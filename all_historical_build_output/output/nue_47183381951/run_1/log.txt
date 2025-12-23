@@ -1,0 +1,540 @@
+bun install v1.2.20 (6ad208bc)
+
+23 packages installed [391.00ms]
+bun test v1.2.20 (6ad208bc)
+
+packages/nuejs/test/render.test.js:
+4 | // helper function to run multiple tests at once
+5 | function runTests(tests, data) {
+6 |   for (const tmpl in tests) {
+7 |     const html = render(tmpl, data)
+8 |     const val = tests[tmpl]
+9 |     expect(html).toBe(val)
+                     ^
+error: expect(received).toBe(expected)
+
+Expected: "<time datetime="6">6</time>"
+Received: "<time datetime="5">5</time>"
+
+      at runTests (/app/packages/nuejs/test/render.test.js:9:18)
+      at <anonymous> (/app/packages/nuejs/test/render.test.js:19:3)
+(fail) Expressions [14.02ms]
+(pass) Comments [1.36ms]
+(pass) Conditionals [7.17ms]
+(pass) Methods and variables [1.89ms]
+(pass) Class and style [0.93ms]
+(pass) Loops [6.96ms]
+(pass) Custom tags [1.23ms]
+(pass) Advanced [2.47ms]
+(pass) Global script [1.56ms]
+(pass) GA [0.52ms]
+(pass) If sibling [0.94ms]
+(pass) :for error [0.71ms]
+(pass) { expr } error [0.88ms]
+
+packages/nuejs/test/compile.test.js:
+(pass) All compile tests [5.95ms]
+(pass) :for error [0.27ms]
+(pass) Unit test [0.20ms]
+
+packages/nuejs/test/parse.test.js:
+(pass) For loop expression [0.33ms]
+(pass) Class attributes [0.09ms]
+(pass) Context (_.variable) [0.08ms]
+(pass) Expressions [0.13ms]
+
+packages/glow/test/glow.test.js:
+(pass) HTML [1.22ms]
+(pass) Emphasis [0.41ms]
+(pass) parse HTML comment [0.37ms]
+(pass) parse JS comment [0.07ms]
+(pass) disable mark [0.15ms]
+(pass) escape prefixes [0.07ms]
+(pass) disable prefixes [0.05ms]
+
+packages/nuekit/test/layout.test.js:
+(pass) <head> [0.96ms]
+(pass) prefetch [0.31ms]
+(pass) findComponent [0.17ms]
+(pass) renderSlots [0.33ms]
+(pass) renderPage [2.30ms]
+(pass) getSPALayout [0.20ms]
+
+packages/nuekit/test/misc.test.js:
+(pass) CSS errors [40.80ms]
+(pass) CSS @import bundling [6.06ms]
+(pass) CSS [3.66ms]
+(pass) CLI args [0.64ms]
+(pass) path parts [0.47ms]
+Loading template...
+Created template "simple-blog" to "_test".
+✓ Initialize _test/.dist/dev: •••••••••
+✓ Serving site from _test/.dist/dev
+✓ Building site to: _test/.dist/dev
+✓ Processing CSS 10
+✓ Reactive components 1
+✓ Markdown content 7
+
+Time taken: 258ms
+
+✓ http://localhost:8083/
+(pass) create [505.63ms]
+Loading template...
+Created template "simple-blog" to "_test".
+✓ Initialize _test/.dist/dev: •••••••••
+✓ Serving site from _test/.dist/dev
+✓ Building site to: _test/.dist/dev
+✓ Processing CSS 10
+✓ Reactive components 1
+✓ Markdown content 7
+
+Time taken: 177ms
+
+✓ http://localhost:8083/
+(pass) create without name arg [243.18ms]
+
+packages/nuekit/test/kit-init.test.js:
+✓ Initialize _test: •••••••••
+(pass) bun init [27.19ms]
+(pass) esbuild init [0.63ms]
+
+packages/nuekit/test/nueserver.test.js:
+(pass) serve all file extensions with correct MIME type [19.84ms]
+
+packages/nuekit/test/nuekit.test.js:
+(pass) site defaults [0.55ms]
+(pass) site.yaml [1.24ms]
+(pass) environment [1.00ms]
+✓ Loaded model from _ssr/index.js
+✓ Loaded model from _ssr/index.js
+(pass) server_model [1.89ms]
+✓ Loaded tags from _ssr/tags.ts
+(pass) custom tags [1.67ms]
+(pass) page styles [2.33ms]
+(pass) root styles [2.15ms]
+(pass) include/exclude data [4.73ms]
+(pass) asset include/exclude [3.96ms]
+(pass) SPA [4.74ms]
+(pass) get data [2.08ms]
+(pass) content collection [3.86ms]
+(pass) basic page generation [3.61ms]
+(pass) simple custom tag [3.30ms]
+(pass) custom tag with <slot/> [5.93ms]
+(pass) layout components [2.36ms]
+(pass) page layout [3.19ms]
+(pass) getRequestPaths [1.84ms]
+(pass) inline CSS [12.32ms]
+(pass) line endings [6.27ms]
+(pass) page assets [3.94ms]
+(pass) bundle [49.02ms]
+(pass) JS errors [7.00ms]
+✓ Initialize _test/.dist/dev: •••••••••
+✓ Serving site from _test/.dist/dev
+✓ Building site to: _test/.dist/dev
+✓ Processing CSS 2
+✓ Markdown content 1
+
+Time taken: 11ms
+
+✓ http://localhost:9090/
+(pass) the project was started for the first time [45.74ms]
+
+packages/nuekit/test/app-router.test.js:
+(pass) parse path data [0.27ms]
+(pass) parse search [0.21ms]
+(pass) hasPathData [0.13ms]
+(pass) matchesPath [0.09ms]
+(pass) diff [0.19ms]
+(pass) fire [0.76ms]
+(pass) renderPath [0.18ms]
+(pass) renderQuery [0.08ms]
+(pass) storage [0.32ms]
+
+packages/nuekit/test/component.test.js:
+(pass) render page [4.11ms]
+(pass) render page with a thumb [0.71ms]
+(pass) parse class [0.21ms]
+(pass) parse link [0.26ms]
+(pass) parse link / plain string [0.15ms]
+(pass) render link [0.43ms]
+(pass) render link with attributes [0.39ms]
+(pass) render image link [0.25ms]
+(pass) render nav [0.19ms]
+(pass) render categorized nav [0.62ms]
+(pass) renderSymbols [1.07ms]
+
+packages/hyper/test/domdiff.test.js:
+(pass) text update [17.86ms]
+(pass) text update [1.08ms]
+(pass) attribute update [3.01ms]
+(pass) attribute addition [1.20ms]
+(pass) attribute removal [1.20ms]
+(pass) element addition [1.43ms]
+(pass) element removal [1.12ms]
+(pass) multiple element addition [1.26ms]
+(pass) multiple element removal [1.12ms]
+(pass) element reorder - positional [1.22ms]
+(pass) keyed list reorder [2.23ms]
+(pass) keyed list addition [1.46ms]
+(pass) keyed list removal [1.13ms]
+(pass) mixed keyed and positional children [1.63ms]
+(pass) nested element update [0.57ms]
+(pass) nested element addition [0.79ms]
+(pass) nested element removal [0.89ms]
+(pass) text node addition [0.77ms]
+(pass) text node removal [0.51ms]
+(pass) mixed content update [0.56ms]
+(pass) complete node replacement [0.58ms]
+
+packages/hyper/test/ast.test.js:
+(pass) parseTags [0.85ms]
+(pass) closed tag [0.36ms]
+(pass) SVG tag [0.06ms]
+(pass) is attrib [1.01ms]
+(pass) nested element [0.17ms]
+(pass) nested tag [0.41ms]
+(pass) element with expression [0.22ms]
+(pass) nested script [0.36ms]
+(pass) client script [0.32ms]
+(pass) conditional [0.47ms]
+(pass) slot [0.16ms]
+(pass) newlines [0.15ms]
+(pass) skip style tags [0.15ms]
+
+packages/hyper/test/attributes.test.js:
+(pass) attr tokenize basics [0.13ms]
+(pass) tokenize class helper [0.05ms]
+(pass) tokenize complex [0.06ms]
+(pass) plain value [0.04ms]
+(pass) expression [0.14ms]
+(pass) interpolation [0.07ms]
+(pass) complex expression [0.06ms]
+(pass) class helper [0.21ms]
+(pass) class helper plain value [0.05ms]
+(pass) complex class helper [0.07ms]
+(pass) for args [0.24ms]
+(pass) for arg parenthesis [0.07ms]
+(pass) [k, v] [0.04ms]
+(pass) ([k, v]) [0.06ms]
+(pass) [lang, text], i [0.04ms]
+(pass) ({ lang, text }, i) [0.04ms]
+(pass) ({k, v}) [0.04ms]
+(pass) simple for clause [0.13ms]
+(pass) complex for clause [0.07ms]
+(pass) basic attrs [0.14ms]
+(pass) equals character [0.07ms]
+(pass) event argument [0.10ms]
+(pass) for attribute [0.10ms]
+(pass) if attribute [0.05ms]
+(pass) skip style attribute [0.06ms]
+
+packages/hyper/test/html5.test.js:
+(pass) scopes simple variable [1.85ms]
+(pass) preserves reserved words [0.08ms]
+(pass) handles math operations [0.05ms]
+(pass) handles array access [0.03ms]
+(pass) handles ternary with multiple variables [0.04ms]
+(pass) handles nested function calls [0.04ms]
+(pass) handles complex expression [0.07ms]
+
+packages/hyper/test/event.test.js:
+(pass) event handler [4.67ms]
+(pass) event argument [0.90ms]
+(pass) conditional [1.64ms]
+(pass) loop + if [1.45ms]
+(pass) callback [1.90ms]
+(pass) method [0.87ms]
+(pass) method syntax [0.82ms]
+(pass) child/bind updates [2.07ms]
+(pass) async method [0.70ms]
+
+packages/hyper/test/compiler.test.js:
+(pass) convertFn [1.86ms]
+(pass) parseTemplate [0.21ms]
+(pass) <script> block [3.06ms]
+(pass) complex <script> block [0.32ms]
+(pass) empty template [0.07ms]
+(pass) compileTemplate [0.19ms]
+(pass) multiple components [0.28ms]
+(pass) function [0.21ms]
+(pass) quoted function [0.24ms]
+(pass) script blocks [0.40ms]
+
+packages/hyper/test/component.test.js:
+(pass) self-closing [0.57ms]
+(pass) render [0.37ms]
+(pass) child [0.36ms]
+(pass) :is=name [0.38ms]
+(pass) params [0.62ms]
+(pass) child data [0.97ms]
+(pass) script [0.53ms]
+(pass) loop [0.95ms]
+(pass) if-else [0.53ms]
+(pass) parent & child params [1.12ms]
+(pass) class merging [0.58ms]
+(pass) :bind [0.65ms]
+(pass) :bind="foo [0.56ms]
+(pass) slot [0.85ms]
+(pass) slot loop [0.65ms]
+(pass) mount attribute [0.65ms]
+(skip) onmount mounted callbacks
+
+packages/hyper/test/tokenizer.test.js:
+(pass) tag [1.71ms]
+(pass) self-closing tag [0.06ms]
+(pass) expressions [0.04ms]
+(pass) nested tags [0.05ms]
+(pass) open tags [0.06ms]
+(pass) complex [0.05ms]
+(pass) simple, unquoted attributes [0.04ms]
+(pass) class helper [0.04ms]
+(pass) single quoted attr [0.03ms]
+(pass) complex attribute [0.03ms]
+(pass) elem with attributes [0.04ms]
+(pass) newlines [0.03ms]
+(pass) if and angle brackets [0.04ms]
+(pass) unclosed tag throws [0.12ms]
+(pass) comments [0.07ms]
+(pass) scripts with expressions [0.04ms]
+(pass) scripts with inner HTML [0.03ms]
+
+packages/hyper/test/block.test.js:
+(pass) element [0.44ms]
+(pass) text [0.22ms]
+(pass) expression [0.23ms]
+(pass) NaN values [0.25ms]
+(pass) expression whitespace [0.29ms]
+(pass) errors [0.34ms]
+(pass) do not render event handlers [0.26ms]
+(pass) attributes [0.33ms]
+(pass) attribute expressions [0.27ms]
+(pass) render prop [0.27ms]
+(pass) nesting [0.29ms]
+(pass) svg [0.46ms]
+(pass) interpolation [0.38ms]
+(pass) text whitespace [0.35ms]
+(pass) tag whitespace [0.30ms]
+(pass) html [3.80ms]
+(pass) class mapping [0.62ms]
+(pass) class mapping with functions [0.51ms]
+(pass) :var-* attributes [0.43ms]
+(pass) max class names [0.72ms]
+(pass) invalid character warnings [0.54ms]
+(pass) loop [0.59ms]
+(pass) template loop [0.64ms]
+(pass) Object.entries() [0.71ms]
+(pass) loop deconstruct [0.42ms]
+(pass) nested loop [0.54ms]
+(pass) loop data access [0.44ms]
+(pass) if-else [0.54ms]
+(pass) passtrough scripts [0.58ms]
+
+packages/nuemark/test/tag.test.js:
+(pass) valueGetter [1.82ms]
+(pass) parseAttr [0.14ms]
+(pass) parseSpecs [0.06ms]
+(pass) parse plain args [0.10ms]
+(pass) parse attrs [0.12ms]
+(pass) parse all [0.11ms]
+(pass) inline tag [0.44ms]
+(pass) block tag [0.27ms]
+(pass) [accordion] tag [0.41ms]
+(pass) [list] sections [0.31ms]
+(pass) [list] items [0.17ms]
+(pass) [list] blocks [0.23ms]
+(pass) [list] wrapper [0.13ms]
+(pass) .list [0.14ms]
+(pass) .note [0.12ms]
+(pass) .stack [0.12ms]
+(pass) client-side island [0.24ms]
+(pass) table options [0.37ms]
+(pass) parse table [0.24ms]
+(pass) [table] with external data [0.51ms]
+(pass) [table] nested YAML [0.26ms]
+(pass) [table] backwards compatibility [0.15ms]
+(pass) [table] nested string [0.14ms]
+(pass) [table] empty cells [0.10ms]
+(pass) [button] inline label [0.14ms]
+(pass) [button] nested label [0.19ms]
+(pass) [image] tag [0.10ms]
+(pass) [image] nested arg [0.13ms]
+(pass) picture [0.37ms]
+(pass) [video] tag [0.25ms]
+(pass) ! shortcut [0.11ms]
+(pass) [svg] [0.23ms]
+(pass) [svg] nested in [button] [0.24ms]
+(pass) [define] [0.49ms]
+
+packages/nuemark/test/document.test.js:
+(pass) front matter [0.17ms]
+(pass) empty meta [0.04ms]
+(pass) document title [0.13ms]
+(pass) title inside hero [0.12ms]
+(pass) description [0.07ms]
+(pass) render method [0.07ms]
+(pass) sectionize [0.17ms]
+(pass) non section [0.04ms]
+(pass) multiple sections [0.15ms]
+(pass) render reflinks [0.25ms]
+(pass) footnotes [0.36ms]
+(pass) table of contents [0.44ms]
+
+packages/nuemark/test/inline.test.js:
+(pass) plain text [1.89ms]
+(pass) formatting [0.19ms]
+(pass) formatting inside string [0.10ms]
+(pass) formatting and special chars at the end [0.12ms]
+(pass) bold + em [0.07ms]
+(pass) unclosed formatting [0.09ms]
+(pass) inline render basics [0.23ms]
+(pass) render image [0.10ms]
+(pass) unclosed image [0.14ms]
+(pass) inline HTML [0.06ms]
+(pass) inline code [0.18ms]
+(pass) HTML escaping [0.04ms]
+(pass) escaping [0.07ms]
+(pass) simple link [0.06ms]
+(pass) link subject [0.04ms]
+(pass) parse inline link [0.05ms]
+(pass) parse reflink [0.04ms]
+(pass) parse reflink + link [0.13ms]
+(pass) bad component names [0.17ms]
+(pass) inline image tag [0.12ms]
+(pass) image link [0.11ms]
+(pass) complex label with an image [0.11ms]
+(pass) parse complex Wikipedia-style link [0.06ms]
+(pass) parse footnote link [0.03ms]
+(pass) parse footnote ref [0.07ms]
+(pass) render footnote link [0.09ms]
+(pass) footnote mix [0.12ms]
+(pass) render reflinks [0.06ms]
+(pass) parse simple image [0.07ms]
+(pass) inline tag [0.06ms]
+(pass) inline tag with reflink [0.07ms]
+(pass) link with a tag [0.07ms]
+(pass) link with image tag [0.09ms]
+(pass) tag args [0.10ms]
+(pass) { variables } [0.19ms]
+(pass) complex variable getters [0.21ms]
+(pass) { #foo.bar } [0.10ms]
+
+packages/nuemark/test/block.test.js:
+(pass) paragraphs [0.15ms]
+(pass) list items [0.13ms]
+(pass) nested lists [0.16ms]
+(pass) nested tag data [0.16ms]
+(pass) nested tag content [0.22ms]
+(pass) subsequent blockquotes [0.12ms]
+(pass) numbered items [0.06ms]
+(pass) multiple thematic breaks [0.04ms]
+(pass) parse thematic break [0.06ms]
+(pass) render thematic break [0.12ms]
+(pass) render thematic break [0.07ms]
+(pass) parse heading [0.06ms]
+(pass) render heading [0.16ms]
+(pass) heading class name [0.07ms]
+(pass) heading attr [0.12ms]
+(pass) generated heading id [0.10ms]
+(pass) heading block count [0.08ms]
+(pass) render blockquote [0.08ms]
+(pass) render fenced code [0.65ms]
+(pass) fenced code with caption [0.16ms]
+(pass) multi-line list entries [0.07ms]
+(pass) nested list [0.09ms]
+(pass) blockquote [0.04ms]
+(pass) fenced code blocks [0.10ms]
+(pass) parse table [0.24ms]
+(pass) parse reflinks [0.13ms]
+(pass) footnotes with [define] [0.25ms]
+(pass) complex tag data [0.21ms]
+(pass) duplicate tag classes [0.14ms]
+(pass) escaping [0.09ms]
+(pass) before render callback [0.13ms]
+
+packages/nuejs/test/test-refs/refs.test.js:
+(pass) Nue.js Refs Tests > basic refs should work correctly [13.16ms]
+(pass) Nue.js Refs Tests > multiple refs should work correctly [2.32ms]
+(pass) Nue.js Refs Tests > nested refs should work correctly [2.36ms]
+
+packages/nuejs/test/test-clicks/clicks.test.js:
+(pass) Nue.js Clicks Tests > basic click events should update the DOM correctly [3.75ms]
+
+packages/nuejs/test/test-ifs/ifs.test.js:
+(pass) Nue.js Ifs Tests > The first if statement should conditional render correctly [3.35ms]
+(pass) Nue.js Ifs Tests > The else-if statement should conditional render correctly [2.09ms]
+(pass) Nue.js Ifs Tests > The else statement should conditional render correctly [1.97ms]
+(pass) Nue.js Ifs Tests > If-else should render if branch when condition is true [1.71ms]
+(pass) Nue.js Ifs Tests > If-else should render else branch when condition is false [1.84ms]
+(pass) Nue.js Ifs Tests > Multiple independent if statements should render correctly [1.72ms]
+(pass) Nue.js Ifs Tests > Nested if statements should render correctly [1.68ms]
+
+packages/nuejs/test/test-fors/fors.test.js:
+(pass) Nue.js Fors Tests > Array [5.32ms]
+(pass) Nue.js Fors Tests > Unpacking Array [1.84ms]
+(pass) Nue.js Fors Tests > Numbered Array [1.87ms]
+(pass) Nue.js Fors Tests > Object Array [1.71ms]
+(pass) Nue.js Fors Tests > Array replaced [2.31ms]
+(pass) Nue.js Fors Tests > Array funcs [11.27ms]
+
+1 tests skipped:
+(skip) onmount mounted callbacks
+
+
+1 tests failed:
+(fail) Expressions [14.02ms]
+-------------------------------------------|---------|---------|-------------------
+File                                       | % Funcs | % Lines | Uncovered Line #s
+-------------------------------------------|---------|---------|-------------------
+All files                                  |   89.85 |   88.70 |
+ _test/_ssr/index.js                       |  100.00 |  100.00 |
+ _test/_ssr/tags.ts                        |   66.67 |   60.00 | 3-4
+ packages/glow/index.js                    |  100.00 |  100.00 |
+ packages/glow/src/glow.js                 |   90.00 |   77.30 | 115-155
+ packages/hyper/src/block/block.js         |  100.00 |   99.40 |
+ packages/hyper/src/block/domdiff.js       |  100.00 |  100.00 |
+ packages/hyper/src/compiler/ast.js        |  100.00 |  100.00 |
+ packages/hyper/src/compiler/attributes.js |   93.75 |   95.29 | 85-88
+ packages/hyper/src/compiler/html5.js      |  100.00 |  100.00 |
+ packages/hyper/src/compiler/index.js      |  100.00 |  100.00 |
+ packages/hyper/src/compiler/tokenizer.js  |  100.00 |   96.00 | 52-53
+ packages/hyper/src/index.js               |  100.00 |  100.00 |
+ packages/hyper/test/clickable.js          |  100.00 |  100.00 |
+ packages/nuejs/index.js                   |  100.00 |  100.00 |
+ packages/nuejs/src/browser/for.js         |  100.00 |  100.00 |
+ packages/nuejs/src/browser/if.js          |  100.00 |  100.00 |
+ packages/nuejs/src/browser/nue.js         |   63.64 |   68.52 | 44,47,63-64,73-77,79-80,83,85,88,90,127-129,131,153-154,156,161,173-175,180-188,192-197,201-206,235-240,250-251,277-279,284-286,328-329,334,363-366
+ packages/nuejs/src/compile.js             |  100.00 |   97.40 | 44-46
+ packages/nuejs/src/expr.js                |  100.00 |  100.00 |
+ packages/nuejs/src/fn.js                  |  100.00 |   92.50 | 108-111,131-132
+ packages/nuejs/src/render.js              |   93.94 |   95.73 | 90-92,232-233,352,381-382,386-387
+ packages/nuejs/test/test-utils.js         |   90.91 |   84.44 | 67,69-70,87-88,91-92
+ packages/nuekit/src/browser/app-router.js |   66.67 |   72.44 | 34-36,51-53,57,61-62,69-80,85-87,125-130,166-168,172-173,192-198
+ packages/nuekit/src/builder.js            |  100.00 |   95.40 | 16,32,55-56
+ packages/nuekit/src/cli.js                |   55.56 |   42.06 | 31,54-56,76-77,81,85-121,126-143
+ packages/nuekit/src/create.js             |   80.00 |   90.91 | 39-42
+ packages/nuekit/src/init.js               |  100.00 |  100.00 |
+ packages/nuekit/src/layout/components.js  |   86.36 |   92.65 | 12-13,26-28,44-45,56,64-65
+ packages/nuekit/src/layout/head.js        |   90.91 |   96.88 | 48-49
+ packages/nuekit/src/layout/page.js        |  100.00 |   97.01 | 89-90
+ packages/nuekit/src/nuefs.js              |   66.67 |   40.82 | 15-29,42,47-86,129-130
+ packages/nuekit/src/nuekit.js             |   80.56 |   75.85 | 39-40,156-157,165-183,212,226-229,244,247-249,256-259,290,293,324,333-335,340-345,350-355,369-371
+ packages/nuekit/src/nueserver.js          |   75.00 |   68.12 | 46,48-52,59-60,72-75,81-90
+ packages/nuekit/src/site.js               |   92.98 |   80.38 | 52-54,67,90,150-160,175,239-250,288-289,350-351,384-392,397-405
+ packages/nuekit/src/stats.js              |   20.00 |   37.93 | 13-14,18-47,74-76
+ packages/nuekit/src/util.js               |   86.96 |   93.67 | 11-12,33-34
+ packages/nuekit/test/match-path.js        |   50.00 |   53.33 | 13-19
+ packages/nuemark/index.js                 |  100.00 |  100.00 |
+ packages/nuemark/src/parse-blocks.js      |  100.00 |   98.78 | 145
+ packages/nuemark/src/parse-document.js    |   95.45 |   92.63 | 52-58
+ packages/nuemark/src/parse-inline.js      |  100.00 |  100.00 |
+ packages/nuemark/src/parse-tag.js         |  100.00 |  100.00 |
+ packages/nuemark/src/render-blocks.js     |  100.00 |   98.53 |
+ packages/nuemark/src/render-inline.js     |  100.00 |  100.00 |
+ packages/nuemark/src/render-tag.js        |   97.37 |   97.47 | 96,128-129,137-138
+-------------------------------------------|---------|---------|-------------------
+
+ 364 pass
+ 1 skip
+ 1 fail
+ 798 expect() calls
+Ran 366 tests across 28 files. [1.68s]

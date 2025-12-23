@@ -1,0 +1,28 @@
+# Dockerfile
+FROM node:18
+
+# Set timezone to Pacific Time
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Install git
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
+# Create work directory
+WORKDIR /app
+
+# Copy repository files
+COPY . .
+
+# Check if the tar file exists and extract it if it does
+RUN if [ -f install-build-node-18.tar ]; then tar -xf install-build-node-18.tar; fi
+
+# Install project dependencies
+RUN yarn install
+
+# Copy run.sh and make it executable
+COPY run.sh /usr/local/bin/run.sh
+RUN chmod +x /usr/local/bin/run.sh
+
+# Set entrypoint
+ENTRYPOINT ["/usr/local/bin/run.sh"]

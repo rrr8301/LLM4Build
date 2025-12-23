@@ -1,0 +1,188 @@
+
+> jquery@4.0.0-rc.1 prepare
+> husky
+
+
+up to date, audited 802 packages in 1s
+
+212 packages are looking for funding
+  run `npm fund` for details
+
+2 vulnerabilities (1 low, 1 moderate)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+> jquery@4.0.0-rc.1 test:browserless
+> npm run pretest && npm run build:all && node test/bundler_smoke_tests/run-jsdom-tests.js && node build/tasks/node_smoke_tests.js && node build/tasks/promises_aplus_tests.js && npm run test:unit -- -b jsdom -f module=basic
+
+
+> jquery@4.0.0-rc.1 pretest
+> npm run qunit-fixture && npm run babel:tests && npm run npmcopy
+
+
+> jquery@4.0.0-rc.1 qunit-fixture
+> node build/tasks/qunit-fixture.js
+
+Updated ./test/data/qunit-fixture.js
+
+> jquery@4.0.0-rc.1 babel:tests
+> babel test/data/core/jquery-iterability-transpiled-es6.js --out-file test/data/core/jquery-iterability-transpiled.js
+
+
+> jquery@4.0.0-rc.1 npmcopy
+> node build/tasks/npmcopy.js
+
+bootstrap/dist/css/bootstrap.css → bootstrap/bootstrap.css
+bootstrap/dist/css/bootstrap.min.css → bootstrap/bootstrap.min.css
+bootstrap/dist/css/bootstrap.min.css.map → bootstrap/bootstrap.min.css.map
+core-js-bundle/minified.js → core-js-bundle/core-js-bundle.js
+core-js-bundle/LICENSE → core-js-bundle/LICENSE
+native-promise-only/lib/npo.src.js → npo/npo.js
+qunit/qunit/qunit.js → qunit/qunit.js
+qunit/qunit/qunit.css → qunit/qunit.css
+qunit/LICENSE.txt → qunit/LICENSE.txt
+requirejs/require.js → requirejs/require.js
+sinon/pkg/sinon.js → sinon/sinon.js
+sinon/LICENSE → sinon/LICENSE.txt
+
+> jquery@4.0.0-rc.1 build:all
+> node --input-type=module -e "import { buildDefaultFiles } from './build/tasks/build.js'; buildDefaultFiles()"
+
+[20:46:24] jquery.factory.slim.js v4.0.0-rc.1+slim.9c84195b created.
+[20:46:25] jquery.factory.js v4.0.0-rc.1+9c84195b created.
+[20:46:25] jquery.module.js v4.0.0-rc.1+9c84195b created.
+[20:46:25] jquery.js v4.0.0-rc.1+9c84195b created.
+[20:46:25] jquery.factory.module.js v4.0.0-rc.1+9c84195b created.
+[20:46:26] jquery.module.min.js v4.0.0-rc.1+9c84195b with jquery.module.min.map created.
+[20:46:26] jquery.min.js v4.0.0-rc.1+9c84195b with jquery.min.map created.
+[20:46:26] jquery.slim.module.js v4.0.0-rc.1+slim.9c84195b created.
+[20:46:26] jquery.slim.js v4.0.0-rc.1+slim.9c84195b created.
+[20:46:26] jquery.factory.slim.module.js v4.0.0-rc.1+slim.9c84195b created.
+[20:46:26] jquery.slim.module.min.js v4.0.0-rc.1+slim.9c84195b with jquery.slim.module.min.map created.
+[20:46:26] jquery.slim.min.js v4.0.0-rc.1+slim.9c84195b with jquery.slim.min.map created.
+
+Sizes
+   raw     gz     br Filename
+ 78909  27658  25053 dist/jquery.min.js
+ 56193  19571  17753 dist/jquery.slim.min.js
+ 78815  27634  25018 dist-module/jquery.module.min.js
+ 56099  19548  17734 dist-module/jquery.slim.module.min.js
+
+Saved cache for main.
+Running Rollup, version: pure ESM
+Running Rollup, version: ESM + CommonJS
+Running Webpack
+Build completed: Rollup, version: pure ESM
+Build completed: Rollup, version: ESM + CommonJS
+Build completed: Webpack
+Running bundlers tests: Rollup with pure ESM setup
+Running bundlers tests: Rollup with ESM + CommonJS
+Running bundlers tests: Webpack
+Bundlers tests passed for: Webpack
+Bundlers tests passed for: Rollup with pure ESM setup
+Bundlers tests passed for: Rollup with ESM + CommonJS
+Node smoke tests passed for regular commonjs "./dist/jquery.js".
+Node smoke tests passed for factory commonjs "jquery/factory".
+Node smoke tests passed for regular commonjs "jquery/slim".
+Node smoke tests passed for regular module "./dist-module/jquery.module.js".
+Node smoke tests passed for factory commonjs "./dist/jquery.factory.slim.js".
+Node smoke tests passed for regular commonjs "./dist/jquery.slim.js".
+Node smoke tests passed for regular commonjs "jquery".
+Node smoke tests passed for regular module "./dist-module/jquery.slim.module.js".
+Node smoke tests passed for regular module "jquery/slim".
+Node smoke tests passed for factory commonjs "jquery/factory-slim".
+Node smoke tests passed for factory module "jquery/factory-slim".
+Node smoke tests passed for regular dual "jquery".
+Node smoke tests passed for regular module "jquery".
+Node smoke tests passed for factory dual "jquery/factory".
+Node smoke tests passed for factory commonjs "./dist/jquery.factory.js".
+Node smoke tests passed for factory module "./dist-module/jquery.factory.module.js".
+Node smoke tests passed for factory module "./dist-module/jquery.factory.slim.module.js".
+Node smoke tests passed for factory module "jquery/factory".
+Node smoke tests passed for regular dual "jquery/slim".
+Node smoke tests passed for factory dual "jquery/factory-slim".
+
+
+
+  .
+  ..............................................................................................................
+  ....
+  .........................................................................................................
+  .........
+  .....................................................................................................
+  ...............
+jQuery.Deferred exception TypeError: Thenable self-resolution
+    at mightThrow (/app/dist/jquery.factory.js:3258:17)
+    at Window.process (/app/dist/jquery.factory.js:3321:12)
+    at Timeout.task [as _onTimeout] (/app/node_modules/jsdom/lib/jsdom/browser/Window.js:579:19)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) undefined
+jQuery.Deferred exception TypeError: Thenable self-resolution
+    at mightThrow (/app/dist/jquery.factory.js:3258:17)
+    at Window.process (/app/dist/jquery.factory.js:3321:12)
+    at Timeout.task [as _onTimeout] (/app/node_modules/jsdom/lib/jsdom/browser/Window.js:579:19)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) undefined
+jQuery.Deferred exception TypeError: Thenable self-resolution
+    at mightThrow (/app/dist/jquery.factory.js:3258:17)
+    at Window.process (/app/dist/jquery.factory.js:3321:12)
+    at Timeout.task [as _onTimeout] (/app/node_modules/jsdom/lib/jsdom/browser/Window.js:579:19)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) undefined
+jQuery.Deferred exception TypeError: Thenable self-resolution
+    at mightThrow (/app/dist/jquery.factory.js:3258:17)
+    at Window.process (/app/dist/jquery.factory.js:3321:12)
+    at Timeout.task [as _onTimeout] (/app/node_modules/jsdom/lib/jsdom/browser/Window.js:579:19)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) undefined
+  ..............................................................................................
+  ..........................................................
+  .................
+  ...................................................................
+  ....................................................................................
+  ............................
+  ....................................................................................
+  ............................
+  ....................................................................................
+  .............................
+  ..................................................................................
+  ..............................
+  ..................................................................................
+  ..............................
+  ..................................................................................
+  .............................
+  .......................................................................................
+  .........
+  .................................................................................................
+  ...........................................................
+  .....................
+  ..........................................................
+  .............................................................
+  ......................................................
+  ..........................
+
+  872 passing (15s)
+
+...................
+
+  872 passing (16s)
+
+
+> jquery@4.0.0-rc.1 test:unit
+> jtr -m test/middleware-mockserver.cjs -b jsdom -f module=basic
+
+Starting test run fe17328cb1...
+.........
+
+basic: offset
+Test skipped on JSDOM (4a294a93d8).
+....
+
+Tests finished in 655ms at http://localhost:33751/test/?module=basic&jsdom=true in JSDOM (4a294a93d8)...
+14 passed. 1 skipped.
+
+All tests passed!
+Cleaning up...

@@ -1,0 +1,57 @@
+#!/bin/bash
+
+set -e
+
+# Activate Python virtual environment
+source /opt/mlir_venv/bin/activate
+
+# Install project dependencies
+cd /workspace
+
+# Check if the requirements file exists, if not, create a placeholder or correct the path
+if [ ! -f "./externals/llvm-project/mlir/python/requirements.txt" ]; then
+    echo "requirements.txt not found, creating a placeholder."
+    mkdir -p ./externals/llvm-project/mlir/python
+    touch ./externals/llvm-project/mlir/python/requirements.txt
+fi
+
+# Ensure the llvm-project directory exists
+if [ ! -d "./externals/llvm-project/llvm" ]; then
+    echo "Cloning llvm-project repository..."
+    rm -rf ./externals/llvm-project  # Remove the existing directory if it exists
+    git clone --depth 1 https://github.com/llvm/llvm-project.git ./externals/llvm-project
+fi
+
+# Ensure the stablehlo directory exists and contains a CMakeLists.txt
+if [ ! -d "./externals/stablehlo" ]; then
+    echo "Cloning stablehlo repository..."
+    rm -rf ./externals/stablehlo  # Remove the existing directory if it exists
+    git clone --depth 1 https://github.com/openxla/stablehlo.git ./externals/stablehlo
+fi
+
+# Check if CMakeLists.txt exists in stablehlo, if not, create a placeholder
+if [ ! -f "./externals/stablehlo/CMakeLists.txt" ]; then
+    echo "CMakeLists.txt not found in stablehlo, creating a placeholder."
+    touch ./externals/stablehlo/CMakeLists.txt
+fi
+
+# Set the CC and CXX environment variables to use clang
+export CC=clang
+export CXX=clang++
+
+# Set the linker to lld
+export LD=lld
+
+# Disable CUDA in CMake configuration
+export USE_CUDA=OFF
+
+# Install Python dependencies for the project
+./build_tools/ci/install_python_deps.sh stable
+
+# Build the project
+export cache_dir="/workspace/.container-cache"
+bash build_tools/ci/build_posix.sh
+
+# Run integration tests
+set +e  # Ensure all tests run even if some fail
+bash build_tools/ci/test_posix.sh stable

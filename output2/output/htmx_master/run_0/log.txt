@@ -1,0 +1,35 @@
+
+> htmx.org@2.0.7 test
+> npm run lint && npm run types-check && npm run test:chrome
+
+
+> htmx.org@2.0.7 lint
+> eslint src/htmx.js test/attributes/ test/core/ test/util/ scripts/*.mjs
+
+
+> htmx.org@2.0.7 types-check
+> tsc src/htmx.js --noEmit --checkJs --target es6 --lib dom,dom.iterable
+
+node_modules/@types/node/buffer.d.ts(616,19): error TS2430: Interface 'Buffer' incorrectly extends interface 'Uint8Array<ArrayBufferLike>'.
+  The types of 'slice(...).buffer' are incompatible between these types.
+    Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+      Type 'SharedArrayBuffer' is not assignable to type 'ArrayBuffer'.
+        Types of property '[Symbol.toStringTag]' are incompatible.
+          Type '"SharedArrayBuffer"' is not assignable to type '"ArrayBuffer"'.
+node_modules/@types/node/fs/promises.d.ts(56,66): error TS2344: Type 'Buffer' does not satisfy the constraint 'ArrayBufferView'.
+  Type 'Buffer' is not assignable to type 'Uint8Array<ArrayBufferLike> | DataView<ArrayBufferLike>'.
+    Type 'Buffer' is not assignable to type 'Uint8Array<ArrayBufferLike>'.
+      The types of 'slice(...).buffer' are incompatible between these types.
+        Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+          Type 'SharedArrayBuffer' is not assignable to type 'ArrayBuffer'.
+            Types of property '[Symbol.toStringTag]' are incompatible.
+              Type '"SharedArrayBuffer"' is not assignable to type '"ArrayBuffer"'.
+node_modules/@types/node/fs/promises.d.ts(218,49): error TS2344: Type 'Buffer' does not satisfy the constraint 'ArrayBufferView'.
+  Type 'Buffer' is not assignable to type 'Uint8Array<ArrayBufferLike> | DataView<ArrayBufferLike>'.
+    Type 'Buffer' is not assignable to type 'Uint8Array<ArrayBufferLike>'.
+      The types of 'slice(...).buffer' are incompatible between these types.
+        Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+          Type 'SharedArrayBuffer' is not assignable to type 'ArrayBuffer'.
+            Types of property '[Symbol.toStringTag]' are incompatible.
+              Type '"SharedArrayBuffer"' is not assignable to type '"ArrayBuffer"'.
+node_modules/@types/node/module.d.ts(108,13): error TS2386: Overload signatures must all be optional or required.

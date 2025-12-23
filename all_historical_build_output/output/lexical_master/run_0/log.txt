@@ -1,0 +1,411 @@
+
+> @lexical/monorepo@0.35.0 ci-check
+> npm-run-all --parallel tsc tsc-extension flow prettier lint
+
+
+> @lexical/monorepo@0.35.0 tsc-extension
+> npm run compile -w @lexical/devtools
+
+
+> @lexical/monorepo@0.35.0 tsc
+> tsc
+
+
+> @lexical/monorepo@0.35.0 lint
+> eslint ./
+
+
+> @lexical/monorepo@0.35.0 flow
+> node ./scripts/check-flow-types.js
+
+
+> @lexical/monorepo@0.35.0 prettier
+> prettier --list-different .
+
+Running Flow...
+
+> @lexical/devtools@0.35.0 compile
+> tsc --noEmit
+
+Launching Flow server for /app
+Spawned flow server (pid=158)
+Logs will go to /tmp/flow/zSapp.log
+Monitor logs will go to /tmp/flow/zSapp.monitor_log
+Started a new flow server: -Please wait. Server is starting up Flow server
+Please wait. Server is initializing (parsed files 0)
+Please wait. Server is initializing (parsed files 491)
+Please wait. Server is initializing (loading libraries)
+Please wait. Server is initializing (resolving dependencies)
+Please wait. Server is initializing (indexing files 0/76 (0.0%))
+Please wait. Server is initializing (indexing files (post-process))
+Please wait. Server is initializing (post-Indexing work)
+Please wait. Server is initializing (parsed files 0/0 (0.0%))
+Please wait. Server is initializing (calculating dependencies)
+Please wait. Server is initializing (merged module interfaces 0/76 (0.0%))
+Please wait. Server is initializing (checked files 8/76 (10.5%))
+Please wait. Server is initializing (checked files 56/76 (73.7%))
+Please wait. Server is initializing (collating errors)
+Please wait. Dfind file watcher is still initializing
+Please wait. Dfind file watcher is still initializing
+No errors!
+
+> @lexical/monorepo@0.35.0 build
+> node scripts/build.js
+
+
+> @lexical/monorepo@0.35.0 build-www
+> npm run clean && npm run build -- --www && npm run build -- --www --prod && npm run prepare-www
+
+
+> @lexical/monorepo@0.35.0 clean
+> node scripts/clean.js
+
+
+> @lexical/monorepo@0.35.0 build
+> node scripts/build.js --www
+
+
+> @lexical/monorepo@0.35.0 build
+> node scripts/build.js --www --prod
+
+
+> @lexical/monorepo@0.35.0 prepare-www
+> node scripts/www/rewriteImports.js
+
+
+> @lexical/monorepo@0.35.0 test-unit
+> vitest --no-watch
+
+WebSocket server error: Port is already in use
+
+ RUN  v3.2.4 /app
+
+ ✓ |unit| packages/lexical-eslint-plugin/src/__tests__/unit/buildMatcher.test.ts (4 tests) 6ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/React19.test.tsx (1 test) 25ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalComposer.test.tsx (3 tests) 43ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/mergeRegister.test.ts (2 tests) 7ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalElementHelpers.test.ts (5 tests) 13ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/useLexicalIsTextContentEmpty.test.tsx (1 test) 93ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalContentEditableElement.test.tsx (13 tests) 310ms
+ ✓ |unit| packages/lexical-headless/src/__tests__/unit/LexicalHeadlessEditor.test.ts (6 tests) 142ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTablePlugin.test.tsx (4 tests) 38ms
+ ✓ |unit| packages/lexical-html/src/__tests__/unit/LexicalHtml.test.ts (6 tests) 66ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalCollaborationPlugin.test.tsx (1 test) 115ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/CollaborationWithCollisions.test.ts (3 tests) 286ms
+ ✓ |unit| packages/lexical-eslint-plugin/src/__tests__/unit/rules-of-lexical.test.ts (3 tests) 9ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/PlainRichTextPlugin.test.tsx (6 tests) 347ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/Collaboration.test.ts (7 tests) 682ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/descendantsMatching.test.tsx (3 tests) 47ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/unwrapAndFilterDescendants.test.tsx (4 tests) 24ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalNodeHelpers.test.ts (10 tests) 256ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalEditorState.test.ts (4 tests) 135ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/iterators.test.tsx (7 tests) 33ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalNormalization.test.tsx (10 tests) 264ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalSerialization.test.ts (1 test) 245ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalUpdateTags.test.ts (6 tests) 210ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/useMenuAnchorRef.test.tsx (1 test) 50ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalUtilsSplitNode.test.tsx (7 tests) 97ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalRootHelpers.test.ts (2 tests) 161ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/LexicalListNode.test.ts (12 tests) 310ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalUtilsKlassEqual.test.ts (1 test) 90ms
+ ✓ |unit| packages/lexical-rich-text/src/__tests__/unit/LexicalQuoteNode.test.ts (5 tests) 153ms
+ ✓ |unit| packages/lexical-rich-text/src/__tests__/unit/LexicalHeadingNode.test.ts (9 tests) 273ms
+ ✓ |unit| packages/lexical-hashtag/src/__tests__/unit/LexicalHashtagNode.test.ts (1 test) 128ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/utils.test.ts (10 tests) 286ms
+ ✓ |unit| packages/lexical-selection/src/__tests__/unit/LexicalSelectionHelpers.test.ts (49 tests) 434ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalReconciler.test.ts (5 tests) 211ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/CodeBlock.test.ts (13 tests) 539ms
+ ✓ |unit| packages/lexical-link/src/__tests__/unit/LexicalLinkNode.test.ts (36 tests) 489ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalSelection.test.ts (43 tests) 714ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalUtils.test.ts (25 tests) 389ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalUtilsInsertNodeToNearestRoot.test.tsx (8 tests) 242ms
+ ✓ |unit| packages/lexical-link/src/__tests__/unit/LexicalAutoLinkNode.test.ts (27 tests) 515ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/HTMLCopyAndPaste.test.ts (10 tests) 728ms
+   ✓ HTMLCopyAndPaste tests > HTML copy paste: plain DOM text node  341ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableSelection.test.tsx (1 test) 124ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/useLexicalCharacterLimit.test.ts (2 tests) 155ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableMobileSelection.test.tsx (5 tests) 241ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/formatList.test.ts (4 tests) 211ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableRowNode.test.ts (2 tests) 126ms
+ ✓ |unit| packages/lexical-history/src/__tests__/unit/LexicalHistory.test.tsx (5 tests) 241ms
+ ✓ |unit| packages/lexical-code/src/__tests__/unit/LexicalCodeNodeTabs.test.ts (74 tests) 1038ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalNode.test.ts (70 tests) 685ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalNodeState.test.ts (83 tests) 755ms
+ ✓ |unit| packages/lexical-markdown/src/__tests__/unit/LexicalMarkdown.test.ts (234 tests) 537ms
+ ✓ |unit| packages/lexical-code/src/__tests__/unit/LexicalCodeNode.test.ts (54 tests | 1 skipped) 1715ms
+   ✓ LexicalCodeNode tests > initial editor state before transforms > can be registered after initial editor state (regression #7014)  974ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableCellNode.test.ts (3 tests) 1626ms
+   ✓ LexicalTableCellNode tests > TableCellNode.importDOM  1460ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalEventHelpers.test.tsx (57 tests) 1034ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/registerListStrictIndentTransform.test.ts (1 test) 1700ms
+   ✓ Lexical List StrictIndentTransform tests > applyStrictListIndentation  1698ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalEditor.test.tsx (73 tests) 1907ms
+   ✓ LexicalEditor tests > transforms do not discard unintentional dirtyElements  1236ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/LexicalListItemNode.test.ts (26 tests) 2439ms
+   ✓ LexicalListItemNode tests > ListItemNode.createDOM()  934ms
+   ✓ LexicalListItemNode tests > ListItemNode.replace() > another list item node  485ms
+ ✓ |unit| packages/lexical-code-shiki/src/__tests__/unit/LexicalCodeNodeTabs.test.ts (74 tests) 1423ms
+   ✓ LexicalCodeNode tests > Tabs > testing tab: >| => >-| (forwards)  704ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalListPlugin.test.tsx (3 tests) 1603ms
+   ✓ @lexical/list tests > Toggle an empty list on/off  1417ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalNestedComposer.test.tsx (8 tests) 1925ms
+   ✓ LexicalNestedComposer > with inherited configuration and namespace  1413ms
+ ✓ |unit| packages/lexical-selection/src/__tests__/unit/LexicalSelection.test.tsx (233 tests) 3038ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableNode.test.tsx (38 tests) 3915ms
+   ✓ LexicalTableNode tests > hasHorizontalScroll={false} > TableNode.createDOM()  843ms
+   ✓ LexicalTableNode tests > hasHorizontalScroll={false} > TableNode.createDOM() and updateDOM() style  621ms
+
+ Test Files  62 passed (62)
+      Tests  1423 passed | 1 skipped (1424)
+   Start at  12:37:25
+   Duration  11.09s (transform 25.90s, setup 8.72s, collect 269.18s, tests 35.64s, environment 85.17s, prepare 18.39s)
+
+
+> @lexical/monorepo@0.35.0 test-integration
+> jest --selectProjects integration --testPathPattern
+
+Running one project: integration
+FAIL integration scripts/__tests__/integration/prepare-release.test.js (295.963 s)
+  prepare-release tests
+    lexical
+      ✓ npm/lexical-0.35.0.tgz exists (4 ms)
+    @lexical/clipboard
+      ✓ npm/lexical-clipboard-0.35.0.tgz exists
+    @lexical/code
+      ✓ npm/lexical-code-0.35.0.tgz exists (1 ms)
+    @lexical/code-shiki
+      ✓ npm/lexical-code-shiki-0.35.0.tgz exists
+    @lexical/devtools-core
+      ✓ npm/lexical-devtools-core-0.35.0.tgz exists
+    @lexical/dragon
+      ✓ npm/lexical-dragon-0.35.0.tgz exists (1 ms)
+    @lexical/eslint-plugin
+      ✓ npm/lexical-eslint-plugin-0.35.0.tgz exists (1 ms)
+    @lexical/file
+      ✓ npm/lexical-file-0.35.0.tgz exists
+    @lexical/hashtag
+      ✓ npm/lexical-hashtag-0.35.0.tgz exists
+    @lexical/headless
+      ✓ npm/lexical-headless-0.35.0.tgz exists
+    @lexical/history
+      ✓ npm/lexical-history-0.35.0.tgz exists
+    @lexical/html
+      ✓ npm/lexical-html-0.35.0.tgz exists (1 ms)
+    @lexical/link
+      ✓ npm/lexical-link-0.35.0.tgz exists (1 ms)
+    @lexical/list
+      ✓ npm/lexical-list-0.35.0.tgz exists
+    @lexical/mark
+      ✓ npm/lexical-mark-0.35.0.tgz exists (4 ms)
+    @lexical/markdown
+      ✓ npm/lexical-markdown-0.35.0.tgz exists
+    @lexical/offset
+      ✓ npm/lexical-offset-0.35.0.tgz exists
+    @lexical/overflow
+      ✓ npm/lexical-overflow-0.35.0.tgz exists (1 ms)
+    @lexical/plain-text
+      ✓ npm/lexical-plain-text-0.35.0.tgz exists
+    @lexical/react
+      ✓ npm/lexical-react-0.35.0.tgz exists (1 ms)
+    @lexical/rich-text
+      ✓ npm/lexical-rich-text-0.35.0.tgz exists
+    @lexical/selection
+      ✓ npm/lexical-selection-0.35.0.tgz exists (1 ms)
+    @lexical/table
+      ✓ npm/lexical-table-0.35.0.tgz exists
+    @lexical/text
+      ✓ npm/lexical-text-0.35.0.tgz exists (1 ms)
+    @lexical/utils
+      ✓ npm/lexical-utils-0.35.0.tgz exists
+    @lexical/yjs
+      ✓ npm/lexical-yjs-0.35.0.tgz exists
+  examples/vanilla-js-plugin
+    ✓ install & build succeeded
+    ✓ installed lexical 0.35.0 (8 ms)
+  examples/vanilla-js-iframe
+    ✓ install & build succeeded
+    ✓ installed lexical 0.35.0 (4 ms)
+  examples/vanilla-js
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.35.0 (7 ms)
+  examples/react-table
+    ✓ install & build succeeded
+    ✓ installed lexical 0.35.0 (14 ms)
+  examples/react-rich-collab
+    ✓ install & build succeeded
+    ✓ installed lexical 0.35.0 (13 ms)
+  examples/react-rich
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.35.0 (13 ms)
+  examples/react-plain-text
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.35.0 (14 ms)
+  examples/node-state-style
+    ✓ install & build succeeded
+    ✓ installed lexical 0.35.0 (12 ms)
+  examples/node-replacement
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.35.0 (13 ms)
+  scripts/__tests__/integration/fixtures/lexical-esm-sveltekit-vanilla-js
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.35.0 (6 ms)
+    ✕ tests pass (6854 ms)
+  scripts/__tests__/integration/fixtures/lexical-esm-nextjs
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.35.0 (11 ms)
+    ✕ tests pass (3115 ms)
+  scripts/__tests__/integration/fixtures/lexical-esm-astro-react
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.35.0 (13 ms)
+
+  ● scripts/__tests__/integration/fixtures/lexical-esm-sveltekit-vanilla-js › tests pass
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: null
+    Received: {"code": 1, "stderr": "", "stdout": "
+    > lexical-sveltekit-vanilla-js@0.35.0 test
+    > playwright test··
+    Running 2 tests using 1 worker·
+      ✘  1 tests/test.ts:11:1 › index page has expected h1 and lexical state (11ms)
+      ✘  2 tests/test.ts:21:1 › lexical editor has an accessible numeric version (11ms)··
+      1) tests/test.ts:11:1 › index page has expected h1 and lexical state ─────────────────────────────·
+        Error: browserType.launch:·
+        ╔══════════════════════════════════════════════════════╗
+        ║ Host system is missing dependencies to run browsers. ║
+        ║ Please install them with the following command:      ║
+        ║                                                      ║
+        ║     npx playwright install-deps                      ║
+        ║                                                      ║
+        ║ Alternatively, use apt:                              ║
+        ║     apt-get install libglib2.0-0\\                    ║
+        ║         libnss3\\                                     ║
+        ║         libnspr4\\                                    ║
+        ║         libdbus-1-3\\                                 ║
+        ║         libatk1.0-0\\                                 ║
+        ║         libatk-bridge2.0-0\\                          ║
+        ║         libatspi2.0-0\\                               ║
+        ║         libx11-6\\                                    ║
+        ║         libxcomposite1\\                              ║
+        ║         libxdamage1\\                                 ║
+        ║         libxext6\\                                    ║
+        ║         libxfixes3\\                                  ║
+        ║         libxrandr2\\                                  ║
+        ║         libgbm1\\                                     ║
+        ║         libxcb1\\                                     ║
+        ║         libxkbcommon0\\                               ║
+        ║         libasound2                                   ║
+        ║                                                      ║
+        ║ <3 Playwright Team                                   ║
+        ╚══════════════════════════════════════════════════════╝·
+      2) tests/test.ts:21:1 › lexical editor has an accessible numeric version ─────────────────────────·
+        Error: browserType.launch:·
+        ╔══════════════════════════════════════════════════════╗
+        ║ Host system is missing dependencies to run browsers. ║
+        ║ Please install them with the following command:      ║
+        ║                                                      ║
+        ║     npx playwright install-deps                      ║
+        ║                                                      ║
+        ║ Alternatively, use apt:                              ║
+        ║     apt-get install libglib2.0-0\\                    ║
+        ║         libnss3\\                                     ║
+        ║         libnspr4\\                                    ║
+        ║         libdbus-1-3\\                                 ║
+        ║         libatk1.0-0\\                                 ║
+        ║         libatk-bridge2.0-0\\                          ║
+        ║         libatspi2.0-0\\                               ║
+        ║         libx11-6\\                                    ║
+        ║         libxcomposite1\\                              ║
+        ║         libxdamage1\\                                 ║
+        ║         libxext6\\                                    ║
+        ║         libxfixes3\\                                  ║
+        ║         libxrandr2\\                                  ║
+        ║         libgbm1\\                                     ║
+        ║         libxcb1\\                                     ║
+        ║         libxkbcommon0\\                               ║
+        ║         libasound2                                   ║
+        ║                                                      ║
+        ║ <3 Playwright Team                                   ║
+        ╚══════════════════════════════════════════════════════╝·
+      2 failed
+        tests/test.ts:11:1 › index page has expected h1 and lexical state ──────────────────────────────
+        tests/test.ts:21:1 › lexical editor has an accessible numeric version ──────────────────────────
+    "}
+
+      51 |         ['code', 'stdout', 'stderr'].map((prop) => [prop, err[prop]]),
+      52 |       ),
+    > 53 |     ).toBe(null);
+         |       ^
+      54 |     throw err;
+      55 |   });
+      56 | }
+
+      at toBe (scripts/__tests__/integration/utils.js:53:7)
+
+  ● scripts/__tests__/integration/fixtures/lexical-esm-nextjs › tests pass
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: null
+    Received: {"code": 1, "stderr": "", "stdout": "
+    > lexical-esm-nextjs@0.35.0 test
+    > playwright test··
+    Running 1 test using 1 worker·
+      ✘  1 test.ts:11:5 › index page has expected h1 and lexical state (11ms)··
+      1) test.ts:11:5 › index page has expected h1 and lexical state ───────────────────────────────────·
+        Error: browserType.launch:·
+        ╔══════════════════════════════════════════════════════╗
+        ║ Host system is missing dependencies to run browsers. ║
+        ║ Please install them with the following command:      ║
+        ║                                                      ║
+        ║     npx playwright install-deps                      ║
+        ║                                                      ║
+        ║ Alternatively, use apt:                              ║
+        ║     apt-get install libglib2.0-0\\                    ║
+        ║         libnss3\\                                     ║
+        ║         libnspr4\\                                    ║
+        ║         libdbus-1-3\\                                 ║
+        ║         libatk1.0-0\\                                 ║
+        ║         libatk-bridge2.0-0\\                          ║
+        ║         libcups2\\                                    ║
+        ║         libdrm2\\                                     ║
+        ║         libatspi2.0-0\\                               ║
+        ║         libx11-6\\                                    ║
+        ║         libxcomposite1\\                              ║
+        ║         libxdamage1\\                                 ║
+        ║         libxext6\\                                    ║
+        ║         libxfixes3\\                                  ║
+        ║         libxrandr2\\                                  ║
+        ║         libgbm1\\                                     ║
+        ║         libxcb1\\                                     ║
+        ║         libxkbcommon0\\                               ║
+        ║         libpango-1.0-0\\                              ║
+        ║         libcairo2\\                                   ║
+        ║         libasound2                                   ║
+        ║                                                      ║
+        ║ <3 Playwright Team                                   ║
+        ╚══════════════════════════════════════════════════════╝·
+      1 failed
+        test.ts:11:5 › index page has expected h1 and lexical state ────────────────────────────────────
+    "}
+
+      51 |         ['code', 'stdout', 'stderr'].map((prop) => [prop, err[prop]]),
+      52 |       ),
+    > 53 |     ).toBe(null);
+         |       ^
+      54 |     throw err;
+      55 |   });
+      56 | }
+
+      at toBe (scripts/__tests__/integration/utils.js:53:7)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 50 passed, 52 total
+Snapshots:   0 total
+Time:        296.007 s
+Ran all test suites.
+npm error Missing script: "test-e2e"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-09-06T19_44_15_358Z-debug-0.log

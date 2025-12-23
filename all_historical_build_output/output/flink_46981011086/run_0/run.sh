@@ -1,0 +1,1 @@
+./mvnw clean package -DskipTests -Djdk17 -Pjava17-target

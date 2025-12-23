@@ -1,0 +1,66 @@
+requirements.txt not found, skipping pip install
+Collecting tox
+  Using cached tox-4.32.0-py3-none-any.whl.metadata (3.5 kB)
+Collecting cachetools>=6.2 (from tox)
+  Using cached cachetools-6.2.1-py3-none-any.whl.metadata (5.5 kB)
+Collecting chardet>=5.2 (from tox)
+  Using cached chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting colorama>=0.4.6 (from tox)
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting filelock>=3.20 (from tox)
+  Using cached filelock-3.20.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting packaging>=25 (from tox)
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting platformdirs>=4.5 (from tox)
+  Using cached platformdirs-4.5.0-py3-none-any.whl.metadata (12 kB)
+Collecting pluggy>=1.6 (from tox)
+  Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting pyproject-api>=1.9.1 (from tox)
+  Using cached pyproject_api-1.10.0-py3-none-any.whl.metadata (2.7 kB)
+Collecting virtualenv>=20.34 (from tox)
+  Using cached virtualenv-20.35.4-py3-none-any.whl.metadata (4.6 kB)
+Collecting distlib<1,>=0.3.7 (from virtualenv>=20.34->tox)
+  Using cached distlib-0.4.0-py2.py3-none-any.whl.metadata (5.2 kB)
+Using cached tox-4.32.0-py3-none-any.whl (175 kB)
+Using cached cachetools-6.2.1-py3-none-any.whl (11 kB)
+Using cached chardet-5.2.0-py3-none-any.whl (199 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Using cached filelock-3.20.0-py3-none-any.whl (16 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached platformdirs-4.5.0-py3-none-any.whl (18 kB)
+Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+Using cached pyproject_api-1.10.0-py3-none-any.whl (13 kB)
+Using cached virtualenv-20.35.4-py3-none-any.whl (6.0 MB)
+Using cached distlib-0.4.0-py2.py3-none-any.whl (469 kB)
+Installing collected packages: distlib, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+
+Successfully installed cachetools-6.2.1 chardet-5.2.0 colorama-0.4.6 distlib-0.4.0 filelock-3.20.0 packaging-25.0 platformdirs-4.5.0 pluggy-1.6.0 pyproject-api-1.10.0 tox-4.32.0 virtualenv-20.35.4
+
+[notice] A new release of pip is available: 25.2 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+Traceback (most recent call last):
+  File "/app/venv/bin/tox", line 7, in <module>
+    sys.exit(run())
+             ~~~^^
+  File "/app/venv/lib/python3.13/site-packages/tox/run.py", line 23, in run
+    result = main(sys.argv[1:] if args is None else args)
+  File "/app/venv/lib/python3.13/site-packages/tox/run.py", line 49, in main
+    return handler(state)
+  File "/app/venv/lib/python3.13/site-packages/tox/session/cmd/legacy.py", line 115, in legacy
+    return run_sequential(state)
+  File "/app/venv/lib/python3.13/site-packages/tox/session/cmd/run/sequential.py", line 25, in run_sequential
+    return execute(state, max_workers=1, has_spinner=False, live=True)
+  File "/app/venv/lib/python3.13/site-packages/tox/session/cmd/run/common.py", line 169, in execute
+    state.envs.ensure_only_run_env_is_active()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/venv/lib/python3.13/site-packages/tox/session/env_select.py", line 437, in ensure_only_run_env_is_active
+    envs, active = self._defined_envs, self._env_name_to_active()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.13/site-packages/tox/session/env_select.py", line 259, in _defined_envs
+    run_env = self._build_run_env(name)
+  File "/app/venv/lib/python3.13/site-packages/tox/session/env_select.py", line 320, in _build_run_env
+    runner = REGISTER.runner(cast("str", env_conf["runner"]))
+  File "/app/venv/lib/python3.13/site-packages/tox/tox_env/register.py", line 74, in runner
+    return self._run_envs[name]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'uv-venv-lock-runner'

@@ -1,0 +1,3497 @@
+
+> @eslint/markdown@7.4.0 prepare
+> npm run build
+
+
+> @eslint/markdown@7.4.0 build
+> npm run build:rules && tsc && npm run build:update-rules-docs
+
+
+> @eslint/markdown@7.4.0 build:rules
+> node tools/build-rules.js
+
+Recommended rules generated successfully.
+Rules import file generated successfully.
+
+> @eslint/markdown@7.4.0 build:update-rules-docs
+> node tools/update-rules-docs.js
+
+
+up to date, audited 542 packages in 4s
+
+246 packages are looking for funding
+  run `npm fund` for details
+
+3 high severity vulnerabilities
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+
+> @eslint/markdown@7.4.0 build
+> npm run build:rules && tsc && npm run build:update-rules-docs
+
+
+> @eslint/markdown@7.4.0 build:rules
+> node tools/build-rules.js
+
+Recommended rules generated successfully.
+Rules import file generated successfully.
+
+> @eslint/markdown@7.4.0 build:update-rules-docs
+> node tools/update-rules-docs.js
+
+
+> @eslint/markdown@7.4.0 test
+> mocha "tests/**/*.test.js" --timeout 30000
+
+
+
+  ✔ `no-duplicate-headings` should not timeout for large inputs (80ms)
+  ✔ `no-missing-label-refs` should not timeout for large inputs (916ms)
+  ✔ `no-missing-link-fragments` should not timeout for large inputs (102ms)
+  examples
+    react
+      ✔ reports errors on code blocks in .md files (280ms)
+
+  examples
+    typescript
+      ✔ reports errors on code blocks in .md files (760ms)
+
+  MarkdownLanguage
+    validateLanguageOptions()
+      ✔ should throw an error if `frontmatter` is not `false`, `'yaml'`, `'toml'`, or `'json'`
+      ✔ should not throw an error when `frontmatter` is not provided
+      ✔ should not throw an error when `frontmatter` is not provided and other keys are present
+      ✔ should not throw an error when `frontmatter` has a correct value in commonmark mode
+      ✔ should not throw an error when `frontmatter` has a correct value in gfm mode
+    parse()
+      ✔ should parse markdown
+      ✔ should not parse gfm features in commonmark mode
+      ✔ should parse gfm features in gfm mode
+      ✔ should not parse frontmatter by default
+      ✔ should parse YAML frontmatter in commonmark mode when `frontmatter: 'yaml'` is set
+      ✔ should parse YAML frontmatter in gfm mode when `frontmatter: 'yaml'` is set
+      ✔ should parse TOML frontmatter in commonmark mode when `frontmatter: 'toml'` is set
+      ✔ should parse TOML frontmatter in gfm mode when `frontmatter: 'toml'` is set
+      ✔ should parse JSON frontmatter in commonmark mode when `frontmatter: 'json'` is set
+      ✔ should parse JSON frontmatter in gfm mode when `frontmatter: 'json'` is set
+    createSourceCode()
+      ✔ should create a MarkdownSourceCode instance for commonmark
+      ✔ should create a MarkdownSourceCode instance for gfm
+
+  MarkdownSourceCode
+    constructor
+      ✔ should create a MarkdownSourceCode instance
+    lines
+      ✔ should parse CRLF line endings
+      ✔ should parse CR line endings
+      ✔ should parse LF line endings
+      ✔ should parse CRLF CR LF line endings
+    getText()
+      ✔ should return the text of the Markdown source code
+      ✔ should return just the text of the first paragraph
+      ✔ should return the text of the code block plus the ## of the following heading
+    getLoc()
+      ✔ should return the location of a node
+    getRange()
+      ✔ should return the range of a node
+    getLocFromIndex()
+      ✔ should convert index to location correctly
+    getIndexFromLoc()
+      ✔ should convert location to index correctly
+    getInlineConfigNodes()
+      ✔ should return the inline config nodes
+    getDisableDirectives()
+      ✔ should return the disable directives
+    applyInlineConfig()
+      ✔ should return rule configs and problems
+    traverse()
+      ✔ should traverse the AST
+
+  Package exports
+    ✔ has the ESLint plugin as a default export
+    ✔ has all available rules exported in the ESLint plugin
+    ✔ has a markdown processor with preprocess and postprocess methods
+    ✔ has languages that are instances of MarkdownLanguage
+    ✔ uses a language mode that matches the language name
+    ✔ has a MarkdownLanguage export
+    ✔ has a MarkdownSourceCode export
+
+  meta
+    ✔ should export meta property
+
+  LegacyESLint
+    recommended config
+      ✔ should include the plugin
+      ✔ applies convenience configuration
+      ✔ overrides configure processor to parse .md file code blocks
+    plugin
+      ✔ should run on .md files
+      ✔ should emit correct line numbers
+      ✔ should emit correct line numbers with leading blank line
+      ✔ doesn't add end locations to messages without them
+      ✔ should emit correct line numbers with leading comments
+      ✔ should run on .mkdn files
+      ✔ should run on .mdown files
+      ✔ should run on .markdown files
+      ✔ should run on files with any custom extension
+      ✔ should extract blocks and remap messages
+      ✔ should work when called on nested code blocks in the same file
+      configuration comments
+        ✔ apply only to the code block immediately following
+        ✔ preserves leading empty lines
+      should fix code
+        ✔ in the simplest case
+        ✔ across multiple lines
+        ✔ across multiple blocks
+        ✔ with lines indented by spaces
+        ✔ with lines indented by tabs
+        ✔ at the very start of a block
+        ✔ in blocks with extra backticks
+        ✔ with configuration comments
+        ✔ inside a list single line
+        ✔ inside a list multi line
+        ✔ with multiline autofix and CRLF
+        ✔ with multiple rules
+        when indented
+          ✔ by one space
+          ✔ by two spaces
+          ✔ by three spaces
+          ✔ and the closing fence is differently indented
+          ✔ underindented
+          ✔ multiline autofix
+          ✔ underindented multiline autofix
+          ✔ multiline autofix in blockquote
+          ✔ multiline autofix in nested blockquote
+          ✔ by one space with comments
+          ✔ unevenly by two spaces with comments
+          inside a list
+            ✔ normally
+            ✔ by one space
+
+  FlatESLint
+    recommended config
+      ✔ should include the plugin
+      ✔ applies convenience configuration
+      ✔ overrides configure processor to parse .md file code blocks
+      ✔ should configure recommended rules
+    plugin
+      ✔ should run on .md files
+      ✔ should emit correct line numbers
+      ✔ should emit correct line numbers with leading blank line
+      ✔ doesn't add end locations to messages without them
+      ✔ should emit correct line numbers with leading comments
+      ✔ should run on .mkdn files
+      ✔ should run on .mdown files
+      ✔ should run on .markdown files
+      ✔ should run on files with any custom extension
+      ✔ should extract blocks and remap messages
+      ✔ parses when file name includes lowercase, uppercase, slashes, and spaces
+      ✔ should work when called on nested code blocks in the same file
+      ✔ has all available rules exported
+      configuration comments
+        ✔ apply only to the code block immediately following
+        ✔ preserves leading empty lines
+      should fix code
+        ✔ in the simplest case
+        ✔ across multiple lines
+        ✔ across multiple blocks
+        ✔ with lines indented by spaces
+        ✔ with lines indented by tabs
+        ✔ at the very start of a block
+        ✔ in blocks with extra backticks
+        ✔ with configuration comments
+        ✔ inside a list single line
+        ✔ inside a list multi line
+        ✔ with multiline autofix and CRLF
+        ✔ with multiple rules
+        when indented
+          ✔ by one space
+          ✔ by two spaces
+          ✔ by three spaces
+          ✔ and the closing fence is differently indented
+          ✔ underindented
+          ✔ multiline autofix
+          ✔ underindented multiline autofix
+          ✔ multiline autofix in blockquote
+          ✔ multiline autofix in nested blockquote
+          ✔ by one space with comments
+          ✔ unevenly by two spaces with comments
+          inside a list
+            ✔ normally
+            ✔ by one space
+    Configuration Comments
+      ✔ should report html without any configuration comments present
+      ✔ should report html when a disable configuration comment is present and followed by an enable configuration comment
+      ✔ should not report html when a disable configuration comment is present
+      ✔ should not report html when a disable-line configuration comment is present
+      ✔ should not report html when a disable-next-line configuration comment is present
+
+  processor
+    meta
+      ✔ should have meta property
+    with BOM
+      preprocess
+        ✔ should not crash
+        ✔ should not crash on an empty string
+        ✔ should return an array
+        ✔ should ignore normal text
+        ✔ should ignore inline code
+        ✔ should ignore space-indented code blocks
+        ✔ should ignore 4-space-indented code fences
+        ✔ should ignore 4-space-indented fence ends
+        ✔ should ignore tab-indented code blocks
+        ✔ should terminate blocks at EOF
+        ✔ should allow backticks or tildes
+        ✔ should allow more than three fence characters
+        ✔ should require end fences at least as long as the starting fence
+        ✔ should not allow other content on ending fence line
+        ✔ should allow empty blocks
+        ✔ should allow whitespace-only blocks
+        ✔ should preserve leading and trailing empty lines
+        ✔ should ignore code fences with unspecified info string
+        ✔ should find code fences with js info string
+        ✔ should find code fences with javascript info string
+        ✔ should find code fences with node info string
+        ✔ should find code fences with jsx info string
+        ✔ should find code fences ignoring info string case
+        ✔ should ignore anything after the first word of the info string
+        ✔ should ignore leading whitespace in the info string
+        ✔ should parse a double-quoted filename from meta
+        ✔ should parse a single-quoted filename from meta
+        ✔ should parse a double-quoted filename in a directory from meta
+        ✔ should parse a single-quoted filename in a directory from meta
+        ✔ should parse a filename with lowercase, uppercase, slashes, and spaces
+        ✔ should parse a filename each from two meta
+        ✔ should not parse a blank filename from meta
+        ✔ should not parse a numeric filename from meta
+        ✔ should not parse a null filename from meta
+        ✔ should not parse an undefined filename from meta
+        ✔ should not parse a improperly quoted filename from meta
+        ✔ should not parse an uppercase FILENAME filename from meta
+        ✔ should ignore trailing whitespace in the info string
+        ✔ should translate the language to its file extension with leading whitespace and trailing characters
+        ✔ should find code fences not surrounded by blank lines
+        ✔ should return the source code in the block
+        ✔ should allow multi-line source code
+        ✔ should preserve original line endings
+        ✔ should unindent space-indented code fences
+        ✔ should find multiple code fences
+        ✔ should insert leading configuration comments
+        ✔ should insert global comments
+        ✔ should insert comments inside list items
+        ✔ should ignore non-eslint comments
+        ✔ should ignore non-comment html
+        eslint-skip
+          ✔ should skip the next block
+          ✔ should skip only one block
+          ✔ should still work surrounded by other comments
+      postprocess
+        ✔ should allow for no messages
+        ✔ should flatten messages
+        ✔ should translate line numbers
+        ✔ should translate endLine numbers
+        ✔ should translate column numbers
+        ✔ should translate indented column numbers
+        ✔ should adjust fix range properties
+        ✔ should adjust fix range properties (2)
+        ✔ should adjust suggestion fix range properties
+        ✔ should attach messages without `line` to opening code fence
+        ✔ should ignore messages after the code block
+        should exclude messages from unsatisfiable rules
+          ✔ eol-last
+          ✔ unicode-bom
+    without BOM
+      preprocess
+        ✔ should not crash
+        ✔ should not crash on an empty string
+        ✔ should return an array
+        ✔ should ignore normal text
+        ✔ should ignore inline code
+        ✔ should ignore space-indented code blocks
+        ✔ should ignore 4-space-indented code fences
+        ✔ should ignore 4-space-indented fence ends
+        ✔ should ignore tab-indented code blocks
+        ✔ should terminate blocks at EOF
+        ✔ should allow backticks or tildes
+        ✔ should allow more than three fence characters
+        ✔ should require end fences at least as long as the starting fence
+        ✔ should not allow other content on ending fence line
+        ✔ should allow empty blocks
+        ✔ should allow whitespace-only blocks
+        ✔ should preserve leading and trailing empty lines
+        ✔ should ignore code fences with unspecified info string
+        ✔ should find code fences with js info string
+        ✔ should find code fences with javascript info string
+        ✔ should find code fences with node info string
+        ✔ should find code fences with jsx info string
+        ✔ should find code fences ignoring info string case
+        ✔ should ignore anything after the first word of the info string
+        ✔ should ignore leading whitespace in the info string
+        ✔ should parse a double-quoted filename from meta
+        ✔ should parse a single-quoted filename from meta
+        ✔ should parse a double-quoted filename in a directory from meta
+        ✔ should parse a single-quoted filename in a directory from meta
+        ✔ should parse a filename with lowercase, uppercase, slashes, and spaces
+        ✔ should parse a filename each from two meta
+        ✔ should not parse a blank filename from meta
+        ✔ should not parse a numeric filename from meta
+        ✔ should not parse a null filename from meta
+        ✔ should not parse an undefined filename from meta
+        ✔ should not parse a improperly quoted filename from meta
+        ✔ should not parse an uppercase FILENAME filename from meta
+        ✔ should ignore trailing whitespace in the info string
+        ✔ should translate the language to its file extension with leading whitespace and trailing characters
+        ✔ should find code fences not surrounded by blank lines
+        ✔ should return the source code in the block
+        ✔ should allow multi-line source code
+        ✔ should preserve original line endings
+        ✔ should unindent space-indented code fences
+        ✔ should find multiple code fences
+        ✔ should insert leading configuration comments
+        ✔ should insert global comments
+        ✔ should insert comments inside list items
+        ✔ should ignore non-eslint comments
+        ✔ should ignore non-comment html
+        eslint-skip
+          ✔ should skip the next block
+          ✔ should skip only one block
+          ✔ should still work surrounded by other comments
+      postprocess
+        ✔ should allow for no messages
+        ✔ should flatten messages
+        ✔ should translate line numbers
+        ✔ should translate endLine numbers
+        ✔ should translate column numbers
+        ✔ should translate indented column numbers
+        ✔ should adjust fix range properties
+        ✔ should adjust fix range properties (2)
+        ✔ should adjust suggestion fix range properties
+        ✔ should attach messages without `line` to opening code fence
+        ✔ should ignore messages after the code block
+        should exclude messages from unsatisfiable rules
+          ✔ eol-last
+          ✔ unicode-bom
+    supportsAutofix
+      ✔ should equal true
+
+  fenced-code-language
+    valid
+      ✔ ```js
+console.log("Hello, world!");
+```
+      ✔ ```javascript
+console.log("Hello, world!");
+```
+      ✔ ~~~js
+console.log("Hello, world!");
+~~~
+      ✔ ~~~javascript
+console.log("Hello, world!");
+~~~
+      ✔
+    console.log("Hello, world!");
+
+      ✔ ```js
+console.log("Hello, world!");
+```
+      ✔ ```js foo
+console.log("Hello, world!");
+```
+      ✔ ``` js
+console.log("Hello, world!");
+```
+      ✔ ```JS
+console.log("Hello, world!");
+```
+      ✔ ~~~js
+console.log("Hello, world!");
+~~~
+      ✔ ~~~js foo
+console.log("Hello, world!");
+~~~
+      ✔ ~~~ js
+console.log("Hello, world!");
+~~~
+      ✔ ~~~JS
+console.log("Hello, world!");
+~~~
+    invalid
+      ✔ ```
+console.log("Hello, world!");
+```
+      ✔  ```
+console.log("Hello, world!");
+```
+      ✔   ```
+console.log("Hello, world!");
+```
+      ✔    ```
+console.log("Hello, world!");
+```
+      ✔ ```
+console.log('Hello, world!');
+```
+      ✔ ```\u0009\u0009
+console.log('Hello, world!');
+```
+      ✔ ~~~
+console.log("Hello, world!");
+~~~
+      ✔  ~~~
+console.log("Hello, world!");
+~~~
+      ✔   ~~~
+console.log("Hello, world!");
+~~~
+      ✔    ~~~
+console.log("Hello, world!");
+~~~
+      ✔ ~~~
+console.log('Hello, world!');
+~~~
+      ✔ ~~~\u0009\u0009
+console.log('Hello, world!');
+~~~
+      ✔ ```javascript
+console.log("Hello, world!");
+```
+      ✔  ```javascript
+console.log("Hello, world!");
+```
+      ✔   ```javascript
+console.log("Hello, world!");
+```
+      ✔    ```javascript
+console.log("Hello, world!");
+```
+      ✔ ````javascript
+console.log("Hello, world!");
+````
+      ✔  ````javascript
+console.log("Hello, world!");
+````
+      ✔   ````javascript
+console.log("Hello, world!");
+````
+      ✔    ````javascript
+console.log("Hello, world!");
+````
+      ✔ ```js
+console.log("Hello, world!");
+```
+      ✔ ``` js
+console.log("Hello, world!");
+```
+      ✔ ```js foo
+console.log("Hello, world!");
+```
+      ✔ ~~~javascript
+console.log("Hello, world!");
+~~~
+      ✔ ~~~~javascript
+console.log("Hello, world!");
+~~~~
+      ✔ ~~~js
+console.log("Hello, world!");
+~~~
+      ✔ ~~~ js
+console.log("Hello, world!");
+~~~
+      ✔ ~~~js foo
+console.log("Hello, world!");
+~~~
+
+  heading-increment
+    valid
+      ✔ # Heading 1
+      ✔ ## Heading 2
+      ✔ # Heading 1
+      ## Heading 2
+      ✔ # Heading 1
+      # Heading 2
+      ✔ Only one h1
+===========
+      ✔ Heading 1
+==========
+Heading 2
+----------
+      ✔ # Heading 1
+```markdown
+### Heading 3
+```
+      ✔ <p>
+# Not heading
+### Not heading
+</p>
+      ✔ ---
+[ "title" ]
+---
+### Heading 3
+      ✔ ---
+[
+\u0009"title"
+]
+---
+### Heading 3
+      ✔ ---
+[
+\u0009"title:"
+]
+---
+### Heading 3
+      ✔ ---
+[
+\u0009"title="
+]
+---
+### Heading 3
+      ✔ ---
+title: My Title
+---
+## Heading 2
+      ✔ ---
+title: "My Title"
+---
+## Heading 2
+      ✔ +++
+title = "My Title"
++++
+## Heading 2
+      ✔ ---
+{
+\u0009"title": "My Title"
+}
+---
+## Heading 2
+      ✔ ---
+[
+\u0009"title"
+]
+---
+## Heading 2
+      ✔ ---
+# title: My Title
+---
+### Heading 3
+      ✔ +++
+# title = "My Title"
++++
+### Heading 3
+      ✔ ---
+author: xbinaryx # title: My Title
+---
+### Heading 3
+      ✔ +++
+author = "xbinaryx" # title = "My Title"
++++
+### Heading 3
+      ✔ ---
+heading: My Title
+---
+## Heading 2
+      ✔ ---
+heading: "My Title"
+---
+## Heading 2
+      ✔ +++
+heading = "My Title"
++++
+## Heading 2
+      ✔ ---
+{
+\u0009"heading": "My Title"
+}
+---
+## Heading 2
+      ✔ ---
+[
+\u0009"heading"
+]
+---
+### Heading 3
+      ✔ ---
+author: xbinaryx
+---
+### Heading 3
+      ✔ +++
+author = "xbinaryx"
++++
+### Heading 3
+      ✔ ---
+{
+\u0009"author": "xbinaryx"
+}
+---
+### Heading 3
+      ✔ ---
+[
+\u0009"author"
+]
+---
+### Heading 3
+      ✔ ---
+title: My Title
+---
+### Heading 3
+      ✔ ---
+title: "My Title"
+---
+### Heading 3
+      ✔ +++
+title = "My Title"
++++
+### Heading 3
+      ✔ ---
+{
+\u0009"title": "My Title"
+}
+---
+### Heading 3
+    invalid
+      ✔ # Heading 1
+
+### Heading 3
+      ✔ ## Heading 2
+
+##### Heading 5
+      ✔ Heading 1
+=========
+
+### Heading 3
+      ✔ # Heading 1
+### Heading 3
+###### Heading 6
+      ✔ # Heading 1
+> ### Quoted heading
+      ✔ # Heading 1
+> > ### Double-quoted heading
+      ✔ # Heading 1
+- Item
+  item
+  > ### Quoted heading in list
+      ✔ ---
+---
+# Heading 1
+### Heading 3
+      ✔ ---
+title: My Title
+---
+### Heading 3
+      ✔ ---
+title: "My Title"
+---
+### Heading 3
+      ✔ +++
+title = "My Title"
++++
+### Heading 3
+      ✔ ---
+"title": My Title
+---
+### Heading 3
+      ✔ ---
+"title": "My Title"
+---
+### Heading 3
+      ✔ +++
+"title" = "My Title"
++++
+### Heading 3
+      ✔ ---
+{ "title": "My Title" }
+---
+### Heading 3
+      ✔ ---
+   {    "title": "My Title" }
+---
+### Heading 3
+      ✔ ---
+{
+\u0009"title": "My Title"
+}
+---
+### Heading 3
+      ✔ ---
+'title': My Title
+---
+### Heading 3
+      ✔ ---
+'title': "My Title"
+---
+### Heading 3
+      ✔ +++
+'title' = "My Title"
++++
+### Heading 3
+      ✔ ---
+author: xbinaryx
+title: My Title
+---
+### Heading 3
+      ✔ +++
+author = "xbinaryx"
+title = "My Title"
++++
+### Heading 3
+      ✔ ---
+{
+\u0009"author": "xbinaryx",
+\u0009"title": "My Title"
+}
+---
+### Heading 3
+      ✔ ---
+TITLE: My Title
+---
+### Heading 3
+      ✔ +++
+TITLE = "My Title"
++++
+### Heading 3
+      ✔ ---
+{
+\u0009"TITLE": "My Title"
+}
+---
+### Heading 3
+      ✔ ---
+heading: My Title
+---
+### Heading 3
+      ✔ ---
+heading: "My Title"
+---
+### Heading 3
+      ✔ +++
+heading = "My Title"
++++
+### Heading 3
+      ✔ ---
+{
+\u0009"heading": "My Title"
+}
+---
+### Heading 3
+      ✔ ---
+title: My Title
+---
+# Heading 1
+### Heading 3
+      ✔ ---
+title: "My Title"
+---
+# Heading 1
+### Heading 3
+      ✔ +++
+title = "My Title"
++++
+# Heading 1
+### Heading 3
+      ✔ ---
+{
+\u0009"title": "My Title"
+}
+---
+# Heading 1
+### Heading 3
+
+  no-bare-urls
+    valid
+      ✔ <https://www.google.com/>
+      ✔ <user@example.com>
+      ✔ [text [undefined] text](https://example.com).
+      ✔ [is-a-valid]: https://example.com
+      ✔ <a href="https://example.com">link</a>.
+      ✔ <a href="https://example.com">https://example.com</a>
+      ✔ <a href="https://example.com">Text https://example.com</a>
+      ✔ This is not a bare [link]( https://example.com )
+      ✔ Nor is [link](https://example.com/path-with(parens)).
+      ✔ Or <https://example.com/path-with(parens)>.
+      ✔ <element-name first-attribute=" https://example.com/first " second-attribute=" https://example.com/second ">
+    Text
+</element-name>
+      ✔ <element-name
+    first-attribute=" https://example.com/first "
+    second-attribute=" https://example.com/second "></element-name>
+      ✔ Not <code>https://example.com</code> bare.
+      ✔ Not <pre>https://example.com</pre> bare.
+      ✔ <p>
+Not bare due to being in an HTML block:
+https://example.com
+<code>https://example.com</code>
+<pre>https://example.com</pre>
+</p>
+      ✔ <div>
+https://example.com
+</div>
+      ✔ <div>
+https://example.com
+
+</div>
+      ✔ Text [link to https://example.com site](https://example.com) text.
+      ✔ Image ![for https://example.com site](https://example.com) text.
+      ✔ Links with spaces inside angle brackets are okay: [blue jay](<https://en.wikipedia.org/wiki/Blue jay>)
+      ✔ [link \[is-not-a-valid\] link](https://example.com)
+      ✔ text <https://example.com/dir/dir>
+      ✔ ```text
+Code https://example.com/code?type=fence code
+```
+      ✔        Code https://example.com/code?type=indent code
+    invalid
+      ✔ https://www.example.com/
+      ✔ user@example.com
+      ✔ text https://www.google.com/
+      ✔ hTtPs://gOoGlE.cOm/
+      ✔ (https://example.com)
+      ✔ # https://www.example.com/
+      ✔ | Link                 |
+|----------------------|
+| https://example.com/ |
+      ✔ [link that [is-a-valid] link](https://example.com)
+
+[is-a-valid]: https://example.com
+      ✔ Text <https://example.com/brackets> text https://example.com/bare text
+      ✔ > https://example.com/
+      ✔ Text https://example.com/first more text https://example.com/second
+      ✔ Text https://example.com/first
+more text https://example.com/second
+      ✔ Text <a>https://example.com</a> https://example.com
+      ✔ <br> Another violation: https://example.com. <br>
+      ✔ <br> Another violation: https://example.com. <br />
+      ✔ <br /> Another violation: https://example.com. <br />
+      ✔ <div>
+
+https://example.com
+</div>
+      ✔ <div>
+
+https://example.com
+
+</div>
+      ✔ text **<a>https://example.com</a>** *https://example.com*
+      ✔ text <>https://example.com</> https://example.com
+      ✔ <!DOCTYPE html>
+https://example.com
+      ✔ hi <!-- comment --> https://example.com <!-- comment -->
+      ✔ hi <!-- comment --> https://example.com <!-- comment --> <a>https://example.com</a>
+
+  no-duplicate-definitions
+    valid
+      ✔
+[mercury]: https://example.com/mercury/
+
+      ✔
+[mercury]: https://example.com/mercury/
+[venus]: https://example.com/venus/
+
+      ✔
+[^mercury]: Hello, Mercury!
+
+      ✔
+[^mercury]: Hello, Mercury!
+[^venus]: Hello, Venus!
+
+      ✔
+[alpha]: bravo
+
+[^alpha]: bravo
+
+      ✔
+[//]: # (This is a comment 1)
+[//]: <> (This is a comment 2)
+
+      ✔
+[mercury]: https://example.com/mercury/
+[mercury]: https://example.com/venus/
+
+      ✔
+[^mercury]: Hello, Mercury!
+[^mercury]: Hello, Venus!
+
+      ✔
+[MERCURY]: https://example.com/mercury/
+[mercury]: https://example.com/venus/
+
+      ✔
+[mercury]: https://example.com/mercury/
+[MERCURY]: https://example.com/venus/
+
+      ✔
+[   mercury   ]: https://example.com/mercury/
+[mercury]: https://example.com/venus/
+
+      ✔
+[mercury]: https://example.com/mercury/
+[   mercury   ]: https://example.com/venus/
+
+      ✔
+[foo bar]: https://example.com/foo-bar/
+[foo bar]: https://example.com/foo-bar/
+
+      ✔
+[^MERCURY]: Hello, Mercury!
+[^mercury]: Hello, Venus!
+
+      ✔
+[^mercury]: Hello, Mercury!
+[^MERCURY]: Hello, Venus!
+
+      ✔
+\u0009\u0009\u0009\u0009\u0009\u0009[Grüsse]: https://example.com/
+\u0009\u0009\u0009\u0009\u0009\u0009[Grüsse]: https://example.com/
+\u0009\u0009\u0009\u0009\u0009\u0009
+      ✔
+\u0009\u0009\u0009\u0009\u0009\u0009[^Grüsse]: Grüsse
+\u0009\u0009\u0009\u0009\u0009\u0009[^Grüsse]: Grüsse
+\u0009\u0009\u0009\u0009\u0009\u0009
+    invalid
+      ✔
+[mercury]: https://example.com/mercury/
+[mercury]: https://example.com/venus/
+
+      ✔
+[mercury]: https://example.com/mercury/
+[mercury]: https://example.com/venus/
+[mercury]: https://example.com/earth/
+[mercury]: https://example.com/mars/
+
+      ✔
+[mercury]: https://example.com/mercury/
+[Mercury]: https://example.com/venus/
+
+      ✔
+[mercury]: https://example.com/mercury/
+[mercury    ]: https://example.com/venus/
+
+      ✔
+[mercury]: https://example.com/mercury/
+[mercury]: https://example.com/venus/
+
+      ✔
+[^mercury]: Hello, Mercury!
+[^mercury]: Hello, Venus!
+
+      ✔
+[^mercury]: Hello, Mercury!
+[^mercury]: Hello, Venus!
+[^mercury]: Hello, Earth!
+[^mercury]: Hello, Mars!
+
+      ✔
+[^mercury]: Hello, Mercury!
+[^Mercury]: Hello, Venus!
+
+      ✔
+[^mercury]: Hello, Mercury!
+[^mercury]: Hello, Venus!
+
+      ✔
+[mercury]: https://example.com/mercury/
+[earth]: https://example.com/earth/
+[mars]: https://example.com/mars/
+
+[//]: # (comment about mars)
+
+[jupiter]: https://example.com/jupiter/
+
+[//]: # (comment about jupiter)
+
+[mercury]: https://example.com/venus/
+
+
+  no-duplicate-headings
+    valid
+      ✔ # Heading 1
+
+# Heading *1*
+      ✔ # ***Heading 1***
+
+# Heading 1
+      ✔ # Heading 1
+
+## Heading 2
+      ✔ # Heading 1
+
+# Heading 1#
+      ✔ Heading 1
+Hi
+===
+
+Heading 1
+Bye
+===
+      ✔ Heading 1
+Text
+Hi
+===
+
+Heading 1
+Text
+Bye
+===
+      ✔ Heading 2
+Hi
+---
+
+Heading 2
+Bye
+---
+      ✔ Heading 2
+Text
+Hi
+---
+
+Heading 2
+Text
+Bye
+---
+      ✔ # Heading 1
+#  Heading 1
+      ✔ # Heading 1
+# Heading 1
+      ✔ # Heading 1 #
+#  Heading 1 #
+      ✔ # Heading 1 #
+# Heading 1  #
+      ✔ # Heading 1 #
+# Heading 1 #
+      ✔ #  Heading 1  #
+#  Heading 1 #
+      ✔ #  Heading 1 #
+# Heading 1  #
+      ✔ # foo \###
+# foo ###
+      ✔ # foo #\##
+# foo ###
+      ✔ # foo \#
+      ✔ Heading
+Hi
+===
+
+Heading
+Hi
+===
+      ✔ # Change log
+
+## 1.0.0
+
+### Features
+
+## 2.0.0
+
+### Features
+      ✔ # Change log
+
+## 1.0.0
+
+### Features
+
+## 2.0.0
+
+### Features ###
+      ✔ 1.0.0
+=====
+
+Features
+--------
+
+2.0.0
+=====
+
+Features
+--------
+      ✔ 1.0.0
+=====
+
+Features
+--------
+
+2.0.0
+=====
+
+## Features
+    invalid
+      ✔
+# Heading 1
+
+# Heading 1
+
+      ✔ # Heading 1\u000d
+# Heading 1
+      ✔ Heading
+Hi
+===
+
+Heading
+Hi
+===
+      ✔ # Heading 1
+
+# Heading 1 ##
+      ✔ # Heading 1
+
+# Heading 1 ##########
+      ✔
+# Heading 1
+
+## Heading 1
+
+      ✔
+# Heading 1
+
+Heading 1
+---------
+
+      ✔
+# Heading 1
+
+Heading 1
+=========
+
+      ✔ Heading 1
+Hi
+===
+
+Heading 1
+Hi
+===
+      ✔ Heading *1*
+Hi
+===
+
+Heading _1_
+Hi
+===
+      ✔ Heading <u>1</u>
+Hi
+===
+
+Heading <u>1</u>
+Hi
+===
+      ✔ Heading 1\u000d
+Hi\u000d
+===\u000d
+\u000d
+Heading 1\u000d
+Hi\u000d
+===
+      ✔ # Heading `1`
+
+# Heading `1`
+      ✔ # Heading 1
+
+# Heading 1
+      ✔ # Section 1
+
+## Subsection A
+## Subsection A
+
+# Section 2
+
+## Subsection B
+      ✔ # Section 1
+
+## Subsection A
+## Subsection A ###
+
+# Section 2
+
+## Subsection B
+      ✔ # Section 1
+
+## Subsection A
+## Subsection B
+
+# Section 2
+
+## Subsection A
+## Subsection A
+      ✔ Section 1
+=========
+
+Subsection A
+------------
+Subsection A
+------------
+
+Section 2
+=========
+
+Subsection B
+------------
+      ✔ Section 1
+=========
+
+Subsection A
+------------
+Subsection B
+------------
+
+Section 2
+=========
+
+Subsection A
+------------
+Subsection A
+------------
+      ✔ # Section 1
+
+## Subsection A
+## Subsection B
+
+# Section 2
+
+## Subsection A
+## Subsection A
+Subsection A
+------------
+
+  no-empty-definitions
+    valid
+      ✔ [foo]: bar
+      ✔ [foo]: #bar
+      ✔ [foo]: http://bar.com
+      ✔ [foo]: <https://bar.com>
+      ✔ [//]: # (This is a comment 1)
+      ✔ [//]: <> (This is a comment 2)
+      ✔ [^note]: This is a footnote.
+      ✔ [^note]: ![]()
+      ✔ [^note]: [text](url)
+      ✔ [^note]:
+    Content
+      ✔ [^note]:
+    > blockquote
+      ✔ [^note]: <span></span>
+      ✔ \[^note]:
+      ✔ [\^note]:
+      ✔ [^note\]:
+      ✔ [^note]\:
+      ✔ [^foo]: <span></span> <!-- comment -->
+      ✔ [^foo]: content <!-- comment -->
+      ✔ [^foo]: <!-- comment --> content
+      ✔ [^foo]: <!-- comment --> content <!-- comment -->
+      ✔ [^foo]: <!-- comm
+    ent --> content <!-- comment -->
+      ✔ [foo]: #
+      ✔ [bar]: <>
+      ✔ [foo]: #
+[bar]: <>
+      ✔ [^note]:
+      ✔ [^note]:
+      ✔ [FOO]: #
+      ✔ [foo]: #
+      ✔ [FOO]: #
+      ✔ [   foo   ]: #
+      ✔ [foo]: #
+      ✔ [foo bar]: #
+      ✔ [FOO]: <>
+      ✔ [foo]: <>
+      ✔ [FOO]: <>
+      ✔ [   foo   ]: <>
+      ✔ [foo]: <>
+      ✔ [foo bar]: <>
+      ✔ [^NOTE]:
+      ✔ [^note]:
+      ✔ [^NOTE]:
+      ✔ [^note]:
+      ✔ [Grüsse]: #
+      ✔ [Grüsse]: <>
+      ✔ [^Grüsse]:
+    invalid
+      ✔ [foo]: #
+      ✔ [Foo]: #
+      ✔ [  Foo  ]: #
+      ✔ [foo]: <>
+      ✔ [foo]: #
+[bar]: <>
+      ✔ [^note]:
+      ✔ [^Note]:
+      ✔ [^note]:
+      ✔ [^note]:
+
+      ✔ [^a]:
+[^b]:
+      ✔ [foo]: #
+[^note]:
+      ✔ [foo]: #
+[^note]:
+      ✔ [^foo]: <!-- comment -->
+      ✔ [^foo]: <!-- comment
+    -->
+      ✔ [^foo]: <!-- comment -->
+    <!-- another comment -->
+      ✔ [//]: #
+[foo]: #
+      ✔ [foo]: #
+      ✔ [^foo]:
+
+  no-empty-images
+    valid
+      ✔ ![foo](bar)
+      ✔ ![foo](#bar)
+      ✔ ![foo](http://bar.com/image.png)
+    invalid
+      ✔ ![]()
+      ✔ ![](#)
+      ✔ ![foo]()
+      ✔ ![foo](#)
+      ✔ ![foo]( )
+
+  no-empty-links
+    valid
+      ✔ [foo](bar)
+      ✔ [foo](#bar)
+      ✔ [foo](http://bar.com)
+    invalid
+      ✔ [foo]()
+      ✔ [foo](#)
+      ✔ [foo]( )
+
+  no-html
+    valid
+      ✔ Hello world!
+      ✔  1 < 5
+      ✔ <!-- comment -->
+      ✔ ```html
+<b>Hello world!</b>
+```
+      ✔ <b>Hello world!</b>
+      ✔ <custom-element>Hello world!</custom-element>
+      ✔ <div>Hello world!</div>
+      ✔ <DIV>Hello world!</DIV>
+      ✔ <div>Hello world!</div>
+      ✔ <DIV>Hello world!</DIV>
+      ✔ <DiV>Hello world!</DiV>
+      ✔ <custom-element>Hello world!</custom-element>
+      ✔ <CUSTOM-ELEMENT>Hello world!</CUSTOM-ELEMENT>
+    invalid
+      ✔ <b>Hello world!</b>
+      ✔ <b>Hello world!</b>
+      ✔ <b>Hello world!</b><i>Goodbye world!</i>
+      ✔ <!-- hi --><b>Hello world!</b>
+      ✔ <custom-element>Hello world!</custom-element>
+      ✔ <div>Hello world!</div>
+      ✔ <DIV>Hello world!</DIV>
+      ✔ <div>Hello world!</div>
+      ✔ <DIV>Hello world!</DIV>
+      ✔ <span >Content</span>
+      ✔ <div id="foo">Some content</div>
+      ✔ <p class="text-center" data-attr="value">Content</p>
+      ✔ <span
+class="highlight"
+data-id="123">Text</span>
+      ✔ <span\u000dclass="highlight"\u000ddata-id="123">Text</span>
+      ✔ <span\u000d
+class="highlight"\u000d
+data-id="123">Text</span>
+      ✔ <div   class="test"   >Content</div>
+      ✔ <input type="text" placeholder="Enter text" />
+      ✔ <a href="#"><span class="highlight">Link</span></a>
+      ✔ <input placeholder=">" />
+      ✔ <input placeholder='>'></input>
+      ✔ <input
+placeholder=">" />
+      ✔ <!-- comment -->
+<input
+\u0009placeholder="Enter name"
+      \u0009\u0009name="First Name"
+\u0009/>
+
+  no-invalid-label-refs
+    valid
+      ✔ [*foo*]
+      ✔ [foo]
+
+[foo]: http://bar.com
+      ✔ [foo][ foo ]
+
+[foo]: http://bar.com
+      ✔ ![foo][foo]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [foo][]
+
+[foo]: http://bar.com/image.jpg
+      ✔ ![foo][]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [  foo ][]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [eslint][
+
+]
+      ✔ [*eslint*][]
+
+[*eslint*]: http://bar.com
+    invalid
+      ✔ [foo][ ]
+
+[foo]: http://bar.com/image.jpg
+      ✔ ![foo][ ]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [
+foo
+][
+]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [
+foo
+][
+ ]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [foo][ ]
+[bar][ ]
+
+[foo]: http://foo.com
+[bar]: http://bar.com
+      ✔ [foo][ ]
+![bar][ ]
+
+[foo]: http://foo.com
+[bar]: http://bar.com
+      ✔ - - - [foo][ ]
+
+[foo]: http://foo.com
+      ✔ eslint [eslint][ ]
+      ✔ \\eslint [eslint][ ]
+      ✔ es\\lint\\ [eslint][ ]
+      ✔ [eslint][ ]
+      ✔ [eslint][
+]
+      ✔ [*eslint*][ ]
+
+  no-missing-atx-heading-space
+    valid
+      ✔ # Heading 1
+      ✔ ## Heading 2
+      ✔ ### Heading 3
+      ✔ #### Heading 4
+      ✔ ##### Heading 5
+      ✔ ###### Heading 6
+      ✔ ####### Heading 7 (not a valid heading)
+      ✔ #######Heading 7 (not a valid heading)
+      ✔ # Heading 1
+
+## Heading 2
+
+### Heading 3
+      ✔ #  Heading with extra space
+      ✔ #\u0009Heading with tab
+      ✔ #
+      ✔ Heading 1
+=========
+      ✔ Heading 2
+---------
+      ✔ Not a heading
+      ✔ This is a paragraph with a #hashtag
+      ✔ Text with # in the middle
+      ✔ ```js
+#Not a heading in a code block
+console.log("#Not a heading");
+```
+      ✔ ```
+      ✔ ``` #followed #by text
+      ✔ ~~~ #followed #by more text
+      ✔ This is a paragraph followed by code.
+
+```
+#This is in a code block
+```
+      ✔ This paragraph has `#inline-code` which is not a heading
+      ✔ Here's a code span with a hash: `const tag = '#heading'`
+      ✔ [#370](https://github.com/eslint/markdown/issues/370)
+      ✔ ![#370](https://github.com/eslint/markdown/image.png)
+      ✔ <h1>Heading 1</h1>
+      ✔ <h2>Heading 2</h2>
+      ✔ <h3>Heading 3</h3>
+      ✔ <h4>Heading 4</h4>
+      ✔ <h5>Heading 5</h5>
+      ✔ <h6>Heading 6</h6>
+      ✔ <h1>#valid heading</h1>
+      ✔ <!-- #valid heading -->
+      ✔ '#something'
+      ✔ "#something"
+      ✔ "<h1>#valid heading</h1>"
+      ✔     #Heading 1
+      ✔ ##  Normal outer non-breaking inner space
+      ✔ ## Normal space (both) ##
+      ✔ ##  Normal outer non-breaking inner space (both)  ##
+      ✔ ##\u0009Tab
+      ✔ ##\u0009Tab (left) ##
+      ✔ ## Tab (right)\u0009##
+      ✔ # Heading 1 #
+      ✔ ## Heading 2 ##
+      ✔ ### Heading 3 ###
+      ✔ #### Heading 4 ####
+      ✔ ##### Heading 5 #####
+      ✔ ###### Heading 6 ######
+      ✔ ####### Heading 7 (not a valid heading)#######
+      ✔ Not a heading#
+      ✔ # Heading 1\#
+      ✔ ```js
+#Not a heading in a code block#
+console.log("#Not a heading#");
+```
+      ✔ # Heading 1 #
+
+## Heading 2 ##
+
+### Heading 3 ###
+      ✔ This paragraph has `#inline-code#` which is not a heading
+      ✔ [#370#](https://github.com/eslint/markdown/issues/370)
+      ✔ <h1>#valid heading#</h1>
+      ✔ "#something#"
+      ✔     #Heading 1#
+      ✔ # Regular heading
+## Closed heading ##
+### Another regular heading
+      ✔ # Heading with extra spaces  #
+      ✔ #Setext Heading
+===
+      ✔ Setext Heading#
+===
+      ✔ #Setext Heading#
+===
+      ✔ #Setext Heading
+---
+      ✔ Setext Heading#
+---
+      ✔ #Setext Heading#
+---
+      ✔ # Backslash Escaping\#
+      ✔ # Backslash Escaping\\\#
+      ✔ # Backslash Escaping\\\\\#
+      ✔ # Backslash Escaping\\\\\\\#
+    invalid
+      ✔ #Heading 1
+      ✔ ##Heading 2
+      ✔ ###Heading 3
+      ✔ ####Heading 4
+      ✔ #####Heading 5
+      ✔ ######Heading 6
+      ✔ # Heading 1
+
+##Heading 2
+
+### Heading 3
+      ✔ #Text
+      ✔ #Heading with trailing space
+      ✔ #Something with ``` backticks
+      ✔ #Heading with ``` in the middle and more text after
+      ✔ #Heading with `inline code`
+      ✔ #Title with ~~~ tildes in it
+      ✔ Text before
+#Heading with ``` code markers
+Text after
+      ✔    ##Heading 2
+      ✔ #First heading
+
+Some text
+
+##Second heading
+
+###Third heading
+      ✔ #*hi*
+      ✔ #~hi~
+      ✔ #_hi_
+      ✔ #__hi__
+      ✔ > #Quoted heading
+      ✔ > ##Quoted heading
+      ✔ - Item
+> #Quoted heading in list
+      ✔ ## Non-breaking space
+      ✔ ##  Extra non-breaking space
+      ✔ # Heading 1#
+      ✔ ## Heading 2##
+      ✔ ### Heading 3###
+      ✔ #### Heading 4####
+      ✔ ##### Heading 5#####
+      ✔ ###### Heading 6######
+      ✔ ## Heading 2#
+      ✔ # Heading 1\##
+      ✔ # Heading 1\\#
+      ✔ # Heading 1\\\\#
+      ✔ # Heading 1\\\\\\#
+      ✔ # Heading 1\\\\\\\\#
+      ✔ #Heading 1#
+      ✔ # Heading 1
+
+## Heading 2##
+
+### Heading 3 ###
+      ✔ # Something with ``` backticks#
+      ✔ # Heading with ``` in the middle and more text after#
+      ✔ # Heading with `inline code`#
+      ✔ # Title with ~~~ tildes in it#
+      ✔ Text before
+# Heading with ``` code markers#
+Text after
+      ✔    ## Heading 2##
+      ✔ # First heading#
+
+Some text
+
+## Second heading##
+
+### Third heading###
+      ✔ # *hi*#
+      ✔ # ~hi~#
+      ✔ # _hi_#
+      ✔ # __hi__#
+      ✔ # Heading [#123](issue-link)#
+      ✔ > # Quoted heading#
+      ✔ > ## Quoted heading##
+      ✔ - Item
+> # Quoted heading in list#
+
+  no-missing-label-refs
+    valid
+      ✔ [*foo*]
+      ✔ [foo]
+
+[foo]: http://bar.com
+      ✔ [foo][foo]
+
+[foo]: http://bar.com
+      ✔ [foo][foo]
+
+[ foo ]: http://bar.com
+      ✔ [foo][ foo ]
+
+[ foo ]: http://bar.com
+      ✔ ![foo][foo]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [foo][]
+
+[foo]: http://bar.com/image.jpg
+      ✔ ![foo][]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [  foo ][]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [foo][ ]
+
+[foo]: http://bar.com/image.jpg
+      ✔ [
+foo
+][
+]
+
+[foo]: http://bar.com/image.jpg
+      ✔ []
+      ✔ ][]
+      ✔ [][]
+      ✔ [] []
+      ✔ [foo
+      ✔ foo]
+      ✔ foo][bar]
+
+[bar]: http://bar.com
+      ✔ foo][bar][baz]
+
+[baz]: http://baz.com
+      ✔ [][foo]
+
+[foo]: http://foo.com
+      ✔ [foo][bar\]
+
+[foo]: http://foo.com
+      ✔ \[\]
+      ✔ \\\[\\\]
+      ✔ \\\\\[\\\\\]
+      ✔ \\\\\\\[\\\\\\\]
+      ✔ [\]
+      ✔ [\\\]
+      ✔ [\\\\\]
+      ✔ [\\\\\\\]
+      ✔ \[]
+      ✔ \\\[]
+      ✔ \\\\\[]
+      ✔ \\\\\\\[]
+      ✔ \[escaped\]
+      ✔ \\\[escaped\\\]
+      ✔ \\\\\[escaped\\\\\]
+      ✔ \\\\\\\[escaped\\\\\\\]
+      ✔ \[escaped]
+      ✔ \\\[escaped]
+      ✔ \\\\\[escaped]
+      ✔ \\\\\\\[escaped]
+      ✔ [escaped\]
+      ✔ [escaped\\\]
+      ✔ [escaped\\\\\]
+      ✔ [escaped\\\\\\\]
+      ✔ \[escaped\]\[escaped\]
+      ✔ \\\[escaped\\\]\\\[escaped\\\]
+      ✔ \\\\\[escaped\\\\\]\\\\\[escaped\\\\\]
+      ✔ \\\\\\\[escaped\\\\\\\]\\\\\\\[escaped\\\\\\\]
+      ✔ \[escaped\]\[escaped]
+      ✔ \\\[escaped\\\]\\\[escaped]
+      ✔ \\\\\[escaped\\\\\]\\\\\[escaped]
+      ✔ \\\\\\\[escaped\\\\\\\]\\\\\\\[escaped]
+      ✔ [escaped\]\[escaped\]
+      ✔ [escaped\\\]\\\[escaped\\\]
+      ✔ [escaped\\\\\]\\\\\[escaped\\\\\]
+      ✔ [escaped\\\\\\\]\\\\\\\[escaped\\\\\\\]
+      ✔ \[escaped]\[escaped]
+      ✔ \\\[escaped]\\\[escaped]
+      ✔ \\\\\[escaped]\\\\\[escaped]
+      ✔ \\\\\\\[escaped]\\\\\\\[escaped]
+      ✔ [escaped\][escaped\]
+      ✔ [escaped\\\][escaped\\\]
+      ✔ [escaped\\\\\][escaped\\\\\]
+      ✔ [escaped\\\\\\\][escaped\\\\\\\]
+      ✔ [foo][bar]
+      ✔ ![foo][bar]
+      ✔ [foo][]
+      ✔ ![foo][]
+      ✔ [foo]
+      ✔ ![foo]
+      ✔ [foo]
+[bar]
+      ✔ [Foo][]
+[Bar][]
+      ✔ - [x] Checked
+- [-] In progress
+    invalid
+      ✔ [foo][bar]
+      ✔ ![foo][bar]
+      ✔ [foo][]
+      ✔ ![foo][]
+      ✔ [foo]
+      ✔ ![foo]
+      ✔ [foo]
+[bar]
+      ✔ - - - [foo]
+      ✔ foo][bar]
+
+[baz]: http://baz.com
+      ✔ foo][bar][baz]
+
+[bar]: http://bar.com
+      ✔ [foo]
+[foo][bar]
+      ✔ [Foo][foo]
+[Bar][]
+      ✔ [Foo][]
+[Bar][]
+      ✔ [Foo][foo]
+[Bar][bar]
+[Hoge][]
+      ✔ [Foo][]
+[Bar][bar]
+[Hoge][hoge]
+      ✔ [][foo]
+      ✔  foo
+  [bar]
+      ✔ \\[foo]
+      ✔ \\[foo\\][bar\\]
+      ✔ \\\\[foo\\\\][bar\\\\]
+      ✔ \\\\\\[foo\\\\\\][bar\\\\\\]
+      ✔ \[[foo]\]
+      ✔ \\\[[foo]\\\]
+      ✔ \\\\\[[foo]\\\\\]
+      ✔ \\\\\\\[[foo]\\\\\\\]
+      ✔ [\[foo\]]
+      ✔ [\\\[foo\\\]]
+      ✔ [\\\\\[foo\\\\\]]
+      ✔ [\\\\\\\[foo\\\\\\\]]
+      ✔ [\[\[foo\]\]]
+      ✔ [foo][bar]
+      ✔ ![foo][bar]
+      ✔ [foo][]
+      ✔ [foo]
+[bar]
+      ✔ [Foo][]
+      ✔ [Foo][foo]
+[Bar][]
+
+  no-missing-link-fragments
+    valid
+      ✔ # Heading Name
+[Link](#heading-name)
+      ✔ # Heading Name {#custom-name}
+[Link](#custom-name)
+      ✔ <a id="bookmark"></a>
+[Link](#bookmark)
+      ✔ <a ID="bookmark"></a>
+[Link](#bookmark)
+      ✔ <a Id="bookmark"></a>
+[Link](#bookmark)
+      ✔ <a name="old-style"></a>
+[Link](#old-style)
+      ✔ <a NAME="old-style"></a>
+[Link](#old-style)
+      ✔ <a NaMe="old-style"></a>
+[Link](#old-style)
+      ✔ <h1 id="bookmark">Bookmark</h1>
+<h1 name="old-style">Old Style</h1>
+<h2 id="bookmark-2">Bookmark 2</h2>
+<h2 name="old-style-2">Old Style 2</h2>
+<h3 id="bookmark-3">Bookmark 3</h3>
+<h3 name="old-style-3">Old Style 3</h3>
+<h4 id="bookmark-4">Bookmark 4</h4>
+<h4 name="old-style-4">Old Style 4</h4>
+<h5 id="bookmark-5">Bookmark 5</h5>
+<h5 name="old-style-5">Old Style 5</h5>
+<h6 id="bookmark-6">Bookmark 6</h6>
+<h6 name="old-style-6">Old Style 6</h6>
+
+[Link](#bookmark)
+[Link](#old-style)
+[Link](#bookmark-2)
+[Link](#old-style-2)
+[Link](#bookmark-3)
+[Link](#old-style-3)
+[Link](#bookmark-4)
+[Link](#old-style-4)
+[Link](#bookmark-5)
+[Link](#old-style-5)
+[Link](#bookmark-6)
+[Link](#old-style-6)
+      ✔ <h1 id=bookmark>Bookmark</h1>
+<h1 name=old-style>Old Style</h1>
+<h2 id = bookmark-2>Bookmark 2</h2>
+<h2 name = old-style-2>Old Style 2</h2>
+<h3 id= bookmark-3>Bookmark 3</h3>
+<h3 name= old-style-3>Old Style 3</h3>
+<h4 id =bookmark-4>Bookmark 4</h4>
+<h4 name =old-style-4>Old Style 4</h4>
+<h5 id='bookmark-5'>Bookmark 5</h5>
+<h5 name='old-style-5'>Old Style 5</h5>
+<h6 id = 'bookmark-6'>Bookmark 6</h6>
+<h6 name = 'old-style-6'>Old Style 6</h6>
+<h6 id= 'bookmark-7'>Bookmark 7</h6>
+<h6 name= 'old-style-7'>Old Style 7</h6>
+<h6 id ='bookmark-8'>Bookmark 8</h6>
+<h6 name ='old-style-8'>Old Style 8</h6>
+<h6 id="bookmark-9">Bookmark 9</h6>
+<h6 name="old-style-9">Old Style 9</h6>
+<h6 id = "bookmark-10">Bookmark 10</h6>
+<h6 name = "old-style-10">Old Style 10</h6>
+<h6 id= "bookmark-11">Bookmark 11</h6>
+<h6 name= "old-style-11">Old Style 11</h6>
+<h6 id ="bookmark-12">Bookmark 12</h6>
+<h6 name ="old-style-12">Old Style 12</h6>
+
+[Link](#bookmark)
+[Link](#old-style)
+[Link](#bookmark-2)
+[Link](#old-style-2)
+[Link](#bookmark-3)
+[Link](#old-style-3)
+[Link](#bookmark-4)
+[Link](#old-style-4)
+[Link](#bookmark-5)
+[Link](#old-style-5)
+[Link](#bookmark-6)
+[Link](#old-style-6)
+[Link](#bookmark-7)
+[Link](#old-style-7)
+[Link](#bookmark-8)
+[Link](#old-style-8)
+[Link](#bookmark-9)
+[Link](#old-style-9)
+[Link](#bookmark-10)
+[Link](#old-style-10)
+[Link](#bookmark-11)
+[Link](#old-style-11)
+[Link](#bookmark-12)
+[Link](#old-style-12)
+      ✔ # foo bar baz
+# foo-bar-baz
+
+[Link](#foo-bar-baz)
+[Link](#foo-bar-baz-1)
+      ✔ [Link](#top)
+      ✔ # Sample Code Section
+
+```js
+// Line 1: Function declaration
+function add(a, b) {
+\u0009// Line 2: Add numbers
+\u0009return a + b;
+}
+
+// Line 3: Function call
+const result = add(1, 2);
+
+// Line 4: Log result
+console.log(result);
+```
+
+[Reference Line 2](#L6)
+[Reference Lines 2-4](#L6-L12)
+[Reference Line with Column](#L6C13)
+[Reference Line Range with Columns](#L6C13-L8C1)
+      ✔ # Heading Name
+[Link](#HEADING-NAME)
+      ✔ # Heading Name
+[Link](#HeAdInG-nAmE)
+      ✔ # Heading Name
+[Link](#Heading-Name)
+      ✔ [Link](#figure-1)
+[Link](#figure-2)
+      ✔ # Duplicate
+[Link](#duplicate)
+# Duplicate
+[Link to second Duplicate](#duplicate-1)
+# Duplicate {#custom-dup}
+[Link to custom Duplicate](#custom-dup)
+# Duplicate
+[Link to third Duplicate](#duplicate-2)
+      ✔ # Special & < > Characters!
+[Link](#special----characters)
+      ✔ [External](https://example.com)
+      ✔ [Root](/)
+      ✔ [Empty]()
+      ✔ [Link](#)
+      ✔ # First Heading
+## Second Heading
+### Third Heading
+
+[Link 1](#first-heading)
+[Link 2](#second-heading)
+[Link 3](#third-heading)
+      ✔ <div id="section1">Content</div>
+[Link](#section1)
+      ✔ # Heading with `inline code`
+[Link](#heading-with-inline-code)
+
+# Heading with *italic text*
+[Link](#heading-with-italic-text)
+
+# Heading with _italic too_
+[Link](#heading-with-italic-too)
+
+# Heading with **bold text**
+[Link](#heading-with-bold-text)
+
+# Heading with __bold too__
+[Link](#heading-with-bold-too)
+
+# Heading with ~strikethrough~
+[Link](#heading-with-strikethrough)
+      ✔ # Heading with 🚀 emoji
+[Link](#heading-with--emoji)
+
+# Héading with àccènt chàrâctérs
+[Link](#héading-with-àccènt-chàrâctérs)
+
+# Mix: _Héading_ with 🚀 & `code`
+[Link](#mix-héading-with---code)
+      ✔ # Hèading
+[Link](#h%C3%A8ading)
+
+# Hèading with `inline code`
+[Link](#h%C3%A8ading-with-inline-code)
+
+# Héading with _italic_
+[Link](#h%C3%A9ading-with-italic)
+
+# Héading with **bold**
+[Link](#h%C3%A9ading-with-bold)
+
+# Heading Name {#custom-namé}
+[Link](#custom-nam%C3%A9)
+
+<div id="réal-id"></div>
+
+[Link](#r%C3%A9al-id)
+      ✔ # Héading Name
+[Link](#H%C3%89ADING-NAME)
+      ✔ [Link](#figur%C3%A9-1)
+[Link](#figur%C3%A9-2)
+      ✔ <div id="HtmlCaseCheck"></div>
+[Link](#htmlcasecheck)
+      ✔ <!-- <div id="commented-out"></div> -->
+<div id="real-id"></div>
+[Link](#real-id)
+      ✔ # Heading with _italic_
+[Link](#heading-with-italic)
+
+# Heading with **bold**
+[Link](#heading-with-bold)
+
+# foo_
+[Link](#foo_)
+      ✔ # <picture></picture> Heading Name
+[Link](#-heading-name)
+      ✔ # Heading Name <picture></picture>
+[Link](#heading-name-)
+      ✔ # Heading <picture></picture> Name
+[Link](#heading--name)
+      ✔ # <span>Text</span> Heading Name
+[Link](#text-heading-name)
+      ✔ # ![alt text](img.png) Heading Name
+[Link](#-heading-name)
+      ✔ # Heading Name ![alt text](img.png)
+[Link](#heading-name-)
+      ✔ # <picture></picture> Heading Name
+[Link](#-HEADING-NAME)
+    invalid
+      ✔ [Invalid](#non-existent)
+      ✔ # Heading Name
+[Invalid](#HEADING-NAME)
+      ✔ # Heading
+[Invalid](#wrong-heading)
+      ✔ # Heading
+[Invalid 1](#wrong1)
+[Invalid 2](#wrong2)
+      ✔ # Heading {#Invalid-ID-With-Caps}
+[Link](#Invalid-ID-With-Caps)
+      ✔ # Heading
+[Invalid](#heading@#$%)
+      ✔ ```js
+// Some code
+```
+[Invalid Format](#L2O)  // Using O instead of 0
+      ✔ # Only One Like This
+[Invalid Link](#only-one-like-this-1)
+      ✔ <!-- <div id="only-in-comment"></div> -->
+[Link](#only-in-comment)
+      ✔ <h1 id=bookmark>Bookmark</h1>
+
+[Link](#notfound)
+      ✔ <h2 id = bookmark-2>Bookmark 2</h2>
+
+[Link](#notfound)
+      ✔ <h3 name=old-style-3>Old Style 3</h3>
+
+[Link](#notfound)
+      ✔ <h4 id="bookmark-4">Bookmark 4</h4>
+
+[Link](#notfound)
+      ✔ <h5 id = "bookmark-5">Bookmark 5</h5>
+
+[Link](#notfound)
+      ✔ <h1 id="one">
+<!-- comment <h1 id="two"> </h1> -->
+</h1>
+
+[Link](#two)
+      ✔ # foo
+
+## foo
+
+[Link](#foo)
+
+[Link](#foo-1)
+
+[Link](#foo-2)
+      ✔ # foo
+
+## foo-1
+
+### foo-1
+
+[Link](#foo)
+
+[Link](#foo-1)
+
+[Link](#foo-1-1)
+
+[Link](#foo-2)
+
+[Link](#foo-1-2)
+      ✔ # Heading With Space
+[Invalid](#heading%20with%20space)
+      ✔ # fóo
+
+## fóo
+
+[Link](#f%C3%B3o)
+
+[Link](#f%C3%B3o-1)
+
+[Link](#f%C3%B3o-2)
+      ✔ # <picture></picture> Heading Name
+[Link](#heading-name)
+      ✔ # ![alt text](img.png) Heading Name
+[Link](#heading-name)
+
+  no-multiple-h1
+    valid
+      ✔ # Only one h1
+      ✔ # Heading 1
+Text
+      ✔ # Heading 1 #
+Text
+      ✔ # Heading 1
+## Heading 2
+      ✔ Only one h1
+===========
+      ✔ Heading 1
+==========
+Text
+      ✔ Heading 1
+==========
+Heading 2
+----------
+      ✔ # Heading 1
+```markdown
+# Heading 1-2
+```
+      ✔ <p>
+# Not heading
+</p>
+      ✔ ---
+[ "title" ]
+---
+# Heading 1
+      ✔ ---
+[
+\u0009"title"
+]
+---
+# Heading 1
+      ✔ ---
+[
+\u0009"title:"
+]
+---
+# Heading 1
+      ✔ ---
+[
+\u0009"title="
+]
+---
+# Heading 1
+      ✔ ---
+title: My Title
+---
+## Heading 2
+      ✔ +++
+title = "My Title"
++++
+## Heading 2
+      ✔ ---
+{
+\u0009"title": "My Title"
+}
+---
+## Heading 2
+      ✔ ---
+[
+\u0009"title"
+]
+---
+## Heading 2
+      ✔ ---
+# title: My Title
+---
+# Heading 1
+      ✔ +++
+# title = "My Title"
++++
+# Heading 1
+      ✔ ---
+author: Pixel998 # title: My Title
+---
+# Heading 1
+      ✔ +++
+author = "Pixel998" # title = "My Title"
++++
+# Heading 1
+      ✔ ---
+heading: My Title
+---
+## Heading 2
+      ✔ +++
+heading = "My Title"
++++
+## Heading 2
+      ✔ ---
+{
+\u0009"heading": "My Title"
+}
+---
+## Heading 2
+      ✔ ---
+[
+\u0009"heading"
+]
+---
+## Heading 2
+      ✔ ---
+author: Pixel998
+---
+# Heading 1
+      ✔ +++
+author = "Pixel998"
++++
+# Heading 1
+      ✔ ---
+{
+\u0009"author": "name"
+}
+---
+# Heading 1
+      ✔ ---
+[
+\u0009"author"
+]
+---
+# Heading 1
+      ✔ ---
+title: My Title
+---
+# Heading 1
+      ✔ +++
+title = "My Title"
++++
+# Heading 1
+      ✔ ---
+{
+\u0009"title": "My Title"
+}
+---
+# Heading 1
+      ✔ <h1 class="title">Heading</h1>
+      ✔ # Heading 1
+
+<!-- <h1>Commented Heading</h1> -->
+<!-- <h1>Commented Heading</h1> -->
+      ✔ # Heading 1
+
+<!--
+<h1>Commented Heading</h1>
+<p>Some text</p>
+-->
+      ✔ # Heading 1
+Some text <!-- <h1>Commented</h1> --> more text.
+      ✔ # Heading 1
+<!-- <h1>Comment with --- extra dashes</h1> -->
+      ✔ # Heading 1
+<!--<h1>No spaces</h1>-->
+<!--    <h1>Extra spaces</h1>    -->
+      ✔ # Heading 1
+```html
+<!-- <h1>Commented in code</h1> -->
+```
+    invalid
+      ✔ # Heading 1
+# Another H1
+      ✔ # Heading 1
+# Heading 2
+# Heading 3
+      ✔ # Heading 1
+> # Quoted heading
+      ✔ # Heading 1
+> > # Double-quoted heading
+      ✔ # Heading 1
+- Item
+  item
+  > # Quoted heading in list
+      ✔ # Heading 1
+Another H1
+==========
+      ✔ Another H1
+==========
+# Heading 1
+      ✔ ---
+---
+# Heading 1
+# Another H1
+      ✔ ---
+title: My Title
+---
+# Heading 1
+      ✔ +++
+title = "My Title"
++++
+# Heading 1
+      ✔ ---
+"title": My Title
+---
+# Heading 1
+      ✔ +++
+"title" = "My Title"
++++
+# Heading 1
+      ✔ ---
+{ "title": "My Title" }
+---
+# Heading 1
+      ✔ ---
+   {    "title": "My Title" }
+---
+# Heading 1
+      ✔ ---
+{
+\u0009"title": "My Title"
+}
+---
+# Heading 1
+      ✔ ---
+'title': My Title
+---
+# Heading 1
+      ✔ +++
+'title' = "My Title"
++++
+# Heading 1
+      ✔ ---
+author: Pixel998
+title: My Title
+---
+# Heading 1
+      ✔ +++
+author = "Pixel998"
+title = "My Title"
++++
+# Heading 1
+      ✔ ---
+{
+\u0009"author": "name",
+\u0009"title": "My Title"
+}
+---
+# Heading 1
+      ✔ ---
+TITLE: My Title
+---
+# Heading 1
+      ✔ +++
+TITLE = "My Title"
++++
+# Heading 1
+      ✔ ---
+{
+\u0009"TITLE": "My Title"
+}
+---
+# Heading 1
+      ✔ ---
+heading: My Title
+---
+# Heading 1
+      ✔ +++
+heading = "My Title"
++++
+# Heading 1
+      ✔ ---
+{
+\u0009"heading": "My Title"
+}
+---
+# Heading 1
+      ✔ ---
+title: My Title
+---
+# Heading 1
+# Another H1
+      ✔ +++
+title = "My Title"
++++
+# Heading 1
+# Another H1
+      ✔ ---
+{
+\u0009"title": "My Title"
+}
+---
+# Heading 1
+# Another H1
+      ✔ <h1>Heading</h1>
+
+# Another H1
+      ✔ # Heading 1
+
+<h1
+class="title">
+Another H1</h1>
+      ✔ # Heading
+<h1>Another H1</h1>
+      ✔ <h1>First H1</h1>
+
+<h1>Second H1</h1>
+      ✔ <h1>First H1</h1>
+<p>Text</p>
+<h1>Second H1</h1>
+<p>Text</p>
+<h1>Third H1</h1>
+      ✔ ---
+title: My Title
+---
+<h1>Another H1</h1>
+      ✔ +++
+title = "My Title"
++++
+# Heading 1
+
+<h1>Another H1</h1>
+      ✔ ---
+{
+\u0009"title": "My Title"
+}
+---
+# Heading 1
+
+<h1>Another H1</h1>
+      ✔ <!-- <h1>Commented</h1> -->
+<h1>Heading 1</h1>
+<h1>Another H1</h1>
+      ✔ # Heading 1
+<!-- <h1>Commented</h1> -->
+<h1>Another H1</h1>
+      ✔ # Heading 1
+<!- Not a valid comment ->
+<h1>Another H1</h1>
+      ✔ # Heading 1
+<!-- comment --> <h1>Another H1</h1>
+      ✔ <h1>Heading 1</h1>
+<!-- comment --> <h1>Another H1</h1>
+      ✔ <h1>Heading 1</h1>
+<!-- comment with surrogate pairs: 👍🚀 --> <h1>Another H1</h1>
+
+  no-reference-like-urls
+    valid
+      ✔ [Mercury](https://example.com/mercury/)
+      ✔ [Mercury](https://example.com/mercury/ "Go to Mercury")
+      ✔ ![Venus](https://example.com/venus/)
+      ✔ ![Venus](https://example.com/venus/ "Go to Venus")
+      ✔ [text][mercury]
+      ✔ [mercury]: https://example.com/mercury/
+      ✔ [Mercury](mercury) is the first planet.
+
+[venus]: https://example.com/venus/
+      ✔ [Planet 1](https://example.com/planet1/)
+[Planet 2](https://example.com/planet2/)
+
+[planet1]: https://example.com/planet1/
+[planet2]: https://example.com/planet2/
+      ✔ `[Mercury](mercury) is the first planet.`
+`![Mercury](mercury) is the first planet.`
+
+[mercury]: https://example.com/mercury/
+      ✔ ```markdown
+[Mercury](mercury)
+![Mercury](mercury)
+
+[mercury]: https://example.com/mercury/
+```
+      ✔ <div>[Mercury](mercury)</div>
+
+<div>![Mercury](mercury)</div>
+
+[mercury]: https://example.com/mercury/
+      ✔ \[Mercury](mercury)
+[Mercury\](mercury)
+![Mercury\](mercury)
+[Mercury]\(mercury)
+![Mercury]\(mercury)
+
+[mercury]: https://example.com/mercury/
+      ✔ [foo bar](foo bar)
+![foo bar](foo bar)
+
+[foo bar]: https://example.com/foo-bar
+      ✔ [link](<uri>)
+
+   [uri]: https://example.com/uri
+      ✔ ![image](<uri>)
+
+[uri]: https://example.com/uri
+      ✔ <http://foo>
+
+[http://foo]: hi
+      ✔ http://foo
+
+[http://foo]: hi
+      ✔ # Heading with [Mercury](mercury)
+# Heading with ![Mercury](mercury)
+
+[venus]: https://example.com/venus/
+      ✔ # Heading with [Mercury][mercury]
+# Heading with ![Mercury][mercury]
+
+[mercury]: https://example.com/mercury
+      ✔ Heading with [Mercury](mercury)
+===============================
+Heading with ![Mercury](mercury)
+================================
+
+[venus]: https://example.com/venus/
+      ✔ Heading with [Mercury][mercury]
+===============================
+Heading with ![Mercury][mercury]
+================================
+
+[mercury]: https://example.com/mercury
+      ✔ | Planet  | Link                |
+|---------|---------------------|
+| Mercury | [Mercury](mercury)  |
+| Mercury | ![Mercury](mercury) |
+
+[venus]: https://example.com/venus/
+      ✔ | Planet  | Link                |
+|---------|---------------------|
+| Mercury | [Mercury][mercury]  |
+| Mercury | ![Mercury][mercury] |
+
+[mercury]: https://example.com/mercury
+      ✔ \[Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\[Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\\\[Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\\\\\[Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+    invalid
+      ✔ [Mercury](  mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ [Mercury](\u0009mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ [Mercury](
+mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ [Mercury](\u000d
+mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ [Mercury](\u000dmercury)
+
+[mercury]: https://example.com/mercury
+      ✔ ![Mercury](
+mercury)
+
+[mercury]: https://example.com/mercury.jpg
+      ✔ ![Mercury](\u000d
+mercury)
+
+[mercury]: https://example.com/mercury.jpg
+      ✔ ![Mercury](\u000dmercury)
+
+[mercury]: https://example.com/mercury.jpg
+      ✔ ![Mercury](  mercury)
+
+[mercury]: https://example.com/mercury.jpg
+      ✔ ![Mercury](\u0009mercury)
+
+[mercury]: https://example.com/mercury.jpg
+      ✔ [Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ [**Mercury**](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ [Mercury](MERCURY)
+
+[mercury]: https://example.com/mercury
+      ✔ [Mercury](MeRcUrY)
+
+[mercury]: https://example.com/mercury
+      ✔ [Mercury](<mercury>)
+
+[<mercury>]: https://example.com/mercury
+      ✔ ![Venus](venus)
+
+[venus]: https://example.com/venus.jpg
+      ✔ ![Venus](VENUS)
+
+[venus]: https://example.com/venus.jpg
+      ✔ ![Venus](VeNuS)
+
+[venus]: https://example.com/venus.jpg
+      ✔ ![Venus](<venus>)
+
+[<venus>]: https://example.com/venus.jpg
+      ✔ ![**Mercury** is a planet](mercury)
+
+[mercury]: https://example.com/mercury.jpg
+      ✔ ![Mercury](mercury) is the first planet from the sun.
+
+[mercury]: https://example.com/mercury/
+      ✔ [Mercury](mercury) is the first planet from the sun.
+
+[mercury]: https://example.com/mercury/
+      ✔ [Planet 1](planet1) and [Planet 2](planet2) are neighbors.
+
+[planet1]: https://example.com/planet1/
+[planet2]: https://example.com/planet2/
+      ✔ [Mercury](mercury) is the first planet and ![Venus](venus) is the second.
+
+[mercury]: https://example.com/mercury
+[venus]: https://example.com/venus.jpg
+      ✔ [Mercury](mercury "")
+
+[mercury]: https://example.com/mercury
+      ✔ ![Venus](venus "")
+
+[venus]: https://example.com/venus.jpg
+      ✔ [Mercury](mercury '')
+
+[mercury]: https://example.com/mercury
+      ✔ ![Venus](venus '')
+
+[venus]: https://example.com/venus.jpg
+      ✔ [Mercury](mercury ())
+
+[mercury]: https://example.com/mercury
+      ✔ ![Venus](venus ())
+
+[venus]: https://example.com/venus.jpg
+      ✔ [Mercury](mercury "Go to Mercury")
+
+[mercury]: https://example.com/mercury
+      ✔ ![Venus](venus "Venus Image")
+
+[venus]: https://example.com/venus.jpg
+      ✔ [Mercury](mercury 'Go to Mercury')
+
+[mercury]: https://example.com/mercury
+      ✔ ![Venus](venus 'Venus Image')
+
+[venus]: https://example.com/venus.jpg
+      ✔ [Mercury](mercury (Go to Mercury))
+
+[mercury]: https://example.com/mercury
+      ✔ ![Venus](venus (Venus Image))
+
+[venus]: https://example.com/venus.jpg
+      ✔ \\[Mercury](mercury)
+
+[mercury]: https://example.com/mercury/
+      ✔ \\![Venus](venus)
+
+[venus]: https://example.com/venus/
+      ✔ [Click Me
+](test)
+
+[test]: https://abc.com
+      ✔ ![Click Me
+](test)
+
+[test]: https://abc.com
+      ✔ [Mercury](@mercury)
+![Mercury](@mercury)
+
+[@mercury]: https://example.com/mercury
+      ✔ # Heading with [Mercury](mercury)
+# Heading with ![Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ Heading with [Mercury](mercury)
+===============================
+Heading with ![Mercury](mercury)
+================================
+
+[mercury]: https://example.com/mercury
+      ✔ | Planet  | Link                |
+|---------|---------------------|
+| Mercury | [Mercury](mercury)  |
+| Mercury | ![Mercury](mercury) |
+
+[mercury]: https://example.com/mercury
+      ✔ \![Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\![Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\\\![Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\\\\\![Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\[Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\\[Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\\\\[Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\![Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\\![Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ \\\\\\![Mercury](mercury)
+
+[mercury]: https://example.com/mercury
+      ✔ [link](GRÜẞE)
+
+[Grüsse]: https://example.com/
+
+  no-reversed-media-syntax
+    valid
+      ✔ [foo](bar)
+      ✔ [foo](#bar)
+      ✔ [foo](http://bar.com)
+      ✔ ![foo](bar)
+      ✔ ![foo](#bar)
+      ✔ ![foo](http://bar.com)
+      ✔ (foo)[bar](http://bar.com)
+      ✔ \u0009\u0009myObj.getFiles(test)[0]
+      ✔ ```js
+myObj.getFiles(test)[0];
+```
+      ✔ `myobj.getFiles(test)[0]`
+      ✔ Some long text about foo
+# Split,
+`myobj.getFiles(test)[0]`
+      ✔ &lpar;reversed&rpar;[link]
+      ✔ a &rpar; a &lpar; a &rpar;[a]~
+      ✔ a<pre>&rpar; a &lpar; a &rpar;[a]~</pre>
+      ✔ \(foo)[bar]
+      ✔ \\\(foo)[bar]
+      ✔ \\\\\(foo)[bar]
+      ✔ \\\\\\\(foo)[bar]
+      ✔ (foo\)[bar]
+      ✔ (foo\\\)[bar]
+      ✔ (foo\\\\\)[bar]
+      ✔ (foo\\\\\\\)[bar]
+      ✔ (foo)\[bar]
+      ✔ (foo)\\\[bar]
+      ✔ (foo)\\\\\[bar]
+      ✔ (foo)\\\\\\\[bar]
+      ✔ (foo)[bar\]
+      ✔ (foo)[bar\\\]
+      ✔ (foo)[bar\\\\\]
+      ✔ (foo)[bar\\\\\\\]
+      ✔ text [foo](bar) text [foo](bar) text
+      ✔ text [foo](bar)[foo](bar) text
+      ✔ text [foo](bar)[foo](bar)[foo](bar) text
+      ✔ text (text `func()[index]`) text
+      ✔ hi <span class="foo(bar)[baz]">hi</span>
+      ✔ # [ESLint](https://eslint.org/)
+      ✔ # ![A beautiful sunset](sunset.png)
+      ✔ | ESLint                        | Sunset                            |
+| ----------------------------- | --------------------------------- |
+| [ESLint](https://eslint.org/) | ![A beautiful sunset](sunset.png) |
+    invalid
+      ✔ ()[]
+      ✔ (foo)[]
+      ✔ !()[foo]
+      ✔ (foo)[bar]
+      ✔ (foo)[#bar]
+      ✔ (foo)[http://bar.com]
+      ✔ !(foo)[bar]
+      ✔ !(foo)[#bar]
+      ✔ !(foo)[http://bar.com]
+      ✔ (*foo*)[]
+      ✔ (**foo**)[]
+      ✔ (~~foo~~)[]
+      ✔ (`foo`)[]
+      ✔ [^1]: (Footnote text)[https://example.com]
+      ✔ (fo
+o)[bar]
+      ✔ (foo
+)[bar]
+      ✔ (foo)[bar]
+!(foo)[bar]
+      ✔ `code code
+code`
+(foo)[bar]
+      ✔ text
+text `code
+code code
+code` text
+text (foo)[bar]
+      ✔ text (text(foo)[bar] text
+      ✔ (text foo())[bar]
+      ✔ text (foo)[bar] text !(baz)[qux] text
+      ✔ abcd
+  \a()[]
+      ✔ [link1](#link "`") ()[] [link2](#link "`")
+      ✔ \\(foo)[bar]
+      ✔ \\\\(foo)[bar]
+      ✔ \\\\\\(foo)[bar]
+      ✔ \\\\\\\\(foo)[bar]
+      ✔ # (ESLint)[https://eslint.org/]
+      ✔ # !(A beautiful sunset)[sunset.png]
+      ✔ Setext Heading
+  (ESLint)[https://eslint.org/]
+===
+      ✔ | ESLint                        | Sunset                            |
+| ----------------------------- | --------------------------------- |
+| (ESLint)[https://eslint.org/] | !(A beautiful sunset)[sunset.png] |
+
+  no-space-in-emphasis
+    valid
+      ✔ Line with *Normal emphasis*
+      ✔ Line with **Normal strong**
+      ✔ Line with ***Normal strong and emphasis***
+      ✔ Line with _Normal emphasis_
+      ✔ Line with __Normal strong__
+      ✔ Line with ___Normal strong and emphasis___
+      ✔ Line with ~Normal strikethrough~
+      ✔ Line with ~~Normal strikethrough~~
+      ✔ Line with ~~*strikethrough and emphasis*~~
+      ✔ But not with escaped\* asterisks\* \_and \_underscores.
+      ✔ But not with escaped\~ tildes\~ either.
+      ✔ * Emphasis* with left space is recognized as a list
+      ✔ * List item *with emphasis* on the
+  first and *second lines*.
+      ✔ * List item with
+  *hanging* emphasis
+      ✔ ***strong emph***
+      ✔ ***strong** in emph*
+      ✔ ***emph* in strong**
+      ✔ **in strong *emph***
+      ✔ *in emph **strong***
+      ✔ **in strong * emph*** (internal spaces are not detected)
+      ✔ *in emph ** strong*** (internal spaces are not detected)
+      ✔ ***strong ** in emph* (internal spaces are not detected)
+      ✔ ***emph * in strong** (internal spaces are not detected)
+      ✔ Text *emph***strong** text
+      ✔ ```markdown
+      Violations * are * allowed in code blocks where emphasis does not apply.
+      ```
+      ✔ ```markdown
+      Violations ~~ are ~~ allowed in code blocks where strikethrough does not apply.
+      ```
+      ✔ Emphasis `inside * code * blocks` is okay.
+      ✔ Emphasis `* inside` code `blocks *` is okay.
+      ✔ Emphasis `inside *` code `* blocks` is okay.
+      ✔ Emphasis `inside _ code _ blocks` is okay.
+      ✔ Emphasis `_ inside` code `blocks _` is okay.
+      ✔ Emphasis `inside _` code `_ blocks` is okay.
+      ✔ Mixed `code_span` scenarios are _also_ okay.
+      ✔ Mixed `code*span` scenarios are *also* okay.
+      ✔ Mixed `code*span` scenarios are _also_ okay.
+      ✔ Mixed `code_span` scenarios are *also* okay.
+      ✔ Text ~ strikethrough ~ with spaces
+      ✔ Text ~~ strikethrough ~~ with spaces
+      ✔ [Link](under_score) followed by _underscore_
+      ✔ [Link](un_der_score) followed by _underscore_
+      ✔ [Link](un_der_sco_re) followed by _underscore_
+      ✔ [Link](star*star) followed by *star*
+      ✔ * [Link](star*star) followed by *star*
+      ✔ Text [Link](under_score) text _underscore_ text [Link](st*ar) text *star* text
+      ✔ [Link [link] link](under_score) followed by _underscore_
+      ✔ **under_score** text *under_score*
+      ✔ *under_score* text **under_score**
+      ✔ __star*star__ text _star*star_
+      ✔ _star*star_ text __star*star__
+      ✔ *_emphasis* text *emphasis*
+      ✔ *emphasis_* text *emphasis*
+      ✔ *emphasis* text *_emphasis*
+      ✔ *emphasis* text *emphasis_*
+      ✔ text \*emphasis* text *emphasis* text
+      ✔ text *emphasis\* text *emphasis* text
+      ✔ text *emphasis* text \*emphasis* text
+      ✔ text *emphasis* text *emphasis\* text
+      ✔ text *star*_underscore_ text **star**_underscore_ text
+      ✔ text **star**_underscore_ text *star*_underscore_ text
+      ✔ text **star**_underscore_ text **star**_underscore_ text
+      ✔ text *star*_underscore_ text *star*__underscore__ text
+      ✔ text *star*__underscore__ text *star*_underscore_ text
+      ✔ text *star*__underscore__ text *star*__underscore__ text
+      ✔ text _underscore_*star* text __underscore__*star* text
+      ✔ text __underscore__*star* text _underscore_*star* text
+      ✔ text __underscore__*star* text __underscore__*star* text
+      ✔ text _underscore_*star* text _underscore_**star** text
+      ✔ text _underscore_**star** text _underscore_*star* text
+      ✔ text _underscore_**star** text _underscore_**star** text
+      ✔ text ~~strike~~*star* text ~strike~**star** text
+      ✔ text ~~strike~~_underscore_ text ~strike~__underscore__ text
+      ✔ > * List with *emphasis* in blockquote
+>
+> > * List with *emphasis* in blockquote
+      ✔ `* text *`
+      ✔ `** text **`
+      ✔ `*** text ***`
+      ✔ `**** text ****`
+      ✔ `***** text *****`
+      ✔ `****** text ******`
+      ✔ `******* text *******`
+      ✔ under_score
+_underscore_
+      ✔ st*ar
+*star*
+      ✔ under_score
+*star*
+      ✔ st*ar
+_underscore_
+      ✔ *star*
+_underscore_
+      ✔ _underscore_
+*star*
+      ✔ [reference_link]
+_first_ and _second_
+
+[reference_link]: https://example.com
+      ✔ [reference_link]
+*first* and *second*
+
+[reference_link]: https://example.com
+      ✔ [reference*link]
+_first_ and _second_
+
+[reference*link]: https://example.com
+      ✔ [reference*link]
+*first* and *second*
+
+[reference*link]: https://example.com
+      ✔ text [reference_link] under _ score text
+
+[reference_link]: https://example.com
+      ✔ text [reference*link] star * star text
+
+[reference*link]: https://example.com
+      ✔ ***text
+*text*
+***
+      ✔ *** text
+*text*
+***
+      ✔ *** text
+\*text\*
+***
+      ✔ *** text
+**text**
+***
+      ✔ | Table | Table |
+| ----- | ----- |
+| star  | x * y |
+| under | x _ y |
+      ✔ | Table | Table |
+| ----- | ----- |
+| star  | x * y |
+| star  | x * y |
+| under | x _ y |
+| under | x _ y |
+      ✔ | Table | Table                     |
+| ----- | ------------------------- |
+| star  | text *text* text          |
+| under | text _text_ text          |
+| strike| text ~text~ text          |
+      ✔ | Table | Table |
+| ----- | ----- |
+| x * y | x * y |
+| x** y | x** y |
+| x _ y | x _ y |
+| x__ y | x__ y |
+      ✔ ```yaml /* autogenerated */
+# YAML...
+```
+      ✔ new_value from *old_value* and *older_value*.
+      ✔ :ballot_box_with_check: _Emoji syntax_
+      ✔ some_snake_case_function() is _called_
+      ✔ _~/.ssh/id_rsa_ and _emphasis_
+      ✔ Partial *em*phasis of a *wo*rd.
+      ✔ <p>
+Emphasis inside * HTML * content
+</p>
+      ✔ Emphasis <p data="inside * attribute * content"></p>
+      ✔ Embedded underscore is okay:
+Text _emphas_i_s_ text _emphasis_
+      ✔ Text *emphasis
+emphasis* text
+      ✔ Text *emphasis* *emphasis
+emphasis* *emphasis* text
+      ✔ Text *emphasis* text *emphasis
+emphasis* text *emphasis* text
+      ✔ Text *emphasis* *emphasis
+emphasis* *emphasis* *emphasis
+emphasis* text *emphasis
+emphasis* text *emphasis* text
+      ✔ Text text
+text *emphasis
+emphasis emphasis
+emphasis* text
+text text
+      ✔ Text * asterisk
+      ✔ * Item *emphasis* item
+* Item *emphasis* item
+* Item *emphasis
+  emphasis* item
+* Item *emphasis* item
+      ✔ * Item * asterisk
+* Item * asterisk
+      ✔ Emphasis `inside
+of * code *
+blocks` is okay.
+      ✔ Emphasis `* inside`
+code
+`blocks *` is okay.
+      ✔ Emphasis `inside *`
+code
+`* blocks` is okay.
+      ✔ Emphasis `inside
+_ code _
+blocks` is okay.
+      ✔ Emphasis `_ inside`
+code
+`blocks _` is okay.
+      ✔ Emphasis `inside _`
+code
+`_ blocks` is okay.
+      ✔ Mixed `code_span`
+scenarios
+are _also_ okay.
+      ✔ Mixed `code*span`
+scenarios
+are *also* okay.
+      ✔ This paragraph
+contains *a* mix
+of `*` emphasis
+scenarios and *should*
+not trigger `*` any
+violations at *all*.
+      ✔ This paragraph
+contains `a * slightly
+more complicated
+multi-line emphasis
+scenario * that
+should * not trigger
+violations * either`.
+      ✔ Escaped asterisks \* should \* be ignored.
+      ✔ Escaped asterisks \* should * be ignored.
+      ✔ Escaped asterisks * should \* be ignored.
+      ✔ Escaped underscores \_ should \_ be ignored.
+      ✔ Escaped underscores \_ should _ be ignored.
+      ✔ Escaped underscores _ should \_ be ignored.
+      ✔ Escaped asterisks \** should ** be ignored.
+      ✔ Escaped asterisks *\* should ** be ignored.
+      ✔ Escaped underscores \__ should __ be ignored.
+      ✔ Escaped underscores _\_ should __ be ignored.
+      ✔ Escaped asterisks ** should \** be ignored.
+      ✔ Escaped asterisks ** should *\* be ignored.
+      ✔ Escaped underscores __ should \__ be ignored.
+      ✔ Escaped underscores __ should _\_ be ignored.
+      ✔ Escaped tildes \~ should \~ be ignored.
+      ✔ Escaped tildes \~~ should ~~ be ignored.
+      ✔ This is * some * text
+    invalid
+      ✔ Broken * emphasis * with spaces
+      ✔ Broken ** strong ** with spaces
+      ✔ Broken *** strong and emphasis *** with spaces
+      ✔ Broken _ emphasis _ with spaces
+      ✔ Broken __ strong __ with spaces
+      ✔ Broken ___ strong and emphasis ___ with spaces
+      ✔ Mixed *ok emphasis* and * broken emphasis *
+      ✔ Mixed **ok strong** and ** broken strong **
+      ✔ Mixed ***ok strong and emphasis*** and *** broken strong and emphasis ***
+      ✔ Mixed _ok emphasis_ and _ broken emphasis _
+      ✔ Mixed __ok strong__ and __ broken strong __
+      ✔ Mixed ___ok strong and emphasis___ and ___ broken strong and emphasis ___
+      ✔ Mixed *ok emphasis* **ok strong** * broken emphasis *
+      ✔ Multiple * broken emphasis * _ broken emphasis _
+      ✔ One-sided *broken emphasis *
+      ✔ One-sided * broken emphasis*
+      ✔ Will _flag on _words with underscores before them.
+      ✔ The same goes for words* with asterisks* after them.
+      ✔ ** Strong** with left space
+      ✔ *** Strong and emphasis*** with left space
+      ✔ _ Emphasis_ with left space
+      ✔ __ Strong__ with left space
+      ✔ ___ Strong and emphasis___ with left space
+      ✔ *Emphasis * with right space
+      ✔ **Strong ** with right space
+      ✔ ***Strong and emphasis *** with right space
+      ✔ _Emphasis _ with right space
+      ✔ __Strong __ with right space
+      ✔ ___Strong and emphasis ___ with right space
+      ✔ **Multiple ** spaces **in ** emphasis **at ** once.
+      ✔ This is * an ambiguous * scenario
+      ✔ * List * item*
+      ✔ * List *item *
+      ✔ * List * item *
+      ✔ *** strong emph***
+      ✔ ***strong emph ***
+      ✔ Text * emph***strong** text
+      ✔ Text *emph ***strong** text
+      ✔ Text *emph*** strong** text
+      ✔ Text *emph***strong ** text
+      ✔ Emphasis <b>inside * HTML * content</b>
+      ✔ Emphasis <p data="* attribute *">* HTML *</p>
+      ✔ Text * emphasis
+emphasis* text
+      ✔ Text *emphasis
+emphasis * text
+      ✔ Text * emphasis
+emphasis * text
+      ✔ Text * emphasis * * emphasis
+emphasis * * emphasis * text
+      ✔ Text text
+text * emphasis
+emphasis emphasis
+emphasis * text
+text text
+      ✔ Text ** bold
+bold ** text
+      ✔ Text _ **bold** _
+      ✔ This is * italic with __ bold __ markdown *
+      ✔ This is _\u0009emphasized\u0009_ text
+      ✔ # Broken * emphasis * with spaces
+      ✔ Broken * emphasis * with spaces
+===============
+      ✔ | Table | Table                     |
+| ----- | ------------------------- |
+| star  | text * text* text          |
+| star  | text *text * text          |
+| under | text _ text_ text          |
+| under | text _text _ text          |
+      ✔ Broken ~ strikethrough ~ with spaces
+      ✔ Broken ~~ strikethrough ~~ with spaces
+      ✔ Mixed ~~ok strikethrough~~ and ~~ broken strikethrough ~~
+      ✔ Mixed ~ strikethrough ~ and * emphasis * with spaces
+      ✔ Mixed ~ok strikethrough~ and ~ broken strikethrough ~
+      ✔ # Broken ~ strikethrough ~ with spaces
+      ✔ | Table | Table                     |
+| ----- | ------------------------- |
+| strike | text ~ text~ text          |
+| strike | text ~text ~ text          |
+
+  no-unused-definitions
+    valid
+      ✔
+      ✔
+      ✔
+[Mercury][mercury]
+
+[mercury]: https://example.com/mercury/
+
+      ✔
+[mercury][]
+
+[mercury]: https://example.com/mercury/
+
+      ✔
+[mercury]
+
+[mercury]: https://example.com/mercury/
+
+      ✔
+[Mercury][mercury]
+
+[mercury]: https://example.com/mercury/
+[Mercury]: https://example.com/venus/
+
+      ✔
+[Mercury][mercury]
+
+[mercury]: https://example.com/mercury/
+[   mercury       ]: https://example.com/venus/
+
+      ✔
+![Venus Image][venus]
+
+[venus]: https://example.com/venus.jpg
+
+      ✔
+![venus][]
+
+[venus]: https://example.com/venus.jpg
+
+      ✔
+![venus]
+
+[venus]: https://example.com/venus.jpg
+
+      ✔
+Mercury[^mercury]
+
+[^mercury]: Hello, Mercury!
+
+      ✔
+Mercury[^mercury]
+
+[^mercury]: Hello, Mercury!
+[^Mercury]: Hello, Venus!
+
+      ✔
+Mercury[^mercury]
+
+[^mercury]: https://example.com/mercury/
+[    ^mercury       ]: https://example.com/venus/
+
+      ✔
+[//]: # (This is a comment 1)
+[//]: <> (This is a comment 2)
+
+      ✔
+[Alpha][alpha] and [Alpha][^alpha]
+
+[alpha]: bravo
+
+[^alpha]: bravo
+
+      ✔
+[mercury]: https://example.com/mercury/
+[mercury]: https://example.com/venus/
+
+      ✔
+[^mercury]: Hello, Mercury!
+[^mercury]: Hello, Venus!
+
+      ✔ [MERCURY]: https://example.com/mercury/
+      ✔ [mercury]: https://example.com/mercury/
+      ✔ [MERCURY]: https://example.com/mercury/
+      ✔ [   mercury   ]: https://example.com/mercury/
+      ✔ [mercury]: https://example.com/mercury/
+      ✔ [foo bar]: https://example.com/foo-bar/
+      ✔ [^MERCURY]: Hello, Mercury!
+      ✔ [^mercury]: Hello, Mercury!
+      ✔ [^MERCURY]: Hello, Mercury!
+      ✔ [^mercury]: Hello, Mercury!
+      ✔ [Grüsse]: https://example.com/
+      ✔ [^Grüsse]: Grüsse
+    invalid
+      ✔
+[mercury]: https://example.com/mercury/
+
+      ✔
+[Mercury]: https://example.com/mercury/
+
+      ✔
+[  Mercury  ]: https://example.com/mercury/
+
+      ✔
+[mercury]: https://example.com/mercury/
+[mercury]: https://example.com/venus/
+[mercury]: https://example.com/earth/
+
+      ✔
+[mercury]: https://example.com/mercury/
+
+      ✔
+[^mercury]: Hello, Mercury!
+
+      ✔
+[^Mercury]: Hello, Mercury!
+
+      ✔
+[^mercury]: Hello, Mercury!
+[^mercury]: Hello, Venus!
+[^mercury]: Hello, Earth!
+
+      ✔
+[^mercury]: Hello, Mercury!
+
+      ✔
+Hello, [Mercury][mercury]!
+I am living on [Earth][earth] and I am going to [Mars][mars].
+
+[mercury]: https://example.com/mercury/
+[earth]: https://example.com/earth/
+[mars]: https://example.com/mars/
+
+[//]: # (comment about mars)
+
+[jupiter]: https://example.com/jupiter/
+
+[//]: # (comment about jupiter)
+
+[mercury]: https://example.com/venus/
+
+
+  require-alt-text
+    valid
+      ✔ ![Alternative text](image.jpg)
+      ✔ ![Alternative text](image.jpg "Title")
+      ✔ ![Alternative text][notitle]
+
+[notitle]: image.jpg
+      ✔ ![Alternative text][title]
+
+[title]: image.jpg "Title"
+      ✔ [![Alternative text](image.jpg)](image.jpg)
+      ✔ <img src="image.png" alt="Descriptive text" />
+      ✔ <img src="image.png" alt />
+      ✔ <img src="image.png" alt="" />
+      ✔ <img src="image.png" alt='' />
+      ✔ <IMG SRC="image.png" ALT="Descriptive text"/>
+      ✔ <img src="image.png" aria-hidden alt="alt">
+      ✔ <img src="image.png" aria-hidden="true"/>
+      ✔ <img src="image.png" ARIA-HIDDEN="TRUE" />
+      ✔ <p><img src="image.png" alt="Descriptive text" /></p>
+      ✔ <!-- <img src="image.png" /> -->
+      ✔ Some text <!-- <img src="image.png" /> --> more text.
+      ✔ <!--
+<img src="image.png" />
+<p>Some text</p>
+-->
+      ✔ <!--<img src="image.png" />-->
+<!--    <img src="image.png" />    -->
+      ✔ ```html
+<img src="image.png" />
+```
+    invalid
+      ✔ ![ ](image.jpg)
+      ✔ ![](image.jpg)
+      ✔ ![](image.jpg "Title")
+      ✔ Image without an alternative text ![](image.jpg) in a sentence.
+      ✔ ![][notitle]
+
+[notitle]: image.jpg
+      ✔ ![][title]
+
+[title]: image.jpg "Title"
+      ✔ [![](image.jpg)](image.jpg)
+      ✔ <img src="image.png" />
+      ✔ <IMG SRC="image.png" />
+      ✔ <img src="image.png" alt=" " />
+      ✔ <p>
+<img src="image.png" />
+</p>
+      ✔ <p>
+<img src="image.png" />
+<img src="image2.png" />
+</p>
+      ✔ <img src="image.png" aria-hidden="false"/>
+      ✔ <img
+src="image.png" />
+      ✔ <!-- <img src="image.png" /> -->
+<img src="image.png" />
+      ✔ <!- Not a valid comment ->
+<img src="image.png" />
+      ✔ <img src="image.png" />
+<!-- comment --> <img src="image.png" />
+      ✔ <!-- comment with surrogate pairs: 👍🚀 --> <img src="image.png" />
+
+  table-column-count
+    valid
+      ✔ | Header | Header |
+| ------ | ------ |
+| Cell   | Cell   |
+| Cell   | Cell   |
+      ✔ | Header | Header | Header |
+| ------ | ------ | ------ |
+| Cell   | Cell   |
+| Cell   |        |
+      ✔ | A | B |
+|---|---|
+|   |   |
+| C |   |
+      ✔ Just some text. | not a table |
+      ✔ | Header | Header |
+| ------ | ------ | ----- |
+| Cell   | Cell   |
+      ✔ | Header | Header |
+| ------ | ------ |
+      ✔ Some text before.
+
+| H1 | H2 |
+|----|----|
+| D1 | D2 |
+
+Some text after.
+      ✔ | Valid | Table |
+| ----- | ----- |
+| Row   | Here  |
+      ✔ | abc | defghi |
+:-: | -----------:
+bar | baz
+      ✔ | f|oo  |
+| ------ |
+| b `|` az |
+| b **|** im |
+      ✔ | abc | def |
+| --- | --- |
+| bar | baz |
+> bar
+      ✔ | abc | def |
+| --- | --- |
+      ✔ | Header | Header |
+| ------ | ------ |
+| Cell   | Cell   |
+| Cell   | Cell   |
+      ✔ | Header | Header |
+| ------ | ------ |
+| Cell   |        |
+| Cell   | Cell   |
+    invalid
+      ✔ | Head1 | Head2 |
+| ----- | ----- |
+| R1C1  | R1C2  | R2C3  |
+      ✔ | Head1 | Head2 |
+| ----- | ----- |
+| R1C1  | R1C2  | R2C3  | R3C4 |
+      ✔ | A |
+| - |
+| 1 | 2 |
+      ✔ Some introductory text.
+
+| Header1 | Header2 |
+| ------- | ------- |
+| Data1   | Data2   | Data3 |
+| D4      | D5      |
+
+Some concluding text.
+      ✔ | abc | defghi |
+:-: | -----------:
+bar | baz
+bar | baz | bad
+      ✔ | abc | def |
+| --- | --- |
+| bar | baz | Extra |
+> This is a blockquote after
+      ✔ | abc | def |
+| --- | --- |
+| bar | baz | Extra1 |
+| bar | baz | Extra2 |
+      ✔ | abc | def |
+| --- | --- |
+| bar | baz | Extra1 |
+   | bar | baz |
+| bar | baz | Extra2 |
+      ✔ | Header | Header | Header |
+| ------ | ------ | ------ |
+| Cell   | Cell   |
+      ✔ | Col A | Col B | Col C |
+| ----- | ----- | ----- |
+| Cell  |       | Cell  |
+| Cell  | Cell  |
+      ✔ | Col A | Col B | Col C |
+| ----- | ----- | ----- |
+| Cell  |
+| Cell  | Cell  |
+| Cell  | Cell  | Cell  |
+      ✔ | Table |
+| ----- |
+| Cell  | Cell  |
+| Cell  |
+| Cell  | Cell  |
+      ✔ | Table | Header |
+| ----- | ------ |
+| Cell  | Cell   | Cell   |
+| Cell  |
+| Cell  | Cell   |
+      ✔ | Table | Header | Header |
+| ----- | ------ | ------ |
+| Cell  | Cell   | Cell   |
+| Cell  | Cell   | Cell   | Cell   |
+| Cell  |
+
+  util
+    frontmatterHasTitle()
+      ✔ should return false if pattern is null
+      ✔ should return true when the title matches the pattern
+      ✔ should return false when the title does not match the pattern
+      ✔ should return true if the pattern matches any line in multiline frontmatter (CRLF)
+      ✔ should return true if the pattern matches any line in multiline frontmatter (CR)
+      ✔ should return true if the pattern matches any line in multiline frontmatter (LF)
+      ✔ should return false for empty frontmatter
+    stripHtmlComments()
+      ✔ should replace single-line HTML comments with spaces
+      ✔ should replace multi-line HTML comments with spaces
+      ✔ should handle surrogate pairs like emojis correctly
+
+
+  1479 passing (4s)
+

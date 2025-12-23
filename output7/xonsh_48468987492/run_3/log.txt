@@ -1,0 +1,2563 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.0rc1, pytest-8.4.1, pluggy-1.6.0
+cachedir: .cache/pytest
+rootdir: /app
+configfile: setup.cfg
+testpaths: tests
+plugins: xonsh-0.19.9, timeout-2.4.0, subprocess-1.5.3, rerunfailures-16.0.1, mock-3.14.1, cov-6.2.1
+timeout: 240.0s
+timeout method: signal
+timeout func_only: False
+collected 5186 items
+
+tests/api/test_os.xsh .F                                                 [  0%]
+tests/api/test_subprocess.xsh ....                                       [  0%]
+tests/test_xonsh.xsh ...                                                 [  0%]
+tests/aliases/test_completer_alias.py .......                            [  0%]
+tests/aliases/test_source.py F...                                        [  0%]
+tests/aliases/test_xexec.py .......                                      [  0%]
+tests/built_ins/test_tracer.py .F                                        [  0%]
+tests/built_ins/test_wizard.py ....                                      [  0%]
+tests/built_ins/test_xonfig.py ..........                                [  0%]
+tests/built_ins/test_xontribs.py ........                                [  0%]
+tests/completers/test_base_completer.py ..                               [  1%]
+tests/completers/test_bash_completer.py EEEEEEEEEEEEEEEEEEEE             [  1%]
+tests/completers/test_command_completers.py .....                        [  1%]
+tests/completers/test_completer_command.py ......                        [  1%]
+tests/completers/test_dir_completers.py FFEEEEEEF                        [  1%]
+tests/completers/test_environment_completer.py .....                     [  1%]
+tests/completers/test_gh.py ss                                           [  1%]
+tests/completers/test_path_completers.py ...............                 [  2%]
+tests/completers/test_pip_completer.py ..............F                   [  2%]
+tests/completers/test_python.py .........................                [  2%]
+tests/completers/test_xompletions.py .....                               [  3%]
+tests/history/test_history_dummy.py ......                               [  3%]
+tests/history/test_history_json.py ..................................... [  3%]
+............FFF                                                          [  4%]
+tests/history/test_history_sqlite.py ......................              [  4%]
+tests/lib/test_collections.py ..............                             [  4%]
+tests/lib/test_itertools.py ...                                          [  4%]
+tests/lib/test_jsonutils.py .......                                      [  5%]
+tests/lib/test_lazyasd.py .                                              [  5%]
+tests/lib/test_lazyjson.py ...................                           [  5%]
+tests/lib/test_pretty.py ...........                                     [  5%]
+tests/parsers/test_ast.py ............................                   [  6%]
+tests/parsers/test_lexer.py ............................................ [  7%]
+.................................................                        [  8%]
+tests/parsers/test_parser.py ........................................... [  8%]
+.......................................................x................ [ 10%]
+........................................................................ [ 11%]
+........................................................................ [ 13%]
+........................................................................ [ 14%]
+........................................................................ [ 15%]
+........................................................................ [ 17%]
+........................................................................ [ 18%]
+........................................................................ [ 19%]
+........................................................................ [ 21%]
+........................................................................ [ 22%]
+........................................................................ [ 24%]
+........................................................................ [ 25%]
+........................................................................ [ 26%]
+........................................................................ [ 28%]
+........................................................................ [ 29%]
+........................................................................ [ 31%]
+........................................................................ [ 32%]
+........................................................................ [ 33%]
+........................................................................ [ 35%]
+........................................................................ [ 36%]
+........................................................................ [ 38%]
+........................................................................ [ 39%]
+........................................................................ [ 40%]
+........................................................................ [ 42%]
+........................................................................ [ 43%]
+........................................................................ [ 44%]
+........................................................................ [ 46%]
+........................................................................ [ 47%]
+........................................................................ [ 49%]
+........................................................................ [ 50%]
+..                                                                       [ 50%]
+tests/platform/test_platform.py ..                                       [ 50%]
+tests/procs/test_executables.py .FF.                                     [ 50%]
+tests/procs/test_jobs.py ..                                              [ 50%]
+tests/procs/test_pipelines.py .....s...................s                 [ 51%]
+tests/procs/test_specs.py .....................ssss....ssss............. [ 52%]
+....................F.......                                             [ 52%]
+tests/prompt/test_base.py .............................................. [ 53%]
+.....x....                                                               [ 53%]
+tests/prompt/test_cwd.py .                                               [ 53%]
+tests/prompt/test_gitstatus.py ....                                      [ 53%]
+tests/prompt/test_job.py .                                               [ 53%]
+tests/prompt/test_vc.py sss.ssssss..                                     [ 54%]
+tests/shell/test_base_shell.py .....                                     [ 54%]
+tests/shell/test_ptk_completer.py ..................                     [ 54%]
+tests/shell/test_ptk_highlight.py .......................                [ 54%]
+tests/shell/test_ptk_history.py .                                        [ 54%]
+tests/shell/test_ptk_multiline.py .......                                [ 55%]
+tests/shell/test_ptk_shell.py ....................                       [ 55%]
+tests/shell/test_readline_shell.py ............                          [ 55%]
+tests/shell/test_shell.py ...                                            [ 55%]
+tests/test_aliases.py ..............................                     [ 56%]
+tests/test_ansi_colors.py .............................................. [ 57%]
+........................................................................ [ 58%]
+........................................................................ [ 60%]
+........................................................................ [ 61%]
+........................................................................ [ 62%]
+........................................................................ [ 64%]
+........................................................................ [ 65%]
+........................................................................ [ 66%]
+........................................................................ [ 68%]
+........................................................................ [ 69%]
+.................                                                        [ 70%]
+tests/test_builtins.py sF............................................... [ 70%]
+........................................                                 [ 71%]
+tests/test_cli_utils.py ....                                             [ 71%]
+tests/test_color_tools.py ............................                   [ 72%]
+tests/test_commands_cache.py .................................F......... [ 73%]
+.......                                                                  [ 73%]
+tests/test_completer.py ..........                                       [ 73%]
+tests/test_completion_context.py ....................................... [ 74%]
+........................................................................ [ 75%]
+........................................................................ [ 77%]
+........................................................................ [ 78%]
+........................................................................ [ 79%]
+.................................................                        [ 80%]
+tests/test_contexts.py .........................                         [ 81%]
+tests/test_dirstack.py ........                                          [ 81%]
+tests/test_dirstack_unc.py ..ssssssss                                    [ 81%]
+tests/test_environ.py ...................s.............................. [ 82%]
+....................                                                     [ 82%]
+tests/test_events.py ..........                                          [ 83%]
+tests/test_execer.py ss................................                  [ 83%]
+tests/test_foreign_shells.py .....s                                      [ 83%]
+tests/test_imphooks.py ........                                          [ 84%]
+tests/test_integrations.py .................................x........... [ 84%]
+....X............................sss.................................... [ 86%]
+.....                                                                    [ 86%]
+tests/test_main.py ..................................................... [ 87%]
+...........F......                                                       [ 87%]
+tests/test_man.py FFs                                                    [ 87%]
+tests/test_pyghooks.py ................................................. [ 88%]
+..................................                                       [ 89%]
+tests/test_tools.py .................................................... [ 90%]
+........................................................................ [ 91%]
+........................................................................ [ 93%]
+........................................................................ [ 94%]
+........................................................................ [ 96%]
+................FF............F......................................... [ 97%]
+........................................................................ [ 98%]
+..............................................                           [ 99%]
+tests/test_virtualenv_activator.py ..                                    [ 99%]
+tests/xoreutils/test_cat.py ........                                     [ 99%]
+tests/xoreutils/test_uname.py .                                          [ 99%]
+tests/xoreutils/test_uptime.py .                                         [ 99%]
+tests/xoreutils/test_which.py ....                                       [100%]
+
+==================================== ERRORS ====================================
+____ ERROR at setup of test_bash_completer[command_context0-completions0-5] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d173810>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_bash_completer_command_co0')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d173810>
+path = '/tmp/pytest-of-root/pytest-0/test_bash_completer_command_co0'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_bash_completer[command_context1-completions1-0] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d25fad0>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_bash_completer_command_co1')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d25fad0>
+path = '/tmp/pytest-of-root/pytest-0/test_bash_completer_command_co1'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_bash_completer[command_context2-completions2-2] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d2ad990>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_bash_completer_command_co2')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d2ad990>
+path = '/tmp/pytest-of-root/pytest-0/test_bash_completer_command_co2'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_bash_completer[command_context3-completions3-1] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d4540d0>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_bash_completer_command_co3')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d4540d0>
+path = '/tmp/pytest-of-root/pytest-0/test_bash_completer_command_co3'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_quote_handling[command_context0-completions0-4] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d172f10>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co0')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d172f10>
+path = '/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co0'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_quote_handling[command_context1-completions1-5] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1d5fd0>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co1')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1d5fd0>
+path = '/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co1'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_quote_handling[command_context2-completions2-5] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d14d890>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co2')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d14d890>
+path = '/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co2'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_quote_handling[command_context3-completions3-6] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d2d5a50>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co3')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d2d5a50>
+path = '/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co3'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+___ ERROR at setup of test_quote_handling[command_context4-completions4-10] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d48e010>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co4')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d48e010>
+path = '/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co4'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_quote_handling[command_context5-completions5-4] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d487650>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co5')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d487650>
+path = '/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co5'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_quote_handling[command_context6-completions6-5] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d456b90>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co6')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d456b90>
+path = '/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co6'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_quote_handling[command_context7-completions7-5] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1d9810>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co7')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1d9810>
+path = '/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co7'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+____ ERROR at setup of test_quote_handling[command_context8-completions8-6] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1b7190>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co8')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1b7190>
+path = '/tmp/pytest-of-root/pytest-0/test_quote_handling_command_co8'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+______________ ERROR at setup of test_bash_completer_empty_prefix ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1ed6d0>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_bash_completer_empty_pref0')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1ed6d0>
+path = '/tmp/pytest-of-root/pytest-0/test_bash_completer_empty_pref0'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+_ ERROR at setup of test_equal_sign_arg[command_context0-completions0-3-False] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1da6d0>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co0')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1da6d0>
+path = '/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co0'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+_ ERROR at setup of test_equal_sign_arg[command_context1-completions1-3-True] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1479d0>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co1')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1479d0>
+path = '/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co1'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+_ ERROR at setup of test_equal_sign_arg[command_context2-completions2-2-True] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d14d510>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co2')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d14d510>
+path = '/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co2'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+_ ERROR at setup of test_equal_sign_arg[command_context3-completions3-3-False] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1d75d0>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co3')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1d75d0>
+path = '/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co3'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+_ ERROR at setup of test_equal_sign_arg[command_context4-completions4-8-True] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d142890>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co4')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d142890>
+path = '/tmp/pytest-of-root/pytest-0/test_equal_sign_arg_command_co4'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+_______________ ERROR at setup of test_git_delete_remote_branch ________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1b6d50>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_git_delete_remote_branch0')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.fixture(autouse=True)
+    def setup(monkeypatch, tmp_path, xession):
+        if not xession.env.get("BASH_COMPLETIONS"):
+            monkeypatch.setitem(
+                xession.env,
+                "BASH_COMPLETIONS",
+                ["/usr/share/bash-completion/bash_completion"],
+            )
+
+        (tmp_path / "testdir").mkdir()
+        (tmp_path / "spaced dir").mkdir()
+>       monkeypatch.chdir(str(tmp_path))
+
+/app/tests/completers/test_bash_completer.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4d1b6d50>
+path = '/tmp/pytest-of-root/pytest-0/test_git_delete_remote_branch0'
+
+    def chdir(self, path: str | os.PathLike[str]) -> None:
+        """Change the current working directory to the specified path.
+
+        :param path:
+            The path to change into.
+        """
+        if self._cwd is None:
+>           self._cwd = os.getcwd()
+                        ^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory
+
+/app/venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:371: FileNotFoundError
+_____________________ ERROR at setup of test_dirs_only[cd] _____________________
+
+    @pytest.fixture(scope="module")
+    def dir_path():
+>       with tempfile.TemporaryDirectory(dir=".", suffix="_dummyDir") as tmp_path:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/completers/test_dir_completers.py:32:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/tempfile.py:993: in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+suffix = '_dummyDir', prefix = 'tmp', dir = '.'
+
+    def mkdtemp(suffix=None, prefix=None, dir=None):
+        """User-callable function to create and return a unique temporary
+        directory.  The return value is the pathname of the directory.
+
+        Arguments are as for mkstemp, except that the 'text' argument is
+        not accepted.
+
+        The directory is readable, writable, and searchable only by the
+        creating user.
+
+        Caller is responsible for deleting the directory when done with it.
+        """
+
+        prefix, suffix, dir, output_type = _sanitize_params(prefix, suffix, dir)
+
+        names = _get_candidate_names()
+        if output_type is bytes:
+            names = map(_os.fsencode, names)
+
+        for seq in range(TMP_MAX):
+            name = next(names)
+            file = _os.path.join(dir, prefix + name + suffix)
+            _sys.audit("tempfile.mkdtemp", file)
+            try:
+>               _os.mkdir(file, 0o700)
+E               FileNotFoundError: [Errno 2] No such file or directory: './tmp6gqwr_ib_dummyDir'
+
+/usr/lib/python3.11/tempfile.py:507: FileNotFoundError
+___________________ ERROR at setup of test_dirs_only[rmdir] ____________________
+
+    @pytest.fixture(scope="module")
+    def dir_path():
+>       with tempfile.TemporaryDirectory(dir=".", suffix="_dummyDir") as tmp_path:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/completers/test_dir_completers.py:32:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/tempfile.py:993: in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+suffix = '_dummyDir', prefix = 'tmp', dir = '.'
+
+    def mkdtemp(suffix=None, prefix=None, dir=None):
+        """User-callable function to create and return a unique temporary
+        directory.  The return value is the pathname of the directory.
+
+        Arguments are as for mkstemp, except that the 'text' argument is
+        not accepted.
+
+        The directory is readable, writable, and searchable only by the
+        creating user.
+
+        Caller is responsible for deleting the directory when done with it.
+        """
+
+        prefix, suffix, dir, output_type = _sanitize_params(prefix, suffix, dir)
+
+        names = _get_candidate_names()
+        if output_type is bytes:
+            names = map(_os.fsencode, names)
+
+        for seq in range(TMP_MAX):
+            name = next(names)
+            file = _os.path.join(dir, prefix + name + suffix)
+            _sys.audit("tempfile.mkdtemp", file)
+            try:
+>               _os.mkdir(file, 0o700)
+E               FileNotFoundError: [Errno 2] No such file or directory: './tmp6gqwr_ib_dummyDir'
+
+/usr/lib/python3.11/tempfile.py:507: FileNotFoundError
+__________________ ERROR at setup of test_opening_quotes[cd] ___________________
+
+    @pytest.fixture(scope="module")
+    def dir_path():
+>       with tempfile.TemporaryDirectory(dir=".", suffix="_dummyDir") as tmp_path:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/completers/test_dir_completers.py:32:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/tempfile.py:993: in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+suffix = '_dummyDir', prefix = 'tmp', dir = '.'
+
+    def mkdtemp(suffix=None, prefix=None, dir=None):
+        """User-callable function to create and return a unique temporary
+        directory.  The return value is the pathname of the directory.
+
+        Arguments are as for mkstemp, except that the 'text' argument is
+        not accepted.
+
+        The directory is readable, writable, and searchable only by the
+        creating user.
+
+        Caller is responsible for deleting the directory when done with it.
+        """
+
+        prefix, suffix, dir, output_type = _sanitize_params(prefix, suffix, dir)
+
+        names = _get_candidate_names()
+        if output_type is bytes:
+            names = map(_os.fsencode, names)
+
+        for seq in range(TMP_MAX):
+            name = next(names)
+            file = _os.path.join(dir, prefix + name + suffix)
+            _sys.audit("tempfile.mkdtemp", file)
+            try:
+>               _os.mkdir(file, 0o700)
+E               FileNotFoundError: [Errno 2] No such file or directory: './tmp6gqwr_ib_dummyDir'
+
+/usr/lib/python3.11/tempfile.py:507: FileNotFoundError
+_________________ ERROR at setup of test_opening_quotes[rmdir] _________________
+
+    @pytest.fixture(scope="module")
+    def dir_path():
+>       with tempfile.TemporaryDirectory(dir=".", suffix="_dummyDir") as tmp_path:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/completers/test_dir_completers.py:32:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/tempfile.py:993: in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+suffix = '_dummyDir', prefix = 'tmp', dir = '.'
+
+    def mkdtemp(suffix=None, prefix=None, dir=None):
+        """User-callable function to create and return a unique temporary
+        directory.  The return value is the pathname of the directory.
+
+        Arguments are as for mkstemp, except that the 'text' argument is
+        not accepted.
+
+        The directory is readable, writable, and searchable only by the
+        creating user.
+
+        Caller is responsible for deleting the directory when done with it.
+        """
+
+        prefix, suffix, dir, output_type = _sanitize_params(prefix, suffix, dir)
+
+        names = _get_candidate_names()
+        if output_type is bytes:
+            names = map(_os.fsencode, names)
+
+        for seq in range(TMP_MAX):
+            name = next(names)
+            file = _os.path.join(dir, prefix + name + suffix)
+            _sys.audit("tempfile.mkdtemp", file)
+            try:
+>               _os.mkdir(file, 0o700)
+E               FileNotFoundError: [Errno 2] No such file or directory: './tmp6gqwr_ib_dummyDir'
+
+/usr/lib/python3.11/tempfile.py:507: FileNotFoundError
+__________________ ERROR at setup of test_closing_quotes[cd] ___________________
+
+    @pytest.fixture(scope="module")
+    def dir_path():
+>       with tempfile.TemporaryDirectory(dir=".", suffix="_dummyDir") as tmp_path:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/completers/test_dir_completers.py:32:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/tempfile.py:993: in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+suffix = '_dummyDir', prefix = 'tmp', dir = '.'
+
+    def mkdtemp(suffix=None, prefix=None, dir=None):
+        """User-callable function to create and return a unique temporary
+        directory.  The return value is the pathname of the directory.
+
+        Arguments are as for mkstemp, except that the 'text' argument is
+        not accepted.
+
+        The directory is readable, writable, and searchable only by the
+        creating user.
+
+        Caller is responsible for deleting the directory when done with it.
+        """
+
+        prefix, suffix, dir, output_type = _sanitize_params(prefix, suffix, dir)
+
+        names = _get_candidate_names()
+        if output_type is bytes:
+            names = map(_os.fsencode, names)
+
+        for seq in range(TMP_MAX):
+            name = next(names)
+            file = _os.path.join(dir, prefix + name + suffix)
+            _sys.audit("tempfile.mkdtemp", file)
+            try:
+>               _os.mkdir(file, 0o700)
+E               FileNotFoundError: [Errno 2] No such file or directory: './tmp6gqwr_ib_dummyDir'
+
+/usr/lib/python3.11/tempfile.py:507: FileNotFoundError
+_________________ ERROR at setup of test_closing_quotes[rmdir] _________________
+
+    @pytest.fixture(scope="module")
+    def dir_path():
+>       with tempfile.TemporaryDirectory(dir=".", suffix="_dummyDir") as tmp_path:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/completers/test_dir_completers.py:32:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/tempfile.py:993: in __init__
+    self.name = mkdtemp(suffix, prefix, dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+suffix = '_dummyDir', prefix = 'tmp', dir = '.'
+
+    def mkdtemp(suffix=None, prefix=None, dir=None):
+        """User-callable function to create and return a unique temporary
+        directory.  The return value is the pathname of the directory.
+
+        Arguments are as for mkstemp, except that the 'text' argument is
+        not accepted.
+
+        The directory is readable, writable, and searchable only by the
+        creating user.
+
+        Caller is responsible for deleting the directory when done with it.
+        """
+
+        prefix, suffix, dir, output_type = _sanitize_params(prefix, suffix, dir)
+
+        names = _get_candidate_names()
+        if output_type is bytes:
+            names = map(_os.fsencode, names)
+
+        for seq in range(TMP_MAX):
+            name = next(names)
+            file = _os.path.join(dir, prefix + name + suffix)
+            _sys.audit("tempfile.mkdtemp", file)
+            try:
+>               _os.mkdir(file, 0o700)
+E               FileNotFoundError: [Errno 2] No such file or directory: './tmp6gqwr_ib_dummyDir'
+
+/usr/lib/python3.11/tempfile.py:507: FileNotFoundError
+=================================== FAILURES ===================================
+___________________________ xonsh test: test_rmtree ____________________________
+xonsh execution failed
+  File "/app/tests/api/test_os.xsh", line 33, in test_rmtree
+    git init
+
+  File "/app/xonsh/built_ins.py", line 223, in subproc_captured_hiddenobject
+    return xonsh.procs.specs.run_subproc(cmds, captured="hiddenobject", envs=envs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/xonsh/procs/specs.py", line 1107, in run_subproc
+    return _run_specs(specs, cmds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/xonsh/procs/specs.py", line 1153, in _run_specs
+    cp.end()
+  File "/app/xonsh/procs/pipelines.py", line 481, in end
+    self._end(tee_output=tee_output)
+  File "/app/xonsh/procs/pipelines.py", line 500, in _end
+    self._raise_subproc_error()
+  File "/app/xonsh/procs/pipelines.py", line 646, in _raise_subproc_error
+    raise subprocess.CalledProcessError(rtn, spec.args, output=self.output)
+CalledProcessError: Command '['git', 'init']' returned non-zero exit status 1.
+----------------------------- Captured stdout call -----------------------------
+/tmp/tmphqdb497i/rmtree_test /tmp/tmphqdb497i /app
+----------------------------- Captured stderr call -----------------------------
+xonsh: For full traceback set: $XONSH_SHOW_TRACEBACK = True
+xonsh.tools.XonshError: xonsh: subprocess mode: command not found: 'git'
+Did you mean one of the following?
+    id:    Command (id)
+    tic:   Command (tic)
+    gpg:   Command (gpg)
+    exit:  Alias
+    quit:  Alias
+___________________________ test_source_current_dir ____________________________
+
+mockopen = None
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4ee78e90>
+mocked_execx_checker = []
+
+    def test_source_current_dir(mockopen, monkeypatch, mocked_execx_checker):
+        monkeypatch.setattr(os.path, "isfile", lambda x: True)
+>       source_alias(["foo", "bar"])
+
+/app/tests/aliases/test_source.py:34:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/aliases.py:787: in source_alias
+    updates = {"__file__": fpath, "__name__": os.path.abspath(fpath)}
+                                              ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = 'foo'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+_____________________________ test_trace_in_script _____________________________
+
+    def test_trace_in_script():
+        CURRENT_DIR = Path(__file__).parent
+        cmd = [sys.executable, "-m", "xonsh", str(CURRENT_DIR / "tracer" / "example.xsh")]
+        env = {"XONSH_SHOW_TRACEBACK": "True"}
+        if sys.platform == "win32":
+            # required for an empty environment on Windows. see python/cpython#120836
+            for ev in W_ENV.split():
+                env[ev] = os.environ[ev]
+        expected = dedent(
+            """\
+            Some output!
+            tests/built_ins/tracer/example.xsh:3:variable = ""
+            tests/built_ins/tracer/example.xsh:4:for part in parts:
+            tests/built_ins/tracer/example.xsh:5:    variable += part
+            tests/built_ins/tracer/example.xsh:4:for part in parts:
+            tests/built_ins/tracer/example.xsh:5:    variable += part
+            tests/built_ins/tracer/example.xsh:4:for part in parts:
+            tests/built_ins/tracer/example.xsh:5:    variable += part
+            tests/built_ins/tracer/example.xsh:4:for part in parts:
+            tests/built_ins/tracer/example.xsh:6:echo Some @(variable)
+            """
+        ).replace("/", os.sep)
+        proc = subprocess.run(cmd, capture_output=True, encoding="utf8", env=env)
+>       assert proc.returncode == 0
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/app/venv/bin/python3.11', '-m', 'xonsh', '/app/tests/built_ins/tracer/example.xsh'], returnco... relpath\n  File "<frozen posixpath>", line 403, in abspath\nFileNotFoundError: [Errno 2] No such file or directory\n').returncode
+
+/app/tests/built_ins/test_tracer.py:53: AssertionError
+_______________________________ test_non_dir[cd] _______________________________
+
+cmd = 'cd'
+check_completer = <function check_completer.<locals>._factory at 0x7fec4eb993a0>
+
+    def test_non_dir(cmd, check_completer):
+>       with tempfile.NamedTemporaryFile(dir=".", suffix="_dummySuffix") as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/completers/test_dir_completers.py:26:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/tempfile.py:702: in NamedTemporaryFile
+    file = _io.open(dir, mode, buffering=buffering,
+/usr/lib/python3.11/tempfile.py:699: in opener
+    fd, name = _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/tempfile.py:385: in _mkstemp_inner
+    dir = _os.path.abspath(dir)
+          ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = '.'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+_____________________________ test_non_dir[rmdir] ______________________________
+
+cmd = 'rmdir'
+check_completer = <function check_completer.<locals>._factory at 0x7fec4d05a980>
+
+    def test_non_dir(cmd, check_completer):
+>       with tempfile.NamedTemporaryFile(dir=".", suffix="_dummySuffix") as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/completers/test_dir_completers.py:26:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/tempfile.py:702: in NamedTemporaryFile
+    file = _io.open(dir, mode, buffering=buffering,
+/usr/lib/python3.11/tempfile.py:699: in opener
+    fd, name = _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/tempfile.py:385: in _mkstemp_inner
+    dir = _os.path.abspath(dir)
+          ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = '.'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+______________________________ test_complete_dots ______________________________
+
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+check_completer = <function check_completer.<locals>._factory at 0x7fec4d0d0720>
+
+    def test_complete_dots(xession, check_completer):
+        with xession.env.swap(COMPLETE_DOTS="never"):
+            dirs = check_completer("cd")
+>           assert CUR_DIR not in dirs and PARENT_DIR not in dirs
+E           AssertionError: assert ('./' not in {'./'})
+
+/app/tests/completers/test_dir_completers.py:67: AssertionError
+__________________ test_completions[pip show--pip_installed] ___________________
+
+line = 'pip show', prefix = '', exp = <function pip_installed at 0x7fec543936a0>
+check_completer = <function check_completer.<locals>._factory at 0x7fec4d0bab60>
+xsh_with_env = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @pytest.mark.parametrize(
+        "line, prefix, exp",
+        [
+            ["pip", "c", {"cache", "check", "config"}],
+            ["pip show", "", pip_installed],
+        ],
+    )
+    def test_completions(line, prefix, exp, check_completer, xsh_with_env):
+        # use the actual PATH from os. Otherwise subproc will fail on windows. `unintialized python...`
+        comps = check_completer(line, prefix=prefix)
+
+        if callable(exp):
+>           exp = exp()
+                  ^^^^^
+
+/app/tests/completers/test_pip_completer.py:62:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/tests/completers/test_pip_completer.py:43: in pip_installed
+    out = subprocess.check_output(
+/usr/lib/python3.11/subprocess.py:465: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['pip', 'list', '--format=json', '--disable-pip-version-check'],)
+kwargs = {'stdout': -1}
+process = <Popen: returncode: 2 args: ['pip', 'list', '--format=json', '--disable-pip-...>
+stdout = b'', stderr = None, retcode = 2
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them.
+
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['pip', 'list', '--format=json', '--disable-pip-version-check']' returned non-zero exit status 2.
+
+/usr/lib/python3.11/subprocess.py:569: CalledProcessError
+----------------------------- Captured stderr call -----------------------------
+ERROR: Exception:
+Traceback (most recent call last):
+  File "/app/venv/lib/python3.11/site-packages/pip/_internal/cli/base_command.py", line 107, in _run_wrapper
+    status = _inner_run()
+             ^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/pip/_internal/cli/base_command.py", line 98, in _inner_run
+    return self.run(options, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/pip/_internal/commands/list.py", line 185, in run
+    for d in get_environment(options.path).iter_installed_distributions(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/pip/_internal/metadata/__init__.py", line 122, in get_environment
+    return select_backend().Environment.from_paths(paths)
+           ^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/pip/_internal/metadata/__init__.py", line 100, in select_backend
+    from . import pkg_resources
+  File "/app/venv/lib/python3.11/site-packages/pip/_internal/metadata/pkg_resources.py", line 13, in <module>
+    from pip._vendor import pkg_resources
+  File "/app/venv/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3623, in <module>
+    @_call_aside
+     ^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3607, in _call_aside
+    f(*args, **kwargs)
+  File "/app/venv/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3648, in _initialize_master_working_set
+    tuple(dist.activate(replace=False) for dist in working_set)
+  File "/app/venv/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3648, in <genexpr>
+    tuple(dist.activate(replace=False) for dist in working_set)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3111, in activate
+    self.insert_on(path, replace=replace)
+  File "/app/venv/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3233, in insert_on
+    npath = [(p and _normalize_cached(p) or p) for p in path]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py", line 3233, in <listcomp>
+    npath = [(p and _normalize_cached(p) or p) for p in path]
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py", line 2631, in _normalize_cached
+    return normalize_path(filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py", line 2605, in normalize_path
+    return os.path.normcase(os.path.realpath(os.path.normpath(_cygwin_patch(filename))))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 416, in realpath
+  File "<frozen posixpath>", line 403, in abspath
+FileNotFoundError: [Errno 2] No such file or directory
+_____________________________ test_hist_pull[None] _____________________________
+
+src_sessionid = None
+ptk_shell = (<prompt_toolkit.input.posix_pipe.PosixPipeInput object at 0x7fec4cf85950>, <prompt_toolkit.output.base.DummyOutput object at 0x7fec4cf84d90>, <xonsh.shells.ptk_shell.PromptToolkitShell object at 0x7fec4cf86550>)
+tmpdir = local('/tmp/pytest-of-root/pytest-0/test_hist_pull_None_0')
+xonsh_session = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4cf71850>
+
+    @pytest.mark.parametrize(
+        "src_sessionid", [None, "e2265764-041c-4c57-acba-49d4e4f676e5"]
+    )
+    def test_hist_pull(src_sessionid, ptk_shell, tmpdir, xonsh_session, monkeypatch):
+        """Test that `pull` method correctly loads history entries
+        added to the database by other sessions."""
+        xonsh_session.env["XONSH_DATA_DIR"] = str(tmpdir)
+        before = time.time()
+
+        # simulate commands being run in other sessions before this session starts
+        hist_a = JsonHistory(sessionid=src_sessionid, gc=False)
+        hist_a.append({"inp": "cmd hist_a before", "rtn": 0, "ts": [before, before]})
+        hist_b = JsonHistory(gc=False)
+        hist_b.append({"inp": "cmd hist_b before", "rtn": 0, "ts": [before, before]})
+
+        hist_main = JsonHistory(gc=False)
+
+        # simulate commands being run in other sessions after this session starts
+        after = time.time() + 1
+        hist_a.append({"inp": "cmd hist_a after", "rtn": 0, "ts": [after, after]})
+        hist_b.append({"inp": "cmd hist_b after", "rtn": 0, "ts": [after + 1, after + 1]})
+
+        # give the filesystem long enough that it will update the mtime
+        time.sleep(0.01)
+        # at_exit ensures that we run the flush synchronously instead of in a background thread
+        hist_a.flush(at_exit=True)
+        hist_b.flush(at_exit=True)
+
+        # pull only works with PTK shell
+        monkeypatch.setattr(xonsh_session.shell, "shell", ptk_shell[2])
+>       hist_main.pull(src_sessionid=src_sessionid)
+
+/app/tests/history/test_history_json.py:648:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/history/json.py:652: in pull
+    for item in _xhj_pull_items(self.last_pull_times, src_sessionid):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/history/json.py:169: in _xhj_pull_items
+    current_session_path = xt.expanduser_abs_path(custom_history_file)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/tools.py:2576: in expanduser_abs_path
+    return os.path.abspath(expanduser(inp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = ''
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+_____________ test_hist_pull[e2265764-041c-4c57-acba-49d4e4f676e5] _____________
+
+src_sessionid = 'e2265764-041c-4c57-acba-49d4e4f676e5'
+ptk_shell = (<prompt_toolkit.input.posix_pipe.PosixPipeInput object at 0x7fec4cf70090>, <prompt_toolkit.output.base.DummyOutput object at 0x7fec4cf84890>, <xonsh.shells.ptk_shell.PromptToolkitShell object at 0x7fec4d188d50>)
+tmpdir = local('/tmp/pytest-of-root/pytest-0/test_hist_pull_e2265764_041c_40')
+xonsh_session = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4cc38c50>
+
+    @pytest.mark.parametrize(
+        "src_sessionid", [None, "e2265764-041c-4c57-acba-49d4e4f676e5"]
+    )
+    def test_hist_pull(src_sessionid, ptk_shell, tmpdir, xonsh_session, monkeypatch):
+        """Test that `pull` method correctly loads history entries
+        added to the database by other sessions."""
+        xonsh_session.env["XONSH_DATA_DIR"] = str(tmpdir)
+        before = time.time()
+
+        # simulate commands being run in other sessions before this session starts
+        hist_a = JsonHistory(sessionid=src_sessionid, gc=False)
+        hist_a.append({"inp": "cmd hist_a before", "rtn": 0, "ts": [before, before]})
+        hist_b = JsonHistory(gc=False)
+        hist_b.append({"inp": "cmd hist_b before", "rtn": 0, "ts": [before, before]})
+
+        hist_main = JsonHistory(gc=False)
+
+        # simulate commands being run in other sessions after this session starts
+        after = time.time() + 1
+        hist_a.append({"inp": "cmd hist_a after", "rtn": 0, "ts": [after, after]})
+        hist_b.append({"inp": "cmd hist_b after", "rtn": 0, "ts": [after + 1, after + 1]})
+
+        # give the filesystem long enough that it will update the mtime
+        time.sleep(0.01)
+        # at_exit ensures that we run the flush synchronously instead of in a background thread
+        hist_a.flush(at_exit=True)
+        hist_b.flush(at_exit=True)
+
+        # pull only works with PTK shell
+        monkeypatch.setattr(xonsh_session.shell, "shell", ptk_shell[2])
+>       hist_main.pull(src_sessionid=src_sessionid)
+
+/app/tests/history/test_history_json.py:648:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/history/json.py:652: in pull
+    for item in _xhj_pull_items(self.last_pull_times, src_sessionid):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/history/json.py:169: in _xhj_pull_items
+    current_session_path = xt.expanduser_abs_path(custom_history_file)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/tools.py:2576: in expanduser_abs_path
+    return os.path.abspath(expanduser(inp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = ''
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+_____________________________ test_hist_pull_mixed _____________________________
+
+ptk_shell = (<prompt_toolkit.input.posix_pipe.PosixPipeInput object at 0x7fec4cc381d0>, <prompt_toolkit.output.base.DummyOutput object at 0x7fec4cc38e50>, <xonsh.shells.ptk_shell.PromptToolkitShell object at 0x7fec4cc38210>)
+tmpdir = local('/tmp/pytest-of-root/pytest-0/test_hist_pull_mixed0')
+xonsh_session = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec4cf72bd0>
+
+    def test_hist_pull_mixed(ptk_shell, tmpdir, xonsh_session, monkeypatch):
+        """Test that mixing general pull with session-specific pull
+        does not result in missed or duplicate items.
+        """
+        xonsh_session.env["XONSH_DATA_DIR"] = str(tmpdir)
+        monkeypatch.setattr(xonsh_session.shell, "shell", ptk_shell[2])
+
+        # make sure that all of our fake commands have real, sequential timestamps
+        def cmd(inp):
+            start, end = time.time(), time.time()
+            return {"inp": inp, "rtn": 0, "ts": [start, end]}
+
+        hist_a = JsonHistory(gc=False)
+        hist_b = JsonHistory(gc=False)
+        hist_main = JsonHistory(gc=False)
+
+        # windows time.time() has ~16ms granularity, so we need to give it some time to increment
+        time.sleep(0.032)
+        hist_a.append(cmd("a1"))
+        time.sleep(0.032)
+        hist_b.append(cmd("b1"))
+
+        # filesystem mtimes and time.time() don't always match up perfectly,
+        # so we need a little bit of fudge time
+        time.sleep(0.032)
+        hist_a.flush()
+        hist_b.flush()
+        time.sleep(0.032)
+>       hist_main.pull(src_sessionid=str(hist_a.sessionid))
+
+/app/tests/history/test_history_json.py:688:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/history/json.py:652: in pull
+    for item in _xhj_pull_items(self.last_pull_times, src_sessionid):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/history/json.py:169: in _xhj_pull_items
+    current_session_path = xt.expanduser_abs_path(custom_history_file)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/tools.py:2576: in expanduser_abs_path
+    return os.path.abspath(expanduser(inp))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = ''
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+________________________________ test_get_paths ________________________________
+
+tmpdir = local('/tmp/pytest-of-root/pytest-0/test_get_paths0')
+
+    def test_get_paths(tmpdir):
+        bindir1 = str(tmpdir.mkdir("bindir1"))
+        bindir2 = str(tmpdir.mkdir("bindir2"))
+        env = Env(PATH=[bindir1, bindir2, bindir1, "nodir"])
+>       assert get_paths(env) == (bindir2, bindir1)
+               ^^^^^^^^^^^^^^
+
+/app/tests/procs/test_executables.py:24:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/procs/executables.py:38: in get_paths
+    return tuple(reversed(tuple(clear_paths(env.get("PATH") or []))))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/lib/itertools.py:54: in unique_everseen
+    for element in filterfalse(seen.__contains__, iterable):
+<frozen posixpath>:416: in realpath
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = 'nodir'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+____________________________ test_locate_executable ____________________________
+
+tmpdir = local('/tmp/pytest-of-root/pytest-0/test_locate_executable0')
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    def test_locate_executable(tmpdir, xession):
+        bindir0 = tmpdir.mkdir("bindir0")  # current working directory
+        bindir1 = tmpdir.mkdir("bindir1")
+        bindir2 = tmpdir.mkdir("bindir2")
+        bindir3 = tmpdir.mkdir("bindir3")
+        bindir2.mkdir("subdir")
+        executables = ["file1.EXE", "file2.COM", "file2.EXE", "file3"]
+        not_executables = ["file4.EXE", "file5"]
+        for exefile in executables + not_executables:
+            f = bindir2 / exefile
+            f.write_text("binary", encoding="utf8")
+            if exefile in executables:
+                os.chmod(f, 0o777)
+
+        # Test current working directory.
+        (bindir0 / "cwd_non_bin_file").write_text("binary", encoding="utf8")
+        (f := bindir0 / "cwd_bin_file.EXE").write_text("binary", encoding="utf8")
+        os.chmod(f, 0o777)
+
+        # Test overlapping file names in different bin directories.
+        (f := bindir3 / "file3").write_text("binary", encoding="utf8")
+        os.chmod(f, 0o777)
+
+        pathext = [".EXE", ".COM"] if ON_WINDOWS else []
+        sep = os.path.sep
+
+>       with (
+            xession.env.swap(
+                PATH=[str(bindir1), str(bindir2), str(bindir3)], PATHEXT=pathext
+            ),
+            chdir(str(bindir0)),
+        ):
+
+/app/tests/procs/test_executables.py:53:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+adir = PosixPath('/tmp/pytest-of-root/pytest-0/test_locate_executable0/bindir0')
+mkdir = False
+
+    @contextmanager
+    def chdir(adir, mkdir=False):
+        adir = pathlib.Path(adir)
+>       old_dir = os.getcwd()
+                  ^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory
+
+/app/xonsh/tools.py:75: FileNotFoundError
+________________________ test_redirect_to_substitution _________________________
+
+fname = 'file', mode = 'w', buffering = -1
+
+    def safe_open(fname, mode, buffering=-1):
+        """Safely attempts to open a file in for xonsh subprocs."""
+        # file descriptors
+        try:
+>           return open(fname, mode, buffering=buffering)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           FileNotFoundError: [Errno 2] No such file or directory: 'file'
+
+/app/xonsh/procs/specs.py:179: FileNotFoundError
+
+The above exception was the direct cause of the following exception:
+
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    def test_redirect_to_substitution(xession):
+>       s = SubprocSpec.build(
+            # `echo hello > @('file')`
+            ["echo", "hello", (">", ["file"])]
+        )
+
+/app/tests/procs/test_specs.py:464:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/procs/specs.py:647: in build
+    spec.resolve_redirects()
+/app/xonsh/procs/specs.py:699: in resolve_redirects
+    streams = _redirect_streams(*c)
+              ^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/procs/specs.py:246: in _redirect_streams
+    stdout = safe_open(loc, mode)
+             ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fname = 'file', mode = 'w', buffering = -1
+
+    def safe_open(fname, mode, buffering=-1):
+        """Safely attempts to open a file in for xonsh subprocs."""
+        # file descriptors
+        try:
+            return open(fname, mode, buffering=buffering)
+        except PermissionError as ex:
+            raise xt.XonshError(f"xonsh: {fname}: permission denied") from ex
+        except FileNotFoundError as ex:
+>           raise xt.XonshError(f"xonsh: {fname}: no such file or directory") from ex
+E           xonsh.tools.XonshError: xonsh: file: no such file or directory
+
+/app/xonsh/procs/specs.py:183: XonshError
+____________________________ test_repath_backslash _____________________________
+
+home_env = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    @skip_if_on_windows
+    def test_repath_backslash(home_env):
+        exp = os.listdir(HOME_PATH)
+        exp = {p for p in exp if re.match(r"\w\w.*", p)}
+        exp = {os.path.join(HOME_PATH, p) for p in exp}
+        obs = set(pathsearch(regexsearch, r"~/\w\w.*"))
+>       assert exp == obs
+E       AssertionError: assert set() == {'~/\\w\\w.*'}
+E
+E         Extra items in the right set:
+E         '~/\\w\\w.*'
+E         Use -v to get more diff
+
+/app/tests/test_builtins.py:56: AssertionError
+_ Test_is_only_functional_alias.test_bash_and_is_alias_is_only_functional_alias _
+
+self = <test_commands_cache.Test_is_only_functional_alias object at 0x7fec4f44dc10>
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+
+    def test_bash_and_is_alias_is_only_functional_alias(self, xession):
+        xession.aliases["git"] = lambda args: os.chdir(args[0])
+>       assert xession.commands_cache.is_only_functional_alias("git") is False
+E       AssertionError: assert True is False
+E        +  where True = is_only_functional_alias('git')
+E        +    where is_only_functional_alias = <xonsh.commands_cache.CommandsCache object at 0x7fec47492050>.is_only_functional_alias
+E        +      where <xonsh.commands_cache.CommandsCache object at 0x7fec47492050> = <xonsh.built_ins.XonshSession object at 0x7fec55808890>.commands_cache
+
+/app/tests/test_commands_cache.py:182: AssertionError
+________________________ test_xonsh_no_file_returncode _________________________
+
+shell = None
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fec47588e10>
+monkeypatch_stderr = None
+
+    def test_xonsh_no_file_returncode(shell, monkeypatch, monkeypatch_stderr):
+        monkeypatch.setattr(sys, "argv", ["xonsh", "foobazbarzzznotafileatall.xsh"])
+        with pytest.raises(SystemExit):
+>           xonsh.main.main()
+
+/app/tests/test_main.py:539:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/main.py:514: in main
+    _failback_to_other_shells(args, err)
+/app/xonsh/main.py:460: in _failback_to_other_shells
+    raise err
+/app/xonsh/main.py:512: in main
+    sys.exit(main_xonsh(args))
+             ^^^^^^^^^^^^^^^^
+/app/xonsh/main.py:575: in main_xonsh
+    path = os.path.abspath(os.path.expanduser(args.file))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = 'foobazbarzzznotafileatall.xsh'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+________________________ test_man_completion[yes-exp0] _________________________
+
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+check_completer = <function check_completer.<locals>._factory at 0x7fec2a5b4680>
+cmd = 'yes', exp = {'--help', '--version'}
+
+    @skip_if_on_windows
+    @pytest.mark.parametrize(
+        "cmd,exp",
+        [
+            [
+                "yes",
+                {"--version", "--help"},
+            ],
+            [
+                "man",
+                {
+                    "--all",
+                    "--apropos",
+                    "--ascii",
+                    "--catman",
+                    "--config-file",
+                    "--debug",
+                    "--default",
+                    "--ditroff",
+                    "--encoding",
+                    "--extension",
+                    "--global-apropos",
+                    "--gxditview",
+                    "--help",
+                    "--html",
+                    "--ignore-case",
+                    "--local-file",
+                    "--locale",
+                    "--location",
+                    "--location-cat",
+                    "--manpath",
+                    "--match-case",
+                    "--names-only",
+                    "--nh",
+                    "--nj",
+                    "--no-subpages",
+                    "--pager",
+                    "--preprocessor",
+                    "--prompt",
+                    "--recode",
+                    "--regex",
+                    "--sections",
+                    "--systems",
+                    "--troff",
+                    "--troff-device",
+                    "--update",
+                    "--usage",
+                    "--version",
+                    "--warnings",
+                    "--whatis",
+                    "--wildcard",
+                },
+            ],
+        ],
+    )
+    def test_man_completion(xession, check_completer, cmd, exp):
+        xession.env["MANPATH"] = os.path.dirname(os.path.abspath(__file__))
+>       completions = check_completer(cmd, complete_fn=complete_from_man, prefix="-")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/test_man.py:67:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/pytest/plugin.py:350: in _factory
+    values = {getattr(i, "value", i).strip() for i in completions}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/pytest/plugin.py:350: in <setcomp>
+    values = {getattr(i, "value", i).strip() for i in completions}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/completers/man.py:137: in completions
+    for desc, opts in _parse_man_page_options(cmd).items():
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/completers/man.py:120: in _parse_man_page_options
+    options = dict(generate_options_of(cmd))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/completers/man.py:43: in generate_options_of
+    out = _get_man_page(cmd)
+          ^^^^^^^^^^^^^^^^^^
+/app/xonsh/completers/man.py:32: in _get_man_page
+    return subprocess.check_output(["col", "-b"], stdin=manpage.stdout, env=env)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/subprocess.py:465: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/usr/lib/python3.11/subprocess.py:546: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/subprocess.py:1022: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Popen: returncode: 255 args: ['col', '-b']>, args = ['col', '-b']
+executable = b'col', preexec_fn = None, close_fds = True, pass_fds = ()
+cwd = None
+env = {'COMMANDS_CACHE_SAVE_INTERMEDIATE': '', 'MANPATH': '/app/tests', 'PATH': '/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'UPDATE_OS_ENVIRON': '', ...}
+startupinfo = None, creationflags = 0, shell = False, p2cread = 15
+p2cwrite = -1, c2pread = 16, c2pwrite = 17, errread = -1, errwrite = -1
+restore_signals = True, gid = None, gids = None, uid = None, umask = -1
+start_new_session = False, process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+
+        if executable is None:
+            executable = args[0]
+
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread > 2)
+                and (c2pwrite == -1 or c2pwrite > 2)
+                and (errwrite == -1 or errwrite > 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask < 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+
+        orig_executable = executable
+
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write < 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) > 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                child_exec_never_called = (err_msg == "noexec")
+                if child_exec_never_called:
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+>               raise child_exception_type(errno_num, err_msg, err_filename)
+E               FileNotFoundError: [Errno 2] No such file or directory: 'col'
+
+/usr/lib/python3.11/subprocess.py:1899: FileNotFoundError
+________________________ test_man_completion[man-exp1] _________________________
+
+xession = <xonsh.built_ins.XonshSession object at 0x7fec55808890>
+check_completer = <function check_completer.<locals>._factory at 0x7fec474ceca0>
+cmd = 'man'
+exp = {'--all', '--apropos', '--ascii', '--catman', '--config-file', '--debug', ...}
+
+    @skip_if_on_windows
+    @pytest.mark.parametrize(
+        "cmd,exp",
+        [
+            [
+                "yes",
+                {"--version", "--help"},
+            ],
+            [
+                "man",
+                {
+                    "--all",
+                    "--apropos",
+                    "--ascii",
+                    "--catman",
+                    "--config-file",
+                    "--debug",
+                    "--default",
+                    "--ditroff",
+                    "--encoding",
+                    "--extension",
+                    "--global-apropos",
+                    "--gxditview",
+                    "--help",
+                    "--html",
+                    "--ignore-case",
+                    "--local-file",
+                    "--locale",
+                    "--location",
+                    "--location-cat",
+                    "--manpath",
+                    "--match-case",
+                    "--names-only",
+                    "--nh",
+                    "--nj",
+                    "--no-subpages",
+                    "--pager",
+                    "--preprocessor",
+                    "--prompt",
+                    "--recode",
+                    "--regex",
+                    "--sections",
+                    "--systems",
+                    "--troff",
+                    "--troff-device",
+                    "--update",
+                    "--usage",
+                    "--version",
+                    "--warnings",
+                    "--whatis",
+                    "--wildcard",
+                },
+            ],
+        ],
+    )
+    def test_man_completion(xession, check_completer, cmd, exp):
+        xession.env["MANPATH"] = os.path.dirname(os.path.abspath(__file__))
+>       completions = check_completer(cmd, complete_fn=complete_from_man, prefix="-")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/app/tests/test_man.py:67:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/pytest/plugin.py:350: in _factory
+    values = {getattr(i, "value", i).strip() for i in completions}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/pytest/plugin.py:350: in <setcomp>
+    values = {getattr(i, "value", i).strip() for i in completions}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/completers/man.py:137: in completions
+    for desc, opts in _parse_man_page_options(cmd).items():
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/completers/man.py:120: in _parse_man_page_options
+    options = dict(generate_options_of(cmd))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/xonsh/completers/man.py:43: in generate_options_of
+    out = _get_man_page(cmd)
+          ^^^^^^^^^^^^^^^^^^
+/app/xonsh/completers/man.py:32: in _get_man_page
+    return subprocess.check_output(["col", "-b"], stdin=manpage.stdout, env=env)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/subprocess.py:465: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/usr/lib/python3.11/subprocess.py:546: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/subprocess.py:1022: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Popen: returncode: 255 args: ['col', '-b']>, args = ['col', '-b']
+executable = b'col', preexec_fn = None, close_fds = True, pass_fds = ()
+cwd = None
+env = {'COMMANDS_CACHE_SAVE_INTERMEDIATE': '', 'MANPATH': '/app/tests', 'PATH': '/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'UPDATE_OS_ENVIRON': '', ...}
+startupinfo = None, creationflags = 0, shell = False, p2cread = 16
+p2cwrite = -1, c2pread = 17, c2pwrite = 18, errread = -1, errwrite = -1
+restore_signals = True, gid = None, gids = None, uid = None, umask = -1
+start_new_session = False, process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+
+        if executable is None:
+            executable = args[0]
+
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread > 2)
+                and (c2pwrite == -1 or c2pwrite > 2)
+                and (errwrite == -1 or errwrite > 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask < 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+
+        orig_executable = executable
+
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write < 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) > 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                child_exec_never_called = (err_msg == "noexec")
+                if child_exec_never_called:
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+>               raise child_exception_type(errno_num, err_msg, err_filename)
+E               FileNotFoundError: [Errno 2] No such file or directory: 'col'
+
+/usr/lib/python3.11/subprocess.py:1899: FileNotFoundError
+___________________ test_is_logfile_opt[throwback.log-True] ____________________
+
+inp = 'throwback.log', exp = True
+
+    @pytest.mark.parametrize(
+        "inp, exp",
+        [
+            ("throwback.log", True),
+            ("", True),
+            (None, True),
+            (True, False),
+            (False, False),
+            (42, False),
+            ([1, 2, 3], False),
+            ((1, 2), False),
+            (("wrong", "parameter"), False),
+            pytest.param("/dev/null", True, marks=skip_if_on_windows),
+        ],
+    )
+    def test_is_logfile_opt(inp, exp):
+>       obs = is_logfile_opt(inp)
+              ^^^^^^^^^^^^^^^^^^^
+
+/app/tests/test_tools.py:1450:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/tools.py:1389: in is_logfile_opt
+    return is_writable_file(x) or x == ""
+           ^^^^^^^^^^^^^^^^^^^
+/app/xonsh/tools.py:1131: in is_writable_file
+    filepath = os.path.abspath(filepath)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = 'throwback.log'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+__________________________ test_is_logfile_opt[-True] __________________________
+
+inp = '', exp = True
+
+    @pytest.mark.parametrize(
+        "inp, exp",
+        [
+            ("throwback.log", True),
+            ("", True),
+            (None, True),
+            (True, False),
+            (False, False),
+            (42, False),
+            ([1, 2, 3], False),
+            ((1, 2), False),
+            (("wrong", "parameter"), False),
+            pytest.param("/dev/null", True, marks=skip_if_on_windows),
+        ],
+    )
+    def test_is_logfile_opt(inp, exp):
+>       obs = is_logfile_opt(inp)
+              ^^^^^^^^^^^^^^^^^^^
+
+/app/tests/test_tools.py:1450:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/tools.py:1389: in is_logfile_opt
+    return is_writable_file(x) or x == ""
+           ^^^^^^^^^^^^^^^^^^^
+/app/xonsh/tools.py:1131: in is_writable_file
+    filepath = os.path.abspath(filepath)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = ''
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+_______________ test_to_logfile_opt[throwback.log-throwback.log] _______________
+
+inp = 'throwback.log', exp = 'throwback.log'
+
+    @pytest.mark.parametrize(
+        "inp, exp",
+        [
+            (True, None),
+            (False, None),
+            (1, None),
+            (None, None),
+            ("throwback.log", "throwback.log"),
+            pytest.param("/dev/null", "/dev/null", marks=skip_if_on_windows),
+            pytest.param(
+                "/dev/nonexistent_dev",
+                (
+                    "/dev/nonexistent_dev"
+                    if is_writable_file("/dev/nonexistent_dev")
+                    else None
+                ),
+                marks=skip_if_on_windows,
+            ),
+            ("~/log", os.path.expanduser("~/log")),
+        ],
+    )
+    def test_to_logfile_opt(inp, exp):
+>       obs = to_logfile_opt(inp)
+              ^^^^^^^^^^^^^^^^^^^
+
+/app/tests/test_tools.py:1476:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/xonsh/tools.py:1399: in to_logfile_opt
+    if is_logfile_opt(x):
+       ^^^^^^^^^^^^^^^^^
+/app/xonsh/tools.py:1389: in is_logfile_opt
+    return is_writable_file(x) or x == ""
+           ^^^^^^^^^^^^^^^^^^^
+/app/xonsh/tools.py:1131: in is_writable_file
+    filepath = os.path.abspath(filepath)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = 'throwback.log'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory
+
+<frozen posixpath>:403: FileNotFoundError
+=============================== warnings summary ===============================
+tests/test_tools.py::test_is_tok_color_dict[val1-False]
+tests/test_tools.py::test_is_tok_color_dict[val2-False]
+  /app/tests/test_tools.py:2048: RuntimeWarning: "1" is not a valid Token.
+    assert is_tok_color_dict(val) == exp
+
+tests/test_tools.py::test_is_tok_color_dict[val3-False]
+  /app/tests/test_tools.py:2048: RuntimeWarning: "{Token.Literal.String: '123'}" contains an invalid style.
+    assert is_tok_color_dict(val) == exp
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 5 durations ==============================
+4.68s call     tests/test_integrations.py::test_callable_alias_no_bad_file_descriptor[\n$XONSH_SHOW_TRACEBACK = True\n@aliases.register\ndef _e(a,i,o,e):\n    echo -n O\n    echo -n E 1>2\n    execx("echo -n O")\n    execx("echo -n E 1>2")\n    print("o")\n    print("O", file=o)\n    print("E", file=e)\n\nimport tempfile\nfor i in range(0, 12):\n    echo -n e\n    print($(e), !(e), $[e], ![e])\n    print($(e > @(tempfile.NamedTemporaryFile(delete=False).name)))\n    print(!(e > @(tempfile.NamedTemporaryFile(delete=False).name)))\n    print($[e > @(tempfile.NamedTemporaryFile(delete=False).name)])\n    print(![e > @(tempfile.NamedTemporaryFile(delete=False).name)])\n]
+3.56s call     tests/test_integrations.py::test_alias_stability
+2.58s call     tests/test_integrations.py::test_alias_stability_exception
+2.12s call     tests/test_integrations.py::test_on_postcommand_waiting
+2.07s call     tests/test_integrations.py::test_forwarding_sighup
+=========================== short test summary info ============================
+FAILED tests/api/test_os.xsh::test_rmtree
+FAILED tests/aliases/test_source.py::test_source_current_dir - FileNotFoundEr...
+FAILED tests/built_ins/test_tracer.py::test_trace_in_script - assert 1 == 0
+FAILED tests/completers/test_dir_completers.py::test_non_dir[cd] - FileNotFou...
+FAILED tests/completers/test_dir_completers.py::test_non_dir[rmdir] - FileNot...
+FAILED tests/completers/test_dir_completers.py::test_complete_dots - Assertio...
+FAILED tests/completers/test_pip_completer.py::test_completions[pip show--pip_installed]
+FAILED tests/history/test_history_json.py::test_hist_pull[None] - FileNotFoun...
+FAILED tests/history/test_history_json.py::test_hist_pull[e2265764-041c-4c57-acba-49d4e4f676e5]
+FAILED tests/history/test_history_json.py::test_hist_pull_mixed - FileNotFoun...
+FAILED tests/procs/test_executables.py::test_get_paths - FileNotFoundError: [...
+FAILED tests/procs/test_executables.py::test_locate_executable - FileNotFound...
+FAILED tests/procs/test_specs.py::test_redirect_to_substitution - xonsh.tools...
+FAILED tests/test_builtins.py::test_repath_backslash - AssertionError: assert...
+FAILED tests/test_commands_cache.py::Test_is_only_functional_alias::test_bash_and_is_alias_is_only_functional_alias
+FAILED tests/test_main.py::test_xonsh_no_file_returncode - FileNotFoundError:...
+FAILED tests/test_man.py::test_man_completion[yes-exp0] - FileNotFoundError: ...
+FAILED tests/test_man.py::test_man_completion[man-exp1] - FileNotFoundError: ...
+FAILED tests/test_tools.py::test_is_logfile_opt[throwback.log-True] - FileNot...
+FAILED tests/test_tools.py::test_is_logfile_opt[-True] - FileNotFoundError: [...
+FAILED tests/test_tools.py::test_to_logfile_opt[throwback.log-throwback.log]
+ERROR tests/completers/test_bash_completer.py::test_bash_completer[command_context0-completions0-5]
+ERROR tests/completers/test_bash_completer.py::test_bash_completer[command_context1-completions1-0]
+ERROR tests/completers/test_bash_completer.py::test_bash_completer[command_context2-completions2-2]
+ERROR tests/completers/test_bash_completer.py::test_bash_completer[command_context3-completions3-1]
+ERROR tests/completers/test_bash_completer.py::test_quote_handling[command_context0-completions0-4]
+ERROR tests/completers/test_bash_completer.py::test_quote_handling[command_context1-completions1-5]
+ERROR tests/completers/test_bash_completer.py::test_quote_handling[command_context2-completions2-5]
+ERROR tests/completers/test_bash_completer.py::test_quote_handling[command_context3-completions3-6]
+ERROR tests/completers/test_bash_completer.py::test_quote_handling[command_context4-completions4-10]
+ERROR tests/completers/test_bash_completer.py::test_quote_handling[command_context5-completions5-4]
+ERROR tests/completers/test_bash_completer.py::test_quote_handling[command_context6-completions6-5]
+ERROR tests/completers/test_bash_completer.py::test_quote_handling[command_context7-completions7-5]
+ERROR tests/completers/test_bash_completer.py::test_quote_handling[command_context8-completions8-6]
+ERROR tests/completers/test_bash_completer.py::test_bash_completer_empty_prefix
+ERROR tests/completers/test_bash_completer.py::test_equal_sign_arg[command_context0-completions0-3-False]
+ERROR tests/completers/test_bash_completer.py::test_equal_sign_arg[command_context1-completions1-3-True]
+ERROR tests/completers/test_bash_completer.py::test_equal_sign_arg[command_context2-completions2-2-True]
+ERROR tests/completers/test_bash_completer.py::test_equal_sign_arg[command_context3-completions3-3-False]
+ERROR tests/completers/test_bash_completer.py::test_equal_sign_arg[command_context4-completions4-8-True]
+ERROR tests/completers/test_bash_completer.py::test_git_delete_remote_branch
+ERROR tests/completers/test_dir_completers.py::test_dirs_only[cd] - FileNotFo...
+ERROR tests/completers/test_dir_completers.py::test_dirs_only[rmdir] - FileNo...
+ERROR tests/completers/test_dir_completers.py::test_opening_quotes[cd] - File...
+ERROR tests/completers/test_dir_completers.py::test_opening_quotes[rmdir] - F...
+ERROR tests/completers/test_dir_completers.py::test_closing_quotes[cd] - File...
+ERROR tests/completers/test_dir_completers.py::test_closing_quotes[rmdir] - F...
+= 21 failed, 5097 passed, 38 skipped, 3 xfailed, 1 xpassed, 3 warnings, 26 errors in 94.66s (0:01:34) =
+Failed with Command '['pytest', '--timeout=240', '--durations=5']' returned non-zero exit status 1.

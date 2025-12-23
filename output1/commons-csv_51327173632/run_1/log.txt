@@ -1,0 +1,401 @@
+Apache Maven 3.8.7
+Maven home: /usr/share/maven
+Java version: 17.0.16, vendor: Ubuntu, runtime: /usr/lib/jvm/java-17-openjdk-amd64
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "5.4.0-204-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -------------------< org.apache.commons:commons-csv >-------------------
+[INFO] Building Apache Commons CSV 1.14.2-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:3.5.0:clean (default-clean) @ commons-csv ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.5.0:enforce (enforce-maven-version) @ commons-csv ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.5.0:enforce (enforce-java-version) @ commons-csv ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO]
+[INFO] --- apache-rat-plugin:0.16.1:check (rat-check) @ commons-csv ---
+[INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 88 licenses.
+[INFO]
+[INFO] --- maven-artifact-plugin:3.6.0:check-buildplan (check-buildplan) @ commons-csv ---
+[INFO] No known issue in 21 plugins
+[INFO]
+[INFO] --- build-helper-maven-plugin:3.6.1:parse-version (parse-version) @ commons-csv ---
+[INFO]
+[INFO] --- maven-antrun-plugin:3.1.0:run (javadoc.resources) @ commons-csv ---
+[INFO] Executing tasks
+[INFO]      [copy] Copying 2 files to /app/target/apidocs/META-INF
+[INFO] Executed tasks
+[INFO]
+[INFO] --- maven-remote-resources-plugin:3.3.0:process (process-resource-bundles) @ commons-csv ---
+[INFO] Skipping remote resources execution.
+[INFO]
+[INFO] --- buildnumber-maven-plugin:3.2.1:create (default) @ commons-csv ---
+[INFO] Executing: /bin/sh -c cd '/app' && 'git' 'log' '-1' '--no-merges' '--format=format:%H %aI %aE %aN'
+[INFO] Working directory: /app
+[WARNING] Cannot get the revision information from the scm repository, proceeding with revision of ?????? :
+Exception while executing SCM command.
+[INFO] Storing buildNumber: ?????? at timestamp: 1764488782892
+[INFO] Executing: /bin/sh -c cd '/app' && 'git' 'symbolic-ref' 'HEAD'
+[INFO] Working directory: /app
+[WARNING] Cannot get the branch information from the git repository:
+Detecting the current branch failed: fatal: not a git repository (or any of the parent directories): .git
+
+[INFO] Executing: /bin/sh -c cd '/app' && 'git' 'log' '-1' '--no-merges' '--format=format:%H %aI %aE %aN'
+[INFO] Working directory: /app
+[WARNING] Cannot get the branch information from the scm repository, proceeding with UNKNOWN_BRANCH :
+Exception while executing SCM command.
+[INFO] Storing scmBranch: UNKNOWN_BRANCH
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ commons-csv ---
+[INFO] skip non existing resourceDirectory /app/src/main/resources
+[INFO] Copying 2 resources from  to target/classes/META-INF
+[INFO]
+[INFO] --- maven-compiler-plugin:3.14.0:compile (default-compile) @ commons-csv ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 12 source files with javac [debug release 8] to target/classes
+[INFO]
+[INFO] --- maven-bundle-plugin:6.0.0:manifest (bundle-manifest) @ commons-csv ---
+[INFO] No MANIFEST.MF file found, generating manifest.
+[INFO] Writing manifest: /app/target/osgi/MANIFEST.MF
+[INFO]
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ commons-csv ---
+[INFO] Copying 25 resources from src/test/resources to target/test-classes
+[INFO] Copying 2 resources from  to target/test-classes/META-INF
+[INFO]
+[INFO] --- maven-compiler-plugin:3.14.0:testCompile (default-testCompile) @ commons-csv ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 41 source files with javac [debug release 8] to target/test-classes
+[INFO] /app/src/test/java/org/apache/commons/csv/CSVFileParserTest.java: Some input files use or override a deprecated API.
+[INFO] /app/src/test/java/org/apache/commons/csv/CSVFileParserTest.java: Recompile with -Xlint:deprecation for details.
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.13:prepare-agent (prepare-agent) @ commons-csv ---
+[INFO] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.13/org.jacoco.agent-0.8.13-runtime.jar=destfile=/app/target/jacoco.exec
+[INFO]
+[INFO] --- maven-surefire-plugin:3.5.4:test (default-test) @ commons-csv ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.commons.csv.CSVFormatPredefinedTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 s -- in org.apache.commons.csv.CSVFormatPredefinedTest
+[INFO] Running org.apache.commons.csv.JiraCsv318Test
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s -- in org.apache.commons.csv.JiraCsv318Test
+[INFO] Running org.apache.commons.csv.CSVFormatTest
+[INFO] Tests run: 109, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s -- in org.apache.commons.csv.CSVFormatTest
+[INFO] Running org.apache.commons.csv.JiraCsv196Test
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.056 s <<< FAILURE! -- in org.apache.commons.csv.JiraCsv196Test
+[ERROR] org.apache.commons.csv.JiraCsv196Test.testParseFourBytes -- Time elapsed: 0.047 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: At index 3 ==> expected: <701> but was: <1901>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
+	at org.apache.commons.csv.JiraCsv196Test.testParseFourBytes(JiraCsv196Test.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] org.apache.commons.csv.JiraCsv196Test.testParseThreeBytes -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: At index 3 ==> expected: <242> but was: <398>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
+	at org.apache.commons.csv.JiraCsv196Test.testParseThreeBytes(JiraCsv196Test.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[INFO] Running org.apache.commons.csv.ExtendedBufferedReaderTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.csv.ExtendedBufferedReaderTest
+[INFO] Running org.apache.commons.csv.TokenTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s -- in org.apache.commons.csv.TokenTest
+[INFO] Running org.apache.commons.csv.LexerTest
+[INFO] Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in org.apache.commons.csv.LexerTest
+[INFO] Running org.apache.commons.csv.CSVPrinterTest
+[WARNING] Tests run: 144, Failures: 0, Errors: 0, Skipped: 7, Time elapsed: 6.902 s -- in org.apache.commons.csv.CSVPrinterTest
+[INFO] Running org.apache.commons.csv.UserGuideTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.apache.commons.csv.UserGuideTest
+[INFO] Running org.apache.commons.csv.CSVDuplicateHeaderTest
+[INFO] Tests run: 348, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.293 s -- in org.apache.commons.csv.CSVDuplicateHeaderTest
+[INFO] Running org.apache.commons.csv.CSVFileParserTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in org.apache.commons.csv.CSVFileParserTest
+[INFO] Running org.apache.commons.csv.CSVParserTest
+[WARNING] Tests run: 154, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.106 s -- in org.apache.commons.csv.CSVParserTest
+[INFO] Running org.apache.commons.csv.issues.JiraCsv93Test
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.csv.issues.JiraCsv93Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv149Test
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv149Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv263Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.csv.issues.JiraCsv263Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv264Test
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.JiraCsv264Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv211Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv211Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv203Test
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.csv.issues.JiraCsv203Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv154Test
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv154Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv294Test
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.JiraCsv294Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv249Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv249Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv248Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.csv.issues.JiraCsv248Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv148Test
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv148Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv265Test
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv265Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv198Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.503 s -- in org.apache.commons.csv.issues.JiraCsv198Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv247Test
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.JiraCsv247Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv257Test
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.JiraCsv257Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv290Test
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.JiraCsv290Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv271Test
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv271Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv206Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv206Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv253Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.csv.issues.JiraCsv253Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv213Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv213Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv167Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv167Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv150Test
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.JiraCsv150Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv254Test
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.csv.issues.JiraCsv254Test
+[INFO] Running org.apache.commons.csv.issues.JiraCsv288Test
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.csv.issues.JiraCsv288Test
+[INFO] Running org.apache.commons.csv.CSVRecordTest
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in org.apache.commons.csv.CSVRecordTest
+[INFO]
+[INFO] Results:
+[INFO]
+[ERROR] Failures:
+[ERROR]   JiraCsv196Test.testParseFourBytes:52 At index 3 ==> expected: <701> but was: <1901>
+[ERROR]   JiraCsv196Test.testParseThreeBytes:72 At index 3 ==> expected: <242> but was: <398>
+[INFO]
+[ERROR] Tests run: 923, Failures: 2, Errors: 0, Skipped: 11
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  55.554 s
+[INFO] Finished at: 2025-11-29T23:46:45-08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.4:test (default-test) on project commons-csv: There are test failures.
+[ERROR]
+[ERROR] See /app/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m-------------------< [0;36morg.apache.commons:commons-csv[0;1m >-------------------[m
+[[1;34mINFO[m] [1mBuilding Apache Commons CSV 1.14.2-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.5.0:enforce[m [1m(enforce-maven-version)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.5.0:enforce[m [1m(enforce-java-version)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.16.1:check[m [1m(rat-check)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 88 licenses.
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-artifact-plugin:3.6.0:check-buildplan[m [1m(check-buildplan)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] No known issue in 21 plugins
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mbuild-helper-maven-plugin:3.6.1:parse-version[m [1m(parse-version)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-antrun-plugin:3.1.0:run[m [1m(javadoc.resources)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Executing tasks
+[[1;34mINFO[m] Executed tasks
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:3.3.0:process[m [1m(process-resource-bundles)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Skipping remote resources execution.
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mbuildnumber-maven-plugin:3.2.1:create[m [1m(default)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/app' && 'git' 'log' '-1' '--no-merges' '--format=format:%H %aI %aE %aN'
+[[1;34mINFO[m] Working directory: /app
+[[1;33mWARNING[m] Cannot get the revision information from the scm repository, proceeding with revision of ?????? :
+Exception while executing SCM command.
+[[1;34mINFO[m] Storing buildNumber: ?????? at timestamp: 1764488809176
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/app' && 'git' 'symbolic-ref' 'HEAD'
+[[1;34mINFO[m] Working directory: /app
+[[1;33mWARNING[m] Cannot get the branch information from the git repository:
+Detecting the current branch failed: fatal: not a git repository (or any of the parent directories): .git
+
+[[1;34mINFO[m] Executing: /bin/sh -c cd '/app' && 'git' 'log' '-1' '--no-merges' '--format=format:%H %aI %aE %aN'
+[[1;34mINFO[m] Working directory: /app
+[[1;33mWARNING[m] Cannot get the branch information from the scm repository, proceeding with UNKNOWN_BRANCH :
+Exception while executing SCM command.
+[[1;34mINFO[m] Storing scmBranch: UNKNOWN_BRANCH
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /app/src/main/resources
+[[1;34mINFO[m] Copying 2 resources from  to target/classes/META-INF
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.14.0:compile[m [1m(default-compile)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-bundle-plugin:6.0.0:manifest[m [1m(bundle-manifest)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Writing manifest: /app/target/osgi/MANIFEST.MF
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Copying 25 resources from src/test/resources to target/test-classes
+[[1;34mINFO[m] Copying 2 resources from  to target/test-classes/META-INF
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.14.0:testCompile[m [1m(default-testCompile)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mjacoco-maven-plugin:0.8.13:prepare-agent[m [1m(prepare-agent)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] argLine set to -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.13/org.jacoco.agent-0.8.13-runtime.jar=destfile=/app/target/jacoco.exec
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.5.4:test[m [1m(default-test)[m @ [36mcommons-csv[0;1m ---[m
+[[1;34mINFO[m] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m]
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mCSVFormatPredefinedTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m10[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s -- in org.apache.commons.csv.[1mCSVFormatPredefinedTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mJiraCsv318Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in org.apache.commons.csv.[1mJiraCsv318Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mCSVFormatTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m109[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 s -- in org.apache.commons.csv.[1mCSVFormatTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mJiraCsv196Test[m
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m2[m, [1;31mFailures: [0;1;31m2[m, Errors: 0, Skipped: 0, Time elapsed: 0.054 s[1;31m <<< FAILURE![m -- in org.apache.commons.csv.[1mJiraCsv196Test[m
+[[1;31mERROR[m] org.apache.commons.csv.JiraCsv196Test.testParseFourBytes -- Time elapsed: 0.038 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: At index 3 ==> expected: <701> but was: <1901>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
+	at org.apache.commons.csv.JiraCsv196Test.testParseFourBytes(JiraCsv196Test.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[[1;31mERROR[m] org.apache.commons.csv.JiraCsv196Test.testParseThreeBytes -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: At index 3 ==> expected: <242> but was: <398>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
+	at org.apache.commons.csv.JiraCsv196Test.testParseThreeBytes(JiraCsv196Test.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mExtendedBufferedReaderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.csv.[1mExtendedBufferedReaderTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mTokenTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s -- in org.apache.commons.csv.[1mTokenTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mLexerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m33[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in org.apache.commons.csv.[1mLexerTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mCSVPrinterTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m144[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m7[m, Time elapsed: 6.811 s -- in org.apache.commons.csv.[1mCSVPrinterTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mUserGuideTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.apache.commons.csv.[1mUserGuideTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mCSVDuplicateHeaderTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m348[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.298 s -- in org.apache.commons.csv.[1mCSVDuplicateHeaderTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mCSVFileParserTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m14[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in org.apache.commons.csv.[1mCSVFileParserTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mCSVParserTest[m
+[[1;33mWARNING[m] [1;33mTests [0;1mrun: [0;1m154[m, Failures: 0, Errors: 0, [1;33mSkipped: [0;1;33m4[m, Time elapsed: 0.101 s -- in org.apache.commons.csv.[1mCSVParserTest[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv93Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.[1mJiraCsv93Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv149Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv149Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv263Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.csv.issues.[1mJiraCsv263Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv264Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.[1mJiraCsv264Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv211Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv211Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv203Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.csv.issues.[1mJiraCsv203Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv154Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv154Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv294Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.[1mJiraCsv294Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv249Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv249Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv248Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.csv.issues.[1mJiraCsv248Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv148Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv148Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv265Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv265Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv198Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.511 s -- in org.apache.commons.csv.issues.[1mJiraCsv198Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv247Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.[1mJiraCsv247Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv257Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.[1mJiraCsv257Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv290Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.[1mJiraCsv290Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv271Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv271Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv206Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv206Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv253Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv253Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv213Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv213Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv167Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv167Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv150Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv150Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv254Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.csv.issues.[1mJiraCsv254Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.issues.[1mJiraCsv288Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m12[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.csv.issues.[1mJiraCsv288Test[m
+[[1;34mINFO[m] Running org.apache.commons.csv.[1mCSVRecordTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m31[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in org.apache.commons.csv.[1mCSVRecordTest[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m]
+[[1;31mERROR[m] [1;31mFailures: [m
+[[1;31mERROR[m] [1;31m  JiraCsv196Test.testParseFourBytes:52 At index 3 ==> expected: <701> but was: <1901>[m
+[[1;31mERROR[m] [1;31m  JiraCsv196Test.testParseThreeBytes:72 At index 3 ==> expected: <242> but was: <398>[m
+[[1;34mINFO[m]
+[[1;31mERROR[m] [1;31mTests run: 923, Failures: 2, Errors: 0, Skipped: 11[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  13.212 s
+[[1;34mINFO[m] Finished at: 2025-11-29T23:46:59-08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-surefire-plugin:3.5.4:test[m [1m(default-test)[m on project [36mcommons-csv[m: [1;31mThere are test failures.[m
+[[1;31mERROR[m] [1;31m[m
+[[1;31mERROR[m] [1;31mSee /app/target/surefire-reports for the individual test results.[m
+[[1;31mERROR[m] [1;31mSee dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m]
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m]
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

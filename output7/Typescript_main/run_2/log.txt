@@ -1,0 +1,79 @@
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: 'walk-up-path@4.0.0',
+npm warn EBADENGINE   required: { node: '20 || >=22' },
+npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+npm warn EBADENGINE }
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+
+added 365 packages, and audited 366 packages in 3s
+
+88 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: 'walk-up-path@4.0.0',
+npm warn EBADENGINE   required: { node: '20 || >=22' },
+npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+npm warn EBADENGINE }
+
+up to date, audited 366 packages in 1s
+
+88 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Using /app/Herebyfile.mjs to run runtests-parallel
+Starting lib
+Starting generate-diagnostics
+> /usr/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Starting lint
+Linting: node_modules/eslint/bin/eslint --cache --cache-location ./.eslintcache --format autolinkable-stylish --report-unused-disable-directives --max-warnings 0 .
+> /usr/bin/node node_modules/eslint/bin/eslint --cache --cache-location ./.eslintcache --format autolinkable-stylish --report-unused-disable-directives --max-warnings 0 .
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 95ms
+Finished generate-diagnostics in 167ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished bundle-tests in 548ms
+Finished build-tests in 24.3s
+Finished build-services in 24.3s
+Starting dts-services
+> /usr/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 2.8s
+Starting dts-lssl
+Finished dts-lssl in 2ms
+Starting do-runtests-parallel
+Running tests with config: {"light":true,"workerCount":87,"taskConfigsFolder":"/tmp/ts-tests1","noColor":false,"timeout":40000,"keepFailed":false}
+> /usr/bin/node ./built/local/run.js
+Discovered 326 unittest suites.
+Discovering runner-based tests...
+Discovered 19584 test files in 226ms.
+Starting to run tests using 87 threads...
+Batching initial test lists...
+Suboptimal packing detected: no tests remain to be stolen. Reduce packing fraction from 0.9 to fix.
+Batched into 87 groups with approximate total file sizes of 231101 bytes in each group. (100.0% of total tests batched)
+
+Finished lint in 1m 43.3s
+
+
+  98894 passing (2m)
+  1 failing
+
+  1)
+
+         compiler tests
+           compiler tests for tests/cases/compiler/relationComplexityError.ts
+             "before all" hook for "Correct errors for tests/cases/compiler/relationComplexityError.ts":
+     Error: Timeout of 40000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
+      at processImmediate (node:internal/timers:476:21)
+
+
+
+Error in do-runtests-parallel in 1m 40.4s
+Error: Process exited with code: 1
+Completed runtests-parallel with errors in 2m 7.8s
+Failed tasks: do-runtests-parallel

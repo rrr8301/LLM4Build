@@ -1,0 +1,70 @@
+Removed all cached metadata files
+Removed 0 files
+Removed 0 packages
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+Scope: all 193 workspace projects
+Already up to date
+Done in 1.5s using pnpm v10.15.0
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> monorepo-root@ test-main /app
+> pnpm pretest && pnpm lint && pnpm run test-pkgs-main
+
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> monorepo-root@ pretest /app
+> pnpm run compile-only && pnpm --dir=__fixtures__ run prepareFixtures
+
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> monorepo-root@ compile-only /app
+> ts-node __utils__/scripts/src/typecheck-only.ts && pnpm -F pnpm compile
+
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> pnpm@10.15.1 compile /app/pnpm
+> tsc --build && pnpm run lint --fix && rimraf dist bin/nodes && pnpm run bundle && shx cp -r node-gyp-bin dist/node-gyp-bin && shx cp -r node_modules/@pnpm/tabtab/lib/templates dist/templates && shx cp -r node_modules/ps-list/vendor dist/vendor && shx cp pnpmrc dist/pnpmrc
+
+ WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> pnpm@10.15.1 lint /app/pnpm
+> eslint "src/**/*.ts" "test/**/*.ts" --fix
+
+ WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> pnpm@10.15.1 bundle /app/pnpm
+> ts-node bundle.ts
+
+
+> @ prepareFixtures /app/__fixtures__
+> pnpm run step1 && pnpm run step2 && pnpm run step3 && pnpm run step4 && pnpm run step5
+
+
+
+> @ step1 /app/__fixtures__
+> node ../pnpm/dist/pnpm.cjs install -rf --frozen-lockfile --no-shared-workspace-lockfile --no-link-workspace-packages
+
+.                                        |  WARN  using --force I sure hope you know what you are doing
+Scope: all 26 workspace projects
+circular                                 | Progress: resolved 1, reused 0, downloaded 0, added 0
+circular                                 |   +4 +
+fixture                                  | Progress: resolved 1, reused 0, downloaded 0, added 0
+fixture                                  |  +12 +
+fixture-with-no-pkg-name-and-no-version  | Progress: resolved 1, reused 0, downloaded 0, added 0
+fixture-with-no-pkg-name-and-no-version  |  +12 +
+fixture-with-no-pkg-version              | Progress: resolved 1, reused 0, downloaded 0, added 0
+fixture-with-no-pkg-version              |  +12 +
+circular                                 | Progress: resolved 4, reused 0, downloaded 3, added 3
+fixture                                  | Progress: resolved 12, reused 0, downloaded 4, added 3
+fixture-with-no-pkg-name-and-no-version  | Progress: resolved 12, reused 0, downloaded 0, added 4
+undefined
+/app/__fixtures__/fixture:
+ ERR_PNPM_ENOTEMPTY  ENOTEMPTY: directory not empty, rmdir '/root/.local/share/pnpm/store/v10/links/pify/3.0.0/ec513f6b352359be105b18c3f4775767e1d88502ff452f89cbca8eb3d06c8149/node_modules/pify'
+general                                  | Progress: resolved 1, reused 0, downloaded 0, added 0
+general                                  |  +13 +
+ ELIFECYCLE  Command failed with exit code 1.
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+ ELIFECYCLE  Command failed with exit code 1.
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.

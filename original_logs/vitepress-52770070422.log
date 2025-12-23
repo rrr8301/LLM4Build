@@ -1,0 +1,472 @@
+﻿2025-10-15T03:53:39.5372095Z Current runner version: '2.328.0'
+2025-10-15T03:53:39.5409044Z ##[group]Runner Image Provisioner
+2025-10-15T03:53:39.5410561Z Hosted Compute Agent
+2025-10-15T03:53:39.5411700Z Version: 20250912.392
+2025-10-15T03:53:39.5412614Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-15T03:53:39.5413797Z Build Date: 2025-09-12T15:23:14Z
+2025-10-15T03:53:39.5414816Z ##[endgroup]
+2025-10-15T03:53:39.5415884Z ##[group]Operating System
+2025-10-15T03:53:39.5416778Z Ubuntu
+2025-10-15T03:53:39.5417717Z 24.04.3
+2025-10-15T03:53:39.5418580Z LTS
+2025-10-15T03:53:39.5419347Z ##[endgroup]
+2025-10-15T03:53:39.5420599Z ##[group]Runner Image
+2025-10-15T03:53:39.5421589Z Image: ubuntu-24.04
+2025-10-15T03:53:39.5422432Z Version: 20250929.60.1
+2025-10-15T03:53:39.5424222Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-15T03:53:39.5426937Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-15T03:53:39.5428731Z ##[endgroup]
+2025-10-15T03:53:39.5430638Z ##[group]GITHUB_TOKEN Permissions
+2025-10-15T03:53:39.5433940Z Metadata: read
+2025-10-15T03:53:39.5434779Z ##[endgroup]
+2025-10-15T03:53:39.5438025Z Secret source: None
+2025-10-15T03:53:39.5439253Z Prepare workflow directory
+2025-10-15T03:53:39.6174845Z Prepare all required actions
+2025-10-15T03:53:39.6232170Z Getting action download info
+2025-10-15T03:53:39.9711860Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-10-15T03:53:40.1705610Z Download action repository 'pnpm/action-setup@v3' (SHA:a3252b78c470c02df07e9d59298aecedc3ccdd6d)
+2025-10-15T03:53:40.6924899Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-10-15T03:53:40.8836525Z Complete job name: test (ubuntu-latest, 22)
+2025-10-15T03:53:40.9531583Z ##[group]Run actions/checkout@v4
+2025-10-15T03:53:40.9532606Z with:
+2025-10-15T03:53:40.9533162Z   repository: vuejs/vitepress
+2025-10-15T03:53:40.9534134Z   token: ***
+2025-10-15T03:53:40.9534612Z   ssh-strict: true
+2025-10-15T03:53:40.9535097Z   ssh-user: git
+2025-10-15T03:53:40.9535604Z   persist-credentials: true
+2025-10-15T03:53:40.9536199Z   clean: true
+2025-10-15T03:53:40.9536720Z   sparse-checkout-cone-mode: true
+2025-10-15T03:53:40.9537391Z   fetch-depth: 1
+2025-10-15T03:53:40.9537881Z   fetch-tags: false
+2025-10-15T03:53:40.9538402Z   show-progress: true
+2025-10-15T03:53:40.9538920Z   lfs: false
+2025-10-15T03:53:40.9539465Z   submodules: false
+2025-10-15T03:53:40.9540192Z   set-safe-directory: true
+2025-10-15T03:53:40.9541066Z ##[endgroup]
+2025-10-15T03:53:41.0678982Z Syncing repository: vuejs/vitepress
+2025-10-15T03:53:41.0682475Z ##[group]Getting Git version info
+2025-10-15T03:53:41.0684201Z Working directory is '/home/runner/work/vitepress/vitepress'
+2025-10-15T03:53:41.0686820Z [command]/usr/bin/git version
+2025-10-15T03:53:41.0747601Z git version 2.51.0
+2025-10-15T03:53:41.0774769Z ##[endgroup]
+2025-10-15T03:53:41.0791806Z Temporarily overriding HOME='/home/runner/work/_temp/b76a10a6-f22b-4fad-b25e-c9c6da7c5790' before making global git config changes
+2025-10-15T03:53:41.0795849Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-15T03:53:41.0799049Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vitepress/vitepress
+2025-10-15T03:53:41.0838817Z Deleting the contents of '/home/runner/work/vitepress/vitepress'
+2025-10-15T03:53:41.0842731Z ##[group]Initializing the repository
+2025-10-15T03:53:41.0847723Z [command]/usr/bin/git init /home/runner/work/vitepress/vitepress
+2025-10-15T03:53:41.0950854Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-15T03:53:41.0953445Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-15T03:53:41.0955818Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-15T03:53:41.0956933Z hint:
+2025-10-15T03:53:41.0957570Z hint: 	git config --global init.defaultBranch <name>
+2025-10-15T03:53:41.0958657Z hint:
+2025-10-15T03:53:41.0959397Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-15T03:53:41.0961323Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-15T03:53:41.0962607Z hint:
+2025-10-15T03:53:41.0963067Z hint: 	git branch -m <name>
+2025-10-15T03:53:41.0963618Z hint:
+2025-10-15T03:53:41.0964456Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-15T03:53:41.0966031Z Initialized empty Git repository in /home/runner/work/vitepress/vitepress/.git/
+2025-10-15T03:53:41.0968850Z [command]/usr/bin/git remote add origin https://github.com/vuejs/vitepress
+2025-10-15T03:53:41.1010102Z ##[endgroup]
+2025-10-15T03:53:41.1011085Z ##[group]Disabling automatic garbage collection
+2025-10-15T03:53:41.1014166Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-15T03:53:41.1045589Z ##[endgroup]
+2025-10-15T03:53:41.1046467Z ##[group]Setting up auth
+2025-10-15T03:53:41.1052792Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-15T03:53:41.1085445Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-15T03:53:41.1430021Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-15T03:53:41.1463535Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-15T03:53:41.1688876Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-15T03:53:41.1735816Z ##[endgroup]
+2025-10-15T03:53:41.1736803Z ##[group]Fetching the repository
+2025-10-15T03:53:41.1745524Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +be436e88c9107e3e93189a9d6f55ac78e5ff30e9:refs/remotes/pull/4988/merge
+2025-10-15T03:53:41.7146788Z From https://github.com/vuejs/vitepress
+2025-10-15T03:53:41.7148266Z  * [new ref]         be436e88c9107e3e93189a9d6f55ac78e5ff30e9 -> pull/4988/merge
+2025-10-15T03:53:41.7179695Z ##[endgroup]
+2025-10-15T03:53:41.7181457Z ##[group]Determining the checkout info
+2025-10-15T03:53:41.7182932Z ##[endgroup]
+2025-10-15T03:53:41.7187123Z [command]/usr/bin/git sparse-checkout disable
+2025-10-15T03:53:41.7229138Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-15T03:53:41.7258596Z ##[group]Checking out the ref
+2025-10-15T03:53:41.7262191Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4988/merge
+2025-10-15T03:53:41.7681012Z Note: switching to 'refs/remotes/pull/4988/merge'.
+2025-10-15T03:53:41.7682291Z 
+2025-10-15T03:53:41.7683304Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-10-15T03:53:41.7687043Z changes and commit them, and you can discard any commits you make in this
+2025-10-15T03:53:41.7690249Z state without impacting any branches by switching back to a branch.
+2025-10-15T03:53:41.7692265Z 
+2025-10-15T03:53:41.7693735Z If you want to create a new branch to retain commits you create, you may
+2025-10-15T03:53:41.7696910Z do so (now or later) by using -c with the switch command. Example:
+2025-10-15T03:53:41.7698551Z 
+2025-10-15T03:53:41.7699199Z   git switch -c <new-branch-name>
+2025-10-15T03:53:41.7700401Z 
+2025-10-15T03:53:41.7700965Z Or undo this operation with:
+2025-10-15T03:53:41.7701876Z 
+2025-10-15T03:53:41.7702375Z   git switch -
+2025-10-15T03:53:41.7703160Z 
+2025-10-15T03:53:41.7704433Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-10-15T03:53:41.7706119Z 
+2025-10-15T03:53:41.7707469Z HEAD is now at be436e8 Merge 8b2c6d9f9c37a6223208526388e6481d09f64106 into 7658ad35003409e3faa95793f88d3df4147d6dc9
+2025-10-15T03:53:41.7712392Z ##[endgroup]
+2025-10-15T03:53:41.7734536Z [command]/usr/bin/git log -1 --format=%H
+2025-10-15T03:53:41.7757188Z be436e88c9107e3e93189a9d6f55ac78e5ff30e9
+2025-10-15T03:53:41.8013364Z ##[group]Run pnpm/action-setup@v3
+2025-10-15T03:53:41.8014489Z with:
+2025-10-15T03:53:41.8015478Z   dest: ~/setup-pnpm
+2025-10-15T03:53:41.8016443Z   run_install: null
+2025-10-15T03:53:41.8017372Z   package_json_file: package.json
+2025-10-15T03:53:41.8018612Z   standalone: false
+2025-10-15T03:53:41.8019705Z ##[endgroup]
+2025-10-15T03:53:41.8890031Z ##[group]Running self-installer...
+2025-10-15T03:53:42.5027564Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2025-10-15T03:53:42.5149173Z Packages: +1
+2025-10-15T03:53:42.5150404Z +
+2025-10-15T03:53:43.0068156Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2025-10-15T03:53:43.0331814Z 
+2025-10-15T03:53:43.0332300Z dependencies:
+2025-10-15T03:53:43.0333199Z + pnpm 10.14.0 (10.18.3 is available)
+2025-10-15T03:53:43.0334018Z 
+2025-10-15T03:53:43.0362227Z Done in 980ms
+2025-10-15T03:53:43.0539147Z ##[endgroup]
+2025-10-15T03:53:43.0545359Z Installation Completed!
+2025-10-15T03:53:43.0770172Z ##[group]Run actions/setup-node@v4
+2025-10-15T03:53:43.0771104Z with:
+2025-10-15T03:53:43.0771898Z   node-version: 22
+2025-10-15T03:53:43.0772612Z   cache: pnpm
+2025-10-15T03:53:43.0773379Z   always-auth: false
+2025-10-15T03:53:43.0774235Z   check-latest: false
+2025-10-15T03:53:43.0775245Z   token: ***
+2025-10-15T03:53:43.0775984Z env:
+2025-10-15T03:53:43.0776842Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-10-15T03:53:43.0777913Z ##[endgroup]
+2025-10-15T03:53:43.2645880Z Found in cache @ /opt/hostedtoolcache/node/22.20.0/x64
+2025-10-15T03:53:43.2654962Z ##[group]Environment details
+2025-10-15T03:53:46.0672864Z node: v22.20.0
+2025-10-15T03:53:46.0673169Z npm: 10.9.3
+2025-10-15T03:53:46.0673581Z yarn: 1.22.22
+2025-10-15T03:53:46.0674474Z ##[endgroup]
+2025-10-15T03:53:46.0697159Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+2025-10-15T03:53:46.5820210Z /home/runner/setup-pnpm/node_modules/.bin/store/v10
+2025-10-15T03:53:46.7495917Z Cache hit for: node-cache-Linux-x64-pnpm-8a7bf4c0929370959928a6fd0466b3522448ceff480ebe2e27a0b1ef7f4a9ce2
+2025-10-15T03:53:47.7876972Z Received 79998048 of 79998048 (100.0%), 85.4 MBs/sec
+2025-10-15T03:53:47.7878610Z Cache Size: ~76 MB (79998048 B)
+2025-10-15T03:53:47.7914965Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a696b3a0-0ace-43c4-b3bd-099b6a511dee/cache.tzst -P -C /home/runner/work/vitepress/vitepress --use-compress-program unzstd
+2025-10-15T03:53:48.7726870Z Cache restored successfully
+2025-10-15T03:53:48.7901501Z Cache restored from key: node-cache-Linux-x64-pnpm-8a7bf4c0929370959928a6fd0466b3522448ceff480ebe2e27a0b1ef7f4a9ce2
+2025-10-15T03:53:48.8157759Z ##[group]Run pnpm install
+2025-10-15T03:53:48.8158100Z [36;1mpnpm install[0m
+2025-10-15T03:53:48.8272164Z shell: /usr/bin/bash -e {0}
+2025-10-15T03:53:48.8272448Z env:
+2025-10-15T03:53:48.8272700Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-10-15T03:53:48.8273040Z   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+2025-10-15T03:53:48.8273322Z ##[endgroup]
+2025-10-15T03:53:49.1266225Z Scope: all 4 workspace projects
+2025-10-15T03:53:49.1882989Z Lockfile is up to date, resolution step is skipped
+2025-10-15T03:53:49.2358077Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2025-10-15T03:53:49.3490814Z Packages: +622
+2025-10-15T03:53:49.3492296Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2025-10-15T03:53:50.1011843Z Progress: resolved 622, reused 622, downloaded 0, added 622, done
+2025-10-15T03:53:50.6399210Z 
+2025-10-15T03:53:50.6400017Z dependencies:
+2025-10-15T03:53:50.6400536Z + @docsearch/css 4.0.0-beta.8
+2025-10-15T03:53:50.6401080Z + @docsearch/js 4.0.0-beta.8
+2025-10-15T03:53:50.6401602Z + @iconify-json/simple-icons 1.2.49
+2025-10-15T03:53:50.6402064Z + @shikijs/core 3.12.0
+2025-10-15T03:53:50.6402560Z + @shikijs/transformers 3.12.0
+2025-10-15T03:53:50.6402968Z + @shikijs/types 3.12.0
+2025-10-15T03:53:50.6403396Z + @types/markdown-it 14.1.2
+2025-10-15T03:53:50.6404360Z + @vitejs/plugin-vue 6.0.1
+2025-10-15T03:53:50.6404819Z + @vue/devtools-api 8.0.1
+2025-10-15T03:53:50.6405250Z + @vue/shared 3.5.20
+2025-10-15T03:53:50.6405645Z + @vueuse/core 13.8.0
+2025-10-15T03:53:50.6406176Z + @vueuse/integrations 13.8.0
+2025-10-15T03:53:50.6406472Z + focus-trap 7.6.5
+2025-10-15T03:53:50.6406694Z + mark.js 8.11.1
+2025-10-15T03:53:50.6406979Z + minisearch 7.1.2
+2025-10-15T03:53:50.6407296Z + shiki 3.12.0
+2025-10-15T03:53:50.6407714Z + vite <- rolldown-vite 7.1.5
+2025-10-15T03:53:50.6408120Z + vue 3.5.20
+2025-10-15T03:53:50.6408322Z 
+2025-10-15T03:53:50.6408431Z devDependencies:
+2025-10-15T03:53:50.6408761Z + @clack/prompts 1.0.0-alpha.4
+2025-10-15T03:53:50.6409095Z + @iconify/utils 3.0.1
+2025-10-15T03:53:50.6409380Z + @mdit-vue/plugin-component 3.0.2
+2025-10-15T03:53:50.6409983Z + @mdit-vue/plugin-frontmatter 3.0.2
+2025-10-15T03:53:50.6410313Z + @mdit-vue/plugin-headers 3.0.2
+2025-10-15T03:53:50.6410771Z + @mdit-vue/plugin-sfc 3.0.2
+2025-10-15T03:53:50.6411374Z + @mdit-vue/plugin-title 3.0.2
+2025-10-15T03:53:50.6411851Z + @mdit-vue/plugin-toc 3.0.2
+2025-10-15T03:53:50.6412142Z + @mdit-vue/shared 3.0.2
+2025-10-15T03:53:50.6412433Z + @polka/compression 1.0.0-next.28
+2025-10-15T03:53:50.6412863Z + @rollup/plugin-alias 5.1.1
+2025-10-15T03:53:50.6413321Z + @rollup/plugin-commonjs 28.0.6
+2025-10-15T03:53:50.6413599Z + @rollup/plugin-json 6.1.0
+2025-10-15T03:53:50.6413893Z + @rollup/plugin-node-resolve 16.0.1
+2025-10-15T03:53:50.6414207Z + @rollup/plugin-replace 6.0.2
+2025-10-15T03:53:50.6414471Z + @types/cross-spawn 6.0.6
+2025-10-15T03:53:50.6414713Z + @types/debug 4.1.12
+2025-10-15T03:53:50.6414939Z + @types/fs-extra 11.0.4
+2025-10-15T03:53:50.6415215Z + @types/lodash.template 4.5.3
+2025-10-15T03:53:50.6415462Z + @types/mark.js 8.11.12
+2025-10-15T03:53:50.6415723Z + @types/markdown-it-attrs 4.1.3
+2025-10-15T03:53:50.6416016Z + @types/markdown-it-container 2.0.10
+2025-10-15T03:53:50.6416325Z + @types/markdown-it-emoji 3.0.1
+2025-10-15T03:53:50.6416597Z + @types/minimist 1.2.5
+2025-10-15T03:53:50.6416836Z + @types/node 24.3.0
+2025-10-15T03:53:50.6417061Z + @types/picomatch 4.0.2
+2025-10-15T03:53:50.6417297Z + @types/prompts 2.4.9
+2025-10-15T03:53:50.6417512Z + chokidar 4.0.3
+2025-10-15T03:53:50.6417775Z + conventional-changelog-cli 5.0.0
+2025-10-15T03:53:50.6418037Z + cross-spawn 7.0.6
+2025-10-15T03:53:50.6418274Z + debug 4.4.1
+2025-10-15T03:53:50.6418600Z + esbuild 0.25.9
+2025-10-15T03:53:50.6418951Z + execa 9.6.0
+2025-10-15T03:53:50.6419306Z + fs-extra 11.3.1
+2025-10-15T03:53:50.6419789Z + get-port 7.1.0
+2025-10-15T03:53:50.6420179Z + gray-matter 4.0.3
+2025-10-15T03:53:50.6420452Z + lint-staged 16.1.5
+2025-10-15T03:53:50.6420727Z + lodash.template 4.5.0
+2025-10-15T03:53:50.6421417Z + lru-cache 11.1.0
+2025-10-15T03:53:50.6421848Z + markdown-it 14.1.0
+2025-10-15T03:53:50.6422276Z + markdown-it-anchor 9.2.0
+2025-10-15T03:53:50.6422714Z + markdown-it-async 2.2.0
+2025-10-15T03:53:50.6423122Z + markdown-it-attrs 4.3.1
+2025-10-15T03:53:50.6423615Z + markdown-it-cjk-friendly 1.2.0
+2025-10-15T03:53:50.6424138Z + markdown-it-container 4.0.0
+2025-10-15T03:53:50.6424663Z + markdown-it-emoji 3.0.0
+2025-10-15T03:53:50.6425147Z + markdown-it-mathjax3 4.3.2
+2025-10-15T03:53:50.6425573Z + minimist 1.2.8
+2025-10-15T03:53:50.6425928Z + nanoid 5.1.5
+2025-10-15T03:53:50.6426259Z + ora 8.2.0
+2025-10-15T03:53:50.6426602Z + oxc-minify 0.82.3
+2025-10-15T03:53:50.6427004Z + p-map 7.0.3
+2025-10-15T03:53:50.6427394Z + package-directory 8.1.0
+2025-10-15T03:53:50.6427819Z + path-to-regexp 6.3.0
+2025-10-15T03:53:50.6428248Z + picocolors 1.1.1
+2025-10-15T03:53:50.6428609Z + picomatch 4.0.3
+2025-10-15T03:53:50.6429007Z + playwright-chromium 1.55.0
+2025-10-15T03:53:50.6429446Z + polka 1.0.0-next.28
+2025-10-15T03:53:50.6429956Z + postcss 8.5.6
+2025-10-15T03:53:50.6430410Z + postcss-selector-parser 7.1.0
+2025-10-15T03:53:50.6430859Z + prettier 3.6.2
+2025-10-15T03:53:50.6431193Z + prompts 2.4.2
+2025-10-15T03:53:50.6431559Z + punycode 2.3.1
+2025-10-15T03:53:50.6431901Z + rimraf 6.0.1
+2025-10-15T03:53:50.6432464Z + rollup 4.49.0
+2025-10-15T03:53:50.6432846Z + rollup-plugin-dts 6.1.1
+2025-10-15T03:53:50.6433255Z + rollup-plugin-esbuild 6.2.1
+2025-10-15T03:53:50.6433698Z + semver 7.7.2
+2025-10-15T03:53:50.6434120Z + simple-git-hooks 2.13.1
+2025-10-15T03:53:50.6434502Z + sirv 3.0.1
+2025-10-15T03:53:50.6434800Z + sitemap 8.0.0
+2025-10-15T03:53:50.6435117Z + tinyglobby 0.2.14
+2025-10-15T03:53:50.6435485Z + typescript 5.9.2
+2025-10-15T03:53:50.6435811Z + vitest 4.0.0-beta.4
+2025-10-15T03:53:50.6436090Z + vue-tsc 3.0.6
+2025-10-15T03:53:50.6436399Z + wait-on 8.0.4
+2025-10-15T03:53:50.6436582Z 
+2025-10-15T03:53:50.7544156Z Done in 1.8s using pnpm v10.14.0
+2025-10-15T03:53:50.7725400Z ##[group]Run pnpm playwright install chromium
+2025-10-15T03:53:50.7725794Z [36;1mpnpm playwright install chromium[0m
+2025-10-15T03:53:50.7759178Z shell: /usr/bin/bash -e {0}
+2025-10-15T03:53:50.7759417Z env:
+2025-10-15T03:53:50.7759976Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-10-15T03:53:50.7760363Z ##[endgroup]
+2025-10-15T03:53:51.3367538Z Downloading Chromium 140.0.7339.16 (playwright build v1187) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1187/chromium-linux.zip
+2025-10-15T03:53:51.8732115Z |                                                                                |   0% of 173.7 MiB
+2025-10-15T03:53:52.8936094Z |■■■■■■■■                                                                        |  10% of 173.7 MiB
+2025-10-15T03:53:53.3592658Z |■■■■■■■■■■■■■■■■                                                                |  20% of 173.7 MiB
+2025-10-15T03:53:53.8024698Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 173.7 MiB
+2025-10-15T03:53:54.2411623Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 173.7 MiB
+2025-10-15T03:53:54.6760267Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 173.7 MiB
+2025-10-15T03:53:55.1193647Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 173.7 MiB
+2025-10-15T03:53:55.5763155Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 173.7 MiB
+2025-10-15T03:53:56.0206683Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 173.7 MiB
+2025-10-15T03:53:56.4628604Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 173.7 MiB
+2025-10-15T03:53:56.9006988Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 173.7 MiB
+2025-10-15T03:54:00.1693115Z Chromium 140.0.7339.16 (playwright build v1187) downloaded to /home/runner/.cache/ms-playwright/chromium-1187
+2025-10-15T03:54:00.1696508Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2025-10-15T03:54:00.6075453Z |                                                                                |   0% of 2.3 MiB
+2025-10-15T03:54:00.8650013Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2025-10-15T03:54:00.9617293Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2025-10-15T03:54:01.0313236Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2025-10-15T03:54:01.0595814Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2025-10-15T03:54:01.0805042Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2025-10-15T03:54:01.1318340Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2025-10-15T03:54:01.1463684Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2025-10-15T03:54:01.1592731Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2025-10-15T03:54:01.1719416Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2025-10-15T03:54:01.1816144Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2025-10-15T03:54:01.2364863Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2025-10-15T03:54:01.2367327Z Downloading Chromium Headless Shell 140.0.7339.16 (playwright build v1187) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1187/chromium-headless-shell-linux.zip
+2025-10-15T03:54:01.6818621Z |                                                                                |   0% of 104.3 MiB
+2025-10-15T03:54:02.5351099Z |■■■■■■■■                                                                        |  10% of 104.3 MiB
+2025-10-15T03:54:02.7731226Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.3 MiB
+2025-10-15T03:54:03.0582300Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.3 MiB
+2025-10-15T03:54:03.2978021Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.3 MiB
+2025-10-15T03:54:03.5828817Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.3 MiB
+2025-10-15T03:54:03.8213623Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.3 MiB
+2025-10-15T03:54:04.1065897Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.3 MiB
+2025-10-15T03:54:04.3460160Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.3 MiB
+2025-10-15T03:54:04.6292736Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.3 MiB
+2025-10-15T03:54:04.8759982Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.3 MiB
+2025-10-15T03:54:06.5679724Z Chromium Headless Shell 140.0.7339.16 (playwright build v1187) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1187
+2025-10-15T03:54:06.8537814Z ##[group]Run pnpm check
+2025-10-15T03:54:06.8538234Z [36;1mpnpm check[0m
+2025-10-15T03:54:06.8580948Z shell: /usr/bin/bash -e {0}
+2025-10-15T03:54:06.8581343Z env:
+2025-10-15T03:54:06.8581721Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-10-15T03:54:06.8582202Z ##[endgroup]
+2025-10-15T03:54:07.1404215Z 
+2025-10-15T03:54:07.1405281Z > vitepress@2.0.0-alpha.12 check /home/runner/work/vitepress/vitepress
+2025-10-15T03:54:07.1406089Z > pnpm format:fail && pnpm build && pnpm test
+2025-10-15T03:54:07.1406425Z 
+2025-10-15T03:54:07.4214115Z 
+2025-10-15T03:54:07.4214949Z > vitepress@2.0.0-alpha.12 format:fail /home/runner/work/vitepress/vitepress
+2025-10-15T03:54:07.4215853Z > prettier --experimental-cli --check .
+2025-10-15T03:54:07.4216217Z 
+2025-10-15T03:54:10.4241555Z Checking formatting...
+2025-10-15T03:54:10.4255300Z All matched files use Prettier code style!
+2025-10-15T03:54:10.8452763Z 
+2025-10-15T03:54:10.8453825Z > vitepress@2.0.0-alpha.12 build /home/runner/work/vitepress/vitepress
+2025-10-15T03:54:10.8454411Z > pnpm build:prepare && pnpm build:client && pnpm build:node
+2025-10-15T03:54:10.8454659Z 
+2025-10-15T03:54:11.1207617Z 
+2025-10-15T03:54:11.1208862Z > vitepress@2.0.0-alpha.12 build:prepare /home/runner/work/vitepress/vitepress
+2025-10-15T03:54:11.1209951Z > rimraf dist && node scripts/copyShared
+2025-10-15T03:54:11.1210307Z 
+2025-10-15T03:54:11.5432047Z 
+2025-10-15T03:54:11.5433240Z > vitepress@2.0.0-alpha.12 build:client /home/runner/work/vitepress/vitepress
+2025-10-15T03:54:11.5434527Z > vue-tsc --noEmit -p src/client && tsc -p src/client && node scripts/copyClient
+2025-10-15T03:54:11.5435852Z 
+2025-10-15T03:54:19.4619440Z 
+2025-10-15T03:54:19.4620696Z > vitepress@2.0.0-alpha.12 build:node /home/runner/work/vitepress/vitepress
+2025-10-15T03:54:19.4621898Z > tsc -p src/node --noEmit && rollup --config rollup.config.ts --configPlugin esbuild
+2025-10-15T03:54:19.4622502Z 
+2025-10-15T03:54:22.8197788Z [36m
+2025-10-15T03:54:22.8198523Z [1msrc/node/index.ts, src/node/cli.ts[22m → [1mdist/node[22m...[39m
+2025-10-15T03:54:25.3581599Z [32mcreated [1mdist/node[22m in [1m2.5s[22m[39m
+2025-10-15T03:54:25.3582337Z [36m
+2025-10-15T03:54:25.3583112Z [1msrc/node/index.ts[22m → [1mdist/node/index.d.ts[22m...[39m
+2025-10-15T03:54:28.4189424Z [32mcreated [1mdist/node/index.d.ts[22m in [1m3s[22m[39m
+2025-10-15T03:54:28.4190385Z [36m
+2025-10-15T03:54:28.4191261Z [1mdist/client-types/index.d.ts[22m → [1mdist/client/index.d.ts[22m...[39m
+2025-10-15T03:54:28.4352826Z [32mcreated [1mdist/client/index.d.ts[22m in [1m17ms[22m[39m
+2025-10-15T03:54:28.7792782Z 
+2025-10-15T03:54:28.7793625Z > vitepress@2.0.0-alpha.12 test /home/runner/work/vitepress/vitepress
+2025-10-15T03:54:28.7794452Z > pnpm --aggregate-output --reporter=append-only '/^test:(unit|e2e|init)$/'
+2025-10-15T03:54:28.7794855Z 
+2025-10-15T03:54:31.6977646Z . test:unit$ vitest run -r __tests__/unit
+2025-10-15T03:54:31.6989332Z . test:unit: [1m[46m RUN [49m[22m [36mv4.0.0-beta.4 [39m[90m/home/runner/work/vitepress/vitepress/__tests__/unit[39m
+2025-10-15T03:54:31.6996997Z . test:unit:  [32m✓[39m node/markdown/plugins/snippet.test.ts [2m([22m[2m45 tests[22m[2m)[22m[32m 89[2mms[22m[39m
+2025-10-15T03:54:31.7007418Z . test:unit:  [32m✓[39m client/theme-default/support/sidebar.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+2025-10-15T03:54:31.7013180Z . test:unit:  [32m✓[39m client/theme-default/composables/outline.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+2025-10-15T03:54:31.7018886Z . test:unit:  [32m✓[39m node/postcss/isolateStyles.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+2025-10-15T03:54:31.7022743Z . test:unit:  [32m✓[39m node/utils/moduleGraph.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+2025-10-15T03:54:31.7026214Z . test:unit:  [32m✓[39m client/theme-default/support/utils.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 4[2mms[22m[39m
+2025-10-15T03:54:31.7030512Z . test:unit: [2m Test Files [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+2025-10-15T03:54:31.7035645Z . test:unit: [2m      Tests [22m [1m[32m69 passed[39m[22m[90m (69)[39m
+2025-10-15T03:54:31.7036442Z . test:unit: [2m   Start at [22m 03:54:29
+2025-10-15T03:54:31.7037741Z . test:unit: [2m   Duration [22m 1.82s[2m (transform 500ms, setup 0ms, collect 1.95s, tests 185ms, environment 2ms, prepare 1.14s)[22m
+2025-10-15T03:54:31.7039955Z . test:unit: Done
+2025-10-15T03:54:47.5916092Z . test:init$ pnpm -F=tests-init test
+2025-10-15T03:54:47.5923097Z . test:init: > tests-init@ test /home/runner/work/vitepress/vitepress/__tests__/init
+2025-10-15T03:54:47.5936064Z . test:init: > vitest run
+2025-10-15T03:54:47.5937494Z . test:init: [1m[46m RUN [49m[22m [36mv4.0.0-beta.4 [39m[90m/home/runner/work/vitepress/vitepress/__tests__/init[39m
+2025-10-15T03:54:47.5939018Z . test:init:  [32m✓[39m init.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 12089[2mms[22m[39m
+2025-10-15T03:54:47.5945295Z . test:init:    [33m[2m✓[22m[39m init default theme [33m 3664[2mms[22m[39m
+2025-10-15T03:54:47.5946408Z . test:init:    [33m[2m✓[22m[39m init default theme + ts [33m 2479[2mms[22m[39m
+2025-10-15T03:54:47.5947604Z . test:init:    [33m[2m✓[22m[39m init default theme + customization [33m 2551[2mms[22m[39m
+2025-10-15T03:54:47.5948868Z . test:init:    [33m[2m✓[22m[39m init default theme + customization + ts [33m 2151[2mms[22m[39m
+2025-10-15T03:54:47.5971364Z . test:init:    [33m[2m✓[22m[39m init custom theme [33m 615[2mms[22m[39m
+2025-10-15T03:54:47.5972511Z . test:init:    [33m[2m✓[22m[39m init custom theme + ts [33m 550[2mms[22m[39m
+2025-10-15T03:54:47.5973600Z . test:init: [2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+2025-10-15T03:54:47.5974654Z . test:init: [2m      Tests [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+2025-10-15T03:54:47.5975510Z . test:init: [2m   Start at [22m 03:54:30
+2025-10-15T03:54:47.5976903Z . test:init: [2m   Duration [22m 17.09s[2m (transform 2.06s, setup 0ms, collect 4.39s, tests 12.09s, environment 0ms, prepare 154ms)[22m
+2025-10-15T03:54:47.5977798Z . test:init: Done
+2025-10-15T03:55:02.9936414Z . test:e2e$ pnpm test:e2e-dev && pnpm test:e2e-build
+2025-10-15T03:55:02.9938407Z . test:e2e: > vitepress@2.0.0-alpha.12 test:e2e-dev /home/runner/work/vitepress/vitepress
+2025-10-15T03:55:02.9939899Z . test:e2e: > pnpm -F=tests-e2e test
+2025-10-15T03:55:02.9943524Z . test:e2e: > tests-e2e@ test /home/runner/work/vitepress/vitepress/__tests__/e2e
+2025-10-15T03:55:02.9944455Z . test:e2e: > vitest run
+2025-10-15T03:55:02.9945881Z . test:e2e: [1m[46m RUN [49m[22m [36mv4.0.0-beta.4 [39m[90m/home/runner/work/vitepress/vitepress/__tests__/e2e[39m
+2025-10-15T03:55:02.9947361Z . test:e2e:  [32m✓[39m home.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 2722[2mms[22m[39m
+2025-10-15T03:55:02.9949026Z . test:e2e: [2m3:54:39 AM[22m [36m[1m[vitepress][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/data-loading/data.md[22m
+2025-10-15T03:55:02.9950926Z . test:e2e: [2m3:54:39 AM[22m [36m[1m[vitepress][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/data-loading/data.md[22m
+2025-10-15T03:55:02.9952645Z . test:e2e: [2m3:54:39 AM[22m [36m[1m[vitepress][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/data-loading/data.md[22m
+2025-10-15T03:55:02.9954331Z . test:e2e: [2m3:54:39 AM[22m [36m[1m[vitepress][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/data-loading/data.md[22m
+2025-10-15T03:55:02.9955861Z . test:e2e:  [32m✓[39m data-loading/data.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 3032[2mms[22m[39m
+2025-10-15T03:55:02.9957537Z . test:e2e: [2m3:54:39 AM[22m [36m[1m[vitepress][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/data-loading/data.md[22m
+2025-10-15T03:55:02.9959766Z . test:e2e:  [32m✓[39m multi-sidebar/index.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 2039[2mms[22m[39m
+2025-10-15T03:55:02.9961620Z . test:e2e:  [32m✓[39m local-search/local-search.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1925[2mms[22m[39m
+2025-10-15T03:55:02.9963179Z . test:e2e:    [33m[2m✓[22m[39m local search[2m > [22mexclude content from search results [33m 1729[2mms[22m[39m
+2025-10-15T03:55:02.9979081Z . test:e2e:  [32m✓[39m frontmatter/multiple-levels-outline.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1447[2mms[22m[39m
+2025-10-15T03:55:02.9981026Z . test:e2e:  [32m✓[39m dynamic-routes/dynamic-routes.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 2007[2mms[22m[39m
+2025-10-15T03:55:02.9982565Z . test:e2e:    [33m[2m✓[22m[39m dynamic routes[2m > [22mrender correct content [33m 1806[2mms[22m[39m
+2025-10-15T03:55:02.9986006Z . test:e2e:  [32m✓[39m markdown-extensions/markdown-extensions.test.ts [2m([22m[2m26 tests[22m[2m)[22m[33m 13744[2mms[22m[39m
+2025-10-15T03:55:02.9987589Z . test:e2e:    [33m[2m✓[22m[39m Links[2m > [22mrender internal link [33m 2809[2mms[22m[39m
+2025-10-15T03:55:02.9988961Z . test:e2e:    [33m[2m✓[22m[39m Links[2m > [22mexternal link get target="_blank" and rel="noreferrer" [33m 620[2mms[22m[39m
+2025-10-15T03:55:02.9990520Z . test:e2e:    [33m[2m✓[22m[39m GitHub-Style Tables[2m > [22mrender table [33m 693[2mms[22m[39m
+2025-10-15T03:55:02.9991629Z . test:e2e:    [33m[2m✓[22m[39m Emoji[2m > [22mrender emoji [33m 985[2mms[22m[39m
+2025-10-15T03:55:02.9992781Z . test:e2e:    [33m[2m✓[22m[39m Table of Contents[2m > [22mrender toc [33m 706[2mms[22m[39m
+2025-10-15T03:55:02.9993949Z . test:e2e:    [33m[2m✓[22m[39m Custom Containers[2m > [22mdefault title [33m 665[2mms[22m[39m
+2025-10-15T03:55:02.9995112Z . test:e2e:    [33m[2m✓[22m[39m Custom Containers[2m > [22mcustom Title [33m 770[2mms[22m[39m
+2025-10-15T03:55:02.9996366Z . test:e2e:    [33m[2m✓[22m[39m Line Highlighting in Code Blocks[2m > [22msingle line [33m 944[2mms[22m[39m
+2025-10-15T03:55:02.9997853Z . test:e2e:    [33m[2m✓[22m[39m Line Highlighting in Code Blocks[2m > [22mmultiple single lines, ranges [33m 716[2mms[22m[39m
+2025-10-15T03:55:02.9999308Z . test:e2e:    [33m[2m✓[22m[39m Line Highlighting in Code Blocks[2m > [22mcomment highlight [33m 476[2mms[22m[39m
+2025-10-15T03:55:03.0000824Z . test:e2e:    [33m[2m✓[22m[39m Line Numbers[2m > [22mrender line numbers [33m 394[2mms[22m[39m
+2025-10-15T03:55:03.0001958Z . test:e2e:    [33m[2m✓[22m[39m Import Code Snippets[2m > [22mbasic [33m 312[2mms[22m[39m
+2025-10-15T03:55:03.0003128Z . test:e2e:    [33m[2m✓[22m[39m Import Code Snippets[2m > [22mspecify region [33m 315[2mms[22m[39m
+2025-10-15T03:55:03.0004147Z . test:e2e: [2m Test Files [22m [1m[32m7 passed[39m[22m[90m (7)[39m
+2025-10-15T03:55:03.0005062Z . test:e2e: [2m      Tests [22m [1m[32m35 passed[39m[22m[90m (35)[39m
+2025-10-15T03:55:03.0005778Z . test:e2e: [2m   Start at [22m 03:54:30
+2025-10-15T03:55:03.0007044Z . test:e2e: [2m   Duration [22m 20.02s[2m (transform 2.41s, setup 3.45s, collect 229ms, tests 26.92s, environment 2ms, prepare 1.30s)[22m
+2025-10-15T03:55:03.0008244Z . test:e2e: > vitepress@2.0.0-alpha.12 test:e2e-build /home/runner/work/vitepress/vitepress
+2025-10-15T03:55:03.0009022Z . test:e2e: > VITE_TEST_BUILD=1 pnpm test:e2e-dev
+2025-10-15T03:55:03.0010021Z . test:e2e: > vitepress@2.0.0-alpha.12 test:e2e-dev /home/runner/work/vitepress/vitepress
+2025-10-15T03:55:03.0010733Z . test:e2e: > pnpm -F=tests-e2e test
+2025-10-15T03:55:03.0011480Z . test:e2e: > tests-e2e@ test /home/runner/work/vitepress/vitepress/__tests__/e2e
+2025-10-15T03:55:03.0012099Z . test:e2e: > vitest run
+2025-10-15T03:55:03.0013150Z . test:e2e: [1m[46m RUN [49m[22m [36mv4.0.0-beta.4 [39m[90m/home/runner/work/vitepress/vitepress/__tests__/e2e[39m
+2025-10-15T03:55:03.0014049Z . test:e2e: - building client + server bundles...
+2025-10-15T03:55:03.0015048Z . test:e2e: [32m✓[0m building client + server bundles...
+2025-10-15T03:55:03.0015793Z . test:e2e: - rendering pages...
+2025-10-15T03:55:03.0016384Z . test:e2e: [32m✓[0m rendering pages...
+2025-10-15T03:55:03.0016912Z . test:e2e: build complete in 2.27s.
+2025-10-15T03:55:03.0017549Z . test:e2e: Built site served at http://localhost:41191/
+2025-10-15T03:55:03.0018859Z . test:e2e:  [32m✓[39m data-loading/data.test.ts [2m([22m[2m2 tests[22m[2m | [22m[33m1 skipped[39m[2m)[22m[33m 990[2mms[22m[39m
+2025-10-15T03:55:03.0020350Z . test:e2e:  [32m✓[39m home.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 1004[2mms[22m[39m
+2025-10-15T03:55:03.0021557Z . test:e2e:  [32m✓[39m multi-sidebar/index.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 1072[2mms[22m[39m
+2025-10-15T03:55:03.0022926Z . test:e2e:  [32m✓[39m dynamic-routes/dynamic-routes.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1068[2mms[22m[39m
+2025-10-15T03:55:03.0024247Z . test:e2e:    [33m[2m✓[22m[39m dynamic routes[2m > [22mrender correct content [33m 925[2mms[22m[39m
+2025-10-15T03:55:03.0025748Z . test:e2e:  [32m✓[39m frontmatter/multiple-levels-outline.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 903[2mms[22m[39m
+2025-10-15T03:55:03.0027281Z . test:e2e:  [32m✓[39m local-search/local-search.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1472[2mms[22m[39m
+2025-10-15T03:55:03.0028732Z . test:e2e:    [33m[2m✓[22m[39m local search[2m > [22mexclude content from search results [33m 1354[2mms[22m[39m
+2025-10-15T03:55:03.0030466Z . test:e2e:  [32m✓[39m markdown-extensions/markdown-extensions.test.ts [2m([22m[2m26 tests[22m[2m)[22m[33m 5800[2mms[22m[39m
+2025-10-15T03:55:03.0032003Z . test:e2e:    [33m[2m✓[22m[39m Links[2m > [22mrender internal link [33m 996[2mms[22m[39m
+2025-10-15T03:55:03.0033020Z . test:e2e:    [33m[2m✓[22m[39m Code Groups[2m > [22mbasic [33m 305[2mms[22m[39m
+2025-10-15T03:55:03.0033927Z . test:e2e: [2m Test Files [22m [1m[32m7 passed[39m[22m[90m (7)[39m
+2025-10-15T03:55:03.0035015Z . test:e2e: [2m      Tests [22m [1m[32m34 passed[39m[22m[2m | [22m[33m1 skipped[39m[90m (35)[39m
+2025-10-15T03:55:03.0035834Z . test:e2e: [2m   Start at [22m 03:54:52
+2025-10-15T03:55:03.0037014Z . test:e2e: [2m   Duration [22m 10.78s[2m (transform 2.73s, setup 2.44s, collect 105ms, tests 12.31s, environment 2ms, prepare 843ms)[22m
+2025-10-15T03:55:03.0037785Z . test:e2e: Done
+2025-10-15T03:55:03.0289701Z Post job cleanup.
+2025-10-15T03:55:03.1824317Z Cache hit occurred on the primary key node-cache-Linux-x64-pnpm-8a7bf4c0929370959928a6fd0466b3522448ceff480ebe2e27a0b1ef7f4a9ce2, not saving cache.
+2025-10-15T03:55:03.1916834Z Post job cleanup.
+2025-10-15T03:55:03.2765506Z Pruning is unnecessary.
+2025-10-15T03:55:03.2870853Z Post job cleanup.
+2025-10-15T03:55:03.3815988Z [command]/usr/bin/git version
+2025-10-15T03:55:03.3852545Z git version 2.51.0
+2025-10-15T03:55:03.3897292Z Temporarily overriding HOME='/home/runner/work/_temp/9cc7cae3-b7c5-4ce2-8dd6-e6d9b9715239' before making global git config changes
+2025-10-15T03:55:03.3898829Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-15T03:55:03.3912215Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vitepress/vitepress
+2025-10-15T03:55:03.3951392Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-15T03:55:03.3987216Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-15T03:55:03.4248659Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-15T03:55:03.4275368Z http.https://github.com/.extraheader
+2025-10-15T03:55:03.4291062Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-15T03:55:03.4326899Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-15T03:55:03.4660294Z Cleaning up orphan processes

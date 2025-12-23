@@ -1,0 +1,74 @@
+Cloning into 'click'...
+Obtaining file:///app/click
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: click
+  Building editable for click (pyproject.toml): started
+  Building editable for click (pyproject.toml): finished with status 'done'
+  Created wheel for click: filename=click-8.2.2-py3-none-any.whl size=3101 sha256=fcd2df78603225f40dcc3cfd46b9ad06ad8b75cb18b16a058ef9f040cfdfd05a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-uzl3op0w/wheels/88/51/f4/8ee3b9beb5fddae642658c33089b4a1a42b36025c9a57778cb
+Successfully built click
+Installing collected packages: click
+Successfully installed click-8.2.2
+Collecting tox
+  Downloading tox-4.28.4-py3-none-any.whl (174 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 174.1/174.1 KB 5.2 MB/s eta 0:00:00
+Collecting packaging>=25
+  Downloading packaging-25.0-py3-none-any.whl (66 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 KB 12.6 MB/s eta 0:00:00
+Collecting typing-extensions>=4.14.1
+  Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 KB 8.1 MB/s eta 0:00:00
+Collecting filelock>=3.18
+  Downloading filelock-3.19.1-py3-none-any.whl (15 kB)
+Collecting cachetools>=6.1
+  Downloading cachetools-6.1.0-py3-none-any.whl (11 kB)
+Collecting tomli>=2.2.1
+  Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+Collecting platformdirs>=4.3.8
+  Downloading platformdirs-4.3.8-py3-none-any.whl (18 kB)
+Collecting pyproject-api>=1.9.1
+  Downloading pyproject_api-1.9.1-py3-none-any.whl (13 kB)
+Collecting virtualenv>=20.31.2
+  Downloading virtualenv-20.34.0-py3-none-any.whl (6.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 64.1 MB/s eta 0:00:00
+Collecting chardet>=5.2
+  Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 199.4/199.4 KB 34.8 MB/s eta 0:00:00
+Collecting colorama>=0.4.6
+  Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting pluggy>=1.6
+  Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Collecting distlib<1,>=0.3.7
+  Downloading distlib-0.4.0-py2.py3-none-any.whl (469 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 469.0/469.0 KB 52.9 MB/s eta 0:00:00
+Installing collected packages: distlib, typing-extensions, tomli, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+Successfully installed cachetools-6.1.0 chardet-5.2.0 colorama-0.4.6 distlib-0.4.0 filelock-3.19.1 packaging-25.0 platformdirs-4.3.8 pluggy-1.6.0 pyproject-api-1.9.1 tomli-2.2.1 tox-4.28.4 typing-extensions-4.14.1 virtualenv-20.34.0
+Traceback (most recent call last):
+  File "/app/venv/bin/tox", line 8, in <module>
+    sys.exit(run())
+  File "/app/venv/lib/python3.10/site-packages/tox/run.py", line 20, in run
+    result = main(sys.argv[1:] if args is None else args)
+  File "/app/venv/lib/python3.10/site-packages/tox/run.py", line 46, in main
+    return handler(state)
+  File "/app/venv/lib/python3.10/site-packages/tox/session/cmd/legacy.py", line 115, in legacy
+    return run_sequential(state)
+  File "/app/venv/lib/python3.10/site-packages/tox/session/cmd/run/sequential.py", line 25, in run_sequential
+    return execute(state, max_workers=1, has_spinner=False, live=True)
+  File "/app/venv/lib/python3.10/site-packages/tox/session/cmd/run/common.py", line 167, in execute
+    state.envs.ensure_only_run_env_is_active()
+  File "/app/venv/lib/python3.10/site-packages/tox/session/env_select.py", line 436, in ensure_only_run_env_is_active
+    envs, active = self._defined_envs, self._env_name_to_active()
+  File "/app/venv/lib/python3.10/site-packages/tox/session/env_select.py", line 258, in _defined_envs
+    run_env = self._build_run_env(name)
+  File "/app/venv/lib/python3.10/site-packages/tox/session/env_select.py", line 319, in _build_run_env
+    runner = REGISTER.runner(cast("str", env_conf["runner"]))
+  File "/app/venv/lib/python3.10/site-packages/tox/tox_env/register.py", line 72, in runner
+    return self._run_envs[name]
+KeyError: 'uv-venv-lock-runner'

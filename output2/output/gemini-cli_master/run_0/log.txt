@@ -1,0 +1,632 @@
+
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e prepare
+> husky && npm run bundle
+
+git command not found
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e bundle
+> npm run generate && node esbuild.config.js && node scripts/copy_bundle_assets.js
+
+
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e generate
+> node scripts/generate-git-commit-info.js
+
+/bin/sh: 1: git: not found
+Assets copied to bundle/
+
+added 30 packages, changed 1 package, and audited 1266 packages in 5s
+
+344 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e build
+> node scripts/build.js
+
+
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e generate
+> node scripts/generate-git-commit-info.js
+
+/bin/sh: 1: git: not found
+
+> @google/gemini-cli-a2a-server@0.9.0-nightly.20251001.163dba7e build
+> node ../../scripts/build_package.js
+
+Successfully copied files.
+
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e build
+> node ../../scripts/build_package.js
+
+Successfully copied files.
+
+> @google/gemini-cli-core@0.9.0-nightly.20251001.163dba7e build
+> node ../../scripts/build_package.js
+
+Successfully copied files.
+
+> @google/gemini-cli-test-utils@0.9.0-nightly.20251001.163dba7e build
+> node ../../scripts/build_package.js
+
+Successfully copied files.
+
+> gemini-cli-vscode-ide-companion@0.9.0-nightly.20251001.163dba7e build
+> npm run build:dev
+
+
+> gemini-cli-vscode-ide-companion@0.9.0-nightly.20251001.163dba7e build:dev
+> npm run check-types && npm run lint && node esbuild.js
+
+
+> gemini-cli-vscode-ide-companion@0.9.0-nightly.20251001.163dba7e check-types
+> tsc --noEmit
+
+
+> gemini-cli-vscode-ide-companion@0.9.0-nightly.20251001.163dba7e lint
+> eslint src
+
+[watch] build started
+[watch] build finished
+
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e test:ci
+> npm run test:ci --workspaces --if-present --parallel && npm run test:scripts
+
+
+> @google/gemini-cli-a2a-server@0.9.0-nightly.20251001.163dba7e test:ci
+> vitest run --coverage
+
+
+ RUN  v3.2.4 /app/packages/a2a-server
+      Coverage enabled with v8
+
+ ✓ src/persistence/gcs.test.ts (10 tests | 1 skipped) 23ms
+ ✓ src/agent/task.test.ts (1 test) 19ms
+ ✓ src/http/endpoints.test.ts (5 tests) 102ms
+ ✓ src/http/app.test.ts (5 tests) 93ms
+
+ Test Files  4 passed (4)
+      Tests  20 passed | 1 skipped (21)
+   Start at  05:27:51
+   Duration  5.27s (transform 1.84s, setup 0ms, collect 10.52s, tests 237ms, environment 2.21s, prepare 488ms)
+
+JUNIT report written to /app/packages/a2a-server/junit.xml
+ % Coverage report from v8
+
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e test:ci
+> vitest run
+
+
+ RUN  v3.2.4 /app/packages/cli
+      Coverage enabled with v8
+
+ ✓ src/ui/commands/restoreCommand.test.ts (13 tests) 89ms
+ ✓ src/ui/themes/color-utils.test.ts (16 tests) 25ms
+ ✓ src/services/CommandService.test.ts (11 tests) 27ms
+ ✓ src/ui/keyMatchers.test.ts (34 tests) 23ms
+ ✓ src/ui/commands/copyCommand.test.ts (11 tests) 29ms
+ ✓ src/utils/installationInfo.test.ts (16 tests) 26ms
+ ✓ src/ui/utils/commandUtils.test.ts (26 tests) 62ms
+ ✓ src/ui/hooks/useInputHistoryStore.test.ts (14 tests) 104ms
+ ✓ src/ui/hooks/useSlashCompletion.test.ts (21 tests) 538ms
+ ✓ src/ui/components/LoadingIndicator.test.tsx (16 tests) 211ms
+ ✓ src/ui/components/shared/MaxSizedBox.test.tsx (21 tests) 305ms
+ ✓ src/ui/hooks/shellCommandProcessor.test.ts (20 tests) 508ms
+ ✓ src/utils/envVarResolver.test.ts (16 tests) 17ms
+ ✓ src/services/prompt-processors/injectionParser.test.ts (21 tests) 31ms
+ ✓ src/ui/components/messages/DiffRenderer.test.tsx (13 tests) 809ms
+   ✓ <OverflowProvider><DiffRenderer /></OverflowProvider> > should call colorizeCode with null language for new file with unknown extension  409ms
+ ✓ src/ui/hooks/useShellHistory.test.ts (7 tests) 606ms
+ ✓ src/ui/commands/setupGithubCommand.test.ts (8 tests) 86ms
+ ✓ src/ui/utils/computeStats.test.ts (12 tests) 12ms
+ ✓ src/ui/hooks/useInputHistory.test.ts (11 tests) 69ms
+ ✓ src/ui/hooks/usePermissionsModifyTrust.test.ts (8 tests) 72ms
+ ✓ src/ui/commands/chatCommand.test.ts (28 tests) 74ms
+ ✓ src/ui/hooks/useToolScheduler.test.ts (21 tests | 4 skipped) 88ms
+node:internal/modules/cjs/loader:1210
+  throw err;
+  ^
+
+Error: Cannot find module '/app/cli.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.19.5
+ ✓ src/ui/hooks/useReverseSearchCompletion.test.tsx (10 tests) 95ms
+ ✓ src/config/policy-engine.integration.test.ts (12 tests) 15ms
+ ✓ src/config/policy.test.ts (19 tests) 17ms
+ ✓ src/services/prompt-processors/shellProcessor.test.ts (33 tests) 69ms
+ ✓ src/utils/sessionCleanup.integration.test.ts (5 tests) 28ms
+ ✓ src/services/McpPromptLoader.test.ts (25 tests) 26ms
+ ✓ src/config/settings.test.ts (77 tests) 85ms
+ ✓ src/utils/errors.test.ts (20 tests) 31ms
+ ✓ src/config/settingsSchema.test.ts (16 tests) 29ms
+ ✓ src/services/FileCommandLoader.test.ts (38 tests) 188ms
+ ✓ src/ui/commands/extensionsCommand.test.ts (11 tests) 30ms
+ ✓ src/utils/relaunch.test.ts (8 tests) 75ms
+ ✓ src/config/trustedFolders.test.ts (21 tests) 28ms
+ ✓ src/ui/components/StatsDisplay.test.tsx (12 tests) 336ms
+ ✓ src/ui/commands/memoryCommand.test.ts (10 tests) 27ms
+ ✓ src/ui/components/shared/text-buffer.test.ts (115 tests) 336ms
+ ✓ src/utils/sessionCleanup.test.ts (70 tests) 110ms
+ ✓ src/services/prompt-processors/atFileProcessor.test.ts (11 tests) 40ms
+ ✓ src/utils/settingsUtils.test.ts (73 tests) 52ms
+ ✓ src/ui/hooks/atCommandProcessor.test.ts (39 tests) 541ms
+ ✓ src/ui/components/messages/ToolGroupMessage.test.tsx (14 tests) 175ms
+ ✓ src/ui/components/shared/vim-buffer-actions.test.ts (74 tests) 48ms
+ ✓ src/utils/handleAutoUpdate.test.ts (13 tests) 26ms
+ ✓ src/ui/hooks/useGeminiStream.test.tsx (40 tests) 686ms
+ ✓ src/ui/hooks/useQuotaAndFallback.test.ts (10 tests) 103ms
+ ✓ src/ui/hooks/vim.test.ts (87 tests) 633ms
+ ✓ src/ui/hooks/useSelectionList.test.ts (45 tests) 180ms
+ ✓ src/ui/hooks/useKeypress.test.ts (18 tests) 113ms
+ ✓ src/ui/hooks/useCommandCompletion.test.ts (17 tests) 201ms
+(node:2311) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 error listeners added to [Socket]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/ui/hooks/useAutoAcceptIndicator.test.ts (16 tests) 145ms
+ ✓ src/ui/commands/ideCommand.test.ts (8 tests) 27ms
+ ✓ src/config/extensions/github.test.ts (23 tests) 26ms
+ ✓ src/ui/contexts/KeypressContext.test.tsx (43 tests) 222ms
+ ✓ src/ui/hooks/useEditorSettings.test.ts (10 tests) 62ms
+ ✓ src/commands/mcp/add.test.ts (17 tests) 180ms
+ ✓ src/validateNonInterActiveAuth.test.ts (16 tests) 48ms
+ ✓ src/config/extensions/update.test.ts (8 tests) 420ms
+ ✓ src/nonInteractiveCli.test.ts (18 tests) 133ms
+ ✓ src/config/extensions/extensionEnablement.test.ts (43 tests) 240ms
+ ✓ src/ui/auth/AuthDialog.test.tsx (14 tests) 301ms
+ ✓ src/ui/components/Footer.test.tsx (18 tests) 232ms
+ ✓ src/ui/hooks/slashCommandProcessor.test.ts (35 tests) 2072ms
+(node:2626) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 mcp-client-update listeners added to [EventEmitter]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/ui/components/Composer.test.tsx (18 tests) 198ms
+ ✓ src/config/extension.test.ts (53 tests) 659ms
+ ✓ src/ui/hooks/useExtensionUpdates.test.ts (4 tests) 280ms
+ ✓ src/ui/components/shared/BaseSelectionList.test.tsx (26 tests) 618ms
+ ✓ src/ui/utils/textUtils.test.ts (9 tests) 11ms
+ ✓ src/ui/components/messages/ToolMessage.test.tsx (12 tests) 121ms
+ ✓ src/ui/hooks/useHistoryManager.test.ts (8 tests) 78ms
+ ✓ src/ui/hooks/usePhraseCycler.test.ts (9 tests) 77ms
+ ✓ src/commands/mcp/list.test.ts (4 tests) 20ms
+ ✓ src/ui/themes/theme-manager.test.ts (12 tests) 61ms
+ ✓ src/utils/commands.test.ts (12 tests) 12ms
+ ✓ src/ui/utils/updateCheck.test.ts (9 tests) 32ms
+ ✓ src/utils/commentJson.test.ts (6 tests) 85ms
+ ✓ src/ui/hooks/useMessageQueue.test.ts (9 tests) 82ms
+ ✓ src/commands/extensions/install.test.ts (11 tests) 60ms
+ ✓ src/ui/hooks/useAtCompletion.test.ts (13 tests) 1080ms
+ ✓ src/ui/utils/highlight.test.ts (16 tests) 16ms
+ ✓ src/ui/hooks/useLoadingIndicator.test.ts (5 tests) 117ms
+ ✓ src/ui/hooks/useIdeTrustListener.test.ts (5 tests) 56ms
+ ✓ src/utils/gitUtils.test.ts (12 tests) 46ms
+ ✓ src/config/config.integration.test.ts (18 tests) 3092ms
+   ✓ Configuration Integration Tests > Approval Mode Integration Tests > should parse --approval-mode=auto_edit correctly through the full argument parsing flow  2944ms
+ ✓ src/ui/hooks/useTimer.test.ts (8 tests) 83ms
+ ✓ src/ui/hooks/useConsoleMessages.test.ts (7 tests) 100ms
+ ✓ src/ui/commands/toolsCommand.test.ts (4 tests) 24ms
+ ✓ src/ui/themes/theme.test.ts (5 tests) 9ms
+ ✓ src/ui/hooks/useGitBranchName.test.ts (7 tests | 2 skipped) 92ms
+ ✓ src/ui/commands/initCommand.test.ts (3 tests) 21ms
+ ✓ src/utils/userStartupWarnings.test.ts (5 tests) 34ms
+ ✓ src/ui/commands/docsCommand.test.ts (3 tests) 21ms
+ ✓ src/services/BuiltinCommandLoader.test.ts (8 tests) 18ms
+ ✓ src/ui/components/AnsiOutput.test.tsx (6 tests) 106ms
+ ✓ src/ui/components/PrepareLabel.test.tsx (6 tests) 101ms
+ ✓ src/utils/readStdin.test.ts (4 tests) 20ms
+ ✓ src/ui/commands/statsCommand.test.ts (3 tests) 22ms
+ ✓ src/ui/commands/terminalSetupCommand.test.ts (5 tests) 13ms
+ ✓ src/ui/utils/displayUtils.test.ts (8 tests) 10ms
+ ✓ src/ui/utils/formatters.test.ts (14 tests) 10ms
+ ✓ src/ui/utils/markdownUtilities.test.ts (7 tests) 12ms
+ ✓ src/config/config.test.ts (168 tests | 1 skipped) 1415ms
+ ✓ src/ui/components/ModelDialog.test.tsx (9 tests) 195ms
+ ✓ src/ui/hooks/useMemoryMonitor.test.ts (3 tests) 52ms
+ ✓ src/config/keyBindings.test.ts (3 tests) 21ms
+ ✓ src/test-utils/mockCommandContext.test.ts (3 tests) 13ms
+ ✓ src/utils/windowTitle.test.ts (7 tests) 9ms
+ ✓ src/ui/components/HistoryItemDisplay.test.tsx (13 tests) 569ms
+ ✓ src/ui/components/ConsentPrompt.test.tsx (5 tests) 128ms
+ ✓ src/ui/components/messages/CompressionMessage.test.tsx (8 tests) 182ms
+ ✓ src/ui/components/QueuedMessageDisplay.test.tsx (5 tests) 68ms
+ ✓ src/ui/components/ProQuotaDialog.test.tsx (3 tests) 108ms
+ ✓ src/ui/AppContainer.test.tsx (35 tests) 539ms
+ ✓ src/ui/commands/quitCommand.test.ts (1 test) 37ms
+ ✓ src/ui/commands/helpCommand.test.ts (2 tests) 19ms
+ ✓ src/ui/commands/privacyCommand.test.ts (2 tests) 13ms
+ ✓ src/ui/commands/themeCommand.test.ts (2 tests) 12ms
+ ✓ src/ui/commands/permissionsCommand.test.ts (3 tests) 13ms
+ ✓ src/ui/hooks/useModelCommand.test.ts (3 tests) 42ms
+ ✓ src/ui/commands/settingsCommand.test.ts (2 tests) 12ms
+ ✓ src/ui/components/ModelStatsDisplay.test.tsx (6 tests) 249ms
+ ✓ src/ui/commands/corgiCommand.test.ts (2 tests) 11ms
+ ✓ src/ui/commands/modelCommand.test.ts (2 tests) 11ms
+ ✓ src/ui/commands/editorCommand.test.ts (2 tests) 10ms
+ ✓ src/ui/commands/authCommand.test.ts (2 tests) 11ms
+ ✓ src/ui/components/views/ToolsList.test.tsx (3 tests) 99ms
+ ✓ src/ui/components/Help.test.tsx (2 tests) 130ms
+ ✓ src/ui/commands/directoryCommand.test.tsx (7 tests) 25ms
+ ✓ src/config/extensions/variables.test.ts (1 test) 6ms
+ ✓ src/ui/components/views/ChatList.test.tsx (3 tests) 74ms
+ ✓ src/ui/components/SettingsDialog.test.tsx (52 tests) 5556ms
+   ✓ SettingsDialog > Complex User Interactions > should allow changing multiple settings without losing pending changes  355ms
+   ✓ SettingsDialog > Complex User Interactions > should maintain state consistency during complex interactions  316ms
+   ✓ SettingsDialog > String Settings Editing > should allow editing and committing a string setting  714ms
+ ✓ src/utils/deepMerge.test.ts (13 tests) 12ms
+ ✓ src/ui/commands/aboutCommand.test.ts (5 tests) 24ms
+ ✓ src/ui/commands/mcpCommand.test.ts (5 tests) 26ms
+ ✓ src/ui/commands/compressCommand.test.ts (5 tests) 34ms
+ ✓ src/ui/components/Header.test.tsx (4 tests) 135ms
+]2;Gemini - cli]2;Gemini - root]2;Gemini - root ✓ src/ui/components/shared/RadioButtonSelect.test.tsx (5 tests) 47ms
+ ✓ src/ui/commands/bugCommand.test.ts (2 tests) 10ms
+ ✓ src/ui/commands/clearCommand.test.ts (2 tests) 13ms
+ ✓ src/ui/components/views/McpStatus.test.tsx (12 tests) 166ms
+ ✓ src/ui/hooks/useFolderTrust.test.ts (9 tests) 62ms
+ ✓ src/ui/components/shared/EnumSelector.test.tsx (9 tests) 74ms
+ ✓ src/ui/App.test.tsx (7 tests) 82ms
+ ✓ src/ui/components/ToolStatsDisplay.test.tsx (5 tests) 188ms
+ ✓ src/ui/hooks/useFocus.test.ts (6 tests) 62ms
+ ✓ src/ui/utils/clipboardUtils.test.ts (6 tests) 10ms
+ ✓ src/utils/startupWarnings.test.ts (4 tests) 14ms
+ ✓ src/ui/contexts/SessionContext.test.tsx (4 tests) 91ms
+ ✓ src/ui/hooks/usePrivacySettings.test.ts (4 tests) 214ms
+ ✓ src/config/auth.test.ts (8 tests) 16ms
+ ✓ src/commands/extensions/new.test.ts (4 tests) 48ms
+ ✓ src/gemini.test.tsx (9 tests) 550ms
+   ✓ gemini.tsx main function > verifies that we dont load the config before relaunchAppInChildProcess  519ms
+ ✓ src/ui/components/PermissionsModifyTrustDialog.test.tsx (6 tests) 339ms
+ ✓ src/ui/components/messages/ToolConfirmationMessage.test.tsx (10 tests) 174ms
+ ✓ src/ui/components/views/ExtensionsList.test.tsx (9 tests) 106ms
+ ✓ src/ui/utils/MarkdownDisplay.test.tsx (30 tests) 477ms
+ ✓ src/ui/components/FolderTrustDialog.test.tsx (9 tests) 249ms
+ ✓ src/ui/components/IdeTrustChangeDialog.test.tsx (6 tests) 172ms
+ ✓ src/utils/cleanup.test.ts (4 tests) 8ms
+ ✓ src/commands/mcp.test.ts (3 tests) 16ms
+ ✓ src/ui/components/ContextSummaryDisplay.test.tsx (4 tests) 50ms
+ ✓ src/ui/components/shared/DescriptiveRadioButtonSelect.test.tsx (2 tests) 55ms
+ ✓ src/ui/components/SessionSummaryDisplay.test.tsx (1 test) 91ms
+ ✓ src/commands/mcp/remove.test.ts (2 tests) 42ms
+ ✓ src/services/prompt-processors/argumentProcessor.test.ts (2 tests) 12ms
+ ✓ src/utils/processUtils.test.ts (1 test) 6ms
+ ✓ src/ui/components/ThemeDialog.test.tsx (2 tests) 514ms
+   ✓ ThemeDialog Snapshots > should render correctly in theme selection mode  332ms
+ ✓ src/ui/components/ShellConfirmationDialog.test.tsx (4 tests) 123ms
+ ✓ src/commands/extensions/uninstall.test.ts (1 test) 17ms
+ ✓ src/ui/components/LoopDetectionConfirmation.test.tsx (2 tests) 85ms
+ ✓ src/ui/components/InputPrompt.test.tsx (87 tests) 9378ms
+   ✓ InputPrompt > command search (Ctrl+R when not in shell) > expands and collapses long suggestion via Right/Left arrows  378ms
+
+ Test Files  172 passed (172)
+      Tests  2615 passed | 7 skipped (2622)
+   Start at  05:27:57
+   Duration  24.96s (transform 62.98s, setup 12.15s, collect 662.74s, tests 43.16s, environment 158.66s, prepare 33.11s)
+
+JUNIT report written to /app/packages/cli/junit.xml
+ % Coverage report from v8
+
+> @google/gemini-cli-core@0.9.0-nightly.20251001.163dba7e test:ci
+> vitest run
+
+
+ RUN  v3.2.4 /app/packages/core
+      Coverage enabled with v8
+
+ ✓ src/utils/partUtils.test.ts (37 tests) 21ms
+ ✓ src/utils/editor.test.ts (113 tests) 83ms
+ ✓ src/utils/ignorePatterns.test.ts (28 tests) 20ms
+ ✓ src/mcp/oauth-utils.test.ts (21 tests) 25ms
+ ✓ src/utils/paths.test.ts (55 tests) 22ms
+ ✓ src/utils/userAccountManager.test.ts (23 tests) 42ms
+ ✓ src/utils/memoryImportProcessor.test.ts (25 tests) 98ms
+ ✓ src/utils/systemEncoding.test.ts (38 tests) 48ms
+ ✓ src/telemetry/gcp-exporters.test.ts (18 tests) 64ms
+ ✓ src/utils/workspaceContext.test.ts (34 tests) 104ms
+ ✓ src/code_assist/converter.test.ts (22 tests) 21ms
+ ✓ src/core/logger.test.ts (38 tests) 172ms
+ ✓ src/mcp/oauth-provider.test.ts (21 tests) 209ms
+ ✓ src/utils/generateContentResponseUtilities.test.ts (29 tests) 17ms
+ ✓ src/tools/modifiable-tool.test.ts (11 tests) 62ms
+ ✓ src/ide/ideContext.test.ts (23 tests) 34ms
+ ✓ src/policy/policy-engine.test.ts (28 tests) 34ms
+ ✓ src/services/shellExecutionService.test.ts (37 tests) 206ms
+ ✓ src/mcp/oauth-token-storage.test.ts (28 tests) 56ms
+ ✓ src/utils/filesearch/crawler.test.ts (18 tests) 87ms
+ ✓ src/output/json-formatter.test.ts (15 tests) 20ms
+ ✓ src/utils/googleErrors.test.ts (9 tests) 18ms
+ ✓ src/utils/filesearch/fileSearch.test.ts (27 tests) 191ms
+ ✓ src/utils/getFolderStructure.test.ts (15 tests) 138ms
+ ✓ src/mcp/token-storage/keychain-token-storage.test.ts (24 tests) 1297ms
+   ✓ KeychainTokenStorage > checkKeychainAvailability > should return true if keytar is available and functional  502ms
+ ✓ src/mcp/token-storage/hybrid-token-storage.test.ts (11 tests) 29ms
+ ✓ src/telemetry/rate-limiter.test.ts (24 tests) 24ms
+ ✓ src/tools/mcp-tool.test.ts (42 tests) 153ms
+ ✓ src/core/prompts.test.ts (40 tests) 58ms
+ ✓ src/services/gitService.test.ts (14 tests) 67ms
+ ✓ src/utils/gitIgnoreParser.test.ts (20 tests) 79ms
+ ✓ src/ide/ide-client.test.ts (23 tests) 121ms
+ ✓ src/tools/memoryTool.test.ts (19 tests) 135ms
+ ✓ src/utils/memoryDiscovery.test.ts (16 tests) 160ms
+ ❯ src/utils/pathReader.test.ts (16 tests | 1 failed) 180ms
+   ✓ readPathFromWorkspace > should read a text file from the CWD 22ms
+   ✓ readPathFromWorkspace > should read a file from a secondary workspace directory 4ms
+   ✓ readPathFromWorkspace > should prioritize CWD when file exists in both CWD and secondary dir 3ms
+   ✓ readPathFromWorkspace > should read an image file and return it as inlineData (Part object) 2ms
+   ✓ readPathFromWorkspace > should read a generic binary file and return an info string 2ms
+   ✓ readPathFromWorkspace > should read a file from an absolute path if within workspace 3ms
+   ✓ readPathFromWorkspace > Directory Expansion > should expand a directory and read the content of its files 24ms
+   ✓ readPathFromWorkspace > Directory Expansion > should recursively expand a directory and read all nested files 6ms
+   ✓ readPathFromWorkspace > Directory Expansion > should handle mixed content and include files from subdirectories 6ms
+   ✓ readPathFromWorkspace > Directory Expansion > should handle an empty directory 3ms
+   ✓ readPathFromWorkspace > File Ignoring > should return an empty array for an ignored file 4ms
+   ✓ readPathFromWorkspace > File Ignoring > should not read ignored files when expanding a directory 9ms
+   ✓ readPathFromWorkspace > should throw an error for an absolute path outside the workspace 5ms
+   ✓ readPathFromWorkspace > should throw an error if a relative path is not found anywhere 2ms
+   × readPathFromWorkspace > should return an error string if reading a file with no permissions 26ms
+     → expected 'you cannot read me' to contain 'Error reading file unreadable.txt'
+   ✓ readPathFromWorkspace > should return an error string for files exceeding the size limit 55ms
+(node:8130) MaxListenersExceededWarning: Possible EventTarget memory leak detected. 11 abort listeners added to [AbortSignal]. MaxListeners is 10. Use events.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/utils/secure-browser-launcher.test.ts (14 tests) 42ms
+ ✓ src/utils/errorReporting.test.ts (6 tests) 56ms
+ ✓ src/utils/bfsFileSearch.test.ts (11 tests) 111ms
+ ✓ src/utils/fileUtils.test.ts (65 tests) 181ms
+ ✓ src/code_assist/oauth-credential-storage.test.ts (12 tests) 49ms
+ ✓ src/tools/ls.test.ts (22 tests) 317ms
+ ✓ src/services/fileDiscoveryService.test.ts (13 tests) 85ms
+ ✓ src/tools/grep.test.ts (24 tests) 309ms
+ ✓ src/confirmation-bus/message-bus.test.ts (10 tests) 36ms
+ ✓ src/tools/message-bus-integration.test.ts (9 tests) 122ms
+ ✓ src/tools/ripGrep.test.ts (45 tests) 419ms
+ ✓ src/utils/environmentContext.test.ts (8 tests) 79ms
+ ✓ src/telemetry/high-water-mark-tracker.test.ts (18 tests) 20ms
+ ✓ src/routing/strategies/classifierStrategy.test.ts (8 tests) 34ms
+ ✓ src/ide/process-utils.test.ts (7 tests) 31ms
+ ✓ src/mcp/token-storage/file-token-storage.test.ts (16 tests) 1163ms
+ ✓ src/utils/googleQuotaErrors.test.ts (10 tests) 10ms
+ ✓ src/mcp/token-storage/base-token-storage.test.ts (12 tests) 11ms
+ ✓ src/routing/strategies/compositeStrategy.test.ts (6 tests) 24ms
+ ✓ src/tools/diffOptions.test.ts (9 tests) 10ms
+ ✓ src/utils/terminalSerializer.test.ts (16 tests) 115ms
+ ✓ src/code_assist/setup.test.ts (7 tests) 15ms
+ ✓ src/mcp/sa-impersonation-provider.test.ts (8 tests) 39ms
+ ✓ src/code_assist/server.test.ts (8 tests) 71ms
+ ✓ src/agents/schema-utils.test.ts (6 tests) 13ms
+ ✓ src/telemetry/activity-detector.test.ts (13 tests) 21ms
+ ✓ src/utils/filesearch/ignore.test.ts (12 tests) 37ms
+ ✓ src/tools/tools.test.ts (11 tests) 22ms
+ ✓ src/agents/utils.test.ts (12 tests) 11ms
+ ✓ src/ide/ide-installer.test.ts (10 tests) 29ms
+ ✓ src/utils/filesearch/crawlCache.test.ts (9 tests) 14ms
+ ✓ src/ide/detect-ide.test.ts (14 tests) 15ms
+ ✓ src/utils/installationManager.test.ts (4 tests) 16ms
+ ✓ src/tools/read-file.test.ts (28 tests) 423ms
+ ✓ src/mcp/google-auth-provider.test.ts (8 tests) 36ms
+ ✓ src/config/models.test.ts (9 tests) 8ms
+ ✓ src/utils/schemaValidator.test.ts (7 tests) 109ms
+ ✓ src/utils/textUtils.test.ts (12 tests) 11ms
+ ✓ src/utils/thoughtUtils.test.ts (11 tests) 11ms
+ ✓ src/routing/strategies/fallbackStrategy.test.ts (4 tests) 10ms
+ ✓ src/utils/safeJsonStringify.test.ts (8 tests) 7ms
+ ✓ src/tools/write-todos.test.ts (9 tests) 80ms
+ ✓ src/utils/filesearch/result-cache.test.ts (3 tests) 7ms
+ ✓ src/routing/strategies/overrideStrategy.test.ts (3 tests) 7ms
+ ✓ src/config/storage.test.ts (6 tests) 7ms
+ ✓ src/utils/geminiIgnoreParser.test.ts (2 tests) 33ms
+ ✓ src/routing/strategies/defaultStrategy.test.ts (1 test) 9ms
+ ✓ src/telemetry/telemetry-utils.test.ts (6 tests) 7ms
+ ✓ src/services/fileSystemService.test.ts (3 tests) 34ms
+ ✓ src/index.test.ts (1 test) 5ms
+ ✓ src/utils/retry.test.ts (18 tests) 92ms
+ ✓ src/core/baseLlmClient.test.ts (21 tests) 38ms
+ ✓ src/utils/llm-edit-fixer.test.ts (7 tests) 24ms
+ ✓ src/telemetry/uiTelemetry.test.ts (19 tests) 24ms
+ ✓ src/code_assist/oauth2.test.ts (24 tests) 149ms
+ ✓ src/fallback/handler.test.ts (10 tests) 24ms
+ ✓ src/telemetry/sdk.test.ts (9 tests) 57ms
+ ✓ src/core/contentGenerator.test.ts (8 tests) 24ms
+ ✓ src/telemetry/config.test.ts (11 tests) 17ms
+ ✓ src/utils/errorParsing.test.ts (10 tests) 10ms
+ ✓ src/config/config.test.ts (65 tests) 193ms
+ ✓ src/telemetry/loggers.test.ts (26 tests) 82ms
+ ✓ src/tools/tool-registry.test.ts (9 tests) 90ms
+ ✓ src/tools/web-search.test.ts (9 tests) 101ms
+ ✓ src/agents/executor.test.ts (13 tests) 43ms
+ ✓ src/utils/shell-utils.test.ts (50 tests) 28ms
+ ✓ src/core/nonInteractiveToolExecutor.test.ts (8 tests) 32ms
+ ✓ src/utils/summarizer.test.ts (8 tests) 81ms
+ ✓ src/core/turn.test.ts (18 tests) 33ms
+ ✓ src/core/coreToolScheduler.test.ts (28 tests) 195ms
+ ✓ src/agents/invocation.test.ts (11 tests) 28ms
+ ✓ src/core/client.test.ts (61 tests) 407ms
+ ✓ src/utils/editCorrector.test.ts (40 tests) 59ms
+ ✓ src/core/subagent.test.ts (19 tests) 371ms
+ ✓ src/tools/shell.test.ts (21 tests) 169ms
+ ✓ src/services/loopDetectionService.test.ts (37 tests) 376ms
+ ✓ src/utils/nextSpeakerChecker.test.ts (10 tests) 32ms
+ ✓ src/tools/mcp-client.test.ts (30 tests) 246ms
+ ✓ src/tools/smart-edit.test.ts (27 tests) 232ms
+ ✓ src/tools/write-file.test.ts (30 tests) 256ms
+ ✓ src/telemetry/clearcut-logger/clearcut-logger.test.ts (31 tests) 278ms
+ ❯ src/tools/edit.test.ts (54 tests | 1 failed) 287ms
+   ✓ EditTool > applyReplacement > should return newString if isNewFile is true 8ms
+   ✓ EditTool > applyReplacement > should return newString if currentContent is null and oldString is empty (defensive) 1ms
+   ✓ EditTool > applyReplacement > should return empty string if currentContent is null and oldString is not empty (defensive) 1ms
+   ✓ EditTool > applyReplacement > should replace oldString with newString in currentContent 1ms
+   ✓ EditTool > applyReplacement > should return currentContent if oldString is empty and not a new file 1ms
+   ✓ EditTool > applyReplacement > should treat $ literally and not as replacement pattern 1ms
+   ✓ EditTool > applyReplacement > should treat $' literally and not as a replacement pattern 1ms
+   ✓ EditTool > applyReplacement > should treat $& literally and not as a replacement pattern 1ms
+   ✓ EditTool > applyReplacement > should treat $` literally and not as a replacement pattern 1ms
+   ✓ EditTool > applyReplacement > should treat $1, $2 capture groups literally 1ms
+   ✓ EditTool > applyReplacement > should use replaceAll for normal strings without problematic $ sequences 2ms
+   ✓ EditTool > applyReplacement > should handle multiple occurrences with problematic $ sequences 2ms
+   ✓ EditTool > applyReplacement > should handle complex regex patterns with $ at end 2ms
+   ✓ EditTool > applyReplacement > should handle empty replacement with problematic $ in newString 2ms
+   ✓ EditTool > applyReplacement > should handle $$ (escaped dollar) correctly 2ms
+   ✓ EditTool > validateToolParams > should return null for valid params 59ms
+   ✓ EditTool > validateToolParams > should return error for relative path 4ms
+   ✓ EditTool > validateToolParams > should return error for path outside root 4ms
+   ✓ EditTool > shouldConfirmExecute > should throw an error if params are invalid 11ms
+   ✓ EditTool > shouldConfirmExecute > should request confirmation for valid edit 10ms
+   ✓ EditTool > shouldConfirmExecute > should return false if old_string is not found (ensureCorrectEdit returns 0) 6ms
+   ✓ EditTool > shouldConfirmExecute > should return false if multiple occurrences of old_string are found (ensureCorrectEdit returns > 1) 4ms
+   ✓ EditTool > shouldConfirmExecute > should request confirmation for creating a new file (empty old_string) 5ms
+   ✓ EditTool > shouldConfirmExecute > should use corrected params from ensureCorrectEdit for diff generation 4ms
+   ✓ EditTool > shouldConfirmExecute > should rethrow calculateEdit errors when the abort signal is triggered 5ms
+   ✓ EditTool > execute > should throw error if file path is not absolute 4ms
+   ✓ EditTool > execute > should throw error if file path is empty 4ms
+   ✓ EditTool > execute > should reject when calculateEdit fails after an abort signal 4ms
+   ✓ EditTool > execute > should edit an existing file and return diff with fileName 7ms
+   ✓ EditTool > execute > should create a new file if old_string is empty and file does not exist, and return created message 5ms
+   ✓ EditTool > execute > should return error if old_string is not found in file 4ms
+   ✓ EditTool > execute > should return error if multiple occurrences of old_string are found 4ms
+   ✓ EditTool > execute > should successfully replace multiple occurrences when expected_replacements specified 5ms
+   ✓ EditTool > execute > should return error if expected_replacements does not match actual occurrences 4ms
+   ✓ EditTool > execute > should return error if trying to create a file that already exists (empty old_string) 4ms
+   ✓ EditTool > execute > should include modification message when proposed content is modified 5ms
+   ✓ EditTool > execute > should not include modification message when proposed content is not modified 4ms
+   ✓ EditTool > execute > should not include modification message when modified_by_user is not provided 5ms
+   ✓ EditTool > execute > should return error if old_string and new_string are identical 4ms
+   ✓ EditTool > execute > should return EDIT_NO_CHANGE error if replacement results in identical content 4ms
+   ✓ EditTool > Error Scenarios > should return FILE_NOT_FOUND error 4ms
+   ✓ EditTool > Error Scenarios > should return ATTEMPT_TO_CREATE_EXISTING_FILE error 4ms
+   ✓ EditTool > Error Scenarios > should return NO_OCCURRENCE_FOUND error 4ms
+   ✓ EditTool > Error Scenarios > should return EXPECTED_OCCURRENCE_MISMATCH error 4ms
+   ✓ EditTool > Error Scenarios > should return NO_CHANGE error 4ms
+   ✓ EditTool > Error Scenarios > should throw INVALID_PARAMETERS error for relative path 4ms
+   × EditTool > Error Scenarios > should return FILE_WRITE_FAILURE on write error 22ms
+     → expected undefined to be 'file_write_failure' // Object.is equality
+   ✓ EditTool > getDescription > should return "No file changes to..." if old_string and new_string are the same 5ms
+   ✓ EditTool > getDescription > should return a snippet of old and new strings if they are different 4ms
+   ✓ EditTool > getDescription > should handle very short strings correctly in the description 4ms
+   ✓ EditTool > getDescription > should truncate long strings in the description 4ms
+   ✓ EditTool > workspace boundary validation > should validate paths are within workspace root 4ms
+   ✓ EditTool > workspace boundary validation > should reject paths outside workspace root 4ms
+   ✓ EditTool > IDE mode > should call ideClient.openDiff and update params on confirmation 6ms
+ ✓ src/services/chatRecordingService.test.ts (10 tests) 38ms
+ ✓ src/tools/read-many-files.test.ts (31 tests) 473ms
+(node:8057) MaxListenersExceededWarning: Possible EventTarget memory leak detected. 11 abort listeners added to [AbortSignal]. MaxListeners is 10. Use events.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/agents/registry.test.ts (12 tests) 25ms
+ ✓ src/tools/web-fetch.test.ts (7 tests) 84ms
+ ✓ src/agents/subagent-tool-wrapper.test.ts (7 tests) 86ms
+ ✓ src/utils/flashFallback.test.ts (4 tests) 15ms
+ ✓ src/routing/modelRouterService.test.ts (5 tests) 46ms
+ ✓ src/telemetry/telemetry.test.ts (2 tests) 24ms
+ ✓ src/config/flashFallback.test.ts (6 tests) 8ms
+ ✓ src/utils/tool-utils.test.ts (8 tests) 6ms
+ ✓ src/tools/mcp-client-manager.test.ts (2 tests) 7ms
+ ✓ src/tools/glob.test.ts (38 tests) 2041ms
+ ✓ src/telemetry/metrics.test.ts (50 tests) 3230ms
+   ✓ Telemetry Metrics > recordChatCompressionMetrics > records token compression with the correct attributes  748ms
+ ✓ src/core/geminiChat.test.ts (32 tests) 5158ms
+   ✓ GeminiChat > sendMessageStream > should fail if the stream ends with an empty part and has no finishReason  506ms
+   ✓ GeminiChat > sendMessageStream > should throw an error when a tool call is followed by an empty stream response  503ms
+   ✓ GeminiChat > sendMessageStream > should throw InvalidStreamError when no tool call and no finish reason  503ms
+   ✓ GeminiChat > sendMessageStream > should throw InvalidStreamError when no tool call and empty response text  504ms
+   ✓ GeminiChat > sendMessageStream with retries > should yield a RETRY event when an invalid stream is encountered  505ms
+   ✓ GeminiChat > sendMessageStream with retries > should retry on invalid content, succeed, and report metrics  507ms
+   ✓ GeminiChat > sendMessageStream with retries > should fail after all retries on persistent invalid content and report metrics  507ms
+   ✓ GeminiChat > should correctly retry and append to an existing history mid-conversation  506ms
+   ✓ GeminiChat > should retry if the model returns a completely empty stream (no chunks)  508ms
+   ✓ GeminiChat > should discard valid partial content from a failed attempt upon retry  508ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/tools/edit.test.ts > EditTool > Error Scenarios > should return FILE_WRITE_FAILURE on write error
+AssertionError: expected undefined to be 'file_write_failure' // Object.is equality
+
+[32m- Expected:[39m
+"file_write_failure"
+
+[31m+ Received:[39m
+undefined
+
+ ❯ src/tools/edit.test.ts:943:34
+    941|       const invocation = tool.build(params);
+    942|       const result = await invocation.execute(new AbortController().si…
+    943|       expect(result.error?.type).toBe(ToolErrorType.FILE_WRITE_FAILURE…
+       |                                  ^
+    944|     });
+    945|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/utils/pathReader.test.ts > readPathFromWorkspace > should return an error string if reading a file with no permissions
+AssertionError: expected 'you cannot read me' to contain 'Error reading file unreadable.txt'
+
+Expected: [32m"Error reading file unreadable.txt"[39m
+Received: [31m"you cannot read me"[39m
+
+ ❯ src/utils/pathReader.test.ts:385:26
+    383|
+    384|       // processSingleFileContent formats errors using the relative pa…
+    385|       expect(textResult).toContain('Error reading file unreadable.txt'…
+       |                          ^
+    386|       expect(textResult).toMatch(/(EACCES|permission denied)/i);
+    387|     },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 129 passed (131)
+      Tests  2 failed | 2492 passed (2494)
+   Start at  05:28:24
+   Duration  14.48s (transform 67.71s, setup 9.54s, collect 328.03s, tests 23.75s, environment 54ms, prepare 27.02s)
+
+JUNIT report written to /app/packages/core/junit.xml
+npm error Lifecycle script `test:ci` failed with error:
+npm error code 1
+npm error path /app/packages/core
+npm error workspace @google/gemini-cli-core@0.9.0-nightly.20251001.163dba7e
+npm error location /app/packages/core
+npm error command failed
+npm error command sh -c vitest run
+
+
+> gemini-cli-vscode-ide-companion@0.9.0-nightly.20251001.163dba7e test:ci
+> vitest run --coverage
+
+
+ RUN  v3.2.4 /app/packages/vscode-ide-companion
+      Coverage enabled with v8
+
+ ✓ src/open-files-manager.test.ts (17 tests) 45ms
+ ✓ src/ide-server.test.ts (13 tests | 1 skipped) 206ms
+ ✓ src/extension.test.ts (11 tests) 148ms
+
+ Test Files  3 passed (3)
+      Tests  40 passed | 1 skipped (41)
+   Start at  05:28:40
+   Duration  1.53s (transform 632ms, setup 0ms, collect 1.32s, tests 398ms, environment 1ms, prepare 370ms)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+All files          |      48 |    76.63 |    55.1 |      48 |
+ ...-ide-companion |       0 |        0 |       0 |       0 |
+  esbuild.js       |       0 |        0 |       0 |       0 | 1-69
+ ...panion/scripts |       0 |        0 |       0 |       0 |
+  ...de-release.js |       0 |        0 |       0 |       0 | 1-99
+  ...te-notices.js |       0 |        0 |       0 |       0 | 1-160
+ ...-companion/src |   61.57 |     79.2 |   57.77 |   61.57 |
+  diff-manager.ts  |   23.38 |       80 |      25 |   23.38 | ...37-238,241-266
+  extension.ts     |   67.19 |       80 |      50 |   67.19 | ...04-208,213-227
+  ide-server.ts    |   66.19 |    74.46 |   68.75 |   66.19 | ...60-463,472-489
+  ...es-manager.ts |   94.36 |    85.29 |     100 |   94.36 | ...88,146-147,154
+ ...nion/src/utils |   88.23 |    66.66 |     100 |   88.23 |
+  logger.ts        |   88.23 |    66.66 |     100 |   88.23 | 21-22
+-------------------|---------|----------|---------|---------|-------------------
+
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e bundle
+> npm run generate && node esbuild.config.js && node scripts/copy_bundle_assets.js
+
+
+> @google/gemini-cli@0.9.0-nightly.20251001.163dba7e generate
+> node scripts/generate-git-commit-info.js
+
+/bin/sh: 1: git: not found
+Assets copied to bundle/
+0.9.0-nightly.20251001.163dba7e

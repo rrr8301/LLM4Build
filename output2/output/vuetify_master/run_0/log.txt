@@ -1,0 +1,112 @@
+ WARN  Unsupported engine: wanted: {"node":">=24.8.0"} (current: {"node":"v18.20.8","pnpm":"10.17.0"})
+Scope: all 4 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 0, reused 0, downloaded 1, added 0
+Progress: resolved 0, reused 0, downloaded 8, added 0
+Packages: -96
+--------------------------------------------------------------------------------
+Progress: resolved 0, reused 0, downloaded 50, added 0
+Progress: resolved 0, reused 0, downloaded 86, added 0
+Progress: resolved 0, reused 0, downloaded 90, added 0, done
+
+. prepare$ husky; node scripts/post-install.js
+. prepare: Done
+Done in 8.7s using pnpm v10.17.0
+ WARN  Unsupported engine: wanted: {"node":">=24.8.0"} (current: {"node":"v18.20.8","pnpm":"10.17.0"})
+
+> @vuetify/vuetify-root@ build /app
+> node scripts/build.js vuetify
+
+.                                        |  WARN  Unsupported engine: wanted: {"node":">=24.8.0"} (current: {"node":"v18.20.8","pnpm":"10.17.0"})
+packages/vuetify build$ rimraf lib dist && pnpm build:lib && concurrently "pnpm build:dist" "pnpm build:types:lib" -n "dist,types" --kill-others-on-fail -gr && pnpm build:types:bundle
+> vuetify@3.10.5 build:lib /app/packages/vuetify
+> NODE_ENV=lib babel src --out-dir lib --source-maps --extensions ".ts",".tsx",".snap" --copy-files --no-copy-ignored --out-file-extension .js
+Successfully compiled 527 files with Babel (6837ms).
+> vuetify@3.10.5 build:dist /app/packages/vuetify
+> rollup --config build/rollup.config.js
+> vuetify@3.10.5 build:types:lib /app/packages/vuetify
+> tsgo --pretty --emitDeclarationOnly -p tsconfig.dist.json && node build/transform-types.js
+[36m
+[1msrc/entry-bundler.ts[22m → [1mdist/vuetify.esm.js, dist/vuetify.js, dist/vuetify.cjs, dist/vuetify.min.js[22m...[39m
+[1m[33m(!) Circular dependency[39m[22m
+src/iconsets/mdi.ts -> src/composables/icons.tsx -> src/iconsets/mdi.ts
+[32mcreated [1mdist/vuetify.esm.js, dist/vuetify.js, dist/vuetify.cjs, dist/vuetify.min.js[22m in [1m36.3s[22m[39m
+[36m
+[1msrc/labs/entry-bundler.ts[22m → [1mdist/vuetify-labs.js, dist/vuetify-labs.cjs, dist/vuetify-labs.esm.js[22m...[39m
+[1m[33m(!) Circular dependency[39m[22m
+src/composables/icons.tsx -> src/iconsets/mdi.ts -> src/composables/icons.tsx
+[32mcreated [1mdist/vuetify-labs.js, dist/vuetify-labs.cjs, dist/vuetify-labs.esm.js[22m in [1m27.4s[22m[39m
+> vuetify@3.10.5 build:types:bundle /app/packages/vuetify
+> rollup --config build/rollup.types.config.js
+[36m
+[1mlib/entry-bundler.d.ts[22m → [1mdist/vuetify.d.ts[22m...[39m
+[32mcreated [1mdist/vuetify.d.ts[22m in [1m8.2s[22m[39m
+[36m
+[1mlib/labs/entry-bundler.d.ts[22m → [1mdist/vuetify-labs.d.ts[22m...[39m
+[32mcreated [1mdist/vuetify-labs.d.ts[22m in [1m10.7s[22m[39m
+[36m
+[1mlib/framework.d.ts[22m → [1mlib/framework.d.ts[22m...[39m
+[32mcreated [1mlib/framework.d.ts[22m in [1m320ms[22m[39m
+packages/vuetify build: Done
+ WARN  Unsupported engine: wanted: {"node":">=24.8.0"} (current: {"node":"v18.20.8","pnpm":"10.17.0"})
+
+> @vuetify/vuetify-root@ lint /app
+> pnpm run -r --parallel --stream lint
+
+.                                        |  WARN  Unsupported engine: wanted: {"node":">=24.8.0"} (current: {"node":"v18.20.8","pnpm":"10.17.0"})
+Scope: 3 of 4 workspace projects
+packages/api-generator lint$ eslint --ext .ts,.json src -f codeframe --max-warnings 0
+packages/docs lint$ concurrently 'vue-tsc --noEmit --pretty' 'pnpm lint:md' 'jest --no-cache' -n 'tsc,md,eslint' --kill-others-on-fail -gr
+packages/vuetify lint$ concurrently -n "tsc,eslint" --kill-others-on-fail "tsgo -p tsconfig.checks.json --noEmit --pretty" "eslint src -f codeframe --max-warnings 0"
+packages/docs lint: 32 workers
+packages/docs lint: > vuetifyjs.com@3.10.5 lint:md /app/packages/docs
+packages/docs lint: > markdownlint --config .markdownlintrc src/pages/en
+packages/api-generator lint: Oops! Something went wrong! :(
+packages/api-generator lint: ESLint: 8.57.1
+packages/api-generator lint: Error [ERR_REQUIRE_ESM]: require() of ES Module /app/scripts/rules/vitest-global-imports.js from /app/eslint-local-rules.cjs not supported.
+packages/api-generator lint: Instead change the require of vitest-global-imports.js in /app/eslint-local-rules.cjs to a dynamic import() which is available in all CommonJS modules.
+packages/api-generator lint:     at /app/eslint-local-rules.cjs:9:20
+packages/api-generator lint:     at Array.map (<anonymous>)
+packages/api-generator lint:     at Object.<anonymous> (/app/eslint-local-rules.cjs:7:73)
+packages/api-generator lint:     at requireUp (/app/node_modules/eslint-plugin-local-rules/requireUp.js:16:14)
+packages/api-generator lint:     at requireUp (/app/node_modules/eslint-plugin-local-rules/requireUp.js:33:10)
+packages/api-generator lint:     at requireUp (/app/node_modules/eslint-plugin-local-rules/requireUp.js:33:10)
+packages/api-generator lint:     at Object.<anonymous> (/app/node_modules/eslint-plugin-local-rules/index.js:8:13)
+packages/api-generator lint:     at ConfigArrayFactory._loadPlugin (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3433:42)
+packages/api-generator lint:     at /app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3304:33
+packages/api-generator lint:     at Array.reduce (<anonymous>)
+packages/api-generator lint:     at ConfigArrayFactory._loadPlugins (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3300:22)
+packages/api-generator lint:     at ConfigArrayFactory._normalizeObjectConfigDataBody (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3100:44)
+packages/api-generator lint:     at _normalizeObjectConfigDataBody.next (<anonymous>)
+packages/api-generator lint:     at ConfigArrayFactory._normalizeObjectConfigData (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3040:20)
+packages/api-generator lint:     at _normalizeObjectConfigData.next (<anonymous>)
+packages/api-generator lint:     at ConfigArrayFactory.loadInDirectory (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:2886:28)
+packages/api-generator lint:     at CascadingConfigArrayFactory._loadConfigInAncestors (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3871:46)
+packages/api-generator lint:     at CascadingConfigArrayFactory._loadConfigInAncestors (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3890:20)
+packages/api-generator lint:     at CascadingConfigArrayFactory._loadConfigInAncestors (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3890:20)
+packages/api-generator lint:     at CascadingConfigArrayFactory._loadConfigInAncestors (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3890:20)
+packages/api-generator lint:     at CascadingConfigArrayFactory.getConfigArrayForFile (/app/node_modules/@eslint/eslintrc/dist/eslintrc.cjs:3792:18)
+packages/api-generator lint:     at FileEnumerator._iterateFilesRecursive (/app/node_modules/eslint/lib/cli-engine/file-enumerator.js:486:49)
+packages/api-generator lint:     at _iterateFilesRecursive.next (<anonymous>)
+packages/api-generator lint:     at FileEnumerator.iterateFiles (/app/node_modules/eslint/lib/cli-engine/file-enumerator.js:299:49)
+packages/api-generator lint:     at iterateFiles.next (<anonymous>)
+packages/api-generator lint:     at CLIEngine.executeOnFiles (/app/node_modules/eslint/lib/cli-engine/cli-engine.js:797:48)
+packages/api-generator lint:     at ESLint.lintFiles (/app/node_modules/eslint/lib/eslint/eslint.js:551:23)
+packages/api-generator lint:     at Object.execute (/app/node_modules/eslint/lib/cli.js:421:36)
+packages/api-generator lint:     at async main (/app/node_modules/eslint/bin/eslint.js:152:22)
+packages/api-generator lint: Failed
+/app/packages/api-generator:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @vuetify/api-generator@3.10.5 lint: `eslint --ext .ts,.json src -f codeframe --max-warnings 0`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.
+ WARN  Unsupported engine: wanted: {"node":">=24.8.0"} (current: {"node":"v18.20.8","pnpm":"10.17.0"})
+ WARN  Unsupported engine: wanted: {"node":">=24.8.0"} (current: {"node":"v18.20.8","pnpm":"10.17.0"})
+ ERR_PNPM_NO_SCRIPT  Missing script: test
+
+Command "test" not found.
+ WARN  Unsupported engine: wanted: {"node":">=24.8.0"} (current: {"node":"v18.20.8","pnpm":"10.17.0"})
+ WARN  Unsupported engine: wanted: {"node":">=24.8.0"} (current: {"node":"v18.20.8","pnpm":"10.17.0"})
+ ERR_PNPM_NO_SCRIPT  Missing script: test
+
+Command "test" not found.
+Artifacts are not uploaded in this Docker setup.

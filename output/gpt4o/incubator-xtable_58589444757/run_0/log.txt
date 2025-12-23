@@ -1,0 +1,174 @@
+[WARNING] Cache requires Maven >= 3.9, but version is 3.8.7. Disabling cache.
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for org.apache.xtable:xtable-api:jar:0.2.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-compiler-plugin @ org.apache.xtable:xtable:0.2.0-SNAPSHOT, /app/pom.xml, line 737, column 21
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for org.apache.xtable:xtable-core_2.12:jar:0.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.xtable:xtable-core_${scala.binary.version}:0.2.0-SNAPSHOT, /app/xtable-core/pom.xml, line 28, column 17
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for org.apache.xtable:xtable-utilities_2.12:jar:0.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.xtable:xtable-utilities_${scala.binary.version}:0.2.0-SNAPSHOT, /app/xtable-utilities/pom.xml, line 28, column 17
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.xtable:xtable-core_${scala.binary.version}:test-jar:tests -> duplicate declaration of version ${project.version} @ org.apache.xtable:xtable-utilities_${scala.binary.version}:0.2.0-SNAPSHOT, /app/xtable-utilities/pom.xml, line 169, column 21
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for org.apache.xtable:xtable:pom:0.2.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-compiler-plugin @ line 737, column 21
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] XTable Project Parent POM                                          [pom]
+[INFO] XTable Project API                                                 [jar]
+[INFO] XTable Project Hudi Support Parent POM                             [pom]
+[INFO] XTable Project Hudi Support Utils                                  [jar]
+[INFO] XTable Project Core                                                [jar]
+[INFO] XTable Project Hudi Support Extensions                             [jar]
+[INFO] XTable AWS                                                         [jar]
+[INFO] XTable HMS                                                         [jar]
+[INFO] XTable Project Utilities                                           [jar]
+[INFO] xtable-service                                                     [jar]
+[INFO]
+[INFO] ----------------------< org.apache.xtable:xtable >----------------------
+[INFO] Building XTable Project Parent POM 0.2.0-SNAPSHOT                 [1/10]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:3.4.0:clean (default-clean) @ xtable ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.5.0:enforce (enforce-maven-version) @ xtable ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.5.0:enforce (enforce-java-version) @ xtable ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.5.0:enforce (enforce-logging) @ xtable ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO]
+[INFO] --- maven-remote-resources-plugin:3.2.0:process (process-resource-bundles) @ xtable ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-incubator-disclaimer-resource-bundle:1.7
+[INFO] Copying 4 resources from 2 bundles.
+[INFO]
+[INFO] --- apache-rat-plugin:0.16.1:check (default) @ xtable ---
+[WARNING] Duplicate LicenseFamily category: AL    (action: IGNORE)
+[WARNING] Duplicate License Apache License Version 2.0 (AL) of type AL    (action: IGNORE)
+[INFO] Rat check: Summary over all files. Unapproved: 2, unknown: 2, generated: 0, approved: 35 licenses.
+[WARNING] Files with unapproved licenses:
+  run.sh
+  Dockerfile
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for XTable Project Parent POM 0.2.0-SNAPSHOT:
+[INFO]
+[INFO] XTable Project Parent POM .......................... FAILURE [ 14.296 s]
+[INFO] XTable Project API ................................. SKIPPED
+[INFO] XTable Project Hudi Support Parent POM ............. SKIPPED
+[INFO] XTable Project Hudi Support Utils .................. SKIPPED
+[INFO] XTable Project Core ................................ SKIPPED
+[INFO] XTable Project Hudi Support Extensions ............. SKIPPED
+[INFO] XTable AWS ......................................... SKIPPED
+[INFO] XTable HMS ......................................... SKIPPED
+[INFO] XTable Project Utilities ........................... SKIPPED
+[INFO] xtable-service ..................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  33.111 s
+[INFO] Finished at: 2025-12-20T20:26:53-08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.rat:apache-rat-plugin:0.16.1:check (default) on project xtable: Too many files with unapproved license: 2 See RAT report in: /app/target/rat.txt -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[[1;33mWARNING[m] Cache requires Maven >= 3.9, but version is 3.8.7. Disabling cache.
+[[1;34mINFO[m] Scanning for projects...
+[[1;33mWARNING[m]
+[[1;33mWARNING[m] Some problems were encountered while building the effective model for org.apache.xtable:xtable-api:jar:0.2.0-SNAPSHOT
+[[1;33mWARNING[m] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-compiler-plugin @ org.apache.xtable:xtable:0.2.0-SNAPSHOT, /app/pom.xml, line 737, column 21
+[[1;33mWARNING[m]
+[[1;33mWARNING[m] Some problems were encountered while building the effective model for org.apache.xtable:xtable-core_2.12:jar:0.2.0-SNAPSHOT
+[[1;33mWARNING[m] 'artifactId' contains an expression but should be a constant. @ org.apache.xtable:xtable-core_${scala.binary.version}:0.2.0-SNAPSHOT, /app/xtable-core/pom.xml, line 28, column 17
+[[1;33mWARNING[m]
+[[1;33mWARNING[m] Some problems were encountered while building the effective model for org.apache.xtable:xtable-utilities_2.12:jar:0.2.0-SNAPSHOT
+[[1;33mWARNING[m] 'artifactId' contains an expression but should be a constant. @ org.apache.xtable:xtable-utilities_${scala.binary.version}:0.2.0-SNAPSHOT, /app/xtable-utilities/pom.xml, line 28, column 17
+[[1;33mWARNING[m] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.xtable:xtable-core_${scala.binary.version}:test-jar:tests -> duplicate declaration of version ${project.version} @ org.apache.xtable:xtable-utilities_${scala.binary.version}:0.2.0-SNAPSHOT, /app/xtable-utilities/pom.xml, line 169, column 21
+[[1;33mWARNING[m]
+[[1;33mWARNING[m] Some problems were encountered while building the effective model for org.apache.xtable:xtable:pom:0.2.0-SNAPSHOT
+[[1;33mWARNING[m] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-compiler-plugin @ line 737, column 21
+[[1;33mWARNING[m]
+[[1;33mWARNING[m] It is highly recommended to fix these problems because they threaten the stability of your build.
+[[1;33mWARNING[m]
+[[1;33mWARNING[m] For this reason, future Maven versions might no longer support building such malformed projects.
+[[1;33mWARNING[m]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] XTable Project Parent POM                                          [pom]
+[[1;34mINFO[m] XTable Project API                                                 [jar]
+[[1;34mINFO[m] XTable Project Hudi Support Parent POM                             [pom]
+[[1;34mINFO[m] XTable Project Hudi Support Utils                                  [jar]
+[[1;34mINFO[m] XTable Project Core                                                [jar]
+[[1;34mINFO[m] XTable Project Hudi Support Extensions                             [jar]
+[[1;34mINFO[m] XTable AWS                                                         [jar]
+[[1;34mINFO[m] XTable HMS                                                         [jar]
+[[1;34mINFO[m] XTable Project Utilities                                           [jar]
+[[1;34mINFO[m] xtable-service                                                     [jar]
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m----------------------< [0;36morg.apache.xtable:xtable[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding XTable Project Parent POM 0.2.0-SNAPSHOT                 [1/10][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.5.0:enforce[m [1m(enforce-maven-version)[m @ [36mxtable[0;1m ---[m
+[[1;34mINFO[m] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.5.0:enforce[m [1m(enforce-java-version)[m @ [36mxtable[0;1m ---[m
+[[1;34mINFO[m] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-enforcer-plugin:3.5.0:enforce[m [1m(enforce-logging)[m @ [36mxtable[0;1m ---[m
+[[1;34mINFO[m] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-remote-resources-plugin:3.2.0:process[m [1m(process-resource-bundles)[m @ [36mxtable[0;1m ---[m
+[[1;34mINFO[m] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[[1;34mINFO[m] Preparing remote bundle org.apache.apache.resources:apache-incubator-disclaimer-resource-bundle:1.7
+[[1;34mINFO[m] Copying 4 resources from 2 bundles.
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mapache-rat-plugin:0.16.1:check[m [1m(default)[m @ [36mxtable[0;1m ---[m
+[[1;33mWARNING[m] Duplicate LicenseFamily category: AL    (action: IGNORE)
+[[1;33mWARNING[m] Duplicate License Apache License Version 2.0 (AL) of type AL    (action: IGNORE)
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 2, unknown: 2, generated: 0, approved: 35 licenses.
+[[1;33mWARNING[m] Files with unapproved licenses:
+  run.sh
+  Dockerfile
+
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for XTable Project Parent POM 0.2.0-SNAPSHOT:[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] XTable Project Parent POM .......................... [1;31mFAILURE[m [  1.599 s]
+[[1;34mINFO[m] XTable Project API ................................. [1;33mSKIPPED[m
+[[1;34mINFO[m] XTable Project Hudi Support Parent POM ............. [1;33mSKIPPED[m
+[[1;34mINFO[m] XTable Project Hudi Support Utils .................. [1;33mSKIPPED[m
+[[1;34mINFO[m] XTable Project Core ................................ [1;33mSKIPPED[m
+[[1;34mINFO[m] XTable Project Hudi Support Extensions ............. [1;33mSKIPPED[m
+[[1;34mINFO[m] XTable AWS ......................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] XTable HMS ......................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] XTable Project Utilities ........................... [1;33mSKIPPED[m
+[[1;34mINFO[m] xtable-service ..................................... [1;33mSKIPPED[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  2.494 s
+[[1;34mINFO[m] Finished at: 2025-12-20T20:26:57-08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.rat:apache-rat-plugin:0.16.1:check[m [1m(default)[m on project [36mxtable[m: [1;31mToo many files with unapproved license: 2 See RAT report in: /app/target/rat.txt[m -> [1m[Help 1][m
+[[1;31mERROR[m]
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m]
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

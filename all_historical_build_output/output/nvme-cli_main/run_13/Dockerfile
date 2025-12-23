@@ -1,0 +1,44 @@
+# Dockerfile
+FROM ubuntu:22.04
+
+# Set timezone to Pacific Time
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    ninja-build \
+    pkg-config \
+    libjson-c-dev \
+    cmake \
+    git \
+    wget \
+    libtool \
+    autoconf \
+    automake \
+    python3-pip
+
+# Upgrade Meson to a version >= 0.62.0
+RUN pip3 install --upgrade meson
+
+# Install libnvme from source
+RUN git clone https://github.com/linux-nvme/libnvme.git /tmp/libnvme && \
+    cd /tmp/libnvme && \
+    meson setup build && \
+    meson compile -C build && \
+    meson install -C build && \
+    rm -rf /tmp/libnvme
+
+# Create work directory
+WORKDIR /app
+
+# Copy repository contents
+COPY . .
+
+# Copy run.sh and make it executable
+COPY run.sh /app/run.sh
+RUN chmod +x /app/run.sh
+
+# Set entrypoint
+ENTRYPOINT ["/app/run.sh"]

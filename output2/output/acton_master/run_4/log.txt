@@ -1,0 +1,780 @@
+make: Entering directory '/app'
+make dist/zig
+make[1]: Entering directory '/app'
+mkdir -p deps-download
+curl -o deps-download/zig-linux-x86_64-0.13.0.tar.xz https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 44.9M    0  111k    0     0  97194      0  0:08:04  0:00:01  0:08:03 97135 13 44.9M   13 6207k    0     0  2771k      0  0:00:16  0:00:02  0:00:14 2771k 46 44.9M   46 20.6M    0     0  6770k      0  0:00:06  0:00:03  0:00:03 6770k 85 44.9M   85 38.4M    0     0  9373k      0  0:00:04  0:00:04 --:--:-- 9372k100 44.9M  100 44.9M    0     0   9.8M      0  0:00:04  0:00:04 --:--:-- 10.2M
+mkdir -p dist/zig
+cd dist/zig && tar Jx --strip-components=1 -f ../../deps-download/zig-linux-x86_64-0.13.0.tar.xz
+rm -rf dist/zig/doc
+cp -a deps/zig-extras/* dist/zig
+make[1]: Leaving directory '/app'
+make distribution
+make[1]: Entering directory '/app'
+mkdir -p dist/bin
+mkdir -p deps-download
+cd compiler && sed 's,^version: BUILD_VERSION,version: "0.26.0",' < lib/package.yaml.in > lib/package.yaml
+curl -f -L -o deps-download/e72756f2312f04b659fdeaba2fbba7b1f5fd3927.tar.gz https://github.com/actonlang/mbedtls/archive/e72756f2312f04b659fdeaba2fbba7b1f5fd3927.tar.gz
+cd compiler && unset CC && unset CXX && unset CFLAGS && stack build actonc --dry-run 2>&1 | grep "Nothing to build" || \
+	(sed 's,^version: BUILD_VERSION,version: "0.26.0.20251008.16.16.0",' < actonc/package.yaml.in > actonc/package.yaml \
+	&& sed 's,^version: BUILD_VERSION,version: "0.26.0.20251008.16.16.0",' < lsp-server/package.yaml.in > lsp-server/package.yaml \
+	&& stack build actonc  --ghc-options='-j4 ')
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 2693k    0 2693k    0     0  2652k      0 --:--:--  0:00:01 --:--:-- 2652k100 4837k    0 4837k    0     0  3839k      0 --:--:--  0:00:01 --:--:-- 8788k
+mkdir -p deps-download
+curl -f -L -o deps-download/a30e99cda3fabc591727a8df3aee5524c2392e15.tar.gz https://github.com/actonlang/argp-standalone/archive/a30e99cda3fabc591727a8df3aee5524c2392e15.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[1m[91m[ Error ][0m[0m []8;;https://errors.haskell.org/messages/GHCup-00130\GHCup-00130]8;;\] The version '9.6.6' of the tool ghc is not installed.
+[1m[92m[ Info  ][0m[0m downloading: https://raw.githubusercontent.com/haskell/ghcup-metadata/master/ghcup-0.0.9.yaml as file /root/.ghcup/cache/ghcup-0.0.9.yaml
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+[1m[93m[ Warn  ][0m[0m New ghc version available. If you want to install this latest version, run 'ghcup install ghc 9.12.2'
+[1m[93m[ Warn  ][0m[0m New cabal version available. If you want to install this latest version, run 'ghcup install cabal 3.16.0.0'
+[1m[93m[ Warn  ][0m[0m New stack version available. If you want to install this latest version, run 'ghcup install stack 3.7.1'
+[1m[92m[ Info  ][0m[0m downloading: https://downloads.haskell.org/~ghc/9.6.6/ghc-9.6.6-x86_64-ubuntu20_04-linux.tar.xz as file /root/.ghcup/tmp/ghcup-43d049ac65595ed1/ghc-9.6.6-x86_64-ubuntu20_04-linux.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 55288    0 55288    0     0  79709      0 --:--:-- --:--:-- --:--:-- 79709
+mkdir -p deps-download
+curl -f -L -o deps-download/282f774e1e664ea7c23cc0bb9f313c1054874a97.tar.gz https://github.com/actonlang/bsdnt/archive/282f774e1e664ea7c23cc0bb9f313c1054874a97.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0  200M    0  543k    0     0  2510k      0  0:01:21 --:--:--  0:01:21 2506k  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 64118    0 64118    0     0  82049      0 --:--:-- --:--:-- --:--:-- 82049
+mkdir -p deps-download
+curl -f -L -o deps-download/0a23b211b558137de7ee654c5527a54113142517.tar.gz https://github.com/actonlang/bdwgc/archive/0a23b211b558137de7ee654c5527a54113142517.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 45  200M   45 92.0M    0     0  76.4M      0  0:00:02  0:00:01  0:00:01 76.4M  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  844k    0  844k    0     0   854k      0 --:--:-- --:--:-- --:--:--  854k
+mkdir -p /app/dist/deps/libnetstring
+cp -a deps/libnetstring/* /app/dist/deps/libnetstring
+mkdir -p deps-download
+curl -f -L -o deps-download/2afc8e2c87e53204e08e5e1333a8e14ecbf5e3a2.tar.gz https://github.com/actonlang/pcre2/archive/2afc8e2c87e53204e08e5e1333a8e14ecbf5e3a2.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  200M  100  200M    0     0  91.7M      0  0:00:02  0:00:02 --:--:-- 91.8M
+[1m[92m[ Info  ][0m[0m verifying digest of: ghc-9.6.6-x86_64-ubuntu20_04-linux.tar.xz
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 2868k    0 2868k    0     0  2713k      0 --:--:--  0:00:01 --:--:-- 2713k
+mkdir -p deps-download
+curl -f -L -o deps-download/4e4bfc7ec44e6ac746b05f3251f59610822bc95c.tar.gz https://github.com/actonlang/protobuf-c/archive/4e4bfc7ec44e6ac746b05f3251f59610822bc95c.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[1m[92m[ Info  ][0m[0m Unpacking: ghc-9.6.6-x86_64-ubuntu20_04-linux.tar.xz to /root/.ghcup/tmp/ghcup-6c183ca4ae03c53b
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  131k    0  131k    0     0   182k      0 --:--:-- --:--:-- --:--:--  182k
+mkdir -p deps-download
+curl -f -L -o deps-download/6232c3fae39a7820b5f99a0f4ccd054735473668.tar.gz https://github.com/actonlang/tlsuv/archive/6232c3fae39a7820b5f99a0f4ccd054735473668.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  179k    0  179k    0     0   239k      0 --:--:-- --:--:-- --:--:--  448k
+mkdir -p deps-download
+curl -f -L -o deps-download/f20620733fb8fb5fb261699bbb858887ac6ec0bb.tar.gz https://github.com/actonlang/libuv/archive/f20620733fb8fb5fb261699bbb858887ac6ec0bb.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 13134    0 13134    0     0  19408      0 --:--:-- --:--:-- --:--:-- 19408100 1280k    0 1280k    0     0  1296k      0 --:--:-- --:--:-- --:--:-- 4075k
+mkdir -p deps-download
+curl -f -L -o deps-download/e914c63b43d5f283090a63a307fccd25acbe37f0.tar.gz https://github.com/actonlang/utf8proc/archive/e914c63b43d5f283090a63a307fccd25acbe37f0.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 12922    0 12922    0     0  18372      0 --:--:-- --:--:-- --:--:-- 18372100  186k    0  186k    0     0   233k      0 --:--:-- --:--:-- --:--:-- 1828k
+mkdir -p /app/dist/deps/libuuid
+cp -a deps/libuuid/* /app/dist/deps/libuuid
+mkdir -p deps-download
+curl -f -L -o deps-download/56e4e62c077b2c5285b0eec4d6d4497f9b2e6e8f.tar.gz https://github.com/actonlang/libxml2/archive/56e4e62c077b2c5285b0eec4d6d4497f9b2e6e8f.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  198k    0  198k    0     0   268k      0 --:--:-- --:--:-- --:--:--  268k100 3694k    0 3694k    0     0  2123k      0 --:--:--  0:00:01 --:--:-- 3495k100 3694k    0 3694k    0     0  2123k      0 --:--:--  0:00:01 --:--:-- 3495k
+mkdir -p /app/dist/deps/libyyjson
+cp -a deps/libyyjson/* /app/dist/deps/libyyjson
+mkdir -p deps-download
+curl -f -L -o deps-download/3f5b95957558a35c2becbe6b628c8219477dd5a4.tar.gz https://github.com/actonlang/snappy/archive/3f5b95957558a35c2becbe6b628c8219477dd5a4.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 1080k    0 1080k    0     0  1293k      0 --:--:-- --:--:-- --:--:-- 1293k
+mkdir -p dist/backend/
+cp -a backend//build.zig dist/backend/build.zig
+mkdir -p dist/backend/
+cp -a backend//build.zig.zon dist/backend/build.zig.zon
+mkdir -p dist/backend/
+cp -a backend//actondb.c dist/backend/actondb.c
+mkdir -p dist/backend/
+cp -a backend//client_api.c dist/backend/client_api.c
+mkdir -p dist/backend/
+cp -a backend//comm.c dist/backend/comm.c
+mkdir -p dist/backend/
+cp -a backend//db.c dist/backend/db.c
+mkdir -p dist/backend/
+cp -a backend//hash_ring.c dist/backend/hash_ring.c
+mkdir -p dist/backend/
+cp -a backend//log.c dist/backend/log.c
+mkdir -p dist/backend/
+cp -a backend//queue.c dist/backend/queue.c
+mkdir -p dist/backend/
+cp -a backend//queue_callback.c dist/backend/queue_callback.c
+mkdir -p dist/backend/
+cp -a backend//queue_groups.c dist/backend/queue_groups.c
+mkdir -p dist/backend/
+cp -a backend//skiplist.c dist/backend/skiplist.c
+mkdir -p dist/backend/
+cp -a backend//txn_state.c dist/backend/txn_state.c
+mkdir -p dist/backend/
+cp -a backend//txns.c dist/backend/txns.c
+mkdir -p dist/backend/
+cp -a backend//client_api.h dist/backend/client_api.h
+mkdir -p dist/backend/
+cp -a backend//comm.h dist/backend/comm.h
+mkdir -p dist/backend/
+cp -a backend//common.h dist/backend/common.h
+mkdir -p dist/backend/
+cp -a backend//consumer_state.h dist/backend/consumer_state.h
+mkdir -p dist/backend/
+cp -a backend//db.h dist/backend/db.h
+mkdir -p dist/backend/
+cp -a backend//db_client_api.h dist/backend/db_client_api.h
+mkdir -p dist/backend/
+cp -a backend//fastrand.h dist/backend/fastrand.h
+mkdir -p dist/backend/
+cp -a backend//hash_ring.h dist/backend/hash_ring.h
+mkdir -p dist/backend/
+cp -a backend//hashes.h dist/backend/hashes.h
+mkdir -p dist/backend/
+cp -a backend//log.h dist/backend/log.h
+mkdir -p dist/backend/
+cp -a backend//queue.h dist/backend/queue.h
+mkdir -p dist/backend/
+cp -a backend//queue_callback.h dist/backend/queue_callback.h
+mkdir -p dist/backend/
+cp -a backend//queue_groups.h dist/backend/queue_groups.h
+mkdir -p dist/backend/
+cp -a backend//skiplist.h dist/backend/skiplist.h
+mkdir -p dist/backend/
+cp -a backend//txn_state.h dist/backend/txn_state.h
+mkdir -p dist/backend/
+cp -a backend//txns.h dist/backend/txns.h
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/cells.c dist/backend/failure_detector/cells.c
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/db_messages.pb-c.c dist/backend/failure_detector/db_messages.pb-c.c
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/db_messages_test.c dist/backend/failure_detector/db_messages_test.c
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/db_queries.c dist/backend/failure_detector/db_queries.c
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/fd.c dist/backend/failure_detector/fd.c
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/vector_clock.c dist/backend/failure_detector/vector_clock.c
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/cells.h dist/backend/failure_detector/cells.h
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/db_messages.pb-c.h dist/backend/failure_detector/db_messages.pb-c.h
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/db_queries.h dist/backend/failure_detector/db_queries.h
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/fd.h dist/backend/failure_detector/fd.h
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/txns.h dist/backend/failure_detector/txns.h
+mkdir -p dist/backend/failure_detector/
+cp -a backend//failure_detector/vector_clock.h dist/backend/failure_detector/vector_clock.h
+mkdir -p dist/backend/
+cp -a backend//deps dist/backend/deps
+cp -a builder/build.zig builder/build.zig.zon dist/builder/
+cp bin/runacton dist/bin/runacton.tmp
+mv dist/bin/runacton.tmp dist/bin/runacton
+mkdir -p dist/deps/mbedtls
+cd dist/deps/mbedtls && tar zx --strip-components=1 -f /app/deps-download/e72756f2312f04b659fdeaba2fbba7b1f5fd3927.tar.gz
+touch /app/dist/deps/mbedtls
+mkdir -p dist/deps/libargp
+cd dist/deps/libargp && tar zx --strip-components=1 -f /app/deps-download/a30e99cda3fabc591727a8df3aee5524c2392e15.tar.gz
+rm -rf dist/deps/libargp/testsuite
+touch /app/dist/deps/libargp
+mkdir -p dist/deps/libbsdnt
+cd dist/deps/libbsdnt && tar zx --strip-components=1 -f /app/deps-download/282f774e1e664ea7c23cc0bb9f313c1054874a97.tar.gz
+touch /app/dist/deps/libbsdnt
+mkdir -p dist/deps/libgc
+cd dist/deps/libgc && tar zx --strip-components=1 -f /app/deps-download/0a23b211b558137de7ee654c5527a54113142517.tar.gz
+rm -rf dist/deps/libgc/tests dist/deps/libgc/tools
+touch /app/dist/deps/libgc
+mkdir -p dist/deps/pcre2
+cd dist/deps/pcre2 && tar zx --strip-components=1 -f /app/deps-download/2afc8e2c87e53204e08e5e1333a8e14ecbf5e3a2.tar.gz
+touch /app/dist/deps/pcre2
+mkdir -p dist/deps/libprotobuf_c
+cd dist/deps/libprotobuf_c && tar zx --strip-components=1 -f /app/deps-download/4e4bfc7ec44e6ac746b05f3251f59610822bc95c.tar.gz
+touch /app/dist/deps/libprotobuf_c
+mkdir -p dist/deps/libuv
+cd dist/deps/libuv && tar zx --strip-components=1 -f /app/deps-download/f20620733fb8fb5fb261699bbb858887ac6ec0bb.tar.gz libuv-f20620733fb8fb5fb261699bbb858887ac6ec0bb/build.zig libuv-f20620733fb8fb5fb261699bbb858887ac6ec0bb/include libuv-f20620733fb8fb5fb261699bbb858887ac6ec0bb/src
+touch /app/dist/deps/libuv
+mkdir -p dist/deps/libutf8proc
+cd dist/deps/libutf8proc && tar zx --strip-components=1 -f /app/deps-download/e914c63b43d5f283090a63a307fccd25acbe37f0.tar.gz
+touch /app/dist/deps/libutf8proc
+mkdir -p dist/deps/libxml2
+cd dist/deps/libxml2 && tar zx --strip-components=1 -f /app/deps-download/56e4e62c077b2c5285b0eec4d6d4497f9b2e6e8f.tar.gz
+rm -rf dist/deps/libxml2/doc dist/deps/libxml2/example dist/deps/libxml2/fuzz dist/deps/libxml2/os400 dist/deps/libxml2/python dist/deps/libxml2/test*
+touch /app/dist/deps/libxml2
+mkdir -p dist/deps/libsnappy_c
+cd dist/deps/libsnappy_c && tar zx --strip-components=1 -f /app/deps-download/3f5b95957558a35c2becbe6b628c8219477dd5a4.tar.gz
+touch /app/dist/deps/libsnappy_c
+mkdir -p dist/deps/tlsuv
+cd dist/deps/tlsuv && tar zx --strip-components=1 -f /app/deps-download/6232c3fae39a7820b5f99a0f4ccd054735473668.tar.gz
+touch /app/dist/deps/tlsuv
+cd dist/backend && /app/dist/zig/zig build -Donly_actondb --prefix /app/dist
+[1m[92m[ Info  ][0m[0m Installing GHC (this may take a while)
+
+
+
+
+
+
+[6A[0J
+
+
+
+
+
+Threads enabled
+[6A[0J[1m[92m[ Info  ][0m[0m Merging file tree from "/root/.ghcup/tmp/ghcup-43b0300a686575bd/root/.ghcup/ghc/9.6.6" to "/root/.ghcup/ghc/9.6.6"
+[1m[92m[ Info  ][0m[0m GHC installation successful
+Cabal file info not found for transformers-compat-0.7.2@sha256:044fb9955f63ee138fcebedfdcbe54afe741f2d5892a2d0bdf3a8052bd342643,5601, updating
+Selected mirror https://hackage.haskell.org/
+Downloading root
+Waiting to acquire cache lock on /root/.stack/pantry/hackage/hackage-security-lock
+Acquired cache lock on /root/.stack/pantry/hackage/hackage-security-lock
+Released cache lock on /root/.stack/pantry/hackage/hackage-security-lock
+Selected mirror https://hackage.haskell.org/
+Downloading timestamp
+Downloading snapshot
+Downloading mirrors
+Cannot update index (no local copy)
+Downloading index
+Waiting to acquire cache lock on /root/.stack/pantry/hackage/hackage-security-lock
+Acquired cache lock on /root/.stack/pantry/hackage/hackage-security-lock
+Released cache lock on /root/.stack/pantry/hackage/hackage-security-lock
+Updated package index downloaded
+Calculating hashes to check for hackage-security rebases or filesystem changes
+No old cache found, populating cache from scratch
+Populating cache from file size 984023552, hash ff2f5c41fce87ae73bac41c54cced5375c6b0d88a8c068e77e8a3f9f28b21a90
+Populating package index cache ...
+Processed 400 cabal files
+Processed 800 cabal files
+Processed 1200 cabal files
+Processed 1600 cabal files
+Processed 2000 cabal files
+Processed 2400 cabal files
+Processed 2800 cabal files
+Processed 3200 cabal files
+Processed 3600 cabal files
+Processed 4000 cabal files
+Processed 4400 cabal files
+Processed 4800 cabal files
+Processed 5200 cabal files
+Processed 5600 cabal files
+Processed 6000 cabal files
+Processed 6400 cabal files
+Processed 6800 cabal files
+Processed 7200 cabal files
+Processed 7600 cabal files
+Processed 8000 cabal files
+Processed 8400 cabal files
+Processed 8800 cabal files
+Processed 9200 cabal files
+Processed 9600 cabal files
+Processed 10000 cabal files
+Processed 10400 cabal files
+Processed 10800 cabal files
+Processed 11200 cabal files
+Processed 11600 cabal files
+Processed 12000 cabal files
+Processed 12400 cabal files
+Processed 12800 cabal files
+Processed 13200 cabal files
+Processed 13600 cabal files
+Processed 14000 cabal files
+Processed 14400 cabal files
+Processed 14800 cabal files
+Processed 15200 cabal files
+Processed 15600 cabal files
+Processed 16000 cabal files
+Processed 16400 cabal files
+Processed 16800 cabal files
+Processed 17200 cabal files
+Processed 17600 cabal files
+Processed 18000 cabal files
+Processed 18400 cabal files
+Processed 18800 cabal files
+Processed 19200 cabal files
+Processed 19600 cabal files
+Processed 20000 cabal files
+Processed 20400 cabal files
+Processed 20800 cabal files
+Processed 21200 cabal files
+Processed 21600 cabal files
+Processed 22000 cabal files
+Processed 22400 cabal files
+Processed 22800 cabal files
+Processed 23200 cabal files
+Processed 23600 cabal files
+Processed 24000 cabal files
+Processed 24400 cabal files
+Processed 24800 cabal files
+Processed 25200 cabal files
+Processed 25600 cabal files
+Processed 26000 cabal files
+Processed 26400 cabal files
+Processed 26800 cabal files
+Processed 27200 cabal files
+Processed 27600 cabal files
+Processed 28000 cabal files
+Processed 28400 cabal files
+Processed 28800 cabal files
+Processed 29200 cabal files
+Processed 29600 cabal files
+Processed 30000 cabal files
+Processed 30400 cabal files
+Processed 30800 cabal files
+Processed 31200 cabal files
+Processed 31600 cabal files
+Processed 32000 cabal files
+Processed 32400 cabal files
+Processed 32800 cabal files
+Processed 33200 cabal files
+Processed 33600 cabal files
+Processed 34000 cabal files
+Processed 34400 cabal files
+Processed 34800 cabal files
+Processed 35200 cabal files
+Processed 35600 cabal files
+Processed 36000 cabal files
+Processed 36400 cabal files
+Processed 36800 cabal files
+Processed 37200 cabal files
+Processed 37600 cabal files
+Processed 38000 cabal files
+Processed 38400 cabal files
+Processed 38800 cabal files
+Processed 39200 cabal files
+Processed 39600 cabal files
+Processed 40000 cabal files
+Processed 40400 cabal files
+Processed 40800 cabal files
+Processed 41200 cabal files
+Processed 41600 cabal files
+Processed 42000 cabal files
+Processed 42400 cabal files
+Processed 42800 cabal files
+Processed 43200 cabal files
+Processed 43600 cabal files
+Processed 44000 cabal files
+Processed 44400 cabal files
+Processed 44800 cabal files
+Processed 45200 cabal files
+Processed 45600 cabal files
+Processed 46000 cabal files
+Processed 46400 cabal files
+Processed 46800 cabal files
+Processed 47200 cabal files
+Processed 47600 cabal files
+Processed 48000 cabal files
+Processed 48400 cabal files
+Processed 48800 cabal files
+Processed 49200 cabal files
+Processed 49600 cabal files
+Processed 50000 cabal files
+Processed 50400 cabal files
+Processed 50800 cabal files
+Processed 51200 cabal files
+Processed 51600 cabal files
+Processed 52000 cabal files
+Processed 52400 cabal files
+Processed 52800 cabal files
+Processed 53200 cabal files
+Processed 53600 cabal files
+Processed 54000 cabal files
+Processed 54400 cabal files
+Processed 54800 cabal files
+Processed 55200 cabal files
+Processed 55600 cabal files
+Processed 56000 cabal files
+Processed 56400 cabal files
+Processed 56800 cabal files
+Processed 57200 cabal files
+Processed 57600 cabal files
+Processed 58000 cabal files
+Processed 58400 cabal files
+Processed 58800 cabal files
+Processed 59200 cabal files
+Processed 59600 cabal files
+Processed 60000 cabal files
+Processed 60400 cabal files
+Processed 60800 cabal files
+Processed 61200 cabal files
+Processed 61600 cabal files
+Processed 62000 cabal files
+Processed 62400 cabal files
+Processed 62800 cabal files
+Processed 63200 cabal files
+Processed 63600 cabal files
+Processed 64000 cabal files
+Processed 64400 cabal files
+Processed 64800 cabal files
+Processed 65200 cabal files
+Processed 65600 cabal files
+Processed 66000 cabal files
+Processed 66400 cabal files
+Processed 66800 cabal files
+Processed 67200 cabal files
+Processed 67600 cabal files
+Processed 68000 cabal files
+Processed 68400 cabal files
+Processed 68800 cabal files
+Processed 69200 cabal files
+Processed 69600 cabal files
+Processed 70000 cabal files
+Processed 70400 cabal files
+Processed 70800 cabal files
+Processed 71200 cabal files
+Processed 71600 cabal files
+Processed 72000 cabal files
+Processed 72400 cabal files
+Processed 72800 cabal files
+Processed 73200 cabal files
+Processed 73600 cabal files
+Processed 74000 cabal files
+Processed 74400 cabal files
+Processed 74800 cabal files
+Processed 75200 cabal files
+Processed 75600 cabal files
+Processed 76000 cabal files
+Processed 76400 cabal files
+Processed 76800 cabal files
+Processed 77200 cabal files
+Processed 77600 cabal files
+Processed 78000 cabal files
+Processed 78400 cabal files
+Processed 78800 cabal files
+Processed 79200 cabal files
+Processed 79600 cabal files
+Processed 80000 cabal files
+Processed 80400 cabal files
+Processed 80800 cabal files
+Processed 81200 cabal files
+Processed 81600 cabal files
+Processed 82000 cabal files
+Processed 82400 cabal files
+Processed 82800 cabal files
+Processed 83200 cabal files
+Processed 83600 cabal files
+Processed 84000 cabal files
+Processed 84400 cabal files
+Processed 84800 cabal files
+Processed 85200 cabal files
+Processed 85600 cabal files
+Processed 86000 cabal files
+Processed 86400 cabal files
+Processed 86800 cabal files
+Processed 87200 cabal files
+Processed 87600 cabal files
+Processed 88000 cabal files
+Processed 88400 cabal files
+Processed 88800 cabal files
+Processed 89200 cabal files
+Processed 89600 cabal files
+Processed 90000 cabal files
+Processed 90400 cabal files
+Processed 90800 cabal files
+Processed 91200 cabal files
+Processed 91600 cabal files
+Processed 92000 cabal files
+Processed 92400 cabal files
+Processed 92800 cabal files
+Processed 93200 cabal files
+Processed 93600 cabal files
+Processed 94000 cabal files
+Processed 94400 cabal files
+Processed 94800 cabal files
+Processed 95200 cabal files
+Processed 95600 cabal files
+Processed 96000 cabal files
+Processed 96400 cabal files
+Processed 96800 cabal files
+Processed 97200 cabal files
+Processed 97600 cabal files
+Processed 98000 cabal files
+Processed 98400 cabal files
+Processed 98800 cabal files
+Processed 99200 cabal files
+Processed 99600 cabal files
+Processed 100000 cabal files
+Processed 100400 cabal files
+Processed 100800 cabal files
+Processed 101200 cabal files
+Processed 101600 cabal files
+Processed 102000 cabal files
+Processed 102400 cabal files
+Processed 102800 cabal files
+Processed 103200 cabal files
+Processed 103600 cabal files
+Processed 104000 cabal files
+Processed 104400 cabal files
+Processed 104800 cabal files
+Processed 105200 cabal files
+Processed 105600 cabal files
+Processed 106000 cabal files
+Processed 106400 cabal files
+Processed 106800 cabal files
+Processed 107200 cabal files
+Processed 107600 cabal files
+Processed 108000 cabal files
+Processed 108400 cabal files
+Processed 108800 cabal files
+Processed 109200 cabal files
+Processed 109600 cabal files
+Processed 110000 cabal files
+Processed 110400 cabal files
+Processed 110800 cabal files
+Processed 111200 cabal files
+Processed 111600 cabal files
+Processed 112000 cabal files
+Processed 112400 cabal files
+Processed 112800 cabal files
+Processed 113200 cabal files
+Processed 113600 cabal files
+Processed 114000 cabal files
+Processed 114400 cabal files
+Processed 114800 cabal files
+Processed 115200 cabal files
+Processed 115600 cabal files
+Processed 116000 cabal files
+Processed 116400 cabal files
+Processed 116800 cabal files
+Processed 117200 cabal files
+Processed 117600 cabal files
+Processed 118000 cabal files
+Processed 118400 cabal files
+Processed 118800 cabal files
+Processed 119200 cabal files
+Processed 119600 cabal files
+Processed 120000 cabal files
+Processed 120400 cabal files
+Processed 120800 cabal files
+Processed 121200 cabal files
+Processed 121600 cabal files
+Processed 122000 cabal files
+Processed 122400 cabal files
+Processed 122800 cabal files
+Processed 123200 cabal files
+Processed 123600 cabal files
+Processed 124000 cabal files
+Processed 124400 cabal files
+Processed 124800 cabal files
+Processed 125200 cabal files
+Processed 125600 cabal files
+Processed 126000 cabal files
+Processed 126400 cabal files
+Processed 126800 cabal files
+Processed 127200 cabal files
+Processed 127600 cabal files
+Processed 128000 cabal files
+Processed 128400 cabal files
+Processed 128800 cabal files
+Processed 129200 cabal files
+Processed 129600 cabal files
+Processed 130000 cabal files
+Processed 130400 cabal files
+Processed 130800 cabal files
+Processed 131200 cabal files
+Processed 131600 cabal files
+Processed 132000 cabal files
+Processed 132400 cabal files
+Processed 132800 cabal files
+Processed 133200 cabal files
+Processed 133600 cabal files
+Processed 134000 cabal files
+Processed 134400 cabal files
+Processed 134800 cabal files
+Processed 135200 cabal files
+Processed 135600 cabal files
+Processed 136000 cabal files
+Processed 136400 cabal files
+Processed 136800 cabal files
+Processed 137200 cabal files
+Processed 137600 cabal files
+Processed 138000 cabal files
+Processed 138400 cabal files
+Processed 138800 cabal files
+Processed 139200 cabal files
+Processed 139600 cabal files
+Processed 140000 cabal files
+Processed 140400 cabal files
+Processed 140800 cabal files
+Processed 141200 cabal files
+Processed 141600 cabal files
+Processed 142000 cabal files
+Processed 142400 cabal files
+Processed 142800 cabal files
+Processed 143200 cabal files
+Processed 143600 cabal files
+Processed 144000 cabal files
+Processed 144400 cabal files
+Processed 144800 cabal files
+Processed 145200 cabal files
+Processed 145600 cabal files
+Processed 146000 cabal files
+Processed 146400 cabal files
+Processed 146800 cabal files
+Processed 147200 cabal files
+Processed 147600 cabal files
+Processed 148000 cabal files
+Processed 148400 cabal files
+Processed 148800 cabal files
+Processed 149200 cabal files
+Processed 149600 cabal files
+Processed 150000 cabal files
+Processed 150400 cabal files
+Processed 150800 cabal files
+Processed 151200 cabal files
+Processed 151600 cabal files
+Processed 152000 cabal files
+Processed 152400 cabal files
+Processed 152800 cabal files
+Processed 153200 cabal files
+Processed 153600 cabal files
+Processed 154000 cabal files
+Processed 154400 cabal files
+Processed 154800 cabal files
+Processed 155200 cabal files
+Processed 155600 cabal files
+Processed 156000 cabal files
+Processed 156400 cabal files
+Processed 156800 cabal files
+Processed 157200 cabal files
+Processed 157600 cabal files
+Processed 158000 cabal files
+Processed 158400 cabal files
+Processed 158800 cabal files
+Processed 159200 cabal files
+Processed 159600 cabal files
+Processed 160000 cabal files
+Processed 160400 cabal files
+Processed 160800 cabal files
+Processed 161200 cabal files
+Processed 161600 cabal files
+Processed 162000 cabal files
+Processed 162400 cabal files
+Processed 162800 cabal files
+Processed 163200 cabal files
+Processed 163600 cabal files
+Processed 164000 cabal files
+Processed 164400 cabal files
+Processed 164800 cabal files
+Processed 165200 cabal files
+Processed 165600 cabal files
+Processed 166000 cabal files
+Processed 166400 cabal files
+Processed 166800 cabal files
+Processed 167200 cabal files
+Processed 167600 cabal files
+Processed 168000 cabal files
+Processed 168400 cabal files
+Processed 168800 cabal files
+Processed 169200 cabal files
+Processed 169600 cabal files
+Processed 170000 cabal files
+Processed 170400 cabal files
+Processed 170800 cabal files
+Processed 171200 cabal files
+Processed 171600 cabal files
+Processed 172000 cabal files
+Processed 172400 cabal files
+Processed 172800 cabal files
+Processed 173200 cabal files
+Processed 173600 cabal files
+Processed 174000 cabal files
+Processed 174400 cabal files
+Processed 174800 cabal files
+Processed 175200 cabal files
+Processed 175600 cabal files
+Processed 176000 cabal files
+Processed 176400 cabal files
+Processed 176800 cabal files
+Processed 177200 cabal files
+Processed 177600 cabal files
+Processed 178000 cabal files
+Processed 178400 cabal files
+Processed 178800 cabal files
+Processed 179200 cabal files
+Processed 179600 cabal files
+Processed 180000 cabal files
+Processed 180400 cabal files
+Processed 180800 cabal files
+Processed 181200 cabal files
+Processed 181600 cabal files
+Processed 182000 cabal files
+Processed 182400 cabal files
+Processed 182800 cabal files
+Processed 183200 cabal files
+Processed 183600 cabal files
+Processed 184000 cabal files
+Processed 184400 cabal files
+Processed 184800 cabal files
+Processed 185200 cabal files
+Processed 185600 cabal files
+Processed 186000 cabal files
+Processed 186400 cabal files
+Processed 186800 cabal files
+Processed 187200 cabal files
+Processed 187600 cabal files
+Processed 188000 cabal files
+Processed 188400 cabal files
+Processed 188800 cabal files
+Processed 189200 cabal files
+Processed 189600 cabal files
+Processed 190000 cabal files
+Processed 190400 cabal files
+Processed 190800 cabal files
+Processed 191200 cabal files
+Processed 191600 cabal files
+Package index cache populated
+[1 of 3] Compiling Main             ( /root/.stack/setup-exe-src/setup-w2MFVN35.hs, /root/.stack/setup-exe-src/setup-w2MFVN35.o )
+[2 of 3] Compiling StackSetupShim   ( /root/.stack/setup-exe-src/setup-shim-w2MFVN35.hs, /root/.stack/setup-exe-src/setup-shim-w2MFVN35.o )
+[3 of 3] Linking /root/.stack/setup-exe-cache/x86_64-linux/tmp-Cabal-simple_w2MFVN35_3.10.3.0_ghc-9.6.6
+/usr/bin/ld: cannot find -lgmp: No such file or directory
+collect2: error: ld returned 1 exit status
+ghc-9.6.6: `gcc' failed in phase `Linker'. (Exit code: 1)
+
+Error: [S-6374]
+       While building simple Setup.hs (scroll up to its section to see the error) using:
+       /root/.ghcup/ghc/9.6.6/bin/ghc -rtsopts -threaded -clear-package-db -global-package-db -hide-all-packages -package base -main-is StackSetupShim.mainOverride -package Cabal-3.10.3.0 /root/.stack/setup-exe-src/setup-w2MFVN35.hs /root/.stack/setup-exe-src/setup-shim-w2MFVN35.hs -o /root/.stack/setup-exe-cache/x86_64-linux/tmp-Cabal-simple_w2MFVN35_3.10.3.0_ghc-9.6.6
+       Process exited with code: ExitFailure 1
+make[1]: Leaving directory '/app'
+make[1]: *** [Makefile:123: dist/bin/actonc] Error 1
+make: *** [Makefile:78: all] Error 2
+make: Leaving directory '/app'
+make: Entering directory '/app'
+cd compiler && stack test
+
+Warning: No packages found in snapshot which provide a "tasty-discover" executable, which is a
+         build-tool dependency of generic-arbitrary
+[3 of 3] Linking /root/.stack/setup-exe-cache/x86_64-linux/tmp-Cabal-simple_w2MFVN35_3.10.3.0_ghc-9.6.6
+/usr/bin/ld: cannot find -lgmp: No such file or directory
+collect2: error: ld returned 1 exit status
+ghc-9.6.6: `gcc' failed in phase `Linker'. (Exit code: 1)
+
+Error: [S-6374]
+       While building simple Setup.hs (scroll up to its section to see the error) using:
+       /root/.ghcup/ghc/9.6.6/bin/ghc -rtsopts -threaded -clear-package-db -global-package-db -hide-all-packages -package base -main-is StackSetupShim.mainOverride -package Cabal-3.10.3.0 /root/.stack/setup-exe-src/setup-w2MFVN35.hs /root/.stack/setup-exe-src/setup-shim-w2MFVN35.hs -o /root/.stack/setup-exe-cache/x86_64-linux/tmp-Cabal-simple_w2MFVN35_3.10.3.0_ghc-9.6.6
+       Process exited with code: ExitFailure 1
+make: Leaving directory '/app'
+make: *** [Makefile:295: test] Error 1

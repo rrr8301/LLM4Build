@@ -1,0 +1,77 @@
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+npm warn deprecated rimraf@2.5.4: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated @humanwhocodes/config-array@0.11.14: Use @eslint/config-array instead
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+npm warn deprecated sinon@9.2.4: 16.1.1
+npm warn deprecated eslint@8.57.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+> jquery@4.0.0-rc.1 prepare
+> husky
+
+
+added 801 packages, and audited 802 packages in 5s
+
+212 packages are looking for funding
+  run `npm fund` for details
+
+2 vulnerabilities (1 low, 1 moderate)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+> jquery@4.0.0-rc.1 test:browser
+> npm run pretest && npm run build:main && npm run test:unit -- -b chrome -b firefox --headless
+
+
+> jquery@4.0.0-rc.1 pretest
+> npm run qunit-fixture && npm run babel:tests && npm run npmcopy
+
+
+> jquery@4.0.0-rc.1 qunit-fixture
+> node build/tasks/qunit-fixture.js
+
+Updated ./test/data/qunit-fixture.js
+
+> jquery@4.0.0-rc.1 babel:tests
+> babel test/data/core/jquery-iterability-transpiled-es6.js --out-file test/data/core/jquery-iterability-transpiled.js
+
+
+> jquery@4.0.0-rc.1 npmcopy
+> node build/tasks/npmcopy.js
+
+bootstrap/dist/css/bootstrap.css → bootstrap/bootstrap.css
+bootstrap/dist/css/bootstrap.min.css → bootstrap/bootstrap.min.css
+bootstrap/dist/css/bootstrap.min.css.map → bootstrap/bootstrap.min.css.map
+core-js-bundle/minified.js → core-js-bundle/core-js-bundle.js
+core-js-bundle/LICENSE → core-js-bundle/LICENSE
+native-promise-only/lib/npo.src.js → npo/npo.js
+qunit/qunit/qunit.js → qunit/qunit.js
+qunit/qunit/qunit.css → qunit/qunit.css
+qunit/LICENSE.txt → qunit/LICENSE.txt
+requirejs/require.js → requirejs/require.js
+sinon/pkg/sinon.js → sinon/sinon.js
+sinon/LICENSE → sinon/LICENSE.txt
+
+> jquery@4.0.0-rc.1 build:main
+> node --input-type=module -e "import { build } from './build/tasks/build.js'; build()"
+
+[16:43:49] jquery.js v4.0.0-rc.1+98cc8c83 created.
+[16:43:49] jquery.min.js v4.0.0-rc.1+98cc8c83 with jquery.min.map created.
+
+> jquery@4.0.0-rc.1 test:unit
+> jtr -m test/middleware-mockserver.cjs -b chrome -b firefox --headless
+
+Starting test run 2e6f68ce8d...
+Error: Server terminated early with status 127
+    at /app/node_modules/selenium-webdriver/remote/index.js:256:70
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Cleaning up...
+
+No tests were run with URL "http://localhost:41257/test/?reportId=cf6363d09d" in Chrome (headless) (cf6363d09d)
+No tests were run with URL "http://localhost:41257/test/?reportId=6e4b5bdb1e" in Firefox (headless) (6e4b5bdb1e)

@@ -1,0 +1,64 @@
+Requirement already satisfied: tox in ./venv/lib/python3.11/site-packages (4.28.4)
+Requirement already satisfied: cachetools>=6.1 in ./venv/lib/python3.11/site-packages (from tox) (6.1.0)
+Requirement already satisfied: chardet>=5.2 in ./venv/lib/python3.11/site-packages (from tox) (5.2.0)
+Requirement already satisfied: colorama>=0.4.6 in ./venv/lib/python3.11/site-packages (from tox) (0.4.6)
+Requirement already satisfied: filelock>=3.18 in ./venv/lib/python3.11/site-packages (from tox) (3.18.0)
+Requirement already satisfied: packaging>=25 in ./venv/lib/python3.11/site-packages (from tox) (25.0)
+Requirement already satisfied: platformdirs>=4.3.8 in ./venv/lib/python3.11/site-packages (from tox) (4.3.8)
+Requirement already satisfied: pluggy>=1.6 in ./venv/lib/python3.11/site-packages (from tox) (1.6.0)
+Requirement already satisfied: pyproject-api>=1.9.1 in ./venv/lib/python3.11/site-packages (from tox) (1.9.1)
+Requirement already satisfied: virtualenv>=20.31.2 in ./venv/lib/python3.11/site-packages (from tox) (20.33.1)
+Requirement already satisfied: distlib<1,>=0.3.7 in ./venv/lib/python3.11/site-packages (from virtualenv>=20.31.2->tox) (0.4.0)
+4.28.4 from /app/venv/lib/python3.11/site-packages/tox/__init__.py
+tox.ini not found, creating a default configuration
+py311: install_deps> python -I -m pip install pytest
+.pkg: install_requires> python -I -m pip install 'flit_core<4'
+.pkg: _optional_hooks> python /app/venv/lib/python3.11/site-packages/pyproject_api/_backend.py True flit_core.buildapi
+.pkg: get_requires_for_build_sdist> python /app/venv/lib/python3.11/site-packages/pyproject_api/_backend.py True flit_core.buildapi
+.pkg: build_sdist> python /app/venv/lib/python3.11/site-packages/pyproject_api/_backend.py True flit_core.buildapi
+py311: install_package_deps> python -I -m pip install 'colorama; platform_system == "Windows"'
+py311: install_package> python -I -m pip install --force-reinstall --no-deps /app/.tox/.tmp/package/1/click-8.2.2.tar.gz
+py311: commands[0]> pytest
+============================= test session starts ==============================
+platform linux -- Python 3.11.0rc1, pytest-8.4.1, pluggy-1.6.0
+cachedir: .tox/py311/.pytest_cache
+rootdir: /app
+configfile: pyproject.toml
+testpaths: tests
+collected 923 items
+
+tests/test_arguments.py ..........................................       [  4%]
+tests/test_basic.py .................................................... [ 10%]
+.......                                                                  [ 10%]
+tests/test_chain.py ...............x                                     [ 12%]
+tests/test_command_decorators.py .........                               [ 13%]
+tests/test_commands.py ................................................. [ 18%]
+..............                                                           [ 20%]
+tests/test_compat.py .                                                   [ 20%]
+tests/test_context.py ...........................                        [ 23%]
+tests/test_custom_classes.py ......                                      [ 24%]
+tests/test_defaults.py .....                                             [ 24%]
+tests/test_formatting.py .................                               [ 26%]
+tests/test_imports.py .                                                  [ 26%]
+tests/test_info_dict.py ......................                           [ 29%]
+tests/test_normalization.py ...                                          [ 29%]
+tests/test_options.py .................................................. [ 34%]
+........................................................................ [ 42%]
+........................................................................ [ 50%]
+........................................................................ [ 58%]
+....................................                                     [ 62%]
+tests/test_parser.py .......                                             [ 62%]
+tests/test_shell_completion.py ......................................... [ 67%]
+..........                                                               [ 68%]
+tests/test_termui.py ............................................sssssss [ 73%]
+ssssssssssssss...................                                        [ 77%]
+tests/test_testing.py ..........................                         [ 80%]
+tests/test_types.py ........................................             [ 84%]
+tests/test_utils.py .................................................... [ 90%]
+........................................................................ [ 98%]
+..................                                                       [100%]
+
+================== 901 passed, 21 skipped, 1 xfailed in 2.26s ==================
+.pkg: _exit> python /app/venv/lib/python3.11/site-packages/pyproject_api/_backend.py True flit_core.buildapi
+  py311: OK (8.94=setup[6.34]+cmd[2.60] seconds)
+  congratulations :) (9.00 seconds)

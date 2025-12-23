@@ -1,0 +1,17 @@
+git submodule init
+Submodule 'cpp-jsonnet' (https://github.com/google/jsonnet.git) registered for path 'cpp-jsonnet'
+git submodule update
+Cloning into '/app/cpp-jsonnet'...
+Submodule path 'cpp-jsonnet': checked out 'bbb38f1020be1f5aed560928fb839b2c448cefb4'
+./tests.sh
++ go test -covermode atomic -coverprofile=coverage.out ./...
+go: errors parsing go.mod:
+/app/go.mod:3: invalid go version '1.23.7': must match format 1.23
+make: *** [Makefile:39: test] Error 1
+git submodule init
+git submodule update
+go generate
+go: errors parsing go.mod:
+/app/go.mod:3: invalid go version '1.23.7': must match format 1.23
+make: *** [Makefile:48: generate] Error 1
+/app/run.sh: line 17: ./bin/goveralls: No such file or directory

@@ -1,0 +1,110 @@
+yarn install v1.22.22
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+warning Workspaces can only be enabled in private projects.
+warning Workspaces can only be enabled in private projects.
+warning Workspaces can only be enabled in private projects.
+warning Ignored scripts due to flag.
+[4/4] Building fresh packages...
+Done in 28.35s.
+yarn run v1.22.22
+$ yarn clean && node ./scripts/setup-build.js
+$ del-cli "*.tsbuildinfo" "packages/**/*.tsbuildinfo" "packages/*/lib/!(*.tpl)" "**/.yo-rc.json"
+$ tsc --build
+Done in 4.36s.
+yarn run v1.22.22
+$ nyc --no-clean jest --ci --shard=3/4
+
+ Running tests for webpack @5.101.0
+
+PASS test/api/do-install.test.js
+PASS test/build/config/absent/config-absent.test.js
+PASS test/build/config/invalid-path/invalid-path.test.js
+PASS test/configtest/without-config-path-error/without-config-path-error.test.js
+PASS test/build/config-format/esm-require/index.test.js
+PASS test/build/zero-config/entry-absent/zero-config.test.js
+PASS test/build/config/defaults/with-mode/default-config-with-mode.test.js
+PASS test/watch/analyze/analyze-flag.test.js
+PASS test/build/config/type/array-function-with-env/array-function-with-env.test.js
+PASS test/build/config/no-config-object/no-config-object.test.js
+PASS test/build/config/multiple/multiple-config.test.js
+PASS test/build/config/defaults/cjs-config/default-cjs-config.test.js
+PASS test/build/config/empty-function/empty-function.test.js
+PASS test/build/config-lookup/dotfolder-single/dotfolder-single.test.js
+PASS test/build/config/no-code/no-code.test.js
+PASS test/build/config/undefined-default/undefined-default.test.js
+PASS test/build/config/error-mjs/config-error.test.js
+PASS test/build/config-format/babel-commonjs/babel-esm.test.js
+PASS test/build/config/error-commonjs/config-error.test.js (5.002 s)
+PASS test/watch/watch-variable/watch-variable.test.js (5.057 s)
+PASS test/build/devtool/array/source-map-array.test.js (5.012 s)
+PASS test/build/entry/defaults-index/entry-multi-args.test.js (5.621 s)
+PASS test/build/error/error-in-plugin/error.test.js (5.812 s)
+PASS test/build/config-lookup/custom-name/custom-name.test.js (5.831 s)
+PASS test/build/config-lookup/relative/basic-config.test.js (5.993 s)
+PASS test/build/config-format/typescript-mjs-using-nodejs/typescript.test.js (6.593 s)
+PASS test/build/progress/progress-flag.test.js (7.136 s)
+PASS test/build/mode/mode-single-arg/mode-single-arg.test.js (8.225 s)
+PASS test/build/node-env/node-env.test.js (8.485 s)
+PASS test/build/config-node-env/config-node-env.test.js (8.644 s)
+PASS test/build/config-name/config-name.test.js (8.691 s)
+PASS test/build/extends/extends.test.js (10.341 s)
+PASS test/build/mode/mode-with-config/mode-with-config.test.js (10.515 s)
+PASS test/build/target/flag-test/target-flag.test.js (18.27 s)
+PASS test/build/basic/basic.test.js (18.533 s)
+FAIL test/create-webpack-app/init/init.test.js (350.308 s)
+  ● create-webpack-app cli › should throw if the current path is not writable
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Failed to initialize the project with webpack!"
+    Received string:    "[create-webpack] ⚠️Skipping the prompt and using the default values
+    npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.·
+    npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported·
+    npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead·
+    npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions
+    "
+
+      517 |       reject: false,
+      518 |     });
+    > 519 |     expect(stderr).toContain("Failed to initialize the project with webpack!");
+          |                    ^
+      520 |     expect(exitCode).toBe(2);
+      521 |   });
+      522 |
+
+      at Object.<anonymous> (test/create-webpack-app/init/init.test.js:519:20)
+
+Summary of all failing tests
+FAIL test/create-webpack-app/init/init.test.js (350.308 s)
+  ● create-webpack-app cli › should throw if the current path is not writable
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Failed to initialize the project with webpack!"
+    Received string:    "[create-webpack] ⚠️Skipping the prompt and using the default values
+    npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.·
+    npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported·
+    npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead·
+    npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions
+    "
+
+      517 |       reject: false,
+      518 |     });
+    > 519 |     expect(stderr).toContain("Failed to initialize the project with webpack!");
+          |                    ^
+      520 |     expect(exitCode).toBe(2);
+      521 |   });
+      522 |
+
+      at Object.<anonymous> (test/create-webpack-app/init/init.test.js:519:20)
+
+
+Test Suites: 1 failed, 35 passed, 36 total
+Tests:       1 failed, 166 passed, 167 total
+Snapshots:   61 passed, 61 total
+Time:        351.237 s
+Ran all test suites.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

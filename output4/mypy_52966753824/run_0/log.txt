@@ -1,0 +1,649 @@
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+py: install_deps> python -I -m pip install 'orjson; python_version == "3.12"' -r test-requirements.txt
+.pkg: install_requires> python -I -m pip install 'librt>=0.2.1' 'mypy_extensions>=1.0.0' 'pathspec>=0.9.0' 'setuptools>=75.1.0' 'tomli>=1.1.0; python_version < "3.11"' types-psutil types-setuptools 'typing_extensions>=4.6.0'
+.pkg: _optional_hooks> python /usr/local/lib/python3.10/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_sdist> python /usr/local/lib/python3.10/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_editable> python /usr/local/lib/python3.10/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: build_sdist> python /usr/local/lib/python3.10/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+py: install_package_deps> python -I -m pip install 'librt>=0.2.1' 'mypy_extensions>=1.0.0' 'pathspec>=0.9.0' 'tomli>=1.1.0; python_version < "3.11"' 'typing_extensions>=4.6.0'
+py: install_package> python -I -m pip install --force-reinstall --no-deps /app/.tox/.tmp/package/1/mypy-1.19.0+dev.tar.gz
+  py: OK (21.71 seconds)
+  congratulations :) (21.83 seconds)
+py: skip building and installing the package
+py: commands[0]> python -m pytest -n 4
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.4.2, pluggy-1.6.0
+cachedir: .tox/py/.pytest_cache
+rootdir: /app
+configfile: pyproject.toml
+testpaths: mypy/test, mypyc/test
+plugins: xdist-3.8.0, cov-7.0.0
+created: 4/4 workers
+4 workers [13128 items]
+
+........................................................................ [  0%]
+...............................s........................................ [  1%]
+........................................................................ [  1%]
+........................................................................ [  2%]
+......................s................................................. [  2%]
+........................................................................ [  3%]
+........................................................................ [  3%]
+........................................................................ [  4%]
+........................................................................ [  4%]
+........................................................................ [  5%]
+........................................................................ [  6%]
+........................................................................ [  6%]
+............................................s........................... [  7%]
+........................................................................ [  7%]
+........................................................................ [  8%]
+........................................................................ [  8%]
+........................................................................ [  9%]
+.....................x.................................................. [  9%]
+........................................................................ [ 10%]
+........................................................................ [ 10%]
+........................................................................ [ 11%]
+........................................................................ [ 12%]
+........................................................................ [ 12%]
+..ss.................................................................... [ 13%]
+........................................................................ [ 13%]
+........................................................................ [ 14%]
+.............................................s.......................... [ 14%]
+........................................................................ [ 15%]
+........................................................................ [ 15%]
+........................................................................ [ 16%]
+........................................................................ [ 17%]
+............................x........................................... [ 17%]
+........................................................................ [ 18%]
+........................................................................ [ 18%]
+........................................................................ [ 19%]
+........................................................................ [ 19%]
+........................................................................ [ 20%]
+........................................................................ [ 20%]
+........................................................................ [ 21%]
+........................................................................ [ 21%]
+........................................................................ [ 22%]
+........................................................................ [ 23%]
+........................................................................ [ 23%]
+........................................................................ [ 24%]
+........................................................................ [ 24%]
+........................................................................ [ 25%]
+........................................................................ [ 25%]
+........................................................................ [ 26%]
+........................................................................ [ 26%]
+........................................................................ [ 27%]
+........................................................................ [ 27%]
+........................................................................ [ 28%]
+...................................x.................................... [ 29%]
+........................................................................ [ 29%]
+........................................................................ [ 30%]
+........................................................................ [ 30%]
+........................................................................ [ 31%]
+........................................................................ [ 31%]
+........................................................................ [ 32%]
+........................................................................ [ 32%]
+........................................................................ [ 33%]
+........................................................................ [ 34%]
+........................................................................ [ 34%]
+........................................................................ [ 35%]
+........................................................................ [ 35%]
+......................s................................................. [ 36%]
+........................................................................ [ 36%]
+........................................................................ [ 37%]
+........................................................................ [ 37%]
+........................................................................ [ 38%]
+........................................................................ [ 38%]
+........................................................................ [ 39%]
+........................................................................ [ 40%]
+........................................................................ [ 40%]
+.........................................................s.............. [ 41%]
+........................................................................ [ 41%]
+..........................................ss.s.s.sssssss................ [ 42%]
+........................................................................ [ 42%]
+........................................................................ [ 43%]
+.....................s.................................................. [ 43%]
+........................................................................ [ 44%]
+......x................................................................. [ 44%]
+........................................................................ [ 45%]
+........................................................................ [ 46%]
+.......................x....x........................................... [ 46%]
+........................................................................ [ 47%]
+........................................................................ [ 47%]
+........................................................................ [ 48%]
+........................................................................ [ 48%]
+.................................................................s...... [ 49%]
+...................................................................s.... [ 49%]
+......................................s................................. [ 50%]
+........................................................................ [ 51%]
+........................................................................ [ 51%]
+.......................................................s................ [ 52%]
+..................s...s.........................s..s.................... [ 52%]
+.................s...................................................... [ 53%]
+........................................................................ [ 53%]
+........................................................................ [ 54%]
+........................................................................ [ 54%]
+.....x.................................................................. [ 55%]
+........................................................................ [ 55%]
+........................................................................ [ 56%]
+........................................................................ [ 57%]
+........................................................................ [ 57%]
+.....................ss......ss......................................... [ 58%]
+........................................................................ [ 58%]
+..............................s......................................... [ 59%]
+.........................s.............................................. [ 59%]
+........................................................................ [ 60%]
+...........s...................s........................................ [ 60%]
+...................sss.....ss............s........s........s.ss......... [ 61%]
+........................................ssssss.ssssssssss............ss. [ 61%]
+.....................s..............s.........s.......s.........s...s... [ 62%]
+s.s...........ss.....s.......................ssss.....................ss [ 63%]
+....................s.....ssss...s.....sss...............ss..ss....s...s [ 63%]
+....ss...ss...ss...s..........ssssss.................................... [ 64%]
+..s......sss.s..s..ss...........ss.......s..............ssss...sss.....s [ 64%]
+sssss.s...s...s.....s........s....s.ss..........................sssss... [ 65%]
+...s.s....sss....s.s.s............s..s........................s....s...s [ 65%]
+s.s..s....ss....ssssss..sss..sssss....s...........ssss.................. [ 66%]
+..............sss......................................s...........sss.. [ 66%]
+....sssssssss..........................s..........ssssss..s........ss... [ 67%]
+..s......ss....................s........................................ [ 68%]
+...s.s.s.......s.sss.s........s....s...............s....s....s.......... [ 68%]
+.................................................................sssssss [ 69%]
+sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.FFFF [ 69%]
+FFFFFFFFFFFFFFF......................................................... [ 70%]
+........................................................................ [ 70%]
+........................................................................ [ 71%]
+....x................................................................... [ 71%]
+........................................................................ [ 72%]
+........................................................................ [ 72%]
+........................................................................ [ 73%]
+........................................................................ [ 74%]
+........................................................................ [ 74%]
+.......s......x......................................................... [ 75%]
+........................................................................ [ 75%]
+........................................................................ [ 76%]
+........................................................................ [ 76%]
+........................................................................ [ 77%]
+........................................................................ [ 77%]
+...................................................................x.... [ 78%]
+.....................ss................................................. [ 78%]
+..................ssssss................................................ [ 79%]
+........................................................................ [ 80%]
+........................................................................ [ 80%]
+........................................................................ [ 81%]
+.......................................................s................ [ 81%]
+........................................................................ [ 82%]
+...........................s.......s.................................... [ 82%]
+........................................................................ [ 83%]
+................s....................................................... [ 83%]
+........................................................................ [ 84%]
+........................................................................ [ 85%]
+........................................................................ [ 85%]
+........................................................................ [ 86%]
+........................................................................ [ 86%]
+........................................................................ [ 87%]
+........................................................................ [ 87%]
+........................................................................ [ 88%]
+........................................................................ [ 88%]
+........................................................................ [ 89%]
+........................................................................ [ 89%]
+.......................................................................s [ 90%]
+..s................s........ssssss...................................... [ 91%]
+............................s........................................... [ 91%]
+..............ssssssss...............s...........................s...... [ 92%]
+.................s...................................s....s......ss..... [ 92%]
+...ssss...........................s..sssssssssssssss...ss..............s [ 93%]
+sssssssssssssssssssssssssssssss.......s................................. [ 93%]
+........................................................................ [ 94%]
+........................................................................ [ 94%]
+........................................................................ [ 95%]
+........................................................................ [ 95%]
+........................................x............................... [ 96%]
+........................................................................ [ 97%]
+...................x.x.................................................. [ 97%]
+........................................................................ [ 98%]
+........................................................................ [ 98%]
+...................s.................................................... [ 99%]
+........................................................................ [ 99%]
+........................                                                 [100%]
+=================================== FAILURES ===================================
+_____________________ testTypedPkgNoSitePkgsIgnoredImports _____________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:1:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpybrtbtrj/bin/python
+______________________________ testTypedPkgSimple ______________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:14:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmp12n2nesj/bin/python
+_____________________ testTypedPkgSimplePackageSearchPath ______________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:23:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpn24o1xug/bin/python
+______________________ testTypedPkg_config_nositepackages ______________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:28:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpr5j9wwdm/bin/python
+_______________________ testTypedPkg_args_nositepackages _______________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:43:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmps45o8q7t/bin/python
+______________________________ testTypedPkgStubs _______________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:56:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmp2g8v91jd/bin/python
+______________________________ testStubPrecedence ______________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:66:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpqvz51uau/bin/python
+__________________________ testTypedPkgSimpleEditable __________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:75:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpfsnpc2ee/bin/python
+_______________________ testTypedPkgNamespaceImportFrom ________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:84:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpq2l_yohw/bin/python
+________________________ testTypedPkgNamespaceImportAs _________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:103:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpjt4_x2tf/bin/python
+________________________ testTypedPkgNamespaceRegImport ________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:122:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpgmubxkhc/bin/python
+__________________________ testPep561TestIncremental ___________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:143:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpoio1bjcz/bin/python
+___________________ testTypedPkgNamespaceRegFromImportTwice ____________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:153:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmp_oqs9_bi/bin/python
+____________________________ testNamespacePkgWStubs ____________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:161:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpclqzyzoj/bin/python
+_______________ testNamespacePkgWStubsWithNamespacePackagesFlag ________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:177:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpkddn7fhm/bin/python
+____________________________ testMissingPytypedFlag ____________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:190:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpxck8yo46/bin/python
+________________ testTypedPkgNamespaceRegFromImportTwiceMissing ________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:198:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmpbb320ou2/bin/python
+_______________ testTypedPkgNamespaceRegFromImportTwiceMissing2 ________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:208:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmp1pp65997/bin/python
+_________________________ testTypedNamespaceSubpackage _________________________
+[gw3] linux -- Python 3.10.12 /app/.tox/py/bin/python
+data: /app/test-data/unit/pep561.test:217:
+/app/mypy/test/testpep561.py:27: in run_case
+    test_pep561(testcase)
+/app/mypy/test/testpep561.py:110: in test_pep561
+    with virtualenv(python) as venv:
+/usr/lib/python3.10/contextlib.py:135: in __enter__
+    return next(self.gen)
+/app/mypy/test/testpep561.py:42: in virtualenv
+    raise Exception("Failed to create venv.\n" + err)
+E   Exception: Failed to create venv.
+E   The virtual environment was not created successfully because ensurepip is not
+E   available.  On Debian/Ubuntu systems, you need to install the python3-venv
+E   package using the following command.
+E
+E       apt install python3.10-venv
+E
+E   You may need to use sudo with that command.  After installing the python3-venv
+E   package, recreate your virtual environment.
+E
+E   Failing command: /tmp/tmp1yb1le8t/bin/python
+=========================== short test summary info ============================
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgNoSitePkgsIgnoredImports
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgSimple
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgSimplePackageSearchPath
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkg_config_nositepackages
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkg_args_nositepackages
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgStubs
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testStubPrecedence
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgSimpleEditable
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgNamespaceImportFrom
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgNamespaceImportAs
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgNamespaceRegImport
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testPep561TestIncremental
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgNamespaceRegFromImportTwice
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testNamespacePkgWStubs
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testNamespacePkgWStubsWithNamespacePackagesFlag
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testMissingPytypedFlag
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgNamespaceRegFromImportTwiceMissing
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedPkgNamespaceRegFromImportTwiceMissing2
+FAILED mypy/test/testpep561.py::PEP561Suite::pep561.test::testTypedNamespaceSubpackage
+==== 19 failed, 12701 passed, 395 skipped, 13 xfailed in 1104.82s (0:18:24) ====
+py: exit 1 (1105.57 seconds) /app> python -m pytest -n 4 pid=79
+  py: FAIL code 1 (1105.60=setup[0.03]+cmd[1105.57] seconds)
+  evaluation failed :( (1105.72 seconds)

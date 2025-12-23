@@ -1,0 +1,2036 @@
+﻿2025-10-11T14:28:13.6196339Z Current runner version: '2.328.0'
+2025-10-11T14:28:13.6219692Z ##[group]Runner Image Provisioner
+2025-10-11T14:28:13.6220458Z Hosted Compute Agent
+2025-10-11T14:28:13.6221158Z Version: 20250912.392
+2025-10-11T14:28:13.6221744Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-11T14:28:13.6222468Z Build Date: 2025-09-12T15:23:14Z
+2025-10-11T14:28:13.6223482Z ##[endgroup]
+2025-10-11T14:28:13.6224011Z ##[group]Operating System
+2025-10-11T14:28:13.6224583Z Ubuntu
+2025-10-11T14:28:13.6225116Z 24.04.3
+2025-10-11T14:28:13.6225607Z LTS
+2025-10-11T14:28:13.6226081Z ##[endgroup]
+2025-10-11T14:28:13.6226647Z ##[group]Runner Image
+2025-10-11T14:28:13.6227176Z Image: ubuntu-24.04
+2025-10-11T14:28:13.6227707Z Version: 20250929.60.1
+2025-10-11T14:28:13.6228765Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-11T14:28:13.6230602Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-11T14:28:13.6232450Z ##[endgroup]
+2025-10-11T14:28:13.6234511Z ##[group]GITHUB_TOKEN Permissions
+2025-10-11T14:28:13.6237097Z Contents: read
+2025-10-11T14:28:13.6238092Z Metadata: read
+2025-10-11T14:28:13.6239001Z ##[endgroup]
+2025-10-11T14:28:13.6241690Z Secret source: None
+2025-10-11T14:28:13.6243073Z Prepare workflow directory
+2025-10-11T14:28:13.6703881Z Prepare all required actions
+2025-10-11T14:28:13.6760984Z Getting action download info
+2025-10-11T14:28:13.9891851Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-10-11T14:28:14.2025714Z Download action repository 'Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6' (SHA:9d47c6ad4b02e050fd481d890b2ea34778fd09d6)
+2025-10-11T14:28:14.7869082Z Complete job name: test (stable)
+2025-10-11T14:28:14.8606281Z ##[group]Run actions/checkout@v4
+2025-10-11T14:28:14.8607205Z with:
+2025-10-11T14:28:14.8607675Z   repository: apache/datafusion-sqlparser-rs
+2025-10-11T14:28:14.8608493Z   token: ***
+2025-10-11T14:28:14.8609073Z   ssh-strict: true
+2025-10-11T14:28:14.8609497Z   ssh-user: git
+2025-10-11T14:28:14.8609928Z   persist-credentials: true
+2025-10-11T14:28:14.8610396Z   clean: true
+2025-10-11T14:28:14.8610834Z   sparse-checkout-cone-mode: true
+2025-10-11T14:28:14.8611341Z   fetch-depth: 1
+2025-10-11T14:28:14.8611755Z   fetch-tags: false
+2025-10-11T14:28:14.8612173Z   show-progress: true
+2025-10-11T14:28:14.8612610Z   lfs: false
+2025-10-11T14:28:14.8613167Z   submodules: false
+2025-10-11T14:28:14.8613700Z   set-safe-directory: true
+2025-10-11T14:28:14.8614660Z ##[endgroup]
+2025-10-11T14:28:14.9689278Z Syncing repository: apache/datafusion-sqlparser-rs
+2025-10-11T14:28:14.9691368Z ##[group]Getting Git version info
+2025-10-11T14:28:14.9692419Z Working directory is '/home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs'
+2025-10-11T14:28:14.9693914Z [command]/usr/bin/git version
+2025-10-11T14:28:14.9759892Z git version 2.51.0
+2025-10-11T14:28:14.9786442Z ##[endgroup]
+2025-10-11T14:28:14.9803527Z Temporarily overriding HOME='/home/runner/work/_temp/a4895956-2d00-46d4-bb59-080cfdfa0fbe' before making global git config changes
+2025-10-11T14:28:14.9806260Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-11T14:28:14.9809994Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs
+2025-10-11T14:28:14.9846943Z Deleting the contents of '/home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs'
+2025-10-11T14:28:14.9850234Z ##[group]Initializing the repository
+2025-10-11T14:28:14.9855754Z [command]/usr/bin/git init /home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs
+2025-10-11T14:28:14.9948674Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-11T14:28:14.9950084Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-11T14:28:14.9951104Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-11T14:28:14.9952907Z hint:
+2025-10-11T14:28:14.9953619Z hint: 	git config --global init.defaultBranch <name>
+2025-10-11T14:28:14.9954875Z hint:
+2025-10-11T14:28:14.9956017Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-11T14:28:14.9957877Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-11T14:28:14.9959404Z hint:
+2025-10-11T14:28:14.9960269Z hint: 	git branch -m <name>
+2025-10-11T14:28:14.9961137Z hint:
+2025-10-11T14:28:14.9962308Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-11T14:28:14.9965025Z Initialized empty Git repository in /home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs/.git/
+2025-10-11T14:28:14.9968887Z [command]/usr/bin/git remote add origin https://github.com/apache/datafusion-sqlparser-rs
+2025-10-11T14:28:15.0005312Z ##[endgroup]
+2025-10-11T14:28:15.0006758Z ##[group]Disabling automatic garbage collection
+2025-10-11T14:28:15.0010223Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-11T14:28:15.0047813Z ##[endgroup]
+2025-10-11T14:28:15.0048679Z ##[group]Setting up auth
+2025-10-11T14:28:15.0055555Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-11T14:28:15.0087511Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-11T14:28:15.0440119Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-11T14:28:15.0472953Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-11T14:28:15.0724666Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-11T14:28:15.0871483Z ##[endgroup]
+2025-10-11T14:28:15.0873232Z ##[group]Fetching the repository
+2025-10-11T14:28:15.0882334Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0a354b0c7fa1125a4dc84982944c3d1c2681e8d6:refs/remotes/pull/2062/merge
+2025-10-11T14:28:15.5141092Z From https://github.com/apache/datafusion-sqlparser-rs
+2025-10-11T14:28:15.5142950Z  * [new ref]         0a354b0c7fa1125a4dc84982944c3d1c2681e8d6 -> pull/2062/merge
+2025-10-11T14:28:15.5176118Z ##[endgroup]
+2025-10-11T14:28:15.5177020Z ##[group]Determining the checkout info
+2025-10-11T14:28:15.5178302Z ##[endgroup]
+2025-10-11T14:28:15.5183055Z [command]/usr/bin/git sparse-checkout disable
+2025-10-11T14:28:15.5223291Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-11T14:28:15.5250660Z ##[group]Checking out the ref
+2025-10-11T14:28:15.5253869Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2062/merge
+2025-10-11T14:28:15.5495730Z Note: switching to 'refs/remotes/pull/2062/merge'.
+2025-10-11T14:28:15.5497089Z 
+2025-10-11T14:28:15.5497777Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-10-11T14:28:15.5500477Z changes and commit them, and you can discard any commits you make in this
+2025-10-11T14:28:15.5501695Z state without impacting any branches by switching back to a branch.
+2025-10-11T14:28:15.5502212Z 
+2025-10-11T14:28:15.5502571Z If you want to create a new branch to retain commits you create, you may
+2025-10-11T14:28:15.5503696Z do so (now or later) by using -c with the switch command. Example:
+2025-10-11T14:28:15.5504154Z 
+2025-10-11T14:28:15.5504357Z   git switch -c <new-branch-name>
+2025-10-11T14:28:15.5504707Z 
+2025-10-11T14:28:15.5505011Z Or undo this operation with:
+2025-10-11T14:28:15.5505537Z 
+2025-10-11T14:28:15.5505848Z   git switch -
+2025-10-11T14:28:15.5506245Z 
+2025-10-11T14:28:15.5506843Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-10-11T14:28:15.5507724Z 
+2025-10-11T14:28:15.5508717Z HEAD is now at 0a354b0 Merge c5a77c93e4e6e1278af24199a7b889500d06e348 into 4490c8c55cbe1e6b96a29fd9ba448e06320af50a
+2025-10-11T14:28:15.5510995Z ##[endgroup]
+2025-10-11T14:28:15.5552255Z [command]/usr/bin/git log -1 --format=%H
+2025-10-11T14:28:15.5576156Z 0a354b0c7fa1125a4dc84982944c3d1c2681e8d6
+2025-10-11T14:28:15.5815980Z Prepare all required actions
+2025-10-11T14:28:15.5888673Z ##[group]Run ./.github/actions/setup-builder
+2025-10-11T14:28:15.5889268Z with:
+2025-10-11T14:28:15.5889659Z   rust-version: stable
+2025-10-11T14:28:15.5890120Z ##[endgroup]
+2025-10-11T14:28:15.6001226Z ##[group]Run echo "Installing stable"
+2025-10-11T14:28:15.6001883Z [36;1mecho "Installing stable"[0m
+2025-10-11T14:28:15.6002432Z [36;1mif [ -n "" ]; then[0m
+2025-10-11T14:28:15.6003234Z [36;1m  rustup toolchain install stable -t [0m
+2025-10-11T14:28:15.6003795Z [36;1melse[0m
+2025-10-11T14:28:15.6004221Z [36;1m  rustup toolchain install stable[0m
+2025-10-11T14:28:15.6004742Z [36;1mfi[0m
+2025-10-11T14:28:15.6005139Z [36;1mrustup default stable[0m
+2025-10-11T14:28:15.6005696Z [36;1mrustup component add rustfmt clippy[0m
+2025-10-11T14:28:15.6042524Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-11T14:28:15.6043341Z ##[endgroup]
+2025-10-11T14:28:15.6119412Z Installing stable
+2025-10-11T14:28:17.9301301Z info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+2025-10-11T14:28:18.0524518Z 
+2025-10-11T14:28:18.0626127Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.90.0 (1159e78c4 2025-09-14)
+2025-10-11T14:28:18.0700239Z info: using existing install for 'stable-x86_64-unknown-linux-gnu'
+2025-10-11T14:28:18.0701132Z 
+2025-10-11T14:28:18.1103537Z info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+2025-10-11T14:28:18.1104688Z 
+2025-10-11T14:28:18.1194195Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.90.0 (1159e78c4 2025-09-14)
+2025-10-11T14:28:18.2835952Z info: component 'rustfmt' for target 'x86_64-unknown-linux-gnu' is up to date
+2025-10-11T14:28:18.2836590Z 
+2025-10-11T14:28:18.3909654Z info: component 'clippy' for target 'x86_64-unknown-linux-gnu' is up to date
+2025-10-11T14:28:18.4046313Z ##[group]Run Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6
+2025-10-11T14:28:18.4046750Z with:
+2025-10-11T14:28:18.4046968Z   prefix-key: v0-rust
+2025-10-11T14:28:18.4047245Z   cache-targets: true
+2025-10-11T14:28:18.4047509Z   cache-all-crates: false
+2025-10-11T14:28:18.4047761Z   save-if: true
+2025-10-11T14:28:18.4047982Z   cache-provider: github
+2025-10-11T14:28:18.4048238Z   cache-bin: true
+2025-10-11T14:28:18.4048462Z   lookup-only: false
+2025-10-11T14:28:18.4048697Z ##[endgroup]
+2025-10-11T14:28:19.7430903Z ##[group]Cache Configuration
+2025-10-11T14:28:19.7431419Z Cache Provider:
+2025-10-11T14:28:19.7431749Z     github
+2025-10-11T14:28:19.7432055Z Workspaces:
+2025-10-11T14:28:19.7432562Z     /home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs
+2025-10-11T14:28:19.7433473Z Cache Paths:
+2025-10-11T14:28:19.7433822Z     /home/runner/.cargo/bin
+2025-10-11T14:28:19.7434227Z     /home/runner/.cargo/.crates.toml
+2025-10-11T14:28:19.7434866Z     /home/runner/.cargo/.crates2.json
+2025-10-11T14:28:19.7435335Z     /home/runner/.cargo/registry
+2025-10-11T14:28:19.7435750Z     /home/runner/.cargo/git
+2025-10-11T14:28:19.7436357Z     /home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs/target
+2025-10-11T14:28:19.7436994Z Restore Key:
+2025-10-11T14:28:19.7437367Z     v0-rust-test-Linux-x64-948915f2
+2025-10-11T14:28:19.7437790Z Cache Key:
+2025-10-11T14:28:19.7438142Z     v0-rust-test-Linux-x64-948915f2-86cf170c
+2025-10-11T14:28:19.7438614Z .. Prefix:
+2025-10-11T14:28:19.7438996Z   - v0-rust-test-Linux-x64
+2025-10-11T14:28:19.7439426Z .. Environment considered:
+2025-10-11T14:28:19.7440028Z   - Rust Version: 1.90.0 x86_64-unknown-linux-gnu (1159e78c4747b02ef996e55082b704c09b970588)
+2025-10-11T14:28:19.7440768Z   - CARGO_INCREMENTAL
+2025-10-11T14:28:19.7441136Z .. Lockfiles considered:
+2025-10-11T14:28:19.7441786Z   - /home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs/Cargo.toml
+2025-10-11T14:28:19.7443661Z ##[endgroup]
+2025-10-11T14:28:19.7443873Z 
+2025-10-11T14:28:19.7444025Z ... Restoring cache ...
+2025-10-11T14:28:19.9117298Z Cache hit for: v0-rust-test-Linux-x64-948915f2-86cf170c
+2025-10-11T14:28:20.7623542Z Received 69187057 of 69187057 (100.0%), 87.7 MBs/sec
+2025-10-11T14:28:20.7624433Z Cache Size: ~66 MB (69187057 B)
+2025-10-11T14:28:20.7666004Z [command]/usr/bin/tar -xf /home/runner/work/_temp/fe323701-4751-44bd-ab86-d2b9cb9d8d10/cache.tzst -P -C /home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs --use-compress-program unzstd
+2025-10-11T14:28:21.2055715Z Cache restored successfully
+2025-10-11T14:28:21.2191303Z Restored from cache key "v0-rust-test-Linux-x64-948915f2-86cf170c" full match: true.
+2025-10-11T14:28:21.2319170Z ##[group]Run cargo install cargo-tarpaulin
+2025-10-11T14:28:21.2319500Z [36;1mcargo install cargo-tarpaulin[0m
+2025-10-11T14:28:21.2353754Z shell: /usr/bin/bash -e {0}
+2025-10-11T14:28:21.2353975Z env:
+2025-10-11T14:28:21.2354150Z   CACHE_ON_FAILURE: false
+2025-10-11T14:28:21.2354381Z   CARGO_INCREMENTAL: 0
+2025-10-11T14:28:21.2354570Z ##[endgroup]
+2025-10-11T14:28:21.3505492Z     Updating crates.io index
+2025-10-11T14:28:21.5239400Z  Downloading crates ...
+2025-10-11T14:28:21.5595112Z   Downloaded cargo-tarpaulin v0.33.0
+2025-10-11T14:28:21.7370350Z   Installing cargo-tarpaulin v0.33.0
+2025-10-11T14:28:22.1365982Z     Updating crates.io index
+2025-10-11T14:28:22.7680532Z      Locking 268 packages to latest compatible versions
+2025-10-11T14:28:22.7730380Z       Adding cargo_metadata v0.22.0 (available: v0.23.0)
+2025-10-11T14:28:22.7812961Z       Adding indexmap v1.8.2 (available: v1.9.3)
+2025-10-11T14:28:22.8120843Z  Downloading crates ...
+2025-10-11T14:28:22.8949729Z   Downloaded adler2 v2.0.1
+2025-10-11T14:28:22.8969559Z   Downloaded cargo-util-schemas v0.8.2
+2025-10-11T14:28:22.8996603Z   Downloaded hex v0.4.3
+2025-10-11T14:28:22.9021698Z   Downloaded fallible-iterator v0.3.0
+2025-10-11T14:28:22.9044624Z   Downloaded slab v0.4.11
+2025-10-11T14:28:22.9069251Z   Downloaded tower-service v0.3.3
+2025-10-11T14:28:22.9086711Z   Downloaded tracing-core v0.1.34
+2025-10-11T14:28:22.9120770Z   Downloaded nom v7.1.3
+2025-10-11T14:28:22.9179202Z   Downloaded object v0.26.2
+2025-10-11T14:28:22.9275523Z   Downloaded mio v1.0.4
+2025-10-11T14:28:22.9351439Z   Downloaded humantime-serde v1.1.1
+2025-10-11T14:28:22.9376864Z   Downloaded serde-untagged v0.1.9
+2025-10-11T14:28:22.9403820Z   Downloaded serde-value v0.7.0
+2025-10-11T14:28:22.9421635Z   Downloaded regex-automata v0.4.12
+2025-10-11T14:28:22.9621337Z   Downloaded zerovec-derive v0.11.1
+2025-10-11T14:28:22.9644427Z   Downloaded socket2 v0.6.0
+2025-10-11T14:28:22.9672070Z   Downloaded typeid v1.0.3
+2025-10-11T14:28:22.9691965Z   Downloaded linux-raw-sys v0.11.0
+2025-10-11T14:28:23.0307812Z   Downloaded zeroize v1.8.2
+2025-10-11T14:28:23.0339048Z   Downloaded zerofrom v0.1.6
+2025-10-11T14:28:23.0359413Z   Downloaded twox-hash v2.1.2
+2025-10-11T14:28:23.0397783Z   Downloaded zerovec v0.11.4
+2025-10-11T14:28:23.0467981Z   Downloaded zerotrie v0.2.2
+2025-10-11T14:28:23.0514707Z   Downloaded native-tls v0.2.14
+2025-10-11T14:28:23.0541443Z   Downloaded url v2.5.7
+2025-10-11T14:28:23.0574577Z   Downloaded winnow v0.7.13
+2025-10-11T14:28:23.0670102Z   Downloaded minimal-lexical v0.2.1
+2025-10-11T14:28:23.0720412Z   Downloaded vcpkg v0.2.15
+2025-10-11T14:28:23.1271461Z   Downloaded indexmap v2.11.4
+2025-10-11T14:28:23.1317636Z   Downloaded icu_properties_data v2.0.1
+2025-10-11T14:28:23.1417528Z   Downloaded procfs-core v0.18.0
+2025-10-11T14:28:23.1455235Z   Downloaded idna v1.1.0
+2025-10-11T14:28:23.1492410Z   Downloaded reqwest v0.12.23
+2025-10-11T14:28:23.1549444Z   Downloaded aho-corasick v1.1.3
+2025-10-11T14:28:23.1603259Z   Downloaded chrono v0.4.42
+2025-10-11T14:28:23.1670812Z   Downloaded git2 v0.20.2
+2025-10-11T14:28:23.1754741Z   Downloaded hyper v1.7.0
+2025-10-11T14:28:23.1823286Z   Downloaded object v0.37.3
+2025-10-11T14:28:23.1933073Z   Downloaded gimli v0.32.3
+2025-10-11T14:28:23.2004620Z   Downloaded hashbrown v0.16.0
+2025-10-11T14:28:23.2055641Z   Downloaded nix v0.30.1
+2025-10-11T14:28:23.2171705Z   Downloaded http v1.3.1
+2025-10-11T14:28:23.2209208Z   Downloaded regex-syntax v0.8.7
+2025-10-11T14:28:23.2278640Z   Downloaded tracing v0.1.41
+2025-10-11T14:28:23.2318081Z   Downloaded memchr v2.7.6
+2025-10-11T14:28:23.2372432Z   Downloaded iri-string v0.7.8
+2025-10-11T14:28:23.2442687Z   Downloaded hyper-util v0.1.17
+2025-10-11T14:28:23.2500252Z   Downloaded hashbrown v0.11.2
+2025-10-11T14:28:23.2535745Z   Downloaded bytes v1.10.1
+2025-10-11T14:28:23.2577406Z   Downloaded icu_locale_core v2.0.0
+2025-10-11T14:28:23.2647153Z   Downloaded libssh2-sys v0.3.1
+2025-10-11T14:28:23.2981643Z   Downloaded flate2 v1.1.4
+2025-10-11T14:28:23.3029592Z   Downloaded base64 v0.22.1
+2025-10-11T14:28:23.3068365Z   Downloaded tower-http v0.6.6
+2025-10-11T14:28:23.3150547Z   Downloaded rustix v1.1.2
+2025-10-11T14:28:23.3419823Z   Downloaded miniz_oxide v0.8.9
+2025-10-11T14:28:23.3446019Z   Downloaded icu_properties v2.0.1
+2025-10-11T14:28:23.3468195Z   Downloaded icu_normalizer v2.0.0
+2025-10-11T14:28:23.3502133Z   Downloaded deflate v1.0.0
+2025-10-11T14:28:23.3530540Z   Downloaded tracing-subscriber v0.3.20
+2025-10-11T14:28:23.3615645Z   Downloaded httparse v1.10.1
+2025-10-11T14:28:23.3640931Z   Downloaded cc v1.2.41
+2025-10-11T14:28:23.3670379Z   Downloaded libc v0.2.177
+2025-10-11T14:28:23.3940350Z   Downloaded camino v1.2.1
+2025-10-11T14:28:23.3958990Z   Downloaded bitflags v2.9.4
+2025-10-11T14:28:23.4000807Z   Downloaded anyhow v1.0.100
+2025-10-11T14:28:23.4042379Z   Downloaded mime_guess v2.0.5
+2025-10-11T14:28:23.4060814Z   Downloaded jobserver v0.1.34
+2025-10-11T14:28:23.4081735Z   Downloaded icu_provider v2.0.0
+2025-10-11T14:28:23.4107662Z   Downloaded libz-sys v1.1.22
+2025-10-11T14:28:23.4328192Z   Downloaded icu_collections v2.0.0
+2025-10-11T14:28:23.4389663Z   Downloaded futures-sink v0.3.31
+2025-10-11T14:28:23.4398621Z   Downloaded futures-channel v0.3.31
+2025-10-11T14:28:23.4420168Z   Downloaded tokio v1.47.1
+2025-10-11T14:28:23.4833434Z   Downloaded erased-serde v0.4.8
+2025-10-11T14:28:23.4857182Z   Downloaded clap v4.5.48
+2025-10-11T14:28:23.4950510Z   Downloaded anstyle-parse v0.2.7
+2025-10-11T14:28:23.4967082Z   Downloaded regex v1.12.1
+2025-10-11T14:28:23.5028897Z   Downloaded nu-ansi-term v0.50.3
+2025-10-11T14:28:23.5052426Z   Downloaded litemap v0.8.0
+2025-10-11T14:28:23.5074640Z   Downloaded ipnet v2.11.0
+2025-10-11T14:28:23.5090473Z   Downloaded iana-time-zone v0.1.64
+2025-10-11T14:28:23.5117504Z   Downloaded displaydoc v0.2.5
+2025-10-11T14:28:23.5146954Z   Downloaded cargo-platform v0.3.1
+2025-10-11T14:28:23.5159310Z   Downloaded atomic-waker v1.1.2
+2025-10-11T14:28:23.5171233Z   Downloaded anstyle-query v1.1.4
+2025-10-11T14:28:23.5182522Z   Downloaded toml_edit v0.22.27
+2025-10-11T14:28:23.5225091Z   Downloaded toml v0.9.8
+2025-10-11T14:28:23.5265088Z   Downloaded num_cpus v1.17.0
+2025-10-11T14:28:23.5296637Z   Downloaded mime v0.3.17
+2025-10-11T14:28:23.5309812Z   Downloaded leb128 v0.2.5
+2025-10-11T14:28:23.5323420Z   Downloaded is_terminal_polyfill v1.70.1
+2025-10-11T14:28:23.5332362Z   Downloaded humantime v2.3.0
+2025-10-11T14:28:23.5348762Z   Downloaded heck v0.5.0
+2025-10-11T14:28:23.5361456Z   Downloaded gzip-header v1.0.0
+2025-10-11T14:28:23.5370820Z   Downloaded glob v0.3.3
+2025-10-11T14:28:23.5385769Z   Downloaded toml_datetime v0.7.3
+2025-10-11T14:28:23.5398231Z   Downloaded toml_datetime v0.6.11
+2025-10-11T14:28:23.5409136Z   Downloaded tokio-native-tls v0.3.1
+2025-10-11T14:28:23.5426660Z   Downloaded tinystr v0.8.1
+2025-10-11T14:28:23.5446475Z   Downloaded thread_local v1.1.9
+2025-10-11T14:28:23.5461397Z   Downloaded thiserror-impl v2.0.17
+2025-10-11T14:28:23.5476285Z   Downloaded thiserror v2.0.17
+2025-10-11T14:28:23.5539261Z   Downloaded synstructure v0.13.2
+2025-10-11T14:28:23.5549562Z   Downloaded strsim v0.11.1
+2025-10-11T14:28:23.5562306Z   Downloaded rustc-hash v2.1.1
+2025-10-11T14:28:23.5575563Z   Downloaded quote v1.0.41
+2025-10-11T14:28:23.5602143Z   Downloaded potential_utf v0.1.3
+2025-10-11T14:28:23.5612327Z   Downloaded matchers v0.2.0
+2025-10-11T14:28:23.5623891Z   Downloaded indexmap v1.8.2
+2025-10-11T14:28:23.5654306Z   Downloaded hyper-tls v0.6.0
+2025-10-11T14:28:23.5668359Z   Downloaded form_urlencoded v1.2.2
+2025-10-11T14:28:23.5676659Z   Downloaded foreign-types v0.3.2
+2025-10-11T14:28:23.5684203Z   Downloaded errno v0.3.14
+2025-10-11T14:28:23.5699159Z   Downloaded coveralls-api v0.7.0
+2025-10-11T14:28:23.5713291Z   Downloaded adler32 v1.2.0
+2025-10-11T14:28:23.5723881Z   Downloaded yoke v0.8.0
+2025-10-11T14:28:23.5740243Z   Downloaded writeable v0.6.1
+2025-10-11T14:28:23.5758144Z   Downloaded want v0.3.1
+2025-10-11T14:28:23.5767284Z   Downloaded unicode-xid v0.2.6
+2025-10-11T14:28:23.5780654Z   Downloaded try-lock v0.2.5
+2025-10-11T14:28:23.5789954Z   Downloaded tracing-log v0.2.0
+2025-10-11T14:28:23.5803203Z   Downloaded libgit2-sys v0.18.2+1.9.1
+2025-10-11T14:28:23.6414846Z   Downloaded tracing-attributes v0.1.30
+2025-10-11T14:28:23.6440672Z   Downloaded tower-layer v0.3.3
+2025-10-11T14:28:23.6450050Z   Downloaded toml v0.8.23
+2025-10-11T14:28:23.6473259Z   Downloaded thiserror-impl v1.0.69
+2025-10-11T14:28:23.6486162Z   Downloaded thiserror v1.0.69
+2025-10-11T14:28:23.6540466Z   Downloaded sync_wrapper v1.0.2
+2025-10-11T14:28:23.6548463Z   Downloaded stable_deref_trait v1.2.1
+2025-10-11T14:28:23.6556899Z   Downloaded simd-adler32 v0.3.7
+2025-10-11T14:28:23.6574033Z   Downloaded md5 v0.7.0
+2025-10-11T14:28:23.6583099Z   Downloaded equivalent v1.0.2
+2025-10-11T14:28:23.6592526Z   Downloaded colorchoice v1.0.4
+2025-10-11T14:28:23.6601695Z   Downloaded yoke-derive v0.8.0
+2025-10-11T14:28:23.6610910Z   Downloaded walkdir v2.5.0
+2025-10-11T14:28:23.6629092Z   Downloaded utf8parse v0.2.2
+2025-10-11T14:28:23.6638552Z   Downloaded utf8_iter v1.0.4
+2025-10-11T14:28:23.6648371Z   Downloaded unicase v2.8.1
+2025-10-11T14:28:23.6661703Z   Downloaded toml_parser v1.0.4
+2025-10-11T14:28:23.6683762Z   Downloaded http-body-util v0.1.3
+2025-10-11T14:28:23.6700955Z   Downloaded futures-task v0.3.31
+2025-10-11T14:28:23.6711953Z   Downloaded futures-core v0.3.31
+2025-10-11T14:28:23.6724995Z   Downloaded foreign-types-shared v0.1.1
+2025-10-11T14:28:23.6731287Z   Downloaded fnv v1.0.7
+2025-10-11T14:28:23.6739584Z   Downloaded find-msvc-tools v0.1.4
+2025-10-11T14:28:23.6755600Z   Downloaded clap_lex v0.7.5
+2025-10-11T14:28:23.6765722Z   Downloaded clap_derive v4.5.47
+2025-10-11T14:28:23.6786471Z   Downloaded clap_builder v4.5.48
+2025-10-11T14:28:23.6848098Z   Downloaded cargo_metadata v0.22.0
+2025-10-11T14:28:23.6866374Z   Downloaded anstyle v1.0.13
+2025-10-11T14:28:23.6880092Z   Downloaded idna_adapter v1.2.1
+2025-10-11T14:28:23.6889120Z   Downloaded http-body v1.0.1
+2025-10-11T14:28:23.6898282Z   Downloaded crc32fast v1.5.0
+2025-10-11T14:28:23.6916468Z   Downloaded toml_writer v1.0.4
+2025-10-11T14:28:23.6929234Z   Downloaded toml_write v0.1.2
+2025-10-11T14:28:23.6941281Z   Downloaded rustc-demangle v0.1.26
+2025-10-11T14:28:23.6957601Z   Downloaded smallvec v1.15.1
+2025-10-11T14:28:23.6978145Z   Downloaded sharded-slab v0.1.7
+2025-10-11T14:28:23.7010447Z   Downloaded serde_spanned v1.0.3
+2025-10-11T14:28:23.7021124Z   Downloaded serde_spanned v0.6.9
+2025-10-11T14:28:23.7031206Z   Downloaded serde_core v1.0.228
+2025-10-11T14:28:23.7057968Z   Downloaded serde v1.0.228
+2025-10-11T14:28:23.7091965Z   Downloaded semver v1.0.27
+2025-10-11T14:28:23.7114072Z   Downloaded same-file v1.0.6
+2025-10-11T14:28:23.7127148Z   Downloaded ruzstd v0.8.1
+2025-10-11T14:28:23.7180041Z   Downloaded rustc_version v0.4.1
+2025-10-11T14:28:23.7192614Z   Downloaded quick-xml v0.38.3
+2025-10-11T14:28:23.7247490Z   Downloaded pin-project-lite v0.2.16
+2025-10-11T14:28:23.7303821Z   Downloaded openssl-sys v0.9.109
+2025-10-11T14:28:23.7355932Z   Downloaded openssl-probe v0.1.6
+2025-10-11T14:28:23.7366809Z   Downloaded openssl-macros v0.1.1
+2025-10-11T14:28:23.7374122Z   Downloaded zerofrom-derive v0.1.6
+2025-10-11T14:28:23.7383312Z   Downloaded serde_derive v1.0.228
+2025-10-11T14:28:23.7412603Z   Downloaded rustls-pki-types v1.12.0
+2025-10-11T14:28:23.7458111Z   Downloaded pkg-config v0.3.32
+2025-10-11T14:28:23.7473207Z   Downloaded pin-utils v0.1.0
+2025-10-11T14:28:23.7484979Z   Downloaded ordered-float v2.10.1
+2025-10-11T14:28:23.7497865Z   Downloaded openssl v0.10.73
+2025-10-11T14:28:23.7588169Z   Downloaded once_cell v1.21.3
+2025-10-11T14:28:23.7612364Z   Downloaded tower v0.5.2
+2025-10-11T14:28:23.7713230Z   Downloaded procfs v0.18.0
+2025-10-11T14:28:23.7755228Z   Downloaded futures-util v0.3.31
+2025-10-11T14:28:23.7883782Z   Downloaded serde_urlencoded v0.7.1
+2025-10-11T14:28:23.7899873Z   Downloaded percent-encoding v2.3.2
+2025-10-11T14:28:23.7908250Z   Downloaded llvm_profparser v0.9.0
+2025-10-11T14:28:23.7930462Z   Downloaded icu_normalizer_data v2.0.0
+2025-10-11T14:28:23.7951223Z   Downloaded futures-io v0.3.31
+2025-10-11T14:28:23.7959076Z   Downloaded cfg_aliases v0.2.1
+2025-10-11T14:28:23.7968253Z   Downloaded anstream v0.6.21
+2025-10-11T14:28:23.8829879Z    Compiling proc-macro2 v1.0.101
+2025-10-11T14:28:23.8830416Z    Compiling quote v1.0.41
+2025-10-11T14:28:23.8830853Z    Compiling unicode-ident v1.0.19
+2025-10-11T14:28:23.8831301Z    Compiling libc v0.2.177
+2025-10-11T14:28:26.3770670Z    Compiling serde_core v1.0.228
+2025-10-11T14:28:28.3424187Z    Compiling shlex v1.3.0
+2025-10-11T14:28:28.8177903Z    Compiling find-msvc-tools v0.1.4
+2025-10-11T14:28:29.1707864Z    Compiling pkg-config v0.3.32
+2025-10-11T14:28:29.9665522Z    Compiling syn v2.0.106
+2025-10-11T14:28:30.0086088Z    Compiling jobserver v0.1.34
+2025-10-11T14:28:30.3081235Z    Compiling cc v1.2.41
+2025-10-11T14:28:31.3420625Z    Compiling memchr v2.7.6
+2025-10-11T14:28:31.5194642Z    Compiling stable_deref_trait v1.2.1
+2025-10-11T14:28:31.5575218Z    Compiling vcpkg v0.2.15
+2025-10-11T14:28:31.6429522Z    Compiling serde v1.0.228
+2025-10-11T14:28:31.8285231Z    Compiling cfg-if v1.0.3
+2025-10-11T14:28:31.8567846Z    Compiling autocfg v1.5.0
+2025-10-11T14:28:32.1634239Z    Compiling openssl-sys v0.9.109
+2025-10-11T14:28:32.1725582Z    Compiling pin-project-lite v0.2.16
+2025-10-11T14:28:32.2156833Z    Compiling smallvec v1.15.1
+2025-10-11T14:28:32.3384120Z    Compiling litemap v0.8.0
+2025-10-11T14:28:32.4044357Z    Compiling once_cell v1.21.3
+2025-10-11T14:28:32.5446992Z    Compiling bytes v1.10.1
+2025-10-11T14:28:32.5724146Z    Compiling writeable v0.6.1
+2025-10-11T14:28:32.8485369Z    Compiling bitflags v2.9.4
+2025-10-11T14:28:33.0019034Z    Compiling itoa v1.0.15
+2025-10-11T14:28:33.0344320Z    Compiling futures-core v0.3.31
+2025-10-11T14:28:33.0852040Z    Compiling icu_normalizer_data v2.0.0
+2025-10-11T14:28:33.1144282Z    Compiling icu_properties_data v2.0.1
+2025-10-11T14:28:33.1759309Z    Compiling num-traits v0.2.19
+2025-10-11T14:28:33.2011788Z    Compiling percent-encoding v2.3.2
+2025-10-11T14:28:33.2469635Z    Compiling crc32fast v1.5.0
+2025-10-11T14:28:33.3748863Z    Compiling synstructure v0.13.2
+2025-10-11T14:28:33.4320150Z    Compiling mio v1.0.4
+2025-10-11T14:28:33.8746929Z    Compiling socket2 v0.6.0
+2025-10-11T14:28:33.9174524Z    Compiling futures-sink v0.3.31
+2025-10-11T14:28:33.9607247Z    Compiling fnv v1.0.7
+2025-10-11T14:28:33.9993924Z    Compiling http v1.3.1
+2025-10-11T14:28:34.2536865Z    Compiling tokio v1.47.1
+2025-10-11T14:28:35.1403878Z    Compiling zerofrom-derive v0.1.6
+2025-10-11T14:28:35.4200172Z    Compiling yoke-derive v0.8.0
+2025-10-11T14:28:35.5143151Z    Compiling serde_derive v1.0.228
+2025-10-11T14:28:36.3832650Z    Compiling zerovec-derive v0.11.1
+2025-10-11T14:28:36.3878540Z    Compiling zerofrom v0.1.6
+2025-10-11T14:28:36.4629834Z    Compiling yoke v0.8.0
+2025-10-11T14:28:36.6209612Z    Compiling displaydoc v0.2.5
+2025-10-11T14:28:37.1652304Z    Compiling zerotrie v0.2.2
+2025-10-11T14:28:37.3949152Z    Compiling zerovec v0.11.4
+2025-10-11T14:28:37.5047745Z    Compiling tracing-core v0.1.34
+2025-10-11T14:28:38.1832352Z    Compiling pin-utils v0.1.0
+2025-10-11T14:28:38.2156516Z    Compiling log v0.4.28
+2025-10-11T14:28:38.3867308Z    Compiling tracing-attributes v0.1.30
+2025-10-11T14:28:38.5208904Z    Compiling tinystr v0.8.1
+2025-10-11T14:28:38.6844781Z    Compiling icu_locale_core v2.0.0
+2025-10-11T14:28:39.2234769Z    Compiling potential_utf v0.1.3
+2025-10-11T14:28:39.3210358Z    Compiling icu_collections v2.0.0
+2025-10-11T14:28:39.5350490Z    Compiling icu_provider v2.0.0
+2025-10-11T14:28:39.8316206Z    Compiling icu_properties v2.0.1
+2025-10-11T14:28:39.8411888Z    Compiling icu_normalizer v2.0.0
+2025-10-11T14:28:40.4205068Z    Compiling http-body v1.0.1
+2025-10-11T14:28:40.5052060Z    Compiling form_urlencoded v1.2.2
+2025-10-11T14:28:40.6510628Z    Compiling libz-sys v1.1.22
+2025-10-11T14:28:40.6557808Z    Compiling equivalent v1.0.2
+2025-10-11T14:28:40.6892203Z    Compiling slab v0.4.11
+2025-10-11T14:28:40.7653651Z    Compiling futures-io v0.3.31
+2025-10-11T14:28:40.8337751Z    Compiling openssl v0.10.73
+2025-10-11T14:28:40.8390179Z    Compiling hashbrown v0.16.0
+2025-10-11T14:28:40.8741571Z    Compiling futures-task v0.3.31
+2025-10-11T14:28:40.9466971Z    Compiling foreign-types-shared v0.1.1
+2025-10-11T14:28:40.9798589Z    Compiling utf8_iter v1.0.4
+2025-10-11T14:28:40.9830191Z    Compiling httparse v1.10.1
+2025-10-11T14:28:41.0682176Z    Compiling idna_adapter v1.2.1
+2025-10-11T14:28:41.1382651Z    Compiling idna v1.1.0
+2025-10-11T14:28:41.1923847Z    Compiling foreign-types v0.3.2
+2025-10-11T14:28:41.2206374Z    Compiling futures-util v0.3.31
+2025-10-11T14:28:41.4800269Z    Compiling indexmap v2.11.4
+2025-10-11T14:28:42.2675066Z    Compiling tracing v0.1.41
+2025-10-11T14:28:42.4351353Z    Compiling openssl-macros v0.1.1
+2025-10-11T14:28:42.5509981Z    Compiling try-lock v0.2.5
+2025-10-11T14:28:42.5859918Z    Compiling native-tls v0.2.14
+2025-10-11T14:28:42.6354569Z    Compiling tower-service v0.3.3
+2025-10-11T14:28:42.6530084Z    Compiling typeid v1.0.3
+2025-10-11T14:28:42.6738768Z    Compiling openssl-probe v0.1.6
+2025-10-11T14:28:42.7478209Z    Compiling winnow v0.7.13
+2025-10-11T14:28:42.8039292Z    Compiling simd-adler32 v0.3.7
+2025-10-11T14:28:42.8408569Z    Compiling adler2 v2.0.1
+2025-10-11T14:28:42.9403118Z    Compiling miniz_oxide v0.8.9
+2025-10-11T14:28:43.2258906Z    Compiling want v0.3.1
+2025-10-11T14:28:43.8791511Z    Compiling url v2.5.7
+2025-10-11T14:28:44.3079154Z    Compiling futures-channel v0.3.31
+2025-10-11T14:28:44.4978547Z    Compiling libssh2-sys v0.3.1
+2025-10-11T14:28:44.7022051Z    Compiling erased-serde v0.4.8
+2025-10-11T14:28:44.7201334Z    Compiling atomic-waker v1.1.2
+2025-10-11T14:28:44.7774012Z    Compiling serde_json v1.0.145
+2025-10-11T14:28:44.8299988Z    Compiling unicase v2.8.1
+2025-10-11T14:28:44.8624961Z    Compiling ryu v1.0.20
+2025-10-11T14:28:44.9562278Z    Compiling thiserror v2.0.17
+2025-10-11T14:28:45.0403410Z    Compiling mime_guess v2.0.5
+2025-10-11T14:28:45.2187026Z    Compiling hyper v1.7.0
+2025-10-11T14:28:47.4587938Z    Compiling flate2 v1.1.4
+2025-10-11T14:28:47.5386924Z    Compiling serde_spanned v0.6.9
+2025-10-11T14:28:47.5794986Z    Compiling toml_datetime v0.6.11
+2025-10-11T14:28:47.6062927Z    Compiling thiserror-impl v2.0.17
+2025-10-11T14:28:47.8113762Z    Compiling sync_wrapper v1.0.2
+2025-10-11T14:28:47.8584346Z    Compiling aho-corasick v1.1.3
+2025-10-11T14:28:47.8636720Z    Compiling regex-syntax v0.8.7
+2025-10-11T14:28:48.7127931Z    Compiling iana-time-zone v0.1.64
+2025-10-11T14:28:49.0068732Z    Compiling base64 v0.22.1
+2025-10-11T14:28:49.3738019Z    Compiling ipnet v2.11.0
+2025-10-11T14:28:50.2053407Z    Compiling toml_write v0.1.2
+2025-10-11T14:28:50.3742620Z    Compiling utf8parse v0.2.2
+2025-10-11T14:28:50.4247077Z    Compiling tower-layer v0.3.3
+2025-10-11T14:28:50.6356063Z    Compiling tower v0.5.2
+2025-10-11T14:28:51.1310498Z    Compiling anstyle-parse v0.2.7
+2025-10-11T14:28:51.2265019Z    Compiling toml_edit v0.22.27
+2025-10-11T14:28:51.2514173Z    Compiling hyper-util v0.1.17
+2025-10-11T14:28:52.1739963Z    Compiling regex-automata v0.4.12
+2025-10-11T14:28:53.2941364Z    Compiling chrono v0.4.42
+2025-10-11T14:28:56.2093754Z    Compiling semver v1.0.27
+2025-10-11T14:28:56.4072705Z    Compiling tokio-native-tls v0.3.1
+2025-10-11T14:28:58.3330227Z    Compiling http-body-util v0.1.3
+2025-10-11T14:28:58.5613321Z    Compiling ordered-float v2.10.1
+2025-10-11T14:28:58.8077041Z    Compiling indexmap v1.8.2
+2025-10-11T14:28:58.8869174Z    Compiling libgit2-sys v0.18.2+1.9.1
+2025-10-11T14:28:59.0940919Z    Compiling zeroize v1.8.2
+2025-10-11T14:28:59.1115105Z    Compiling iri-string v0.7.8
+2025-10-11T14:28:59.2076700Z    Compiling anstyle-query v1.1.4
+2025-10-11T14:28:59.2562004Z    Compiling camino v1.2.1
+2025-10-11T14:28:59.5822471Z    Compiling anyhow v1.0.100
+2025-10-11T14:28:59.7550738Z    Compiling anstyle v1.0.13
+2025-10-11T14:28:59.9417513Z    Compiling is_terminal_polyfill v1.70.1
+2025-10-11T14:28:59.9825876Z    Compiling mime v0.3.17
+2025-10-11T14:29:00.2615887Z    Compiling rustix v1.1.2
+2025-10-11T14:29:00.4379983Z    Compiling cfg_aliases v0.2.1
+2025-10-11T14:29:00.4756725Z    Compiling colorchoice v1.0.4
+2025-10-11T14:29:00.5296371Z    Compiling thiserror v1.0.69
+2025-10-11T14:29:00.7318270Z    Compiling anstream v0.6.21
+2025-10-11T14:29:01.0626316Z    Compiling tower-http v0.6.6
+2025-10-11T14:29:01.2450555Z    Compiling nix v0.30.1
+2025-10-11T14:29:02.1110122Z    Compiling rustls-pki-types v1.12.0
+2025-10-11T14:29:02.2216028Z    Compiling serde-value v0.7.0
+2025-10-11T14:29:02.5736364Z    Compiling hyper-tls v0.6.0
+2025-10-11T14:29:02.6539605Z    Compiling rustc_version v0.4.1
+2025-10-11T14:29:02.7213982Z    Compiling serde-untagged v0.1.9
+2025-10-11T14:29:02.8716036Z    Compiling toml v0.8.23
+2025-10-11T14:29:02.9371687Z    Compiling serde_urlencoded v0.7.1
+2025-10-11T14:29:03.0284404Z    Compiling thiserror-impl v1.0.69
+2025-10-11T14:29:03.0947625Z    Compiling gzip-header v1.0.0
+2025-10-11T14:29:03.5771771Z    Compiling md5 v0.7.0
+2025-10-11T14:29:03.6945920Z    Compiling adler32 v1.2.0
+2025-10-11T14:29:03.7646760Z    Compiling twox-hash v2.1.2
+2025-10-11T14:29:03.8393962Z    Compiling linux-raw-sys v0.11.0
+2025-10-11T14:29:03.9226771Z    Compiling unicode-xid v0.2.6
+2025-10-11T14:29:03.9669394Z    Compiling hex v0.4.3
+2025-10-11T14:29:04.1383316Z    Compiling object v0.37.3
+2025-10-11T14:29:04.2286114Z    Compiling minimal-lexical v0.2.1
+2025-10-11T14:29:04.2995754Z    Compiling lazy_static v1.5.0
+2025-10-11T14:29:04.3421320Z    Compiling clap_lex v0.7.5
+2025-10-11T14:29:04.4027052Z    Compiling procfs v0.18.0
+2025-10-11T14:29:04.4847366Z    Compiling strsim v0.11.1
+2025-10-11T14:29:04.4903722Z    Compiling heck v0.5.0
+2025-10-11T14:29:04.5289779Z    Compiling hashbrown v0.11.2
+2025-10-11T14:29:04.6398694Z    Compiling clap_derive v4.5.47
+2025-10-11T14:29:05.0117256Z    Compiling clap_builder v4.5.48
+2025-10-11T14:29:05.4538973Z    Compiling nom v7.1.3
+2025-10-11T14:29:06.0245619Z    Compiling sharded-slab v0.1.7
+2025-10-11T14:29:06.8552961Z    Compiling procfs-core v0.18.0
+2025-10-11T14:29:10.7184674Z    Compiling cargo-util-schemas v0.8.2
+2025-10-11T14:29:10.9602178Z    Compiling ruzstd v0.8.1
+2025-10-11T14:29:11.4293599Z    Compiling deflate v1.0.0
+2025-10-11T14:29:12.4586134Z    Compiling reqwest v0.12.23
+2025-10-11T14:29:12.8919607Z    Compiling cargo-tarpaulin v0.33.0
+2025-10-11T14:29:13.4283510Z    Compiling matchers v0.2.0
+2025-10-11T14:29:13.4586549Z    Compiling object v0.26.2
+2025-10-11T14:29:13.5101732Z    Compiling toml_parser v1.0.4
+2025-10-11T14:29:14.4307516Z    Compiling cargo-platform v0.3.1
+2025-10-11T14:29:14.7629612Z    Compiling tracing-log v0.2.0
+2025-10-11T14:29:14.9581111Z    Compiling thread_local v1.1.9
+2025-10-11T14:29:15.1624515Z    Compiling toml_datetime v0.7.3
+2025-10-11T14:29:15.4592015Z    Compiling serde_spanned v1.0.3
+2025-10-11T14:29:15.5408571Z    Compiling nu-ansi-term v0.50.3
+2025-10-11T14:29:15.9199074Z    Compiling leb128 v0.2.5
+2025-10-11T14:29:15.9839219Z    Compiling same-file v1.0.6
+2025-10-11T14:29:16.0519429Z    Compiling toml_writer v1.0.4
+2025-10-11T14:29:16.0536784Z    Compiling rustc-hash v2.1.1
+2025-10-11T14:29:16.1156148Z    Compiling humantime v2.3.0
+2025-10-11T14:29:16.2318525Z    Compiling fallible-iterator v0.3.0
+2025-10-11T14:29:16.4118925Z    Compiling humantime-serde v1.1.1
+2025-10-11T14:29:16.4953874Z    Compiling toml v0.9.8
+2025-10-11T14:29:16.5790774Z    Compiling gimli v0.32.3
+2025-10-11T14:29:19.1866330Z    Compiling llvm_profparser v0.9.0
+2025-10-11T14:29:20.9930405Z    Compiling walkdir v2.5.0
+2025-10-11T14:29:21.4179758Z    Compiling tracing-subscriber v0.3.20
+2025-10-11T14:29:21.5031764Z    Compiling cargo_metadata v0.22.0
+2025-10-11T14:29:23.9158245Z    Compiling coveralls-api v0.7.0
+2025-10-11T14:29:30.9635026Z    Compiling clap v4.5.48
+2025-10-11T14:29:31.0011456Z    Compiling regex v1.12.1
+2025-10-11T14:29:31.7685622Z    Compiling quick-xml v0.38.3
+2025-10-11T14:29:32.9788491Z    Compiling num_cpus v1.17.0
+2025-10-11T14:29:33.5439095Z    Compiling rustc-demangle v0.1.26
+2025-10-11T14:29:34.1966301Z    Compiling glob v0.3.3
+2025-10-11T14:29:49.7990958Z    Compiling git2 v0.20.2
+2025-10-11T14:31:05.2058766Z     Finished `release` profile [optimized] target(s) in 2m 43s
+2025-10-11T14:31:05.2508125Z    Replacing /home/runner/.cargo/bin/cargo-tarpaulin
+2025-10-11T14:31:05.2545032Z     Replaced package `cargo-tarpaulin v0.32.8` with `cargo-tarpaulin v0.33.0` (executable `cargo-tarpaulin`)
+2025-10-11T14:31:05.4258954Z ##[group]Run cargo test --all-features
+2025-10-11T14:31:05.4259275Z [36;1mcargo test --all-features[0m
+2025-10-11T14:31:05.4294716Z shell: /usr/bin/bash -e {0}
+2025-10-11T14:31:05.4294939Z env:
+2025-10-11T14:31:05.4295116Z   CACHE_ON_FAILURE: false
+2025-10-11T14:31:05.4295318Z   CARGO_INCREMENTAL: 0
+2025-10-11T14:31:05.4295513Z ##[endgroup]
+2025-10-11T14:31:05.5111866Z     Updating crates.io index
+2025-10-11T14:31:05.7448501Z      Locking 61 packages to latest compatible versions
+2025-10-11T14:31:05.7767799Z  Downloading crates ...
+2025-10-11T14:31:06.0039621Z   Downloaded psm v0.1.27
+2025-10-11T14:31:06.0072325Z   Downloaded deranged v0.5.4
+2025-10-11T14:31:06.0094600Z   Downloaded time v0.3.44
+2025-10-11T14:31:06.0178579Z   Downloaded stacker v0.1.22
+2025-10-11T14:31:06.0362420Z    Compiling quote v1.0.41
+2025-10-11T14:31:06.0363018Z    Compiling find-msvc-tools v0.1.4
+2025-10-11T14:31:06.0363438Z    Compiling libc v0.2.177
+2025-10-11T14:31:06.0364889Z    Compiling serde_core v1.0.228
+2025-10-11T14:31:06.2099817Z    Compiling cc v1.2.41
+2025-10-11T14:31:06.5837144Z    Compiling syn v2.0.106
+2025-10-11T14:31:07.3374551Z    Compiling serde v1.0.228
+2025-10-11T14:31:07.5466018Z    Compiling deranged v0.5.4
+2025-10-11T14:31:07.5910667Z    Compiling psm v0.1.27
+2025-10-11T14:31:07.8878961Z    Compiling stacker v0.1.22
+2025-10-11T14:31:08.1796116Z    Compiling memchr v2.7.6
+2025-10-11T14:31:08.7367119Z    Compiling serde_json v1.0.145
+2025-10-11T14:31:08.8399187Z    Compiling time v0.3.44
+2025-10-11T14:31:09.7705929Z    Compiling serde_derive v1.0.228
+2025-10-11T14:31:09.8036973Z    Compiling recursive-proc-macro-impl v0.1.1
+2025-10-11T14:31:09.8534048Z    Compiling sqlparser_derive v0.4.0 (/home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs/derive)
+2025-10-11T14:31:10.0370818Z    Compiling recursive v0.1.1
+2025-10-11T14:31:10.0784792Z    Compiling simple_logger v5.0.0
+2025-10-11T14:31:11.7785090Z    Compiling bigdecimal v0.4.8
+2025-10-11T14:31:12.1611173Z    Compiling sqlparser v0.59.0 (/home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs)
+2025-10-11T14:31:45.7495747Z     Finished `test` profile [unoptimized + debuginfo] target(s) in 40.26s
+2025-10-11T14:31:45.7629488Z      Running unittests src/lib.rs (target/debug/deps/sqlparser-00584ba356a73134)
+2025-10-11T14:31:45.7653138Z 
+2025-10-11T14:31:45.7653575Z running 112 tests
+2025-10-11T14:31:45.7666691Z test ast::helpers::stmt_create_database::tests::test_from_invalid_statement ... ok
+2025-10-11T14:31:45.7667633Z test ast::helpers::stmt_create_table::tests::test_from_invalid_statement ... ok
+2025-10-11T14:31:45.7668470Z test ast::helpers::stmt_create_database::tests::test_from_valid_statement ... ok
+2025-10-11T14:31:45.7669277Z test ast::helpers::stmt_create_table::tests::test_from_valid_statement ... ok
+2025-10-11T14:31:45.7669883Z test ast::spans::tests::test_alter_table_multiline_span ... ok
+2025-10-11T14:31:45.7670542Z test ast::spans::tests::test_case_expr_span ... ok
+2025-10-11T14:31:45.7671479Z test ast::spans::tests::test_cte ... ok
+2025-10-11T14:31:45.7671992Z test ast::spans::tests::test_join ... ok
+2025-10-11T14:31:45.7673377Z test ast::spans::tests::test_snowflake_lateral_flatten ... ok
+2025-10-11T14:31:45.7673994Z test ast::spans::tests::test_placeholder_span ... ok
+2025-10-11T14:31:45.7674526Z test ast::spans::tests::test_subquery ... ok
+2025-10-11T14:31:45.7675812Z test ast::spans::tests::test_union ... ok
+2025-10-11T14:31:45.7676324Z test ast::tests::test_cube_display ... ok
+2025-10-11T14:31:45.7676850Z test ast::spans::tests::test_wildcard_from_cte ... ok
+2025-10-11T14:31:45.7677412Z test ast::tests::test_grouping_sets_display ... ok
+2025-10-11T14:31:45.7677895Z test ast::tests::test_ident_ord ... ok
+2025-10-11T14:31:45.7678366Z test ast::tests::test_interval_display ... ok
+2025-10-11T14:31:45.7679235Z test ast::tests::test_one_or_many_with_parens_as_ref ... ok
+2025-10-11T14:31:45.7679865Z test ast::tests::test_one_or_many_with_parens_ref_into_iter ... ok
+2025-10-11T14:31:45.7680831Z test ast::tests::test_one_or_many_with_parens_deref ... ok
+2025-10-11T14:31:45.7681457Z test ast::tests::test_one_or_many_with_parens_value_into_iter ... ok
+2025-10-11T14:31:45.7693833Z test ast::tests::test_rollup_display ... ok
+2025-10-11T14:31:45.7694644Z test ast::tests::test_window_frame_default ... ok
+2025-10-11T14:31:45.7695179Z test ast::visitor::tests::test_sql ... ok
+2025-10-11T14:31:45.7698704Z test dialect::tests::identifier_quote_style ... ok
+2025-10-11T14:31:45.7700632Z test ast::visitor::visit_mut_tests::test_value_redact ... ok
+2025-10-11T14:31:45.7701274Z test dialect::tests::parse_with_wrapped_dialect ... ok
+2025-10-11T14:31:45.7701890Z test dialect::tests::test_dialect_from_str ... ok
+2025-10-11T14:31:45.7706294Z test dialect::tests::test_is_dialect ... ok
+2025-10-11T14:31:45.7707326Z test display_utils::tests::test_indent ... ok
+2025-10-11T14:31:45.7710317Z test parser::tests::mysql_parse_index_table_constraint ... ok
+2025-10-11T14:31:45.7710978Z test parser::tests::test_mysql_partition_selection ... ok
+2025-10-11T14:31:45.7711802Z test parser::tests::test_parse_data_type::test_ansii_character_large_object_types ... ok
+2025-10-11T14:31:45.7713299Z test parser::tests::test_nested_explain_error ... ok
+2025-10-11T14:31:45.7716726Z test parser::tests::test_parse_data_type::test_ansii_character_string_types ... ok
+2025-10-11T14:31:45.7718331Z test parser::tests::test_parse_data_type::test_ansii_exact_numeric_types ... ok
+2025-10-11T14:31:45.7722073Z test parser::tests::test_parse_data_type::test_ansii_date_type ... ok
+2025-10-11T14:31:45.7725412Z test parser::tests::test_parse_data_type::test_parse_custom_types ... ok
+2025-10-11T14:31:45.7726168Z test parser::tests::test_parse_multipart_identifier_positive ... ok
+2025-10-11T14:31:45.7727106Z test parser::tests::test_parse_multipart_identifier_negative ... ok
+2025-10-11T14:31:45.7727865Z test parser::tests::test_parse_schema_name ... ok
+2025-10-11T14:31:45.7728396Z test parser::tests::test_parser_error_loc ... ok
+2025-10-11T14:31:45.7732239Z test parser::tests::test_placeholder_invalid_whitespace ... ok
+2025-10-11T14:31:45.7733182Z test parser::tests::test_peek_tokens ... ok
+2025-10-11T14:31:45.7734622Z test parser::tests::test_prev_index ... ok
+2025-10-11T14:31:45.7735554Z test parser::tests::test_replace_incomplete ... ok
+2025-10-11T14:31:45.7736065Z test parser::tests::test_replace_into_placeholders ... ok
+2025-10-11T14:31:45.7740757Z test parser::tests::test_replace_into_set_placeholder ... ok
+2025-10-11T14:31:45.7741620Z test tokenizer::tests::test_mysql_users_grantees ... ok
+2025-10-11T14:31:45.7742476Z test parser::tests::test_tokenizer_error_loc ... ok
+2025-10-11T14:31:45.7743607Z test tokenizer::tests::test_national_strings_backslash_escape_not_supported ... ok
+2025-10-11T14:31:45.7744682Z test tokenizer::tests::test_postgres_abs_without_space_and_string_literal ... ok
+2025-10-11T14:31:45.7745567Z test tokenizer::tests::test_national_strings_backslash_escape_supported ... ok
+2025-10-11T14:31:45.7746825Z test tokenizer::tests::test_postgres_abs_without_space_and_quoted_column ... ok
+2025-10-11T14:31:45.7747642Z test tokenizer::tests::test_string_escape_constant_supported ... ok
+2025-10-11T14:31:45.7748404Z test tokenizer::tests::test_string_escape_constant_not_supported ... ok
+2025-10-11T14:31:45.7749162Z test tokenizer::tests::test_tokenize_identifiers_numeric_prefix ... ok
+2025-10-11T14:31:45.7751680Z test tokenizer::tests::test_whitespace_not_required_after_single_line_comment ... ok
+2025-10-11T14:31:45.7753522Z test tokenizer::tests::test_unescape ... ok
+2025-10-11T14:31:45.7754432Z test tokenizer::tests::test_whitespace_required_after_single_line_comment ... ok
+2025-10-11T14:31:45.7755182Z test tokenizer::tests::tokenize_bitwise_op ... ok
+2025-10-11T14:31:45.7755856Z test tokenizer::tests::tokenize_clickhouse_double_equal ... ok
+2025-10-11T14:31:45.7756482Z test tokenizer::tests::tokenize_comment ... ok
+2025-10-11T14:31:45.7757042Z test tokenizer::tests::tokenize_comment_at_eof ... ok
+2025-10-11T14:31:45.7757910Z test tokenizer::tests::tokenize_comment_postgres ... ok
+2025-10-11T14:31:45.7758622Z test tokenizer::tests::tokenize_dollar_placeholder ... ok
+2025-10-11T14:31:45.7761114Z test tokenizer::tests::tokenize_dollar_quoted_string_tagged_unterminated ... ok
+2025-10-11T14:31:45.7762189Z test tokenizer::tests::tokenize_dollar_quoted_string_tagged ... ok
+2025-10-11T14:31:45.7763240Z test tokenizer::tests::tokenize_dollar_quoted_string_tagged_unterminated_mirror ... ok
+2025-10-11T14:31:45.7764285Z test tokenizer::tests::tokenize_dollar_quoted_string_untagged_unterminated ... ok
+2025-10-11T14:31:45.7765196Z test tokenizer::tests::tokenize_dollar_quoted_string_untagged_empty ... ok
+2025-10-11T14:31:45.7765994Z test tokenizer::tests::tokenize_dollar_quoted_string_untagged ... ok
+2025-10-11T14:31:45.7766675Z test tokenizer::tests::tokenize_invalid_string ... ok
+2025-10-11T14:31:45.7767255Z test tokenizer::tests::tokenize_explain_analyze_select ... ok
+2025-10-11T14:31:45.7768548Z test tokenizer::tests::tokenize_explain_select ... ok
+2025-10-11T14:31:45.7771354Z test tokenizer::tests::tokenize_logical_xor ... ok
+2025-10-11T14:31:45.7772075Z test tokenizer::tests::tokenize_mismatched_quotes ... ok
+2025-10-11T14:31:45.7774616Z test tokenizer::tests::tokenize_invalid_string_cols ... ok
+2025-10-11T14:31:45.7775222Z test tokenizer::tests::tokenize_is_null ... ok
+2025-10-11T14:31:45.7775806Z test tokenizer::tests::tokenize_multiline_comment ... ok
+2025-10-11T14:31:45.7776393Z test tokenizer::tests::tokenize_mssql_top ... ok
+2025-10-11T14:31:45.7777206Z test tokenizer::tests::tokenize_multiline_comment_with_even_asterisks ... ok
+2025-10-11T14:31:45.7778017Z test tokenizer::tests::tokenize_nested_dollar_quoted_strings ... ok
+2025-10-11T14:31:45.7778765Z test tokenizer::tests::tokenize_nested_comments_if_not_supported ... ok
+2025-10-11T14:31:45.7781943Z test tokenizer::tests::tokenize_nested_multiline_comment ... ok
+2025-10-11T14:31:45.7782701Z test tokenizer::tests::tokenize_nested_multiline_comment_empty ... ok
+2025-10-11T14:31:45.7783815Z test tokenizer::tests::tokenize_newline_in_string_literal ... ok
+2025-10-11T14:31:45.7787001Z test tokenizer::tests::tokenize_newlines ... ok
+2025-10-11T14:31:45.7787645Z test tokenizer::tests::tokenize_numeric_literal_underscore ... ok
+2025-10-11T14:31:45.7788348Z test tokenizer::tests::tokenize_numeric_prefix_trait ... ok
+2025-10-11T14:31:45.7789006Z test tokenizer::tests::tokenize_period_underscore ... ok
+2025-10-11T14:31:45.7790014Z test tokenizer::tests::tokenize_pg_like_match ... ok
+2025-10-11T14:31:45.7790614Z test tokenizer::tests::tokenize_pg_regex_match ... ok
+2025-10-11T14:31:45.7791207Z test tokenizer::tests::tokenize_quoted_identifier ... ok
+2025-10-11T14:31:45.7794996Z test tokenizer::tests::tokenize_quoted_identifier_with_no_escape ... ok
+2025-10-11T14:31:45.7796054Z test tokenizer::tests::tokenize_quoted_string_escape ... ok
+2025-10-11T14:31:45.7796859Z test tokenizer::tests::tokenize_right_arrow ... ok
+2025-10-11T14:31:45.7797397Z test tokenizer::tests::tokenize_scalar_function ... ok
+2025-10-11T14:31:45.7798192Z test tokenizer::tests::tokenize_select_1 ... ok
+2025-10-11T14:31:45.7798744Z test tokenizer::tests::tokenize_select_exponent ... ok
+2025-10-11T14:31:45.7799333Z test tokenizer::tests::tokenize_select_float ... ok
+2025-10-11T14:31:45.7799889Z test tokenizer::tests::tokenize_simple_select ... ok
+2025-10-11T14:31:45.7800471Z test tokenizer::tests::tokenize_string_predicate ... ok
+2025-10-11T14:31:45.7801109Z test tokenizer::tests::tokenize_string_string_concat ... ok
+2025-10-11T14:31:45.7801762Z test tokenizer::tests::tokenize_snowflake_div ... ok
+2025-10-11T14:31:45.7802374Z test tokenizer::tests::tokenize_unicode_whitespace ... ok
+2025-10-11T14:31:45.7803195Z test tokenizer::tests::tokenize_triple_quoted_string ... ok
+2025-10-11T14:31:45.7804993Z test tokenizer::tests::tokenize_unterminated_string_literal ... ok
+2025-10-11T14:31:45.7805757Z test tokenizer::tests::tokenize_unterminated_string_literal_utf8 ... ok
+2025-10-11T14:31:45.7806437Z test tokenizer::tests::tokenize_with_location ... ok
+2025-10-11T14:31:45.7807447Z test tokenizer::tests::tokenizer_error_impl ... ok
+2025-10-11T14:31:45.7890039Z test ast::visitor::tests::overflow ... ok
+2025-10-11T14:31:45.7890381Z 
+2025-10-11T14:31:45.7890812Z test result: ok. 112 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+2025-10-11T14:31:45.7891188Z 
+2025-10-11T14:31:45.7898126Z      Running tests/pretty_print.rs (target/debug/deps/pretty_print-9585d54f126c39a1)
+2025-10-11T14:31:45.7913498Z 
+2025-10-11T14:31:45.7913663Z running 22 tests
+2025-10-11T14:31:45.7915068Z test test_pretty_print_control_flow ... ignored, https://github.com/apache/datafusion-sqlparser-rs/issues/1850
+2025-10-11T14:31:45.7916228Z test test_pretty_print_create_function ... ignored, https://github.com/apache/datafusion-sqlparser-rs/issues/1850
+2025-10-11T14:31:45.7917410Z test test_pretty_print_create_index ... ignored, https://github.com/apache/datafusion-sqlparser-rs/issues/1850
+2025-10-11T14:31:45.7921553Z test test_pretty_print_create_table ... ok
+2025-10-11T14:31:45.7922996Z test test_pretty_print_cte ... ok
+2025-10-11T14:31:45.7923455Z test test_pretty_print_case_when ... ok
+2025-10-11T14:31:45.7928064Z test test_pretty_print_explain ... ignored, https://github.com/apache/datafusion-sqlparser-rs/issues/1850
+2025-10-11T14:31:45.7930483Z test test_pretty_print_create_view ... ok
+2025-10-11T14:31:45.7930935Z test test_pretty_print_delete ... ok
+2025-10-11T14:31:45.7931355Z test test_pretty_print_insert_values ... ok
+2025-10-11T14:31:45.7931811Z test test_pretty_print_group_by ... ok
+2025-10-11T14:31:45.7932932Z test test_pretty_print_json_table ... ignored, https://github.com/apache/datafusion-sqlparser-rs/issues/1850
+2025-10-11T14:31:45.7934048Z test test_pretty_print_merge ... ignored, https://github.com/apache/datafusion-sqlparser-rs/issues/1850
+2025-10-11T14:31:45.7934853Z test test_pretty_print_multiline_string ... ok
+2025-10-11T14:31:45.7935363Z test test_pretty_print_insert_select ... ok
+2025-10-11T14:31:45.7935834Z test test_pretty_print_join ... ok
+2025-10-11T14:31:45.7936678Z test test_pretty_print_transaction_blocks ... ignored, https://github.com/apache/datafusion-sqlparser-rs/issues/1850
+2025-10-11T14:31:45.7937516Z test test_pretty_print_select ... ok
+2025-10-11T14:31:45.7937961Z test test_pretty_print_subquery ... ok
+2025-10-11T14:31:45.7938328Z test test_pretty_print_union ... ok
+2025-10-11T14:31:45.7938585Z test test_pretty_print_update ... ok
+2025-10-11T14:31:45.7941113Z test test_pretty_print_window_function ... ok
+2025-10-11T14:31:45.7941340Z 
+2025-10-11T14:31:45.7941561Z test result: ok. 15 passed; 0 failed; 7 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-11T14:31:45.7941851Z 
+2025-10-11T14:31:45.7946725Z      Running tests/sqlparser_bigquery.rs (target/debug/deps/sqlparser_bigquery-e3ebf82b592e3948)
+2025-10-11T14:31:45.7961525Z 
+2025-10-11T14:31:45.7961651Z running 52 tests
+2025-10-11T14:31:45.7972476Z test parse_at_at_identifier ... ok
+2025-10-11T14:31:45.7973625Z test bigquery_select_expr_star ... ok
+2025-10-11T14:31:45.7975790Z test parse_array_agg_func ... ok
+2025-10-11T14:31:45.7978008Z test parse_big_query_declare ... ok
+2025-10-11T14:31:45.7981795Z test parse_begin ... ok
+2025-10-11T14:31:45.7982369Z test parse_byte_literal ... ok
+2025-10-11T14:31:45.7983175Z test parse_big_query_non_reserved_column_alias ... ok
+2025-10-11T14:31:45.7984004Z test parse_cast_bytes_to_string_format ... ok
+2025-10-11T14:31:45.7987015Z test parse_cast_string_to_bytes_format ... ok
+2025-10-11T14:31:45.7987497Z test parse_cast_time_format ... ok
+2025-10-11T14:31:45.7992406Z test parse_cast_date_format ... ok
+2025-10-11T14:31:45.7993299Z test parse_cast_timestamp_format_tz ... ok
+2025-10-11T14:31:45.7993752Z test parse_cast_type ... ok
+2025-10-11T14:31:45.7997109Z test parse_create_table_with_options ... ok
+2025-10-11T14:31:45.7998093Z test parse_create_table_with_unquoted_hyphen ... ok
+2025-10-11T14:31:45.7999786Z test parse_create_view_if_not_exists ... ok
+2025-10-11T14:31:45.8000667Z test parse_create_view_with_unquoted_hyphen ... ok
+2025-10-11T14:31:45.8001646Z test parse_delete_statement ... ok
+2025-10-11T14:31:45.8003514Z test parse_create_view_with_options ... ok
+2025-10-11T14:31:45.8006622Z test parse_extract_weekday ... ok
+2025-10-11T14:31:45.8007167Z test parse_literal_string ... ok
+2025-10-11T14:31:45.8007681Z test parse_join_constraint_unnest_alias ... ok
+2025-10-11T14:31:45.8008300Z test parse_hyphenated_table_identifiers ... ok
+2025-10-11T14:31:45.8013623Z test parse_map_access_expr ... ok
+2025-10-11T14:31:45.8018688Z test parse_nested_data_types ... ok
+2025-10-11T14:31:45.8036440Z test parse_raw_literal ... ok
+2025-10-11T14:31:45.8036847Z test parse_merge ... ok
+2025-10-11T14:31:45.8037202Z test parse_table_identifiers ... ok
+2025-10-11T14:31:45.8042423Z test parse_table_time_travel ... ok
+2025-10-11T14:31:45.8045664Z test parse_tuple_struct_literal ... ok
+2025-10-11T14:31:45.8046460Z test parse_merge_invalid_statements ... ok
+2025-10-11T14:31:45.8054062Z test parse_trailing_comma ... ok
+2025-10-11T14:31:45.8054869Z test parse_typed_struct_with_field_name_bigquery ... ok
+2025-10-11T14:31:45.8059354Z test parse_typed_struct_syntax_bigquery ... ok
+2025-10-11T14:31:45.8060217Z test parse_typed_struct_with_field_name_bigquery_and_generic ... ok
+2025-10-11T14:31:45.8064354Z test parse_typeless_struct_syntax ... ok
+2025-10-11T14:31:45.8066793Z test test_any_type ... ok
+2025-10-11T14:31:45.8067311Z test parse_typed_struct_syntax_bigquery_and_generic ... ok
+2025-10-11T14:31:45.8070017Z test test_any_type_dont_break_custom_type ... ok
+2025-10-11T14:31:45.8071013Z test test_begin_statement ... ok
+2025-10-11T14:31:45.8074922Z test test_begin_transaction ... ok
+2025-10-11T14:31:45.8077482Z test test_any_value ... ok
+2025-10-11T14:31:45.8083119Z test test_alter_schema ... ok
+2025-10-11T14:31:45.8083568Z test test_array_agg ... ok
+2025-10-11T14:31:45.8084141Z test test_bigquery_trim ... ok
+2025-10-11T14:31:45.8088962Z test test_export_data ... ok
+2025-10-11T14:31:45.8090310Z test test_bigquery_create_function ... ok
+2025-10-11T14:31:45.8094134Z test test_select_as_struct ... ok
+2025-10-11T14:31:45.8094699Z test test_struct_field_options ... ok
+2025-10-11T14:31:45.8095406Z test test_select_as_value ... ok
+2025-10-11T14:31:45.8096582Z test test_triple_quote_typed_strings ... ok
+2025-10-11T14:31:45.8100019Z test test_struct_trailing_and_nested_bracket ... ok
+2025-10-11T14:31:45.8100378Z 
+2025-10-11T14:31:45.8100741Z test result: ok. 52 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+2025-10-11T14:31:45.8101077Z 
+2025-10-11T14:31:45.8106302Z      Running tests/sqlparser_clickhouse.rs (target/debug/deps/sqlparser_clickhouse-d39756632e112c17)
+2025-10-11T14:31:45.8123417Z 
+2025-10-11T14:31:45.8123714Z running 47 tests
+2025-10-11T14:31:45.8131290Z test explain_desc ... ok
+2025-10-11T14:31:45.8132585Z test explain_describe ... ok
+2025-10-11T14:31:45.8138317Z test parse_alter_table_attach_and_detach_partition ... ok
+2025-10-11T14:31:45.8140228Z test parse_alter_table_drop_projection ... ok
+2025-10-11T14:31:45.8141513Z test parse_alter_table_add_projection ... ok
+2025-10-11T14:31:45.8144213Z test parse_alter_table_clear_and_materialize_projection ... ok
+2025-10-11T14:31:45.8144802Z test parse_array_expr ... ok
+2025-10-11T14:31:45.8146007Z test parse_array_fn ... ok
+2025-10-11T14:31:45.8148125Z test parse_create_materialized_view ... ok
+2025-10-11T14:31:45.8153185Z test parse_create_table ... ok
+2025-10-11T14:31:45.8153879Z test parse_clickhouse_data_types ... ok
+2025-10-11T14:31:45.8158763Z test parse_create_table_on_commit_and_as_query ... ok
+2025-10-11T14:31:45.8159377Z test parse_create_table_with_nested_data_types ... ok
+2025-10-11T14:31:45.8159884Z test parse_create_table_with_nullable ... ok
+2025-10-11T14:31:45.8166792Z test parse_create_table_with_primary_key ... ok
+2025-10-11T14:31:45.8167384Z test parse_create_view_with_fields_data_types ... ok
+2025-10-11T14:31:45.8168334Z test parse_delimited_identifiers ... ok
+2025-10-11T14:31:45.8168935Z test parse_create_table_with_variant_default_expressions ... ok
+2025-10-11T14:31:45.8169524Z test parse_double_equal ... ok
+2025-10-11T14:31:45.8170233Z test parse_explain_table ... ok
+2025-10-11T14:31:45.8176347Z test parse_interpolate_with_empty_body ... ok
+2025-10-11T14:31:45.8177102Z test parse_insert_into_function ... ok
+2025-10-11T14:31:45.8177596Z test parse_interpolate_without_body ... ok
+2025-10-11T14:31:45.8178086Z test parse_interpolate_body_with_columns ... ok
+2025-10-11T14:31:45.8178515Z test parse_kill ... ok
+2025-10-11T14:31:45.8188712Z test parse_freeze_and_unfreeze_partition ... ok
+2025-10-11T14:31:45.8189442Z test parse_limit_by ... ok
+2025-10-11T14:31:45.8190733Z test parse_optimize_table ... ok
+2025-10-11T14:31:45.8192657Z test parse_map_access_expr ... ok
+2025-10-11T14:31:45.8194213Z test parse_select_order_by_interpolate_not_last ... ok
+2025-10-11T14:31:45.8195259Z test parse_select_order_by_with_fill_interpolate ... ok
+2025-10-11T14:31:45.8199741Z test parse_select_order_by_with_fill_interpolate_multi_with_fill_interpolates ... ok
+2025-10-11T14:31:45.8200663Z test parse_select_order_by_with_fill_interpolate_multi_interpolates ... ok
+2025-10-11T14:31:45.8202699Z test parse_select_parametric_function ... ok
+2025-10-11T14:31:45.8203733Z test parse_select_star_except ... ok
+2025-10-11T14:31:45.8208455Z test parse_select_star_except_no_parens ... ok
+2025-10-11T14:31:45.8209281Z test parse_table_sample ... ok
+2025-10-11T14:31:45.8213829Z test parse_select_table_function_settings ... ok
+2025-10-11T14:31:45.8215156Z test parse_use ... ok
+2025-10-11T14:31:45.8217454Z test parse_with_fill ... ok
+2025-10-11T14:31:45.8218306Z test parse_with_fill_missing_single_argument ... ok
+2025-10-11T14:31:45.8224061Z test parse_with_fill_multiple_incomplete_arguments ... ok
+2025-10-11T14:31:45.8224895Z test parse_settings_in_query ... ok
+2025-10-11T14:31:45.8229643Z test test_parse_not_null_in_column_options ... ok
+2025-10-11T14:31:45.8230221Z test test_insert_query_with_format_clause ... ok
+2025-10-11T14:31:45.8230767Z test test_prewhere ... ok
+2025-10-11T14:31:45.8233998Z test test_query_with_format_clause ... ok
+2025-10-11T14:31:45.8234367Z 
+2025-10-11T14:31:45.8234731Z test result: ok. 47 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+2025-10-11T14:31:45.8235116Z 
+2025-10-11T14:31:45.8240996Z      Running tests/sqlparser_common.rs (target/debug/deps/sqlparser_common-5fd715d90bd70551)
+2025-10-11T14:31:45.8260454Z 
+2025-10-11T14:31:45.8260738Z running 422 tests
+2025-10-11T14:31:45.8271780Z test all_keywords_sorted ... ok
+2025-10-11T14:31:45.8272574Z test ensure_multiple_dialects_are_tested - should panic ... ok
+2025-10-11T14:31:45.8281312Z test explain_describe ... ok
+2025-10-11T14:31:45.8285929Z test explain_desc ... ok
+2025-10-11T14:31:45.8286545Z test interval_disallow_interval_expr_double_colon ... ok
+2025-10-11T14:31:45.8290966Z test interval_disallow_interval_expr_gt ... ok
+2025-10-11T14:31:45.8291453Z test insert_into_with_parentheses ... ok
+2025-10-11T14:31:45.8291874Z test check_enforced ... ok
+2025-10-11T14:31:45.8304916Z test lateral_function ... ok
+2025-10-11T14:31:45.8332163Z test parse_adjacent_string_literal_concatenation ... ok
+2025-10-11T14:31:45.8337383Z test parse_agg_with_order_by ... ok
+2025-10-11T14:31:45.8338278Z test join_precedence ... ok
+2025-10-11T14:31:45.8344801Z test parse_alter_index ... ok
+2025-10-11T14:31:45.8379881Z test lateral_derived ... ok
+2025-10-11T14:31:45.8380348Z test parse_aggregate_with_group_by ... ok
+2025-10-11T14:31:45.8380913Z test parse_alter_table_add_column_if_not_exists ... ok
+2025-10-11T14:31:45.8381463Z test parse_alter_table_add_column ... ok
+2025-10-11T14:31:45.8385942Z test parse_alter_table ... ok
+2025-10-11T14:31:45.8391576Z test parse_alter_table_alter_column_type ... ok
+2025-10-11T14:31:45.8413366Z test parse_alter_table_alter_column ... ok
+2025-10-11T14:31:45.8434678Z test parse_alter_table_drop_constraint ... ok
+2025-10-11T14:31:45.8435201Z test parse_alter_table_drop_column ... ok
+2025-10-11T14:31:45.8435648Z test parse_alter_view ... ok
+2025-10-11T14:31:45.8436040Z test parse_alter_view_with_columns ... ok
+2025-10-11T14:31:45.8436906Z test parse_analyze ... ok
+2025-10-11T14:31:45.8437315Z test parse_alter_view_with_options ... ok
+2025-10-11T14:31:45.8442265Z test parse_array_type_def_with_brackets ... ok
+2025-10-11T14:31:45.8457178Z test parse_assert ... ok
+2025-10-11T14:31:45.8465157Z test parse_array_agg_func ... ok
+2025-10-11T14:31:45.8473511Z test parse_assert_message ... ok
+2025-10-11T14:31:45.8482185Z test parse_bad_constraint ... ok
+2025-10-11T14:31:45.8492342Z test parse_bang_not ... ok
+2025-10-11T14:31:45.8498550Z test parse_at_timezone ... ok
+2025-10-11T14:31:45.8517695Z test parse_between ... ok
+2025-10-11T14:31:45.8538228Z test parse_between_with_expr ... ok
+2025-10-11T14:31:45.8539112Z test parse_binary_all ... ok
+2025-10-11T14:31:45.8549087Z test parse_binary_any ... ok
+2025-10-11T14:31:45.8573757Z test parse_bignumeric_keyword ... ok
+2025-10-11T14:31:45.8574483Z test overflow ... ok
+2025-10-11T14:31:45.8585604Z test parse_alter_table_constraints ... ok
+2025-10-11T14:31:45.8589544Z test parse_bitwise_ops ... ok
+2025-10-11T14:31:45.8624570Z test parse_call ... ok
+2025-10-11T14:31:45.8668922Z test parse_cache_table ... ok
+2025-10-11T14:31:45.8722181Z test parse_case_statement ... ok
+2025-10-11T14:31:45.8727846Z test parse_ceil_datetime ... ok
+2025-10-11T14:31:45.8748073Z test parse_cast ... ok
+2025-10-11T14:31:45.8748479Z test parse_ceil_number ... ok
+2025-10-11T14:31:45.8748924Z test parse_ceil_number_scale ... ok
+2025-10-11T14:31:45.8761242Z test parse_ceil_scale ... ok
+2025-10-11T14:31:45.8766979Z test parse_collate ... ok
+2025-10-11T14:31:45.8767411Z test parse_collate_after_parens ... ok
+2025-10-11T14:31:45.8780097Z test parse_column_definition_trailing_commas ... ok
+2025-10-11T14:31:45.8794733Z test parse_comments ... ok
+2025-10-11T14:31:45.8799071Z test parse_column_aliases ... ok
+2025-10-11T14:31:45.8811743Z test parse_commit ... ok
+2025-10-11T14:31:45.8818388Z test parse_compound_expr_1 ... ok
+2025-10-11T14:31:45.8824748Z test parse_compound_expr_2 ... ok
+2025-10-11T14:31:45.8845728Z test parse_complex_join ... ok
+2025-10-11T14:31:45.8846462Z test parse_composite_access_expr ... ok
+2025-10-11T14:31:45.8855023Z test parse_binary_operators_without_whitespace ... ok
+2025-10-11T14:31:45.8860431Z test parse_connect_by ... ok
+2025-10-11T14:31:45.8865748Z test parse_create_database ... ok
+2025-10-11T14:31:45.8866449Z test parse_create_database_ine ... ok
+2025-10-11T14:31:45.8877545Z test parse_count_wildcard ... ok
+2025-10-11T14:31:45.8887361Z test parse_create_index ... ok
+2025-10-11T14:31:45.8893798Z test parse_create_external_table ... ok
+2025-10-11T14:31:45.8894580Z test parse_create_external_table_lowercase ... ok
+2025-10-11T14:31:45.8905951Z test parse_create_materialized_view ... ok
+2025-10-11T14:31:45.8906461Z test parse_copy_options ... ok
+2025-10-11T14:31:45.8909056Z test parse_create_materialized_view_with_cluster_by ... ok
+2025-10-11T14:31:45.8914902Z test parse_create_index_different_using_positions ... ok
+2025-10-11T14:31:45.8917875Z test parse_create_or_replace_table ... ok
+2025-10-11T14:31:45.8925852Z test parse_create_or_replace_materialized_view ... ok
+2025-10-11T14:31:45.8927125Z test parse_create_or_replace_external_table ... ok
+2025-10-11T14:31:45.8929552Z test parse_create_procedure_with_language ... ok
+2025-10-11T14:31:45.8936717Z test parse_create_or_replace_view ... ok
+2025-10-11T14:31:45.8938654Z test parse_create_schema_with_authorization ... ok
+2025-10-11T14:31:45.8941522Z test parse_create_role ... ok
+2025-10-11T14:31:45.8953968Z test parse_create_schema_with_name_and_authorization ... ok
+2025-10-11T14:31:45.8960746Z test parse_create_procedure_with_parameter_modes ... ok
+2025-10-11T14:31:45.8974085Z test parse_create_schema ... ok
+2025-10-11T14:31:45.8975206Z test parse_create_table_as_table ... ok
+2025-10-11T14:31:45.8978664Z test parse_create_table_as ... ok
+2025-10-11T14:31:45.8980853Z test parse_create_table_clone ... ok
+2025-10-11T14:31:45.9020312Z test parse_create_table_hive_array ... ok
+2025-10-11T14:31:45.9020828Z test parse_create_table_like ... ok
+2025-10-11T14:31:45.9021318Z test parse_create_table_on_cluster ... ok
+2025-10-11T14:31:45.9024685Z test parse_create_table_collate ... ok
+2025-10-11T14:31:45.9025197Z test parse_create_table_trailing_comma ... ok
+2025-10-11T14:31:45.9025697Z test parse_create_table_select ... ok
+2025-10-11T14:31:45.9026160Z test parse_create_table_with_bit_types ... ok
+2025-10-11T14:31:45.9063630Z test parse_create_table_with_enum_types ... ok
+2025-10-11T14:31:45.9065010Z test parse_create_table ... ok
+2025-10-11T14:31:45.9065542Z test parse_create_table_with_multiple_on_delete_fails ... ok
+2025-10-11T14:31:45.9093620Z test parse_create_table_with_multiple_on_delete_in_constraint_fails ... ok
+2025-10-11T14:31:45.9094494Z test parse_create_table_with_options ... ok
+2025-10-11T14:31:45.9095132Z test parse_create_type ... ok
+2025-10-11T14:31:45.9110237Z test parse_create_table_with_on_delete_on_update_2in_any_order ... ok
+2025-10-11T14:31:45.9124276Z test parse_create_user ... ok
+2025-10-11T14:31:45.9134224Z test parse_create_table_with_constraint_characteristics ... ok
+2025-10-11T14:31:45.9144288Z test parse_create_view ... ok
+2025-10-11T14:31:45.9146514Z test parse_create_view_temporary ... ok
+2025-10-11T14:31:45.9153982Z test parse_create_view_if_not_exists ... ok
+2025-10-11T14:31:45.9154777Z test parse_create_view_with_columns ... ok
+2025-10-11T14:31:45.9160525Z test parse_create_view_with_options ... ok
+2025-10-11T14:31:45.9183637Z test parse_cross_join ... ok
+2025-10-11T14:31:45.9184058Z test parse_cross_join_constraint ... ok
+2025-10-11T14:31:45.9218731Z test parse_cte_renamed_columns ... ok
+2025-10-11T14:31:45.9219343Z test parse_cursor ... ok
+2025-10-11T14:31:45.9225462Z test parse_cte_in_data_modification_statements ... ok
+2025-10-11T14:31:45.9235388Z test parse_deeply_nested_expr_hits_recursion_limits ... ok
+2025-10-11T14:31:45.9254363Z test parse_deeply_nested_subquery_expr_hits_recursion_limits ... ok
+2025-10-11T14:31:45.9282453Z test parse_deeply_nested_parens_hits_recursion_limits ... ok
+2025-10-11T14:31:45.9285200Z test parse_ctes ... ok
+2025-10-11T14:31:45.9290291Z test parse_delete_statement ... ok
+2025-10-11T14:31:45.9306577Z test parse_delete_statement_for_multi_tables ... ok
+2025-10-11T14:31:45.9318561Z test parse_delete_without_from_error ... ok
+2025-10-11T14:31:45.9321845Z test parse_deeply_nested_unary_op_hits_recursion_limits ... ok
+2025-10-11T14:31:45.9325609Z test parse_delete_statement_for_multi_tables_with_using ... ok
+2025-10-11T14:31:45.9347455Z test parse_discard ... ok
+2025-10-11T14:31:45.9347849Z test parse_deny ... ok
+2025-10-11T14:31:45.9348213Z test parse_drop_database ... ok
+2025-10-11T14:31:45.9348670Z test parse_double_colon_cast_at_timezone ... ok
+2025-10-11T14:31:45.9349178Z test parse_drop_database_if_exists ... ok
+2025-10-11T14:31:45.9353304Z test parse_drop_index ... ok
+2025-10-11T14:31:45.9356163Z test parse_drop_role ... ok
+2025-10-11T14:31:45.9359240Z test parse_create_table_column_constraint_characteristics ... ok
+2025-10-11T14:31:45.9362155Z test parse_drop_schema ... ok
+2025-10-11T14:31:45.9363255Z test parse_drop_stream ... ok
+2025-10-11T14:31:45.9367677Z test parse_drop_user ... ok
+2025-10-11T14:31:45.9371262Z test parse_drop_table ... ok
+2025-10-11T14:31:45.9381387Z test parse_drop_view ... ok
+2025-10-11T14:31:45.9386616Z test parse_drop_type ... ok
+2025-10-11T14:31:45.9389391Z test parse_end ... ok
+2025-10-11T14:31:45.9396771Z test parse_escaped_single_quote_string_predicate_with_escape ... ok
+2025-10-11T14:31:45.9398719Z test parse_escaped_single_quote_string_predicate_with_no_escape ... ok
+2025-10-11T14:31:45.9399423Z test parse_escaped_string_with_unescape ... ok
+2025-10-11T14:31:45.9406608Z test parse_escaped_string_without_unescape ... ok
+2025-10-11T14:31:45.9407436Z test parse_execute_immediate ... ok
+2025-10-11T14:31:45.9409910Z test parse_execute_stored_procedure ... ok
+2025-10-11T14:31:45.9433517Z test parse_derived_tables ... ok
+2025-10-11T14:31:45.9434273Z test parse_explain_estimate ... ok
+2025-10-11T14:31:45.9434724Z test parse_explain_table ... ok
+2025-10-11T14:31:45.9457119Z test parse_explain_query_plan ... ok
+2025-10-11T14:31:45.9460792Z test parse_explain_with_option_list ... ok
+2025-10-11T14:31:45.9463815Z test parse_exponent_in_select ... ok
+2025-10-11T14:31:45.9469722Z test parse_exists_subquery ... ok
+2025-10-11T14:31:45.9493713Z test parse_factorial_operator ... ok
+2025-10-11T14:31:45.9505258Z test parse_explain_analyze_with_simple_select ... ok
+2025-10-11T14:31:45.9550775Z test parse_fetch_variations ... ok
+2025-10-11T14:31:45.9563067Z test parse_floor_datetime ... ok
+2025-10-11T14:31:45.9582016Z test parse_floor_number ... ok
+2025-10-11T14:31:45.9598091Z test parse_floor_number_scale ... ok
+2025-10-11T14:31:45.9598565Z test parse_floor_scale ... ok
+2025-10-11T14:31:45.9598988Z test parse_from_advanced ... ok
+2025-10-11T14:31:45.9599821Z test parse_fetch ... ok
+2025-10-11T14:31:45.9623473Z test parse_function_object_name ... ok
+2025-10-11T14:31:45.9627893Z test parse_group_by_special_grouping_sets ... ok
+2025-10-11T14:31:45.9643245Z test parse_group_by_grouping_sets_single_values ... ok
+2025-10-11T14:31:45.9674046Z test parse_group_by_with_modifier ... ok
+2025-10-11T14:31:45.9703464Z test parse_extract ... ok
+2025-10-11T14:31:45.9721476Z test parse_implicit_join ... ok
+2025-10-11T14:31:45.9729935Z test parse_ilike ... ok
+2025-10-11T14:31:45.9731553Z test parse_in_error ... ok
+2025-10-11T14:31:45.9751819Z test parse_in_subquery ... ok
+2025-10-11T14:31:45.9783126Z test parse_in_list ... ok
+2025-10-11T14:31:45.9783536Z test parse_in_unnest ... ok
+2025-10-11T14:31:45.9783934Z test parse_if_statement ... ok
+2025-10-11T14:31:45.9786805Z test parse_in_union ... ok
+2025-10-11T14:31:45.9803799Z test parse_insert_select_from_returning ... ok
+2025-10-11T14:31:45.9804698Z test parse_insert_set ... ok
+2025-10-11T14:31:45.9805144Z test parse_insert_select_returning ... ok
+2025-10-11T14:31:45.9805630Z test parse_insert_default_values ... ok
+2025-10-11T14:31:45.9818481Z test parse_insert_sqlite ... ok
+2025-10-11T14:31:45.9837564Z test parse_grant ... ok
+2025-10-11T14:31:45.9848393Z test parse_interval_and_or_xor ... ok
+2025-10-11T14:31:45.9857555Z test parse_interval_disallow_interval_expr ... ok
+2025-10-11T14:31:45.9870120Z test parse_interval_require_qualifier ... ok
+2025-10-11T14:31:45.9871192Z test parse_interval_dont_require_unit ... ok
+2025-10-11T14:31:45.9886868Z test parse_interval_require_unit ... ok
+2025-10-11T14:31:45.9887365Z test parse_invalid_limit_by ... ok
+2025-10-11T14:31:45.9887812Z test parse_invalid_infix_not ... ok
+2025-10-11T14:31:45.9890816Z test parse_invalid_table_name ... ok
+2025-10-11T14:31:45.9893406Z test parse_insert_values ... ok
+2025-10-11T14:31:45.9908206Z test parse_invisible_column ... ok
+2025-10-11T14:31:45.9913070Z test parse_invalid_subquery_without_parens ... ok
+2025-10-11T14:31:45.9916086Z test parse_is_distinct_from ... ok
+2025-10-11T14:31:45.9918803Z test parse_is_not_null ... ok
+2025-10-11T14:31:45.9927947Z test parse_is_null ... ok
+2025-10-11T14:31:45.9931202Z test parse_is_not_distinct_from ... ok
+2025-10-11T14:31:45.9981391Z test parse_join_nesting ... ok
+2025-10-11T14:31:46.0022472Z test parse_join_syntax_variants ... ok
+2025-10-11T14:31:46.0034087Z test parse_is_boolean ... ok
+2025-10-11T14:31:46.0039275Z test parse_json_keyword ... ok
+2025-10-11T14:31:46.0063769Z test parse_interval_all ... ok
+2025-10-11T14:31:46.0064441Z test parse_json_object ... ok
+2025-10-11T14:31:46.0083123Z test parse_json_ops_without_colon ... ok
+2025-10-11T14:31:46.0092063Z test parse_limit ... ok
+2025-10-11T14:31:46.0120359Z test parse_like ... ok
+2025-10-11T14:31:46.0136656Z test parse_joins_on ... ok
+2025-10-11T14:31:46.0139683Z test parse_limit_is_not_an_alias ... ok
+2025-10-11T14:31:46.0140678Z test parse_listen_channel ... ok
+2025-10-11T14:31:46.0157505Z test parse_literal_date ... ok
+2025-10-11T14:31:46.0158201Z test parse_literal_datetime ... ok
+2025-10-11T14:31:46.0166047Z test parse_literal_decimal ... ok
+2025-10-11T14:31:46.0173774Z test parse_limit_accepts_all ... ok
+2025-10-11T14:31:46.0183900Z test parse_literal_integer ... ok
+2025-10-11T14:31:46.0190206Z test parse_literal_time ... ok
+2025-10-11T14:31:46.0201996Z test parse_literal_string ... ok
+2025-10-11T14:31:46.0204786Z test parse_literal_timestamp_with_time_zone ... ok
+2025-10-11T14:31:46.0206040Z test parse_listagg ... ok
+2025-10-11T14:31:46.0211002Z test parse_map_access_expr ... ok
+2025-10-11T14:31:46.0211516Z test parse_literal_timestamp_without_time_zone ... ok
+2025-10-11T14:31:46.0254229Z test parse_joins_using ... ok
+2025-10-11T14:31:46.0254688Z test parse_load_data ... ok
+2025-10-11T14:31:46.0258471Z test parse_mod ... ok
+2025-10-11T14:31:46.0258876Z test parse_mod_no_spaces ... ok
+2025-10-11T14:31:46.0259331Z test parse_multiple_set_statements ... ok
+2025-10-11T14:31:46.0262544Z test parse_method_expr ... ok
+2025-10-11T14:31:46.0278797Z test parse_named_argument_function ... ok
+2025-10-11T14:31:46.0289706Z test parse_method_select ... ok
+2025-10-11T14:31:46.0305379Z test parse_named_argument_function_with_eq_operator ... ok
+2025-10-11T14:31:46.0324890Z test parse_merge ... ok
+2025-10-11T14:31:46.0338164Z test parse_named_window_functions ... ok
+2025-10-11T14:31:46.0347957Z test parse_no_table_name ... ok
+2025-10-11T14:31:46.0353393Z test parse_negative_value ... ok
+2025-10-11T14:31:46.0360711Z test parse_non_latin_identifiers ... ok
+2025-10-11T14:31:46.0371311Z test parse_not ... ok
+2025-10-11T14:31:46.0373218Z test parse_not_null ... ok
+2025-10-11T14:31:46.0378040Z test parse_notify_channel ... ok
+2025-10-11T14:31:46.0386538Z test parse_natural_join ... ok
+2025-10-11T14:31:46.0395351Z test parse_null_in_select ... ok
+2025-10-11T14:31:46.0403641Z test parse_not_precedence ... ok
+2025-10-11T14:31:46.0404946Z test parse_notnull ... ok
+2025-10-11T14:31:46.0409723Z test parse_null_like ... ok
+2025-10-11T14:31:46.0410572Z test parse_number ... ok
+2025-10-11T14:31:46.0413134Z test parse_nullary_table_valued_function ... ok
+2025-10-11T14:31:46.0424807Z test parse_numeric_literal_underscore ... ok
+2025-10-11T14:31:46.0434713Z test parse_odbc_scalar_function ... ok
+2025-10-11T14:31:46.0453482Z test parse_odbc_time_date_timestamp ... ok
+2025-10-11T14:31:46.0454250Z test parse_outer_join_operator ... ok
+2025-10-11T14:31:46.0465221Z test parse_overlaps ... ok
+2025-10-11T14:31:46.0475433Z test parse_multiple_statements ... ok
+2025-10-11T14:31:46.0487005Z test parse_parens ... ok
+2025-10-11T14:31:46.0508092Z test parse_offset ... ok
+2025-10-11T14:31:46.0543607Z test parse_overlay ... ok
+2025-10-11T14:31:46.0544087Z test parse_offset_and_limit ... ok
+2025-10-11T14:31:46.0553230Z test parse_pipeline_operator_negative_tests ... ok
+2025-10-11T14:31:46.0563135Z test parse_pivot_unpivot_table ... ok
+2025-10-11T14:31:46.0574038Z test parse_position ... ok
+2025-10-11T14:31:46.0574486Z test parse_position_negative ... ok
+2025-10-11T14:31:46.0593203Z test parse_projection_nested_type ... ok
+2025-10-11T14:31:46.0598954Z test parse_projection_trailing_comma ... ok
+2025-10-11T14:31:46.0635398Z test parse_raise_statement ... ok
+2025-10-11T14:31:46.0635874Z test parse_rename_table ... ok
+2025-10-11T14:31:46.0636285Z test parse_replace_into ... ok
+2025-10-11T14:31:46.0637161Z test parse_return ... ok
+2025-10-11T14:31:46.0637599Z test parse_returning_as_column_alias ... ok
+2025-10-11T14:31:46.0645310Z test parse_recursive_cte ... ok
+2025-10-11T14:31:46.0669796Z test parse_scalar_function_in_projection ... ok
+2025-10-11T14:31:46.0675164Z test parse_rollback ... ok
+2025-10-11T14:31:46.0685728Z test parse_scalar_subqueries ... ok
+2025-10-11T14:31:46.0696143Z test parse_pivot_table ... ok
+2025-10-11T14:31:46.0701813Z test parse_select_all ... ok
+2025-10-11T14:31:46.0713801Z test parse_searched_case_expr ... ok
+2025-10-11T14:31:46.0714436Z test parse_select_all_distinct ... ok
+2025-10-11T14:31:46.0714908Z test parse_select_distinct ... ok
+2025-10-11T14:31:46.0722413Z test parse_select_count_wildcard ... ok
+2025-10-11T14:31:46.0723290Z test parse_pipeline_operator ... ok
+2025-10-11T14:31:46.0723751Z test parse_select_distinct_missing_paren ... ok
+2025-10-11T14:31:46.0735907Z test parse_select_distinct_two_fields ... ok
+2025-10-11T14:31:46.0738001Z test parse_select_distinct_tuple ... ok
+2025-10-11T14:31:46.0740730Z test parse_select_count_distinct ... ok
+2025-10-11T14:31:46.0755548Z test parse_select_expr_star ... ok
+2025-10-11T14:31:46.0758709Z test parse_select_distinct_on ... ok
+2025-10-11T14:31:46.0768841Z test parse_select_group_by_all ... ok
+2025-10-11T14:31:46.0788404Z test parse_select_group_by ... ok
+2025-10-11T14:31:46.0788826Z test parse_select_having ... ok
+2025-10-11T14:31:46.0789205Z test parse_select_into ... ok
+2025-10-11T14:31:46.0809802Z test parse_select_order_by_all ... ok
+2025-10-11T14:31:46.0818727Z test parse_select_order_by_limit ... ok
+2025-10-11T14:31:46.0819181Z test parse_select_order_by ... ok
+2025-10-11T14:31:46.0819620Z test parse_select_order_by_not_support_all ... ok
+2025-10-11T14:31:46.0836922Z test parse_select_order_by_nulls_order ... ok
+2025-10-11T14:31:46.0840888Z test parse_select_string_predicate ... ok
+2025-10-11T14:31:46.0845574Z test parse_select_table_with_index_hints ... ok
+2025-10-11T14:31:46.0850350Z test parse_select_wildcard_with_except ... ok
+2025-10-11T14:31:46.0858074Z test parse_select_wildcard ... ok
+2025-10-11T14:31:46.0863422Z test parse_select_with_date_column_name ... ok
+2025-10-11T14:31:46.0871076Z test parse_select_qualify ... ok
+2025-10-11T14:31:46.0875477Z test parse_select_without_projection ... ok
+2025-10-11T14:31:46.0875987Z test parse_select_with_table_alias ... ok
+2025-10-11T14:31:46.0879836Z test parse_set_names ... ok
+2025-10-11T14:31:46.0880292Z test parse_set_role_as_variable ... ok
+2025-10-11T14:31:46.0880767Z test parse_set_time_zone_alias ... ok
+2025-10-11T14:31:46.0881218Z test parse_set_time_zone ... ok
+2025-10-11T14:31:46.0886997Z test parse_select_with_table_alias_as ... ok
+2025-10-11T14:31:46.0889266Z test parse_set_transaction ... ok
+2025-10-11T14:31:46.0889772Z test parse_select_with_alias_and_column_defs ... ok
+2025-10-11T14:31:46.0890512Z test parse_show_functions ... ok
+2025-10-11T14:31:46.0906503Z test parse_simple_case_expr ... ok
+2025-10-11T14:31:46.0916678Z test parse_simple_math_expr_minus ... ok
+2025-10-11T14:31:46.0928712Z test parse_set_variable ... ok
+2025-10-11T14:31:46.0934548Z test parse_simple_math_expr_plus ... ok
+2025-10-11T14:31:46.0944354Z test parse_simple_select ... ok
+2025-10-11T14:31:46.0950356Z test parse_sized_list ... ok
+2025-10-11T14:31:46.0953332Z test parse_string_agg ... ok
+2025-10-11T14:31:46.0974717Z test parse_similar_to ... ok
+2025-10-11T14:31:46.0978627Z test parse_subquery_limit ... ok
+2025-10-11T14:31:46.0979830Z test parse_start_transaction ... ok
+2025-10-11T14:31:46.0991251Z test parse_table_function ... ok
+2025-10-11T14:31:46.1013496Z test parse_top_level ... ok
+2025-10-11T14:31:46.1014156Z test parse_trailing_comma ... ok
+2025-10-11T14:31:46.1014847Z test parse_truncate_only ... ok
+2025-10-11T14:31:46.1024017Z test parse_time_functions ... ok
+2025-10-11T14:31:46.1051055Z test parse_tuple_invalid ... ok
+2025-10-11T14:31:46.1055493Z test parse_tuples ... ok
+2025-10-11T14:31:46.1059718Z test parse_typed_strings ... ok
+2025-10-11T14:31:46.1064625Z test parse_substring ... ok
+2025-10-11T14:31:46.1068877Z test parse_unary_math_with_multiply ... ok
+2025-10-11T14:31:46.1073517Z test parse_trim ... ok
+2025-10-11T14:31:46.1076816Z test parse_try_cast ... ok
+2025-10-11T14:31:46.1079549Z test parse_unary_math_with_plus ... ok
+2025-10-11T14:31:46.1081628Z test parse_unlisten_channel ... ok
+2025-10-11T14:31:46.1084463Z test parse_uncache_table ... ok
+2025-10-11T14:31:46.1087052Z test parse_unnest_in_from_clause ... ok
+2025-10-11T14:31:46.1113281Z test parse_unnest ... ok
+2025-10-11T14:31:46.1137815Z test parse_update ... ok
+2025-10-11T14:31:46.1191050Z test parse_unload ... ok
+2025-10-11T14:31:46.1223382Z test parse_update_from_before_select ... ok
+2025-10-11T14:31:46.1224413Z test parse_update_set_from ... ok
+2025-10-11T14:31:46.1231193Z test parse_update_or ... ok
+2025-10-11T14:31:46.1235623Z test parse_update_with_table_alias ... ok
+2025-10-11T14:31:46.1244174Z test parse_where_delete_statement ... ok
+2025-10-11T14:31:46.1258031Z test parse_where_delete_with_alias_statement ... ok
+2025-10-11T14:31:46.1303829Z test parse_values ... ok
+2025-10-11T14:31:46.1304635Z test parse_window_and_qualify_clause ... ok
+2025-10-11T14:31:46.1305313Z test parse_window_clause_named_window ... ok
+2025-10-11T14:31:46.1318829Z test parse_window_function_null_treatment_arg ... ok
+2025-10-11T14:31:46.1333902Z test parse_window_clause ... ok
+2025-10-11T14:31:46.1350003Z test parse_union_except_intersect_minus ... ok
+2025-10-11T14:31:46.1362503Z test parse_window_functions ... ok
+2025-10-11T14:31:46.1367036Z test parse_unpivot_table ... ok
+2025-10-11T14:31:46.1370566Z test parse_with_recursion_limit ... ok
+2025-10-11T14:31:46.1384147Z test parse_within_group ... ok
+2025-10-11T14:31:46.1384856Z test parse_window_rank_function ... ok
+2025-10-11T14:31:46.1385388Z test test_alias_equal_expr ... ok
+2025-10-11T14:31:46.1397357Z test test_alter_connector ... ok
+2025-10-11T14:31:46.1403964Z test test_buffer_reuse ... ok
+2025-10-11T14:31:46.1407390Z test test_alter_table_with_on_cluster ... ok
+2025-10-11T14:31:46.1411661Z test test_case_statement_span ... ok
+2025-10-11T14:31:46.1418160Z test test_comment_hash_syntax ... ok
+2025-10-11T14:31:46.1422437Z test test_alter_policy ... ok
+2025-10-11T14:31:46.1423500Z test test_conditional_statement_span ... ok
+2025-10-11T14:31:46.1436276Z test test_create_connector ... ok
+2025-10-11T14:31:46.1440392Z test test_create_index_with_with_clause ... ok
+2025-10-11T14:31:46.1446055Z test test_create_index_with_using_function ... ok
+2025-10-11T14:31:46.1451551Z test test_any_some_all_comparison ... ok
+2025-10-11T14:31:46.1452672Z test test_compound_expr ... ok
+2025-10-11T14:31:46.1453609Z test test_dictionary_syntax ... ok
+2025-10-11T14:31:46.1466255Z test test_drop_connector ... ok
+2025-10-11T14:31:46.1468975Z test test_drop_policy ... ok
+2025-10-11T14:31:46.1482657Z test test_extract_seconds_ok ... ok
+2025-10-11T14:31:46.1483673Z test test_extract_seconds_single_quote_err ... ok
+2025-10-11T14:31:46.1485504Z test test_eof_after_as ... ok
+2025-10-11T14:31:46.1486397Z test test_extract_seconds_single_quote_ok ... ok
+2025-10-11T14:31:46.1496765Z test test_geometric_unary_operators ... ok
+2025-10-11T14:31:46.1498184Z test test_geometric_binary_operators ... ok
+2025-10-11T14:31:46.1501319Z test test_create_policy ... ok
+2025-10-11T14:31:46.1518956Z test test_geometry_type ... ok
+2025-10-11T14:31:46.1522543Z test test_group_by_nothing ... ok
+2025-10-11T14:31:46.1524245Z test test_identifier_unicode_start ... ok
+2025-10-11T14:31:46.1531221Z test test_group_by_grouping_sets ... ok
+2025-10-11T14:31:46.1532011Z test test_identifier_unicode_support ... ok
+2025-10-11T14:31:46.1532507Z test test_if_statement_multiline_span ... ok
+2025-10-11T14:31:46.1533176Z test test_if_statement_span ... ok
+2025-10-11T14:31:46.1553287Z test test_load_extension ... ok
+2025-10-11T14:31:46.1556331Z test test_lambdas ... ok
+2025-10-11T14:31:46.1556935Z test test_lock ... ok
+2025-10-11T14:31:46.1561108Z test test_lock_nonblock ... ok
+2025-10-11T14:31:46.1573674Z test test_map_syntax ... ok
+2025-10-11T14:31:46.1585121Z test test_match_recognize ... ok
+2025-10-11T14:31:46.1592094Z test test_lock_table ... ok
+2025-10-11T14:31:46.1603488Z test test_match_recognize_patterns ... ok
+2025-10-11T14:31:46.1614989Z test test_merge_in_cte ... ok
+2025-10-11T14:31:46.1646274Z test test_merge_invalid_statements ... ok
+2025-10-11T14:31:46.1646787Z test test_merge_into_using_table ... ok
+2025-10-11T14:31:46.1647236Z test test_merge_with_delimiter ... ok
+2025-10-11T14:31:46.1647726Z test test_merge_with_output_without_into ... ok
+2025-10-11T14:31:46.1652263Z test test_no_infix_error ... ok
+2025-10-11T14:31:46.1655398Z test test_merge_with_output ... ok
+2025-10-11T14:31:46.1662080Z test test_open ... ok
+2025-10-11T14:31:46.1664741Z test test_no_semicolon_required_between_statements ... ok
+2025-10-11T14:31:46.1678994Z test test_parse_default_with_collate_column_option ... ok
+2025-10-11T14:31:46.1686226Z test test_merge_with_returning ... ok
+2025-10-11T14:31:46.1695077Z test test_parse_inline_comment ... ok
+2025-10-11T14:31:46.1711455Z test test_parse_named_window ... ok
+2025-10-11T14:31:46.1730961Z test test_parse_semantic_view_table_factor ... ok
+2025-10-11T14:31:46.1748230Z test test_placeholder ... ok
+2025-10-11T14:31:46.1763432Z test test_release_savepoint ... ok
+2025-10-11T14:31:46.1764228Z test test_reserved_keywords_for_identifiers ... ok
+2025-10-11T14:31:46.1769697Z test test_revoke ... ok
+2025-10-11T14:31:46.1776803Z test test_revoke_with_cascade ... ok
+2025-10-11T14:31:46.1779961Z test test_savepoint ... ok
+2025-10-11T14:31:46.1791848Z test test_select_exclude ... ok
+2025-10-11T14:31:46.1798848Z test test_parse_not_null_in_column_options ... ok
+2025-10-11T14:31:46.1799655Z test test_select_from_first ... ok
+2025-10-11T14:31:46.1805009Z test test_select_top ... ok
+2025-10-11T14:31:46.1820271Z test test_parse_alter_user ... ok
+2025-10-11T14:31:46.1820776Z test test_select_wildcard_with_replace ... ok
+2025-10-11T14:31:46.1845401Z test test_selective_aggregation ... ok
+2025-10-11T14:31:46.1861930Z test test_select_where_with_like_or_ilike_any ... ok
+2025-10-11T14:31:46.1862563Z test test_trailing_commas_in_from ... ok
+2025-10-11T14:31:46.1864434Z test test_table_sample ... ok
+2025-10-11T14:31:46.1865021Z test test_show_dbs_schemas_tables_views ... ok
+2025-10-11T14:31:46.1887959Z test test_truncate_table_with_on_cluster ... ok
+2025-10-11T14:31:46.1888443Z test test_try_convert ... ok
+2025-10-11T14:31:46.1889480Z test test_visit_order ... ok
+2025-10-11T14:31:46.1900118Z test tests_select_values_without_parens ... ok
+2025-10-11T14:31:46.1904267Z test tests_select_values_without_parens_and_set_op ... ok
+2025-10-11T14:31:46.2033271Z test test_xmltable ... ok
+2025-10-11T14:31:46.2105685Z test test_double_value ... ok
+2025-10-11T14:31:46.2105976Z 
+2025-10-11T14:31:46.2106357Z test result: ok. 422 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.38s
+2025-10-11T14:31:46.2106716Z 
+2025-10-11T14:31:46.2116264Z      Running tests/sqlparser_custom_dialect.rs (target/debug/deps/sqlparser_custom_dialect-4389fd49b0a5b19c)
+2025-10-11T14:31:46.2130967Z 
+2025-10-11T14:31:46.2131142Z running 4 tests
+2025-10-11T14:31:46.2137542Z test custom_statement_parser ... ok
+2025-10-11T14:31:46.2138053Z test test_map_syntax_not_support_default ... ok
+2025-10-11T14:31:46.2138554Z test custom_prefix_parser ... ok
+2025-10-11T14:31:46.2138951Z test custom_infix_parser ... ok
+2025-10-11T14:31:46.2139128Z 
+2025-10-11T14:31:46.2139390Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-11T14:31:46.2139754Z 
+2025-10-11T14:31:46.2142881Z      Running tests/sqlparser_databricks.rs (target/debug/deps/sqlparser_databricks-4bed25d5dc8100a8)
+2025-10-11T14:31:46.2156112Z 
+2025-10-11T14:31:46.2156252Z running 7 tests
+2025-10-11T14:31:46.2164263Z test data_type_timestamp_ntz ... ok
+2025-10-11T14:31:46.2166475Z test test_databricks_exists ... ok
+2025-10-11T14:31:46.2166910Z test parse_use ... ok
+2025-10-11T14:31:46.2167591Z test test_databricks_identifiers ... ok
+2025-10-11T14:31:46.2173901Z test parse_databricks_struct_function ... ok
+2025-10-11T14:31:46.2176126Z test test_values_clause ... ok
+2025-10-11T14:31:46.2176901Z test test_databricks_lambdas ... ok
+2025-10-11T14:31:46.2177103Z 
+2025-10-11T14:31:46.2177333Z test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-11T14:31:46.2177639Z 
+2025-10-11T14:31:46.2182079Z      Running tests/sqlparser_duckdb.rs (target/debug/deps/sqlparser_duckdb-a82be79af15b7823)
+2025-10-11T14:31:46.2195350Z 
+2025-10-11T14:31:46.2195496Z running 25 tests
+2025-10-11T14:31:46.2203280Z test test_array_index ... ok
+2025-10-11T14:31:46.2203706Z test parse_extract_single_quotes ... ok
+2025-10-11T14:31:46.2204120Z test parse_div_infix ... ok
+2025-10-11T14:31:46.2204478Z test parse_use ... ok
+2025-10-11T14:31:46.2207175Z test test_attach_database_simple ... ok
+2025-10-11T14:31:46.2207637Z test test_attach_database ... ok
+2025-10-11T14:31:46.2208845Z test test_create_macro ... ok
+2025-10-11T14:31:46.2209278Z test test_create_macro_default_args ... ok
+2025-10-11T14:31:46.2210410Z test test_create_secret ... ok
+2025-10-11T14:31:46.2213137Z test test_create_secret_simple ... ok
+2025-10-11T14:31:46.2213803Z test test_detach_database_simple ... ok
+2025-10-11T14:31:46.2214265Z test test_detach_database ... ok
+2025-10-11T14:31:46.2240853Z test test_drop_secret ... ok
+2025-10-11T14:31:46.2241338Z test test_drop_secret_simple ... ok
+2025-10-11T14:31:46.2241742Z test test_create_table_macro ... ok
+2025-10-11T14:31:46.2242135Z test test_duckdb_install ... ok
+2025-10-11T14:31:46.2242514Z test test_duckdb_load_extension ... ok
+2025-10-11T14:31:46.2243261Z test test_duckdb_named_argument_function_with_assignment_operator ... ok
+2025-10-11T14:31:46.2243743Z test test_duckdb_specific_int_types ... ok
+2025-10-11T14:31:46.2244012Z test test_duckdb_struct_literal ... ok
+2025-10-11T14:31:46.2244277Z test test_duckdb_union_datatype ... ok
+2025-10-11T14:31:46.2244528Z test test_select_union_by_name ... ok
+2025-10-11T14:31:46.2244772Z test test_duckdb_trim ... ok
+2025-10-11T14:31:46.2245036Z test test_select_wildcard_with_exclude ... ok
+2025-10-11T14:31:46.2245289Z test test_struct ... ok
+2025-10-11T14:31:46.2245409Z 
+2025-10-11T14:31:46.2245623Z test result: ok. 25 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-11T14:31:46.2245929Z 
+2025-10-11T14:31:46.2246153Z      Running tests/sqlparser_hive.rs (target/debug/deps/sqlparser_hive-610555b03c513980)
+2025-10-11T14:31:46.2255354Z 
+2025-10-11T14:31:46.2255483Z running 44 tests
+2025-10-11T14:31:46.2262159Z test create_table_like ... ok
+2025-10-11T14:31:46.2262583Z test create_delimited_table ... ok
+2025-10-11T14:31:46.2263153Z test create_local_directory ... ok
+2025-10-11T14:31:46.2267130Z test columns_after_partition ... ok
+2025-10-11T14:31:46.2267541Z test create_temp_table ... ok
+2025-10-11T14:31:46.2271508Z test drop_table_purge ... ok
+2025-10-11T14:31:46.2272224Z test decimal_precision ... ok
+2025-10-11T14:31:46.2275345Z test explain_describe_extended ... ok
+2025-10-11T14:31:46.2275776Z test create_table_with_comment ... ok
+2025-10-11T14:31:46.2276228Z test explain_describe_formatted ... ok
+2025-10-11T14:31:46.2280637Z test filter_as_alias ... ok
+2025-10-11T14:31:46.2281601Z test from_cte ... ok
+2025-10-11T14:31:46.2282218Z test create_table_with_clustered_by ... ok
+2025-10-11T14:31:46.2285352Z test lateral_view ... ok
+2025-10-11T14:31:46.2285973Z test long_numerics ... ok
+2025-10-11T14:31:46.2288569Z test map_access ... ok
+2025-10-11T14:31:46.2288928Z test no_join_condition ... ok
+2025-10-11T14:31:46.2289319Z test parse_analyze_for_columns ... ok
+2025-10-11T14:31:46.2289712Z test parse_analyze ... ok
+2025-10-11T14:31:46.2293564Z test parse_create_function ... ok
+2025-10-11T14:31:46.2294357Z test parse_describe ... ok
+2025-10-11T14:31:46.2295523Z test parse_msck ... ok
+2025-10-11T14:31:46.2301178Z test parse_delimited_identifiers ... ok
+2025-10-11T14:31:46.2301671Z test parse_insert_overwrite ... ok
+2025-10-11T14:31:46.2302069Z test parse_set_hivevar ... ok
+2025-10-11T14:31:46.2304016Z test parse_table_create ... ok
+2025-10-11T14:31:46.2306752Z test parse_use ... ok
+2025-10-11T14:31:46.2307121Z test parse_with_cte ... ok
+2025-10-11T14:31:46.2310566Z test set_statement_with_minus ... ok
+2025-10-11T14:31:46.2313389Z test rename_table ... ok
+2025-10-11T14:31:46.2313747Z test sort_by ... ok
+2025-10-11T14:31:46.2314081Z test test_add_multiple_partitions ... ok
+2025-10-11T14:31:46.2315520Z test test_add_partition ... ok
+2025-10-11T14:31:46.2318210Z test test_alter_with_location ... ok
+2025-10-11T14:31:46.2318654Z test test_alter_partition ... ok
+2025-10-11T14:31:46.2322661Z test test_cluster_by ... ok
+2025-10-11T14:31:46.2323497Z test test_alter_with_set_location ... ok
+2025-10-11T14:31:46.2324112Z test test_drop_if_exists ... ok
+2025-10-11T14:31:46.2324524Z test test_drop_partition ... ok
+2025-10-11T14:31:46.2324956Z test test_identifier ... ok
+2025-10-11T14:31:46.2325568Z test test_distribute_by ... ok
+2025-10-11T14:31:46.2325985Z test test_truncate ... ok
+2025-10-11T14:31:46.2327835Z test test_spaceship ... ok
+2025-10-11T14:31:46.2330732Z test test_tample_sample ... ok
+2025-10-11T14:31:46.2331023Z 
+2025-10-11T14:31:46.2331384Z test result: ok. 44 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+2025-10-11T14:31:46.2331751Z 
+2025-10-11T14:31:46.2336922Z      Running tests/sqlparser_mssql.rs (target/debug/deps/sqlparser_mssql-7feec73261194679)
+2025-10-11T14:31:46.2351471Z 
+2025-10-11T14:31:46.2351603Z running 53 tests
+2025-10-11T14:31:46.2358089Z test parse_ampersand_arobase ... ok
+2025-10-11T14:31:46.2358581Z test dont_parse_trailing_for ... ok
+2025-10-11T14:31:46.2358986Z test parse_alter_role ... ok
+2025-10-11T14:31:46.2364498Z test parse_cast_varchar_max ... ok
+2025-10-11T14:31:46.2365043Z test parse_create_function_parameter_default_values ... ok
+2025-10-11T14:31:46.2365552Z test parse_convert ... ok
+2025-10-11T14:31:46.2372393Z test parse_create_procedure ... ok
+2025-10-11T14:31:46.2373509Z test parse_create_table_with_identity_column ... ok
+2025-10-11T14:31:46.2377782Z test parse_create_table_with_invalid_options ... ok
+2025-10-11T14:31:46.2395083Z test parse_create_trigger ... ok
+2025-10-11T14:31:46.2396542Z test parse_create_function ... ok
+2025-10-11T14:31:46.2397900Z test parse_drop_trigger ... ok
+2025-10-11T14:31:46.2400045Z test parse_delimited_identifiers ... ok
+2025-10-11T14:31:46.2401108Z test parse_create_table_with_valid_options ... ok
+2025-10-11T14:31:46.2403036Z test parse_for_json_expect_ast ... ok
+2025-10-11T14:31:46.2403479Z test parse_for_clause ... ok
+2025-10-11T14:31:46.2403847Z test parse_mssql_bin_literal ... ok
+2025-10-11T14:31:46.2408064Z test parse_mssql_create_role ... ok
+2025-10-11T14:31:46.2408832Z test parse_mssql_apply_join ... ok
+2025-10-11T14:31:46.2410918Z test parse_mssql_declare ... ok
+2025-10-11T14:31:46.2411626Z test parse_mssql_delimited_identifiers ... ok
+2025-10-11T14:31:46.2414115Z test parse_mssql_deny ... ok
+2025-10-11T14:31:46.2415305Z test parse_mssql_grant ... ok
+2025-10-11T14:31:46.2420946Z test parse_mssql_identifiers ... ok
+2025-10-11T14:31:46.2422529Z test parse_mssql_create_procedure ... ok
+2025-10-11T14:31:46.2428496Z test parse_mssql_if_else ... ok
+2025-10-11T14:31:46.2429057Z test parse_mssql_json_object ... ok
+2025-10-11T14:31:46.2436908Z test parse_mssql_json_array ... ok
+2025-10-11T14:31:46.2437668Z test parse_mssql_merge_with_output ... ok
+2025-10-11T14:31:46.2442538Z test parse_mssql_single_quoted_aliases ... ok
+2025-10-11T14:31:46.2443828Z test parse_mssql_openjson ... ok
+2025-10-11T14:31:46.2444628Z test parse_mssql_table_identifier_with_default_schema ... ok
+2025-10-11T14:31:46.2446599Z test parse_mssql_set_session_value ... ok
+2025-10-11T14:31:46.2447065Z test parse_mssql_top ... ok
+2025-10-11T14:31:46.2451038Z test parse_mssql_top_percent ... ok
+2025-10-11T14:31:46.2451520Z test parse_mssql_top_paren ... ok
+2025-10-11T14:31:46.2451984Z test parse_mssql_top_percent_with_ties ... ok
+2025-10-11T14:31:46.2452467Z test parse_mssql_top_with_ties ... ok
+2025-10-11T14:31:46.2455637Z test parse_nested_slash_star_comment ... ok
+2025-10-11T14:31:46.2457975Z test parse_mssql_varbinary_max_length ... ok
+2025-10-11T14:31:46.2461852Z test parse_print ... ok
+2025-10-11T14:31:46.2462493Z test parse_table_name_in_square_brackets ... ok
+2025-10-11T14:31:46.2463084Z test parse_true_false_as_identifiers ... ok
+2025-10-11T14:31:46.2463468Z test parse_substring_in_select ... ok
+2025-10-11T14:31:46.2464459Z test parse_table_time_travel ... ok
+2025-10-11T14:31:46.2467859Z test parse_use ... ok
+2025-10-11T14:31:46.2468378Z test test_mssql_cursor ... ok
+2025-10-11T14:31:46.2468790Z test test_mssql_if_else_multiline_span ... ok
+2025-10-11T14:31:46.2469234Z test test_mssql_if_else_span ... ok
+2025-10-11T14:31:46.2473226Z test test_tsql_no_semicolon_delimiter ... ok
+2025-10-11T14:31:46.2473750Z test test_mssql_if_statements_span ... ok
+2025-10-11T14:31:46.2474272Z test test_parse_raiserror ... ok
+2025-10-11T14:31:46.2475318Z test test_mssql_while_statement ... ok
+2025-10-11T14:31:46.2475615Z 
+2025-10-11T14:31:46.2475980Z test result: ok. 53 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+2025-10-11T14:31:46.2476583Z 
+2025-10-11T14:31:46.2480810Z      Running tests/sqlparser_mysql.rs (target/debug/deps/sqlparser_mysql-a13a572be12c6cdf)
+2025-10-11T14:31:46.2496368Z 
+2025-10-11T14:31:46.2496530Z running 115 tests
+2025-10-11T14:31:46.2503745Z test parse_alter_table_add_columns ... ok
+2025-10-11T14:31:46.2504523Z test mysql_foreign_key_with_index_name ... ok
+2025-10-11T14:31:46.2506751Z test parse_alter_table_add_column ... ok
+2025-10-11T14:31:46.2508889Z test check_roundtrip_of_escaped_string ... ok
+2025-10-11T14:31:46.2509404Z test parse_alter_table_auto_increment ... ok
+2025-10-11T14:31:46.2509874Z test parse_alter_table_change_column ... ok
+2025-10-11T14:31:46.2511857Z test parse_alter_table_change_column_with_column_position ... ok
+2025-10-11T14:31:46.2515085Z test parse_alter_table_drop_foreign_key ... ok
+2025-10-11T14:31:46.2515628Z test parse_alter_table_drop_index ... ok
+2025-10-11T14:31:46.2517081Z test parse_alter_table_drop_primary_key ... ok
+2025-10-11T14:31:46.2521265Z test parse_alter_table_modify_column ... ok
+2025-10-11T14:31:46.2522401Z test parse_begin_without_transaction ... ok
+2025-10-11T14:31:46.2524331Z test parse_alter_table_with_algorithm ... ok
+2025-10-11T14:31:46.2525133Z test parse_alter_table_with_lock ... ok
+2025-10-11T14:31:46.2526054Z test parse_bitstring_literal ... ok
+2025-10-11T14:31:46.2530606Z test parse_alter_table_modify_column_with_column_position ... ok
+2025-10-11T14:31:46.2531716Z test parse_create_table_auto_increment ... ok
+2025-10-11T14:31:46.2532193Z test parse_cast_integers ... ok
+2025-10-11T14:31:46.2533903Z test parse_convert_using ... ok
+2025-10-11T14:31:46.2536738Z test parse_create_table_auto_increment_offset ... ok
+2025-10-11T14:31:46.2537240Z test parse_create_table_collate ... ok
+2025-10-11T14:31:46.2541355Z test parse_create_table_comment_character_set ... ok
+2025-10-11T14:31:46.2542137Z test parse_create_table_engine_default_charset ... ok
+2025-10-11T14:31:46.2547409Z test parse_create_table_both_options_and_as_query ... ok
+2025-10-11T14:31:46.2547963Z test parse_create_table_comment ... ok
+2025-10-11T14:31:46.2548512Z test parse_create_table_multiple_options_order_independent ... ok
+2025-10-11T14:31:46.2556036Z test parse_create_table_primary_and_unique_key ... ok
+2025-10-11T14:31:46.2558256Z test parse_create_table_options_comma_separated ... ok
+2025-10-11T14:31:46.2558852Z test parse_create_table_gencol ... ok
+2025-10-11T14:31:46.2563912Z test parse_create_table_primary_and_unique_key_characteristic_test ... ok
+2025-10-11T14:31:46.2564731Z test parse_create_table_set_enum ... ok
+2025-10-11T14:31:46.2565543Z test parse_create_table_unallow_constraint_then_index ... ok
+2025-10-11T14:31:46.2566273Z test parse_create_table_primary_and_unique_key_with_index_options ... ok
+2025-10-11T14:31:46.2571866Z test parse_create_table_primary_and_unique_key_with_index_type ... ok
+2025-10-11T14:31:46.2572482Z test parse_create_table_with_column_collate ... ok
+2025-10-11T14:31:46.2573176Z test parse_create_table_unsigned ... ok
+2025-10-11T14:31:46.2584323Z test parse_create_table_with_all_table_options ... ok
+2025-10-11T14:31:46.2588316Z test parse_create_table_with_fulltext_definition_should_not_accept_constraint_name - should panic ... ok
+2025-10-11T14:31:46.2589526Z test parse_create_table_with_fulltext_definition ... ok
+2025-10-11T14:31:46.2590884Z test parse_create_trigger ... ok
+2025-10-11T14:31:46.2592117Z test parse_create_table_with_index_definition ... ok
+2025-10-11T14:31:46.2597150Z test parse_create_table_with_minimum_display_width ... ok
+2025-10-11T14:31:46.2599741Z test parse_create_view_algorithm_param ... ok
+2025-10-11T14:31:46.2600262Z test parse_create_trigger_compound_statement ... ok
+2025-10-11T14:31:46.2600756Z test parse_create_view_definer_param ... ok
+2025-10-11T14:31:46.2601284Z test parse_create_table_with_spatial_definition ... ok
+2025-10-11T14:31:46.2604227Z test parse_create_view_multiple_params ... ok
+2025-10-11T14:31:46.2604754Z test parse_delete_with_limit ... ok
+2025-10-11T14:31:46.2608023Z test parse_create_view_security_param ... ok
+2025-10-11T14:31:46.2611306Z test parse_delete_with_order_by ... ok
+2025-10-11T14:31:46.2611938Z test parse_div_infix ... ok
+2025-10-11T14:31:46.2612388Z test parse_deprecated_mysql_unsigned_data_types ... ok
+2025-10-11T14:31:46.2613044Z test parse_drop_index ... ok
+2025-10-11T14:31:46.2613442Z test parse_drop_temporary_table ... ok
+2025-10-11T14:31:46.2615462Z test parse_drop_trigger ... ok
+2025-10-11T14:31:46.2617244Z test parse_double_precision ... ok
+2025-10-11T14:31:46.2618077Z test parse_empty_row_insert ... ok
+2025-10-11T14:31:46.2618555Z test parse_escaped_quote_identifiers_with_escape ... ok
+2025-10-11T14:31:46.2619109Z test parse_escaped_backticks_with_escape ... ok
+2025-10-11T14:31:46.2619694Z test parse_escaped_backticks_with_no_escape ... ok
+2025-10-11T14:31:46.2622973Z test parse_escaped_quote_identifiers_with_no_escape ... ok
+2025-10-11T14:31:46.2626309Z test parse_geometric_types_srid_option ... ok
+2025-10-11T14:31:46.2626764Z test parse_grant ... ok
+2025-10-11T14:31:46.2627124Z test parse_flush ... ok
+2025-10-11T14:31:46.2630796Z test parse_hex_string_introducer ... ok
+2025-10-11T14:31:46.2631746Z test parse_identifiers ... ok
+2025-10-11T14:31:46.2633531Z test parse_ignore_insert ... ok
+2025-10-11T14:31:46.2637251Z test parse_insert_as ... ok
+2025-10-11T14:31:46.2639039Z test parse_insert_with_on_duplicate_update ... ok
+2025-10-11T14:31:46.2640556Z test parse_insert_with_numeric_prefix_column_name ... ok
+2025-10-11T14:31:46.2643963Z test parse_fulltext_expression ... ok
+2025-10-11T14:31:46.2648133Z test parse_json_member_of ... ok
+2025-10-11T14:31:46.2648800Z test parse_kill ... ok
+2025-10-11T14:31:46.2651432Z test parse_like_with_escape ... ok
+2025-10-11T14:31:46.2653085Z test parse_json_table ... ok
+2025-10-11T14:31:46.2653705Z test parse_literal_string ... ok
+2025-10-11T14:31:46.2656147Z test parse_lock_tables ... ok
+2025-10-11T14:31:46.2657006Z test parse_limit_my_sql_syntax ... ok
+2025-10-11T14:31:46.2662314Z test parse_logical_xor ... ok
+2025-10-11T14:31:46.2664393Z test parse_match_against_with_alias ... ok
+2025-10-11T14:31:46.2665080Z test parse_looks_like_single_line_comment ... ok
+2025-10-11T14:31:46.2671804Z test parse_longblob_type ... ok
+2025-10-11T14:31:46.2672298Z test parse_qualified_identifiers_with_numeric_prefix ... ok
+2025-10-11T14:31:46.2676205Z test parse_quote_identifiers ... ok
+2025-10-11T14:31:46.2677229Z test parse_priority_insert ... ok
+2025-10-11T14:31:46.2678852Z test parse_prefix_key_part ... ok
+2025-10-11T14:31:46.2679592Z test parse_replace_insert ... ok
+2025-10-11T14:31:46.2680870Z test parse_revoke ... ok
+2025-10-11T14:31:46.2682390Z test parse_select_with_numeric_prefix_column_name ... ok
+2025-10-11T14:31:46.2683303Z test parse_set_names ... ok
+2025-10-11T14:31:46.2686639Z test parse_rlike_and_regexp ... ok
+2025-10-11T14:31:46.2687377Z test parse_show_charset ... ok
+2025-10-11T14:31:46.2692072Z test parse_set_variables ... ok
+2025-10-11T14:31:46.2692511Z test parse_show_collation ... ok
+2025-10-11T14:31:46.2693447Z test parse_show_create ... ok
+2025-10-11T14:31:46.2699597Z test parse_show_extended_full ... ok
+2025-10-11T14:31:46.2700174Z test parse_show_status ... ok
+2025-10-11T14:31:46.2700667Z test parse_show_tables ... ok
+2025-10-11T14:31:46.2703818Z test parse_show_columns ... ok
+2025-10-11T14:31:46.2704538Z test parse_show_variables ... ok
+2025-10-11T14:31:46.2709539Z test parse_simple_insert ... ok
+2025-10-11T14:31:46.2710059Z test parse_straight_join ... ok
+2025-10-11T14:31:46.2715599Z test parse_string_introducers ... ok
+2025-10-11T14:31:46.2716076Z test parse_table_column_option_on_update ... ok
+2025-10-11T14:31:46.2716542Z test parse_signed_data_types ... ok
+2025-10-11T14:31:46.2718251Z test parse_substring_in_select ... ok
+2025-10-11T14:31:46.2718917Z test parse_unterminated_escape ... ok
+2025-10-11T14:31:46.2723886Z test parse_update_with_joins ... ok
+2025-10-11T14:31:46.2724613Z test parse_values ... ok
+2025-10-11T14:31:46.2726103Z test parse_use ... ok
+2025-10-11T14:31:46.2730631Z test test_create_index_options ... ok
+2025-10-11T14:31:46.2731340Z test test_group_concat ... ok
+2025-10-11T14:31:46.2731762Z test test_functional_key_part ... ok
+2025-10-11T14:31:46.2737033Z test test_variable_assignment_using_colon_equal ... ok
+2025-10-11T14:31:46.2741667Z test test_ddl_with_index_using ... ok
+2025-10-11T14:31:46.2741973Z 
+2025-10-11T14:31:46.2742354Z test result: ok. 115 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+2025-10-11T14:31:46.2742912Z 
+2025-10-11T14:31:46.2748357Z      Running tests/sqlparser_postgres.rs (target/debug/deps/sqlparser_postgres-d0e9b475526c8508)
+2025-10-11T14:31:46.2764315Z 
+2025-10-11T14:31:46.2764448Z running 139 tests
+2025-10-11T14:31:46.2770575Z test arrow_cast_precedence ... ok
+2025-10-11T14:31:46.2771048Z test arrow_precedence ... ok
+2025-10-11T14:31:46.2773319Z test json_object_value_syntax ... ok
+2025-10-11T14:31:46.2777371Z test json_object_colon_syntax ... ok
+2025-10-11T14:31:46.2780931Z test long_arrow_precedence ... ok
+2025-10-11T14:31:46.2781363Z test parse_alter_schema ... ok
+2025-10-11T14:31:46.2788830Z test parse_alter_role ... ok
+2025-10-11T14:31:46.2793535Z test parse_alter_table_alter_column ... ok
+2025-10-11T14:31:46.2794321Z test parse_alter_table_add_columns ... ok
+2025-10-11T14:31:46.2794968Z test parse_alter_table_constraints_rename ... ok
+2025-10-11T14:31:46.2795502Z test parse_alter_table_constraint_not_valid ... ok
+2025-10-11T14:31:46.2795997Z test parse_alter_table_disable ... ok
+2025-10-11T14:31:46.2796442Z test parse_alter_table_disable_trigger ... ok
+2025-10-11T14:31:46.2796986Z test parse_alter_table_alter_column_add_generated ... ok
+2025-10-11T14:31:46.2797635Z test parse_alter_table_constraints_unique_nulls_distinct ... ok
+2025-10-11T14:31:46.2798261Z test parse_alter_table_validate_constraint ... ok
+2025-10-11T14:31:46.2798787Z test parse_alter_table_replica_identity ... ok
+2025-10-11T14:31:46.2799275Z test parse_alter_table_owner_to ... ok
+2025-10-11T14:31:46.2799542Z test parse_ampersand_arobase ... ok
+2025-10-11T14:31:46.2803890Z test parse_alter_type ... ok
+2025-10-11T14:31:46.2804560Z test parse_alter_table_enable ... ok
+2025-10-11T14:31:46.2805999Z test parse_array_agg ... ok
+2025-10-11T14:31:46.2808849Z test parse_array_multi_subscript ... ok
+2025-10-11T14:31:46.2810172Z test parse_array_subquery_expr ... ok
+2025-10-11T14:31:46.2815851Z test parse_array_index_expr ... ok
+2025-10-11T14:31:46.2816590Z test parse_at_time_zone ... ok
+2025-10-11T14:31:46.2818035Z test parse_bad_if_not_exists ... ok
+2025-10-11T14:31:46.2818796Z test parse_bitstring_literal ... ok
+2025-10-11T14:31:46.2820398Z test parse_copy_from ... ok
+2025-10-11T14:31:46.2821029Z test parse_copy_from_before_v9_0 ... ok
+2025-10-11T14:31:46.2825503Z test parse_copy_from_error ... ok
+2025-10-11T14:31:46.2826005Z test parse_copy_to ... ok
+2025-10-11T14:31:46.2826370Z test parse_array_subscript ... ok
+2025-10-11T14:31:46.2830426Z test parse_copy_to_before_v9_0 ... ok
+2025-10-11T14:31:46.2832038Z test parse_create_anonymous_index ... ok
+2025-10-11T14:31:46.2833433Z test parse_create_after_update_trigger_with_condition ... ok
+2025-10-11T14:31:46.2833983Z test parse_copy_from_stdin ... ok
+2025-10-11T14:31:46.2834342Z test parse_create_bloom ... ok
+2025-10-11T14:31:46.2835835Z test parse_create_brin ... ok
+2025-10-11T14:31:46.2841976Z test parse_create_function ... ok
+2025-10-11T14:31:46.2842411Z test parse_create_extension ... ok
+2025-10-11T14:31:46.2842975Z test parse_create_domain ... ok
+2025-10-11T14:31:46.2847100Z test parse_create_index ... ok
+2025-10-11T14:31:46.2847783Z test parse_create_index_concurrently ... ok
+2025-10-11T14:31:46.2849237Z test parse_create_index_with_include ... ok
+2025-10-11T14:31:46.2849771Z test parse_create_index_with_nulls_distinct ... ok
+2025-10-11T14:31:46.2859003Z test parse_create_index_with_predicate ... ok
+2025-10-11T14:31:46.2859543Z test parse_create_instead_of_delete_trigger ... ok
+2025-10-11T14:31:46.2860499Z test parse_create_function_detailed ... ok
+2025-10-11T14:31:46.2863171Z test parse_create_role ... ok
+2025-10-11T14:31:46.2869852Z test parse_create_schema_if_not_exists ... ok
+2025-10-11T14:31:46.2871820Z test parse_create_simple_before_insert_trigger ... ok
+2025-10-11T14:31:46.2872382Z test parse_create_server ... ok
+2025-10-11T14:31:46.2873899Z test parse_create_table_constraints_only ... ok
+2025-10-11T14:31:46.2877253Z test parse_create_table_empty ... ok
+2025-10-11T14:31:46.2878336Z test parse_create_sequence ... ok
+2025-10-11T14:31:46.2890245Z test parse_create_table_if_not_exists ... ok
+2025-10-11T14:31:46.2892293Z test parse_create_table_from_pg_dump ... ok
+2025-10-11T14:31:46.2896934Z test parse_create_indices_with_operator_classes ... ok
+2025-10-11T14:31:46.2900305Z test parse_create_table_with_alias ... ok
+2025-10-11T14:31:46.2902113Z test parse_create_table_with_empty_inherits_fails ... ok
+2025-10-11T14:31:46.2902703Z test parse_create_table_with_inherit ... ok
+2025-10-11T14:31:46.2908852Z test parse_create_table_with_defaults ... ok
+2025-10-11T14:31:46.2911127Z test parse_create_table_with_options ... ok
+2025-10-11T14:31:46.2911687Z test parse_create_table_with_inherits ... ok
+2025-10-11T14:31:46.2912217Z test parse_create_trigger_invalid_cases ... ok
+2025-10-11T14:31:46.2912930Z test parse_create_table_with_partition_by ... ok
+2025-10-11T14:31:46.2914099Z test parse_create_trigger_with_referencing ... ok
+2025-10-11T14:31:46.2915334Z test parse_create_trigger_with_multiple_events_and_deferrable ... ok
+2025-10-11T14:31:46.2916429Z test parse_create_type_as_enum ... ok
+2025-10-11T14:31:46.2917809Z test parse_deallocate ... ok
+2025-10-11T14:31:46.2918233Z test parse_current_functions ... ok
+2025-10-11T14:31:46.2922374Z test parse_custom_operator ... ok
+2025-10-11T14:31:46.2923351Z test parse_create_table_generated_always_as_identity ... ok
+2025-10-11T14:31:46.2933666Z test parse_dollar_quoted_string ... ok
+2025-10-11T14:31:46.2937575Z test parse_delimited_identifiers ... ok
+2025-10-11T14:31:46.2938733Z test parse_drop_domain ... ok
+2025-10-11T14:31:46.2939311Z test parse_declare ... ok
+2025-10-11T14:31:46.2939680Z test parse_drop_schema_if_exists ... ok
+2025-10-11T14:31:46.2940127Z test parse_drop_procedure ... ok
+2025-10-11T14:31:46.2940486Z test parse_drop_function ... ok
+2025-10-11T14:31:46.2940831Z test parse_drop_extension ... ok
+2025-10-11T14:31:46.2941291Z test parse_drop_trigger_invalid_cases ... ok
+2025-10-11T14:31:46.2941745Z test parse_drop_sequence ... ok
+2025-10-11T14:31:46.2943569Z test parse_drop_trigger ... ok
+2025-10-11T14:31:46.2944840Z test parse_escaped_literal_string ... ok
+2025-10-11T14:31:46.2945294Z test parse_execute ... ok
+2025-10-11T14:31:46.2952578Z test parse_foreign_key_match_with_actions ... ok
+2025-10-11T14:31:46.2954283Z test parse_incorrect_dollar_quoted_string ... ok
+2025-10-11T14:31:46.2954851Z test parse_incorrect_create_function_parallel ... ok
+2025-10-11T14:31:46.2955318Z test parse_fetch ... ok
+2025-10-11T14:31:46.2955660Z test parse_foreign_key_match ... ok
+2025-10-11T14:31:46.2959933Z test parse_join_constraint_unnest_alias ... ok
+2025-10-11T14:31:46.2960395Z test parse_json_object ... ok
+2025-10-11T14:31:46.2961222Z test parse_json_table_is_not_reserved ... ok
+2025-10-11T14:31:46.2966174Z test parse_local_and_global ... ok
+2025-10-11T14:31:46.2969446Z test parse_mat_cte ... ok
+2025-10-11T14:31:46.2969832Z test parse_on_commit ... ok
+2025-10-11T14:31:46.2970198Z test parse_pg_binary_ops ... ok
+2025-10-11T14:31:46.2978671Z test parse_pg_like_match_ops ... ok
+2025-10-11T14:31:46.2985368Z test parse_pg_postfix_factorial ... ok
+2025-10-11T14:31:46.2986799Z test parse_pg_custom_binary_ops ... ok
+2025-10-11T14:31:46.2990997Z test parse_pg_on_conflict ... ok
+2025-10-11T14:31:46.2994420Z test parse_pg_regex_match_ops ... ok
+2025-10-11T14:31:46.3002118Z test parse_pg_unary_ops ... ok
+2025-10-11T14:31:46.3003137Z test parse_quoted_identifier ... ok
+2025-10-11T14:31:46.3004597Z test parse_prepare ... ok
+2025-10-11T14:31:46.3005022Z test parse_pg_returning ... ok
+2025-10-11T14:31:46.3005447Z test parse_quoted_identifier_2 ... ok
+2025-10-11T14:31:46.3010280Z test parse_select_group_by_cube ... ok
+2025-10-11T14:31:46.3011262Z test parse_select_group_by_grouping_sets ... ok
+2025-10-11T14:31:46.3016716Z test parse_select_regexp_as_column_name ... ok
+2025-10-11T14:31:46.3017304Z test parse_select_group_by_rollup ... ok
+2025-10-11T14:31:46.3020520Z test parse_set_role ... ok
+2025-10-11T14:31:46.3023481Z test parse_show ... ok
+2025-10-11T14:31:46.3023934Z test parse_set ... ok
+2025-10-11T14:31:46.3029169Z test parse_truncate_table ... ok
+2025-10-11T14:31:46.3029808Z test parse_truncate ... ok
+2025-10-11T14:31:46.3030473Z test parse_trigger_related_functions ... ok
+2025-10-11T14:31:46.3032110Z test parse_truncate_with_table_list ... ok
+2025-10-11T14:31:46.3033246Z test parse_truncate_with_options ... ok
+2025-10-11T14:31:46.3037613Z test parse_ts_datatypes ... ok
+2025-10-11T14:31:46.3039148Z test parse_update_has_keyword ... ok
+2025-10-11T14:31:46.3048118Z test parse_varbit_datatype ... ok
+2025-10-11T14:31:46.3053599Z test test_complex_postgres_insert_with_alias ... ok
+2025-10-11T14:31:46.3054309Z test parse_update_in_with_subquery ... ok
+2025-10-11T14:31:46.3055014Z test parser_create_function_with_args ... ok
+2025-10-11T14:31:46.3055522Z test test_copy_from ... ok
+2025-10-11T14:31:46.3055941Z test test_composite_value ... ok
+2025-10-11T14:31:46.3058507Z test test_copy_to ... ok
+2025-10-11T14:31:46.3059233Z test test_escaped_string_literal ... ok
+2025-10-11T14:31:46.3067454Z test test_simple_insert_with_quoted_alias ... ok
+2025-10-11T14:31:46.3069044Z test test_simple_postgres_insert_with_alias ... ok
+2025-10-11T14:31:46.3071982Z test test_json ... ok
+2025-10-11T14:31:46.3072382Z test test_table_function_with_ordinality ... ok
+2025-10-11T14:31:46.3075811Z test test_transaction_statement ... ok
+2025-10-11T14:31:46.3076643Z test test_unicode_string_literal ... ok
+2025-10-11T14:31:46.3078268Z test test_table_unnest_with_ordinality ... ok
+2025-10-11T14:31:46.3213360Z test parse_interval_data_type ... ok
+2025-10-11T14:31:46.3213698Z 
+2025-10-11T14:31:46.3214094Z test result: ok. 139 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+2025-10-11T14:31:46.3214685Z 
+2025-10-11T14:31:46.3220229Z      Running tests/sqlparser_redshift.rs (target/debug/deps/sqlparser_redshift-635c524f7b7ad94e)
+2025-10-11T14:31:46.3235634Z 
+2025-10-11T14:31:46.3235780Z running 14 tests
+2025-10-11T14:31:46.3242530Z test brackets_over_db_schema_table_name_with_whites_paces ... ok
+2025-10-11T14:31:46.3243669Z test parse_string_literal_backslash_escape ... ok
+2025-10-11T14:31:46.3246104Z test parse_delimited_identifiers ... ok
+2025-10-11T14:31:46.3246616Z test parse_utf8_multibyte_idents ... ok
+2025-10-11T14:31:46.3248807Z test parse_extract_single_quotes ... ok
+2025-10-11T14:31:46.3249277Z test parse_vacuum ... ok
+2025-10-11T14:31:46.3253528Z test test_create_view_with_no_schema_binding ... ok
+2025-10-11T14:31:46.3255621Z test test_double_quotes_over_db_schema_table_name ... ok
+2025-10-11T14:31:46.3256968Z test test_parse_select_numbered_columns ... ok
+2025-10-11T14:31:46.3259316Z test test_parse_json_path_from ... ok
+2025-10-11T14:31:46.3260291Z test test_parse_nested_quoted_identifier ... ok
+2025-10-11T14:31:46.3260816Z test test_sharp ... ok
+2025-10-11T14:31:46.3261451Z test test_square_brackets_over_db_schema_table_name ... ok
+2025-10-11T14:31:46.3267659Z test test_redshift_json_path ... ok
+2025-10-11T14:31:46.3267864Z 
+2025-10-11T14:31:46.3268092Z test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-11T14:31:46.3268418Z 
+2025-10-11T14:31:46.3273168Z      Running tests/sqlparser_regression.rs (target/debug/deps/sqlparser_regression-08d9a30b258e4160)
+2025-10-11T14:31:46.3287368Z 
+2025-10-11T14:31:46.3287489Z running 22 tests
+2025-10-11T14:31:46.3300983Z test tpch_12 ... ok
+2025-10-11T14:31:46.3301317Z test tpch_10 ... ok
+2025-10-11T14:31:46.3301625Z test tpch_1 ... ok
+2025-10-11T14:31:46.3301920Z test tpch_11 ... ok
+2025-10-11T14:31:46.3309582Z test tpch_13 ... ok
+2025-10-11T14:31:46.3311795Z test tpch_14 ... ok
+2025-10-11T14:31:46.3312296Z test tpch_16 ... ok
+2025-10-11T14:31:46.3312622Z test tpch_15 ... ok
+2025-10-11T14:31:46.3324341Z test tpch_17 ... ok
+2025-10-11T14:31:46.3324702Z test tpch_18 ... ok
+2025-10-11T14:31:46.3326541Z test tpch_2 ... ok
+2025-10-11T14:31:46.3333815Z test tpch_20 ... ok
+2025-10-11T14:31:46.3334149Z test tpch_19 ... ok
+2025-10-11T14:31:46.3334453Z test tpch_21 ... ok
+2025-10-11T14:31:46.3340977Z test tpch_4 ... ok
+2025-10-11T14:31:46.3344984Z test tpch_3 ... ok
+2025-10-11T14:31:46.3345623Z test tpch_22 ... ok
+2025-10-11T14:31:46.3346232Z test tpch_5 ... ok
+2025-10-11T14:31:46.3346848Z test tpch_6 ... ok
+2025-10-11T14:31:46.3350333Z test tpch_7 ... ok
+2025-10-11T14:31:46.3354450Z test tpch_8 ... ok
+2025-10-11T14:31:46.3354784Z test tpch_9 ... ok
+2025-10-11T14:31:46.3354969Z 
+2025-10-11T14:31:46.3355347Z test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+2025-10-11T14:31:46.3355824Z 
+2025-10-11T14:31:46.3363429Z      Running tests/sqlparser_snowflake.rs (target/debug/deps/sqlparser_snowflake-95a5f1ef294dac3c)
+2025-10-11T14:31:46.3379394Z 
+2025-10-11T14:31:46.3379558Z running 135 tests
+2025-10-11T14:31:46.3388221Z test explain_describe ... ok
+2025-10-11T14:31:46.3388721Z test explain_desc ... ok
+2025-10-11T14:31:46.3389130Z test first_value_ignore_nulls ... ok
+2025-10-11T14:31:46.3395776Z test parse_array ... ok
+2025-10-11T14:31:46.3399930Z test parse_connect_by_root_operator ... ok
+2025-10-11T14:31:46.3401404Z test parse_comma_outer_join ... ok
+2025-10-11T14:31:46.3406038Z test parse_delimited_identifiers ... ok
+2025-10-11T14:31:46.3408521Z test parse_create_dynamic_table ... ok
+2025-10-11T14:31:46.3413438Z test parse_explain_table ... ok
+2025-10-11T14:31:46.3414128Z test asof_joins ... ok
+2025-10-11T14:31:46.3414752Z test parse_extract_comma ... ok
+2025-10-11T14:31:46.3417610Z test parse_extract_comma_quoted ... ok
+2025-10-11T14:31:46.3418365Z test parse_extract_custom_part ... ok
+2025-10-11T14:31:46.3419865Z test parse_division_correctly ... ok
+2025-10-11T14:31:46.3420552Z test parse_insert_overwrite ... ok
+2025-10-11T14:31:46.3421311Z test parse_ls_and_rm ... ok
+2025-10-11T14:31:46.3424909Z test parse_lateral_flatten ... ok
+2025-10-11T14:31:46.3425708Z test parse_position_not_function_columns ... ok
+2025-10-11T14:31:46.3430520Z test parse_pivot_of_table_factor_derived ... ok
+2025-10-11T14:31:46.3433798Z test parse_sf_create_or_replace_with_comment_for_snowflake ... ok
+2025-10-11T14:31:46.3434567Z test parse_sf_create_or_replace_view_with_comment_missing_equal ... ok
+2025-10-11T14:31:46.3436201Z test parse_semi_structured_data_traversal ... ok
+2025-10-11T14:31:46.3437355Z test parse_sf_create_table_or_view_with_dollar_quoted_comment ... ok
+2025-10-11T14:31:46.3438294Z test parse_sf_create_secure_view_and_materialized_view ... ok
+2025-10-11T14:31:46.3441190Z test parse_snowflake_declare_cursor ... ok
+2025-10-11T14:31:46.3441749Z test parse_snowflake_declare_exception ... ok
+2025-10-11T14:31:46.3448725Z test parse_snowflake_declare_multi_statements ... ok
+2025-10-11T14:31:46.3449521Z test parse_snowflake_declare_variable ... ok
+2025-10-11T14:31:46.3451409Z test parse_snowflake_declare_result_set ... ok
+2025-10-11T14:31:46.3451909Z test parse_subquery_function_argument ... ok
+2025-10-11T14:31:46.3452328Z test parse_top ... ok
+2025-10-11T14:31:46.3456830Z test parse_view_column_descriptions ... ok
+2025-10-11T14:31:46.3457737Z test test_alter_iceberg_table ... ok
+2025-10-11T14:31:46.3459391Z test test_alter_session ... ok
+2025-10-11T14:31:46.3460867Z test parse_use ... ok
+2025-10-11T14:31:46.3461359Z test test_alter_session_followed_by_statement ... ok
+2025-10-11T14:31:46.3462036Z test test_alter_table_swap_with ... ok
+2025-10-11T14:31:46.3475750Z test test_alter_table_clustering ... ok
+2025-10-11T14:31:46.3478229Z test test_array_agg_func ... ok
+2025-10-11T14:31:46.3478666Z test test_copy_into_copy_options ... ok
+2025-10-11T14:31:46.3479126Z test test_copy_into_file_format ... ok
+2025-10-11T14:31:46.3479707Z test test_copy_into_with_files_and_pattern_and_verification ... ok
+2025-10-11T14:31:46.3480440Z test test_begin_exception_end ... ok
+2025-10-11T14:31:46.3481410Z test test_copy_into ... ok
+2025-10-11T14:31:46.3481873Z test test_copy_into_with_stage_params ... ok
+2025-10-11T14:31:46.3482336Z test test_create_stage ... ok
+2025-10-11T14:31:46.3482962Z test test_create_stage_with_copy_options ... ok
+2025-10-11T14:31:46.3483485Z test test_copy_into_with_transformations ... ok
+2025-10-11T14:31:46.3483975Z test test_create_database ... ok
+2025-10-11T14:31:46.3485588Z test test_create_stage_with_directory_table_params ... ok
+2025-10-11T14:31:46.3489349Z test test_create_stage_with_file_format ... ok
+2025-10-11T14:31:46.3489883Z test test_create_stage_with_stage_params ... ok
+2025-10-11T14:31:46.3490322Z test test_drop_stage ... ok
+2025-10-11T14:31:46.3490708Z test test_drop_constraints ... ok
+2025-10-11T14:31:46.3496071Z test test_grant_database_role_to ... ok
+2025-10-11T14:31:46.3499751Z test test_grant_role_to ... ok
+2025-10-11T14:31:46.3506533Z test test_number_placeholder ... ok
+2025-10-11T14:31:46.3517485Z test test_nested_join_without_parentheses ... ok
+2025-10-11T14:31:46.3526576Z test test_parse_double_dot_notation_wrong_position ... ok
+2025-10-11T14:31:46.3527694Z test test_parse_position ... ok
+2025-10-11T14:31:46.3528159Z test test_parentheses_overflow ... ok
+2025-10-11T14:31:46.3529737Z test test_parse_show_columns_sql ... ok
+2025-10-11T14:31:46.3538162Z test test_parse_show_schemas ... ok
+2025-10-11T14:31:46.3538860Z test test_parse_show_objects ... ok
+2025-10-11T14:31:46.3546824Z test test_parse_show_tables ... ok
+2025-10-11T14:31:46.3559009Z test test_pivot ... ok
+2025-10-11T14:31:46.3563535Z test test_projection_with_nested_trailing_commas ... ok
+2025-10-11T14:31:46.3568330Z test test_select_wildcard_with_exclude ... ok
+2025-10-11T14:31:46.3570736Z test test_select_wildcard_with_exclude_and_rename ... ok
+2025-10-11T14:31:46.3571366Z test test_select_wildcard_with_ilike_double_quote ... ok
+2025-10-11T14:31:46.3574686Z test test_select_wildcard_with_ilike ... ok
+2025-10-11T14:31:46.3576891Z test test_select_wildcard_with_ilike_replace ... ok
+2025-10-11T14:31:46.3585315Z test test_select_wildcard_with_ilike_number ... ok
+2025-10-11T14:31:46.3587154Z test test_grant_account_global_privileges ... ok
+2025-10-11T14:31:46.3590971Z test test_select_wildcard_with_replace_and_rename ... ok
+2025-10-11T14:31:46.3593325Z test test_select_wildcard_with_rename ... ok
+2025-10-11T14:31:46.3596717Z test test_sf_double_dot_notation ... ok
+2025-10-11T14:31:46.3598186Z test test_sf_derived_table_in_parenthesis ... ok
+2025-10-11T14:31:46.3611961Z test test_sf_trailing_commas ... ok
+2025-10-11T14:31:46.3613063Z test test_show_databases ... ok
+2025-10-11T14:31:46.3613558Z test test_show_views ... ok
+2025-10-11T14:31:46.3614070Z test test_snowflake_copy_into ... ok
+2025-10-11T14:31:46.3614696Z test test_snowflake_copy_into_stage_name_ends_with_parens ... ok
+2025-10-11T14:31:46.3615424Z test test_single_table_in_parenthesis ... ok
+2025-10-11T14:31:46.3615959Z test test_grant_account_object_privileges ... ok
+2025-10-11T14:31:46.3617983Z test test_snowflake_create_global_table ... ok
+2025-10-11T14:31:46.3620217Z test test_snowflake_create_iceberg_table ... ok
+2025-10-11T14:31:46.3620831Z test test_snowflake_create_iceberg_table_without_location ... ok
+2025-10-11T14:31:46.3621452Z test test_snowflake_create_iceberg_table_all_options ... ok
+2025-10-11T14:31:46.3626257Z test test_snowflake_create_invalid_local_global_table ... ok
+2025-10-11T14:31:46.3626887Z test test_snowflake_create_invalid_temporal_table ... ok
+2025-10-11T14:31:46.3627454Z test test_snowflake_create_local_table ... ok
+2025-10-11T14:31:46.3629269Z test test_single_table_in_parenthesis_with_alias ... ok
+2025-10-11T14:31:46.3632226Z test test_snowflake_create_or_replace_table ... ok
+2025-10-11T14:31:46.3633011Z test test_snowflake_create_or_replace_table_copy_grants ... ok
+2025-10-11T14:31:46.3633675Z test test_snowflake_create_or_replace_table_copy_grants_cta ... ok
+2025-10-11T14:31:46.3634426Z test test_snowflake_create_or_replace_table_copy_grants_at_end ... ok
+2025-10-11T14:31:46.3636939Z test test_snowflake_create_table ... ok
+2025-10-11T14:31:46.3641368Z test test_snowflake_create_table_cluster_by ... ok
+2025-10-11T14:31:46.3643578Z test test_snowflake_create_table_change_tracking ... ok
+2025-10-11T14:31:46.3644158Z test test_snowflake_create_table_column_comment ... ok
+2025-10-11T14:31:46.3644698Z test test_snowflake_create_table_comment ... ok
+2025-10-11T14:31:46.3645317Z test test_snowflake_create_table_data_retention_time_in_days ... ok
+2025-10-11T14:31:46.3646027Z test test_snowflake_create_table_default_ddl_collation ... ok
+2025-10-11T14:31:46.3647148Z test test_snowflake_create_table_enable_schema_evolution ... ok
+2025-10-11T14:31:46.3648012Z test test_snowflake_create_table_on_commit ... ok
+2025-10-11T14:31:46.3648730Z test test_snowflake_create_table_max_data_extension_time_in_days ... ok
+2025-10-11T14:31:46.3649455Z test test_snowflake_create_table_if_not_exists ... ok
+2025-10-11T14:31:46.3654726Z test test_snowflake_create_table_with_aggregation_policy ... ok
+2025-10-11T14:31:46.3655680Z test test_snowflake_create_table_with_collated_column ... ok
+2025-10-11T14:31:46.3658367Z test test_snowflake_create_table_with_autoincrement_columns ... ok
+2025-10-11T14:31:46.3659254Z test test_snowflake_create_table_trailing_options ... ok
+2025-10-11T14:31:46.3662572Z test test_snowflake_create_table_with_columns_masking_policy ... ok
+2025-10-11T14:31:46.3663487Z test test_snowflake_create_table_with_columns_projection_policy ... ok
+2025-10-11T14:31:46.3664165Z test test_snowflake_create_table_with_columns_tags ... ok
+2025-10-11T14:31:46.3667737Z test test_snowflake_create_table_with_row_access_policy ... ok
+2025-10-11T14:31:46.3668477Z test test_snowflake_create_table_with_several_column_options ... ok
+2025-10-11T14:31:46.3671023Z test test_snowflake_create_table_with_tag ... ok
+2025-10-11T14:31:46.3673131Z test test_snowflake_create_transient_table ... ok
+2025-10-11T14:31:46.3673711Z test test_snowflake_create_view_with_composite_tag ... ok
+2025-10-11T14:31:46.3679666Z test test_snowflake_create_view_with_composite_policy_name ... ok
+2025-10-11T14:31:46.3681711Z test test_snowflake_create_view_with_multiple_column_options ... ok
+2025-10-11T14:31:46.3683493Z test test_snowflake_single_line_tokenize ... ok
+2025-10-11T14:31:46.3686666Z test test_snowflake_fetch_clause_syntax ... ok
+2025-10-11T14:31:46.3687180Z test test_snowflake_identifier_function ... ok
+2025-10-11T14:31:46.3687632Z test test_snowflake_trim ... ok
+2025-10-11T14:31:46.3690239Z test test_snowflake_stage_object_names_into_table ... ok
+2025-10-11T14:31:46.3696776Z test test_snowflake_stage_object_names_into_location ... ok
+2025-10-11T14:31:46.3697676Z test test_sql_keywords_as_select_item_ident ... ok
+2025-10-11T14:31:46.3704106Z test test_sql_keywords_as_select_item_aliases ... ok
+2025-10-11T14:31:46.3704999Z test test_sql_keywords_as_table_factor ... ok
+2025-10-11T14:31:46.3714005Z test test_timetravel_at_before ... ok
+2025-10-11T14:31:46.3714581Z test view_comment_option_should_be_after_column_list ... ok
+2025-10-11T14:31:46.3715611Z test test_table_sample ... ok
+2025-10-11T14:31:46.3726589Z test test_sql_keywords_as_table_aliases ... ok
+2025-10-11T14:31:46.3726909Z 
+2025-10-11T14:31:46.3727266Z test result: ok. 135 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+2025-10-11T14:31:46.3727757Z 
+2025-10-11T14:31:46.3734472Z      Running tests/sqlparser_sqlite.rs (target/debug/deps/sqlparser_sqlite-2965b2e366735c59)
+2025-10-11T14:31:46.3749648Z 
+2025-10-11T14:31:46.3749817Z running 33 tests
+2025-10-11T14:31:46.3756226Z test parse_attach_database ... ok
+2025-10-11T14:31:46.3756670Z test invalid_empty_list ... ok
+2025-10-11T14:31:46.3757060Z test parse_create_sqlite_quote ... ok
+2025-10-11T14:31:46.3764665Z test double_equality_operator ... ok
+2025-10-11T14:31:46.3765186Z test parse_create_table_auto_increment ... ok
+2025-10-11T14:31:46.3768911Z test parse_create_table_primary_key_asc_desc ... ok
+2025-10-11T14:31:46.3773488Z test parse_create_table_untyped ... ok
+2025-10-11T14:31:46.3774131Z test parse_create_table_on_conflict_col ... ok
+2025-10-11T14:31:46.3774911Z test parse_create_table_with_strict ... ok
+2025-10-11T14:31:46.3775477Z test parse_create_table_without_rowid ... ok
+2025-10-11T14:31:46.3776016Z test parse_create_view_temporary_if_not_exists ... ok
+2025-10-11T14:31:46.3777041Z test parse_create_table_gencol ... ok
+2025-10-11T14:31:46.3777603Z test parse_single_quoted_identified ... ok
+2025-10-11T14:31:46.3779619Z test parse_start_transaction_with_modifier ... ok
+2025-10-11T14:31:46.3780167Z test parse_create_virtual_table ... ok
+2025-10-11T14:31:46.3783410Z test parse_update_tuple_row_values ... ok
+2025-10-11T14:31:46.3784847Z test parse_substring ... ok
+2025-10-11T14:31:46.3785496Z test parse_where_in_empty_list ... ok
+2025-10-11T14:31:46.3787138Z test pragma_eq_placeholder_style ... ok
+2025-10-11T14:31:46.3787637Z test pragma_eq_string_style ... ok
+2025-10-11T14:31:46.3788310Z test pragma_eq_style ... ok
+2025-10-11T14:31:46.3788844Z test pragma_function_string_style ... ok
+2025-10-11T14:31:46.3789482Z test parse_window_function_with_filter ... ok
+2025-10-11T14:31:46.3792594Z test pragma_function_style ... ok
+2025-10-11T14:31:46.3793215Z test pragma_no_value ... ok
+2025-10-11T14:31:46.3794952Z test test_dollar_identifier_as_placeholder ... ok
+2025-10-11T14:31:46.3797760Z test test_drop_trigger ... ok
+2025-10-11T14:31:46.3801102Z test test_match_operator ... ok
+2025-10-11T14:31:46.3801569Z test test_parse_create_table_on_conflict_col_err ... ok
+2025-10-11T14:31:46.3802059Z test test_placeholder ... ok
+2025-10-11T14:31:46.3802430Z test test_update_delete_limit ... ok
+2025-10-11T14:31:46.3803158Z test test_create_trigger ... ok
+2025-10-11T14:31:46.3804147Z test test_regexp_operator ... ok
+2025-10-11T14:31:46.3804415Z 
+2025-10-11T14:31:46.3804765Z test result: ok. 33 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+2025-10-11T14:31:46.3805280Z 
+2025-10-11T14:31:46.3809637Z    Doc-tests sqlparser
+2025-10-11T14:31:50.8566805Z 
+2025-10-11T14:31:50.8567224Z running 43 tests
+2025-10-11T14:31:51.1657170Z test src/ast/helpers/attached_token.rs - ast::helpers::attached_token::AttachedToken (line 62) ... ok
+2025-10-11T14:31:51.1660356Z test src/ast/helpers/attached_token.rs - ast::helpers::attached_token::AttachedToken (line 42) ... ok
+2025-10-11T14:31:51.1670518Z test src/ast/helpers/stmt_create_database.rs - ast::helpers::stmt_create_database::CreateDatabaseBuilder (line 39) ... ok
+2025-10-11T14:31:51.1673169Z test src/ast/helpers/stmt_create_table.rs - ast::helpers::stmt_create_table::CreateTableBuilder (line 43) ... ok
+2025-10-11T14:31:51.4610303Z test src/ast/mod.rs - ast::OneOrManyWithParens (line 1295) ... ok
+2025-10-11T14:31:51.4617018Z test src/ast/mod.rs - ast::WrappedCollection (line 9484) ... ok
+2025-10-11T14:31:51.4765133Z test src/ast/mod.rs - ast::OneOrManyWithParens (line 1303) ... ok
+2025-10-11T14:31:51.5324420Z test src/ast/mod.rs - ast::Statement::fmt (line 4333) ... ok
+2025-10-11T14:31:51.7405766Z test src/ast/value.rs - ast::value::ValueWithSpan (line 36) ... ok
+2025-10-11T14:31:51.7844461Z test src/ast/value.rs - ast::value::ValueWithSpan (line 48) ... ok
+2025-10-11T14:31:51.8548221Z test src/ast/value.rs - ast::value::ValueWithSpan (line 57) ... ok
+2025-10-11T14:31:51.8795402Z test src/ast/spans.rs - ast::spans::Spanned (line 67) ... ok
+2025-10-11T14:31:53.2839316Z test src/ast/visitor.rs - ast::visitor::visit_expressions_mut (line 515) ... ok
+2025-10-11T14:31:53.3642477Z test src/ast/visitor.rs - ast::visitor::VisitorMut (line 262) ... ok
+2025-10-11T14:31:53.4340428Z test src/ast/visitor.rs - ast::visitor::Visitor (line 135) ... ok
+2025-10-11T14:31:53.5174598Z test src/ast/visitor.rs - ast::visitor::visit_expressions (line 471) ... ok
+2025-10-11T14:31:54.7873888Z test src/ast/visitor.rs - ast::visitor::visit_expressions_mut (line 540) ... ok
+2025-10-11T14:31:54.7915955Z test src/ast/visitor.rs - ast::visitor::visit_relations (line 383) ... ok
+2025-10-11T14:31:54.9310440Z test src/ast/visitor.rs - ast::visitor::visit_relations_mut (line 423) ... ok
+2025-10-11T14:31:54.9378557Z test src/dialect/mod.rs - dialect::Dialect (line 104) ... ok
+2025-10-11T14:31:54.9444979Z test src/ast/visitor.rs - ast::visitor::visit_statements (line 602) ... ok
+2025-10-11T14:31:55.1592056Z test src/lib.rs - (line 131) ... ok
+2025-10-11T14:31:55.2986880Z test src/lib.rs - (line 34) ... ok
+2025-10-11T14:31:55.3209657Z test src/dialect/mod.rs - dialect::Dialect (line 112) ... ok
+2025-10-11T14:31:55.4749966Z test src/lib.rs - (line 56) ... ok
+2025-10-11T14:31:55.6453838Z test src/lib.rs - (line 72) ... ok
+2025-10-11T14:31:55.6864948Z test src/parser/mod.rs - parser::Parser<'a>::new (line 353) ... ok
+2025-10-11T14:31:55.8426602Z test src/parser/mod.rs - parser::Parser<'a>::parse_expr_with_alias (line 14637) ... ok
+2025-10-11T14:31:55.9285256Z test src/parser/mod.rs - parser::Parser<'a>::parse_multipart_identifier (line 11192) ... ok
+2025-10-11T14:31:56.0431701Z test src/parser/mod.rs - parser::Parser<'a>::parse_sql (line 517) ... ok
+2025-10-11T14:31:56.1626086Z test src/parser/mod.rs - parser::Parser<'a>::parse_statements (line 465) ... ok
+2025-10-11T14:31:56.2349129Z test src/ast/visitor.rs - ast::visitor::visit_statements_mut (line 639) ... ok
+2025-10-11T14:31:56.2408156Z test src/parser/mod.rs - parser::Parser<'a>::peek_tokens (line 4005) ... ok
+2025-10-11T14:31:56.4378879Z test src/parser/mod.rs - parser::Parser<'a>::with_options (line 408) ... ok
+2025-10-11T14:31:56.4597990Z test src/tokenizer.rs - tokenizer::Location (line 478) ... ok
+2025-10-11T14:31:56.5134061Z test src/tokenizer.rs - tokenizer::Location (line 484) ... ok
+2025-10-11T14:31:56.5623817Z test src/parser/mod.rs - parser::Parser<'a>::with_recursion_limit (line 381) ... ok
+2025-10-11T14:31:56.7189592Z test src/tokenizer.rs - tokenizer::Location (line 490) ... ok
+2025-10-11T14:31:56.7374682Z test src/tokenizer.rs - tokenizer::Span::union (line 596) ... ok
+2025-10-11T14:31:56.7814437Z test src/tokenizer.rs - tokenizer::Span::union_iter (line 635) ... ok
+2025-10-11T14:31:56.8365927Z test src/tokenizer.rs - tokenizer::TokenWithSpan (line 663) ... ok
+2025-10-11T14:31:56.9332981Z test src/tokenizer.rs - tokenizer::Tokenizer<'a>::new (line 818) ... ok
+2025-10-11T14:31:56.9463513Z test src/tokenizer.rs - tokenizer::Tokenizer<'a>::with_unescape (line 852) ... ok
+2025-10-11T14:31:56.9464076Z 
+2025-10-11T14:31:56.9464335Z test result: ok. 43 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.09s
+2025-10-11T14:31:56.9464649Z 
+2025-10-11T14:31:56.9625827Z Post job cleanup.
+2025-10-11T14:31:57.1084881Z Cache up-to-date.
+2025-10-11T14:31:57.1214447Z Post job cleanup.
+2025-10-11T14:31:57.2178208Z [command]/usr/bin/git version
+2025-10-11T14:31:57.2219815Z git version 2.51.0
+2025-10-11T14:31:57.2265812Z Temporarily overriding HOME='/home/runner/work/_temp/17fafb7a-971f-4eb2-b211-748d53c77bb3' before making global git config changes
+2025-10-11T14:31:57.2267122Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-11T14:31:57.2281192Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/datafusion-sqlparser-rs/datafusion-sqlparser-rs
+2025-10-11T14:31:57.2319840Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-11T14:31:57.2352974Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-11T14:31:57.2585252Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-11T14:31:57.2609617Z http.https://github.com/.extraheader
+2025-10-11T14:31:57.2624670Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-11T14:31:57.2659417Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-11T14:31:57.3015662Z Cleaning up orphan processes

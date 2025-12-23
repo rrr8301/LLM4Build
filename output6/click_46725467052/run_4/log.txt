@@ -1,0 +1,92 @@
+requirements.txt not found, skipping pip install
+Collecting tox
+  Downloading tox-4.30.2-py3-none-any.whl (175 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 175.5/175.5 KB 2.9 MB/s eta 0:00:00
+Collecting filelock>=3.18
+  Downloading filelock-3.19.1-py3-none-any.whl (15 kB)
+Collecting cachetools>=6.1
+  Downloading cachetools-6.2.0-py3-none-any.whl (11 kB)
+Collecting colorama>=0.4.6
+  Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting platformdirs>=4.3.8
+  Downloading platformdirs-4.4.0-py3-none-any.whl (18 kB)
+Collecting pluggy>=1.6
+  Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Collecting pyproject-api>=1.9.1
+  Downloading pyproject_api-1.9.1-py3-none-any.whl (13 kB)
+Collecting virtualenv>=20.31.2
+  Downloading virtualenv-20.34.0-py3-none-any.whl (6.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 18.7 MB/s eta 0:00:00
+Collecting chardet>=5.2
+  Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 199.4/199.4 KB 19.0 MB/s eta 0:00:00
+Collecting packaging>=25
+  Downloading packaging-25.0-py3-none-any.whl (66 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 KB 6.6 MB/s eta 0:00:00
+Collecting distlib<1,>=0.3.7
+  Downloading distlib-0.4.0-py2.py3-none-any.whl (469 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 469.0/469.0 KB 22.5 MB/s eta 0:00:00
+Installing collected packages: distlib, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+Successfully installed cachetools-6.2.0 chardet-5.2.0 colorama-0.4.6 distlib-0.4.0 filelock-3.19.1 packaging-25.0 platformdirs-4.4.0 pluggy-1.6.0 pyproject-api-1.9.1 tox-4.30.2 virtualenv-20.34.0
+Traceback (most recent call last):
+  File "/app/venv/bin/tox", line 8, in <module>
+    sys.exit(run())
+             ^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/run.py", line 20, in run
+    result = main(sys.argv[1:] if args is None else args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/run.py", line 46, in main
+    return handler(state)
+           ^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/cmd/legacy.py", line 115, in legacy
+    return run_sequential(state)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/cmd/run/sequential.py", line 25, in run_sequential
+    return execute(state, max_workers=1, has_spinner=False, live=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/cmd/run/common.py", line 167, in execute
+    state.envs.ensure_only_run_env_is_active()
+  File "/app/venv/lib/python3.11/site-packages/tox/session/env_select.py", line 436, in ensure_only_run_env_is_active
+    envs, active = self._defined_envs, self._env_name_to_active()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/env_select.py", line 258, in _defined_envs
+    run_env = self._build_run_env(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/env_select.py", line 319, in _build_run_env
+    runner = REGISTER.runner(cast("str", env_conf["runner"]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/tox_env/register.py", line 72, in runner
+    return self._run_envs[name]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'uv-venv-lock-runner'
+Traceback (most recent call last):
+  File "/app/venv/bin/tox", line 8, in <module>
+    sys.exit(run())
+             ^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/run.py", line 20, in run
+    result = main(sys.argv[1:] if args is None else args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/run.py", line 46, in main
+    return handler(state)
+           ^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/cmd/legacy.py", line 115, in legacy
+    return run_sequential(state)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/cmd/run/sequential.py", line 25, in run_sequential
+    return execute(state, max_workers=1, has_spinner=False, live=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/cmd/run/common.py", line 167, in execute
+    state.envs.ensure_only_run_env_is_active()
+  File "/app/venv/lib/python3.11/site-packages/tox/session/env_select.py", line 436, in ensure_only_run_env_is_active
+    envs, active = self._defined_envs, self._env_name_to_active()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/env_select.py", line 258, in _defined_envs
+    run_env = self._build_run_env(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/env_select.py", line 319, in _build_run_env
+    runner = REGISTER.runner(cast("str", env_conf["runner"]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/tox_env/register.py", line 72, in runner
+    return self._run_envs[name]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'uv-venv-lock-runner'

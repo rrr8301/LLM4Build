@@ -1,0 +1,16 @@
+
+> spacetimedb-monorepo@ build /app
+> pnpm --filter ./crates/bindings-typescript run build && pnpm --filter ./docs run build && pnpm --filter ./sdks/typescript run build
+
+
+> spacetimedb@0.0.1 build /app/crates/bindings-typescript
+> tsc
+
+src/binary_reader.ts(1,29): error TS2307: Cannot find module '@zxing/text-encoding' or its corresponding type declarations.
+src/binary_writer.ts(1,31): error TS2307: Cannot find module 'base64-js' or its corresponding type declarations.
+src/binary_writer.ts(2,29): error TS2307: Cannot find module '@zxing/text-encoding' or its corresponding type declarations.
+/app/crates/bindings-typescript:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  spacetimedb@0.0.1 build: `tsc`
+Exit status 2
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+ ELIFECYCLE  Command failed with exit code 2.

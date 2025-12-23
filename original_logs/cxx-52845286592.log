@@ -1,0 +1,733 @@
+﻿2025-10-15T19:21:48.7915835Z Current runner version: '2.328.0'
+2025-10-15T19:21:48.7947498Z ##[group]Runner Image Provisioner
+2025-10-15T19:21:48.7948628Z Hosted Compute Agent
+2025-10-15T19:21:48.7949374Z Version: 20250912.392
+2025-10-15T19:21:48.7950472Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-15T19:21:48.7951788Z Build Date: 2025-09-12T15:23:14Z
+2025-10-15T19:21:48.7952772Z ##[endgroup]
+2025-10-15T19:21:48.7953612Z ##[group]Operating System
+2025-10-15T19:21:48.7954530Z Ubuntu
+2025-10-15T19:21:48.7955199Z 24.04.3
+2025-10-15T19:21:48.7956009Z LTS
+2025-10-15T19:21:48.7956651Z ##[endgroup]
+2025-10-15T19:21:48.7957506Z ##[group]Runner Image
+2025-10-15T19:21:48.7958429Z Image: ubuntu-24.04
+2025-10-15T19:21:48.7959145Z Version: 20250929.60.1
+2025-10-15T19:21:48.7961102Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-15T19:21:48.7963726Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-15T19:21:48.7965483Z ##[endgroup]
+2025-10-15T19:21:48.7967038Z ##[group]GITHUB_TOKEN Permissions
+2025-10-15T19:21:48.7969504Z Contents: read
+2025-10-15T19:21:48.7970405Z Metadata: read
+2025-10-15T19:21:48.7971370Z ##[endgroup]
+2025-10-15T19:21:48.7974578Z Secret source: Actions
+2025-10-15T19:21:48.7975861Z Prepare workflow directory
+2025-10-15T19:21:48.8742137Z Prepare all required actions
+2025-10-15T19:21:48.8796346Z Getting action download info
+2025-10-15T19:21:49.1794368Z Download action repository 'actions/checkout@v5' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-10-15T19:21:49.3603309Z Download action repository 'dtolnay/rust-toolchain@master' (SHA:6d653acede28d24f02e3cd41383119e8b1b35921)
+2025-10-15T19:21:49.5534272Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-10-15T19:21:49.7678437Z Complete job name: Rust stable
+2025-10-15T19:21:49.8320221Z ##[group]Run actions/checkout@v5
+2025-10-15T19:21:49.8321886Z with:
+2025-10-15T19:21:49.8322420Z   repository: dtolnay/cxx
+2025-10-15T19:21:49.8323100Z   token: ***
+2025-10-15T19:21:49.8323504Z   ssh-strict: true
+2025-10-15T19:21:49.8323922Z   ssh-user: git
+2025-10-15T19:21:49.8324351Z   persist-credentials: true
+2025-10-15T19:21:49.8324825Z   clean: true
+2025-10-15T19:21:49.8325252Z   sparse-checkout-cone-mode: true
+2025-10-15T19:21:49.8325755Z   fetch-depth: 1
+2025-10-15T19:21:49.8326169Z   fetch-tags: false
+2025-10-15T19:21:49.8326585Z   show-progress: true
+2025-10-15T19:21:49.8327009Z   lfs: false
+2025-10-15T19:21:49.8327449Z   submodules: false
+2025-10-15T19:21:49.8327870Z   set-safe-directory: true
+2025-10-15T19:21:49.8328589Z env:
+2025-10-15T19:21:49.8328960Z   CXX: g++
+2025-10-15T19:21:49.8329378Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:49.8329944Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:49.8330482Z ##[endgroup]
+2025-10-15T19:21:49.9230602Z Syncing repository: dtolnay/cxx
+2025-10-15T19:21:49.9232707Z ##[group]Getting Git version info
+2025-10-15T19:21:49.9233378Z Working directory is '/home/runner/work/cxx/cxx'
+2025-10-15T19:21:49.9234365Z [command]/usr/bin/git version
+2025-10-15T19:21:49.9286233Z git version 2.51.0
+2025-10-15T19:21:49.9307546Z ##[endgroup]
+2025-10-15T19:21:49.9323966Z Temporarily overriding HOME='/home/runner/work/_temp/c653d47e-dd30-4216-a823-2be49f7f27ca' before making global git config changes
+2025-10-15T19:21:49.9326702Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-15T19:21:49.9328961Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cxx/cxx
+2025-10-15T19:21:49.9364876Z Deleting the contents of '/home/runner/work/cxx/cxx'
+2025-10-15T19:21:49.9368720Z ##[group]Initializing the repository
+2025-10-15T19:21:49.9373512Z [command]/usr/bin/git init /home/runner/work/cxx/cxx
+2025-10-15T19:21:49.9478748Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-15T19:21:49.9479996Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-15T19:21:49.9481467Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-15T19:21:49.9482217Z hint:
+2025-10-15T19:21:49.9483121Z hint: 	git config --global init.defaultBranch <name>
+2025-10-15T19:21:49.9484005Z hint:
+2025-10-15T19:21:49.9484729Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-15T19:21:49.9486615Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-15T19:21:49.9488110Z hint:
+2025-10-15T19:21:49.9488931Z hint: 	git branch -m <name>
+2025-10-15T19:21:49.9489908Z hint:
+2025-10-15T19:21:49.9491286Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-15T19:21:49.9493115Z Initialized empty Git repository in /home/runner/work/cxx/cxx/.git/
+2025-10-15T19:21:49.9496156Z [command]/usr/bin/git remote add origin https://github.com/dtolnay/cxx
+2025-10-15T19:21:49.9533463Z ##[endgroup]
+2025-10-15T19:21:49.9534805Z ##[group]Disabling automatic garbage collection
+2025-10-15T19:21:49.9537756Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-15T19:21:49.9565646Z ##[endgroup]
+2025-10-15T19:21:49.9567011Z ##[group]Setting up auth
+2025-10-15T19:21:49.9572801Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-15T19:21:49.9603151Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-15T19:21:49.9924815Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-15T19:21:49.9954591Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-15T19:21:50.0173794Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-15T19:21:50.0208496Z ##[endgroup]
+2025-10-15T19:21:50.0209718Z ##[group]Fetching the repository
+2025-10-15T19:21:50.0218035Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +00d21a7bab6073520a39e49df427f0947e8a8b6c:refs/remotes/origin/master
+2025-10-15T19:21:50.2964830Z From https://github.com/dtolnay/cxx
+2025-10-15T19:21:50.2966148Z  * [new ref]         00d21a7bab6073520a39e49df427f0947e8a8b6c -> origin/master
+2025-10-15T19:21:50.2994914Z ##[endgroup]
+2025-10-15T19:21:50.2996863Z ##[group]Determining the checkout info
+2025-10-15T19:21:50.2999012Z ##[endgroup]
+2025-10-15T19:21:50.3003593Z [command]/usr/bin/git sparse-checkout disable
+2025-10-15T19:21:50.3044388Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-15T19:21:50.3071083Z ##[group]Checking out the ref
+2025-10-15T19:21:50.3075467Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2025-10-15T19:21:50.3325848Z Reset branch 'master'
+2025-10-15T19:21:50.3328165Z branch 'master' set up to track 'origin/master'.
+2025-10-15T19:21:50.3335941Z ##[endgroup]
+2025-10-15T19:21:50.3369119Z [command]/usr/bin/git log -1 --format=%H
+2025-10-15T19:21:50.3389595Z 00d21a7bab6073520a39e49df427f0947e8a8b6c
+2025-10-15T19:21:50.3863360Z ##[group]Run dtolnay/rust-toolchain@master
+2025-10-15T19:21:50.3864616Z with:
+2025-10-15T19:21:50.3865421Z   toolchain: stable
+2025-10-15T19:21:50.3866322Z   components: rust-src
+2025-10-15T19:21:50.3867226Z env:
+2025-10-15T19:21:50.3867976Z   CXX: g++
+2025-10-15T19:21:50.3868841Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:50.3870042Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:50.3871344Z ##[endgroup]
+2025-10-15T19:21:50.3993163Z ##[group]Run : parse toolchain version
+2025-10-15T19:21:50.3994354Z [36;1m: parse toolchain version[0m
+2025-10-15T19:21:50.3995390Z [36;1mif [[ -z $toolchain ]]; then[0m
+2025-10-15T19:21:50.3997258Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+2025-10-15T19:21:50.3999462Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+2025-10-15T19:21:50.4000595Z [36;1m  exit 1[0m
+2025-10-15T19:21:50.4002183Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2025-10-15T19:21:50.4003697Z [36;1m  if [[ Linux == macOS ]]; then[0m
+2025-10-15T19:21:50.4005491Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:50.4007259Z [36;1m  else[0m
+2025-10-15T19:21:50.4008679Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:50.4010328Z [36;1m  fi[0m
+2025-10-15T19:21:50.4011555Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2025-10-15T19:21:50.4013483Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:50.4015184Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2025-10-15T19:21:50.4017067Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:50.4018816Z [36;1melse[0m
+2025-10-15T19:21:50.4019735Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:50.4020972Z [36;1mfi[0m
+2025-10-15T19:21:50.4060366Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:50.4061806Z env:
+2025-10-15T19:21:50.4062499Z   CXX: g++
+2025-10-15T19:21:50.4063281Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:50.4064388Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:50.4065442Z   toolchain: stable
+2025-10-15T19:21:50.4066232Z ##[endgroup]
+2025-10-15T19:21:50.4222672Z ##[group]Run : construct rustup command line
+2025-10-15T19:21:50.4223862Z [36;1m: construct rustup command line[0m
+2025-10-15T19:21:50.4225462Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:50.4227710Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:50.4229486Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:50.4262291Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:50.4325953Z env:
+2025-10-15T19:21:50.4326813Z   CXX: g++
+2025-10-15T19:21:50.4327714Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:50.4328911Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:50.4329982Z   targets: 
+2025-10-15T19:21:50.4330826Z   components: rust-src
+2025-10-15T19:21:50.4331644Z ##[endgroup]
+2025-10-15T19:21:50.4441529Z ##[group]Run : set $CARGO_HOME
+2025-10-15T19:21:50.4442489Z [36;1m: set $CARGO_HOME[0m
+2025-10-15T19:21:50.4443694Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV[0m
+2025-10-15T19:21:50.4476635Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:50.4477873Z env:
+2025-10-15T19:21:50.4478579Z   CXX: g++
+2025-10-15T19:21:50.4479361Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:50.4480451Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:50.4481861Z ##[endgroup]
+2025-10-15T19:21:50.4588572Z ##[group]Run : install rustup if needed
+2025-10-15T19:21:50.4589651Z [36;1m: install rustup if needed[0m
+2025-10-15T19:21:50.4590951Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2025-10-15T19:21:50.4593490Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y[0m
+2025-10-15T19:21:50.4595981Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+2025-10-15T19:21:50.4597037Z [36;1mfi[0m
+2025-10-15T19:21:50.4630907Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:50.4632141Z env:
+2025-10-15T19:21:50.4632809Z   CXX: g++
+2025-10-15T19:21:50.4633759Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:50.4634861Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:50.4635934Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:50.4636862Z ##[endgroup]
+2025-10-15T19:21:50.4747870Z ##[group]Run rustup toolchain install stable --component rust-src --profile minimal --no-self-update
+2025-10-15T19:21:50.4750279Z [36;1mrustup toolchain install stable --component rust-src --profile minimal --no-self-update[0m
+2025-10-15T19:21:50.4785811Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:50.4787013Z env:
+2025-10-15T19:21:50.4787693Z   CXX: g++
+2025-10-15T19:21:50.4788471Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:50.4789554Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:50.4790633Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:50.4791820Z ##[endgroup]
+2025-10-15T19:21:50.8621771Z info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+2025-10-15T19:21:51.1125652Z info: latest update on 2025-09-18, rust version 1.90.0 (1159e78c4 2025-09-14)
+2025-10-15T19:21:51.1454588Z info: downloading component 'rust-src'
+2025-10-15T19:21:51.2264587Z info: installing component 'rust-src'
+2025-10-15T19:21:51.6943213Z 
+2025-10-15T19:21:51.7039028Z   stable-x86_64-unknown-linux-gnu updated - rustc 1.90.0 (1159e78c4 2025-09-14) (from rustc 1.90.0 (1159e78c4 2025-09-14))
+2025-10-15T19:21:51.7039995Z 
+2025-10-15T19:21:51.7097776Z ##[group]Run rustup default stable
+2025-10-15T19:21:51.7098100Z [36;1mrustup default stable[0m
+2025-10-15T19:21:51.7130484Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:51.7131085Z env:
+2025-10-15T19:21:51.7131298Z   CXX: g++
+2025-10-15T19:21:51.7131530Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:51.7131843Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:51.7132145Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:51.7132409Z ##[endgroup]
+2025-10-15T19:21:51.7234818Z info: using existing install for 'stable-x86_64-unknown-linux-gnu'
+2025-10-15T19:21:51.7562772Z info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+2025-10-15T19:21:51.7563219Z 
+2025-10-15T19:21:51.7654895Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.90.0 (1159e78c4 2025-09-14)
+2025-10-15T19:21:51.7655447Z 
+2025-10-15T19:21:51.7655981Z info: note that the toolchain 'stable-x86_64-unknown-linux-gnu' is currently in use (overridden by '/home/runner/work/cxx/cxx/rust-toolchain.toml')
+2025-10-15T19:21:51.7701593Z ##[group]Run : create cachekey
+2025-10-15T19:21:51.7701906Z [36;1m: create cachekey[0m
+2025-10-15T19:21:51.7702395Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2025-10-15T19:21:51.7703024Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2025-10-15T19:21:51.7703527Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:51.7736052Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:51.7736423Z env:
+2025-10-15T19:21:51.7736636Z   CXX: g++
+2025-10-15T19:21:51.7736870Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:51.7737190Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:51.7737788Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:51.7738102Z ##[endgroup]
+2025-10-15T19:21:51.8627993Z ##[group]Run : disable incremental compilation
+2025-10-15T19:21:51.8628508Z [36;1m: disable incremental compilation[0m
+2025-10-15T19:21:51.8629076Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2025-10-15T19:21:51.8629554Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2025-10-15T19:21:51.8629888Z [36;1mfi[0m
+2025-10-15T19:21:51.8662647Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:51.8663016Z env:
+2025-10-15T19:21:51.8663211Z   CXX: g++
+2025-10-15T19:21:51.8663452Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:51.8663777Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:51.8664270Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:51.8664532Z ##[endgroup]
+2025-10-15T19:21:51.8735046Z ##[group]Run : enable colors in Cargo output
+2025-10-15T19:21:51.8735395Z [36;1m: enable colors in Cargo output[0m
+2025-10-15T19:21:51.8735737Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2025-10-15T19:21:51.8736110Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2025-10-15T19:21:51.8736411Z [36;1mfi[0m
+2025-10-15T19:21:51.8765777Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:51.8766142Z env:
+2025-10-15T19:21:51.8766346Z   CXX: g++
+2025-10-15T19:21:51.8766586Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:51.8766895Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:51.8767206Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:51.8767477Z   CARGO_INCREMENTAL: 0
+2025-10-15T19:21:51.8767713Z ##[endgroup]
+2025-10-15T19:21:51.8838449Z ##[group]Run : enable Cargo sparse registry
+2025-10-15T19:21:51.8838799Z [36;1m: enable Cargo sparse registry[0m
+2025-10-15T19:21:51.8839183Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2025-10-15T19:21:51.8839899Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2025-10-15T19:21:51.8840627Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2025-10-15T19:21:51.8841469Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-10-15T19:21:51.8842013Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2025-10-15T19:21:51.8842501Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2025-10-15T19:21:51.8843059Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-10-15T19:21:51.8843577Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2025-10-15T19:21:51.8843939Z [36;1m  fi[0m
+2025-10-15T19:21:51.8844151Z [36;1mfi[0m
+2025-10-15T19:21:51.8873338Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:51.8873698Z env:
+2025-10-15T19:21:51.8873898Z   CXX: g++
+2025-10-15T19:21:51.8874134Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:51.8874444Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:51.8874758Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:51.8875032Z   CARGO_INCREMENTAL: 0
+2025-10-15T19:21:51.8875268Z   CARGO_TERM_COLOR: always
+2025-10-15T19:21:51.8875510Z ##[endgroup]
+2025-10-15T19:21:51.9239166Z ##[group]Run : work around spurious network errors in curl 8.0
+2025-10-15T19:21:51.9239642Z [36;1m: work around spurious network errors in curl 8.0[0m
+2025-10-15T19:21:51.9240385Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2025-10-15T19:21:51.9241294Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2025-10-15T19:21:51.9241785Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2025-10-15T19:21:51.9242115Z [36;1mfi[0m
+2025-10-15T19:21:51.9274830Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:51.9275356Z env:
+2025-10-15T19:21:51.9275570Z   CXX: g++
+2025-10-15T19:21:51.9275807Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:51.9276125Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:51.9276433Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:51.9276702Z   CARGO_INCREMENTAL: 0
+2025-10-15T19:21:51.9276949Z   CARGO_TERM_COLOR: always
+2025-10-15T19:21:51.9277188Z ##[endgroup]
+2025-10-15T19:21:51.9498178Z ##[group]Run rustc +stable --version --verbose
+2025-10-15T19:21:51.9498568Z [36;1mrustc +stable --version --verbose[0m
+2025-10-15T19:21:51.9530989Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:51.9531366Z env:
+2025-10-15T19:21:51.9531571Z   CXX: g++
+2025-10-15T19:21:51.9531803Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:51.9532293Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:51.9532596Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:51.9532870Z   CARGO_INCREMENTAL: 0
+2025-10-15T19:21:51.9533106Z   CARGO_TERM_COLOR: always
+2025-10-15T19:21:51.9533367Z ##[endgroup]
+2025-10-15T19:21:51.9707787Z rustc 1.90.0 (1159e78c4 2025-09-14)
+2025-10-15T19:21:51.9708547Z binary: rustc
+2025-10-15T19:21:51.9709221Z commit-hash: 1159e78c4747b02ef996e55082b704c09b970588
+2025-10-15T19:21:51.9709952Z commit-date: 2025-09-14
+2025-10-15T19:21:51.9710394Z host: x86_64-unknown-linux-gnu
+2025-10-15T19:21:51.9710936Z release: 1.90.0
+2025-10-15T19:21:51.9711215Z LLVM version: 20.1.8
+2025-10-15T19:21:51.9790394Z ##[group]Run echo RUSTFLAGS=$RUSTFLAGS >> $GITHUB_ENV
+2025-10-15T19:21:51.9791157Z [36;1mecho RUSTFLAGS=$RUSTFLAGS >> $GITHUB_ENV[0m
+2025-10-15T19:21:51.9791648Z [36;1mecho exclude=--exclude cxx-test-suite >> $GITHUB_OUTPUT[0m
+2025-10-15T19:21:51.9823658Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T19:21:51.9824026Z env:
+2025-10-15T19:21:51.9824231Z   CXX: g++
+2025-10-15T19:21:51.9824459Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:51.9824782Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings 
+2025-10-15T19:21:51.9825090Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:51.9825360Z   CARGO_INCREMENTAL: 0
+2025-10-15T19:21:51.9825611Z   CARGO_TERM_COLOR: always
+2025-10-15T19:21:51.9825846Z ##[endgroup]
+2025-10-15T19:21:51.9926155Z ##[group]Run cargo run --manifest-path demo/Cargo.toml
+2025-10-15T19:21:51.9926585Z [36;1mcargo run --manifest-path demo/Cargo.toml[0m
+2025-10-15T19:21:51.9956483Z shell: /usr/bin/bash -e {0}
+2025-10-15T19:21:51.9956761Z env:
+2025-10-15T19:21:51.9956959Z   CXX: g++
+2025-10-15T19:21:51.9957196Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:21:51.9957506Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:21:51.9957818Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:21:51.9958083Z   CARGO_INCREMENTAL: 0
+2025-10-15T19:21:51.9958337Z   CARGO_TERM_COLOR: always
+2025-10-15T19:21:51.9958572Z ##[endgroup]
+2025-10-15T19:21:53.5073578Z [1m[32m    Updating[0m crates.io index
+2025-10-15T19:21:53.9013180Z [1m[32m     Locking[0m 59 packages to latest compatible versions
+2025-10-15T19:21:53.9221606Z [1m[32m Downloading[0m crates ...
+2025-10-15T19:21:54.1406267Z [1m[32m  Downloaded[0m equivalent v1.0.2
+2025-10-15T19:21:54.1714437Z [1m[32m  Downloaded[0m link-cplusplus v1.0.12
+2025-10-15T19:21:54.1727671Z [1m[32m  Downloaded[0m unicode-ident v1.0.19
+2025-10-15T19:21:54.1756544Z [1m[32m  Downloaded[0m shlex v1.3.0
+2025-10-15T19:21:54.1770221Z [1m[32m  Downloaded[0m quote v1.0.41
+2025-10-15T19:21:54.1800302Z [1m[32m  Downloaded[0m codespan-reporting v0.13.0
+2025-10-15T19:21:54.1927660Z [1m[32m  Downloaded[0m termcolor v1.4.1
+2025-10-15T19:21:54.1941417Z [1m[32m  Downloaded[0m serde_derive v1.0.228
+2025-10-15T19:21:54.1972278Z [1m[32m  Downloaded[0m cc v1.2.41
+2025-10-15T19:21:54.2005030Z [1m[32m  Downloaded[0m serde_core v1.0.228
+2025-10-15T19:21:54.2032747Z [1m[32m  Downloaded[0m hashbrown v0.16.0
+2025-10-15T19:21:54.2083683Z [1m[32m  Downloaded[0m serde v1.0.228
+2025-10-15T19:21:54.2117873Z [1m[32m  Downloaded[0m proc-macro2 v1.0.101
+2025-10-15T19:21:54.2145377Z [1m[32m  Downloaded[0m indexmap v2.11.4
+2025-10-15T19:21:54.2187445Z [1m[32m  Downloaded[0m scratch v1.0.9
+2025-10-15T19:21:54.2198585Z [1m[32m  Downloaded[0m foldhash v0.2.0
+2025-10-15T19:21:54.2210995Z [1m[32m  Downloaded[0m unicode-width v0.2.2
+2025-10-15T19:21:54.2266550Z [1m[32m  Downloaded[0m find-msvc-tools v0.1.4
+2025-10-15T19:21:54.2282477Z [1m[32m  Downloaded[0m syn v2.0.106
+2025-10-15T19:21:54.8550977Z [1m[32m   Compiling[0m find-msvc-tools v0.1.4
+2025-10-15T19:21:54.8551714Z [1m[32m   Compiling[0m shlex v1.3.0
+2025-10-15T19:21:54.8552351Z [1m[32m   Compiling[0m proc-macro2 v1.0.101
+2025-10-15T19:21:54.8555525Z [1m[32m   Compiling[0m quote v1.0.41
+2025-10-15T19:21:57.9354185Z [1m[32m   Compiling[0m cc v1.2.41
+2025-10-15T19:21:57.9626455Z [1m[32m   Compiling[0m unicode-ident v1.0.19
+2025-10-15T19:21:58.0318746Z [1m[32m   Compiling[0m hashbrown v0.16.0
+2025-10-15T19:21:58.8518274Z [1m[32m   Compiling[0m equivalent v1.0.2
+2025-10-15T19:21:58.8771065Z [1m[32m   Compiling[0m indexmap v2.11.4
+2025-10-15T19:21:59.1025208Z [1m[32m   Compiling[0m link-cplusplus v1.0.12
+2025-10-15T19:21:59.3127026Z [1m[32m   Compiling[0m scratch v1.0.9
+2025-10-15T19:21:59.9384412Z [1m[32m   Compiling[0m cxx-build v1.0.186 (/home/runner/work/cxx/cxx/gen/build)
+2025-10-15T19:21:59.9488101Z [1m[32m   Compiling[0m cxxbridge-flags v1.0.186 (/home/runner/work/cxx/cxx/flags)
+2025-10-15T19:21:59.9836735Z [1m[32m   Compiling[0m termcolor v1.4.1
+2025-10-15T19:22:00.1492959Z [1m[32m   Compiling[0m unicode-width v0.2.2
+2025-10-15T19:22:00.2347471Z [1m[32m   Compiling[0m cxx v1.0.186 (/home/runner/work/cxx/cxx)
+2025-10-15T19:22:00.2833060Z [1m[32m   Compiling[0m codespan-reporting v0.13.0
+2025-10-15T19:22:00.5730884Z [1m[32m   Compiling[0m cxxbridge-macro v1.0.186 (/home/runner/work/cxx/cxx/macro)
+2025-10-15T19:22:00.6001852Z [1m[32m   Compiling[0m foldhash v0.2.0
+2025-10-15T19:22:01.4280586Z [1m[32m   Compiling[0m syn v2.0.106
+2025-10-15T19:22:04.7670445Z [1m[32m   Compiling[0m demo v0.0.0 (/home/runner/work/cxx/cxx/demo)
+2025-10-15T19:22:12.7365666Z [1m[32m    Finished[0m `dev` profile [unoptimized + debuginfo] target(s) in 20.25s
+2025-10-15T19:22:12.7546397Z [1m[32m     Running[0m `target/debug/demo`
+2025-10-15T19:22:12.7602840Z blobid = 9851996977040795552
+2025-10-15T19:22:12.7603286Z tags = ["rust"]
+2025-10-15T19:22:12.7643759Z ##[group]Run cargo test --workspace --exclude cxx-test-suite
+2025-10-15T19:22:12.7644188Z [36;1mcargo test --workspace --exclude cxx-test-suite[0m
+2025-10-15T19:22:12.7675356Z shell: /usr/bin/bash -e {0}
+2025-10-15T19:22:12.7675580Z env:
+2025-10-15T19:22:12.7675736Z   CXX: g++
+2025-10-15T19:22:12.7675931Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:22:12.7676223Z   RUSTFLAGS: --cfg deny_warnings -Dwarnings
+2025-10-15T19:22:12.7676494Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:22:12.7676718Z   CARGO_INCREMENTAL: 0
+2025-10-15T19:22:12.7676921Z   CARGO_TERM_COLOR: always
+2025-10-15T19:22:12.7677117Z ##[endgroup]
+2025-10-15T19:22:12.8368733Z [1m[32m Downloading[0m crates ...
+2025-10-15T19:22:12.8871858Z [1m[32m  Downloaded[0m clap_lex v0.7.6
+2025-10-15T19:22:12.8888829Z [1m[32m  Downloaded[0m getrandom v0.3.4
+2025-10-15T19:22:12.8923036Z [1m[32m  Downloaded[0m errno v0.3.14
+2025-10-15T19:22:12.9080045Z [1m[32m  Downloaded[0m anstyle v1.0.13
+2025-10-15T19:22:12.9117699Z [1m[32m  Downloaded[0m toml_datetime v0.7.3
+2025-10-15T19:22:12.9139697Z [1m[32m  Downloaded[0m toml v0.9.8
+2025-10-15T19:22:12.9193281Z [1m[32m  Downloaded[0m toml_writer v1.0.4
+2025-10-15T19:22:12.9212979Z [1m[32m  Downloaded[0m trybuild v1.0.112
+2025-10-15T19:22:12.9271920Z [1m[32m  Downloaded[0m toml_parser v1.0.4
+2025-10-15T19:22:12.9298756Z [1m[32m  Downloaded[0m glob v0.3.3
+2025-10-15T19:22:12.9320372Z [1m[32m  Downloaded[0m strsim v0.11.1
+2025-10-15T19:22:12.9337962Z [1m[32m  Downloaded[0m serde_json v1.0.145
+2025-10-15T19:22:12.9418487Z [1m[32m  Downloaded[0m tempfile v3.23.0
+2025-10-15T19:22:12.9448033Z [1m[32m  Downloaded[0m rustversion v1.0.22
+2025-10-15T19:22:12.9476826Z [1m[32m  Downloaded[0m cfg-if v1.0.4
+2025-10-15T19:22:12.9490468Z [1m[32m  Downloaded[0m target-triple v0.1.4
+2025-10-15T19:22:12.9502916Z [1m[32m  Downloaded[0m serde_spanned v1.0.3
+2025-10-15T19:22:12.9514677Z [1m[32m  Downloaded[0m prettyplease v0.2.37
+2025-10-15T19:22:12.9553211Z [1m[32m  Downloaded[0m pkg-config v0.3.32
+2025-10-15T19:22:12.9568979Z [1m[32m  Downloaded[0m memchr v2.7.6
+2025-10-15T19:22:12.9623065Z [1m[32m  Downloaded[0m clap_builder v4.5.49
+2025-10-15T19:22:12.9686185Z [1m[32m  Downloaded[0m bitflags v2.9.4
+2025-10-15T19:22:12.9727126Z [1m[32m  Downloaded[0m once_cell v1.21.3
+2025-10-15T19:22:12.9752663Z [1m[32m  Downloaded[0m dissimilar v1.0.10
+2025-10-15T19:22:12.9770329Z [1m[32m  Downloaded[0m libc v0.2.177
+2025-10-15T19:22:13.0038775Z [1m[32m  Downloaded[0m clap v4.5.49
+2025-10-15T19:22:13.0131821Z [1m[32m  Downloaded[0m rustix v1.1.2
+2025-10-15T19:22:13.0399846Z [1m[32m  Downloaded[0m itoa v1.0.15
+2025-10-15T19:22:13.0414447Z [1m[32m  Downloaded[0m indoc v2.0.6
+2025-10-15T19:22:13.0443360Z [1m[32m  Downloaded[0m fastrand v2.3.0
+2025-10-15T19:22:13.0455878Z [1m[32m  Downloaded[0m ryu v1.0.20
+2025-10-15T19:22:13.0514334Z [1m[32m  Downloaded[0m linux-raw-sys v0.11.0
+2025-10-15T19:22:13.1065273Z [1m[32m  Downloaded[0m winnow v0.7.13
+2025-10-15T19:22:13.1446108Z [1m[32m   Compiling[0m proc-macro2 v1.0.101
+2025-10-15T19:22:13.1446807Z [1m[32m   Compiling[0m unicode-ident v1.0.19
+2025-10-15T19:22:13.1447368Z [1m[32m   Compiling[0m hashbrown v0.16.0
+2025-10-15T19:22:13.1447894Z [1m[32m   Compiling[0m quote v1.0.41
+2025-10-15T19:22:13.1602284Z [1m[32m   Compiling[0m equivalent v1.0.2
+2025-10-15T19:22:13.2086226Z [1m[32m   Compiling[0m find-msvc-tools v0.1.4
+2025-10-15T19:22:13.2325283Z [1m[32m   Compiling[0m shlex v1.3.0
+2025-10-15T19:22:13.3767020Z [1m[32m   Compiling[0m cc v1.2.41
+2025-10-15T19:22:13.5740072Z [1m[32m   Compiling[0m termcolor v1.4.1
+2025-10-15T19:22:13.8795569Z [1m[32m   Compiling[0m indexmap v2.11.4
+2025-10-15T19:22:14.0769669Z [1m[32m   Compiling[0m syn v2.0.106
+2025-10-15T19:22:14.3586173Z [1m[32m   Compiling[0m unicode-width v0.2.2
+2025-10-15T19:22:14.4914744Z [1m[32m   Compiling[0m cxxbridge-flags v1.0.186 (/home/runner/work/cxx/cxx/flags)
+2025-10-15T19:22:14.5213708Z [1m[32m   Compiling[0m codespan-reporting v0.13.0
+2025-10-15T19:22:14.5366893Z [1m[32m   Compiling[0m scratch v1.0.9
+2025-10-15T19:22:14.5399935Z [1m[32m   Compiling[0m cxx-build v1.0.186 (/home/runner/work/cxx/cxx/gen/build)
+2025-10-15T19:22:14.5941483Z [1m[32m   Compiling[0m serde_core v1.0.228
+2025-10-15T19:22:15.0243580Z [1m[32m   Compiling[0m cxx-gen v0.7.186 (/home/runner/work/cxx/cxx/gen/lib)
+2025-10-15T19:22:15.0501451Z [1m[32m   Compiling[0m link-cplusplus v1.0.12
+2025-10-15T19:22:15.1199102Z [1m[32m   Compiling[0m cxx v1.0.186 (/home/runner/work/cxx/cxx)
+2025-10-15T19:22:15.2788004Z [1m[32m   Compiling[0m libc v0.2.177
+2025-10-15T19:22:15.5476378Z [1m[32m   Compiling[0m serde v1.0.228
+2025-10-15T19:22:15.7494690Z [1m[32m   Compiling[0m getrandom v0.3.4
+2025-10-15T19:22:15.9428065Z [1m[32m   Compiling[0m target-triple v0.1.4
+2025-10-15T19:22:16.0933015Z [1m[32m   Compiling[0m rustix v1.1.2
+2025-10-15T19:22:17.7471244Z [1m[32m   Compiling[0m winnow v0.7.13
+2025-10-15T19:22:18.9809177Z [1m[32m   Compiling[0m cxxbridge-macro v1.0.186 (/home/runner/work/cxx/cxx/macro)
+2025-10-15T19:22:19.2672110Z [1m[32m   Compiling[0m serde_derive v1.0.228
+2025-10-15T19:22:20.3397252Z [1m[32m   Compiling[0m serde_json v1.0.145
+2025-10-15T19:22:20.4389468Z [1m[32m   Compiling[0m toml_parser v1.0.4
+2025-10-15T19:22:20.6170349Z [1m[32m   Compiling[0m cxx-test-suite v0.0.0 (/home/runner/work/cxx/cxx/tests/ffi)
+2025-10-15T19:22:20.8935644Z [1m[32m   Compiling[0m toml_datetime v0.7.3
+2025-10-15T19:22:21.1349839Z [1m[32m   Compiling[0m serde_spanned v1.0.3
+2025-10-15T19:22:21.3651453Z [1m[32m   Compiling[0m itoa v1.0.15
+2025-10-15T19:22:21.4395937Z [1m[32m   Compiling[0m ryu v1.0.20
+2025-10-15T19:22:21.5642817Z [1m[32m   Compiling[0m cfg-if v1.0.4
+2025-10-15T19:22:21.5910444Z [1m[32m   Compiling[0m toml_writer v1.0.4
+2025-10-15T19:22:21.7378819Z [1m[32m   Compiling[0m rustversion v1.0.22
+2025-10-15T19:22:21.9421023Z [1m[32m   Compiling[0m bitflags v2.9.4
+2025-10-15T19:22:22.0816632Z [1m[32m   Compiling[0m linux-raw-sys v0.11.0
+2025-10-15T19:22:22.4393884Z [1m[32m   Compiling[0m memchr v2.7.6
+2025-10-15T19:22:22.7988514Z [1m[32m   Compiling[0m toml v0.9.8
+2025-10-15T19:22:24.4641233Z [1m[32m   Compiling[0m once_cell v1.21.3
+2025-10-15T19:22:24.5052133Z [1m[32m   Compiling[0m glob v0.3.3
+2025-10-15T19:22:24.6117115Z [1m[32m   Compiling[0m fastrand v2.3.0
+2025-10-15T19:22:24.7472495Z [1m[32m   Compiling[0m dissimilar v1.0.10
+2025-10-15T19:22:24.7828079Z [1m[32m   Compiling[0m tempfile v3.23.0
+2025-10-15T19:22:24.9114516Z [1m[32m   Compiling[0m trybuild v1.0.112
+2025-10-15T19:22:25.1428999Z [1m[32m   Compiling[0m indoc v2.0.6
+2025-10-15T19:22:25.4253577Z [1m[32m   Compiling[0m prettyplease v0.2.37
+2025-10-15T19:22:25.5277035Z [1m[32m   Compiling[0m anstyle v1.0.13
+2025-10-15T19:22:25.5808991Z [1m[32m   Compiling[0m clap_lex v0.7.6
+2025-10-15T19:22:25.6894027Z [1m[32m   Compiling[0m strsim v0.11.1
+2025-10-15T19:22:26.0250432Z [1m[32m   Compiling[0m clap_builder v4.5.49
+2025-10-15T19:22:26.5154963Z [1m[32m   Compiling[0m demo v0.0.0 (/home/runner/work/cxx/cxx/demo)
+2025-10-15T19:22:26.8012612Z [1m[32m   Compiling[0m pkg-config v0.3.32
+2025-10-15T19:22:27.4633391Z [1m[32m   Compiling[0m cxxbridge-cmd v1.0.186 (/home/runner/work/cxx/cxx/gen/cmd)
+2025-10-15T19:22:28.5864746Z [1m[32m   Compiling[0m clap v4.5.49
+2025-10-15T19:22:33.0910320Z [1m[32m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 20.27s
+2025-10-15T19:22:33.1006318Z [1m[32m     Running[0m unittests src/lib.rs (target/debug/deps/cxx-e69edee60371314d)
+2025-10-15T19:22:33.1019094Z 
+2025-10-15T19:22:33.1019678Z running 0 tests
+2025-10-15T19:22:33.1020080Z 
+2025-10-15T19:22:33.1020367Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.1021059Z 
+2025-10-15T19:22:33.1023105Z [1m[32m     Running[0m tests/compiletest.rs (target/debug/deps/compiletest-38aa1375a0e455ce)
+2025-10-15T19:22:33.1033083Z 
+2025-10-15T19:22:33.1033488Z running 1 test
+2025-10-15T19:22:33.1033829Z test ui ... ignored, requires nightly
+2025-10-15T19:22:33.1034016Z 
+2025-10-15T19:22:33.1034234Z test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.1034532Z 
+2025-10-15T19:22:33.1036750Z [1m[32m     Running[0m tests/cpp_ui_tests.rs (target/debug/deps/cpp_ui_tests-9d1c101161481802)
+2025-10-15T19:22:33.1047311Z 
+2025-10-15T19:22:33.1047463Z running 4 tests
+2025-10-15T19:22:33.1283808Z test cpp_compile::smoke_test::test_failure ... ok
+2025-10-15T19:22:33.1284299Z test cpp_compile::smoke_test::test_unexpected_extra_error - should panic ... ok
+2025-10-15T19:22:33.2320106Z test cpp_compile::smoke_test::test_success ... ok
+2025-10-15T19:22:33.6854273Z test test_unique_ptr_of_incomplete_foward_declared_pointee ... ok
+2025-10-15T19:22:33.6854852Z 
+2025-10-15T19:22:33.6855371Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.58s
+2025-10-15T19:22:33.6856052Z 
+2025-10-15T19:22:33.6858905Z [1m[32m     Running[0m tests/cxx_gen.rs (target/debug/deps/cxx_gen-e23ac737dd1abb47)
+2025-10-15T19:22:33.6871643Z 
+2025-10-15T19:22:33.6871874Z running 3 tests
+2025-10-15T19:22:33.6881157Z test test_extern_rust_method_on_c_type ... ok
+2025-10-15T19:22:33.6891804Z test test_impl_annotation ... ok
+2025-10-15T19:22:33.6892236Z test test_extern_c_function ... ok
+2025-10-15T19:22:33.6892507Z 
+2025-10-15T19:22:33.6892868Z test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.6893387Z 
+2025-10-15T19:22:33.6896151Z [1m[32m     Running[0m tests/cxx_string.rs (target/debug/deps/cxx_string-2595537777ad3a4a)
+2025-10-15T19:22:33.6912182Z 
+2025-10-15T19:22:33.6912308Z running 5 tests
+2025-10-15T19:22:33.6915509Z test test_async_cxx_string ... ok
+2025-10-15T19:22:33.6916060Z test test_debug ... ok
+2025-10-15T19:22:33.6916429Z test test_display ... ok
+2025-10-15T19:22:33.6916788Z test test_fmt_write ... ok
+2025-10-15T19:22:33.6917119Z test test_io_write ... ok
+2025-10-15T19:22:33.6917337Z 
+2025-10-15T19:22:33.6917575Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.6917876Z 
+2025-10-15T19:22:33.6920953Z [1m[32m     Running[0m tests/cxx_vector.rs (target/debug/deps/cxx_vector-8e1ef79a592443e0)
+2025-10-15T19:22:33.6934980Z 
+2025-10-15T19:22:33.6935094Z running 1 test
+2025-10-15T19:22:33.6937067Z test test_cxx_vector_new ... ok
+2025-10-15T19:22:33.6937298Z 
+2025-10-15T19:22:33.6937628Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.6937928Z 
+2025-10-15T19:22:33.6941140Z [1m[32m     Running[0m tests/test.rs (target/debug/deps/test-69e4f634873b98c9)
+2025-10-15T19:22:33.6955188Z 
+2025-10-15T19:22:33.6955311Z running 24 tests
+2025-10-15T19:22:33.6960200Z test test_c_ns_method_calls ... ok
+2025-10-15T19:22:33.6960661Z test test_c_method_calls ... ok
+2025-10-15T19:22:33.6961483Z test test_c_callback ... ok
+2025-10-15T19:22:33.6962020Z test test_c_call_r ... ok
+2025-10-15T19:22:33.6962350Z test test_c_return ... ok
+2025-10-15T19:22:33.6962722Z test test_debug ... ok
+2025-10-15T19:22:33.6963224Z test test_enum_default ... ok
+2025-10-15T19:22:33.6963691Z test test_c_take ... ok
+2025-10-15T19:22:33.6964018Z test test_c_try_return ... ok
+2025-10-15T19:22:33.6964521Z test test_enum_representations ... ok
+2025-10-15T19:22:33.6965505Z test test_extern_opaque ... ok
+2025-10-15T19:22:33.6965861Z test test_raw_ptr ... ok
+2025-10-15T19:22:33.6966358Z test test_rust_name_attribute ... ok
+2025-10-15T19:22:33.6966751Z test test_extern_trivial ... ok
+2025-10-15T19:22:33.6967206Z test test_shared_ptr_from_raw ... ok
+2025-10-15T19:22:33.6967693Z test test_shared_ptr_from_raw_private - should panic ... ok
+2025-10-15T19:22:33.6968430Z test test_shared_ptr_from_raw_undefined - should panic ... ok
+2025-10-15T19:22:33.6969270Z test test_shared_ptr_weak_ptr ... ok
+2025-10-15T19:22:33.6969910Z test test_struct_repr_align ... ok
+2025-10-15T19:22:33.6970339Z test test_unique_to_shared_ptr_cpp_type ... ok
+2025-10-15T19:22:33.6971255Z test test_unique_to_shared_ptr_null ... ok
+2025-10-15T19:22:33.6971707Z test test_unique_to_shared_ptr_string ... ok
+2025-10-15T19:22:33.6972122Z test test_unwind_safe ... ok
+2025-10-15T19:22:33.6972555Z test test_vector_reserve_unmovable - should panic ... ok
+2025-10-15T19:22:33.6972915Z 
+2025-10-15T19:22:33.6973270Z test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.6973771Z 
+2025-10-15T19:22:33.6974677Z [1m[32m     Running[0m tests/unique_ptr.rs (target/debug/deps/unique_ptr-748a7e54a6883e3d)
+2025-10-15T19:22:33.6988331Z 
+2025-10-15T19:22:33.6988485Z running 1 test
+2025-10-15T19:22:33.6991482Z test test_deref_null - should panic ... ok
+2025-10-15T19:22:33.6991838Z 
+2025-10-15T19:22:33.6992207Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.6992675Z 
+2025-10-15T19:22:33.6994364Z [1m[32m     Running[0m unittests src/lib.rs (target/debug/deps/cxx_build-b0948a34e8234e38)
+2025-10-15T19:22:33.7003410Z 
+2025-10-15T19:22:33.7003553Z running 3 tests
+2025-10-15T19:22:33.7007246Z test out::tests::test_relativize_symlink_unix ... ok
+2025-10-15T19:22:33.7008789Z test gen::nested::tests::test_ns_entries_sort ... ok
+2025-10-15T19:22:33.7009584Z test gen::builtin::tests::test_write_builtin ... ok
+2025-10-15T19:22:33.7009944Z 
+2025-10-15T19:22:33.7010293Z test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.7011052Z 
+2025-10-15T19:22:33.7012970Z [1m[32m     Running[0m unittests src/lib.rs (target/debug/deps/cxx_gen-e56381a588bd3aa9)
+2025-10-15T19:22:33.7022487Z 
+2025-10-15T19:22:33.7022845Z running 2 tests
+2025-10-15T19:22:33.7027939Z test gen::builtin::tests::test_write_builtin ... ok
+2025-10-15T19:22:33.7028635Z test gen::nested::tests::test_ns_entries_sort ... ok
+2025-10-15T19:22:33.7029016Z 
+2025-10-15T19:22:33.7029390Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.7029926Z 
+2025-10-15T19:22:33.7031605Z [1m[32m     Running[0m tests/test.rs (target/debug/deps/test-fe4dcd4caf7b7290)
+2025-10-15T19:22:33.7041832Z 
+2025-10-15T19:22:33.7042081Z running 2 tests
+2025-10-15T19:22:33.7045355Z test test_negative ... ok
+2025-10-15T19:22:33.7049177Z test test_positive ... ok
+2025-10-15T19:22:33.7049437Z 
+2025-10-15T19:22:33.7049808Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.7050333Z 
+2025-10-15T19:22:33.7053324Z [1m[32m     Running[0m unittests src/main.rs (target/debug/deps/cxxbridge-637140c84a9116d8)
+2025-10-15T19:22:33.7063182Z 
+2025-10-15T19:22:33.7063473Z running 4 tests
+2025-10-15T19:22:33.7069308Z test gen::nested::tests::test_ns_entries_sort ... ok
+2025-10-15T19:22:33.7070316Z test gen::builtin::tests::test_write_builtin ... ok
+2025-10-15T19:22:33.7072363Z test app::test::test_cli ... ok
+2025-10-15T19:22:33.7075854Z test app::test::test_help ... ok
+2025-10-15T19:22:33.7076157Z 
+2025-10-15T19:22:33.7076544Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.7077098Z 
+2025-10-15T19:22:33.7077919Z [1m[32m     Running[0m unittests src/lib.rs (target/debug/deps/cxxbridge_flags-51dfb8fa78977adc)
+2025-10-15T19:22:33.7086203Z 
+2025-10-15T19:22:33.7086397Z running 0 tests
+2025-10-15T19:22:33.7086620Z 
+2025-10-15T19:22:33.7086990Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.7087485Z 
+2025-10-15T19:22:33.7089268Z [1m[32m     Running[0m unittests src/lib.rs (target/debug/deps/cxxbridge_macro-563d8decb935ab7a)
+2025-10-15T19:22:33.8139600Z 
+2025-10-15T19:22:33.8139910Z running 3 tests
+2025-10-15T19:22:33.8163371Z test tests::test_vec_string ... ok
+2025-10-15T19:22:33.8192866Z test tests::test_unique_ptr_lifetimes_from_explicit_impl ... ok
+2025-10-15T19:22:33.8198073Z test tests::test_unique_ptr_with_elided_lifetime_implicit_impl ... ok
+2025-10-15T19:22:33.8198537Z 
+2025-10-15T19:22:33.8198897Z test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+2025-10-15T19:22:33.8199310Z 
+2025-10-15T19:22:33.8204052Z [1m[32m     Running[0m unittests src/main.rs (target/debug/deps/demo-877f91143460a329)
+2025-10-15T19:22:33.8219804Z 
+2025-10-15T19:22:33.8219964Z running 0 tests
+2025-10-15T19:22:33.8220408Z 
+2025-10-15T19:22:33.8220935Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:33.8221255Z 
+2025-10-15T19:22:33.8223630Z [1m[32m   Doc-tests[0m cxx
+2025-10-15T19:22:35.1873332Z 
+2025-10-15T19:22:35.1873739Z running 11 tests
+2025-10-15T19:22:35.2391777Z test src/extern_type.rs - extern_type::ExternType (line 31) - compile ... ok
+2025-10-15T19:22:35.2741016Z test src/extern_type.rs - extern_type::ExternType (line 68) - compile ... ok
+2025-10-15T19:22:35.2978949Z test src/cxx_vector.rs - cxx_vector::VectorElement (line 388) ... ok
+2025-10-15T19:22:35.3015304Z test src/cxx_string.rs - string::let_cxx_string (line 56) ... ok
+2025-10-15T19:22:35.3070331Z test src/cxx_string.rs - string::let_cxx_string (line 71) ... ok
+2025-10-15T19:22:35.3382115Z test src/lib.rs - (line 248) - compile ... ok
+2025-10-15T19:22:35.3480449Z test src/lib.rs - (line 78) - compile ... ok
+2025-10-15T19:22:35.3809509Z test src/extern_type.rs - extern_type::ExternType::Id (line 106) ... ok
+2025-10-15T19:22:35.4004321Z test src/extern_type.rs - extern_type::ExternType::Kind (line 131) ... ok
+2025-10-15T19:22:35.4287273Z test src/shared_ptr.rs - shared_ptr::SharedPtrTarget (line 361) ... ok
+2025-10-15T19:22:35.4370494Z test src/unique_ptr.rs - unique_ptr::UniquePtrTarget (line 366) ... ok
+2025-10-15T19:22:35.4371147Z 
+2025-10-15T19:22:35.4371490Z test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s
+2025-10-15T19:22:35.4371995Z 
+2025-10-15T19:22:35.4401339Z [1m[32m   Doc-tests[0m cxx_build
+2025-10-15T19:22:35.5393139Z 
+2025-10-15T19:22:35.5393593Z running 11 tests
+2025-10-15T19:22:35.5713049Z test gen/build/src/cfg.rs - cfg::CFG (line 192) - compile ... ok
+2025-10-15T19:22:35.5715086Z test gen/build/src/cfg.rs - cfg::CFG (line 226) - compile ... ok
+2025-10-15T19:22:35.5732661Z test gen/build/src/cfg.rs - cfg::CFG (line 127) - compile ... ok
+2025-10-15T19:22:35.5760224Z test gen/build/src/cfg.rs - cfg::CFG (line 104) - compile ... ok
+2025-10-15T19:22:35.6028540Z test gen/build/src/cfg.rs - cfg::CFG (line 256) - compile ... ok
+2025-10-15T19:22:35.6066204Z test gen/build/src/cfg.rs - cfg::CFG (line 52) - compile ... ok
+2025-10-15T19:22:35.6399375Z test gen/build/src/lib.rs - (line 13) - compile ... ok
+2025-10-15T19:22:35.6545634Z test gen/build/src/cfg.rs - cfg::CFG (line 37) ... ok
+2025-10-15T19:22:35.6712668Z test gen/build/src/lib.rs - bridges (line 126) - compile ... ok
+2025-10-15T19:22:35.6820401Z test gen/build/src/cfg.rs - cfg::CFG (line 268) ... ok
+2025-10-15T19:22:35.7332533Z test gen/build/src/gen/mod.rs - gen::Opt (line 39) ... ok
+2025-10-15T19:22:35.7332896Z 
+2025-10-15T19:22:35.7333128Z test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+2025-10-15T19:22:35.7362570Z [1m[32m   Doc-tests[0m cxx_gen
+2025-10-15T19:22:35.7362846Z 
+2025-10-15T19:22:35.8276854Z 
+2025-10-15T19:22:35.8277326Z running 1 test
+2025-10-15T19:22:35.9362543Z test gen/lib/src/gen/mod.rs - gen::Opt (line 39) ... ok
+2025-10-15T19:22:35.9362923Z 
+2025-10-15T19:22:35.9363266Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+2025-10-15T19:22:35.9363766Z 
+2025-10-15T19:22:35.9391723Z [1m[32m   Doc-tests[0m cxxbridge_flags
+2025-10-15T19:22:35.9540240Z 
+2025-10-15T19:22:35.9540644Z running 0 tests
+2025-10-15T19:22:35.9541071Z 
+2025-10-15T19:22:35.9541451Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-15T19:22:35.9542144Z 
+2025-10-15T19:22:35.9567777Z [1m[32m   Doc-tests[0m cxxbridge_macro
+2025-10-15T19:22:36.2412583Z 
+2025-10-15T19:22:36.2413119Z running 1 test
+2025-10-15T19:22:36.3095639Z test macro/src/lib.rs - bridge (line 58) ... ok
+2025-10-15T19:22:36.3096011Z 
+2025-10-15T19:22:36.3096374Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+2025-10-15T19:22:36.3096905Z 
+2025-10-15T19:22:36.3181728Z ##[group]Run cargo check --no-default-features --features alloc
+2025-10-15T19:22:36.3182188Z [36;1mcargo check --no-default-features --features alloc[0m
+2025-10-15T19:22:36.3212766Z shell: /usr/bin/bash -e {0}
+2025-10-15T19:22:36.3212980Z env:
+2025-10-15T19:22:36.3213141Z   CXX: g++
+2025-10-15T19:22:36.3213323Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:22:36.3213666Z   RUSTFLAGS: --cfg compile_error_if_std --cfg deny_warnings -Dwarnings
+2025-10-15T19:22:36.3214009Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:22:36.3214236Z   CARGO_INCREMENTAL: 0
+2025-10-15T19:22:36.3214429Z   CARGO_TERM_COLOR: always
+2025-10-15T19:22:36.3214616Z ##[endgroup]
+2025-10-15T19:22:36.4111824Z [1m[32m   Compiling[0m shlex v1.3.0
+2025-10-15T19:22:36.4112514Z [1m[32m   Compiling[0m find-msvc-tools v0.1.4
+2025-10-15T19:22:36.4113112Z [1m[32m   Compiling[0m proc-macro2 v1.0.101
+2025-10-15T19:22:36.4113680Z [1m[32m   Compiling[0m unicode-ident v1.0.19
+2025-10-15T19:22:36.4691472Z [1m[32m   Compiling[0m quote v1.0.41
+2025-10-15T19:22:36.5276847Z [1m[32m   Compiling[0m cc v1.2.41
+2025-10-15T19:22:36.5788879Z [1m[32m   Compiling[0m equivalent v1.0.2
+2025-10-15T19:22:36.6102965Z [1m[32m   Compiling[0m cxxbridge-flags v1.0.186 (/home/runner/work/cxx/cxx/flags)
+2025-10-15T19:22:36.6234210Z [1m[32m   Compiling[0m hashbrown v0.16.0
+2025-10-15T19:22:36.6369245Z [1m[32m   Compiling[0m cxxbridge-macro v1.0.186 (/home/runner/work/cxx/cxx/macro)
+2025-10-15T19:22:36.7364352Z [1m[32m    Checking[0m foldhash v0.2.0
+2025-10-15T19:22:37.1221500Z [1m[32m   Compiling[0m syn v2.0.106
+2025-10-15T19:22:37.1881813Z [1m[32m   Compiling[0m indexmap v2.11.4
+2025-10-15T19:22:37.5355785Z [1m[32m   Compiling[0m link-cplusplus v1.0.12
+2025-10-15T19:22:37.5360085Z [1m[32m   Compiling[0m cxx v1.0.186 (/home/runner/work/cxx/cxx)
+2025-10-15T19:22:41.1219640Z [1m[32m    Finished[0m `dev` profile [unoptimized + debuginfo] target(s) in 4.75s
+2025-10-15T19:22:41.1291649Z ##[group]Run cargo check --no-default-features
+2025-10-15T19:22:41.1292194Z [36;1mcargo check --no-default-features[0m
+2025-10-15T19:22:41.1323647Z shell: /usr/bin/bash -e {0}
+2025-10-15T19:22:41.1323865Z env:
+2025-10-15T19:22:41.1324025Z   CXX: g++
+2025-10-15T19:22:41.1324211Z   CXXFLAGS:  -Werror -Wall -Wpedantic
+2025-10-15T19:22:41.1324640Z   RUSTFLAGS: --cfg compile_error_if_alloc --cfg cxx_experimental_no_alloc --cfg deny_warnings -Dwarnings
+2025-10-15T19:22:41.1325080Z   CARGO_HOME: /home/runner/.cargo
+2025-10-15T19:22:41.1325300Z   CARGO_INCREMENTAL: 0
+2025-10-15T19:22:41.1325495Z   CARGO_TERM_COLOR: always
+2025-10-15T19:22:41.1325685Z ##[endgroup]
+2025-10-15T19:22:41.2291670Z [1m[32m   Compiling[0m shlex v1.3.0
+2025-10-15T19:22:41.2292492Z [1m[32m   Compiling[0m find-msvc-tools v0.1.4
+2025-10-15T19:22:41.2293524Z [1m[32m   Compiling[0m proc-macro2 v1.0.101
+2025-10-15T19:22:41.2294357Z [1m[32m   Compiling[0m quote v1.0.41
+2025-10-15T19:22:41.3420117Z [1m[32m   Compiling[0m cc v1.2.41
+2025-10-15T19:22:41.3708807Z [1m[32m   Compiling[0m unicode-ident v1.0.19
+2025-10-15T19:22:41.4117906Z [1m[32m   Compiling[0m equivalent v1.0.2
+2025-10-15T19:22:41.4434165Z [1m[32m   Compiling[0m cxxbridge-flags v1.0.186 (/home/runner/work/cxx/cxx/flags)
+2025-10-15T19:22:41.4452801Z [1m[32m   Compiling[0m cxxbridge-macro v1.0.186 (/home/runner/work/cxx/cxx/macro)
+2025-10-15T19:22:41.4734606Z [1m[32m   Compiling[0m hashbrown v0.16.0
+2025-10-15T19:22:41.5572941Z [1m[32m    Checking[0m foldhash v0.2.0
+2025-10-15T19:22:41.9913540Z [1m[32m   Compiling[0m indexmap v2.11.4
+2025-10-15T19:22:42.0980313Z [1m[32m   Compiling[0m syn v2.0.106
+2025-10-15T19:22:42.3548124Z [1m[32m   Compiling[0m link-cplusplus v1.0.12
+2025-10-15T19:22:42.3551324Z [1m[32m   Compiling[0m cxx v1.0.186 (/home/runner/work/cxx/cxx)
+2025-10-15T19:22:45.9485818Z [1m[32m    Finished[0m `dev` profile [unoptimized + debuginfo] target(s) in 4.76s
+2025-10-15T19:22:45.9625129Z Post job cleanup.
+2025-10-15T19:22:46.0377375Z [command]/usr/bin/git version
+2025-10-15T19:22:46.0413327Z git version 2.51.0
+2025-10-15T19:22:46.0449072Z Temporarily overriding HOME='/home/runner/work/_temp/804dbdf7-1722-47f9-b34b-2f9517609af8' before making global git config changes
+2025-10-15T19:22:46.0450339Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-15T19:22:46.0454996Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cxx/cxx
+2025-10-15T19:22:46.0487674Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-15T19:22:46.0520094Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-15T19:22:46.0739040Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-15T19:22:46.0760141Z http.https://github.com/.extraheader
+2025-10-15T19:22:46.0769660Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-15T19:22:46.0799007Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-15T19:22:46.1117386Z Cleaning up orphan processes

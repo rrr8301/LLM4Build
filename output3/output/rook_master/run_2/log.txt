@@ -1,0 +1,468 @@
+go: downloading go1.24.3 (linux/amd64)
+++ readlink -f -- tests/scripts/../..
++ REPO_DIR=/app
++ NETWORK_ERROR='connection reset by peer'
++ SERVICE_UNAVAILABLE_ERROR='Service Unavailable'
++ INTERNAL_ERROR=INTERNAL_ERROR
++ INTERNAL_SERVER_ERROR='500 Internal Server Error'
++ FUNCTION=collect_udev_logs_in_background
++ shift
++ collect_udev_logs_in_background
++ local log_dir=/home/runner/work/rook/rook/tests/integration/_output/tests
++ mkdir -p /home/runner/work/rook/rook/tests/integration/_output/tests
++ udevadm monitor --property
++ udevadm monitor --kernel
++ udevadm monitor --udev
+++ readlink -f -- tests/scripts/../..
++ REPO_DIR=/app
++ NETWORK_ERROR='connection reset by peer'
++ SERVICE_UNAVAILABLE_ERROR='Service Unavailable'
++ INTERNAL_ERROR=INTERNAL_ERROR
++ INTERNAL_SERVER_ERROR='500 Internal Server Error'
++ FUNCTION=find_extra_block_dev
++ shift
++ find_extra_block_dev
+++ sudo lsblk
++ echo 'NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0     4K  1 loop
+loop1         7:1    0 104.2M  1 loop
+loop3         7:3    0  73.9M  1 loop
+loop4         7:4    0 104.2M  1 loop
+loop5         7:5    0   7.7M  1 loop
+loop6         7:6    0  51.9M  1 loop
+loop7         7:7    0 218.4M  1 loop
+loop8         7:8    0 218.4M  1 loop
+loop9         7:9    0  12.2M  1 loop
+loop10        7:10   0 349.7M  1 loop
+loop11        7:11   0 349.7M  1 loop
+loop12        7:12   0  91.7M  1 loop
+loop13        7:13   0  51.9M  1 loop
+loop14        7:14   0  63.8M  1 loop
+loop15        7:15   0  91.9M  1 loop
+loop16        7:16   0  91.9M  1 loop
+loop17        7:17   0  63.8M  1 loop
+loop18        7:18   0  50.8M  1 loop
+loop19        7:19   0 516.2M  1 loop
+loop20        7:20   0  49.3M  1 loop
+loop21        7:21   0   516M  1 loop
+loop22        7:22   0  12.9M  1 loop
+loop23        7:23   0  55.5M  1 loop
+loop24        7:24   0  73.9M  1 loop
+loop25        7:25   0   240K  1 loop
+loop26        7:26   0  55.5M  1 loop
+sda           8:0    0   1.8T  0 disk
+sdb           8:16   0   1.8T  0 disk
+sdc           8:32   0   3.6T  0 disk
+`-sdc1        8:33   0   3.6T  0 part /etc/hosts
+                                      /etc/hostname
+                                      /etc/resolv.conf
+nvme0n1     259:0    0 476.9G  0 disk
+|-nvme0n1p1 259:1    0   512M  0 part
+|-nvme0n1p2 259:2    0 475.5G  0 part
+`-nvme0n1p3 259:3    0   976M  0 part [SWAP]'
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0     4K  1 loop
+loop1         7:1    0 104.2M  1 loop
+loop3         7:3    0  73.9M  1 loop
+loop4         7:4    0 104.2M  1 loop
+loop5         7:5    0   7.7M  1 loop
+loop6         7:6    0  51.9M  1 loop
+loop7         7:7    0 218.4M  1 loop
+loop8         7:8    0 218.4M  1 loop
+loop9         7:9    0  12.2M  1 loop
+loop10        7:10   0 349.7M  1 loop
+loop11        7:11   0 349.7M  1 loop
+loop12        7:12   0  91.7M  1 loop
+loop13        7:13   0  51.9M  1 loop
+loop14        7:14   0  63.8M  1 loop
+loop15        7:15   0  91.9M  1 loop
+loop16        7:16   0  91.9M  1 loop
+loop17        7:17   0  63.8M  1 loop
+loop18        7:18   0  50.8M  1 loop
+loop19        7:19   0 516.2M  1 loop
+loop20        7:20   0  49.3M  1 loop
+loop21        7:21   0   516M  1 loop
+loop22        7:22   0  12.9M  1 loop
+loop23        7:23   0  55.5M  1 loop
+loop24        7:24   0  73.9M  1 loop
+loop25        7:25   0   240K  1 loop
+loop26        7:26   0  55.5M  1 loop
+sda           8:0    0   1.8T  0 disk
+sdb           8:16   0   1.8T  0 disk
+sdc           8:32   0   3.6T  0 disk
+`-sdc1        8:33   0   3.6T  0 part /etc/hosts
+                                      /etc/hostname
+                                      /etc/resolv.conf
+nvme0n1     259:0    0 476.9G  0 disk
+|-nvme0n1p1 259:1    0   512M  0 part
+|-nvme0n1p2 259:2    0 475.5G  0 part
+`-nvme0n1p3 259:3    0   976M  0 part [SWAP]
+++ sudo lsblk --noheading --list --output MOUNTPOINT,PKNAME
+++ grep boot
+++ awk '{print $2}'
++ boot_dev=
+=== RUN   TestCephSmokeSuite
+2025-10-12 13:38:10.917141 I | installer: test environment variable (default) "TEST_STORAGE_CLASS"=""
+2025-10-12 13:38:10.917226 I | installer: test environment variable (default) "TEST_STORAGE_CLASS"=""
+    ceph_base_deploy_test.go:95:
+        	Error Trace:	/app/tests/integration/ceph_base_deploy_test.go:95
+        	            				/app/tests/integration/ceph_smoke_test.go:101
+        	            				/root/go/pkg/mod/github.com/stretchr/testify@v1.11.1/suite/suite.go:211
+        	            				/app/tests/integration/ceph_smoke_test.go:68
+        	Error:      	Received unexpected error:
+        	            	failed to get kube client. invalid configuration: no configuration has been provided, try setting KUBERNETES_MASTER environment variable
+        	Test:       	TestCephSmokeSuite
+--- FAIL: TestCephSmokeSuite (0.00s)
+FAIL
+FAIL	github.com/rook/rook/tests/integration	0.058s
+FAIL
++ : smoke-ns
++ : smoke-ns-system
++ : ''
++ : /app/tests/integration/_output/tests/
++ LOG_DIR=/app/tests/integration/_output/tests
++ mkdir -p /app/tests/integration/_output/tests
++ CEPH_CMD='kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10'
++ kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10 -s
+E1012 13:38:11.499884   32074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.500543   32074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.502287   32074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.503110   32074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10 osd dump
+E1012 13:38:11.575855   32093 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.576555   32093 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.578595   32093 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.579239   32093 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10 report
+E1012 13:38:11.657128   32109 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.657979   32109 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.659415   32109 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.659691   32109 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10 auth ls
+E1012 13:38:11.724935   32127 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.725806   32127 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.727720   32127 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.728559   32127 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ NAMESPACES=("$CLUSTER_NAMESPACE")
++ [[ smoke-ns-system != \s\m\o\k\e\-\n\s ]]
++ NAMESPACES+=("$OPERATOR_NAMESPACE")
++ [[ -n '' ]]
++ for NAMESPACE in "${NAMESPACES[@]}"
++ NS_DIR=/app/tests/integration/_output/tests/namespace-smoke-ns
++ mkdir /app/tests/integration/_output/tests/namespace-smoke-ns
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get pod -o wide
+E1012 13:38:11.808365   32145 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.809359   32145 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.811193   32145 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.811983   32145 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.813507   32145 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns get pod -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:11.884914   32162 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.885793   32162 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.894958   32162 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.895677   32162 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.897245   32162 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get deployment -o wide
+E1012 13:38:11.957513   32184 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.958397   32184 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.959717   32184 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.960365   32184 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:11.961815   32184 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns get deployment -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:12.028410   32203 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.029216   32203 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.031067   32203 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.031756   32203 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.033760   32203 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get job -o wide
+E1012 13:38:12.091558   32219 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.092429   32219 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.094514   32219 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.095201   32219 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.096729   32219 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns get job -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:12.166654   32235 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.167266   32235 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.169220   32235 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.169914   32235 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.171913   32235 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get daemonset -o wide
+E1012 13:38:12.240159   32252 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.241000   32252 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.243034   32252 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.243703   32252 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.245705   32252 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns get daemonset -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:12.312408   32271 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.313329   32271 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.315311   32271 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.316165   32271 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.317740   32271 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get cm -o wide
+E1012 13:38:12.389292   32289 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.390130   32289 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.392302   32289 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.393015   32289 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.395004   32289 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns get cm -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:12.466296   32306 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.466910   32306 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.468293   32306 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.468554   32306 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.470472   32306 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get pvc -o wide
+E1012 13:38:12.542137   32323 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.543072   32323 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.544996   32323 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.545673   32323 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.547584   32323 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns get pvc -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:12.622232   32339 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.623312   32339 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.624234   32339 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.626197   32339 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.626860   32339 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get sc -o wide
+E1012 13:38:12.701737   32355 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.702691   32355 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.704899   32355 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.705624   32355 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.708771   32355 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns get sc -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:12.782602   32376 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.782975   32376 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.784823   32376 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.785436   32376 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.787467   32376 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns get secrets -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:12.861688   32393 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.862565   32393 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.864733   32393 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.865418   32393 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.867370   32393 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl get crds -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:12.943164   32409 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.944019   32409 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.946242   32409 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.946924   32409 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:12.948993   32409 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ kubectl get all -n smoke-ns -o wide
+E1012 13:38:13.024665   32426 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.025625   32426 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.027654   32426 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.028414   32426 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.030299   32426 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ kubectl get all -n smoke-ns -o yaml
+E1012 13:38:13.104013   32443 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.104689   32443 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.106060   32443 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.106685   32443 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.108793   32443 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for NAMESPACE in "${NAMESPACES[@]}"
++ NS_DIR=/app/tests/integration/_output/tests/namespace-smoke-ns-system
++ mkdir /app/tests/integration/_output/tests/namespace-smoke-ns-system
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get pod -o wide
+E1012 13:38:13.178842   32460 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.179736   32460 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.181843   32460 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.182534   32460 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.184703   32460 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns-system get pod -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:13.259603   32477 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.260416   32477 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.261726   32477 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.262493   32477 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.264127   32477 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get deployment -o wide
+E1012 13:38:13.341076   32494 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.342013   32494 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.345485   32494 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.346315   32494 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.348447   32494 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns-system get deployment -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:13.421882   32510 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.423662   32510 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.424623   32510 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.426029   32510 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.426693   32510 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get job -o wide
+E1012 13:38:13.501843   32526 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.502839   32526 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.504957   32526 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.505687   32526 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.507522   32526 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns-system get job -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:13.579874   32542 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.581010   32542 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.581803   32542 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.583979   32542 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.584688   32542 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get daemonset -o wide
+E1012 13:38:13.661451   32558 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.662317   32558 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.663576   32558 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.664528   32558 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.666604   32558 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns-system get daemonset -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:13.741165   32574 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.741868   32574 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.743839   32574 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.744164   32574 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.746169   32574 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get cm -o wide
+E1012 13:38:13.820619   32590 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.821443   32590 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.822494   32590 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.823093   32590 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.825100   32590 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns-system get cm -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:13.901047   32608 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.901740   32608 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.903430   32608 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.904333   32608 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.906214   32608 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get pvc -o wide
+E1012 13:38:13.981239   32624 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.981607   32624 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.983565   32624 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.984407   32624 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:13.986643   32624 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns-system get pvc -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:14.060672   32640 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.061073   32640 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.063323   32640 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.064136   32640 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.066083   32640 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get sc -o wide
+E1012 13:38:14.139375   32657 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.140118   32657 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.141954   32657 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.142775   32657 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.146627   32657 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns-system get sc -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:14.221540   32675 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.222185   32675 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.224270   32675 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.225025   32675 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.227276   32675 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl -n smoke-ns-system get secrets -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:14.299443   32691 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.300304   32691 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.302248   32691 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.303039   32691 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.305073   32691 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ kubectl get crds -o 'jsonpath={.items[*].metadata.name}'
+E1012 13:38:14.380516   32707 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.381255   32707 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.383354   32707 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.384189   32707 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.385967   32707 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ kubectl get all -n smoke-ns-system -o wide
+E1012 13:38:14.457644   32724 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.458496   32724 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.462473   32724 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.463217   32724 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.465182   32724 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ kubectl get all -n smoke-ns-system -o yaml
+E1012 13:38:14.538889   32742 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.539412   32742 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.541428   32742 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.542144   32742 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1012 13:38:14.544237   32742 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
++ sudo lsblk
++ sudo tee -a /app/tests/integration/_output/tests/lsblk.txt
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0     4K  1 loop
+loop1         7:1    0 104.2M  1 loop
+loop3         7:3    0  73.9M  1 loop
+loop4         7:4    0 104.2M  1 loop
+loop5         7:5    0   7.7M  1 loop
+loop6         7:6    0  51.9M  1 loop
+loop7         7:7    0 218.4M  1 loop
+loop8         7:8    0 218.4M  1 loop
+loop9         7:9    0  12.2M  1 loop
+loop10        7:10   0 349.7M  1 loop
+loop11        7:11   0 349.7M  1 loop
+loop12        7:12   0  91.7M  1 loop
+loop13        7:13   0  51.9M  1 loop
+loop14        7:14   0  63.8M  1 loop
+loop15        7:15   0  91.9M  1 loop
+loop16        7:16   0  91.9M  1 loop
+loop17        7:17   0  63.8M  1 loop
+loop18        7:18   0  50.8M  1 loop
+loop19        7:19   0 516.2M  1 loop
+loop20        7:20   0  49.3M  1 loop
+loop21        7:21   0   516M  1 loop
+loop22        7:22   0  12.9M  1 loop
+loop23        7:23   0  55.5M  1 loop
+loop24        7:24   0  73.9M  1 loop
+loop25        7:25   0   240K  1 loop
+loop26        7:26   0  55.5M  1 loop
+sda           8:0    0   1.8T  0 disk
+sdb           8:16   0   1.8T  0 disk
+sdc           8:32   0   3.6T  0 disk
+`-sdc1        8:33   0   3.6T  0 part /etc/hosts
+                                      /etc/hostname
+                                      /etc/resolv.conf
+nvme0n1     259:0    0 476.9G  0 disk
+|-nvme0n1p1 259:1    0   512M  0 part
+|-nvme0n1p2 259:2    0 475.5G  0 part
+`-nvme0n1p3 259:3    0   976M  0 part [SWAP]
++ journalctl -o short-precise --dmesg
+No journal files were found.
++ journalctl
+No journal files were found.

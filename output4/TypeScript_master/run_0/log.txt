@@ -1,0 +1,40 @@
+
+> typescript@6.0.0 test
+> hereby runtests-parallel --light=false --no-lint --bundle=true
+
+Using /usr/src/app/Herebyfile.mjs to run runtests-parallel
+Starting lib
+Starting generate-diagnostics
+> /usr/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 94ms
+Finished generate-diagnostics in 146ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished bundle-tests in 571ms
+Finished build-tests in 28s
+Finished build-services in 28s
+Starting dts-services
+> /usr/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 3.7s
+Starting dts-lssl
+Finished dts-lssl in 2ms
+Starting do-runtests-parallel
+Running tests with config: {"light":false,"workerCount":63,"taskConfigsFolder":"/tmp/ts-tests1","noColor":false,"timeout":40000,"keepFailed":false}
+> /usr/bin/node ./built/local/run.js
+Discovered 326 unittest suites.
+Discovering runner-based tests...
+Discovered 19612 test files in 229ms.
+Starting to run tests using 63 threads...
+Batching initial test lists...
+Suboptimal packing detected: no tests remain to be stolen. Reduce packing fraction from 0.9 to fix.
+Batched into 63 groups with approximate total file sizes of 319009 bytes in each group. (100.0% of total tests batched)
+
+
+
+  98975 passing (2m)
+
+Finished do-runtests-parallel in 2m 8s
+Completed runtests-parallel in 2m 39.9s

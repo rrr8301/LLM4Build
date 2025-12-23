@@ -1,0 +1,59 @@
+
+> typescript@6.0.0 test
+> hereby runtests-parallel --light=false --no-lint --bundle=true
+
+Using /usr/src/app/Herebyfile.mjs to run runtests-parallel
+Starting lib
+Starting generate-diagnostics
+> /usr/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 117ms
+Finished generate-diagnostics in 154ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished bundle-tests in 699ms
+Finished build-tests in 40.4s
+Finished build-services in 40.4s
+Starting dts-services
+> /usr/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 4.8s
+Starting dts-lssl
+Finished dts-lssl in 1ms
+Starting do-runtests-parallel
+Running tests with config: {"light":false,"workerCount":63,"taskConfigsFolder":"/tmp/ts-tests1","noColor":false,"timeout":40000,"keepFailed":false}
+> /usr/bin/node ./built/local/run.js
+Discovered 326 unittest suites.
+Discovering runner-based tests...
+Discovered 19584 test files in 344ms.
+Starting to run tests using 63 threads...
+Batching initial test lists...
+Suboptimal packing detected: no tests remain to be stolen. Reduce packing fraction from 0.9 to fix.
+Batched into 63 groups with approximate total file sizes of 319149 bytes in each group. (100.0% of total tests batched)
+
+
+
+  98857 passing (3m)
+  1 failing
+
+  1)
+
+         fourslash-server tests
+           tests/cases/fourslash/server/autoImportPackageJsonFilterExistingImport3.ts
+             fourslash-server test autoImportPackageJsonFilterExistingImport3.ts runs correctly:
+     Error: Timeout of 40000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
+      at processImmediate (node:internal/timers:483:21)
+
+
+
+Error in do-runtests-parallel in 3m 27.5s
+Error: Process exited with code: 1
+Completed runtests-parallel with errors in 4m 13s
+Failed tasks: do-runtests-parallel
+Using /usr/src/app/Herebyfile.mjs to run baseline-accept
+Starting baseline-accept
+Finished baseline-accept in 283ms
+Completed baseline-accept in 284ms
+/usr/src/app/run.sh: line 13: git: command not found
+/usr/src/app/run.sh: line 14: git: command not found

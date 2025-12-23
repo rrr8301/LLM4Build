@@ -1,0 +1,713 @@
+npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+npm warn deprecated gauge@3.0.2: This package is no longer supported.
+npm warn deprecated mkdirp@0.3.0: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+
+> @lexical/monorepo@0.36.2 prepare
+> husky install
+
+husky - Git hooks installed
+
+added 3368 packages, and audited 3406 packages in 1m
+
+759 packages are looking for funding
+  run `npm fund` for details
+
+24 vulnerabilities (5 low, 14 moderate, 3 high, 2 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> @lexical/monorepo@0.36.2 ci-check
+> npm-run-all --parallel tsc tsc-extension flow prettier lint
+
+
+> @lexical/monorepo@0.36.2 flow
+> node ./scripts/check-flow-types.js
+
+
+> @lexical/monorepo@0.36.2 tsc-extension
+> npm run compile -w @lexical/devtools
+
+
+> @lexical/monorepo@0.36.2 tsc
+> tsc
+
+
+> @lexical/monorepo@0.36.2 lint
+> eslint ./
+
+
+> @lexical/monorepo@0.36.2 prettier
+> prettier --list-different .
+
+Running Flow...
+/app/node_modules/flow-bin/flow-linux64-v0.280.0/flow: /lib/x86_64-linux-gnu/libm.so.6: version `GLIBC_2.35' not found (required by /app/node_modules/flow-bin/flow-linux64-v0.280.0/flow)
+/app/node_modules/flow-bin/flow-linux64-v0.280.0/flow: /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by /app/node_modules/flow-bin/flow-linux64-v0.280.0/flow)
+/app/node_modules/flow-bin/flow-linux64-v0.280.0/flow: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /app/node_modules/flow-bin/flow-linux64-v0.280.0/flow)
+/app/node_modules/flow-bin/flow-linux64-v0.280.0/flow: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.34' not found (required by /app/node_modules/flow-bin/flow-linux64-v0.280.0/flow)
+/app/node_modules/flow-bin/flow-linux64-v0.280.0/flow: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.32' not found (required by /app/node_modules/flow-bin/flow-linux64-v0.280.0/flow)
+Flow failed :(
+
+
+> @lexical/devtools@0.36.2 compile
+> tsc --noEmit
+
+ERROR: "flow" exited with 1.
+
+> @lexical/monorepo@0.36.2 build
+> node scripts/build.js
+
+
+> @lexical/monorepo@0.36.2 build-www
+> npm run clean && npm run build -- --www && npm run build -- --www --prod && npm run prepare-www
+
+
+> @lexical/monorepo@0.36.2 clean
+> node scripts/clean.js
+
+
+> @lexical/monorepo@0.36.2 build
+> node scripts/build.js --www
+
+
+> @lexical/monorepo@0.36.2 build
+> node scripts/build.js --www --prod
+
+
+> @lexical/monorepo@0.36.2 prepare-www
+> node scripts/www/rewriteImports.js
+
+
+> @lexical/monorepo@0.36.2 test-unit
+> vitest --no-watch
+
+
+ RUN  v3.2.4 /app
+
+ ✓ |unit| packages/lexical-eslint-plugin/src/__tests__/unit/rules-of-lexical.test.ts (3 tests) 6ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalComposer.test.tsx (3 tests) 52ms
+ ✓ |unit| packages/lexical-extension/src/__tests__/unit/LexicalBuilder.test.ts (7 tests) 27ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalContentEditableElement.test.tsx (13 tests) 240ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTablePlugin.test.tsx (4 tests) 36ms
+ ✓ |unit| packages/lexical-html/src/__tests__/unit/LexicalHtml.test.ts (6 tests) 82ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalCollaborationPlugin.test.tsx (1 test) 174ms
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should collaborate basic text insertion between two clients
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/CollaborationWithCollisions.test.ts > CollaborationWithCollisions > useCollabV2: false > Remove text at within the first of multiple paragraphs colliding with removing first paragraph
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should collaborate basic text insertion between two clients
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should collaborate basic text insertion conflicts between two clients
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should collaborate basic text insertion conflicts between two clients
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should collaborate basic text insertion conflicts between two clients
+Invalid access: Add Yjs type to a document before reading data.
+
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalExtensionCore.test.ts (7 tests) 7ms
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should collaborate basic text deletion conflicts between two clients
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should collaborate basic text deletion conflicts between two clients
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/CollaborationWithCollisions.test.ts > CollaborationWithCollisions > useCollabV2: false > Remove first two paragraphs colliding with removing first paragraph
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should sync direction of element node
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should sync direction of element node
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/CollaborationWithCollisions.test.ts > CollaborationWithCollisions > useCollabV2: false > Editing first and second paragraphs colliding with editing second and third paragraphs (with overlapping edit)
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should allow the passing of arbitrary awareness data
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should sync to other clients when inserting a new paragraph node when document is emptied via undo
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should sync to other clients when inserting a new paragraph node when document is emptied via undo
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > useCollabV2: false > Should sync to other clients when inserting a new paragraph node when document is emptied via undo
+Invalid access: Add Yjs type to a document before reading data.
+Invalid access: Add Yjs type to a document before reading data.
+
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalUtilsInsertNodeToNearestRoot.test.tsx (8 tests) 152ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/unwrapAndFilterDescendants.test.tsx (4 tests) 26ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/iterators.test.tsx (7 tests) 38ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/CollaborationWithCollisions.test.ts (6 tests) 605ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalUpdateTags.test.ts (6 tests) 177ms
+ ✓ |unit| packages/lexical-playground/__tests__/unit/docSerialization.test.ts (3 tests) 235ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/PlainRichTextPlugin.test.tsx (6 tests) 278ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalNodeHelpers.test.ts (10 tests) 270ms
+ ✓ |unit| packages/lexical-mark/__tests__/unit/LexicalMarkNode.test.ts (6 tests) 301ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalEditorState.test.ts (4 tests) 160ms
+ ✓ |unit| packages/lexical-rich-text/src/__tests__/unit/LexicalHeadingNode.test.ts (9 tests) 215ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/useLexicalCharacterLimit.test.ts (2 tests) 178ms
+ ✓ |unit| packages/lexical-rich-text/src/__tests__/unit/LexicalQuoteNode.test.ts (5 tests) 201ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalSerialization.test.ts (1 test) 217ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalUtilsSplitNode.test.tsx (7 tests) 151ms
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > Should handle multiple text nodes being normalized due to merge conflict
+Invalid access: Add Yjs type to a document before reading data.
+
+stderr | packages/lexical-react/src/__tests__/unit/Collaboration.test.ts > Collaboration > Should handle multiple text nodes being normalized due to merge conflict
+Invalid access: Add Yjs type to a document before reading data.
+
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalNormalization.test.tsx (10 tests) 204ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/Collaboration.test.ts (13 tests) 727ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalReconciler.test.ts (5 tests) 193ms
+ ✓ |unit| packages/lexical/src/nodes/__tests__/unit/LexicalParagraphNode.test.ts (7 tests) 194ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/ReactPluginHostExtension.test.tsx (2 tests) 182ms
+ ✓ |unit| packages/lexical/src/nodes/__tests__/unit/LexicalElementNode.test.tsx (37 tests) 605ms
+ ✓ |unit| packages/lexical/src/caret/__tests__/unit/docs-traversals.test.ts (8 tests) 231ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/utils.test.ts (10 tests) 249ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalUtils.test.ts (25 tests) 306ms
+ ✓ |unit| packages/lexical/src/nodes/__tests__/unit/LexicalRootNode.test.ts (14 tests) 252ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalExtensionComposer.test.tsx (2 tests) 138ms
+ ✓ |unit| packages/lexical/src/nodes/__tests__/unit/LexicalGC.test.tsx (42 tests) 458ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/CodeBlock.test.ts (13 tests) 406ms
+ ✓ |unit| packages/lexical-link/src/__tests__/unit/LexicalAutoLinkNode.test.ts (27 tests) 349ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/HTMLCopyAndPaste.test.ts (10 tests) 411ms
+ ✓ |unit| packages/lexical-selection/src/__tests__/unit/LexicalSelectionHelpers.test.ts (49 tests) 368ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableSelection.test.tsx (2 tests) 129ms
+ ✓ |unit| packages/lexical-markdown/src/__tests__/unit/LexicalMarkdown.test.ts (238 tests) 728ms
+ ✓ |unit| packages/lexical-history/src/__tests__/unit/LexicalHistory.test.tsx (5 tests) 201ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableMobileSelection.test.tsx (5 tests) 193ms
+ ✓ |unit| packages/lexical-link/src/__tests__/unit/LexicalLinkNode.test.ts (36 tests) 410ms
+ ✓ |unit| packages/lexical/src/nodes/__tests__/unit/LexicalTextNode.test.tsx (99 tests) 878ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/formatList.test.ts (4 tests) 177ms
+ ✓ |unit| packages/lexical/src/nodes/__tests__/unit/LexicalTabNode.test.tsx (15 tests) 376ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalNode.test.ts (70 tests) 719ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalNodeState.test.ts (83 tests) 789ms
+stderr | packages/lexical-react/src/__tests__/unit/CollaborationSnapshot.test.ts > CollaborationSnapshot > DIFF_VERSIONS_COMMAND > should diff between two snapshots
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ ✓ |scripts-unit| scripts/error-codes/__tests__/unit/ErrorMap.test.ts (7 tests) 17ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalSelection.test.ts (50 tests) 642ms
+ ✓ |unit| packages/lexical-code/src/__tests__/unit/LexicalCodeNodeTabs.test.ts (74 tests) 891ms
+ ✓ |scripts-unit| scripts/__tests__/unit/stackblitz.test.ts (70 tests) 25ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalEventHelpers.test.tsx (57 tests) 939ms
+ ✓ |unit| packages/lexical-link/src/__tests__/unit/LinkExtension.test.ts (1 test) 31ms
+ ✓ |unit| packages/lexical-eslint-plugin/src/__tests__/unit/buildMatcher.test.ts (4 tests) 7ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalElementHelpers.test.ts (5 tests) 12ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/useLexicalIsTextContentEmpty.test.tsx (1 test) 94ms
+ ✓ |unit| packages/lexical-extension/src/__tests__/unit/deepThemeMergeInPlace.test.ts (1 test) 5ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/LinkExtension.test.ts (2 tests) 30ms
+ ✓ |scripts-unit| scripts/__tests__/unit/build.test.ts (461 tests) 141ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/React19.test.tsx (1 test) 27ms
+ ✓ |scripts-unit| scripts/www/__tests__/unit/transformFlowFileContents.test.ts (4 tests) 283ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/mergeRegister.test.ts (2 tests) 11ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/descendantsMatching.test.tsx (3 tests) 21ms
+ ✓ |unit| packages/lexical-code-shiki/src/__tests__/unit/LexicalCodeNodeTabs.test.ts (74 tests) 1181ms
+   ✓ LexicalCodeNode tests > Tabs > testing tab: >| => >-| (forwards)  491ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableExtension.test.ts (1 test) 23ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/registerListStrictIndentTransform.test.ts (1 test) 1785ms
+   ✓ Lexical List StrictIndentTransform tests > applyStrictListIndentation  1782ms
+ ✓ |unit| packages/lexical/src/caret/__tests__/unit/LexicalCaret.test.ts (168 tests) 1343ms
+ ✓ |unit| packages/lexical-code/src/__tests__/unit/LexicalCodeNode.test.ts (54 tests | 1 skipped) 1683ms
+   ✓ LexicalCodeNode tests > initial editor state before transforms > can be registered after initial editor state (regression #7014)  913ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/ReactExtension.test.tsx (2 tests) 13ms
+ ✓ |unit| packages/lexical/src/nodes/__tests__/unit/LexicalLineBreakNode.test.ts (5 tests) 120ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableCellNode.test.ts (3 tests) 1600ms
+   ✓ LexicalTableCellNode tests > TableCellNode.importDOM  1486ms
+stderr | packages/lexical-react/src/__tests__/unit/CollaborationSnapshot.test.ts > CollaborationSnapshot > DIFF_VERSIONS_COMMAND > should diff from start of time if no prevSnapshot is provided
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | packages/lexical-react/src/__tests__/unit/CollaborationSnapshot.test.ts > CollaborationSnapshot > DIFF_VERSIONS_COMMAND > should diff to latest state if no snapshot is provided
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Placeholder inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalListPlugin.test.tsx (3 tests) 1570ms
+   ✓ @lexical/list tests > Toggle an empty list on/off  1407ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/LexicalListNode.test.ts (14 tests) 1172ms
+   ✓ LexicalListNode tests > Should clear checklist attributes when nesting lists  952ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableRowNode.test.ts (2 tests) 73ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/useMenuAnchorRef.test.tsx (1 test) 24ms
+ ✓ |unit| packages/lexical-hashtag/src/__tests__/unit/LexicalHashtagNode.test.ts (1 test) 69ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalUtilsKlassEqual.test.ts (1 test) 58ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalRootHelpers.test.ts (2 tests) 80ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/CollaborationSnapshot.test.ts (6 tests) 1484ms
+   ✓ CollaborationSnapshot > DIFF_VERSIONS_COMMAND > should diff between two snapshots  1158ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalEditor.test.tsx (75 tests) 1947ms
+   ✓ LexicalEditor tests > transforms do not discard unintentional dirtyElements  1301ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/LexicalListItemNode.test.ts (26 tests) 2302ms
+   ✓ LexicalListItemNode tests > ListItemNode.createDOM()  1119ms
+   ✓ LexicalListItemNode tests > ListItemNode.replace() > another list item node  380ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalNestedComposer.test.tsx (8 tests) 1887ms
+   ✓ LexicalNestedComposer > with inherited configuration and namespace  1429ms
+ ✓ |unit| packages/lexical-headless/src/__tests__/unit/LexicalHeadlessEditor.test.ts (8 tests) 107ms
+ ✓ |unit| packages/lexical-selection/src/__tests__/unit/LexicalSelection.test.tsx (233 tests) 2244ms
+ ✓ |unit| packages/lexical-tailwind/src/__tests__/unit/LexicalTailwind.test.ts (1 test) 775ms
+   ✓ TailwindExtension > applies the expected classes  773ms
+ ✓ |scripts-unit| scripts/error-codes/__tests__/unit/transform-error-messages.test.ts (8 tests) 1604ms
+   ✓ transform-error-messages > invariant > {extractCodes: true, noMinify: false} > inserts known and extracts unknown message codes  1415ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableNode.test.tsx (38 tests) 3119ms
+   ✓ LexicalTableNode tests > hasHorizontalScroll={false} > TableNode.createDOM()  1052ms
+   ✓ LexicalTableNode tests > hasHorizontalScroll={false} > TableNode.createDOM() and updateDOM() style  402ms
+
+ Test Files  89 passed (89)
+      Tests  2436 passed | 1 skipped (2437)
+   Start at  05:06:23
+   Duration  8.59s (transform 29.63s, setup 11.37s, collect 228.16s, tests 43.14s, environment 65.23s, prepare 14.08s)
+
+
+> @lexical/monorepo@0.36.2 test-integration
+> jest --selectProjects integration --testPathPattern
+
+Running one project: integration
+FAIL integration scripts/__tests__/integration/prepare-release.test.js (243.953 s)
+  prepare-release tests
+    lexical
+      ✓ npm/lexical-0.36.2.tgz exists (2 ms)
+    @lexical/clipboard
+      ✓ npm/lexical-clipboard-0.36.2.tgz exists (1 ms)
+    @lexical/code
+      ✓ npm/lexical-code-0.36.2.tgz exists
+    @lexical/code-shiki
+      ✓ npm/lexical-code-shiki-0.36.2.tgz exists
+    @lexical/devtools-core
+      ✓ npm/lexical-devtools-core-0.36.2.tgz exists
+    @lexical/dragon
+      ✓ npm/lexical-dragon-0.36.2.tgz exists
+    @lexical/eslint-plugin
+      ✓ npm/lexical-eslint-plugin-0.36.2.tgz exists
+    @lexical/extension
+      ✓ npm/lexical-extension-0.36.2.tgz exists
+    @lexical/file
+      ✓ npm/lexical-file-0.36.2.tgz exists
+    @lexical/hashtag
+      ✓ npm/lexical-hashtag-0.36.2.tgz exists
+    @lexical/headless
+      ✓ npm/lexical-headless-0.36.2.tgz exists (1 ms)
+    @lexical/history
+      ✓ npm/lexical-history-0.36.2.tgz exists
+    @lexical/html
+      ✓ npm/lexical-html-0.36.2.tgz exists (3 ms)
+    @lexical/link
+      ✓ npm/lexical-link-0.36.2.tgz exists
+    @lexical/list
+      ✓ npm/lexical-list-0.36.2.tgz exists
+    @lexical/mark
+      ✓ npm/lexical-mark-0.36.2.tgz exists
+    @lexical/markdown
+      ✓ npm/lexical-markdown-0.36.2.tgz exists (1 ms)
+    @lexical/offset
+      ✓ npm/lexical-offset-0.36.2.tgz exists
+    @lexical/overflow
+      ✓ npm/lexical-overflow-0.36.2.tgz exists
+    @lexical/plain-text
+      ✓ npm/lexical-plain-text-0.36.2.tgz exists
+    @lexical/react
+      ✓ npm/lexical-react-0.36.2.tgz exists
+    @lexical/rich-text
+      ✓ npm/lexical-rich-text-0.36.2.tgz exists
+    @lexical/selection
+      ✓ npm/lexical-selection-0.36.2.tgz exists
+    @lexical/table
+      ✓ npm/lexical-table-0.36.2.tgz exists (1 ms)
+    @lexical/tailwind
+      ✓ npm/lexical-tailwind-0.36.2.tgz exists
+    @lexical/text
+      ✓ npm/lexical-text-0.36.2.tgz exists
+    @lexical/utils
+      ✓ npm/lexical-utils-0.36.2.tgz exists (1 ms)
+    @lexical/yjs
+      ✓ npm/lexical-yjs-0.36.2.tgz exists
+  examples/vanilla-js-plugin
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (14 ms)
+  examples/vanilla-js-iframe
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (8 ms)
+  examples/vanilla-js
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (13 ms)
+  examples/react-table
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (20 ms)
+  examples/react-rich-collab
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (18 ms)
+  examples/react-rich
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (20 ms)
+  examples/react-plain-text
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (19 ms)
+  examples/node-state-style
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (21 ms)
+  examples/node-replacement
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (22 ms)
+  examples/extension-vanilla-tailwind
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (11 ms)
+  examples/extension-vanilla-react-plugin-host
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (17 ms)
+  examples/extension-sveltekit-ssr-hydration
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (12 ms)
+    ✕ tests pass (13304 ms)
+  examples/extension-react-table
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (17 ms)
+  scripts/__tests__/integration/fixtures/lexical-esm-nextjs
+    ✓ install & build succeeded
+    ✓ installed lexical 0.36.2 (14 ms)
+    ✕ tests pass (3066 ms)
+  scripts/__tests__/integration/fixtures/lexical-esm-astro-react
+    ✓ install & build succeeded (1 ms)
+    ✓ installed lexical 0.36.2 (15 ms)
+
+  ● examples/extension-sveltekit-ssr-hydration › tests pass
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: null
+    Received: {"code": 1, "stderr": "", "stdout": "
+    > extension-sveltekit-ssr-hydration@0.36.2 test
+    > playwright test··
+    Running 2 tests using 1 worker·
+      ✘  1 e2e/demo.test.ts:3:1 › home page has expected h1 (5ms)
+      ✘  2 e2e/demo.test.ts:9:1 › html is prerendered (5ms)··
+      1) e2e/demo.test.ts:3:1 › home page has expected h1 ──────────────────────────────────────────────·
+        Error: browserType.launch:·
+        ╔══════════════════════════════════════════════════════╗
+        ║ Host system is missing dependencies to run browsers. ║
+        ║ Please install them with the following command:      ║
+        ║                                                      ║
+        ║     npx playwright install-deps                      ║
+        ║                                                      ║
+        ║ Alternatively, use apt:                              ║
+        ║     apt-get install libglib2.0-0\\                    ║
+        ║         libnspr4\\                                    ║
+        ║         libnss3\\                                     ║
+        ║         libdbus-1-3\\                                 ║
+        ║         libatk1.0-0\\                                 ║
+        ║         libatk-bridge2.0-0\\                          ║
+        ║         libatspi2.0-0\\                               ║
+        ║         libx11-6\\                                    ║
+        ║         libxcomposite1\\                              ║
+        ║         libxdamage1\\                                 ║
+        ║         libxext6\\                                    ║
+        ║         libxfixes3\\                                  ║
+        ║         libxrandr2\\                                  ║
+        ║         libgbm1\\                                     ║
+        ║         libxcb1\\                                     ║
+        ║         libxkbcommon0\\                               ║
+        ║         libasound2                                   ║
+        ║                                                      ║
+        ║ <3 Playwright Team                                   ║
+        ╚══════════════════════════════════════════════════════╝·
+      2) e2e/demo.test.ts:9:1 › html is prerendered ────────────────────────────────────────────────────·
+        Error: browserType.launch:·
+        ╔══════════════════════════════════════════════════════╗
+        ║ Host system is missing dependencies to run browsers. ║
+        ║ Please install them with the following command:      ║
+        ║                                                      ║
+        ║     npx playwright install-deps                      ║
+        ║                                                      ║
+        ║ Alternatively, use apt:                              ║
+        ║     apt-get install libglib2.0-0\\                    ║
+        ║         libnspr4\\                                    ║
+        ║         libnss3\\                                     ║
+        ║         libdbus-1-3\\                                 ║
+        ║         libatk1.0-0\\                                 ║
+        ║         libatk-bridge2.0-0\\                          ║
+        ║         libatspi2.0-0\\                               ║
+        ║         libx11-6\\                                    ║
+        ║         libxcomposite1\\                              ║
+        ║         libxdamage1\\                                 ║
+        ║         libxext6\\                                    ║
+        ║         libxfixes3\\                                  ║
+        ║         libxrandr2\\                                  ║
+        ║         libgbm1\\                                     ║
+        ║         libxcb1\\                                     ║
+        ║         libxkbcommon0\\                               ║
+        ║         libasound2                                   ║
+        ║                                                      ║
+        ║ <3 Playwright Team                                   ║
+        ╚══════════════════════════════════════════════════════╝·
+      2 failed
+        e2e/demo.test.ts:3:1 › home page has expected h1 ───────────────────────────────────────────────
+        e2e/demo.test.ts:9:1 › html is prerendered ─────────────────────────────────────────────────────
+    "}
+
+      54 |         ['code', 'stdout', 'stderr'].map((prop) => [prop, err[prop]]),
+      55 |       ),
+    > 56 |     ).toBe(null);
+         |       ^
+      57 |     throw err;
+      58 |   });
+      59 | }
+
+      at toBe (scripts/__tests__/integration/utils.js:56:7)
+
+  ● scripts/__tests__/integration/fixtures/lexical-esm-nextjs › tests pass
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: null
+    Received: {"code": 1, "stderr": "[WebServer]  [33m[1m⚠[22m[39m Warning: Next.js inferred your workspace root, but it may not be correct.
+    [WebServer]  We detected multiple lockfiles and selected the directory of /app/package-lock.json as the root directory.
+    [WebServer]  To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+    [WebServer]    See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+    [WebServer]  Detected additional lockfiles:·
+    [WebServer]    * /app/scripts/__tests__/integration/fixtures/lexical-esm-nextjs/package-lock.json
+    [WebServer]·
+    ", "stdout": "
+    > lexical-esm-nextjs@0.36.2 test
+    > playwright test··
+    Running 1 test using 1 worker·
+      ✘  1 tests/test.ts:11:5 › index page has expected h1 and lexical state (5ms)··
+      1) tests/test.ts:11:5 › index page has expected h1 and lexical state ─────────────────────────────·
+        Error: browserType.launch:·
+        ╔══════════════════════════════════════════════════════╗
+        ║ Host system is missing dependencies to run browsers. ║
+        ║ Please install them with the following command:      ║
+        ║                                                      ║
+        ║     npx playwright install-deps                      ║
+        ║                                                      ║
+        ║ Alternatively, use apt:                              ║
+        ║     apt-get install libglib2.0-0\\                    ║
+        ║         libnspr4\\                                    ║
+        ║         libnss3\\                                     ║
+        ║         libdbus-1-3\\                                 ║
+        ║         libatk1.0-0\\                                 ║
+        ║         libatk-bridge2.0-0\\                          ║
+        ║         libatspi2.0-0\\                               ║
+        ║         libx11-6\\                                    ║
+        ║         libxcomposite1\\                              ║
+        ║         libxdamage1\\                                 ║
+        ║         libxext6\\                                    ║
+        ║         libxfixes3\\                                  ║
+        ║         libxrandr2\\                                  ║
+        ║         libgbm1\\                                     ║
+        ║         libxcb1\\                                     ║
+        ║         libxkbcommon0\\                               ║
+        ║         libasound2                                   ║
+        ║                                                      ║
+        ║ <3 Playwright Team                                   ║
+        ╚══════════════════════════════════════════════════════╝·
+      1 failed
+        tests/test.ts:11:5 › index page has expected h1 and lexical state ──────────────────────────────
+    "}
+
+      54 |         ['code', 'stdout', 'stderr'].map((prop) => [prop, err[prop]]),
+      55 |       ),
+    > 56 |     ).toBe(null);
+         |       ^
+      57 |     throw err;
+      58 |   });
+      59 | }
+
+      at toBe (scripts/__tests__/integration/utils.js:56:7)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 58 passed, 60 total
+Snapshots:   0 total
+Time:        243.997 s
+Ran all test suites.
+npm error Missing script: "test-e2e"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-10-07T12_11_57_720Z-debug-0.log

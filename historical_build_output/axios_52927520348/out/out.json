@@ -1,0 +1,82 @@
+{
+  "framework": "mocha",
+  "num_tests_run": 227,
+  "num_tests_failed": 8,
+  "num_tests_passed": 219,
+  "num_tests_skipped": 0,
+  "test_duration": 88.0,
+  "tests_failed": [
+    {
+      "file": "supports http with nodejs",
+      "failures": [
+        {
+          "name": "should support IPv6 literal strings:",
+          "error": "Error: connect EADDRNOTAVAIL ::1:4444 - Local (:::0)\nat AxiosError.from (file:///app/lib/core/AxiosError.js:96:14)\nat RedirectableRequest.handleRequestError (file:///app/lib/adapters/http.js:638:25)\nat RedirectableRequest.emit (node:events:519:28)\nat eventHandlers.<computed> (node_modules/follow-redirects/index.js:38:24)\nat ClientRequest.emit (node:events:519:28)\nat emitErrorEvent (node:_http_client:107:11)\nat Socket.socketErrorListener (node:_http_client:574:5)\nat Socket.emit (node:events:519:28)\nat emitErrorNT (node:internal/streams/destroy:170:8)\nat emitErrorCloseNT (node:internal/streams/destroy:129:3)\nat process.processTicksAndRejections (node:internal/process/task_queues:90:21)\nat Axios.request (file:///app/lib/core/Axios.js:45:41)\nat process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n"
+        }
+      ]
+    },
+    {
+      "file": " > Node.js v22.21.1 > should support IPv6 literal strings: > > axios@1.12.2 test:package > > npm run test:eslint && npm run test:dtslint && npm run test:exports > > axios@1.12.2 test:eslint > > node bin/ssl_hotfix.js eslint lib/**/*.js > Running eslint lib/adapters/adapters.js lib/adapters/fetch.js lib/adapters/http.js lib/adapters/xhr.js lib/cancel/CancelToken.js lib/cancel/CanceledError.js lib/cancel/isCancel.js lib/core/Axios.js lib/core/AxiosError.js lib/core/AxiosHeaders.js lib/core/InterceptorManager.js lib/core/buildFullPath.js lib/core/dispatchRequest.js lib/core/mergeConfig.js lib/core/settle.js lib/core/transformData.js lib/defaults/index.js lib/defaults/transitional.js lib/env/data.js lib/helpers/AxiosTransformStream.js lib/helpers/AxiosURLSearchParams.js lib/helpers/HttpStatusCode.js lib/helpers/ZlibHeaderTransformStream.js lib/helpers/bind.js lib/helpers/buildURL.js lib/helpers/callbackify.js lib/helpers/combineURLs.js lib/helpers/composeSignals.js lib/helpers/cookies.js lib/helpers/deprecatedMethod.js lib/helpers/estimateDataURLDecodedBytes.js lib/helpers/formDataToJSON.js lib/helpers/formDataToStream.js lib/helpers/fromDataURI.js lib/helpers/isAbsoluteURL.js lib/helpers/isAxiosError.js lib/helpers/isURLSameOrigin.js lib/helpers/null.js lib/helpers/parseHeaders.js lib/helpers/parseProtocol.js lib/helpers/progressEventReducer.js lib/helpers/readBlob.js lib/helpers/resolveConfig.js lib/helpers/speedometer.js lib/helpers/spread.js lib/helpers/throttle.js lib/helpers/toFormData.js lib/helpers/toURLEncodedForm.js lib/helpers/trackStream.js lib/helpers/validator.js lib/platform/index.js on v22.21.1 > Setting --openssl-legacy-provider as ssl hotfix > > axios@1.12.2 test:dtslint > > dtslint --localTs node_modules/typescript/lib > > axios@1.12.2 test:exports > > node bin/ssl_hotfix.js mocha test/module/test.js --timeout 30000 --exit > Running mocha test/module/test.js --timeout 30000 --exit on v22.21.1 > Setting --openssl-legacy-provider as ssl hotfix > module > \u2713 Creating build backup... > \u2713 Exec build script... > \u2713 Running tests... > exportshould be able to be loaded with require > \u2714 should have consistent ESM export > CommonJSshould be able to be loaded with import > \u2713 Remove entry '/app/test/module/cjs/node_modules'... > ESMshould be able to be loaded with import > \u2713 Remove entry '/app/test/module/esm/node_modules'... > TSshould be able to be loaded with require > \u2713 Remove entry '/app/test/module/ts/node_modules'... > TS require('axios')should be able to be loaded with require > \u2713 Remove entry '/app/test/module/ts-require/node_modules'... > TS require('axios').default > \u2713 Remove entry '/app/test/module/ts-require-default/node_modules'... > typings > ESM > > esm-typings-test@1.0.0 test > > npm i --no-save --no-package-lock && tsc -v && npm run test:types > npm error code 1 > npm error path /app > npm error command failed > npm error command sh -c husky install && npm run prepare:hooks > npm error husky - git command not found, skipping install > npm error > npm error > axios@1.12.2 prepare:hooks > npm error > npx husky set .husky/commit-msg \"npx commitlint --edit $1\" > npm error fatal: not a git repository (or any of the parent directories): .gitshould pass types check > npm error husky - can't create hook, .husky directory doesn't exist (try running husky install) > npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-30T08_38_00_291Z-debug-0.log > \u2713 Remove entry '/app/test/module/typings/esm/node_modules'... > CommonJS > > commonjs-typings-test@1.0.0 test > > npm i --no-save --no-package-lock && tsc -v && npm run test:types > npm error code 1 > npm error path /app > npm error command failed > npm error command sh -c husky install && npm run prepare:hooks > npm error husky - git command not found, skipping install > npm error > npm error > axios@1.12.2 prepare:hooks > npm error > npx husky set .husky/commit-msg \"npx commitlint --edit $1\" > npm error fatal: not a git repository (or any of the parent directories): .gitshould pass types check > npm error husky - can't create hook, .husky directory doesn't exist (try running husky install) > npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-30T08_38_03_488Z-debug-0.log > \u2713 Remove entry '/app/test/module/typings/cjs/node_modules'... > \u2713 Restore build from the backup... > \u2713 Remove entry './backup/'... > 1 passing (28s)module > 7 failing > export > CommonJS",
+      "failures": [
+        {
+          "name": "should be able to be loaded with require:",
+          "error": "Error: Command failed: npm test --prefix /app/test/module/cjs\nnpm error code 1\nnpm error path /app\nnpm error command failed\nnpm error command sh -c husky install && npm run prepare:hooks\nnpm error husky - git command not found, skipping install\nnpm error\nnpm error > axios@1.12.2 prepare:hooks\nnpm error > npx husky set .husky/commit-msg \"npx commitlint --edit $1\"\nnpm error fatal: not a git repository (or any of the parent directories): .git\nnpm error husky - can't create hook, .husky directory doesn't exist (try running husky install)\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-30T08_37_45_998Z-debug-0.log\n"
+        }
+      ]
+    },
+    {
+      "file": " > CommonJSmodule > should be able to be loaded with require: > export > ESM",
+      "failures": [
+        {
+          "name": "should be able to be loaded with import:",
+          "error": "Error: Command failed: npm test --prefix /app/test/module/esm\nnpm error code 1\nnpm error path /app\nnpm error command failed\nnpm error command sh -c husky install && npm run prepare:hooks\nnpm error husky - git command not found, skipping install\nnpm error\nnpm error > axios@1.12.2 prepare:hooks\nnpm error > npx husky set .husky/commit-msg \"npx commitlint --edit $1\"\nnpm error fatal: not a git repository (or any of the parent directories): .git\nnpm error husky - can't create hook, .husky directory doesn't exist (try running husky install)\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-30T08_37_48_225Z-debug-0.log\n"
+        }
+      ]
+    },
+    {
+      "file": " > ESMmodule > should be able to be loaded with import: > export > TS",
+      "failures": [
+        {
+          "name": "should be able to be loaded with import:",
+          "error": "Error: Command failed: npm test --prefix /app/test/module/ts\nnpm error code 1\nnpm error path /app\nnpm error command failed\nnpm error command sh -c husky install && npm run prepare:hooks\nnpm error husky - git command not found, skipping install\nnpm error\nnpm error > axios@1.12.2 prepare:hooks\nnpm error > npx husky set .husky/commit-msg \"npx commitlint --edit $1\"\nnpm error fatal: not a git repository (or any of the parent directories): .git\nnpm error husky - can't create hook, .husky directory doesn't exist (try running husky install)\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-30T08_37_50_417Z-debug-0.log\n"
+        }
+      ]
+    },
+    {
+      "file": " > TSmodule > should be able to be loaded with import: > export > TS require('axios')",
+      "failures": [
+        {
+          "name": "should be able to be loaded with require:",
+          "error": "Error: Command failed: npm test --prefix /app/test/module/ts-require\nnpm error code 1\nnpm error path /app\nnpm error command failed\nnpm error command sh -c husky install && npm run prepare:hooks\nnpm error husky - git command not found, skipping install\nnpm error\nnpm error > axios@1.12.2 prepare:hooks\nnpm error > npx husky set .husky/commit-msg \"npx commitlint --edit $1\"\nnpm error fatal: not a git repository (or any of the parent directories): .git\nnpm error husky - can't create hook, .husky directory doesn't exist (try running husky install)\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-30T08_37_53_926Z-debug-0.log\n"
+        }
+      ]
+    },
+    {
+      "file": " > TS require('axios')module > should be able to be loaded with require: > export > TS require('axios').default",
+      "failures": [
+        {
+          "name": "should be able to be loaded with require:",
+          "error": "Error: Command failed: npm test --prefix /app/test/module/ts-require-default\nnpm error code 1\nnpm error path /app\nnpm error command failed\nnpm error command sh -c husky install && npm run prepare:hooks\nnpm error husky - git command not found, skipping install\nnpm error\nnpm error > axios@1.12.2 prepare:hooks\nnpm error > npx husky set .husky/commit-msg \"npx commitlint --edit $1\"\nnpm error fatal: not a git repository (or any of the parent directories): .git\nnpm error husky - can't create hook, .husky directory doesn't exist (try running husky install)\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-30T08_37_57_100Z-debug-0.log\n"
+        }
+      ]
+    },
+    {
+      "file": " > TS require('axios').defaultmodule > should be able to be loaded with require: > typings > ESM",
+      "failures": [
+        {
+          "name": "should pass types check:",
+          "error": "Error: Exit code 1\nat ChildProcess.<anonymous> (file:///app/test/module/test.js:23:29)\nat ChildProcess.emit (node:events:519:28)\nat maybeClose (node:internal/child_process:1101:16)\nat ChildProcess._handle.onexit (node:internal/child_process:304:5)\n"
+        }
+      ]
+    },
+    {
+      "file": "module > ESM > should pass types check: > typings > CommonJS",
+      "failures": [
+        {
+          "name": "should pass types check:",
+          "error": "Error: Exit code 1\nat ChildProcess.<anonymous> (file:///app/test/module/test.js:23:29)\nat ChildProcess.emit (node:events:519:28)\nat maybeClose (node:internal/child_process:1101:16)\nat ChildProcess._handle.onexit (node:internal/child_process:304:5)\n"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Set CUDA toolkit path
+export CUDAToolkit_ROOT=/usr/local/cuda
+
+# Ensure CUDA is properly set up
+export PATH=/usr/local/cuda/bin:${PATH}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
+
+# Build the project using CMake
+cmake -S . -B build
+cmake --build build
+
+# Run tests
+cd build
+ctest --output-on-failure

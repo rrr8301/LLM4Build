@@ -1,0 +1,1865 @@
+﻿2025-09-18T00:26:15.5992707Z Current runner version: '2.328.0'
+2025-09-18T00:26:15.6015312Z ##[group]Runner Image Provisioner
+2025-09-18T00:26:15.6016116Z Hosted Compute Agent
+2025-09-18T00:26:15.6016816Z Version: 20250829.383
+2025-09-18T00:26:15.6017524Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+2025-09-18T00:26:15.6018177Z Build Date: 2025-08-29T13:48:48Z
+2025-09-18T00:26:15.6018774Z ##[endgroup]
+2025-09-18T00:26:15.6019385Z ##[group]Operating System
+2025-09-18T00:26:15.6019901Z Ubuntu
+2025-09-18T00:26:15.6020377Z 24.04.3
+2025-09-18T00:26:15.6020836Z LTS
+2025-09-18T00:26:15.6021308Z ##[endgroup]
+2025-09-18T00:26:15.6021749Z ##[group]Runner Image
+2025-09-18T00:26:15.6022339Z Image: ubuntu-24.04
+2025-09-18T00:26:15.6022819Z Version: 20250907.24.1
+2025-09-18T00:26:15.6023843Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
+2025-09-18T00:26:15.6025679Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
+2025-09-18T00:26:15.6027408Z ##[endgroup]
+2025-09-18T00:26:15.6030045Z ##[group]GITHUB_TOKEN Permissions
+2025-09-18T00:26:15.6032225Z Actions: write
+2025-09-18T00:26:15.6032722Z Attestations: write
+2025-09-18T00:26:15.6033325Z Checks: write
+2025-09-18T00:26:15.6033776Z Contents: write
+2025-09-18T00:26:15.6034256Z Deployments: write
+2025-09-18T00:26:15.6034798Z Discussions: write
+2025-09-18T00:26:15.6035330Z Issues: write
+2025-09-18T00:26:15.6035788Z Metadata: read
+2025-09-18T00:26:15.6036293Z Models: read
+2025-09-18T00:26:15.6037054Z Packages: write
+2025-09-18T00:26:15.6037521Z Pages: write
+2025-09-18T00:26:15.6038086Z PullRequests: write
+2025-09-18T00:26:15.6038601Z RepositoryProjects: write
+2025-09-18T00:26:15.6039147Z SecurityEvents: write
+2025-09-18T00:26:15.6039808Z Statuses: write
+2025-09-18T00:26:15.6040261Z ##[endgroup]
+2025-09-18T00:26:15.6042229Z Secret source: Actions
+2025-09-18T00:26:15.6042937Z Prepare workflow directory
+2025-09-18T00:26:15.6436857Z Prepare all required actions
+2025-09-18T00:26:15.6475136Z Getting action download info
+2025-09-18T00:26:15.9998948Z Download action repository 'actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-09-18T00:26:16.1790576Z Download action repository 'actions/setup-go@v5' (SHA:d35c59abb061a4a6fb18e82ac0862c26744d6ab5)
+2025-09-18T00:26:16.7824391Z Complete job name: build (1.23.x)
+2025-09-18T00:26:16.8439515Z ##[group]Run actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+2025-09-18T00:26:16.8440632Z with:
+2025-09-18T00:26:16.8441039Z   fetch-depth: 0
+2025-09-18T00:26:16.8441468Z   repository: IBM/fp-go
+2025-09-18T00:26:16.8442084Z   token: ***
+2025-09-18T00:26:16.8442486Z   ssh-strict: true
+2025-09-18T00:26:16.8442892Z   ssh-user: git
+2025-09-18T00:26:16.8443317Z   persist-credentials: true
+2025-09-18T00:26:16.8443779Z   clean: true
+2025-09-18T00:26:16.8444215Z   sparse-checkout-cone-mode: true
+2025-09-18T00:26:16.8444730Z   fetch-tags: false
+2025-09-18T00:26:16.8445161Z   show-progress: true
+2025-09-18T00:26:16.8445613Z   lfs: false
+2025-09-18T00:26:16.8445997Z   submodules: false
+2025-09-18T00:26:16.8446438Z   set-safe-directory: true
+2025-09-18T00:26:16.8447538Z env:
+2025-09-18T00:26:16.8447943Z   DEFAULT_BRANCH: main
+2025-09-18T00:26:16.8448387Z   GO_VERSION: 1.21.6
+2025-09-18T00:26:16.8448809Z   NODE_VERSION: 22
+2025-09-18T00:26:16.8449208Z   DRY_RUN: true
+2025-09-18T00:26:16.8449653Z ##[endgroup]
+2025-09-18T00:26:16.9521243Z Syncing repository: IBM/fp-go
+2025-09-18T00:26:16.9523589Z ##[group]Getting Git version info
+2025-09-18T00:26:16.9524328Z Working directory is '/home/runner/work/fp-go/fp-go'
+2025-09-18T00:26:16.9525416Z [command]/usr/bin/git version
+2025-09-18T00:26:16.9600215Z git version 2.51.0
+2025-09-18T00:26:16.9627611Z ##[endgroup]
+2025-09-18T00:26:16.9645211Z Temporarily overriding HOME='/home/runner/work/_temp/8621343f-ac9b-4c89-be9f-a7409be00741' before making global git config changes
+2025-09-18T00:26:16.9648260Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-18T00:26:16.9653081Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fp-go/fp-go
+2025-09-18T00:26:16.9693055Z Deleting the contents of '/home/runner/work/fp-go/fp-go'
+2025-09-18T00:26:16.9697464Z ##[group]Initializing the repository
+2025-09-18T00:26:16.9702509Z [command]/usr/bin/git init /home/runner/work/fp-go/fp-go
+2025-09-18T00:26:16.9813606Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-18T00:26:16.9815023Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-18T00:26:16.9815980Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-18T00:26:16.9816895Z hint:
+2025-09-18T00:26:16.9817636Z hint: 	git config --global init.defaultBranch <name>
+2025-09-18T00:26:16.9818751Z hint:
+2025-09-18T00:26:16.9819377Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-18T00:26:16.9821168Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-18T00:26:16.9822694Z hint:
+2025-09-18T00:26:16.9823522Z hint: 	git branch -m <name>
+2025-09-18T00:26:16.9824433Z hint:
+2025-09-18T00:26:16.9825677Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-18T00:26:16.9827830Z Initialized empty Git repository in /home/runner/work/fp-go/fp-go/.git/
+2025-09-18T00:26:16.9833458Z [command]/usr/bin/git remote add origin https://github.com/IBM/fp-go
+2025-09-18T00:26:16.9869866Z ##[endgroup]
+2025-09-18T00:26:16.9870640Z ##[group]Disabling automatic garbage collection
+2025-09-18T00:26:16.9873763Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-18T00:26:16.9901996Z ##[endgroup]
+2025-09-18T00:26:16.9902707Z ##[group]Setting up auth
+2025-09-18T00:26:16.9909242Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-18T00:26:16.9938139Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-18T00:26:17.0254924Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-18T00:26:17.0285602Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-18T00:26:17.0509762Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-18T00:26:17.0557142Z ##[endgroup]
+2025-09-18T00:26:17.0558697Z ##[group]Fetching the repository
+2025-09-18T00:26:17.0568590Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +bd258aba07a6ca6f341d4158de3898caaa688956:refs/remotes/pull/140/merge
+2025-09-18T00:26:17.7598955Z From https://github.com/IBM/fp-go
+2025-09-18T00:26:17.7601840Z  * [new branch]      cleue-add-FilterChain-operations         -> origin/cleue-add-FilterChain-operations
+2025-09-18T00:26:17.7605381Z  * [new branch]      cleue-add-FoldMap                        -> origin/cleue-add-FoldMap
+2025-09-18T00:26:17.7608867Z  * [new branch]      cleue-add-FromReaderIO                   -> origin/cleue-add-FromReaderIO
+2025-09-18T00:26:17.7612235Z  * [new branch]      cleue-add-alt-to-iooption                -> origin/cleue-add-alt-to-iooption
+2025-09-18T00:26:17.7615912Z  * [new branch]      cleue-add-apply-monoid                   -> origin/cleue-add-apply-monoid
+2025-09-18T00:26:17.7619292Z  * [new branch]      cleue-add-asserts                        -> origin/cleue-add-asserts
+2025-09-18T00:26:17.7622588Z  * [new branch]      cleue-add-bool-package                   -> origin/cleue-add-bool-package
+2025-09-18T00:26:17.7625903Z  * [new branch]      cleue-add-cache                          -> origin/cleue-add-cache
+2025-09-18T00:26:17.7629934Z  * [new branch]      cleue-add-chain-first-to-readerio        -> origin/cleue-add-chain-first-to-readerio
+2025-09-18T00:26:17.7634736Z  * [new branch]      cleue-add-custom-type-sample             -> origin/cleue-add-custom-type-sample
+2025-09-18T00:26:17.7638713Z  * [new branch]      cleue-add-disclaimer                     -> origin/cleue-add-disclaimer
+2025-09-18T00:26:17.7641909Z  * [new branch]      cleue-add-doc                            -> origin/cleue-add-doc
+2025-09-18T00:26:17.7644871Z  * [new branch]      cleue-add-flap                           -> origin/cleue-add-flap
+2025-09-18T00:26:17.7648457Z  * [new branch]      cleue-add-flap-to-reader                 -> origin/cleue-add-flap-to-reader
+2025-09-18T00:26:17.7652279Z  * [new branch]      cleue-add-flap-to-readerio               -> origin/cleue-add-flap-to-readerio
+2025-09-18T00:26:17.7656000Z  * [new branch]      cleue-add-fromiooption                   -> origin/cleue-add-fromiooption
+2025-09-18T00:26:17.7660747Z  * [new branch]      cleue-add-ioeither-sample-with-return-tuple -> origin/cleue-add-ioeither-sample-with-return-tuple
+2025-09-18T00:26:17.7665415Z  * [new branch]      cleue-add-memoize-to-reader              -> origin/cleue-add-memoize-to-reader
+2025-09-18T00:26:17.7669603Z  * [new branch]      cleue-add-missing-FromIO                 -> origin/cleue-add-missing-FromIO
+2025-09-18T00:26:17.7673956Z  * [new branch]      cleue-add-missing-chain-readeriok        -> origin/cleue-add-missing-chain-readeriok
+2025-09-18T00:26:17.7678838Z  * [new branch]      cleue-add-missing-flatten-to-reader      -> origin/cleue-add-missing-flatten-to-reader
+2025-09-18T00:26:17.7683250Z  * [new branch]      cleue-add-missing-functions              -> origin/cleue-add-missing-functions
+2025-09-18T00:26:17.7687433Z  * [new branch]      cleue-add-missing-lenses                 -> origin/cleue-add-missing-lenses
+2025-09-18T00:26:17.7691388Z  * [new branch]      cleue-add-missing-methods                -> origin/cleue-add-missing-methods
+2025-09-18T00:26:17.7695507Z  * [new branch]      cleue-add-more-generated-code            -> origin/cleue-add-more-generated-code
+2025-09-18T00:26:17.7699617Z  * [new branch]      cleue-add-mutex-to-io                    -> origin/cleue-add-mutex-to-io
+2025-09-18T00:26:17.7703323Z  * [new branch]      cleue-add-presentation                   -> origin/cleue-add-presentation
+2025-09-18T00:26:17.7707400Z  * [new branch]      cleue-add-renovate                       -> origin/cleue-add-renovate
+2025-09-18T00:26:17.7711374Z  * [new branch]      cleue-add-sequence-array-par             -> origin/cleue-add-sequence-array-par
+2025-09-18T00:26:17.7715606Z  * [new branch]      cleue-add-some-more-itertools            -> origin/cleue-add-some-more-itertools
+2025-09-18T00:26:17.7719761Z  * [new branch]      cleue-add-some-tweaks                    -> origin/cleue-add-some-tweaks
+2025-09-18T00:26:17.7723273Z  * [new branch]      cleue-add-take                           -> origin/cleue-add-take
+2025-09-18T00:26:17.7727240Z  * [new branch]      cleue-add-traverse-with-index            -> origin/cleue-add-traverse-with-index
+2025-09-18T00:26:17.7732181Z  * [new branch]      cleue-add-try-catch-for-single-value-return -> origin/cleue-add-try-catch-for-single-value-return
+2025-09-18T00:26:17.7737005Z  * [new branch]      cleue-add-uniq-to-array                  -> origin/cleue-add-uniq-to-array
+2025-09-18T00:26:17.7740837Z  * [new branch]      cleue-add-with-resource                  -> origin/cleue-add-with-resource
+2025-09-18T00:26:17.7744435Z  * [new branch]      cleue-add-writer                         -> origin/cleue-add-writer
+2025-09-18T00:26:17.7747909Z  * [new branch]      cleue-add-zip                            -> origin/cleue-add-zip
+2025-09-18T00:26:17.7751926Z  * [new branch]      cleue-alternative-monoid-for-option      -> origin/cleue-alternative-monoid-for-option
+2025-09-18T00:26:17.7757743Z  * [new branch]      cleue-auto-generate-traversal-for-readeroieither -> origin/cleue-auto-generate-traversal-for-readeroieither
+2025-09-18T00:26:17.7762621Z  * [new branch]      cleue-better-doc                         -> origin/cleue-better-doc
+2025-09-18T00:26:17.7766274Z  * [new branch]      cleue-better-docs                        -> origin/cleue-better-docs
+2025-09-18T00:26:17.7769872Z  * [new branch]      cleue-bind                               -> origin/cleue-bind
+2025-09-18T00:26:17.7772083Z  * [new branch]      cleue-check-ap                           -> origin/cleue-check-ap
+2025-09-18T00:26:17.7774143Z  * [new branch]      cleue-fix-ap                             -> origin/cleue-fix-ap
+2025-09-18T00:26:17.7776378Z  * [new branch]      cleue-fix-build-break-1                  -> origin/cleue-fix-build-break-1
+2025-09-18T00:26:17.7779133Z  * [new branch]      cleue-fix-buildbreak                     -> origin/cleue-fix-buildbreak
+2025-09-18T00:26:17.7781651Z  * [new branch]      cleue-fix-compact-array                  -> origin/cleue-fix-compact-array
+2025-09-18T00:26:17.7783937Z  * [new branch]      cleue-fix-flap-order                     -> origin/cleue-fix-flap-order
+2025-09-18T00:26:17.7786457Z  * [new branch]      cleue-fix-generic-order-in-chain-to      -> origin/cleue-fix-generic-order-in-chain-to
+2025-09-18T00:26:17.7789463Z  * [new branch]      cleue-fix-http-for-ioeither              -> origin/cleue-fix-http-for-ioeither
+2025-09-18T00:26:17.7792435Z  * [new branch]      cleue-fix-order-of-generics-for-ChainOptionK -> origin/cleue-fix-order-of-generics-for-ChainOptionK
+2025-09-18T00:26:17.7795019Z  * [new branch]      cleue-flip                               -> origin/cleue-flip
+2025-09-18T00:26:17.7797309Z  * [new branch]      cleue-getting-started-docs               -> origin/cleue-getting-started-docs
+2025-09-18T00:26:17.7799593Z  * [new branch]      cleue-http-example                       -> origin/cleue-http-example
+2025-09-18T00:26:17.7802118Z  * [new branch]      cleue-implement-compact                  -> origin/cleue-implement-compact
+2025-09-18T00:26:17.7804585Z  * [new branch]      cleue-implement-first-and-last           -> origin/cleue-implement-first-and-last
+2025-09-18T00:26:17.7807444Z  * [new branch]      cleue-implement-with-temp-file           -> origin/cleue-implement-with-temp-file
+2025-09-18T00:26:17.7809888Z  * [new branch]      cleue-improve-with-lock                  -> origin/cleue-improve-with-lock
+2025-09-18T00:26:17.7812129Z  * [new branch]      cleue-initial-checkin                    -> origin/cleue-initial-checkin
+2025-09-18T00:26:17.7814487Z  * [new branch]      cleue-issue-77-2                         -> origin/cleue-issue-77-2
+2025-09-18T00:26:17.7816692Z  * [new branch]      cleue-more-iterator                      -> origin/cleue-more-iterator
+2025-09-18T00:26:17.7818812Z  * [new branch]      cleue-more-samples                       -> origin/cleue-more-samples
+2025-09-18T00:26:17.7821146Z  * [new branch]      cleue-mostly-adequate-capter10           -> origin/cleue-mostly-adequate-capter10
+2025-09-18T00:26:17.7823657Z  * [new branch]      cleue-mostly-adequate-fp-go              -> origin/cleue-mostly-adequate-fp-go
+2025-09-18T00:26:17.7826216Z  * [new branch]      cleue-mostly-adequate-more-samples       -> origin/cleue-mostly-adequate-more-samples
+2025-09-18T00:26:17.7828901Z  * [new branch]      cleue-prefer-second-over-SK              -> origin/cleue-prefer-second-over-SK
+2025-09-18T00:26:17.7831370Z  * [new branch]      cleue-request-builder-example            -> origin/cleue-request-builder-example
+2025-09-18T00:26:17.7833649Z  * [new branch]      cleue-rioe-tests                         -> origin/cleue-rioe-tests
+2025-09-18T00:26:17.7835767Z  * [new branch]      cleue-sample-ioeither                    -> origin/cleue-sample-ioeither
+2025-09-18T00:26:17.7838184Z  * [new branch]      cleue-some-benchmarking                  -> origin/cleue-some-benchmarking
+2025-09-18T00:26:17.7840776Z  * [new branch]      cleue-support-chain-first-for-iooption   -> origin/cleue-support-chain-first-for-iooption
+2025-09-18T00:26:17.7843425Z  * [new branch]      cleue-switch-either-type                 -> origin/cleue-switch-either-type
+2025-09-18T00:26:17.7845442Z  * [new branch]      cleue-v2                                 -> origin/cleue-v2
+2025-09-18T00:26:17.7847809Z  * [new branch]      dependency-injection                     -> origin/dependency-injection
+2025-09-18T00:26:17.7849770Z  * [new branch]      issue-77                                 -> origin/issue-77
+2025-09-18T00:26:17.7851435Z  * [new branch]      main                                     -> origin/main
+2025-09-18T00:26:17.7853520Z  * [new branch]      renovate/major-go-dependencies           -> origin/renovate/major-go-dependencies
+2025-09-18T00:26:17.7855728Z  * [new branch]      sample-match                             -> origin/sample-match
+2025-09-18T00:26:17.7857903Z  * [new branch]      whitesource/configure                    -> origin/whitesource/configure
+2025-09-18T00:26:17.7859773Z  * [new tag]         v1.0.0                                   -> v1.0.0
+2025-09-18T00:26:17.7861254Z  * [new tag]         v1.0.1                                   -> v1.0.1
+2025-09-18T00:26:17.7862735Z  * [new tag]         v1.0.10                                  -> v1.0.10
+2025-09-18T00:26:17.7864238Z  * [new tag]         v1.0.100                                 -> v1.0.100
+2025-09-18T00:26:17.7865748Z  * [new tag]         v1.0.101                                 -> v1.0.101
+2025-09-18T00:26:17.7867356Z  * [new tag]         v1.0.102                                 -> v1.0.102
+2025-09-18T00:26:17.7868850Z  * [new tag]         v1.0.103                                 -> v1.0.103
+2025-09-18T00:26:17.7870354Z  * [new tag]         v1.0.104                                 -> v1.0.104
+2025-09-18T00:26:17.7871851Z  * [new tag]         v1.0.105                                 -> v1.0.105
+2025-09-18T00:26:17.7873346Z  * [new tag]         v1.0.106                                 -> v1.0.106
+2025-09-18T00:26:17.7874831Z  * [new tag]         v1.0.107                                 -> v1.0.107
+2025-09-18T00:26:17.7876320Z  * [new tag]         v1.0.108                                 -> v1.0.108
+2025-09-18T00:26:17.7877904Z  * [new tag]         v1.0.109                                 -> v1.0.109
+2025-09-18T00:26:17.7879596Z  * [new tag]         v1.0.11                                  -> v1.0.11
+2025-09-18T00:26:17.7881084Z  * [new tag]         v1.0.110                                 -> v1.0.110
+2025-09-18T00:26:17.7882564Z  * [new tag]         v1.0.111                                 -> v1.0.111
+2025-09-18T00:26:17.7884203Z  * [new tag]         v1.0.112                                 -> v1.0.112
+2025-09-18T00:26:17.7885676Z  * [new tag]         v1.0.113                                 -> v1.0.113
+2025-09-18T00:26:17.7887368Z  * [new tag]         v1.0.114                                 -> v1.0.114
+2025-09-18T00:26:17.7888800Z  * [new tag]         v1.0.115                                 -> v1.0.115
+2025-09-18T00:26:17.7890226Z  * [new tag]         v1.0.116                                 -> v1.0.116
+2025-09-18T00:26:17.7891658Z  * [new tag]         v1.0.117                                 -> v1.0.117
+2025-09-18T00:26:17.7893099Z  * [new tag]         v1.0.118                                 -> v1.0.118
+2025-09-18T00:26:17.7894723Z  * [new tag]         v1.0.119                                 -> v1.0.119
+2025-09-18T00:26:17.7896156Z  * [new tag]         v1.0.12                                  -> v1.0.12
+2025-09-18T00:26:17.7897714Z  * [new tag]         v1.0.120                                 -> v1.0.120
+2025-09-18T00:26:17.7899491Z  * [new tag]         v1.0.121                                 -> v1.0.121
+2025-09-18T00:26:17.7901700Z  * [new tag]         v1.0.122                                 -> v1.0.122
+2025-09-18T00:26:17.7903749Z  * [new tag]         v1.0.123                                 -> v1.0.123
+2025-09-18T00:26:17.7905173Z  * [new tag]         v1.0.124                                 -> v1.0.124
+2025-09-18T00:26:17.7906990Z  * [new tag]         v1.0.125                                 -> v1.0.125
+2025-09-18T00:26:17.7908421Z  * [new tag]         v1.0.126                                 -> v1.0.126
+2025-09-18T00:26:17.7910343Z  * [new tag]         v1.0.127                                 -> v1.0.127
+2025-09-18T00:26:17.7912160Z  * [new tag]         v1.0.128                                 -> v1.0.128
+2025-09-18T00:26:17.7913786Z  * [new tag]         v1.0.129                                 -> v1.0.129
+2025-09-18T00:26:17.7915543Z  * [new tag]         v1.0.13                                  -> v1.0.13
+2025-09-18T00:26:17.7917191Z  * [new tag]         v1.0.130                                 -> v1.0.130
+2025-09-18T00:26:17.7918886Z  * [new tag]         v1.0.131                                 -> v1.0.131
+2025-09-18T00:26:17.7920459Z  * [new tag]         v1.0.132                                 -> v1.0.132
+2025-09-18T00:26:17.7921853Z  * [new tag]         v1.0.133                                 -> v1.0.133
+2025-09-18T00:26:17.7923245Z  * [new tag]         v1.0.134                                 -> v1.0.134
+2025-09-18T00:26:17.7924624Z  * [new tag]         v1.0.135                                 -> v1.0.135
+2025-09-18T00:26:17.7926006Z  * [new tag]         v1.0.136                                 -> v1.0.136
+2025-09-18T00:26:17.7927637Z  * [new tag]         v1.0.137                                 -> v1.0.137
+2025-09-18T00:26:17.7929024Z  * [new tag]         v1.0.138                                 -> v1.0.138
+2025-09-18T00:26:17.7930437Z  * [new tag]         v1.0.139                                 -> v1.0.139
+2025-09-18T00:26:17.7931812Z  * [new tag]         v1.0.14                                  -> v1.0.14
+2025-09-18T00:26:17.7933178Z  * [new tag]         v1.0.140                                 -> v1.0.140
+2025-09-18T00:26:17.7934575Z  * [new tag]         v1.0.141                                 -> v1.0.141
+2025-09-18T00:26:17.7935954Z  * [new tag]         v1.0.142                                 -> v1.0.142
+2025-09-18T00:26:17.7937533Z  * [new tag]         v1.0.143                                 -> v1.0.143
+2025-09-18T00:26:17.7938946Z  * [new tag]         v1.0.144                                 -> v1.0.144
+2025-09-18T00:26:17.7940369Z  * [new tag]         v1.0.145                                 -> v1.0.145
+2025-09-18T00:26:17.7941764Z  * [new tag]         v1.0.146                                 -> v1.0.146
+2025-09-18T00:26:17.7943154Z  * [new tag]         v1.0.147                                 -> v1.0.147
+2025-09-18T00:26:17.7944728Z  * [new tag]         v1.0.148                                 -> v1.0.148
+2025-09-18T00:26:17.7946111Z  * [new tag]         v1.0.149                                 -> v1.0.149
+2025-09-18T00:26:17.7947898Z  * [new tag]         v1.0.15                                  -> v1.0.15
+2025-09-18T00:26:17.7949301Z  * [new tag]         v1.0.150                                 -> v1.0.150
+2025-09-18T00:26:17.7950916Z  * [new tag]         v1.0.151                                 -> v1.0.151
+2025-09-18T00:26:17.7952314Z  * [new tag]         v1.0.152                                 -> v1.0.152
+2025-09-18T00:26:17.7953688Z  * [new tag]         v1.0.153                                 -> v1.0.153
+2025-09-18T00:26:17.7955078Z  * [new tag]         v1.0.154                                 -> v1.0.154
+2025-09-18T00:26:17.7956450Z  * [new tag]         v1.0.155                                 -> v1.0.155
+2025-09-18T00:26:17.7958385Z  * [new tag]         v1.0.16                                  -> v1.0.16
+2025-09-18T00:26:17.7959774Z  * [new tag]         v1.0.17                                  -> v1.0.17
+2025-09-18T00:26:17.7961107Z  * [new tag]         v1.0.18                                  -> v1.0.18
+2025-09-18T00:26:17.7962600Z  * [new tag]         v1.0.19                                  -> v1.0.19
+2025-09-18T00:26:17.7964013Z  * [new tag]         v1.0.2                                   -> v1.0.2
+2025-09-18T00:26:17.7965358Z  * [new tag]         v1.0.20                                  -> v1.0.20
+2025-09-18T00:26:17.7967236Z  * [new tag]         v1.0.21                                  -> v1.0.21
+2025-09-18T00:26:17.7968778Z  * [new tag]         v1.0.22                                  -> v1.0.22
+2025-09-18T00:26:17.7970356Z  * [new tag]         v1.0.23                                  -> v1.0.23
+2025-09-18T00:26:17.7971722Z  * [new tag]         v1.0.24                                  -> v1.0.24
+2025-09-18T00:26:17.7973095Z  * [new tag]         v1.0.25                                  -> v1.0.25
+2025-09-18T00:26:17.7974447Z  * [new tag]         v1.0.26                                  -> v1.0.26
+2025-09-18T00:26:17.7975805Z  * [new tag]         v1.0.27                                  -> v1.0.27
+2025-09-18T00:26:17.7977428Z  * [new tag]         v1.0.28                                  -> v1.0.28
+2025-09-18T00:26:17.7978792Z  * [new tag]         v1.0.29                                  -> v1.0.29
+2025-09-18T00:26:17.7980125Z  * [new tag]         v1.0.3                                   -> v1.0.3
+2025-09-18T00:26:17.7981471Z  * [new tag]         v1.0.30                                  -> v1.0.30
+2025-09-18T00:26:17.7982819Z  * [new tag]         v1.0.31                                  -> v1.0.31
+2025-09-18T00:26:17.7984167Z  * [new tag]         v1.0.32                                  -> v1.0.32
+2025-09-18T00:26:17.7985510Z  * [new tag]         v1.0.33                                  -> v1.0.33
+2025-09-18T00:26:17.7987757Z  * [new tag]         v1.0.34                                  -> v1.0.34
+2025-09-18T00:26:17.7989234Z  * [new tag]         v1.0.35                                  -> v1.0.35
+2025-09-18T00:26:17.7990582Z  * [new tag]         v1.0.36                                  -> v1.0.36
+2025-09-18T00:26:17.7992470Z  * [new tag]         v1.0.37                                  -> v1.0.37
+2025-09-18T00:26:17.7994790Z  * [new tag]         v1.0.38                                  -> v1.0.38
+2025-09-18T00:26:17.7997465Z  * [new tag]         v1.0.39                                  -> v1.0.39
+2025-09-18T00:26:17.7999824Z  * [new tag]         v1.0.4                                   -> v1.0.4
+2025-09-18T00:26:17.8002095Z  * [new tag]         v1.0.40                                  -> v1.0.40
+2025-09-18T00:26:17.8004452Z  * [new tag]         v1.0.41                                  -> v1.0.41
+2025-09-18T00:26:17.8006941Z  * [new tag]         v1.0.42                                  -> v1.0.42
+2025-09-18T00:26:17.8009157Z  * [new tag]         v1.0.43                                  -> v1.0.43
+2025-09-18T00:26:17.8011387Z  * [new tag]         v1.0.44                                  -> v1.0.44
+2025-09-18T00:26:17.8012788Z  * [new tag]         v1.0.45                                  -> v1.0.45
+2025-09-18T00:26:17.8014145Z  * [new tag]         v1.0.46                                  -> v1.0.46
+2025-09-18T00:26:17.8015557Z  * [new tag]         v1.0.47                                  -> v1.0.47
+2025-09-18T00:26:17.8017225Z  * [new tag]         v1.0.48                                  -> v1.0.48
+2025-09-18T00:26:17.8019467Z  * [new tag]         v1.0.49                                  -> v1.0.49
+2025-09-18T00:26:17.8021137Z  * [new tag]         v1.0.5                                   -> v1.0.5
+2025-09-18T00:26:17.8022494Z  * [new tag]         v1.0.50                                  -> v1.0.50
+2025-09-18T00:26:17.8023872Z  * [new tag]         v1.0.51                                  -> v1.0.51
+2025-09-18T00:26:17.8025219Z  * [new tag]         v1.0.52                                  -> v1.0.52
+2025-09-18T00:26:17.8026764Z  * [new tag]         v1.0.53                                  -> v1.0.53
+2025-09-18T00:26:17.8028198Z  * [new tag]         v1.0.54                                  -> v1.0.54
+2025-09-18T00:26:17.8029568Z  * [new tag]         v1.0.55                                  -> v1.0.55
+2025-09-18T00:26:17.8030895Z  * [new tag]         v1.0.56                                  -> v1.0.56
+2025-09-18T00:26:17.8032228Z  * [new tag]         v1.0.57                                  -> v1.0.57
+2025-09-18T00:26:17.8033548Z  * [new tag]         v1.0.58                                  -> v1.0.58
+2025-09-18T00:26:17.8034874Z  * [new tag]         v1.0.59                                  -> v1.0.59
+2025-09-18T00:26:17.8036223Z  * [new tag]         v1.0.6                                   -> v1.0.6
+2025-09-18T00:26:17.8037944Z  * [new tag]         v1.0.60                                  -> v1.0.60
+2025-09-18T00:26:17.8039276Z  * [new tag]         v1.0.61                                  -> v1.0.61
+2025-09-18T00:26:17.8040621Z  * [new tag]         v1.0.62                                  -> v1.0.62
+2025-09-18T00:26:17.8041952Z  * [new tag]         v1.0.63                                  -> v1.0.63
+2025-09-18T00:26:17.8043260Z  * [new tag]         v1.0.64                                  -> v1.0.64
+2025-09-18T00:26:17.8044582Z  * [new tag]         v1.0.65                                  -> v1.0.65
+2025-09-18T00:26:17.8045917Z  * [new tag]         v1.0.66                                  -> v1.0.66
+2025-09-18T00:26:17.8047503Z  * [new tag]         v1.0.67                                  -> v1.0.67
+2025-09-18T00:26:17.8048817Z  * [new tag]         v1.0.68                                  -> v1.0.68
+2025-09-18T00:26:17.8050133Z  * [new tag]         v1.0.69                                  -> v1.0.69
+2025-09-18T00:26:17.8051616Z  * [new tag]         v1.0.7                                   -> v1.0.7
+2025-09-18T00:26:17.8052939Z  * [new tag]         v1.0.70                                  -> v1.0.70
+2025-09-18T00:26:17.8054238Z  * [new tag]         v1.0.71                                  -> v1.0.71
+2025-09-18T00:26:17.8055566Z  * [new tag]         v1.0.72                                  -> v1.0.72
+2025-09-18T00:26:17.8057052Z  * [new tag]         v1.0.73                                  -> v1.0.73
+2025-09-18T00:26:17.8058353Z  * [new tag]         v1.0.74                                  -> v1.0.74
+2025-09-18T00:26:17.8059666Z  * [new tag]         v1.0.75                                  -> v1.0.75
+2025-09-18T00:26:17.8060960Z  * [new tag]         v1.0.76                                  -> v1.0.76
+2025-09-18T00:26:17.8062262Z  * [new tag]         v1.0.77                                  -> v1.0.77
+2025-09-18T00:26:17.8063546Z  * [new tag]         v1.0.78                                  -> v1.0.78
+2025-09-18T00:26:17.8064847Z  * [new tag]         v1.0.79                                  -> v1.0.79
+2025-09-18T00:26:17.8066140Z  * [new tag]         v1.0.8                                   -> v1.0.8
+2025-09-18T00:26:17.8067621Z  * [new tag]         v1.0.80                                  -> v1.0.80
+2025-09-18T00:26:17.8069184Z  * [new tag]         v1.0.81                                  -> v1.0.81
+2025-09-18T00:26:17.8070533Z  * [new tag]         v1.0.82                                  -> v1.0.82
+2025-09-18T00:26:17.8071852Z  * [new tag]         v1.0.83                                  -> v1.0.83
+2025-09-18T00:26:17.8073163Z  * [new tag]         v1.0.84                                  -> v1.0.84
+2025-09-18T00:26:17.8074476Z  * [new tag]         v1.0.85                                  -> v1.0.85
+2025-09-18T00:26:17.8075799Z  * [new tag]         v1.0.86                                  -> v1.0.86
+2025-09-18T00:26:17.8077296Z  * [new tag]         v1.0.87                                  -> v1.0.87
+2025-09-18T00:26:17.8078624Z  * [new tag]         v1.0.88                                  -> v1.0.88
+2025-09-18T00:26:17.8079972Z  * [new tag]         v1.0.89                                  -> v1.0.89
+2025-09-18T00:26:17.8081275Z  * [new tag]         v1.0.9                                   -> v1.0.9
+2025-09-18T00:26:17.8082823Z  * [new tag]         v1.0.90                                  -> v1.0.90
+2025-09-18T00:26:17.8084148Z  * [new tag]         v1.0.91                                  -> v1.0.91
+2025-09-18T00:26:17.8085487Z  * [new tag]         v1.0.92                                  -> v1.0.92
+2025-09-18T00:26:17.8086982Z  * [new tag]         v1.0.93                                  -> v1.0.93
+2025-09-18T00:26:17.8088304Z  * [new tag]         v1.0.94                                  -> v1.0.94
+2025-09-18T00:26:17.8089630Z  * [new tag]         v1.0.95                                  -> v1.0.95
+2025-09-18T00:26:17.8090952Z  * [new tag]         v1.0.96                                  -> v1.0.96
+2025-09-18T00:26:17.8092441Z  * [new tag]         v1.0.97                                  -> v1.0.97
+2025-09-18T00:26:17.8093752Z  * [new tag]         v1.0.98                                  -> v1.0.98
+2025-09-18T00:26:17.8095076Z  * [new tag]         v1.0.99                                  -> v1.0.99
+2025-09-18T00:26:17.8096811Z  * [new ref]         bd258aba07a6ca6f341d4158de3898caaa688956 -> pull/140/merge
+2025-09-18T00:26:17.8100096Z ##[endgroup]
+2025-09-18T00:26:17.8101400Z ##[group]Determining the checkout info
+2025-09-18T00:26:17.8102874Z ##[endgroup]
+2025-09-18T00:26:17.8103774Z [command]/usr/bin/git sparse-checkout disable
+2025-09-18T00:26:17.8106224Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-18T00:26:17.8109332Z ##[group]Checking out the ref
+2025-09-18T00:26:17.8110705Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/140/merge
+2025-09-18T00:26:17.8537858Z Note: switching to 'refs/remotes/pull/140/merge'.
+2025-09-18T00:26:17.8540555Z 
+2025-09-18T00:26:17.8541873Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-09-18T00:26:17.8544651Z changes and commit them, and you can discard any commits you make in this
+2025-09-18T00:26:17.8547777Z state without impacting any branches by switching back to a branch.
+2025-09-18T00:26:17.8549296Z 
+2025-09-18T00:26:17.8550007Z If you want to create a new branch to retain commits you create, you may
+2025-09-18T00:26:17.8551583Z do so (now or later) by using -c with the switch command. Example:
+2025-09-18T00:26:17.8552500Z 
+2025-09-18T00:26:17.8552916Z   git switch -c <new-branch-name>
+2025-09-18T00:26:17.8553565Z 
+2025-09-18T00:26:17.8554029Z Or undo this operation with:
+2025-09-18T00:26:17.8555004Z 
+2025-09-18T00:26:17.8555522Z   git switch -
+2025-09-18T00:26:17.8556110Z 
+2025-09-18T00:26:17.8557066Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-09-18T00:26:17.8558179Z 
+2025-09-18T00:26:17.8559440Z HEAD is now at bd258ab Merge e1df624996b12559cac10b4fdb946dff24f6af3a into 25e3d1d85c8fbe910f9c7cb81d0a5c8fa8495c9c
+2025-09-18T00:26:17.8563321Z ##[endgroup]
+2025-09-18T00:26:17.8601343Z [command]/usr/bin/git log -1 --format=%H
+2025-09-18T00:26:17.8625343Z bd258aba07a6ca6f341d4158de3898caaa688956
+2025-09-18T00:26:17.8965055Z ##[group]Run actions/setup-go@v5
+2025-09-18T00:26:17.8966009Z with:
+2025-09-18T00:26:17.8966875Z   go-version: 1.23.x
+2025-09-18T00:26:17.8967677Z   check-latest: false
+2025-09-18T00:26:17.8968701Z   token: ***
+2025-09-18T00:26:17.8969401Z   cache: true
+2025-09-18T00:26:17.8970093Z env:
+2025-09-18T00:26:17.8970764Z   DEFAULT_BRANCH: main
+2025-09-18T00:26:17.8971556Z   GO_VERSION: 1.21.6
+2025-09-18T00:26:17.8972325Z   NODE_VERSION: 22
+2025-09-18T00:26:17.8973059Z   DRY_RUN: true
+2025-09-18T00:26:17.8973780Z ##[endgroup]
+2025-09-18T00:26:18.0596551Z Setup go version spec 1.23.x
+2025-09-18T00:26:18.1039196Z Found in cache @ /opt/hostedtoolcache/go/1.23.12/x64
+2025-09-18T00:26:18.1043832Z Added go to the path
+2025-09-18T00:26:18.1047987Z Successfully set up Go version 1.23.x
+2025-09-18T00:26:18.6047443Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOMODCACHE
+2025-09-18T00:26:18.6086881Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOCACHE
+2025-09-18T00:26:18.6113281Z /home/runner/go/pkg/mod
+2025-09-18T00:26:18.6147180Z /home/runner/.cache/go-build
+2025-09-18T00:26:18.7988229Z Cache is not found
+2025-09-18T00:26:18.8005765Z go version go1.23.12 linux/amd64
+2025-09-18T00:26:18.8005986Z 
+2025-09-18T00:26:18.8006305Z ##[group]go env
+2025-09-18T00:26:19.3649453Z GO111MODULE=''
+2025-09-18T00:26:19.3649856Z GOARCH='amd64'
+2025-09-18T00:26:19.3650175Z GOBIN=''
+2025-09-18T00:26:19.3667320Z GOCACHE='/home/runner/.cache/go-build'
+2025-09-18T00:26:19.3667832Z GOENV='/home/runner/.config/go/env'
+2025-09-18T00:26:19.3668238Z GOEXE=''
+2025-09-18T00:26:19.3668559Z GOEXPERIMENT=''
+2025-09-18T00:26:19.3668893Z GOFLAGS=''
+2025-09-18T00:26:19.3669193Z GOHOSTARCH='amd64'
+2025-09-18T00:26:19.3669508Z GOHOSTOS='linux'
+2025-09-18T00:26:19.3670097Z GOINSECURE=''
+2025-09-18T00:26:19.3670480Z GOMODCACHE='/home/runner/go/pkg/mod'
+2025-09-18T00:26:19.3670888Z GONOPROXY=''
+2025-09-18T00:26:19.3671198Z GONOSUMDB=''
+2025-09-18T00:26:19.3671535Z GOOS='linux'
+2025-09-18T00:26:19.3671868Z GOPATH='/home/runner/go'
+2025-09-18T00:26:19.3672225Z GOPRIVATE=''
+2025-09-18T00:26:19.3672660Z GOPROXY='https://proxy.golang.org,direct'
+2025-09-18T00:26:19.3673085Z GOROOT='/opt/hostedtoolcache/go/1.23.12/x64'
+2025-09-18T00:26:19.3673381Z GOSUMDB='sum.golang.org'
+2025-09-18T00:26:19.3673591Z GOTMPDIR=''
+2025-09-18T00:26:19.3673806Z GOTOOLCHAIN='auto'
+2025-09-18T00:26:19.3674142Z GOTOOLDIR='/opt/hostedtoolcache/go/1.23.12/x64/pkg/tool/linux_amd64'
+2025-09-18T00:26:19.3674504Z GOVCS=''
+2025-09-18T00:26:19.3674681Z GOVERSION='go1.23.12'
+2025-09-18T00:26:19.3674886Z GODEBUG=''
+2025-09-18T00:26:19.3675076Z GOTELEMETRY='local'
+2025-09-18T00:26:19.3675564Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2025-09-18T00:26:19.3675860Z GCCGO='gccgo'
+2025-09-18T00:26:19.3676046Z GOAMD64='v1'
+2025-09-18T00:26:19.3676230Z AR='ar'
+2025-09-18T00:26:19.3676413Z CC='gcc'
+2025-09-18T00:26:19.3676761Z CXX='g++'
+2025-09-18T00:26:19.3676967Z CGO_ENABLED='1'
+2025-09-18T00:26:19.3677207Z GOMOD='/home/runner/work/fp-go/fp-go/go.mod'
+2025-09-18T00:26:19.3677466Z GOWORK=''
+2025-09-18T00:26:19.3677653Z CGO_CFLAGS='-O2 -g'
+2025-09-18T00:26:19.3677850Z CGO_CPPFLAGS=''
+2025-09-18T00:26:19.3678043Z CGO_CXXFLAGS='-O2 -g'
+2025-09-18T00:26:19.3678243Z CGO_FFLAGS='-O2 -g'
+2025-09-18T00:26:19.3678444Z CGO_LDFLAGS='-O2 -g'
+2025-09-18T00:26:19.3678655Z PKG_CONFIG='pkg-config'
+2025-09-18T00:26:19.3679269Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build3055307461=/tmp/go-build -gno-record-gcc-switches'
+2025-09-18T00:26:19.3679800Z 
+2025-09-18T00:26:19.3680245Z ##[endgroup]
+2025-09-18T00:26:19.3789482Z ##[group]Run go mod tidy
+2025-09-18T00:26:19.3789763Z [36;1mgo mod tidy[0m
+2025-09-18T00:26:19.3790011Z [36;1mgo test -v ./...[0m
+2025-09-18T00:26:19.3847444Z shell: /usr/bin/bash -e {0}
+2025-09-18T00:26:19.3847696Z env:
+2025-09-18T00:26:19.3847873Z   DEFAULT_BRANCH: main
+2025-09-18T00:26:19.3848080Z   GO_VERSION: 1.21.6
+2025-09-18T00:26:19.3848259Z   NODE_VERSION: 22
+2025-09-18T00:26:19.3848438Z   DRY_RUN: true
+2025-09-18T00:26:19.3848616Z ##[endgroup]
+2025-09-18T00:26:19.4405808Z go: downloading github.com/stretchr/testify v1.11.1
+2025-09-18T00:26:19.5344590Z go: downloading github.com/urfave/cli/v2 v2.27.7
+2025-09-18T00:26:22.0116445Z go: downloading github.com/davecgh/go-spew v1.1.1
+2025-09-18T00:26:22.0415547Z go: downloading github.com/pmezard/go-difflib v1.0.0
+2025-09-18T00:26:22.3947255Z go: downloading github.com/cpuguy83/go-md2man/v2 v2.0.7
+2025-09-18T00:26:22.4205128Z go: downloading github.com/xrash/smetrics v0.0.0-20240521201337-686a1a2994c1
+2025-09-18T00:26:24.9928397Z go: downloading gopkg.in/yaml.v3 v3.0.1
+2025-09-18T00:26:25.0403768Z go: downloading github.com/russross/blackfriday/v2 v2.1.0
+2025-09-18T00:26:26.0547971Z go: downloading gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405
+2025-09-18T00:26:36.8502924Z ?   	github.com/IBM/fp-go	[no test files]
+2025-09-18T00:26:44.4667487Z ?   	github.com/IBM/fp-go/array/generic	[no test files]
+2025-09-18T00:26:44.4674156Z ?   	github.com/IBM/fp-go/array/nonempty	[no test files]
+2025-09-18T00:26:44.4736683Z === RUN   TestAny
+2025-09-18T00:26:44.4741160Z --- PASS: TestAny (0.00s)
+2025-09-18T00:26:44.4741885Z === RUN   TestMap1
+2025-09-18T00:26:44.4742372Z --- PASS: TestMap1 (0.00s)
+2025-09-18T00:26:44.4743113Z === RUN   TestMap
+2025-09-18T00:26:44.4743753Z --- PASS: TestMap (0.00s)
+2025-09-18T00:26:44.4744326Z === RUN   TestReduceRight
+2025-09-18T00:26:44.4744938Z --- PASS: TestReduceRight (0.00s)
+2025-09-18T00:26:44.4745505Z === RUN   TestReduce
+2025-09-18T00:26:44.4746092Z --- PASS: TestReduce (0.00s)
+2025-09-18T00:26:44.4746910Z === RUN   TestEmpty
+2025-09-18T00:26:44.4747622Z --- PASS: TestEmpty (0.00s)
+2025-09-18T00:26:44.4748394Z === RUN   TestAp
+2025-09-18T00:26:44.4749322Z --- PASS: TestAp (0.00s)
+2025-09-18T00:26:44.4751174Z === RUN   TestIntercalate
+2025-09-18T00:26:44.4751590Z --- PASS: TestIntercalate (0.00s)
+2025-09-18T00:26:44.4752030Z === RUN   TestPrependAll
+2025-09-18T00:26:44.4752421Z --- PASS: TestPrependAll (0.00s)
+2025-09-18T00:26:44.4752845Z === RUN   TestFlatten
+2025-09-18T00:26:44.4753228Z --- PASS: TestFlatten (0.00s)
+2025-09-18T00:26:44.4753654Z === RUN   TestLookup
+2025-09-18T00:26:44.4754006Z --- PASS: TestLookup (0.00s)
+2025-09-18T00:26:44.4754369Z === RUN   TestSlice
+2025-09-18T00:26:44.4754712Z --- PASS: TestSlice (0.00s)
+2025-09-18T00:26:44.4755076Z === RUN   TestFrom
+2025-09-18T00:26:44.4755416Z --- PASS: TestFrom (0.00s)
+2025-09-18T00:26:44.4755770Z === RUN   TestPartition
+2025-09-18T00:26:44.4756131Z --- PASS: TestPartition (0.00s)
+2025-09-18T00:26:44.4756529Z === RUN   TestFilterChain
+2025-09-18T00:26:44.4757128Z --- PASS: TestFilterChain (0.00s)
+2025-09-18T00:26:44.4757525Z === RUN   TestFilterMap
+2025-09-18T00:26:44.4757910Z --- PASS: TestFilterMap (0.00s)
+2025-09-18T00:26:44.4758308Z === RUN   TestFoldMap
+2025-09-18T00:26:44.4758668Z --- PASS: TestFoldMap (0.00s)
+2025-09-18T00:26:44.4759040Z === RUN   TestBind
+2025-09-18T00:26:44.4759362Z --- PASS: TestBind (0.00s)
+2025-09-18T00:26:44.4759723Z === RUN   TestApS
+2025-09-18T00:26:44.4760041Z --- PASS: TestApS (0.00s)
+2025-09-18T00:26:44.4760421Z === RUN   TestConcatAll
+2025-09-18T00:26:44.4760784Z --- PASS: TestConcatAll (0.00s)
+2025-09-18T00:26:44.4761177Z === RUN   TestMonoid
+2025-09-18T00:26:44.4761518Z --- PASS: TestMonoid (0.00s)
+2025-09-18T00:26:44.4761927Z === RUN   TestSequenceOption
+2025-09-18T00:26:44.4762338Z --- PASS: TestSequenceOption (0.00s)
+2025-09-18T00:26:44.4762753Z === RUN   TestSort
+2025-09-18T00:26:44.4763081Z --- PASS: TestSort (0.00s)
+2025-09-18T00:26:44.4763442Z === RUN   TestTraverse
+2025-09-18T00:26:44.4764088Z --- PASS: TestTraverse (0.00s)
+2025-09-18T00:26:44.4764525Z === RUN   TestUniq
+2025-09-18T00:26:44.4764887Z --- PASS: TestUniq (0.00s)
+2025-09-18T00:26:44.4765288Z === RUN   TestZipWith
+2025-09-18T00:26:44.4765646Z --- PASS: TestZipWith (0.00s)
+2025-09-18T00:26:44.4766024Z === RUN   TestZip
+2025-09-18T00:26:44.4766358Z --- PASS: TestZip (0.00s)
+2025-09-18T00:26:44.4766877Z === RUN   TestUnzip
+2025-09-18T00:26:44.4767227Z --- PASS: TestUnzip (0.00s)
+2025-09-18T00:26:44.4767629Z === RUN   ExampleFoldMap
+2025-09-18T00:26:44.4768018Z --- PASS: ExampleFoldMap (0.00s)
+2025-09-18T00:26:44.4768434Z === RUN   Example_any
+2025-09-18T00:26:44.4768783Z --- PASS: Example_any (0.00s)
+2025-09-18T00:26:44.4769173Z === RUN   Example_any_filter
+2025-09-18T00:26:44.4769575Z --- PASS: Example_any_filter (0.00s)
+2025-09-18T00:26:44.4770056Z === RUN   Example_any_find
+2025-09-18T00:26:44.4770467Z --- PASS: Example_any_find (0.00s)
+2025-09-18T00:26:44.4770909Z === RUN   Example_find
+2025-09-18T00:26:44.4771338Z --- PASS: Example_find (0.00s)
+2025-09-18T00:26:44.4771816Z === RUN   Example_find_filter
+2025-09-18T00:26:44.4772274Z --- PASS: Example_find_filter (0.00s)
+2025-09-18T00:26:44.4772703Z === RUN   Example_basic
+2025-09-18T00:26:44.4773085Z --- PASS: Example_basic (0.00s)
+2025-09-18T00:26:44.4773468Z === RUN   Example_sort
+2025-09-18T00:26:44.4773839Z --- PASS: Example_sort (0.00s)
+2025-09-18T00:26:44.4774194Z PASS
+2025-09-18T00:26:44.4774538Z ok  	github.com/IBM/fp-go/array	0.005s
+2025-09-18T00:26:44.8442382Z ?   	github.com/IBM/fp-go/boolean	[no test files]
+2025-09-18T00:26:44.8443015Z ?   	github.com/IBM/fp-go/bounded	[no test files]
+2025-09-18T00:26:44.8491347Z === RUN   TestMonadLaws
+2025-09-18T00:26:44.8493761Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:26:44.8494174Z PASS
+2025-09-18T00:26:44.8494707Z ok  	github.com/IBM/fp-go/array/testing	0.004s
+2025-09-18T00:26:44.8495371Z testing: warning: no tests to run
+2025-09-18T00:26:44.8495710Z PASS
+2025-09-18T00:26:44.8496205Z ok  	github.com/IBM/fp-go/assert	0.003s [no tests to run]
+2025-09-18T00:26:45.0811524Z ?   	github.com/IBM/fp-go/cli	[no test files]
+2025-09-18T00:26:45.0813018Z ?   	github.com/IBM/fp-go/cli/templates	[no test files]
+2025-09-18T00:26:45.0863501Z === RUN   TestMonoid
+2025-09-18T00:26:45.0864103Z --- PASS: TestMonoid (0.00s)
+2025-09-18T00:26:45.0864610Z PASS
+2025-09-18T00:26:45.0870128Z ok  	github.com/IBM/fp-go/bytes	0.003s
+2025-09-18T00:26:45.1097880Z ?   	github.com/IBM/fp-go/constraints	[no test files]
+2025-09-18T00:26:45.1114537Z ?   	github.com/IBM/fp-go/context	[no test files]
+2025-09-18T00:26:45.1160517Z === RUN   TestMap
+2025-09-18T00:26:45.1165445Z --- PASS: TestMap (0.00s)
+2025-09-18T00:26:45.1166154Z === RUN   TestOf
+2025-09-18T00:26:45.1167331Z --- PASS: TestOf (0.00s)
+2025-09-18T00:26:45.1167899Z === RUN   TestAp
+2025-09-18T00:26:45.1168454Z --- PASS: TestAp (0.00s)
+2025-09-18T00:26:45.1169100Z PASS
+2025-09-18T00:26:45.1169594Z ok  	github.com/IBM/fp-go/constant	0.004s
+2025-09-18T00:26:45.8473405Z ?   	github.com/IBM/fp-go/context/ioeither	[no test files]
+2025-09-18T00:26:45.8476460Z ?   	github.com/IBM/fp-go/context/ioeither/generic	[no test files]
+2025-09-18T00:26:46.0462265Z ?   	github.com/IBM/fp-go/context/readereither/exec	[no test files]
+2025-09-18T00:26:46.0521885Z === RUN   TestBind
+2025-09-18T00:26:46.0523555Z --- PASS: TestBind (0.00s)
+2025-09-18T00:26:46.0525082Z === RUN   TestApS
+2025-09-18T00:26:46.0526500Z --- PASS: TestApS (0.00s)
+2025-09-18T00:26:46.0528132Z PASS
+2025-09-18T00:26:46.0529620Z ok  	github.com/IBM/fp-go/context/readereither	0.004s
+2025-09-18T00:26:48.3888270Z ?   	github.com/IBM/fp-go/context/readerioeither/exec	[no test files]
+2025-09-18T00:26:48.3895580Z ?   	github.com/IBM/fp-go/context/readerioeither/generic	[no test files]
+2025-09-18T00:26:51.0439939Z ?   	github.com/IBM/fp-go/di/erasure	[no test files]
+2025-09-18T00:26:51.2478358Z ?   	github.com/IBM/fp-go/either/exec	[no test files]
+2025-09-18T00:26:51.2759929Z ?   	github.com/IBM/fp-go/either/http	[no test files]
+2025-09-18T00:26:51.5633739Z ?   	github.com/IBM/fp-go/endomorphism	[no test files]
+2025-09-18T00:26:51.5634423Z ?   	github.com/IBM/fp-go/endomorphism/generic	[no test files]
+2025-09-18T00:26:51.5651521Z ?   	github.com/IBM/fp-go/eq	[no test files]
+2025-09-18T00:26:51.5828208Z ?   	github.com/IBM/fp-go/eq/testing	[no test files]
+2025-09-18T00:26:51.8205342Z ?   	github.com/IBM/fp-go/exec	[no test files]
+2025-09-18T00:26:51.8205949Z ?   	github.com/IBM/fp-go/file	[no test files]
+2025-09-18T00:26:52.1397052Z ?   	github.com/IBM/fp-go/function/generic	[no test files]
+2025-09-18T00:26:52.3985235Z === RUN   TestBind
+2025-09-18T00:26:52.3989416Z --- PASS: TestBind (0.00s)
+2025-09-18T00:26:52.3993291Z === RUN   TestApS
+2025-09-18T00:26:52.3997402Z --- PASS: TestApS (0.00s)
+2025-09-18T00:26:52.4002507Z === RUN   TestInnerContextCancelSemantics
+2025-09-18T00:26:52.4007892Z --- PASS: TestInnerContextCancelSemantics (0.00s)
+2025-09-18T00:26:52.4012691Z === RUN   TestOuterContextCancelSemantics
+2025-09-18T00:26:52.4017847Z --- PASS: TestOuterContextCancelSemantics (0.00s)
+2025-09-18T00:26:52.4022885Z === RUN   TestOuterAndInnerContextCancelSemantics
+2025-09-18T00:26:52.4033206Z --- PASS: TestOuterAndInnerContextCancelSemantics (0.00s)
+2025-09-18T00:26:52.4036916Z === RUN   TestCancelCauseSemantics
+2025-09-18T00:26:52.4039393Z --- PASS: TestCancelCauseSemantics (0.00s)
+2025-09-18T00:26:52.4041828Z === RUN   TestTimer
+2025-09-18T00:26:52.4044030Z --- PASS: TestTimer (3.00s)
+2025-09-18T00:26:52.4046228Z === RUN   TestCanceledApply
+2025-09-18T00:26:52.4048052Z --- PASS: TestCanceledApply (1.00s)
+2025-09-18T00:26:52.4052666Z === RUN   TestRegularApply
+2025-09-18T00:26:52.4053030Z --- PASS: TestRegularApply (0.00s)
+2025-09-18T00:26:52.4053429Z === RUN   TestWithResourceNoErrors
+2025-09-18T00:26:52.4053851Z --- PASS: TestWithResourceNoErrors (0.00s)
+2025-09-18T00:26:52.4054316Z === RUN   TestWithResourceErrorInBody
+2025-09-18T00:26:52.4055006Z --- PASS: TestWithResourceErrorInBody (0.00s)
+2025-09-18T00:26:52.4055751Z === RUN   TestWithResourceErrorInAcquire
+2025-09-18T00:26:52.4056341Z --- PASS: TestWithResourceErrorInAcquire (0.00s)
+2025-09-18T00:26:52.4057884Z === RUN   TestWithResourceErrorInRelease
+2025-09-18T00:26:52.4058674Z --- PASS: TestWithResourceErrorInRelease (0.00s)
+2025-09-18T00:26:52.4059178Z === RUN   ExampleWithResource
+2025-09-18T00:26:52.4059640Z 2025/09/18 00:26:52 Opened file [data/file.txt]
+2025-09-18T00:26:52.4060131Z 2025/09/18 00:26:52 Read content of length [7]
+2025-09-18T00:26:52.4060611Z 2025/09/18 00:26:52 Closed file [data/file.txt]
+2025-09-18T00:26:52.4061093Z --- PASS: ExampleWithResource (0.00s)
+2025-09-18T00:26:52.4061494Z PASS
+2025-09-18T00:26:52.4061889Z ok  	github.com/IBM/fp-go/context/readerioeither	4.008s
+2025-09-18T00:26:52.4062397Z === RUN   TestWithTempFile
+2025-09-18T00:26:52.4062785Z --- PASS: TestWithTempFile (0.00s)
+2025-09-18T00:26:52.4063232Z === RUN   TestWithTempFileOnClosedFile
+2025-09-18T00:26:52.4063727Z --- PASS: TestWithTempFileOnClosedFile (0.00s)
+2025-09-18T00:26:52.4064188Z === RUN   ExampleReadFile
+2025-09-18T00:26:52.4064556Z 2025/09/18 00:26:48 Log: {Carsten}
+2025-09-18T00:26:52.4064957Z --- PASS: ExampleReadFile (0.00s)
+2025-09-18T00:26:52.4065323Z PASS
+2025-09-18T00:26:52.4065742Z ok  	github.com/IBM/fp-go/context/readerioeither/file	0.005s
+2025-09-18T00:26:52.4066350Z === RUN   TestSendSingleRequest
+2025-09-18T00:26:52.4067377Z Right[http.PostItem]({1 1 sunt aut facere repellat provident occaecati excepturi optio reprehenderit quia et suscipit
+2025-09-18T00:26:52.4068305Z suscipit recusandae consequuntur expedita et cum
+2025-09-18T00:26:52.4068836Z reprehenderit molestiae ut ut quas totam
+2025-09-18T00:26:52.4069375Z nostrum rerum est autem sunt rem eveniet architecto})
+2025-09-18T00:26:52.4069907Z --- PASS: TestSendSingleRequest (0.23s)
+2025-09-18T00:26:52.4070414Z === RUN   TestSendSingleRequestWithHeaderUnsafe
+2025-09-18T00:26:52.4071005Z --- PASS: TestSendSingleRequestWithHeaderUnsafe (0.04s)
+2025-09-18T00:26:52.4071581Z === RUN   TestSendSingleRequestWithHeaderSafe
+2025-09-18T00:26:52.4072360Z --- PASS: TestSendSingleRequestWithHeaderSafe (0.04s)
+2025-09-18T00:26:52.4072867Z PASS
+2025-09-18T00:26:52.4073299Z ok  	github.com/IBM/fp-go/context/readerioeither/http	0.316s
+2025-09-18T00:26:52.4073869Z === RUN   TestBuilderWithQuery
+2025-09-18T00:26:52.4074287Z --- PASS: TestBuilderWithQuery (0.00s)
+2025-09-18T00:26:52.4074688Z PASS
+2025-09-18T00:26:52.4075144Z ok  	github.com/IBM/fp-go/context/readerioeither/http/builder	0.004s
+2025-09-18T00:26:52.4075739Z === RUN   TestSimpleProvider
+2025-09-18T00:26:52.4076156Z --- PASS: TestSimpleProvider (0.00s)
+2025-09-18T00:26:52.4076790Z === RUN   TestOptionalProvider
+2025-09-18T00:26:52.4077229Z --- PASS: TestOptionalProvider (0.00s)
+2025-09-18T00:26:52.4077745Z === RUN   TestOptionalProviderMissingDependency
+2025-09-18T00:26:52.4078320Z --- PASS: TestOptionalProviderMissingDependency (0.00s)
+2025-09-18T00:26:52.4078866Z === RUN   TestProviderMissingDependency
+2025-09-18T00:26:52.4079356Z --- PASS: TestProviderMissingDependency (0.00s)
+2025-09-18T00:26:52.4079862Z === RUN   TestEagerAndLazyProvider
+2025-09-18T00:26:52.4081617Z Right[string](Dynamic based on [Dynamic based on [Static based on [Carsten], at [2025-09-18 00:26:51.047446176 +0000 UTC m=+0.001616246]] at [2025-09-18 00:26:51.047532958 +0000 UTC m=+0.001702968]], [Static based on [Carsten], at [2025-09-18 00:26:51.047446176 +0000 UTC m=+0.001616246]] at [2025-09-18 00:26:51.047541003 +0000 UTC m=+0.001711013])
+2025-09-18T00:26:52.4083309Z --- PASS: TestEagerAndLazyProvider (0.00s)
+2025-09-18T00:26:52.4083764Z === RUN   TestItemProvider
+2025-09-18T00:26:52.4084143Z --- PASS: TestItemProvider (0.00s)
+2025-09-18T00:26:52.4084556Z === RUN   TestEmptyItemProvider
+2025-09-18T00:26:52.4084983Z --- PASS: TestEmptyItemProvider (0.00s)
+2025-09-18T00:26:52.4085443Z === RUN   TestDependencyOnMultiProvider
+2025-09-18T00:26:52.4085934Z --- PASS: TestDependencyOnMultiProvider (0.00s)
+2025-09-18T00:26:52.4092107Z === RUN   TestTokenWithDefaultProvider
+2025-09-18T00:26:52.4092630Z --- PASS: TestTokenWithDefaultProvider (0.00s)
+2025-09-18T00:26:52.4093291Z === RUN   TestTokenWithDefaultProviderAndOverride
+2025-09-18T00:26:52.4093905Z --- PASS: TestTokenWithDefaultProviderAndOverride (0.00s)
+2025-09-18T00:26:52.4094678Z === RUN   TestToType
+2025-09-18T00:26:52.4095022Z --- PASS: TestToType (0.00s)
+2025-09-18T00:26:52.4095393Z === RUN   TestToOptionType
+2025-09-18T00:26:52.4095765Z --- PASS: TestToOptionType (0.00s)
+2025-09-18T00:26:52.4096168Z === RUN   TestToIOEitherType
+2025-09-18T00:26:52.4096540Z --- PASS: TestToIOEitherType (0.00s)
+2025-09-18T00:26:52.4097120Z === RUN   TestToArrayType
+2025-09-18T00:26:52.4097480Z --- PASS: TestToArrayType (0.00s)
+2025-09-18T00:26:52.4097840Z PASS
+2025-09-18T00:26:52.4098135Z ok  	github.com/IBM/fp-go/di	0.005s
+2025-09-18T00:26:52.4098555Z === RUN   TestApplySemigroup
+2025-09-18T00:26:52.4098948Z --- PASS: TestApplySemigroup (0.00s)
+2025-09-18T00:26:52.4099478Z === RUN   TestApplicativeMonoid
+2025-09-18T00:26:52.4099885Z --- PASS: TestApplicativeMonoid (0.00s)
+2025-09-18T00:26:52.4100334Z === RUN   TestApplicativeMonoidLaws
+2025-09-18T00:26:52.4100774Z --- PASS: TestApplicativeMonoidLaws (0.00s)
+2025-09-18T00:26:52.4101206Z === RUN   TestCompactArray
+2025-09-18T00:26:52.4101569Z --- PASS: TestCompactArray (0.00s)
+2025-09-18T00:26:52.4101945Z === RUN   TestSequenceArray
+2025-09-18T00:26:52.4102339Z === RUN   TestSequenceArray/TestSequenceArray_0
+2025-09-18T00:26:52.4102802Z === RUN   TestSequenceArray/TestSequenceArray_1
+2025-09-18T00:26:52.4103257Z === RUN   TestSequenceArray/TestSequenceArray_2
+2025-09-18T00:26:52.4103715Z === RUN   TestSequenceArray/TestSequenceArray_3
+2025-09-18T00:26:52.4104184Z === RUN   TestSequenceArray/TestSequenceArray_4
+2025-09-18T00:26:52.4104655Z === RUN   TestSequenceArray/TestSequenceArray_5
+2025-09-18T00:26:52.4105122Z === RUN   TestSequenceArray/TestSequenceArray_6
+2025-09-18T00:26:52.4105590Z === RUN   TestSequenceArray/TestSequenceArray_7
+2025-09-18T00:26:52.4106047Z === RUN   TestSequenceArray/TestSequenceArray_8
+2025-09-18T00:26:52.4106849Z === RUN   TestSequenceArray/TestSequenceArray_9
+2025-09-18T00:26:52.4107346Z --- PASS: TestSequenceArray (0.00s)
+2025-09-18T00:26:52.4107944Z     --- PASS: TestSequenceArray/TestSequenceArray_0 (0.00s)
+2025-09-18T00:26:52.4108643Z     --- PASS: TestSequenceArray/TestSequenceArray_1 (0.00s)
+2025-09-18T00:26:52.4109301Z     --- PASS: TestSequenceArray/TestSequenceArray_2 (0.00s)
+2025-09-18T00:26:52.4109983Z     --- PASS: TestSequenceArray/TestSequenceArray_3 (0.00s)
+2025-09-18T00:26:52.4110643Z     --- PASS: TestSequenceArray/TestSequenceArray_4 (0.00s)
+2025-09-18T00:26:52.4111308Z     --- PASS: TestSequenceArray/TestSequenceArray_5 (0.00s)
+2025-09-18T00:26:52.4111968Z     --- PASS: TestSequenceArray/TestSequenceArray_6 (0.00s)
+2025-09-18T00:26:52.4112619Z     --- PASS: TestSequenceArray/TestSequenceArray_7 (0.00s)
+2025-09-18T00:26:52.4113283Z     --- PASS: TestSequenceArray/TestSequenceArray_8 (0.00s)
+2025-09-18T00:26:52.4113954Z     --- PASS: TestSequenceArray/TestSequenceArray_9 (0.00s)
+2025-09-18T00:26:52.4114471Z === RUN   TestSequenceArrayError
+2025-09-18T00:26:52.4114931Z === RUN   TestSequenceArrayError/Bitmask_test_1
+2025-09-18T00:26:52.4115460Z === RUN   TestSequenceArrayError/Bitmask_test_2
+2025-09-18T00:26:52.4115972Z === RUN   TestSequenceArrayError/Bitmask_test_3
+2025-09-18T00:26:52.4116464Z === RUN   TestSequenceArrayError/Bitmask_test_4
+2025-09-18T00:26:52.4119523Z === RUN   TestSequenceArrayError/Bitmask_test_5
+2025-09-18T00:26:52.4120078Z === RUN   TestSequenceArrayError/Bitmask_test_6
+2025-09-18T00:26:52.4120605Z === RUN   TestSequenceArrayError/Bitmask_test_7
+2025-09-18T00:26:52.4121459Z === RUN   TestSequenceArrayError/Bitmask_test_8
+2025-09-18T00:26:52.4121972Z === RUN   TestSequenceArrayError/Bitmask_test_9
+2025-09-18T00:26:52.4124523Z === RUN   TestSequenceArrayError/Bitmask_test_10
+2025-09-18T00:26:52.4125122Z === RUN   TestSequenceArrayError/Bitmask_test_11
+2025-09-18T00:26:52.4125639Z === RUN   TestSequenceArrayError/Bitmask_test_12
+2025-09-18T00:26:52.4126148Z === RUN   TestSequenceArrayError/Bitmask_test_13
+2025-09-18T00:26:52.4126840Z === RUN   TestSequenceArrayError/Bitmask_test_14
+2025-09-18T00:26:52.4127306Z === RUN   TestSequenceArrayError/Bitmask_test_15
+2025-09-18T00:26:52.4128036Z --- PASS: TestSequenceArrayError (0.00s)
+2025-09-18T00:26:52.4128670Z     --- PASS: TestSequenceArrayError/Bitmask_test_1 (0.00s)
+2025-09-18T00:26:52.4129359Z     --- PASS: TestSequenceArrayError/Bitmask_test_2 (0.00s)
+2025-09-18T00:26:52.4130033Z     --- PASS: TestSequenceArrayError/Bitmask_test_3 (0.00s)
+2025-09-18T00:26:52.4130693Z     --- PASS: TestSequenceArrayError/Bitmask_test_4 (0.00s)
+2025-09-18T00:26:52.4131358Z     --- PASS: TestSequenceArrayError/Bitmask_test_5 (0.00s)
+2025-09-18T00:26:52.4132024Z     --- PASS: TestSequenceArrayError/Bitmask_test_6 (0.00s)
+2025-09-18T00:26:52.4132754Z     --- PASS: TestSequenceArrayError/Bitmask_test_7 (0.00s)
+2025-09-18T00:26:52.4133490Z     --- PASS: TestSequenceArrayError/Bitmask_test_8 (0.00s)
+2025-09-18T00:26:52.4134173Z     --- PASS: TestSequenceArrayError/Bitmask_test_9 (0.00s)
+2025-09-18T00:26:52.4134861Z     --- PASS: TestSequenceArrayError/Bitmask_test_10 (0.00s)
+2025-09-18T00:26:52.4135550Z     --- PASS: TestSequenceArrayError/Bitmask_test_11 (0.00s)
+2025-09-18T00:26:52.4136240Z     --- PASS: TestSequenceArrayError/Bitmask_test_12 (0.00s)
+2025-09-18T00:26:52.4137094Z     --- PASS: TestSequenceArrayError/Bitmask_test_13 (0.00s)
+2025-09-18T00:26:52.4137783Z     --- PASS: TestSequenceArrayError/Bitmask_test_14 (0.00s)
+2025-09-18T00:26:52.4138459Z     --- PASS: TestSequenceArrayError/Bitmask_test_15 (0.00s)
+2025-09-18T00:26:52.4138943Z === RUN   TestBind
+2025-09-18T00:26:52.4139268Z --- PASS: TestBind (0.00s)
+2025-09-18T00:26:52.4139620Z === RUN   TestApS
+2025-09-18T00:26:52.4139938Z --- PASS: TestApS (0.00s)
+2025-09-18T00:26:52.4140278Z === RUN   TestIsLeft
+2025-09-18T00:26:52.4140613Z --- PASS: TestIsLeft (0.00s)
+2025-09-18T00:26:52.4140968Z === RUN   TestIsRight
+2025-09-18T00:26:52.4141310Z --- PASS: TestIsRight (0.00s)
+2025-09-18T00:26:52.4141677Z === RUN   TestMapEither
+2025-09-18T00:26:52.4142218Z --- PASS: TestMapEither (0.00s)
+2025-09-18T00:26:52.4142604Z === RUN   TestUnwrapError
+2025-09-18T00:26:52.4142980Z --- PASS: TestUnwrapError (0.00s)
+2025-09-18T00:26:52.4143366Z === RUN   TestReduce
+2025-09-18T00:26:52.4143693Z --- PASS: TestReduce (0.00s)
+2025-09-18T00:26:52.4144042Z === RUN   TestAp
+2025-09-18T00:26:52.4144349Z --- PASS: TestAp (0.00s)
+2025-09-18T00:26:52.4144680Z === RUN   TestAlt
+2025-09-18T00:26:52.4144987Z --- PASS: TestAlt (0.00s)
+2025-09-18T00:26:52.4145334Z === RUN   TestChainFirst
+2025-09-18T00:26:52.4145690Z --- PASS: TestChainFirst (0.00s)
+2025-09-18T00:26:52.4146079Z === RUN   TestChainOptionK
+2025-09-18T00:26:52.4146453Z --- PASS: TestChainOptionK (0.00s)
+2025-09-18T00:26:52.4147012Z === RUN   TestFromOption
+2025-09-18T00:26:52.4147367Z --- PASS: TestFromOption (0.00s)
+2025-09-18T00:26:52.4147745Z === RUN   TestStringer
+2025-09-18T00:26:52.4148087Z --- PASS: TestStringer (0.00s)
+2025-09-18T00:26:52.4148446Z === RUN   TestFromIO
+2025-09-18T00:26:52.4148791Z --- PASS: TestFromIO (0.00s)
+2025-09-18T00:26:52.4149138Z === RUN   TestEq
+2025-09-18T00:26:52.4149444Z --- PASS: TestEq (0.00s)
+2025-09-18T00:26:52.4149769Z === RUN   TestLogger
+2025-09-18T00:26:52.4150117Z 2025/09/18 00:26:51 out: test
+2025-09-18T00:26:52.4150472Z --- PASS: TestLogger (0.00s)
+2025-09-18T00:26:52.4150846Z === RUN   TestCompactRecord
+2025-09-18T00:26:52.4151230Z --- PASS: TestCompactRecord (0.00s)
+2025-09-18T00:26:52.4151641Z === RUN   TestWithResource
+2025-09-18T00:26:52.4152013Z --- PASS: TestWithResource (0.00s)
+2025-09-18T00:26:52.4152398Z === RUN   TestTraverse
+2025-09-18T00:26:52.4152742Z --- PASS: TestTraverse (0.00s)
+2025-09-18T00:26:52.4153107Z === RUN   TestSequence
+2025-09-18T00:26:52.4153444Z --- PASS: TestSequence (0.00s)
+2025-09-18T00:26:52.4153821Z === RUN   ExampleEither_creation
+2025-09-18T00:26:52.4154239Z --- PASS: ExampleEither_creation (0.00s)
+2025-09-18T00:26:52.4154680Z === RUN   ExampleEither_extraction
+2025-09-18T00:26:52.4155113Z --- PASS: ExampleEither_extraction (0.00s)
+2025-09-18T00:26:52.4155515Z PASS
+2025-09-18T00:26:52.4155827Z ok  	github.com/IBM/fp-go/either	0.005s
+2025-09-18T00:26:52.4156242Z === RUN   TestMonadLaws
+2025-09-18T00:26:52.4157067Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:26:52.4157418Z PASS
+2025-09-18T00:26:52.4157751Z ok  	github.com/IBM/fp-go/either/testing	0.004s
+2025-09-18T00:26:52.4158188Z === RUN   TestEither
+2025-09-18T00:26:52.4158484Z CARSTEN
+2025-09-18T00:26:52.4158933Z --- PASS: TestEither (0.00s)
+2025-09-18T00:26:52.4159275Z PASS
+2025-09-18T00:26:52.4159588Z ok  	github.com/IBM/fp-go/erasure	0.002s
+2025-09-18T00:26:52.4159985Z === RUN   TestAs
+2025-09-18T00:26:52.4160300Z --- PASS: TestAs (0.00s)
+2025-09-18T00:26:52.4160635Z === RUN   TestNotAs
+2025-09-18T00:26:52.4160947Z --- PASS: TestNotAs (0.00s)
+2025-09-18T00:26:52.4161295Z === RUN   TestOnError
+2025-09-18T00:26:52.4161627Z --- PASS: TestOnError (0.00s)
+2025-09-18T00:26:52.4161963Z PASS
+2025-09-18T00:26:52.4162260Z ok  	github.com/IBM/fp-go/errors	0.003s
+2025-09-18T00:26:52.4162672Z === RUN   TestCache
+2025-09-18T00:26:52.4162985Z --- PASS: TestCache (0.00s)
+2025-09-18T00:26:52.4163491Z === RUN   TestSingleElementCache
+2025-09-18T00:26:52.4164006Z --- PASS: TestSingleElementCache (0.00s)
+2025-09-18T00:26:52.4164426Z === RUN   TestFlip
+2025-09-18T00:26:52.4164839Z --- PASS: TestFlip (0.00s)
+2025-09-18T00:26:52.4165292Z === RUN   TestUnvariadic
+2025-09-18T00:26:52.4165653Z --- PASS: TestUnvariadic (0.00s)
+2025-09-18T00:26:52.4166032Z === RUN   TestVariadicArity
+2025-09-18T00:26:52.4166409Z --- PASS: TestVariadicArity (0.00s)
+2025-09-18T00:26:52.4166945Z === RUN   Example
+2025-09-18T00:26:52.4167255Z --- PASS: Example (0.00s)
+2025-09-18T00:26:52.4167910Z PASS
+2025-09-18T00:26:52.4168247Z ok  	github.com/IBM/fp-go/function	0.003s
+2025-09-18T00:26:52.4168716Z === RUN   TestValidateJsonContentTypeString
+2025-09-18T00:26:52.4169237Z --- PASS: TestValidateJsonContentTypeString (0.00s)
+2025-09-18T00:26:52.4169793Z === RUN   TestValidateInvalidJsonContentTypeString
+2025-09-18T00:26:52.4170567Z --- PASS: TestValidateInvalidJsonContentTypeString (0.00s)
+2025-09-18T00:26:52.4171064Z PASS
+2025-09-18T00:26:52.4171353Z ok  	github.com/IBM/fp-go/http	0.007s
+2025-09-18T00:26:52.6933321Z ?   	github.com/IBM/fp-go/http/content	[no test files]
+2025-09-18T00:26:52.7014272Z === RUN   TestBuilder
+2025-09-18T00:26:52.7014738Z --- PASS: TestBuilder (0.00s)
+2025-09-18T00:26:52.7015217Z === RUN   TestWithFormData
+2025-09-18T00:26:52.7015618Z --- PASS: TestWithFormData (0.00s)
+2025-09-18T00:26:52.7016028Z === RUN   TestHash
+2025-09-18T00:26:52.7016545Z bb09d9b461124ec0a616e95537522cb631a59219f5a74af53e2d2fd3e03b2381
+2025-09-18T00:26:52.7017309Z --- PASS: TestHash (0.00s)
+2025-09-18T00:26:52.7017651Z PASS
+2025-09-18T00:26:52.7018002Z ok  	github.com/IBM/fp-go/http/builder	0.007s
+2025-09-18T00:26:52.7018427Z === RUN   TestLaws
+2025-09-18T00:26:52.7018762Z --- PASS: TestLaws (0.00s)
+2025-09-18T00:26:52.7019124Z === RUN   TestFormField
+2025-09-18T00:26:52.7019485Z --- PASS: TestFormField (0.00s)
+2025-09-18T00:26:52.7019840Z PASS
+2025-09-18T00:26:52.7020197Z ok  	github.com/IBM/fp-go/http/form	0.004s
+2025-09-18T00:26:52.9087166Z === RUN   TestLaws
+2025-09-18T00:26:52.9087551Z --- PASS: TestLaws (0.00s)
+2025-09-18T00:26:52.9087934Z PASS
+2025-09-18T00:26:52.9088261Z ok  	github.com/IBM/fp-go/http/headers	0.003s
+2025-09-18T00:26:52.9720315Z ?   	github.com/IBM/fp-go/identity/generic	[no test files]
+2025-09-18T00:26:52.9721514Z ?   	github.com/IBM/fp-go/internal/applicative	[no test files]
+2025-09-18T00:26:52.9722786Z ?   	github.com/IBM/fp-go/internal/applicative/testing	[no test files]
+2025-09-18T00:26:52.9723605Z ?   	github.com/IBM/fp-go/internal/apply	[no test files]
+2025-09-18T00:26:52.9724238Z ?   	github.com/IBM/fp-go/internal/apply/testing	[no test files]
+2025-09-18T00:26:52.9724848Z ?   	github.com/IBM/fp-go/internal/array	[no test files]
+2025-09-18T00:26:52.9725448Z ?   	github.com/IBM/fp-go/internal/bracket	[no test files]
+2025-09-18T00:26:52.9726009Z ?   	github.com/IBM/fp-go/internal/chain	[no test files]
+2025-09-18T00:26:52.9726854Z ?   	github.com/IBM/fp-go/internal/chain/testing	[no test files]
+2025-09-18T00:26:52.9727484Z ?   	github.com/IBM/fp-go/internal/eithert	[no test files]
+2025-09-18T00:26:52.9728334Z ?   	github.com/IBM/fp-go/internal/eq	[no test files]
+2025-09-18T00:26:52.9728886Z ?   	github.com/IBM/fp-go/internal/exec	[no test files]
+2025-09-18T00:26:52.9729447Z ?   	github.com/IBM/fp-go/internal/file	[no test files]
+2025-09-18T00:26:52.9769297Z === RUN   TestMap
+2025-09-18T00:26:52.9769656Z --- PASS: TestMap (0.00s)
+2025-09-18T00:26:52.9770015Z === RUN   TestChain
+2025-09-18T00:26:52.9770448Z --- PASS: TestChain (0.00s)
+2025-09-18T00:26:52.9770733Z === RUN   TestAp
+2025-09-18T00:26:52.9770926Z --- PASS: TestAp (0.00s)
+2025-09-18T00:26:52.9771118Z PASS
+2025-09-18T00:26:52.9771312Z ok  	github.com/IBM/fp-go/identity	0.003s
+2025-09-18T00:26:52.9822446Z ?   	github.com/IBM/fp-go/internal/foldable	[no test files]
+2025-09-18T00:26:52.9823155Z ?   	github.com/IBM/fp-go/internal/fromeither	[no test files]
+2025-09-18T00:26:52.9823817Z ?   	github.com/IBM/fp-go/internal/fromio	[no test files]
+2025-09-18T00:26:52.9824434Z ?   	github.com/IBM/fp-go/internal/fromioeither	[no test files]
+2025-09-18T00:26:52.9825101Z ?   	github.com/IBM/fp-go/internal/fromreader	[no test files]
+2025-09-18T00:26:52.9825748Z ?   	github.com/IBM/fp-go/internal/functor	[no test files]
+2025-09-18T00:26:52.9826400Z ?   	github.com/IBM/fp-go/internal/functor/testing	[no test files]
+2025-09-18T00:26:52.9827246Z ?   	github.com/IBM/fp-go/internal/lazy	[no test files]
+2025-09-18T00:26:52.9827807Z ?   	github.com/IBM/fp-go/internal/monad	[no test files]
+2025-09-18T00:26:52.9828391Z ?   	github.com/IBM/fp-go/internal/monad/testing	[no test files]
+2025-09-18T00:26:52.9829015Z ?   	github.com/IBM/fp-go/internal/optiont	[no test files]
+2025-09-18T00:26:52.9829622Z ?   	github.com/IBM/fp-go/internal/pointed	[no test files]
+2025-09-18T00:26:52.9830237Z ?   	github.com/IBM/fp-go/internal/readert	[no test files]
+2025-09-18T00:26:52.9830969Z ?   	github.com/IBM/fp-go/internal/record	[no test files]
+2025-09-18T00:26:53.0119981Z ?   	github.com/IBM/fp-go/internal/statet	[no test files]
+2025-09-18T00:26:53.0121006Z ?   	github.com/IBM/fp-go/internal/testing	[no test files]
+2025-09-18T00:26:53.0121984Z ?   	github.com/IBM/fp-go/internal/utils	[no test files]
+2025-09-18T00:26:53.4840790Z ?   	github.com/IBM/fp-go/io/file	[no test files]
+2025-09-18T00:26:53.4847347Z ?   	github.com/IBM/fp-go/io/generic	[no test files]
+2025-09-18T00:26:53.4916249Z === RUN   TestBind
+2025-09-18T00:26:53.4917112Z --- PASS: TestBind (0.00s)
+2025-09-18T00:26:53.4928057Z === RUN   TestApS
+2025-09-18T00:26:53.4928408Z --- PASS: TestApS (0.00s)
+2025-09-18T00:26:53.4928765Z === RUN   TestMap
+2025-09-18T00:26:53.4929098Z --- PASS: TestMap (0.00s)
+2025-09-18T00:26:53.4929457Z === RUN   TestChain
+2025-09-18T00:26:53.4929801Z --- PASS: TestChain (0.00s)
+2025-09-18T00:26:53.4930153Z === RUN   TestAp
+2025-09-18T00:26:53.4930481Z --- PASS: TestAp (0.00s)
+2025-09-18T00:26:53.4930838Z === RUN   TestFlatten
+2025-09-18T00:26:53.4931240Z --- PASS: TestFlatten (0.00s)
+2025-09-18T00:26:53.4931636Z === RUN   TestMemoize
+2025-09-18T00:26:53.4931999Z --- PASS: TestMemoize (0.00s)
+2025-09-18T00:26:53.4932385Z === RUN   TestApFirst
+2025-09-18T00:26:53.4932721Z --- PASS: TestApFirst (0.00s)
+2025-09-18T00:26:53.4933095Z === RUN   TestApSecond
+2025-09-18T00:26:53.4933439Z --- PASS: TestApSecond (0.00s)
+2025-09-18T00:26:53.4933808Z === RUN   TestLogger
+2025-09-18T00:26:53.4934135Z 2025/09/18 00:26:53 out: 10
+2025-09-18T00:26:53.4934630Z --- PASS: TestLogger (0.00s)
+2025-09-18T00:26:53.4934998Z === RUN   TestLogf
+2025-09-18T00:26:53.4935322Z 2025/09/18 00:26:53 Value is 10
+2025-09-18T00:26:53.4935709Z --- PASS: TestLogf (0.00s)
+2025-09-18T00:26:53.4936062Z === RUN   TestRetry
+2025-09-18T00:26:53.4936395Z --- PASS: TestRetry (0.00s)
+2025-09-18T00:26:53.4936940Z === RUN   TestMapSeq
+2025-09-18T00:26:53.4937298Z --- PASS: TestMapSeq (0.00s)
+2025-09-18T00:26:53.4937683Z === RUN   TestSequenceArray
+2025-09-18T00:26:53.4938119Z === RUN   TestSequenceArray/TestSequenceArray_0
+2025-09-18T00:26:53.4938632Z === RUN   TestSequenceArray/TestSequenceArray_1
+2025-09-18T00:26:53.4939144Z === RUN   TestSequenceArray/TestSequenceArray_2
+2025-09-18T00:26:53.4939948Z === RUN   TestSequenceArray/TestSequenceArray_3
+2025-09-18T00:26:53.4940452Z === RUN   TestSequenceArray/TestSequenceArray_4
+2025-09-18T00:26:53.4940937Z === RUN   TestSequenceArray/TestSequenceArray_5
+2025-09-18T00:26:53.4941412Z === RUN   TestSequenceArray/TestSequenceArray_6
+2025-09-18T00:26:53.4941901Z === RUN   TestSequenceArray/TestSequenceArray_7
+2025-09-18T00:26:53.4942380Z === RUN   TestSequenceArray/TestSequenceArray_8
+2025-09-18T00:26:53.4942866Z === RUN   TestSequenceArray/TestSequenceArray_9
+2025-09-18T00:26:53.4943326Z --- PASS: TestSequenceArray (0.00s)
+2025-09-18T00:26:53.4943941Z     --- PASS: TestSequenceArray/TestSequenceArray_0 (0.00s)
+2025-09-18T00:26:53.4944636Z     --- PASS: TestSequenceArray/TestSequenceArray_1 (0.00s)
+2025-09-18T00:26:53.4945346Z     --- PASS: TestSequenceArray/TestSequenceArray_2 (0.00s)
+2025-09-18T00:26:53.4946044Z     --- PASS: TestSequenceArray/TestSequenceArray_3 (0.00s)
+2025-09-18T00:26:53.4946922Z     --- PASS: TestSequenceArray/TestSequenceArray_4 (0.00s)
+2025-09-18T00:26:53.4947652Z     --- PASS: TestSequenceArray/TestSequenceArray_5 (0.00s)
+2025-09-18T00:26:53.4948322Z     --- PASS: TestSequenceArray/TestSequenceArray_6 (0.00s)
+2025-09-18T00:26:53.4948981Z     --- PASS: TestSequenceArray/TestSequenceArray_7 (0.00s)
+2025-09-18T00:26:53.4949638Z     --- PASS: TestSequenceArray/TestSequenceArray_8 (0.00s)
+2025-09-18T00:26:53.4950300Z     --- PASS: TestSequenceArray/TestSequenceArray_9 (0.00s)
+2025-09-18T00:26:53.4950764Z PASS
+2025-09-18T00:26:53.4951066Z ok  	github.com/IBM/fp-go/io	0.005s
+2025-09-18T00:26:53.4951486Z === RUN   TestMonadLaws
+2025-09-18T00:26:53.4951836Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:26:53.4952189Z PASS
+2025-09-18T00:26:53.4952503Z ok  	github.com/IBM/fp-go/io/testing	0.005s
+2025-09-18T00:26:54.6957001Z ?   	github.com/IBM/fp-go/ioeither/generic	[no test files]
+2025-09-18T00:26:55.0270069Z === RUN   TestBind
+2025-09-18T00:26:55.0275536Z --- PASS: TestBind (0.00s)
+2025-09-18T00:26:55.0280221Z === RUN   TestApS
+2025-09-18T00:26:55.0287559Z --- PASS: TestApS (0.00s)
+2025-09-18T00:26:55.0289265Z === RUN   TestEq
+2025-09-18T00:26:55.0291055Z --- PASS: TestEq (0.00s)
+2025-09-18T00:26:55.0295079Z === RUN   TestMap
+2025-09-18T00:26:55.0297643Z --- PASS: TestMap (0.00s)
+2025-09-18T00:26:55.0300246Z === RUN   TestChainEitherK
+2025-09-18T00:26:55.0302487Z --- PASS: TestChainEitherK (0.00s)
+2025-09-18T00:26:55.0304540Z === RUN   TestChainOptionK
+2025-09-18T00:26:55.0317147Z --- PASS: TestChainOptionK (0.00s)
+2025-09-18T00:26:55.0318582Z === RUN   TestFromOption
+2025-09-18T00:26:55.0319233Z --- PASS: TestFromOption (0.00s)
+2025-09-18T00:26:55.0319851Z === RUN   TestChainIOK
+2025-09-18T00:26:55.0320397Z --- PASS: TestChainIOK (0.00s)
+2025-09-18T00:26:55.0320993Z === RUN   TestChainWithIO
+2025-09-18T00:26:55.0465502Z --- PASS: TestChainWithIO (0.00s)
+2025-09-18T00:26:55.0520861Z === RUN   TestChainFirst
+2025-09-18T00:26:55.0521346Z --- PASS: TestChainFirst (0.00s)
+2025-09-18T00:26:55.0521814Z === RUN   TestChainFirstIOK
+2025-09-18T00:26:55.0522249Z --- PASS: TestChainFirstIOK (0.00s)
+2025-09-18T00:26:55.0522682Z === RUN   TestApFirst
+2025-09-18T00:26:55.0523045Z --- PASS: TestApFirst (0.00s)
+2025-09-18T00:26:55.0523445Z === RUN   TestApSecond
+2025-09-18T00:26:55.0523823Z --- PASS: TestApSecond (0.00s)
+2025-09-18T00:26:55.0524219Z === RUN   TestLogging
+2025-09-18T00:26:55.0524571Z 2025/09/18 00:26:54 Data: 
+2025-09-18T00:26:55.0524900Z {
+2025-09-18T00:26:55.0525201Z   "key": "key",
+2025-09-18T00:26:55.0525541Z   "value": "value"
+2025-09-18T00:26:55.0525837Z }
+2025-09-18T00:26:55.0526152Z --- PASS: TestLogging (0.00s)
+2025-09-18T00:26:55.0526779Z === RUN   TestApplicativeMonoid
+2025-09-18T00:26:55.0527241Z --- PASS: TestApplicativeMonoid (0.00s)
+2025-09-18T00:26:55.0527698Z === RUN   TestRetry
+2025-09-18T00:26:55.0528056Z --- PASS: TestRetry (0.31s)
+2025-09-18T00:26:55.0528445Z === RUN   TestMapSeq
+2025-09-18T00:26:55.0528811Z --- PASS: TestMapSeq (0.00s)
+2025-09-18T00:26:55.0529222Z === RUN   TestSequenceArray
+2025-09-18T00:26:55.0529990Z === RUN   TestSequenceArray/TestSequenceArray_0
+2025-09-18T00:26:55.0530534Z === RUN   TestSequenceArray/TestSequenceArray_1
+2025-09-18T00:26:55.0531055Z === RUN   TestSequenceArray/TestSequenceArray_2
+2025-09-18T00:26:55.0531589Z === RUN   TestSequenceArray/TestSequenceArray_3
+2025-09-18T00:26:55.0532107Z === RUN   TestSequenceArray/TestSequenceArray_4
+2025-09-18T00:26:55.0532643Z === RUN   TestSequenceArray/TestSequenceArray_5
+2025-09-18T00:26:55.0533169Z === RUN   TestSequenceArray/TestSequenceArray_6
+2025-09-18T00:26:55.0533701Z === RUN   TestSequenceArray/TestSequenceArray_7
+2025-09-18T00:26:55.0534220Z === RUN   TestSequenceArray/TestSequenceArray_8
+2025-09-18T00:26:55.0534743Z === RUN   TestSequenceArray/TestSequenceArray_9
+2025-09-18T00:26:55.0535233Z --- PASS: TestSequenceArray (0.00s)
+2025-09-18T00:26:55.0535893Z     --- PASS: TestSequenceArray/TestSequenceArray_0 (0.00s)
+2025-09-18T00:26:55.0536834Z     --- PASS: TestSequenceArray/TestSequenceArray_1 (0.00s)
+2025-09-18T00:26:55.0537615Z     --- PASS: TestSequenceArray/TestSequenceArray_2 (0.00s)
+2025-09-18T00:26:55.0538339Z     --- PASS: TestSequenceArray/TestSequenceArray_3 (0.00s)
+2025-09-18T00:26:55.0539065Z     --- PASS: TestSequenceArray/TestSequenceArray_4 (0.00s)
+2025-09-18T00:26:55.0539794Z     --- PASS: TestSequenceArray/TestSequenceArray_5 (0.00s)
+2025-09-18T00:26:55.0540527Z     --- PASS: TestSequenceArray/TestSequenceArray_6 (0.00s)
+2025-09-18T00:26:55.0541230Z     --- PASS: TestSequenceArray/TestSequenceArray_7 (0.00s)
+2025-09-18T00:26:55.0541952Z     --- PASS: TestSequenceArray/TestSequenceArray_8 (0.00s)
+2025-09-18T00:26:55.0542680Z     --- PASS: TestSequenceArray/TestSequenceArray_9 (0.00s)
+2025-09-18T00:26:55.0543224Z === RUN   TestSequenceArrayError
+2025-09-18T00:26:55.0543705Z === RUN   TestSequenceArrayError/Bitmask_test_1
+2025-09-18T00:26:55.0544496Z === RUN   TestSequenceArrayError/Bitmask_test_2
+2025-09-18T00:26:55.0545073Z === RUN   TestSequenceArrayError/Bitmask_test_3
+2025-09-18T00:26:55.0545621Z === RUN   TestSequenceArrayError/Bitmask_test_4
+2025-09-18T00:26:55.0546164Z === RUN   TestSequenceArrayError/Bitmask_test_5
+2025-09-18T00:26:55.0635944Z === RUN   TestSequenceArrayError/Bitmask_test_6
+2025-09-18T00:26:55.0636921Z === RUN   TestSequenceArrayError/Bitmask_test_7
+2025-09-18T00:26:55.0637490Z === RUN   TestSequenceArrayError/Bitmask_test_8
+2025-09-18T00:26:55.0638029Z === RUN   TestSequenceArrayError/Bitmask_test_9
+2025-09-18T00:26:55.0638579Z === RUN   TestSequenceArrayError/Bitmask_test_10
+2025-09-18T00:26:55.0639127Z === RUN   TestSequenceArrayError/Bitmask_test_11
+2025-09-18T00:26:55.0639673Z === RUN   TestSequenceArrayError/Bitmask_test_12
+2025-09-18T00:26:55.0640222Z === RUN   TestSequenceArrayError/Bitmask_test_13
+2025-09-18T00:26:55.0640786Z === RUN   TestSequenceArrayError/Bitmask_test_14
+2025-09-18T00:26:55.0641352Z === RUN   TestSequenceArrayError/Bitmask_test_15
+2025-09-18T00:26:55.0641888Z --- PASS: TestSequenceArrayError (0.00s)
+2025-09-18T00:26:55.0642588Z     --- PASS: TestSequenceArrayError/Bitmask_test_1 (0.00s)
+2025-09-18T00:26:55.0643370Z     --- PASS: TestSequenceArrayError/Bitmask_test_2 (0.00s)
+2025-09-18T00:26:55.0644134Z     --- PASS: TestSequenceArrayError/Bitmask_test_3 (0.00s)
+2025-09-18T00:26:55.0644883Z     --- PASS: TestSequenceArrayError/Bitmask_test_4 (0.00s)
+2025-09-18T00:26:55.0645604Z     --- PASS: TestSequenceArrayError/Bitmask_test_5 (0.00s)
+2025-09-18T00:26:55.0646343Z     --- PASS: TestSequenceArrayError/Bitmask_test_6 (0.00s)
+2025-09-18T00:26:55.0647233Z     --- PASS: TestSequenceArrayError/Bitmask_test_7 (0.00s)
+2025-09-18T00:26:55.0647961Z     --- PASS: TestSequenceArrayError/Bitmask_test_8 (0.00s)
+2025-09-18T00:26:55.0648687Z     --- PASS: TestSequenceArrayError/Bitmask_test_9 (0.00s)
+2025-09-18T00:26:55.0649424Z     --- PASS: TestSequenceArrayError/Bitmask_test_10 (0.00s)
+2025-09-18T00:26:55.0650154Z     --- PASS: TestSequenceArrayError/Bitmask_test_11 (0.00s)
+2025-09-18T00:26:55.0650870Z     --- PASS: TestSequenceArrayError/Bitmask_test_12 (0.00s)
+2025-09-18T00:26:55.0651913Z     --- PASS: TestSequenceArrayError/Bitmask_test_13 (0.00s)
+2025-09-18T00:26:55.0652646Z     --- PASS: TestSequenceArrayError/Bitmask_test_14 (0.00s)
+2025-09-18T00:26:55.0653383Z     --- PASS: TestSequenceArrayError/Bitmask_test_15 (0.00s)
+2025-09-18T00:26:55.0653915Z === RUN   TestTraverseArray
+2025-09-18T00:26:55.0654337Z --- PASS: TestTraverseArray (0.00s)
+2025-09-18T00:26:55.0654786Z === RUN   ExampleIOEither_creation
+2025-09-18T00:26:55.0655256Z --- PASS: ExampleIOEither_creation (0.00s)
+2025-09-18T00:26:55.0655732Z === RUN   ExampleIOEither_do
+2025-09-18T00:26:55.0656165Z 2025/09/18 00:26:55 t1: foo, t2: 1, t3: foo1
+2025-09-18T00:26:55.0656824Z --- PASS: ExampleIOEither_do (0.00s)
+2025-09-18T00:26:55.0657277Z === RUN   ExampleIOEither_extraction
+2025-09-18T00:26:55.0657777Z --- PASS: ExampleIOEither_extraction (0.00s)
+2025-09-18T00:26:55.0658202Z PASS
+2025-09-18T00:26:55.0658535Z ok  	github.com/IBM/fp-go/ioeither	0.330s
+2025-09-18T00:26:55.0658983Z === RUN   TestOpenSSL
+2025-09-18T00:26:55.0659384Z --- PASS: TestOpenSSL (0.00s)
+2025-09-18T00:26:55.0659748Z PASS
+2025-09-18T00:26:55.0660121Z ok  	github.com/IBM/fp-go/ioeither/exec	0.009s
+2025-09-18T00:26:55.0660603Z === RUN   TestWithTempFile
+2025-09-18T00:26:55.0661034Z --- PASS: TestWithTempFile (0.00s)
+2025-09-18T00:26:55.0661513Z === RUN   TestWithTempFileOnClosedFile
+2025-09-18T00:26:55.0662065Z --- PASS: TestWithTempFileOnClosedFile (0.00s)
+2025-09-18T00:26:55.0662556Z PASS
+2025-09-18T00:26:55.0662938Z ok  	github.com/IBM/fp-go/ioeither/file	0.004s
+2025-09-18T00:26:55.9125782Z ?   	github.com/IBM/fp-go/ioeither/http/di	[no test files]
+2025-09-18T00:26:56.1955092Z ?   	github.com/IBM/fp-go/iooption/generic	[no test files]
+2025-09-18T00:26:57.2899407Z ?   	github.com/IBM/fp-go/iterator/stateless/generic	[no test files]
+2025-09-18T00:26:57.7427223Z ?   	github.com/IBM/fp-go/logging	[no test files]
+2025-09-18T00:26:57.9369885Z ?   	github.com/IBM/fp-go/monoid	[no test files]
+2025-09-18T00:26:57.9371496Z ?   	github.com/IBM/fp-go/monoid/testing	[no test files]
+2025-09-18T00:26:58.1416484Z ?   	github.com/IBM/fp-go/number/integer	[no test files]
+2025-09-18T00:26:58.1944959Z ?   	github.com/IBM/fp-go/optics/iso/lens	[no test files]
+2025-09-18T00:26:58.6142109Z ?   	github.com/IBM/fp-go/optics/lens/array/generic	[no test files]
+2025-09-18T00:26:58.7020214Z ?   	github.com/IBM/fp-go/optics/lens/either	[no test files]
+2025-09-18T00:26:58.7026951Z ?   	github.com/IBM/fp-go/optics/lens/generic	[no test files]
+2025-09-18T00:26:59.1550889Z ?   	github.com/IBM/fp-go/optics/lens/option	[no test files]
+2025-09-18T00:26:59.1551591Z ?   	github.com/IBM/fp-go/optics/lens/optional	[no test files]
+2025-09-18T00:26:59.4376458Z ?   	github.com/IBM/fp-go/optics/lens/record/generic	[no test files]
+2025-09-18T00:26:59.9383021Z ?   	github.com/IBM/fp-go/optics/optional/prism	[no test files]
+2025-09-18T00:27:00.0594993Z ?   	github.com/IBM/fp-go/optics/optional/record/generic	[no test files]
+2025-09-18T00:27:00.1787534Z === RUN   TestRetryHttp
+2025-09-18T00:27:00.1790882Z --- PASS: TestRetryHttp (4.25s)
+2025-09-18T00:27:00.1791538Z PASS
+2025-09-18T00:27:00.1791966Z ok  	github.com/IBM/fp-go/ioeither/http	4.258s
+2025-09-18T00:27:00.1792489Z === RUN   TestBuilderWithQuery
+2025-09-18T00:27:00.1793979Z --- PASS: TestBuilderWithQuery (0.00s)
+2025-09-18T00:27:00.1794421Z PASS
+2025-09-18T00:27:00.1794822Z ok  	github.com/IBM/fp-go/ioeither/http/builder	0.003s
+2025-09-18T00:27:00.1795347Z === RUN   TestMonadLaws
+2025-09-18T00:27:00.1795730Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:27:00.1796121Z PASS
+2025-09-18T00:27:00.1796501Z ok  	github.com/IBM/fp-go/ioeither/testing	0.003s
+2025-09-18T00:27:00.1797364Z === RUN   TestBind
+2025-09-18T00:27:00.1797715Z --- PASS: TestBind (0.00s)
+2025-09-18T00:27:00.1798086Z === RUN   TestApS
+2025-09-18T00:27:00.1798412Z --- PASS: TestApS (0.00s)
+2025-09-18T00:27:00.1798790Z === RUN   TestMap
+2025-09-18T00:27:00.1799134Z --- PASS: TestMap (0.00s)
+2025-09-18T00:27:00.1799516Z === RUN   TestChainOptionK
+2025-09-18T00:27:00.1800264Z --- PASS: TestChainOptionK (0.00s)
+2025-09-18T00:27:00.1800714Z === RUN   TestFromOption
+2025-09-18T00:27:00.1801115Z --- PASS: TestFromOption (0.00s)
+2025-09-18T00:27:00.1801513Z === RUN   TestChainIOK
+2025-09-18T00:27:00.1801886Z --- PASS: TestChainIOK (0.00s)
+2025-09-18T00:27:00.1802267Z === RUN   TestEnv
+2025-09-18T00:27:00.1802607Z --- PASS: TestEnv (0.00s)
+2025-09-18T00:27:00.1802954Z PASS
+2025-09-18T00:27:00.1803290Z ok  	github.com/IBM/fp-go/iooption	0.004s
+2025-09-18T00:27:00.1803754Z === RUN   TestMonadLaws
+2025-09-18T00:27:00.1804194Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:27:00.1804568Z PASS
+2025-09-18T00:27:00.1804936Z ok  	github.com/IBM/fp-go/iooption/testing	0.005s
+2025-09-18T00:27:00.1805396Z === RUN   TestAny
+2025-09-18T00:27:00.1805748Z --- PASS: TestAny (0.00s)
+2025-09-18T00:27:00.1806113Z === RUN   TestBind
+2025-09-18T00:27:00.1806479Z --- PASS: TestBind (0.00s)
+2025-09-18T00:27:00.1807068Z === RUN   TestApS
+2025-09-18T00:27:00.1807416Z --- PASS: TestApS (0.00s)
+2025-09-18T00:27:00.1807819Z === RUN   TestCompress
+2025-09-18T00:27:00.1808183Z --- PASS: TestCompress (0.00s)
+2025-09-18T00:27:00.1808584Z === RUN   TestCycle
+2025-09-18T00:27:00.1808921Z --- PASS: TestCycle (0.00s)
+2025-09-18T00:27:00.1809310Z === RUN   TestDropWhile
+2025-09-18T00:27:00.1809673Z --- PASS: TestDropWhile (0.00s)
+2025-09-18T00:27:00.1810063Z === RUN   TestFirst
+2025-09-18T00:27:00.1810390Z --- PASS: TestFirst (0.00s)
+2025-09-18T00:27:00.1810766Z === RUN   TestNoFirst
+2025-09-18T00:27:00.1811123Z --- PASS: TestNoFirst (0.00s)
+2025-09-18T00:27:00.1811525Z === RUN   TestIteratorFromLazy
+2025-09-18T00:27:00.1811963Z --- PASS: TestIteratorFromLazy (0.00s)
+2025-09-18T00:27:00.1812402Z === RUN   TestIterator
+2025-09-18T00:27:00.1812764Z --- PASS: TestIterator (0.00s)
+2025-09-18T00:27:00.1813130Z === RUN   TestChain
+2025-09-18T00:27:00.1813744Z --- PASS: TestChain (0.00s)
+2025-09-18T00:27:00.1814146Z === RUN   TestFilterMap
+2025-09-18T00:27:00.1814534Z --- PASS: TestFilterMap (0.00s)
+2025-09-18T00:27:00.1814941Z === RUN   TestAp
+2025-09-18T00:27:00.1815290Z --- PASS: TestAp (0.00s)
+2025-09-18T00:27:00.1815649Z === RUN   TestLast
+2025-09-18T00:27:00.1815991Z --- PASS: TestLast (0.00s)
+2025-09-18T00:27:00.1816359Z === RUN   TestNoLast
+2025-09-18T00:27:00.1816911Z --- PASS: TestNoLast (0.00s)
+2025-09-18T00:27:00.1817313Z === RUN   TestReflect
+2025-09-18T00:27:00.1817685Z --- PASS: TestReflect (0.00s)
+2025-09-18T00:27:00.1818076Z === RUN   TestScan
+2025-09-18T00:27:00.1818416Z --- PASS: TestScan (0.00s)
+2025-09-18T00:27:00.1818772Z === RUN   TestTake
+2025-09-18T00:27:00.1819092Z --- PASS: TestTake (0.00s)
+2025-09-18T00:27:00.1819457Z === RUN   TestUniq
+2025-09-18T00:27:00.1819784Z --- PASS: TestUniq (0.00s)
+2025-09-18T00:27:00.1820150Z === RUN   TestZipWith
+2025-09-18T00:27:00.1820517Z --- PASS: TestZipWith (0.00s)
+2025-09-18T00:27:00.1820908Z === RUN   TestZip
+2025-09-18T00:27:00.1821250Z --- PASS: TestZip (0.00s)
+2025-09-18T00:27:00.1821606Z === RUN   Example_any
+2025-09-18T00:27:00.1821958Z --- PASS: Example_any (0.00s)
+2025-09-18T00:27:00.1822346Z === RUN   Example_next
+2025-09-18T00:27:00.1822717Z --- PASS: Example_next (0.00s)
+2025-09-18T00:27:00.1823108Z === RUN   ExampleFoldMap
+2025-09-18T00:27:00.1823503Z --- PASS: ExampleFoldMap (0.00s)
+2025-09-18T00:27:00.1823875Z PASS
+2025-09-18T00:27:00.1824243Z ok  	github.com/IBM/fp-go/iterator/stateless	0.005s
+2025-09-18T00:27:00.1824746Z === RUN   TestJsonMarshal
+2025-09-18T00:27:00.1825150Z Right[[]uint8]([123 34 97 34 58 34 98 34 125])
+2025-09-18T00:27:00.1825633Z --- PASS: TestJsonMarshal (0.00s)
+2025-09-18T00:27:00.1826051Z === RUN   TestToType
+2025-09-18T00:27:00.1826413Z --- PASS: TestToType (0.00s)
+2025-09-18T00:27:00.1827133Z PASS
+2025-09-18T00:27:00.1827479Z ok  	github.com/IBM/fp-go/json	0.003s
+2025-09-18T00:27:00.1827924Z === RUN   TestFactorial
+2025-09-18T00:27:00.1828309Z --- PASS: TestFactorial (0.00s)
+2025-09-18T00:27:00.1828698Z PASS
+2025-09-18T00:27:00.1829032Z ok  	github.com/IBM/fp-go/lambda	0.003s
+2025-09-18T00:27:00.1829471Z === RUN   TestBind
+2025-09-18T00:27:00.1830064Z --- PASS: TestBind (0.00s)
+2025-09-18T00:27:00.1830442Z === RUN   TestApS
+2025-09-18T00:27:00.1830776Z --- PASS: TestApS (0.00s)
+2025-09-18T00:27:00.1831142Z === RUN   TestMap
+2025-09-18T00:27:00.1831468Z --- PASS: TestMap (0.00s)
+2025-09-18T00:27:00.1831830Z === RUN   TestChain
+2025-09-18T00:27:00.1832175Z --- PASS: TestChain (0.00s)
+2025-09-18T00:27:00.1832551Z === RUN   TestAp
+2025-09-18T00:27:00.1832883Z --- PASS: TestAp (0.00s)
+2025-09-18T00:27:00.1833234Z === RUN   TestFlatten
+2025-09-18T00:27:00.1833594Z --- PASS: TestFlatten (0.00s)
+2025-09-18T00:27:00.1833981Z === RUN   TestMemoize
+2025-09-18T00:27:00.1834344Z --- PASS: TestMemoize (0.00s)
+2025-09-18T00:27:00.1834732Z === RUN   TestApFirst
+2025-09-18T00:27:00.1835103Z --- PASS: TestApFirst (0.00s)
+2025-09-18T00:27:00.1835496Z === RUN   TestApSecond
+2025-09-18T00:27:00.1835892Z --- PASS: TestApSecond (0.00s)
+2025-09-18T00:27:00.1836268Z === RUN   TestRetry
+2025-09-18T00:27:00.1836830Z --- PASS: TestRetry (0.00s)
+2025-09-18T00:27:00.1837224Z === RUN   ExampleLazy_creation
+2025-09-18T00:27:00.1837632Z --- PASS: ExampleLazy_creation (0.00s)
+2025-09-18T00:27:00.1838011Z PASS
+2025-09-18T00:27:00.1838320Z ok  	github.com/IBM/fp-go/lazy	0.004s
+2025-09-18T00:27:00.1838698Z === RUN   TestMonadLaws
+2025-09-18T00:27:00.1839022Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:27:00.1839408Z PASS
+2025-09-18T00:27:00.1839782Z ok  	github.com/IBM/fp-go/lazy/testing	0.003s
+2025-09-18T00:27:00.1840207Z === RUN   TestFirst
+2025-09-18T00:27:00.1840516Z --- PASS: TestFirst (0.00s)
+2025-09-18T00:27:00.1840854Z === RUN   TestSecond
+2025-09-18T00:27:00.1841148Z --- PASS: TestSecond (0.00s)
+2025-09-18T00:27:00.1841462Z PASS
+2025-09-18T00:27:00.1841743Z ok  	github.com/IBM/fp-go/magma	0.003s
+2025-09-18T00:27:00.1842154Z === RUN   TestSemigroupIsMagma
+2025-09-18T00:27:00.1842750Z --- PASS: TestSemigroupIsMagma (0.00s)
+2025-09-18T00:27:00.1843164Z === RUN   TestMonoidSum
+2025-09-18T00:27:00.1843501Z --- PASS: TestMonoidSum (0.00s)
+2025-09-18T00:27:00.1843830Z PASS
+2025-09-18T00:27:00.1844112Z ok  	github.com/IBM/fp-go/number	0.003s
+2025-09-18T00:27:00.1844491Z === RUN   TestGet
+2025-09-18T00:27:00.1844784Z --- PASS: TestGet (0.00s)
+2025-09-18T00:27:00.1845107Z === RUN   TestReverseGet
+2025-09-18T00:27:00.1845453Z --- PASS: TestReverseGet (0.00s)
+2025-09-18T00:27:00.1845800Z === RUN   TestModify
+2025-09-18T00:27:00.1846119Z --- PASS: TestModify (0.00s)
+2025-09-18T00:27:00.1846453Z === RUN   TestReverse
+2025-09-18T00:27:00.1846952Z --- PASS: TestReverse (0.00s)
+2025-09-18T00:27:00.1847302Z === RUN   TestCompose
+2025-09-18T00:27:00.1847628Z --- PASS: TestCompose (0.00s)
+2025-09-18T00:27:00.1847962Z PASS
+2025-09-18T00:27:00.1848275Z ok  	github.com/IBM/fp-go/optics/iso	0.005s
+2025-09-18T00:27:00.1848667Z === RUN   TestLens
+2025-09-18T00:27:00.1848967Z --- PASS: TestLens (0.00s)
+2025-09-18T00:27:00.1849336Z === RUN   TestAddressCompose
+2025-09-18T00:27:00.1849707Z --- PASS: TestAddressCompose (0.00s)
+2025-09-18T00:27:00.1850078Z === RUN   TestIMap
+2025-09-18T00:27:00.1850384Z --- PASS: TestIMap (0.00s)
+2025-09-18T00:27:00.1850711Z === RUN   TestPassByValue
+2025-09-18T00:27:00.1851055Z --- PASS: TestPassByValue (0.00s)
+2025-09-18T00:27:00.1851430Z === RUN   TestFromNullableProp
+2025-09-18T00:27:00.1851823Z --- PASS: TestFromNullableProp (0.00s)
+2025-09-18T00:27:00.1852227Z === RUN   TestComposeOption
+2025-09-18T00:27:00.1852596Z --- PASS: TestComposeOption (0.00s)
+2025-09-18T00:27:00.1852968Z === RUN   TestComposeOptions
+2025-09-18T00:27:00.1853344Z --- PASS: TestComposeOptions (0.00s)
+2025-09-18T00:27:00.1853705Z PASS
+2025-09-18T00:27:00.1854017Z ok  	github.com/IBM/fp-go/optics/lens	0.003s
+2025-09-18T00:27:00.1854417Z === RUN   TestLaws
+2025-09-18T00:27:00.1854702Z --- PASS: TestLaws (0.00s)
+2025-09-18T00:27:00.1855011Z PASS
+2025-09-18T00:27:00.1855321Z ok  	github.com/IBM/fp-go/optics/lens/array	0.003s
+2025-09-18T00:27:00.1855758Z === RUN   TestIso
+2025-09-18T00:27:00.1856064Z --- PASS: TestIso (0.00s)
+2025-09-18T00:27:00.1856374Z PASS
+2025-09-18T00:27:00.1857048Z ok  	github.com/IBM/fp-go/optics/lens/iso	0.003s
+2025-09-18T00:27:00.1857470Z === RUN   TestAtKey
+2025-09-18T00:27:00.1857778Z --- PASS: TestAtKey (0.00s)
+2025-09-18T00:27:00.1858105Z PASS
+2025-09-18T00:27:00.1858440Z ok  	github.com/IBM/fp-go/optics/lens/record	0.003s
+2025-09-18T00:27:00.1858878Z === RUN   TestStreetLensLaws
+2025-09-18T00:27:00.1859248Z --- PASS: TestStreetLensLaws (0.00s)
+2025-09-18T00:27:00.1859937Z === RUN   TestAddrLensLaws
+2025-09-18T00:27:00.1860306Z --- PASS: TestAddrLensLaws (0.00s)
+2025-09-18T00:27:00.1860665Z === RUN   TestCompose
+2025-09-18T00:27:00.1860986Z --- PASS: TestCompose (0.00s)
+2025-09-18T00:27:00.1861345Z === RUN   TestOuterLensLaws
+2025-09-18T00:27:00.1861715Z --- PASS: TestOuterLensLaws (0.00s)
+2025-09-18T00:27:00.1862110Z === RUN   TestOuterOptLensLaws
+2025-09-18T00:27:00.1862501Z --- PASS: TestOuterOptLensLaws (0.00s)
+2025-09-18T00:27:00.1862873Z PASS
+2025-09-18T00:27:00.1863208Z ok  	github.com/IBM/fp-go/optics/lens/testing	0.006s
+2025-09-18T00:27:00.1863645Z === RUN   TestOptional
+2025-09-18T00:27:00.1863977Z --- PASS: TestOptional (0.00s)
+2025-09-18T00:27:00.1864295Z PASS
+2025-09-18T00:27:00.1864601Z ok  	github.com/IBM/fp-go/optics/optional	0.003s
+2025-09-18T00:27:00.1865018Z === RUN   TestCompose
+2025-09-18T00:27:00.1865336Z --- PASS: TestCompose (0.00s)
+2025-09-18T00:27:00.1865655Z PASS
+2025-09-18T00:27:00.1865994Z ok  	github.com/IBM/fp-go/optics/optional/lens	0.003s
+2025-09-18T00:27:00.1866432Z === RUN   TestOptionalRecord
+2025-09-18T00:27:00.1867044Z --- PASS: TestOptionalRecord (0.00s)
+2025-09-18T00:27:00.1867426Z === RUN   TestOptionalWithType
+2025-09-18T00:27:00.1867801Z --- PASS: TestOptionalWithType (0.00s)
+2025-09-18T00:27:00.1868152Z PASS
+2025-09-18T00:27:00.1868489Z ok  	github.com/IBM/fp-go/optics/optional/record	0.003s
+2025-09-18T00:27:00.2389381Z === RUN   TestSome
+2025-09-18T00:27:00.2391243Z --- PASS: TestSome (0.00s)
+2025-09-18T00:27:00.2392823Z PASS
+2025-09-18T00:27:00.2393222Z ok  	github.com/IBM/fp-go/optics/prism	0.003s
+2025-09-18T00:27:00.3823616Z ?   	github.com/IBM/fp-go/optics/traversal/array	[no test files]
+2025-09-18T00:27:00.3824653Z ?   	github.com/IBM/fp-go/optics/traversal/array/generic/const	[no test files]
+2025-09-18T00:27:00.3826241Z ?   	github.com/IBM/fp-go/optics/traversal/array/generic/identity	[no test files]
+2025-09-18T00:27:00.3840675Z ?   	github.com/IBM/fp-go/optics/traversal/array/const	[no test files]
+2025-09-18T00:27:00.3841691Z ?   	github.com/IBM/fp-go/optics/traversal/either	[no test files]
+2025-09-18T00:27:00.3843067Z ?   	github.com/IBM/fp-go/optics/traversal/generic	[no test files]
+2025-09-18T00:27:00.3844075Z ?   	github.com/IBM/fp-go/optics/traversal/option	[no test files]
+2025-09-18T00:27:00.3844777Z ?   	github.com/IBM/fp-go/optics/traversal/array/identity	[no test files]
+2025-09-18T00:27:00.3845596Z ?   	github.com/IBM/fp-go/optics/traversal/array/generic	[no test files]
+2025-09-18T00:27:00.3875042Z === RUN   TestGetAll
+2025-09-18T00:27:00.3875639Z --- PASS: TestGetAll (0.00s)
+2025-09-18T00:27:00.3876254Z === RUN   TestFold
+2025-09-18T00:27:00.3876915Z --- PASS: TestFold (0.00s)
+2025-09-18T00:27:00.3877301Z === RUN   TestTraverse
+2025-09-18T00:27:00.3877691Z --- PASS: TestTraverse (0.00s)
+2025-09-18T00:27:00.3878062Z PASS
+2025-09-18T00:27:00.3878456Z ok  	github.com/IBM/fp-go/optics/traversal	0.003s
+2025-09-18T00:27:00.3879100Z ?   	github.com/IBM/fp-go/optics/traversal/record	[no test files]
+2025-09-18T00:27:00.4292815Z ?   	github.com/IBM/fp-go/optics/traversal/record/const	[no test files]
+2025-09-18T00:27:00.4294053Z ?   	github.com/IBM/fp-go/optics/traversal/record/generic	[no test files]
+2025-09-18T00:27:00.4295809Z ?   	github.com/IBM/fp-go/optics/traversal/record/generic/const	[no test files]
+2025-09-18T00:27:00.4665735Z ?   	github.com/IBM/fp-go/optics/traversal/record/generic/identity	[no test files]
+2025-09-18T00:27:00.5051055Z ?   	github.com/IBM/fp-go/optics/traversal/record/identity	[no test files]
+2025-09-18T00:27:01.2618967Z ?   	github.com/IBM/fp-go/option/number	[no test files]
+2025-09-18T00:27:01.2619934Z ?   	github.com/IBM/fp-go/ord	[no test files]
+2025-09-18T00:27:01.2622570Z ?   	github.com/IBM/fp-go/pair	[no test files]
+2025-09-18T00:27:01.2623495Z ?   	github.com/IBM/fp-go/pair/generic	[no test files]
+2025-09-18T00:27:01.2698290Z === RUN   TestCompactArray
+2025-09-18T00:27:01.2699976Z --- PASS: TestCompactArray (0.00s)
+2025-09-18T00:27:01.2700444Z === RUN   TestSequenceArray
+2025-09-18T00:27:01.2700902Z === RUN   TestSequenceArray/TestSequenceArray_0
+2025-09-18T00:27:01.2701427Z === RUN   TestSequenceArray/TestSequenceArray_1
+2025-09-18T00:27:01.2701938Z === RUN   TestSequenceArray/TestSequenceArray_2
+2025-09-18T00:27:01.2702449Z === RUN   TestSequenceArray/TestSequenceArray_3
+2025-09-18T00:27:01.2702979Z === RUN   TestSequenceArray/TestSequenceArray_4
+2025-09-18T00:27:01.2703502Z === RUN   TestSequenceArray/TestSequenceArray_5
+2025-09-18T00:27:01.2704055Z === RUN   TestSequenceArray/TestSequenceArray_6
+2025-09-18T00:27:01.2704564Z === RUN   TestSequenceArray/TestSequenceArray_7
+2025-09-18T00:27:01.2705094Z === RUN   TestSequenceArray/TestSequenceArray_8
+2025-09-18T00:27:01.2705603Z === RUN   TestSequenceArray/TestSequenceArray_9
+2025-09-18T00:27:01.2706081Z --- PASS: TestSequenceArray (0.00s)
+2025-09-18T00:27:01.2707079Z     --- PASS: TestSequenceArray/TestSequenceArray_0 (0.00s)
+2025-09-18T00:27:01.2707860Z     --- PASS: TestSequenceArray/TestSequenceArray_1 (0.00s)
+2025-09-18T00:27:01.2708606Z     --- PASS: TestSequenceArray/TestSequenceArray_2 (0.00s)
+2025-09-18T00:27:01.2709333Z     --- PASS: TestSequenceArray/TestSequenceArray_3 (0.00s)
+2025-09-18T00:27:01.2710053Z     --- PASS: TestSequenceArray/TestSequenceArray_4 (0.00s)
+2025-09-18T00:27:01.2710771Z     --- PASS: TestSequenceArray/TestSequenceArray_5 (0.00s)
+2025-09-18T00:27:01.2711474Z     --- PASS: TestSequenceArray/TestSequenceArray_6 (0.00s)
+2025-09-18T00:27:01.2712442Z     --- PASS: TestSequenceArray/TestSequenceArray_7 (0.00s)
+2025-09-18T00:27:01.2713179Z     --- PASS: TestSequenceArray/TestSequenceArray_8 (0.00s)
+2025-09-18T00:27:01.2713902Z     --- PASS: TestSequenceArray/TestSequenceArray_9 (0.00s)
+2025-09-18T00:27:01.2714400Z === RUN   TestBind
+2025-09-18T00:27:01.2714746Z --- PASS: TestBind (0.00s)
+2025-09-18T00:27:01.2715107Z === RUN   TestApS
+2025-09-18T00:27:01.2715444Z --- PASS: TestApS (0.00s)
+2025-09-18T00:27:01.2715805Z === RUN   TestEq
+2025-09-18T00:27:01.2716122Z --- PASS: TestEq (0.00s)
+2025-09-18T00:27:01.2716476Z === RUN   TestJson
+2025-09-18T00:27:01.2717051Z --- PASS: TestJson (0.00s)
+2025-09-18T00:27:01.2717434Z === RUN   TestDefault
+2025-09-18T00:27:01.2717784Z --- PASS: TestDefault (0.00s)
+2025-09-18T00:27:01.2718153Z === RUN   TestReduce
+2025-09-18T00:27:01.2718495Z --- PASS: TestReduce (0.00s)
+2025-09-18T00:27:01.2718864Z === RUN   TestIsNone
+2025-09-18T00:27:01.2719198Z --- PASS: TestIsNone (0.00s)
+2025-09-18T00:27:01.2719575Z === RUN   TestIsSome
+2025-09-18T00:27:01.2719930Z --- PASS: TestIsSome (0.00s)
+2025-09-18T00:27:01.2720314Z === RUN   TestMapOption
+2025-09-18T00:27:01.2720686Z --- PASS: TestMapOption (0.00s)
+2025-09-18T00:27:01.2721104Z === RUN   TestTryCachOption
+2025-09-18T00:27:01.2721514Z --- PASS: TestTryCachOption (0.00s)
+2025-09-18T00:27:01.2721939Z === RUN   TestAp
+2025-09-18T00:27:01.2722260Z --- PASS: TestAp (0.00s)
+2025-09-18T00:27:01.2722619Z === RUN   TestChain
+2025-09-18T00:27:01.2722957Z --- PASS: TestChain (0.00s)
+2025-09-18T00:27:01.2723313Z === RUN   TestFlatten
+2025-09-18T00:27:01.2723661Z --- PASS: TestFlatten (0.00s)
+2025-09-18T00:27:01.2724023Z === RUN   TestFold
+2025-09-18T00:27:01.2724352Z --- PASS: TestFold (0.00s)
+2025-09-18T00:27:01.2724735Z === RUN   TestFromPredicate
+2025-09-18T00:27:01.2725138Z --- PASS: TestFromPredicate (0.00s)
+2025-09-18T00:27:01.2725536Z === RUN   TestAlt
+2025-09-18T00:27:01.2725862Z --- PASS: TestAlt (0.00s)
+2025-09-18T00:27:01.2726204Z === RUN   TestOrd
+2025-09-18T00:27:01.2726538Z --- PASS: TestOrd (0.00s)
+2025-09-18T00:27:01.2727109Z === RUN   TestCompactRecord
+2025-09-18T00:27:01.2727505Z --- PASS: TestCompactRecord (0.00s)
+2025-09-18T00:27:01.2727936Z === RUN   TestSequenceRecord
+2025-09-18T00:27:01.2728628Z === RUN   TestSequenceRecord/TestSequenceRecord_0
+2025-09-18T00:27:01.2729181Z === RUN   TestSequenceRecord/TestSequenceRecord_1
+2025-09-18T00:27:01.2729711Z === RUN   TestSequenceRecord/TestSequenceRecord_2
+2025-09-18T00:27:01.2730240Z === RUN   TestSequenceRecord/TestSequenceRecord_3
+2025-09-18T00:27:01.2730759Z === RUN   TestSequenceRecord/TestSequenceRecord_4
+2025-09-18T00:27:01.2731286Z === RUN   TestSequenceRecord/TestSequenceRecord_5
+2025-09-18T00:27:01.2731794Z === RUN   TestSequenceRecord/TestSequenceRecord_6
+2025-09-18T00:27:01.2732295Z === RUN   TestSequenceRecord/TestSequenceRecord_7
+2025-09-18T00:27:01.2732806Z === RUN   TestSequenceRecord/TestSequenceRecord_8
+2025-09-18T00:27:01.2733327Z === RUN   TestSequenceRecord/TestSequenceRecord_9
+2025-09-18T00:27:01.2733825Z --- PASS: TestSequenceRecord (0.00s)
+2025-09-18T00:27:01.2734464Z     --- PASS: TestSequenceRecord/TestSequenceRecord_0 (0.00s)
+2025-09-18T00:27:01.2735216Z     --- PASS: TestSequenceRecord/TestSequenceRecord_1 (0.00s)
+2025-09-18T00:27:01.2735966Z     --- PASS: TestSequenceRecord/TestSequenceRecord_2 (0.00s)
+2025-09-18T00:27:01.2737665Z     --- PASS: TestSequenceRecord/TestSequenceRecord_3 (0.00s)
+2025-09-18T00:27:01.2738433Z     --- PASS: TestSequenceRecord/TestSequenceRecord_4 (0.00s)
+2025-09-18T00:27:01.2739177Z     --- PASS: TestSequenceRecord/TestSequenceRecord_5 (0.00s)
+2025-09-18T00:27:01.2739926Z     --- PASS: TestSequenceRecord/TestSequenceRecord_6 (0.00s)
+2025-09-18T00:27:01.2740663Z     --- PASS: TestSequenceRecord/TestSequenceRecord_7 (0.00s)
+2025-09-18T00:27:01.2741401Z     --- PASS: TestSequenceRecord/TestSequenceRecord_8 (0.00s)
+2025-09-18T00:27:01.2742156Z     --- PASS: TestSequenceRecord/TestSequenceRecord_9 (0.00s)
+2025-09-18T00:27:01.2742686Z === RUN   TestSequenceT
+2025-09-18T00:27:01.2743285Z --- PASS: TestSequenceT (0.00s)
+2025-09-18T00:27:01.2743720Z === RUN   TestTypeConversion
+2025-09-18T00:27:01.2744145Z --- PASS: TestTypeConversion (0.00s)
+2025-09-18T00:27:01.2744589Z === RUN   TestInvalidConversion
+2025-09-18T00:27:01.2745008Z --- PASS: TestInvalidConversion (0.00s)
+2025-09-18T00:27:01.2745452Z === RUN   ExampleOption_creation
+2025-09-18T00:27:01.2745895Z --- PASS: ExampleOption_creation (0.00s)
+2025-09-18T00:27:01.2746375Z === RUN   ExampleOption_extraction
+2025-09-18T00:27:01.2747061Z --- PASS: ExampleOption_extraction (0.00s)
+2025-09-18T00:27:01.2747498Z PASS
+2025-09-18T00:27:01.2747853Z ok  	github.com/IBM/fp-go/option	0.006s
+2025-09-18T00:27:01.2748313Z === RUN   TestMonadLaws
+2025-09-18T00:27:01.2748673Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:27:01.2749029Z PASS
+2025-09-18T00:27:01.2749364Z ok  	github.com/IBM/fp-go/option/testing	0.003s
+2025-09-18T00:27:01.7195977Z ?   	github.com/IBM/fp-go/predicate	[no test files]
+2025-09-18T00:27:01.7197334Z ?   	github.com/IBM/fp-go/reader/generic	[no test files]
+2025-09-18T00:27:01.7242830Z === RUN   TestMonadLaws
+2025-09-18T00:27:01.7243441Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:27:01.7249002Z PASS
+2025-09-18T00:27:01.7249647Z ok  	github.com/IBM/fp-go/pair/testing	0.003s
+2025-09-18T00:27:01.7250368Z === RUN   TestSequenceArray
+2025-09-18T00:27:01.7250905Z --- PASS: TestSequenceArray (0.00s)
+2025-09-18T00:27:01.7251299Z === RUN   TestBind
+2025-09-18T00:27:01.7251614Z --- PASS: TestBind (0.00s)
+2025-09-18T00:27:01.7251968Z === RUN   TestApS
+2025-09-18T00:27:01.7252295Z --- PASS: TestApS (0.00s)
+2025-09-18T00:27:01.7252677Z === RUN   TestMap
+2025-09-18T00:27:01.7252940Z --- PASS: TestMap (0.00s)
+2025-09-18T00:27:01.7253143Z === RUN   TestAp
+2025-09-18T00:27:01.7253328Z --- PASS: TestAp (0.00s)
+2025-09-18T00:27:01.7253604Z PASS
+2025-09-18T00:27:01.7253851Z ok  	github.com/IBM/fp-go/reader	0.003s
+2025-09-18T00:27:02.4852727Z ?   	github.com/IBM/fp-go/readereither/generic	[no test files]
+2025-09-18T00:27:02.4853547Z ?   	github.com/IBM/fp-go/readerio/generic	[no test files]
+2025-09-18T00:27:02.4906133Z === RUN   TestSequenceArray
+2025-09-18T00:27:02.4907333Z --- PASS: TestSequenceArray (0.00s)
+2025-09-18T00:27:02.4908547Z === RUN   TestBind
+2025-09-18T00:27:02.4909097Z --- PASS: TestBind (0.00s)
+2025-09-18T00:27:02.4909825Z === RUN   TestApS
+2025-09-18T00:27:02.4910205Z --- PASS: TestApS (0.00s)
+2025-09-18T00:27:02.4910575Z === RUN   TestMap
+2025-09-18T00:27:02.4910895Z --- PASS: TestMap (0.00s)
+2025-09-18T00:27:02.4911215Z === RUN   TestAp
+2025-09-18T00:27:02.4911505Z --- PASS: TestAp (0.00s)
+2025-09-18T00:27:02.4911875Z === RUN   TestFlatten
+2025-09-18T00:27:02.4912226Z --- PASS: TestFlatten (0.00s)
+2025-09-18T00:27:02.4912586Z === RUN   TestSequenceT1
+2025-09-18T00:27:02.4912946Z --- PASS: TestSequenceT1 (0.00s)
+2025-09-18T00:27:02.4913316Z === RUN   TestSequenceT2
+2025-09-18T00:27:02.4913686Z --- PASS: TestSequenceT2 (0.00s)
+2025-09-18T00:27:02.4914084Z === RUN   TestSequenceT3
+2025-09-18T00:27:02.4914470Z --- PASS: TestSequenceT3 (0.00s)
+2025-09-18T00:27:02.4914883Z === RUN   TestSequenceT4
+2025-09-18T00:27:02.4915264Z --- PASS: TestSequenceT4 (0.00s)
+2025-09-18T00:27:02.4915630Z PASS
+2025-09-18T00:27:02.4915999Z ok  	github.com/IBM/fp-go/readereither	0.004s
+2025-09-18T00:27:02.4916488Z === RUN   TestTraverseArray
+2025-09-18T00:27:02.4917225Z --- PASS: TestTraverseArray (0.00s)
+2025-09-18T00:27:02.4917663Z === RUN   TestBind
+2025-09-18T00:27:02.4918028Z --- PASS: TestBind (0.00s)
+2025-09-18T00:27:02.4918431Z === RUN   TestApS
+2025-09-18T00:27:02.4918779Z --- PASS: TestApS (0.00s)
+2025-09-18T00:27:02.4919125Z === RUN   TestMap
+2025-09-18T00:27:02.4919437Z --- PASS: TestMap (0.00s)
+2025-09-18T00:27:02.4919795Z === RUN   TestAp
+2025-09-18T00:27:02.4920114Z --- PASS: TestAp (0.00s)
+2025-09-18T00:27:02.4920439Z PASS
+2025-09-18T00:27:02.4920761Z ok  	github.com/IBM/fp-go/readerio	0.003s
+2025-09-18T00:27:03.4511472Z ?   	github.com/IBM/fp-go/readerioeither/generic	[no test files]
+2025-09-18T00:27:03.4518374Z ?   	github.com/IBM/fp-go/record/generic	[no test files]
+2025-09-18T00:27:03.4591596Z === RUN   TestTraverseArray
+2025-09-18T00:27:03.4592318Z --- PASS: TestTraverseArray (0.00s)
+2025-09-18T00:27:03.4592776Z === RUN   TestSequenceArray
+2025-09-18T00:27:03.4593228Z === RUN   TestSequenceArray/TestSequenceArray_0
+2025-09-18T00:27:03.4593752Z === RUN   TestSequenceArray/TestSequenceArray_1
+2025-09-18T00:27:03.4594254Z === RUN   TestSequenceArray/TestSequenceArray_2
+2025-09-18T00:27:03.4594756Z === RUN   TestSequenceArray/TestSequenceArray_3
+2025-09-18T00:27:03.4595269Z === RUN   TestSequenceArray/TestSequenceArray_4
+2025-09-18T00:27:03.4595772Z === RUN   TestSequenceArray/TestSequenceArray_5
+2025-09-18T00:27:03.4596287Z === RUN   TestSequenceArray/TestSequenceArray_6
+2025-09-18T00:27:03.4597073Z === RUN   TestSequenceArray/TestSequenceArray_7
+2025-09-18T00:27:03.4597616Z === RUN   TestSequenceArray/TestSequenceArray_8
+2025-09-18T00:27:03.4598116Z === RUN   TestSequenceArray/TestSequenceArray_9
+2025-09-18T00:27:03.4598601Z --- PASS: TestSequenceArray (0.00s)
+2025-09-18T00:27:03.4599254Z     --- PASS: TestSequenceArray/TestSequenceArray_0 (0.00s)
+2025-09-18T00:27:03.4599959Z     --- PASS: TestSequenceArray/TestSequenceArray_1 (0.00s)
+2025-09-18T00:27:03.4600671Z     --- PASS: TestSequenceArray/TestSequenceArray_2 (0.00s)
+2025-09-18T00:27:03.4601408Z     --- PASS: TestSequenceArray/TestSequenceArray_3 (0.00s)
+2025-09-18T00:27:03.4602096Z     --- PASS: TestSequenceArray/TestSequenceArray_4 (0.00s)
+2025-09-18T00:27:03.4602782Z     --- PASS: TestSequenceArray/TestSequenceArray_5 (0.00s)
+2025-09-18T00:27:03.4603456Z     --- PASS: TestSequenceArray/TestSequenceArray_6 (0.00s)
+2025-09-18T00:27:03.4604124Z     --- PASS: TestSequenceArray/TestSequenceArray_7 (0.00s)
+2025-09-18T00:27:03.4604787Z     --- PASS: TestSequenceArray/TestSequenceArray_8 (0.00s)
+2025-09-18T00:27:03.4605472Z     --- PASS: TestSequenceArray/TestSequenceArray_9 (0.00s)
+2025-09-18T00:27:03.4605991Z === RUN   TestSequenceArrayError
+2025-09-18T00:27:03.4606445Z === RUN   TestSequenceArrayError/Bitmask_test_1
+2025-09-18T00:27:03.4607445Z === RUN   TestSequenceArrayError/Bitmask_test_2
+2025-09-18T00:27:03.4607957Z === RUN   TestSequenceArrayError/Bitmask_test_3
+2025-09-18T00:27:03.4608696Z === RUN   TestSequenceArrayError/Bitmask_test_4
+2025-09-18T00:27:03.4609194Z === RUN   TestSequenceArrayError/Bitmask_test_5
+2025-09-18T00:27:03.4609698Z === RUN   TestSequenceArrayError/Bitmask_test_6
+2025-09-18T00:27:03.4610178Z === RUN   TestSequenceArrayError/Bitmask_test_7
+2025-09-18T00:27:03.4610665Z === RUN   TestSequenceArrayError/Bitmask_test_8
+2025-09-18T00:27:03.4611174Z === RUN   TestSequenceArrayError/Bitmask_test_9
+2025-09-18T00:27:03.4611681Z === RUN   TestSequenceArrayError/Bitmask_test_10
+2025-09-18T00:27:03.4612196Z === RUN   TestSequenceArrayError/Bitmask_test_11
+2025-09-18T00:27:03.4612691Z === RUN   TestSequenceArrayError/Bitmask_test_12
+2025-09-18T00:27:03.4613198Z === RUN   TestSequenceArrayError/Bitmask_test_13
+2025-09-18T00:27:03.4613692Z === RUN   TestSequenceArrayError/Bitmask_test_14
+2025-09-18T00:27:03.4614204Z === RUN   TestSequenceArrayError/Bitmask_test_15
+2025-09-18T00:27:03.4614681Z --- PASS: TestSequenceArrayError (0.00s)
+2025-09-18T00:27:03.4615341Z     --- PASS: TestSequenceArrayError/Bitmask_test_1 (0.00s)
+2025-09-18T00:27:03.4616078Z     --- PASS: TestSequenceArrayError/Bitmask_test_2 (0.00s)
+2025-09-18T00:27:03.4617024Z     --- PASS: TestSequenceArrayError/Bitmask_test_3 (0.00s)
+2025-09-18T00:27:03.4617712Z     --- PASS: TestSequenceArrayError/Bitmask_test_4 (0.00s)
+2025-09-18T00:27:03.4618375Z     --- PASS: TestSequenceArrayError/Bitmask_test_5 (0.00s)
+2025-09-18T00:27:03.4619044Z     --- PASS: TestSequenceArrayError/Bitmask_test_6 (0.00s)
+2025-09-18T00:27:03.4619694Z     --- PASS: TestSequenceArrayError/Bitmask_test_7 (0.00s)
+2025-09-18T00:27:03.4620376Z     --- PASS: TestSequenceArrayError/Bitmask_test_8 (0.00s)
+2025-09-18T00:27:03.4621047Z     --- PASS: TestSequenceArrayError/Bitmask_test_9 (0.00s)
+2025-09-18T00:27:03.4621732Z     --- PASS: TestSequenceArrayError/Bitmask_test_10 (0.00s)
+2025-09-18T00:27:03.4622657Z     --- PASS: TestSequenceArrayError/Bitmask_test_11 (0.00s)
+2025-09-18T00:27:03.4623379Z     --- PASS: TestSequenceArrayError/Bitmask_test_12 (0.00s)
+2025-09-18T00:27:03.4624085Z     --- PASS: TestSequenceArrayError/Bitmask_test_13 (0.00s)
+2025-09-18T00:27:03.4624811Z     --- PASS: TestSequenceArrayError/Bitmask_test_14 (0.00s)
+2025-09-18T00:27:03.4625507Z     --- PASS: TestSequenceArrayError/Bitmask_test_15 (0.00s)
+2025-09-18T00:27:03.4625990Z === RUN   TestBind
+2025-09-18T00:27:03.4626345Z --- PASS: TestBind (0.00s)
+2025-09-18T00:27:03.4626938Z === RUN   TestApS
+2025-09-18T00:27:03.4627298Z --- PASS: TestApS (0.00s)
+2025-09-18T00:27:03.4627687Z === RUN   TestMap
+2025-09-18T00:27:03.4628049Z --- PASS: TestMap (0.00s)
+2025-09-18T00:27:03.4628413Z === RUN   TestOrLeft
+2025-09-18T00:27:03.4628745Z --- PASS: TestOrLeft (0.00s)
+2025-09-18T00:27:03.4629106Z === RUN   TestAp
+2025-09-18T00:27:03.4629417Z --- PASS: TestAp (0.00s)
+2025-09-18T00:27:03.4629777Z === RUN   TestChainReaderK
+2025-09-18T00:27:03.4630172Z --- PASS: TestChainReaderK (0.00s)
+2025-09-18T00:27:03.4630579Z === RUN   TestSequence2
+2025-09-18T00:27:03.4630950Z --- PASS: TestSequence2 (0.00s)
+2025-09-18T00:27:03.4631314Z PASS
+2025-09-18T00:27:03.4631660Z ok  	github.com/IBM/fp-go/readerioeither	0.006s
+2025-09-18T00:27:03.4632138Z === RUN   TestFromStrictEquals
+2025-09-18T00:27:03.4632559Z --- PASS: TestFromStrictEquals (0.00s)
+2025-09-18T00:27:03.4632981Z === RUN   TestUnionMonoid
+2025-09-18T00:27:03.4633353Z --- PASS: TestUnionMonoid (0.00s)
+2025-09-18T00:27:03.4633765Z === RUN   TestUnionFirstMonoid
+2025-09-18T00:27:03.4634171Z --- PASS: TestUnionFirstMonoid (0.00s)
+2025-09-18T00:27:03.4634610Z === RUN   TestUnionLastMonoid
+2025-09-18T00:27:03.4635017Z --- PASS: TestUnionLastMonoid (0.00s)
+2025-09-18T00:27:03.4635427Z === RUN   TestKeys
+2025-09-18T00:27:03.4635738Z --- PASS: TestKeys (0.00s)
+2025-09-18T00:27:03.4636087Z === RUN   TestValues
+2025-09-18T00:27:03.4636418Z --- PASS: TestValues (0.00s)
+2025-09-18T00:27:03.4636970Z === RUN   TestMap
+2025-09-18T00:27:03.4637297Z --- PASS: TestMap (0.00s)
+2025-09-18T00:27:03.4637656Z === RUN   TestLookup
+2025-09-18T00:27:03.4637990Z --- PASS: TestLookup (0.00s)
+2025-09-18T00:27:03.4638566Z === RUN   TestFilterChain
+2025-09-18T00:27:03.4638950Z --- PASS: TestFilterChain (0.00s)
+2025-09-18T00:27:03.4639339Z === RUN   TestCopyVsClone
+2025-09-18T00:27:03.4639718Z --- PASS: TestCopyVsClone (0.00s)
+2025-09-18T00:27:03.4640130Z === RUN   TestFromArrayMap
+2025-09-18T00:27:03.4640533Z --- PASS: TestFromArrayMap (0.00s)
+2025-09-18T00:27:03.4640916Z === RUN   TestEmpty
+2025-09-18T00:27:03.4641253Z --- PASS: TestEmpty (0.00s)
+2025-09-18T00:27:03.4641609Z === RUN   TestHas
+2025-09-18T00:27:03.4641937Z --- PASS: TestHas (0.00s)
+2025-09-18T00:27:03.4642325Z === RUN   TestSimpleTraversalWithIndex
+2025-09-18T00:27:03.4642824Z --- PASS: TestSimpleTraversalWithIndex (0.00s)
+2025-09-18T00:27:03.4643340Z === RUN   TestSimpleTraversalNoIndex
+2025-09-18T00:27:03.4643821Z --- PASS: TestSimpleTraversalNoIndex (0.00s)
+2025-09-18T00:27:03.4644280Z === RUN   TestSequence
+2025-09-18T00:27:03.4644626Z --- PASS: TestSequence (0.00s)
+2025-09-18T00:27:03.4645009Z === RUN   ExampleFoldMap
+2025-09-18T00:27:03.4645386Z --- PASS: ExampleFoldMap (0.00s)
+2025-09-18T00:27:03.4645808Z === RUN   ExampleValuesOrd
+2025-09-18T00:27:03.4646213Z --- PASS: ExampleValuesOrd (0.00s)
+2025-09-18T00:27:03.4646989Z PASS
+2025-09-18T00:27:03.4647335Z ok  	github.com/IBM/fp-go/record	0.004s
+2025-09-18T00:27:03.4789661Z ?   	github.com/IBM/fp-go/reflect	[no test files]
+2025-09-18T00:27:03.4790734Z ?   	github.com/IBM/fp-go/reflect/generic	[no test files]
+2025-09-18T00:27:03.4792393Z ?   	github.com/IBM/fp-go/retry	[no test files]
+2025-09-18T00:27:03.4795439Z ?   	github.com/IBM/fp-go/retry/generic	[no test files]
+2025-09-18T00:27:03.6464331Z testing: warning: no tests to run
+2025-09-18T00:27:03.6468887Z PASS
+2025-09-18T00:27:03.6473091Z ok  	github.com/IBM/fp-go/samples	0.003s [no tests to run]
+2025-09-18T00:27:03.6737739Z === RUN   ExampleReader
+2025-09-18T00:27:03.6740220Z --- PASS: ExampleReader (0.00s)
+2025-09-18T00:27:03.6740971Z PASS
+2025-09-18T00:27:03.6741736Z ok  	github.com/IBM/fp-go/samples/getting-started-with-fp-ts/reader/example1	0.002s
+2025-09-18T00:27:03.7698190Z === RUN   ExampleReader
+2025-09-18T00:27:03.7702965Z --- PASS: ExampleReader (0.00s)
+2025-09-18T00:27:03.7703743Z PASS
+2025-09-18T00:27:03.7704641Z ok  	github.com/IBM/fp-go/samples/getting-started-with-fp-ts/reader/example2	0.008s
+2025-09-18T00:27:06.0348371Z === RUN   TestMultipleHttpRequests
+2025-09-18T00:27:06.0349299Z 2025/09/18 00:27:05 Log Single: {1 1 sunt aut facere repellat provident occaecati excepturi optio reprehenderit quia et suscipit
+2025-09-18T00:27:06.0350231Z suscipit recusandae consequuntur expedita et cum
+2025-09-18T00:27:06.0350756Z reprehenderit molestiae ut ut quas totam
+2025-09-18T00:27:06.0351270Z nostrum rerum est autem sunt rem eveniet architecto}
+2025-09-18T00:27:06.0352147Z 2025/09/18 00:27:05 Log Single: {1 3 ea molestias quasi exercitationem repellat qui ipsa sit aut et iusto sed quo iure
+2025-09-18T00:27:06.0352960Z voluptatem occaecati omnis eligendi aut ad
+2025-09-18T00:27:06.0353459Z voluptatem doloribus vel accusantium quis pariatur
+2025-09-18T00:27:06.0354004Z molestiae porro eius odio et labore et velit aut}
+2025-09-18T00:27:06.0354583Z 2025/09/18 00:27:05 Log Single: {1 2 qui est esse est rerum tempore vitae
+2025-09-18T00:27:06.0355208Z sequi sint nihil reprehenderit dolor beatae ea dolores neque
+2025-09-18T00:27:06.0355869Z fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis
+2025-09-18T00:27:06.0356505Z qui aperiam non debitis possimus qui neque nisi nulla}
+2025-09-18T00:27:06.0363107Z 2025/09/18 00:27:05 Log Single: {1 6 dolorem eum magni eos aperiam quia ut aspernatur corporis harum nihil quis provident sequi
+2025-09-18T00:27:06.0364014Z mollitia nobis aliquid molestiae
+2025-09-18T00:27:06.0364550Z perspiciatis et ea nemo ab reprehenderit accusantium quas
+2025-09-18T00:27:06.0365157Z voluptate dolores velit et doloremque molestiae}
+2025-09-18T00:27:06.0365971Z 2025/09/18 00:27:05 Log Single: {1 10 optio molestias id quia eum quo et expedita modi cum officia vel magni
+2025-09-18T00:27:06.0367207Z doloribus qui repudiandae
+2025-09-18T00:27:06.0367559Z vero nisi sit
+2025-09-18T00:27:06.0367930Z quos veniam quod sed accusamus veritatis error}
+2025-09-18T00:27:06.0368658Z 2025/09/18 00:27:05 Log Single: {1 7 magnam facilis autem dolore placeat quibusdam ea quo vitae
+2025-09-18T00:27:06.0369338Z magni quis enim qui quis quo nemo aut saepe
+2025-09-18T00:27:06.0369808Z quidem repellat excepturi ut quia
+2025-09-18T00:27:06.0370225Z sunt ut sequi eos ea sed quas}
+2025-09-18T00:27:06.0370828Z 2025/09/18 00:27:05 Log Single: {1 5 nesciunt quas odio repudiandae veniam quaerat sunt sed
+2025-09-18T00:27:06.0371473Z alias aut fugiat sit autem sed est
+2025-09-18T00:27:06.0371943Z voluptatem omnis possimus esse voluptatibus quis
+2025-09-18T00:27:06.0372431Z est aut tenetur dolor neque}
+2025-09-18T00:27:06.0373247Z 2025/09/18 00:27:05 Log Single: {1 9 nesciunt iure omnis dolorem tempora et accusantium consectetur animi nesciunt iure dolore
+2025-09-18T00:27:06.0374029Z enim quia ad
+2025-09-18T00:27:06.0374349Z veniam autem ut quam aut nobis
+2025-09-18T00:27:06.0374804Z et est aut quod aut provident voluptas autem voluptas}
+2025-09-18T00:27:06.0375586Z 2025/09/18 00:27:05 Log Single: {1 4 eum et est occaecati ullam et saepe reiciendis voluptatem adipisci
+2025-09-18T00:27:06.0376330Z sit amet autem assumenda provident rerum culpa
+2025-09-18T00:27:06.0377083Z quis hic commodi nesciunt rem tenetur doloremque ipsam iure
+2025-09-18T00:27:06.0377931Z quis sunt voluptatem rerum illo velit}
+2025-09-18T00:27:06.0378622Z 2025/09/18 00:27:05 Log Single: {1 8 dolorem dolore est ipsam dignissimos aperiam dolorem qui eum
+2025-09-18T00:27:06.0379411Z facilis quibusdam animi sint suscipit qui sint possimus cum
+2025-09-18T00:27:06.0380087Z quaerat magni maiores excepturi
+2025-09-18T00:27:06.0380775Z ipsam ut commodi dolor voluptatum modi aut vitae}
+2025-09-18T00:27:06.0381912Z 2025/09/18 00:27:05 Log Result: [{1 1 sunt aut facere repellat provident occaecati excepturi optio reprehenderit quia et suscipit
+2025-09-18T00:27:06.0382832Z suscipit recusandae consequuntur expedita et cum
+2025-09-18T00:27:06.0383334Z reprehenderit molestiae ut ut quas totam
+2025-09-18T00:27:06.0384071Z nostrum rerum est autem sunt rem eveniet architecto} {1 2 qui est esse est rerum tempore vitae
+2025-09-18T00:27:06.0384888Z sequi sint nihil reprehenderit dolor beatae ea dolores neque
+2025-09-18T00:27:06.0385582Z fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis
+2025-09-18T00:27:06.0386965Z qui aperiam non debitis possimus qui neque nisi nulla} {1 3 ea molestias quasi exercitationem repellat qui ipsa sit aut et iusto sed quo iure
+2025-09-18T00:27:06.0388356Z voluptatem occaecati omnis eligendi aut ad
+2025-09-18T00:27:06.0416978Z voluptatem doloribus vel accusantium quis pariatur
+2025-09-18T00:27:06.0417920Z molestiae porro eius odio et labore et velit aut} {1 4 eum et est occaecati ullam et saepe reiciendis voluptatem adipisci
+2025-09-18T00:27:06.0418769Z sit amet autem assumenda provident rerum culpa
+2025-09-18T00:27:06.0419331Z quis hic commodi nesciunt rem tenetur doloremque ipsam iure
+2025-09-18T00:27:06.0420139Z quis sunt voluptatem rerum illo velit} {1 5 nesciunt quas odio repudiandae veniam quaerat sunt sed
+2025-09-18T00:27:06.0420832Z alias aut fugiat sit autem sed est
+2025-09-18T00:27:06.0421264Z voluptatem omnis possimus esse voluptatibus quis
+2025-09-18T00:27:06.0422109Z est aut tenetur dolor neque} {1 6 dolorem eum magni eos aperiam quia ut aspernatur corporis harum nihil quis provident sequi
+2025-09-18T00:27:06.0422954Z mollitia nobis aliquid molestiae
+2025-09-18T00:27:06.0423427Z perspiciatis et ea nemo ab reprehenderit accusantium quas
+2025-09-18T00:27:06.0424293Z voluptate dolores velit et doloremque molestiae} {1 7 magnam facilis autem dolore placeat quibusdam ea quo vitae
+2025-09-18T00:27:06.0425066Z magni quis enim qui quis quo nemo aut saepe
+2025-09-18T00:27:06.0425503Z quidem repellat excepturi ut quia
+2025-09-18T00:27:06.0426132Z sunt ut sequi eos ea sed quas} {1 8 dolorem dolore est ipsam dignissimos aperiam dolorem qui eum
+2025-09-18T00:27:06.0427703Z facilis quibusdam animi sint suscipit qui sint possimus cum
+2025-09-18T00:27:06.0428241Z quaerat magni maiores excepturi
+2025-09-18T00:27:06.0429337Z ipsam ut commodi dolor voluptatum modi aut vitae} {1 9 nesciunt iure omnis dolorem tempora et accusantium consectetur animi nesciunt iure dolore
+2025-09-18T00:27:06.0430233Z enim quia ad
+2025-09-18T00:27:06.0430538Z veniam autem ut quam aut nobis
+2025-09-18T00:27:06.0431355Z et est aut quod aut provident voluptas autem voluptas} {1 10 optio molestias id quia eum quo et expedita modi cum officia vel magni
+2025-09-18T00:27:06.0432184Z doloribus qui repudiandae
+2025-09-18T00:27:06.0432520Z vero nisi sit
+2025-09-18T00:27:06.0432884Z quos veniam quod sed accusamus veritatis error}]
+2025-09-18T00:27:06.0433388Z --- PASS: TestMultipleHttpRequests (0.25s)
+2025-09-18T00:27:06.0433861Z === RUN   TestHeterogeneousHttpRequests
+2025-09-18T00:27:06.0434927Z 2025/09/18 00:27:06 Log Result: Tuple2[http.PostItem, http.CatFact]({1 1 sunt aut facere repellat provident occaecati excepturi optio reprehenderit quia et suscipit
+2025-09-18T00:27:06.0436057Z suscipit recusandae consequuntur expedita et cum
+2025-09-18T00:27:06.0436751Z reprehenderit molestiae ut ut quas totam
+2025-09-18T00:27:06.0438090Z nostrum rerum est autem sunt rem eveniet architecto}, {Contrary to popular belief, the cat is a social animal. A pet cat will respond and answer to speech , and seems to enjoy human companionship.})
+2025-09-18T00:27:06.0440420Z Right[tuple.Tuple2[github.com/IBM/fp-go/samples/http.PostItem,github.com/IBM/fp-go/samples/http.CatFact]](Tuple2[http.PostItem, http.CatFact]({1 1 sunt aut facere repellat provident occaecati excepturi optio reprehenderit quia et suscipit
+2025-09-18T00:27:06.0442074Z suscipit recusandae consequuntur expedita et cum
+2025-09-18T00:27:06.0442586Z reprehenderit molestiae ut ut quas totam
+2025-09-18T00:27:06.0444196Z nostrum rerum est autem sunt rem eveniet architecto}, {Contrary to popular belief, the cat is a social animal. A pet cat will respond and answer to speech , and seems to enjoy human companionship.}))
+2025-09-18T00:27:06.0445404Z --- PASS: TestHeterogeneousHttpRequests (0.72s)
+2025-09-18T00:27:06.0445813Z PASS
+2025-09-18T00:27:06.0446136Z ok  	github.com/IBM/fp-go/samples/http	0.971s
+2025-09-18T00:27:06.0446743Z === RUN   ExampleEither_match
+2025-09-18T00:27:06.0447125Z --- PASS: ExampleEither_match (0.00s)
+2025-09-18T00:27:06.0447485Z PASS
+2025-09-18T00:27:06.0447801Z ok  	github.com/IBM/fp-go/samples/match	0.007s
+2025-09-18T00:27:06.4807831Z === RUN   Example_flock
+2025-09-18T00:27:06.4870705Z --- PASS: Example_flock (0.00s)
+2025-09-18T00:27:06.4871436Z === RUN   Example_greeting
+2025-09-18T00:27:06.4872071Z --- PASS: Example_greeting (0.00s)
+2025-09-18T00:27:06.4872663Z === RUN   Example_solution04A
+2025-09-18T00:27:06.4873221Z --- PASS: Example_solution04A (0.00s)
+2025-09-18T00:27:06.4873818Z === RUN   Example_solution04B
+2025-09-18T00:27:06.4874363Z --- PASS: Example_solution04B (0.00s)
+2025-09-18T00:27:06.4874931Z === RUN   Example_solution04C
+2025-09-18T00:27:06.4875480Z --- PASS: Example_solution04C (0.00s)
+2025-09-18T00:27:06.4876028Z === RUN   Example_shout
+2025-09-18T00:27:06.4876539Z --- PASS: Example_shout (0.00s)
+2025-09-18T00:27:06.4877256Z === RUN   Example_dasherize
+2025-09-18T00:27:06.4877825Z --- PASS: Example_dasherize (0.00s)
+2025-09-18T00:27:06.4878370Z === RUN   Example_pipe
+2025-09-18T00:27:06.4878871Z --- PASS: Example_pipe (0.00s)
+2025-09-18T00:27:06.4879424Z === RUN   Example_solution05A
+2025-09-18T00:27:06.4879957Z --- PASS: Example_solution05A (0.00s)
+2025-09-18T00:27:06.4880510Z === RUN   Example_solution05B
+2025-09-18T00:27:06.4881059Z --- PASS: Example_solution05B (0.00s)
+2025-09-18T00:27:06.4881611Z === RUN   Example_solution05C
+2025-09-18T00:27:06.4882144Z --- PASS: Example_solution05C (0.00s)
+2025-09-18T00:27:06.4882708Z === RUN   Example_application
+2025-09-18T00:27:06.4883235Z --- PASS: Example_application (0.51s)
+2025-09-18T00:27:06.4883788Z === RUN   Example_widthdraw
+2025-09-18T00:27:06.4884664Z --- PASS: Example_widthdraw (0.00s)
+2025-09-18T00:27:06.4885229Z === RUN   Example_getAge
+2025-09-18T00:27:06.4885753Z --- PASS: Example_getAge (0.00s)
+2025-09-18T00:27:06.4886296Z === RUN   Example_solution08A
+2025-09-18T00:27:06.4887009Z --- PASS: Example_solution08A (0.00s)
+2025-09-18T00:27:06.4887690Z === RUN   Example_solution08B
+2025-09-18T00:27:06.4888278Z --- PASS: Example_solution08B (0.00s)
+2025-09-18T00:27:06.4889069Z === RUN   Example_solution08C
+2025-09-18T00:27:06.4889559Z --- PASS: Example_solution08C (0.00s)
+2025-09-18T00:27:06.4889998Z === RUN   Example_solution08D
+2025-09-18T00:27:06.4890394Z --- PASS: Example_solution08D (0.00s)
+2025-09-18T00:27:06.4890799Z === RUN   Example_street
+2025-09-18T00:27:06.4891150Z --- PASS: Example_street (0.00s)
+2025-09-18T00:27:06.4891534Z === RUN   Example_solution09A
+2025-09-18T00:27:06.4891920Z --- PASS: Example_solution09A (0.00s)
+2025-09-18T00:27:06.4892319Z === RUN   Example_solution09B
+2025-09-18T00:27:06.4892651Z 2025/09/18 00:27:06 ch09.md
+2025-09-18T00:27:06.4893022Z --- PASS: Example_solution09B (0.00s)
+2025-09-18T00:27:06.4893415Z === RUN   Example_solution09C
+2025-09-18T00:27:06.4893767Z --- PASS: Example_solution09C (0.00s)
+2025-09-18T00:27:06.4915271Z === RUN   Example_renderPage
+2025-09-18T00:27:06.4915779Z --- PASS: Example_renderPage (0.10s)
+2025-09-18T00:27:06.4916195Z === RUN   Example_solution10A
+2025-09-18T00:27:06.4916755Z --- PASS: Example_solution10A (0.00s)
+2025-09-18T00:27:06.4917167Z === RUN   Example_solution10B
+2025-09-18T00:27:06.4917548Z --- PASS: Example_solution10B (0.00s)
+2025-09-18T00:27:06.4917939Z === RUN   Example_solution10C
+2025-09-18T00:27:06.4918311Z --- PASS: Example_solution10C (0.00s)
+2025-09-18T00:27:06.4918716Z === RUN   Example_solution11A
+2025-09-18T00:27:06.4919087Z --- PASS: Example_solution11A (0.00s)
+2025-09-18T00:27:06.4919464Z === RUN   Example_solution11B
+2025-09-18T00:27:06.4920058Z --- PASS: Example_solution11B (0.00s)
+2025-09-18T00:27:06.4920472Z === RUN   Example_solution11C
+2025-09-18T00:27:06.4920840Z --- PASS: Example_solution11C (0.00s)
+2025-09-18T00:27:06.4921225Z === RUN   Example_solution12A
+2025-09-18T00:27:06.4921585Z --- PASS: Example_solution12A (0.00s)
+2025-09-18T00:27:06.4921980Z === RUN   Example_solution12B
+2025-09-18T00:27:06.4922343Z --- PASS: Example_solution12B (0.00s)
+2025-09-18T00:27:06.4922755Z === RUN   Example_solution12C
+2025-09-18T00:27:06.4923151Z --- PASS: Example_solution12C (0.00s)
+2025-09-18T00:27:06.4923531Z PASS
+2025-09-18T00:27:06.4923939Z ok  	github.com/IBM/fp-go/samples/mostly-adequate	0.617s
+2025-09-18T00:27:06.4924381Z testing: warning: no tests to run
+2025-09-18T00:27:06.4924704Z PASS
+2025-09-18T00:27:06.4925177Z ok  	github.com/IBM/fp-go/samples/presentation/benchmarks	0.003s [no tests to run]
+2025-09-18T00:27:06.4925820Z === RUN   Example_composition_pipe
+2025-09-18T00:27:06.4926283Z --- PASS: Example_composition_pipe (0.00s)
+2025-09-18T00:27:06.4926907Z === RUN   Example_composition_flow
+2025-09-18T00:27:06.4927371Z --- PASS: Example_composition_flow (0.00s)
+2025-09-18T00:27:06.4927874Z === RUN   Example_either_monad
+2025-09-18T00:27:06.4928251Z --- PASS: Example_either_monad (0.00s)
+2025-09-18T00:27:06.4928661Z === RUN   Example_either_idiomatic
+2025-09-18T00:27:06.4929090Z --- PASS: Example_either_idiomatic (0.00s)
+2025-09-18T00:27:06.4929527Z === RUN   Example_either_worlds
+2025-09-18T00:27:06.4929929Z --- PASS: Example_either_worlds (0.00s)
+2025-09-18T00:27:06.4930341Z === RUN   Example_generics
+2025-09-18T00:27:06.4930698Z --- PASS: Example_generics (0.00s)
+2025-09-18T00:27:06.4931077Z === RUN   Example_closure
+2025-09-18T00:27:06.4931449Z --- PASS: Example_closure (0.00s)
+2025-09-18T00:27:06.4931848Z === RUN   Example_immutability_struct
+2025-09-18T00:27:06.4932308Z --- PASS: Example_immutability_struct (0.00s)
+2025-09-18T00:27:06.4932772Z === RUN   Example_immutability_optics
+2025-09-18T00:27:06.4933199Z --- PASS: Example_immutability_optics (0.00s)
+2025-09-18T00:27:06.4933658Z === RUN   Example_immutability_lenses
+2025-09-18T00:27:06.4934106Z --- PASS: Example_immutability_lenses (0.00s)
+2025-09-18T00:27:06.4934749Z === RUN   Example_map
+2025-09-18T00:27:06.4935101Z --- PASS: Example_map (0.00s)
+2025-09-18T00:27:06.4935436Z === RUN   Example_reduce
+2025-09-18T00:27:06.4935808Z --- PASS: Example_reduce (0.00s)
+2025-09-18T00:27:06.4936189Z === RUN   Example_io_flow
+2025-09-18T00:27:06.4936531Z --- PASS: Example_io_flow (0.00s)
+2025-09-18T00:27:06.4937114Z === RUN   Example_io_flow_idiomatic
+2025-09-18T00:27:06.4937547Z --- PASS: Example_io_flow_idiomatic (0.00s)
+2025-09-18T00:27:06.4937943Z PASS
+2025-09-18T00:27:06.4938354Z ok  	github.com/IBM/fp-go/samples/presentation/examples	0.003s
+2025-09-18T00:27:06.4938900Z === RUN   ExampleReaderIOEither
+2025-09-18T00:27:06.4939304Z --- PASS: ExampleReaderIOEither (0.00s)
+2025-09-18T00:27:06.4939690Z PASS
+2025-09-18T00:27:06.4940111Z ok  	github.com/IBM/fp-go/samples/readerioeither/example1	0.003s
+2025-09-18T00:27:06.6579025Z ?   	github.com/IBM/fp-go/semigroup/ord	[no test files]
+2025-09-18T00:27:06.6648277Z === RUN   TestReadSingleFile
+2025-09-18T00:27:06.6648772Z 2025/09/18 00:27:06 Log: {Carsten}
+2025-09-18T00:27:06.6649221Z --- PASS: TestReadSingleFile (0.00s)
+2025-09-18T00:27:06.6649674Z === RUN   TestReadMultipleFiles
+2025-09-18T00:27:06.6650076Z 2025/09/18 00:27:06 Log Single: {file3}
+2025-09-18T00:27:06.6650500Z 2025/09/18 00:27:06 Log Single: {file2}
+2025-09-18T00:27:06.6650911Z 2025/09/18 00:27:06 Log Single: {file1}
+2025-09-18T00:27:06.6651410Z 2025/09/18 00:27:06 Log Result: [{file1} {file2} {file3}]
+2025-09-18T00:27:06.6651954Z --- PASS: TestReadMultipleFiles (0.00s)
+2025-09-18T00:27:06.6652371Z PASS
+2025-09-18T00:27:06.6652750Z ok  	github.com/IBM/fp-go/samples/readfile	0.005s
+2025-09-18T00:27:06.6661832Z === RUN   TestIOEitherToOption1
+2025-09-18T00:27:06.6662498Z None[<nil>]
+2025-09-18T00:27:06.6663039Z --- PASS: TestIOEitherToOption1 (0.00s)
+2025-09-18T00:27:06.6664002Z === RUN   TestIOEitherToOption2
+2025-09-18T00:27:06.6664617Z None[<nil>]
+2025-09-18T00:27:06.6665142Z --- PASS: TestIOEitherToOption2 (0.00s)
+2025-09-18T00:27:06.6665815Z === RUN   TestSampleConvertDocx1
+2025-09-18T00:27:06.6666428Z --- PASS: TestSampleConvertDocx1 (0.00s)
+2025-09-18T00:27:06.6667693Z === RUN   TestSampleConvertDocx2
+2025-09-18T00:27:06.6668317Z --- PASS: TestSampleConvertDocx2 (0.00s)
+2025-09-18T00:27:06.6669004Z === RUN   TestSampleConvertDocx3
+2025-09-18T00:27:06.6669650Z --- PASS: TestSampleConvertDocx3 (0.00s)
+2025-09-18T00:27:06.6670325Z === RUN   TestSampleConvertDocx4
+2025-09-18T00:27:06.6670969Z --- PASS: TestSampleConvertDocx4 (0.00s)
+2025-09-18T00:27:06.6671567Z PASS
+2025-09-18T00:27:06.6672048Z ok  	github.com/IBM/fp-go/samples/tuples	0.005s
+2025-09-18T00:27:06.6677167Z === RUN   TestFirst
+2025-09-18T00:27:06.6677999Z --- PASS: TestFirst (0.00s)
+2025-09-18T00:27:06.6678568Z === RUN   TestLast
+2025-09-18T00:27:06.6679070Z --- PASS: TestLast (0.00s)
+2025-09-18T00:27:06.6679612Z PASS
+2025-09-18T00:27:06.6680090Z ok  	github.com/IBM/fp-go/semigroup	0.004s
+2025-09-18T00:27:06.7432820Z ?   	github.com/IBM/fp-go/state	[no test files]
+2025-09-18T00:27:06.7433441Z ?   	github.com/IBM/fp-go/state/generic	[no test files]
+2025-09-18T00:27:07.4677823Z ?   	github.com/IBM/fp-go/statereaderioeither	[no test files]
+2025-09-18T00:27:07.4678645Z ?   	github.com/IBM/fp-go/statereaderioeither/generic	[no test files]
+2025-09-18T00:27:07.4716511Z === RUN   TestMonadLaws
+2025-09-18T00:27:07.4718532Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:27:07.4723280Z PASS
+2025-09-18T00:27:07.4723665Z ok  	github.com/IBM/fp-go/state/testing	0.003s
+2025-09-18T00:27:07.8888302Z ?   	github.com/IBM/fp-go/string/generic	[no test files]
+2025-09-18T00:27:07.8976231Z === RUN   TestMonadLaws
+2025-09-18T00:27:07.8977072Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:27:07.8977582Z PASS
+2025-09-18T00:27:07.8978040Z ok  	github.com/IBM/fp-go/statereaderioeither/testing	0.008s
+2025-09-18T00:27:07.8978647Z === RUN   TestMonoid
+2025-09-18T00:27:07.8979004Z --- PASS: TestMonoid (0.00s)
+2025-09-18T00:27:07.8979377Z === RUN   TestEmpty
+2025-09-18T00:27:07.8979707Z --- PASS: TestEmpty (0.00s)
+2025-09-18T00:27:07.8980399Z === RUN   TestJoin
+2025-09-18T00:27:07.8980720Z --- PASS: TestJoin (0.00s)
+2025-09-18T00:27:07.8981082Z === RUN   TestEquals
+2025-09-18T00:27:07.8981420Z --- PASS: TestEquals (0.00s)
+2025-09-18T00:27:07.8981795Z === RUN   TestIncludes
+2025-09-18T00:27:07.8982153Z --- PASS: TestIncludes (0.00s)
+2025-09-18T00:27:07.8982510Z PASS
+2025-09-18T00:27:07.8982827Z ok  	github.com/IBM/fp-go/string	0.007s
+2025-09-18T00:27:07.9126383Z === RUN   TestString
+2025-09-18T00:27:07.9127361Z --- PASS: TestString (0.00s)
+2025-09-18T00:27:07.9127799Z === RUN   TestMarshal
+2025-09-18T00:27:07.9128161Z --- PASS: TestMarshal (0.00s)
+2025-09-18T00:27:07.9128575Z === RUN   TestMarshalSmallArray
+2025-09-18T00:27:07.9129008Z --- PASS: TestMarshalSmallArray (0.00s)
+2025-09-18T00:27:07.9129414Z PASS
+2025-09-18T00:27:07.9129784Z ok  	github.com/IBM/fp-go/tuple	0.003s
+2025-09-18T00:27:08.3666200Z ?   	github.com/IBM/fp-go/writer/generic	[no test files]
+2025-09-18T00:27:08.3708366Z === RUN   TestBind
+2025-09-18T00:27:08.3708782Z --- PASS: TestBind (0.00s)
+2025-09-18T00:27:08.3709137Z === RUN   TestApS
+2025-09-18T00:27:08.3709418Z --- PASS: TestApS (0.00s)
+2025-09-18T00:27:08.3709652Z === RUN   ExampleWriter_logging
+2025-09-18T00:27:08.3709907Z --- PASS: ExampleWriter_logging (0.00s)
+2025-09-18T00:27:08.3710161Z PASS
+2025-09-18T00:27:08.3710355Z ok  	github.com/IBM/fp-go/writer	0.003s
+2025-09-18T00:27:08.5475229Z === RUN   TestMonadLaws
+2025-09-18T00:27:08.5475682Z --- PASS: TestMonadLaws (0.00s)
+2025-09-18T00:27:08.5476051Z PASS
+2025-09-18T00:27:08.5476413Z ok  	github.com/IBM/fp-go/writer/testing	0.003s
+2025-09-18T00:27:08.7045077Z Post job cleanup.
+2025-09-18T00:27:08.8578798Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOMODCACHE
+2025-09-18T00:27:08.8616023Z [command]/opt/hostedtoolcache/go/1.23.12/x64/bin/go env GOCACHE
+2025-09-18T00:27:08.8640732Z /home/runner/go/pkg/mod
+2025-09-18T00:27:08.8665902Z /home/runner/.cache/go-build
+2025-09-18T00:27:08.8859155Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/fp-go/fp-go --files-from manifest.txt --use-compress-program zstdmt
+2025-09-18T00:27:10.8777674Z Sent 46268416 of 73788424 (62.7%), 44.1 MBs/sec
+2025-09-18T00:27:11.8402607Z Sent 73788424 of 73788424 (100.0%), 35.8 MBs/sec
+2025-09-18T00:27:12.0060319Z Cache saved with the key: setup-go-Linux-x64-ubuntu24-go-1.23.12-81952ab8c0015eb46368a8d25f7d0690f810df2bb4c7e007d9ab28e62b507f8a
+2025-09-18T00:27:12.0196022Z Post job cleanup.
+2025-09-18T00:27:12.1120753Z [command]/usr/bin/git version
+2025-09-18T00:27:12.1157922Z git version 2.51.0
+2025-09-18T00:27:12.1206410Z Temporarily overriding HOME='/home/runner/work/_temp/26ec5b29-98dd-473c-8b9f-943f3bd19934' before making global git config changes
+2025-09-18T00:27:12.1207850Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-18T00:27:12.1211575Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fp-go/fp-go
+2025-09-18T00:27:12.1244898Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-18T00:27:12.1276133Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-18T00:27:12.1500237Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-18T00:27:12.1519967Z http.https://github.com/.extraheader
+2025-09-18T00:27:12.1532127Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-09-18T00:27:12.1561588Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-18T00:27:12.1877882Z Cleaning up orphan processes

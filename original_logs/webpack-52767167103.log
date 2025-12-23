@@ -1,0 +1,591 @@
+﻿2025-10-15T02:55:09.6438103Z Current runner version: '2.328.0'
+2025-10-15T02:55:09.6461308Z ##[group]Runner Image Provisioner
+2025-10-15T02:55:09.6462381Z Hosted Compute Agent
+2025-10-15T02:55:09.6463225Z Version: 20250912.392
+2025-10-15T02:55:09.6463800Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-15T02:55:09.6465198Z Build Date: 2025-09-12T15:23:14Z
+2025-10-15T02:55:09.6466347Z ##[endgroup]
+2025-10-15T02:55:09.6467178Z ##[group]Operating System
+2025-10-15T02:55:09.6468058Z Ubuntu
+2025-10-15T02:55:09.6468991Z 24.04.3
+2025-10-15T02:55:09.6469508Z LTS
+2025-10-15T02:55:09.6469992Z ##[endgroup]
+2025-10-15T02:55:09.6470546Z ##[group]Runner Image
+2025-10-15T02:55:09.6471057Z Image: ubuntu-24.04
+2025-10-15T02:55:09.6471596Z Version: 20250929.60.1
+2025-10-15T02:55:09.6472608Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-15T02:55:09.6475363Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-15T02:55:09.6477220Z ##[endgroup]
+2025-10-15T02:55:09.6478971Z ##[group]GITHUB_TOKEN Permissions
+2025-10-15T02:55:09.6481811Z Contents: read
+2025-10-15T02:55:09.6482722Z Metadata: read
+2025-10-15T02:55:09.6483662Z ##[endgroup]
+2025-10-15T02:55:09.6486594Z Secret source: None
+2025-10-15T02:55:09.6488142Z Prepare workflow directory
+2025-10-15T02:55:09.6813354Z Prepare all required actions
+2025-10-15T02:55:09.6850629Z Getting action download info
+2025-10-15T02:55:10.0532210Z Download action repository 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-10-15T02:55:10.2034919Z Download action repository 'actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444' (SHA:a0853c24544627f65ddf259abe73b1d18a591444)
+2025-10-15T02:55:10.3614047Z Download action repository 'actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+2025-10-15T02:55:10.4682339Z Download action repository 'codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7' (SHA:5a1091511ad55cbe89839c7260b706298ca349f7)
+2025-10-15T02:55:10.6972032Z Getting action download info
+2025-10-15T02:55:10.8068050Z Download action repository 'actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea' (SHA:60a0d83039c74a4aee543508d2ffcb1c3799cdea)
+2025-10-15T02:55:11.0361816Z Complete job name: unit
+2025-10-15T02:55:11.1155813Z ##[group]Run actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+2025-10-15T02:55:11.1157487Z with:
+2025-10-15T02:55:11.1158214Z   repository: webpack/webpack
+2025-10-15T02:55:11.1159339Z   token: ***
+2025-10-15T02:55:11.1160063Z   ssh-strict: true
+2025-10-15T02:55:11.1160806Z   ssh-user: git
+2025-10-15T02:55:11.1161564Z   persist-credentials: true
+2025-10-15T02:55:11.1162423Z   clean: true
+2025-10-15T02:55:11.1163198Z   sparse-checkout-cone-mode: true
+2025-10-15T02:55:11.1164117Z   fetch-depth: 1
+2025-10-15T02:55:11.1165018Z   fetch-tags: false
+2025-10-15T02:55:11.1165771Z   show-progress: true
+2025-10-15T02:55:11.1166533Z   lfs: false
+2025-10-15T02:55:11.1167260Z   submodules: false
+2025-10-15T02:55:11.1168026Z   set-safe-directory: true
+2025-10-15T02:55:11.1169107Z ##[endgroup]
+2025-10-15T02:55:11.2124948Z Syncing repository: webpack/webpack
+2025-10-15T02:55:11.2127514Z ##[group]Getting Git version info
+2025-10-15T02:55:11.2128952Z Working directory is '/home/runner/work/webpack/webpack'
+2025-10-15T02:55:11.2130666Z [command]/usr/bin/git version
+2025-10-15T02:55:11.2174891Z git version 2.51.0
+2025-10-15T02:55:11.2197033Z ##[endgroup]
+2025-10-15T02:55:11.2213083Z Temporarily overriding HOME='/home/runner/work/_temp/9cd1f73b-fd8e-46e1-9413-b1eaae48ff83' before making global git config changes
+2025-10-15T02:55:11.2217923Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-15T02:55:11.2221417Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/webpack/webpack
+2025-10-15T02:55:11.2256633Z Deleting the contents of '/home/runner/work/webpack/webpack'
+2025-10-15T02:55:11.2322346Z ##[group]Initializing the repository
+2025-10-15T02:55:11.2324334Z [command]/usr/bin/git init /home/runner/work/webpack/webpack
+2025-10-15T02:55:11.2372815Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-15T02:55:11.2375288Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-15T02:55:11.2377347Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-15T02:55:11.2379338Z hint:
+2025-10-15T02:55:11.2380203Z hint: 	git config --global init.defaultBranch <name>
+2025-10-15T02:55:11.2381253Z hint:
+2025-10-15T02:55:11.2382263Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-15T02:55:11.2384184Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-15T02:55:11.2385803Z hint:
+2025-10-15T02:55:11.2386504Z hint: 	git branch -m <name>
+2025-10-15T02:55:11.2387354Z hint:
+2025-10-15T02:55:11.2389040Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-15T02:55:11.2390921Z Initialized empty Git repository in /home/runner/work/webpack/webpack/.git/
+2025-10-15T02:55:11.2393654Z [command]/usr/bin/git remote add origin https://github.com/webpack/webpack
+2025-10-15T02:55:11.2427857Z ##[endgroup]
+2025-10-15T02:55:11.2429599Z ##[group]Disabling automatic garbage collection
+2025-10-15T02:55:11.2431505Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-15T02:55:11.2462483Z ##[endgroup]
+2025-10-15T02:55:11.2463684Z ##[group]Setting up auth
+2025-10-15T02:55:11.2465179Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-15T02:55:11.2494963Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-15T02:55:11.2830033Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-15T02:55:11.2861659Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-15T02:55:11.3075735Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-15T02:55:11.3109289Z ##[endgroup]
+2025-10-15T02:55:11.3110954Z ##[group]Fetching the repository
+2025-10-15T02:55:11.3117693Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9c44e7916a107bbdba2119079b028ff542746792:refs/remotes/pull/19996/merge
+2025-10-15T02:55:12.1130979Z From https://github.com/webpack/webpack
+2025-10-15T02:55:12.1133482Z  * [new ref]         9c44e7916a107bbdba2119079b028ff542746792 -> pull/19996/merge
+2025-10-15T02:55:12.1165238Z ##[endgroup]
+2025-10-15T02:55:12.1167476Z ##[group]Determining the checkout info
+2025-10-15T02:55:12.1169975Z ##[endgroup]
+2025-10-15T02:55:12.1173110Z [command]/usr/bin/git sparse-checkout disable
+2025-10-15T02:55:12.1216142Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-15T02:55:12.1243690Z ##[group]Checking out the ref
+2025-10-15T02:55:12.1247220Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/19996/merge
+2025-10-15T02:55:12.6045416Z Note: switching to 'refs/remotes/pull/19996/merge'.
+2025-10-15T02:55:12.6047018Z 
+2025-10-15T02:55:12.6048073Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-10-15T02:55:12.6051736Z changes and commit them, and you can discard any commits you make in this
+2025-10-15T02:55:12.6054068Z state without impacting any branches by switching back to a branch.
+2025-10-15T02:55:12.6055675Z 
+2025-10-15T02:55:12.6056522Z If you want to create a new branch to retain commits you create, you may
+2025-10-15T02:55:12.6058252Z do so (now or later) by using -c with the switch command. Example:
+2025-10-15T02:55:12.6059011Z 
+2025-10-15T02:55:12.6059344Z   git switch -c <new-branch-name>
+2025-10-15T02:55:12.6060284Z 
+2025-10-15T02:55:12.6060598Z Or undo this operation with:
+2025-10-15T02:55:12.6061309Z 
+2025-10-15T02:55:12.6061703Z   git switch -
+2025-10-15T02:55:12.6062307Z 
+2025-10-15T02:55:12.6063289Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-10-15T02:55:12.6065002Z 
+2025-10-15T02:55:12.6066675Z HEAD is now at 9c44e79 Merge 99f6337ec694fdd1076302e6f200028815814a44 into 0f84d1e3bf69915dc060f23ced9dfa468a884a42
+2025-10-15T02:55:12.6070381Z ##[endgroup]
+2025-10-15T02:55:12.6109048Z [command]/usr/bin/git log -1 --format=%H
+2025-10-15T02:55:12.6131881Z 9c44e7916a107bbdba2119079b028ff542746792
+2025-10-15T02:55:12.6417997Z ##[group]Run actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+2025-10-15T02:55:12.6419090Z with:
+2025-10-15T02:55:12.6419669Z   node-version: lts/*
+2025-10-15T02:55:12.6420310Z   cache: yarn
+2025-10-15T02:55:12.6420915Z   always-auth: false
+2025-10-15T02:55:12.6421556Z   check-latest: false
+2025-10-15T02:55:12.6422460Z   token: ***
+2025-10-15T02:55:12.6423102Z   package-manager-cache: true
+2025-10-15T02:55:12.6423821Z ##[endgroup]
+2025-10-15T02:55:12.7781694Z Attempt to resolve LTS alias from manifest...
+2025-10-15T02:55:12.7939237Z (node:2089) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-10-15T02:55:12.7941199Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-15T02:55:13.1521072Z Found in cache @ /opt/hostedtoolcache/node/22.20.0/x64
+2025-10-15T02:55:13.1525409Z ##[group]Environment details
+2025-10-15T02:55:16.7776040Z node: v22.20.0
+2025-10-15T02:55:16.7776584Z npm: 10.9.3
+2025-10-15T02:55:16.7776923Z yarn: 1.22.22
+2025-10-15T02:55:16.7777852Z ##[endgroup]
+2025-10-15T02:55:16.7804815Z [command]/usr/local/bin/yarn --version
+2025-10-15T02:55:16.8962416Z 1.22.22
+2025-10-15T02:55:16.9058309Z [command]/usr/local/bin/yarn cache dir
+2025-10-15T02:55:17.0824814Z /home/runner/.cache/yarn/v6
+2025-10-15T02:55:17.1116755Z [command]/usr/local/bin/yarn config get enableGlobalCache
+2025-10-15T02:55:17.2651210Z undefined
+2025-10-15T02:55:17.3141912Z Cache hit for: node-cache-Linux-x64-yarn-a0f28579227045a8e1aa6ad0bb6b22aa4b98dcb039d33359e278eff8dbaa9666
+2025-10-15T02:55:17.3245430Z (node:2089) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-10-15T02:55:17.5293474Z Received 5300037 of 5300037 (100.0%), 35.3 MBs/sec
+2025-10-15T02:55:17.5294148Z Cache Size: ~5 MB (5300037 B)
+2025-10-15T02:55:17.5350167Z [command]/usr/bin/tar -xf /home/runner/work/_temp/60158da4-4949-4a15-9dca-e1a4513f7792/cache.tzst -P -C /home/runner/work/webpack/webpack --use-compress-program unzstd
+2025-10-15T02:55:17.6606419Z Cache restored successfully
+2025-10-15T02:55:17.6621265Z Cache restored from key: node-cache-Linux-x64-yarn-a0f28579227045a8e1aa6ad0bb6b22aa4b98dcb039d33359e278eff8dbaa9666
+2025-10-15T02:55:17.6794760Z ##[group]Run yarn --frozen-lockfile
+2025-10-15T02:55:17.6795133Z [36;1myarn --frozen-lockfile[0m
+2025-10-15T02:55:17.6951700Z shell: /usr/bin/bash -e {0}
+2025-10-15T02:55:17.6951968Z ##[endgroup]
+2025-10-15T02:55:17.8230273Z yarn install v1.22.22
+2025-10-15T02:55:17.9033761Z [1/5] Validating package.json...
+2025-10-15T02:55:17.9059191Z [2/5] Resolving packages...
+2025-10-15T02:55:18.2234310Z [3/5] Fetching packages...
+2025-10-15T02:55:30.9685948Z [4/5] Linking dependencies...
+2025-10-15T02:55:30.9707131Z warning " > terser-webpack-plugin@5.3.14" has unmet peer dependency "webpack@^5.1.0".
+2025-10-15T02:55:30.9715254Z warning " > babel-loader@10.0.0" has unmet peer dependency "webpack@>=5.61.0".
+2025-10-15T02:55:30.9716473Z warning " > coffee-loader@5.0.0" has unmet peer dependency "webpack@^5.0.0".
+2025-10-15T02:55:30.9724713Z warning "eslint-plugin-jest > @typescript-eslint/utils@8.36.0" has incorrect peer dependency "typescript@>=4.8.4 <5.9.0".
+2025-10-15T02:55:30.9728039Z warning "eslint-plugin-jest > @typescript-eslint/utils > @typescript-eslint/typescript-estree@8.36.0" has incorrect peer dependency "typescript@>=4.8.4 <5.9.0".
+2025-10-15T02:55:30.9731377Z warning "eslint-plugin-jest > @typescript-eslint/utils > @typescript-eslint/typescript-estree > @typescript-eslint/project-service@8.36.0" has incorrect peer dependency "typescript@>=4.8.4 <5.9.0".
+2025-10-15T02:55:30.9734182Z warning "eslint-plugin-jest > @typescript-eslint/utils > @typescript-eslint/typescript-estree > @typescript-eslint/tsconfig-utils@8.36.0" has incorrect peer dependency "typescript@>=4.8.4 <5.9.0".
+2025-10-15T02:55:30.9737668Z warning " > file-loader@6.2.0" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+2025-10-15T02:55:30.9738868Z warning " > fork-ts-checker-webpack-plugin@9.1.0" has unmet peer dependency "webpack@^5.11.0".
+2025-10-15T02:55:30.9755588Z warning " > mini-css-extract-plugin@2.9.4" has unmet peer dependency "webpack@^5.0.0".
+2025-10-15T02:55:30.9757067Z warning " > pug-loader@2.4.0" has incorrect peer dependency "pug@^2.0.0".
+2025-10-15T02:55:30.9758328Z warning " > raw-loader@4.0.2" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+2025-10-15T02:55:30.9759677Z warning " > style-loader@4.0.0" has unmet peer dependency "webpack@^5.27.0".
+2025-10-15T02:55:30.9760900Z warning " > ts-loader@9.5.2" has unmet peer dependency "webpack@^5.0.0".
+2025-10-15T02:55:30.9762130Z warning " > url-loader@4.1.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+2025-10-15T02:55:30.9763333Z warning " > webpack-cli@6.0.1" has unmet peer dependency "webpack@^5.82.0".
+2025-10-15T02:55:30.9764931Z warning "webpack-cli > @webpack-cli/configtest@3.0.1" has unmet peer dependency "webpack@^5.82.0".
+2025-10-15T02:55:30.9766414Z warning "webpack-cli > @webpack-cli/info@3.0.1" has unmet peer dependency "webpack@^5.82.0".
+2025-10-15T02:55:30.9768036Z warning "webpack-cli > @webpack-cli/serve@3.0.1" has unmet peer dependency "webpack@^5.82.0".
+2025-10-15T02:55:30.9958213Z warning Workspaces can only be enabled in private projects.
+2025-10-15T02:55:31.0009509Z warning Workspaces can only be enabled in private projects.
+2025-10-15T02:55:31.0248535Z warning Workspaces can only be enabled in private projects.
+2025-10-15T02:55:31.0264624Z warning Workspaces can only be enabled in private projects.
+2025-10-15T02:55:37.9258880Z [5/5] Building fresh packages...
+2025-10-15T02:55:38.3756454Z $ husky
+2025-10-15T02:55:38.4189032Z Done in 20.60s.
+2025-10-15T02:55:38.4585501Z ##[group]Run yarn link --frozen-lockfile || true
+2025-10-15T02:55:38.4585891Z [36;1myarn link --frozen-lockfile || true[0m
+2025-10-15T02:55:38.4618696Z shell: /usr/bin/bash -e {0}
+2025-10-15T02:55:38.4618941Z ##[endgroup]
+2025-10-15T02:55:38.5818137Z yarn link v1.22.22
+2025-10-15T02:55:38.6181314Z warning There's already a linked binary called "webpack" in your global Yarn bin. Could not link this package's "webpack" bin entry.
+2025-10-15T02:55:38.6182361Z success Registered "webpack".
+2025-10-15T02:55:38.6183092Z info You can now run `yarn link "webpack"` in the projects where you want to use this package and it will be used instead.
+2025-10-15T02:55:38.6183639Z Done in 0.04s.
+2025-10-15T02:55:38.6308667Z ##[group]Run yarn link webpack --frozen-lockfile
+2025-10-15T02:55:38.6309049Z [36;1myarn link webpack --frozen-lockfile[0m
+2025-10-15T02:55:38.6341302Z shell: /usr/bin/bash -e {0}
+2025-10-15T02:55:38.6341543Z ##[endgroup]
+2025-10-15T02:55:38.7572583Z yarn link v1.22.22
+2025-10-15T02:55:38.7942877Z success Using linked package for "webpack".
+2025-10-15T02:55:38.7943456Z Done in 0.04s.
+2025-10-15T02:55:42.3436573Z ##[group]Run actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
+2025-10-15T02:55:42.3436959Z with:
+2025-10-15T02:55:42.3437149Z   path: .jest-cache
+2025-10-15T02:55:42.3437360Z   key: jest-unit-
+2025-10-15T02:55:42.3437755Z   restore-keys: jest-unit-b32f696c3eeb715b5b492c186a9da1611086d1f3fda73f8f1e6fd2a1bc77608e
+2025-10-15T02:55:42.3438227Z   enableCrossOsArchive: false
+2025-10-15T02:55:42.3438475Z   fail-on-cache-miss: false
+2025-10-15T02:55:42.3438919Z   lookup-only: false
+2025-10-15T02:55:42.3439117Z   save-always: false
+2025-10-15T02:55:42.3439307Z ##[endgroup]
+2025-10-15T02:55:42.5563831Z Cache hit for: jest-unit-
+2025-10-15T02:55:42.6594130Z Received 2402883 of 2402883 (100.0%), 35.8 MBs/sec
+2025-10-15T02:55:42.6595163Z Cache Size: ~2 MB (2402883 B)
+2025-10-15T02:55:42.6620942Z [command]/usr/bin/tar -xf /home/runner/work/_temp/ab603b7b-ff32-4d6b-8e55-85a162f40610/cache.tzst -P -C /home/runner/work/webpack/webpack --use-compress-program unzstd
+2025-10-15T02:55:42.7236838Z Cache restored successfully
+2025-10-15T02:55:42.7324185Z Cache restored from key: jest-unit-
+2025-10-15T02:55:42.7439677Z ##[group]Run yarn cover:unit --ci --cacheDirectory .jest-cache
+2025-10-15T02:55:42.7440141Z [36;1myarn cover:unit --ci --cacheDirectory .jest-cache[0m
+2025-10-15T02:55:42.7481078Z shell: /usr/bin/bash -e {0}
+2025-10-15T02:55:42.7481454Z ##[endgroup]
+2025-10-15T02:55:42.8842928Z yarn run v1.22.22
+2025-10-15T02:55:42.9242655Z $ yarn cover:base --testMatch "<rootDir>/test/*.unittest.js" --coverage --ci --cacheDirectory .jest-cache
+2025-10-15T02:55:43.0971136Z $ node --expose-gc --max-old-space-size=4096 --experimental-vm-modules node_modules/jest-cli/bin/jest --logHeapUsage --testMatch '<rootDir>/test/*.unittest.js' --coverage --ci --cacheDirectory .jest-cache
+2025-10-15T02:55:44.0724241Z jest-haste-map: Haste module naming collision: pkg
+2025-10-15T02:55:44.0729291Z   The following files share their name; please adjust your hasteImpl:
+2025-10-15T02:55:44.0730248Z     * <rootDir>/test/cases/entry-exports-field/imports/package.json
+2025-10-15T02:55:44.0731286Z     * <rootDir>/test/configCases/asset-modules/only-hash-url/package.json
+2025-10-15T02:55:44.0731826Z 
+2025-10-15T02:55:44.1068458Z jest-haste-map: Haste module naming collision: css-order
+2025-10-15T02:55:44.1070776Z   The following files share their name; please adjust your hasteImpl:
+2025-10-15T02:55:44.1071658Z     * <rootDir>/test/configCases/css/css-order/package.json
+2025-10-15T02:55:44.1072556Z     * <rootDir>/test/configCases/css/css-order-concatenate-modules/package.json
+2025-10-15T02:55:44.1073191Z 
+2025-10-15T02:55:44.1078119Z jest-haste-map: Haste module naming collision: css-order2
+2025-10-15T02:55:44.1079029Z   The following files share their name; please adjust your hasteImpl:
+2025-10-15T02:55:44.1079897Z     * <rootDir>/test/configCases/css/css-order-reexport/package.json
+2025-10-15T02:55:44.1080726Z     * <rootDir>/test/configCases/css/css-order3/package.json
+2025-10-15T02:55:44.1081159Z 
+2025-10-15T02:55:44.3439280Z jest-haste-map: Haste module naming collision: dependency
+2025-10-15T02:55:44.3441826Z   The following files share their name; please adjust your hasteImpl:
+2025-10-15T02:55:44.3442973Z     * <rootDir>/test/configCases/css/css-order-reexport/dependency/package.json
+2025-10-15T02:55:44.3443956Z     * <rootDir>/test/configCases/css/css-order2/dependency/package.json
+2025-10-15T02:55:44.3444656Z 
+2025-10-15T02:55:44.3758696Z jest-haste-map: Haste module naming collision: foo
+2025-10-15T02:55:44.3759770Z   The following files share their name; please adjust your hasteImpl:
+2025-10-15T02:55:44.3760770Z     * <rootDir>/test/configCases/resolve/context-resolve-with-ignore/b/foo/package.json
+2025-10-15T02:55:44.3761878Z     * <rootDir>/test/configCases/resolve/context-resolve-with-ignore/a/foo/package.json
+2025-10-15T02:55:44.3762397Z 
+2025-10-15T02:55:45.8280178Z PASS test/extractSourceMap.unittest.js (27 MB heap size)
+2025-10-15T02:55:46.0566332Z PASS test/compareSourceOrder.unittest.js (28 MB heap size)
+2025-10-15T02:55:50.5743412Z PASS test/CleanPlugin.unittest.js (5.282 s, 60 MB heap size)
+2025-10-15T02:55:56.8472045Z PASS test/WasmHashes.unittest.js (6.137 s, 73 MB heap size)
+2025-10-15T02:55:59.6271893Z PASS test/FileSystemInfo.unittest.js (88 MB heap size)
+2025-10-15T02:56:00.2739616Z PASS test/Defaults.unittest.js (13.045 s, 144 MB heap size)
+2025-10-15T02:56:00.4104063Z PASS test/JavascriptParser.unittest.js (95 MB heap size)
+2025-10-15T02:56:00.8909886Z PASS test/SharingUtil.unittest.js (97 MB heap size)
+2025-10-15T02:56:01.5199044Z PASS test/NormalModule.unittest.js (144 MB heap size)
+2025-10-15T02:56:01.9006720Z PASS test/SemVer.unittest.js (104 MB heap size)
+2025-10-15T02:56:02.0616434Z PASS test/numberHash.unittest.js (139 MB heap size)
+2025-10-15T02:56:02.5722064Z PASS test/ProfilingPlugin.unittest.js (115 MB heap size)
+2025-10-15T02:56:02.7218353Z PASS test/ContextModuleFactory.unittest.js (154 MB heap size)
+2025-10-15T02:56:03.3107870Z PASS test/MultiItemCache.unittest.js (157 MB heap size)
+2025-10-15T02:56:03.3455477Z PASS test/RawModule.unittest.js (128 MB heap size)
+2025-10-15T02:56:04.3126057Z PASS test/SideEffectsFlagPlugin.unittest.js (146 MB heap size)
+2025-10-15T02:56:04.3477497Z PASS test/walkCssTokens.unittest.js (160 MB heap size)
+2025-10-15T02:56:04.6308301Z PASS test/NullDependency.unittest.js (164 MB heap size)
+2025-10-15T02:56:04.9842680Z PASS test/compareStringsNumeric.unittest.js (168 MB heap size)
+2025-10-15T02:56:05.0339194Z PASS test/ContextModule.unittest.js (154 MB heap size)
+2025-10-15T02:56:05.5014073Z PASS test/Chunk.unittest.js (160 MB heap size)
+2025-10-15T02:56:05.6786304Z PASS test/RuntimeTemplate.unittest.js (181 MB heap size)
+2025-10-15T02:56:05.8083122Z PASS test/nonNumericOnlyHash.unittest.js (161 MB heap size)
+2025-10-15T02:56:06.0146267Z PASS test/compareLocations.unittest.js (181 MB heap size)
+2025-10-15T02:56:06.2389317Z PASS test/WebpackError.unittest.js (169 MB heap size)
+2025-10-15T02:56:06.3075751Z PASS test/Template.unittest.js (184 MB heap size)
+2025-10-15T02:56:06.5689836Z PASS test/ArrayHelpers.unittest.js (170 MB heap size)
+2025-10-15T02:56:06.6226348Z PASS test/objectToMap.unittest.js (187 MB heap size)
+2025-10-15T02:56:07.0110984Z PASS test/LazySet.unittest.js (178 MB heap size)
+2025-10-15T02:56:07.0349648Z PASS test/cleverMerge.unittest.js (191 MB heap size)
+2025-10-15T02:56:07.3230817Z PASS test/SortableSet.unittest.js (194 MB heap size)
+2025-10-15T02:56:07.4800051Z PASS test/ModuleDependencyError.unittest.js (184 MB heap size)
+2025-10-15T02:56:07.6075531Z PASS test/Queue.unittest.js (197 MB heap size)
+2025-10-15T02:56:07.9026461Z PASS test/propertyName.unittest.js (200 MB heap size)
+2025-10-15T02:56:08.1307277Z PASS test/AbstractMethodError.unittest.js (189 MB heap size)
+2025-10-15T02:56:08.2906353Z PASS test/target-browserslist.unittest.js (205 MB heap size)
+2025-10-15T02:56:08.4539960Z PASS test/RequestShortener.unittest.js (191 MB heap size)
+2025-10-15T02:56:08.6118343Z PASS test/identifier.unittest.js (208 MB heap size)
+2025-10-15T02:56:08.8644346Z PASS test/formatLocation.unittest.js (195 MB heap size)
+2025-10-15T02:56:08.9649140Z PASS test/extractUrlAndGlobal.unittest.js (212 MB heap size)
+2025-10-15T02:56:09.2195964Z PASS test/smartGrouping.unittest.js (198 MB heap size)
+2025-10-15T02:56:09.2985829Z PASS test/deterministicGrouping.unittest.js (215 MB heap size)
+2025-10-15T02:56:09.5918230Z PASS test/MultiWatching.unittest.js (202 MB heap size)
+2025-10-15T02:56:09.7597991Z PASS test/LocalModulesHelpers.unittest.js (221 MB heap size)
+2025-10-15T02:56:09.9445017Z PASS test/compileBooleanMatcher.unittest.js (206 MB heap size)
+2025-10-15T02:56:10.1057031Z PASS test/URLAbsoluteSpecifier.unittest.js (223 MB heap size)
+2025-10-15T02:56:10.2596373Z PASS test/propertyAccess.unittest.js (209 MB heap size)
+2025-10-15T02:56:10.4353219Z PASS test/SizeFormatHelpers.unittest.js (227 MB heap size)
+2025-10-15T02:56:19.7071552Z PASS test/BinaryMiddleware.unittest.js (33.42 s, 115 MB heap size)
+2025-10-15T02:56:19.8670434Z 
+2025-10-15T02:56:19.8675465Z Test Suites: 49 passed, 49 total
+2025-10-15T02:56:19.8676112Z Tests:       26707 passed, 26707 total
+2025-10-15T02:56:19.8676761Z Snapshots:   127 passed, 127 total
+2025-10-15T02:56:19.8677246Z Time:        35.446 s
+2025-10-15T02:56:19.8677638Z Ran all test suites.
+2025-10-15T02:56:19.8688524Z Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
+2025-10-15T02:56:19.8945899Z Done in 37.01s.
+2025-10-15T02:56:19.9213479Z ##[group]Run codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7
+2025-10-15T02:56:19.9213858Z with:
+2025-10-15T02:56:19.9214038Z   flags: unit
+2025-10-15T02:56:19.9214232Z   disable_file_fixes: false
+2025-10-15T02:56:19.9214749Z   disable_search: false
+2025-10-15T02:56:19.9215008Z   disable_safe_directory: false
+2025-10-15T02:56:19.9215236Z   disable_telem: false
+2025-10-15T02:56:19.9215435Z   dry_run: false
+2025-10-15T02:56:19.9215621Z   fail_ci_if_error: false
+2025-10-15T02:56:19.9215832Z   git_service: github
+2025-10-15T02:56:19.9216029Z   gcov_executable: gcov
+2025-10-15T02:56:19.9216252Z   handle_no_reports_found: false
+2025-10-15T02:56:19.9216493Z   recurse_submodules: false
+2025-10-15T02:56:19.9216722Z   run_command: upload-coverage
+2025-10-15T02:56:19.9216948Z   skip_validation: false
+2025-10-15T02:56:19.9217171Z   use_legacy_upload_endpoint: false
+2025-10-15T02:56:19.9217408Z   use_oidc: false
+2025-10-15T02:56:19.9217596Z   use_pypi: false
+2025-10-15T02:56:19.9217806Z   verbose: false
+2025-10-15T02:56:19.9217999Z   version: latest
+2025-10-15T02:56:19.9218171Z env:
+2025-10-15T02:56:19.9218334Z   CODECOV_TOKEN: 
+2025-10-15T02:56:19.9218511Z ##[endgroup]
+2025-10-15T02:56:19.9291552Z ##[group]Run missing_deps=""
+2025-10-15T02:56:19.9291811Z [36;1mmissing_deps=""[0m
+2025-10-15T02:56:19.9292020Z [36;1m[0m
+2025-10-15T02:56:19.9292210Z [36;1m# Check for required commands[0m
+2025-10-15T02:56:19.9292476Z [36;1mfor cmd in bash git curl gpg; do[0m
+2025-10-15T02:56:19.9292774Z [36;1m  if ! command -v "$cmd" >/dev/null 2>&1; then[0m
+2025-10-15T02:56:19.9293076Z [36;1m    missing_deps="$missing_deps $cmd"[0m
+2025-10-15T02:56:19.9293330Z [36;1m  fi[0m
+2025-10-15T02:56:19.9293506Z [36;1mdone[0m
+2025-10-15T02:56:19.9293682Z [36;1m[0m
+2025-10-15T02:56:19.9293883Z [36;1m# Report missing required dependencies[0m
+2025-10-15T02:56:19.9294165Z [36;1mif [ -n "$missing_deps" ]; then[0m
+2025-10-15T02:56:19.9294901Z [36;1m  echo "Error: The following required dependencies are missing:$missing_deps"[0m
+2025-10-15T02:56:19.9295411Z [36;1m  echo "Please install these dependencies before using this action."[0m
+2025-10-15T02:56:19.9295753Z [36;1m  exit 1[0m
+2025-10-15T02:56:19.9295937Z [36;1mfi[0m
+2025-10-15T02:56:19.9296107Z [36;1m[0m
+2025-10-15T02:56:19.9296349Z [36;1mecho "All required system dependencies are available."[0m
+2025-10-15T02:56:19.9476201Z shell: /usr/bin/sh -e {0}
+2025-10-15T02:56:19.9476443Z env:
+2025-10-15T02:56:19.9476624Z   CODECOV_TOKEN: 
+2025-10-15T02:56:19.9476828Z ##[endgroup]
+2025-10-15T02:56:19.9543170Z All required system dependencies are available.
+2025-10-15T02:56:19.9568622Z ##[group]Run CC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)
+2025-10-15T02:56:19.9569064Z [36;1mCC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)[0m
+2025-10-15T02:56:19.9569490Z [36;1mecho -e "\033[0;32m==>\033[0m Running Action version $CC_ACTION_VERSION"[0m
+2025-10-15T02:56:19.9597974Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T02:56:19.9598304Z env:
+2025-10-15T02:56:19.9598472Z   CODECOV_TOKEN: 
+2025-10-15T02:56:19.9598664Z ##[endgroup]
+2025-10-15T02:56:19.9659408Z [0;32m==>[0m Running Action version 5.5.1
+2025-10-15T02:56:19.9683546Z ##[group]Run git config --global --add safe.directory "/home/runner/work/webpack/webpack"
+2025-10-15T02:56:19.9684097Z [36;1mgit config --global --add safe.directory "/home/runner/work/webpack/webpack"[0m
+2025-10-15T02:56:19.9684800Z [36;1mgit config --global --add safe.directory "$GITHUB_WORKSPACE"[0m
+2025-10-15T02:56:19.9713001Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T02:56:19.9713398Z env:
+2025-10-15T02:56:19.9713599Z   CODECOV_TOKEN: 
+2025-10-15T02:56:19.9713798Z ##[endgroup]
+2025-10-15T02:56:19.9808839Z ##[group]Run CC_FORK="false"
+2025-10-15T02:56:19.9809101Z [36;1mCC_FORK="false"[0m
+2025-10-15T02:56:19.9809756Z [36;1mif [ -n "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" ] && [ "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" != "$GITHUB_REPOSITORY" ];[0m
+2025-10-15T02:56:19.9810405Z [36;1mthen[0m
+2025-10-15T02:56:19.9810629Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected"[0m
+2025-10-15T02:56:19.9810909Z [36;1m  CC_FORK="true"[0m
+2025-10-15T02:56:19.9811111Z [36;1mfi[0m
+2025-10-15T02:56:19.9811321Z [36;1mecho "CC_FORK=$CC_FORK" >> "$GITHUB_ENV"[0m
+2025-10-15T02:56:19.9839769Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T02:56:19.9840092Z env:
+2025-10-15T02:56:19.9840269Z   CODECOV_TOKEN: 
+2025-10-15T02:56:19.9840533Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: xiaoxiaojx:metaEnv
+2025-10-15T02:56:19.9840936Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: xiaoxiaojx/webpack
+2025-10-15T02:56:19.9841279Z   GITHUB_REPOSITORY: webpack/webpack
+2025-10-15T02:56:19.9841523Z ##[endgroup]
+2025-10-15T02:56:19.9889495Z [0;32m==>[0m Fork detected
+2025-10-15T02:56:19.9947005Z ##[group]Run actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
+2025-10-15T02:56:19.9947367Z with:
+2025-10-15T02:56:19.9947895Z   script: if (process.env.CC_USE_OIDC === 'true' && process.env.CC_FORK != 'true') {
+  const id_token = await core.getIDToken(process.env.CC_OIDC_AUDIENCE)
+  return id_token
+}
+
+2025-10-15T02:56:19.9948736Z   github-token: ***
+2025-10-15T02:56:19.9948947Z   debug: false
+2025-10-15T02:56:19.9949145Z   user-agent: actions/github-script
+2025-10-15T02:56:19.9949400Z   result-encoding: json
+2025-10-15T02:56:19.9949599Z   retries: 0
+2025-10-15T02:56:19.9949816Z   retry-exempt-status-codes: 400,401,403,404,422
+2025-10-15T02:56:19.9950084Z env:
+2025-10-15T02:56:19.9950248Z   CC_FORK: true
+2025-10-15T02:56:19.9950430Z   CODECOV_TOKEN: 
+2025-10-15T02:56:19.9950652Z   CC_OIDC_AUDIENCE: https://codecov.io
+2025-10-15T02:56:19.9950913Z   CC_USE_OIDC: false
+2025-10-15T02:56:19.9951107Z ##[endgroup]
+2025-10-15T02:56:20.0861909Z ##[group]Run if [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];
+2025-10-15T02:56:20.0862319Z [36;1mif [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];[0m
+2025-10-15T02:56:20.0862615Z [36;1mthen[0m
+2025-10-15T02:56:20.0862861Z [36;1m  echo "CC_TOKEN=$CC_OIDC_TOKEN" >> "$GITHUB_ENV"[0m
+2025-10-15T02:56:20.0863145Z [36;1melif [ -n "" ];[0m
+2025-10-15T02:56:20.0863350Z [36;1mthen[0m
+2025-10-15T02:56:20.0863581Z [36;1m  echo -e "\033[0;32m==>\033[0m Token set from env"[0m
+2025-10-15T02:56:20.0863874Z [36;1m    echo "CC_TOKEN=" >> "$GITHUB_ENV"[0m
+2025-10-15T02:56:20.0864121Z [36;1melse[0m
+2025-10-15T02:56:20.0864302Z [36;1m  if [ -n "" ];[0m
+2025-10-15T02:56:20.0864758Z [36;1m  then[0m
+2025-10-15T02:56:20.0865003Z [36;1m    echo -e "\033[0;32m==>\033[0m Token set from input"[0m
+2025-10-15T02:56:20.0865313Z [36;1m    CC_TOKEN=$(echo "" | tr -d '\n')[0m
+2025-10-15T02:56:20.0865604Z [36;1m    echo "CC_TOKEN=$CC_TOKEN" >> "$GITHUB_ENV"[0m
+2025-10-15T02:56:20.0865869Z [36;1m  fi[0m
+2025-10-15T02:56:20.0866048Z [36;1mfi[0m
+2025-10-15T02:56:20.0897882Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T02:56:20.0898195Z env:
+2025-10-15T02:56:20.0898376Z   CC_FORK: true
+2025-10-15T02:56:20.0898572Z   CODECOV_TOKEN: 
+2025-10-15T02:56:20.0898759Z   CC_OIDC_TOKEN: 
+2025-10-15T02:56:20.0898979Z   CC_OIDC_AUDIENCE: https://codecov.io
+2025-10-15T02:56:20.0899236Z ##[endgroup]
+2025-10-15T02:56:20.0970431Z ##[group]Run if [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ]
+2025-10-15T02:56:20.0970874Z [36;1mif [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ][0m
+2025-10-15T02:56:20.0971196Z [36;1mthen[0m
+2025-10-15T02:56:20.0971558Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected, setting branch to $GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-10-15T02:56:20.0972030Z [36;1m  TOKENLESS="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-10-15T02:56:20.0972380Z [36;1m  CC_BRANCH="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-10-15T02:56:20.0972704Z [36;1m  echo "TOKENLESS=$TOKENLESS" >> "$GITHUB_ENV"[0m
+2025-10-15T02:56:20.0972976Z [36;1mfi[0m
+2025-10-15T02:56:20.0973148Z [36;1m[0m
+2025-10-15T02:56:20.0973527Z [36;1mecho "CC_BRANCH=$CC_BRANCH" >> "$GITHUB_ENV"[0m
+2025-10-15T02:56:20.1002305Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T02:56:20.1002629Z env:
+2025-10-15T02:56:20.1002802Z   CC_FORK: true
+2025-10-15T02:56:20.1002993Z   CODECOV_TOKEN: 
+2025-10-15T02:56:20.1003182Z   CC_BRANCH: 
+2025-10-15T02:56:20.1003435Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: xiaoxiaojx:metaEnv
+2025-10-15T02:56:20.1003827Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: xiaoxiaojx/webpack
+2025-10-15T02:56:20.1004182Z   GITHUB_REPOSITORY: webpack/webpack
+2025-10-15T02:56:20.1004631Z ##[endgroup]
+2025-10-15T02:56:20.1052307Z [0;32m==>[0m Fork detected, setting branch to xiaoxiaojx:metaEnv
+2025-10-15T02:56:20.1073893Z ##[group]Run if [ -z "$CC_SHA" ];
+2025-10-15T02:56:20.1074175Z [36;1mif [ -z "$CC_SHA" ];[0m
+2025-10-15T02:56:20.1074588Z [36;1mthen[0m
+2025-10-15T02:56:20.1074906Z [36;1m  CC_SHA="$GITHUB_EVENT_PULL_REQUEST_HEAD_SHA"[0m
+2025-10-15T02:56:20.1075183Z [36;1mfi[0m
+2025-10-15T02:56:20.1075420Z [36;1mif [ -z "$CC_PR" ] && [ "$CC_FORK" == 'true' ];[0m
+2025-10-15T02:56:20.1075701Z [36;1mthen[0m
+2025-10-15T02:56:20.1075914Z [36;1m  CC_PR="$GITHUB_EVENT_NUMBER"[0m
+2025-10-15T02:56:20.1076163Z [36;1mfi[0m
+2025-10-15T02:56:20.1076330Z [36;1m[0m
+2025-10-15T02:56:20.1076533Z [36;1mecho "CC_SHA=$CC_SHA" >> "$GITHUB_ENV"[0m
+2025-10-15T02:56:20.1076816Z [36;1mecho "CC_PR=$CC_PR" >> "$GITHUB_ENV"[0m
+2025-10-15T02:56:20.1105159Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T02:56:20.1105481Z env:
+2025-10-15T02:56:20.1105649Z   CC_FORK: true
+2025-10-15T02:56:20.1105858Z   TOKENLESS: xiaoxiaojx:metaEnv
+2025-10-15T02:56:20.1106098Z   CC_BRANCH: xiaoxiaojx:metaEnv
+2025-10-15T02:56:20.1106317Z   CODECOV_TOKEN: 
+2025-10-15T02:56:20.1106503Z   CC_PR: 
+2025-10-15T02:56:20.1106668Z   CC_SHA: 
+2025-10-15T02:56:20.1106847Z   GITHUB_EVENT_NAME: pull_request
+2025-10-15T02:56:20.1107091Z   GITHUB_EVENT_NUMBER: 19996
+2025-10-15T02:56:20.1107429Z   GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: 99f6337ec694fdd1076302e6f200028815814a44
+2025-10-15T02:56:20.1107787Z ##[endgroup]
+2025-10-15T02:56:20.1180332Z ##[group]Run ${GITHUB_ACTION_PATH}/dist/codecov.sh
+2025-10-15T02:56:20.1180677Z [36;1m${GITHUB_ACTION_PATH}/dist/codecov.sh[0m
+2025-10-15T02:56:20.1208892Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-15T02:56:20.1209210Z env:
+2025-10-15T02:56:20.1209376Z   CC_FORK: true
+2025-10-15T02:56:20.1209580Z   TOKENLESS: xiaoxiaojx:metaEnv
+2025-10-15T02:56:20.1209829Z   CC_BRANCH: xiaoxiaojx:metaEnv
+2025-10-15T02:56:20.1210087Z   CC_SHA: 99f6337ec694fdd1076302e6f200028815814a44
+2025-10-15T02:56:20.1210357Z   CC_PR: 19996
+2025-10-15T02:56:20.1210540Z   CODECOV_TOKEN: 
+2025-10-15T02:56:20.1210719Z   CC_BASE_SHA: 
+2025-10-15T02:56:20.1210895Z   CC_BINARY: 
+2025-10-15T02:56:20.1211067Z   CC_BUILD: 
+2025-10-15T02:56:20.1211240Z   CC_BUILD_URL: 
+2025-10-15T02:56:20.1211420Z   CC_CODE: 
+2025-10-15T02:56:20.1211583Z   CC_DIR: 
+2025-10-15T02:56:20.1211759Z   CC_DISABLE_FILE_FIXES: false
+2025-10-15T02:56:20.1211995Z   CC_DISABLE_SEARCH: false
+2025-10-15T02:56:20.1212213Z   CC_DISABLE_TELEM: false
+2025-10-15T02:56:20.1212419Z   CC_DRY_RUN: false
+2025-10-15T02:56:20.1212610Z   CC_ENTERPRISE_URL: 
+2025-10-15T02:56:20.1212796Z   CC_ENV: 
+2025-10-15T02:56:20.1212968Z   CC_EXCLUDES: 
+2025-10-15T02:56:20.1213156Z   CC_FAIL_ON_ERROR: false
+2025-10-15T02:56:20.1213356Z   CC_FILES: 
+2025-10-15T02:56:20.1213530Z   CC_FLAGS: unit
+2025-10-15T02:56:20.1213712Z   CC_FORCE: 
+2025-10-15T02:56:20.1213919Z   CC_GCOV_ARGS: 
+2025-10-15T02:56:20.1214116Z   CC_GCOV_EXECUTABLE: gcov
+2025-10-15T02:56:20.1214332Z   CC_GCOV_IGNORE: 
+2025-10-15T02:56:20.1214719Z   CC_GCOV_INCLUDE: 
+2025-10-15T02:56:20.1214917Z   CC_GIT_SERVICE: github
+2025-10-15T02:56:20.1215144Z   CC_HANDLE_NO_REPORTS_FOUND: false
+2025-10-15T02:56:20.1215380Z   CC_JOB_CODE: 
+2025-10-15T02:56:20.1215563Z   CC_LEGACY: false
+2025-10-15T02:56:20.1215739Z   CC_NAME: 
+2025-10-15T02:56:20.1215917Z   CC_NETWORK_FILTER: 
+2025-10-15T02:56:20.1216116Z   CC_NETWORK_PREFIX: 
+2025-10-15T02:56:20.1216477Z   CC_NETWORK_ROOT_FOLDER: 
+2025-10-15T02:56:20.1216808Z   CC_OS: 
+2025-10-15T02:56:20.1216980Z   CC_PARENT_SHA: 
+2025-10-15T02:56:20.1217159Z   CC_PLUGINS: 
+2025-10-15T02:56:20.1217362Z   CC_RECURSE_SUBMODULES: false
+2025-10-15T02:56:20.1217584Z   CC_REPORT_TYPE: 
+2025-10-15T02:56:20.1217784Z   CC_RUN_CMD: upload-coverage
+2025-10-15T02:56:20.1218009Z   CC_SERVICE: github
+2025-10-15T02:56:20.1218214Z   CC_SKIP_VALIDATION: false
+2025-10-15T02:56:20.1218420Z   CC_SLUG: 
+2025-10-15T02:56:20.1218594Z   CC_SWIFT_PROJECT: 
+2025-10-15T02:56:20.1218787Z   CC_USE_PYPI: false
+2025-10-15T02:56:20.1218978Z   CC_VERBOSE: false
+2025-10-15T02:56:20.1219165Z   CC_VERSION: latest
+2025-10-15T02:56:20.1219348Z   CC_YML_PATH: 
+2025-10-15T02:56:20.1219531Z ##[endgroup]
+2025-10-15T02:56:20.1288088Z      _____          _
+2025-10-15T02:56:20.1288493Z     / ____|        | |
+2025-10-15T02:56:20.1288908Z    | |     ___   __| | ___  ___ _____   __
+2025-10-15T02:56:20.1289406Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2025-10-15T02:56:20.1289894Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2025-10-15T02:56:20.1290376Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2025-10-15T02:56:20.1291101Z                            [0;31m Wrapper-0.2.7[0m
+2025-10-15T02:56:20.1291579Z                            
+2025-10-15T02:56:20.1343781Z [0;32m==>[0m Detected [0;36mlinux[0m
+2025-10-15T02:56:20.1344977Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov[0m
+2025-10-15T02:56:20.1410331Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-10-15T02:56:20.1411139Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-10-15T02:56:20.1411531Z 
+2025-10-15T02:56:20.3978001Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-10-15T02:56:20.4825885Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-10-15T02:56:20.4827077Z 100 10.6M  100 10.6M    0     0  31.2M      0 --:--:-- --:--:-- --:--:-- 31.1M
+2025-10-15T02:56:20.4849577Z [0;32m==>[0m Finishing downloading [0;36mlinux:latest[0m
+2025-10-15T02:56:20.5281953Z       Version: [0;36mv11.2.3[0m
+2025-10-15T02:56:20.5885903Z gpg: directory '/home/runner/.gnupg' created
+2025-10-15T02:56:20.5886510Z  
+2025-10-15T02:56:20.5945787Z gpg: keybox '/home/runner/.gnupg/pubring.kbx' created
+2025-10-15T02:56:21.0304589Z gpg: /home/runner/.gnupg/trustdb.gpg: trustdb created
+2025-10-15T02:56:21.0305870Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2025-10-15T02:56:21.0735655Z gpg: Total number processed: 1
+2025-10-15T02:56:21.0736015Z gpg:               imported: 1
+2025-10-15T02:56:21.0741680Z [0;32m==>[0m Verifying GPG signature integrity
+2025-10-15T02:56:21.0742771Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM[0m
+2025-10-15T02:56:21.0743644Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM.sig[0m
+2025-10-15T02:56:21.0744121Z  
+2025-10-15T02:56:21.1627048Z gpg: Signature made Thu Sep 18 23:03:08 2025 UTC
+2025-10-15T02:56:21.1627611Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2025-10-15T02:56:21.1629807Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2025-10-15T02:56:21.1630558Z gpg: WARNING: This key is not certified with a trusted signature!
+2025-10-15T02:56:21.1631127Z gpg:          There is no indication that the signature belongs to the owner.
+2025-10-15T02:56:21.1631727Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2025-10-15T02:56:21.2376743Z codecov: OK
+2025-10-15T02:56:21.2385729Z [0;32m==>[0m CLI integrity verified
+2025-10-15T02:56:21.2386126Z 
+2025-10-15T02:56:21.3056461Z [0;32m ->[0m Token length: 0
+2025-10-15T02:56:21.3057092Z [0;32m==>[0m Running upload-coverage
+2025-10-15T02:56:21.3067569Z       [0;36m./codecov  upload-coverage --git-service github --pr 19996 --sha 99f6337ec694fdd1076302e6f200028815814a44 --branch xiaoxiaojx:metaEnv --flag unit --gcov-executable gcov[0m
+2025-10-15T02:56:21.6501570Z info - 2025-10-15 02:56:21,649 -- ci service found: github-actions
+2025-10-15T02:56:21.6915505Z warning - 2025-10-15 02:56:21,691 -- xcrun is not installed or can't be found.
+2025-10-15T02:56:22.3592883Z warning - 2025-10-15 02:56:22,359 -- No gcov data found.
+2025-10-15T02:56:22.3597118Z warning - 2025-10-15 02:56:22,359 -- coverage.py is not installed or can't be found.
+2025-10-15T02:56:22.5568698Z info - 2025-10-15 02:56:22,556 -- Found 1 coverage files to report
+2025-10-15T02:56:22.5569740Z info - 2025-10-15 02:56:22,556 -- > /home/runner/work/webpack/webpack/coverage/coverage-final.json
+2025-10-15T02:56:23.1155720Z info - 2025-10-15 02:56:23,115 -- Your upload is now processing. When finished, results will be available at: https://app.codecov.io/github/webpack/webpack/commit/99f6337ec694fdd1076302e6f200028815814a44
+2025-10-15T02:56:23.2879428Z info - 2025-10-15 02:56:23,287 -- Process Upload complete
+2025-10-15T02:56:26.8307567Z Post job cleanup.
+2025-10-15T02:56:26.9590468Z Cache hit occurred on the primary key jest-unit-, not saving cache.
+2025-10-15T02:56:26.9698319Z Post job cleanup.
+2025-10-15T02:56:27.0900134Z (node:2583) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-10-15T02:56:27.0901654Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-15T02:56:27.0904025Z Cache hit occurred on the primary key node-cache-Linux-x64-yarn-a0f28579227045a8e1aa6ad0bb6b22aa4b98dcb039d33359e278eff8dbaa9666, not saving cache.
+2025-10-15T02:56:27.1011733Z Post job cleanup.
+2025-10-15T02:56:27.1815403Z [command]/usr/bin/git version
+2025-10-15T02:56:27.1853844Z git version 2.51.0
+2025-10-15T02:56:27.1888296Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/6f471c7c-ed68-4c59-8bad-c3e6e4076ed0/.gitconfig'
+2025-10-15T02:56:27.1897334Z Temporarily overriding HOME='/home/runner/work/_temp/6f471c7c-ed68-4c59-8bad-c3e6e4076ed0' before making global git config changes
+2025-10-15T02:56:27.1898812Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-15T02:56:27.1902946Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/webpack/webpack
+2025-10-15T02:56:27.1940414Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-15T02:56:27.1973050Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-15T02:56:27.2222751Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-15T02:56:27.2247894Z http.https://github.com/.extraheader
+2025-10-15T02:56:27.2259126Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-15T02:56:27.2293467Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-15T02:56:27.2642901Z Cleaning up orphan processes

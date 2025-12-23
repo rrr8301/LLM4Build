@@ -1,0 +1,123 @@
+Removed all cached metadata files
+Removed 0 files
+Removed 0 packages
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> monorepo-root@ test-main /app
+> pnpm pretest && pnpm lint && pnpm run test-pkgs-main
+
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> monorepo-root@ pretest /app
+> pnpm run compile-only && pnpm --dir=__fixtures__ run prepareFixtures
+
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> monorepo-root@ compile-only /app
+> ts-node __utils__/scripts/src/typecheck-only.ts && pnpm -F pnpm compile
+
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> pnpm@10.15.1 compile /app/pnpm
+> tsc --build && pnpm run lint --fix && rimraf dist bin/nodes && pnpm run bundle && shx cp -r node-gyp-bin dist/node-gyp-bin && shx cp -r node_modules/@pnpm/tabtab/lib/templates dist/templates && shx cp -r node_modules/ps-list/vendor dist/vendor && shx cp pnpmrc dist/pnpmrc
+
+ WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> pnpm@10.15.1 lint /app/pnpm
+> eslint "src/**/*.ts" "test/**/*.ts" --fix
+
+ WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> pnpm@10.15.1 bundle /app/pnpm
+> ts-node bundle.ts
+
+
+> @ prepareFixtures /app/__fixtures__
+> pnpm run step1 && pnpm run step2 && pnpm run step3 && pnpm run step4 && pnpm run step5
+
+
+
+> @ step1 /app/__fixtures__
+> node ../pnpm/dist/pnpm.cjs install -rf --frozen-lockfile --no-shared-workspace-lockfile --no-link-workspace-packages
+
+.                                        |  WARN  using --force I sure hope you know what you are doing
+Scope: all 26 workspace projects
+circular                                 | Progress: resolved 1, reused 0, downloaded 0, added 0
+circular                                 |   +4 +
+fixture                                  | Progress: resolved 1, reused 0, downloaded 0, added 0
+fixture                                  |  +12 +
+fixture-with-no-pkg-name-and-no-version  | Progress: resolved 1, reused 0, downloaded 0, added 0
+fixture-with-no-pkg-name-and-no-version  |  +12 +
+fixture-with-no-pkg-version              | Progress: resolved 1, reused 0, downloaded 0, added 0
+fixture-with-no-pkg-version              |  +12 +
+circular                                 | Progress: resolved 4, reused 0, downloaded 0, added 0
+fixture                                  | Progress: resolved 12, reused 0, downloaded 0, added 0
+undefined
+fixture-with-no-pkg-name-and-no-version  | Progress: resolved 12, reused 0, downloaded 0, added 3
+general                                  | Progress: resolved 1, reused 0, downloaded 0, added 0
+general                                  |  +13 +
+fixture-with-no-pkg-version              | Progress: resolved 12, reused 0, downloaded 0, added 3
+circular                                 | Progress: resolved 4, reused 0, downloaded 4, added 4, done
+has-2-outdated-deps                      | Progress: resolved 1, reused 0, downloaded 0, added 0
+has-2-outdated-deps                      |   +2 +
+fixture                                  | Progress: resolved 12, reused 0, downloaded 11, added 8
+fixture-with-no-pkg-name-and-no-version  | Progress: resolved 12, reused 0, downloaded 0, added 7
+general                                  | Progress: resolved 13, reused 0, downloaded 13, added 4
+fixture-with-no-pkg-version              | Progress: resolved 12, reused 0, downloaded 0, added 8
+fixture                                  | Progress: resolved 12, reused 0, downloaded 12, added 12, done
+has-outdated-deps-using-catalog-protocol | Progress: resolved 1, reused 0, downloaded 0, added 0
+has-outdated-deps-using-catalog-protocol |   +1 +
+fixture-with-no-pkg-version              | Progress: resolved 12, reused 0, downloaded 0, added 12, done
+general                                  | Progress: resolved 13, reused 0, downloaded 13, added 13, done
+has-2-outdated-deps                      | Progress: resolved 2, reused 0, downloaded 1, added 2, done
+has-outdated-deps-using-npm-alias        | Progress: resolved 1, reused 0, downloaded 0, added 0
+has-outdated-deps-using-npm-alias        |   +1 +
+has-outdated-deps-using-catalog-protocol | Progress: resolved 1, reused 0, downloaded 0, added 1, done
+with-aliased-dep                         | Progress: resolved 1, reused 0, downloaded 0, added 0
+with-aliased-dep                         |   +1 +
+with-file-dep                            | Progress: resolved 1, reused 0, downloaded 0, added 0
+with-file-dep                            |   +1 +
+with-git-protocol-dep                    | Progress: resolved 1, reused 0, downloaded 0, added 0
+with-git-protocol-dep                    |   +1 +
+has-outdated-deps-using-npm-alias        | Progress: resolved 1, reused 0, downloaded 0, added 1, done
+with-non-package-dep                     | Progress: resolved 1, reused 0, downloaded 0, added 0
+with-non-package-dep                     |   +1 +
+with-aliased-dep                         | Progress: resolved 1, reused 0, downloaded 0, added 1, done
+with-file-dep                            | Progress: resolved 1, reused 0, downloaded 0, added 1, done
+with-peer                                | Progress: resolved 1, reused 0, downloaded 0, added 0
+with-peer                                |   +7 +
+with-pnpm-update-ignore                  | Progress: resolved 1, reused 0, downloaded 0, added 0
+with-pnpm-update-ignore                  |   +2 +
+fixture-with-no-pkg-name-and-no-version  | Progress: resolved 12, reused 0, downloaded 0, added 11
+with-pnpm-update-ignore                  | Progress: resolved 2, reused 0, downloaded 0, added 2, done
+with-unsaved-deps                        | Progress: resolved 1, reused 0, downloaded 0, added 0
+with-unsaved-deps                        |  +39 ++++
+with-peer                                | Progress: resolved 7, reused 0, downloaded 7, added 0
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /root/.local/share/pnpm/store/v10
+  Virtual store is at:             ../../root/.local/share/pnpm/store/v10/links
+with-unsaved-deps                        | Progress: resolved 39, reused 0, downloaded 0, added 0
+with-non-package-dep                     | Progress: resolved 1, reused 0, downloaded 1, added 0
+with-git-protocol-dep                    | Progress: resolved 1, reused 0, downloaded 1, added 0
+with-unsaved-deps                        | Progress: resolved 39, reused 0, downloaded 30, added 8
+with-peer                                | Progress: resolved 7, reused 0, downloaded 7, added 1
+with-peer                                | Progress: resolved 7, reused 0, downloaded 7, added 7, done
+with-non-package-dep                     | Progress: resolved 1, reused 0, downloaded 1, added 1
+with-non-package-dep                     | Progress: resolved 1, reused 0, downloaded 1, added 1, done
+workspace-external-depends-deep          | Progress: resolved 1, reused 0, downloaded 0, added 0
+workspace-external-depends-deep          |   +1 +
+with-unsaved-deps                        | Progress: resolved 39, reused 0, downloaded 31, added 32
+with-git-protocol-dep                    | Progress: resolved 1, reused 0, downloaded 1, added 1
+with-git-protocol-dep                    | Progress: resolved 1, reused 0, downloaded 1, added 1, done
+with-unsaved-deps                        | Progress: resolved 39, reused 0, downloaded 31, added 39, done
+workspace-external-depends-deep          | Progress: resolved 1, reused 0, downloaded 0, added 1
+workspace-external-depends-deep          | Progress: resolved 1, reused 0, downloaded 0, added 1, done
+/app/__fixtures__/fixture-with-no-pkg-name-and-no-version:
+ ERR_PNPM_ENOENT  ENOENT: no such file or directory, copyfile '/root/.local/share/pnpm/store/v10/files/94/c226e0755b9ebe19206cf7c19c58a283661cb55da400043042d0f4d157c4f369a5cedda0b3db7d12fcc6e5115effd7b9e23a5e7c7089fb3f2b22d77c694cae' -> '/root/.local/share/pnpm/store/v10/links/make-dir/1.3.0/d3daebd0b9412a9485023e4d22bacc8827721ee8d5545a5eb2d747af58930372/node_modules/make-dir_tmp_314/package.json'
+ ELIFECYCLE  Command failed with exit code 1.
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+ ELIFECYCLE  Command failed with exit code 1.
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.
+An error occurred during the execution of the script.

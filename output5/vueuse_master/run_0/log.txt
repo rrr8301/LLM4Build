@@ -1,0 +1,45 @@
+
+> @vueuse/monorepo@14.0.0-alpha.1 build /app
+> nr update && nr build:packages
+
+
+> @vueuse/monorepo@14.0.0-alpha.1 update /app
+> nr -C packages/metadata update && tsx scripts/update.ts
+
+
+> @vueuse/metadata@14.0.0-alpha.1 update /app/packages/metadata
+> tsx scripts/update.ts
+
+/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/plugins/error-detection.plugin.ts:42
+            return { error: new GitError(undefined, error.toString('utf-8')) };
+                            ^
+
+
+GitError: Error: spawn git ENOENT
+    at ChildProcess._handle.onexit (node:internal/child_process:285:19)
+    at onErrorNT (node:internal/child_process:483:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Object.action (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/plugins/error-detection.plugin.ts:42:29)
+    at PluginStore.exec (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/plugins/plugin-store.ts:54:29)
+    at <anonymous> (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/runners/git-executor-chain.ts:124:42)
+    at new Promise (<anonymous>)
+    at GitExecutorChain.handleTaskData (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/runners/git-executor-chain.ts:121:14)
+    at GitExecutorChain.attemptRemoteTask (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/runners/git-executor-chain.ts:97:40)
+    at async GitExecutorChain.attemptTask (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/runners/git-executor-chain.ts:61:18) {
+  task: {
+    commands: [
+      'log',
+      '-1',
+      '--format=%at',
+      '/app/packages/shared/createInjectionState/index.ts'
+    ],
+    format: 'utf-8',
+    parser: [Function: parser]
+  }
+}
+
+Node.js v20.19.5
+ ELIFECYCLE  Command failed with exit code 1.
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.

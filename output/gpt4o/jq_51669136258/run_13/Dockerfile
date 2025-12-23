@@ -1,0 +1,66 @@
+# Use Ubuntu 24.04 as the base image
+FROM ubuntu:24.04
+
+# Set the timezone to Pacific Time
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Install required packages with additional dependencies for autoreconf
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    automake autoconf libtool crossbuild-essential-amd64 \
+    make gcc git pkg-config libtool-bin && \
+    rm -rf /var/lib/apt/lists/*
+
+# Create a working directory
+WORKDIR /app
+
+# Copy the repository into the container including .git directory
+COPY . .
+
+# Initialize and update submodules
+RUN if [ -d .git ]; then \
+        git submodule update --init --recursive; \
+    fi
+
+# Fix permissions for scripts
+RUN chmod +x scripts/*
+
+# Handle oniguruma build with minimal configuration if Makefile.am is missing
+RUN if [ -d "vendor/oniguruma" ]; then \
+        cd vendor/oniguruma && \
+        if [ ! -f "configure.ac" ]; then \
+            echo "Creating minimal configure.ac for oniguruma"; \
+            echo 'AC_INIT([oniguruma], [6.9.8])' > configure.ac && \
+            echo 'AM_INIT_AUTOMAKE([foreign])' >> configure.ac && \
+            echo 'AC_PROG_CC' >> configure.ac && \
+            echo 'AC_PROG_RANLIB' >> configure.ac && \
+            echo 'AC_CONFIG_HEADERS([config.h])' >> configure.ac && \
+            echo 'AC_CONFIG_FILES([Makefile])' >> configure.ac && \
+            echo 'AC_OUTPUT' >> configure.ac; \
+        fi && \
+        if [ ! -f "Makefile.am" ]; then \
+            echo "Creating minimal Makefile.am for oniguruma"; \
+            echo 'lib_LIBRARIES = libonig.a' > Makefile.am && \
+            echo 'libonig_a_SOURCES = regcomp.c regenc.c regerror.c regexec.c regparse.c regsyntax.c regtrav.c regversion.c st.c onig_init.c' >> Makefile.am && \
+            echo 'include_HEADERS = oniguruma.h onig-config.h' >> Makefile.am && \
+            echo 'AM_CFLAGS = -Wall -O2 -pthread -fstack-protector-all' >> Makefile.am; \
+        fi && \
+        autoreconf -vfi && \
+        ./configure --enable-static --disable-shared && \
+        make -j"$(nproc)" && \
+        cd ../..; \
+    fi
+
+# Verify configure.ac exists before running autoreconf
+RUN if [ ! -f "configure.ac" ] && [ ! -f "src/configure.ac" ] && [ ! -f "jq/configure.ac" ]; then \
+        echo "Error: configure.ac not found in root directory or expected subdirectories"; \
+        exit 1; \
+    fi
+
+# Copy the run.sh script and make it executable
+COPY run.sh /usr/local/bin/run.sh
+RUN chmod +x /usr/local/bin/run.sh
+
+# Set the entrypoint to run.sh
+ENTRYPOINT ["/usr/local/bin/run.sh"]

@@ -1,0 +1,718 @@
+﻿2025-09-26T16:13:45.5381075Z Current runner version: '2.328.0'
+2025-09-26T16:13:45.5404945Z ##[group]Runner Image Provisioner
+2025-09-26T16:13:45.5405709Z Hosted Compute Agent
+2025-09-26T16:13:45.5406317Z Version: 20250912.392
+2025-09-26T16:13:45.5406910Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-09-26T16:13:45.5407546Z Build Date: 2025-09-12T15:23:14Z
+2025-09-26T16:13:45.5408194Z ##[endgroup]
+2025-09-26T16:13:45.5408714Z ##[group]Operating System
+2025-09-26T16:13:45.5409271Z Ubuntu
+2025-09-26T16:13:45.5409752Z 24.04.3
+2025-09-26T16:13:45.5410238Z LTS
+2025-09-26T16:13:45.5410683Z ##[endgroup]
+2025-09-26T16:13:45.5411158Z ##[group]Runner Image
+2025-09-26T16:13:45.5411765Z Image: ubuntu-24.04
+2025-09-26T16:13:45.5412216Z Version: 20250922.53.1
+2025-09-26T16:13:45.5413216Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250922.53/images/ubuntu/Ubuntu2404-Readme.md
+2025-09-26T16:13:45.5414909Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250922.53
+2025-09-26T16:13:45.5415970Z ##[endgroup]
+2025-09-26T16:13:45.5416997Z ##[group]GITHUB_TOKEN Permissions
+2025-09-26T16:13:45.5418752Z Contents: read
+2025-09-26T16:13:45.5419409Z Metadata: read
+2025-09-26T16:13:45.5419870Z Packages: read
+2025-09-26T16:13:45.5420346Z ##[endgroup]
+2025-09-26T16:13:45.5422369Z Secret source: None
+2025-09-26T16:13:45.5423113Z Prepare workflow directory
+2025-09-26T16:13:45.5803876Z Prepare all required actions
+2025-09-26T16:13:45.5859018Z Getting action download info
+2025-09-26T16:13:45.9158671Z Download action repository 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-09-26T16:13:46.0736066Z Download action repository 'astral-sh/setup-uv@d9e0f98d3fc6adb07d1e3d37f3043649ddad06a1' (SHA:d9e0f98d3fc6adb07d1e3d37f3043649ddad06a1)
+2025-09-26T16:13:46.9430221Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2025-09-26T16:13:47.1176575Z Complete job name: 3.11
+2025-09-26T16:13:47.1818270Z ##[group]Run actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+2025-09-26T16:13:47.1819362Z with:
+2025-09-26T16:13:47.1819786Z   repository: pallets/flask
+2025-09-26T16:13:47.1820468Z   token: ***
+2025-09-26T16:13:47.1820898Z   ssh-strict: true
+2025-09-26T16:13:47.1821330Z   ssh-user: git
+2025-09-26T16:13:47.1821771Z   persist-credentials: true
+2025-09-26T16:13:47.1822258Z   clean: true
+2025-09-26T16:13:47.1822700Z   sparse-checkout-cone-mode: true
+2025-09-26T16:13:47.1823210Z   fetch-depth: 1
+2025-09-26T16:13:47.1823640Z   fetch-tags: false
+2025-09-26T16:13:47.1824080Z   show-progress: true
+2025-09-26T16:13:47.1824709Z   lfs: false
+2025-09-26T16:13:47.1825138Z   submodules: false
+2025-09-26T16:13:47.1825589Z   set-safe-directory: true
+2025-09-26T16:13:47.1826336Z ##[endgroup]
+2025-09-26T16:13:47.2728998Z Syncing repository: pallets/flask
+2025-09-26T16:13:47.2730890Z ##[group]Getting Git version info
+2025-09-26T16:13:47.2731695Z Working directory is '/home/runner/work/flask/flask'
+2025-09-26T16:13:47.2732749Z [command]/usr/bin/git version
+2025-09-26T16:13:47.2771877Z git version 2.51.0
+2025-09-26T16:13:47.2792693Z ##[endgroup]
+2025-09-26T16:13:47.2806605Z Temporarily overriding HOME='/home/runner/work/_temp/f3027f31-a533-4ae5-92c7-5d4468b3451f' before making global git config changes
+2025-09-26T16:13:47.2807952Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-26T16:13:47.2811136Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flask/flask
+2025-09-26T16:13:47.2846694Z Deleting the contents of '/home/runner/work/flask/flask'
+2025-09-26T16:13:47.2850745Z ##[group]Initializing the repository
+2025-09-26T16:13:47.2855432Z [command]/usr/bin/git init /home/runner/work/flask/flask
+2025-09-26T16:13:47.2947123Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-26T16:13:47.2948770Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-26T16:13:47.2950621Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-26T16:13:47.2951419Z hint:
+2025-09-26T16:13:47.2952285Z hint: 	git config --global init.defaultBranch <name>
+2025-09-26T16:13:47.2953492Z hint:
+2025-09-26T16:13:47.2954815Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-26T16:13:47.2956696Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-26T16:13:47.2958158Z hint:
+2025-09-26T16:13:47.2958894Z hint: 	git branch -m <name>
+2025-09-26T16:13:47.2959730Z hint:
+2025-09-26T16:13:47.2960881Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-26T16:13:47.2962881Z Initialized empty Git repository in /home/runner/work/flask/flask/.git/
+2025-09-26T16:13:47.2965973Z [command]/usr/bin/git remote add origin https://github.com/pallets/flask
+2025-09-26T16:13:47.3000215Z ##[endgroup]
+2025-09-26T16:13:47.3001619Z ##[group]Disabling automatic garbage collection
+2025-09-26T16:13:47.3004128Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-26T16:13:47.3032796Z ##[endgroup]
+2025-09-26T16:13:47.3033524Z ##[group]Setting up auth
+2025-09-26T16:13:47.3039504Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-26T16:13:47.3069681Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-26T16:13:47.3380288Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-26T16:13:47.3409488Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-26T16:13:47.3627090Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-26T16:13:47.3661625Z ##[endgroup]
+2025-09-26T16:13:47.3670083Z ##[group]Fetching the repository
+2025-09-26T16:13:47.3671562Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +82b352c0ab47c554bc578df32e2ba37e32b4910a:refs/remotes/pull/5821/merge
+2025-09-26T16:13:47.8411370Z From https://github.com/pallets/flask
+2025-09-26T16:13:47.8412550Z  * [new ref]         82b352c0ab47c554bc578df32e2ba37e32b4910a -> pull/5821/merge
+2025-09-26T16:13:47.8441404Z ##[endgroup]
+2025-09-26T16:13:47.8442254Z ##[group]Determining the checkout info
+2025-09-26T16:13:47.8444881Z ##[endgroup]
+2025-09-26T16:13:47.8450113Z [command]/usr/bin/git sparse-checkout disable
+2025-09-26T16:13:47.8490846Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-26T16:13:47.8516871Z ##[group]Checking out the ref
+2025-09-26T16:13:47.8521017Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/5821/merge
+2025-09-26T16:13:47.8709022Z Note: switching to 'refs/remotes/pull/5821/merge'.
+2025-09-26T16:13:47.8709809Z 
+2025-09-26T16:13:47.8710384Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-09-26T16:13:47.8711828Z changes and commit them, and you can discard any commits you make in this
+2025-09-26T16:13:47.8713184Z state without impacting any branches by switching back to a branch.
+2025-09-26T16:13:47.8713907Z 
+2025-09-26T16:13:47.8714645Z If you want to create a new branch to retain commits you create, you may
+2025-09-26T16:13:47.8716092Z do so (now or later) by using -c with the switch command. Example:
+2025-09-26T16:13:47.8716891Z 
+2025-09-26T16:13:47.8717252Z   git switch -c <new-branch-name>
+2025-09-26T16:13:47.8717815Z 
+2025-09-26T16:13:47.8718125Z Or undo this operation with:
+2025-09-26T16:13:47.8718649Z 
+2025-09-26T16:13:47.8718941Z   git switch -
+2025-09-26T16:13:47.8719370Z 
+2025-09-26T16:13:47.8719980Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-09-26T16:13:47.8720894Z 
+2025-09-26T16:13:47.8721951Z HEAD is now at 82b352c Merge 57df4824ea5e75ba37b16665d0b3cd7fa7c9fb52 into adf363679da2d9a5ddc564bb2da563c7ca083916
+2025-09-26T16:13:47.8725647Z ##[endgroup]
+2025-09-26T16:13:47.8756552Z [command]/usr/bin/git log -1 --format=%H
+2025-09-26T16:13:47.8778488Z 82b352c0ab47c554bc578df32e2ba37e32b4910a
+2025-09-26T16:13:47.9030518Z ##[group]Run astral-sh/setup-uv@d9e0f98d3fc6adb07d1e3d37f3043649ddad06a1
+2025-09-26T16:13:47.9031238Z with:
+2025-09-26T16:13:47.9031596Z   enable-cache: true
+2025-09-26T16:13:47.9031995Z   prune-cache: false
+2025-09-26T16:13:47.9032409Z   activate-environment: false
+2025-09-26T16:13:47.9032918Z   working-directory: /home/runner/work/flask/flask
+2025-09-26T16:13:47.9033482Z   server-url: https://github.com
+2025-09-26T16:13:47.9034125Z   github-token: ***
+2025-09-26T16:13:47.9035204Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+
+2025-09-26T16:13:47.9036227Z   ignore-nothing-to-cache: false
+2025-09-26T16:13:47.9036707Z   ignore-empty-workdir: false
+2025-09-26T16:13:47.9037160Z   add-problem-matchers: true
+2025-09-26T16:13:47.9037577Z ##[endgroup]
+2025-09-26T16:13:48.1373362Z Trying to find version for uv in: /home/runner/work/flask/flask/uv.toml
+2025-09-26T16:13:48.1375930Z Could not find file: /home/runner/work/flask/flask/uv.toml
+2025-09-26T16:13:48.1378064Z Trying to find version for uv in: /home/runner/work/flask/flask/pyproject.toml
+2025-09-26T16:13:48.1411730Z Could not determine uv version from uv.toml or pyproject.toml. Falling back to latest.
+2025-09-26T16:13:48.4460018Z manifest-file not provided, reading from local file.
+2025-09-26T16:13:48.4520395Z manifest-file does not contain version 0.8.22, arch x86_64, platform unknown-linux-gnu. Falling back to GitHub releases.
+2025-09-26T16:13:48.4524442Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.8.22/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-09-26T16:13:48.8896129Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/b99b1f77-04c8-4ba9-ab47-4c5b356a5878 -f /home/runner/work/_temp/72cd83c8-f677-47b0-958a-32f482d0f0a9
+2025-09-26T16:13:49.3258850Z Added /home/runner/.local/bin to the path
+2025-09-26T16:13:49.3262417Z Added /opt/hostedtoolcache/uv/0.8.22/x86_64 to the path
+2025-09-26T16:13:49.3285001Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-09-26T16:13:49.3285570Z Successfully installed uv version 0.8.22
+2025-09-26T16:13:49.3287019Z Searching files using cache dependency glob: /home/runner/work/flask/flask/**/*requirements*.txt,/home/runner/work/flask/flask/**/*requirements*.in,/home/runner/work/flask/flask/**/*constraints*.txt,/home/runner/work/flask/flask/**/*constraints*.in,/home/runner/work/flask/flask/**/pyproject.toml,/home/runner/work/flask/flask/**/uv.lock
+2025-09-26T16:13:49.3551372Z /home/runner/work/flask/flask/examples/celery/pyproject.toml
+2025-09-26T16:13:49.3570854Z /home/runner/work/flask/flask/examples/celery/requirements.txt
+2025-09-26T16:13:49.3615415Z /home/runner/work/flask/flask/examples/javascript/pyproject.toml
+2025-09-26T16:13:49.3660916Z /home/runner/work/flask/flask/examples/tutorial/pyproject.toml
+2025-09-26T16:13:49.3677737Z /home/runner/work/flask/flask/pyproject.toml
+2025-09-26T16:13:49.3839131Z /home/runner/work/flask/flask/uv.lock
+2025-09-26T16:13:49.3849447Z Found 6 files to hash.
+2025-09-26T16:13:49.4522004Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-264a9aeb144b97770224f1383c2c172cc5011053dbc1bdce83d8ac88ad6dbf93
+2025-09-26T16:13:49.5618064Z Cache hit for: setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-264a9aeb144b97770224f1383c2c172cc5011053dbc1bdce83d8ac88ad6dbf93
+2025-09-26T16:13:50.6348702Z Received 60716496 of 60716496 (100.0%), 65.2 MBs/sec
+2025-09-26T16:13:50.6350093Z Cache Size: ~58 MB (60716496 B)
+2025-09-26T16:13:50.6379401Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2c470c6c-a639-44af-a0ff-eeb205749d74/cache.tzst -P -C /home/runner/work/flask/flask --use-compress-program unzstd
+2025-09-26T16:13:51.1917450Z Cache restored successfully
+2025-09-26T16:13:51.2038255Z uv cache restored from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-264a9aeb144b97770224f1383c2c172cc5011053dbc1bdce83d8ac88ad6dbf93
+2025-09-26T16:13:51.2238908Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2025-09-26T16:13:51.2239293Z with:
+2025-09-26T16:13:51.2239474Z   python-version: 3.11
+2025-09-26T16:13:51.2239686Z   check-latest: false
+2025-09-26T16:13:51.2240018Z   token: ***
+2025-09-26T16:13:51.2240224Z   update-environment: true
+2025-09-26T16:13:51.2240479Z   allow-prereleases: false
+2025-09-26T16:13:51.2240693Z   freethreaded: false
+2025-09-26T16:13:51.2240880Z env:
+2025-09-26T16:13:51.2241102Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-09-26T16:13:51.2241396Z ##[endgroup]
+2025-09-26T16:13:51.3879747Z ##[group]Installed versions
+2025-09-26T16:13:51.3974799Z Successfully set up CPython (3.11.13)
+2025-09-26T16:13:51.3975609Z ##[endgroup]
+2025-09-26T16:13:51.4088466Z ##[group]Run uv run --locked tox run -e py3.11
+2025-09-26T16:13:51.4088887Z [36;1muv run --locked tox run -e py3.11[0m
+2025-09-26T16:13:51.4138091Z shell: /usr/bin/bash -e {0}
+2025-09-26T16:13:51.4138346Z env:
+2025-09-26T16:13:51.4138584Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-09-26T16:13:51.4138945Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-09-26T16:13:51.4139364Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.13/x64/lib/pkgconfig
+2025-09-26T16:13:51.4139766Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-09-26T16:13:51.4140112Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-09-26T16:13:51.4140472Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-09-26T16:13:51.4140834Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.13/x64/lib
+2025-09-26T16:13:51.4141125Z ##[endgroup]
+2025-09-26T16:13:52.0742030Z Using CPython 3.11.13 interpreter at: /opt/hostedtoolcache/Python/3.11.13/x64/bin/python3
+2025-09-26T16:13:52.0742718Z Creating virtual environment at: .venv
+2025-09-26T16:13:52.0835583Z    Building flask @ file:///home/runner/work/flask/flask
+2025-09-26T16:13:52.1484957Z Downloading mypy (12.0MiB)
+2025-09-26T16:13:52.4647903Z  Downloading mypy
+2025-09-26T16:13:53.0328396Z       Built flask @ file:///home/runner/work/flask/flask
+2025-09-26T16:13:53.1853392Z Installed 43 packages in 151ms
+2025-09-26T16:13:54.4629703Z py3.11: venv> .venv/bin/uv venv -p /home/runner/work/flask/flask/.venv/bin/python --allow-existing --python-preference system /home/runner/work/flask/flask/.tox/py3.11
+2025-09-26T16:13:54.5152082Z py3.11: uv-sync> uv sync --locked --python-preference system --no-default-groups --no-editable --reinstall-package Flask --group tests -p /home/runner/work/flask/flask/.venv/bin/python
+2025-09-26T16:13:54.8007087Z py3.11: freeze> .venv/bin/uv --color never pip freeze
+2025-09-26T16:13:54.8095272Z py3.11: asgiref==3.9.1,blinker==1.9.0,click==8.2.1,flask @ file:///home/runner/work/flask/flask,greenlet==3.2.4,iniconfig==2.1.0,itsdangerous==2.2.0,jinja2==3.1.6,markupsafe==3.0.2,packaging==25.0,pluggy==1.6.0,pygments==2.19.2,pytest==8.4.1,python-dotenv==1.1.1,werkzeug==3.1.3
+2025-09-26T16:13:54.8102528Z py3.11: commands[0]> pytest -v --tb=short --basetemp=/home/runner/work/flask/flask/.tox/tmp/py3.11
+2025-09-26T16:13:56.0360575Z ============================= test session starts ==============================
+2025-09-26T16:13:56.0361546Z platform linux -- Python 3.11.13, pytest-8.4.1, pluggy-1.6.0 -- /home/runner/work/flask/flask/.tox/py3.11/bin/python3
+2025-09-26T16:13:56.0362148Z cachedir: .tox/py3.11/.pytest_cache
+2025-09-26T16:13:56.0362482Z rootdir: /home/runner/work/flask/flask
+2025-09-26T16:13:56.0362805Z configfile: pyproject.toml
+2025-09-26T16:13:56.0363073Z testpaths: tests
+2025-09-26T16:13:56.7373416Z collecting ... collected 490 items
+2025-09-26T16:13:56.7373706Z 
+2025-09-26T16:13:56.7523005Z tests/test_appctx.py::test_basic_url_generation PASSED                   [  0%]
+2025-09-26T16:13:56.7539807Z tests/test_appctx.py::test_url_generation_requires_server_name PASSED    [  0%]
+2025-09-26T16:13:56.7548957Z tests/test_appctx.py::test_url_generation_without_context_fails PASSED   [  0%]
+2025-09-26T16:13:56.7569357Z tests/test_appctx.py::test_request_context_means_app_context PASSED      [  0%]
+2025-09-26T16:13:56.7590929Z tests/test_appctx.py::test_app_context_provides_current_app PASSED       [  1%]
+2025-09-26T16:13:56.7608022Z tests/test_appctx.py::test_app_tearing_down PASSED                       [  1%]
+2025-09-26T16:13:56.7623934Z tests/test_appctx.py::test_app_tearing_down_with_previous_exception PASSED [  1%]
+2025-09-26T16:13:56.7639905Z tests/test_appctx.py::test_app_tearing_down_with_handled_exception_by_except_block PASSED [  1%]
+2025-09-26T16:13:56.7670047Z tests/test_appctx.py::test_app_tearing_down_with_handled_exception_by_app_handler PASSED [  1%]
+2025-09-26T16:13:56.7692728Z tests/test_appctx.py::test_app_tearing_down_with_unhandled_exception PASSED [  2%]
+2025-09-26T16:13:56.7709114Z tests/test_appctx.py::test_app_ctx_globals_methods PASSED                [  2%]
+2025-09-26T16:13:56.7738900Z tests/test_appctx.py::test_custom_app_ctx_globals_class PASSED           [  2%]
+2025-09-26T16:13:56.7761584Z tests/test_appctx.py::test_context_refcounts PASSED                      [  2%]
+2025-09-26T16:13:56.7777102Z tests/test_appctx.py::test_clean_pop PASSED                              [  2%]
+2025-09-26T16:13:56.7890337Z tests/test_async.py::test_async_route[/] PASSED                          [  3%]
+2025-09-26T16:13:56.7940841Z tests/test_async.py::test_async_route[/home] PASSED                      [  3%]
+2025-09-26T16:13:56.7989471Z tests/test_async.py::test_async_route[/bp/] PASSED                       [  3%]
+2025-09-26T16:13:56.8037765Z tests/test_async.py::test_async_route[/view] PASSED                      [  3%]
+2025-09-26T16:13:56.8090654Z tests/test_async.py::test_async_route[/methodview] PASSED                [  3%]
+2025-09-26T16:13:56.8132252Z tests/test_async.py::test_async_error_handler[/error] PASSED             [  4%]
+2025-09-26T16:13:56.8177153Z tests/test_async.py::test_async_error_handler[/bp/error] PASSED          [  4%]
+2025-09-26T16:13:56.8231275Z tests/test_async.py::test_async_before_after_request PASSED              [  4%]
+2025-09-26T16:13:56.8253875Z tests/test_basic.py::test_options_work PASSED                            [  4%]
+2025-09-26T16:13:56.8278701Z tests/test_basic.py::test_options_on_multiple_rules PASSED               [  4%]
+2025-09-26T16:13:56.8300387Z tests/test_basic.py::test_method_route[get] PASSED                       [  5%]
+2025-09-26T16:13:56.8322054Z tests/test_basic.py::test_method_route[post] PASSED                      [  5%]
+2025-09-26T16:13:56.8345592Z tests/test_basic.py::test_method_route[put] PASSED                       [  5%]
+2025-09-26T16:13:56.8367743Z tests/test_basic.py::test_method_route[delete] PASSED                    [  5%]
+2025-09-26T16:13:56.8389762Z tests/test_basic.py::test_method_route[patch] PASSED                     [  5%]
+2025-09-26T16:13:56.8405087Z tests/test_basic.py::test_method_route_no_methods PASSED                 [  6%]
+2025-09-26T16:13:56.8436713Z tests/test_basic.py::test_provide_automatic_options_attr PASSED          [  6%]
+2025-09-26T16:13:56.8479731Z tests/test_basic.py::test_provide_automatic_options_kwarg PASSED         [  6%]
+2025-09-26T16:13:56.8518867Z tests/test_basic.py::test_request_dispatching PASSED                     [  6%]
+2025-09-26T16:13:56.8533853Z tests/test_basic.py::test_disallow_string_for_allowed_methods PASSED     [  6%]
+2025-09-26T16:13:56.8577977Z tests/test_basic.py::test_url_mapping PASSED                             [  7%]
+2025-09-26T16:13:56.8604845Z tests/test_basic.py::test_werkzeug_routing PASSED                        [  7%]
+2025-09-26T16:13:56.8633710Z tests/test_basic.py::test_endpoint_decorator PASSED                      [  7%]
+2025-09-26T16:13:56.8665637Z tests/test_basic.py::test_session PASSED                                 [  7%]
+2025-09-26T16:13:56.8688810Z tests/test_basic.py::test_session_path PASSED                            [  7%]
+2025-09-26T16:13:56.8712012Z tests/test_basic.py::test_session_using_application_root PASSED          [  8%]
+2025-09-26T16:13:56.8743908Z tests/test_basic.py::test_session_using_session_settings PASSED          [  8%]
+2025-09-26T16:13:56.8778513Z tests/test_basic.py::test_session_using_samesite_attribute PASSED        [  8%]
+2025-09-26T16:13:56.8795426Z tests/test_basic.py::test_missing_session PASSED                         [  8%]
+2025-09-26T16:13:56.8833313Z tests/test_basic.py::test_session_secret_key_fallbacks PASSED            [  8%]
+2025-09-26T16:13:56.8870198Z tests/test_basic.py::test_session_expiration PASSED                      [  9%]
+2025-09-26T16:13:56.8897381Z tests/test_basic.py::test_session_stored_last PASSED                     [  9%]
+2025-09-26T16:13:56.8923353Z tests/test_basic.py::test_session_special_types PASSED                   [  9%]
+2025-09-26T16:13:56.9015417Z tests/test_basic.py::test_session_cookie_setting PASSED                  [  9%]
+2025-09-26T16:13:56.9080966Z tests/test_basic.py::test_session_vary_cookie PASSED                     [ 10%]
+2025-09-26T16:13:56.9117298Z tests/test_basic.py::test_session_refresh_vary PASSED                    [ 10%]
+2025-09-26T16:13:56.9136194Z tests/test_basic.py::test_flashes PASSED                                 [ 10%]
+2025-09-26T16:13:56.9200948Z tests/test_basic.py::test_extended_flashing PASSED                       [ 10%]
+2025-09-26T16:13:56.9225415Z tests/test_basic.py::test_request_processing PASSED                      [ 10%]
+2025-09-26T16:13:56.9246831Z tests/test_basic.py::test_request_preprocessing_early_return PASSED      [ 11%]
+2025-09-26T16:13:56.9267791Z tests/test_basic.py::test_after_request_processing PASSED                [ 11%]
+2025-09-26T16:13:56.9289215Z tests/test_basic.py::test_teardown_request_handler PASSED                [ 11%]
+2025-09-26T16:13:56.9310540Z tests/test_basic.py::test_teardown_request_handler_debug_mode PASSED     [ 11%]
+2025-09-26T16:13:56.9342500Z tests/test_basic.py::test_teardown_request_handler_error PASSED          [ 11%]
+2025-09-26T16:13:56.9364810Z tests/test_basic.py::test_before_after_request_order PASSED              [ 12%]
+2025-09-26T16:13:56.9406739Z tests/test_basic.py::test_error_handling PASSED                          [ 12%]
+2025-09-26T16:13:56.9434321Z tests/test_basic.py::test_error_handling_processing PASSED               [ 12%]
+2025-09-26T16:13:56.9455002Z tests/test_basic.py::test_baseexception_error_handling PASSED            [ 12%]
+2025-09-26T16:13:56.9473834Z tests/test_basic.py::test_before_request_and_routing_errors PASSED       [ 12%]
+2025-09-26T16:13:56.9497960Z tests/test_basic.py::test_user_error_handling PASSED                     [ 13%]
+2025-09-26T16:13:56.9530357Z tests/test_basic.py::test_http_error_subclass_handling PASSED            [ 13%]
+2025-09-26T16:13:56.9557598Z tests/test_basic.py::test_errorhandler_precedence PASSED                 [ 13%]
+2025-09-26T16:13:56.9589909Z tests/test_basic.py::test_trap_bad_request_key_error[False-None-True-True] PASSED [ 13%]
+2025-09-26T16:13:56.9633301Z tests/test_basic.py::test_trap_bad_request_key_error[True-None-False-True] PASSED [ 13%]
+2025-09-26T16:13:56.9661908Z tests/test_basic.py::test_trap_bad_request_key_error[False-True-False-False] PASSED [ 14%]
+2025-09-26T16:13:56.9683088Z tests/test_basic.py::test_trapping_of_all_http_exceptions PASSED         [ 14%]
+2025-09-26T16:13:56.9717832Z tests/test_basic.py::test_error_handler_after_processor_error PASSED     [ 14%]
+2025-09-26T16:13:56.9742740Z tests/test_basic.py::test_enctype_debug_helper PASSED                    [ 14%]
+2025-09-26T16:13:56.9810723Z tests/test_basic.py::test_response_types PASSED                          [ 14%]
+2025-09-26T16:13:56.9844477Z tests/test_basic.py::test_response_type_errors PASSED                    [ 15%]
+2025-09-26T16:13:56.9863629Z tests/test_basic.py::test_make_response PASSED                           [ 15%]
+2025-09-26T16:13:56.9881358Z tests/test_basic.py::test_make_response_with_response_instance PASSED    [ 15%]
+2025-09-26T16:13:56.9897046Z tests/test_basic.py::test_jsonify_no_prettyprint[True] PASSED            [ 15%]
+2025-09-26T16:13:56.9912564Z tests/test_basic.py::test_jsonify_no_prettyprint[False] PASSED           [ 15%]
+2025-09-26T16:13:56.9929418Z tests/test_basic.py::test_jsonify_mimetype PASSED                        [ 16%]
+2025-09-26T16:13:56.9950159Z tests/test_basic.py::test_json_dump_dataclass PASSED                     [ 16%]
+2025-09-26T16:13:56.9968936Z tests/test_basic.py::test_jsonify_args_and_kwargs_check PASSED           [ 16%]
+2025-09-26T16:13:56.9990500Z tests/test_basic.py::test_url_generation PASSED                          [ 16%]
+2025-09-26T16:13:57.0009417Z tests/test_basic.py::test_build_error_handler PASSED                     [ 16%]
+2025-09-26T16:13:57.0025718Z tests/test_basic.py::test_build_error_handler_reraise PASSED             [ 17%]
+2025-09-26T16:13:57.0044435Z tests/test_basic.py::test_url_for_passes_special_values_to_build_error_handler PASSED [ 17%]
+2025-09-26T16:13:57.0107756Z tests/test_basic.py::test_static_files PASSED                            [ 17%]
+2025-09-26T16:13:57.0127128Z tests/test_basic.py::test_static_url_path PASSED                         [ 17%]
+2025-09-26T16:13:57.0146478Z tests/test_basic.py::test_static_url_path_with_ending_slash PASSED       [ 17%]
+2025-09-26T16:13:57.0172630Z tests/test_basic.py::test_static_url_empty_path PASSED                   [ 18%]
+2025-09-26T16:13:57.0197224Z tests/test_basic.py::test_static_url_empty_path_default PASSED           [ 18%]
+2025-09-26T16:13:57.0221395Z tests/test_basic.py::test_static_folder_with_pathlib_path PASSED         [ 18%]
+2025-09-26T16:13:57.0241473Z tests/test_basic.py::test_static_folder_with_ending_slash PASSED         [ 18%]
+2025-09-26T16:13:57.0262946Z tests/test_basic.py::test_static_route_with_host_matching PASSED         [ 18%]
+2025-09-26T16:13:57.0272476Z tests/test_basic.py::test_request_locals PASSED                          [ 19%]
+2025-09-26T16:13:57.0308010Z tests/test_basic.py::test_server_name_matching[False-False-default-default-default] PASSED [ 19%]
+2025-09-26T16:13:57.0338388Z tests/test_basic.py::test_server_name_matching[True-False-default-abc-<invalid>] PASSED [ 19%]
+2025-09-26T16:13:57.0368491Z tests/test_basic.py::test_server_name_matching[False-True-default-abc-default] PASSED [ 19%]
+2025-09-26T16:13:57.0406739Z tests/test_basic.py::test_server_name_subdomain PASSED                   [ 20%]
+2025-09-26T16:13:57.0428643Z tests/test_basic.py::test_exception_propagation[TESTING] PASSED          [ 20%]
+2025-09-26T16:13:57.0450257Z tests/test_basic.py::test_exception_propagation[PROPAGATE_EXCEPTIONS] PASSED [ 20%]
+2025-09-26T16:13:57.0474675Z tests/test_basic.py::test_exception_propagation[DEBUG] PASSED            [ 20%]
+2025-09-26T16:13:57.0502705Z tests/test_basic.py::test_exception_propagation[None] PASSED             [ 20%]
+2025-09-26T16:13:57.0521960Z tests/test_basic.py::test_werkzeug_passthrough_errors[None-True-True-True] PASSED [ 21%]
+2025-09-26T16:13:57.0540627Z tests/test_basic.py::test_werkzeug_passthrough_errors[None-True-True-False] PASSED [ 21%]
+2025-09-26T16:13:57.0560559Z tests/test_basic.py::test_werkzeug_passthrough_errors[None-True-False-True] PASSED [ 21%]
+2025-09-26T16:13:57.0578423Z tests/test_basic.py::test_werkzeug_passthrough_errors[None-True-False-False] PASSED [ 21%]
+2025-09-26T16:13:57.0596084Z tests/test_basic.py::test_werkzeug_passthrough_errors[None-False-True-True] PASSED [ 21%]
+2025-09-26T16:13:57.0613449Z tests/test_basic.py::test_werkzeug_passthrough_errors[None-False-True-False] PASSED [ 22%]
+2025-09-26T16:13:57.0631237Z tests/test_basic.py::test_werkzeug_passthrough_errors[None-False-False-True] PASSED [ 22%]
+2025-09-26T16:13:57.0649196Z tests/test_basic.py::test_werkzeug_passthrough_errors[None-False-False-False] PASSED [ 22%]
+2025-09-26T16:13:57.0668849Z tests/test_basic.py::test_werkzeug_passthrough_errors[True-True-True-True] PASSED [ 22%]
+2025-09-26T16:13:57.0685946Z tests/test_basic.py::test_werkzeug_passthrough_errors[True-True-True-False] PASSED [ 22%]
+2025-09-26T16:13:57.0703327Z tests/test_basic.py::test_werkzeug_passthrough_errors[True-True-False-True] PASSED [ 23%]
+2025-09-26T16:13:57.0720872Z tests/test_basic.py::test_werkzeug_passthrough_errors[True-True-False-False] PASSED [ 23%]
+2025-09-26T16:13:57.0738576Z tests/test_basic.py::test_werkzeug_passthrough_errors[True-False-True-True] PASSED [ 23%]
+2025-09-26T16:13:57.0756021Z tests/test_basic.py::test_werkzeug_passthrough_errors[True-False-True-False] PASSED [ 23%]
+2025-09-26T16:13:57.0775221Z tests/test_basic.py::test_werkzeug_passthrough_errors[True-False-False-True] PASSED [ 23%]
+2025-09-26T16:13:57.0792667Z tests/test_basic.py::test_werkzeug_passthrough_errors[True-False-False-False] PASSED [ 24%]
+2025-09-26T16:13:57.0810331Z tests/test_basic.py::test_werkzeug_passthrough_errors[False-True-True-True] PASSED [ 24%]
+2025-09-26T16:13:57.0828075Z tests/test_basic.py::test_werkzeug_passthrough_errors[False-True-True-False] PASSED [ 24%]
+2025-09-26T16:13:57.0846271Z tests/test_basic.py::test_werkzeug_passthrough_errors[False-True-False-True] PASSED [ 24%]
+2025-09-26T16:13:57.0864205Z tests/test_basic.py::test_werkzeug_passthrough_errors[False-True-False-False] PASSED [ 24%]
+2025-09-26T16:13:57.0884408Z tests/test_basic.py::test_werkzeug_passthrough_errors[False-False-True-True] PASSED [ 25%]
+2025-09-26T16:13:57.0902009Z tests/test_basic.py::test_werkzeug_passthrough_errors[False-False-True-False] PASSED [ 25%]
+2025-09-26T16:13:57.0919434Z tests/test_basic.py::test_werkzeug_passthrough_errors[False-False-False-True] PASSED [ 25%]
+2025-09-26T16:13:57.0937576Z tests/test_basic.py::test_werkzeug_passthrough_errors[False-False-False-False] PASSED [ 25%]
+2025-09-26T16:13:57.0973537Z tests/test_basic.py::test_url_processors PASSED                          [ 25%]
+2025-09-26T16:13:57.0996725Z tests/test_basic.py::test_inject_blueprint_url_defaults PASSED           [ 26%]
+2025-09-26T16:13:57.1020955Z tests/test_basic.py::test_nonascii_pathinfo PASSED                       [ 26%]
+2025-09-26T16:13:57.1042723Z tests/test_basic.py::test_no_setup_after_first_request PASSED            [ 26%]
+2025-09-26T16:13:57.1075624Z tests/test_basic.py::test_routing_redirect_debugging PASSED              [ 26%]
+2025-09-26T16:13:57.1109404Z tests/test_basic.py::test_route_decorator_custom_endpoint PASSED         [ 26%]
+2025-09-26T16:13:57.1125545Z tests/test_basic.py::test_get_method_on_g PASSED                         [ 27%]
+2025-09-26T16:13:57.1141531Z tests/test_basic.py::test_g_iteration_protocol PASSED                    [ 27%]
+2025-09-26T16:13:57.1173721Z tests/test_basic.py::test_subdomain_basic_support PASSED                 [ 27%]
+2025-09-26T16:13:57.1193713Z tests/test_basic.py::test_subdomain_matching PASSED                      [ 27%]
+2025-09-26T16:13:57.1214141Z tests/test_basic.py::test_subdomain_matching_with_ports PASSED           [ 27%]
+2025-09-26T16:13:57.1235228Z tests/test_basic.py::test_subdomain_matching_other_name[False] PASSED    [ 28%]
+2025-09-26T16:13:57.1259933Z tests/test_basic.py::test_subdomain_matching_other_name[True] PASSED     [ 28%]
+2025-09-26T16:13:57.1287984Z tests/test_basic.py::test_multi_route_rules PASSED                       [ 28%]
+2025-09-26T16:13:57.1315634Z tests/test_basic.py::test_multi_route_class_views PASSED                 [ 28%]
+2025-09-26T16:13:57.1332434Z tests/test_basic.py::test_run_defaults PASSED                            [ 28%]
+2025-09-26T16:13:57.1349151Z tests/test_basic.py::test_run_server_port PASSED                         [ 29%]
+2025-09-26T16:13:57.1369207Z tests/test_basic.py::test_run_from_config[None-None-pocoo.org:8080-pocoo.org-8080] PASSED [ 29%]
+2025-09-26T16:13:57.1386966Z tests/test_basic.py::test_run_from_config[localhost-None-pocoo.org:8080-localhost-8080] PASSED [ 29%]
+2025-09-26T16:13:57.1404480Z tests/test_basic.py::test_run_from_config[None-80-pocoo.org:8080-pocoo.org-80] PASSED [ 29%]
+2025-09-26T16:13:57.1423025Z tests/test_basic.py::test_run_from_config[localhost-80-pocoo.org:8080-localhost-80] PASSED [ 30%]
+2025-09-26T16:13:57.1440717Z tests/test_basic.py::test_run_from_config[localhost-0-localhost:8080-localhost-0] PASSED [ 30%]
+2025-09-26T16:13:57.1458521Z tests/test_basic.py::test_run_from_config[None-None-localhost:8080-localhost-8080] PASSED [ 30%]
+2025-09-26T16:13:57.1476408Z tests/test_basic.py::test_run_from_config[None-None-localhost:0-localhost-0] PASSED [ 30%]
+2025-09-26T16:13:57.1502483Z tests/test_basic.py::test_max_cookie_size PASSED                         [ 30%]
+2025-09-26T16:13:57.1518073Z tests/test_basic.py::test_app_freed_on_zero_refcount PASSED              [ 31%]
+2025-09-26T16:13:57.1553164Z tests/test_blueprints.py::test_blueprint_specific_error_handling PASSED  [ 31%]
+2025-09-26T16:13:57.1581251Z tests/test_blueprints.py::test_blueprint_specific_user_error_handling PASSED [ 31%]
+2025-09-26T16:13:57.1609432Z tests/test_blueprints.py::test_blueprint_app_error_handling PASSED       [ 31%]
+2025-09-26T16:13:57.1634256Z tests/test_blueprints.py::test_blueprint_prefix_slash[-/-/] PASSED       [ 31%]
+2025-09-26T16:13:57.1657836Z tests/test_blueprints.py::test_blueprint_prefix_slash[/--/] PASSED       [ 32%]
+2025-09-26T16:13:57.1680008Z tests/test_blueprints.py::test_blueprint_prefix_slash[/-/-/] PASSED      [ 32%]
+2025-09-26T16:13:57.1703634Z tests/test_blueprints.py::test_blueprint_prefix_slash[/foo--/foo] PASSED [ 32%]
+2025-09-26T16:13:57.1726599Z tests/test_blueprints.py::test_blueprint_prefix_slash[/foo/--/foo/] PASSED [ 32%]
+2025-09-26T16:13:57.1751618Z tests/test_blueprints.py::test_blueprint_prefix_slash[-/bar-/bar] PASSED [ 32%]
+2025-09-26T16:13:57.1774833Z tests/test_blueprints.py::test_blueprint_prefix_slash[/foo/-/bar-/foo/bar] PASSED [ 33%]
+2025-09-26T16:13:57.1797644Z tests/test_blueprints.py::test_blueprint_prefix_slash[/foo/-bar-/foo/bar] PASSED [ 33%]
+2025-09-26T16:13:57.1820226Z tests/test_blueprints.py::test_blueprint_prefix_slash[/foo-/bar-/foo/bar] PASSED [ 33%]
+2025-09-26T16:13:57.1842902Z tests/test_blueprints.py::test_blueprint_prefix_slash[/foo/-//bar-/foo/bar] PASSED [ 33%]
+2025-09-26T16:13:57.1867558Z tests/test_blueprints.py::test_blueprint_prefix_slash[/foo//-/bar-/foo/bar] PASSED [ 33%]
+2025-09-26T16:13:57.1906734Z tests/test_blueprints.py::test_blueprint_url_defaults PASSED             [ 34%]
+2025-09-26T16:13:57.1937170Z tests/test_blueprints.py::test_blueprint_url_processors PASSED           [ 34%]
+2025-09-26T16:13:57.2035272Z tests/test_blueprints.py::test_templates_and_static PASSED               [ 34%]
+2025-09-26T16:13:57.2065218Z tests/test_blueprints.py::test_default_static_max_age PASSED             [ 34%]
+2025-09-26T16:13:57.2103161Z tests/test_blueprints.py::test_templates_list PASSED                     [ 34%]
+2025-09-26T16:13:57.2122723Z tests/test_blueprints.py::test_dotted_name_not_allowed PASSED            [ 35%]
+2025-09-26T16:13:57.2138506Z tests/test_blueprints.py::test_empty_name_not_allowed PASSED             [ 35%]
+2025-09-26T16:13:57.2165298Z tests/test_blueprints.py::test_dotted_names_from_app PASSED              [ 35%]
+2025-09-26T16:13:57.2194806Z tests/test_blueprints.py::test_empty_url_defaults PASSED                 [ 35%]
+2025-09-26T16:13:57.2237518Z tests/test_blueprints.py::test_route_decorator_custom_endpoint PASSED    [ 35%]
+2025-09-26T16:13:57.2255695Z tests/test_blueprints.py::test_route_decorator_custom_endpoint_with_dots PASSED [ 36%]
+2025-09-26T16:13:57.2281043Z tests/test_blueprints.py::test_endpoint_decorator PASSED                 [ 36%]
+2025-09-26T16:13:57.2296820Z tests/test_blueprints.py::test_template_filter PASSED                    [ 36%]
+2025-09-26T16:13:57.2312199Z tests/test_blueprints.py::test_add_template_filter PASSED                [ 36%]
+2025-09-26T16:13:57.2329726Z tests/test_blueprints.py::test_template_filter_with_name PASSED          [ 36%]
+2025-09-26T16:13:57.2345217Z tests/test_blueprints.py::test_add_template_filter_with_name PASSED      [ 37%]
+2025-09-26T16:13:57.2373842Z tests/test_blueprints.py::test_template_filter_with_template PASSED      [ 37%]
+2025-09-26T16:13:57.2402255Z tests/test_blueprints.py::test_template_filter_after_route_with_template PASSED [ 37%]
+2025-09-26T16:13:57.2438088Z tests/test_blueprints.py::test_add_template_filter_with_template PASSED  [ 37%]
+2025-09-26T16:13:57.2465811Z tests/test_blueprints.py::test_template_filter_with_name_and_template PASSED [ 37%]
+2025-09-26T16:13:57.2493866Z tests/test_blueprints.py::test_add_template_filter_with_name_and_template PASSED [ 38%]
+2025-09-26T16:13:57.2510182Z tests/test_blueprints.py::test_template_test PASSED                      [ 38%]
+2025-09-26T16:13:57.2528155Z tests/test_blueprints.py::test_add_template_test PASSED                  [ 38%]
+2025-09-26T16:13:57.2543788Z tests/test_blueprints.py::test_template_test_with_name PASSED            [ 38%]
+2025-09-26T16:13:57.2559301Z tests/test_blueprints.py::test_add_template_test_with_name PASSED        [ 38%]
+2025-09-26T16:13:57.2588852Z tests/test_blueprints.py::test_template_test_with_template PASSED        [ 39%]
+2025-09-26T16:13:57.2619932Z tests/test_blueprints.py::test_template_test_after_route_with_template PASSED [ 39%]
+2025-09-26T16:13:57.2649170Z tests/test_blueprints.py::test_add_template_test_with_template PASSED    [ 39%]
+2025-09-26T16:13:57.2677715Z tests/test_blueprints.py::test_template_test_with_name_and_template PASSED [ 39%]
+2025-09-26T16:13:57.2708814Z tests/test_blueprints.py::test_add_template_test_with_name_and_template PASSED [ 40%]
+2025-09-26T16:13:57.2751709Z tests/test_blueprints.py::test_context_processing PASSED                 [ 40%]
+2025-09-26T16:13:57.2784066Z tests/test_blueprints.py::test_template_global PASSED                    [ 40%]
+2025-09-26T16:13:57.2808780Z tests/test_blueprints.py::test_request_processing PASSED                 [ 40%]
+2025-09-26T16:13:57.2833834Z tests/test_blueprints.py::test_app_request_processing PASSED             [ 40%]
+2025-09-26T16:13:57.2864817Z tests/test_blueprints.py::test_app_url_processors PASSED                 [ 41%]
+2025-09-26T16:13:57.2916832Z tests/test_blueprints.py::test_nested_blueprint PASSED                   [ 41%]
+2025-09-26T16:13:57.2949542Z tests/test_blueprints.py::test_nested_callback_order PASSED              [ 41%]
+2025-09-26T16:13:57.2973673Z tests/test_blueprints.py::test_nesting_url_prefixes[/parent-/child-None-None] PASSED [ 41%]
+2025-09-26T16:13:57.2999356Z tests/test_blueprints.py::test_nesting_url_prefixes[/parent-None-None-/child] PASSED [ 41%]
+2025-09-26T16:13:57.3023189Z tests/test_blueprints.py::test_nesting_url_prefixes[None-None-/parent-/child] PASSED [ 42%]
+2025-09-26T16:13:57.3047200Z tests/test_blueprints.py::test_nesting_url_prefixes[/other-/something-/parent-/child] PASSED [ 42%]
+2025-09-26T16:13:57.3069792Z tests/test_blueprints.py::test_nesting_subdomains PASSED                 [ 42%]
+2025-09-26T16:13:57.3096995Z tests/test_blueprints.py::test_child_and_parent_subdomain PASSED         [ 42%]
+2025-09-26T16:13:57.3113370Z tests/test_blueprints.py::test_unique_blueprint_names PASSED             [ 42%]
+2025-09-26T16:13:57.3128775Z tests/test_blueprints.py::test_self_registration PASSED                  [ 43%]
+2025-09-26T16:13:57.3179433Z tests/test_blueprints.py::test_blueprint_renaming PASSED                 [ 43%]
+2025-09-26T16:13:57.3207289Z tests/test_cli.py::test_cli_name PASSED                                  [ 43%]
+2025-09-26T16:13:57.3286742Z tests/test_cli.py::test_find_best_app PASSED                             [ 43%]
+2025-09-26T16:13:57.3296412Z tests/test_cli.py::test_prepare_import[test-path0-test] PASSED           [ 43%]
+2025-09-26T16:13:57.3305918Z tests/test_cli.py::test_prepare_import[test.py-path1-test] PASSED        [ 44%]
+2025-09-26T16:13:57.3315997Z tests/test_cli.py::test_prepare_import[a/test-path2-test] PASSED         [ 44%]
+2025-09-26T16:13:57.3325406Z tests/test_cli.py::test_prepare_import[test/__init__.py-path3-test] PASSED [ 44%]
+2025-09-26T16:13:57.3335315Z tests/test_cli.py::test_prepare_import[test/__init__-path4-test] PASSED  [ 44%]
+2025-09-26T16:13:57.3345220Z tests/test_cli.py::test_prepare_import[value5-path5-cliapp.inner1] PASSED [ 44%]
+2025-09-26T16:13:57.3355348Z tests/test_cli.py::test_prepare_import[value6-path6-cliapp.inner1.inner2] PASSED [ 45%]
+2025-09-26T16:13:57.3364739Z tests/test_cli.py::test_prepare_import[test.a.b-path7-test.a.b] PASSED   [ 45%]
+2025-09-26T16:13:57.3374694Z tests/test_cli.py::test_prepare_import[value8-path8-cliapp.app] PASSED   [ 45%]
+2025-09-26T16:13:57.3384303Z tests/test_cli.py::test_prepare_import[value9-path9-cliapp.message.txt] PASSED [ 45%]
+2025-09-26T16:13:57.3408955Z tests/test_cli.py::test_locate_app[cliapp.app-None-testapp] PASSED       [ 45%]
+2025-09-26T16:13:57.3433318Z tests/test_cli.py::test_locate_app[cliapp.app-testapp-testapp] PASSED    [ 46%]
+2025-09-26T16:13:57.3462024Z tests/test_cli.py::test_locate_app[cliapp.factory-None-app] PASSED       [ 46%]
+2025-09-26T16:13:57.3487189Z tests/test_cli.py::test_locate_app[cliapp.factory-create_app-app] PASSED [ 46%]
+2025-09-26T16:13:57.3512131Z tests/test_cli.py::test_locate_app[cliapp.factory-create_app()-app] PASSED [ 46%]
+2025-09-26T16:13:57.3537759Z tests/test_cli.py::test_locate_app[cliapp.factory-create_app2("foo", "bar")-app2_foo_bar] PASSED [ 46%]
+2025-09-26T16:13:57.3562611Z tests/test_cli.py::test_locate_app[cliapp.factory-create_app2("foo", "bar", )-app2_foo_bar] PASSED [ 47%]
+2025-09-26T16:13:57.3586674Z tests/test_cli.py::test_locate_app[cliapp.factory- create_app () -app] PASSED [ 47%]
+2025-09-26T16:13:57.3602388Z tests/test_cli.py::test_locate_app_raises[notanapp.py-None] PASSED       [ 47%]
+2025-09-26T16:13:57.3617962Z tests/test_cli.py::test_locate_app_raises[cliapp/app-None] PASSED        [ 47%]
+2025-09-26T16:13:57.3641723Z tests/test_cli.py::test_locate_app_raises[cliapp.app-notanapp] PASSED    [ 47%]
+2025-09-26T16:13:57.3656810Z tests/test_cli.py::test_locate_app_raises[cliapp.factory-create_app2("foo")] PASSED [ 48%]
+2025-09-26T16:13:57.3670797Z tests/test_cli.py::test_locate_app_raises[cliapp.factory-create_app(] PASSED [ 48%]
+2025-09-26T16:13:57.3686912Z tests/test_cli.py::test_locate_app_raises[cliapp.factory-no_app] PASSED  [ 48%]
+2025-09-26T16:13:57.3705700Z tests/test_cli.py::test_locate_app_raises[cliapp.importerrorapp-None] PASSED [ 48%]
+2025-09-26T16:13:57.3719323Z tests/test_cli.py::test_locate_app_raises[cliapp.message.txt-None] PASSED [ 48%]
+2025-09-26T16:13:57.3738111Z tests/test_cli.py::test_locate_app_suppress_raise PASSED                 [ 49%]
+2025-09-26T16:13:57.3767920Z tests/test_cli.py::test_get_version PASSED                               [ 49%]
+2025-09-26T16:13:57.3821003Z tests/test_cli.py::test_scriptinfo PASSED                                [ 49%]
+2025-09-26T16:13:57.3867570Z tests/test_cli.py::test_app_cli_has_app_context PASSED                   [ 49%]
+2025-09-26T16:13:57.3886132Z tests/test_cli.py::test_with_appcontext PASSED                           [ 50%]
+2025-09-26T16:13:57.3911494Z tests/test_cli.py::test_appgroup_app_context PASSED                      [ 50%]
+2025-09-26T16:13:57.3942393Z tests/test_cli.py::test_flaskgroup_app_context PASSED                    [ 50%]
+2025-09-26T16:13:57.3971641Z tests/test_cli.py::test_flaskgroup_debug[True] PASSED                    [ 50%]
+2025-09-26T16:13:57.4000532Z tests/test_cli.py::test_flaskgroup_debug[False] PASSED                   [ 50%]
+2025-09-26T16:13:57.4033157Z tests/test_cli.py::test_flaskgroup_nested PASSED                         [ 51%]
+2025-09-26T16:13:57.4064842Z tests/test_cli.py::test_no_command_echo_loading_error PASSED             [ 51%]
+2025-09-26T16:13:57.4086571Z tests/test_cli.py::test_help_echo_loading_error PASSED                   [ 51%]
+2025-09-26T16:13:57.4117022Z tests/test_cli.py::test_help_echo_exception PASSED                       [ 51%]
+2025-09-26T16:13:57.4155289Z tests/test_cli.py::TestRoutes::test_simple PASSED                        [ 51%]
+2025-09-26T16:13:57.4216062Z tests/test_cli.py::TestRoutes::test_sort PASSED                          [ 52%]
+2025-09-26T16:13:57.4256875Z tests/test_cli.py::TestRoutes::test_all_methods PASSED                   [ 52%]
+2025-09-26T16:13:57.4278661Z tests/test_cli.py::TestRoutes::test_no_routes PASSED                     [ 52%]
+2025-09-26T16:13:57.4309153Z tests/test_cli.py::TestRoutes::test_subdomain PASSED                     [ 52%]
+2025-09-26T16:13:57.4336922Z tests/test_cli.py::TestRoutes::test_host PASSED                          [ 52%]
+2025-09-26T16:13:57.4352112Z tests/test_cli.py::test_load_dotenv PASSED                               [ 53%]
+2025-09-26T16:13:57.4363942Z tests/test_cli.py::test_dotenv_path PASSED                               [ 53%]
+2025-09-26T16:13:57.4373255Z tests/test_cli.py::test_dotenv_optional PASSED                           [ 53%]
+2025-09-26T16:13:57.4399920Z tests/test_cli.py::test_disable_dotenv_from_env PASSED                   [ 53%]
+2025-09-26T16:13:57.4418319Z tests/test_cli.py::test_run_cert_path PASSED                             [ 53%]
+2025-09-26T16:13:57.4435948Z tests/test_cli.py::test_run_cert_adhoc PASSED                            [ 54%]
+2025-09-26T16:13:57.4464955Z tests/test_cli.py::test_run_cert_import PASSED                           [ 54%]
+2025-09-26T16:13:57.4475077Z tests/test_cli.py::test_run_cert_no_ssl PASSED                           [ 54%]
+2025-09-26T16:13:57.4507434Z tests/test_cli.py::test_cli_blueprints PASSED                            [ 54%]
+2025-09-26T16:13:57.4530274Z tests/test_cli.py::test_cli_empty PASSED                                 [ 54%]
+2025-09-26T16:13:57.4541183Z tests/test_cli.py::test_run_exclude_patterns PASSED                      [ 55%]
+2025-09-26T16:13:57.4572328Z tests/test_config.py::test_config_from_pyfile PASSED                     [ 55%]
+2025-09-26T16:13:57.4585909Z tests/test_config.py::test_config_from_object PASSED                     [ 55%]
+2025-09-26T16:13:57.4599813Z tests/test_config.py::test_config_from_file_json PASSED                  [ 55%]
+2025-09-26T16:13:57.4614367Z tests/test_config.py::test_config_from_file_toml PASSED                  [ 55%]
+2025-09-26T16:13:57.4628926Z tests/test_config.py::test_from_prefixed_env PASSED                      [ 56%]
+2025-09-26T16:13:57.4642570Z tests/test_config.py::test_from_prefixed_env_custom_prefix PASSED        [ 56%]
+2025-09-26T16:13:57.4656619Z tests/test_config.py::test_from_prefixed_env_nested PASSED               [ 56%]
+2025-09-26T16:13:57.4689626Z tests/test_config.py::test_config_from_mapping PASSED                    [ 56%]
+2025-09-26T16:13:57.4703055Z tests/test_config.py::test_config_from_class PASSED                      [ 56%]
+2025-09-26T16:13:57.4733449Z tests/test_config.py::test_config_from_envvar PASSED                     [ 57%]
+2025-09-26T16:13:57.4747570Z tests/test_config.py::test_config_from_envvar_missing PASSED             [ 57%]
+2025-09-26T16:13:57.4763648Z tests/test_config.py::test_config_missing PASSED                         [ 57%]
+2025-09-26T16:13:57.4777952Z tests/test_config.py::test_config_missing_file PASSED                    [ 57%]
+2025-09-26T16:13:57.4791754Z tests/test_config.py::test_custom_config_class PASSED                    [ 57%]
+2025-09-26T16:13:57.4805247Z tests/test_config.py::test_session_lifetime PASSED                       [ 58%]
+2025-09-26T16:13:57.4818929Z tests/test_config.py::test_get_namespace PASSED                          [ 58%]
+2025-09-26T16:13:57.4840006Z tests/test_config.py::test_from_pyfile_weird_encoding[utf-8] PASSED      [ 58%]
+2025-09-26T16:13:57.5111687Z tests/test_config.py::test_from_pyfile_weird_encoding[iso-8859-15] PASSED [ 58%]
+2025-09-26T16:13:57.5367640Z tests/test_config.py::test_from_pyfile_weird_encoding[latin-1] PASSED    [ 58%]
+2025-09-26T16:13:57.5396548Z tests/test_converters.py::test_custom_converters PASSED                  [ 59%]
+2025-09-26T16:13:57.5423709Z tests/test_converters.py::test_context_available PASSED                  [ 59%]
+2025-09-26T16:13:57.5442903Z tests/test_helpers.py::TestSendfile::test_send_file PASSED               [ 59%]
+2025-09-26T16:13:57.5480616Z tests/test_helpers.py::TestSendfile::test_static_file PASSED             [ 59%]
+2025-09-26T16:13:57.5499889Z tests/test_helpers.py::TestSendfile::test_send_from_directory PASSED     [ 60%]
+2025-09-26T16:13:57.5519879Z tests/test_helpers.py::TestUrlFor::test_url_for_with_anchor PASSED       [ 60%]
+2025-09-26T16:13:57.5540418Z tests/test_helpers.py::TestUrlFor::test_url_for_with_scheme PASSED       [ 60%]
+2025-09-26T16:13:57.5569355Z tests/test_helpers.py::TestUrlFor::test_url_for_with_scheme_not_external PASSED [ 60%]
+2025-09-26T16:13:57.5589534Z tests/test_helpers.py::TestUrlFor::test_url_for_with_alternating_schemes PASSED [ 60%]
+2025-09-26T16:13:57.5616693Z tests/test_helpers.py::TestUrlFor::test_url_with_method PASSED           [ 61%]
+2025-09-26T16:13:57.5638069Z tests/test_helpers.py::TestUrlFor::test_url_for_with_self PASSED         [ 61%]
+2025-09-26T16:13:57.5646716Z tests/test_helpers.py::test_redirect_no_app PASSED                       [ 61%]
+2025-09-26T16:13:57.5813296Z tests/test_helpers.py::test_redirect_with_app PASSED                     [ 61%]
+2025-09-26T16:13:57.5821441Z tests/test_helpers.py::test_abort_no_app PASSED                          [ 61%]
+2025-09-26T16:13:57.5835661Z tests/test_helpers.py::test_app_aborter_class PASSED                     [ 62%]
+2025-09-26T16:13:57.5852008Z tests/test_helpers.py::test_abort_with_app PASSED                        [ 62%]
+2025-09-26T16:13:57.5873652Z tests/test_helpers.py::TestNoImports::test_name_with_import_error PASSED [ 62%]
+2025-09-26T16:13:57.5901154Z tests/test_helpers.py::TestStreaming::test_streaming_with_context PASSED [ 62%]
+2025-09-26T16:13:57.5925470Z tests/test_helpers.py::TestStreaming::test_streaming_with_context_as_decorator PASSED [ 62%]
+2025-09-26T16:13:57.5948120Z tests/test_helpers.py::TestStreaming::test_streaming_with_context_and_custom_close PASSED [ 63%]
+2025-09-26T16:13:57.5971843Z tests/test_helpers.py::TestStreaming::test_stream_keeps_session PASSED   [ 63%]
+2025-09-26T16:13:57.6029927Z tests/test_helpers.py::TestStreaming::test_async_view PASSED             [ 63%]
+2025-09-26T16:13:57.6039180Z tests/test_helpers.py::TestHelpers::test_get_debug_flag[-False] PASSED   [ 63%]
+2025-09-26T16:13:57.6049027Z tests/test_helpers.py::TestHelpers::test_get_debug_flag[0-False] PASSED  [ 63%]
+2025-09-26T16:13:57.6057981Z tests/test_helpers.py::TestHelpers::test_get_debug_flag[False-False] PASSED [ 64%]
+2025-09-26T16:13:57.6066922Z tests/test_helpers.py::TestHelpers::test_get_debug_flag[No-False] PASSED [ 64%]
+2025-09-26T16:13:57.6075732Z tests/test_helpers.py::TestHelpers::test_get_debug_flag[True-True] PASSED [ 64%]
+2025-09-26T16:13:57.6092651Z tests/test_helpers.py::TestHelpers::test_make_response PASSED            [ 64%]
+2025-09-26T16:13:57.6106944Z tests/test_helpers.py::test_open_resource[r] PASSED                      [ 64%]
+2025-09-26T16:13:57.6120752Z tests/test_helpers.py::test_open_resource[rb] PASSED                     [ 65%]
+2025-09-26T16:13:57.6134839Z tests/test_helpers.py::test_open_resource[rt] PASSED                     [ 65%]
+2025-09-26T16:13:57.6148210Z tests/test_helpers.py::test_open_resource_exceptions[w] PASSED           [ 65%]
+2025-09-26T16:13:57.6161637Z tests/test_helpers.py::test_open_resource_exceptions[x] PASSED           [ 65%]
+2025-09-26T16:13:57.6175236Z tests/test_helpers.py::test_open_resource_exceptions[a] PASSED           [ 65%]
+2025-09-26T16:13:57.6188754Z tests/test_helpers.py::test_open_resource_exceptions[r+] PASSED          [ 66%]
+2025-09-26T16:13:57.6208510Z tests/test_helpers.py::test_open_resource_with_encoding[utf-8] PASSED    [ 66%]
+2025-09-26T16:13:57.6356342Z tests/test_helpers.py::test_open_resource_with_encoding[utf-16-le] PASSED [ 66%]
+2025-09-26T16:13:57.6374706Z tests/test_instance_config.py::test_explicit_instance_paths PASSED       [ 66%]
+2025-09-26T16:13:57.6397468Z tests/test_instance_config.py::test_uninstalled_module_paths PASSED      [ 66%]
+2025-09-26T16:13:57.6420550Z tests/test_instance_config.py::test_uninstalled_package_paths PASSED     [ 67%]
+2025-09-26T16:13:57.6452909Z tests/test_instance_config.py::test_uninstalled_namespace_paths PASSED   [ 67%]
+2025-09-26T16:13:57.6478120Z tests/test_instance_config.py::test_installed_module_paths PASSED        [ 67%]
+2025-09-26T16:13:57.6503747Z tests/test_instance_config.py::test_installed_package_paths PASSED       [ 67%]
+2025-09-26T16:13:57.6530311Z tests/test_instance_config.py::test_prefix_package_paths PASSED          [ 67%]
+2025-09-26T16:13:57.6558453Z tests/test_json.py::test_bad_request_debug_message[True] PASSED          [ 68%]
+2025-09-26T16:13:57.6581784Z tests/test_json.py::test_bad_request_debug_message[False] PASSED         [ 68%]
+2025-09-26T16:13:57.6607566Z tests/test_json.py::test_json_bad_requests PASSED                        [ 68%]
+2025-09-26T16:13:57.6629770Z tests/test_json.py::test_json_custom_mimetypes PASSED                    [ 68%]
+2025-09-26T16:13:57.6646549Z tests/test_json.py::test_json_as_unicode[True-"\\u2603"] PASSED          [ 68%]
+2025-09-26T16:13:57.6662522Z tests/test_json.py::test_json_as_unicode[False-"\u2603"] PASSED          [ 69%]
+2025-09-26T16:13:57.6678976Z tests/test_json.py::test_json_dump_to_file PASSED                        [ 69%]
+2025-09-26T16:13:57.6703496Z tests/test_json.py::test_jsonify_basic_types[0] PASSED                   [ 69%]
+2025-09-26T16:13:57.6726170Z tests/test_json.py::test_jsonify_basic_types[-1] PASSED                  [ 69%]
+2025-09-26T16:13:57.6748235Z tests/test_json.py::test_jsonify_basic_types[1] PASSED                   [ 70%]
+2025-09-26T16:13:57.6770567Z tests/test_json.py::test_jsonify_basic_types[23] PASSED                  [ 70%]
+2025-09-26T16:13:57.6793031Z tests/test_json.py::test_jsonify_basic_types[3.14] PASSED                [ 70%]
+2025-09-26T16:13:57.6817468Z tests/test_json.py::test_jsonify_basic_types[s] PASSED                   [ 70%]
+2025-09-26T16:13:57.6840089Z tests/test_json.py::test_jsonify_basic_types[longer string] PASSED       [ 70%]
+2025-09-26T16:13:57.6862422Z tests/test_json.py::test_jsonify_basic_types[True] PASSED                [ 71%]
+2025-09-26T16:13:57.6884874Z tests/test_json.py::test_jsonify_basic_types[False] PASSED               [ 71%]
+2025-09-26T16:13:57.6907108Z tests/test_json.py::test_jsonify_basic_types[None] PASSED                [ 71%]
+2025-09-26T16:13:57.6936593Z tests/test_json.py::test_jsonify_dicts PASSED                            [ 71%]
+2025-09-26T16:13:57.6963953Z tests/test_json.py::test_jsonify_arrays PASSED                           [ 71%]
+2025-09-26T16:13:57.6986765Z tests/test_json.py::test_jsonify_datetime[value0] PASSED                 [ 72%]
+2025-09-26T16:13:57.7008872Z tests/test_json.py::test_jsonify_datetime[value1] PASSED                 [ 72%]
+2025-09-26T16:13:57.7018085Z tests/test_json.py::test_jsonify_aware_datetimes[tz0] PASSED             [ 72%]
+2025-09-26T16:13:57.7027078Z tests/test_json.py::test_jsonify_aware_datetimes[tz1] PASSED             [ 72%]
+2025-09-26T16:13:57.7036056Z tests/test_json.py::test_jsonify_aware_datetimes[tz2] PASSED             [ 72%]
+2025-09-26T16:13:57.7058594Z tests/test_json.py::test_jsonify_uuid_types PASSED                       [ 73%]
+2025-09-26T16:13:57.7067318Z tests/test_json.py::test_json_decimal PASSED                             [ 73%]
+2025-09-26T16:13:57.7091575Z tests/test_json.py::test_json_attr PASSED                                [ 73%]
+2025-09-26T16:13:57.7116602Z tests/test_json.py::test_tojson_filter PASSED                            [ 73%]
+2025-09-26T16:13:57.7139786Z tests/test_json.py::test_json_customization PASSED                       [ 73%]
+2025-09-26T16:13:57.7163018Z tests/test_json.py::test_json_key_sorting PASSED                         [ 74%]
+2025-09-26T16:13:57.7172285Z tests/test_json.py::test_html_method PASSED                              [ 74%]
+2025-09-26T16:13:57.7181642Z tests/test_json_tag.py::test_dump_load_unchanged[data0] PASSED           [ 74%]
+2025-09-26T16:13:57.7190681Z tests/test_json_tag.py::test_dump_load_unchanged[data1] PASSED           [ 74%]
+2025-09-26T16:13:57.7199583Z tests/test_json_tag.py::test_dump_load_unchanged[data2] PASSED           [ 74%]
+2025-09-26T16:13:57.7208984Z tests/test_json_tag.py::test_dump_load_unchanged[data3] PASSED           [ 75%]
+2025-09-26T16:13:57.7220438Z tests/test_json_tag.py::test_dump_load_unchanged[data4] PASSED           [ 75%]
+2025-09-26T16:13:57.7229444Z tests/test_json_tag.py::test_dump_load_unchanged[data5] PASSED           [ 75%]
+2025-09-26T16:13:57.7238216Z tests/test_json_tag.py::test_dump_load_unchanged[\xff] PASSED            [ 75%]
+2025-09-26T16:13:57.7247307Z tests/test_json_tag.py::test_dump_load_unchanged[<html>] PASSED          [ 75%]
+2025-09-26T16:13:57.7256206Z tests/test_json_tag.py::test_dump_load_unchanged[data8] PASSED           [ 76%]
+2025-09-26T16:13:57.7265203Z tests/test_json_tag.py::test_dump_load_unchanged[data9] PASSED           [ 76%]
+2025-09-26T16:13:57.7273560Z tests/test_json_tag.py::test_duplicate_tag PASSED                        [ 76%]
+2025-09-26T16:13:57.7282495Z tests/test_json_tag.py::test_custom_tag PASSED                           [ 76%]
+2025-09-26T16:13:57.7291078Z tests/test_json_tag.py::test_tag_interface PASSED                        [ 76%]
+2025-09-26T16:13:57.7300216Z tests/test_json_tag.py::test_tag_order PASSED                            [ 77%]
+2025-09-26T16:13:57.7320929Z tests/test_logging.py::test_logger PASSED                                [ 77%]
+2025-09-26T16:13:57.7339667Z tests/test_logging.py::test_logger_debug PASSED                          [ 77%]
+2025-09-26T16:13:57.7358620Z tests/test_logging.py::test_existing_handler PASSED                      [ 77%]
+2025-09-26T16:13:57.7387654Z tests/test_logging.py::test_wsgi_errors_stream PASSED                    [ 77%]
+2025-09-26T16:13:57.7399615Z tests/test_logging.py::test_has_level_handler PASSED                     [ 78%]
+2025-09-26T16:13:57.7430390Z tests/test_logging.py::test_log_view_exception PASSED                    [ 78%]
+2025-09-26T16:13:57.7466250Z tests/test_regression.py::test_aborting PASSED                           [ 78%]
+2025-09-26T16:13:57.7482936Z tests/test_reqctx.py::test_teardown_on_pop PASSED                        [ 78%]
+2025-09-26T16:13:57.7499692Z tests/test_reqctx.py::test_teardown_with_previous_exception PASSED       [ 78%]
+2025-09-26T16:13:57.7516045Z tests/test_reqctx.py::test_teardown_with_handled_exception PASSED        [ 79%]
+2025-09-26T16:13:57.7543848Z tests/test_reqctx.py::test_proper_test_request_context PASSED            [ 79%]
+2025-09-26T16:13:57.7567313Z tests/test_reqctx.py::test_context_binding PASSED                        [ 79%]
+2025-09-26T16:13:57.7583652Z tests/test_reqctx.py::test_context_test PASSED                           [ 79%]
+2025-09-26T16:13:57.7603333Z tests/test_reqctx.py::test_manual_context_binding PASSED                 [ 80%]
+2025-09-26T16:13:57.7630571Z tests/test_reqctx.py::TestGreenletContextCopying::test_greenlet_context_copying PASSED [ 80%]
+2025-09-26T16:13:57.7654797Z tests/test_reqctx.py::TestGreenletContextCopying::test_greenlet_context_copying_api PASSED [ 80%]
+2025-09-26T16:13:57.7683484Z tests/test_reqctx.py::test_session_error_pops_context PASSED             [ 80%]
+2025-09-26T16:13:57.7728962Z tests/test_reqctx.py::test_session_dynamic_cookie_name PASSED            [ 80%]
+2025-09-26T16:13:57.7865764Z tests/test_reqctx.py::test_bad_environ_raises_bad_request PASSED         [ 81%]
+2025-09-26T16:13:57.8263027Z tests/test_reqctx.py::test_environ_for_valid_idna_completes PASSED       [ 81%]
+2025-09-26T16:13:57.8287411Z tests/test_reqctx.py::test_normal_environ_completes PASSED               [ 81%]
+2025-09-26T16:13:57.8310499Z tests/test_request.py::test_max_content_length PASSED                    [ 81%]
+2025-09-26T16:13:57.8326494Z tests/test_request.py::test_limit_config PASSED                          [ 81%]
+2025-09-26T16:13:57.8353760Z tests/test_request.py::test_trusted_hosts_config PASSED                  [ 82%]
+2025-09-26T16:13:57.8375968Z tests/test_session_interface.py::test_open_session_with_endpoint PASSED  [ 82%]
+2025-09-26T16:13:57.8404126Z tests/test_signals.py::test_template_rendered PASSED                     [ 82%]
+2025-09-26T16:13:57.8428285Z tests/test_signals.py::test_before_render_template PASSED                [ 82%]
+2025-09-26T16:13:57.8447834Z tests/test_signals.py::test_request_signals PASSED                       [ 82%]
+2025-09-26T16:13:57.8473548Z tests/test_signals.py::test_request_exception_signal PASSED              [ 83%]
+2025-09-26T16:13:57.8495866Z tests/test_signals.py::test_appcontext_signals PASSED                    [ 83%]
+2025-09-26T16:13:57.8521256Z tests/test_signals.py::test_flash_signal PASSED                          [ 83%]
+2025-09-26T16:13:57.8547449Z tests/test_signals.py::test_appcontext_tearing_down_signal PASSED        [ 83%]
+2025-09-26T16:13:57.8569729Z tests/test_subclassing.py::test_suppressed_exception_logging PASSED      [ 83%]
+2025-09-26T16:13:57.8597626Z tests/test_templating.py::test_context_processing PASSED                 [ 84%]
+2025-09-26T16:13:57.8622882Z tests/test_templating.py::test_original_win PASSED                       [ 84%]
+2025-09-26T16:13:57.8651033Z tests/test_templating.py::test_simple_stream PASSED                      [ 84%]
+2025-09-26T16:13:57.8673561Z tests/test_templating.py::test_request_less_rendering PASSED             [ 84%]
+2025-09-26T16:13:57.8707702Z tests/test_templating.py::test_standard_context PASSED                   [ 84%]
+2025-09-26T16:13:57.8742628Z tests/test_templating.py::test_escaping PASSED                           [ 85%]
+2025-09-26T16:13:57.8779917Z tests/test_templating.py::test_no_escaping PASSED                        [ 85%]
+2025-09-26T16:13:57.8806540Z tests/test_templating.py::test_escaping_without_template_filename PASSED [ 85%]
+2025-09-26T16:13:57.8831430Z tests/test_templating.py::test_macros PASSED                             [ 85%]
+2025-09-26T16:13:57.8847271Z tests/test_templating.py::test_template_filter PASSED                    [ 85%]
+2025-09-26T16:13:57.8862393Z tests/test_templating.py::test_add_template_filter PASSED                [ 86%]
+2025-09-26T16:13:57.8879940Z tests/test_templating.py::test_template_filter_with_name PASSED          [ 86%]
+2025-09-26T16:13:57.8895709Z tests/test_templating.py::test_add_template_filter_with_name PASSED      [ 86%]
+2025-09-26T16:13:57.8922980Z tests/test_templating.py::test_template_filter_with_template PASSED      [ 86%]
+2025-09-26T16:13:57.8950490Z tests/test_templating.py::test_add_template_filter_with_template PASSED  [ 86%]
+2025-09-26T16:13:57.8980349Z tests/test_templating.py::test_template_filter_with_name_and_template PASSED [ 87%]
+2025-09-26T16:13:57.9008089Z tests/test_templating.py::test_add_template_filter_with_name_and_template PASSED [ 87%]
+2025-09-26T16:13:57.9023642Z tests/test_templating.py::test_template_test PASSED                      [ 87%]
+2025-09-26T16:13:57.9038572Z tests/test_templating.py::test_add_template_test PASSED                  [ 87%]
+2025-09-26T16:13:57.9053869Z tests/test_templating.py::test_template_test_with_name PASSED            [ 87%]
+2025-09-26T16:13:57.9069304Z tests/test_templating.py::test_add_template_test_with_name PASSED        [ 88%]
+2025-09-26T16:13:57.9106685Z tests/test_templating.py::test_template_test_with_template PASSED        [ 88%]
+2025-09-26T16:13:57.9135464Z tests/test_templating.py::test_add_template_test_with_template PASSED    [ 88%]
+2025-09-26T16:13:57.9163929Z tests/test_templating.py::test_template_test_with_name_and_template PASSED [ 88%]
+2025-09-26T16:13:57.9194840Z tests/test_templating.py::test_add_template_test_with_name_and_template PASSED [ 88%]
+2025-09-26T16:13:57.9227768Z tests/test_templating.py::test_add_template_global PASSED                [ 89%]
+2025-09-26T16:13:57.9257713Z tests/test_templating.py::test_custom_template_loader PASSED             [ 89%]
+2025-09-26T16:13:57.9285100Z tests/test_templating.py::test_iterable_loader PASSED                    [ 89%]
+2025-09-26T16:13:57.9325190Z tests/test_templating.py::test_templates_auto_reload PASSED              [ 89%]
+2025-09-26T16:13:57.9343437Z tests/test_templating.py::test_templates_auto_reload_debug_run PASSED    [ 90%]
+2025-09-26T16:13:57.9388305Z tests/test_templating.py::test_template_loader_debugging PASSED          [ 90%]
+2025-09-26T16:13:57.9402798Z tests/test_templating.py::test_custom_jinja_env PASSED                   [ 90%]
+2025-09-26T16:13:57.9429944Z tests/test_testing.py::test_environ_defaults_from_config PASSED          [ 90%]
+2025-09-26T16:13:57.9457905Z tests/test_testing.py::test_environ_defaults PASSED                      [ 90%]
+2025-09-26T16:13:57.9489442Z tests/test_testing.py::test_environ_base_default PASSED                  [ 91%]
+2025-09-26T16:13:57.9511342Z tests/test_testing.py::test_environ_base_modified PASSED                 [ 91%]
+2025-09-26T16:13:57.9537005Z tests/test_testing.py::test_client_open_environ PASSED                   [ 91%]
+2025-09-26T16:13:57.9562002Z tests/test_testing.py::test_specify_url_scheme PASSED                    [ 91%]
+2025-09-26T16:13:57.9577737Z tests/test_testing.py::test_path_is_url PASSED                           [ 91%]
+2025-09-26T16:13:57.9593315Z tests/test_testing.py::test_environbuilder_json_dumps PASSED             [ 92%]
+2025-09-26T16:13:57.9613955Z tests/test_testing.py::test_blueprint_with_subdomain PASSED              [ 92%]
+2025-09-26T16:13:57.9647322Z tests/test_testing.py::test_redirect_session PASSED                      [ 92%]
+2025-09-26T16:13:57.9678539Z tests/test_testing.py::test_session_transactions PASSED                  [ 92%]
+2025-09-26T16:13:57.9693731Z tests/test_testing.py::test_session_transactions_no_null_sessions PASSED [ 92%]
+2025-09-26T16:13:57.9717347Z tests/test_testing.py::test_session_transactions_keep_context PASSED     [ 93%]
+2025-09-26T16:13:57.9733772Z tests/test_testing.py::test_session_transaction_needs_cookies PASSED     [ 93%]
+2025-09-26T16:13:57.9769131Z tests/test_testing.py::test_test_client_context_binding PASSED           [ 93%]
+2025-09-26T16:13:57.9792413Z tests/test_testing.py::test_reuse_client PASSED                          [ 93%]
+2025-09-26T16:13:57.9818745Z tests/test_testing.py::test_full_url_request PASSED                      [ 93%]
+2025-09-26T16:13:57.9841973Z tests/test_testing.py::test_json_request_and_response PASSED             [ 94%]
+2025-09-26T16:13:57.9865520Z tests/test_testing.py::test_client_json_no_app_context PASSED            [ 94%]
+2025-09-26T16:13:57.9887654Z tests/test_testing.py::test_subdomain PASSED                             [ 94%]
+2025-09-26T16:13:57.9916370Z tests/test_testing.py::test_nosubdomain PASSED                           [ 94%]
+2025-09-26T16:13:57.9931940Z tests/test_testing.py::test_cli_runner_class PASSED                      [ 94%]
+2025-09-26T16:13:57.9954349Z tests/test_testing.py::test_cli_invoke PASSED                            [ 95%]
+2025-09-26T16:13:57.9975404Z tests/test_testing.py::test_cli_custom_obj PASSED                        [ 95%]
+2025-09-26T16:13:57.9999264Z tests/test_testing.py::test_client_pop_all_preserved PASSED              [ 95%]
+2025-09-26T16:13:58.0037191Z tests/test_user_error_handler.py::test_error_handler_no_match PASSED     [ 95%]
+2025-09-26T16:13:58.0072208Z tests/test_user_error_handler.py::test_error_handler_subclass PASSED     [ 95%]
+2025-09-26T16:13:58.0104786Z tests/test_user_error_handler.py::test_error_handler_http_subclass PASSED [ 96%]
+2025-09-26T16:13:58.0132293Z tests/test_user_error_handler.py::test_error_handler_blueprint PASSED    [ 96%]
+2025-09-26T16:13:58.0179640Z tests/test_user_error_handler.py::test_default_error_handler PASSED      [ 96%]
+2025-09-26T16:13:58.0227101Z tests/test_user_error_handler.py::TestGenericHandlers::test_handle_class_or_code[InternalServerError] PASSED [ 96%]
+2025-09-26T16:13:58.0271342Z tests/test_user_error_handler.py::TestGenericHandlers::test_handle_class_or_code[500] PASSED [ 96%]
+2025-09-26T16:13:58.0312133Z tests/test_user_error_handler.py::TestGenericHandlers::test_handle_generic_http PASSED [ 97%]
+2025-09-26T16:13:58.0352178Z tests/test_user_error_handler.py::TestGenericHandlers::test_handle_generic PASSED [ 97%]
+2025-09-26T16:13:58.0386578Z tests/test_views.py::test_basic_view PASSED                              [ 97%]
+2025-09-26T16:13:58.0417340Z tests/test_views.py::test_method_based_view PASSED                       [ 97%]
+2025-09-26T16:13:58.0450579Z tests/test_views.py::test_view_patching PASSED                           [ 97%]
+2025-09-26T16:13:58.0474343Z tests/test_views.py::test_view_inheritance PASSED                        [ 98%]
+2025-09-26T16:13:58.0497677Z tests/test_views.py::test_view_decorators PASSED                         [ 98%]
+2025-09-26T16:13:58.0540752Z tests/test_views.py::test_view_provide_automatic_options_attr PASSED     [ 98%]
+2025-09-26T16:13:58.0567023Z tests/test_views.py::test_implicit_head PASSED                           [ 98%]
+2025-09-26T16:13:58.0593524Z tests/test_views.py::test_explicit_head PASSED                           [ 98%]
+2025-09-26T16:13:58.0626568Z tests/test_views.py::test_endpoint_override PASSED                       [ 99%]
+2025-09-26T16:13:58.0651153Z tests/test_views.py::test_methods_var_inheritance PASSED                 [ 99%]
+2025-09-26T16:13:58.0679237Z tests/test_views.py::test_multiple_inheritance PASSED                    [ 99%]
+2025-09-26T16:13:58.0705117Z tests/test_views.py::test_remove_method_from_parent PASSED               [ 99%]
+2025-09-26T16:13:58.1267585Z tests/test_views.py::test_init_once PASSED                               [100%]
+2025-09-26T16:13:58.1268420Z 
+2025-09-26T16:13:58.1269294Z ============================= 490 passed in 2.04s ==============================
+2025-09-26T16:13:58.1876645Z   py3.11: OK (3.73=setup[0.35]+cmd[3.38] seconds)
+2025-09-26T16:13:58.1877592Z   congratulations :) (4.17 seconds)
+2025-09-26T16:13:58.2313202Z Post job cleanup.
+2025-09-26T16:13:58.3912220Z Post job cleanup.
+2025-09-26T16:13:58.5507490Z Cache hit occurred on key setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-264a9aeb144b97770224f1383c2c172cc5011053dbc1bdce83d8ac88ad6dbf93, not saving cache.
+2025-09-26T16:13:58.5626243Z Post job cleanup.
+2025-09-26T16:13:58.6398198Z [command]/usr/bin/git version
+2025-09-26T16:13:58.6433428Z git version 2.51.0
+2025-09-26T16:13:58.6468796Z Temporarily overriding HOME='/home/runner/work/_temp/d1cae317-23ae-42be-994a-7e977988f105' before making global git config changes
+2025-09-26T16:13:58.6469779Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-26T16:13:58.6474085Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flask/flask
+2025-09-26T16:13:58.6509256Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-26T16:13:58.6541775Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-26T16:13:58.6768604Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-26T16:13:58.6789510Z http.https://github.com/.extraheader
+2025-09-26T16:13:58.6799223Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-09-26T16:13:58.6829391Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-26T16:13:58.7157668Z Cleaning up orphan processes

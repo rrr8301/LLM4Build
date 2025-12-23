@@ -1,0 +1,87 @@
+Removing `build`
+Removing `build-install`
+$ /opt/venv/bin/python3.11 vendored-meson/meson/meson.py setup build --prefix=/usr -Dallow-noblas=false
+The Meson build system
+Version: 1.8.3
+Source dir: /app
+Build dir: /app/build
+Build type: native build
+Project name: NumPy
+Project version: 2.4.0.dev0+git20251007.128d684
+C compiler for the host machine: cc (gcc 11.4.0 "cc (Ubuntu 11.4.0-1ubuntu1~22.04.2) 11.4.0")
+C linker for the host machine: cc ld.bfd 2.38
+C++ compiler for the host machine: c++ (gcc 11.4.0 "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.2) 11.4.0")
+C++ linker for the host machine: c++ ld.bfd 2.38
+Cython compiler for the host machine: cython (cython 3.1.4)
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Program python3 found: YES (/opt/venv/bin/python3.11)
+Did not find pkg-config by name 'pkg-config'
+Found pkg-config: NO
+Run-time dependency python found: YES 3.11
+Has header "Python.h" with dependency python: YES
+Compiler for C supports arguments -fno-strict-aliasing: YES
+Test features "SSE SSE2 SSE3" : Supported
+Test features "SSSE3" : Supported
+Test features "SSE41" : Supported
+Test features "POPCNT" : Supported
+Test features "SSE42" : Supported
+Test features "AVX" : Supported
+Test features "F16C" : Supported
+Test features "FMA3" : Supported
+Test features "AVX2" : Supported
+Test features "AVX512F" : Supported
+Test features "AVX512CD" : Supported
+Test features "AVX512_KNL" : Supported
+Test features "AVX512_KNM" : Supported
+Test features "AVX512_SKX" : Supported
+Test features "AVX512_CLX" : Supported
+Test features "AVX512_CNL" : Supported
+Test features "AVX512_ICL" : Supported
+Test features "AVX512_SPR" : Unsupported due to Arguments "-msse, -msse2, -msse3, -mssse3, -msse4.1, -mpopcnt, -msse4.2, -mavx, -mf16c, -mfma, -mavx2, -maes, -mpclmul, -mbmi, -mbmi2, -mno-mmx, -mavx512f, -mavx512cd, -mavx512vl, -mavx512bw, -mavx512dq, -mavx512vnni, -mavx512ifma, -mavx512vbmi, -mavx512vbmi2, -mavx512bitalg, -mavx512vpopcntdq, -mavx512fp16" are not supported
+Configuring npy_cpu_dispatch_config.h using configuration
+Message:
+CPU Optimization Options
+  baseline:
+    Requested : min
+    Enabled   : SSE SSE2 SSE3
+  dispatch:
+    Requested : max -xop -fma4
+    Enabled   : SSSE3 SSE41 POPCNT SSE42 AVX F16C FMA3 AVX2 AVX512F AVX512CD AVX512_KNL AVX512_KNM AVX512_SKX AVX512_CLX AVX512_CNL AVX512_ICL
+
+Library m found: YES
+Run-time dependency scipy-openblas found: NO (tried pkgconfig)
+Run-time dependency mkl found: NO (tried pkgconfig and system)
+Run-time dependency mkl found: NO (tried pkgconfig and system)
+Did not find CMake 'cmake'
+Found CMake: NO
+Run-time dependency openblas found: NO (tried pkgconfig, pkgconfig, pkgconfig, system and cmake)
+Run-time dependency flexiblas found: NO (tried pkgconfig and cmake)
+Run-time dependency blis found: NO (tried pkgconfig and cmake)
+Run-time dependency blas found: NO (tried pkgconfig and system)
+
+numpy/meson.build:185:4: ERROR: Problem encountered: No BLAS library detected! Install one, or use the `allow-noblas` build option (note, this may be up to 100x slower for some linear algebra operations).
+
+A full log can be found at /app/build/meson-logs/meson-log.txt
+
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.11/site-packages/spin/cmds/meson.py", line 389, in build
+    raise RuntimeError(
+RuntimeError: Meson configuration failed; please try `spin build` again with the `--clean` flag.
+
+If you suspect this is a bug in `spin`, please file a report at:
+
+  https://github.com/scientific-python/spin
+
+including the above traceback and the following information:
+
+  spin: 0.15, package: numpy
+
+Aborting.
+Invoking `build` prior to running tests:
+$ /opt/venv/bin/python3.11 vendored-meson/meson/meson.py compile -C build
+
+ERROR: Current directory is not a meson build directory: `/app/build`.
+Please specify a valid build dir or change the working directory to it.
+It is also possible that the build directory was generated with an old
+meson version. Please regenerate it in this case.

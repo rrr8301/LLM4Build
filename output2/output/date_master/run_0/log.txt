@@ -1,0 +1,33 @@
+Don't run Bundler as root. Installing your bundle as root will break this
+application for all non-root users on this machine.
+Bundle complete! 6 Gemfile dependencies, 7 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+/usr/bin/ruby3.0 -I. ../../../../ext/date/extconf.rb
+mkdir -p lib/3.0.2/x86_64-linux-gnu
+mkdir -p tmp/x86_64-linux-gnu/date_core/3.0.2
+cd tmp/x86_64-linux-gnu/date_core/3.0.2
+checking for rb_category_warn()... yes
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+/usr/bin/gmake
+cd -
+cd tmp/x86_64-linux-gnu/date_core/3.0.2
+compiling ../../../../ext/date/date_core.c
+compiling ../../../../ext/date/date_parse.c
+compiling ../../../../ext/date/date_strftime.c
+compiling ../../../../ext/date/date_strptime.c
+linking shared-object date_core.so
+/usr/bin/gmake install sitearchdir=../../../../lib/3.0.2/x86_64-linux-gnu sitelibdir=../../../../lib/3.0.2/x86_64-linux-gnu target_prefix=
+cd -
+mkdir -p tmp/x86_64-linux-gnu/stage/lib/3.0.2/x86_64-linux-gnu
+/usr/bin/install -c -m 0755 date_core.so ../../../../lib/3.0.2/x86_64-linux-gnu
+cp tmp/x86_64-linux-gnu/date_core/3.0.2/date_core.so tmp/x86_64-linux-gnu/stage/lib/3.0.2/x86_64-linux-gnu/date_core.so
+Loaded suite /var/lib/gems/3.0.0/gems/rake-13.3.0/lib/rake/rake_test_loader
+Started
+Finished in 2.617935899 seconds.
+-------------------------------------------------------------------------------
+143 tests, 162593 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+100% passed
+-------------------------------------------------------------------------------
+54.62 tests/s, 62107.33 assertions/s

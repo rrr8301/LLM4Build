@@ -1,0 +1,167 @@
+go: downloading go1.24.3 (linux/amd64)
+++ readlink -f -- tests/scripts/../..
++ REPO_DIR=/app
++ NETWORK_ERROR='connection reset by peer'
++ SERVICE_UNAVAILABLE_ERROR='Service Unavailable'
++ INTERNAL_ERROR=INTERNAL_ERROR
++ INTERNAL_SERVER_ERROR='500 Internal Server Error'
++ FUNCTION=collect_udev_logs_in_background
++ shift
++ collect_udev_logs_in_background
++ local log_dir=/home/runner/work/rook/rook/tests/integration/_output/tests
++ mkdir -p /home/runner/work/rook/rook/tests/integration/_output/tests
++ udevadm monitor --property
++ udevadm monitor --kernel
++ udevadm monitor --udev
+++ readlink -f -- tests/scripts/../..
++ REPO_DIR=/app
++ NETWORK_ERROR='connection reset by peer'
++ SERVICE_UNAVAILABLE_ERROR='Service Unavailable'
++ INTERNAL_ERROR=INTERNAL_ERROR
++ INTERNAL_SERVER_ERROR='500 Internal Server Error'
++ FUNCTION=find_extra_block_dev
++ shift
++ find_extra_block_dev
+++ sudo lsblk
+tests/scripts/github-action-helper.sh: line 35: sudo: command not found
++ echo ''
+
+++ sudo lsblk --noheading --list --output MOUNTPOINT,PKNAME
+tests/scripts/github-action-helper.sh: line 40: sudo: command not found
+++ grep boot
+++ awk '{print $2}'
++ boot_dev=
+=== RUN   TestCephSmokeSuite
+2025-10-12 13:34:36.738018 I | installer: test environment variable (default) "TEST_STORAGE_CLASS"=""
+2025-10-12 13:34:36.738101 I | installer: test environment variable (default) "TEST_STORAGE_CLASS"=""
+    ceph_base_deploy_test.go:95:
+        	Error Trace:	/app/tests/integration/ceph_base_deploy_test.go:95
+        	            				/app/tests/integration/ceph_smoke_test.go:101
+        	            				/root/go/pkg/mod/github.com/stretchr/testify@v1.11.1/suite/suite.go:211
+        	            				/app/tests/integration/ceph_smoke_test.go:68
+        	Error:      	Received unexpected error:
+        	            	failed to get kube client. invalid configuration: no configuration has been provided, try setting KUBERNETES_MASTER environment variable
+        	Test:       	TestCephSmokeSuite
+--- FAIL: TestCephSmokeSuite (0.00s)
+FAIL
+FAIL	github.com/rook/rook/tests/integration	0.058s
+FAIL
++ : smoke-ns
++ : smoke-ns-system
++ : ''
++ : /app/tests/integration/_output/tests/
++ LOG_DIR=/app/tests/integration/_output/tests
++ mkdir -p /app/tests/integration/_output/tests
++ CEPH_CMD='kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10'
++ kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10 -s
+tests/scripts/collect-logs.sh: line 16: kubectl: command not found
++ kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10 osd dump
+tests/scripts/collect-logs.sh: line 17: kubectl: command not found
++ kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10 report
+tests/scripts/collect-logs.sh: line 18: kubectl: command not found
++ kubectl -n smoke-ns exec deploy/rook-ceph-tools -- ceph --connect-timeout 10 auth ls
+tests/scripts/collect-logs.sh: line 19: kubectl: command not found
++ NAMESPACES=("$CLUSTER_NAMESPACE")
++ [[ smoke-ns-system != \s\m\o\k\e\-\n\s ]]
++ NAMESPACES+=("$OPERATOR_NAMESPACE")
++ [[ -n '' ]]
++ for NAMESPACE in "${NAMESPACES[@]}"
++ NS_DIR=/app/tests/integration/_output/tests/namespace-smoke-ns
++ mkdir /app/tests/integration/_output/tests/namespace-smoke-ns
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get pod -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns get pod -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get deployment -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns get deployment -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get job -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns get job -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get daemonset -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns get daemonset -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get cm -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns get cm -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get pvc -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns get pvc -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns get sc -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns get sc -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
+++ kubectl -n smoke-ns get secrets -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 50: kubectl: command not found
+++ kubectl get crds -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 56: kubectl: command not found
++ kubectl get all -n smoke-ns -o wide
+tests/scripts/collect-logs.sh: line 64: kubectl: command not found
++ kubectl get all -n smoke-ns -o yaml
+tests/scripts/collect-logs.sh: line 65: kubectl: command not found
++ for NAMESPACE in "${NAMESPACES[@]}"
++ NS_DIR=/app/tests/integration/_output/tests/namespace-smoke-ns-system
++ mkdir /app/tests/integration/_output/tests/namespace-smoke-ns-system
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get pod -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns-system get pod -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get deployment -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns-system get deployment -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get job -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns-system get job -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get daemonset -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns-system get daemonset -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get cm -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns-system get cm -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get pvc -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns-system get pvc -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
++ for KIND in 'pod' 'deployment' 'job' 'daemonset' 'cm' 'pvc' 'sc'
++ kubectl -n smoke-ns-system get sc -o wide
+tests/scripts/collect-logs.sh: line 37: kubectl: command not found
+++ kubectl -n smoke-ns-system get sc -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 38: kubectl: command not found
+++ kubectl -n smoke-ns-system get secrets -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 50: kubectl: command not found
+++ kubectl get crds -o 'jsonpath={.items[*].metadata.name}'
+tests/scripts/collect-logs.sh: line 56: kubectl: command not found
++ kubectl get all -n smoke-ns-system -o wide
+tests/scripts/collect-logs.sh: line 64: kubectl: command not found
++ kubectl get all -n smoke-ns-system -o yaml
+tests/scripts/collect-logs.sh: line 65: kubectl: command not found
++ sudo lsblk
++ sudo tee -a /app/tests/integration/_output/tests/lsblk.txt
+tests/scripts/collect-logs.sh: line 68: sudo: command not found
+tests/scripts/collect-logs.sh: line 68: sudo: command not found
++ journalctl -o short-precise --dmesg
+tests/scripts/collect-logs.sh: line 69: journalctl: command not found
++ journalctl
+tests/scripts/collect-logs.sh: line 70: journalctl: command not found

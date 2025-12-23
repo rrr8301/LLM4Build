@@ -1,0 +1,1310 @@
+﻿2025-12-15T15:16:32.0107800Z Current runner version: '2.329.0'
+2025-12-15T15:16:32.0132094Z ##[group]Runner Image Provisioner
+2025-12-15T15:16:32.0132857Z Hosted Compute Agent
+2025-12-15T15:16:32.0133368Z Version: 20251202.455
+2025-12-15T15:16:32.0134068Z Commit: 6c10caca4910e198df60de23adf20ad317c474e3
+2025-12-15T15:16:32.0134729Z Build Date: 2025-12-02T15:56:59Z
+2025-12-15T15:16:32.0135388Z Worker ID: {36d88477-cfc3-414a-ad6c-bc045dda102c}
+2025-12-15T15:16:32.0136389Z ##[endgroup]
+2025-12-15T15:16:32.0136963Z ##[group]Operating System
+2025-12-15T15:16:32.0137532Z Ubuntu
+2025-12-15T15:16:32.0138023Z 24.04.3
+2025-12-15T15:16:32.0138496Z LTS
+2025-12-15T15:16:32.0138907Z ##[endgroup]
+2025-12-15T15:16:32.0139465Z ##[group]Runner Image
+2025-12-15T15:16:32.0139973Z Image: ubuntu-24.04
+2025-12-15T15:16:32.0140478Z Version: 20251208.163.1
+2025-12-15T15:16:32.0141449Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251208.163/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-15T15:16:32.0143049Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251208.163
+2025-12-15T15:16:32.0144058Z ##[endgroup]
+2025-12-15T15:16:32.0145025Z ##[group]GITHUB_TOKEN Permissions
+2025-12-15T15:16:32.0147079Z Contents: read
+2025-12-15T15:16:32.0147716Z Metadata: read
+2025-12-15T15:16:32.0148205Z ##[endgroup]
+2025-12-15T15:16:32.0150321Z Secret source: Actions
+2025-12-15T15:16:32.0151146Z Prepare workflow directory
+2025-12-15T15:16:32.0654491Z Prepare all required actions
+2025-12-15T15:16:32.0709458Z Getting action download info
+2025-12-15T15:16:32.5856386Z Download action repository 'actions/checkout@v6.0.1' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+2025-12-15T15:16:32.7175297Z Download action repository 'actions/setup-python@v6.1.0' (SHA:83679a892e2d95755f2dac6acb0bfd1e9ac5d548)
+2025-12-15T15:16:32.8004661Z Download action repository 'actions/cache@v5.0.1' (SHA:9255dc7a253b0ccc959486e2bca901246202afeb)
+2025-12-15T15:16:33.3921458Z Download action repository 'actions/upload-artifact@v6.0.0' (SHA:b7c566a772e6b6bfb58ed0dc250532a479d7789f)
+2025-12-15T15:16:34.1060890Z Complete job name: run / 3.13 / ubuntu-latest
+2025-12-15T15:16:34.1804787Z ##[group]Run actions/checkout@v6.0.1
+2025-12-15T15:16:34.1806334Z with:
+2025-12-15T15:16:34.1807105Z   repository: pylint-dev/pylint
+2025-12-15T15:16:34.1808326Z   token: ***
+2025-12-15T15:16:34.1809078Z   ssh-strict: true
+2025-12-15T15:16:34.1809841Z   ssh-user: git
+2025-12-15T15:16:34.1810650Z   persist-credentials: true
+2025-12-15T15:16:34.1811542Z   clean: true
+2025-12-15T15:16:34.1812343Z   sparse-checkout-cone-mode: true
+2025-12-15T15:16:34.1813316Z   fetch-depth: 1
+2025-12-15T15:16:34.1814099Z   fetch-tags: false
+2025-12-15T15:16:34.1814888Z   show-progress: true
+2025-12-15T15:16:34.1815691Z   lfs: false
+2025-12-15T15:16:34.1816547Z   submodules: false
+2025-12-15T15:16:34.1817407Z   set-safe-directory: true
+2025-12-15T15:16:34.1818554Z env:
+2025-12-15T15:16:34.1819254Z   CACHE_VERSION: 5
+2025-12-15T15:16:34.1820024Z   KEY_PREFIX: venv
+2025-12-15T15:16:34.1820792Z ##[endgroup]
+2025-12-15T15:16:34.2754469Z Syncing repository: pylint-dev/pylint
+2025-12-15T15:16:34.2757988Z ##[group]Getting Git version info
+2025-12-15T15:16:34.2759479Z Working directory is '/home/runner/work/pylint/pylint'
+2025-12-15T15:16:34.2761333Z [command]/usr/bin/git version
+2025-12-15T15:16:34.2800801Z git version 2.52.0
+2025-12-15T15:16:34.2823536Z ##[endgroup]
+2025-12-15T15:16:34.2840191Z Temporarily overriding HOME='/home/runner/work/_temp/b506034c-d878-474a-b999-870473df0665' before making global git config changes
+2025-12-15T15:16:34.2843106Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-15T15:16:34.2846139Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pylint/pylint
+2025-12-15T15:16:34.2890139Z Deleting the contents of '/home/runner/work/pylint/pylint'
+2025-12-15T15:16:34.2894087Z ##[group]Initializing the repository
+2025-12-15T15:16:34.2900555Z [command]/usr/bin/git init /home/runner/work/pylint/pylint
+2025-12-15T15:16:34.3002499Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-15T15:16:34.3004882Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-15T15:16:34.3007448Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-15T15:16:34.3009468Z hint: call:
+2025-12-15T15:16:34.3010697Z hint:
+2025-12-15T15:16:34.3011823Z hint: 	git config --global init.defaultBranch <name>
+2025-12-15T15:16:34.3012960Z hint:
+2025-12-15T15:16:34.3014037Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-15T15:16:34.3016693Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-15T15:16:34.3018211Z hint:
+2025-12-15T15:16:34.3018954Z hint: 	git branch -m <name>
+2025-12-15T15:16:34.3019832Z hint:
+2025-12-15T15:16:34.3020989Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-15T15:16:34.3022842Z Initialized empty Git repository in /home/runner/work/pylint/pylint/.git/
+2025-12-15T15:16:34.3026216Z [command]/usr/bin/git remote add origin https://github.com/pylint-dev/pylint
+2025-12-15T15:16:34.3058970Z ##[endgroup]
+2025-12-15T15:16:34.3060377Z ##[group]Disabling automatic garbage collection
+2025-12-15T15:16:34.3062627Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-15T15:16:34.3099626Z ##[endgroup]
+2025-12-15T15:16:34.3101112Z ##[group]Setting up auth
+2025-12-15T15:16:34.3102551Z Removing SSH command configuration
+2025-12-15T15:16:34.3107411Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-15T15:16:34.3146940Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-15T15:16:34.3483585Z Removing HTTP extra header
+2025-12-15T15:16:34.3490427Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-15T15:16:34.3524184Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-15T15:16:34.3743402Z Removing includeIf entries pointing to credentials config files
+2025-12-15T15:16:34.3749596Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-15T15:16:34.3783574Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-15T15:16:34.4018805Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-15T15:16:34.4058447Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/pylint/pylint/.git.path /home/runner/work/_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:16:34.4092373Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/pylint/pylint/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:16:34.4124903Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:16:34.4157580Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:16:34.4183379Z ##[endgroup]
+2025-12-15T15:16:34.4185768Z ##[group]Fetching the repository
+2025-12-15T15:16:34.4195529Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a76ce2704393185ac38dd65e8e785d768b8019af:refs/remotes/origin/main
+2025-12-15T15:16:34.9683696Z From https://github.com/pylint-dev/pylint
+2025-12-15T15:16:34.9686544Z  * [new ref]         a76ce2704393185ac38dd65e8e785d768b8019af -> origin/main
+2025-12-15T15:16:34.9717479Z ##[endgroup]
+2025-12-15T15:16:34.9718394Z ##[group]Determining the checkout info
+2025-12-15T15:16:34.9719859Z ##[endgroup]
+2025-12-15T15:16:34.9727159Z [command]/usr/bin/git sparse-checkout disable
+2025-12-15T15:16:34.9773112Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-15T15:16:34.9805459Z ##[group]Checking out the ref
+2025-12-15T15:16:34.9811373Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-15T15:16:35.1524956Z Switched to a new branch 'main'
+2025-12-15T15:16:35.1526982Z branch 'main' set up to track 'origin/main'.
+2025-12-15T15:16:35.1536324Z ##[endgroup]
+2025-12-15T15:16:35.1581465Z [command]/usr/bin/git log -1 --format=%H
+2025-12-15T15:16:35.1613649Z a76ce2704393185ac38dd65e8e785d768b8019af
+2025-12-15T15:16:35.1873213Z ##[group]Run actions/setup-python@v6.1.0
+2025-12-15T15:16:35.1873857Z with:
+2025-12-15T15:16:35.1874260Z   python-version: 3.13
+2025-12-15T15:16:35.1874773Z   allow-prereleases: true
+2025-12-15T15:16:35.1875278Z   check-latest: true
+2025-12-15T15:16:35.1876109Z   token: ***
+2025-12-15T15:16:35.1876554Z   update-environment: true
+2025-12-15T15:16:35.1877065Z   freethreaded: false
+2025-12-15T15:16:35.1877514Z env:
+2025-12-15T15:16:35.1877878Z   CACHE_VERSION: 5
+2025-12-15T15:16:35.1878304Z   KEY_PREFIX: venv
+2025-12-15T15:16:35.1878719Z ##[endgroup]
+2025-12-15T15:16:35.3195118Z ##[group]Installed versions
+2025-12-15T15:16:35.3367448Z (node:2135) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-15T15:16:35.3369188Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-15T15:16:36.0696246Z Resolved as '3.13.11'
+2025-12-15T15:16:36.0723280Z Successfully set up CPython (3.13.11)
+2025-12-15T15:16:36.0724680Z ##[endgroup]
+2025-12-15T15:16:36.1498470Z ##[group]Run echo "key=venv-5-403618818c13e06b80a6e70102c5cd69aad8cd002be648cbdf1947152d44c574" >> $GITHUB_OUTPUT
+2025-12-15T15:16:36.1499345Z [36;1mecho "key=venv-5-403618818c13e06b80a6e70102c5cd69aad8cd002be648cbdf1947152d44c574" >> $GITHUB_OUTPUT[0m
+2025-12-15T15:16:36.1610896Z shell: /usr/bin/bash -e {0}
+2025-12-15T15:16:36.1611162Z env:
+2025-12-15T15:16:36.1611338Z   CACHE_VERSION: 5
+2025-12-15T15:16:36.1611529Z   KEY_PREFIX: venv
+2025-12-15T15:16:36.1611798Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:36.1612226Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib/pkgconfig
+2025-12-15T15:16:36.1612639Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:36.1612986Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:36.1613324Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:36.1613699Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib
+2025-12-15T15:16:36.1614074Z ##[endgroup]
+2025-12-15T15:16:36.1757046Z ##[group]Run actions/cache@v5.0.1
+2025-12-15T15:16:36.1757338Z with:
+2025-12-15T15:16:36.1757503Z   path: venv
+2025-12-15T15:16:36.1757864Z   key: Linux-3.13.11-venv-5-403618818c13e06b80a6e70102c5cd69aad8cd002be648cbdf1947152d44c574
+2025-12-15T15:16:36.1758291Z   enableCrossOsArchive: false
+2025-12-15T15:16:36.1758538Z   fail-on-cache-miss: false
+2025-12-15T15:16:36.1758758Z   lookup-only: false
+2025-12-15T15:16:36.1758950Z   save-always: false
+2025-12-15T15:16:36.1759128Z env:
+2025-12-15T15:16:36.1759284Z   CACHE_VERSION: 5
+2025-12-15T15:16:36.1759469Z   KEY_PREFIX: venv
+2025-12-15T15:16:36.1759723Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:36.1760144Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib/pkgconfig
+2025-12-15T15:16:36.1760557Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:36.1760937Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:36.1761326Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:36.1761678Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib
+2025-12-15T15:16:36.1762141Z ##[endgroup]
+2025-12-15T15:16:36.4282616Z Cache hit for: Linux-3.13.11-venv-5-403618818c13e06b80a6e70102c5cd69aad8cd002be648cbdf1947152d44c574
+2025-12-15T15:16:37.3329168Z Received 22495653 of 22495653 (100.0%), 34.0 MBs/sec
+2025-12-15T15:16:37.3329741Z Cache Size: ~21 MB (22495653 B)
+2025-12-15T15:16:37.3362312Z [command]/usr/bin/tar -xf /home/runner/work/_temp/28aaf4fb-2125-400f-9b1b-59bb91b579c4/cache.tzst -P -C /home/runner/work/pylint/pylint --use-compress-program unzstd
+2025-12-15T15:16:38.0162992Z Cache restored successfully
+2025-12-15T15:16:38.0281755Z Cache restored from key: Linux-3.13.11-venv-5-403618818c13e06b80a6e70102c5cd69aad8cd002be648cbdf1947152d44c574
+2025-12-15T15:16:38.0404191Z ##[group]Run . venv/bin/activate
+2025-12-15T15:16:38.0404478Z [36;1m. venv/bin/activate[0m
+2025-12-15T15:16:38.0404707Z [36;1mpip install . --no-deps[0m
+2025-12-15T15:16:38.0404969Z [36;1mpip list | grep 'astroid\|pylint'[0m
+2025-12-15T15:16:38.0405390Z [36;1mpython -m pytest --durations=10 --benchmark-disable --cov --cov-report= tests/[0m
+2025-12-15T15:16:38.0439835Z shell: /usr/bin/bash -e {0}
+2025-12-15T15:16:38.0440202Z env:
+2025-12-15T15:16:38.0440467Z   CACHE_VERSION: 5
+2025-12-15T15:16:38.0440779Z   KEY_PREFIX: venv
+2025-12-15T15:16:38.0441202Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:38.0441864Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib/pkgconfig
+2025-12-15T15:16:38.0442528Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:38.0443119Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:38.0443710Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:16:38.0444338Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib
+2025-12-15T15:16:38.0444823Z ##[endgroup]
+2025-12-15T15:16:39.3783563Z Processing /home/runner/work/pylint/pylint
+2025-12-15T15:16:39.3817218Z   Installing build dependencies: started
+2025-12-15T15:16:40.5043575Z   Installing build dependencies: finished with status 'done'
+2025-12-15T15:16:40.5049639Z   Getting requirements to build wheel: started
+2025-12-15T15:16:41.1257636Z   Getting requirements to build wheel: finished with status 'done'
+2025-12-15T15:16:41.1267637Z   Preparing metadata (pyproject.toml): started
+2025-12-15T15:16:41.4368222Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-12-15T15:16:41.4419004Z Building wheels for collected packages: pylint
+2025-12-15T15:16:41.4427025Z   Building wheel for pylint (pyproject.toml): started
+2025-12-15T15:16:42.0135556Z   Building wheel for pylint (pyproject.toml): finished with status 'done'
+2025-12-15T15:16:42.0148306Z   Created wheel for pylint: filename=pylint-4.1.0.dev0-py3-none-any.whl size=537081 sha256=143471b116237229cc46f6c3d4ced66e339eefd9ea5e86fe2ecb55bc8e5a2042
+2025-12-15T15:16:42.0150002Z   Stored in directory: /tmp/pip-ephem-wheel-cache-flc9tp79/wheels/0a/3b/13/beb5c5e23f395698f6d14fc73a07f9b1caeef282e6c64fef64
+2025-12-15T15:16:42.0190797Z Successfully built pylint
+2025-12-15T15:16:42.0193624Z Installing collected packages: pylint
+2025-12-15T15:16:42.0196272Z   Attempting uninstall: pylint
+2025-12-15T15:16:42.0239745Z     Found existing installation: pylint 4.1.0.dev0
+2025-12-15T15:16:42.0394470Z     Uninstalling pylint-4.1.0.dev0:
+2025-12-15T15:16:42.0422539Z       Successfully uninstalled pylint-4.1.0.dev0
+2025-12-15T15:16:42.4221907Z Successfully installed pylint-4.1.0.dev0
+2025-12-15T15:16:42.8640683Z astroid            4.0.2
+2025-12-15T15:16:42.8640996Z pylint             4.1.0.dev0
+2025-12-15T15:16:48.2133877Z ============================= test session starts ==============================
+2025-12-15T15:16:48.2134742Z platform linux -- Python 3.13.11, pytest-9.0.2, pluggy-1.6.0
+2025-12-15T15:16:48.2136116Z benchmark: 5.2.3 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+2025-12-15T15:16:48.2137358Z rootdir: /home/runner/work/pylint/pylint
+2025-12-15T15:16:48.2137681Z configfile: pyproject.toml
+2025-12-15T15:16:48.2138033Z plugins: timeout-2.4.0, benchmark-5.2.3, cov-7.0.0, xdist-3.8.0
+2025-12-15T15:16:48.2138409Z collected 2273 items
+2025-12-15T15:16:48.2138553Z 
+2025-12-15T15:16:48.4427650Z tests/benchmark/test_baseline_benchmarks.py ...........                  [  0%]
+2025-12-15T15:16:48.4463444Z tests/checkers/base/unittest_base.py s                                   [  0%]
+2025-12-15T15:16:48.4766462Z tests/checkers/base/unittest_multi_naming_style.py ....                  [  0%]
+2025-12-15T15:16:48.4862691Z tests/checkers/base/unittest_name_preset.py ....                         [  0%]
+2025-12-15T15:16:48.5129088Z tests/checkers/unittest_base_checker.py ....                             [  1%]
+2025-12-15T15:16:48.6440900Z tests/checkers/unittest_deprecated.py ..........................         [  2%]
+2025-12-15T15:16:48.6594077Z tests/checkers/unittest_design.py ...                                    [  2%]
+2025-12-15T15:16:48.7038120Z tests/checkers/unittest_format.py .........                              [  2%]
+2025-12-15T15:16:49.7754786Z tests/checkers/unittest_imports.py ........                              [  3%]
+2025-12-15T15:16:49.8231346Z tests/checkers/unittest_misc.py ...........                              [  3%]
+2025-12-15T15:16:50.0973922Z tests/checkers/unittest_non_ascii_name.py ..........................x    [  4%]
+2025-12-15T15:16:53.9616782Z tests/checkers/unittest_refactoring.py ..                                [  4%]
+2025-12-15T15:16:54.8693659Z tests/checkers/unittest_spelling.py .................................... [  6%]
+2025-12-15T15:16:55.2102927Z .......                                                                  [  6%]
+2025-12-15T15:16:55.2150477Z tests/checkers/unittest_stdlib.py .                                      [  6%]
+2025-12-15T15:16:55.2169158Z tests/checkers/unittest_strings.py .                                     [  6%]
+2025-12-15T15:16:55.2967796Z tests/checkers/unittest_symilar.py .....................                 [  7%]
+2025-12-15T15:16:56.1742301Z tests/checkers/unittest_typecheck.py .......                             [  8%]
+2025-12-15T15:16:56.3265654Z tests/checkers/unittest_unicode/unittest_bad_chars.py .................. [  8%]
+2025-12-15T15:16:56.4850683Z ..................................                                       [ 10%]
+2025-12-15T15:16:56.5383339Z tests/checkers/unittest_unicode/unittest_bidirectional_unicode.py ...... [ 10%]
+2025-12-15T15:16:56.7280351Z .............................................                            [ 12%]
+2025-12-15T15:16:56.7603988Z tests/checkers/unittest_unicode/unittest_functions.py .................. [ 13%]
+2025-12-15T15:16:56.9061595Z ........................................................................ [ 16%]
+2025-12-15T15:16:56.9104170Z ..                                                                       [ 16%]
+2025-12-15T15:16:57.0179727Z tests/checkers/unittest_unicode/unittest_invalid_encoding.py xx........x [ 17%]
+2025-12-15T15:16:57.0635355Z ...........                                                              [ 17%]
+2025-12-15T15:16:57.3298146Z tests/checkers/unittest_utils.py ....................................... [ 19%]
+2025-12-15T15:16:57.4776339Z .....                                                                    [ 19%]
+2025-12-15T15:16:57.5481838Z tests/checkers/unittest_variables.py ..........                          [ 19%]
+2025-12-15T15:16:59.2998168Z tests/config/pylint_config/test_pylint_config_generate.py ....           [ 20%]
+2025-12-15T15:16:59.6517536Z tests/config/pylint_config/test_pylint_config_help.py .                  [ 20%]
+2025-12-15T15:16:59.6542783Z tests/config/pylint_config/test_pylint_config_utils.py .                 [ 20%]
+2025-12-15T15:16:59.7254664Z tests/config/pylint_config/test_run_pylint_config.py .                   [ 20%]
+2025-12-15T15:17:01.3168989Z tests/config/test_argparse_config.py ......                              [ 20%]
+2025-12-15T15:17:07.4644642Z tests/config/test_config.py ....................                         [ 21%]
+2025-12-15T15:17:07.6483282Z tests/config/test_find_default_config_files.py .................         [ 22%]
+2025-12-15T15:17:11.0200574Z tests/config/test_functional_config_loading.py ......................... [ 23%]
+2025-12-15T15:17:12.0220020Z .....                                                                    [ 23%]
+2025-12-15T15:17:12.1862663Z tests/config/test_per_directory_config.py .                              [ 23%]
+2025-12-15T15:17:12.2173722Z tests/extensions/test_check_docs_utils.py ...............                [ 24%]
+2025-12-15T15:17:12.2420846Z tests/extensions/test_private_import.py .....                            [ 24%]
+2025-12-15T15:17:12.2462976Z tests/functional/r/redundant_unittest_assert.py ss                       [ 24%]
+2025-12-15T15:17:12.2678739Z tests/lint/test_caching.py .....ss....                                   [ 24%]
+2025-12-15T15:17:12.6867007Z tests/lint/test_pylinter.py ....                                         [ 25%]
+2025-12-15T15:17:12.8145205Z tests/lint/test_run_pylint.py ..                                         [ 25%]
+2025-12-15T15:17:12.8903757Z tests/lint/test_utils.py ...                                             [ 25%]
+2025-12-15T15:17:12.9402670Z tests/lint/unittest_expand_modules.py ...........                        [ 25%]
+2025-12-15T15:17:14.8905486Z tests/lint/unittest_lint.py ............................................ [ 27%]
+2025-12-15T15:17:20.7189000Z ......................                                                   [ 28%]
+2025-12-15T15:17:20.7686852Z tests/message/test_no_removed_msgid_or_symbol_used.py .                  [ 28%]
+2025-12-15T15:17:20.7732033Z tests/message/unittest_message.py .                                      [ 28%]
+2025-12-15T15:17:20.8013844Z tests/message/unittest_message_definition.py .......                     [ 29%]
+2025-12-15T15:17:20.8773670Z tests/message/unittest_message_definition_store.py .................     [ 29%]
+2025-12-15T15:17:20.9704719Z tests/message/unittest_message_id_store.py ........                      [ 30%]
+2025-12-15T15:17:21.0107256Z tests/primer/test_primer_stdlib.py sssssssssssssssssssssssssssssssssssss [ 31%]
+2025-12-15T15:17:21.0871416Z ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 35%]
+2025-12-15T15:17:21.1622304Z ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 38%]
+2025-12-15T15:17:21.1706396Z sssssss                                                                  [ 38%]
+2025-12-15T15:17:21.4487987Z tests/pyreverse/test_diadefs.py ......................................   [ 40%]
+2025-12-15T15:17:21.4638629Z tests/pyreverse/test_diagrams.py .                                       [ 40%]
+2025-12-15T15:17:21.5016546Z tests/pyreverse/test_inspector.py ....                                   [ 40%]
+2025-12-15T15:17:21.6116500Z tests/pyreverse/test_main.py ............................                [ 41%]
+2025-12-15T15:17:21.6299637Z tests/pyreverse/test_printer.py ..........                               [ 42%]
+2025-12-15T15:17:21.6369607Z tests/pyreverse/test_printer_factory.py ....                             [ 42%]
+2025-12-15T15:17:23.7643883Z tests/pyreverse/test_pyreverse_functional.py ....................        [ 43%]
+2025-12-15T15:17:23.8159207Z tests/pyreverse/test_utils.py ......................                     [ 44%]
+2025-12-15T15:17:24.1485121Z tests/pyreverse/test_writer.py ....................                      [ 45%]
+2025-12-15T15:17:24.3076811Z tests/reporters/unittest_json_reporter.py .......                        [ 45%]
+2025-12-15T15:17:24.6870390Z tests/reporters/unittest_reporting.py ..........                         [ 45%]
+2025-12-15T15:17:27.0668295Z tests/test_check_parallel.py ..........................................  [ 47%]
+2025-12-15T15:17:27.3064038Z tests/test_func.py ............                                          [ 48%]
+2025-12-15T15:17:37.0844009Z tests/test_functional.py ..................s............................ [ 50%]
+2025-12-15T15:17:51.7802151Z ........................................................................ [ 53%]
+2025-12-15T15:18:03.2335640Z ..........s............................................................. [ 56%]
+2025-12-15T15:18:14.3630160Z ...............................................................s........ [ 59%]
+2025-12-15T15:18:26.7854891Z ..................................s..........s.......................... [ 62%]
+2025-12-15T15:18:38.3761792Z ........................................................................ [ 66%]
+2025-12-15T15:18:48.7381156Z ........................................................................ [ 69%]
+2025-12-15T15:18:58.0282130Z ........................................................................ [ 72%]
+2025-12-15T15:19:09.7126803Z ..................................................s...............s..... [ 75%]
+2025-12-15T15:19:19.9827301Z ................................................s..ss................... [ 78%]
+2025-12-15T15:19:33.3440584Z ...............................s........................................ [ 81%]
+2025-12-15T15:19:44.6249602Z ...s.................................................................... [ 85%]
+2025-12-15T15:19:50.7478876Z ........................................                                 [ 86%]
+2025-12-15T15:19:51.0393876Z tests/test_functional_directories.py .                                   [ 86%]
+2025-12-15T15:19:51.4579177Z tests/test_import_graph.py ......                                        [ 87%]
+2025-12-15T15:19:51.4771339Z tests/test_numversion.py ...........                                     [ 87%]
+2025-12-15T15:19:51.4946790Z tests/test_pragma_parser.py .............                                [ 88%]
+2025-12-15T15:19:54.7970498Z tests/test_pylint_runners.py .............................               [ 89%]
+2025-12-15T15:19:56.3218947Z tests/test_regr.py ..................                                    [ 90%]
+2025-12-15T15:20:03.5087285Z tests/test_self.py .............x....................................... [ 92%]
+2025-12-15T15:20:13.2676348Z ........................................................................ [ 95%]
+2025-12-15T15:20:18.2492529Z ........................                                                 [ 96%]
+2025-12-15T15:20:19.5581432Z tests/test_similar.py ..............                                     [ 97%]
+2025-12-15T15:20:19.5618392Z tests/testutils/_primer/test_package_to_lint.py ..                       [ 97%]
+2025-12-15T15:20:19.5987652Z tests/testutils/_primer/test_primer.py .........                         [ 97%]
+2025-12-15T15:20:19.6022493Z tests/testutils/test_configuration_test.py .                             [ 97%]
+2025-12-15T15:20:19.8053580Z tests/testutils/test_functional_testutils.py ................            [ 98%]
+2025-12-15T15:20:21.0197892Z tests/testutils/test_lint_module_output_update.py ...........            [ 99%]
+2025-12-15T15:20:21.0283469Z tests/testutils/test_output_line.py .....                                [ 99%]
+2025-12-15T15:20:21.0329102Z tests/testutils/test_pyreverse_testutils.py ...                          [ 99%]
+2025-12-15T15:20:21.0475051Z tests/testutils/test_testutils_utils.py ........                         [ 99%]
+2025-12-15T15:20:21.0519534Z tests/utils/unittest_ast_walker.py ..                                    [ 99%]
+2025-12-15T15:20:29.2629857Z tests/utils/unittest_utils.py ..                                         [100%]
+2025-12-15T15:20:29.2630332Z 
+2025-12-15T15:20:29.2630536Z ============================= slowest 10 durations =============================
+2025-12-15T15:20:29.2631288Z 3.87s call     tests/config/test_config.py::test_disable_before_enable_all_takes_effect
+2025-12-15T15:20:29.2632009Z 3.61s call     tests/checkers/unittest_refactoring.py::test_issue_5724
+2025-12-15T15:20:29.2632645Z 3.03s call     tests/test_functional.py::test_functional[consider_using_with]
+2025-12-15T15:20:29.2633300Z 2.04s call     tests/lint/unittest_lint.py::test_recursive_implicit_namespace_wrapper
+2025-12-15T15:20:29.2634114Z 1.82s call     tests/test_functional.py::test_functional[await_outside_async]
+2025-12-15T15:20:29.2634641Z 1.75s call     tests/test_self.py::TestRunTC::test_fail_on[6-broad-exception-caught-fail_under_plus7_5.py-0]
+2025-12-15T15:20:29.2635209Z 1.66s call     tests/pyreverse/test_pyreverse_functional.py::test_class_diagrams[colorized]
+2025-12-15T15:20:29.2635738Z 1.66s call     tests/test_self.py::TestRunTC::test_do_not_import_files_from_local_directory[args0]
+2025-12-15T15:20:29.2636663Z 1.64s call     tests/test_self.py::TestRunTC::test_do_not_import_files_from_local_directory[args1]
+2025-12-15T15:20:29.2637151Z 1.53s call     tests/test_functional.py::test_functional[using_constant_test]
+2025-12-15T15:20:29.2637732Z =========== 2063 passed, 205 skipped, 5 xfailed in 216.95s (0:03:36) ===========
+2025-12-15T15:20:38.0777633Z ##[group]Run . venv/bin/activate
+2025-12-15T15:20:38.0777930Z [36;1m. venv/bin/activate[0m
+2025-12-15T15:20:38.0778169Z [36;1mpip list | grep 'astroid\|pylint'[0m
+2025-12-15T15:20:38.0778630Z [36;1mpython -m pytest -vv --minimal-messages-config tests/test_functional.py --benchmark-disable[0m
+2025-12-15T15:20:38.0810917Z shell: /usr/bin/bash -e {0}
+2025-12-15T15:20:38.0811133Z env:
+2025-12-15T15:20:38.0811291Z   CACHE_VERSION: 5
+2025-12-15T15:20:38.0811478Z   KEY_PREFIX: venv
+2025-12-15T15:20:38.0811734Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:20:38.0812128Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib/pkgconfig
+2025-12-15T15:20:38.0812507Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:20:38.0812844Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:20:38.0813187Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:20:38.0813553Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib
+2025-12-15T15:20:38.0813837Z ##[endgroup]
+2025-12-15T15:20:38.3367284Z astroid            4.0.2
+2025-12-15T15:20:38.3369292Z pylint             4.1.0.dev0
+2025-12-15T15:20:38.7335752Z ============================= test session starts ==============================
+2025-12-15T15:20:38.7336911Z platform linux -- Python 3.13.11, pytest-9.0.2, pluggy-1.6.0 -- /home/runner/work/pylint/pylint/venv/bin/python
+2025-12-15T15:20:38.7337750Z cachedir: .pytest_cache
+2025-12-15T15:20:38.7338854Z benchmark: 5.2.3 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+2025-12-15T15:20:38.7340067Z rootdir: /home/runner/work/pylint/pylint
+2025-12-15T15:20:38.7340573Z configfile: pyproject.toml
+2025-12-15T15:20:38.7341123Z plugins: timeout-2.4.0, benchmark-5.2.3, cov-7.0.0, xdist-3.8.0
+2025-12-15T15:20:38.9701336Z collecting ... collected 879 items
+2025-12-15T15:20:38.9701708Z 
+2025-12-15T15:20:39.1430368Z tests/test_functional.py::test_functional[anomalous_backslash_escape] PASSED [  0%]
+2025-12-15T15:20:39.1727713Z tests/test_functional.py::test_functional[anomalous_unicode_escape] PASSED [  0%]
+2025-12-15T15:20:39.4366162Z tests/test_functional.py::test_functional[arguments] PASSED              [  0%]
+2025-12-15T15:20:39.4982183Z tests/test_functional.py::test_functional[arguments_differ] PASSED       [  0%]
+2025-12-15T15:20:39.6139708Z tests/test_functional.py::test_functional[arguments_differ_issue5371] PASSED [  0%]
+2025-12-15T15:20:39.6488837Z tests/test_functional.py::test_functional[arguments_out_of_order] PASSED [  0%]
+2025-12-15T15:20:39.6954919Z tests/test_functional.py::test_functional[arguments_renamed] PASSED      [  0%]
+2025-12-15T15:20:39.7259629Z tests/test_functional.py::test_functional[assert_on_string_literal] PASSED [  0%]
+2025-12-15T15:20:39.7574926Z tests/test_functional.py::test_functional[assert_on_tuple] PASSED        [  1%]
+2025-12-15T15:20:39.8140924Z tests/test_functional.py::test_functional[async_context_manager_with_regular_with] PASSED [  1%]
+2025-12-15T15:20:39.8583437Z tests/test_functional.py::test_functional[async_functions] PASSED        [  1%]
+2025-12-15T15:20:39.8986233Z tests/test_functional.py::test_functional[attribute_defined_outside_init] PASSED [  1%]
+2025-12-15T15:20:39.9810542Z tests/test_functional.py::test_functional[attribute_defined_outside_init_py38] PASSED [  1%]
+2025-12-15T15:20:41.1323923Z tests/test_functional.py::test_functional[await_outside_async] PASSED    [  1%]
+2025-12-15T15:20:41.1620089Z tests/test_functional.py::test_functional[abstract_abc_methods] PASSED   [  1%]
+2025-12-15T15:20:41.2609616Z tests/test_functional.py::test_functional[abstract_class_instantiated] PASSED [  1%]
+2025-12-15T15:20:41.2903233Z tests/test_functional.py::test_functional[abstract_class_instantiated_in_class] PASSED [  1%]
+2025-12-15T15:20:41.3291003Z tests/test_functional.py::test_functional[abstract_method] PASSED        [  2%]
+2025-12-15T15:20:41.3520969Z tests/test_functional.py::test_functional[access_attr_before_def_false_positive] SKIPPED [  2%]
+2025-12-15T15:20:41.3831346Z tests/test_functional.py::test_functional[access_member_before_definition] PASSED [  2%]
+2025-12-15T15:20:41.4130876Z tests/test_functional.py::test_functional[access_to__name__] PASSED      [  2%]
+2025-12-15T15:20:41.4739226Z tests/test_functional.py::test_functional[access_to_protected_members] PASSED [  2%]
+2025-12-15T15:20:41.5026339Z tests/test_functional.py::test_functional[access_to_protected_members_typing] PASSED [  2%]
+2025-12-15T15:20:41.5740524Z tests/test_functional.py::test_functional[alternative_union_syntax] PASSED [  2%]
+2025-12-15T15:20:41.6271948Z tests/test_functional.py::test_functional[alternative_union_syntax_error] PASSED [  2%]
+2025-12-15T15:20:41.6702190Z tests/test_functional.py::test_functional[alternative_union_syntax_py37] PASSED [  2%]
+2025-12-15T15:20:41.7025024Z tests/test_functional.py::test_functional[alternative_union_syntax_regession_8119] PASSED [  3%]
+2025-12-15T15:20:41.7608610Z tests/test_functional.py::test_functional[assigning_non_slot] PASSED     [  3%]
+2025-12-15T15:20:41.7932640Z tests/test_functional.py::test_functional[assigning_non_slot_4509] PASSED [  3%]
+2025-12-15T15:20:41.8377307Z tests/test_functional.py::test_functional[assignment_expression] PASSED  [  3%]
+2025-12-15T15:20:41.8715291Z tests/test_functional.py::test_functional[assignment_from_no_return] PASSED [  3%]
+2025-12-15T15:20:41.9038053Z tests/test_functional.py::test_functional[assignment_from_no_return_2] PASSED [  3%]
+2025-12-15T15:20:41.9357051Z tests/test_functional.py::test_functional[assignment_from_no_return_py3] PASSED [  3%]
+2025-12-15T15:20:41.9651801Z tests/test_functional.py::test_functional[bad_chained_comparison] PASSED [  3%]
+2025-12-15T15:20:41.9953493Z tests/test_functional.py::test_functional[bad_except_order] PASSED       [  3%]
+2025-12-15T15:20:42.0871916Z tests/test_functional.py::test_functional[bad_exception_cause] PASSED    [  4%]
+2025-12-15T15:20:42.3142656Z tests/test_functional.py::test_functional[bad_indentation] PASSED        [  4%]
+2025-12-15T15:20:42.3411796Z tests/test_functional.py::test_functional[bad_inline_option] PASSED      [  4%]
+2025-12-15T15:20:42.3708241Z tests/test_functional.py::test_functional[bad_open_mode] PASSED          [  4%]
+2025-12-15T15:20:42.3990792Z tests/test_functional.py::test_functional[bad_option_value] PASSED       [  4%]
+2025-12-15T15:20:42.4272579Z tests/test_functional.py::test_functional[bad_option_value_disable] PASSED [  4%]
+2025-12-15T15:20:42.4684230Z tests/test_functional.py::test_functional[bad_reversed_sequence] PASSED  [  4%]
+2025-12-15T15:20:42.4964696Z tests/test_functional.py::test_functional[bad_reversed_sequence_py37] PASSED [  4%]
+2025-12-15T15:20:42.5239654Z tests/test_functional.py::test_functional[bad_reversed_sequence_py38] PASSED [  5%]
+2025-12-15T15:20:42.5525124Z tests/test_functional.py::test_functional[bad_staticmethod_argument] PASSED [  5%]
+2025-12-15T15:20:42.5849130Z tests/test_functional.py::test_functional[bad_string_format_type] PASSED [  5%]
+2025-12-15T15:20:42.6209569Z tests/test_functional.py::test_functional[bad_thread_instantiation] PASSED [  5%]
+2025-12-15T15:20:42.6488013Z tests/test_functional.py::test_functional[bare_except] PASSED            [  5%]
+2025-12-15T15:20:42.6767016Z tests/test_functional.py::test_functional[bare_name_capture_pattern] PASSED [  5%]
+2025-12-15T15:20:42.7059346Z tests/test_functional.py::test_functional[base_init_vars] PASSED         [  5%]
+2025-12-15T15:20:42.8079922Z tests/test_functional.py::test_functional[boolean_datetime] PASSED       [  5%]
+2025-12-15T15:20:42.8383650Z tests/test_functional.py::test_functional[bugfix_local_scope_metaclass_1177] PASSED [  5%]
+2025-12-15T15:20:42.8656874Z tests/test_functional.py::test_functional[builtin_module_test] PASSED    [  6%]
+2025-12-15T15:20:42.8976711Z tests/test_functional.py::test_functional[bad_char_backspace] PASSED     [  6%]
+2025-12-15T15:20:42.9250428Z tests/test_functional.py::test_functional[bad_char_carriage_return] PASSED [  6%]
+2025-12-15T15:20:42.9524923Z tests/test_functional.py::test_functional[bad_char_esc] PASSED           [  6%]
+2025-12-15T15:20:42.9799673Z tests/test_functional.py::test_functional[bad_char_sub] PASSED           [  6%]
+2025-12-15T15:20:43.0077467Z tests/test_functional.py::test_functional[bad_char_zero_width_space] PASSED [  6%]
+2025-12-15T15:20:43.0400583Z tests/test_functional.py::test_functional[broad_exception_caught] PASSED [  6%]
+2025-12-15T15:20:43.0694828Z tests/test_functional.py::test_functional[broad_exception_caught_trystar] PASSED [  6%]
+2025-12-15T15:20:43.1017768Z tests/test_functional.py::test_functional[broad_exception_raised] PASSED [  6%]
+2025-12-15T15:20:43.1342383Z tests/test_functional.py::test_functional[broad_exception_raised_trystar] PASSED [  7%]
+2025-12-15T15:20:43.1635202Z tests/test_functional.py::test_functional[cached_property] PASSED        [  7%]
+2025-12-15T15:20:43.1951765Z tests/test_functional.py::test_functional[cell_var_from_loop_enabled_regression] PASSED [  7%]
+2025-12-15T15:20:43.2431255Z tests/test_functional.py::test_functional[cellvar_escaping_loop] PASSED  [  7%]
+2025-12-15T15:20:43.2730836Z tests/test_functional.py::test_functional[class_attributes] PASSED       [  7%]
+2025-12-15T15:20:43.3024561Z tests/test_functional.py::test_functional[class_members] PASSED          [  7%]
+2025-12-15T15:20:43.3453750Z tests/test_functional.py::test_functional[class_members_py30] PASSED     [  7%]
+2025-12-15T15:20:43.3788075Z tests/test_functional.py::test_functional[class_protocol_ellipsis] PASSED [  7%]
+2025-12-15T15:20:43.4098852Z tests/test_functional.py::test_functional[class_scope] PASSED            [  7%]
+2025-12-15T15:20:43.4373423Z tests/test_functional.py::test_functional[class_variable_slots_conflict_exempted] PASSED [  8%]
+2025-12-15T15:20:43.4660039Z tests/test_functional.py::test_functional[classes_meth_could_be_a_function] PASSED [  8%]
+2025-12-15T15:20:43.4941104Z tests/test_functional.py::test_functional[classes_protected_member_access] PASSED [  8%]
+2025-12-15T15:20:43.5281168Z tests/test_functional.py::test_functional[comparison_of_constants] PASSED [  8%]
+2025-12-15T15:20:43.5634822Z tests/test_functional.py::test_functional[comparison_with_callable] PASSED [  8%]
+2025-12-15T15:20:43.5919094Z tests/test_functional.py::test_functional[comparison_with_callable_typing_constants] PASSED [  8%]
+2025-12-15T15:20:43.6232211Z tests/test_functional.py::test_functional[condition_evals_to_constant] PASSED [  8%]
+2025-12-15T15:20:43.6523498Z tests/test_functional.py::test_functional[confidence_filter] PASSED      [  8%]
+2025-12-15T15:20:43.6848626Z tests/test_functional.py::test_functional[confusing_with_statement] PASSED [  8%]
+2025-12-15T15:20:43.7262715Z tests/test_functional.py::test_functional[contextmanager_generator_missing_cleanup] PASSED [  9%]
+2025-12-15T15:20:43.7546966Z tests/test_functional.py::test_functional[continue_in_finally] PASSED    [  9%]
+2025-12-15T15:20:43.7832956Z tests/test_functional.py::test_functional[control_pragmas] PASSED        [  9%]
+2025-12-15T15:20:43.8113460Z tests/test_functional.py::test_functional[crash_missing_module_type] PASSED [  9%]
+2025-12-15T15:20:43.8576385Z tests/test_functional.py::test_functional[ctor_arguments] PASSED         [  9%]
+2025-12-15T15:20:43.9085438Z tests/test_functional.py::test_functional[consider_iterating_dictionary] PASSED [  9%]
+2025-12-15T15:20:43.9490717Z tests/test_functional.py::test_functional[consider_join] PASSED          [  9%]
+2025-12-15T15:20:44.2286015Z tests/test_functional.py::test_functional[consider_join_for_non_empty_separator] PASSED [  9%]
+2025-12-15T15:20:44.2634966Z tests/test_functional.py::test_functional[consider_merging_isinstance] PASSED [ 10%]
+2025-12-15T15:20:44.2927824Z tests/test_functional.py::test_functional[consider_swap_variables] PASSED [ 10%]
+2025-12-15T15:20:44.3264337Z tests/test_functional.py::test_functional[consider_using_dict_comprehension] PASSED [ 10%]
+2025-12-15T15:20:44.4182944Z tests/test_functional.py::test_functional[consider_using_dict_items] PASSED [ 10%]
+2025-12-15T15:20:44.4599986Z tests/test_functional.py::test_functional[consider_using_enumerate] PASSED [ 10%]
+2025-12-15T15:20:44.5084993Z tests/test_functional.py::test_functional[consider_using_f_string] PASSED [ 10%]
+2025-12-15T15:20:44.5419804Z tests/test_functional.py::test_functional[consider_using_generator] PASSED [ 10%]
+2025-12-15T15:20:44.5780224Z tests/test_functional.py::test_functional[consider_using_get] PASSED     [ 10%]
+2025-12-15T15:20:44.6194911Z tests/test_functional.py::test_functional[consider_using_in] PASSED      [ 10%]
+2025-12-15T15:20:44.6564964Z tests/test_functional.py::test_functional[consider_using_min_max_builtin] PASSED [ 11%]
+2025-12-15T15:20:44.6861158Z tests/test_functional.py::test_functional[consider_using_set_comprehension] PASSED [ 11%]
+2025-12-15T15:20:44.7199879Z tests/test_functional.py::test_functional[consider_using_sys_exit] PASSED [ 11%]
+2025-12-15T15:20:44.7484757Z tests/test_functional.py::test_functional[consider_using_sys_exit_exempted] PASSED [ 11%]
+2025-12-15T15:20:44.7804998Z tests/test_functional.py::test_functional[consider_using_sys_exit_local_scope] PASSED [ 11%]
+2025-12-15T15:20:45.9824983Z tests/test_functional.py::test_functional[consider_using_with] PASSED    [ 11%]
+2025-12-15T15:20:46.0357424Z tests/test_functional.py::test_functional[consider_using_with_open] PASSED [ 11%]
+2025-12-15T15:20:46.0738158Z tests/test_functional.py::test_functional[dangerous_default_value] PASSED [ 11%]
+2025-12-15T15:20:46.1050860Z tests/test_functional.py::test_functional[decorator_scope] PASSED        [ 11%]
+2025-12-15T15:20:46.1362508Z tests/test_functional.py::test_functional[decorator_unused] PASSED       [ 12%]
+2025-12-15T15:20:46.1692301Z tests/test_functional.py::test_functional[defined_and_used_on_same_line] PASSED [ 12%]
+2025-12-15T15:20:46.2016048Z tests/test_functional.py::test_functional[dict_iter_missing_items] PASSED [ 12%]
+2025-12-15T15:20:46.2310437Z tests/test_functional.py::test_functional[disable_msg_github_issue_1389] PASSED [ 12%]
+2025-12-15T15:20:46.2649859Z tests/test_functional.py::test_functional[disable_msg_next_line] PASSED  [ 12%]
+2025-12-15T15:20:46.7743483Z tests/test_functional.py::test_functional[disable_ungrouped_imports] PASSED [ 12%]
+2025-12-15T15:20:46.8066601Z tests/test_functional.py::test_functional[disable_wrong_import_order] PASSED [ 12%]
+2025-12-15T15:20:46.8368012Z tests/test_functional.py::test_functional[disable_wrong_import_position] PASSED [ 12%]
+2025-12-15T15:20:46.8635237Z tests/test_functional.py::test_functional[disabled_msgid_in_pylintrc] PASSED [ 12%]
+2025-12-15T15:20:46.8923446Z tests/test_functional.py::test_functional[disallowed_name] PASSED        [ 13%]
+2025-12-15T15:20:46.9241427Z tests/test_functional.py::test_functional[docstrings] PASSED             [ 13%]
+2025-12-15T15:20:46.9546725Z tests/test_functional.py::test_functional[dotted_ancestor] PASSED        [ 13%]
+2025-12-15T15:20:46.9868276Z tests/test_functional.py::test_functional[dataclass_kw_only] PASSED      [ 13%]
+2025-12-15T15:20:47.0156806Z tests/test_functional.py::test_functional[dataclass_parameter] PASSED    [ 13%]
+2025-12-15T15:20:47.0789762Z tests/test_functional.py::test_functional[dataclass_typecheck] PASSED    [ 13%]
+2025-12-15T15:20:47.1179989Z tests/test_functional.py::test_functional[dataclass_with_default_factory] PASSED [ 13%]
+2025-12-15T15:20:47.1562361Z tests/test_functional.py::test_functional[dataclass_with_field] PASSED   [ 13%]
+2025-12-15T15:20:47.2158284Z tests/test_functional.py::test_functional[deprecated_attribute_py312] PASSED [ 13%]
+2025-12-15T15:20:47.2436672Z tests/test_functional.py::test_functional[deprecated_class_py33] PASSED  [ 14%]
+2025-12-15T15:20:47.2763287Z tests/test_functional.py::test_functional[deprecated_decorators] PASSED  [ 14%]
+2025-12-15T15:20:47.7013749Z tests/test_functional.py::test_functional[deprecated_method_suppression] PASSED [ 14%]
+2025-12-15T15:20:47.8407401Z tests/test_functional.py::test_functional[deprecated_methods_py36] PASSED [ 14%]
+2025-12-15T15:20:47.8709311Z tests/test_functional.py::test_functional[deprecated_module__import__] PASSED [ 14%]
+2025-12-15T15:20:47.9007054Z tests/test_functional.py::test_functional[deprecated_module_py3] PASSED  [ 14%]
+2025-12-15T15:20:47.9247604Z tests/test_functional.py::test_functional[deprecated_module_py310] SKIPPED [ 14%]
+2025-12-15T15:20:48.0179152Z tests/test_functional.py::test_functional[deprecated_module_py33] PASSED [ 14%]
+2025-12-15T15:20:48.0469359Z tests/test_functional.py::test_functional[deprecated_module_py36] PASSED [ 15%]
+2025-12-15T15:20:48.0788665Z tests/test_functional.py::test_functional[deprecated_module_py39] PASSED [ 15%]
+2025-12-15T15:20:48.1075661Z tests/test_functional.py::test_functional[deprecated_module_py39_earlier_pyversion] PASSED [ 15%]
+2025-12-15T15:20:48.1374569Z tests/test_functional.py::test_functional[deprecated_module_py4] PASSED  [ 15%]
+2025-12-15T15:20:48.2063678Z tests/test_functional.py::test_functional[deprecated_module_redundant] PASSED [ 15%]
+2025-12-15T15:20:48.2357546Z tests/test_functional.py::test_functional[deprecated_module_uninstalled] PASSED [ 15%]
+2025-12-15T15:20:48.2644196Z tests/test_functional.py::test_functional[dot_relative_import] PASSED    [ 15%]
+2025-12-15T15:20:48.2940804Z tests/test_functional.py::test_functional[dot_dot_relative_import] PASSED [ 15%]
+2025-12-15T15:20:48.3266407Z tests/test_functional.py::test_functional[duplicate_argument_name] PASSED [ 15%]
+2025-12-15T15:20:48.3564201Z tests/test_functional.py::test_functional[duplicate_bases] PASSED        [ 16%]
+2025-12-15T15:20:48.3878954Z tests/test_functional.py::test_functional[duplicate_dict_literal_key] PASSED [ 16%]
+2025-12-15T15:20:48.4180237Z tests/test_functional.py::test_functional[duplicate_except] PASSED       [ 16%]
+2025-12-15T15:20:48.4481002Z tests/test_functional.py::test_functional[duplicate_string_formatting_argument] PASSED [ 16%]
+2025-12-15T15:20:48.4804006Z tests/test_functional.py::test_functional[duplicate_value] PASSED        [ 16%]
+2025-12-15T15:20:48.5062291Z tests/test_functional.py::test_functional[.#emacs_file_lock] PASSED      [ 16%]
+2025-12-15T15:20:48.5322832Z tests/test_functional.py::test_functional[.#emacs_file_lock_by_conf] PASSED [ 16%]
+2025-12-15T15:20:48.5596824Z tests/test_functional.py::test_functional[.#emacs_file_lock_redefined_conf] PASSED [ 16%]
+2025-12-15T15:20:48.5883977Z tests/test_functional.py::test_functional[e1101_9588_base_attr_aug_assign] PASSED [ 16%]
+2025-12-15T15:20:48.6170829Z tests/test_functional.py::test_functional[empty_docstring] PASSED        [ 17%]
+2025-12-15T15:20:48.6683673Z tests/test_functional.py::test_functional[enum_self_defined_member_5138] PASSED [ 17%]
+2025-12-15T15:20:48.7059429Z tests/test_functional.py::test_functional[enum_self_defined_member_6805] PASSED [ 17%]
+2025-12-15T15:20:48.7503666Z tests/test_functional.py::test_functional[enum_subclasses] PASSED        [ 17%]
+2025-12-15T15:20:48.7836613Z tests/test_functional.py::test_functional[eval_used] PASSED              [ 17%]
+2025-12-15T15:20:48.8127518Z tests/test_functional.py::test_functional[exception_is_binary_op] PASSED [ 17%]
+2025-12-15T15:20:48.8426976Z tests/test_functional.py::test_functional[excess_escapes] PASSED         [ 17%]
+2025-12-15T15:20:48.8718191Z tests/test_functional.py::test_functional[exec_used] PASSED              [ 17%]
+2025-12-15T15:20:48.9009583Z tests/test_functional.py::test_functional[external_classmethod_crash] PASSED [ 17%]
+2025-12-15T15:20:48.9312993Z tests/test_functional.py::test_functional[dict_init_mutate] PASSED       [ 18%]
+2025-12-15T15:20:48.9651383Z tests/test_functional.py::test_functional[plugin_does_not_exists] PASSED [ 18%]
+2025-12-15T15:20:48.9940290Z tests/test_functional.py::test_functional[bad_builtin_extension] PASSED  [ 18%]
+2025-12-15T15:20:49.0233836Z tests/test_functional.py::test_functional[bad_builtins] PASSED           [ 18%]
+2025-12-15T15:20:49.0557710Z tests/test_functional.py::test_functional[bad_dunder_name] PASSED        [ 18%]
+2025-12-15T15:20:49.0873684Z tests/test_functional.py::test_functional[broad_try_clause_extension] PASSED [ 18%]
+2025-12-15T15:20:49.1231275Z tests/test_functional.py::test_functional[check_elif] PASSED             [ 18%]
+2025-12-15T15:20:49.1599880Z tests/test_functional.py::test_functional[cs_consider_using_assignment_expr] PASSED [ 18%]
+2025-12-15T15:20:49.2080624Z tests/test_functional.py::test_functional[cs_consider_using_augmented_assign] PASSED [ 18%]
+2025-12-15T15:20:49.2441840Z tests/test_functional.py::test_functional[cs_consider_using_namedtuple_or_dataclass] PASSED [ 19%]
+2025-12-15T15:20:49.2754631Z tests/test_functional.py::test_functional[cs_consider_using_tuple] PASSED [ 19%]
+2025-12-15T15:20:49.3035266Z tests/test_functional.py::test_functional[cs_default] PASSED             [ 19%]
+2025-12-15T15:20:49.3352216Z tests/test_functional.py::test_functional[cs_prefer_typing_namedtuple] PASSED [ 19%]
+2025-12-15T15:20:49.3640112Z tests/test_functional.py::test_functional[cs_py_version_35] PASSED       [ 19%]
+2025-12-15T15:20:49.3944728Z tests/test_functional.py::test_functional[cs_use_math_not_float] PASSED  [ 19%]
+2025-12-15T15:20:49.4301506Z tests/test_functional.py::test_functional[misplaced_comparison_constant] PASSED [ 19%]
+2025-12-15T15:20:49.4631953Z tests/test_functional.py::test_functional[confusing_elif] PASSED         [ 19%]
+2025-12-15T15:20:49.5130936Z tests/test_functional.py::test_functional[consider_refactoring_into_while_condition] PASSED [ 20%]
+2025-12-15T15:20:49.5465137Z tests/test_functional.py::test_functional[consider_refactoring_into_while_condition_py38] PASSED [ 20%]
+2025-12-15T15:20:49.5793545Z tests/test_functional.py::test_functional[consider_ternary_expression] PASSED [ 20%]
+2025-12-15T15:20:49.6281619Z tests/test_functional.py::test_functional[docparams] PASSED              [ 20%]
+2025-12-15T15:20:49.6589760Z tests/test_functional.py::test_functional[docparams_py38] PASSED         [ 20%]
+2025-12-15T15:20:49.6979009Z tests/test_functional.py::test_functional[missing_param_doc0] PASSED     [ 20%]
+2025-12-15T15:20:49.7309534Z tests/test_functional.py::test_functional[missing_param_doc_py38] PASSED [ 20%]
+2025-12-15T15:20:49.7620069Z tests/test_functional.py::test_functional[useless_type_doc] PASSED       [ 20%]
+2025-12-15T15:20:49.7903519Z tests/test_functional.py::test_functional[missing_param_doc1] PASSED     [ 20%]
+2025-12-15T15:20:49.8212072Z tests/test_functional.py::test_functional[missing_param_doc_required] PASSED [ 21%]
+2025-12-15T15:20:50.3463474Z tests/test_functional.py::test_functional[missing_param_doc_required_Google] PASSED [ 21%]
+2025-12-15T15:20:50.3901323Z tests/test_functional.py::test_functional[missing_param_doc_required_Numpy] PASSED [ 21%]
+2025-12-15T15:20:50.4464101Z tests/test_functional.py::test_functional[missing_param_doc_required_Sphinx] PASSED [ 21%]
+2025-12-15T15:20:50.4780382Z tests/test_functional.py::test_functional[missing_param_doc_required_min_length] PASSED [ 21%]
+2025-12-15T15:20:50.5087054Z tests/test_functional.py::test_functional[missing_param_doc_required_no_doc_rgx_check_init] PASSED [ 21%]
+2025-12-15T15:20:50.5385513Z tests/test_functional.py::test_functional[missing_param_doc_required_no_doc_rgx_check_none] PASSED [ 21%]
+2025-12-15T15:20:50.5673323Z tests/test_functional.py::test_functional[missing_param_doc_required_no_doc_rgx_default] PASSED [ 21%]
+2025-12-15T15:20:50.5972048Z tests/test_functional.py::test_functional[missing_param_doc_required_no_doc_rgx_test_all] PASSED [ 21%]
+2025-12-15T15:20:50.6412853Z tests/test_functional.py::test_functional[missing_raises_doc] PASSED     [ 22%]
+2025-12-15T15:20:50.7827113Z tests/test_functional.py::test_functional[missing_raises_doc_Google] PASSED [ 22%]
+2025-12-15T15:20:50.8262045Z tests/test_functional.py::test_functional[missing_raises_doc_Numpy] PASSED [ 22%]
+2025-12-15T15:20:50.8685411Z tests/test_functional.py::test_functional[missing_raises_doc_Sphinx] PASSED [ 22%]
+2025-12-15T15:20:50.8974802Z tests/test_functional.py::test_functional[missing_raises_doc_options] PASSED [ 22%]
+2025-12-15T15:20:50.9323513Z tests/test_functional.py::test_functional[missing_raises_doc_required] PASSED [ 22%]
+2025-12-15T15:20:50.9642536Z tests/test_functional.py::test_functional[missing_raises_doc_required_Google] PASSED [ 22%]
+2025-12-15T15:20:50.9954047Z tests/test_functional.py::test_functional[missing_raises_doc_required_Numpy] PASSED [ 22%]
+2025-12-15T15:20:51.0282403Z tests/test_functional.py::test_functional[missing_raises_doc_required_Sphinx] PASSED [ 22%]
+2025-12-15T15:20:51.0603889Z tests/test_functional.py::test_functional[missing_raises_doc_required_exc_inheritance] PASSED [ 23%]
+2025-12-15T15:20:51.0956535Z tests/test_functional.py::test_functional[missing_raises_doc_required_min_length] PASSED [ 23%]
+2025-12-15T15:20:51.1272899Z tests/test_functional.py::test_functional[missing_return_doc] PASSED     [ 23%]
+2025-12-15T15:20:51.1666742Z tests/test_functional.py::test_functional[missing_return_doc_Google] PASSED [ 23%]
+2025-12-15T15:20:51.2034188Z tests/test_functional.py::test_functional[missing_return_doc_Numpy] PASSED [ 23%]
+2025-12-15T15:20:51.2424097Z tests/test_functional.py::test_functional[missing_return_doc_Sphinx] PASSED [ 23%]
+2025-12-15T15:20:51.2737756Z tests/test_functional.py::test_functional[missing_return_doc_required] PASSED [ 23%]
+2025-12-15T15:20:51.3071867Z tests/test_functional.py::test_functional[missing_return_doc_required_Google] PASSED [ 23%]
+2025-12-15T15:20:51.3421484Z tests/test_functional.py::test_functional[missing_return_doc_required_Numpy] PASSED [ 24%]
+2025-12-15T15:20:51.3796970Z tests/test_functional.py::test_functional[missing_return_doc_required_Sphinx] PASSED [ 24%]
+2025-12-15T15:20:51.4095029Z tests/test_functional.py::test_functional[missing_yield_doc] PASSED      [ 24%]
+2025-12-15T15:20:51.4445552Z tests/test_functional.py::test_functional[missing_yield_doc_Google] PASSED [ 24%]
+2025-12-15T15:20:51.4766284Z tests/test_functional.py::test_functional[missing_yield_doc_Numpy] PASSED [ 24%]
+2025-12-15T15:20:51.5069371Z tests/test_functional.py::test_functional[missing_yield_doc_Sphinx] PASSED [ 24%]
+2025-12-15T15:20:51.5375502Z tests/test_functional.py::test_functional[missing_yield_doc_required] PASSED [ 24%]
+2025-12-15T15:20:51.5696714Z tests/test_functional.py::test_functional[missing_yield_doc_required_Google] PASSED [ 24%]
+2025-12-15T15:20:51.6060794Z tests/test_functional.py::test_functional[missing_yield_doc_required_Numpy] PASSED [ 24%]
+2025-12-15T15:20:51.6388520Z tests/test_functional.py::test_functional[missing_yield_doc_required_Sphinx] PASSED [ 25%]
+2025-12-15T15:20:51.6684644Z tests/test_functional.py::test_functional[missing_yield_doc_required_min_length] PASSED [ 25%]
+2025-12-15T15:20:51.6990738Z tests/test_functional.py::test_functional[docstyle_first_line_empty] PASSED [ 25%]
+2025-12-15T15:20:51.7303034Z tests/test_functional.py::test_functional[docstyle_quotes] PASSED        [ 25%]
+2025-12-15T15:20:51.7640942Z tests/test_functional.py::test_functional[empty_comment] PASSED          [ 25%]
+2025-12-15T15:20:51.7960626Z tests/test_functional.py::test_functional[eq_without_hash] PASSED        [ 25%]
+2025-12-15T15:20:51.8386432Z tests/test_functional.py::test_functional[for_any_all] PASSED            [ 25%]
+2025-12-15T15:20:51.8754198Z tests/test_functional.py::test_functional[magic_value_comparison] PASSED [ 25%]
+2025-12-15T15:20:51.9432872Z tests/test_functional.py::test_functional[mccabe] PASSED                 [ 25%]
+2025-12-15T15:20:51.9732343Z tests/test_functional.py::test_functional[not_too_complex] PASSED        [ 26%]
+2025-12-15T15:20:52.0164522Z tests/test_functional.py::test_functional[no_self_use] PASSED            [ 26%]
+2025-12-15T15:20:52.0540766Z tests/test_functional.py::test_functional[overlapping_exceptions] PASSED [ 26%]
+2025-12-15T15:20:52.0953919Z tests/test_functional.py::test_functional[private_import] PASSED         [ 26%]
+2025-12-15T15:20:52.1284447Z tests/test_functional.py::test_functional[redefined_loop_name] PASSED    [ 26%]
+2025-12-15T15:20:52.1598436Z tests/test_functional.py::test_functional[reused_outer_loop_variable] PASSED [ 26%]
+2025-12-15T15:20:52.1981107Z tests/test_functional.py::test_functional[redefined_variable_type] PASSED [ 26%]
+2025-12-15T15:20:52.2310405Z tests/test_functional.py::test_functional[regression_newtype_fstring] PASSED [ 26%]
+2025-12-15T15:20:52.2639921Z tests/test_functional.py::test_functional[use_set_membership] PASSED     [ 26%]
+2025-12-15T15:20:52.2972291Z tests/test_functional.py::test_functional[redundant_typehint_argument] PASSED [ 27%]
+2025-12-15T15:20:52.3307300Z tests/test_functional.py::test_functional[redundant_typehint_argument_py310] PASSED [ 27%]
+2025-12-15T15:20:52.4046777Z tests/test_functional.py::test_functional[typing_broken_callable] PASSED [ 27%]
+2025-12-15T15:20:52.4356220Z tests/test_functional.py::test_functional[typing_broken_callable_deprecated_alias] PASSED [ 27%]
+2025-12-15T15:20:52.4676591Z tests/test_functional.py::test_functional[typing_broken_callable_future_import] PASSED [ 27%]
+2025-12-15T15:20:52.6126864Z tests/test_functional.py::test_functional[typing_broken_noreturn] PASSED [ 27%]
+2025-12-15T15:20:52.6439485Z tests/test_functional.py::test_functional[typing_broken_noreturn_future_import] PASSED [ 27%]
+2025-12-15T15:20:52.6778917Z tests/test_functional.py::test_functional[typing_broken_noreturn_py372] PASSED [ 27%]
+2025-12-15T15:20:52.7203169Z tests/test_functional.py::test_functional[typing_consider_using_alias] PASSED [ 27%]
+2025-12-15T15:20:52.7611361Z tests/test_functional.py::test_functional[typing_consider_using_alias_without_future] PASSED [ 28%]
+2025-12-15T15:20:52.8011902Z tests/test_functional.py::test_functional[typing_consider_using_union] PASSED [ 28%]
+2025-12-15T15:20:52.8457764Z tests/test_functional.py::test_functional[typing_consider_using_union_py310] PASSED [ 28%]
+2025-12-15T15:20:52.8861522Z tests/test_functional.py::test_functional[typing_consider_using_union_without_future] PASSED [ 28%]
+2025-12-15T15:20:52.9264864Z tests/test_functional.py::test_functional[typing_deprecated_alias] PASSED [ 28%]
+2025-12-15T15:20:52.9590816Z tests/test_functional.py::test_functional[unnecessary_default_type_args] PASSED [ 28%]
+2025-12-15T15:20:52.9884318Z tests/test_functional.py::test_functional[while_used] PASSED             [ 28%]
+2025-12-15T15:20:53.0226746Z tests/test_functional.py::test_functional[f_string_without_interpolation] PASSED [ 28%]
+2025-12-15T15:20:53.0472661Z tests/test_functional.py::test_functional[f_string_without_interpolation_py314] SKIPPED [ 29%]
+2025-12-15T15:20:53.0761027Z tests/test_functional.py::test_functional[fallback_import_disabled] PASSED [ 29%]
+2025-12-15T15:20:53.1057047Z tests/test_functional.py::test_functional[fallback_import_enabled] PASSED [ 29%]
+2025-12-15T15:20:53.1383725Z tests/test_functional.py::test_functional[first_arg] PASSED              [ 29%]
+2025-12-15T15:20:53.1745406Z tests/test_functional.py::test_functional[fixme] PASSED                  [ 29%]
+2025-12-15T15:20:53.2048308Z tests/test_functional.py::test_functional[fixme_bad_formatting_1139] PASSED [ 29%]
+2025-12-15T15:20:53.2364436Z tests/test_functional.py::test_functional[fixme_docstring] PASSED        [ 29%]
+2025-12-15T15:20:53.2672613Z tests/test_functional.py::test_functional[for_loop_variable_shadowing] PASSED [ 29%]
+2025-12-15T15:20:53.9653601Z tests/test_functional.py::test_functional[forgotten_debug_statement] PASSED [ 29%]
+2025-12-15T15:20:53.9970824Z tests/test_functional.py::test_functional[formatted_string_literal_with_if] PASSED [ 30%]
+2025-12-15T15:20:54.0252729Z tests/test_functional.py::test_functional[func_disable_linebased] PASSED [ 30%]
+2025-12-15T15:20:54.0617933Z tests/test_functional.py::test_functional[function_redefined] PASSED     [ 30%]
+2025-12-15T15:20:54.0898656Z tests/test_functional.py::test_functional[function_redefined_2540] PASSED [ 30%]
+2025-12-15T15:20:54.1192539Z tests/test_functional.py::test_functional[function_redefined_private_function] PASSED [ 30%]
+2025-12-15T15:20:54.1515555Z tests/test_functional.py::test_functional[future_import] PASSED          [ 30%]
+2025-12-15T15:20:54.1799313Z tests/test_functional.py::test_functional[future_unicode_literals] PASSED [ 30%]
+2025-12-15T15:20:54.2223628Z tests/test_functional.py::test_functional[generated_members] PASSED      [ 30%]
+2025-12-15T15:20:54.2614713Z tests/test_functional.py::test_functional[generic_class_syntax] PASSED   [ 30%]
+2025-12-15T15:20:54.2979701Z tests/test_functional.py::test_functional[generic_class_syntax_py312] PASSED [ 31%]
+2025-12-15T15:20:54.3341916Z tests/test_functional.py::test_functional[genexp_in_class_scope] PASSED  [ 31%]
+2025-12-15T15:20:54.3630459Z tests/test_functional.py::test_functional[genexpr_variable_scope] PASSED [ 31%]
+2025-12-15T15:20:54.4008281Z tests/test_functional.py::test_functional[globals] PASSED                [ 31%]
+2025-12-15T15:20:54.4653368Z tests/test_functional.py::test_functional[generic_alias_collections] PASSED [ 31%]
+2025-12-15T15:20:54.5111122Z tests/test_functional.py::test_functional[generic_alias_mixed_py39] PASSED [ 31%]
+2025-12-15T15:20:54.5489178Z tests/test_functional.py::test_functional[generic_alias_related] PASSED  [ 31%]
+2025-12-15T15:20:54.5865100Z tests/test_functional.py::test_functional[generic_alias_related_py39] PASSED [ 31%]
+2025-12-15T15:20:54.6284450Z tests/test_functional.py::test_functional[generic_alias_side_effects] PASSED [ 31%]
+2025-12-15T15:20:54.7136804Z tests/test_functional.py::test_functional[generic_alias_typing] PASSED   [ 32%]
+2025-12-15T15:20:54.7531513Z tests/test_functional.py::test_functional[import_aliasing] PASSED        [ 32%]
+2025-12-15T15:20:54.7818472Z tests/test_functional.py::test_functional[import_dummy] PASSED           [ 32%]
+2025-12-15T15:20:54.8367820Z tests/test_functional.py::test_functional[import_error] PASSED           [ 32%]
+2025-12-15T15:20:54.8719472Z tests/test_functional.py::test_functional[import_itself] PASSED          [ 32%]
+2025-12-15T15:20:55.0784187Z tests/test_functional.py::test_functional[import_outside_toplevel] PASSED [ 32%]
+2025-12-15T15:20:55.1088878Z tests/test_functional.py::test_functional[inference_crash_4692] PASSED   [ 32%]
+2025-12-15T15:20:55.1568488Z tests/test_functional.py::test_functional[inherit_non_class] PASSED      [ 32%]
+2025-12-15T15:20:55.1860302Z tests/test_functional.py::test_functional[init_is_generator] PASSED      [ 32%]
+2025-12-15T15:20:55.2255736Z tests/test_functional.py::test_functional[init_not_called] PASSED        [ 33%]
+2025-12-15T15:20:55.2541974Z tests/test_functional.py::test_functional[init_return_from_inner_function] PASSED [ 33%]
+2025-12-15T15:20:55.2835614Z tests/test_functional.py::test_functional[init_subclass_classmethod] PASSED [ 33%]
+2025-12-15T15:20:55.3134120Z tests/test_functional.py::test_functional[inner_classes] PASSED          [ 33%]
+2025-12-15T15:20:55.3482531Z tests/test_functional.py::test_functional[isinstance_second_argument] PASSED [ 33%]
+2025-12-15T15:20:55.3827865Z tests/test_functional.py::test_functional[isinstance_second_argument_py310] PASSED [ 33%]
+2025-12-15T15:20:55.4341000Z tests/test_functional.py::test_functional[iterable_context] PASSED       [ 33%]
+2025-12-15T15:20:55.4601346Z tests/test_functional.py::test_functional[iterable_context_asyncio] SKIPPED [ 33%]
+2025-12-15T15:20:55.4927954Z tests/test_functional.py::test_functional[iterable_context_py3] PASSED   [ 34%]
+2025-12-15T15:20:55.5323627Z tests/test_functional.py::test_functional[iterable_context_py36] PASSED  [ 34%]
+2025-12-15T15:20:55.5936516Z tests/test_functional.py::test_functional[implicit_flag_alias] PASSED    [ 34%]
+2025-12-15T15:20:55.6250655Z tests/test_functional.py::test_functional[implicit_str_concat] PASSED    [ 34%]
+2025-12-15T15:20:55.6572347Z tests/test_functional.py::test_functional[implicit_str_concat_latin1] PASSED [ 34%]
+2025-12-15T15:20:55.6874555Z tests/test_functional.py::test_functional[implicit_str_concat_multiline] PASSED [ 34%]
+2025-12-15T15:20:55.7147856Z tests/test_functional.py::test_functional[implicit_str_concat_utf8] PASSED [ 34%]
+2025-12-15T15:20:55.7430508Z tests/test_functional.py::test_functional[inconsistent_mro] PASSED       [ 34%]
+2025-12-15T15:20:55.7716061Z tests/test_functional.py::test_functional[inconsistent_quotes] PASSED    [ 34%]
+2025-12-15T15:20:55.8020877Z tests/test_functional.py::test_functional[inconsistent_quotes2] PASSED   [ 35%]
+2025-12-15T15:20:55.8250200Z tests/test_functional.py::test_functional[inconsistent_quotes_fstring] SKIPPED [ 35%]
+2025-12-15T15:20:55.8546129Z tests/test_functional.py::test_functional[inconsistent_quotes_fstring_py312] PASSED [ 35%]
+2025-12-15T15:20:55.8838887Z tests/test_functional.py::test_functional[inconsistent_quotes_fstring_py312_311] PASSED [ 35%]
+2025-12-15T15:20:55.9589880Z tests/test_functional.py::test_functional[inconsistent_returns] PASSED   [ 35%]
+2025-12-15T15:20:56.0002676Z tests/test_functional.py::test_functional[inconsistent_returns_noreturn] PASSED [ 35%]
+2025-12-15T15:20:56.0346092Z tests/test_functional.py::test_functional[inconsistent_returns_quit_exit] PASSED [ 35%]
+2025-12-15T15:20:56.1019367Z tests/test_functional.py::test_functional[invalid_bool_returned] PASSED  [ 35%]
+2025-12-15T15:20:56.1350295Z tests/test_functional.py::test_functional[invalid_bytes_returned] PASSED [ 35%]
+2025-12-15T15:20:56.1705427Z tests/test_functional.py::test_functional[invalid_class_object] PASSED   [ 36%]
+2025-12-15T15:20:56.2166887Z tests/test_functional.py::test_functional[invalid_enum_extension] PASSED [ 36%]
+2025-12-15T15:20:56.2616635Z tests/test_functional.py::test_functional[invalid_envvar_value] PASSED   [ 36%]
+2025-12-15T15:20:56.3017007Z tests/test_functional.py::test_functional[invalid_field_call] PASSED     [ 36%]
+2025-12-15T15:20:56.3349898Z tests/test_functional.py::test_functional[invalid_format_returned] PASSED [ 36%]
+2025-12-15T15:20:56.3673625Z tests/test_functional.py::test_functional[invalid_hash_returned] PASSED  [ 36%]
+2025-12-15T15:20:56.4032598Z tests/test_functional.py::test_functional[invalid_index_returned] PASSED [ 36%]
+2025-12-15T15:20:56.5157265Z tests/test_functional.py::test_functional[invalid_metaclass] PASSED      [ 36%]
+2025-12-15T15:20:56.5453333Z tests/test_functional.py::test_functional[invalid_metaclass_py3] PASSED  [ 36%]
+2025-12-15T15:20:56.6088302Z tests/test_functional.py::test_functional[invalid_name] PASSED           [ 37%]
+2025-12-15T15:20:56.6545667Z tests/test_functional.py::test_functional[invalid_overridden_method] PASSED [ 37%]
+2025-12-15T15:20:56.6890692Z tests/test_functional.py::test_functional[invalid_repr_returned] PASSED  [ 37%]
+2025-12-15T15:20:56.7457067Z tests/test_functional.py::test_functional[invalid_sequence_index] PASSED [ 37%]
+2025-12-15T15:20:56.7869745Z tests/test_functional.py::test_functional[invalid_slice_index] PASSED    [ 37%]
+2025-12-15T15:20:56.8198371Z tests/test_functional.py::test_functional[invalid_star_assignment_target] PASSED [ 37%]
+2025-12-15T15:20:56.8534446Z tests/test_functional.py::test_functional[invalid_str_returned] PASSED   [ 37%]
+2025-12-15T15:20:56.8903415Z tests/test_functional.py::test_functional[invalid_unary_operand_type] PASSED [ 37%]
+2025-12-15T15:20:56.9207300Z tests/test_functional.py::test_functional[invalid_all_format] PASSED     [ 37%]
+2025-12-15T15:20:56.9517183Z tests/test_functional.py::test_functional[invalid_all_format_list_confusion] PASSED [ 38%]
+2025-12-15T15:20:56.9861524Z tests/test_functional.py::test_functional[invalid_all_format_tuple_confusion] PASSED [ 38%]
+2025-12-15T15:20:57.0146094Z tests/test_functional.py::test_functional[invalid_all_format_valid_1] PASSED [ 38%]
+2025-12-15T15:20:57.0436664Z tests/test_functional.py::test_functional[invalid_all_format_valid_2] PASSED [ 38%]
+2025-12-15T15:20:57.0724905Z tests/test_functional.py::test_functional[invalid_all_format_valid_3] PASSED [ 38%]
+2025-12-15T15:20:57.1008746Z tests/test_functional.py::test_functional[invalid_all_format_valid_4] PASSED [ 38%]
+2025-12-15T15:20:57.1290768Z tests/test_functional.py::test_functional[invalid_all_format_valid_5] PASSED [ 38%]
+2025-12-15T15:20:57.1609240Z tests/test_functional.py::test_functional[invalid_all_format_valid_6] PASSED [ 38%]
+2025-12-15T15:20:57.1896797Z tests/test_functional.py::test_functional[invalid_all_object] PASSED     [ 39%]
+2025-12-15T15:20:57.2351936Z tests/test_functional.py::test_functional[invalid_exceptions_caught] PASSED [ 39%]
+2025-12-15T15:20:58.0947205Z tests/test_functional.py::test_functional[invalid_exceptions_raised] PASSED [ 39%]
+2025-12-15T15:20:58.1320083Z tests/test_functional.py::test_functional[invalid_getnewargs_ex_returned] PASSED [ 39%]
+2025-12-15T15:20:58.1685783Z tests/test_functional.py::test_functional[invalid_getnewargs_returned] PASSED [ 39%]
+2025-12-15T15:20:58.2024467Z tests/test_functional.py::test_functional[invalid_length_hint_returned] PASSED [ 39%]
+2025-12-15T15:20:58.2366827Z tests/test_functional.py::test_functional[invalid_length_returned] PASSED [ 39%]
+2025-12-15T15:20:58.2666900Z tests/test_functional.py::test_functional[invalid_name-module-disable] PASSED [ 39%]
+2025-12-15T15:20:58.3050322Z tests/test_functional.py::test_functional[invalid_name_enum] PASSED      [ 39%]
+2025-12-15T15:20:58.3398571Z tests/test_functional.py::test_functional[invalid_name_issue_3405] PASSED [ 40%]
+2025-12-15T15:20:58.4611073Z tests/test_functional.py::test_functional[invalid_name_module_level] PASSED [ 40%]
+2025-12-15T15:20:58.4910155Z tests/test_functional.py::test_functional[invalid_name_multinaming_style] PASSED [ 40%]
+2025-12-15T15:20:58.5231695Z tests/test_functional.py::test_functional[invalid_name_property] PASSED  [ 40%]
+2025-12-15T15:20:58.5597021Z tests/test_functional.py::test_functional[invalid_name_with_final_typing] PASSED [ 40%]
+2025-12-15T15:20:58.5926713Z tests/test_functional.py::test_functional[keyword_arg_before_vararg] PASSED [ 40%]
+2025-12-15T15:20:58.6266546Z tests/test_functional.py::test_functional[keyword_arg_before_vararg_positional_only] PASSED [ 40%]
+2025-12-15T15:20:58.6561790Z tests/test_functional.py::test_functional[kwarg_superseded_by_positional_arg] PASSED [ 40%]
+2025-12-15T15:20:58.6855239Z tests/test_functional.py::test_functional[lambda_use_before_assign] PASSED [ 40%]
+2025-12-15T15:20:58.7177767Z tests/test_functional.py::test_functional[literal_comparison] PASSED     [ 41%]
+2025-12-15T15:20:58.7518666Z tests/test_functional.py::test_functional[logical_tautology] PASSED      [ 41%]
+2025-12-15T15:20:58.7846893Z tests/test_functional.py::test_functional[loopvar_in_dict_comp] PASSED   [ 41%]
+2025-12-15T15:20:58.8161503Z tests/test_functional.py::test_functional[lost_exception] PASSED         [ 41%]
+2025-12-15T15:20:58.8452897Z tests/test_functional.py::test_functional[line_endings] PASSED           [ 41%]
+2025-12-15T15:20:58.8894297Z tests/test_functional.py::test_functional[line_too_long] PASSED          [ 41%]
+2025-12-15T15:20:58.9186911Z tests/test_functional.py::test_functional[line_too_long_end_of_module] PASSED [ 41%]
+2025-12-15T15:20:58.9470587Z tests/test_functional.py::test_functional[line_too_long_with_utf8] PASSED [ 41%]
+2025-12-15T15:20:58.9785285Z tests/test_functional.py::test_functional[line_too_long_with_utf8_2] PASSED [ 41%]
+2025-12-15T15:20:59.0167668Z tests/test_functional.py::test_functional[logging_format_interpolation] PASSED [ 42%]
+2025-12-15T15:20:59.0412311Z tests/test_functional.py::test_functional[logging_format_interpolation_py36] SKIPPED [ 42%]
+2025-12-15T15:20:59.0702443Z tests/test_functional.py::test_functional[logging_format_interpolation_style] PASSED [ 42%]
+2025-12-15T15:20:59.0946015Z tests/test_functional.py::test_functional[logging_fstring_interpolation_py36] SKIPPED [ 42%]
+2025-12-15T15:20:59.1227700Z tests/test_functional.py::test_functional[logging_fstring_interpolation_py37] SKIPPED [ 42%]
+2025-12-15T15:20:59.1579852Z tests/test_functional.py::test_functional[logging_not_lazy] PASSED       [ 42%]
+2025-12-15T15:20:59.1819941Z tests/test_functional.py::test_functional[logging_not_lazy_module] SKIPPED [ 42%]
+2025-12-15T15:20:59.2063971Z tests/test_functional.py::test_functional[logging_not_lazy_with_logger] SKIPPED [ 42%]
+2025-12-15T15:20:59.2353348Z tests/test_functional.py::test_functional[logging_too_few_args_new_style] PASSED [ 43%]
+2025-12-15T15:20:59.2663340Z tests/test_functional.py::test_functional[logging_too_few_args_old_style] PASSED [ 43%]
+2025-12-15T15:20:59.2954314Z tests/test_functional.py::test_functional[logging_too_many_args_new_style] PASSED [ 43%]
+2025-12-15T15:20:59.3257156Z tests/test_functional.py::test_functional[logging_too_many_args_old_style] PASSED [ 43%]
+2025-12-15T15:20:59.3553952Z tests/test_functional.py::test_functional[logging_unsupported_format] PASSED [ 43%]
+2025-12-15T15:20:59.3935260Z tests/test_functional.py::test_functional[mapping_context] PASSED        [ 43%]
+2025-12-15T15:20:59.4279747Z tests/test_functional.py::test_functional[mapping_context_py3] PASSED    [ 43%]
+2025-12-15T15:20:59.4732118Z tests/test_functional.py::test_functional[match_class_pattern] PASSED    [ 43%]
+2025-12-15T15:20:59.5178777Z tests/test_functional.py::test_functional[membership_protocol] PASSED    [ 43%]
+2025-12-15T15:20:59.5525137Z tests/test_functional.py::test_functional[membership_protocol_py3] PASSED [ 44%]
+2025-12-15T15:20:59.5856727Z tests/test_functional.py::test_functional[metaclass_attr_access] PASSED  [ 44%]
+2025-12-15T15:20:59.6468307Z tests/test_functional.py::test_functional[method_cache_max_size_none] PASSED [ 44%]
+2025-12-15T15:20:59.7049386Z tests/test_functional.py::test_functional[method_hidden] PASSED          [ 44%]
+2025-12-15T15:20:59.7420039Z tests/test_functional.py::test_functional[misplaced_bare_raise] PASSED   [ 44%]
+2025-12-15T15:20:59.7846683Z tests/test_functional.py::test_functional[misplaced_format_function] PASSED [ 44%]
+2025-12-15T15:20:59.8164725Z tests/test_functional.py::test_functional[misplaced_future] PASSED       [ 44%]
+2025-12-15T15:20:59.8496461Z tests/test_functional.py::test_functional[mixin_class_rgx] PASSED        [ 44%]
+2025-12-15T15:20:59.8930932Z tests/test_functional.py::test_functional[modified_iterating] PASSED     [ 44%]
+2025-12-15T15:20:59.9256307Z tests/test_functional.py::test_functional[module___dict__] PASSED        [ 45%]
+2025-12-15T15:20:59.9554586Z tests/test_functional.py::test_functional[monkeypatch_method] PASSED     [ 45%]
+2025-12-15T15:20:59.9846560Z tests/test_functional.py::test_functional[multiple_imports] PASSED       [ 45%]
+2025-12-15T15:21:00.0182048Z tests/test_functional.py::test_functional[multiple_statements] PASSED    [ 45%]
+2025-12-15T15:21:00.0508627Z tests/test_functional.py::test_functional[multiple_statements_single_line] PASSED [ 45%]
+2025-12-15T15:21:00.1354538Z tests/test_functional.py::test_functional[member_checks] PASSED          [ 45%]
+2025-12-15T15:21:00.1676216Z tests/test_functional.py::test_functional[member_checks_async] PASSED    [ 45%]
+2025-12-15T15:21:00.2011735Z tests/test_functional.py::test_functional[member_checks_hints] PASSED    [ 45%]
+2025-12-15T15:21:00.2300031Z tests/test_functional.py::test_functional[member_checks_ignore_none] PASSED [ 45%]
+2025-12-15T15:21:00.2616996Z tests/test_functional.py::test_functional[member_checks_inference_improvements] PASSED [ 46%]
+2025-12-15T15:21:00.2932172Z tests/test_functional.py::test_functional[member_checks_no_hints] PASSED [ 46%]
+2025-12-15T15:21:00.3233907Z tests/test_functional.py::test_functional[member_checks_opaque] PASSED   [ 46%]
+2025-12-15T15:21:00.3558607Z tests/test_functional.py::test_functional[member_checks_typed_annotations] PASSED [ 46%]
+2025-12-15T15:21:00.3842093Z tests/test_functional.py::test_functional[missing_class_docstring] PASSED [ 46%]
+2025-12-15T15:21:00.4184297Z tests/test_functional.py::test_functional[missing_docstring] PASSED      [ 46%]
+2025-12-15T15:21:00.4491094Z tests/test_functional.py::test_functional[missing_docstring_new_style] PASSED [ 46%]
+2025-12-15T15:21:00.4771913Z tests/test_functional.py::test_functional[missing_final_newline] PASSED  [ 46%]
+2025-12-15T15:21:00.5066383Z tests/test_functional.py::test_functional[missing_function_docstring] PASSED [ 46%]
+2025-12-15T15:21:00.5356962Z tests/test_functional.py::test_functional[missing_function_docstring_min_length] PASSED [ 47%]
+2025-12-15T15:21:00.5684720Z tests/test_functional.py::test_functional[missing_function_docstring_rgx] PASSED [ 47%]
+2025-12-15T15:21:00.6060990Z tests/test_functional.py::test_functional[missing_kwoa] PASSED           [ 47%]
+2025-12-15T15:21:00.6351164Z tests/test_functional.py::test_functional[missing_module_docstring] PASSED [ 47%]
+2025-12-15T15:21:00.6641137Z tests/test_functional.py::test_functional[missing_module_docstring_disabled] PASSED [ 47%]
+2025-12-15T15:21:00.6923174Z tests/test_functional.py::test_functional[missing_module_docstring_empty] PASSED [ 47%]
+2025-12-15T15:21:00.7371776Z tests/test_functional.py::test_functional[missing_parentheses_for_call_in_test] PASSED [ 47%]
+2025-12-15T15:21:00.7674605Z tests/test_functional.py::test_functional[missing_self_argument] PASSED  [ 47%]
+2025-12-15T15:21:00.8103041Z tests/test_functional.py::test_functional[missing_timeout] PASSED        [ 48%]
+2025-12-15T15:21:00.8421364Z tests/test_functional.py::test_functional[namePresetCamelCase] PASSED    [ 48%]
+2025-12-15T15:21:00.8744559Z tests/test_functional.py::test_functional[named_expr_without_context_py38] PASSED [ 48%]
+2025-12-15T15:21:00.9113800Z tests/test_functional.py::test_functional[namedtuple_member_inference] PASSED [ 48%]
+2025-12-15T15:21:00.9429597Z tests/test_functional.py::test_functional[names_in__all__] PASSED        [ 48%]
+2025-12-15T15:21:00.9771512Z tests/test_functional.py::test_functional[nan_comparison_check] PASSED   [ 48%]
+2025-12-15T15:21:01.0068920Z tests/test_functional.py::test_functional[nested_blocks_issue1088] PASSED [ 48%]
+2025-12-15T15:21:01.0357046Z tests/test_functional.py::test_functional[nested_func_defined_in_loop] PASSED [ 48%]
+2025-12-15T15:21:01.0789142Z tests/test_functional.py::test_functional[nested_min_max] PASSED         [ 48%]
+2025-12-15T15:21:01.1086367Z tests/test_functional.py::test_functional[nested_min_max_py39] PASSED    [ 49%]
+2025-12-15T15:21:01.1408142Z tests/test_functional.py::test_functional[new_style_class_py_30] PASSED  [ 49%]
+2025-12-15T15:21:01.1757876Z tests/test_functional.py::test_functional[none_dunder_protocols] PASSED  [ 49%]
+2025-12-15T15:21:01.2051553Z tests/test_functional.py::test_functional[none_dunder_protocols_py38] PASSED [ 49%]
+2025-12-15T15:21:01.2373284Z tests/test_functional.py::test_functional[nonexistent_operator] PASSED   [ 49%]
+2025-12-15T15:21:01.2662451Z tests/test_functional.py::test_functional[nonlocal_and_global] PASSED    [ 49%]
+2025-12-15T15:21:01.2977701Z tests/test_functional.py::test_functional[nonlocal_without_binding] PASSED [ 49%]
+2025-12-15T15:21:01.3318193Z tests/test_functional.py::test_functional[not_async_context_manager] PASSED [ 49%]
+2025-12-15T15:21:01.3606729Z tests/test_functional.py::test_functional[not_async_context_manager_py37] PASSED [ 49%]
+2025-12-15T15:21:01.4222240Z tests/test_functional.py::test_functional[not_callable] PASSED           [ 50%]
+2025-12-15T15:21:01.4615679Z tests/test_functional.py::test_functional[not_context_manager] PASSED    [ 50%]
+2025-12-15T15:21:01.4932114Z tests/test_functional.py::test_functional[not_in_loop] PASSED            [ 50%]
+2025-12-15T15:21:01.5266041Z tests/test_functional.py::test_functional[name_final] PASSED             [ 50%]
+2025-12-15T15:21:01.5572877Z tests/test_functional.py::test_functional[name_final_snake_case] PASSED  [ 50%]
+2025-12-15T15:21:01.5880232Z tests/test_functional.py::test_functional[name_good_bad_names_regex] PASSED [ 50%]
+2025-12-15T15:21:01.6209493Z tests/test_functional.py::test_functional[name_preset_snake_case] PASSED [ 50%]
+2025-12-15T15:21:01.6640644Z tests/test_functional.py::test_functional[name_styles] PASSED            [ 50%]
+2025-12-15T15:21:01.6977234Z tests/test_functional.py::test_functional[no_classmethod_decorator] PASSED [ 50%]
+2025-12-15T15:21:01.7276533Z tests/test_functional.py::test_functional[no_dummy_redefined] PASSED     [ 51%]
+2025-12-15T15:21:01.7619487Z tests/test_functional.py::test_functional[no_else_break] PASSED          [ 51%]
+2025-12-15T15:21:01.7965348Z tests/test_functional.py::test_functional[no_else_continue] PASSED       [ 51%]
+2025-12-15T15:21:01.8341022Z tests/test_functional.py::test_functional[no_else_raise] PASSED          [ 51%]
+2025-12-15T15:21:01.8735010Z tests/test_functional.py::test_functional[no_else_return] PASSED         [ 51%]
+2025-12-15T15:21:01.9064637Z tests/test_functional.py::test_functional[no_member] PASSED              [ 51%]
+2025-12-15T15:21:01.9380339Z tests/test_functional.py::test_functional[no_member_assign_same_line] PASSED [ 51%]
+2025-12-15T15:21:01.9688220Z tests/test_functional.py::test_functional[no_member_augassign] PASSED    [ 51%]
+2025-12-15T15:21:02.0009908Z tests/test_functional.py::test_functional[no_member_binary_operations] PASSED [ 51%]
+2025-12-15T15:21:02.0459482Z tests/test_functional.py::test_functional[no_member_dataclasses] PASSED  [ 52%]
+2025-12-15T15:21:02.0747083Z tests/test_functional.py::test_functional[no_member_decorator] PASSED    [ 52%]
+2025-12-15T15:21:02.1026239Z tests/test_functional.py::test_functional[no_member_exception_group] PASSED [ 52%]
+2025-12-15T15:21:02.1466587Z tests/test_functional.py::test_functional[no_member_if_statements] PASSED [ 52%]
+2025-12-15T15:21:02.9737543Z tests/test_functional.py::test_functional[no_member_imports] PASSED      [ 52%]
+2025-12-15T15:21:03.0021091Z tests/test_functional.py::test_functional[no_member_nested_namedtuple] PASSED [ 52%]
+2025-12-15T15:21:03.0371345Z tests/test_functional.py::test_functional[no_member_subclassed_dataclasses] PASSED [ 52%]
+2025-12-15T15:21:03.0694431Z tests/test_functional.py::test_functional[no_member_typevar] PASSED      [ 52%]
+2025-12-15T15:21:03.0997975Z tests/test_functional.py::test_functional[no_method_argument_py38] PASSED [ 53%]
+2025-12-15T15:21:03.1454789Z tests/test_functional.py::test_functional[no_name_in_module] PASSED      [ 53%]
+2025-12-15T15:21:03.1771263Z tests/test_functional.py::test_functional[no_self_argument] PASSED       [ 53%]
+2025-12-15T15:21:03.2069766Z tests/test_functional.py::test_functional[no_staticmethod_decorator] PASSED [ 53%]
+2025-12-15T15:21:03.2358090Z tests/test_functional.py::test_functional[no_warning_docstring] PASSED   [ 53%]
+2025-12-15T15:21:03.2631528Z tests/test_functional.py::test_functional[non_ascii_name] PASSED         [ 53%]
+2025-12-15T15:21:03.2945047Z tests/test_functional.py::test_functional[non_ascii_name_backward_test_code] PASSED [ 53%]
+2025-12-15T15:21:03.3223517Z tests/test_functional.py::test_functional[non_ascii_name_backward_test_msg] PASSED [ 53%]
+2025-12-15T15:21:03.3593026Z tests/test_functional.py::test_functional[non_init_parent_called] PASSED [ 53%]
+2025-12-15T15:21:03.3942837Z tests/test_functional.py::test_functional[non_iterator_returned] PASSED  [ 54%]
+2025-12-15T15:21:03.4522808Z tests/test_functional.py::test_functional[non_parent_init_called] PASSED [ 54%]
+2025-12-15T15:21:03.4854561Z tests/test_functional.py::test_functional[non_str_assignment_to_dunder_name] PASSED [ 54%]
+2025-12-15T15:21:03.5139351Z tests/test_functional.py::test_functional[non_ascii_import] PASSED       [ 54%]
+2025-12-15T15:21:03.5411499Z tests/test_functional.py::test_functional[non_ascii_import_as_bad] PASSED [ 54%]
+2025-12-15T15:21:03.5732460Z tests/test_functional.py::test_functional[non_ascii_import_as_okay] PASSED [ 54%]
+2025-12-15T15:21:03.6008568Z tests/test_functional.py::test_functional[non_ascii_import_from_as] PASSED [ 54%]
+2025-12-15T15:21:03.6282619Z tests/test_functional.py::test_functional[non_ascii_name_assignment_expressions] PASSED [ 54%]
+2025-12-15T15:21:03.6557779Z tests/test_functional.py::test_functional[non_ascii_name_decorator] PASSED [ 54%]
+2025-12-15T15:21:03.6829703Z tests/test_functional.py::test_functional[non_ascii_name_dict_kwargs] PASSED [ 55%]
+2025-12-15T15:21:03.7147304Z tests/test_functional.py::test_functional[non_ascii_name_for_loop] PASSED [ 55%]
+2025-12-15T15:21:03.7437592Z tests/test_functional.py::test_functional[non_ascii_name_function] PASSED [ 55%]
+2025-12-15T15:21:03.7715159Z tests/test_functional.py::test_functional[non_ascii_name_function_argument] PASSED [ 55%]
+2025-12-15T15:21:03.7988586Z tests/test_functional.py::test_functional[non_ascii_name_inline_var] PASSED [ 55%]
+2025-12-15T15:21:03.8264259Z tests/test_functional.py::test_functional[non_ascii_name_kwargs] PASSED  [ 55%]
+2025-12-15T15:21:03.8541117Z tests/test_functional.py::test_functional[non_ascii_name_local] PASSED   [ 55%]
+2025-12-15T15:21:03.8850417Z tests/test_functional.py::test_functional[non_ascii_name_lo\u0142] PASSED [ 55%]
+2025-12-15T15:21:03.9132647Z tests/test_functional.py::test_functional[non_ascii_name_pos_and_kwonly_function] PASSED [ 55%]
+2025-12-15T15:21:03.9408362Z tests/test_functional.py::test_functional[non_ascii_name_staticmethod] PASSED [ 56%]
+2025-12-15T15:21:03.9683545Z tests/test_functional.py::test_functional[non_ascii_name_try_except] PASSED [ 56%]
+2025-12-15T15:21:03.9957847Z tests/test_functional.py::test_functional[non_ascii_name_variable] PASSED [ 56%]
+2025-12-15T15:21:04.0276356Z tests/test_functional.py::test_functional[non_ascii_name_class] PASSED   [ 56%]
+2025-12-15T15:21:04.0561741Z tests/test_functional.py::test_functional[non_ascii_name_class_attribute] PASSED [ 56%]
+2025-12-15T15:21:04.0840142Z tests/test_functional.py::test_functional[non_ascii_name_class_constant] PASSED [ 56%]
+2025-12-15T15:21:04.1118183Z tests/test_functional.py::test_functional[non_ascii_name_class_method] PASSED [ 56%]
+2025-12-15T15:21:04.1390368Z tests/test_functional.py::test_functional[object_as_class_attribute] PASSED [ 56%]
+2025-12-15T15:21:04.1716092Z tests/test_functional.py::test_functional[overloaded_operator] PASSED    [ 56%]
+2025-12-15T15:21:04.2012763Z tests/test_functional.py::test_functional[overridden_final_method_py38] PASSED [ 57%]
+2025-12-15T15:21:04.2286442Z tests/test_functional.py::test_functional[overridden_final_method_regression] PASSED [ 57%]
+2025-12-15T15:21:04.2589012Z tests/test_functional.py::test_functional[pattern_matching] PASSED       [ 57%]
+2025-12-15T15:21:04.2907335Z tests/test_functional.py::test_functional[positional_only_arguments_expected] PASSED [ 57%]
+2025-12-15T15:21:04.3267608Z tests/test_functional.py::test_functional[potential_index_error] PASSED  [ 57%]
+2025-12-15T15:21:04.3569026Z tests/test_functional.py::test_functional[pragma_after_backslash] PASSED [ 57%]
+2025-12-15T15:21:04.3872773Z tests/test_functional.py::test_functional[preferred_module] PASSED       [ 57%]
+2025-12-15T15:21:04.4169288Z tests/test_functional.py::test_functional[property_affectation_py26] PASSED [ 57%]
+2025-12-15T15:21:04.4479433Z tests/test_functional.py::test_functional[property_with_parameters] PASSED [ 58%]
+2025-12-15T15:21:04.4839513Z tests/test_functional.py::test_functional[protected_access] PASSED       [ 58%]
+2025-12-15T15:21:04.5137806Z tests/test_functional.py::test_functional[protected_access_access_different_scopes] PASSED [ 58%]
+2025-12-15T15:21:04.5452780Z tests/test_functional.py::test_functional[protected_access_special_methods_off] PASSED [ 58%]
+2025-12-15T15:21:04.5758479Z tests/test_functional.py::test_functional[protected_access_special_methods_on] PASSED [ 58%]
+2025-12-15T15:21:04.6081843Z tests/test_functional.py::test_functional[protocol_classes] PASSED       [ 58%]
+2025-12-15T15:21:04.6453753Z tests/test_functional.py::test_functional[protocol_classes_abstract] PASSED [ 58%]
+2025-12-15T15:21:04.6738468Z tests/test_functional.py::test_functional[py_version_35] PASSED          [ 58%]
+2025-12-15T15:21:04.7039167Z tests/test_functional.py::test_functional[postponed_evaluation_activated] PASSED [ 58%]
+2025-12-15T15:21:04.7338991Z tests/test_functional.py::test_functional[postponed_evaluation_activated_with_alias] PASSED [ 59%]
+2025-12-15T15:21:04.7637098Z tests/test_functional.py::test_functional[postponed_evaluation_not_activated] PASSED [ 59%]
+2025-12-15T15:21:04.8246040Z tests/test_functional.py::test_functional[postponed_evaluation_pep585] PASSED [ 59%]
+2025-12-15T15:21:04.8704287Z tests/test_functional.py::test_functional[raise_missing_from] PASSED     [ 59%]
+2025-12-15T15:21:04.8993473Z tests/test_functional.py::test_functional[redeclared_assigned_name] PASSED [ 59%]
+2025-12-15T15:21:04.9268583Z tests/test_functional.py::test_functional[redefine_loop] PASSED          [ 59%]
+2025-12-15T15:21:04.9596254Z tests/test_functional.py::test_functional[redundant_u_string_prefix] PASSED [ 59%]
+2025-12-15T15:21:04.9933569Z tests/test_functional.py::test_functional[redundant_unittest_assert] PASSED [ 59%]
+2025-12-15T15:21:05.0252950Z tests/test_functional.py::test_functional[reimport] PASSED               [ 59%]
+2025-12-15T15:21:05.0914194Z tests/test_functional.py::test_functional[reimported] PASSED             [ 60%]
+2025-12-15T15:21:05.1160649Z tests/test_functional.py::test_functional[renamed_import_logging_not_lazy] SKIPPED [ 60%]
+2025-12-15T15:21:05.1460088Z tests/test_functional.py::test_functional[repeated_keyword] PASSED       [ 60%]
+2025-12-15T15:21:05.1772329Z tests/test_functional.py::test_functional[return_in_finally] PASSED      [ 60%]
+2025-12-15T15:21:05.2101943Z tests/test_functional.py::test_functional[return_in_init] PASSED         [ 60%]
+2025-12-15T15:21:05.2383599Z tests/test_functional.py::test_functional[return_outside_function] PASSED [ 60%]
+2025-12-15T15:21:05.2669335Z tests/test_functional.py::test_functional[raising_bad_type] PASSED       [ 60%]
+2025-12-15T15:21:05.3026979Z tests/test_functional.py::test_functional[raising_format_tuple] PASSED   [ 60%]
+2025-12-15T15:21:05.3328489Z tests/test_functional.py::test_functional[raising_non_exception] PASSED  [ 60%]
+2025-12-15T15:21:05.3651796Z tests/test_functional.py::test_functional[raising_self] PASSED           [ 61%]
+2025-12-15T15:21:05.3946727Z tests/test_functional.py::test_functional[recursion_error_2667] PASSED   [ 61%]
+2025-12-15T15:21:05.4246696Z tests/test_functional.py::test_functional[recursion_error_2836] PASSED   [ 61%]
+2025-12-15T15:21:05.4551096Z tests/test_functional.py::test_functional[recursion_error_2861] PASSED   [ 61%]
+2025-12-15T15:21:05.4837241Z tests/test_functional.py::test_functional[recursion_error_2899] PASSED   [ 61%]
+2025-12-15T15:21:05.5126526Z tests/test_functional.py::test_functional[recursion_error_2906] PASSED   [ 61%]
+2025-12-15T15:21:05.6022756Z tests/test_functional.py::test_functional[recursion_error_3152] PASSED   [ 61%]
+2025-12-15T15:21:05.6318418Z tests/test_functional.py::test_functional[recursion_error_3159] PASSED   [ 61%]
+2025-12-15T15:21:05.6646720Z tests/test_functional.py::test_functional[recursion_error_940] PASSED    [ 62%]
+2025-12-15T15:21:05.6927942Z tests/test_functional.py::test_functional[recursion_error_crash] PASSED  [ 62%]
+2025-12-15T15:21:05.7220894Z tests/test_functional.py::test_functional[recursion_error_crash_2683] PASSED [ 62%]
+2025-12-15T15:21:05.7512104Z tests/test_functional.py::test_functional[recursion_error_crash_astroid_623] PASSED [ 62%]
+2025-12-15T15:21:05.7795066Z tests/test_functional.py::test_functional[recursion_regression_2960] PASSED [ 62%]
+2025-12-15T15:21:05.8159163Z tests/test_functional.py::test_functional[redefined_argument_from_local] PASSED [ 62%]
+2025-12-15T15:21:05.8473604Z tests/test_functional.py::test_functional[redefined_builtin] PASSED      [ 62%]
+2025-12-15T15:21:05.8760552Z tests/test_functional.py::test_functional[redefined_builtin_allowed] PASSED [ 62%]
+2025-12-15T15:21:05.9074569Z tests/test_functional.py::test_functional[redefined_except_handler] PASSED [ 62%]
+2025-12-15T15:21:05.9369650Z tests/test_functional.py::test_functional[redefined_outer_name_type_checking] PASSED [ 63%]
+2025-12-15T15:21:05.9729191Z tests/test_functional.py::test_functional[redefined_slots] PASSED        [ 63%]
+2025-12-15T15:21:06.0011631Z tests/test_functional.py::test_functional[regression_1326_crash_uninferable] PASSED [ 63%]
+2025-12-15T15:21:06.0313168Z tests/test_functional.py::test_functional[regression_2306_enum_value] PASSED [ 63%]
+2025-12-15T15:21:06.0655494Z tests/test_functional.py::test_functional[regression_2443_duplicate_bases] PASSED [ 63%]
+2025-12-15T15:21:06.0950800Z tests/test_functional.py::test_functional[regression_2913] PASSED        [ 63%]
+2025-12-15T15:21:06.1279847Z tests/test_functional.py::test_functional[regression_2937_ifexp] PASSED  [ 63%]
+2025-12-15T15:21:06.1568641Z tests/test_functional.py::test_functional[regression_3091] PASSED        [ 63%]
+2025-12-15T15:21:06.1855454Z tests/test_functional.py::test_functional[regression_3231_no_member_property] PASSED [ 63%]
+2025-12-15T15:21:06.2144338Z tests/test_functional.py::test_functional[regression_3416_unused_argument_raise] PASSED [ 64%]
+2025-12-15T15:21:06.2429595Z tests/test_functional.py::test_functional[regression_3507_typing_alias_isinstance] PASSED [ 64%]
+2025-12-15T15:21:06.2757079Z tests/test_functional.py::test_functional[regression_3535_double_enum_inherit] PASSED [ 64%]
+2025-12-15T15:21:06.3041669Z tests/test_functional.py::test_functional[regression_3595_notcallable_collections] PASSED [ 64%]
+2025-12-15T15:21:06.3331205Z tests/test_functional.py::test_functional[regression_4083_sequence_index] PASSED [ 64%]
+2025-12-15T15:21:06.3615431Z tests/test_functional.py::test_functional[regression_4221_object_instanceattr] PASSED [ 64%]
+2025-12-15T15:21:06.3912185Z tests/test_functional.py::test_functional[regression_4358_unsubscriptable_enum] PASSED [ 64%]
+2025-12-15T15:21:06.4211071Z tests/test_functional.py::test_functional[regression_4439] PASSED        [ 64%]
+2025-12-15T15:21:06.4535623Z tests/test_functional.py::test_functional[regression_4612_crash_pytest_fixture] PASSED [ 64%]
+2025-12-15T15:21:06.4849298Z tests/test_functional.py::test_functional[regression_4680] PASSED        [ 65%]
+2025-12-15T15:21:06.5149650Z tests/test_functional.py::test_functional[regression_4688_duplicated_bases_member_hints] PASSED [ 65%]
+2025-12-15T15:21:06.5471287Z tests/test_functional.py::test_functional[regression_4723] PASSED        [ 65%]
+2025-12-15T15:21:06.5758320Z tests/test_functional.py::test_functional[regression_4891] PASSED        [ 65%]
+2025-12-15T15:21:06.6094031Z tests/test_functional.py::test_functional[regression_6531_crash_index_error] PASSED [ 65%]
+2025-12-15T15:21:06.6375044Z tests/test_functional.py::test_functional[regression_9074_refactor_loop_with_unary_variable] PASSED [ 65%]
+2025-12-15T15:21:06.6663622Z tests/test_functional.py::test_functional[regression_9865_calling_bound_lambda] PASSED [ 65%]
+2025-12-15T15:21:06.6958099Z tests/test_functional.py::test_functional[regression_9875_enumerate] PASSED [ 65%]
+2025-12-15T15:21:06.7244486Z tests/test_functional.py::test_functional[regression___file___global] PASSED [ 65%]
+2025-12-15T15:21:06.7600976Z tests/test_functional.py::test_functional[regression_implicit_none_with_no_return] PASSED [ 66%]
+2025-12-15T15:21:06.7897822Z tests/test_functional.py::test_functional[regression_infer_call_result_3690] PASSED [ 66%]
+2025-12-15T15:21:06.8188222Z tests/test_functional.py::test_functional[regression_issue_4631] PASSED  [ 66%]
+2025-12-15T15:21:06.9513559Z tests/test_functional.py::test_functional[regression_issue_4633] PASSED  [ 66%]
+2025-12-15T15:21:06.9801641Z tests/test_functional.py::test_functional[regression_no_member_1078] PASSED [ 66%]
+2025-12-15T15:21:07.0129719Z tests/test_functional.py::test_functional[regression_no_value_for_parameter] PASSED [ 66%]
+2025-12-15T15:21:07.0436749Z tests/test_functional.py::test_functional[regression_posonly_args] PASSED [ 66%]
+2025-12-15T15:21:07.0766909Z tests/test_functional.py::test_functional[regression_properties_in_class_context] PASSED [ 66%]
+2025-12-15T15:21:07.1084027Z tests/test_functional.py::test_functional[regression_property_no_member_2641] PASSED [ 67%]
+2025-12-15T15:21:07.1371384Z tests/test_functional.py::test_functional[regression_property_no_member_3269] PASSED [ 67%]
+2025-12-15T15:21:07.1662301Z tests/test_functional.py::test_functional[regression_property_no_member_844] PASSED [ 67%]
+2025-12-15T15:21:07.1990229Z tests/test_functional.py::test_functional[regression_property_no_member_870] PASSED [ 67%]
+2025-12-15T15:21:07.2279507Z tests/test_functional.py::test_functional[regression_10105] PASSED       [ 67%]
+2025-12-15T15:21:07.2559261Z tests/test_functional.py::test_functional[regression_10334] PASSED       [ 67%]
+2025-12-15T15:21:07.2845450Z tests/test_functional.py::test_functional[regression_10626] PASSED       [ 67%]
+2025-12-15T15:21:07.3133820Z tests/test_functional.py::test_functional[regression_10627] PASSED       [ 67%]
+2025-12-15T15:21:07.3452904Z tests/test_functional.py::test_functional[regression_2567] PASSED        [ 67%]
+2025-12-15T15:21:07.3738768Z tests/test_functional.py::test_functional[regression_2964] PASSED        [ 68%]
+2025-12-15T15:21:07.4032580Z tests/test_functional.py::test_functional[regression_3866] PASSED        [ 68%]
+2025-12-15T15:21:07.4300214Z tests/test_functional.py::test_functional[regression_3976] PASSED        [ 68%]
+2025-12-15T15:21:07.4568874Z tests/test_functional.py::test_functional[regression_3979] PASSED        [ 68%]
+2025-12-15T15:21:07.4792125Z tests/test_functional.py::test_functional[regression_4126] SKIPPED (Test
+2025-12-15T15:21:07.4796629Z cannot run with Python implementation 'CPython')                         [ 68%]
+2025-12-15T15:21:07.5135036Z tests/test_functional.py::test_functional[regression_4660] PASSED        [ 68%]
+2025-12-15T15:21:07.5425212Z tests/test_functional.py::test_functional[regression_4982] PASSED        [ 68%]
+2025-12-15T15:21:07.5722955Z tests/test_functional.py::test_functional[regression_5030] PASSED        [ 68%]
+2025-12-15T15:21:07.6011042Z tests/test_functional.py::test_functional[regression_5048] PASSED        [ 68%]
+2025-12-15T15:21:07.6288115Z tests/test_functional.py::test_functional[regression_5244] PASSED        [ 69%]
+2025-12-15T15:21:07.6759898Z tests/test_functional.py::test_functional[regression_5408] PASSED        [ 69%]
+2025-12-15T15:21:07.7032805Z tests/test_functional.py::test_functional[regression_5461] PASSED        [ 69%]
+2025-12-15T15:21:07.7351662Z tests/test_functional.py::test_functional[regression_5479] PASSED        [ 69%]
+2025-12-15T15:21:07.7630790Z tests/test_functional.py::test_functional[regression_5776] PASSED        [ 69%]
+2025-12-15T15:21:07.7933252Z tests/test_functional.py::test_functional[regression_5801] PASSED        [ 69%]
+2025-12-15T15:21:07.8230567Z tests/test_functional.py::test_functional[regression_8067] PASSED        [ 69%]
+2025-12-15T15:21:07.8533296Z tests/test_functional.py::test_functional[regression_8109] PASSED        [ 69%]
+2025-12-15T15:21:07.8833645Z tests/test_functional.py::test_functional[regression_8207] PASSED        [ 69%]
+2025-12-15T15:21:07.9122549Z tests/test_functional.py::test_functional[regression_8736] PASSED        [ 70%]
+2025-12-15T15:21:07.9443876Z tests/test_functional.py::test_functional[regression_9751] PASSED        [ 70%]
+2025-12-15T15:21:07.9684393Z tests/test_functional.py::test_functional[regression_distutil_import_error_73] SKIPPED [ 70%]
+2025-12-15T15:21:07.9984258Z tests/test_functional.py::test_functional[regression_dynamic_getitiem] PASSED [ 70%]
+2025-12-15T15:21:08.0300849Z tests/test_functional.py::test_functional[regression_enum_1734] PASSED   [ 70%]
+2025-12-15T15:21:08.0590874Z tests/test_functional.py::test_functional[regression_lambda_inference_not_callable] PASSED [ 70%]
+2025-12-15T15:21:08.0894403Z tests/test_functional.py::test_functional[regression_no_member_7631] PASSED [ 70%]
+2025-12-15T15:21:08.1235056Z tests/test_functional.py::test_functional[regression_node_statement] PASSED [ 70%]
+2025-12-15T15:21:08.1544725Z tests/test_functional.py::test_functional[regression_node_statement_two] PASSED [ 70%]
+2025-12-15T15:21:08.1845762Z tests/test_functional.py::test_functional[regression_property_slots_2439] PASSED [ 71%]
+2025-12-15T15:21:08.2140988Z tests/test_functional.py::test_functional[regression_protected_access] PASSED [ 71%]
+2025-12-15T15:21:08.2432971Z tests/test_functional.py::test_functional[regression_too_many_arguments_2335] PASSED [ 71%]
+2025-12-15T15:21:08.2834375Z tests/test_functional.py::test_functional[shadowed_import] PASSED        [ 71%]
+2025-12-15T15:21:08.3186259Z tests/test_functional.py::test_functional[shallow_copy_environ] PASSED   [ 71%]
+2025-12-15T15:21:08.3509006Z tests/test_functional.py::test_functional[signature_differs] PASSED      [ 71%]
+2025-12-15T15:21:08.3874603Z tests/test_functional.py::test_functional[simplify_chained_comparison] PASSED [ 71%]
+2025-12-15T15:21:08.4235227Z tests/test_functional.py::test_functional[singleton_comparison] PASSED   [ 71%]
+2025-12-15T15:21:09.4165435Z tests/test_functional.py::test_functional[slots_checks] PASSED           [ 72%]
+2025-12-15T15:21:09.4451186Z tests/test_functional.py::test_functional[socketerror_import] PASSED     [ 72%]
+2025-12-15T15:21:09.4808565Z tests/test_functional.py::test_functional[statement_without_effect] PASSED [ 72%]
+2025-12-15T15:21:09.5077090Z tests/test_functional.py::test_functional[statement_without_effect_py312] PASSED [ 72%]
+2025-12-15T15:21:09.5399722Z tests/test_functional.py::test_functional[statement_without_effect_py36] PASSED [ 72%]
+2025-12-15T15:21:09.5861274Z tests/test_functional.py::test_functional[stop_iteration_inside_generator] PASSED [ 72%]
+2025-12-15T15:21:09.6169733Z tests/test_functional.py::test_functional[subclassed_final_class_py38] PASSED [ 72%]
+2025-12-15T15:21:09.6461294Z tests/test_functional.py::test_functional[subprocess_popen_preexec_fn] PASSED [ 72%]
+2025-12-15T15:21:09.6786560Z tests/test_functional.py::test_functional[subprocess_run_check] PASSED   [ 72%]
+2025-12-15T15:21:09.7189037Z tests/test_functional.py::test_functional[superfluous_parens] PASSED     [ 73%]
+2025-12-15T15:21:09.7528304Z tests/test_functional.py::test_functional[superfluous_parens_walrus_py38] PASSED [ 73%]
+2025-12-15T15:21:09.7818488Z tests/test_functional.py::test_functional[suspicious_str_strip_call] PASSED [ 73%]
+2025-12-15T15:21:09.8151568Z tests/test_functional.py::test_functional[sys_stream_regression_1004] PASSED [ 73%]
+2025-12-15T15:21:09.8530056Z tests/test_functional.py::test_functional[self_assigning_variable] PASSED [ 73%]
+2025-12-15T15:21:09.8867657Z tests/test_functional.py::test_functional[self_cls_assignment] PASSED    [ 73%]
+2025-12-15T15:21:09.9177363Z tests/test_functional.py::test_functional[simplifiable_condition] PASSED [ 73%]
+2025-12-15T15:21:09.9481317Z tests/test_functional.py::test_functional[simplifiable_if_expression] PASSED [ 73%]
+2025-12-15T15:21:09.9840326Z tests/test_functional.py::test_functional[simplifiable_if_statement] PASSED [ 73%]
+2025-12-15T15:21:10.0179335Z tests/test_functional.py::test_functional[singledispatch_function_redefined] PASSED [ 74%]
+2025-12-15T15:21:10.0569842Z tests/test_functional.py::test_functional[singledispatch_functions] PASSED [ 74%]
+2025-12-15T15:21:10.0917660Z tests/test_functional.py::test_functional[singledispatch_method] PASSED  [ 74%]
+2025-12-15T15:21:10.1258527Z tests/test_functional.py::test_functional[singledispatchmethod_function] PASSED [ 74%]
+2025-12-15T15:21:10.1532878Z tests/test_functional.py::test_functional[star_needs_assignment_target] PASSED [ 74%]
+2025-12-15T15:21:10.2179763Z tests/test_functional.py::test_functional[string_formatting] PASSED      [ 74%]
+2025-12-15T15:21:10.2462250Z tests/test_functional.py::test_functional[string_formatting_disable] PASSED [ 74%]
+2025-12-15T15:21:10.2778726Z tests/test_functional.py::test_functional[string_formatting_error] PASSED [ 74%]
+2025-12-15T15:21:10.3051271Z tests/test_functional.py::test_functional[string_formatting_failed_inference] PASSED [ 74%]
+2025-12-15T15:21:10.3363383Z tests/test_functional.py::test_functional[string_formatting_failed_inference_py35] PASSED [ 75%]
+2025-12-15T15:21:10.3671571Z tests/test_functional.py::test_functional[string_formatting_py3] PASSED  [ 75%]
+2025-12-15T15:21:10.3961184Z tests/test_functional.py::test_functional[string_log_formatting] PASSED  [ 75%]
+2025-12-15T15:21:10.4559750Z tests/test_functional.py::test_functional[super_checks] PASSED           [ 75%]
+2025-12-15T15:21:10.5456530Z tests/test_functional.py::test_functional[super_init_not_called] PASSED  [ 75%]
+2025-12-15T15:21:10.5780568Z tests/test_functional.py::test_functional[super_init_not_called_extensions_py310] PASSED [ 75%]
+2025-12-15T15:21:10.6066609Z tests/test_functional.py::test_functional[super_init_not_called_py38] PASSED [ 75%]
+2025-12-15T15:21:10.6387965Z tests/test_functional.py::test_functional[super_with_arguments] PASSED   [ 75%]
+2025-12-15T15:21:10.6688096Z tests/test_functional.py::test_functional[super_without_brackets] PASSED [ 75%]
+2025-12-15T15:21:10.6961099Z tests/test_functional.py::test_functional[symlink_module0] PASSED        [ 76%]
+2025-12-15T15:21:10.7269836Z tests/test_functional.py::test_functional[symlink_module1] PASSED        [ 76%]
+2025-12-15T15:21:10.7544397Z tests/test_functional.py::test_functional[syntax_error] PASSED           [ 76%]
+2025-12-15T15:21:10.7781903Z tests/test_functional.py::test_functional[syntax_error_jython] SKIPPED   [ 76%]
+2025-12-15T15:21:10.8104376Z tests/test_functional.py::test_functional[ternary] PASSED                [ 76%]
+2025-12-15T15:21:10.8394459Z tests/test_functional.py::test_functional[test_compile] PASSED           [ 76%]
+2025-12-15T15:21:10.8661496Z tests/test_functional.py::test_functional[tokenize_error] SKIPPED (Test
+2025-12-15T15:21:10.8666135Z cannot run with Python 3.13.11.)                                         [ 76%]
+2025-12-15T15:21:10.8900479Z tests/test_functional.py::test_functional[tokenize_error_jython] SKIPPED [ 76%]
+2025-12-15T15:21:10.9173623Z tests/test_functional.py::test_functional[tokenize_error_py312] PASSED   [ 77%]
+2025-12-15T15:21:10.9488367Z tests/test_functional.py::test_functional[trailing_comma_tuple] PASSED   [ 77%]
+2025-12-15T15:21:10.9720419Z tests/test_functional.py::test_functional[trailing_comma_tuple_9608] SKIPPED [ 77%]
+2025-12-15T15:21:10.9996438Z tests/test_functional.py::test_functional[trailing_newlines] PASSED      [ 77%]
+2025-12-15T15:21:11.0333854Z tests/test_functional.py::test_functional[trailing_whitespaces] PASSED   [ 77%]
+2025-12-15T15:21:11.0728119Z tests/test_functional.py::test_functional[try_except_raise] PASSED       [ 77%]
+2025-12-15T15:21:11.0970614Z tests/test_functional.py::test_functional[try_except_raise_crash] SKIPPED [ 77%]
+2025-12-15T15:21:11.1305461Z tests/test_functional.py::test_functional[typing_generic] PASSED         [ 77%]
+2025-12-15T15:21:11.1668358Z tests/test_functional.py::test_functional[typing_use] PASSED             [ 77%]
+2025-12-15T15:21:11.1983937Z tests/test_functional.py::test_functional[too_few_public_methods] PASSED [ 78%]
+2025-12-15T15:21:11.2321888Z tests/test_functional.py::test_functional[too_few_public_methods_37] PASSED [ 78%]
+2025-12-15T15:21:11.2608040Z tests/test_functional.py::test_functional[too_few_public_methods_excluded] PASSED [ 78%]
+2025-12-15T15:21:11.2915690Z tests/test_functional.py::test_functional[too_many_ancestors] PASSED     [ 78%]
+2025-12-15T15:21:11.3202974Z tests/test_functional.py::test_functional[too_many_ancestors_ignored_parents] PASSED [ 78%]
+2025-12-15T15:21:11.3547118Z tests/test_functional.py::test_functional[too_many_arguments] PASSED     [ 78%]
+2025-12-15T15:21:11.3827219Z tests/test_functional.py::test_functional[too_many_arguments_issue_1045] PASSED [ 78%]
+2025-12-15T15:21:11.4123937Z tests/test_functional.py::test_functional[too_many_arguments_overload] PASSED [ 78%]
+2025-12-15T15:21:11.4429164Z tests/test_functional.py::test_functional[too_many_boolean_expressions] PASSED [ 78%]
+2025-12-15T15:21:11.4721418Z tests/test_functional.py::test_functional[too_many_branches] PASSED      [ 79%]
+2025-12-15T15:21:11.5053790Z tests/test_functional.py::test_functional[too_many_function_args] PASSED [ 79%]
+2025-12-15T15:21:11.5361215Z tests/test_functional.py::test_functional[too_many_instance_attributes] PASSED [ 79%]
+2025-12-15T15:21:11.5674107Z tests/test_functional.py::test_functional[too_many_instance_attributes_py37] PASSED [ 79%]
+2025-12-15T15:21:11.6018220Z tests/test_functional.py::test_functional[too_many_lines] PASSED         [ 79%]
+2025-12-15T15:21:11.6342811Z tests/test_functional.py::test_functional[too_many_lines_disabled] PASSED [ 79%]
+2025-12-15T15:21:11.6661931Z tests/test_functional.py::test_functional[too_many_locals] PASSED        [ 79%]
+2025-12-15T15:21:11.7005058Z tests/test_functional.py::test_functional[too_many_nested_blocks] PASSED [ 79%]
+2025-12-15T15:21:11.7295386Z tests/test_functional.py::test_functional[too_many_positional_arguments] PASSED [ 79%]
+2025-12-15T15:21:11.7637151Z tests/test_functional.py::test_functional[too_many_public_methods] PASSED [ 80%]
+2025-12-15T15:21:11.7935519Z tests/test_functional.py::test_functional[too_many_return_statements] PASSED [ 80%]
+2025-12-15T15:21:11.8223221Z tests/test_functional.py::test_functional[too_many_star_expressions] PASSED [ 80%]
+2025-12-15T15:21:11.8572788Z tests/test_functional.py::test_functional[too_many_statements] PASSED    [ 80%]
+2025-12-15T15:21:11.8928658Z tests/test_functional.py::test_functional[typealias_naming_style_default] PASSED [ 80%]
+2025-12-15T15:21:11.9240564Z tests/test_functional.py::test_functional[typealias_naming_style_py312] PASSED [ 80%]
+2025-12-15T15:21:11.9532515Z tests/test_functional.py::test_functional[typealias_naming_style_rgx] PASSED [ 80%]
+2025-12-15T15:21:11.9828845Z tests/test_functional.py::test_functional[typedDict] PASSED              [ 80%]
+2025-12-15T15:21:12.0143163Z tests/test_functional.py::test_functional[typevar_double_variance] PASSED [ 81%]
+2025-12-15T15:21:12.0597041Z tests/test_functional.py::test_functional[typevar_name_incorrect_variance] PASSED [ 81%]
+2025-12-15T15:21:12.1007762Z tests/test_functional.py::test_functional[typevar_name_mismatch] PASSED  [ 81%]
+2025-12-15T15:21:12.1531259Z tests/test_functional.py::test_functional[typevar_naming_style_default] PASSED [ 81%]
+2025-12-15T15:21:12.1816121Z tests/test_functional.py::test_functional[typevar_naming_style_py312] PASSED [ 81%]
+2025-12-15T15:21:12.2167262Z tests/test_functional.py::test_functional[typevar_naming_style_rgx] PASSED [ 81%]
+2025-12-15T15:21:12.2610554Z tests/test_functional.py::test_functional[unexpected_keyword_arg] PASSED [ 81%]
+2025-12-15T15:21:12.3006904Z tests/test_functional.py::test_functional[unexpected_special_method_signature] PASSED [ 81%]
+2025-12-15T15:21:12.3383749Z tests/test_functional.py::test_functional[ungrouped_imports] PASSED      [ 81%]
+2025-12-15T15:21:12.3662441Z tests/test_functional.py::test_functional[ungrouped_imports_isort_compatible] PASSED [ 82%]
+2025-12-15T15:21:12.3927267Z tests/test_functional.py::test_functional[ungrouped_imports_suppression] SKIPPED [ 82%]
+2025-12-15T15:21:12.4255780Z tests/test_functional.py::test_functional[unhashable_member] PASSED      [ 82%]
+2025-12-15T15:21:12.4523085Z tests/test_functional.py::test_functional[unhashable_member_py312] PASSED [ 82%]
+2025-12-15T15:21:12.4962814Z tests/test_functional.py::test_functional[unidiomatic_typecheck] PASSED  [ 82%]
+2025-12-15T15:21:12.5236753Z tests/test_functional.py::test_functional[uninferable_all_object] PASSED [ 82%]
+2025-12-15T15:21:12.5497698Z tests/test_functional.py::test_functional[unknown_encoding_jython] SKIPPED [ 82%]
+2025-12-15T15:21:12.6160518Z tests/test_functional.py::test_functional[unreachable] PASSED            [ 82%]
+2025-12-15T15:21:12.6440690Z tests/test_functional.py::test_functional[unrecognized_inline_option] PASSED [ 82%]
+2025-12-15T15:21:12.7397994Z tests/test_functional.py::test_functional[unspecified_encoding_py38] PASSED [ 83%]
+2025-12-15T15:21:12.7738877Z tests/test_functional.py::test_functional[unsubscriptable_object] PASSED [ 83%]
+2025-12-15T15:21:12.8242118Z tests/test_functional.py::test_functional[unsubscriptable_value] PASSED  [ 83%]
+2025-12-15T15:21:12.8543208Z tests/test_functional.py::test_functional[unsubscriptable_value_py37] PASSED [ 83%]
+2025-12-15T15:21:12.8971642Z tests/test_functional.py::test_functional[using_constant_test] PASSED    [ 83%]
+2025-12-15T15:21:12.9480819Z tests/test_functional.py::test_functional[unbalanced_dict_unpacking] PASSED [ 83%]
+2025-12-15T15:21:12.9975662Z tests/test_functional.py::test_functional[unbalanced_tuple_unpacking] PASSED [ 83%]
+2025-12-15T15:21:13.0250681Z tests/test_functional.py::test_functional[unbalanced_tuple_unpacking_py30] PASSED [ 83%]
+2025-12-15T15:21:13.0523427Z tests/test_functional.py::test_functional[undefined_all_variable_edge_case] PASSED [ 83%]
+2025-12-15T15:21:13.1026156Z tests/test_functional.py::test_functional[undefined_loop_variable] PASSED [ 84%]
+2025-12-15T15:21:13.1297818Z tests/test_functional.py::test_functional[undefined_loop_variable_py311] PASSED [ 84%]
+2025-12-15T15:21:13.1565279Z tests/test_functional.py::test_functional[undefined_loop_variable_py38] PASSED [ 84%]
+2025-12-15T15:21:13.2312188Z tests/test_functional.py::test_functional[undefined_variable] PASSED     [ 84%]
+2025-12-15T15:21:13.2601064Z tests/test_functional.py::test_functional[undefined_variable_classes] PASSED [ 84%]
+2025-12-15T15:21:13.2885130Z tests/test_functional.py::test_functional[undefined_variable_crash_on_attribute] PASSED [ 84%]
+2025-12-15T15:21:13.3177163Z tests/test_functional.py::test_functional[undefined_variable_decorators] PASSED [ 84%]
+2025-12-15T15:21:13.3529519Z tests/test_functional.py::test_functional[undefined_variable_py30] PASSED [ 84%]
+2025-12-15T15:21:13.3866352Z tests/test_functional.py::test_functional[undefined_variable_py312] PASSED [ 84%]
+2025-12-15T15:21:13.4302427Z tests/test_functional.py::test_functional[undefined_variable_py38] PASSED [ 85%]
+2025-12-15T15:21:13.4592000Z tests/test_functional.py::test_functional[undefined_variable_typing] PASSED [ 85%]
+2025-12-15T15:21:13.4864320Z tests/test_functional.py::test_functional[unicode_bidi_commenting_out] PASSED [ 85%]
+2025-12-15T15:21:13.5143750Z tests/test_functional.py::test_functional[unicode_bidi_early_return] PASSED [ 85%]
+2025-12-15T15:21:13.5463290Z tests/test_functional.py::test_functional[unicode_bidi_pep672] PASSED    [ 85%]
+2025-12-15T15:21:13.5833436Z tests/test_functional.py::test_functional[unnecessary_comprehension] PASSED [ 85%]
+2025-12-15T15:21:13.6350000Z tests/test_functional.py::test_functional[unnecessary_dict_index_lookup] PASSED [ 85%]
+2025-12-15T15:21:13.6635384Z tests/test_functional.py::test_functional[unnecessary_direct_lambda_call] PASSED [ 85%]
+2025-12-15T15:21:13.7090662Z tests/test_functional.py::test_functional[unnecessary_dunder_call] PASSED [ 86%]
+2025-12-15T15:21:13.7367582Z tests/test_functional.py::test_functional[unnecessary_dunder_call_async_py310] PASSED [ 86%]
+2025-12-15T15:21:13.7635026Z tests/test_functional.py::test_functional[unnecessary_dunder_call_async_py39] PASSED [ 86%]
+2025-12-15T15:21:13.7976065Z tests/test_functional.py::test_functional[unnecessary_ellipsis] PASSED   [ 86%]
+2025-12-15T15:21:13.8380036Z tests/test_functional.py::test_functional[unnecessary_lambda] PASSED     [ 86%]
+2025-12-15T15:21:13.8692152Z tests/test_functional.py::test_functional[unnecessary_lambda_assignment] PASSED [ 86%]
+2025-12-15T15:21:13.9201256Z tests/test_functional.py::test_functional[unnecessary_list_index_lookup] PASSED [ 86%]
+2025-12-15T15:21:13.9531148Z tests/test_functional.py::test_functional[unnecessary_negation] PASSED   [ 86%]
+2025-12-15T15:21:13.9842039Z tests/test_functional.py::test_functional[unnecessary_pass] PASSED       [ 86%]
+2025-12-15T15:21:14.0108665Z tests/test_functional.py::test_functional[unpacking] PASSED              [ 87%]
+2025-12-15T15:21:14.0430464Z tests/test_functional.py::test_functional[unpacking_generalizations] PASSED [ 87%]
+2025-12-15T15:21:14.1300404Z tests/test_functional.py::test_functional[unpacking_non_sequence] PASSED [ 87%]
+2025-12-15T15:21:14.1588439Z tests/test_functional.py::test_functional[unpacking_non_sequence_py310] PASSED [ 87%]
+2025-12-15T15:21:14.1900263Z tests/test_functional.py::test_functional[unpacking_non_sequence_py37] PASSED [ 87%]
+2025-12-15T15:21:14.2338168Z tests/test_functional.py::test_functional[unsupported_assignment_operation] PASSED [ 87%]
+2025-12-15T15:21:14.2582929Z tests/test_functional.py::test_functional[unsupported_binary_operation] SKIPPED [ 87%]
+2025-12-15T15:21:14.3051109Z tests/test_functional.py::test_functional[unsupported_delete_operation] PASSED [ 87%]
+2025-12-15T15:21:14.3346474Z tests/test_functional.py::test_functional[unsupported_version_for_assignment_expression] PASSED [ 87%]
+2025-12-15T15:21:14.3644561Z tests/test_functional.py::test_functional[unsupported_version_for_exception_group] PASSED [ 88%]
+2025-12-15T15:21:14.3926854Z tests/test_functional.py::test_functional[unsupported_version_for_f_string] PASSED [ 88%]
+2025-12-15T15:21:14.4243950Z tests/test_functional.py::test_functional[unsupported_version_for_final] PASSED [ 88%]
+2025-12-15T15:21:14.4572708Z tests/test_functional.py::test_functional[unsupported_version_for_generic_type_syntax] PASSED [ 88%]
+2025-12-15T15:21:14.4856854Z tests/test_functional.py::test_functional[unsupported_version_for_posonly_args] PASSED [ 88%]
+2025-12-15T15:21:14.5290434Z tests/test_functional.py::test_functional[unused_argument] PASSED        [ 88%]
+2025-12-15T15:21:14.5588988Z tests/test_functional.py::test_functional[unused_argument_py3] PASSED    [ 88%]
+2025-12-15T15:21:14.5883419Z tests/test_functional.py::test_functional[unused_global_variable1] PASSED [ 88%]
+2025-12-15T15:21:14.6234282Z tests/test_functional.py::test_functional[unused_global_variable2] PASSED [ 88%]
+2025-12-15T15:21:14.6522666Z tests/test_functional.py::test_functional[unused_global_variable3] PASSED [ 89%]
+2025-12-15T15:21:14.6808981Z tests/test_functional.py::test_functional[unused_global_variable4] PASSED [ 89%]
+2025-12-15T15:21:14.7238983Z tests/test_functional.py::test_functional[unused_import] PASSED          [ 89%]
+2025-12-15T15:21:14.7553711Z tests/test_functional.py::test_functional[unused_import_assigned_to] PASSED [ 89%]
+2025-12-15T15:21:14.7906959Z tests/test_functional.py::test_functional[unused_import_class_def_keyword] PASSED [ 89%]
+2025-12-15T15:21:14.8206907Z tests/test_functional.py::test_functional[unused_import_everything_disabled] PASSED [ 89%]
+2025-12-15T15:21:14.8498944Z tests/test_functional.py::test_functional[unused_import_positional_only_py38] PASSED [ 89%]
+2025-12-15T15:21:14.8822987Z tests/test_functional.py::test_functional[unused_import_py30] PASSED     [ 89%]
+2025-12-15T15:21:14.9114456Z tests/test_functional.py::test_functional[unused_module] PASSED          [ 89%]
+2025-12-15T15:21:14.9464689Z tests/test_functional.py::test_functional[unused_name_from_wildcard_import] PASSED [ 90%]
+2025-12-15T15:21:14.9766693Z tests/test_functional.py::test_functional[unused_name_in_string_literal_type_annotation] PASSED [ 90%]
+2025-12-15T15:21:15.0063026Z tests/test_functional.py::test_functional[unused_name_in_string_literal_type_annotation_py310] PASSED [ 90%]
+2025-12-15T15:21:15.0373234Z tests/test_functional.py::test_functional[unused_name_in_string_literal_type_annotation_py38] PASSED [ 90%]
+2025-12-15T15:21:15.0652807Z tests/test_functional.py::test_functional[unused_name_in_string_literal_type_annotation_py39] PASSED [ 90%]
+2025-12-15T15:21:15.1407551Z tests/test_functional.py::test_functional[unused_private_member] PASSED  [ 90%]
+2025-12-15T15:21:15.1712457Z tests/test_functional.py::test_functional[unused_typing_imports] PASSED  [ 90%]
+2025-12-15T15:21:15.2255314Z tests/test_functional.py::test_functional[unused_variable] PASSED        [ 90%]
+2025-12-15T15:21:15.2540945Z tests/test_functional.py::test_functional[unused_variable_after_inference] PASSED [ 91%]
+2025-12-15T15:21:15.2820053Z tests/test_functional.py::test_functional[unused_variable_future_and_annotations] PASSED [ 91%]
+2025-12-15T15:21:15.3109128Z tests/test_functional.py::test_functional[unused_variable_py36] PASSED   [ 91%]
+2025-12-15T15:21:15.3412098Z tests/test_functional.py::test_functional[unused_variable_py38] PASSED   [ 91%]
+2025-12-15T15:21:15.3714880Z tests/test_functional.py::test_functional[use_a_generator] PASSED        [ 91%]
+2025-12-15T15:21:15.4536292Z tests/test_functional.py::test_functional[use_implicit_booleaness_not_comparison] PASSED [ 91%]
+2025-12-15T15:21:15.4908248Z tests/test_functional.py::test_functional[use_implicit_booleaness_not_comparison_to_string] PASSED [ 91%]
+2025-12-15T15:21:15.5302994Z tests/test_functional.py::test_functional[use_implicit_booleaness_not_comparison_to_zero] PASSED [ 91%]
+2025-12-15T15:21:15.6033904Z tests/test_functional.py::test_functional[use_implicit_booleaness_not_len] PASSED [ 91%]
+2025-12-15T15:21:15.6398955Z tests/test_functional.py::test_functional[use_literal_dict] PASSED       [ 92%]
+2025-12-15T15:21:15.6694277Z tests/test_functional.py::test_functional[use_literal_list] PASSED       [ 92%]
+2025-12-15T15:21:15.7207605Z tests/test_functional.py::test_functional[use_maxsplit_arg] PASSED       [ 92%]
+2025-12-15T15:21:15.7530156Z tests/test_functional.py::test_functional[use_sequence_for_iteration] PASSED [ 92%]
+2025-12-15T15:21:15.7859951Z tests/test_functional.py::test_functional[use_symbolic_message_instead] PASSED [ 92%]
+2025-12-15T15:21:15.8266391Z tests/test_functional.py::test_functional[use_yield_from] PASSED         [ 92%]
+2025-12-15T15:21:15.8561242Z tests/test_functional.py::test_functional[used_before_assignment_except_handler_for_try_with_return_py38] PASSED [ 92%]
+2025-12-15T15:21:15.9226670Z tests/test_functional.py::test_functional[used_before_assignment] PASSED [ 92%]
+2025-12-15T15:21:15.9540629Z tests/test_functional.py::test_functional[used_before_assignment_488] PASSED [ 92%]
+2025-12-15T15:21:15.9828089Z tests/test_functional.py::test_functional[used_before_assignment_class_nested_under_function] PASSED [ 93%]
+2025-12-15T15:21:16.0158376Z tests/test_functional.py::test_functional[used_before_assignment_comprehension_homonyms] PASSED [ 93%]
+2025-12-15T15:21:16.0448102Z tests/test_functional.py::test_functional[used_before_assignment_conditional] PASSED [ 93%]
+2025-12-15T15:21:16.0758531Z tests/test_functional.py::test_functional[used_before_assignment_else_continue] PASSED [ 93%]
+2025-12-15T15:21:16.1090146Z tests/test_functional.py::test_functional[used_before_assignment_else_return] PASSED [ 93%]
+2025-12-15T15:21:17.2901163Z tests/test_functional.py::test_functional[used_before_assignment_except_handler_for_try_with_return] PASSED [ 93%]
+2025-12-15T15:21:17.3225540Z tests/test_functional.py::test_functional[used_before_assignment_issue1081] PASSED [ 93%]
+2025-12-15T15:21:17.3536088Z tests/test_functional.py::test_functional[used_before_assignment_issue2615] PASSED [ 93%]
+2025-12-15T15:21:17.3911792Z tests/test_functional.py::test_functional[used_before_assignment_issue4761] PASSED [ 93%]
+2025-12-15T15:21:17.4276160Z tests/test_functional.py::test_functional[used_before_assignment_issue626] PASSED [ 94%]
+2025-12-15T15:21:17.4628016Z tests/test_functional.py::test_functional[used_before_assignment_issue85] PASSED [ 94%]
+2025-12-15T15:21:17.4933231Z tests/test_functional.py::test_functional[used_before_assignment_issue853] PASSED [ 94%]
+2025-12-15T15:21:17.5344502Z tests/test_functional.py::test_functional[used_before_assignment_nonlocal] PASSED [ 94%]
+2025-12-15T15:21:17.5672299Z tests/test_functional.py::test_functional[used_before_assignment_postponed_evaluation] PASSED [ 94%]
+2025-12-15T15:21:17.6167198Z tests/test_functional.py::test_functional[used_before_assignment_py310] PASSED [ 94%]
+2025-12-15T15:21:17.6484187Z tests/test_functional.py::test_functional[used_before_assignment_py311] PASSED [ 94%]
+2025-12-15T15:21:17.6797008Z tests/test_functional.py::test_functional[used_before_assignment_py312] PASSED [ 94%]
+2025-12-15T15:21:17.7100761Z tests/test_functional.py::test_functional[used_before_assignment_py313_0] PASSED [ 94%]
+2025-12-15T15:21:17.7427752Z tests/test_functional.py::test_functional[used_before_assignment_py37] PASSED [ 95%]
+2025-12-15T15:21:17.7782019Z tests/test_functional.py::test_functional[used_before_assignment_scoping] PASSED [ 95%]
+2025-12-15T15:21:17.8171814Z tests/test_functional.py::test_functional[used_before_assignment_ternary] PASSED [ 95%]
+2025-12-15T15:21:17.8539859Z tests/test_functional.py::test_functional[used_before_assignment_type_annotations] PASSED [ 95%]
+2025-12-15T15:21:17.9388238Z tests/test_functional.py::test_functional[used_before_assignment_typing] PASSED [ 95%]
+2025-12-15T15:21:17.9692860Z tests/test_functional.py::test_functional[used_prior_global_declaration] PASSED [ 95%]
+2025-12-15T15:21:17.9989197Z tests/test_functional.py::test_functional[used_before_assignment_py313_1] PASSED [ 95%]
+2025-12-15T15:21:18.0318500Z tests/test_functional.py::test_functional[useless_else_on_loop] PASSED   [ 95%]
+2025-12-15T15:21:18.0627983Z tests/test_functional.py::test_functional[useless_object_inheritance] PASSED [ 96%]
+2025-12-15T15:21:18.1685741Z tests/test_functional.py::test_functional[useless_parent_delegation] PASSED [ 96%]
+2025-12-15T15:21:18.1985031Z tests/test_functional.py::test_functional[useless_parent_delegation_py38] PASSED [ 96%]
+2025-12-15T15:21:18.2327482Z tests/test_functional.py::test_functional[useless_return] PASSED         [ 96%]
+2025-12-15T15:21:18.2561150Z tests/test_functional.py::test_functional[useless_suppression] SKIPPED   [ 96%]
+2025-12-15T15:21:18.2867489Z tests/test_functional.py::test_functional[useless_with_lock] PASSED      [ 96%]
+2025-12-15T15:21:18.3244378Z tests/test_functional.py::test_functional[wildcard_import] PASSED        [ 96%]
+2025-12-15T15:21:18.3714821Z tests/test_functional.py::test_functional[wildcard_import_allowed] PASSED [ 96%]
+2025-12-15T15:21:18.4012036Z tests/test_functional.py::test_functional[with_used_before_assign] PASSED [ 96%]
+2025-12-15T15:21:18.4325193Z tests/test_functional.py::test_functional[with_using_generator] PASSED   [ 97%]
+2025-12-15T15:21:18.4661029Z tests/test_functional.py::test_functional[wrong_exception_operation] PASSED [ 97%]
+2025-12-15T15:21:18.4974144Z tests/test_functional.py::test_functional[wrong_exception_operation_py37] PASSED [ 97%]
+2025-12-15T15:21:18.6693523Z tests/test_functional.py::test_functional[wrong_import_order] PASSED     [ 97%]
+2025-12-15T15:21:18.7000491Z tests/test_functional.py::test_functional[wrong_import_order2] PASSED    [ 97%]
+2025-12-15T15:21:18.7351771Z tests/test_functional.py::test_functional[wrong_import_position] PASSED  [ 97%]
+2025-12-15T15:21:18.7649571Z tests/test_functional.py::test_functional[wrong_import_position10] PASSED [ 97%]
+2025-12-15T15:21:18.7954277Z tests/test_functional.py::test_functional[wrong_import_position11] PASSED [ 97%]
+2025-12-15T15:21:18.8313448Z tests/test_functional.py::test_functional[wrong_import_position12] PASSED [ 97%]
+2025-12-15T15:21:18.8632702Z tests/test_functional.py::test_functional[wrong_import_position13] PASSED [ 98%]
+2025-12-15T15:21:18.8942252Z tests/test_functional.py::test_functional[wrong_import_position14] PASSED [ 98%]
+2025-12-15T15:21:18.9239402Z tests/test_functional.py::test_functional[wrong_import_position15] PASSED [ 98%]
+2025-12-15T15:21:18.9580567Z tests/test_functional.py::test_functional[wrong_import_position2] PASSED [ 98%]
+2025-12-15T15:21:18.9914577Z tests/test_functional.py::test_functional[wrong_import_position3] PASSED [ 98%]
+2025-12-15T15:21:19.0220762Z tests/test_functional.py::test_functional[wrong_import_position4] PASSED [ 98%]
+2025-12-15T15:21:19.0526871Z tests/test_functional.py::test_functional[wrong_import_position5] PASSED [ 98%]
+2025-12-15T15:21:19.0834271Z tests/test_functional.py::test_functional[wrong_import_position6] PASSED [ 98%]
+2025-12-15T15:21:19.1144457Z tests/test_functional.py::test_functional[wrong_import_position7] PASSED [ 98%]
+2025-12-15T15:21:19.1498308Z tests/test_functional.py::test_functional[wrong_import_position8] PASSED [ 99%]
+2025-12-15T15:21:19.1811139Z tests/test_functional.py::test_functional[wrong_import_position9] PASSED [ 99%]
+2025-12-15T15:21:19.2126305Z tests/test_functional.py::test_functional[wrong_import_position_exclude_dunder_main] PASSED [ 99%]
+2025-12-15T15:21:19.2423960Z tests/test_functional.py::test_functional[yield_assign] PASSED           [ 99%]
+2025-12-15T15:21:19.2717504Z tests/test_functional.py::test_functional[yield_from_iterable] PASSED    [ 99%]
+2025-12-15T15:21:19.3005169Z tests/test_functional.py::test_functional[yield_from_outside_func] PASSED [ 99%]
+2025-12-15T15:21:19.3351534Z tests/test_functional.py::test_functional[yield_inside_async_function] PASSED [ 99%]
+2025-12-15T15:21:19.3643765Z tests/test_functional.py::test_functional[yield_outside_func] PASSED     [ 99%]
+2025-12-15T15:21:25.3192205Z tests/test_functional.py::test_functional[yield_return_mix] PASSED       [100%]
+2025-12-15T15:21:25.3192670Z 
+2025-12-15T15:21:25.3192869Z ======================= 857 passed, 22 skipped in 40.68s =======================
+2025-12-15T15:21:32.0322799Z ##[group]Run actions/upload-artifact@v6.0.0
+2025-12-15T15:21:32.0323072Z with:
+2025-12-15T15:21:32.0323248Z   name: coverage-3.13
+2025-12-15T15:21:32.0323458Z   include-hidden-files: true
+2025-12-15T15:21:32.0323667Z   path: .coverage
+2025-12-15T15:21:32.0323845Z   if-no-files-found: warn
+2025-12-15T15:21:32.0324048Z   compression-level: 6
+2025-12-15T15:21:32.0324244Z   overwrite: false
+2025-12-15T15:21:32.0324406Z env:
+2025-12-15T15:21:32.0324555Z   CACHE_VERSION: 5
+2025-12-15T15:21:32.0324735Z   KEY_PREFIX: venv
+2025-12-15T15:21:32.0324972Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:21:32.0325377Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib/pkgconfig
+2025-12-15T15:21:32.0325753Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:21:32.0326355Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:21:32.0326691Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.11/x64
+2025-12-15T15:21:32.0327055Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.11/x64/lib
+2025-12-15T15:21:32.0327330Z ##[endgroup]
+2025-12-15T15:21:32.1826180Z With the provided path, there will be 1 file uploaded
+2025-12-15T15:21:32.1831531Z Artifact name is valid!
+2025-12-15T15:21:32.1832510Z Root directory input is valid!
+2025-12-15T15:21:32.3222568Z Beginning upload of artifact content to blob storage
+2025-12-15T15:21:32.5019290Z Uploaded bytes 22269
+2025-12-15T15:21:32.5386565Z Finished uploading artifact content to blob storage!
+2025-12-15T15:21:32.5387614Z SHA256 digest of uploaded artifact zip is d67e7f1e88aa95d2638d60ccbb88b40f64f71290c6940d874cf3178089531073
+2025-12-15T15:21:32.5389617Z Finalizing artifact upload
+2025-12-15T15:21:32.7053261Z Artifact coverage-3.13.zip successfully finalized. Artifact ID 4873402088
+2025-12-15T15:21:32.7054362Z Artifact coverage-3.13 has been successfully uploaded! Final size is 22269 bytes. Artifact ID is 4873402088
+2025-12-15T15:21:32.7060053Z Artifact download URL: https://github.com/pylint-dev/pylint/actions/runs/20237315587/artifacts/4873402088
+2025-12-15T15:21:32.7183960Z Post job cleanup.
+2025-12-15T15:21:32.8363703Z Cache hit occurred on the primary key Linux-3.13.11-venv-5-403618818c13e06b80a6e70102c5cd69aad8cd002be648cbdf1947152d44c574, not saving cache.
+2025-12-15T15:21:32.8483942Z Post job cleanup.
+2025-12-15T15:21:32.9649635Z (node:2608) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-15T15:21:32.9650807Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-15T15:21:32.9771581Z Post job cleanup.
+2025-12-15T15:21:33.0569350Z [command]/usr/bin/git version
+2025-12-15T15:21:33.0605253Z git version 2.52.0
+2025-12-15T15:21:33.0673619Z Temporarily overriding HOME='/home/runner/work/_temp/e4e64d38-81d6-493c-a823-bea1acf58655' before making global git config changes
+2025-12-15T15:21:33.0674620Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-15T15:21:33.0679091Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pylint/pylint
+2025-12-15T15:21:33.0709976Z Removing SSH command configuration
+2025-12-15T15:21:33.0717002Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-15T15:21:33.0749778Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-15T15:21:33.0986467Z Removing HTTP extra header
+2025-12-15T15:21:33.0991516Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-15T15:21:33.1028176Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-15T15:21:33.1255709Z Removing includeIf entries pointing to credentials config files
+2025-12-15T15:21:33.1262502Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-15T15:21:33.1285649Z includeif.gitdir:/home/runner/work/pylint/pylint/.git.path
+2025-12-15T15:21:33.1286588Z includeif.gitdir:/home/runner/work/pylint/pylint/.git/worktrees/*.path
+2025-12-15T15:21:33.1287320Z includeif.gitdir:/github/workspace/.git.path
+2025-12-15T15:21:33.1287932Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2025-12-15T15:21:33.1296208Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/pylint/pylint/.git.path
+2025-12-15T15:21:33.1316910Z /home/runner/work/_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:21:33.1327514Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/pylint/pylint/.git.path /home/runner/work/_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:21:33.1360184Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/pylint/pylint/.git/worktrees/*.path
+2025-12-15T15:21:33.1381054Z /home/runner/work/_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:21:33.1390310Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/pylint/pylint/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:21:33.1420081Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2025-12-15T15:21:33.1440303Z /github/runner_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:21:33.1449044Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:21:33.1479668Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2025-12-15T15:21:33.1500252Z /github/runner_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:21:33.1509178Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config
+2025-12-15T15:21:33.1539993Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-15T15:21:33.1763955Z Removing credentials config '/home/runner/work/_temp/git-credentials-a0f8bf0e-068e-4c11-a48b-538a0741fcc5.config'
+2025-12-15T15:21:33.1889237Z Evaluate and set job outputs
+2025-12-15T15:21:33.1894194Z Set output 'python-key'
+2025-12-15T15:21:33.1896311Z Cleaning up orphan processes

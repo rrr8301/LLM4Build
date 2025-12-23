@@ -1,0 +1,78 @@
+Requirement already satisfied: pip in ./venv/lib/python3.11/site-packages (22.0.2)
+Collecting pip
+  Downloading pip-25.2-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 10.3 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.2
+    Uninstalling pip-22.0.2:
+      Successfully uninstalled pip-22.0.2
+Successfully installed pip-25.2
+Collecting tox
+  Downloading tox-4.28.3-py3-none-any.whl.metadata (3.6 kB)
+Collecting cachetools>=6.1 (from tox)
+  Downloading cachetools-6.1.0-py3-none-any.whl.metadata (5.4 kB)
+Collecting chardet>=5.2 (from tox)
+  Downloading chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting colorama>=0.4.6 (from tox)
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting filelock>=3.18 (from tox)
+  Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting packaging>=25 (from tox)
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting platformdirs>=4.3.8 (from tox)
+  Downloading platformdirs-4.3.8-py3-none-any.whl.metadata (12 kB)
+Collecting pluggy>=1.6 (from tox)
+  Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting pyproject-api>=1.9.1 (from tox)
+  Downloading pyproject_api-1.9.1-py3-none-any.whl.metadata (2.7 kB)
+Collecting virtualenv>=20.31.2 (from tox)
+  Downloading virtualenv-20.32.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting distlib<1,>=0.3.7 (from virtualenv>=20.31.2->tox)
+  Downloading distlib-0.4.0-py2.py3-none-any.whl.metadata (5.2 kB)
+Downloading tox-4.28.3-py3-none-any.whl (174 kB)
+Downloading cachetools-6.1.0-py3-none-any.whl (11 kB)
+Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+Downloading platformdirs-4.3.8-py3-none-any.whl (18 kB)
+Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Downloading pyproject_api-1.9.1-py3-none-any.whl (13 kB)
+Downloading virtualenv-20.32.0-py3-none-any.whl (6.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.1/6.1 MB 72.7 MB/s  0:00:00
+Downloading distlib-0.4.0-py2.py3-none-any.whl (469 kB)
+Installing collected packages: distlib, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+
+Successfully installed cachetools-6.1.0 chardet-5.2.0 colorama-0.4.6 distlib-0.4.0 filelock-3.18.0 packaging-25.0 platformdirs-4.3.8 pluggy-1.6.0 pyproject-api-1.9.1 tox-4.28.3 virtualenv-20.32.0
+Traceback (most recent call last):
+  File "/app/venv/bin/tox", line 7, in <module>
+    sys.exit(run())
+             ^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/run.py", line 20, in run
+    result = main(sys.argv[1:] if args is None else args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/run.py", line 46, in main
+    return handler(state)
+           ^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/cmd/legacy.py", line 115, in legacy
+    return run_sequential(state)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/cmd/run/sequential.py", line 25, in run_sequential
+    return execute(state, max_workers=1, has_spinner=False, live=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/cmd/run/common.py", line 167, in execute
+    state.envs.ensure_only_run_env_is_active()
+  File "/app/venv/lib/python3.11/site-packages/tox/session/env_select.py", line 436, in ensure_only_run_env_is_active
+    envs, active = self._defined_envs, self._env_name_to_active()
+                   ^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/env_select.py", line 258, in _defined_envs
+    run_env = self._build_run_env(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/session/env_select.py", line 319, in _build_run_env
+    runner = REGISTER.runner(cast("str", env_conf["runner"]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.11/site-packages/tox/tox_env/register.py", line 72, in runner
+    return self._run_envs[name]
+           ~~~~~~~~~~~~~~^^^^^^
+KeyError: 'uv-venv-lock-runner'

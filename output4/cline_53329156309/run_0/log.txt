@@ -1,0 +1,486 @@
+npm warn deprecated @vscode/webview-ui-toolkit@1.4.0: This package has been deprecated, https://github.com/microsoft/vscode-webview-ui-toolkit/issues/561
+
+added 942 packages, and audited 948 packages in 13s
+
+187 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+/app/run.sh: line 9: cd: webview-ui: No such file or directory
+npm error Missing script: "ci:build"
+npm error
+npm error Did you mean one of these?
+npm error   npm rebuild # Rebuild a package
+npm error   npm run build # run the "build" package script
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-10-22T00_49_39_869Z-debug-0.log
+npm error Missing script: "test:unit"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-10-22T00_49_41_171Z-debug-0.log
+
+> webview-ui@0.3.0 test:coverage
+> vitest run --coverage
+
+Building webview for vscode
+
+ RUN  v3.2.4 /app/webview-ui
+      Coverage enabled with v8
+
+stdout | src/utils/__tests__/context-mentions.test.ts
+[PLATFORM_CONFIG] Build platform: vscode
+
+ ✓ src/utils/__tests__/platformUtils.spec.ts (4 tests) 4ms
+ ✓ src/utils/__tests__/context-mentions.test.ts (9 tests) 5ms
+ ✓ src/components/chat/chat-view/shared/buttonConfig.test.ts (21 tests) 12ms
+ ✓ src/utils/__tests__/hooks.spec.ts (6 tests) 66ms
+stderr | src/components/chat/ErrorRow.test.tsx > ErrorRow > API error handling > renders rate limit error with request ID
+Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+    at div
+    at p
+    at /app/webview-ui/src/components/chat/ErrorRow.tsx:9:66
+
+ ✓ src/components/chat/ErrorRow.test.tsx (12 tests) 200ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/components/chat/__tests__/Announcement.spec.tsx [ src/components/chat/__tests__/Announcement.spec.tsx ]
+Error: Failed to resolve import "@shared/proto/cline/common" from "src/context/ClineAuthContext.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /app/webview-ui/src/context/ClineAuthContext.tsx:2:29
+  1  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+  2  |  import { EmptyRequest } from "@shared/proto/cline/common";
+     |                                ^
+  3  |  import deepEqual from "fast-deep-equal";
+  4  |  import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42517:41
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42514:16
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40493:23
+ ❯ node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40612:37
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40539:7
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42312:18
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:35738:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  src/components/chat/__tests__/ErrorBlockTitle.spec.tsx [ src/components/chat/__tests__/ErrorBlockTitle.spec.tsx ]
+Error: Failed to resolve import "@shared/proto/cline/common" from "src/components/chat/ChatRow.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /app/webview-ui/src/components/chat/ChatRow.tsx:11:60
+  2  |  import { COMMAND_OUTPUT_STRING, COMMAND_REQ_APP_STRING } from "@shared/combineCommandSequences";
+  3  |  import { COMPLETION_RESULT_CHANGES_FLAG } from "@shared/ExtensionMessage";
+  4  |  import { BooleanRequest, Int64Request, StringRequest } from "@shared/proto/cline/common";
+     |                                                               ^
+  5  |  import { VSCodeBadge, VSCodeProgressRing } from "@vscode/webview-ui-toolkit/react";
+  6  |  import deepEqual from "fast-deep-equal";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42517:41
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42514:16
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40493:23
+ ❯ node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40612:37
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40539:7
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42312:18
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:35738:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  src/components/chat/__tests__/UserMessage.ime.test.tsx [ src/components/chat/__tests__/UserMessage.ime.test.tsx ]
+Error: Failed to resolve import "@shared/proto/cline/checkpoints" from "src/components/chat/UserMessage.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /app/webview-ui/src/components/chat/UserMessage.tsx:1:41
+  1  |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+  2  |  import { CheckpointRestoreRequest } from "@shared/proto/cline/checkpoints";
+     |                                            ^
+  3  |  import React, { forwardRef, useRef, useState } from "react";
+  4  |  import DynamicTextArea from "react-textarea-autosize";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42517:41
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42514:16
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40493:23
+ ❯ node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40612:37
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40539:7
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42312:18
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:35738:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  src/components/settings/__tests__/APIOptions.spec.tsx [ src/components/settings/__tests__/APIOptions.spec.tsx ]
+Error: [vitest] There was an error when mocking a module. If you are using "vi.mock" factory, make sure there are no top level variables inside, since this call is hoisted to top of the file. Read more: https://vitest.dev/api/vi.html#vi-mock
+ ❯ src/components/settings/__tests__/APIOptions.spec.tsx:4:1
+      2| import { fireEvent, render, screen } from "@testing-library/react"
+      3| import { describe, expect, it, vi } from "vitest"
+      4| import { ExtensionStateContextProvider, useExtensionState } from "@/co…
+       | ^
+      5| import ApiOptions from "../ApiOptions"
+      6|
+
+Caused by: Error: Failed to resolve import "../services/grpc-client" from "src/context/ExtensionStateContext.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /app/webview-ui/src/context/ExtensionStateContext.tsx:33:91
+  14 |  import { Environment } from "../../../src/config";
+  15 |  import { basetenDefaultModelId, basetenModels, groqDefaultModelId, groqModels, openRouterDefaultModelId, openRouterDefaultModelInfo, requestyDefaultModelId, requestyDefaultModelInfo, vercelAiGatewayDefaultModelId, vercelAiGatewayDefaultModelInfo } from "../../../src/shared/api";
+  16 |  import { McpServiceClient, ModelsServiceClient, StateServiceClient, UiServiceClient } from "../services/grpc-client";
+     |                                                                                              ^
+  17 |  export const ExtensionStateContext = /*#__PURE__*/ createContext(undefined);
+  18 |  export const ExtensionStateContextProvider = ({ children })=>{
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42517:41
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42514:16
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40493:23
+ ❯ node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40612:37
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40539:7
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42312:18
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:35738:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  src/components/settings/__tests__/OllamaModelPicker.spec.tsx [ src/components/settings/__tests__/OllamaModelPicker.spec.tsx ]
+Error: [vitest] There was an error when mocking a module. If you are using "vi.mock" factory, make sure there are no top level variables inside, since this call is hoisted to top of the file. Read more: https://vitest.dev/api/vi.html#vi-mock
+ ❯ src/components/settings/__tests__/OllamaModelPicker.spec.tsx:3:1
+      1| import { fireEvent, render, screen } from "@testing-library/react"
+      2| import { describe, expect, it, vi } from "vitest"
+      3| import { ExtensionStateContextProvider } from "@/context/ExtensionStat…
+       | ^
+      4| import OllamaModelPicker from "../OllamaModelPicker"
+      5|
+
+Caused by: Error: Failed to resolve import "../services/grpc-client" from "src/context/ExtensionStateContext.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /app/webview-ui/src/context/ExtensionStateContext.tsx:33:91
+  14 |  import { Environment } from "../../../src/config";
+  15 |  import { basetenDefaultModelId, basetenModels, groqDefaultModelId, groqModels, openRouterDefaultModelId, openRouterDefaultModelInfo, requestyDefaultModelId, requestyDefaultModelInfo, vercelAiGatewayDefaultModelId, vercelAiGatewayDefaultModelInfo } from "../../../src/shared/api";
+  16 |  import { McpServiceClient, ModelsServiceClient, StateServiceClient, UiServiceClient } from "../services/grpc-client";
+     |                                                                                              ^
+  17 |  export const ExtensionStateContext = /*#__PURE__*/ createContext(undefined);
+  18 |  export const ExtensionStateContextProvider = ({ children })=>{
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42517:41
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42514:16
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40493:23
+ ❯ node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40612:37
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40539:7
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42312:18
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:35738:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx [ src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx ]
+Error: [vitest] There was an error when mocking a module. If you are using "vi.mock" factory, make sure there are no top level variables inside, since this call is hoisted to top of the file. Read more: https://vitest.dev/api/vi.html#vi-mock
+ ❯ src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx:3:1
+      1| import { render, screen } from "@testing-library/react"
+      2| import { describe, expect, it, vi } from "vitest"
+      3| import { ExtensionStateContextProvider } from "@/context/ExtensionStat…
+       | ^
+      4| import SapAiCoreModelPicker from "../SapAiCoreModelPicker"
+      5|
+
+Caused by: Error: Failed to resolve import "../services/grpc-client" from "src/context/ExtensionStateContext.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /app/webview-ui/src/context/ExtensionStateContext.tsx:33:91
+  14 |  import { Environment } from "../../../src/config";
+  15 |  import { basetenDefaultModelId, basetenModels, groqDefaultModelId, groqModels, openRouterDefaultModelId, openRouterDefaultModelInfo, requestyDefaultModelId, requestyDefaultModelInfo, vercelAiGatewayDefaultModelId, vercelAiGatewayDefaultModelInfo } from "../../../src/shared/api";
+  16 |  import { McpServiceClient, ModelsServiceClient, StateServiceClient, UiServiceClient } from "../services/grpc-client";
+     |                                                                                              ^
+  17 |  export const ExtensionStateContext = /*#__PURE__*/ createContext(undefined);
+  18 |  export const ExtensionStateContextProvider = ({ children })=>{
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42517:41
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42514:16
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40493:23
+ ❯ node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40612:37
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:40539:7
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:42312:18
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:35738:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  6 failed | 5 passed (11)
+      Tests  52 passed (52)
+   Start at  17:49:42
+   Duration  4.85s (transform 1.98s, setup 1.63s, collect 2.08s, tests 289ms, environment 6.19s, prepare 1.63s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+All files          |    1.75 |    41.76 |    25.1 |    1.75 |
+ .storybook        |       0 |    66.66 |   66.66 |       0 |
+  main.ts          |       0 |      100 |     100 |       0 | 3-30
+  preview.ts       |       0 |      100 |     100 |       0 | 2-53
+  themes.ts        |       0 |        0 |       0 |       0 | 1-84
+ ...it/lcov-report |       0 |        0 |       0 |       0 |
+  ...navigation.js |       0 |        0 |       0 |       0 | 1-87
+  prettify.js      |       0 |        0 |       0 |       0 | 1-2
+  sorter.js        |       0 |        0 |       0 |       0 | 1-196
+ src               |       0 |    16.66 |   16.66 |       0 |
+  App.stories.tsx  |       0 |        0 |       0 |       0 | 1-669
+  App.tsx          |       0 |      100 |     100 |       0 | 2-92
+  ...gProvider.tsx |       0 |        0 |       0 |       0 | 1-74
+  Providers.tsx    |       0 |        0 |       0 |       0 | 1-20
+  constants.ts     |       0 |        0 |       0 |       0 | 1-6
+  main.tsx         |       0 |        0 |       0 |       0 | 1-8
+ src/assets        |       0 |      100 |     100 |       0 |
+  ...LogoBlack.tsx |       0 |      100 |     100 |       0 | 3-11
+  ...oVariable.tsx |       0 |      100 |     100 |       0 | 3-32
+  ...LogoWhite.tsx |       0 |      100 |     100 |       0 | 3-11
+ ...onents/account |       0 |    42.85 |   42.85 |       0 |
+  ...ntOptions.tsx |       0 |        0 |       0 |       0 | 1-18
+  AccountView.tsx  |       0 |      100 |     100 |       0 | 2-435
+  ...lcomeView.tsx |       0 |        0 |       0 |       0 | 1-28
+  ...itBalance.tsx |       0 |        0 |       0 |       0 | 1-40
+  ...toryTable.tsx |       0 |      100 |     100 |       0 | 2-110
+  ...itDisplay.tsx |       0 |        0 |       0 |       0 | 1-60
+  helpers.ts       |       0 |      100 |     100 |       0 | 4-53
+ ...onents/browser |       0 |        0 |       0 |       0 |
+  ...tingsMenu.tsx |       0 |        0 |       0 |       0 | 1-217
+ ...omponents/chat |     1.6 |    52.08 |    8.69 |     1.6 |
+  Announcement.tsx |       0 |        0 |       0 |       0 | 1-139
+  ...essionRow.tsx |       0 |        0 |       0 |       0 | 1-639
+  ...rBoundary.tsx |       0 |        0 |       0 |       0 | 1-130
+  ChatRow.tsx      |       0 |        0 |       0 |       0 | 1-1928
+  ChatTextArea.tsx |       0 |        0 |       0 |       0 | 1-1812
+  ChatView.tsx     |       0 |        0 |       0 |       0 | 1-397
+  ContextMenu.tsx  |       0 |        0 |       0 |       0 | 1-294
+  ...imitError.tsx |       0 |        0 |       0 |       0 | 1-95
+  ...lockTitle.tsx |    7.84 |      100 |       0 |    7.84 | 18-74
+  ...w.stories.tsx |       0 |      100 |     100 |       0 | 3-272
+  ErrorRow.tsx     |   97.72 |    88.88 |     100 |   97.72 | 86,123
+  ...skPreview.tsx |       0 |        0 |       0 |       0 | 1-17
+  ...nsButtons.tsx |       0 |        0 |       0 |       0 | 1-83
+  QuoteButton.tsx  |       0 |        0 |       0 |       0 | 1-58
+  ...gePreview.tsx |       0 |        0 |       0 |       0 | 1-89
+  ...ugPreview.tsx |       0 |        0 |       0 |       0 | 1-84
+  ...tsDisplay.tsx |       0 |        0 |       0 |       0 | 1-189
+  ...ggleModal.tsx |       0 |        0 |       0 |       0 | 1-113
+  ...mmandMenu.tsx |       0 |        0 |       0 |       0 | 1-115
+  ...ckButtons.tsx |       0 |        0 |       0 |       0 | 1-132
+  UserMessage.tsx  |       0 |        0 |       0 |       0 | 1-197
+  ...eRecorder.tsx |       0 |        0 |       0 |       0 | 1-281
+  colors.ts        |       0 |        0 |       0 |       0 | 1-9
+ ...o-approve-menu |       0 |       50 |      50 |       0 |
+  ...pproveBar.tsx |       0 |        0 |       0 |       0 | 1-117
+  ...eMenuItem.tsx |       0 |        0 |       0 |       0 | 1-138
+  ...roveModal.tsx |       0 |        0 |       0 |       0 | 1-235
+  ...ettingsAPI.ts |       0 |      100 |     100 |       0 | 2-16
+  constants.ts     |       0 |      100 |     100 |       0 | 3-86
+  types.ts         |       0 |        0 |       0 |       0 |
+ ...chat/chat-view |       0 |        0 |       0 |       0 |
+  constants.ts     |       0 |        0 |       0 |       0 | 1-7
+  index.ts         |       0 |        0 |       0 |       0 | 1-18
+ ...ponents/layout |       0 |    57.14 |   57.14 |       0 |
+  ...onButtons.tsx |       0 |      100 |     100 |       0 | 3-170
+  ChatLayout.tsx   |       0 |      100 |     100 |       0 | 2-40
+  InputSection.tsx |       0 |        0 |       0 |       0 | 1-78
+  MessagesArea.tsx |       0 |      100 |     100 |       0 | 2-97
+  TaskSection.tsx  |       0 |      100 |     100 |       0 | 2-54
+  ...meSection.tsx |       0 |        0 |       0 |       0 | 1-49
+  index.ts         |       0 |        0 |       0 |       0 | 1-10
+ ...nents/messages |       0 |       50 |      50 |       0 |
+  ...eRenderer.tsx |       0 |      100 |     100 |       0 | 2-104
+  index.ts         |       0 |        0 |       0 |       0 | 1-5
+ ...hat-view/hooks |       0 |       75 |      75 |       0 |
+  index.ts         |       0 |        0 |       0 |       0 | 1-7
+  useChatState.ts  |       0 |      100 |     100 |       0 | 2-88
+  ...geHandlers.ts |       0 |      100 |     100 |       0 | 2-254
+  ...llBehavior.ts |       0 |      100 |     100 |       0 | 2-227
+ ...at-view/shared |   97.97 |    88.23 |     100 |   97.97 |
+  buttonConfig.ts  |   97.97 |    88.23 |     100 |   97.97 | ...51,288,297-298
+ ...hat-view/types |       0 |        0 |       0 |       0 |
+  chatTypes.ts     |       0 |        0 |       0 |       0 | 1-157
+ ...hat-view/utils |       0 |        0 |       0 |       0 |
+  markdownUtils.ts |       0 |        0 |       0 |       0 | 1-58
+  messageUtils.ts  |       0 |        0 |       0 |       0 | 1-152
+  scrollUtils.ts   |       0 |        0 |       0 |       0 | 1-60
+ ...at/task-header |       0 |       10 |      10 |       0 |
+  ...nseMarker.tsx |       0 |        0 |       0 |       0 | 1-129
+  ...ointError.tsx |       0 |        0 |       0 |       0 | 1-68
+  ...extWindow.tsx |       0 |        0 |       0 |       0 | 1-284
+  ...owSummary.tsx |       0 |        0 |       0 |       0 | 1-182
+  FocusChain.tsx   |       0 |        0 |       0 |       0 | 1-216
+  Highlights.tsx   |       0 |        0 |       0 |       0 | 1-76
+  TaskHeader.tsx   |       0 |        0 |       0 |       0 | 1-188
+  TaskTimeline.tsx |       0 |        0 |       0 |       0 | 1-212
+  ...neTooltip.tsx |       0 |        0 |       0 |       0 | 1-213
+  util.ts          |       0 |      100 |     100 |       0 | 2-91
+ ...header/buttons |       0 |        0 |       0 |       0 |
+  ...askButton.tsx |       0 |        0 |       0 |       0 | 1-36
+  ...askButton.tsx |       0 |        0 |       0 |       0 | 1-39
+  ...askButton.tsx |       0 |        0 |       0 |       0 | 1-29
+  ...askButton.tsx |       0 |        0 |       0 |       0 | 1-30
+  ...oryButton.tsx |       0 |        0 |       0 |       0 | 1-36
+ ...ts/cline-rules |       0 |       25 |      25 |       0 |
+  ...ggleModal.tsx |       0 |      100 |     100 |       0 | 2-403
+  NewRuleRow.tsx   |       0 |        0 |       0 |       0 | 1-154
+  RuleRow.tsx      |       0 |        0 |       0 |       0 | 1-132
+  ...oggleList.tsx |       0 |        0 |       0 |       0 | 1-59
+ ...ponents/common |       0 |        0 |       0 |       0 |
+  AlertDialog.tsx  |       0 |        0 |       0 |       0 | 1-119
+  ...tRenderer.tsx |       0 |        0 |       0 |       0 | 1-127
+  ...rkControl.tsx |       0 |        0 |       0 |       0 | 1-472
+  ...tControls.tsx |       0 |        0 |       0 |       0 | 1-290
+  ...allBanner.tsx |       0 |        0 |       0 |       0 | 1-214
+  ...Accordian.tsx |       0 |        0 |       0 |       0 | 1-141
+  CodeBlock.tsx    |       0 |        0 |       0 |       0 | 1-166
+  CopyButton.tsx   |       0 |        0 |       0 |       0 | 1-141
+  DangerButton.tsx |       0 |        0 |       0 |       0 | 1-23
+  Demo.tsx         |       0 |        0 |       0 |       0 | 1-123
+  HeroTooltip.tsx  |       0 |        0 |       0 |       0 | 1-63
+  InfoBanner.tsx   |       0 |        0 |       0 |       0 | 1-43
+  ...tMarkdown.tsx |       0 |        0 |       0 |       0 | 1-166
+  ...downBlock.tsx |       0 |        0 |       0 |       0 | 1-437
+  MermaidBlock.tsx |       0 |        0 |       0 |       0 | 1-292
+  ...delBanner.tsx |       0 |        0 |       0 |       0 | 1-98
+  ...ngsButton.tsx |       0 |        0 |       0 |       0 | 1-36
+  ...essButton.tsx |       0 |        0 |       0 |       0 | 1-25
+  Tab.tsx          |       0 |        0 |       0 |       0 | 1-90
+  ...tryBanner.tsx |       0 |        0 |       0 |       0 | 1-50
+  Thumbnails.tsx   |       0 |        0 |       0 |       0 | 1-187
+  Tooltip.tsx      |       0 |        0 |       0 |       0 | 1-65
+  ...uttonLink.tsx |       0 |        0 |       0 |       0 | 1-23
+ ...onents/history |       0 |        0 |       0 |       0 |
+  ...ryPreview.tsx |       0 |        0 |       0 |       0 | 1-221
+  HistoryView.tsx  |       0 |        0 |       0 |       0 | 1-826
+ ...p/chat-display |       0 |       60 |      60 |       0 |
+  ImagePreview.tsx |       0 |        0 |       0 |       0 | 1-347
+  LinkPreview.tsx  |       0 |        0 |       0 |       0 | 1-412
+  ...eDropdown.tsx |       0 |      100 |     100 |       0 | 2-29
+  ...y.stories.tsx |       0 |      100 |     100 |       0 | 2-78
+  ...seDisplay.tsx |       0 |      100 |     100 |       0 | 2-272
+ ...-display/utils |       0 |        0 |       0 |       0 |
+  mcpRichUtil.ts   |       0 |        0 |       0 |       0 | 1-412
+ .../configuration |       0 |      100 |     100 |       0 |
+  ...ationView.tsx |       0 |      100 |     100 |       0 | 2-160
+ ...abs/add-server |       0 |        0 |       0 |       0 |
+  ...erverForm.tsx |       0 |        0 |       0 |       0 | 1-43
+  ...erverForm.tsx |       0 |        0 |       0 |       0 | 1-133
+ ...tabs/installed |       0 |       50 |      50 |       0 |
+  ...rversView.tsx |       0 |        0 |       0 |       0 | 1-74
+  ...oggleList.tsx |       0 |      100 |     100 |       0 | 2-36
+ ...led/server-row |       0 |    66.66 |   66.66 |       0 |
+  ...sourceRow.tsx |       0 |      100 |     100 |       0 | 7-59
+  McpToolRow.tsx   |       0 |      100 |     100 |       0 | 2-137
+  ServerRow.tsx    |       0 |        0 |       0 |       0 | 1-427
+ ...bs/marketplace |       0 |    33.33 |   33.33 |       0 |
+  ...placeCard.tsx |       0 |      100 |     100 |       0 | 2-319
+  ...placeView.tsx |       0 |        0 |       0 |       0 | 1-287
+  ...ubmitCard.tsx |       0 |        0 |       0 |       0 | 1-45
+ ...omponents/menu |       0 |        0 |       0 |       0 |
+  Navbar.tsx       |       0 |        0 |       0 |       0 | 1-89
+ ...nents/settings |       0 |       10 |      10 |       0 |
+  ApiOptions.tsx   |       0 |        0 |       0 |       0 | 1-565
+  ...delPicker.tsx |       0 |        0 |       0 |       0 | 1-293
+  ...tInfoCard.tsx |       0 |        0 |       0 |       0 | 1-38
+  ...leContent.tsx |       0 |        0 |       0 |       0 | 1-16
+  ...ModelCard.tsx |       0 |        0 |       0 |       0 | 1-65
+  ...delPicker.tsx |       0 |        0 |       0 |       0 | 1-275
+  ...delPicker.tsx |       0 |        0 |       0 |       0 | 1-235
+  ...nMarkdown.tsx |       0 |        0 |       0 |       0 | 1-138
+  ...delPicker.tsx |       0 |        0 |       0 |       0 | 1-222
+  ...delPicker.tsx |       0 |        0 |       0 |       0 | 1-575
+  ...geSetting.tsx |       0 |        0 |       0 |       0 | 1-51
+  ...delPicker.tsx |       0 |        0 |       0 |       0 | 1-470
+  ...delPicker.tsx |       0 |        0 |       0 |       0 | 1-178
+  Section.tsx      |       0 |      100 |     100 |       0 | 5-9
+  ...ionHeader.tsx |       0 |        0 |       0 |       0 | 1-18
+  SettingsView.tsx |       0 |      100 |     100 |       0 | 2-329
+  ...mitSlider.tsx |       0 |        0 |       0 |       0 | 1-38
+  ...mitSlider.tsx |       0 |        0 |       0 |       0 | 1-39
+  ...getSlider.tsx |       0 |        0 |       0 |       0 | 1-153
+  ...tCheckbox.tsx |       0 |        0 |       0 |       0 | 1-38
+ ...ettings/common |       0 |    14.28 |   14.28 |       0 |
+  ApiKeyField.tsx  |       0 |        0 |       0 |       0 | 1-60
+  BaseUrlField.tsx |       0 |        0 |       0 |       0 | 1-61
+  ...wSwitcher.tsx |       0 |        0 |       0 |       0 | 1-54
+  ...TextField.tsx |       0 |        0 |       0 |       0 | 1-49
+  ErrorMessage.tsx |       0 |        0 |       0 |       0 | 1-26
+  ...lInfoView.tsx |       0 |        0 |       0 |       0 | 1-216
+  ...lSelector.tsx |       0 |      100 |     100 |       0 | 2-72
+ ...ings/providers |       0 |    24.32 |   24.32 |       0 |
+  ...cProvider.tsx |       0 |        0 |       0 |       0 | 1-105
+  ...eProvider.tsx |       0 |        0 |       0 |       0 | 1-68
+  ...nProvider.tsx |       0 |      100 |     100 |       0 | 2-35
+  ...kProvider.tsx |       0 |        0 |       0 |       0 | 1-401
+  ...sProvider.tsx |       0 |        0 |       0 |       0 | 1-58
+  ...eProvider.tsx |       0 |        0 |       0 |       0 | 1-87
+  ...eProvider.tsx |       0 |      100 |     100 |       0 | 2-85
+  ...kProvider.tsx |       0 |        0 |       0 |       0 | 1-58
+  DifyProvider.tsx |       0 |      100 |     100 |       0 | 2-70
+  ...oProvider.tsx |       0 |        0 |       0 |       0 | 1-58
+  ...sProvider.tsx |       0 |        0 |       0 |       0 | 1-55
+  ...iProvider.tsx |       0 |        0 |       0 |       0 | 1-74
+  GroqProvider.tsx |       0 |      100 |     100 |       0 | 2-35
+  ...sProvider.tsx |       0 |        0 |       0 |       0 | 1-65
+  ...eProvider.tsx |       0 |      100 |     100 |       0 | 2-53
+  ...oProvider.tsx |       0 |      100 |     100 |       0 | 2-173
+  ...mProvider.tsx |       0 |        0 |       0 |       0 | 1-225
+  ...lProvider.tsx |       0 |        0 |       0 |       0 | 1-58
+  ...tProvider.tsx |       0 |        0 |       0 |       0 | 1-80
+  ...sProvider.tsx |       0 |        0 |       0 |       0 | 1-58
+  ...delPicker.tsx |       0 |      100 |     100 |       0 | 3-196
+  OcaProvider.tsx  |       0 |      100 |     100 |       0 | 3-486
+  ...aProvider.tsx |       0 |        0 |       0 |       0 | 1-149
+  ...ompatible.tsx |       0 |        0 |       0 |       0 | 1-408
+  OpenAINative.tsx |       0 |        0 |       0 |       0 | 1-58
+  ...rProvider.tsx |       0 |        0 |       0 |       0 | 1-156
+  ...eProvider.tsx |       0 |        0 |       0 |       0 | 1-86
+  QwenProvider.tsx |       0 |        0 |       0 |       0 | 1-118
+  ...yProvider.tsx |       0 |        0 |       0 |       0 | 1-72
+  ...aProvider.tsx |       0 |        0 |       0 |       0 | 1-58
+  ...eProvider.tsx |       0 |        0 |       0 |       0 | 1-261
+  ...rProvider.tsx |       0 |      100 |     100 |       0 | 2-55
+  ...mProvider.tsx |       0 |        0 |       0 |       0 | 1-103
+  ...yProvider.tsx |       0 |        0 |       0 |       0 | 1-177
+  ...xProvider.tsx |       0 |        0 |       0 |       0 | 1-126
+  XaiProvider.tsx  |       0 |        0 |       0 |       0 | 1-130
+  ZAiProvider.tsx  |       0 |        0 |       0 |       0 | 1-95
+ ...tings/sections |       0 |    14.28 |   14.28 |       0 |
+  AboutSection.tsx |       0 |        0 |       0 |       0 | 1-54
+  ...onSection.tsx |       0 |        0 |       0 |       0 | 1-92
+  ...gsSection.tsx |       0 |        0 |       0 |       0 | 1-404
+  DebugSection.tsx |       0 |        0 |       0 |       0 | 1-34
+  ...gsSection.tsx |       0 |        0 |       0 |       0 | 1-471
+  ...gsSection.tsx |       0 |        0 |       0 |       0 | 1-74
+  ...gsSection.tsx |       0 |      100 |     100 |       0 | 2-193
+ ...settings/utils |       0 |       40 |      40 |       0 |
+  pricingUtils.ts  |       0 |      100 |     100 |       0 | 3-56
+  providerUtils.ts |       0 |        0 |       0 |       0 | 1-651
+  ...gsHandlers.ts |       0 |        0 |       0 |       0 | 1-55
+  ...onHandlers.ts |       0 |      100 |     100 |       0 | 2-109
+  ...uncedInput.ts |       0 |        0 |       0 |       0 | 1-31
+ ...nents/ui/hooks |       0 |        0 |       0 |       0 |
+  ...terKeyInfo.ts |       0 |        0 |       0 |       0 | 1-148
+ ...onents/welcome |       0 |       20 |      20 |       0 |
+  HomeHeader.tsx   |       0 |        0 |       0 |       0 | 1-53
+  QuickWinCard.tsx |       0 |        0 |       0 |       0 | 1-52
+  ...stedTasks.tsx |       0 |        0 |       0 |       0 | 1-28
+  WelcomeView.tsx  |       0 |        0 |       0 |       0 | 1-85
+  quickWinTasks.ts |       0 |      100 |     100 |       0 | 11-39
+ src/config        |       0 |        0 |       0 |       0 |
+  ...Decorator.tsx |       0 |        0 |       0 |       0 | 1-82
+ src/context       |       0 |    33.33 |   33.33 |       0 |
+  ...thContext.tsx |       0 |      100 |     100 |       0 | 2-117
+  ...teContext.tsx |       0 |        0 |       0 |       0 | 1-747
+  ...rmContext.tsx |       0 |        0 |       0 |       0 | 1-16
+ src/hooks         |       0 |       50 |      50 |       0 |
+  ...oveActions.ts |       0 |      100 |     100 |       0 | 2-172
+  ...eatureFlag.ts |       0 |        0 |       0 |       0 | 1-14
+ src/services      |       0 |        0 |       0 |       0 |
+  ...lient-base.ts |       0 |        0 |       0 |       0 | 1-118
+ src/utils         |   14.62 |    72.34 |      50 |   14.62 |
+  ...t-mentions.ts |   19.65 |    88.88 |   28.57 |   19.65 | ...19-279,282-310
+  ...mentColors.ts |       0 |      100 |     100 |       0 | 3-29
+  format.ts        |       0 |        0 |       0 |       0 | 1-76
+  ...geFromPath.ts |       0 |        0 |       0 |       0 | 1-89
+  hooks.ts         |   78.08 |    58.82 |     100 |   78.08 | ...69,71-72,77-78
+  mcp.ts           |       0 |      100 |     100 |       0 | 3-58
+  platformUtils.ts |   91.89 |     92.3 |   66.66 |   91.89 | 49-51
+  ...h-commands.ts |       0 |      100 |     100 |       0 | 7-212
+  ...unceEffect.ts |       0 |      100 |     100 |       0 | 2-41
+  validate.ts      |       0 |        0 |       0 |       0 | 1-184
+  vscStyles.ts     |       0 |        0 |       0 |       0 | 1-44
+-------------------|---------|----------|---------|---------|-------------------
+/app/run.sh: line 21: cd: webview-ui: No such file or directory

@@ -1,0 +1,138 @@
+go: downloading go1.24.1 (linux/amd64)
+?   	claude-squad	[no test files]
+=== RUN   TestConfirmationModalStateTransitions
+=== RUN   TestConfirmationModalStateTransitions/shows_confirmation_on_D_press
+=== RUN   TestConfirmationModalStateTransitions/returns_to_default_on_y_press
+=== RUN   TestConfirmationModalStateTransitions/returns_to_default_on_n_press
+=== RUN   TestConfirmationModalStateTransitions/returns_to_default_on_esc_press
+--- PASS: TestConfirmationModalStateTransitions (0.01s)
+    --- PASS: TestConfirmationModalStateTransitions/shows_confirmation_on_D_press (0.00s)
+    --- PASS: TestConfirmationModalStateTransitions/returns_to_default_on_y_press (0.00s)
+    --- PASS: TestConfirmationModalStateTransitions/returns_to_default_on_n_press (0.00s)
+    --- PASS: TestConfirmationModalStateTransitions/returns_to_default_on_esc_press (0.00s)
+=== RUN   TestConfirmationModalKeyHandling
+=== RUN   TestConfirmationModalKeyHandling/y_key_confirms_and_dismisses_overlay
+=== RUN   TestConfirmationModalKeyHandling/n_key_cancels_and_dismisses_overlay
+=== RUN   TestConfirmationModalKeyHandling/esc_key_cancels_and_dismisses_overlay
+=== RUN   TestConfirmationModalKeyHandling/other_keys_are_ignored
+--- PASS: TestConfirmationModalKeyHandling (0.01s)
+    --- PASS: TestConfirmationModalKeyHandling/y_key_confirms_and_dismisses_overlay (0.00s)
+    --- PASS: TestConfirmationModalKeyHandling/n_key_cancels_and_dismisses_overlay (0.00s)
+    --- PASS: TestConfirmationModalKeyHandling/esc_key_cancels_and_dismisses_overlay (0.00s)
+    --- PASS: TestConfirmationModalKeyHandling/other_keys_are_ignored (0.00s)
+=== RUN   TestConfirmationMessageFormatting
+=== RUN   TestConfirmationMessageFormatting/short_session_name
+=== RUN   TestConfirmationMessageFormatting/long_session_name
+=== RUN   TestConfirmationMessageFormatting/session_with_spaces
+=== RUN   TestConfirmationMessageFormatting/session_with_special_chars
+--- PASS: TestConfirmationMessageFormatting (0.00s)
+    --- PASS: TestConfirmationMessageFormatting/short_session_name (0.00s)
+    --- PASS: TestConfirmationMessageFormatting/long_session_name (0.00s)
+    --- PASS: TestConfirmationMessageFormatting/session_with_spaces (0.00s)
+    --- PASS: TestConfirmationMessageFormatting/session_with_special_chars (0.00s)
+=== RUN   TestConfirmationFlowSimulation
+--- PASS: TestConfirmationFlowSimulation (0.01s)
+=== RUN   TestConfirmActionWithDifferentTypes
+=== RUN   TestConfirmActionWithDifferentTypes/works_with_simple_action_returning_nil
+=== RUN   TestConfirmActionWithDifferentTypes/works_with_action_returning_error
+=== RUN   TestConfirmActionWithDifferentTypes/works_with_action_returning_custom_message
+--- PASS: TestConfirmActionWithDifferentTypes (0.00s)
+    --- PASS: TestConfirmActionWithDifferentTypes/works_with_simple_action_returning_nil (0.00s)
+    --- PASS: TestConfirmActionWithDifferentTypes/works_with_action_returning_error (0.00s)
+    --- PASS: TestConfirmActionWithDifferentTypes/works_with_action_returning_custom_message (0.00s)
+=== RUN   TestMultipleConfirmationsDontInterfere
+--- PASS: TestMultipleConfirmationsDontInterfere (0.00s)
+=== RUN   TestConfirmationModalVisualAppearance
+--- PASS: TestConfirmationModalVisualAppearance (0.01s)
+PASS
+ok  	claude-squad/app	0.043s
+?   	claude-squad/cmd	[no test files]
+?   	claude-squad/cmd/cmd_test	[no test files]
+=== RUN   TestGetClaudeCommand
+=== RUN   TestGetClaudeCommand/finds_claude_in_PATH
+=== RUN   TestGetClaudeCommand/handles_missing_claude_command
+=== RUN   TestGetClaudeCommand/handles_empty_SHELL_environment
+=== RUN   TestGetClaudeCommand/handles_alias_parsing
+--- PASS: TestGetClaudeCommand (0.02s)
+    --- PASS: TestGetClaudeCommand/finds_claude_in_PATH (0.01s)
+    --- PASS: TestGetClaudeCommand/handles_missing_claude_command (0.00s)
+    --- PASS: TestGetClaudeCommand/handles_empty_SHELL_environment (0.00s)
+    --- PASS: TestGetClaudeCommand/handles_alias_parsing (0.00s)
+=== RUN   TestDefaultConfig
+=== RUN   TestDefaultConfig/creates_config_with_default_values
+--- PASS: TestDefaultConfig (0.00s)
+    --- PASS: TestDefaultConfig/creates_config_with_default_values (0.00s)
+=== RUN   TestGetConfigDir
+=== RUN   TestGetConfigDir/returns_valid_config_directory
+--- PASS: TestGetConfigDir (0.00s)
+    --- PASS: TestGetConfigDir/returns_valid_config_directory (0.00s)
+=== RUN   TestLoadConfig
+=== RUN   TestLoadConfig/returns_default_config_when_file_doesn't_exist
+=== RUN   TestLoadConfig/loads_valid_config_file
+=== RUN   TestLoadConfig/returns_default_config_on_invalid_JSON
+--- PASS: TestLoadConfig (0.01s)
+    --- PASS: TestLoadConfig/returns_default_config_when_file_doesn't_exist (0.01s)
+    --- PASS: TestLoadConfig/loads_valid_config_file (0.00s)
+    --- PASS: TestLoadConfig/returns_default_config_on_invalid_JSON (0.00s)
+=== RUN   TestSaveConfig
+=== RUN   TestSaveConfig/saves_config_to_file
+--- PASS: TestSaveConfig (0.00s)
+    --- PASS: TestSaveConfig/saves_config_to_file (0.00s)
+PASS
+ok  	claude-squad/config	0.040s
+?   	claude-squad/daemon	[no test files]
+?   	claude-squad/keys	[no test files]
+?   	claude-squad/log	[no test files]
+?   	claude-squad/session	[no test files]
+=== RUN   TestSanitizeBranchName
+=== RUN   TestSanitizeBranchName/simple_lowercase_string
+=== RUN   TestSanitizeBranchName/string_with_spaces
+=== RUN   TestSanitizeBranchName/mixed_case_string
+=== RUN   TestSanitizeBranchName/string_with_special_characters
+=== RUN   TestSanitizeBranchName/string_with_allowed_special_characters
+=== RUN   TestSanitizeBranchName/string_with_multiple_dashes
+=== RUN   TestSanitizeBranchName/string_with_leading_and_trailing_dashes
+=== RUN   TestSanitizeBranchName/string_with_leading_and_trailing_slashes
+=== RUN   TestSanitizeBranchName/empty_string
+=== RUN   TestSanitizeBranchName/complex_mixed_case_with_special_chars
+--- PASS: TestSanitizeBranchName (0.00s)
+    --- PASS: TestSanitizeBranchName/simple_lowercase_string (0.00s)
+    --- PASS: TestSanitizeBranchName/string_with_spaces (0.00s)
+    --- PASS: TestSanitizeBranchName/mixed_case_string (0.00s)
+    --- PASS: TestSanitizeBranchName/string_with_special_characters (0.00s)
+    --- PASS: TestSanitizeBranchName/string_with_allowed_special_characters (0.00s)
+    --- PASS: TestSanitizeBranchName/string_with_multiple_dashes (0.00s)
+    --- PASS: TestSanitizeBranchName/string_with_leading_and_trailing_dashes (0.00s)
+    --- PASS: TestSanitizeBranchName/string_with_leading_and_trailing_slashes (0.00s)
+    --- PASS: TestSanitizeBranchName/empty_string (0.00s)
+    --- PASS: TestSanitizeBranchName/complex_mixed_case_with_special_chars (0.00s)
+PASS
+ok  	claude-squad/session/git	0.008s
+=== RUN   TestSanitizeName
+--- PASS: TestSanitizeName (0.00s)
+=== RUN   TestStartTmuxSession
+--- PASS: TestStartTmuxSession (30.87s)
+PASS
+ok  	claude-squad/session/tmux	30.877s
+=== RUN   TestPreviewScrolling
+    preview_test.go:218:
+        	Error Trace:	/app/ui/preview_test.go:95
+        	            				/app/ui/preview_test.go:38
+        	            				/app/ui/preview_test.go:218
+        	Error:      	Received unexpected error:
+        	            	exec: "git": executable file not found in $PATH
+        	Test:       	TestPreviewScrolling
+--- FAIL: TestPreviewScrolling (0.00s)
+=== RUN   TestPreviewContentWithoutScrolling
+    preview_test.go:358:
+        	Error Trace:	/app/ui/preview_test.go:95
+        	            				/app/ui/preview_test.go:38
+        	            				/app/ui/preview_test.go:358
+        	Error:      	Received unexpected error:
+        	            	exec: "git": executable file not found in $PATH
+        	Test:       	TestPreviewContentWithoutScrolling
+--- FAIL: TestPreviewContentWithoutScrolling (0.00s)
+FAIL
+FAIL	claude-squad/ui	0.011s
+?   	claude-squad/ui/overlay	[no test files]
+FAIL

@@ -1,0 +1,41 @@
+# Dockerfile
+FROM ubuntu:22.04
+
+# Set timezone to Pacific Time
+ENV TZ=America/Los_Angeles
+RUN ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
+    apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
+
+# Add deadsnakes PPA to install Python 3.12
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa
+
+# Install Python 3.12 and other dependencies
+RUN apt-get update && \
+    apt-get install -y python3.12 python3.12-venv python3.12-dev curl build-essential && \
+    apt-get clean
+
+# Install pip for Python 3.12
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.12
+
+# Set up the working directory
+WORKDIR /app
+
+# Copy the repository contents
+COPY . .
+
+# Ensure MODULE.bazel exists
+RUN if [ ! -f "MODULE.bazel" ]; then echo "Error: MODULE.bazel not found. Please ensure all necessary Bazel files are present." && exit 1; fi
+
+# Install Python dependencies
+RUN python3.12 -m pip install --upgrade pip setuptools && \
+    python3.12 -m pip install build
+
+# Copy the run.sh script and make it executable
+COPY run.sh /app/run.sh
+RUN chmod +x /app/run.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/app/run.sh"]

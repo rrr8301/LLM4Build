@@ -1,0 +1,35 @@
+gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -g -g -O2 -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -fno-omit-frame-pointer -fPIC -I.//src/include -I.//src/include/parser -I. -I./ -I/usr/include/postgresql/14/server -I/usr/include/postgresql/internal  -Wdate-time -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -I/usr/include/libxml2   -c -o src/backend/age.o src/backend/age.c
+In file included from .//src/include/catalog/ag_catalog.h:25,
+                 from src/backend/age.c:20:
+.//src/include/utils/agtype.h:458:25: error: unknown type name 'StringInfo'; did you mean 'fmStringInfo'?
+  458 | int reserve_from_buffer(StringInfo buffer, int len);
+      |                         ^~~~~~~~~~
+      |                         fmStringInfo
+.//src/include/utils/agtype.h:459:25: error: unknown type name 'StringInfo'; did you mean 'fmStringInfo'?
+  459 | short pad_buffer_to_int(StringInfo buffer);
+      |                         ^~~~~~~~~~
+      |                         fmStringInfo
+.//src/include/utils/agtype.h:484:29: error: unknown type name 'StringInfo'; did you mean 'fmStringInfo'?
+  484 | void convert_extended_array(StringInfo buffer, agtentry *pheader,
+      |                             ^~~~~~~~~~
+      |                             fmStringInfo
+.//src/include/utils/agtype.h:486:30: error: unknown type name 'StringInfo'; did you mean 'fmStringInfo'?
+  486 | void convert_extended_object(StringInfo buffer, agtentry *pheader,
+      |                              ^~~~~~~~~~
+      |                              fmStringInfo
+.//src/include/utils/agtype.h:513:25: error: unknown type name 'StringInfo'; did you mean 'fmStringInfo'?
+  513 | char *agtype_to_cstring(StringInfo out, agtype_container *in,
+      |                         ^~~~~~~~~~
+      |                         fmStringInfo
+.//src/include/utils/agtype.h:515:32: error: unknown type name 'StringInfo'; did you mean 'fmStringInfo'?
+  515 | char *agtype_to_cstring_indent(StringInfo out, agtype_container *in,
+      |                                ^~~~~~~~~~
+      |                                fmStringInfo
+In file included from .//src/include/parser/cypher_parse_node.h:23,
+                 from .//src/include/parser/cypher_clause.h:23,
+                 from .//src/include/parser/cypher_analyze.h:23,
+                 from src/backend/age.c:23:
+.//src/include/nodes/cypher_nodes.h:469:5: error: unknown type name 'Integer'
+  469 |     Integer *entity_position;
+      |     ^~~~~~~
+make: *** [<builtin>: src/backend/age.o] Error 1

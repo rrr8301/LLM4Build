@@ -1,0 +1,37 @@
+git submodule init
+Submodule 'cpp-jsonnet' (https://github.com/google/jsonnet.git) registered for path 'cpp-jsonnet'
+git submodule update
+Cloning into '/app/cpp-jsonnet'...
+Submodule path 'cpp-jsonnet': checked out 'bbb38f1020be1f5aed560928fb839b2c448cefb4'
+./tests.sh
++ go test -covermode atomic -coverprofile=coverage.out ./...
+go: downloading github.com/fatih/color v1.18.0
+go: downloading github.com/sergi/go-diff v1.3.1
+go: downloading sigs.k8s.io/yaml v1.4.0
+go: downloading golang.org/x/crypto v0.36.0
+go: downloading github.com/mattn/go-isatty v0.0.20
+go: downloading github.com/mattn/go-colorable v0.1.13
+go: downloading golang.org/x/sys v0.31.0
+# golang.org/x/crypto/sha3
+/go/pkg/mod/golang.org/x/crypto@v0.36.0/sha3/sha3.go:123:15: undefined: subtle.XORBytes
+/go/pkg/mod/golang.org/x/crypto@v0.36.0/sha3/shake.go:129:22: undefined: bytes.Clone
+note: module requires Go 1.23
+FAIL	github.com/google/go-jsonnet [build failed]
+ok  	github.com/google/go-jsonnet/ast	0.004s	coverage: 0.0% of statements [no tests to run]
+?   	github.com/google/go-jsonnet/astgen	[no test files]
+ok  	github.com/google/go-jsonnet/cmd/internal/cmd	0.005s	coverage: 9.8% of statements
+ok  	github.com/google/go-jsonnet/formatter	0.005s	coverage: 50.0% of statements
+ok  	github.com/google/go-jsonnet/internal/dump	0.005s	coverage: 70.9% of statements
+ok  	github.com/google/go-jsonnet/internal/parser	0.029s	coverage: 85.7% of statements
+ok  	github.com/google/go-jsonnet/internal/program	0.005s	coverage: 6.3% of statements
+FAIL	github.com/google/go-jsonnet/linter [build failed]
+make: *** [Makefile:39: test] Error 2
+git submodule init
+git submodule update
+go generate
+go run cmd/dumpstdlibast/dumpstdlibast.go cpp-jsonnet/stdlib/std.jsonnet > astgen/stdast.go
+bazel build //cmd/jsonnet
+make: bazel: No such file or directory
+make: *** [Makefile:10: build.bazel] Error 127
+bad response status from coveralls: 422
+{"message":"Couldn't find a repository matching this job.","error":true}

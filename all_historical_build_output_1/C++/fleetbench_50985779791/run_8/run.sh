@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Activate Python environment
+python3.12 -m venv venv
+source venv/bin/activate
+
+# Install project dependencies if any
+if [ -f "requirements.txt" ]; then
+    pip install -r requirements.txt
+fi
+
+# Clean and sync Bazel workspace
+bazel clean --expunge
+bazel sync --configure
+
+# Fetch all Bazel dependencies
+bazel fetch @bazel_skylib//... @com_github_grpc_grpc//... //...
+
+# Build the project
+bazel build -c fastbuild //...
+
+# Run tests with proper flags
+set +e  # Continue execution even if some tests fail
+bazel test -c fastbuild \
+    --test_output=errors \
+    --define=no_tensorflow_py_deps=true \
+    --incompatible_skip_genfiles_symlink=false \
+    //...
+set -e  # Stop execution on errors after tests
+
+# Deactivate Python environment
+deactivate

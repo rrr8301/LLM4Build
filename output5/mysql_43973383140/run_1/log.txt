@@ -1,0 +1,39 @@
+ * Starting MySQL database server mysqld
+su: warning: cannot change directory to /nonexistent: No such file or directory
+   ...done.
+mysqld is alive
+ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+go: downloading go1.22.0 (linux/amd64)
+go: downloading filippo.io/edwards25519 v1.1.0
+go: -race requires cgo; enable cgo by setting CGO_ENABLED=1
+--- FAIL: BenchmarkQuery
+    benchmark_test.go:58: error on "DROP TABLE IF EXISTS foo": Error 1698 (28000): Access denied for user 'root'@'localhost'
+--- FAIL: BenchmarkQueryCompressed
+    benchmark_test.go:58: error on "DROP TABLE IF EXISTS foo": Error 1698 (28000): Access denied for user 'root'@'localhost'
+--- FAIL: BenchmarkExec
+    benchmark_test.go:30: Error 1698 (28000): Access denied for user 'root'@'localhost'
+--- FAIL: BenchmarkRoundtripTxt
+    benchmark_test.go:30: Error 1698 (28000): Access denied for user 'root'@'localhost'
+--- FAIL: BenchmarkRoundtripBin
+    benchmark_test.go:30: Error 1698 (28000): Access denied for user 'root'@'localhost'
+goos: linux
+goarch: amd64
+pkg: github.com/go-sql-driver/mysql
+cpu: Intel(R) Xeon(R) Silver 4216 CPU @ 2.10GHz
+BenchmarkInterpolation-64               	 1352526	       800.2 ns/op	     176 B/op	       1 allocs/op
+--- FAIL: BenchmarkQueryContext
+    benchmark_test.go:58: error on "DROP TABLE IF EXISTS foo": Error 1698 (28000): Access denied for user 'root'@'localhost'
+--- FAIL: BenchmarkExecContext
+    benchmark_test.go:58: error on "DROP TABLE IF EXISTS foo": Error 1698 (28000): Access denied for user 'root'@'localhost'
+--- FAIL: BenchmarkQueryRawBytes
+    benchmark_test.go:58: error on "DROP TABLE IF EXISTS bench_rawbytes": Error 1698 (28000): Access denied for user 'root'@'localhost'
+--- FAIL: BenchmarkReceive10kRows
+    benchmark_test.go:58: error on "DROP TABLE IF EXISTS foo": Error 1698 (28000): Access denied for user 'root'@'localhost'
+--- FAIL: BenchmarkReceive10kRowsCompressed
+    benchmark_test.go:58: error on "DROP TABLE IF EXISTS foo": Error 1698 (28000): Access denied for user 'root'@'localhost'
+--- FAIL: BenchmarkReceiveMetadata
+    benchmark_test.go:58: error on "DROP TABLE IF EXISTS large_integer_table": Error 1698 (28000): Access denied for user 'root'@'localhost'
+BenchmarkParseDSN-64                    	   78247	     14270 ns/op	    8784 B/op	      52 allocs/op
+FAIL
+exit status 1
+FAIL	github.com/go-sql-driver/mysql	3.392s

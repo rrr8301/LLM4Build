@@ -1,0 +1,96 @@
+Obtaining file:///app
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Collecting portpicker
+  Downloading portpicker-1.6.0-py3-none-any.whl (16 kB)
+Collecting pyyaml
+  Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (762 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 763.0/763.0 KB 7.2 MB/s eta 0:00:00
+Collecting psutil
+  Downloading psutil-7.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (277 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.0/278.0 KB 11.3 MB/s eta 0:00:00
+Building wheels for collected packages: mobly
+  Building editable for mobly (pyproject.toml): started
+  Building editable for mobly (pyproject.toml): finished with status 'done'
+  Created wheel for mobly: filename=mobly-1.13-0.editable-py3-none-any.whl size=8455 sha256=5246c37d7cb03e2e20c66945eb783d0ed4b22aa733ee805e02311288802c642f
+  Stored in directory: /tmp/pip-ephem-wheel-cache-cbkgovjk/wheels/57/0f/98/bb57b2b57b95807699b822a35c022f139d38a02c27922f27ce
+Successfully built mobly
+Installing collected packages: pyyaml, psutil, portpicker, mobly
+Successfully installed mobly-1.13 portpicker-1.6.0 psutil-7.0.0 pyyaml-6.0.2
+py3: install_deps> python -I -m pip install pytest pytz
+.pkg: install_requires> python -I -m pip install 'setuptools>=61.2'
+.pkg: _optional_hooks> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_sdist> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: build_sdist> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+py3: install_package_deps> python -I -m pip install portpicker 'pywin32; platform_system == "Windows"' pyyaml
+py3: install_package> python -I -m pip install --force-reinstall --no-deps /app/.tox/.tmp/package/1/mobly-1.13.tar.gz
+py3: commands[0]> pytest
+============================= test session starts ==============================
+platform linux -- Python 3.11.0rc1, pytest-8.4.1, pluggy-1.6.0
+cachedir: .tox/py3/.pytest_cache
+rootdir: /app
+configfile: pyproject.toml
+testpaths: tests/mobly
+collected 801 items
+
+tests/mobly/asserts_test.py ............................................ [  5%]
+............                                                             [  6%]
+tests/mobly/base_instrumentation_test_test.py ......................     [  9%]
+tests/mobly/base_suite_test.py ....                                      [ 10%]
+tests/mobly/base_test_test.py .......................................... [ 15%]
+........................................................................ [ 24%]
+...........                                                              [ 25%]
+tests/mobly/config_parser_test.py .....                                  [ 26%]
+tests/mobly/controller_manager_test.py ..................                [ 28%]
+tests/mobly/controllers/android_device_lib/adb_test.py ................. [ 30%]
+.....................................................                    [ 37%]
+tests/mobly/controllers/android_device_lib/apk_utils_test.py ........... [ 38%]
+.........                                                                [ 39%]
+tests/mobly/controllers/android_device_lib/callback_handler_test.py .... [ 40%]
+...                                                                      [ 40%]
+tests/mobly/controllers/android_device_lib/callback_handler_v2_test.py . [ 40%]
+.....                                                                    [ 41%]
+tests/mobly/controllers/android_device_lib/errors_test.py ...            [ 41%]
+tests/mobly/controllers/android_device_lib/fastboot_test.py .........    [ 43%]
+tests/mobly/controllers/android_device_lib/jsonrpc_client_base_test.py . [ 43%]
+.....................                                                    [ 45%]
+tests/mobly/controllers/android_device_lib/jsonrpc_shell_base_test.py .. [ 46%]
+....                                                                     [ 46%]
+tests/mobly/controllers/android_device_lib/service_manager_test.py ..... [ 47%]
+.............................                                            [ 50%]
+tests/mobly/controllers/android_device_lib/services/base_service_test.py . [ 50%]
+                                                                         [ 50%]
+tests/mobly/controllers/android_device_lib/services/logcat_test.py ..... [ 51%]
+.........                                                                [ 52%]
+tests/mobly/controllers/android_device_lib/services/snippet_management_service_test.py . [ 52%]
+.............                                                            [ 54%]
+tests/mobly/controllers/android_device_lib/snippet_client_test.py ...... [ 55%]
+...................                                                      [ 57%]
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py ... [ 57%]
+.........................................................                [ 65%]
+tests/mobly/controllers/android_device_lib/snippet_event_test.py .       [ 65%]
+tests/mobly/controllers/android_device_test.py ......................... [ 68%]
+..............................................................           [ 76%]
+tests/mobly/logger_test.py ..........................                    [ 79%]
+tests/mobly/output_test.py .......s....                                  [ 80%]
+tests/mobly/records_test.py ..............................               [ 84%]
+tests/mobly/snippet/callback_event_test.py .                             [ 84%]
+tests/mobly/snippet/callback_handler_base_test.py ..........             [ 85%]
+tests/mobly/snippet/client_base_test.py ...................              [ 88%]
+tests/mobly/suite_runner_test.py ................                        [ 90%]
+tests/mobly/test_runner_test.py ......................                   [ 93%]
+tests/mobly/test_suite_test.py .                                         [ 93%]
+tests/mobly/utils_test.py ..s........................................... [ 98%]
+.........                                                                [100%]
+
+======================== 799 passed, 2 skipped in 6.13s ========================
+  py3: OK (15.40=setup[8.91]+cmd[6.49] seconds)
+  congratulations :) (15.46 seconds)
+All done! ✨ 🍰 ✨
+105 files would be left unchanged.

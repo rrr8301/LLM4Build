@@ -1,0 +1,895 @@
+﻿2025-11-04T03:43:51.4972657Z Current runner version: '2.329.0'
+2025-11-04T03:43:51.4994827Z ##[group]Runner Image Provisioner
+2025-11-04T03:43:51.4995581Z Hosted Compute Agent
+2025-11-04T03:43:51.4996257Z Version: 20251016.436
+2025-11-04T03:43:51.4996836Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+2025-11-04T03:43:51.4997560Z Build Date: 2025-10-15T20:44:12Z
+2025-11-04T03:43:51.4998232Z ##[endgroup]
+2025-11-04T03:43:51.4998738Z ##[group]Operating System
+2025-11-04T03:43:51.4999299Z Ubuntu
+2025-11-04T03:43:51.4999813Z 24.04.3
+2025-11-04T03:43:51.5000524Z LTS
+2025-11-04T03:43:51.5001003Z ##[endgroup]
+2025-11-04T03:43:51.5001554Z ##[group]Runner Image
+2025-11-04T03:43:51.5002069Z Image: ubuntu-24.04
+2025-11-04T03:43:51.5002585Z Version: 20251030.96.2
+2025-11-04T03:43:51.5003649Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251030.96/images/ubuntu/Ubuntu2404-Readme.md
+2025-11-04T03:43:51.5005159Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251030.96
+2025-11-04T03:43:51.5006189Z ##[endgroup]
+2025-11-04T03:43:51.5007163Z ##[group]GITHUB_TOKEN Permissions
+2025-11-04T03:43:51.5008982Z Contents: read
+2025-11-04T03:43:51.5009552Z Metadata: read
+2025-11-04T03:43:51.5010054Z ##[endgroup]
+2025-11-04T03:43:51.5012384Z Secret source: Actions
+2025-11-04T03:43:51.5013078Z Prepare workflow directory
+2025-11-04T03:43:51.5381031Z Prepare all required actions
+2025-11-04T03:43:51.5418406Z Getting action download info
+2025-11-04T03:43:52.0148213Z Download action repository 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-11-04T03:43:52.2777446Z Download action repository 'actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165' (SHA:dded0888837ed1f317902acf8a20df0ad188d165)
+2025-11-04T03:43:53.0211201Z Complete job name: Build on JDK 17
+2025-11-04T03:43:53.0831536Z ##[group]Run actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+2025-11-04T03:43:53.0832671Z with:
+2025-11-04T03:43:53.0833104Z   repository: google/gson
+2025-11-04T03:43:53.0833759Z   token: ***
+2025-11-04T03:43:53.0834177Z   ssh-strict: true
+2025-11-04T03:43:53.0834598Z   ssh-user: git
+2025-11-04T03:43:53.0835034Z   persist-credentials: true
+2025-11-04T03:43:53.0835520Z   clean: true
+2025-11-04T03:43:53.0835949Z   sparse-checkout-cone-mode: true
+2025-11-04T03:43:53.0836462Z   fetch-depth: 1
+2025-11-04T03:43:53.0836874Z   fetch-tags: false
+2025-11-04T03:43:53.0837296Z   show-progress: true
+2025-11-04T03:43:53.0837723Z   lfs: false
+2025-11-04T03:43:53.0838126Z   submodules: false
+2025-11-04T03:43:53.0838572Z   set-safe-directory: true
+2025-11-04T03:43:53.0839257Z env:
+2025-11-04T03:43:53.0839883Z   MAVEN_ARGS: --show-version --batch-mode --no-transfer-progress
+2025-11-04T03:43:53.0840779Z ##[endgroup]
+2025-11-04T03:43:53.1735068Z Syncing repository: google/gson
+2025-11-04T03:43:53.1737239Z ##[group]Getting Git version info
+2025-11-04T03:43:53.1738097Z Working directory is '/home/runner/work/gson/gson'
+2025-11-04T03:43:53.1739086Z [command]/usr/bin/git version
+2025-11-04T03:43:53.1781165Z git version 2.51.2
+2025-11-04T03:43:53.1801449Z ##[endgroup]
+2025-11-04T03:43:53.1815147Z Temporarily overriding HOME='/home/runner/work/_temp/5cdf4d76-bc40-447b-a01c-0ac67de908d9' before making global git config changes
+2025-11-04T03:43:53.1817440Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-04T03:43:53.1819537Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gson/gson
+2025-11-04T03:43:53.1854420Z Deleting the contents of '/home/runner/work/gson/gson'
+2025-11-04T03:43:53.1858015Z ##[group]Initializing the repository
+2025-11-04T03:43:53.1862531Z [command]/usr/bin/git init /home/runner/work/gson/gson
+2025-11-04T03:43:53.1951354Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-11-04T03:43:53.1953116Z hint: is subject to change. To configure the initial branch name to use in all
+2025-11-04T03:43:53.1954702Z hint: of your new repositories, which will suppress this warning, call:
+2025-11-04T03:43:53.1956320Z hint:
+2025-11-04T03:43:53.1957239Z hint: 	git config --global init.defaultBranch <name>
+2025-11-04T03:43:53.1958297Z hint:
+2025-11-04T03:43:53.1959308Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-11-04T03:43:53.1961082Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-11-04T03:43:53.1961920Z hint:
+2025-11-04T03:43:53.1962332Z hint: 	git branch -m <name>
+2025-11-04T03:43:53.1963021Z hint:
+2025-11-04T03:43:53.1964049Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-11-04T03:43:53.1965471Z Initialized empty Git repository in /home/runner/work/gson/gson/.git/
+2025-11-04T03:43:53.1968859Z [command]/usr/bin/git remote add origin https://github.com/google/gson
+2025-11-04T03:43:53.2001338Z ##[endgroup]
+2025-11-04T03:43:53.2002110Z ##[group]Disabling automatic garbage collection
+2025-11-04T03:43:53.2004907Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-04T03:43:53.2031979Z ##[endgroup]
+2025-11-04T03:43:53.2033132Z ##[group]Setting up auth
+2025-11-04T03:43:53.2038295Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-04T03:43:53.2068703Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-04T03:43:53.2405432Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-04T03:43:53.2434935Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-04T03:43:53.2652667Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-04T03:43:53.2686317Z ##[endgroup]
+2025-11-04T03:43:53.2687744Z ##[group]Fetching the repository
+2025-11-04T03:43:53.2696498Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +419a5bc1cf8dda25bf2a6dcd70a0f1f4b1956ceb:refs/remotes/pull/2939/merge
+2025-11-04T03:43:53.8457637Z From https://github.com/google/gson
+2025-11-04T03:43:53.8459056Z  * [new ref]         419a5bc1cf8dda25bf2a6dcd70a0f1f4b1956ceb -> pull/2939/merge
+2025-11-04T03:43:53.8488847Z ##[endgroup]
+2025-11-04T03:43:53.8490048Z ##[group]Determining the checkout info
+2025-11-04T03:43:53.8492005Z ##[endgroup]
+2025-11-04T03:43:53.8497446Z [command]/usr/bin/git sparse-checkout disable
+2025-11-04T03:43:53.8537015Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-11-04T03:43:53.8564973Z ##[group]Checking out the ref
+2025-11-04T03:43:53.8568991Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2939/merge
+2025-11-04T03:43:53.8849102Z Note: switching to 'refs/remotes/pull/2939/merge'.
+2025-11-04T03:43:53.8849870Z 
+2025-11-04T03:43:53.8850737Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-11-04T03:43:53.8851784Z changes and commit them, and you can discard any commits you make in this
+2025-11-04T03:43:53.8852755Z state without impacting any branches by switching back to a branch.
+2025-11-04T03:43:53.8853319Z 
+2025-11-04T03:43:53.8853891Z If you want to create a new branch to retain commits you create, you may
+2025-11-04T03:43:53.8855519Z do so (now or later) by using -c with the switch command. Example:
+2025-11-04T03:43:53.8856405Z 
+2025-11-04T03:43:53.8856818Z   git switch -c <new-branch-name>
+2025-11-04T03:43:53.8857432Z 
+2025-11-04T03:43:53.8857803Z Or undo this operation with:
+2025-11-04T03:43:53.8858382Z 
+2025-11-04T03:43:53.8858747Z   git switch -
+2025-11-04T03:43:53.8859289Z 
+2025-11-04T03:43:53.8860019Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-11-04T03:43:53.8861202Z 
+2025-11-04T03:43:53.8862298Z HEAD is now at 419a5bc Merge 995661f2024ffc196a026f29ee01fdf9d14df7eb into 18bf23f9f7746c62f0f2bb478c16d17f460e875d
+2025-11-04T03:43:53.8865838Z ##[endgroup]
+2025-11-04T03:43:53.8894469Z [command]/usr/bin/git log -1 --format=%H
+2025-11-04T03:43:53.8917523Z 419a5bc1cf8dda25bf2a6dcd70a0f1f4b1956ceb
+2025-11-04T03:43:53.9198520Z ##[group]Run actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165
+2025-11-04T03:43:53.9199267Z with:
+2025-11-04T03:43:53.9199670Z   distribution: temurin
+2025-11-04T03:43:53.9200128Z   java-version: 17
+2025-11-04T03:43:53.9200899Z   cache: maven
+2025-11-04T03:43:53.9201322Z   java-package: jdk
+2025-11-04T03:43:53.9201746Z   check-latest: false
+2025-11-04T03:43:53.9202178Z   server-id: github
+2025-11-04T03:43:53.9202609Z   server-username: GITHUB_ACTOR
+2025-11-04T03:43:53.9203114Z   server-password: GITHUB_TOKEN
+2025-11-04T03:43:53.9203619Z   overwrite-settings: true
+2025-11-04T03:43:53.9204081Z   job-status: success
+2025-11-04T03:43:53.9204655Z   token: ***
+2025-11-04T03:43:53.9205029Z env:
+2025-11-04T03:43:53.9205547Z   MAVEN_ARGS: --show-version --batch-mode --no-transfer-progress
+2025-11-04T03:43:53.9206188Z ##[endgroup]
+2025-11-04T03:43:54.0733962Z ##[group]Installed distributions
+2025-11-04T03:43:54.0972238Z Resolved Java 17.0.17+10 from tool-cache
+2025-11-04T03:43:54.0973214Z Setting Java 17.0.17+10 as the default
+2025-11-04T03:43:54.0983696Z (node:2060) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-11-04T03:43:54.0984973Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-04T03:43:54.0986749Z Creating toolchains.xml for JDK version 17 from temurin
+2025-11-04T03:43:54.1062463Z Writing to /home/runner/.m2/toolchains.xml
+2025-11-04T03:43:54.1063199Z 
+2025-11-04T03:43:54.1063418Z Java configuration:
+2025-11-04T03:43:54.1063972Z   Distribution: temurin
+2025-11-04T03:43:54.1064532Z   Version: 17.0.17+10
+2025-11-04T03:43:54.1065193Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-04T03:43:54.1065742Z 
+2025-11-04T03:43:54.1066262Z ##[endgroup]
+2025-11-04T03:43:54.1079236Z Creating settings.xml with server-id: github
+2025-11-04T03:43:54.1080581Z Writing to /home/runner/.m2/settings.xml
+2025-11-04T03:43:54.4436629Z maven cache is not found
+2025-11-04T03:43:54.4603826Z ##[group]Run mvn verify javadoc:jar 
+2025-11-04T03:43:54.4605237Z [36;1mmvn verify javadoc:jar [0m
+2025-11-04T03:43:54.4646018Z shell: /usr/bin/bash -e {0}
+2025-11-04T03:43:54.4647199Z env:
+2025-11-04T03:43:54.4648481Z   MAVEN_ARGS: --show-version --batch-mode --no-transfer-progress
+2025-11-04T03:43:54.4650920Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-04T03:43:54.4653347Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-04T03:43:54.4655242Z ##[endgroup]
+2025-11-04T03:43:56.6855511Z Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
+2025-11-04T03:43:56.6856558Z Maven home: /usr/share/apache-maven-3.9.11
+2025-11-04T03:43:56.6857472Z Java version: 17.0.17, vendor: Eclipse Adoptium, runtime: /usr/lib/jvm/temurin-17-jdk-amd64
+2025-11-04T03:43:56.6858295Z Default locale: en, platform encoding: UTF-8
+2025-11-04T03:43:56.6859182Z OS name: "linux", version: "6.11.0-1018-azure", arch: "amd64", family: "unix"
+2025-11-04T03:43:59.0158033Z [INFO] Scanning for projects...
+2025-11-04T03:44:04.7155937Z [INFO] Inspecting build with total of 8 modules
+2025-11-04T03:44:04.7242975Z [INFO] Installing Central Publishing features
+2025-11-04T03:44:04.7260974Z [INFO] ------------------------------------------------------------------------
+2025-11-04T03:44:04.7261754Z [INFO] Reactor Build Order:
+2025-11-04T03:44:04.7264414Z [INFO] 
+2025-11-04T03:44:04.7271498Z [INFO] Gson Parent                                                        [pom]
+2025-11-04T03:44:04.7272608Z [INFO] Gson                                                               [jar]
+2025-11-04T03:44:04.7275092Z [INFO] Test: Java Platform Module System (JPMS)                           [jar]
+2025-11-04T03:44:04.7276041Z [INFO] Test: GraalVM Native Image                                         [jar]
+2025-11-04T03:44:04.7277359Z [INFO] Test: Code shrinking (ProGuard / R8)                               [jar]
+2025-11-04T03:44:04.7278096Z [INFO] Gson Extras                                                        [jar]
+2025-11-04T03:44:04.7278764Z [INFO] Gson Metrics                                                       [jar]
+2025-11-04T03:44:04.7279502Z [INFO] Gson Protobuf Support                                              [jar]
+2025-11-04T03:44:06.7811648Z [INFO] 
+2025-11-04T03:44:06.7812304Z [INFO] ------------------< com.google.code.gson:gson-parent >------------------
+2025-11-04T03:44:06.7813121Z [INFO] Building Gson Parent 2.13.3-SNAPSHOT                               [1/8]
+2025-11-04T03:44:06.7813742Z [INFO]   from pom.xml
+2025-11-04T03:44:06.7814215Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-11-04T03:44:06.7939433Z [INFO] 
+2025-11-04T03:44:06.7941173Z [INFO] --- enforcer:3.6.2:enforce (enforce-versions) @ gson-parent ---
+2025-11-04T03:44:07.8394610Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2025-11-04T03:44:07.8523054Z [INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-11-04T03:44:07.8530147Z [INFO] 
+2025-11-04T03:44:07.8531171Z [INFO] --- spotless:3.0.0:check (default) @ gson-parent ---
+2025-11-04T03:44:11.5791451Z [INFO] Index file does not exist. Fallback to an empty index
+2025-11-04T03:44:11.6045483Z [INFO] Spotless.Format is keeping 15 files clean - 0 needs changes to be clean, 15 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:44:11.6109468Z [INFO] 
+2025-11-04T03:44:11.6110481Z [INFO] --- artifact:3.6.1:buildinfo (default) @ gson-parent ---
+2025-11-04T03:44:19.7219164Z [INFO] Auto-skipping goal because module skips install and/or deploy
+2025-11-04T03:44:19.7253687Z [INFO] 
+2025-11-04T03:44:19.7254150Z [INFO] --- javadoc:3.12.0:jar (default-cli) @ gson-parent ---
+2025-11-04T03:44:24.6984081Z [INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+2025-11-04T03:44:24.6986268Z [INFO] 
+2025-11-04T03:44:24.7016870Z [INFO] ---------------------< com.google.code.gson:gson >----------------------
+2025-11-04T03:44:24.7020637Z [INFO] Building Gson 2.13.3-SNAPSHOT                                      [2/8]
+2025-11-04T03:44:24.7022780Z [INFO]   from gson/pom.xml
+2025-11-04T03:44:24.7023277Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-04T03:44:27.2724369Z [INFO] 
+2025-11-04T03:44:27.2725272Z [INFO] --- enforcer:3.6.2:enforce (enforce-versions) @ gson ---
+2025-11-04T03:44:27.2749244Z [INFO] 
+2025-11-04T03:44:27.2781932Z [INFO] --- templating:3.0.0:filter-sources (filtering-java-templates) @ gson ---
+2025-11-04T03:44:27.4306101Z [INFO] Copying files with filtering to temporary directory.
+2025-11-04T03:44:27.4356297Z [INFO] Copying 1 resource from src/main/java-templates to target/templates-tmp4151517166
+2025-11-04T03:44:27.4708671Z [INFO] Copied 1 files to output directory: /home/runner/work/gson/gson/gson/target/generated-sources/java-templates
+2025-11-04T03:44:27.4711285Z [INFO] Source directory: /home/runner/work/gson/gson/gson/target/generated-sources/java-templates added.
+2025-11-04T03:44:27.4712525Z [INFO] 
+2025-11-04T03:44:27.4712948Z [INFO] --- resources:3.3.1:resources (default-resources) @ gson ---
+2025-11-04T03:44:27.6873462Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-04T03:44:27.6897839Z [INFO] 
+2025-11-04T03:44:27.6900123Z [INFO] --- compiler:3.14.1:compile (default-compile) @ gson ---
+2025-11-04T03:44:28.2552957Z [INFO] Recompiling the module because of changed source code.
+2025-11-04T03:44:28.2749210Z [INFO] Compiling 84 source files with javac [debug deprecation release 8] to target/classes
+2025-11-04T03:44:30.9455797Z [INFO] 
+2025-11-04T03:44:30.9459758Z [INFO] --- bnd:6.4.0:bnd-process (default) @ gson ---
+2025-11-04T03:44:34.8380507Z [WARNING] /home/runner/work/gson/gson/gson/pom.xml [0:0]: Export com.google.gson,  has 1,  private references [com.google.gson.internal]
+2025-11-04T03:44:34.8389783Z [INFO] 
+2025-11-04T03:44:34.8390519Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ gson ---
+2025-11-04T03:44:34.8411765Z [INFO] Copying 1 resource from src/test/resources to target/test-classes
+2025-11-04T03:44:34.8417161Z [INFO] 
+2025-11-04T03:44:34.8461092Z [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ gson ---
+2025-11-04T03:44:34.8564299Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:44:34.8569207Z [INFO] Compiling 122 source files with javac [debug deprecation release 17] to target/test-classes
+2025-11-04T03:44:39.6211193Z [INFO] 
+2025-11-04T03:44:39.6211799Z [INFO] --- resources:3.3.1:copy-resources (pre-obfuscate-class) @ gson ---
+2025-11-04T03:44:39.6345785Z [INFO] Copying 2 resources from target/test-classes/com/google/gson/functional to target/test-classes-obfuscated-injar/com/google/gson/functional
+2025-11-04T03:44:39.6357754Z [INFO] 
+2025-11-04T03:44:39.6358261Z [INFO] --- proguard:2.7.0:proguard (obfuscate-test-class) @ gson ---
+2025-11-04T03:44:43.4203247Z [INFO] execute ProGuard [-injars, '/home/runner/work/gson/gson/gson/target/test-classes-obfuscated-injar'(!META-INF/maven/**,**/*.class), -libraryjars, '/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.43.0/error_prone_annotations-2.43.0.jar', -outjars, '/home/runner/work/gson/gson/gson/target/test-classes-obfuscated-outjar', -include, '/home/runner/work/gson/gson/gson/src/test/resources/testcases-proguard.conf', -libraryjars, '/home/runner/work/gson/gson/gson/target/classes', -libraryjars, '/usr/lib/jvm/temurin-17-jdk-amd64/jmods/java.base.jmod', -printmapping, '/home/runner/work/gson/gson/gson/target/proguard_map.txt', -printseeds, '/home/runner/work/gson/gson/gson/target/proguard_seed.txt']
+2025-11-04T03:44:43.4774978Z [INFO] proguard jar: [/home/runner/.m2/repository/com/guardsquare/proguard-base/7.8.0/proguard-base-7.8.0.jar, /home/runner/.m2/repository/com/guardsquare/proguard-core/9.2.0/proguard-core-9.2.0.jar]
+2025-11-04T03:44:44.2534719Z  [proguard] ProGuard, version 7.8.0
+2025-11-04T03:44:45.2034331Z [INFO] 
+2025-11-04T03:44:45.2035314Z [INFO] --- resources:3.3.1:copy-resources (post-obfuscate-class) @ gson ---
+2025-11-04T03:44:45.2056533Z [INFO] Copying 2 resources from target/test-classes-obfuscated-outjar/com/google/gson/functional to target/test-classes/com/google/gson/functional
+2025-11-04T03:44:45.2059763Z [INFO] 
+2025-11-04T03:44:45.2060364Z [INFO] --- surefire:3.5.4:test (default-test) @ gson ---
+2025-11-04T03:44:45.8237702Z [INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+2025-11-04T03:44:46.1643591Z [INFO] 
+2025-11-04T03:44:46.1646078Z [INFO] -------------------------------------------------------
+2025-11-04T03:44:46.1646574Z [INFO]  T E S T S
+2025-11-04T03:44:46.1646960Z [INFO] -------------------------------------------------------
+2025-11-04T03:44:46.2263529Z OpenJDK 64-Bit Server VM warning: Ignoring option --illegal-access=deny; support was removed in 17.0
+2025-11-04T03:44:46.4403170Z [INFO] Running com.google.gson.JavaSerializationTest
+2025-11-04T03:44:46.5713645Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 s -- in com.google.gson.JavaSerializationTest
+2025-11-04T03:44:46.5725123Z [INFO] Running com.google.gson.FieldAttributesTest
+2025-11-04T03:44:46.5778647Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.FieldAttributesTest
+2025-11-04T03:44:46.5779833Z [INFO] Running com.google.gson.metrics.PerformanceTest
+2025-11-04T03:44:46.5848697Z [WARNING] Tests run: 12, Failures: 0, Errors: 0, Skipped: 11, Time elapsed: 0.002 s -- in com.google.gson.metrics.PerformanceTest
+2025-11-04T03:44:46.5853388Z [INFO] Running com.google.gson.TypeAdapterTest
+2025-11-04T03:44:46.5904620Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.google.gson.TypeAdapterTest
+2025-11-04T03:44:46.5905857Z [INFO] Running com.google.gson.GsonTypeAdapterTest
+2025-11-04T03:44:46.6158317Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in com.google.gson.GsonTypeAdapterTest
+2025-11-04T03:44:46.6164207Z [INFO] Running com.google.gson.LongSerializationPolicyTest
+2025-11-04T03:44:46.6238277Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.google.gson.LongSerializationPolicyTest
+2025-11-04T03:44:46.6241322Z [INFO] Running com.google.gson.JsonPrimitiveTest
+2025-11-04T03:44:46.6460700Z [INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in com.google.gson.JsonPrimitiveTest
+2025-11-04T03:44:46.6466733Z [INFO] Running com.google.gson.VersionExclusionStrategyTest
+2025-11-04T03:44:46.6560365Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.google.gson.VersionExclusionStrategyTest
+2025-11-04T03:44:46.6561397Z [INFO] Running com.google.gson.InnerClassExclusionStrategyTest
+2025-11-04T03:44:46.6595852Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.google.gson.InnerClassExclusionStrategyTest
+2025-11-04T03:44:46.6604265Z [INFO] Running com.google.gson.JsonStreamParserTest
+2025-11-04T03:44:46.6647416Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.google.gson.JsonStreamParserTest
+2025-11-04T03:44:46.6648292Z [INFO] Running com.google.gson.ToNumberPolicyTest
+2025-11-04T03:44:46.6728498Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.google.gson.ToNumberPolicyTest
+2025-11-04T03:44:46.6729721Z [INFO] Running com.google.gson.JsonObjectAsMapTest
+2025-11-04T03:44:46.6806783Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.google.gson.JsonObjectAsMapTest
+2025-11-04T03:44:46.6807844Z [INFO] Running com.google.gson.ObjectTypeAdapterTest
+2025-11-04T03:44:46.7541940Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.070 s -- in com.google.gson.ObjectTypeAdapterTest
+2025-11-04T03:44:46.7542869Z [INFO] Running com.google.gson.GsonBuilderTest
+2025-11-04T03:44:46.8153530Z [WARNING] Tests run: 22, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.060 s -- in com.google.gson.GsonBuilderTest
+2025-11-04T03:44:46.8161016Z [INFO] Running com.google.gson.JsonArrayAsListTest
+2025-11-04T03:44:46.8335069Z [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in com.google.gson.JsonArrayAsListTest
+2025-11-04T03:44:46.8336121Z [INFO] Running com.google.gson.internal.UnsafeAllocatorInstantiationTest
+2025-11-04T03:44:46.8391923Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.google.gson.internal.UnsafeAllocatorInstantiationTest
+2025-11-04T03:44:46.8396373Z [INFO] Running com.google.gson.internal.sql.SqlTypesSupportTest
+2025-11-04T03:44:46.8456742Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.google.gson.internal.sql.SqlTypesSupportTest
+2025-11-04T03:44:46.8457955Z [INFO] Running com.google.gson.internal.sql.SqlTypesGsonTest
+2025-11-04T03:44:46.8722798Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in com.google.gson.internal.sql.SqlTypesGsonTest
+2025-11-04T03:44:46.8723839Z [INFO] Running com.google.gson.internal.GsonBuildConfigTest
+2025-11-04T03:44:46.8751468Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.internal.GsonBuildConfigTest
+2025-11-04T03:44:46.8801721Z [INFO] Running com.google.gson.internal.GsonTypesTest
+2025-11-04T03:44:46.8806491Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.google.gson.internal.GsonTypesTest
+2025-11-04T03:44:46.8811558Z [INFO] Running com.google.gson.internal.LinkedTreeMapSuiteTest
+2025-11-04T03:44:47.7162605Z [INFO] Tests run: 1854, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.771 s -- in com.google.gson.internal.LinkedTreeMapSuiteTest
+2025-11-04T03:44:47.7193283Z [INFO] Running com.google.gson.internal.LinkedTreeMapTest
+2025-11-04T03:44:47.7194566Z [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.internal.LinkedTreeMapTest
+2025-11-04T03:44:47.7195537Z [INFO] Running com.google.gson.internal.LazilyParsedNumberTest
+2025-11-04T03:44:47.7196508Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.internal.LazilyParsedNumberTest
+2025-11-04T03:44:47.7197493Z [INFO] Running com.google.gson.internal.ConstructorConstructorTest
+2025-11-04T03:44:47.7198518Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.internal.ConstructorConstructorTest
+2025-11-04T03:44:47.7199623Z [INFO] Running com.google.gson.internal.reflect.Java17ReflectionHelperTest
+2025-11-04T03:44:47.7208838Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.internal.reflect.Java17ReflectionHelperTest
+2025-11-04T03:44:47.7213830Z [INFO] Running com.google.gson.internal.JavaVersionTest
+2025-11-04T03:44:47.7231938Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.internal.JavaVersionTest
+2025-11-04T03:44:47.7237120Z [INFO] Running com.google.gson.internal.bind.JsonElementReaderTest
+2025-11-04T03:44:47.7260726Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.internal.bind.JsonElementReaderTest
+2025-11-04T03:44:47.7266019Z [INFO] Running com.google.gson.internal.bind.Java17ReflectiveTypeAdapterFactoryTest
+2025-11-04T03:44:47.7631228Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in com.google.gson.internal.bind.Java17ReflectiveTypeAdapterFactoryTest
+2025-11-04T03:44:47.7661790Z [INFO] Running com.google.gson.internal.bind.JsonTreeReaderTest
+2025-11-04T03:44:47.7720058Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.google.gson.internal.bind.JsonTreeReaderTest
+2025-11-04T03:44:47.7724747Z [INFO] Running com.google.gson.internal.bind.RecursiveTypesResolveTest
+2025-11-04T03:44:47.7823503Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.google.gson.internal.bind.RecursiveTypesResolveTest
+2025-11-04T03:44:47.7827449Z [INFO] Running com.google.gson.internal.bind.DefaultDateTypeAdapterTest
+2025-11-04T03:44:48.0818667Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.295 s -- in com.google.gson.internal.bind.DefaultDateTypeAdapterTest
+2025-11-04T03:44:48.0821175Z [INFO] Running com.google.gson.internal.bind.JsonTreeWriterTest
+2025-11-04T03:44:48.0964422Z [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.google.gson.internal.bind.JsonTreeWriterTest
+2025-11-04T03:44:48.0967385Z [INFO] Running com.google.gson.internal.bind.util.ISO8601UtilsTest
+2025-11-04T03:44:48.0988160Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.google.gson.internal.bind.util.ISO8601UtilsTest
+2025-11-04T03:44:48.0992150Z [INFO] Running com.google.gson.internal.StreamsTest
+2025-11-04T03:44:48.1036342Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.internal.StreamsTest
+2025-11-04T03:44:48.1040625Z [INFO] Running com.google.gson.OverrideCoreTypeAdaptersTest
+2025-11-04T03:44:48.1041553Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.OverrideCoreTypeAdaptersTest
+2025-11-04T03:44:48.1042586Z [INFO] Running com.google.gson.functional.ExclusionStrategyFunctionalTest
+2025-11-04T03:44:48.1069382Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.google.gson.functional.ExclusionStrategyFunctionalTest
+2025-11-04T03:44:48.1072646Z [INFO] Running com.google.gson.functional.CustomSerializerTest
+2025-11-04T03:44:48.1138160Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.google.gson.functional.CustomSerializerTest
+2025-11-04T03:44:48.1141480Z [INFO] Running com.google.gson.functional.StringTest
+2025-11-04T03:44:48.1192815Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.google.gson.functional.StringTest
+2025-11-04T03:44:48.1201155Z [INFO] Running com.google.gson.functional.DelegateTypeAdapterTest
+2025-11-04T03:44:48.1244007Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.google.gson.functional.DelegateTypeAdapterTest
+2025-11-04T03:44:48.1245473Z [INFO] Running com.google.gson.functional.FieldExclusionTest
+2025-11-04T03:44:48.1260759Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.FieldExclusionTest
+2025-11-04T03:44:48.1263561Z [INFO] Running com.google.gson.functional.CustomDeserializerTest
+2025-11-04T03:44:48.1361375Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.google.gson.functional.CustomDeserializerTest
+2025-11-04T03:44:48.1362952Z [INFO] Running com.google.gson.functional.TypeAdapterPrecedenceTest
+2025-11-04T03:44:48.1372461Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.TypeAdapterPrecedenceTest
+2025-11-04T03:44:48.1373463Z [INFO] Running com.google.gson.functional.VersioningTest
+2025-11-04T03:44:48.1491858Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.google.gson.functional.VersioningTest
+2025-11-04T03:44:48.1494211Z [INFO] Running com.google.gson.functional.ConcurrencyTest
+2025-11-04T03:44:48.1883322Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s -- in com.google.gson.functional.ConcurrencyTest
+2025-11-04T03:44:48.1885678Z [INFO] Running com.google.gson.functional.NamingPolicyTest
+2025-11-04T03:44:48.1990491Z [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.google.gson.functional.NamingPolicyTest
+2025-11-04T03:44:48.1995477Z [INFO] Running com.google.gson.functional.EnumTest
+2025-11-04T03:44:48.2171348Z [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.google.gson.functional.EnumTest
+2025-11-04T03:44:48.2172663Z [INFO] Running com.google.gson.functional.TreeTypeAdaptersTest
+2025-11-04T03:44:48.2186868Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.google.gson.functional.TreeTypeAdaptersTest
+2025-11-04T03:44:48.2188324Z [INFO] Running com.google.gson.functional.PrimitiveCharacterTest
+2025-11-04T03:44:48.2198062Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.PrimitiveCharacterTest
+2025-11-04T03:44:48.2199444Z [INFO] Running com.google.gson.functional.ReflectionAccessTest
+2025-11-04T03:44:48.2283791Z WARNING: A terminally deprecated method in java.lang.System has been called
+2025-11-04T03:44:48.2296747Z WARNING: System::setSecurityManager has been called by com.google.gson.functional.ReflectionAccessTest (file:/home/runner/work/gson/gson/gson/target/test-classes/)
+2025-11-04T03:44:48.2298416Z WARNING: Please consider reporting this to the maintainers of com.google.gson.functional.ReflectionAccessTest
+2025-11-04T03:44:48.2299459Z WARNING: System::setSecurityManager will be removed in a future release
+2025-11-04T03:44:48.2797393Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s -- in com.google.gson.functional.ReflectionAccessTest
+2025-11-04T03:44:48.2802516Z [INFO] Running com.google.gson.functional.SecurityTest
+2025-11-04T03:44:48.2810742Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.SecurityTest
+2025-11-04T03:44:48.2815240Z [INFO] Running com.google.gson.functional.StreamingTypeAdaptersTest
+2025-11-04T03:44:48.3025954Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in com.google.gson.functional.StreamingTypeAdaptersTest
+2025-11-04T03:44:48.3028481Z [INFO] Running com.google.gson.functional.CustomTypeAdaptersTest
+2025-11-04T03:44:48.3142105Z [WARNING] Tests run: 21, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.010 s -- in com.google.gson.functional.CustomTypeAdaptersTest
+2025-11-04T03:44:48.3143521Z [INFO] Running com.google.gson.functional.DefaultTypeAdaptersTest
+2025-11-04T03:44:48.3590370Z [INFO] Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s -- in com.google.gson.functional.DefaultTypeAdaptersTest
+2025-11-04T03:44:48.3596172Z [INFO] Running com.google.gson.functional.GsonVersionDiagnosticsTest
+2025-11-04T03:44:48.3640706Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.GsonVersionDiagnosticsTest
+2025-11-04T03:44:48.3641960Z [INFO] Running com.google.gson.functional.LeniencyTest
+2025-11-04T03:44:48.3652296Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.functional.LeniencyTest
+2025-11-04T03:44:48.3653464Z [INFO] Running com.google.gson.functional.JavaUtilTest
+2025-11-04T03:44:48.3705291Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.JavaUtilTest
+2025-11-04T03:44:48.3706642Z [INFO] Running com.google.gson.functional.MoreSpecificTypeSerializationTest
+2025-11-04T03:44:48.3708052Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.MoreSpecificTypeSerializationTest
+2025-11-04T03:44:48.3709471Z [INFO] Running com.google.gson.functional.JsonAdapterAnnotationOnClassesTest
+2025-11-04T03:44:48.4077285Z [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in com.google.gson.functional.JsonAdapterAnnotationOnClassesTest
+2025-11-04T03:44:48.4078695Z [INFO] Running com.google.gson.functional.UncategorizedTest
+2025-11-04T03:44:48.4079742Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.UncategorizedTest
+2025-11-04T03:44:48.4081023Z [INFO] Running com.google.gson.functional.PrettyPrintingTest
+2025-11-04T03:44:48.4115941Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.google.gson.functional.PrettyPrintingTest
+2025-11-04T03:44:48.4131140Z [INFO] Running com.google.gson.functional.EnumWithObfuscatedTest
+2025-11-04T03:44:48.4164551Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.google.gson.functional.EnumWithObfuscatedTest
+2025-11-04T03:44:48.4165911Z [INFO] Running com.google.gson.functional.TypeHierarchyAdapterTest
+2025-11-04T03:44:48.4212419Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.functional.TypeHierarchyAdapterTest
+2025-11-04T03:44:48.4241074Z [INFO] Running com.google.gson.functional.NumberLimitsTest
+2025-11-04T03:44:48.5082092Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in com.google.gson.functional.NumberLimitsTest
+2025-11-04T03:44:48.5088432Z [INFO] Running com.google.gson.functional.RuntimeTypeAdapterFactoryFunctionalTest
+2025-11-04T03:44:48.5121822Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.functional.RuntimeTypeAdapterFactoryFunctionalTest
+2025-11-04T03:44:48.5127776Z [INFO] Running com.google.gson.functional.ToNumberPolicyFunctionalTest
+2025-11-04T03:44:48.5184983Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.functional.ToNumberPolicyFunctionalTest
+2025-11-04T03:44:48.5186411Z [INFO] Running com.google.gson.functional.ArrayTest
+2025-11-04T03:44:48.5231648Z [INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.functional.ArrayTest
+2025-11-04T03:44:48.5236773Z [INFO] Running com.google.gson.functional.MapTest
+2025-11-04T03:44:48.5531290Z [INFO] Tests run: 52, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in com.google.gson.functional.MapTest
+2025-11-04T03:44:48.5541264Z [INFO] Running com.google.gson.functional.PrintFormattingTest
+2025-11-04T03:44:48.5556250Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.PrintFormattingTest
+2025-11-04T03:44:48.5561531Z [INFO] Running com.google.gson.functional.Java17RecordTest
+2025-11-04T03:44:48.5936377Z [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in com.google.gson.functional.Java17RecordTest
+2025-11-04T03:44:48.5939293Z [INFO] Running com.google.gson.functional.FieldNamingTest
+2025-11-04T03:44:48.5982754Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.google.gson.functional.FieldNamingTest
+2025-11-04T03:44:48.5992148Z [INFO] Running com.google.gson.functional.EscapingTest
+2025-11-04T03:44:48.6021399Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.EscapingTest
+2025-11-04T03:44:48.6022689Z [INFO] Running com.google.gson.functional.ReadersWritersTest
+2025-11-04T03:44:48.6039105Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.ReadersWritersTest
+2025-11-04T03:44:48.6040595Z [INFO] Running com.google.gson.functional.ObjectTest
+2025-11-04T03:44:48.6309740Z [INFO] Tests run: 50, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in com.google.gson.functional.ObjectTest
+2025-11-04T03:44:48.6355465Z [INFO] Running com.google.gson.functional.JsonTreeTest
+2025-11-04T03:44:48.6356753Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.google.gson.functional.JsonTreeTest
+2025-11-04T03:44:48.6357991Z [INFO] Running com.google.gson.functional.ReusedTypeVariablesFullyResolveTest
+2025-11-04T03:44:48.6359352Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.ReusedTypeVariablesFullyResolveTest
+2025-11-04T03:44:48.6360903Z [INFO] Running com.google.gson.functional.JsonAdapterSerializerDeserializerTest
+2025-11-04T03:44:48.6422723Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.google.gson.functional.JsonAdapterSerializerDeserializerTest
+2025-11-04T03:44:48.6428039Z [INFO] Running com.google.gson.functional.PrimitiveTest
+2025-11-04T03:44:48.6787789Z [INFO] Tests run: 106, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in com.google.gson.functional.PrimitiveTest
+2025-11-04T03:44:48.6789322Z [INFO] Running com.google.gson.functional.InternationalizationTest
+2025-11-04T03:44:48.6790954Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.InternationalizationTest
+2025-11-04T03:44:48.6793386Z [INFO] Running com.google.gson.functional.TypeAdapterRuntimeTypeWrapperTest
+2025-11-04T03:44:48.6849533Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.functional.TypeAdapterRuntimeTypeWrapperTest
+2025-11-04T03:44:48.6850772Z [INFO] Running com.google.gson.functional.SerializedNameTest
+2025-11-04T03:44:48.6864253Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.SerializedNameTest
+2025-11-04T03:44:48.6869283Z [INFO] Running com.google.gson.functional.MapAsArrayTypeAdapterTest
+2025-11-04T03:44:48.6887139Z [WARNING] Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s -- in com.google.gson.functional.MapAsArrayTypeAdapterTest
+2025-11-04T03:44:48.6892134Z [INFO] Running com.google.gson.functional.ParameterizedTypesTest
+2025-11-04T03:44:48.7090542Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in com.google.gson.functional.ParameterizedTypesTest
+2025-11-04T03:44:48.7214382Z [INFO] Running com.google.gson.functional.RawSerializationTest
+2025-11-04T03:44:48.7215398Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.RawSerializationTest
+2025-11-04T03:44:48.7216289Z [INFO] Running com.google.gson.functional.InterfaceTest
+2025-11-04T03:44:48.7217413Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.InterfaceTest
+2025-11-04T03:44:48.7218325Z [INFO] Running com.google.gson.functional.TypeVariableTest
+2025-11-04T03:44:48.7255907Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.TypeVariableTest
+2025-11-04T03:44:48.7257237Z [INFO] Running com.google.gson.functional.CollectionTest
+2025-11-04T03:44:48.7359831Z [INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.google.gson.functional.CollectionTest
+2025-11-04T03:44:48.7392708Z [INFO] Running com.google.gson.functional.ExposeFieldsTest
+2025-11-04T03:44:48.7432782Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.google.gson.functional.ExposeFieldsTest
+2025-11-04T03:44:48.7433774Z [INFO] Running com.google.gson.functional.NullObjectAndFieldTest
+2025-11-04T03:44:48.7521340Z [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.google.gson.functional.NullObjectAndFieldTest
+2025-11-04T03:44:48.7523016Z [INFO] Running com.google.gson.functional.JsonParserTest
+2025-11-04T03:44:48.7524075Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.functional.JsonParserTest
+2025-11-04T03:44:48.7525134Z [INFO] Running com.google.gson.functional.FormattingStyleTest
+2025-11-04T03:44:48.7708636Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in com.google.gson.functional.FormattingStyleTest
+2025-11-04T03:44:48.7714196Z [INFO] Running com.google.gson.functional.InstanceCreatorTest
+2025-11-04T03:44:48.7734729Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.google.gson.functional.InstanceCreatorTest
+2025-11-04T03:44:48.7736831Z [INFO] Running com.google.gson.functional.ReflectionAccessFilterTest
+2025-11-04T03:44:48.7989059Z [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in com.google.gson.functional.ReflectionAccessFilterTest
+2025-11-04T03:44:48.7990339Z [INFO] Running com.google.gson.functional.CircularReferenceTest
+2025-11-04T03:44:48.8095101Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.google.gson.functional.CircularReferenceTest
+2025-11-04T03:44:48.8105690Z [INFO] Running com.google.gson.functional.InheritanceTest
+2025-11-04T03:44:48.8169763Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.google.gson.functional.InheritanceTest
+2025-11-04T03:44:48.8173243Z [INFO] Running com.google.gson.functional.JavaUtilConcurrentAtomicTest
+2025-11-04T03:44:48.8268112Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.google.gson.functional.JavaUtilConcurrentAtomicTest
+2025-11-04T03:44:48.8273190Z [INFO] Running com.google.gson.functional.JsonAdapterAnnotationOnFieldsTest
+2025-11-04T03:44:48.8433938Z [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in com.google.gson.functional.JsonAdapterAnnotationOnFieldsTest
+2025-11-04T03:44:48.8435302Z [INFO] Running com.google.gson.DefaultMapJsonSerializerTest
+2025-11-04T03:44:48.8450634Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.DefaultMapJsonSerializerTest
+2025-11-04T03:44:48.8452727Z [INFO] Running com.google.gson.DefaultInetAddressTypeAdapterTest
+2025-11-04T03:44:48.8485534Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.DefaultInetAddressTypeAdapterTest
+2025-11-04T03:44:48.8486694Z [INFO] Running com.google.gson.MixedStreamTest
+2025-11-04T03:44:48.8487994Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.MixedStreamTest
+2025-11-04T03:44:48.8490920Z [INFO] Running com.google.gson.GsonTest
+2025-11-04T03:44:48.8550463Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.google.gson.GsonTest
+2025-11-04T03:44:48.8555491Z [INFO] Running com.google.gson.JsonParserParameterizedTest
+2025-11-04T03:44:48.8681685Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.google.gson.JsonParserParameterizedTest
+2025-11-04T03:44:48.8683102Z [INFO] Running com.google.gson.JsonArrayTest
+2025-11-04T03:44:48.8845711Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.google.gson.JsonArrayTest
+2025-11-04T03:44:48.8846612Z [INFO] Running com.google.gson.stream.JsonWriterTest
+2025-11-04T03:44:48.8918151Z [INFO] Tests run: 55, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.google.gson.stream.JsonWriterTest
+2025-11-04T03:44:48.8919321Z [INFO] Running com.google.gson.stream.JsonReaderTest
+2025-11-04T03:44:48.9730467Z [WARNING] Tests run: 150, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.072 s -- in com.google.gson.stream.JsonReaderTest
+2025-11-04T03:44:48.9732064Z [INFO] Running com.google.gson.stream.JsonReaderPathTest
+2025-11-04T03:44:48.9902006Z [WARNING] Tests run: 28, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.010 s -- in com.google.gson.stream.JsonReaderPathTest
+2025-11-04T03:44:48.9930994Z [INFO] Running com.google.gson.JsonNullTest
+2025-11-04T03:44:48.9939284Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.JsonNullTest
+2025-11-04T03:44:48.9940490Z [INFO] Running com.google.gson.ParameterizedTypeTest
+2025-11-04T03:44:48.9951406Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.ParameterizedTypeTest
+2025-11-04T03:44:48.9952386Z [INFO] Running com.google.gson.ObjectTypeAdapterParameterizedTest
+2025-11-04T03:44:49.0001403Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.ObjectTypeAdapterParameterizedTest
+2025-11-04T03:44:49.0002386Z [INFO] Running com.google.gson.JsonObjectAsMapSuiteTest
+2025-11-04T03:44:49.2389006Z [INFO] Tests run: 903, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.206 s -- in com.google.gson.JsonObjectAsMapSuiteTest
+2025-11-04T03:44:49.2395516Z [INFO] Running com.google.gson.CommentsTest
+2025-11-04T03:44:49.2407113Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.CommentsTest
+2025-11-04T03:44:49.2411657Z [INFO] Running com.google.gson.JsonObjectTest
+2025-11-04T03:44:49.2420103Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.JsonObjectTest
+2025-11-04T03:44:49.2424740Z [INFO] Running com.google.gson.JsonArrayAsListSuiteTest
+2025-11-04T03:44:49.6561817Z [INFO] Tests run: 404, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.405 s -- in com.google.gson.JsonArrayAsListSuiteTest
+2025-11-04T03:44:49.6563158Z [INFO] Running com.google.gson.FieldNamingPolicyTest
+2025-11-04T03:44:49.6574421Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.FieldNamingPolicyTest
+2025-11-04T03:44:49.6579394Z [INFO] Running com.google.gson.JsonParserTest
+2025-11-04T03:44:49.6723802Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.google.gson.JsonParserTest
+2025-11-04T03:44:49.6730401Z [INFO] Running com.google.gson.reflect.TypeTokenTest
+2025-11-04T03:44:49.6834926Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.google.gson.reflect.TypeTokenTest
+2025-11-04T03:44:49.6838441Z [INFO] Running com.google.gson.GenericArrayTypeTest
+2025-11-04T03:44:49.6854488Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.GenericArrayTypeTest
+2025-11-04T03:44:49.6857095Z [INFO] Running com.google.gson.ExposeAnnotationExclusionStrategyTest
+2025-11-04T03:44:49.6866944Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.google.gson.ExposeAnnotationExclusionStrategyTest
+2025-11-04T03:44:49.7197725Z [INFO] 
+2025-11-04T03:44:49.7199972Z [INFO] Results:
+2025-11-04T03:44:49.7202503Z [INFO] 
+2025-11-04T03:44:49.7202934Z [WARNING] Tests run: 4561, Failures: 0, Errors: 0, Skipped: 19
+2025-11-04T03:44:49.7203445Z [INFO] 
+2025-11-04T03:44:49.7222751Z [INFO] 
+2025-11-04T03:44:49.7223129Z [INFO] --- jar:3.4.2:jar (default-jar) @ gson ---
+2025-11-04T03:44:50.7989869Z [INFO] Building jar: /home/runner/work/gson/gson/gson/target/gson-2.13.3-SNAPSHOT.jar
+2025-11-04T03:44:50.8871529Z [INFO] 
+2025-11-04T03:44:50.8872426Z [INFO] --- moditect:1.3.0.Final:add-module-info (add-module-info) @ gson ---
+2025-11-04T03:44:51.8949903Z [INFO] 
+2025-11-04T03:44:51.8950503Z [INFO] --- failsafe:3.5.4:integration-test (default) @ gson ---
+2025-11-04T03:44:51.9608195Z [INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+2025-11-04T03:44:51.9778877Z [INFO] 
+2025-11-04T03:44:51.9782808Z [INFO] -------------------------------------------------------
+2025-11-04T03:44:51.9783403Z [INFO]  T E S T S
+2025-11-04T03:44:51.9783864Z [INFO] -------------------------------------------------------
+2025-11-04T03:44:52.2168443Z [INFO] Running com.google.gson.integration.OSGiManifestIT
+2025-11-04T03:44:52.3009276Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s -- in com.google.gson.integration.OSGiManifestIT
+2025-11-04T03:44:52.3092898Z [INFO] 
+2025-11-04T03:44:52.3093209Z [INFO] Results:
+2025-11-04T03:44:52.3093490Z [INFO] 
+2025-11-04T03:44:52.3096300Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+2025-11-04T03:44:52.3097653Z [INFO] 
+2025-11-04T03:44:52.3121567Z [INFO] 
+2025-11-04T03:44:52.3121937Z [INFO] --- spotless:3.0.0:check (default) @ gson ---
+2025-11-04T03:44:52.3269809Z [INFO] Index file does not exist. Fallback to an empty index
+2025-11-04T03:44:52.3296834Z [INFO] Spotless.Format is keeping 2 files clean - 0 needs changes to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:44:57.3294927Z [INFO] Spotless.Java is keeping 206 files clean - 0 needs changes to be clean, 206 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:44:57.3319336Z [INFO] 
+2025-11-04T03:44:57.3323037Z [INFO] --- artifact:3.6.1:buildinfo (default) @ gson ---
+2025-11-04T03:44:57.3335257Z [INFO] Auto-skipping goal because module skips install and/or deploy
+2025-11-04T03:44:57.3337870Z [INFO] 
+2025-11-04T03:44:57.3338430Z [INFO] --- failsafe:3.5.4:verify (default) @ gson ---
+2025-11-04T03:44:57.7500056Z [INFO] 
+2025-11-04T03:44:57.7500632Z [INFO] --- javadoc:3.12.0:jar (default-cli) @ gson ---
+2025-11-04T03:45:01.7752457Z [INFO] Building jar: /home/runner/work/gson/gson/gson/target/gson-2.13.3-SNAPSHOT-javadoc.jar
+2025-11-04T03:45:01.8268495Z [INFO] 
+2025-11-04T03:45:01.8269003Z [INFO] -------------------< com.google.code.gson:test-jpms >-------------------
+2025-11-04T03:45:01.8269790Z [INFO] Building Test: Java Platform Module System (JPMS) 2.13.3-SNAPSHOT  [3/8]
+2025-11-04T03:45:01.8270672Z [INFO]   from test-jpms/pom.xml
+2025-11-04T03:45:01.8271183Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-04T03:45:01.9773624Z [INFO] 
+2025-11-04T03:45:01.9774231Z [INFO] --- enforcer:3.6.2:enforce (enforce-versions) @ test-jpms ---
+2025-11-04T03:45:02.0355419Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2025-11-04T03:45:02.0413963Z [INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-11-04T03:45:02.0415219Z [INFO] 
+2025-11-04T03:45:02.0416158Z [INFO] --- resources:3.3.1:resources (default-resources) @ test-jpms ---
+2025-11-04T03:45:02.0629483Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/test-jpms/src/main/resources
+2025-11-04T03:45:02.0630925Z [INFO] 
+2025-11-04T03:45:02.0631471Z [INFO] --- compiler:3.14.1:compile (default-compile) @ test-jpms ---
+2025-11-04T03:45:02.1172831Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:02.1208791Z [INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/classes
+2025-11-04T03:45:02.1570384Z [INFO] 
+2025-11-04T03:45:02.1571805Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ test-jpms ---
+2025-11-04T03:45:02.1587424Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/test-jpms/src/test/resources
+2025-11-04T03:45:02.1611091Z [INFO] 
+2025-11-04T03:45:02.1611828Z [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ test-jpms ---
+2025-11-04T03:45:02.1812631Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:02.1817260Z [INFO] Compiling 5 source files with javac [debug deprecation release 11 module-path] to target/test-classes
+2025-11-04T03:45:02.3618321Z [INFO] 
+2025-11-04T03:45:02.3621341Z [INFO] --- surefire:3.5.4:test (default-test) @ test-jpms ---
+2025-11-04T03:45:02.4098969Z [INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+2025-11-04T03:45:02.4293854Z [INFO] 
+2025-11-04T03:45:02.4296148Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:02.4296668Z [INFO]  T E S T S
+2025-11-04T03:45:02.4297044Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:02.7658290Z [INFO] Running com.google.gson.jpms_test.ReflectionInaccessibleTest
+2025-11-04T03:45:02.8762725Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s -- in com.google.gson.jpms_test.ReflectionInaccessibleTest
+2025-11-04T03:45:02.8769842Z [INFO] Running com.google.gson.jpms_test.ModuleTest
+2025-11-04T03:45:02.8940918Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.google.gson.jpms_test.ModuleTest
+2025-11-04T03:45:02.8961397Z [INFO] Running com.google.gson.jpms_test.opened.ReflectionTest
+2025-11-04T03:45:02.8995310Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.google.gson.jpms_test.opened.ReflectionTest
+2025-11-04T03:45:02.9000879Z [INFO] Running com.google.gson.jpms_test.ExportedPackagesTest
+2025-11-04T03:45:02.9121523Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.google.gson.jpms_test.ExportedPackagesTest
+2025-11-04T03:45:02.9209690Z [INFO] 
+2025-11-04T03:45:02.9211748Z [INFO] Results:
+2025-11-04T03:45:02.9212298Z [INFO] 
+2025-11-04T03:45:02.9213321Z [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+2025-11-04T03:45:02.9219548Z [INFO] 
+2025-11-04T03:45:02.9235751Z [INFO] 
+2025-11-04T03:45:02.9236335Z [INFO] --- jar:3.4.2:jar (default-jar) @ test-jpms ---
+2025-11-04T03:45:03.1149440Z [INFO] Building jar: /home/runner/work/gson/gson/test-jpms/target/test-jpms-2.13.3-SNAPSHOT.jar
+2025-11-04T03:45:03.2092799Z [INFO] 
+2025-11-04T03:45:03.2093988Z [INFO] --- spotless:3.0.0:check (default) @ test-jpms ---
+2025-11-04T03:45:03.3587973Z [INFO] Index file does not exist. Fallback to an empty index
+2025-11-04T03:45:03.3623747Z [INFO] Spotless.Format is keeping 2 files clean - 0 needs changes to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:03.5835760Z [INFO] Spotless.Java is keeping 6 files clean - 0 needs changes to be clean, 6 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:03.5855493Z [INFO] 
+2025-11-04T03:45:03.5856436Z [INFO] --- artifact:3.6.1:buildinfo (default) @ test-jpms ---
+2025-11-04T03:45:03.7117541Z [INFO] Auto-skipping goal because module skips install and/or deploy
+2025-11-04T03:45:03.7118530Z [INFO] 
+2025-11-04T03:45:03.7119071Z [INFO] --- javadoc:3.12.0:jar (default-cli) @ test-jpms ---
+2025-11-04T03:45:03.8793823Z [INFO] Skipping javadoc generation
+2025-11-04T03:45:03.8800941Z [INFO] 
+2025-11-04T03:45:03.8801466Z [INFO] ------------< com.google.code.gson:test-graal-native-image >------------
+2025-11-04T03:45:03.8802250Z [INFO] Building Test: GraalVM Native Image 2.13.3-SNAPSHOT                [4/8]
+2025-11-04T03:45:03.8802882Z [INFO]   from test-graal-native-image/pom.xml
+2025-11-04T03:45:03.8803443Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-04T03:45:04.6285867Z [INFO] 
+2025-11-04T03:45:04.6286426Z [INFO] --- enforcer:3.6.2:enforce (enforce-versions) @ test-graal-native-image ---
+2025-11-04T03:45:04.6302703Z [INFO] 
+2025-11-04T03:45:04.6303281Z [INFO] --- resources:3.3.1:resources (default-resources) @ test-graal-native-image ---
+2025-11-04T03:45:04.6313874Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/test-graal-native-image/src/main/resources
+2025-11-04T03:45:04.6315028Z [INFO] 
+2025-11-04T03:45:04.6315781Z [INFO] --- compiler:3.14.1:compile (default-compile) @ test-graal-native-image ---
+2025-11-04T03:45:04.6333745Z [INFO] No sources to compile
+2025-11-04T03:45:04.6334157Z [INFO] 
+2025-11-04T03:45:04.6334771Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ test-graal-native-image ---
+2025-11-04T03:45:04.6360740Z [INFO] Copying 1 resource from src/test/resources to target/test-classes
+2025-11-04T03:45:04.6377808Z [INFO] 
+2025-11-04T03:45:04.6378412Z [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ test-graal-native-image ---
+2025-11-04T03:45:04.6403610Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:04.6407542Z [INFO] Compiling 2 source files with javac [debug deprecation release 17] to target/test-classes
+2025-11-04T03:45:04.7962848Z [INFO] 
+2025-11-04T03:45:04.7963405Z [INFO] --- surefire:3.5.4:test (default-test) @ test-graal-native-image ---
+2025-11-04T03:45:04.8001101Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-11-04T03:45:05.1907632Z [INFO] 
+2025-11-04T03:45:05.1908079Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:05.1908596Z [INFO]  T E S T S
+2025-11-04T03:45:05.1908998Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:05.8835301Z [INFO] Running com.google.gson.native_test.ReflectionTest
+2025-11-04T03:45:06.0366707Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s -- in com.google.gson.native_test.ReflectionTest
+2025-11-04T03:45:06.0368246Z [INFO] Running com.google.gson.native_test.Java17RecordReflectionTest
+2025-11-04T03:45:06.0651627Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in com.google.gson.native_test.Java17RecordReflectionTest
+2025-11-04T03:45:06.0982749Z [INFO] 
+2025-11-04T03:45:06.0983080Z [INFO] Results:
+2025-11-04T03:45:06.0983367Z [INFO] 
+2025-11-04T03:45:06.0983747Z [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0
+2025-11-04T03:45:06.0984167Z [INFO] 
+2025-11-04T03:45:06.0988147Z [INFO] 
+2025-11-04T03:45:06.0988507Z [INFO] --- jar:3.4.2:jar (default-jar) @ test-graal-native-image ---
+2025-11-04T03:45:06.0999241Z [INFO] Skipping packaging of the jar
+2025-11-04T03:45:06.0999688Z [INFO] 
+2025-11-04T03:45:06.1000152Z [INFO] --- spotless:3.0.0:check (default) @ test-graal-native-image ---
+2025-11-04T03:45:06.1076874Z [INFO] Index file does not exist. Fallback to an empty index
+2025-11-04T03:45:06.1086527Z [INFO] Spotless.Format is keeping 2 files clean - 0 needs changes to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:06.2103424Z [INFO] Spotless.Java is keeping 2 files clean - 0 needs changes to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:06.2108281Z [INFO] 
+2025-11-04T03:45:06.2112692Z [INFO] --- artifact:3.6.1:buildinfo (default) @ test-graal-native-image ---
+2025-11-04T03:45:06.2116951Z [INFO] Auto-skipping goal because module skips install and/or deploy
+2025-11-04T03:45:06.2118735Z [INFO] 
+2025-11-04T03:45:06.2120840Z [INFO] --- javadoc:3.12.0:jar (default-cli) @ test-graal-native-image ---
+2025-11-04T03:45:06.2138618Z [INFO] Skipping javadoc generation
+2025-11-04T03:45:06.2140946Z [INFO] 
+2025-11-04T03:45:06.2141401Z [INFO] -----------------< com.google.code.gson:test-shrinker >-----------------
+2025-11-04T03:45:06.2142106Z [INFO] Building Test: Code shrinking (ProGuard / R8) 2.13.3-SNAPSHOT      [5/8]
+2025-11-04T03:45:06.2143029Z [INFO]   from test-shrinker/pom.xml
+2025-11-04T03:45:06.2143511Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-04T03:45:07.0992681Z [INFO] 
+2025-11-04T03:45:07.0993230Z [INFO] --- enforcer:3.6.2:enforce (enforce-versions) @ test-shrinker ---
+2025-11-04T03:45:07.1515681Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2025-11-04T03:45:07.1582421Z [INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-11-04T03:45:07.1583163Z [INFO] 
+2025-11-04T03:45:07.1583601Z [INFO] --- resources:3.3.1:resources (default-resources) @ test-shrinker ---
+2025-11-04T03:45:07.1752401Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/test-shrinker/src/main/resources
+2025-11-04T03:45:07.1755180Z [INFO] 
+2025-11-04T03:45:07.1757404Z [INFO] --- compiler:3.14.1:compile (default-compile) @ test-shrinker ---
+2025-11-04T03:45:07.2087868Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:07.2121143Z [INFO] Compiling 18 source files with javac [debug deprecation release 8] to target/classes
+2025-11-04T03:45:07.3002003Z [INFO] 
+2025-11-04T03:45:07.3004305Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ test-shrinker ---
+2025-11-04T03:45:07.3016117Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/test-shrinker/src/test/resources
+2025-11-04T03:45:07.3017387Z [INFO] 
+2025-11-04T03:45:07.3018399Z [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ test-shrinker ---
+2025-11-04T03:45:07.3045681Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:07.3049312Z [INFO] Compiling 1 source file with javac [debug deprecation release 11] to target/test-classes
+2025-11-04T03:45:07.5076719Z [INFO] 
+2025-11-04T03:45:07.5081797Z [INFO] --- surefire:3.5.4:test (default-test) @ test-shrinker ---
+2025-11-04T03:45:07.5688636Z [INFO] 
+2025-11-04T03:45:07.5689477Z [INFO] --- jar:3.4.2:jar (default-jar) @ test-shrinker ---
+2025-11-04T03:45:07.6816943Z [INFO] Building jar: /home/runner/work/gson/gson/test-shrinker/target/test-shrinker-2.13.3-SNAPSHOT.jar
+2025-11-04T03:45:07.7086123Z [INFO] 
+2025-11-04T03:45:07.7087593Z [INFO] --- proguard:2.7.0:proguard (default) @ test-shrinker ---
+2025-11-04T03:45:07.7606053Z [INFO] execute ProGuard [-injars, '/home/runner/work/gson/gson/test-shrinker/target/test-shrinker-2.13.3-SNAPSHOT.jar'(!META-INF/maven/**), -injars, '/home/runner/work/gson/gson/gson/target/classes'(!META-INF/MANIFEST.MF,!META-INF/maven/**), -injars, '/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.43.0/error_prone_annotations-2.43.0.jar'(!META-INF/MANIFEST.MF,!META-INF/maven/**), -outjars, '/home/runner/work/gson/gson/test-shrinker/target/proguard-output.jar', -include, '/home/runner/work/gson/gson/test-shrinker/proguard.pro', -libraryjars, '/usr/lib/jvm/temurin-17-jdk-amd64/jmods/java.base.jmod', -libraryjars, '/usr/lib/jvm/temurin-17-jdk-amd64/jmods/java.sql.jmod', -libraryjars, '/usr/lib/jvm/temurin-17-jdk-amd64/jmods/java.compiler.jmod', -printmapping, '/home/runner/work/gson/gson/test-shrinker/target/proguard_map.txt', -printseeds, '/home/runner/work/gson/gson/test-shrinker/target/proguard_seed.txt', -include, /home/runner/work/gson/gson/test-shrinker/../gson/src/main/resources/META-INF/proguard/gson.pro]
+2025-11-04T03:45:07.7850738Z [INFO] proguard jar: [/home/runner/.m2/repository/com/guardsquare/proguard-base/7.8.0/proguard-base-7.8.0.jar, /home/runner/.m2/repository/com/guardsquare/proguard-core/9.2.0/proguard-core-9.2.0.jar]
+2025-11-04T03:45:08.5106522Z  [proguard] ProGuard, version 7.8.0
+2025-11-04T03:45:09.1113579Z  [proguard] Note: com.google.gson.internal.GsonTypes calls 'Class.getDeclaringClass'
+2025-11-04T03:45:09.3135485Z  [proguard] Note: com.google.gson.internal.UnsafeAllocator: can't find dynamically referenced class sun.misc.Unsafe
+2025-11-04T03:45:09.3138889Z  [proguard] Note: com.google.gson.internal.UnsafeAllocator accesses a declared field 'theUnsafe' dynamically
+2025-11-04T03:45:09.3145057Z  [proguard] Note: com.google.gson.internal.UnsafeAllocator accesses a method 'allocateInstance(java.lang.Class)' dynamically
+2025-11-04T03:45:09.3146673Z  [proguard] Note: com.google.gson.internal.reflect.ReflectionHelper$RecordSupportedHelper accesses a method 'getType()' dynamically
+2025-11-04T03:45:09.5139733Z  [proguard] Warning: can't derive deserialized type from fromJson() invocation in com/example/Main.fromJson(Lcom/google/gson/Gson;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+2025-11-04T03:45:09.5142102Z  [proguard] Warning: can't derive serialized type from toJson() invocation in com/example/Main.lambda$testTypeTokenWriteRead$2(Lcom/google/gson/Gson;Ljava/util/function/Supplier;)Ljava/lang/String;
+2025-11-04T03:45:09.5159766Z  [proguard] Warning: can't derive deserialized type from fromJson() invocation in com/example/NoSerializedNameMain.runTestNoArgsConstructor()Ljava/lang/String;
+2025-11-04T03:45:09.5161761Z  [proguard] Warning: can't derive deserialized type from fromJson() invocation in com/example/NoSerializedNameMain.runTestNoJdkUnsafe()Ljava/lang/String;
+2025-11-04T03:45:09.5163624Z  [proguard] Warning: can't derive deserialized type from fromJson() invocation in com/example/NoSerializedNameMain.runTestHasArgsConstructor()Ljava/lang/String;
+2025-11-04T03:45:11.9018947Z [INFO] 
+2025-11-04T03:45:11.9019394Z [INFO] --- shade:3.6.1:shade (default) @ test-shrinker ---
+2025-11-04T03:45:12.9337898Z [INFO] Replacing original artifact with shaded artifact.
+2025-11-04T03:45:12.9341361Z [INFO] 
+2025-11-04T03:45:12.9341994Z [INFO] --- exec:3.6.2:java (r8) @ test-shrinker ---
+2025-11-04T03:45:28.5212271Z [INFO] 
+2025-11-04T03:45:28.5216387Z [INFO] --- failsafe:3.5.4:integration-test (default) @ test-shrinker ---
+2025-11-04T03:45:28.5706122Z [INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+2025-11-04T03:45:28.5823903Z [INFO] 
+2025-11-04T03:45:28.5826096Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:28.5826838Z [INFO]  T E S T S
+2025-11-04T03:45:28.5830022Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:28.8041144Z [INFO] Running com.google.gson.it.ShrinkingIT
+2025-11-04T03:45:29.0808185Z [WARNING] Tests run: 10, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.274 s -- in com.google.gson.it.ShrinkingIT
+2025-11-04T03:45:29.0883589Z [INFO] 
+2025-11-04T03:45:29.0883904Z [INFO] Results:
+2025-11-04T03:45:29.0884180Z [INFO] 
+2025-11-04T03:45:29.0886152Z [WARNING] Tests run: 10, Failures: 0, Errors: 0, Skipped: 1
+2025-11-04T03:45:29.0886625Z [INFO] 
+2025-11-04T03:45:29.0909481Z [INFO] 
+2025-11-04T03:45:29.0909886Z [INFO] --- spotless:3.0.0:check (default) @ test-shrinker ---
+2025-11-04T03:45:29.2343327Z [INFO] Index file does not exist. Fallback to an empty index
+2025-11-04T03:45:29.2366400Z [INFO] Spotless.Format is keeping 2 files clean - 0 needs changes to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:29.6340476Z [INFO] Spotless.Java is keeping 19 files clean - 0 needs changes to be clean, 19 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:29.6350812Z [INFO] 
+2025-11-04T03:45:29.6351774Z [INFO] --- artifact:3.6.1:buildinfo (default) @ test-shrinker ---
+2025-11-04T03:45:29.7609870Z [INFO] Auto-skipping goal because module skips install and/or deploy
+2025-11-04T03:45:29.7614129Z [INFO] 
+2025-11-04T03:45:29.7614545Z [INFO] --- failsafe:3.5.4:verify (default) @ test-shrinker ---
+2025-11-04T03:45:29.7663852Z [INFO] 
+2025-11-04T03:45:29.7664629Z [INFO] --- javadoc:3.12.0:jar (default-cli) @ test-shrinker ---
+2025-11-04T03:45:29.9239938Z [INFO] Skipping javadoc generation
+2025-11-04T03:45:29.9241986Z [INFO] 
+2025-11-04T03:45:29.9255114Z [INFO] ------------------< com.google.code.gson:gson-extras >------------------
+2025-11-04T03:45:29.9256646Z [INFO] Building Gson Extras 2.13.3-SNAPSHOT                               [6/8]
+2025-11-04T03:45:29.9257907Z [INFO]   from extras/pom.xml
+2025-11-04T03:45:29.9258844Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-04T03:45:30.0185184Z [INFO] 
+2025-11-04T03:45:30.0185724Z [INFO] --- enforcer:3.6.2:enforce (enforce-versions) @ gson-extras ---
+2025-11-04T03:45:30.0203266Z [INFO] 
+2025-11-04T03:45:30.0203943Z [INFO] --- resources:3.3.1:resources (default-resources) @ gson-extras ---
+2025-11-04T03:45:30.0212643Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/extras/src/main/resources
+2025-11-04T03:45:30.0213327Z [INFO] 
+2025-11-04T03:45:30.0213759Z [INFO] --- compiler:3.14.1:compile (default-compile) @ gson-extras ---
+2025-11-04T03:45:30.0248083Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:30.0251422Z [INFO] Compiling 8 source files with javac [debug deprecation release 8] to target/classes
+2025-11-04T03:45:30.1590422Z [INFO] 
+2025-11-04T03:45:30.1601478Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ gson-extras ---
+2025-11-04T03:45:30.1602774Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/extras/src/test/resources
+2025-11-04T03:45:30.1607995Z [INFO] 
+2025-11-04T03:45:30.1608498Z [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ gson-extras ---
+2025-11-04T03:45:30.1633661Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:30.1636834Z [INFO] Compiling 5 source files with javac [debug deprecation release 11] to target/test-classes
+2025-11-04T03:45:30.3208261Z [INFO] 
+2025-11-04T03:45:30.3210993Z [INFO] --- surefire:3.5.4:test (default-test) @ gson-extras ---
+2025-11-04T03:45:30.3247513Z [INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+2025-11-04T03:45:30.3269801Z [INFO] 
+2025-11-04T03:45:30.3271246Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:30.3275519Z [INFO]  T E S T S
+2025-11-04T03:45:30.3275939Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:30.5341796Z [INFO] Running com.google.gson.graph.GraphAdapterBuilderTest
+2025-11-04T03:45:30.7074933Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 s -- in com.google.gson.graph.GraphAdapterBuilderTest
+2025-11-04T03:45:30.7076611Z [INFO] Running com.google.gson.typeadapters.PostConstructAdapterFactoryTest
+2025-11-04T03:45:30.7249556Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in com.google.gson.typeadapters.PostConstructAdapterFactoryTest
+2025-11-04T03:45:30.7256034Z [INFO] Running com.google.gson.typeadapters.UtcDateTypeAdapterTest
+2025-11-04T03:45:30.9239911Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 s -- in com.google.gson.typeadapters.UtcDateTypeAdapterTest
+2025-11-04T03:45:30.9241452Z [INFO] Running com.google.gson.typeadapters.RuntimeTypeAdapterFactoryTest
+2025-11-04T03:45:30.9613453Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.google.gson.typeadapters.RuntimeTypeAdapterFactoryTest
+2025-11-04T03:45:30.9614805Z [INFO] Running com.google.gson.interceptors.InterceptorTest
+2025-11-04T03:45:30.9689013Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.google.gson.interceptors.InterceptorTest
+2025-11-04T03:45:30.9897730Z [INFO] 
+2025-11-04T03:45:30.9898804Z [INFO] Results:
+2025-11-04T03:45:30.9900004Z [INFO] 
+2025-11-04T03:45:30.9902140Z [INFO] Tests run: 40, Failures: 0, Errors: 0, Skipped: 0
+2025-11-04T03:45:30.9902848Z [INFO] 
+2025-11-04T03:45:30.9912294Z [INFO] 
+2025-11-04T03:45:30.9914543Z [INFO] --- jar:3.4.2:jar (default-jar) @ gson-extras ---
+2025-11-04T03:45:31.0006162Z [INFO] Building jar: /home/runner/work/gson/gson/extras/target/gson-extras-2.13.3-SNAPSHOT.jar
+2025-11-04T03:45:31.0071550Z [INFO] 
+2025-11-04T03:45:31.0073954Z [INFO] --- spotless:3.0.0:check (default) @ gson-extras ---
+2025-11-04T03:45:31.0166833Z [INFO] Index file does not exist. Fallback to an empty index
+2025-11-04T03:45:31.0193158Z [INFO] Spotless.Format is keeping 2 files clean - 0 needs changes to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:31.3466254Z [INFO] Spotless.Java is keeping 13 files clean - 0 needs changes to be clean, 13 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:31.3469231Z [INFO] 
+2025-11-04T03:45:31.3469637Z [INFO] --- artifact:3.6.1:buildinfo (default) @ gson-extras ---
+2025-11-04T03:45:31.3475751Z [INFO] Auto-skipping goal because module skips install and/or deploy
+2025-11-04T03:45:31.3476541Z [INFO] 
+2025-11-04T03:45:31.3477127Z [INFO] --- javadoc:3.12.0:jar (default-cli) @ gson-extras ---
+2025-11-04T03:45:33.2587296Z [INFO] Building jar: /home/runner/work/gson/gson/extras/target/gson-extras-2.13.3-SNAPSHOT-javadoc.jar
+2025-11-04T03:45:33.2924481Z [INFO] 
+2025-11-04T03:45:33.2928080Z [INFO] -----------------< com.google.code.gson:gson-metrics >------------------
+2025-11-04T03:45:33.2929441Z [INFO] Building Gson Metrics 2.13.3-SNAPSHOT                              [7/8]
+2025-11-04T03:45:33.2930701Z [INFO]   from metrics/pom.xml
+2025-11-04T03:45:33.2932621Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-04T03:45:37.7838661Z [INFO] 
+2025-11-04T03:45:37.7840811Z [INFO] --- enforcer:3.6.2:enforce (enforce-versions) @ gson-metrics ---
+2025-11-04T03:45:37.7847556Z [INFO] 
+2025-11-04T03:45:37.7848057Z [INFO] --- resources:3.3.1:resources (default-resources) @ gson-metrics ---
+2025-11-04T03:45:37.7855914Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-04T03:45:37.7858054Z [INFO] 
+2025-11-04T03:45:37.7858492Z [INFO] --- compiler:3.14.1:compile (default-compile) @ gson-metrics ---
+2025-11-04T03:45:37.7888766Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:37.7892517Z [INFO] Compiling 6 source files with javac [debug deprecation release 8] to target/classes
+2025-11-04T03:45:37.9591170Z [INFO] 
+2025-11-04T03:45:37.9592051Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ gson-metrics ---
+2025-11-04T03:45:37.9594206Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/metrics/src/test/resources
+2025-11-04T03:45:37.9594983Z [INFO] 
+2025-11-04T03:45:37.9595522Z [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ gson-metrics ---
+2025-11-04T03:45:37.9607127Z [INFO] No sources to compile
+2025-11-04T03:45:37.9607651Z [INFO] 
+2025-11-04T03:45:37.9608315Z [INFO] --- surefire:3.5.4:test (default-test) @ gson-metrics ---
+2025-11-04T03:45:37.9625919Z [INFO] No tests to run.
+2025-11-04T03:45:37.9629489Z [INFO] 
+2025-11-04T03:45:37.9631842Z [INFO] --- jar:3.4.2:jar (default-jar) @ gson-metrics ---
+2025-11-04T03:45:37.9695470Z [INFO] Building jar: /home/runner/work/gson/gson/metrics/target/gson-metrics-2.13.3-SNAPSHOT.jar
+2025-11-04T03:45:37.9783686Z [INFO] 
+2025-11-04T03:45:37.9789980Z [INFO] --- spotless:3.0.0:check (default) @ gson-metrics ---
+2025-11-04T03:45:37.9859004Z [INFO] Index file does not exist. Fallback to an empty index
+2025-11-04T03:45:37.9865664Z [INFO] Spotless.Format is keeping 2 files clean - 0 needs changes to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:38.0495020Z [INFO] Spotless.Java is keeping 6 files clean - 0 needs changes to be clean, 6 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:38.0499954Z [INFO] 
+2025-11-04T03:45:38.0500574Z [INFO] --- artifact:3.6.1:buildinfo (default) @ gson-metrics ---
+2025-11-04T03:45:38.0505284Z [INFO] Auto-skipping goal because module skips install and/or deploy
+2025-11-04T03:45:38.0506284Z [INFO] 
+2025-11-04T03:45:38.0507080Z [INFO] --- javadoc:3.12.0:jar (default-cli) @ gson-metrics ---
+2025-11-04T03:45:38.0519464Z [INFO] Skipping javadoc generation
+2025-11-04T03:45:38.0521261Z [INFO] 
+2025-11-04T03:45:38.0521943Z [INFO] ---------------------< com.google.code.gson:proto >---------------------
+2025-11-04T03:45:38.0523250Z [INFO] Building Gson Protobuf Support 2.13.3-SNAPSHOT                     [8/8]
+2025-11-04T03:45:38.0523975Z [INFO]   from proto/pom.xml
+2025-11-04T03:45:38.0524648Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-04T03:45:38.6934303Z [INFO] 
+2025-11-04T03:45:38.6934719Z [INFO] --- enforcer:3.6.2:enforce (enforce-versions) @ proto ---
+2025-11-04T03:45:38.6952426Z [INFO] 
+2025-11-04T03:45:38.6953166Z [INFO] --- resources:3.3.1:resources (default-resources) @ proto ---
+2025-11-04T03:45:38.6973011Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/proto/src/main/resources
+2025-11-04T03:45:38.6973674Z [INFO] 
+2025-11-04T03:45:38.6974075Z [INFO] --- compiler:3.14.1:compile (default-compile) @ proto ---
+2025-11-04T03:45:38.6984496Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:38.6987626Z [INFO] Compiling 1 source file with javac [debug deprecation release 8] to target/classes
+2025-11-04T03:45:38.7848458Z [INFO] 
+2025-11-04T03:45:38.7848924Z [INFO] --- protobuf:4.0.1:generate-test (default) @ proto ---
+2025-11-04T03:45:38.9728836Z [INFO] Attempting to resolve artifact "com.google.protobuf:protoc:exe:linux-x86_64:4.33.0"
+2025-11-04T03:45:39.3927374Z [INFO] Registering "/home/runner/work/gson/gson/proto/target/generated-test-sources/protobuf" as a Maven test source root for compiler plugins
+2025-11-04T03:45:39.4002941Z [INFO] All sources will be compiled, as no previous build data was detected
+2025-11-04T03:45:39.4014865Z [INFO] Generating source code from 2 proto source files and 0 descriptor files (discovered a total of 2 proto source files and 0 descriptor files)
+2025-11-04T03:45:39.4076114Z [INFO] Invoking protoc (enable debug logs for more details)
+2025-11-04T03:45:39.4256689Z [INFO] protoc (pid 2782) returned exit code 0 (success) after 18ms
+2025-11-04T03:45:39.4261583Z [INFO] PROTOC SUCCEEDED: Protoc invocation succeeded.
+2025-11-04T03:45:39.4262677Z [INFO] 
+2025-11-04T03:45:39.4263446Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ proto ---
+2025-11-04T03:45:39.4273744Z [INFO] skip non existing resourceDirectory /home/runner/work/gson/gson/proto/src/test/resources
+2025-11-04T03:45:39.4274740Z [INFO] 
+2025-11-04T03:45:39.4275305Z [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ proto ---
+2025-11-04T03:45:39.4301753Z [INFO] Recompiling the module because of changed dependency.
+2025-11-04T03:45:39.4305392Z [INFO] Compiling 6 source files with javac [debug deprecation release 11] to target/test-classes
+2025-11-04T03:45:39.7991643Z [INFO] 
+2025-11-04T03:45:39.7992345Z [INFO] --- surefire:3.5.4:test (default-test) @ proto ---
+2025-11-04T03:45:39.8019362Z [INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+2025-11-04T03:45:39.8068064Z [INFO] 
+2025-11-04T03:45:39.8068522Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:39.8069505Z [INFO]  T E S T S
+2025-11-04T03:45:39.8070661Z [INFO] -------------------------------------------------------
+2025-11-04T03:45:40.0035501Z [INFO] Running com.google.gson.protobuf.functional.ProtosWithPrimitiveTypesTest
+2025-11-04T03:45:40.2895382Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.283 s -- in com.google.gson.protobuf.functional.ProtosWithPrimitiveTypesTest
+2025-11-04T03:45:40.2899569Z [INFO] Running com.google.gson.protobuf.functional.ProtosWithComplexAndRepeatedFieldsTest
+2025-11-04T03:45:40.3207211Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in com.google.gson.protobuf.functional.ProtosWithComplexAndRepeatedFieldsTest
+2025-11-04T03:45:40.3210466Z [INFO] Running com.google.gson.protobuf.functional.ProtosWithAnnotationsTest
+2025-11-04T03:45:40.3617791Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in com.google.gson.protobuf.functional.ProtosWithAnnotationsTest
+2025-11-04T03:45:40.3631188Z [INFO] Running com.google.gson.protobuf.functional.ProtosWithAnnotationsAndJsonNamesTest
+2025-11-04T03:45:40.3941121Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.google.gson.protobuf.functional.ProtosWithAnnotationsAndJsonNamesTest
+2025-11-04T03:45:40.4036260Z [INFO] 
+2025-11-04T03:45:40.4039524Z [INFO] Results:
+2025-11-04T03:45:40.4041667Z [INFO] 
+2025-11-04T03:45:40.4043501Z [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
+2025-11-04T03:45:40.4047578Z [INFO] 
+2025-11-04T03:45:40.4048121Z [INFO] 
+2025-11-04T03:45:40.4048704Z [INFO] --- jar:3.4.2:jar (default-jar) @ proto ---
+2025-11-04T03:45:40.4084719Z [INFO] Building jar: /home/runner/work/gson/gson/proto/target/gson-proto.jar
+2025-11-04T03:45:40.4129545Z [INFO] 
+2025-11-04T03:45:40.4132678Z [INFO] --- spotless:3.0.0:check (default) @ proto ---
+2025-11-04T03:45:40.4189272Z [INFO] Index file does not exist. Fallback to an empty index
+2025-11-04T03:45:40.4192041Z [INFO] Spotless.Format is keeping 2 files clean - 0 needs changes to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:40.5511955Z [INFO] Spotless.Java is keeping 5 files clean - 0 needs changes to be clean, 5 were already clean, 0 were skipped because caching determined they were already clean
+2025-11-04T03:45:40.5516675Z [INFO] 
+2025-11-04T03:45:40.5517052Z [INFO] --- artifact:3.6.1:buildinfo (default) @ proto ---
+2025-11-04T03:45:40.5523062Z [INFO] Auto-skipping goal because module skips install and/or deploy
+2025-11-04T03:45:40.5524105Z [INFO] 
+2025-11-04T03:45:40.5524876Z [INFO] --- javadoc:3.12.0:jar (default-cli) @ proto ---
+2025-11-04T03:45:43.3612136Z [INFO] Building jar: /home/runner/work/gson/gson/proto/target/gson-proto-javadoc.jar
+2025-11-04T03:45:43.3708448Z [INFO] ------------------------------------------------------------------------
+2025-11-04T03:45:43.3711053Z [INFO] Reactor Summary for Gson Parent 2.13.3-SNAPSHOT:
+2025-11-04T03:45:43.3716669Z [INFO] 
+2025-11-04T03:45:43.3717134Z [INFO] Gson Parent ........................................ SUCCESS [ 17.919 s]
+2025-11-04T03:45:43.3717833Z [INFO] Gson ............................................... SUCCESS [ 37.128 s]
+2025-11-04T03:45:43.3718867Z [INFO] Test: Java Platform Module System (JPMS) ........... SUCCESS [  2.053 s]
+2025-11-04T03:45:43.3719782Z [INFO] Test: GraalVM Native Image ......................... SUCCESS [  2.334 s]
+2025-11-04T03:45:43.3721991Z [INFO] Test: Code shrinking (ProGuard / R8) ............... SUCCESS [ 23.710 s]
+2025-11-04T03:45:43.3722495Z [INFO] Gson Extras ........................................ SUCCESS [  3.369 s]
+2025-11-04T03:45:43.3722864Z [INFO] Gson Metrics ....................................... SUCCESS [  4.759 s]
+2025-11-04T03:45:43.3723273Z [INFO] Gson Protobuf Support .............................. SUCCESS [  5.319 s]
+2025-11-04T03:45:43.3723652Z [INFO] ------------------------------------------------------------------------
+2025-11-04T03:45:43.3723927Z [INFO] BUILD SUCCESS
+2025-11-04T03:45:43.3724303Z [INFO] ------------------------------------------------------------------------
+2025-11-04T03:45:43.3724864Z [INFO] Total time:  01:44 min
+2025-11-04T03:45:43.3725277Z [INFO] Finished at: 2025-11-04T03:45:43Z
+2025-11-04T03:45:43.3725838Z [INFO] ------------------------------------------------------------------------
+2025-11-04T03:45:43.7518753Z Post job cleanup.
+2025-11-04T03:45:43.8728074Z (node:2889) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-11-04T03:45:43.8728755Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-04T03:45:43.8956135Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/gson/gson --files-from manifest.txt --use-compress-program zstdmt
+2025-11-04T03:45:44.5850925Z Failed to save: Unable to reserve cache with key setup-java-Linux-x64-maven-4e3a9c2a79e5dac21fbc2c243300ba55c999f42625185cf23b89ba2d50c9e1fb, another job may be creating this cache.
+2025-11-04T03:45:44.6093285Z Cache saved with the key: setup-java-Linux-x64-maven-4e3a9c2a79e5dac21fbc2c243300ba55c999f42625185cf23b89ba2d50c9e1fb
+2025-11-04T03:45:44.6217459Z Post job cleanup.
+2025-11-04T03:45:44.6986039Z [command]/usr/bin/git version
+2025-11-04T03:45:44.7021728Z git version 2.51.2
+2025-11-04T03:45:44.7060373Z Temporarily overriding HOME='/home/runner/work/_temp/d602f1b8-4bbf-44bc-8a30-8d0135092322' before making global git config changes
+2025-11-04T03:45:44.7061637Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-04T03:45:44.7066075Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gson/gson
+2025-11-04T03:45:44.7101080Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-04T03:45:44.7156808Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-04T03:45:44.7374711Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-04T03:45:44.7396744Z http.https://github.com/.extraheader
+2025-11-04T03:45:44.7407415Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-04T03:45:44.7438197Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-04T03:45:44.7764671Z Cleaning up orphan processes

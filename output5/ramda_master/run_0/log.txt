@@ -1,0 +1,1841 @@
+
+> ramda@0.31.3 lint
+> eslint scripts/bookmarklet scripts/*.js source/*.js source/internal/*.js test/*.js test/**/*.js lib/sauce/*.js lib/bench/*.js
+
+
+> ramda@0.31.3 test
+> npm-run-all --parallel spec lint
+
+
+> ramda@0.31.3 spec
+> cross-env BABEL_ENV=cjs mocha --require @babel/register --reporter spec
+
+
+> ramda@0.31.3 lint
+> eslint scripts/bookmarklet scripts/*.js source/*.js source/internal/*.js test/*.js test/**/*.js lib/sauce/*.js lib/bench/*.js
+
+
+
+  F
+    ✔ always returns false
+
+  T
+    ✔ always returns true
+
+  add
+    ✔ adds together two numbers
+    ✔ coerces its arguments to numbers
+
+  add properties
+    ✔ commutative
+    ✔ associative
+    ✔ identity
+
+  addIndex
+    unary functions like `map`
+      ✔ works just like a normal map
+      ✔ passes the index as a second parameter to the callback
+      ✔ passes the entire list as a third parameter to the callback
+      ✔ acts as a curried function
+    binary functions like `reduce`
+      ✔ passes the index as a third parameter to the predicate
+      ✔ passes the entire list as a fourth parameter to the predicate
+    works with functions like `all` that do not typically have index applied
+      ✔ passes the index as a second parameter
+    works with arbitrary user-defined functions
+      ✔ passes the index as an additional parameter
+
+  addIndexRight
+    unary functions like `map`
+      ✔ works just like a normal (reversed) map
+      ✔ passes the index as a second parameter to the callback
+      ✔ passes the entire list as a third parameter to the callback
+      ✔ acts as a curried function
+    binary functions like `reduce`
+      ✔ passes the index as a third parameter to the predicate
+      ✔ passes the entire list as a fourth parameter to the predicate
+    works with functions like `all` that do not typically have index applied
+      ✔ passes the index as a second parameter
+    works with arbitrary user-defined functions
+      ✔ passes the index as an additional parameter
+
+  adjust
+    ✔ applies the given function to the value at the given index of the supplied array
+    ✔ offsets negative indexes from the end of the array
+    ✔ returns the original array if the supplied index is out of bounds
+    ✔ does not mutate the original array
+    ✔ accepts an array-like object
+
+  all
+    ✔ returns true if all elements satisfy the predicate
+    ✔ returns false if any element fails to satisfy the predicate
+    ✔ returns true for an empty list
+    ✔ returns true into array if all elements satisfy the predicate
+    ✔ returns false into array if any element fails to satisfy the predicate
+    ✔ returns true into array for an empty list
+    ✔ works with more complex objects
+    ✔ dispatches when given a transformer in list position
+    ✔ can act as a transducer
+
+  allPass
+    ✔ reports whether all predicates are satisfied by a given value
+    ✔ returns true on empty predicate list
+    ✔ returns a curried function whose arity matches that of the highest-arity predicate
+
+  always
+    ✔ returns a function that returns the object initially supplied
+    ✔ works with various types
+
+  always properties
+    ✔ returns initial argument
+
+  and
+    ✔ compares two values with js &&
+
+  andThen
+    ✔ invokes then on the promise with the function passed to it
+    ✔ flattens promise returning functions
+    ✔ throws a typeError if the then method does not exist
+    ✔ is not dependent on a particular promise implementation
+
+  any
+    ✔ returns true if any element satisfies the predicate
+    ✔ returns false if all elements fails to satisfy the predicate
+    ✔ returns true into array if any element satisfies the predicate
+    ✔ returns false if all elements fails to satisfy the predicate
+    ✔ works with more complex objects
+    ✔ can use a configurable function
+    ✔ returns false for an empty list
+    ✔ returns false into array for an empty list
+    ✔ dispatches when given a transformer in list position
+    ✔ can act as a transducer
+
+  anyPass
+    ✔ reports whether any predicates are satisfied by a given value
+    ✔ returns false for an empty predicate list
+    ✔ returns a curried function whose arity matches that of the highest-arity predicate
+
+  ap
+    ✔ interprets [a] as an applicative
+    ✔ interprets ((->) r) as an applicative
+    ✔ dispatches to the first passed object's ap method when values is a non-Array object
+
+  aperture
+    ✔ creates a list of n-tuples from a list
+    ✔ returns an empty list when `n` > `list.length`
+    ✔ can act as a transducer
+
+  append
+    ✔ adds the element to the end of the list
+    ✔ works on empty list
+
+  apply
+    ✔ applies function to argument list
+    ✔ provides no way to specify context
+
+  applySpec
+    ✔ works with empty spec
+    ✔ works with unary functions
+    ✔ works with binary functions
+    ✔ works with nested specs
+    ✔ works with arrays of nested specs
+    ✔ works with arrays of spec objects
+    ✔ works with arrays of functions
+    ✔ works with a spec defining a map key
+    ✔ retains the highest arity
+    ✔ returns a curried function
+
+  applyTo
+    ✔ applies the function to its first argument
+    ✔ has length 2
+
+  ascend
+    ✔ builds an ascending comparator function out of the identity function
+
+  ascendNatural
+    ✔ builds an ascending natural comparator function out of the identity function
+
+  assoc
+    ✔ makes a shallow clone of an object, overriding only the specified property
+    ✔ is the equivalent of clone and set if the property is not on the original
+    ✔ makes a shallow clone of an array, overriding only the specified index
+    ✔ is the equivalent of clone and set if the index is not on the original
+    ✔ handles negative indexes from end of array
+    ✔ sets garbage key when negative indexes wraps to < 0
+
+  assocPath
+    ✔ makes a shallow clone of an object, overriding only what is necessary for the path
+    ✔ is the equivalent of clone and setPath if the property is not on the original
+    ✔ overwrites primitive values with keys in the path
+    ✔ empty path replaces the whole object
+    ✔ replaces `undefined` with a new object
+    ✔ replaces `null` with a new object
+    ✔ sets in indexes regardless of length
+    ✔ handles negative indexes from end of array
+    ✔ sets garbage key when negative indexes wraps to < 0
+
+  binary
+    ✔ turns multiple-argument function into binary one
+    ✔ initial arguments are passed through normally
+
+  bind
+    ✔ returns a function
+    ✔ returns a function bound to the specified context object
+    ✔ works with built-in types
+    ✔ works with user-defined types
+    ✔ works with plain objects
+    ✔ does not interfere with existing object methods
+    ✔ preserves arity
+
+  both
+    ✔ combines two boolean-returning functions into one
+    ✔ accepts functions that take multiple parameters
+    ✔ does not evaluate the second expression if the first one is false
+    ✔ accepts fantasy-land applicative functors
+
+  call
+    ✔ returns the result of calling its first argument with the remaining arguments
+    ✔ accepts one or more arguments
+    ✔ provides no way to specify context
+
+  chain
+    ✔ maps a function over a nested list and returns the (shallow) flattened result
+    ✔ does not flatten recursively
+    ✔ maps a function (a -> [b]) into a (shallow) flat result
+    ✔ interprets ((->) r) as a monad
+    ✔ dispatches to objects that implement `chain`
+    ✔ dispatches to transformer objects
+    ✔ composes
+    ✔ can compose transducer-style
+
+  clamp
+    ✔ clamps to the lower bound
+    ✔ clamps to the upper bound
+    ✔ leaves it alone when within the bound
+    ✔ works with letters as well
+
+  deep clone integers, strings and booleans
+    ✔ clones integers
+    ✔ clones floats
+    ✔ clones strings
+    ✔ clones booleans
+
+  deep clone objects
+    ✔ clones shallow object
+    ✔ clones deep object
+    ✔ clones objects with circular references
+    ✔ clone instances
+    ✔ only own properties be copied
+    ✔ the prototype should keep the same
+
+  deep clone arrays
+    ✔ clones shallow arrays
+    ✔ clones deep arrays
+
+  deep clone typed arrays
+    ✔ clones Uint16Array
+    ✔ clones Int8Array
+    ✔ clones Uint8Array
+    ✔ clones Uint8ClampedArray
+    ✔ clones Int16Array
+    ✔ clones Uint16Array
+    ✔ clones Int32Array
+    ✔ clones Uint32Array
+    ✔ clones Float32Array
+    ✔ clones Float64Array
+
+  deep clone functions
+    ✔ keep reference to function
+
+  built-in types
+    ✔ clones Date object
+    ✔ clones RegExp object
+
+  deep clone deep nested mixed objects
+    ✔ clones array with objects
+    ✔ clones array with arrays
+    ✔ clones array with mutual ref object
+
+  deep clone edge cases
+    ✔ nulls, undefineds and empty objects and arrays
+
+  clone objects with no prototypes
+    ✔ nested object with no prototype
+
+  Let `R.clone` use an arbitrary user defined `clone` method
+    ✔ dispatches to `clone` method if present
+
+  collectBy
+    ✔ returns a list of lists
+    ✔ groups items but neither adds new ones nor removes any
+    ✔ groups related items together
+    ✔ invokes the tag function for each item in the list
+    ✔ groups items according to the tag value
+
+  comparator
+    ✔ builds a comparator function for sorting out of a simple predicate that reports whether the first param is smaller
+
+  complement
+    ✔ creates boolean-returning function that reverses another
+    ✔ accepts a function that take multiple parameters
+    ✔ accepts fantasy-land functors
+
+  compose
+    ✔ is a variadic function
+    ✔ performs right-to-left function composition
+    ✔ passes context to functions
+    ✔ throws if given no arguments
+    ✔ can be applied to one argument
+
+  compose properties
+    ✔ composes two functions
+    ✔ associative
+
+  composeWith
+    ✔ performs right-to-left function composition with function applying
+    ✔ performs right-to-left function while not nil result
+    ✔ performs right-to-left function using promise chaining
+
+  concat
+    ✔ adds combines the elements of the two lists
+    ✔ works on strings
+    ✔ delegates to non-String object with a concat method, as second param
+    ✔ throws if attempting to combine an array with a non-array
+    ✔ throws if not an array, String, or object with a concat method
+
+  cond
+    ✔ returns a function
+    ✔ returns a conditional function
+    ✔ returns a function which returns undefined if none of the predicates matches
+    ✔ predicates are tested in order
+    ✔ forwards all arguments to predicates and to transformers
+    ✔ retains highest predicate arity
+
+  construct
+    ✔ turns a constructor function into one that can be called without `new`
+    ✔ can be used to create Date object
+    ✔ supports constructors with no arguments
+    ✔ does not support constructor with greater than ten arguments
+    ✔ returns a curried function
+
+  constructN
+    ✔ turns a constructor function into a function with n arguments
+    ✔ can be used to create Date object
+    ✔ supports constructors with no arguments
+    ✔ does not support constructor with greater than ten arguments
+
+  converge
+    ✔ passes the results of applying the arguments individually to two separate functions into a single one
+    ✔ returns a function with the length of the "longest" argument
+    ✔ passes context to its functions
+    ✔ returns a curried function
+    ✔ works with empty functions list
+
+  count
+    ✔ counts items in a list that match a filter
+    ✔ returns zero when no element matches
+    ✔ returns zero for an empty list
+
+  countBy
+    ✔ counts by a simple property of the objects
+    ✔ counts by a more complex function on the objects
+    ✔ ignores inherited properties
+    ✔ can act as a transducer
+
+  curry
+    ✔ curries a single value
+    ✔ curries multiple values
+    ✔ allows further currying of a curried function
+    ✔ properly reports the length of the curried function
+    ✔ preserves context
+    ✔ supports R.__ placeholder
+    ✔ supports @@functional/placeholder
+    ✔ forwards extra arguments
+    ✔ handles arguments beyond function arity when called with placeholder
+    ✔ passes along all arguments from previous calls including placeholder
+
+  curry properties
+    ✔ curries multiple values (86ms)
+    ✔ curries with placeholder (56ms)
+
+  curryN
+    ✔ accepts an arity
+    ✔ can be partially applied
+    ✔ preserves context
+    ✔ supports R.__ placeholder
+    ✔ supports @@functional/placeholder
+    ✔ forwards extra arguments
+
+  dec
+    ✔ decrements its argument
+
+  defaultTo
+    ✔ returns the default value if input is null, undefined or NaN
+    ✔ returns the input value if it is not null/undefined
+    ✔ returns the input value even if it is considered falsy
+    ✔ can be called with both arguments directly
+
+  descend
+    ✔ builds a descending comparator function out of the identity function
+
+  descendNatural
+    ✔ builds a descending natural comparator function out of the identity function
+
+  difference
+    ✔ finds the set of all elements in the first list not contained in the second
+    ✔ does not allow duplicates in the output even if the input lists had duplicates
+    ✔ has R.equals semantics
+    ✔ works for arrays of different lengths
+    ✔ will not create a "sparse" array
+    ✔ returns an empty array if there are no different elements
+
+  differenceWith
+    ✔ combines two lists into the set of all their elements based on the passed-in equality predicate
+    ✔ does not allow duplicates in the output even if the input lists had duplicates
+    ✔ does not return a "sparse" array
+
+  dissoc
+    ✔ copies an object omitting the specified property
+    ✔ makes a shallow clone of an array, remove only the specified index
+    ✔ includes prototype properties
+    ✔ coerces non-string types
+
+  dissocPath
+    ✔ makes a shallow clone of an object, omitting only what is necessary for the path
+    ✔ does not try to omit inner properties that do not exist
+    ✔ leaves an empty object when all properties omitted
+    ✔ leaves an empty array when all indexes are omitted
+    ✔ flattens properties from prototype
+    ✔ accepts empty path
+    ✔ allow integer to be used as key for object
+    ✔ support remove null/undefined value path
+
+  divide
+    ✔ divides two numbers
+
+  drop
+    ✔ skips the first `n` elements from a list, returning the remainder
+    ✔ returns an empty array if `n` is too large
+    ✔ returns an equivalent list if `n` is <= 0
+    ✔ never returns the input array
+    ✔ can operate on strings
+
+  dropLast
+    ✔ skips the last `n` elements from a list, returning the remainder
+    ✔ returns an empty array if `n` is too large
+    ✔ returns an equivalent list if `n` is <= 0
+    ✔ never returns the input array
+    ✔ can operate on strings
+    ✔ can act as a transducer
+
+  dropLastWhile
+    ✔ skips elements while the function reports `true`
+    ✔ returns an empty list for an empty list
+    ✔ starts at the right arg and acknowledges undefined
+    ✔ can operate on strings
+    ✔ can act as a transducer
+
+  dropRepeats
+    ✔ removes repeated elements
+    ✔ returns an empty array for an empty array
+    ✔ can act as a transducer
+    ✔ has R.equals semantics
+
+  dropRepeatsBy
+    ✔ removes repeated elements based on predicate
+    ✔ keeps elements from the left
+    ✔ returns an empty array for an empty array
+    ✔ can act as a transducer
+
+  dropRepeatsWith
+    ✔ removes repeated elements based on predicate
+    ✔ keeps elements from the left
+    ✔ returns an empty array for an empty array
+    ✔ can act as a transducer
+
+  dropWhile
+    ✔ skips elements while the function reports `true`
+    ✔ returns an empty list for an empty list
+    ✔ starts at the right arg and acknowledges undefined
+    ✔ can operate on strings
+    ✔ can act as a transducer
+
+  either
+    ✔ combines two boolean-returning functions into one
+    ✔ accepts functions that take multiple parameters
+    ✔ does not evaluate the second expression if the first one is true
+    ✔ accepts fantasy-land applicative functors
+
+  empty
+    ✔ dispatches to `empty` method
+    ✔ dispatches to `empty` function on constructor
+    ✔ returns empty array given array
+    ✔ returns empty typed array of equivalent type given typed array
+    ✔ returns empty object given object
+    ✔ returns empty string given string
+    ✔ returns empty arguments object given arguments object
+    ✔ returns empty Set
+    ✔ returns empty Map
+
+  endsWith
+    ✔ should return true when a string ends with the provided value
+    ✔ should return true when a long string ends with the provided value
+    ✔ should return false when a string does not end with the provided value
+    ✔ should return false when a long string does not end with the provided value
+    ✔ should return true when an array ends with the provided value
+    ✔ should return true when an array ends with the provided values
+    ✔ should return false when an array does not end with the provided value
+    ✔ should return false when an array does not end with the provided values
+
+  eqBy
+    ✔ determines whether two values map to the same value in the codomain
+    ✔ has R.equals semantics
+
+  eqProps
+    ✔ reports whether two objects have the same value for a given property
+    ✔ has R.equals semantics
+
+  equals
+    ✔ tests for deep equality of its operands
+    ✔ considers equal Boolean primitives equal
+    ✔ considers equivalent Boolean objects equal
+    ✔ never considers Boolean primitive equal to Boolean object
+    ✔ considers equal number primitives equal
+    ✔ considers equivalent Number objects equal
+    ✔ never considers number primitive equal to Number object
+    ✔ considers equal string primitives equal
+    ✔ considers equivalent String objects equal
+    ✔ never considers string primitive equal to String object
+    ✔ handles objects
+    ✔ considers equivalent Arguments objects equal
+    ✔ considers equivalent Error objects equal
+    ✔ handles regex
+    ✔ handles lists
+    ✔ handles recursive data structures
+    ✔ handles dates
+    ✔ requires that both objects have the same enumerable properties with the same values
+    ✔ handles typed arrays
+    ✔ compares Promise objects by identity
+    ✔ compares Map objects by value
+    ✔ dispatches to `equals` method recursively in Set
+    ✔ compares Set objects by value
+    ✔ dispatches to `equals` method recursively in Set
+    ✔ compares WeakMap objects by identity
+    ✔ compares WeakSet objects by identity
+    ✔ dispatches to `equals` method recursively
+    ✔ is commutative
+    ✔ perfect clones should be considered equal
+    ✔ is commutative whatever the values
+
+  evolve
+    ✔ creates a new object by evolving the `object` according to the `transformation` functions
+    ✔ does not invoke function if object does not contain the key
+    ✔ is not destructive
+    ✔ is recursive
+    ✔ ignores primitive value transformations
+    ✔ ignores null transformations
+    ✔ creates a new array by evolving the `array` according to the `transformation` functions
+    ✔ ignores transformations if the input value is not Array and Object
+
+  filter
+    ✔ reduces an array to those matching a filter
+    ✔ returns an empty array if no element matches
+    ✔ returns an empty array if asked to filter an empty array
+    ✔ filters objects
+    ✔ filters ES6 maps
+    ✔ dispatches to passed-in non-Array object with a `filter` method
+    ✔ correctly uses fantasy-land implementations
+    ✔ can act as a transducer
+
+  find
+    ✔ returns the first element that satisfies the predicate
+    ✔ returns `undefined` when no element satisfies the predicate
+    ✔ returns `undefined` when given an empty list
+    ✔ dispatches to transformer objects
+    ✔ can act as a transducer
+
+  findIndex
+    ✔ returns the index of the first element that satisfies the predicate
+    ✔ returns -1 when no element satisfies the predicate
+    ✔ dispatches to transformer objects
+    ✔ can act as a transducer
+
+  findLast
+    ✔ returns the index of the last element that satisfies the predicate
+    ✔ returns `undefined` when no element satisfies the predicate
+    ✔ works when the first element matches
+    ✔ does not go into an infinite loop on an empty array
+    ✔ dispatches to transformer objects
+    ✔ can act as a transducer
+
+  findLastIndex
+    ✔ returns the index of the last element that satisfies the predicate
+    ✔ returns -1 when no element satisfies the predicate
+    ✔ works when the first element matches
+    ✔ does not go into an infinite loop on an empty array
+    ✔ dispatches to transformer objects
+    ✔ can act as a transducer
+
+  flatten
+    ✔ turns a nested list into one flat list
+    ✔ is not destructive
+    ✔ handles ridiculously large inputs (379ms)
+    ✔ handles array-like objects
+    ✔ flattens an array of empty arrays
+
+  flip
+    ✔ returns a function which inverts the first two arguments to the supplied function
+    ✔ returns a curried function
+    ✔ returns a function with the correct arity
+
+  flip properties
+    ✔ inverts first two arguments (58ms)
+
+  flow
+    ✔ is a binary function
+    ✔ applies the first argument to a left-to-right composed function
+
+  forEach
+    ✔ performs the passed in function on each element of the list
+    ✔ returns the original list
+    ✔ handles empty list
+    ✔ dispatches to `forEach` method
+
+  forEachObjIndexed
+    ✔ performs the passed in function on each key and value of the object
+    ✔ returns the original object
+
+  fromPairs
+    ✔ combines an array of two-element arrays into an object
+    ✔ gives later entries precedence over earlier ones
+
+  groupBy
+    ✔ splits the list into groups according to the grouping function
+    ✔ returns an empty object if given an empty array
+    ✔ dispatches on transformer objects in list position
+    ✔ can act as a transducer
+
+  groupWith
+    ✔ splits the list into groups according to the grouping function
+    ✔ splits the list into "streaks" testing adjacent elements
+    ✔ returns an empty array if given an empty array
+    ✔ can be turned into the original list through concatenation
+    ✔ also works on strings
+
+  gt
+    ✔ reports whether one item is greater than another
+
+  gte
+    ✔ reports whether one item is greater than or equal to another
+
+  has
+    ✔ returns true if the specified property is present
+    ✔ returns false if the specified property is absent
+    ✔ does not check properties from the prototype chain
+    ✔ returns false for non-objects
+    ✔ tests currying
+
+  hasIn
+    ✔ returns a function that checks the appropriate property
+    ✔ checks properties from the prototype chain
+    ✔ works properly when called with two arguments
+    ✔ returns false when non-existent object
+
+  hasPath
+    ✔ returns true for existing path
+    ✔ returns true for existing path to falsy values
+    ✔ return false for a test for a child to a non-object
+    ✔ returns true for existing path with indexes
+    ✔ returns false for non-existing path with indexes
+    ✔ tests for paths in arrays
+    ✔ returns false for non-existent path
+    ✔ does not check properties from the prototype chain
+    ✔ returns false for non-objects
+    ✔ tests paths on non-objects
+    ✔ tests currying
+
+  head
+    ✔ returns the first element of an ordered collection
+    ✔ throws if applied to null or undefined
+
+  identical
+    ✔ has Object.is semantics
+    ✔ is auto-curried
+    ✔ does not access the placeholder property of its arguments which is forbidden for cross-origin browser windows
+
+  identity
+    ✔ returns its first argument
+    ✔ has length 1
+
+  ifElse
+    ✔ calls the truth case function if the validator returns a truthy value
+    ✔ calls the false case function if the validator returns a falsy value
+    ✔ calls the true case on array items and the false case on non array items
+    ✔ passes the arguments to the true case function
+    ✔ passes the arguments to the false case function
+    ✔ returns a function whose arity equals the max arity of the three arguments to `ifElse`
+    ✔ returns a curried function
+
+  inc
+    ✔ increments its argument
+
+  includes
+    ✔ returns true if an element is in a list
+    ✔ returns false if an element is not in a list
+    ✔ returns false for the empty list
+    ✔ has R.equals semantics
+    ✔ returns true if substring is part of string
+
+  API surface
+    ✔ both APIs are in sync
+    ✔ list of not exported API methods is empty
+
+  indexBy
+    ✔ indexes list by the given property
+    ✔ indexes list by the given property upper case
+    ✔ can act as a transducer
+
+  indexOf
+    ✔ returns a number indicating an object's position in a list
+    ✔ returns -1 if the object is not in the list
+    ✔ returns the index of the first item
+    ✔ returns the index of the last item
+    ✔ finds 1
+    ✔ finds 1 and is result strictly it
+    ✔ does not find 4
+    ✔ does not consider "1" equal to 1
+    ✔ returns -1 for an empty array
+    ✔ has R.equals semantics
+    ✔ dispatches to `indexOf` method
+    ✔ finds function, compared by identity
+    ✔ does not find function, compared by identity
+
+  init
+    ✔ returns all but the last element of an ordered collection
+    ✔ throws if applied to null or undefined
+    ✔ handles array-like object
+
+  innerJoin
+    ✔ only returns elements from the first list
+    ✔ does not remove duplicates
+
+  insert
+    ✔ inserts an element into the given list
+    ✔ inserts another list as an element
+    ✔ appends to the end of the list if the index is too large
+
+  insertAll
+    ✔ inserts a list of elements into the given list
+    ✔ appends to the end of the list if the index is too large
+
+  intersection
+    ✔ combines two lists into the set of common elements
+    ✔ does not allow duplicates in the output even if the input lists had duplicates
+    ✔ does not allow duplicates in the output even if the first list is bigger and has duplicates
+    ✔ does not allow duplicates in the output even if the second list is bigger and has duplicates
+    ✔ has R.equals semantics
+
+  intersperse
+    ✔ interposes a separator between list items
+    ✔ dispatches
+
+  into
+    ✔ transduces into arrays
+    ✔ transduces into strings
+    ✔ transduces into objects
+    ✔ dispatches to objects that implement `reduce`
+    ✔ allows custom transformer
+
+  invariants
+    ✔ -- applying function f with length n (where n > 0) to no arguments gives function with length n
+    ✔ -- applying function f with length n (where n > 0) to R.__ gives function with length n
+    ✔ -- applying function f with length n (where n > 1) to any value other than R.__ gives function with length n - 1
+
+  invert
+    ✔ takes a list or object and returns an object of lists
+    ✔ returns an empty object when applied to a primitive
+    ✔ returns an empty object when applied to null/undefined
+    ✔ returns the input's values as keys, and keys as values of an array
+    ✔ puts keys that have the same value into the appropriate an array
+    ✔ is not destructive
+    ✔ ignores inherited properties
+
+  invertObj
+    ✔ takes a list or object and returns an object
+    ✔ returns an empty object when applied to a primitive
+    ✔ returns an empty object when applied to null/undefined
+    ✔ returns the input's values as keys, and keys as values
+    ✔ prefers the last key found when handling keys with the same value
+    ✔ is not destructive
+
+  invoker
+    ✔ returns a function with correct arity
+    ✔ calls the method on the object
+    ✔ throws a descriptive TypeError if method does not exist
+    ✔ does not rely on constructor identity
+    ✔ curries the method call
+
+  is
+    ✔ works with built-in types
+    ✔ works with user-defined types
+    ✔ considers almost everything an object
+    ✔ does not coerce
+    ✔ recognizes primitives as their object equivalents
+    ✔ does not consider primitives to be instances of Object
+
+  isEmpty
+    ✔ returns false for null
+    ✔ returns false for undefined
+    ✔ returns true for empty string
+    ✔ returns true for empty array
+    ✔ returns true for empty typed array
+    ✔ returns true for empty object
+    ✔ returns true for empty arguments object
+    ✔ returns false for every other value
+    ✔ returns correctly for Set
+    ✔ returns correctly for Map
+
+  isNil
+    ✔ tests a value for `null` or `undefined`
+
+  isNotEmpty
+    ✔ returns true for null
+    ✔ returns true for undefined
+    ✔ returns false for empty string
+    ✔ returns false for empty array
+    ✔ returns false for empty typed array
+    ✔ returns false for empty object
+    ✔ returns false for empty arguments object
+    ✔ returns true for every other value
+
+  isNotNil
+    ✔ tests a value for `null` or `undefined`
+
+  join
+    ✔ concatenates a list's elements to a string, with an separator string between elements
+
+  juxt
+    ✔ works with no functions and no values
+    ✔ works with no functions and some values
+    ✔ works with 1 function and no values
+    ✔ works with 1 function and 1 value
+    ✔ works with 1 function and some values
+    ✔ works with some functions and no values
+    ✔ works with some functions and 1 value
+    ✔ works with some functions and some values
+    ✔ retains the highest arity
+    ✔ returns a curried function
+
+  keys
+    ✔ returns an array of the given object's own keys
+    ✔ works with hasOwnProperty override
+    ✔ works for primitives
+    ✔ does not include the given object's prototype properties
+
+  keysIn
+    ✔ returns an array of the given object's keys
+    ✔ includes the given object's prototype properties
+    ✔ works for primitives
+
+  last
+    ✔ returns the last element of an ordered collection
+    ✔ throws if applied to null or undefined
+
+  lastIndexOf
+    ✔ returns a number indicating an object's last position in a list
+    ✔ returns -1 if the object is not in the list
+    ✔ returns the last index of the first item
+    ✔ returns the index of the last item
+    ✔ finds a
+    ✔ does not find c
+    ✔ does not consider "1" equal to 1
+    ✔ returns -1 for an empty array
+    ✔ has R.equals semantics
+    ✔ dispatches to `lastIndexOf` method
+    ✔ finds function, compared by identity
+    ✔ does not find function, compared by identity
+
+  length
+    ✔ returns the length of a list
+    ✔ returns the length of a string
+    ✔ returns the length of a function
+    ✔ returns the length of an arguments object
+    ✔ returns NaN for value of unexpected type
+    ✔ returns NaN for length property of unexpected type
+
+  lensIndex
+    view
+      ✔ focuses list element at the specified index
+      ✔ returns undefined if the specified index does not exist
+    set
+      ✔ sets the list value at the specified index
+    over
+      ✔ applies function to the value at the specified list index
+    composability
+      ✔ can be composed
+    well behaved lens
+      ✔ set s (get s) === s
+      ✔ get (set s v) === v
+      ✔ get (set(set s v1) v2) === v2
+
+  lensPath
+    view
+      ✔ focuses the specified object property
+    set
+      ✔ sets the value of the object property specified
+      ✔ adds the property to the object if it doesn't exist
+      ✔ treats negative index from the end of the array
+    over
+      ✔ applies function to the value of the specified object property
+      ✔ applies function to undefined and adds the property if it doesn't exist
+    composability
+      ✔ can be composed
+    well behaved lens
+      ✔ set s (get s) === s
+      ✔ get (set s v) === v
+      ✔ get (set(set s v1) v2) === v2
+
+  lensProp
+    view
+      ✔ focuses object the specified object property
+      ✔ returns undefined if the specified property does not exist
+    set
+      ✔ sets the value of the object property specified
+      ✔ adds the property to the object if it doesn't exist
+    over
+      ✔ applies function to the value of the specified object property
+      ✔ applies function to undefined and adds the property if it doesn't exist
+    composability
+      ✔ can be composed
+    well behaved lens
+      ✔ set s (get s) === s
+      ✔ get (set s v) === v
+      ✔ get (set(set s v1) v2) === v2
+
+  view, over, and set
+    ✔ may be applied to a lens created by `lensPath`
+    ✔ may be applied to a lens created by `lensProp`
+    ✔ may be applied to a lens created by `lensIndex`
+    ✔ may be applied to composed lenses
+
+  lift
+    ✔ returns a function if called with just a function
+    ✔ produces a cross-product of array values
+    ✔ can lift functions of any arity
+    ✔ works with other functors such as "Maybe"
+
+  liftN
+    ✔ returns a function
+    ✔ limits a variadic function to the specified arity
+    ✔ can lift functions of any arity
+    ✔ works with other functors such as "Maybe"
+    ✔ interprets [a] as a functor
+    ✔ interprets ((->) r) as a functor
+
+  lt
+    ✔ reports whether one item is less than another
+
+  lte
+    ✔ reports whether one item is less than or equal to another
+
+  map
+    ✔ maps simple functions over arrays
+    ✔ maps over objects
+    ✔ interprets ((->) r) as a functor
+    ✔ dispatches to objects that implement `map`
+    ✔ dispatches to transformer objects
+    ✔ throws a TypeError on null and undefined
+    ✔ composes
+    ✔ can compose transducer-style
+    ✔ correctly uses fantasy-land implementations
+    ✔ can act as a transducer
+
+  mapAccum
+    ✔ map and accumulate simple functions over arrays with the supplied accumulator
+    ✔ returns the list and accumulator for an empty array
+
+  mapAccumRight
+    ✔ map and accumulate simple functions over arrays with the supplied accumulator
+    ✔ returns the list and accumulator for an empty array
+
+  mapKeys
+    ✔ converts the keys of an object via the supplied function
+    ✔ keeps the last key-value pair processed if multiple invocations return the same key
+
+  mapObjIndexed
+    ✔ works just like a normal mapObj
+    ✔ passes the index as a second parameter to the callback
+    ✔ passes the entire list as a third parameter to the callback
+
+  match
+    ✔ determines whether a string matches a regex
+    ✔ defaults to a different empty array each time
+    ✔ throws on null input
+
+  mathMod
+    ✔ requires integer arguments
+    ✔ behaves differently than JS modulo
+    ✔ computes the true modulo function
+
+  max
+    ✔ returns the larger of its two arguments
+    ✔ works for any orderable type
+    ✔ returns the second argument if both arguments are equal according to the native JS strict equals operator
+    ✔ returns the alphabetically later type if neither argument is greater than the other
+    ✔ returns the alphabetically later string coersion if no argument or type is greater than the other
+    ✔ returns the first argument if no other comparison attempts produce a result
+
+  maxBy
+    ✔ returns the larger value as determined by the function
+
+  mean
+    ✔ returns mean of a nonempty list
+    ✔ returns NaN for an empty list
+    ✔ handles array-like object
+
+  median
+    ✔ returns middle value of an odd-length list
+    ✔ returns mean of two middle values of a nonempty even-length list
+    ✔ returns NaN for an empty list
+    ✔ handles array-like object
+
+  memoizeWith
+    ✔ calculates the value for a given input only once
+    ✔ handles multiple parameters
+    ✔ does not rely on reported arity
+    ✔ can be applied to nullary function
+    ✔ can be applied to function with optional arguments
+    ✔ retains arity
+
+  mergeAll
+    ✔ merges a list of objects together into one object
+    ✔ gives precedence to later objects in the list
+    ✔ ignores inherited properties
+    acts as if nil values are simply empty objects
+      ✔ ... if the first object is nil
+      ✔ ... if the last object is nil
+      ✔ ... if an intermediate object is nil
+
+  mergeDeepLeft
+    ✔ takes two objects, recursively merges their own properties and returns a new object
+    ✔ overrides properties in the second object with properties in the first object
+    ✔ is not destructive
+    ✔ reports only own properties
+
+  mergeDeepRight
+    ✔ takes two objects, recursively merges their own properties and returns a new object
+    ✔ overrides properties in the first object with properties in the second object
+    ✔ is not destructive
+    ✔ reports only own properties
+
+  mergeDeepWith
+    ✔ takes two objects, recursively merges their own properties and returns a new object
+    ✔ applies the provided function to the value from the first object and the value from the second object to determine the value for keys that exist in both objects
+    ✔ is not destructive
+    ✔ reports only own properties
+
+  mergeDeepWithKey
+    ✔ takes two objects, recursively merges their own properties and returns a new object
+    ✔ applies the provided function to the key, the value from the first object and the value from the second object to determine the value for keys that exist in both objects
+    ✔ is not destructive
+    ✔ reports only own properties
+
+  mergeLeft
+    ✔ takes two objects, merges their own properties and returns a new object
+    ✔ overrides properties in the second object with properties in the first object
+    ✔ is not destructive
+    ✔ reports only own properties
+    ✔ is shallow
+    acts as if nil values are simply empty objects
+      ✔ ... if the first object is nil
+      ✔ ... if the second object is nil
+      ✔ ... if both objects are nil
+
+  mergeRight
+    ✔ takes two objects, merges their own properties and returns a new object
+    ✔ overrides properties in the first object with properties in the second object
+    ✔ is not destructive
+    ✔ reports only own properties
+    ✔ is shallow
+    acts as if nil values are simply empty objects
+      ✔ ... if the first object is nil
+      ✔ ... if the second object is nil
+      ✔ ... if both objects are nil
+
+  mergeWith
+    ✔ takes two objects, merges their own properties and returns a new object
+    ✔ applies the provided function to the value from the first object and the value from the second object to determine the value for keys that exist in both objects
+    ✔ is not destructive
+    ✔ reports only own properties
+    acts as if nil values are simply empty objects
+      ✔ ... if the first object is nil and the second empty
+      ✔ ... if the first object is empty and the second nil
+      ✔ ... if both objects are nil
+      ✔ ... if the first object is not empty and the second is nil
+      ✔ ... if the first object is nil and the second is not empty
+
+  mergeWithKey
+    ✔ takes two objects, merges their own properties and returns a new object
+    ✔ applies the provided function to the key, the value from the first object and the value from the second object to determine the value for keys that exist in both objects
+    ✔ is not destructive
+    ✔ reports only own properties
+    acts as if nil values are simply empty objects
+      ✔ ... if the first object is nil
+      ✔ ... if the second object is nil
+      ✔ ... if both objects are nil
+
+  min
+    ✔ returns the smaller of its two arguments
+    ✔ works for any orderable type
+    ✔ returns the first argument if both arguments are equal according to the native JS strict equals operator
+    ✔ returns the alphabetically earlier type if neither argument is smaller than the other
+    ✔ returns the alphabetically earlier string coersion if no argument or type is smaller than the other
+    ✔ returns the first argument if no other comparison attempts produce a result
+
+  minBy
+    ✔ returns the smaller value as determined by the function
+
+  modify
+    ✔ creates a new object by applying the `transformation` function to the given `property` of the `object`
+    ✔ returns the original object if object does not contain the property
+    ✔ is not destructive
+    ✔ ignores primitive value transformations
+    ✔ ignores null transformations
+    ✔ adjust if `array` at the given key with the `transformation` function
+    ✔ ignores transformations if the input value is not Array and Object
+
+  modifyPath
+    ✔ creates a new object by applying the `transformation` function to the given `properties` of the `object`
+    ✔ returns the original object if object does not contain the key
+    ✔ modifies the original object if path is empty array
+    ✔ is not destructive
+    ✔ throws error for non-function transformations
+
+  modulo
+    ✔ divides the first param by the second and returns the remainder
+    ✔ preserves javascript-style modulo evaluation for negative numbers
+
+  move
+    ✔ moves an element from an index to another
+    ✔ does nothing when indexes are outside the list outbounds
+
+  multiply
+    ✔ multiplies together two numbers
+
+  nAry
+    ✔ turns multiple-argument function into a nullary one
+    ✔ turns multiple-argument function into a ternary one
+    ✔ creates functions of arity less than or equal to ten
+    ✔ throws if n is greater than ten
+
+  negate
+    ✔ negates its argument
+
+  none
+    ✔ returns true if no elements satisfy the predicate
+    ✔ returns false if any element satisfies the predicate
+    ✔ returns true for an empty list
+    ✔ works with more complex objects
+    ✔ can act as a transducer
+
+  not
+    ✔ reverses argument
+
+  nth
+    ✔ accepts positive offsets
+    ✔ accepts negative offsets
+    ✔ throws if applied to null or undefined
+
+  nthArg
+    ✔ returns a function which returns its nth argument
+    ✔ accepts negative offsets
+    ✔ returns a function with length n + 1 when n >= 0
+    ✔ returns a function with length 1 when n < 0
+    ✔ returns a curried function
+
+  o
+    ✔ is not a variadic function
+    ✔ is a curried function
+    ✔ performs right-to-left function composition
+    o properties
+      ✔ composes two functions
+      ✔ associative
+
+  objOf
+    ✔ creates an object containing a single key:value pair
+
+  of
+    ✔ returns its argument as an Array
+    ✔ dispatches to an available of method
+
+  omit
+    ✔ copies an object omitting the listed properties
+    ✔ includes prototype properties
+
+  on
+    ✔ transforms and combines two values
+
+  once
+    ✔ returns a function that calls the supplied function only the first time called
+    ✔ passes along arguments supplied
+    ✔ retains and returns the first value calculated, even if different arguments are passed later
+    ✔ retains arity
+
+  or
+    ✔ compares two values with js ||
+
+  otherwise
+    ✔ catches failed promises
+    ✔ does nothing to successfully resolved promises
+    ✔ throws a typeError if the then method does not exist
+
+  pair
+    ✔ creates a two-element array
+
+  partial
+    ✔ caches the initially supplied arguments
+    ✔ correctly reports the arity of the new function
+
+  partialObject
+    ✔ caches the initially supplied arguments
+    ✔ works regardless of property order
+    ✔ merges deeply right
+
+  partialRight
+    ✔ caches the initially supplied arguments
+    ✔ correctly reports the arity of the new function
+
+  partition
+    ✔ splits a list into two lists according to a predicate
+    ✔ works with objects
+    ✔ works with other filterables
+
+  path
+    ✔ takes a path and an object and returns the value at the path or undefined
+    ✔ takes a path that contains indices into arrays
+    ✔ takes a path that contains negative indices into arrays
+    ✔ gets a deep property's value from objects
+    ✔ returns undefined for items not found
+    ✔ works with falsy items
+
+  pathEq
+    ✔ returns true if the path matches the value
+    ✔ returns false for non matches
+    ✔ returns false for non existing values
+    ✔ accepts empty path
+    ✔ has R.equals semantics
+
+  pathOr
+    ✔ takes a path and an object and returns the value at the path or the default value
+    ✔ gets a deep property's value from objects
+    ✔ returns the default value for items not found
+    ✔ returns the default value for null/undefined
+    ✔ works with falsy items
+
+  pathSatisfies
+    ✔ returns true if the specified object path satisfies the given predicate
+    ✔ returns false if the specified path does not exist
+    ✔ handles empty paths by applying pred to data: positive
+    ✔ handles empty paths by applying pred to data: negative
+    ✔ returns false otherwise
+
+  paths
+    ✔ takes paths and returns values at those paths
+    ✔ takes a paths that contains indices into arrays
+    ✔ takes a path that contains negative indices into arrays
+    ✔ gets a deep property's value from objects
+    ✔ returns undefined for items not found
+
+  pick
+    ✔ copies the named properties of an object to the new object
+    ✔ handles numbers as properties
+    ✔ ignores properties not included
+    ✔ retrieves prototype properties
+
+  pickAll
+    ✔ copies the named properties of an object to the new object
+    ✔ includes properties not present on the input object
+
+  pickBy
+    ✔ creates a copy of the object
+    ✔ when returning truthy, keeps the key
+    ✔ when returning falsy, keeps the key
+    ✔ is called with (val,key,obj)
+    ✔ retrieves prototype properties
+
+  pipe
+    ✔ is a variadic function
+    ✔ performs left-to-right function composition
+    ✔ passes context to functions
+    ✔ throws if given no arguments
+    ✔ can be applied to one argument
+
+  pipeWith
+    ✔ performs left-to-right function composition with function applying
+    ✔ performs left-to-right function while not nil result
+    ✔ performs left-to-right function using promise chaining
+
+  pluck
+    ✔ returns a function that maps the appropriate property over an array
+    ✔ behaves as a transducer when given a transducer in list position
+
+  prepend
+    ✔ adds the element to the beginning of the list
+    ✔ works on empty list
+
+  product
+    ✔ multiplies together the array of numbers supplied
+
+  project
+    ✔ selects the chosen properties from each element in a list
+    ✔ has an undefined property on the output tuple for any input tuple that does not have the property
+
+  promap
+    ✔ dispatches to pronfuctor["fantasy-land/promap"]() if present
+    ✔ dispatches to pronfuctor.promap() if present
+    ✔ composes two functions, f and g, before and after the final function respectively
+
+  prop
+    ✔ returns a function that fetches the appropriate property
+    ✔ handles number as property
+    ✔ shows the same behaviour as path for a nonexistent property
+    ✔ shows the same behaviour as path for an undefined property
+    ✔ shows the same behaviour as path for a null property
+    ✔ shows the same behaviour as path for a valid property and object
+    ✔ shows the same behaviour as path for a null object
+    ✔ shows the same behaviour as path for an undefined object
+    ✔ returns that value associated to a property given valid one
+    ✔ shows the same behaviour as path on any object
+    ✔ shows the same behaviour as path on any value
+
+  propEq
+    ✔ determines whether a particular property matches a given value for a specific object
+    ✔ handles number as property
+    ✔ has R.equals semantics
+    ✔ returns false if called with a null or undefined object
+
+  propIs
+    ✔ returns true if the specified object property is of the given type
+    ✔ returns false otherwise
+    ✔ handles number as property
+
+  propOr
+    ✔ returns a function that fetches the appropriate property
+    ✔ returns the default value when the property does not exist
+    ✔ returns the default value when the object is nil
+    ✔ uses the default when supplied an object with a nil value
+    ✔ handles number as property
+    ✔ shows the same behaviour as pathOr for a nonexistent property
+    ✔ shows the same behaviour as pathOr for an undefined property
+    ✔ shows the same behaviour as pathOr for a null property
+    ✔ shows the same behaviour as pathOr for a valid property and object
+    ✔ shows the same behaviour as pathOr for a null object
+    ✔ shows the same behaviour as pathOr for an undefined object
+
+  propSatisfies
+    ✔ returns true if the specified object property satisfies the given predicate
+    ✔ returns false otherwise
+    ✔ returns false if given a null or undefined object
+
+  props
+    ✔ returns empty array if no properties requested
+    ✔ returns values for requested properties
+    ✔ preserves order
+    ✔ returns undefined for nonexistent properties
+
+  range
+    ✔ returns list of numbers
+    ✔ returns the empty list if the first parameter is not larger than the second
+    ✔ returns an empty array if from > to
+
+  rebuild
+    ✔ changes keys and values
+    ✔ can skip particular entries
+    ✔ can include multiple entries for a single input
+
+  reduce
+    ✔ folds simple functions over arrays with the supplied accumulator
+    ✔ dispatches to objects that implement `reduce`
+    ✔ returns the accumulator for an empty array
+    ✔ returns the accumulator for an null/undefined list
+    ✔ Prefers the use of the iterator of an object over reduce (and handles short-circuits)
+    ✔ short circuits with reduced
+
+  reduceBy
+    ✔ splits the list into groups according to the grouping function
+    ✔ splits the list into mutation-free groups
+    ✔ returns an empty object if given an empty array
+    ✔ can act as a transducer
+    ✔ short circuits with reduced
+
+  reduceRight
+    ✔ folds lists in the right order
+    ✔ folds subtract over arrays in the right order
+    ✔ folds simple functions over arrays with the supplied accumulator
+    ✔ returns the accumulator for an empty array
+    ✔ short circuits with reduced
+
+  reduceWhile
+    ✔ reduces until its predicate fails
+    ✔ returns its accumulator when given an empty array
+    ✔ short circuits with reduced
+
+  reduced
+    ✔ wraps a value
+    ✔ flags value as reduced
+    ✔ short-circuits reduce
+
+  reject
+    ✔ reduces an array to those not matching a filter
+    ✔ returns an empty array if no element matches
+    ✔ returns an empty array if asked to filter an empty array
+    ✔ filters objects
+    ✔ dispatches to `filter` method
+    ✔ can act as a transducer
+
+  remove
+    ✔ splices out a sub-list of the given list
+    ✔ returns the appropriate sublist when start == 0
+    ✔ removes the end of the list if the count is too large
+    ✔ retains the entire list if the start is too large
+
+  renameKeys
+    ✔ converts found keys to new ones
+    ✔ ignores keys not found in the mapping
+
+  repeat
+    ✔ returns a lazy list of identical values
+    ✔ can accept any value, including `null`
+
+  replace
+    ✔ replaces substrings of the input string
+    ✔ replaces regex matches of the input string
+
+  reverse
+    ✔ reverses arrays
+    ✔ reverses twice an array should be the array itself (48ms)
+    ✔ reverses strings
+    ✔ reverses twice a string should be the string itself
+
+  scan
+    ✔ scans simple functions over arrays with the supplied accumulator
+    ✔ returns the accumulator for an empty array
+    ✔ works with transducers
+    ✔ composes with other transducers
+    ✔ works lazily: taking 3 elements must call reducer twice
+    ✔ works lazily: taking 0 elements must call reducer 0 times
+
+  sequence
+    ✔ operates on a list of lists
+    ✔ operates on a list of applicatives
+    ✔ traverses left to right
+    ✔ dispatches to `traverse` method
+    ✔ swaps types in a Maybe of Either
+
+  slice
+    ✔ retrieves the proper sublist of a list
+    ✔ handles array-like object
+    ✔ can operate on strings
+
+  sort
+    ✔ sorts the elements of a list
+    ✔ does not affect the list passed supplied
+
+  sortBy
+    ✔ sorts by a simple property of the objects
+    ✔ preserves object identity
+    ✔ sorts array-like object
+
+  sortWith
+    ✔ sorts by a simple property of the objects
+    ✔ sorts by multiple properties of the objects
+    ✔ sorts by 3 properties of the objects
+    ✔ sorts by multiple properties using ascend and descend
+    ✔ preserves object identity
+    ✔ sorts array-like object
+
+  split
+    ✔ splits a string into an array
+    ✔ the split string can be arbitrary
+
+  splitAt
+    ✔ splits an array at a given index
+    ✔ splits a string at a given index
+    ✔ can handle index greater than array length
+    ✔ can support negative index
+
+  splitEvery
+    ✔ splits a collection into slices of the specified length
+    ✔ throws if first argument is not positive
+
+  splitWhen
+    ✔ splits an array at the first instance to satisfy the predicate
+    ✔ retains all original elements
+    ✔ only splits once
+
+  splitWhenever
+    ✔ Splits an array into slices, whenever the predicate returns true
+
+  startsWith
+    ✔ should return true when a string starts with the provided value
+    ✔ should return true when a long string starts with the provided value
+    ✔ should return false when a string does not start with the provided value
+    ✔ should return false when a long string does not start with the provided value
+    ✔ should return true when an array starts with the provided value
+    ✔ should return true when an array starts with the provided values
+    ✔ should return false when an array does not start with the provided value
+    ✔ should return false when an array does not start with the provided values
+
+  subtract
+    ✔ subtracts two numbers
+    ✔ coerces its arguments to numbers
+
+  sum
+    ✔ adds together the array of numbers supplied
+    ✔ does not save the state of the accumulator
+
+  swap
+    ✔ swaps an element from one index to the other
+    ✔ does nothing when indexes are outside the list boundaries
+    ✔ does nothing when indexes are equal
+    ✔ should be the same when swapping index order
+    ✔ works with lists of arrays
+    ✔ swaps property values from one property to another
+    ✔ does nothing when property names are not defined
+    ✔ swaps characters in string from one index to another
+
+  symmetricDifference
+    ✔ finds the set of all elements in the first or second list but not both
+    ✔ does not allow duplicates in the output even if the input lists had duplicates
+    ✔ has R.equals semantics
+    ✔ works for arrays of different lengths
+    ✔ will not create a "sparse" array
+    ✔ returns an empty array if there are no different elements
+    ✔ returns empty arrays when receiving twice the same array
+    ✔ returns empty arrays when receiving an array and a permutation of it
+    ✔ returns missing items when receiving an array and a permuted subset of it
+    ✔ returns an array not containing too many items
+    ✔ returns an array containing only items coming from one of the sources
+
+  symmetricDifferenceWith
+    ✔ combines two lists into the set of all elements unique to either list based on the passed-in equality predicate
+    ✔ does not allow duplicates in the output even if the input lists had duplicates
+    ✔ does not return a "sparse" array
+
+  tail
+    ✔ returns the tail of an ordered collection
+    ✔ throws if applied to null or undefined
+
+  take
+    ✔ takes only the first `n` elements from a list
+    ✔ returns only as many as the array can provide
+    ✔ returns an equivalent list if `n` is < 0
+    ✔ never returns the input array
+    ✔ can operate on strings
+    ✔ handles zero correctly (#1224)
+    ✔ steps correct number of times
+    ✔ transducer called for every member of list if `n` is < 0
+
+  takeLast
+    ✔ takes only the last `n` elements from a list
+    ✔ returns only as many as the array can provide
+    ✔ returns an equivalent list if `n` is < 0
+    ✔ never returns the input array
+    ✔ can operate on strings
+    ✔ handles zero correctly (#1224)
+
+  takeLastWhile
+    ✔ continues taking elements while the function reports `true`
+    ✔ starts at the right arg and acknowledges undefined
+    ✔ can operate on strings
+
+  takeWhile
+    ✔ continues taking elements while the function reports `true`
+    ✔ starts at the right arg and acknowledges undefined
+    ✔ can operate on strings
+    ✔ can act as a transducer
+
+  tap
+    ✔ returns a function that always returns its argument
+    ✔ may take a function as the first argument that executes with tap's argument
+    ✔ can act as a transducer
+    ✔ dispatches to transformer objects
+
+  test
+    ✔ returns true if string matches dotAll pattern
+    ✔ returns true if string matches pattern
+    ✔ returns false if string does not match pattern
+    ✔ is referentially transparent
+    ✔ throws if first argument is not a regexp
+
+  thunkify
+    ✔ returns a function with the same arity as the given function
+    ✔ returns a function that expects arguments and returns a new invoker function
+    ✔ calls the original function with the provided arguments when all were supplied
+
+  times
+    ✔ takes a map func
+    ✔ throws if second argument is not a valid array length
+
+  toLower
+    ✔ returns the lower-case equivalent of the input string
+
+  toPairs
+    ✔ converts an object into an array of two-element [key, value] arrays
+    ✔ only iterates the object's own properties
+
+  toPairsIn
+    ✔ converts an object into an array of two-element [key, value] arrays
+    ✔ iterates properties on the object's prototype chain
+
+  toString
+    ✔ returns the string representation of null
+    ✔ returns the string representation of undefined
+    ✔ returns the string representation of a Boolean primitive
+    ✔ returns the string representation of a number primitive
+    ✔ returns the string representation of a string primitive
+    ✔ returns the string representation of a Boolean object
+    ✔ returns the string representation of a Map object
+    ✔ returns the string representation of a Number object
+    ✔ returns the string representation of a Set object
+    ✔ returns the string representation of a String object
+    ✔ returns the string representation of a Date object
+    ✔ returns the string representation of a RegExp object
+    ✔ returns the string representation of a function
+    ✔ returns the string representation of an array
+    ✔ returns the string representation of an array with non-numeric property names
+    ✔ returns the string representation of an arguments object
+    ✔ returns the string representation of a plain object
+    ✔ treats instance without custom `toString` method as plain object
+    ✔ dispatches to custom `toString` method
+    ✔ handles object with no `toString` method
+    ✔ handles circular references
+
+  toUpper
+    ✔ returns the upper-case equivalent of the input string
+
+  transduce
+    ✔ transduces into arrays
+    ✔ transduces into strings
+    ✔ transduces into objects
+    ✔ folds transformer objects over a collection with the supplied accumulator
+    ✔ dispatches to objects that implement `reduce`
+    ✔ returns the accumulator for an empty collection
+    ✔ short circuits with reduced
+
+  transpose
+    ✔ returns an array of two arrays
+    ✔ skips elements when rows are shorter
+    ✔ copes with empty arrays
+    ✔ copes with true, false, null & undefined elements of arrays
+
+  traverse
+    ✔ operates on a list of lists
+    ✔ operates on a list of applicatives
+    ✔ operates on a list of FL-applicatives
+    ✔ traverses left to right
+    ✔ dispatches to `traverse` method
+    ✔ dispatches to `fantasy-land/traverse` method
+    ✔ dispatches to `fantasy-land/traverse` method when it and `traverse` exist
+    ✔ dispatches to `traverse` when it exists and `fantasy-land/traverse` is not a function
+    ✔ operates on a FL-compliant Maybe of Either
+    ✔ works for the example in the docs
+
+  trim
+    ✔ trims a string
+    ✔ trims all ES5 whitespace
+    ✔ does not trim the zero-width space
+
+  tryCatch
+    ✔ takes two functions and return a function
+    ✔ returns a function with the same arity as the `tryer` function
+    ✔ returns the value of the first function if it does not throw
+    ✔ returns the value of the second function if the first function throws
+    ✔ the second function gets passed the error object and the same arguments as the first function
+
+  type
+    ✔ "Array" if given an array literal
+    ✔ "Object" if given an object literal
+    ✔ "RegExp" if given a RegExp literal
+    ✔ "Number" if given a numeric value
+    ✔ "Number" if given the NaN value
+    ✔ "String" if given a String literal
+    ✔ "String" if given a String object
+    ✔ "Null" if given the null value
+    ✔ "Undefined" if given the undefined value
+
+  unapply
+    ✔ returns a function which is always passed one argument
+    ✔ forwards arguments to decorated function as an array
+    ✔ returns a function with length 0
+    ✔ is the inverse of R.apply
+
+  unary
+    ✔ turns multiple-argument function into unary one
+    ✔ initial argument is passed through normally
+
+  uncurryN
+    ✔ accepts an arity
+    ✔ returns a function of the specified arity
+    ✔ forwards extra arguments
+    ✔ works with ordinary uncurried functions
+    ✔ works with ramda-curried functions
+    ✔ returns a function that supports R.__ placeholder
+
+  unfold
+    ✔ unfolds simple functions with a starting point to create a list
+    ✔ is cool!
+
+  union
+    ✔ combines two lists into the set of all their elements
+    ✔ has R.equals semantics
+
+  unionWith
+    ✔ combines two lists into the set of all their elements based on the passed-in equality predicate
+
+  uniq
+    ✔ returns a set from any array (i.e. purges duplicate elements)
+    ✔ keeps elements from the left
+    ✔ returns an empty array for an empty array
+    ✔ has R.equals semantics
+    ✔ handles null and undefined elements
+    ✔ uses reference equality for functions
+
+  uniqBy
+    ✔ returns a set from any array based on predicate
+    ✔ keeps elements from the left
+    ✔ returns an empty array for an empty array
+    ✔ has R.equals semantics
+    ✔ can act as a transducer
+
+  uniqWith
+    ✔ returns a set from any array (i.e. purges duplicate elements) based on predicate
+    ✔ keeps elements from the left
+    ✔ returns an empty array for an empty array
+    ✔ can act as a transducer
+
+  unless
+    ✔ calls the whenFalse function if the validator returns a falsy value
+    ✔ returns the argument unmodified if the validator returns a truthy value
+    ✔ returns a curried function
+
+  unnest
+    ✔ only flattens one layer deep of a nested list
+    ✔ is not destructive
+    ✔ handles array-like objects
+    ✔ flattens an array of empty arrays
+    ✔ is equivalent to R.chain(R.identity)
+
+  until
+    ✔ applies fn until pred is satisfied
+    ✔ works with lists
+    ✔ ignores fn if predicate is always true
+
+  unwind
+    ✔ returns list of destructed object if key is present as list in the object
+    ✔ returns a list containing only the original object if the key is not present in the object
+    ✔ returns a list containing only the original object if the value for that key is not iterable
+    ✔ does not treat a String as a list
+
+  update
+    ✔ updates the value at the given index of the supplied array
+    ✔ offsets negative indexes from the end of the array
+    ✔ returns the original array if the supplied index is out of bounds
+    ✔ does not mutate the original array
+    ✔ curries the arguments
+    ✔ accepts an array-like object
+
+  useWith
+    ✔ takes a list of function and returns a function
+    ✔ passes the arguments received to their respective functions
+    ✔ passes additional arguments to the main function
+    ✔ has the correct arity
+    ✔ passes context to its functions
+
+  values
+    ✔ returns an array of the given object's values
+    ✔ does not include the given object's prototype properties
+    ✔ returns an empty object for primitives
+
+  valuesIn
+    ✔ returns an array of the given object's values
+    ✔ includes the given object's prototype properties
+    ✔ works for primitives
+
+  when
+    ✔ calls the whenTrue function if the validator returns a truthy value
+    ✔ returns the argument unmodified if the validator returns a falsy value
+    ✔ returns a curried function
+
+  where
+    ✔ returns true if the test object satisfies the spec
+    ✔ does not need the spec and the test object to have the same interface (the test object will have a superset of the specs properties)
+    ✔ matches specs that have undefined properties
+    ✔ is true for an empty spec
+    ✔ matches inherited properties
+    ✔ does not match inherited spec
+
+  whereAny
+    ✔ returns true if the test object satisfies the spec
+    ✔ does not need the spec and the test object to have the same interface (the test object will have a superset of the specs properties)
+    ✔ matches specs that have undefined properties
+    ✔ is false for an empty spec
+    ✔ matches inherited properties
+    ✔ does not match inherited spec
+
+  whereEq
+    ✔ returns true if the test object satisfies the spec
+    ✔ does not need the spec and the test object to have the same interface (the test object will have a superset of the specs properties)
+    ✔ matches specs that have undefined properties
+    ✔ is true for an empty spec
+    ✔ reports true when the object equals the spec
+    ✔ matches inherited props
+    ✔ does not match inherited spec
+
+  without
+    ✔ returns an array not containing values in the first argument
+    ✔ can act as a transducer
+    ✔ has R.equals semantics
+
+  xor
+    ✔ compares two values with exclusive or
+    ✔ when both values are truthy, it should return false
+    ✔ when both values are falsy, it should return false
+    ✔ when one argument is truthy and the other is falsy, it should return true
+    ✔ returns a curried function
+
+  xprod
+    ✔ returns an empty list if either input list is empty
+    ✔ creates the collection of all cross-product pairs of its parameters
+
+  zip
+    ✔ returns an array of "tuples"
+    ✔ returns a list as long as the shorter of the lists input
+
+  zipObj
+    ✔ combines an array of keys with an array of values into a single object
+    ✔ ignores extra values
+    ✔ ignores extra keys
+    ✔ last one in wins when there are duplicate keys
+
+  zipWith
+    ✔ returns an array created by applying its passed-in function pair-wise on its passed in arrays
+    ✔ returns an array whose length is equal to the shorter of its input arrays
+
+
+  1209 passing (1s)
+
+
+> ramda@0.31.3 build
+> npm-run-all --parallel build:**
+
+
+> ramda@0.31.3 build:cjs
+> cross-env BABEL_ENV=cjs babel source --out-dir src
+
+
+> ramda@0.31.3 build:es
+> cross-env BABEL_ENV=es babel source --out-dir es && node ./scripts/addModulePackageScope.js
+
+Successfully compiled 369 files with Babel (1353ms).
+Successfully compiled 369 files with Babel (1482ms).

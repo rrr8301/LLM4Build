@@ -1,0 +1,392 @@
+
+> axios@1.11.0 test
+> npm run test:eslint && npm run test:mocha && npm run test:karma && npm run test:dtslint && npm run test:exports
+
+
+> axios@1.11.0 test:eslint
+> node bin/ssl_hotfix.js eslint lib/**/*.js
+
+Running eslint lib/adapters/adapters.js lib/adapters/fetch.js lib/adapters/http.js lib/adapters/xhr.js lib/cancel/CancelToken.js lib/cancel/CanceledError.js lib/cancel/isCancel.js lib/core/Axios.js lib/core/AxiosError.js lib/core/AxiosHeaders.js lib/core/InterceptorManager.js lib/core/buildFullPath.js lib/core/dispatchRequest.js lib/core/mergeConfig.js lib/core/settle.js lib/core/transformData.js lib/defaults/index.js lib/defaults/transitional.js lib/env/data.js lib/helpers/AxiosTransformStream.js lib/helpers/AxiosURLSearchParams.js lib/helpers/HttpStatusCode.js lib/helpers/ZlibHeaderTransformStream.js lib/helpers/bind.js lib/helpers/buildURL.js lib/helpers/callbackify.js lib/helpers/combineURLs.js lib/helpers/composeSignals.js lib/helpers/cookies.js lib/helpers/deprecatedMethod.js lib/helpers/formDataToJSON.js lib/helpers/formDataToStream.js lib/helpers/fromDataURI.js lib/helpers/isAbsoluteURL.js lib/helpers/isAxiosError.js lib/helpers/isURLSameOrigin.js lib/helpers/null.js lib/helpers/parseHeaders.js lib/helpers/parseProtocol.js lib/helpers/progressEventReducer.js lib/helpers/readBlob.js lib/helpers/resolveConfig.js lib/helpers/speedometer.js lib/helpers/spread.js lib/helpers/throttle.js lib/helpers/toFormData.js lib/helpers/toURLEncodedForm.js lib/helpers/trackStream.js lib/helpers/validator.js lib/platform/index.js on v20.19.5
+
+Setting --openssl-legacy-provider as ssl hotfix
+
+> axios@1.11.0 test:mocha
+> node bin/ssl_hotfix.js mocha test/unit/**/*.js --timeout 30000 --exit
+
+Running mocha test/unit/adapters/adapters.js test/unit/adapters/error-details.spec.js test/unit/adapters/fetch.js test/unit/adapters/http.js test/unit/core/Axios.js test/unit/core/AxiosHeaders.js test/unit/defaults/transformReponse.js test/unit/helpers/composeSignals.js test/unit/helpers/fromDataURI.js test/unit/helpers/parseProtocol.js test/unit/platform/index.js test/unit/regression/SNYK-JS-AXIOS-1038255.js test/unit/regression/SNYK-JS-AXIOS-7361793.js test/unit/regression/bugs.js test/unit/utils/utils.js --timeout 30000 --exit on v20.19.5
+
+Setting --openssl-legacy-provider as ssl hotfix
+
+
+  adapters
+    ✔ should support loading by fn handle
+    ✔ should support loading by name
+    ✔ should detect adapter unavailable status
+    ✔ should detect adapter unsupported status
+    ✔ should pick suitable adapter from the list
+
+  adapters – network-error details
+    ✔ should expose ECONNREFUSED and set error.cause on connection refusal
+    ✔ should expose self-signed TLS error and set error.cause (61ms)
+
+  supports fetch with nodejs
+    ✔ should support basic auth
+    ✔ should support stream.Readable as a payload
+    ✔ should support a timeout (504ms)
+    ✔ should combine baseURL and url
+    ✔ should support params
+    ✔ should handle fetch failed error as an AxiosError with ERR_NETWORK code (46ms)
+    ✔ should get response headers
+    responses
+      ✔ should support text response type
+      ✔ should support arraybuffer response type
+      ✔ should support blob response type
+      ✔ should support stream response type
+      ✔ should support formData response type
+      ✔ should support json response type
+    progress
+      upload
+Upload Progress 4 from 40 bytes (10.0%)
+Upload Progress 8 from 40 bytes (20.0%)
+Upload Progress 12 from 40 bytes (30.0%)
+Upload Progress 16 from 40 bytes (40.0%)
+Upload Progress 20 from 40 bytes (50.0%)
+Upload Progress 24 from 40 bytes (60.0%)
+Upload Progress 28 from 40 bytes (70.0%)
+Upload Progress 32 from 40 bytes (80.0%)
+Upload Progress 36 from 40 bytes (90.0%)
+Upload Progress 40 from 40 bytes (100.0%)
+        ✔ should support upload progress capturing (11509ms)
+        ✔ should not fail with get method
+      download
+Download Progress 4 from 40 bytes (10.0%)
+Download Progress 8 from 40 bytes (20.0%)
+Download Progress 12 from 40 bytes (30.0%)
+Download Progress 16 from 40 bytes (40.0%)
+Download Progress 20 from 40 bytes (50.0%)
+Download Progress 24 from 40 bytes (60.0%)
+Download Progress 28 from 40 bytes (70.0%)
+Download Progress 32 from 40 bytes (80.0%)
+Download Progress 36 from 40 bytes (90.0%)
+Download Progress 40 from 40 bytes (100.0%)
+        ✔ should support download progress capturing (11510ms)
+    request aborting
+      ✔ should be able to abort the request stream (504ms)
+HTTP server error: Error: aborted
+    at abortIncoming (node:_http_server:796:17)
+    at socketOnClose (node:_http_server:790:3)
+    at Socket.emit (node:events:536:35)
+    at TCP.<anonymous> (node:net:343:12) {
+  code: 'ECONNRESET',
+  bufferedData: 'chunkchunkchunkchunk'
+}
+      ✔ should be able to abort the response stream (803ms)
+    fetch adapter - Content-Type handling
+      ✔ should set correct Content-Type for FormData automatically
+    env config
+      ✔ should respect env fetch API configuration
+      ✔ should be able to request with lack of Request object
+      ✔ should be able to handle response with lack of Response object
+      ✔ should fallback to the global on undefined env value
+
+  supports http with nodejs
+    ✔ should support IPv4 literal strings
+    1) should support IPv6 literal strings
+    ✔ should throw an error if the timeout property is not parsable as a number (302ms)
+    ✔ should parse the timeout property (301ms)
+    ✔ should respect the timeout property (301ms)
+    ✔ should respect the timeoutErrorMessage property (301ms)
+    ✔ should allow passing JSON
+    ✔ should allow passing JSON with BOM
+    ✔ should redirect
+    ✔ should not redirect
+    ✔ should support max redirects
+    ✔ should support beforeRedirect
+    ✔ should support beforeRedirect and proxy with redirect
+    ✔ should wrap HTTP errors and keep stack
+    ✔ should wrap interceptor errors and keep stack
+    ✔ should preserve the HTTP verb on redirect
+    ✔ should support UTF8
+    ✔ should support basic auth
+    ✔ should support basic auth with a header
+    ✔ should provides a default User-Agent header
+    ✔ should allow the User-Agent header to be overridden
+    ✔ should allow the Content-Length header to be overridden
+    ✔ should support max content length
+    ✔ should support max content length for redirected (103ms)
+    ✔ should support max body length (105ms)
+    ✔ should properly support default max body length (follow-redirects as well) (818ms)
+    ✔ should display error while parsing params
+    ✔ should support sockets
+    ✔ should support buffers
+    ✔ should support HTTP proxies
+    ✔ should support HTTPS proxies
+    ✔ should not pass through disabled proxy
+    ✔ should support proxy set via env var
+    ✔ should support HTTPS proxy set via env var
+    ✔ should re-evaluate proxy on redirect when proxy set via env var
+    ✔ should not use proxy for domains in no_proxy
+    ✔ should use proxy for domains not in no_proxy
+    ✔ should support HTTP proxy auth
+    ✔ should support proxy auth from env
+    ✔ should support proxy auth with header
+    ✔ should support cancel
+    ✔ should combine baseURL and url
+    ✔ should support HTTP protocol (1002ms)
+    ✔ should support HTTPS protocol (74ms)
+    ✔ should return malformed URL (300ms)
+    ✔ should return unsupported protocol (300ms)
+    ✔ should supply a user-agent if one is not specified
+    ✔ should omit a user-agent if one is explicitly disclaimed
+    ✔ should throw an error if http server that aborts a chunked request (202ms)
+    ✔ should able to cancel multiple requests with CancelToken
+    ✔ should respect formSerializer config
+    ✔ should properly handle synchronous errors inside the adapter
+    ✔ should support function as paramsSerializer value
+    compression
+      ✔ should support transparent gunzip
+      ✔ should support gunzip error handling
+      ✔ should support disabling automatic decompression of response data
+      algorithms
+        gzip decompression
+          ✔ should support decompression
+          ✔ should not fail if response content-length header is missing (gzip)
+          ✔ should not fail with chunked responses (without Content-Length header)
+          ✔ should not fail with an empty response without content-length header (Z_BUF_ERROR)
+          ✔ should not fail with an empty response with content-length header (Z_BUF_ERROR)
+        GZIP decompression
+          ✔ should support decompression
+          ✔ should not fail if response content-length header is missing (GZIP)
+          ✔ should not fail with chunked responses (without Content-Length header)
+          ✔ should not fail with an empty response without content-length header (Z_BUF_ERROR)
+          ✔ should not fail with an empty response with content-length header (Z_BUF_ERROR)
+        compress decompression
+          ✔ should support decompression
+          ✔ should not fail if response content-length header is missing (compress)
+          ✔ should not fail with chunked responses (without Content-Length header)
+          ✔ should not fail with an empty response without content-length header (Z_BUF_ERROR)
+          ✔ should not fail with an empty response with content-length header (Z_BUF_ERROR)
+        deflate decompression
+          ✔ should support decompression
+          ✔ should not fail if response content-length header is missing (deflate)
+          ✔ should not fail with chunked responses (without Content-Length header)
+          ✔ should not fail with an empty response without content-length header (Z_BUF_ERROR)
+          ✔ should not fail with an empty response with content-length header (Z_BUF_ERROR)
+        deflate-raw decompression
+          ✔ should support decompression
+          ✔ should not fail if response content-length header is missing (deflate)
+          ✔ should not fail with chunked responses (without Content-Length header)
+          ✔ should not fail with an empty response without content-length header (Z_BUF_ERROR)
+          ✔ should not fail with an empty response with content-length header (Z_BUF_ERROR)
+        br decompression
+          ✔ should support decompression
+          ✔ should not fail if response content-length header is missing (br)
+          ✔ should not fail with chunked responses (without Content-Length header)
+          ✔ should not fail with an empty response without content-length header (Z_BUF_ERROR)
+          ✔ should not fail with an empty response with content-length header (Z_BUF_ERROR)
+    streams
+      ✔ should support streams
+      ✔ should pass errors for a failed stream
+pipeline error: CanceledError: Request stream has been aborted
+      ✔ should destroy the response stream with an error on request stream destroying (1009ms)
+Server warning: Premature close
+    different options for direct proxy configuration (without env variables)
+      ✔ hostname and trailing colon in protocol
+      ✔ hostname and no trailing colon in protocol
+      ✔ both hostname and host -> hostname takes precedence
+      ✔ only host and https protocol
+    FormData
+      form-data instance (https://www.npmjs.com/package/form-data)
+        ✔ should allow passing FormData
+      SpecCompliant FormData
+        ✔ should allow passing FormData
+      toFormData helper
+        ✔ should properly serialize nested objects for parsing with multer.js (express.js)
+    Blob
+      ✔ should support Blob
+    URLEncoded Form
+      ✔ should post object data as url-encoded form if content-type is application/x-www-form-urlencoded
+    Data URL
+      ✔ should support requesting data URL as a Buffer
+      ✔ should support requesting data URL as a Blob (if supported by the environment)
+      ✔ should support requesting data URL as a String (text)
+      ✔ should support requesting data URL as a Stream
+    progress
+      upload
+onUploadProgress 4 / 40
+onUploadProgress 8 / 40
+onUploadProgress 12 / 40
+onUploadProgress 16 / 40
+onUploadProgress 20 / 40
+onUploadProgress 24 / 40
+onUploadProgress 28 / 40
+onUploadProgress 32 / 40
+onUploadProgress 36 / 40
+onUploadProgress 40 / 40
+        ✔ should support upload progress capturing (11009ms)
+      download
+onDownloadProgress 4 / 40
+onDownloadProgress 8 / 40
+onDownloadProgress 12 / 40
+onDownloadProgress 16 / 40
+onDownloadProgress 20 / 40
+onDownloadProgress 24 / 40
+onDownloadProgress 28 / 40
+onDownloadProgress 32 / 40
+onDownloadProgress 36 / 40
+onDownloadProgress 40 / 40
+        ✔ should support download progress capturing (11010ms)
+    Rate limit
+      ✔ should support upload rate limit (9513ms)
+      ✔ should support download rate limit (9511ms)
+    request aborting
+pipeline error: CanceledError: canceled
+      ✔ should be able to abort the response stream (609ms)
+Server warning: Premature close
+    DNS
+      ✔ should support a custom DNS lookup function
+      ✔ should support a custom DNS lookup function with address entry passing
+      ✔ should support a custom DNS lookup function (async)
+      ✔ should support a custom DNS lookup function with address entry (async)
+      ✔ should support a custom DNS lookup function that returns only IP address (async)
+      ✔ should handle errors
+    JSON
+      ✔ should support reviver on JSON.parse
+
+  Axios
+    ✔ should not throw if the config argument is omitted
+    handle un-writable error stack
+      ✔ should support errors with a defined but un-writable stack
+      ✔ should support errors with an undefined and un-writable stack
+      ✔ should support errors with a custom getter/setter for the stack property
+      ✔ should support errors with a custom getter/setter for the stack property (null case)
+
+  AxiosHeaders
+    ✔ should support headers argument
+    ✔ should support uppercase name mapping for names overlapped by class methods
+    ✔ should be caseless
+    set
+      ✔ should support adding a single header
+      ✔ should support adding multiple headers
+      ✔ should support adding multiple headers from raw headers string
+      ✔ should not rewrite header the header if the value is false
+      ✔ should not rewrite the header if its value is false, unless rewrite options is set to true
+      ✔ should support iterables as a key-value source object
+      ✔ should support setting multiple header values from an iterable source
+    get
+      filter
+        ✔ should support RegExp
+        ✔ should support function
+    has
+      ✔ should return true if the header is defined, otherwise false
+      filter
+        ✔ should support RegExp
+        ✔ should support function
+        ✔ should support string pattern
+    delete
+      ✔ should delete the header
+      ✔ should return true if the header has been deleted, otherwise false
+      ✔ should support headers array
+      filter
+        ✔ should support RegExp
+        ✔ should support function
+        ✔ should support string pattern
+    clear
+      ✔ should clear all headers
+      ✔ should clear matching headers if a matcher was specified
+    toJSON
+      ✔ should return headers object with original headers case
+    accessors
+      ✔ should support get accessor
+      ✔ should support set accessor
+      ✔ should support has accessor
+    normalize()
+      ✔ should support auto-formatting
+      ✔ should support external defined values
+      ✔ should support array values
+    AxiosHeaders.concat
+      ✔ should concatenate plain headers into an AxiosHeader instance
+      ✔ should concatenate raw headers into an AxiosHeader instance
+      ✔ should concatenate Axios headers into a new AxiosHeader instance
+    toString
+      ✔ should serialize AxiosHeader instance to a raw headers string
+    getSetCookie
+      ✔ should return set-cookie
+      ✔ should return empty set-cookie
+
+  transformResponse
+    200 request
+      ✔ parses json
+      ✔ ignores XML
+    204 request
+      ✔ does not parse the empty string
+      ✔ does not parse undefined
+
+  helpers::composeSignals
+    ✔ should abort when any of the signals abort
+    ✔ should abort on timeout (100ms)
+    ✔ should return undefined if signals and timeout are not provided
+
+  helpers::fromDataURI
+    ✔ should return buffer from data uri
+
+  helpers::parseProtocol
+    ✔ should parse protocol part if it exists
+
+  generateString
+    ✔ should generate a string of the specified length using the default alphabet
+    ✔ should generate a string using only characters from the default alphabet
+
+  Server-Side Request Forgery (SSRF)
+    ✔ obeys proxy settings when following redirects
+
+  Server-Side Request Forgery (SSRF)
+    ✔ should not fetch in server-side mode
+    should fetch in client-side mode
+      ✔ should fetch in client-side mode
+
+  issues
+    4999
+      ✔ should not fail with query parsing (312ms)
+    5028
+      ✔ should handle set-cookie headers as an array
+
+  utils
+    ✔ should validate Stream
+    ✔ should validate Buffer
+    utils::isFormData
+      ✔ should detect the FormData instance provided by the `form-data` package
+      ✔ should not call toString method on built-in objects instances
+      ✔ should not call toString method on built-in objects instances, even if append method exists
+      ✔ should detect custom FormData instances by toStringTag signature and append method presence
+    toJSON
+      ✔ should convert to a plain object without circular references
+      ✔ should use objects with defined toJSON method without rebuilding
+    Buffer RangeError Fix
+      ✔ should handle large Buffer in isEmptyObject without RangeError
+      ✔ should handle large Buffer in forEach without RangeError
+      ✔ should handle large Buffer in findKey without RangeError
+
+
+  212 passing (1m)
+  1 failing
+
+  1) supports http with nodejs
+       should support IPv6 literal strings:
+     Error: connect EADDRNOTAVAIL ::1:4444 - Local (:::0)
+      at AxiosError.from (file:///app/lib/core/AxiosError.js:96:14)
+      at RedirectableRequest.handleRequestError (file:///app/lib/adapters/http.js:620:25)
+      at RedirectableRequest.emit (node:events:524:28)
+      at eventHandlers.<computed> (node_modules/follow-redirects/index.js:38:24)
+      at ClientRequest.emit (node:events:524:28)
+      at emitErrorEvent (node:_http_client:101:11)
+      at Socket.socketErrorListener (node:_http_client:504:5)
+      at Socket.emit (node:events:524:28)
+      at emitErrorNT (node:internal/streams/destroy:169:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+      at Axios.request (file:///app/lib/core/Axios.js:45:41)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+
+

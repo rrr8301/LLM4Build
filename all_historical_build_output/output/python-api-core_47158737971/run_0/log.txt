@@ -1,0 +1,60 @@
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/dist-packages (80.9.0)
+Requirement already satisfied: pip in /usr/local/lib/python3.11/dist-packages (25.2)
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/dist-packages (0.45.1)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Requirement already satisfied: nox in /usr/local/lib/python3.11/dist-packages (2025.5.1)
+Requirement already satisfied: argcomplete<4,>=1.9.4 in /usr/local/lib/python3.11/dist-packages (from nox) (3.6.2)
+Requirement already satisfied: attrs>=23.1 in /usr/local/lib/python3.11/dist-packages (from nox) (25.3.0)
+Requirement already satisfied: colorlog<7,>=2.6.1 in /usr/local/lib/python3.11/dist-packages (from nox) (6.9.0)
+Requirement already satisfied: dependency-groups>=1.1 in /usr/local/lib/python3.11/dist-packages (from nox) (1.3.1)
+Requirement already satisfied: packaging>=20.9 in /usr/local/lib/python3.11/dist-packages (from nox) (25.0)
+Requirement already satisfied: virtualenv>=20.14.1 in /usr/local/lib/python3.11/dist-packages (from nox) (20.33.1)
+Requirement already satisfied: distlib<1,>=0.3.7 in /usr/local/lib/python3.11/dist-packages (from virtualenv>=20.14.1->nox) (0.4.0)
+Requirement already satisfied: filelock<4,>=3.12.2 in /usr/local/lib/python3.11/dist-packages (from virtualenv>=20.14.1->nox) (3.18.0)
+Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.11/dist-packages (from virtualenv>=20.14.1->nox) (4.3.8)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+nox > Running session unit-3.11
+nox > Creating virtual environment (virtualenv) using python3.11 in .nox/unit-3-11
+nox > python -m pip install dataclasses 'mock; python_version=='"'"'3.7'"'"'' pytest pytest-cov pytest-xdist
+nox > python -m pip install -e '.[grpc]' -c /app/testing/constraints-3.11.txt
+nox > python -c 'import google.protobuf; print(google.protobuf.__version__)'
+6.31.1
+nox > python -c 'import proto; hasattr(proto, "version") and print(proto.version.__version__)'
+1.26.1
+nox > python -c 'import grpc; print(grpc.__version__)'
+1.74.0
+nox > python -c 'import google.auth; print(google.auth.__version__)'
+2.40.3
+nox > python -m pip install asyncmock pytest-asyncio
+nox > python -m pytest --quiet --cov=google.api_core --cov=tests.unit --cov-append --cov-config=.coveragerc --cov-report= --cov-fail-under=0 -n=auto tests/unit --cov=tests.asyncio tests/asyncio
+bringing up nodes...
+bringing up nodes...
+
+.......s..................s...........................s..s.............. [  6%]
+...............................s........................................ [ 13%]
+...............................................s........................ [ 19%]
+......................s........................s........................ [ 26%]
+....s................................................................... [ 33%]
+.............................................................s.......... [ 39%]
+........................................................................ [ 46%]
+........................................................................ [ 52%]
+........................................................................ [ 59%]
+...................................................s.................... [ 66%]
+........................................................................ [ 72%]
+........................................................................ [ 79%]
+........................................................................ [ 86%]
+........................................................................ [ 92%]
+........................................................................ [ 99%]
+.......                                                                  [100%]
+=============================== warnings summary ===============================
+tests/asyncio/test_operation_async.py::test_metadata
+  tests/asyncio/test_operation_async.py:87: PytestWarning: The test <Function test_metadata> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.
+    @pytest.mark.asyncio
+
+tests/asyncio/test_operation_async.py::test_from_gapic
+  tests/asyncio/test_operation_async.py:180: PytestWarning: The test <Function test_from_gapic> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.
+    @pytest.mark.asyncio
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1076 passed, 11 skipped, 2 warnings in 12.37s
+nox > Session unit-3.11 was successful.

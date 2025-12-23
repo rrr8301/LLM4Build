@@ -1,0 +1,72 @@
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+Scope: all 193 workspace projects
+Already up to date
+Done in 1.5s using pnpm v10.15.0
+/usr/local/bin/run.sh: line 14: git: command not found
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> monorepo-root@ test-branch /app
+> pnpm pretest && pnpm lint && git remote set-branches --add origin main && git fetch origin main && pnpm run test-pkgs-branch
+
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> monorepo-root@ pretest /app
+> pnpm run compile-only && pnpm --dir=__fixtures__ run prepareFixtures
+
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> monorepo-root@ compile-only /app
+> ts-node __utils__/scripts/src/typecheck-only.ts && pnpm -F pnpm compile
+
+pnpm                                     |  WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> pnpm@10.15.1 compile /app/pnpm
+> tsc --build && pnpm run lint --fix && rimraf dist bin/nodes && pnpm run bundle && shx cp -r node-gyp-bin dist/node-gyp-bin && shx cp -r node_modules/@pnpm/tabtab/lib/templates dist/templates && shx cp -r node_modules/ps-list/vendor dist/vendor && shx cp pnpmrc dist/pnpmrc
+
+ WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> pnpm@10.15.1 lint /app/pnpm
+> eslint "src/**/*.ts" "test/**/*.ts" --fix
+
+ WARN  The field "pnpm.overrides" was found in /app/pnpm/package.json. This will not take effect. You should configure "pnpm.overrides" at the root of the workspace instead.
+
+> pnpm@10.15.1 bundle /app/pnpm
+> ts-node bundle.ts
+
+
+> @ prepareFixtures /app/__fixtures__
+> pnpm run step1 && pnpm run step2 && pnpm run step3 && pnpm run step4 && pnpm run step5
+
+
+
+> @ step1 /app/__fixtures__
+> node ../pnpm/dist/pnpm.cjs install -rf --frozen-lockfile --no-shared-workspace-lockfile --no-link-workspace-packages
+
+.                                        |  WARN  using --force I sure hope you know what you are doing
+Scope: all 26 workspace projects
+circular                                 | Progress: resolved 1, reused 0, downloaded 0, added 0
+circular                                 |   +4 +
+fixture                                  | Progress: resolved 1, reused 0, downloaded 0, added 0
+fixture                                  |  +12 +
+fixture-with-no-pkg-name-and-no-version  | Progress: resolved 1, reused 0, downloaded 0, added 0
+fixture-with-no-pkg-name-and-no-version  |  +12 +
+fixture-with-no-pkg-version              | Progress: resolved 1, reused 0, downloaded 0, added 0
+fixture-with-no-pkg-version              |  +12 +
+undefined
+general                                  | Progress: resolved 1, reused 0, downloaded 0, added 0
+general                                  |  +13 +
+circular                                 | Progress: resolved 4, reused 0, downloaded 3, added 0
+fixture                                  | Progress: resolved 12, reused 6, downloaded 2, added 5
+fixture-with-no-pkg-name-and-no-version  | Progress: resolved 12, reused 0, downloaded 0, added 6
+fixture-with-no-pkg-version              | Progress: resolved 12, reused 0, downloaded 0, added 7
+general                                  | Progress: resolved 13, reused 6, downloaded 7, added 1
+circular                                 | Progress: resolved 4, reused 0, downloaded 4, added 4, done
+general                                  | Progress: resolved 13, reused 6, downloaded 7, added 13, done
+/app/__fixtures__/fixture:
+ ERR_PNPM_ENOENT  ENOENT: no such file or directory, copyfile '/root/.local/share/pnpm/store/v10/files/db/55dbdeb9fb291ac32a00404329ec1a7ae3afefa22aed5b0210af9247704dddd05ee755d8b0ec570b350e72859a61c4c98bc48dae90ea8d108d56b71d35ebe9' -> '/root/.local/share/pnpm/store/v10/links/detect-indent/5.0.0/aad22d583a88b265bc659648d983673a095ebc8ce9b15d2f1c9623d3f97bd043/node_modules/detect-indent_tmp_307/package.json'
+ ELIFECYCLE  Command failed with exit code 1.
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+ ELIFECYCLE  Command failed with exit code 1.
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.

@@ -1,0 +1,15 @@
+py311-coverage: install_deps> python -I -m pip install coverage-enable-subprocess
+.pkg_external_sdist_meta: install_requires> python -I -m pip install 'setuptools-scm[toml]>=6.2.3' 'setuptools>=77'
+.pkg_external_sdist_meta: _optional_hooks /app/.tox/.pkg_external/tmp/sdist-extract/pytest-0.1.0> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg_external_sdist_meta: get_requires_for_build_sdist /app/.tox/.pkg_external/tmp/sdist-extract/pytest-0.1.0> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg_external_sdist_meta: get_requires_for_build_wheel /app/.tox/.pkg_external/tmp/sdist-extract/pytest-0.1.0> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg_external_sdist_meta: prepare_metadata_for_build_wheel /app/.tox/.pkg_external/tmp/sdist-extract/pytest-0.1.0> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+py311-coverage: install_package_deps> python -I -m pip install argcomplete 'attrs>=19.2' 'colorama>=0.4; sys_platform == "win32"' 'exceptiongroup>=1; python_version < "3.11"' 'hypothesis>=3.56' 'iniconfig>=1.0.1' mock 'packaging>=22' 'pluggy<2,>=1.5' 'pygments>=2.7.2' requests setuptools 'tomli>=1; python_version < "3.11"' xmlschema
+py311-coverage: install_package> python -I -m pip install --force-reinstall --no-deps /app/dist/pytest-0.1.0.tar.gz
+py311-coverage: commands[0]> coverage run -m pytest
+ERROR: /app/pyproject.toml: 'minversion' requires pytest-2.0, actual pytest-0.1.0'
+
+py311-coverage: exit 4 (0.39 seconds) /app> coverage run -m pytest pid=83
+  py311-coverage: FAIL code 4 (15.41=setup[15.02]+cmd[0.39] seconds)
+  evaluation failed :( (15.48 seconds)
+No data to report.

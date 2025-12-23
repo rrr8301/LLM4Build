@@ -1,0 +1,1512 @@
+Requirement already satisfied: pip in ./.venv/lib/python3.11/site-packages (25.2)
+Requirement already satisfied: setuptools in ./.venv/lib/python3.11/site-packages (80.9.0)
+Obtaining file:///app
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.17 in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (2.3.4)
+Requirement already satisfied: packaging>=20.0 in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (25.0)
+Requirement already satisfied: psutil in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (7.1.0)
+Requirement already satisfied: pyyaml in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (6.0.3)
+Requirement already satisfied: torch>=1.13.0 in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (2.9.0)
+Requirement already satisfied: transformers in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (4.57.1)
+Requirement already satisfied: tqdm in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (4.67.1)
+Requirement already satisfied: accelerate>=0.21.0 in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (1.10.1)
+Requirement already satisfied: safetensors in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (0.6.2)
+Requirement already satisfied: huggingface_hub>=0.25.0 in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (0.35.3)
+Requirement already satisfied: black in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (25.9.0)
+Requirement already satisfied: hf-doc-builder in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (0.5.0)
+Requirement already satisfied: ruff~=0.12.8 in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (0.12.12)
+Requirement already satisfied: pytest in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (8.4.2)
+Requirement already satisfied: pytest-cov in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (7.0.0)
+Requirement already satisfied: pytest-xdist in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (3.8.0)
+Requirement already satisfied: parameterized in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (0.9.0)
+Requirement already satisfied: datasets in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (4.2.0)
+Requirement already satisfied: diffusers in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (0.35.2)
+Requirement already satisfied: scipy in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (1.16.2)
+Requirement already satisfied: protobuf in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (6.33.0)
+Requirement already satisfied: sentencepiece in ./.venv/lib/python3.11/site-packages (from peft==0.17.2.dev0) (0.2.1)
+Requirement already satisfied: filelock in ./.venv/lib/python3.11/site-packages (from huggingface_hub>=0.25.0->peft==0.17.2.dev0) (3.20.0)
+Requirement already satisfied: fsspec>=2023.5.0 in ./.venv/lib/python3.11/site-packages (from huggingface_hub>=0.25.0->peft==0.17.2.dev0) (2025.9.0)
+Requirement already satisfied: requests in ./.venv/lib/python3.11/site-packages (from huggingface_hub>=0.25.0->peft==0.17.2.dev0) (2.32.5)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in ./.venv/lib/python3.11/site-packages (from huggingface_hub>=0.25.0->peft==0.17.2.dev0) (4.15.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in ./.venv/lib/python3.11/site-packages (from huggingface_hub>=0.25.0->peft==0.17.2.dev0) (1.1.10)
+Requirement already satisfied: sympy>=1.13.3 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (3.5)
+Requirement already satisfied: jinja2 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (3.1.6)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (12.8.90)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (9.10.2.21)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (0.7.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (2.27.5)
+Requirement already satisfied: nvidia-nvshmem-cu12==3.3.20 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (3.3.20)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (1.13.1.3)
+Requirement already satisfied: triton==3.5.0 in ./.venv/lib/python3.11/site-packages (from torch>=1.13.0->peft==0.17.2.dev0) (3.5.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./.venv/lib/python3.11/site-packages (from sympy>=1.13.3->torch>=1.13.0->peft==0.17.2.dev0) (1.3.0)
+Requirement already satisfied: click>=8.0.0 in ./.venv/lib/python3.11/site-packages (from black->peft==0.17.2.dev0) (8.3.0)
+Requirement already satisfied: mypy-extensions>=0.4.3 in ./.venv/lib/python3.11/site-packages (from black->peft==0.17.2.dev0) (1.1.0)
+Requirement already satisfied: pathspec>=0.9.0 in ./.venv/lib/python3.11/site-packages (from black->peft==0.17.2.dev0) (0.12.1)
+Requirement already satisfied: platformdirs>=2 in ./.venv/lib/python3.11/site-packages (from black->peft==0.17.2.dev0) (4.5.0)
+Requirement already satisfied: pytokens>=0.1.10 in ./.venv/lib/python3.11/site-packages (from black->peft==0.17.2.dev0) (0.2.0)
+Requirement already satisfied: pyarrow>=21.0.0 in ./.venv/lib/python3.11/site-packages (from datasets->peft==0.17.2.dev0) (21.0.0)
+Requirement already satisfied: dill<0.4.1,>=0.3.0 in ./.venv/lib/python3.11/site-packages (from datasets->peft==0.17.2.dev0) (0.4.0)
+Requirement already satisfied: pandas in ./.venv/lib/python3.11/site-packages (from datasets->peft==0.17.2.dev0) (2.3.3)
+Requirement already satisfied: httpx<1.0.0 in ./.venv/lib/python3.11/site-packages (from datasets->peft==0.17.2.dev0) (0.28.1)
+Requirement already satisfied: xxhash in ./.venv/lib/python3.11/site-packages (from datasets->peft==0.17.2.dev0) (3.6.0)
+Requirement already satisfied: multiprocess<0.70.17 in ./.venv/lib/python3.11/site-packages (from datasets->peft==0.17.2.dev0) (0.70.16)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in ./.venv/lib/python3.11/site-packages (from fsspec[http]<=2025.9.0,>=2023.1.0->datasets->peft==0.17.2.dev0) (3.13.0)
+Requirement already satisfied: anyio in ./.venv/lib/python3.11/site-packages (from httpx<1.0.0->datasets->peft==0.17.2.dev0) (4.11.0)
+Requirement already satisfied: certifi in ./.venv/lib/python3.11/site-packages (from httpx<1.0.0->datasets->peft==0.17.2.dev0) (2025.10.5)
+Requirement already satisfied: httpcore==1.* in ./.venv/lib/python3.11/site-packages (from httpx<1.0.0->datasets->peft==0.17.2.dev0) (1.0.9)
+Requirement already satisfied: idna in ./.venv/lib/python3.11/site-packages (from httpx<1.0.0->datasets->peft==0.17.2.dev0) (3.11)
+Requirement already satisfied: h11>=0.16 in ./.venv/lib/python3.11/site-packages (from httpcore==1.*->httpx<1.0.0->datasets->peft==0.17.2.dev0) (0.16.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in ./.venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets->peft==0.17.2.dev0) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in ./.venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets->peft==0.17.2.dev0) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in ./.venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets->peft==0.17.2.dev0) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ./.venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets->peft==0.17.2.dev0) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./.venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets->peft==0.17.2.dev0) (6.7.0)
+Requirement already satisfied: propcache>=0.2.0 in ./.venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets->peft==0.17.2.dev0) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in ./.venv/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.9.0,>=2023.1.0->datasets->peft==0.17.2.dev0) (1.22.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.11/site-packages (from requests->huggingface_hub>=0.25.0->peft==0.17.2.dev0) (3.4.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./.venv/lib/python3.11/site-packages (from requests->huggingface_hub>=0.25.0->peft==0.17.2.dev0) (2.5.0)
+Requirement already satisfied: sniffio>=1.1 in ./.venv/lib/python3.11/site-packages (from anyio->httpx<1.0.0->datasets->peft==0.17.2.dev0) (1.3.1)
+Requirement already satisfied: importlib_metadata in ./.venv/lib/python3.11/site-packages (from diffusers->peft==0.17.2.dev0) (8.7.0)
+Requirement already satisfied: regex!=2019.12.17 in ./.venv/lib/python3.11/site-packages (from diffusers->peft==0.17.2.dev0) (2025.9.18)
+Requirement already satisfied: Pillow in ./.venv/lib/python3.11/site-packages (from diffusers->peft==0.17.2.dev0) (12.0.0)
+Requirement already satisfied: GitPython in ./.venv/lib/python3.11/site-packages (from hf-doc-builder->peft==0.17.2.dev0) (3.1.45)
+Requirement already satisfied: nbformat in ./.venv/lib/python3.11/site-packages (from hf-doc-builder->peft==0.17.2.dev0) (5.10.4)
+Requirement already satisfied: gitdb<5,>=4.0.1 in ./.venv/lib/python3.11/site-packages (from GitPython->hf-doc-builder->peft==0.17.2.dev0) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in ./.venv/lib/python3.11/site-packages (from gitdb<5,>=4.0.1->GitPython->hf-doc-builder->peft==0.17.2.dev0) (5.0.2)
+Requirement already satisfied: zipp>=3.20 in ./.venv/lib/python3.11/site-packages (from importlib_metadata->diffusers->peft==0.17.2.dev0) (3.23.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.11/site-packages (from jinja2->torch>=1.13.0->peft==0.17.2.dev0) (3.0.3)
+Requirement already satisfied: fastjsonschema>=2.15 in ./.venv/lib/python3.11/site-packages (from nbformat->hf-doc-builder->peft==0.17.2.dev0) (2.21.2)
+Requirement already satisfied: jsonschema>=2.6 in ./.venv/lib/python3.11/site-packages (from nbformat->hf-doc-builder->peft==0.17.2.dev0) (4.25.1)
+Requirement already satisfied: jupyter-core!=5.0.*,>=4.12 in ./.venv/lib/python3.11/site-packages (from nbformat->hf-doc-builder->peft==0.17.2.dev0) (5.9.1)
+Requirement already satisfied: traitlets>=5.1 in ./.venv/lib/python3.11/site-packages (from nbformat->hf-doc-builder->peft==0.17.2.dev0) (5.14.3)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./.venv/lib/python3.11/site-packages (from jsonschema>=2.6->nbformat->hf-doc-builder->peft==0.17.2.dev0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in ./.venv/lib/python3.11/site-packages (from jsonschema>=2.6->nbformat->hf-doc-builder->peft==0.17.2.dev0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.7.1 in ./.venv/lib/python3.11/site-packages (from jsonschema>=2.6->nbformat->hf-doc-builder->peft==0.17.2.dev0) (0.27.1)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./.venv/lib/python3.11/site-packages (from pandas->datasets->peft==0.17.2.dev0) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./.venv/lib/python3.11/site-packages (from pandas->datasets->peft==0.17.2.dev0) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in ./.venv/lib/python3.11/site-packages (from pandas->datasets->peft==0.17.2.dev0) (2025.2)
+Requirement already satisfied: six>=1.5 in ./.venv/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas->datasets->peft==0.17.2.dev0) (1.17.0)
+Requirement already satisfied: iniconfig>=1 in ./.venv/lib/python3.11/site-packages (from pytest->peft==0.17.2.dev0) (2.1.0)
+Requirement already satisfied: pluggy<2,>=1.5 in ./.venv/lib/python3.11/site-packages (from pytest->peft==0.17.2.dev0) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in ./.venv/lib/python3.11/site-packages (from pytest->peft==0.17.2.dev0) (2.19.2)
+Requirement already satisfied: coverage>=7.10.6 in ./.venv/lib/python3.11/site-packages (from coverage[toml]>=7.10.6->pytest-cov->peft==0.17.2.dev0) (7.11.0)
+Requirement already satisfied: execnet>=2.1 in ./.venv/lib/python3.11/site-packages (from pytest-xdist->peft==0.17.2.dev0) (2.1.1)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in ./.venv/lib/python3.11/site-packages (from transformers->peft==0.17.2.dev0) (0.22.1)
+Building wheels for collected packages: peft
+  Building editable for peft (pyproject.toml): started
+  Building editable for peft (pyproject.toml): finished with status 'done'
+  Created wheel for peft: filename=peft-0.17.2.dev0-0.editable-py3-none-any.whl size=10763 sha256=3f19241480dcc727183a05b40612647b24fda74cac90da37ecc3a425042b7abe
+  Stored in directory: /tmp/pip-ephem-wheel-cache-m5gjvxry/wheels/57/0f/98/bb57b2b57b95807699b822a35c022f139d38a02c27922f27ce
+Successfully built peft
+Installing collected packages: peft
+  Attempting uninstall: peft
+    Found existing installation: peft 0.17.2.dev0
+    Uninstalling peft-0.17.2.dev0:
+      Successfully uninstalled peft-0.17.2.dev0
+Successfully installed peft-0.17.2.dev0
+python -m pytest -n 3 tests/
+============================= test session starts ==============================
+platform linux -- Python 3.11.0rc1, pytest-8.4.2, pluggy-1.6.0
+rootdir: /app
+configfile: pyproject.toml
+plugins: anyio-4.11.0, xdist-3.8.0, cov-7.0.0
+created: 3/3 workers
+3 workers [19900 items]
+
+sssssssssssssssssssssssss............................................... [  0%]
+........................................................................ [  0%]
+........................................................................ [  1%]
+........................................................................ [  1%]
+........................................................................ [  1%]
+........................................................................ [  2%]
+........................................................................ [  2%]
+........................................................................ [  2%]
+........................................................................ [  3%]
+........................................................................ [  3%]
+........................................................................ [  3%]
+........................................................................ [  4%]
+........................................................................ [  4%]
+........................................................................ [  5%]
+........................................................................ [  5%]
+........................................................................ [  5%]
+..................sss.sssssssss.sssssssss.ssssssss.ssssssss.ssssssssssss [  6%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [  6%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [  6%]
+sssssssssssssssssss..................................................... [  7%]
+........................................................................ [  7%]
+........................................................................ [  7%]
+..........ss............................................................ [  8%]
+........................................................................ [  8%]
+........................................................................ [  9%]
+........................................................................ [  9%]
+.......................................................................s [  9%]
+sssssssssssssss.sssssssssssssss.ssssssssssssssss.sssssssssssssssss.sssss [ 10%]
+ssssssssss.ssssssssssssssss.sssssssssss.ss.sssssssssssssssss.ssss....... [ 10%]
+.....sssssssssssssss.sssssssssssssssss.ssssssss......................... [ 10%]
+........................................................................ [ 11%]
+........................................................................ [ 11%]
+........................................................................ [ 11%]
+........................................................................ [ 12%]
+....................................x..............................x.... [ 12%]
+........................................................x............... [ 13%]
+........................................................................ [ 13%]
+........................................................................ [ 13%]
+........................................................................ [ 14%]
+........................................................................ [ 14%]
+........................................................................ [ 14%]
+........................................................................ [ 15%]
+..........................ss............................................ [ 15%]
+........................................................................ [ 15%]
+........................................................................ [ 16%]
+........................................................................ [ 16%]
+........................................................................ [ 17%]
+........................................................................ [ 17%]
+........................................................................ [ 17%]
+........................................................................ [ 18%]
+........................................................................ [ 18%]
+ssss.................................................................... [ 18%]
+........................................................................ [ 19%]
+...........sssssssssssssss..............................sssss.sssssss... [ 19%]
+........................................................................ [ 19%]
+....................................................................ssss [ 20%]
+........................................................................ [ 20%]
+................ssssssss.sssssssssssssssssssssssss.sssssssssssssssssssss [ 20%]
+ssssssssssssss.ss........s.ssssss.sss.ssssssssssssss.sss.ssss.ssss.sssss [ 21%]
+.............................ssss....................................... [ 21%]
+........................................................................ [ 22%]
+.............................................s....s.....s............... [ 22%]
+..................s.....ss.s......s............s.....s.ss.......s....... [ 22%]
+..................s..................................................... [ 23%]
+...s.................................................ssss.s............. [ 23%]
+...........................s...........................................s [ 23%]
+............................................s........................... [ 24%]
+........................................................................ [ 24%]
+........................................................................ [ 24%]
+........................................................................ [ 25%]
+........................................................................ [ 25%]
+........................................................................ [ 26%]
+........................................................................ [ 26%]
+........................................................................ [ 26%]
+........................................................................ [ 27%]
+................................................s.s..................... [ 27%]
+........................................................................ [ 27%]
+......................sssss.............sssss.....................ssssss [ 28%]
+sssssssssss.sssssssssssssssssssss.ss.................................... [ 28%]
+.......ss............................................................... [ 28%]
+......................................................sssss............. [ 29%]
+....ssss.sssssss..............ssssss.sssssssssssssssssss.sssssssssssssss [ 29%]
+........................................................................ [ 30%]
+........................................................................ [ 30%]
+........................................................................ [ 30%]
+........................................................................ [ 31%]
+...ssssssssssssssssssssssssssssssssssssssss.ssssssssssssssssssssssssssss [ 31%]
+ssssssssssssssssssssssssssssssss.............s.sssssssssssssssssssssssss [ 31%]
+ssssssssssssss.sssssssssssssssssssssss...........................s...... [ 32%]
+........................................................................ [ 32%]
+........................................................................ [ 32%]
+........................................................................ [ 33%]
+........................................................................ [ 33%]
+........................................................................ [ 34%]
+.................ssss................................................... [ 34%]
+........................................................................ [ 34%]
+..................................................................ssssss [ 35%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 35%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 35%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss....s..... [ 36%]
+.....s...................ss........s..s..............s................s. [ 36%]
+................s...............s....s...s...s................ss........ [ 36%]
+........................ss.................................ss........... [ 37%]
+........................xx.............................................. [ 37%]
+......................................s....................s.....xx..... [ 37%]
+....................ss.................sssssssssssssssssssssssssssssssss [ 38%]
+ssssssssssssssssssssssssssssssssssss.................................... [ 38%]
+........................................................................ [ 39%]
+........................................................................ [ 39%]
+........................................................................ [ 39%]
+.............................s.....s.................................... [ 40%]
+................s...............s....................................... [ 40%]
+........s............................................................... [ 40%]
+.....................................s..s............................... [ 41%]
+........................................................................ [ 41%]
+........................................................................ [ 41%]
+..........................................................s............. [ 42%]
+........................................................................ [ 42%]
+.................................s...................................... [ 43%]
+........s...............................s............................... [ 43%]
+.......s..........s............s..s...................................s. [ 43%]
+...................................................................s...s [ 44%]
+........................................................................ [ 44%]
+........................................................................ [ 44%]
+.....s.................................................................. [ 45%]
+........................................................................ [ 45%]
+.....................................s................s................. [ 45%]
+..................................s..................................... [ 46%]
+........................................................................ [ 46%]
+........................................................................ [ 47%]
+........................................................................ [ 47%]
+........................................................................ [ 47%]
+............................s........................................... [ 48%]
+..........................................s......................s...... [ 48%]
+.............................s..................................s....... [ 48%]
+..........................................................ssss.ssssssss. [ 49%]
+..................s..................................................s.. [ 49%]
+............................sssssssss..s................................ [ 49%]
+...................s..............s......s........s..................... [ 50%]
+........................s.....................s.......ssssssssssssssssss [ 50%]
+ssssssssssssssssssssssssssssssssssssssssssssssss.sssssssssssssssssssssss [ 51%]
+sssssssssssssssssssssssssssssssssssssssssss.sss...............sssssssss. [ 51%]
+.s.....sssssssss......s............s..........................ssssssssss [ 51%]
+ssssssssssssssssssssssssssssss.sssssssssssssssssssssssssssssssssssssssss [ 52%]
+sssssssssssssssssssssssssssssssssssssssssssssss.ssssssssssssssssssssssss [ 52%]
+ssssssssss........s...............................ssssssssssssssssssssss [ 52%]
+ssssss.ssssssssssssssss.ssssssssss...sssssssssssssssssssssssssssssssssss [ 53%]
+ssssssssssssssssssssssssssssssssss.sssssssssssssssssssssssssssssssssssss [ 53%]
+sssssssssssssssssssssssssssss.............ssssssssssssssssssssssssssssss [ 53%]
+ssssssssss.ssssssssssssss.................s..........sssssssssssssssssss [ 54%]
+ssssss.sssss.sssssssssssssssssssssssssssssssssss.sssssssssssssssssssssss [ 54%]
+sssssssssssssssssssssssssssss.s.................s...............s....... [ 54%]
+s.................s......................s..s........................... [ 55%]
+.......................................................s..............s. [ 55%]
+..s.......s.................s........................................... [ 56%]
+..............s...........s........................sssssssss.s.......... [ 56%]
+............s.................s..........s.sssssssssssssssssssssssssssss [ 56%]
+sssssssssssssssssssssssss...s.......................s.ssssssss.sssssssss [ 57%]
+s.............ssssssssss.sssssssssssssssssssssssssssssssssssssss.sssss.s [ 57%]
+............sssssssssss.ssssssssssssssssssssssssssssssssssssssssssssssss [ 57%]
+ss.sssssssssssssssssssssssssssss................................s....... [ 58%]
+....................................s....................s.............. [ 58%]
+...................................................s...........s........ [ 58%]
+...sssssssss...............................ssssssss.ssssssssssssssssssss [ 59%]
+ssssssssssssssssssssssssss.sssssssssssssssssssssssssssssssssssssssssssss [ 59%]
+ssssssssss.sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 60%]
+sssssssssssssssssss...............sssssssssssssssssssssssssssssssss.ssss [ 60%]
+sssssssssss.........s..................................s.s.............. [ 60%]
+...s............s..s........................s........................... [ 61%]
+s.....................s.................s.....s..........s.............. [ 61%]
+......................................................s................. [ 61%]
+s............s...s....................................s................. [ 62%]
+.......s................................................................ [ 62%]
+sssssssssssssssssssssss.s....................s...............s.......... [ 62%]
+...s.............sssssssss......................s............s.......... [ 63%]
+............................s........................................... [ 63%]
+......................s.....s.......sss.ssssssssssssssssssssssss..s..... [ 64%]
+..........s..s..................................................s....... [ 64%]
+.....................s..ssss.ssssssssssss.ssssssssssssssssssssssssssssss [ 64%]
+sssssssssssssssssss.s.sssssss....................s...............s...... [ 65%]
+..............ssssssssss....s..................s....s.................s. [ 65%]
+.ssssssssss.....ssss.sssssssssssssssssssssssssssssssssssssssssssssssssss [ 65%]
+ssssss.ssssssssssssssssssssssssssssss...............s...........s....... [ 66%]
+...s.s..........s...........................s.....s........s..sss.ssssss [ 66%]
+sssssssssssssssssssss.ssssssssssssssssssssssssssss.ssssssss.ssssss...... [ 66%]
+...................s..........................................ssssssssss [ 67%]
+sssssssss........s............ss.sssssss.............................sss [ 67%]
+ssssss.ssssssssss.ssss.ssssssssssssss..ss.ssssssssssssssssssssssssssssss [ 68%]
+ssssssssssssss.sssssssss..s.ssssssssssssssssssssssssssssssssss.ssssss... [ 68%]
+s.................sssssssssssssssssssssssssssssss.sssss.s.s..s.s........ [ 68%]
+.....s.............s..s....s.......sssss.sssss.................s........ [ 69%]
+..s.s....s...........................s...........s...................... [ 69%]
+.............s.......s.....sssssssss...s..ssssssss.sssssssssssssssssssss [ 69%]
+ssssss.ss.......................s..............s........ssssssssssssssss [ 70%]
+ssssssss.sss....s................s...........s......s.............ssssss [ 70%]
+sss............sss.ssssss......s...s.................................... [ 70%]
+...s.............s.............................................s........ [ 71%]
+...................s.....................s..s..............sssssssssssss [ 71%]
+ssssssssss.ssssssssssssssssssssss..................ssssssssssssssssss.ss [ 72%]
+sssssss.......................sss.s.sssss........s...s............ssssss [ 72%]
+ssssssssssssssss.sssssssssssssssssssssssssssss.sss.............s........ [ 72%]
+...............................s........s............................s.. [ 73%]
+...........................s........................sssssss.ssssssssssss [ 73%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 73%]
+s.sssssssssssssssssssss...s.....s......................................s [ 74%]
+.......s............s...ss......s..............s................s....... [ 74%]
+....s....................s.............................................. [ 74%]
+s....................................................................s.. [ 75%]
+.....................s......s.............sssssssssssssssssssssssssss.ss [ 75%]
+ssssssssssssssssssssssss.sssssss...................................ss.s. [ 75%]
+.......s.............................s.................................. [ 76%]
+.......ss......................................ss....................... [ 76%]
+.......ss.............ssssssssssssssssssssssssssssssssssssssssssssssssss [ 77%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 77%]
+ss.ssss.........ssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 77%]
+ssssssssssssssss...................................sssssssssssssssssssss [ 78%]
+sssssssssssssssssssssssssssssssss.............................s......... [ 78%]
+..ss.............ssss..ssssssss....ssssss.......................s....... [ 78%]
+.....................................................................s.. [ 79%]
+.......................................ss............................... [ 79%]
+........................................................................ [ 79%]
+............ssssssssssss....ss...........ss.......ssssssssssssssssssssss [ 80%]
+ssssssssssssss...ss.ssssssssssssss...ssssssss........................... [ 80%]
+.ssssss.............ssssssssssssss.......sssssssssssssssssssssssssssssss [ 81%]
+sss.ssssssssssssss.....ssssssssssssssssssssss.....ssssssssssssssssssss.. [ 81%]
+.................................................ss..................... [ 81%]
+....s.............ssssssssss.......ssssss...........................ssss [ 82%]
+ssssss....ssssss......ssssssssss......ssssssssssss.ssssssss............. [ 82%]
+..................................................ssssssssssss.......sss [ 82%]
+sssssssssss.....ssssssssssss...ssssssss...........................ssssss [ 83%]
+ssssssssssssssssssssssssssssssssss........sssss.sssssssssss............. [ 83%]
+...................................ssss................................. [ 83%]
+.........................................................s.............. [ 84%]
+.................................ssssssssssss........................... [ 84%]
+sssssssss.......ssssssssssssssssssssssssssssssssssssssss...ss..........s [ 85%]
+sssssssssssssssssssssssssssssssssssssssssssssssssss.................ssss [ 85%]
+ssssssssssssssssssssssssssssssssss.ss.sss....ss..ss.........ss...ss..ss. [ 85%]
+..ss...ss...ssssss.........................ss...ss...................... [ 86%]
+...............................................................ssss..... [ 86%]
+....................................ss.......s.......................... [ 86%]
+..ssssssssssssssss..............................ssssssssssssssssssssssss [ 87%]
+ssss..............ssssssssssssssssssssssss......ssssssssssssssss........ [ 87%]
+...............sssssssssss............................................ss [ 87%]
+ssssssssssssssssss.................ssssssssssss......................... [ 88%]
+........................................ssssssssssssssssssss.......s.sss [ 88%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 89%]
+ssssssssssssssssssssssssssssss.ssssssssssssssssssssssssssss............. [ 89%]
+..................ssssssssssssssssssssssss.............................. [ 89%]
+..s.........X..sssssssssssssssss.sssssssssssssssssssssssssssssssssssssss [ 90%]
+sssssssssss.sssssssssssssssss................sssssssssssssssssssssssssss [ 90%]
+sssssssssssssssssssss........s.......................................... [ 90%]
+.........x.......x....................ss................................ [ 91%]
+.....................................x.................................. [ 91%]
+........................................................................ [ 91%]
+.........................s...............s.............................. [ 92%]
+........................................................................ [ 92%]
+........................................................................ [ 92%]
+........................................................................ [ 93%]
+...............................................................ssss..... [ 93%]
+................................sss..................................... [ 94%]
+..................ssssssss.ssssssssssssssssssssssssssss................. [ 94%]
+.................ssssssssssssssssss..................................... [ 94%]
+........................................................................ [ 95%]
+.............................sss........................................ [ 95%]
+..............sss......................................................F [ 95%]
+................F....................................................... [ 96%]
+........................................................................ [ 96%]
+........................................................................ [ 96%]
+....................................................................ssss [ 97%]
+ssssssssssss..sssss..s........ssssssss............sssssssssss........... [ 97%]
+.................................sssssss.sssssssss................s..... [ 98%]
+.....ssssssssssssssss.................sssss............................. [ 98%]
+................ssssssss................................................ [ 98%]
+.........................................ss............................. [ 99%]
+........ss.....s........................................................ [ 99%]
+........................................................................ [ 99%]
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+........ss..................                                             [100%]
+=================================== FAILURES ===================================
+_______________ TestHotSwapping.test_hotswap_works[True-config0] _______________
+[gw1] linux -- Python 3.11.0 /app/.venv/bin/python
+
+self = <tests.test_initialization.TestHotSwapping object at 0x7fad8a3c31d0>
+config = LoraConfig(task_type=None, peft_type=<PeftType.LORA: 'LORA'>, auto_mapping=None, peft_version='0.17.2.dev0@UNKNOWN', b...time_config=LoraRuntimeConfig(ephemeral_gpu_offload=False), lora_bias=False, target_parameters=None, arrow_config=None)
+do_compile = True
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/popen-gw1/test_hotswap_works_True_config0')
+
+    @pytest.mark.parametrize(
+        "config",
+        [
+            LoraConfig(init_lora_weights=0, target_modules=["lin0"]),
+            LoraConfig(init_lora_weights=0, target_modules=["lin0", "lin1"]),
+        ],
+    )
+    @pytest.mark.parametrize("do_compile", [False, True])
+    def test_hotswap_works(self, config, do_compile, tmp_path):
+        # Load 2 different adapters and check that we can hotswap between them, with the model optionally being
+        # compiled.
+        atol, rtol = 1e-4, 1e-4
+        inputs = torch.rand(3, 10).to(self.torch_device)
+
+        # create adapter 0
+        model = self.get_model()
+        torch.manual_seed(0)
+        model = get_peft_model(model, config)
+        model = self.compile(model, do_compile=do_compile)
+        model.eval()
+        with torch.inference_mode():
+>           output0 = model(inputs)
+                      ^^^^^^^^^^^^^
+
+tests/test_initialization.py:3494:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py:414: in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1775: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1786: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py:845: in compile_wrapper
+    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:990: in _compile_fx_inner
+    raise InductorError(e, currentframe()).with_traceback(
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:974: in _compile_fx_inner
+    mb_compiled_graph = fx_codegen_and_compile(
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:1695: in fx_codegen_and_compile
+    return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:1505: in codegen_and_compile
+    compiled_module = graph.compile_to_module()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/graph.py:2319: in compile_to_module
+    return self._compile_to_module()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/graph.py:2329: in _compile_to_module
+    mod = self._compile_to_module_lines(wrapper_code)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/graph.py:2397: in _compile_to_module_lines
+    mod = PyCodeCache.load_by_key_path(
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:3548: in load_by_key_path
+    mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/runtime/compile_tasks.py:33: in _reload_python_module
+    exec(code, mod.__dict__, mod.__dict__)
+/tmp/torchinductor_root/kv/ckvsfed5llvz7r35pm3tj3lnd5hb6pczu7fynkztrgeqi5udrata.py:71: in <module>
+    async_compile.wait(globals())
+.venv/lib/python3.11/site-packages/torch/_inductor/async_compile.py:631: in wait
+    self._wait_futures(scope)
+.venv/lib/python3.11/site-packages/torch/_inductor/async_compile.py:651: in _wait_futures
+    kernel = result.result()
+             ^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:4289: in result
+    return self.result_fn()
+           ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:3025: in future
+    result = get_result()
+             ^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:2821: in load_fn
+    future.result()
+/usr/lib/python3.11/concurrent/futures/_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+/usr/lib/python3.11/concurrent/futures/thread.py:58: in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:2851: in _worker_compile_cpp
+    builder.build()
+.venv/lib/python3.11/site-packages/torch/_inductor/cpp_builder.py:2020: in build
+    run_compile_cmd(build_cmd, cwd=_build_tmp_dir)
+.venv/lib/python3.11/site-packages/torch/_inductor/cpp_builder.py:593: in run_compile_cmd
+    _run_compile_cmd(cmd_line, cwd)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+cmd_line = 'g++ /tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main.cpp -D TORCH_INDUCTOR_CPP_WR...orch_cpu -ltorch_python -lgomp -lc10  -L/usr/lib/x86_64-linux-gnu -L/app/.venv/lib/python3.11/site-packages/torch/lib '
+cwd = '/tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main_CxxBuild'
+
+    def _run_compile_cmd(cmd_line: str, cwd: str) -> None:
+        cmd = shlex.split(cmd_line)
+        try:
+            subprocess.run(
+                cmd, cwd=cwd, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT
+            )
+        except subprocess.CalledProcessError as e:
+            output = e.stdout.decode("utf-8")
+            openmp_problem = "'omp.h' file not found" in output or "libomp" in output
+            if openmp_problem and sys.platform == "darwin":
+                instruction = (
+                    "\n\nOpenMP support not found. Please try one of the following solutions:\n"
+                    "(1) Set the `CXX` environment variable to a compiler other than Apple clang++/g++ "
+                    "that has builtin OpenMP support;\n"
+                    "(2) install OpenMP via conda: `conda install llvm-openmp`;\n"
+                    "(3) install libomp via brew: `brew install libomp`;\n"
+                    "(4) manually setup OpenMP and set the `OMP_PREFIX` environment variable to point to a path"
+                    " with `include/omp.h` under it."
+                )
+                output += instruction
+>           raise exc.CppCompileError(cmd, output) from e
+E           torch._inductor.exc.InductorError: CppCompileError: C++ compile error
+E
+E           Command:
+E           g++ /tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main.cpp -D TORCH_INDUCTOR_CPP_WRAPPER -D STANDALONE_TORCH_HEADER -D C10_USING_CUSTOM_GENERATED_MACROS -D CPU_CAPABILITY_AVX512 -O3 -DNDEBUG -fno-trapping-math -funsafe-math-optimizations -ffinite-math-only -fno-signed-zeros -fno-math-errno -fno-finite-math-only -fno-unsafe-math-optimizations -ffp-contract=off -fexcess-precision=fast -fno-tree-loop-vectorize -march=native -shared -fPIC -Wall -std=c++17 -Wno-unused-variable -Wno-unknown-pragmas -pedantic -fopenmp -include /tmp/torchinductor_root/precompiled_headers/cucaxv532k4at6bp52sg5e6ovg66fyhqhwuqbnsvin3gqal3m2mm.h -I/usr/include/python3.11 -I/app/.venv/lib/python3.11/site-packages/torch/include -I/app/.venv/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -mavx512f -mavx512dq -mavx512vl -mavx512bw -mfma -o /tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main.so -ltorch -ltorch_cpu -ltorch_python -lgomp -lc10 -L/usr/lib/x86_64-linux-gnu -L/app/.venv/lib/python3.11/site-packages/torch/lib
+E
+E           Output:
+E           /tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main.cpp:39:10: fatal error: Python.h: No such file or directory
+E              39 | #include <Python.h>
+E                 |          ^~~~~~~~~~
+E           compilation terminated.
+E
+E
+E           Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+.venv/lib/python3.11/site-packages/torch/_inductor/cpp_builder.py:588: InductorError
+_______________ TestHotSwapping.test_hotswap_works[True-config1] _______________
+[gw1] linux -- Python 3.11.0 /app/.venv/bin/python
+
+self = <tests.test_initialization.TestHotSwapping object at 0x7fad8a3c2c90>
+config = LoraConfig(task_type=None, peft_type=<PeftType.LORA: 'LORA'>, auto_mapping=None, peft_version='0.17.2.dev0@UNKNOWN', b...time_config=LoraRuntimeConfig(ephemeral_gpu_offload=False), lora_bias=False, target_parameters=None, arrow_config=None)
+do_compile = True
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/popen-gw1/test_hotswap_works_True_config1')
+
+    @pytest.mark.parametrize(
+        "config",
+        [
+            LoraConfig(init_lora_weights=0, target_modules=["lin0"]),
+            LoraConfig(init_lora_weights=0, target_modules=["lin0", "lin1"]),
+        ],
+    )
+    @pytest.mark.parametrize("do_compile", [False, True])
+    def test_hotswap_works(self, config, do_compile, tmp_path):
+        # Load 2 different adapters and check that we can hotswap between them, with the model optionally being
+        # compiled.
+        atol, rtol = 1e-4, 1e-4
+        inputs = torch.rand(3, 10).to(self.torch_device)
+
+        # create adapter 0
+        model = self.get_model()
+        torch.manual_seed(0)
+        model = get_peft_model(model, config)
+        model = self.compile(model, do_compile=do_compile)
+        model.eval()
+        with torch.inference_mode():
+>           output0 = model(inputs)
+                      ^^^^^^^^^^^^^
+
+tests/test_initialization.py:3494:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py:414: in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1775: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1786: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py:845: in compile_wrapper
+    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:990: in _compile_fx_inner
+    raise InductorError(e, currentframe()).with_traceback(
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:974: in _compile_fx_inner
+    mb_compiled_graph = fx_codegen_and_compile(
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:1695: in fx_codegen_and_compile
+    return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:1505: in codegen_and_compile
+    compiled_module = graph.compile_to_module()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/graph.py:2319: in compile_to_module
+    return self._compile_to_module()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/graph.py:2329: in _compile_to_module
+    mod = self._compile_to_module_lines(wrapper_code)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/graph.py:2397: in _compile_to_module_lines
+    mod = PyCodeCache.load_by_key_path(
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:3548: in load_by_key_path
+    mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/runtime/compile_tasks.py:33: in _reload_python_module
+    exec(code, mod.__dict__, mod.__dict__)
+/tmp/torchinductor_root/ly/clyc33gec2asom2ymamdhj745nghgtbgncx6j4jlgrfb3w6eruvb.py:94: in <module>
+    async_compile.wait(globals())
+.venv/lib/python3.11/site-packages/torch/_inductor/async_compile.py:631: in wait
+    self._wait_futures(scope)
+.venv/lib/python3.11/site-packages/torch/_inductor/async_compile.py:651: in _wait_futures
+    kernel = result.result()
+             ^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:4289: in result
+    return self.result_fn()
+           ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:3025: in future
+    result = get_result()
+             ^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:2821: in load_fn
+    future.result()
+/usr/lib/python3.11/concurrent/futures/_base.py:449: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:974: in _compile_fx_inner
+    mb_compiled_graph = fx_codegen_and_compile(
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:1695: in fx_codegen_and_compile
+    return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/compile_fx.py:1505: in codegen_and_compile
+    compiled_module = graph.compile_to_module()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/graph.py:2319: in compile_to_module
+    return self._compile_to_module()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/graph.py:2329: in _compile_to_module
+    mod = self._compile_to_module_lines(wrapper_code)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/graph.py:2397: in _compile_to_module_lines
+    mod = PyCodeCache.load_by_key_path(
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:3548: in load_by_key_path
+    mod = _reload_python_module(key, path, set_sys_modules=in_toplevel)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/runtime/compile_tasks.py:33: in _reload_python_module
+    exec(code, mod.__dict__, mod.__dict__)
+/tmp/torchinductor_root/kv/ckvsfed5llvz7r35pm3tj3lnd5hb6pczu7fynkztrgeqi5udrata.py:71: in <module>
+    async_compile.wait(globals())
+.venv/lib/python3.11/site-packages/torch/_inductor/async_compile.py:631: in wait
+    self._wait_futures(scope)
+.venv/lib/python3.11/site-packages/torch/_inductor/async_compile.py:651: in _wait_futures
+    kernel = result.result()
+             ^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:4289: in result
+    return self.result_fn()
+           ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:3025: in future
+    result = get_result()
+             ^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:2821: in load_fn
+    future.result()
+/usr/lib/python3.11/concurrent/futures/_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+/usr/lib/python3.11/concurrent/futures/thread.py:58: in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/torch/_inductor/codecache.py:2851: in _worker_compile_cpp
+    builder.build()
+.venv/lib/python3.11/site-packages/torch/_inductor/cpp_builder.py:2020: in build
+    run_compile_cmd(build_cmd, cwd=_build_tmp_dir)
+.venv/lib/python3.11/site-packages/torch/_inductor/cpp_builder.py:593: in run_compile_cmd
+    _run_compile_cmd(cmd_line, cwd)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+cmd_line = 'g++ /tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main.cpp -D TORCH_INDUCTOR_CPP_WR...orch_cpu -ltorch_python -lgomp -lc10  -L/usr/lib/x86_64-linux-gnu -L/app/.venv/lib/python3.11/site-packages/torch/lib '
+cwd = '/tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main_CxxBuild'
+
+    def _run_compile_cmd(cmd_line: str, cwd: str) -> None:
+        cmd = shlex.split(cmd_line)
+        try:
+            subprocess.run(
+                cmd, cwd=cwd, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT
+            )
+        except subprocess.CalledProcessError as e:
+            output = e.stdout.decode("utf-8")
+            openmp_problem = "'omp.h' file not found" in output or "libomp" in output
+            if openmp_problem and sys.platform == "darwin":
+                instruction = (
+                    "\n\nOpenMP support not found. Please try one of the following solutions:\n"
+                    "(1) Set the `CXX` environment variable to a compiler other than Apple clang++/g++ "
+                    "that has builtin OpenMP support;\n"
+                    "(2) install OpenMP via conda: `conda install llvm-openmp`;\n"
+                    "(3) install libomp via brew: `brew install libomp`;\n"
+                    "(4) manually setup OpenMP and set the `OMP_PREFIX` environment variable to point to a path"
+                    " with `include/omp.h` under it."
+                )
+                output += instruction
+>           raise exc.CppCompileError(cmd, output) from e
+E           torch._inductor.exc.InductorError: CppCompileError: C++ compile error
+E
+E           Command:
+E           g++ /tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main.cpp -D TORCH_INDUCTOR_CPP_WRAPPER -D STANDALONE_TORCH_HEADER -D C10_USING_CUSTOM_GENERATED_MACROS -D CPU_CAPABILITY_AVX512 -O3 -DNDEBUG -fno-trapping-math -funsafe-math-optimizations -ffinite-math-only -fno-signed-zeros -fno-math-errno -fno-finite-math-only -fno-unsafe-math-optimizations -ffp-contract=off -fexcess-precision=fast -fno-tree-loop-vectorize -march=native -shared -fPIC -Wall -std=c++17 -Wno-unused-variable -Wno-unknown-pragmas -pedantic -fopenmp -include /tmp/torchinductor_root/precompiled_headers/cucaxv532k4at6bp52sg5e6ovg66fyhqhwuqbnsvin3gqal3m2mm.h -I/usr/include/python3.11 -I/app/.venv/lib/python3.11/site-packages/torch/include -I/app/.venv/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -mavx512f -mavx512dq -mavx512vl -mavx512bw -mfma -o /tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main.so -ltorch -ltorch_cpu -ltorch_python -lgomp -lc10 -L/usr/lib/x86_64-linux-gnu -L/app/.venv/lib/python3.11/site-packages/torch/lib
+E
+E           Output:
+E           /tmp/torchinductor_root/7u/c7ugk5u46fsi4ts2zl5kign3j7apqtm27ao36uvktioe7stsp477.main.cpp:39:10: fatal error: Python.h: No such file or directory
+E              39 | #include <Python.h>
+E                 |          ^~~~~~~~~~
+E           compilation terminated.
+E
+E
+E           Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+.venv/lib/python3.11/site-packages/torch/_inductor/cpp_builder.py:588: InductorError
+=============================== warnings summary ===============================
+src/peft/tuners/bone/config.py:126: 3 warnings
+tests/test_custom_models.py: 242 warnings
+tests/test_config.py: 22 warnings
+tests/test_decoder_models.py: 167 warnings
+tests/test_encoder_decoder_models.py: 38 warnings
+tests/test_feature_extraction_models.py: 54 warnings
+tests/test_seq_classifier.py: 27 warnings
+  /app/src/peft/tuners/bone/config.py:126: UserWarning: Bone will be removed in v0.19.0 of PEFT, use `MissConfig` instead. If you already have a Bone checkpoint, you can use `/scripts/convert-bone-to-miss.py` to convert it into
+    warnings.warn(
+
+tests/test_custom_models.py: 3632 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'MLP' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 385 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'EmbConv1D' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 27 warnings
+tests/test_decoder_models.py: 17 warnings
+  /app/src/peft/tuners/vera/model.py:275: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+    warnings.warn(
+
+tests/test_custom_models.py: 129 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'MLP_LayerNorm' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 79 warnings
+  /app/src/peft/tuners/tuners_utils.py:208: UserWarning: Unsupported layer type '<class 'torch.nn.modules.normalization.LayerNorm'>' encountered, proceed at your own risk.
+    warnings.warn(f"Unsupported layer type '{type(module)}' encountered, proceed at your own risk.", UserWarning)
+
+tests/test_custom_models.py: 30 warnings
+tests/test_decoder_models.py: 19 warnings
+  /app/src/peft/tuners/vblora/model.py:141: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+    warnings.warn(
+
+tests/test_custom_models.py::TestPeftCustomModel::test_safe_merge[Vanilla MLP 1 BOFT-MLP-BOFTConfig-config_kwargs137]
+tests/test_custom_models.py::TestPeftCustomModel::test_save_pretrained_pickle[Vanilla MLP 1 BOFT-MLP-BOFTConfig-config_kwargs137]
+tests/test_boft.py::TestBoft::test_boft_state_dict
+  /app/src/peft/tuners/boft/layer.py:95: UserWarning: Failed to load the CUDA extension: Ninja is required to load C++ extensions (pip install ninja to get it), check if ninja is available.
+    warnings.warn(f"Failed to load the CUDA extension: {e}, check if ninja is available.")
+
+tests/test_custom_models.py: 354 warnings
+tests/test_boft.py: 2 warnings
+tests/test_decoder_models.py: 160 warnings
+tests/test_encoder_decoder_models.py: 36 warnings
+tests/test_feature_extraction_models.py: 46 warnings
+tests/test_seq_classifier.py: 27 warnings
+tests/test_stablediffusion.py: 4 warnings
+  /app/src/peft/tuners/boft/layer.py:96: UserWarning: Setting boft_n_butterfly_factor to 1 to speed up the finetuning process.
+    warnings.warn("Setting boft_n_butterfly_factor to 1 to speed up the finetuning process.")
+
+tests/test_custom_models.py: 352 warnings
+tests/test_boft.py: 2 warnings
+tests/test_decoder_models.py: 160 warnings
+tests/test_encoder_decoder_models.py: 36 warnings
+tests/test_feature_extraction_models.py: 46 warnings
+tests/test_seq_classifier.py: 27 warnings
+tests/test_stablediffusion.py: 4 warnings
+  /app/src/peft/tuners/boft/layer.py:95: UserWarning: Failed to load the CUDA extension: /root/.cache/torch_extensions/py311_cu128/fbd_cuda/fbd_cuda.so: cannot open shared object file: No such file or directory, check if ninja is available.
+    warnings.warn(f"Failed to load the CUDA extension: {e}, check if ninja is available.")
+
+tests/test_custom_models.py: 811 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'Conv2d' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 56 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'MLP2' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 56 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'Conv2d2' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 160 warnings
+tests/test_decoder_models.py: 100 warnings
+tests/test_helpers.py: 2 warnings
+tests/test_initialization.py: 4 warnings
+tests/test_tuners_utils.py: 2 warnings
+  /app/src/peft/tuners/lora/layer.py:2285: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+    warnings.warn(
+
+tests/test_custom_models.py: 207 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'Conv1d' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 52 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'Conv2dGroups' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 104 warnings
+tests/test_initialization.py: 6 warnings
+  /app/src/peft/tuners/lora/layer.py:1159: UserWarning: LoRA adapter added to ConvNd layer with groups > 1. Merging is not supported.
+    warnings.warn("LoRA adapter added to ConvNd layer with groups > 1. Merging is not supported.")
+
+tests/test_custom_models.py: 52 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'Conv2dGroups2' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 300 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'Conv3d' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 63 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'MHA' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 26 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'MlpUsingParameters' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 26 warnings
+  /app/src/peft/tuners/tuners_utils.py:208: UserWarning: Unsupported layer type '<class 'tests.test_custom_models._LinearUsingParameter'>' encountered, proceed at your own risk.
+    warnings.warn(f"Unsupported layer type '{type(module)}' encountered, proceed at your own risk.", UserWarning)
+
+tests/test_custom_models.py: 87 warnings
+tests/test_decoder_models.py: 20 warnings
+  /app/src/peft/tuners/ia3/model.py:130: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+    warnings.warn(
+
+tests/test_custom_models.py: 29 warnings
+  /app/src/peft/tuners/ia3/model.py:122: UserWarning: fan_in_fan_out is set to True but the target module is `torch.nn.Linear`. Setting fan_in_fan_out to False.
+    warnings.warn(
+
+tests/test_custom_models.py: 116 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'Conv1dBigger' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 58 warnings
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'Conv2d1x1' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_custom_models.py: 14 warnings
+  /app/src/peft/tuners/tuners_utils.py:1755: UserWarning: All adapters are already merged, nothing to do.
+    warnings.warn("All adapters are already merged, nothing to do.")
+
+tests/test_custom_models.py: 10 warnings
+tests/test_tuners_utils.py: 2 warnings
+  /app/src/peft/tuners/lora/layer.py:728: UserWarning: Already unmerged. Nothing to do.
+    warnings.warn("Already unmerged. Nothing to do.")
+
+tests/test_custom_models.py: 110 warnings
+tests/test_decoder_models.py: 7 warnings
+tests/test_encoder_decoder_models.py: 2 warnings
+tests/test_feature_extraction_models.py: 4 warnings
+  /app/src/peft/tuners/ia3/layer.py:142: UserWarning: Unmerge result can be inaccurate for (IA)^3.
+    warnings.warn("Unmerge result can be inaccurate for (IA)^3.")
+
+tests/test_custom_models.py: 60 warnings
+  /app/src/peft/tuners/ia3/layer.py:268: UserWarning: Unmerge result can be inaccurate for (IA)^3.
+    warnings.warn("Unmerge result can be inaccurate for (IA)^3.")
+
+tests/test_custom_models.py: 160 warnings
+tests/test_decoder_models.py: 112 warnings
+tests/test_encoder_decoder_models.py: 22 warnings
+tests/test_feature_extraction_models.py: 44 warnings
+  /app/src/peft/tuners/tuners_utils.py:1401: UserWarning: Adapter delete_me was active which is now deleted. Setting active adapter to default.
+    warnings.warn(
+
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_adapter[MHA 1 LoRA-MHA-LoraConfig-config_kwargs33]
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_adapter[MHA 2 LoRA-MHA-LoraConfig-config_kwargs34]
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_inactive_adapter[MHA 1 LoRA-MHA-LoraConfig-config_kwargs33]
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_inactive_adapter[MHA 2 LoRA-MHA-LoraConfig-config_kwargs34]
+  /app/src/peft/tuners/lora/layer.py:1700: UserWarning: Already unmerged. Nothing to do.
+    warnings.warn("Already unmerged. Nothing to do.")
+
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_adapter_with_multiple_adapters_works
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_adapter_multiple_adapters_with_modules_to_save
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_adapter_multiple_adapters_with_trainable_token_indices
+tests/test_mixed.py::TestMixedAdapterTypes::test_delete_adapter
+  /app/src/peft/tuners/tuners_utils.py:1401: UserWarning: Adapter adapter0 was active which is now deleted. Setting active adapter to adapter1.
+    warnings.warn(
+
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_adapter_multiple_adapters_with_modules_to_save
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_adapter_multiple_adapters_with_trainable_token_indices
+  /app/src/peft/tuners/tuners_utils.py:1401: UserWarning: Adapter adapter1 was active which is now deleted. Setting active adapter to adapter2.
+    warnings.warn(
+
+tests/test_custom_models.py::TestPeftCustomModel::test_delete_adapter_multiple_adapters_with_trainable_token_indices
+  /app/src/peft/tuners/tuners_utils.py:1401: UserWarning: Adapter adapter0 was active which is now deleted. Setting active adapter to adapter2.
+    warnings.warn(
+
+tests/test_custom_models.py: 1 warning
+tests/test_mapping.py: 2 warnings
+tests/test_stablediffusion.py: 6 warnings
+tests/test_tuners_utils.py: 9 warnings
+  /app/src/peft/tuners/tuners_utils.py:281: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+    warnings.warn(
+
+tests/test_custom_models.py::TestPeftCustomModel::test_load_resized_embedding_ignore_mismatched_sizes
+  /app/src/peft/utils/save_and_load.py:587: UserWarning: Some weights of PeftModel were not initialized from the model checkpoint and are being ignored because you passed `ignore_mismatched_sizes=True`: - base_model.model.emb.lora_embedding_A.default: found shape torch.Size([8, 100]) in the checkpoint and torch.Size([8, 105]) in the model instantiated.
+    warnings.warn(msg)
+
+tests/test_custom_models.py::TestPeftCustomModel::test_load_resized_embedding_ignore_mismatched_sizes
+  /app/src/peft/peft_model.py:585: UserWarning: Found missing adapter keys while loading the checkpoint: ['base_model.model.emb.lora_embedding_A.default'].
+    warnings.warn(warn_message)
+
+tests/test_custom_models.py::TestDynamicDispatch::test_custom_lora_layer_used
+tests/test_custom_models.py::TestDynamicDispatch::test_training_works
+tests/test_custom_models.py::TestDynamicDispatch::test_saving_and_loading
+  /app/src/peft/tuners/tuners_utils.py:208: UserWarning: Unsupported layer type '<class 'tests.test_custom_models.TestDynamicDispatch.custom_module_cls.<locals>.MyModule'>' encountered, proceed at your own risk.
+    warnings.warn(f"Unsupported layer type '{type(module)}' encountered, proceed at your own risk.", UserWarning)
+
+tests/test_decoder_models.py: 14 warnings
+  /app/src/peft/tuners/adalora/model.py:211: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+    warnings.warn(
+
+tests/test_config.py::TestPeftConfig::test_from_peft_type
+  /app/src/peft/tuners/xlora/config.py:83: UserWarning: No value was provided for `hidden_size`. This will be set to 4096 by default, please ensure that this is correct.
+    warnings.warn(
+
+tests/test_config.py::TestPeftConfig::test_from_peft_type
+  /app/src/peft/tuners/xlora/config.py:88: UserWarning: No value was provided for for `adapters`. This will be set to empty, please ensure that this is correct.
+    warnings.warn(
+
+tests/test_config.py::TestPeftConfig::test_from_peft_type
+tests/test_cpt.py::test_model_initialization_text
+tests/test_cpt.py::test_model_initialization_random
+tests/test_decoder_models.py::TestDecoderModels::test_prompt_learning_with_gradient_checkpointing[CPTConfig-config_kwargs3-hf-internal-testing/tiny-random-gpt2]
+tests/test_decoder_models.py::TestDecoderModels::test_prompt_learning_with_gradient_checkpointing[CPTConfig-config_kwargs3-hf-internal-testing/tiny-random-OPTForCausalLM]
+tests/test_decoder_models.py::TestDecoderModels::test_prompt_learning_with_gradient_checkpointing[CPTConfig-config_kwargs3-hf-internal-testing/tiny-random-MistralForCausalLM]
+tests/test_decoder_models.py::TestDecoderModels::test_prompt_learning_with_gradient_checkpointing[CPTConfig-config_kwargs3-peft-internal-testing/tiny-dummy-qwen2]
+tests/test_decoder_models.py::TestDecoderModels::test_prompt_learning_with_gradient_checkpointing[CPTConfig-config_kwargs3-trl-internal-testing/tiny-random-LlamaForCausalLM]
+  /app/src/peft/tuners/cpt/config.py:85: FutureWarning: CPTConfig only supports task_type = CAUSAL_LM, setting it automatically. This will raise an error starting from PEFT v0.18.0.
+    warnings.warn(
+
+tests/test_decoder_models.py: 140 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in trl-internal-testing/tiny-random-LlamaForCausalLM - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_decoder_models.py: 140 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in peft-internal-testing/tiny-dummy-qwen2 - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_decoder_models.py: 140 warnings
+tests/test_hub_features.py: 7 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-Gemma3ForCausalLM - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_config.py: 24 warnings
+  /app/src/peft/config.py:280: UserWarning: The configuration file contains a `runtime_config` key. This is ignored. Runtime configurations are only valid at runtime.
+    warnings.warn(
+
+tests/test_decoder_models.py: 57 warnings
+tests/test_encoder_decoder_models.py: 17 warnings
+tests/test_seq_classifier.py: 9 warnings
+  /app/src/peft/tuners/oft/layer.py:446: UserWarning: Invalid `oft_block_size` (32)! Adjusted `oft_block_size` to (16).
+    warnings.warn(
+
+tests/test_decoder_models.py: 140 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-OPTForCausalLM - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_decoder_models.py: 140 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-BloomForCausalLM - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_decoder_models.py: 140 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-gpt_neo - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_decoder_models.py: 140 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-GPTJForCausalLM - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_decoder_models.py: 140 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-GPTBigCodeForCausalLM - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_decoder_models.py: 19 warnings
+  /app/src/peft/tuners/oft/layer.py:446: UserWarning: Invalid `oft_block_size` (32)! Adjusted `oft_block_size` to (8).
+    warnings.warn(
+
+tests/test_decoder_models.py: 92 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-GPT2LMHeadModel - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_decoder_models.py: 18 warnings
+  /app/src/peft/tuners/fourierft/model.py:116: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+    warnings.warn(
+
+tests/test_decoder_models.py: 16 warnings
+  /app/src/peft/tuners/waveft/model.py:169: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+    warnings.warn(
+
+tests/test_cpt.py: 2 warnings
+tests/test_decoder_models.py: 16 warnings
+  /app/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+    warnings.warn(warn_msg)
+
+tests/test_decoder_models.py::TestDecoderModels::test_prompt_tuning_text_prepare_for_training[PromptTuningConfig-config_kwargs15-trl-internal-testing/tiny-random-LlamaForCausalLM]
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+tests/test_decoder_models.py::TestDecoderModels::test_prompt_tuning_text_prepare_for_training[PromptTuningConfig-config_kwargs15-trl-internal-testing/tiny-random-LlamaForCausalLM]
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+tests/test_decoder_models.py: 104 warnings
+tests/test_multitask_prompt_tuning.py: 7 warnings
+  /app/src/peft/peft_model.py:2122: UserWarning: Position ids are not supported for parameter efficient tuning. Ignoring position ids.
+    warnings.warn("Position ids are not supported for parameter efficient tuning. Ignoring position ids.")
+
+tests/test_decoder_models.py: 9 warnings
+tests/test_encoder_decoder_models.py: 2 warnings
+  /app/src/peft/tuners/adalora/config.py:96: UserWarning: Note that `r` is not used in AdaLora and will be ignored.If you intended to set the initial rank, use `init_r` instead.
+    warnings.warn(
+
+tests/test_decoder_models.py: 18 warnings
+  /app/src/peft/tuners/lora/variants.py:714: UserWarning: Cannot calculate aLoRA offsets when only inputs_embeds are provided. Disabling aLoRA for this forward pass.
+    warnings.warn(
+
+tests/test_encoder_decoder_models.py: 119 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in ybelkada/tiny-random-T5ForConditionalGeneration-calibrated - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_encoder_decoder_models.py: 118 warnings
+tests/test_hub_features.py: 2 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-BartForConditionalGeneration - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_decoder_models.py::TestDecoderModels::test_lora_layer_replication
+  /app/tests/test_decoder_models.py:620: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+    layers[0].mlp.up_proj.base_layer.weight.data.storage().data_ptr()
+
+tests/test_decoder_models.py::TestDecoderModels::test_lora_embed_scale_is_applied
+tests/test_decoder_models.py::TestDecoderModels::test_lora_embed_scale_is_applied_mixed_batch
+  /app/src/peft/tuners/tuners_utils.py:913: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['model.embed_tokens'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+    warnings.warn(
+
+tests/test_decoder_models.py::TestDecoderModels::test_lora_embed_scale_is_applied
+  /app/src/peft/tuners/tuners_utils.py:568: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['model.embed_tokens'] are part of the adapter. This can lead to complications. You can opt to merge the adapter after cloning the weights (to untie the embeddings). You can untie the embeddings by loading the model with `tie_word_embeddings=False`. For example:
+  ```python
+  from transformers import AutoModelForCausalLM
+
+  # Load original tied model
+  model = AutoModelForCausalLM.from_pretrained("google/gemma-2-2b-it", tie_word_embeddings=False)
+
+  # Set the randomly initialized lm_head to the previously tied embeddings
+  model.lm_head.weight.data = model.model.embed_tokens.weight.data.clone()
+
+  # Save the untied model
+  untied_model_dir = "dir/for/untied/model"
+  model.save_pretrained(untied_model_dir)
+  model.config.save_pretrained(untied_model_dir)
+
+  # Now use the original model but in untied format
+  model = AutoModelForCausalLM.from_pretrained(untied_model_dir)
+  ```
+
+    warnings.warn(
+
+tests/test_decoder_models.py::TestDecoderModels::test_lora_embed_scale_is_applied_mixed_batch
+  /app/src/peft/tuners/tuners_utils.py:913: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['model.embed_tokens', 'model.embed_tokens'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+    warnings.warn(
+
+tests/test_feature_extraction_models.py: 79 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-DebertaModel - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_feature_extraction_models.py: 79 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-DebertaV2Model - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_feature_extraction_models.py: 81 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-BertModel - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_feature_extraction_models.py: 80 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-RobertaModel - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_initialization.py::TestLoraInitialization::test_lora_pissa_conversion_same_output_after_loading
+tests/test_initialization.py::TestLoraInitialization::test_lora_pissa_conversion_same_output_after_loading_with_rank_pattern
+tests/test_initialization.py::TestLoraInitialization::test_lora_pissa_conversion_same_output_after_loading_with_alpha_pattern
+tests/test_initialization.py::TestLoraInitialization::test_lora_pissa_conversion_same_output_after_loading_with_rslora
+  /app/src/peft/peft_model.py:1255: UserWarning: PiSSA changes the base weights of the model and should thus not be used with other adapters. Consider converting the PiSSA adapter into a normal LoRA adapter: https://github.com/huggingface/peft/tree/main/examples/pissa_finetuning#convert-pissa-to-lora
+    warnings.warn(msg)
+
+tests/test_initialization.py::TestHotSwapping::test_prepare_model_for_compiled_hotswap_lora_bias
+  /app/src/peft/tuners/lora/layer.py:170: PeftWarning: `lora_bias=True` was passed but the targeted layer of type Linear has no bias. This means that merging LoRA weights won't be possible.
+    warnings.warn(
+
+tests/test_lora_variants.py::TestLoraVariants::test_variant_is_applied_to_layers[alora-LoraConfig-config_kwargs1]
+tests/test_lora_variants.py::TestActivatedLora::test_calculate_alora_offsets[input_ids0-alora_invocation_tokens0-expected_offsets0]
+tests/test_lora_variants.py::TestActivatedLora::test_calculate_alora_offsets[input_ids1-alora_invocation_tokens1-expected_offsets1]
+tests/test_lora_variants.py::TestActivatedLora::test_calculate_alora_offsets[input_ids2-alora_invocation_tokens2-expected_offsets2]
+tests/test_lora_variants.py::TestActivatedLora::test_calculate_alora_offsets_with_adapter_names[input_ids0-alora_invocations0-expected_offsets0]
+tests/test_lora_variants.py::TestActivatedLora::test_calculate_alora_offsets_with_adapter_names[input_ids1-alora_invocations1-expected_offsets1]
+tests/test_lora_variants.py::TestActivatedLora::test_alora_activation_matches_base_until_invocation
+tests/test_lora_variants.py::TestActivatedLora::test_input_embeds_warning
+tests/test_lora_variants.py::TestActivatedLora::test_num_beams_error
+  /app/src/peft/tuners/lora/config.py:741: UserWarning: aLoRA is currently only supported for CAUSAL_LM task.
+    warnings.warn("aLoRA is currently only supported for CAUSAL_LM task.")
+
+tests/test_initialization.py::TestLoraInitialization::test_pissa_rank_pattern_and_rslora_raises
+tests/test_initialization.py::TestLoraInitialization::test_pissa_alpha_pattern_and_rslora_raises
+tests/test_initialization.py::TestLoraInitialization::test_olora_rank_pattern_and_rslora_raises
+tests/test_initialization.py::TestLoraInitialization::test_olora_alpha_pattern_and_rslora_raises
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_rank_pattern_and_rslora_raises[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_rank_pattern_and_rslora_raises[kpm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_alpha_pattern_and_rslora_raises[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_alpha_pattern_and_rslora_raises[kpm]
+  /app/src/peft/tuners/lora/config.py:762: UserWarning: Using Rank-Stabilized LoRA with rank_pattern/alpha_pattern and post-training conversion of modified base weights PiSSA/CorDA/OLoRA means that you won't be able to pass `path_initial_model_for_weight_conversion` to `save_pretrained` to restore the initial values of the base weights; if you intend to do this, please ensure not to use rslora or rank_pattern/alpha_pattern.
+    warnings.warn(msg)
+
+tests/test_initialization.py::TestLoraInitialization::test_olora_conversion_same_output_after_loading
+tests/test_initialization.py::TestLoraInitialization::test_olora_conversion_same_output_after_loading_with_rank_pattern
+tests/test_initialization.py::TestLoraInitialization::test_olora_conversion_same_output_after_loading_with_alpha_pattern
+tests/test_initialization.py::TestLoraInitialization::test_olora_conversion_same_output_after_loading_with_rslora
+  /app/src/peft/peft_model.py:1269: UserWarning: OLoRA changes the base weights of the model and should thus not be used with other adapters. Consider converting the OLoRA adapter into a normal LoRA adapter: https://github.com/huggingface/peft/tree/main/examples/olora_finetuning#olora-and-lora
+    warnings.warn(msg)
+
+tests/test_low_level_api.py::TestInjectAdapterFromStateDict::test_inject_from_state_dict_transformers_irregular_targets
+tests/test_low_level_api.py::TestInjectAdapterFromStateDict::test_inject_from_state_dict_transformers_target_parameters_raises
+tests/test_low_level_api.py::TestInjectAdapterFromStateDict::test_inject_from_state_dict_transformers_target_parameters_fails
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in facebook/opt-125m - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_initialization.py::TestLoraInitialization::test_lora_with_bias_incompatible_arguments[extra_kwargs1]
+  /app/src/peft/tuners/lora/config.py:718: UserWarning: `init_lora_weights` is 'eva' but `eva_config` is not specified. Using default EVA config.
+    warnings.warn("`init_lora_weights` is 'eva' but `eva_config` is not specified. Using default EVA config.")
+
+tests/test_low_level_api.py::TestInjectAdapterFromStateDict::test_inject_from_state_dict_extra_keys_warning
+  /app/src/peft/tuners/tuners_utils.py:891: UserWarning: You have passed exclude_modules=['model.decoder.layers.5.self_attn.q_proj'] but no modules were excluded. Please check that exclude_modules was set correctly.
+    warnings.warn(
+
+tests/test_initialization.py::TestVeraInitialization::test_vera_mixing_save_projection_raises
+tests/test_vera.py::TestVera::test_multiple_adapters_save_load_save_projection_false
+tests/test_vera.py::TestVera::test_multiple_adapters_save_projection_false_contains_no_vera_A_vera_B
+  /app/src/peft/tuners/vera/config.py:158: UserWarning: Specified to not save vera_A and vera_B within the state dictionary, instead they will be restored using the PRNG key store in `config.projection_prng_key`. Consider setting `config.save_projection` to `True` to guarantee restoring the checkpoint correctly on all system configurations.
+    warnings.warn(
+
+tests/test_other.py::TestTargetingAuxiliaryTrainingWrapper::test_targeting_trainable_tokens_raises
+tests/test_xlora.py::TestXlora::test_functional_embedding
+  /app/src/peft/tuners/tuners_utils.py:913: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['model.decoder.embed_tokens'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+    warnings.warn(
+
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading[kpm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_rank_pattern[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_rank_pattern[kpm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_alpha_pattern[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_alpha_pattern[kpm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_rslora[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_rslora[kpm]
+  /app/src/peft/tuners/lora/config.py:729: UserWarning: `corda_config` specified but will be ignored when `init_lora_weights` is not 'corda'.
+    warnings.warn("`corda_config` specified but will be ignored when `init_lora_weights` is not 'corda'.")
+
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading[kpm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_rank_pattern[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_rank_pattern[kpm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_alpha_pattern[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_alpha_pattern[kpm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_rslora[ipm]
+tests/test_initialization.py::TestCordaInitialization::test_lora_corda_conversion_same_output_after_loading_with_rslora[kpm]
+  /app/src/peft/peft_model.py:1262: UserWarning: CorDA changes the base weights of the model and should thus not be used with other adapters. Consider converting the CorDA adapter into a normal LoRA adapter: https://github.com/huggingface/peft/tree/main/examples/corda_finetuning#convert-corda-to-lora
+    warnings.warn(msg)
+
+tests/test_randlora.py::TestRandLora::test_multiple_adapters_save_load_save_projection_false
+tests/test_randlora.py::TestRandLora::test_multiple_adapters_save_projection_false_contains_no_randlora_A_randlora_B
+  /app/src/peft/tuners/randlora/config.py:195: UserWarning: Specified to not save basis_A and basis_B within the state dictionary, instead they will be restored using the PRNG key store in `config.projection_prng_key`. Consider setting `config.save_projection` to `True` to guarantee restoring the checkpoint correctly on all system configurations.
+    warnings.warn(
+
+tests/test_initialization.py::TestEvaInitialization::test_eva_state_dict_adjust_scaling_factors[eva_config0]
+tests/test_initialization.py::TestEvaInitialization::test_load_eva_state_dict[True]
+tests/test_initialization.py::TestEvaInitialization::test_load_eva_state_dict[False]
+tests/test_initialization.py::TestEvaInitialization::test_missing_eva_inits
+tests/test_initialization.py::TestEvaInitialization::test_load_eva_model
+  /app/src/peft/mapping_func.py:96: UserWarning: lora with eva initialization used with low_cpu_mem_usage=False. Setting low_cpu_mem_usage=True can improve the maximum batch size possible for eva initialization.
+    warnings.warn(
+
+tests/test_seq_classifier.py: 94 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-BertForSequenceClassification - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_seq_classifier.py: 94 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in hf-internal-testing/tiny-random-RobertaForSequenceClassification - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_seq_classifier.py: 94 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in trl-internal-testing/tiny-LlamaForSequenceClassification-3.2 - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_initialization.py::TestHotSwapping::test_hotswap_works[True-config0]
+tests/test_initialization.py::TestHotSwapping::test_hotswap_works[True-config0]
+tests/test_initialization.py::TestHotSwapping::test_hotswap_works[True-config0]
+tests/test_initialization.py::TestHotSwapping::test_hotswap_works[True-config0]
+tests/test_initialization.py::TestHotSwapping::test_hotswap_works[True-config1]
+  /app/.venv/lib/python3.11/site-packages/torch/_inductor/cpp_builder.py:1112: UserWarning: Can't find Python.h in /usr/include/python3.11
+    warnings.warn(f"Can't find Python.h in {str(include_dir)}")
+
+tests/test_shira.py::TestShira::test_mlp_single_adapter_shapes
+  /app/.venv/lib/python3.11/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_shira.py::TestShira::test_mlp_single_adapter_shapes returned <class 'peft.peft_model.PeftModel'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_target_parameters.py: 80 warnings
+  /app/src/peft/tuners/tuners_utils.py:208: UserWarning: Unsupported layer type '<class 'transformers.models.gpt_oss.modeling_gpt_oss.GptOssExperts'>' encountered, proceed at your own risk.
+    warnings.warn(f"Unsupported layer type '{type(module)}' encountered, proceed at your own risk.", UserWarning)
+
+tests/test_target_parameters.py: 81 warnings
+  /app/src/peft/tuners/tuners_utils.py:208: UserWarning: Unsupported layer type '<class 'transformers.models.llama4.modeling_llama4.Llama4TextExperts'>' encountered, proceed at your own risk.
+    warnings.warn(f"Unsupported layer type '{type(module)}' encountered, proceed at your own risk.", UserWarning)
+
+tests/test_target_parameters.py: 19 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in trl-internal-testing/tiny-Llama4ForCausalLM - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_shira.py::TestShira::test_multiple_adapters_save_load
+  /app/.venv/lib/python3.11/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_shira.py::TestShira::test_multiple_adapters_save_load returned <class 'peft.peft_model.PeftModel'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_shira.py::TestShira::test_save_load_custom_mask_function
+  /app/src/peft/tuners/shira/config.py:126: UserWarning: Argument self.mask_type='custom' is not recognized, please supply your own masking function by calling `config.mask_fn = my_mask_fn`.
+    warnings.warn(
+
+tests/test_shira.py::TestShira::test_save_load_custom_mask_function
+  /app/.venv/lib/python3.11/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_shira.py::TestShira::test_save_load_custom_mask_function returned <class 'peft.peft_model.PeftModel'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_shira.py::TestShira::test_save_load_default_random_mask_with_seed_function
+  /app/.venv/lib/python3.11/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_shira.py::TestShira::test_save_load_default_random_mask_with_seed_function returned <class 'peft.peft_model.PeftModel'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_target_parameters.py: 19 warnings
+  /app/src/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in trl-internal-testing/tiny-GptOssForCausalLM - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+tests/test_trainable_tokens.py::TestTrainableTokens::test_save_pretrained_auto[peft_config0-True]
+tests/test_trainable_tokens.py::TestTrainableTokens::test_save_pretrained_auto[peft_config1-True]
+  /app/src/peft/utils/save_and_load.py:309: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+    warnings.warn(
+
+tests/test_tuners_utils.py::TestModelAndLayerStatus::test_merge_adapters_large
+  /app/src/peft/tuners/tuners_utils.py:1750: UserWarning: Already following adapters were merged other. You are now additionally merging default.
+    warnings.warn(
+
+tests/test_tuners_utils.py::TestModelAndLayerStatus::test_model_merged_adapters_large
+  /app/src/peft/tuners/lora/layer.py:984: UserWarning: Already unmerged. Nothing to do.
+    warnings.warn("Already unmerged. Nothing to do.")
+
+tests/test_tuners_utils.py::TestModelAndLayerStatus::test_model_merged_adapters_large
+  /app/src/peft/tuners/lora/layer.py:1338: UserWarning: Already unmerged. Nothing to do.
+    warnings.warn("Already unmerged. Nothing to do.")
+
+tests/test_tuners_utils.py::PeftCustomKwargsTester::test_all_linear_nested_targets_correct_layers_0_HuggingFaceH4_tiny_random_LlamaForCausalLM
+tests/test_tuners_utils.py::PeftCustomKwargsTester::test_all_linear_nested_targets_correct_layers_1_HuggingFaceH4_tiny_random_LlamaForCausalLM
+tests/test_tuners_utils.py::PeftCustomKwargsTester::test_all_linear_nested_targets_correct_layers_2_hf_internal_testing_tiny_random_gpt2
+tests/test_tuners_utils.py::PeftCustomKwargsTester::test_all_linear_nested_targets_correct_layers_3_hf_internal_testing_tiny_random_t5
+tests/test_tuners_utils.py::PeftCustomKwargsTester::test_all_linear_nested_targets_correct_layers_4_hf_internal_testing_tiny_random_GPTNeoXForCausalLM
+  /app/src/peft/mapping_func.py:73: UserWarning: You are trying to modify a model with PEFT for a second time. If you want to reload the model with a different config, make sure to call `.unload()` before.
+    warnings.warn(
+
+tests/test_vera.py::TestVera::test_multiple_adapters_save_load_save_projection_false
+  /app/src/peft/utils/save_and_load.py:531: UserWarning: Specified to not load vera_A and vera_B from state dictionary. This means we will be relying on PRNG initialisation to restore these projections using `config.projection_prng_key`, which may not be accurate on all system configurations.
+    warnings.warn(
+
+tests/test_tuners_utils.py::PeftCustomKwargsTester::test_maybe_include_all_linear_layers_diffusion
+  /app/src/peft/mapping_func.py:79: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from 'hf-internal-testing/tiny-sd-pipe' to 'None'. Please ensure that the correct base model is loaded when loading this checkpoint.
+    warnings.warn(
+
+tests/test_xlora.py::TestXlora::test_functional_embedding
+  /app/src/peft/utils/save_and_load.py:279: UserWarning: Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.
+    warnings.warn("Setting `save_embedding_layers` to `True` as embedding layers found in `target_modules`.")
+
+tests/test_xlora.py::TestXlora::test_functional_embedding
+  /app/src/peft/tuners/tuners_utils.py:913: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['model.decoder.embed_tokens', 'model.decoder.embed_tokens'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+    warnings.warn(
+
+tests/test_xlora.py::TestXlora::test_functional_embedding
+  /app/src/peft/tuners/tuners_utils.py:913: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['model.decoder.embed_tokens', 'model.decoder.embed_tokens', 'model.decoder.embed_tokens'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+    warnings.warn(
+
+tests/test_xlora.py::TestXlora::test_functional_embedding
+  /app/src/peft/tuners/tuners_utils.py:913: UserWarning: Model with `tie_word_embeddings=True` and the tied_target_modules=['model.decoder.embed_tokens', 'model.decoder.embed_tokens', 'model.decoder.embed_tokens', 'model.decoder.embed_tokens'] are part of the adapter. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. See for example https://github.com/huggingface/peft/issues/2018.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_____________ coverage: platform linux, python 3.11.0-candidate-1 ______________
+
+Name                                                  Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------
+src/peft/__init__.py                                     10      0   100%
+src/peft/auto.py                                         71      4    94%   61, 92, 99, 111
+src/peft/config.py                                      168      8    95%   63-64, 72, 144, 211, 297, 322-323
+src/peft/functional.py                                    4      4     0%   21-26
+src/peft/helpers.py                                      72     21    71%   48-58, 84-98, 124-132, 235
+src/peft/import_utils.py                                 94     42    55%   33-35, 41-46, 55-73, 87-98, 131-147, 158, 161-166
+src/peft/mapping.py                                      18      3    83%   44, 78, 81
+src/peft/mapping_func.py                                 36      0   100%
+src/peft/mixed_model.py                                 154     25    84%   48, 51-54, 112, 120, 137, 143, 163-165, 231-234, 272, 289, 370, 379, 432, 436-439, 443, 448, 452
+src/peft/optimizers/__init__.py                           3      0   100%
+src/peft/optimizers/lorafa.py                           105     25    76%   67, 69, 71, 73, 93, 113, 127-131, 157, 176, 182-210
+src/peft/optimizers/loraplus.py                          36     27    25%   61-121
+src/peft/peft_model.py                                 1350    426    68%   164-167, 173, 220, 229, 246, 261, 301, 325-328, 445, 452, 472, 475-502, 507, 510, 514-536, 580, 633, 657, 682, 701-702, 749-750, 758, 768-770, 794, 809, 843, 849-855, 874-876, 911-913, 921, 1006, 1172-1239, 1244, 1374-1421, 1453, 1460, 1497, 1550, 1555-1557, 1561-1564, 1570, 1696-1748, 1761-1814, 1887-1889, 1900, 1922-1923, 1925-1926, 2062, 2070, 2080-2085, 2094-2116, 2126-2129, 2140, 2257-2261, 2264-2265, 2267-2268, 2311-2341, 2358, 2360-2363, 2365-2368, 2380-2381, 2402-2408, 2420, 2498-2499, 2531-2538, 2552-2605, 2618-2654, 2719-2720, 2752-2759, 2776-2832, 2846-2897, 2963, 2984-2985, 2987-2988, 3089, 3234
+src/peft/tuners/__init__.py                              30      0   100%
+src/peft/tuners/_buffer_dict.py                          62      8    87%   83, 92-94, 123, 137, 141, 159
+src/peft/tuners/adalora/__init__.py                      16      7    56%   33-43
+src/peft/tuners/adalora/bnb.py                           74     74     0%   15-143
+src/peft/tuners/adalora/config.py                        36      2    94%   88, 92
+src/peft/tuners/adalora/gptq.py                          31     26    16%   30-37, 40-67
+src/peft/tuners/adalora/layer.py                        219     94    57%   31, 53, 58, 126, 142, 152-153, 169, 217, 236-252, 256-273, 278, 281-283, 286-335, 339-347, 351-360
+src/peft/tuners/adalora/model.py                        152     79    48%   78, 104, 129, 136, 159-161, 163, 168, 181-188, 190-198, 200, 204-208, 217, 230-252, 256-284, 287-300, 323-342, 346
+src/peft/tuners/adaption_prompt/__init__.py               6      0   100%
+src/peft/tuners/adaption_prompt/config.py                25      1    96%   81
+src/peft/tuners/adaption_prompt/layer.py                 86      5    94%   39, 54, 171, 185, 192
+src/peft/tuners/adaption_prompt/model.py                 85      5    94%   64, 72, 98, 100, 168
+src/peft/tuners/adaption_prompt/utils.py                 68     34    50%   47-58, 73, 84-89, 100-128, 141-146
+src/peft/tuners/boft/__init__.py                          6      0   100%
+src/peft/tuners/boft/config.py                           30      3    90%   152, 154, 158
+src/peft/tuners/boft/fbd/__init__.py                      0      0   100%
+src/peft/tuners/boft/layer.py                           495     97    80%   65-71, 78, 130-132, 136-138, 168, 234, 240-244, 247-254, 257-261, 283, 288, 301, 306-311, 319, 324-329, 336, 342-346, 388, 422-446, 528, 550-551, 583, 595, 625, 639, 713, 718, 724, 736, 741-746, 754, 759-764, 771, 777-781, 872-873, 916, 928, 951, 962, 975
+src/peft/tuners/boft/model.py                            35      5    86%   78, 111, 117-121, 126
+src/peft/tuners/bone/__init__.py                          6      0   100%
+src/peft/tuners/bone/config.py                           26      2    92%   120, 124
+src/peft/tuners/bone/layer.py                           186     29    84%   46, 64, 74, 79, 99-106, 109-113, 169, 188-189, 273-295, 327, 342-343
+src/peft/tuners/bone/model.py                            29      3    90%   89, 115, 122
+src/peft/tuners/c3a/__init__.py                           6      0   100%
+src/peft/tuners/c3a/config.py                            23      2    91%   133, 137
+src/peft/tuners/c3a/layer.py                            112     13    88%   47, 51, 61, 97, 103-108, 155, 171-172, 192
+src/peft/tuners/c3a/model.py                             32      2    94%   63, 90
+src/peft/tuners/c3a/utils.py                             30      0   100%
+src/peft/tuners/cpt/__init__.py                           5      0   100%
+src/peft/tuners/cpt/config.py                            35      1    97%   106
+src/peft/tuners/cpt/model.py                             84      0   100%
+src/peft/tuners/fourierft/__init__.py                     6      0   100%
+src/peft/tuners/fourierft/config.py                      30      3    90%   199, 203, 206
+src/peft/tuners/fourierft/layer.py                      104      5    95%   52, 58, 60, 159-160
+src/peft/tuners/fourierft/model.py                       47      5    89%   67, 102, 108-112, 121
+src/peft/tuners/hra/__init__.py                           6      0   100%
+src/peft/tuners/hra/config.py                            27      3    89%   125, 129, 133
+src/peft/tuners/hra/layer.py                            248     40    84%   50, 70, 85, 99-100, 111-118, 121-125, 177, 193-194, 213-220, 262, 330, 358-359, 385-392, 424, 447
+src/peft/tuners/hra/model.py                             31      3    90%   89, 117, 126
+src/peft/tuners/ia3/__init__.py                          15      7    53%   29-39
+src/peft/tuners/ia3/bnb.py                               67     67     0%   15-129
+src/peft/tuners/ia3/config.py                            22      0   100%
+src/peft/tuners/ia3/layer.py                            194     10    95%   44, 50, 139-140, 246, 265-266, 298, 322, 330
+src/peft/tuners/ia3/model.py                            120     22    82%   80-82, 85, 92, 97-105, 107-115, 138, 192, 198, 219, 222, 234, 241, 247, 251, 256, 307, 314
+src/peft/tuners/ln_tuning/__init__.py                     5      0   100%
+src/peft/tuners/ln_tuning/config.py                      13      0   100%
+src/peft/tuners/ln_tuning/layer.py                       64      7    89%   76, 82-83, 93-94, 106, 112
+src/peft/tuners/ln_tuning/model.py                       44      1    98%   102
+src/peft/tuners/loha/__init__.py                          6      0   100%
+src/peft/tuners/loha/config.py                           25      1    96%   143
+src/peft/tuners/loha/layer.py                           207      2    99%   126, 166
+src/peft/tuners/loha/model.py                            22      0   100%
+src/peft/tuners/lokr/__init__.py                          6      0   100%
+src/peft/tuners/lokr/config.py                           28      1    96%   155
+src/peft/tuners/lokr/layer.py                           230     15    93%   82-88, 146-147, 156, 186, 239, 286, 479-481
+src/peft/tuners/lokr/model.py                            23      0   100%
+src/peft/tuners/lora/__init__.py                         21      6    71%   50-52, 55-57, 60-62
+src/peft/tuners/lora/aqlm.py                             48     31    35%   25, 42-49, 62-85, 88-89, 111-112
+src/peft/tuners/lora/arrow.py                           210     16    92%   177, 212, 217, 316, 318, 339, 346-347, 351, 389, 400, 411, 420, 434, 444, 450
+src/peft/tuners/lora/awq.py                              55     37    33%   39-50, 62-85, 88-89, 105-119
+src/peft/tuners/lora/bnb.py                             316    316     0%   14-611
+src/peft/tuners/lora/config.py                          134      8    94%   117, 119, 707, 709, 714-715, 724-727
+src/peft/tuners/lora/corda.py                           173     17    90%   51, 111, 168, 181, 186, 246, 262, 284, 293, 298, 303, 333, 337, 342, 347, 352, 357
+src/peft/tuners/lora/dora.py                            107      4    96%   48, 63, 97, 164
+src/peft/tuners/lora/eetq.py                             55     42    24%   24-96, 112-116
+src/peft/tuners/lora/eva.py                             333     55    83%   63, 67, 82-102, 132-135, 156-157, 164-165, 221-222, 234-238, 250, 253, 273, 277, 310-313, 322, 332-334, 383-385, 392, 434-436, 454, 461, 470, 544, 632, 713, 718, 722, 727
+src/peft/tuners/lora/gptq.py                             65     43    34%   42-52, 66-80, 84-114, 117-118, 142-146, 151-152
+src/peft/tuners/lora/hqq.py                             132    115    13%   30-237, 249
+src/peft/tuners/lora/inc.py                              23     10    57%   31-59, 71-76
+src/peft/tuners/lora/layer.py                          1190    103    91%   58, 63, 91, 167, 220-221, 250, 260, 271, 281, 285, 299-306, 308-313, 322, 341, 358, 368, 380, 384, 388, 394, 400, 406, 428-446, 479, 492, 505, 701, 892, 901, 923, 967, 1051, 1106, 1157, 1202, 1218, 1246, 1286, 1299, 1312, 1388, 1420, 1452, 1469, 1486, 1537, 1555, 1656, 1664, 1810-1811, 1891-1894, 1934, 1941, 1943, 1945, 1947, 1949, 1986, 1992, 1999, 2012, 2022-2023, 2025-2026, 2028-2029, 2031-2032, 2034, 2036-2037, 2044, 2063, 2068, 2096-2097, 2102, 2106, 2125, 2147, 2187-2188, 2200, 2224, 2276-2280
+src/peft/tuners/lora/model.py                           348     48    86%   170, 221, 243, 270, 272, 295, 310-312, 315-317, 341, 393, 428, 430, 437, 449, 453, 497, 501, 503, 509, 515, 602-606, 617-618, 625, 681, 695, 699-703, 714-718, 720-721, 741-745, 767, 783
+src/peft/tuners/lora/torchao.py                          80     57    29%   35-40, 44-54, 57-91, 94-124, 127-128, 150-156
+src/peft/tuners/lora/tp_layer.py                        169    140    17%   56-99, 117-186, 189-216, 231-256, 262-270, 280-304, 307-308, 325, 333-346
+src/peft/tuners/lora/variants.py                        396     66    83%   55, 121, 129, 144-152, 229-230, 248, 338, 407-408, 454-486, 490, 494, 498, 502, 512-541, 551, 555, 559, 580, 621, 637-639, 694-695, 726, 750
+src/peft/tuners/lycoris_utils.py                        104     26    75%   98-101, 140, 153-156, 159-166, 173-174, 181-188, 241-242, 257-258
+src/peft/tuners/miss/__init__.py                          6      0   100%
+src/peft/tuners/miss/config.py                           26      2    92%   136, 140
+src/peft/tuners/miss/layer.py                           214     41    81%   50, 70, 75, 86, 91, 94-100, 116, 122-129, 132-136, 190-191, 197, 207-208, 219-220, 231, 307, 310-332, 364, 378, 383-384
+src/peft/tuners/miss/model.py                            29      3    90%   89, 119, 126
+src/peft/tuners/mixed/__init__.py                         2      0   100%
+src/peft/tuners/mixed/model.py                          166     40    76%   82, 102-107, 119, 127-131, 150-160, 167, 172, 182-187, 195-196, 204, 220, 249-255, 260, 270, 276
+src/peft/tuners/multitask_prompt_tuning/__init__.py       5      0   100%
+src/peft/tuners/multitask_prompt_tuning/config.py        21      0   100%
+src/peft/tuners/multitask_prompt_tuning/model.py         48      4    92%   38, 65, 71-73
+src/peft/tuners/oft/__init__.py                          19     10    47%   37-52
+src/peft/tuners/oft/aqlm.py                              41     25    39%   25, 45-49, 64-82, 85-86, 97, 102-103
+src/peft/tuners/oft/awq.py                               49     32    35%   42-50, 64-83, 86-87, 98, 103-117
+src/peft/tuners/oft/bnb.py                              188    188     0%   14-388
+src/peft/tuners/oft/config.py                            39      4    90%   171, 173, 177, 191
+src/peft/tuners/oft/eetq.py                              48     36    25%   24-94, 105, 110-114
+src/peft/tuners/oft/gptq.py                              49     30    39%   41-48, 63-84, 87-88, 99, 106-110, 115-116
+src/peft/tuners/oft/hqq.py                               94     79    16%   29-172, 179, 184
+src/peft/tuners/oft/inc.py                               23     11    52%   31-59, 66, 71-76
+src/peft/tuners/oft/layer.py                            425     80    81%   52-69, 193, 218, 249, 344-368, 380-384, 387-394, 397-401, 452-454, 457, 499, 506-508, 512-519, 593, 614-615, 654, 729, 737, 742-748, 751-753, 756, 848-849, 898, 923, 931-935
+src/peft/tuners/oft/model.py                             54      9    83%   101, 122, 154-156, 159-161, 183, 197, 199
+src/peft/tuners/p_tuning/__init__.py                      5      0   100%
+src/peft/tuners/p_tuning/config.py                       17      0   100%
+src/peft/tuners/p_tuning/model.py                        34      7    79%   84-96, 119, 124, 128
+src/peft/tuners/poly/__init__.py                          6      0   100%
+src/peft/tuners/poly/config.py                           21      0   100%
+src/peft/tuners/poly/layer.py                            89      9    90%   49, 56, 103-108, 137
+src/peft/tuners/poly/model.py                            52      5    90%   43, 52, 58, 65, 73
+src/peft/tuners/poly/router.py                           34      3    91%   31, 64, 66
+src/peft/tuners/prefix_tuning/__init__.py                 5      0   100%
+src/peft/tuners/prefix_tuning/config.py                  10      0   100%
+src/peft/tuners/prefix_tuning/model.py                   19      4    79%   65-66, 76-77
+src/peft/tuners/prompt_tuning/__init__.py                 5      0   100%
+src/peft/tuners/prompt_tuning/config.py                  24      0   100%
+src/peft/tuners/prompt_tuning/model.py                   37      0   100%
+src/peft/tuners/randlora/__init__.py                     15      7    53%   30-40
+src/peft/tuners/randlora/bnb.py                         209    209     0%   14-456
+src/peft/tuners/randlora/config.py                       26      0   100%
+src/peft/tuners/randlora/layer.py                       176     13    93%   80-81, 106, 109, 133, 147, 150, 159, 162, 235, 251-252, 339
+src/peft/tuners/randlora/model.py                       144     27    81%   60, 119-123, 133-134, 239, 255, 292-294, 297, 304, 309-317, 319-327, 330-343
+src/peft/tuners/road/__init__.py                         15      7    53%   37-47
+src/peft/tuners/road/bnb.py                             195    195     0%   14-407
+src/peft/tuners/road/config.py                           21      1    95%   124
+src/peft/tuners/road/layer.py                           199      8    96%   70, 102, 265, 276, 298-299, 380, 411
+src/peft/tuners/road/model.py                            77      5    94%   55, 97-99, 102-104
+src/peft/tuners/shira/__init__.py                         6      0   100%
+src/peft/tuners/shira/config.py                          25      0   100%
+src/peft/tuners/shira/layer.py                          102     12    88%   48, 64, 72, 95, 103, 106-109, 128, 163, 174-175
+src/peft/tuners/shira/mask_functions.py                  14      0   100%
+src/peft/tuners/shira/model.py                           42      6    86%   72, 81, 109, 115-121
+src/peft/tuners/trainable_tokens/__init__.py              6      0   100%
+src/peft/tuners/trainable_tokens/config.py               13      0   100%
+src/peft/tuners/trainable_tokens/layer.py               118     13    89%   88-105, 127, 180, 187-188, 247
+src/peft/tuners/trainable_tokens/model.py                41      0   100%
+src/peft/tuners/tuners_utils.py                         805     79    90%   80-81, 90-107, 112, 116-125, 162, 179, 183, 186, 189, 192, 195, 198, 201, 348, 458-462, 480, 513, 662, 871, 873, 884, 886, 1001, 1049-1053, 1060, 1062, 1065-1068, 1245-1253, 1265, 1277, 1280, 1302, 1445, 1465, 1569, 1602, 1647, 1675, 1743, 1790, 1797-1802, 1804, 1821-1826, 1861-1862
+src/peft/tuners/vblora/__init__.py                        6      0   100%
+src/peft/tuners/vblora/config.py                         29      1    97%   196
+src/peft/tuners/vblora/layer.py                         130      5    96%   75, 77, 165, 175-176
+src/peft/tuners/vblora/model.py                          77     12    84%   90, 127, 133-137, 146, 184-189, 205-206
+src/peft/tuners/vera/__init__.py                         15      7    53%   30-40
+src/peft/tuners/vera/bnb.py                             208    208     0%   14-411
+src/peft/tuners/vera/config.py                           28      1    96%   156
+src/peft/tuners/vera/layer.py                           149      7    95%   81, 99, 115, 125, 208-209, 268
+src/peft/tuners/vera/model.py                           119     18    85%   57, 123, 133-134, 194, 229-231, 234, 241, 246-254, 256-264, 267-271, 280
+src/peft/tuners/waveft/__init__.py                        6      0   100%
+src/peft/tuners/waveft/config.py                         36      2    94%   253, 257
+src/peft/tuners/waveft/constants.py                       1      0   100%
+src/peft/tuners/waveft/layer.py                         145      5    97%   64, 132, 243, 257-258
+src/peft/tuners/waveft/model.py                          97     17    82%   46-49, 52-55, 59, 84, 108, 118, 155, 161-165, 174, 192-195
+src/peft/tuners/waveft/wavelet.py                        46      8    83%   65, 69, 113, 118, 123, 127, 130, 513
+src/peft/tuners/waveft/waverec2d.py                     201     59    71%   45, 68, 85, 90-91, 96, 102, 120-126, 130, 147-150, 154-156, 160-163, 167-168, 172, 177, 180, 182, 184-188, 191, 194-195, 197, 203, 205, 207, 210-212, 214-218, 233, 251-255, 283, 288, 299-302
+src/peft/tuners/xlora/__init__.py                         5      0   100%
+src/peft/tuners/xlora/classifier.py                      88     11    88%   74-77, 80, 118-120, 142-143, 185-186
+src/peft/tuners/xlora/config.py                          36      3    92%   94, 97, 102
+src/peft/tuners/xlora/layer.py                          111     29    74%   116, 160, 163, 172-173, 188, 196-225
+src/peft/tuners/xlora/model.py                          210     17    92%   75-85, 148, 241, 257, 261, 266-267, 350, 401, 407, 439, 444, 447
+src/peft/utils/__init__.py                                7      0   100%
+src/peft/utils/constants.py                              64     16    75%   23-32, 37-43, 50, 59
+src/peft/utils/hotswap.py                               204     29    86%   46, 50, 75-76, 130, 136, 172, 175, 210, 216, 356, 360, 423, 457, 474-500, 542, 607
+src/peft/utils/incremental_pca.py                       148     10    93%   74, 76-77, 103, 121, 142, 146, 148, 199-200
+src/peft/utils/integrations.py                          148     74    50%   31, 43-47, 59-60, 63-64, 68-71, 77-84, 89-108, 114, 116, 126-147, 159-175, 198, 212-214, 218, 226-230, 235, 237, 242, 244
+src/peft/utils/loftq_utils.py                           234    202    14%   37-49, 53-61, 65-87, 90-103, 106-113, 116-154, 158-170, 177-187, 192-237, 242-258, 270-308, 311-327, 366-409
+src/peft/utils/merge_utils.py                            79      7    91%   91-92, 94, 100, 120-123
+src/peft/utils/other.py                                 674    146    78%   116, 118, 120, 122, 124, 173, 184-212, 226-235, 266, 270, 277, 319, 325, 336, 363-371, 380-384, 387, 392, 396, 459, 476, 482, 508, 517, 525, 569-572, 579-582, 616, 647, 657, 678-679, 716, 736-738, 795-798, 858, 891-892, 923, 935, 949-951, 996, 1072, 1083, 1096, 1139, 1154-1158, 1161-1167, 1193-1197, 1207, 1225, 1236-1262, 1269-1299, 1318-1320, 1342-1346, 1362, 1381-1382, 1490-1532
+src/peft/utils/peft_types.py                             61      6    90%   143, 146, 149, 162, 165, 169
+src/peft/utils/save_and_load.py                         348     39    89%   54, 110-112, 117-119, 138-149, 171, 193, 208-211, 228, 236, 366, 373, 450, 502, 505, 521, 525, 549-553, 626, 651, 683-684, 691, 709
+src/peft/utils/warning.py                                 1      0   100%
+-----------------------------------------------------------------------------------
+TOTAL                                                 17564   4552    74%
+============================= slowest 10 durations =============================
+92.02s call     tests/test_xlora.py::TestXlora::test_save_load_functional
+88.95s call     tests/test_xlora.py::TestXlora::test_save_load_functional_pt
+74.34s call     tests/test_xlora.py::TestXlora::test_scalings_logging_methods
+63.14s call     tests/test_xlora.py::TestXlora::test_softmax_topk
+58.52s call     tests/test_xlora.py::TestXlora::test_disable_adapter
+45.91s call     tests/test_xlora.py::TestXlora::test_functional_layerwise
+43.24s call     tests/test_xlora.py::TestXlora::test_topk_lora
+38.29s call     tests/test_auto.py::TestPeftAutoModel::test_embedding_size_not_reduced_if_greater_vocab_size
+29.08s call     tests/test_xlora.py::TestXlora::test_misc_methods
+28.09s call     tests/test_xlora.py::TestXlora::test_functional
+=========================== short test summary info ============================
+FAILED tests/test_initialization.py::TestHotSwapping::test_hotswap_works[True-config0]
+FAILED tests/test_initialization.py::TestHotSwapping::test_hotswap_works[True-config1]
+= 2 failed, 15024 passed, 4865 skipped, 10 xfailed, 1 xpassed, 11740 warnings in 1262.00s (0:21:01) =
+make: *** [Makefile:20: test] Error 1

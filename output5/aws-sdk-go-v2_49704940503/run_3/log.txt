@@ -1,0 +1,14 @@
+on branch "feat-override-s3expire"
+looking for feat-override-s3expire...
+looking for feat-override...
+Cloning into '/tmp/runner/smithy-go'...
+go lint SDK and vendor packages
+
+cd ./internal/repotools/cmd/eachmodule \
+	&& go run . -p . -c 1 -fail-fast=true -skip="" \
+	"go vet -tags "example,codegen,integration,ec2env,perftest" --all ./..." \
+	"go test -tags "example,codegen,integration,ec2env,perftest" -run NONE ./..." \
+	"go test -timeout=2m  -race -cpu=4 ./..."
+go: downloading go1.22 (linux/amd64)
+go: download go1.22 for linux/amd64: toolchain not available
+make: *** [Makefile:264: unit-race-modules-.] Error 1

@@ -1,0 +1,835 @@
+﻿2025-12-13T04:04:12.9951429Z Current runner version: '2.329.0'
+2025-12-13T04:04:12.9977067Z ##[group]Runner Image Provisioner
+2025-12-13T04:04:12.9977942Z Hosted Compute Agent
+2025-12-13T04:04:12.9978630Z Version: 20251202.455
+2025-12-13T04:04:12.9979290Z Commit: 6c10caca4910e198df60de23adf20ad317c474e3
+2025-12-13T04:04:12.9980045Z Build Date: 2025-12-02T15:56:59Z
+2025-12-13T04:04:12.9980788Z Worker ID: {4c499b82-1c95-4607-a5fe-70f1ac8af1f6}
+2025-12-13T04:04:12.9981519Z ##[endgroup]
+2025-12-13T04:04:12.9982028Z ##[group]Operating System
+2025-12-13T04:04:12.9982662Z Ubuntu
+2025-12-13T04:04:12.9983177Z 24.04.3
+2025-12-13T04:04:12.9984043Z LTS
+2025-12-13T04:04:12.9984676Z ##[endgroup]
+2025-12-13T04:04:12.9985285Z ##[group]Runner Image
+2025-12-13T04:04:12.9985853Z Image: ubuntu-24.04
+2025-12-13T04:04:12.9986485Z Version: 20251208.163.1
+2025-12-13T04:04:12.9987572Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251208.163/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-13T04:04:12.9989282Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251208.163
+2025-12-13T04:04:12.9990307Z ##[endgroup]
+2025-12-13T04:04:12.9991444Z ##[group]GITHUB_TOKEN Permissions
+2025-12-13T04:04:12.9993827Z Contents: read
+2025-12-13T04:04:12.9994532Z Metadata: read
+2025-12-13T04:04:12.9995091Z ##[endgroup]
+2025-12-13T04:04:12.9997210Z Secret source: Actions
+2025-12-13T04:04:12.9998330Z Prepare workflow directory
+2025-12-13T04:04:13.0461108Z Prepare all required actions
+2025-12-13T04:04:13.0518602Z Getting action download info
+2025-12-13T04:04:13.4716210Z Download action repository 'actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3' (SHA:1af3b93b6815bc44a9784bd300feb67ff0d1eeb3)
+2025-12-13T04:04:13.6069546Z Download action repository 'actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165' (SHA:dded0888837ed1f317902acf8a20df0ad188d165)
+2025-12-13T04:04:14.1687216Z Download action repository 'codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7' (SHA:5a1091511ad55cbe89839c7260b706298ca349f7)
+2025-12-13T04:04:14.6354282Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-12-13T04:04:14.8566109Z Download action repository 'dawidd6/action-download-artifact@v6' (SHA:bf251b5aa9c2f7eeb574a96ee720e24f801b7c11)
+2025-12-13T04:04:17.2232058Z Download action repository 'cicirello/jacoco-badge-generator@v2.12.1' (SHA:72266185b7ee48a6fd74eaf0238395cc8b14fef8)
+2025-12-13T04:04:17.7566961Z Getting action download info
+2025-12-13T04:04:17.8999315Z Download action repository 'actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea' (SHA:60a0d83039c74a4aee543508d2ffcb1c3799cdea)
+2025-12-13T04:04:18.3824023Z Complete job name: build (21, ubuntu-24.04)
+2025-12-13T04:04:18.4254825Z ##[group]Build container for action use: '/home/runner/work/_actions/cicirello/jacoco-badge-generator/v2.12.1/Dockerfile'.
+2025-12-13T04:04:18.4303229Z ##[command]/usr/bin/docker build -t 896624:265081b15464406e9b256ef60829f66e -f "/home/runner/work/_actions/cicirello/jacoco-badge-generator/v2.12.1/Dockerfile" "/home/runner/work/_actions/cicirello/jacoco-badge-generator/v2.12.1"
+2025-12-13T04:04:18.9398865Z #0 building with "default" instance using docker driver
+2025-12-13T04:04:18.9399247Z 
+2025-12-13T04:04:18.9399392Z #1 [internal] load build definition from Dockerfile
+2025-12-13T04:04:18.9399732Z #1 transferring dockerfile: 238B done
+2025-12-13T04:04:18.9399995Z #1 DONE 0.0s
+2025-12-13T04:04:18.9400107Z 
+2025-12-13T04:04:18.9400322Z #2 [internal] load metadata for ghcr.io/cicirello/pyaction:3.13.5-gh-2.75.1
+2025-12-13T04:04:19.2906928Z #2 DONE 0.5s
+2025-12-13T04:04:19.4079124Z 
+2025-12-13T04:04:19.4079920Z #3 [internal] load .dockerignore
+2025-12-13T04:04:19.4080536Z #3 transferring context: 59B done
+2025-12-13T04:04:19.4080884Z #3 DONE 0.0s
+2025-12-13T04:04:19.4081024Z 
+2025-12-13T04:04:19.4081130Z #4 [internal] load build context
+2025-12-13T04:04:19.4081434Z #4 transferring context: 176.53kB done
+2025-12-13T04:04:19.4081728Z #4 DONE 0.0s
+2025-12-13T04:04:19.4081855Z 
+2025-12-13T04:04:19.4082640Z #5 [1/2] FROM ghcr.io/cicirello/pyaction:3.13.5-gh-2.75.1@sha256:f7a134206e5edf6d1dfa3eba0d9768a77f1521ec4f2647a16ac7ae62b3f29789
+2025-12-13T04:04:19.4083927Z #5 resolve ghcr.io/cicirello/pyaction:3.13.5-gh-2.75.1@sha256:f7a134206e5edf6d1dfa3eba0d9768a77f1521ec4f2647a16ac7ae62b3f29789 done
+2025-12-13T04:04:19.4085102Z #5 sha256:f7a134206e5edf6d1dfa3eba0d9768a77f1521ec4f2647a16ac7ae62b3f29789 3.91kB / 3.91kB done
+2025-12-13T04:04:19.4086349Z #5 sha256:676120dd573ec7cbcfc6f278281a2284fc274e5de94727d5bfae970c0a453474 1.25kB / 1.25kB done
+2025-12-13T04:04:19.4087156Z #5 sha256:af1c92fdbdc074a06b9b298527c6292c316fe078c3c3dadd77caa27026c1c67e 7.14kB / 7.14kB done
+2025-12-13T04:04:19.4088183Z #5 sha256:3da95a905ed546f99c4564407923a681757d89651a388ec3f1f5e9bf5ed0b39d 1.05MB / 28.23MB 0.1s
+2025-12-13T04:04:19.4088770Z #5 sha256:e76888448fef0806c49e7438c5ea222b2883da9e1a3e7a8f8fe207f9eade79e3 0B / 3.51MB 0.1s
+2025-12-13T04:04:19.4089577Z #5 sha256:29fc64be73415f7dc67858b8564d51e731d96f3d9f5466a479aadd08f62fbaa2 0B / 12.58MB 0.1s
+2025-12-13T04:04:19.5247368Z #5 sha256:3da95a905ed546f99c4564407923a681757d89651a388ec3f1f5e9bf5ed0b39d 28.23MB / 28.23MB 0.2s done
+2025-12-13T04:04:19.5249352Z #5 sha256:e76888448fef0806c49e7438c5ea222b2883da9e1a3e7a8f8fe207f9eade79e3 1.05MB / 3.51MB 0.2s
+2025-12-13T04:04:19.5250734Z #5 sha256:0fe95cb712c4580a50adcc8e7f597abfcde47afc75c02bf8b116ab73b307fb8f 0B / 251B 0.2s
+2025-12-13T04:04:19.5253194Z #5 extracting sha256:3da95a905ed546f99c4564407923a681757d89651a388ec3f1f5e9bf5ed0b39d
+2025-12-13T04:04:19.6251962Z #5 sha256:e76888448fef0806c49e7438c5ea222b2883da9e1a3e7a8f8fe207f9eade79e3 3.51MB / 3.51MB 0.2s done
+2025-12-13T04:04:19.6259754Z #5 sha256:29fc64be73415f7dc67858b8564d51e731d96f3d9f5466a479aadd08f62fbaa2 12.58MB / 12.58MB 0.3s
+2025-12-13T04:04:19.6260930Z #5 sha256:0fe95cb712c4580a50adcc8e7f597abfcde47afc75c02bf8b116ab73b307fb8f 251B / 251B 0.2s done
+2025-12-13T04:04:19.6263079Z #5 sha256:66ac55e42172f7ed00d009f3e61881fa46654fdca3204cf21ab75b341d3c8221 57.34kB / 51.40MB 0.3s
+2025-12-13T04:04:19.7260734Z #5 sha256:66ac55e42172f7ed00d009f3e61881fa46654fdca3204cf21ab75b341d3c8221 34.60MB / 51.40MB 0.4s
+2025-12-13T04:04:19.8424338Z #5 sha256:29fc64be73415f7dc67858b8564d51e731d96f3d9f5466a479aadd08f62fbaa2 12.58MB / 12.58MB 0.4s done
+2025-12-13T04:04:19.8425919Z #5 sha256:66ac55e42172f7ed00d009f3e61881fa46654fdca3204cf21ab75b341d3c8221 51.40MB / 51.40MB 0.5s
+2025-12-13T04:04:20.0600205Z #5 sha256:66ac55e42172f7ed00d009f3e61881fa46654fdca3204cf21ab75b341d3c8221 51.40MB / 51.40MB 0.7s done
+2025-12-13T04:04:21.3612211Z #5 extracting sha256:3da95a905ed546f99c4564407923a681757d89651a388ec3f1f5e9bf5ed0b39d 1.8s done
+2025-12-13T04:04:21.3614114Z #5 extracting sha256:e76888448fef0806c49e7438c5ea222b2883da9e1a3e7a8f8fe207f9eade79e3
+2025-12-13T04:04:21.6401664Z #5 extracting sha256:e76888448fef0806c49e7438c5ea222b2883da9e1a3e7a8f8fe207f9eade79e3 0.1s done
+2025-12-13T04:04:22.1431393Z #5 extracting sha256:29fc64be73415f7dc67858b8564d51e731d96f3d9f5466a479aadd08f62fbaa2
+2025-12-13T04:04:22.8531251Z #5 extracting sha256:29fc64be73415f7dc67858b8564d51e731d96f3d9f5466a479aadd08f62fbaa2 0.5s done
+2025-12-13T04:04:22.8532378Z #5 extracting sha256:0fe95cb712c4580a50adcc8e7f597abfcde47afc75c02bf8b116ab73b307fb8f done
+2025-12-13T04:04:22.8533128Z #5 extracting sha256:66ac55e42172f7ed00d009f3e61881fa46654fdca3204cf21ab75b341d3c8221 0.1s
+2025-12-13T04:04:24.0886885Z #5 extracting sha256:66ac55e42172f7ed00d009f3e61881fa46654fdca3204cf21ab75b341d3c8221 1.2s done
+2025-12-13T04:04:24.0888022Z #5 DONE 4.8s
+2025-12-13T04:04:24.2516348Z 
+2025-12-13T04:04:24.2516663Z #6 [2/2] COPY src /
+2025-12-13T04:04:24.2517301Z #6 DONE 0.0s
+2025-12-13T04:04:24.2517540Z 
+2025-12-13T04:04:24.2517704Z #7 exporting to image
+2025-12-13T04:04:24.2518149Z #7 exporting layers
+2025-12-13T04:04:25.0037333Z #7 exporting layers 0.9s done
+2025-12-13T04:04:25.0221386Z #7 writing image sha256:53127c548229f9a119dd00af1bc4620693bdf62010fbaef7aad86a09737268d3 done
+2025-12-13T04:04:25.0222393Z #7 naming to docker.io/library/896624:265081b15464406e9b256ef60829f66e done
+2025-12-13T04:04:25.0223352Z #7 DONE 0.9s
+2025-12-13T04:04:25.0277892Z ##[endgroup]
+2025-12-13T04:04:25.0522805Z ##[group]Run actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+2025-12-13T04:04:25.0523442Z with:
+2025-12-13T04:04:25.0523892Z   repository: FasterXML/jackson-core
+2025-12-13T04:04:25.0524279Z   token: ***
+2025-12-13T04:04:25.0524479Z   ssh-strict: true
+2025-12-13T04:04:25.0524685Z   ssh-user: git
+2025-12-13T04:04:25.0524887Z   persist-credentials: true
+2025-12-13T04:04:25.0525109Z   clean: true
+2025-12-13T04:04:25.0525327Z   sparse-checkout-cone-mode: true
+2025-12-13T04:04:25.0525574Z   fetch-depth: 1
+2025-12-13T04:04:25.0525766Z   fetch-tags: false
+2025-12-13T04:04:25.0525978Z   show-progress: true
+2025-12-13T04:04:25.0526176Z   lfs: false
+2025-12-13T04:04:25.0526353Z   submodules: false
+2025-12-13T04:04:25.0526551Z   set-safe-directory: true
+2025-12-13T04:04:25.0526992Z env:
+2025-12-13T04:04:25.0527261Z   JAVA_OPTS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+2025-12-13T04:04:25.0527599Z ##[endgroup]
+2025-12-13T04:04:25.1442241Z Syncing repository: FasterXML/jackson-core
+2025-12-13T04:04:25.1443843Z ##[group]Getting Git version info
+2025-12-13T04:04:25.1444289Z Working directory is '/home/runner/work/jackson-core/jackson-core'
+2025-12-13T04:04:25.1444907Z [command]/usr/bin/git version
+2025-12-13T04:04:25.1458258Z git version 2.52.0
+2025-12-13T04:04:25.1479298Z ##[endgroup]
+2025-12-13T04:04:25.1494800Z Temporarily overriding HOME='/home/runner/work/_temp/0119cafe-13aa-4c46-871d-f293e7f99d0e' before making global git config changes
+2025-12-13T04:04:25.1496055Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-13T04:04:25.1500678Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jackson-core/jackson-core
+2025-12-13T04:04:25.1547882Z Deleting the contents of '/home/runner/work/jackson-core/jackson-core'
+2025-12-13T04:04:25.1551848Z ##[group]Initializing the repository
+2025-12-13T04:04:25.1557817Z [command]/usr/bin/git init /home/runner/work/jackson-core/jackson-core
+2025-12-13T04:04:25.1661644Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-13T04:04:25.1662593Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-13T04:04:25.1663652Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-13T04:04:25.1664316Z hint: call:
+2025-12-13T04:04:25.1664642Z hint:
+2025-12-13T04:04:25.1665088Z hint: 	git config --global init.defaultBranch <name>
+2025-12-13T04:04:25.1665637Z hint:
+2025-12-13T04:04:25.1666161Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-13T04:04:25.1667038Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-13T04:04:25.1667796Z hint:
+2025-12-13T04:04:25.1668159Z hint: 	git branch -m <name>
+2025-12-13T04:04:25.1668595Z hint:
+2025-12-13T04:04:25.1669129Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-13T04:04:25.1670460Z Initialized empty Git repository in /home/runner/work/jackson-core/jackson-core/.git/
+2025-12-13T04:04:25.1681681Z [command]/usr/bin/git remote add origin https://github.com/FasterXML/jackson-core
+2025-12-13T04:04:25.1717454Z ##[endgroup]
+2025-12-13T04:04:25.1717883Z ##[group]Disabling automatic garbage collection
+2025-12-13T04:04:25.1721602Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-13T04:04:25.1750869Z ##[endgroup]
+2025-12-13T04:04:25.1751448Z ##[group]Setting up auth
+2025-12-13T04:04:25.1752573Z Removing SSH command configuration
+2025-12-13T04:04:25.1759005Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-13T04:04:25.1791370Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-13T04:04:25.2138446Z Removing HTTP extra header
+2025-12-13T04:04:25.2144704Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-13T04:04:25.2177455Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-13T04:04:25.2392947Z Removing includeIf entries pointing to credentials config files
+2025-12-13T04:04:25.2399849Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-13T04:04:25.2432773Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-13T04:04:25.2661958Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-246089b4-03a6-4126-aee7-a83f3e8cfa84.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-13T04:04:25.2699533Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/jackson-core/jackson-core/.git.path /home/runner/work/_temp/git-credentials-246089b4-03a6-4126-aee7-a83f3e8cfa84.config
+2025-12-13T04:04:25.2729730Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-246089b4-03a6-4126-aee7-a83f3e8cfa84.config
+2025-12-13T04:04:25.2755471Z ##[endgroup]
+2025-12-13T04:04:25.2756089Z ##[group]Fetching the repository
+2025-12-13T04:04:25.2764965Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fcfebd483864adbdbc268e256f6afc7197d1f202:refs/remotes/pull/1531/merge
+2025-12-13T04:04:25.8103676Z From https://github.com/FasterXML/jackson-core
+2025-12-13T04:04:25.8104526Z  * [new ref]         fcfebd483864adbdbc268e256f6afc7197d1f202 -> pull/1531/merge
+2025-12-13T04:04:25.8134526Z ##[endgroup]
+2025-12-13T04:04:25.8135141Z ##[group]Determining the checkout info
+2025-12-13T04:04:25.8138006Z ##[endgroup]
+2025-12-13T04:04:25.8143074Z [command]/usr/bin/git sparse-checkout disable
+2025-12-13T04:04:25.8183039Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-13T04:04:25.8215778Z ##[group]Checking out the ref
+2025-12-13T04:04:25.8219875Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1531/merge
+2025-12-13T04:04:25.8618173Z Note: switching to 'refs/remotes/pull/1531/merge'.
+2025-12-13T04:04:25.8618609Z 
+2025-12-13T04:04:25.8618925Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-12-13T04:04:25.8619681Z changes and commit them, and you can discard any commits you make in this
+2025-12-13T04:04:25.8620429Z state without impacting any branches by switching back to a branch.
+2025-12-13T04:04:25.8620854Z 
+2025-12-13T04:04:25.8621153Z If you want to create a new branch to retain commits you create, you may
+2025-12-13T04:04:25.8621859Z do so (now or later) by using -c with the switch command. Example:
+2025-12-13T04:04:25.8622233Z 
+2025-12-13T04:04:25.8622406Z   git switch -c <new-branch-name>
+2025-12-13T04:04:25.8622674Z 
+2025-12-13T04:04:25.8622864Z Or undo this operation with:
+2025-12-13T04:04:25.8623055Z 
+2025-12-13T04:04:25.8623155Z   git switch -
+2025-12-13T04:04:25.8623295Z 
+2025-12-13T04:04:25.8623733Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-12-13T04:04:25.8624125Z 
+2025-12-13T04:04:25.8624459Z HEAD is now at fcfebd4 Merge 9bb31c138d416f2cc32f45dcc6e7d26482274190 into 8bc97630be4d7b913b7b62fdb63e2ab59b9ca2af
+2025-12-13T04:04:25.8627808Z ##[endgroup]
+2025-12-13T04:04:25.8666793Z [command]/usr/bin/git log -1 --format=%H
+2025-12-13T04:04:25.8688853Z fcfebd483864adbdbc268e256f6afc7197d1f202
+2025-12-13T04:04:25.8922752Z ##[group]Run actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165
+2025-12-13T04:04:25.8923122Z with:
+2025-12-13T04:04:25.8923311Z   distribution: temurin
+2025-12-13T04:04:25.8923731Z   java-version: 21
+2025-12-13T04:04:25.8923933Z   cache: maven
+2025-12-13T04:04:25.8924123Z   java-package: jdk
+2025-12-13T04:04:25.8924326Z   check-latest: false
+2025-12-13T04:04:25.8924708Z   server-id: github
+2025-12-13T04:04:25.8924914Z   server-username: GITHUB_ACTOR
+2025-12-13T04:04:25.8925157Z   server-password: GITHUB_TOKEN
+2025-12-13T04:04:25.8925399Z   overwrite-settings: true
+2025-12-13T04:04:25.8925610Z   job-status: success
+2025-12-13T04:04:25.8925917Z   token: ***
+2025-12-13T04:04:25.8926100Z env:
+2025-12-13T04:04:25.8926350Z   JAVA_OPTS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+2025-12-13T04:04:25.8926658Z ##[endgroup]
+2025-12-13T04:04:26.0493154Z ##[group]Installed distributions
+2025-12-13T04:04:26.0563443Z Resolved Java 21.0.9+10 from tool-cache
+2025-12-13T04:04:26.0564353Z Setting Java 21.0.9+10 as the default
+2025-12-13T04:04:26.0579820Z (node:2210) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-13T04:04:26.0580962Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-13T04:04:26.0584382Z Creating toolchains.xml for JDK version 21 from temurin
+2025-12-13T04:04:26.0663001Z Writing to /home/runner/.m2/toolchains.xml
+2025-12-13T04:04:26.0664119Z 
+2025-12-13T04:04:26.0664352Z Java configuration:
+2025-12-13T04:04:26.0664735Z   Distribution: temurin
+2025-12-13T04:04:26.0665117Z   Version: 21.0.9+10
+2025-12-13T04:04:26.0665661Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-12-13T04:04:26.0666135Z 
+2025-12-13T04:04:26.0666697Z ##[endgroup]
+2025-12-13T04:04:26.0679584Z Creating settings.xml with server-id: github
+2025-12-13T04:04:26.0687691Z Writing to /home/runner/.m2/settings.xml
+2025-12-13T04:04:26.3153798Z Cache hit for: setup-java-Linux-x64-maven-8e809c06dafef8472557733ac63bd98466b8aaf672e394fb10c34a8603f5e2a4
+2025-12-13T04:04:26.3304157Z (node:2210) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-12-13T04:04:27.4950611Z Received 78664299 of 82858603 (94.9%), 75.0 MBs/sec
+2025-12-13T04:04:27.5710297Z Received 82858603 of 82858603 (100.0%), 73.4 MBs/sec
+2025-12-13T04:04:27.5711233Z Cache Size: ~79 MB (82858603 B)
+2025-12-13T04:04:27.5753804Z [command]/usr/bin/tar -xf /home/runner/work/_temp/9908df8d-db74-4745-b7d2-1d4804624fda/cache.tzst -P -C /home/runner/work/jackson-core/jackson-core --use-compress-program unzstd
+2025-12-13T04:04:27.8152046Z Cache restored successfully
+2025-12-13T04:04:27.8311704Z Cache restored from key: setup-java-Linux-x64-maven-8e809c06dafef8472557733ac63bd98466b8aaf672e394fb10c34a8603f5e2a4
+2025-12-13T04:04:27.8482990Z ##[group]Run ./mvnw -B -ff -ntp verify
+2025-12-13T04:04:27.8483371Z [36;1m./mvnw -B -ff -ntp verify[0m
+2025-12-13T04:04:27.8520957Z shell: /usr/bin/bash -e {0}
+2025-12-13T04:04:27.8521210Z env:
+2025-12-13T04:04:27.8521479Z   JAVA_OPTS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+2025-12-13T04:04:27.8521919Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-12-13T04:04:27.8522387Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-12-13T04:04:27.8522770Z ##[endgroup]
+2025-12-13T04:04:30.8050549Z [INFO] Scanning for projects...
+2025-12-13T04:04:33.5358172Z [INFO] Inspecting build with total of 1 modules
+2025-12-13T04:04:33.5405287Z [INFO] Installing Central Publishing features
+2025-12-13T04:04:33.5534061Z [INFO] 
+2025-12-13T04:04:33.5534824Z [INFO] ------------------< tools.jackson.core:jackson-core >-------------------
+2025-12-13T04:04:33.5536912Z [INFO] Building Jackson-core 3.1.0-SNAPSHOT
+2025-12-13T04:04:33.5537626Z [INFO]   from pom.xml
+2025-12-13T04:04:33.5538341Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-12-13T04:04:33.6852058Z [INFO] 
+2025-12-13T04:04:33.6856557Z [INFO] --- build-helper:3.6.0:regex-property (regex-property) @ jackson-core ---
+2025-12-13T04:04:33.7602342Z [INFO] 
+2025-12-13T04:04:33.7613032Z [INFO] --- enforcer:3.6.2:enforce (enforce-java) @ jackson-core ---
+2025-12-13T04:04:33.8985299Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-12-13T04:04:33.8987083Z [INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2025-12-13T04:04:33.9031747Z [INFO] Rule 2: org.apache.maven.enforcer.rules.RequirePluginVersions passed
+2025-12-13T04:04:33.9032849Z [INFO] 
+2025-12-13T04:04:33.9035755Z [INFO] --- enforcer:3.6.2:enforce (enforce-properties) @ jackson-core ---
+2025-12-13T04:04:33.9056781Z [INFO] Rule 0: org.apache.maven.enforcer.rules.property.RequireProperty passed
+2025-12-13T04:04:33.9058981Z [INFO] Rule 1: org.apache.maven.enforcer.rules.property.RequireProperty passed
+2025-12-13T04:04:33.9061833Z [INFO] 
+2025-12-13T04:04:33.9062314Z [INFO] --- jacoco:0.8.14:prepare-agent (default) @ jackson-core ---
+2025-12-13T04:04:33.9612386Z [INFO] argLine set to -javaagent:/home/runner/.m2/repository/org/jacoco/org.jacoco.agent/0.8.14/org.jacoco.agent-0.8.14-runtime.jar=destfile=/home/runner/work/jackson-core/jackson-core/target/jacoco.exec
+2025-12-13T04:04:33.9614472Z [INFO] 
+2025-12-13T04:04:33.9615290Z [INFO] --- replacer:1.5.3:replace (process-packageVersion) @ jackson-core ---
+2025-12-13T04:04:34.0248003Z [INFO] Replacement run on 1 file.
+2025-12-13T04:04:34.0248827Z [INFO] 
+2025-12-13T04:04:34.0249576Z [INFO] --- build-helper:3.6.0:add-source (add-generated-sources) @ jackson-core ---
+2025-12-13T04:04:34.0284807Z [INFO] Source directory: /home/runner/work/jackson-core/jackson-core/target/generated-sources added.
+2025-12-13T04:04:34.0308061Z [INFO] 
+2025-12-13T04:04:34.0308634Z [INFO] --- build-helper:3.6.0:add-resource (add-resource) @ jackson-core ---
+2025-12-13T04:04:34.0309222Z [INFO] 
+2025-12-13T04:04:34.0309724Z [INFO] --- resources:3.3.1:resources (default-resources) @ jackson-core ---
+2025-12-13T04:04:34.0826026Z [INFO] Copying 3 resources from src/main/resources to target/classes
+2025-12-13T04:04:34.0892282Z [INFO] Copying 1 resource from  to target/classes/META-INF
+2025-12-13T04:04:34.0893176Z [INFO] 
+2025-12-13T04:04:34.0894048Z [INFO] --- compiler:3.14.1:compile (default-compile) @ jackson-core ---
+2025-12-13T04:04:34.3260923Z [INFO] Recompiling the module because of changed source code.
+2025-12-13T04:04:34.3337130Z [INFO] Compiling 138 source files with javac [debug:lines,source,vars deprecation target 17 module-path] to target/classes
+2025-12-13T04:04:37.6485019Z [INFO] JDK-8318913 workaround: patched module-info.class requires version from [21.0.9] to [null] on 1 JDK modules [java.base]
+2025-12-13T04:04:37.6534598Z [WARNING] system modules path not set in conjunction with -source 17
+2025-12-13T04:04:37.6542529Z [INFO] /home/runner/work/jackson-core/jackson-core/src/main/java/tools/jackson/core/json/JsonFactory.java: /home/runner/work/jackson-core/jackson-core/src/main/java/tools/jackson/core/json/JsonFactory.java uses unchecked or unsafe operations.
+2025-12-13T04:04:37.6545401Z [INFO] /home/runner/work/jackson-core/jackson-core/src/main/java/tools/jackson/core/json/JsonFactory.java: Recompile with -Xlint:unchecked for details.
+2025-12-13T04:04:37.6546601Z [INFO] 
+2025-12-13T04:04:37.6547103Z [INFO] --- bundle:5.1.9:manifest (bundle-manifest) @ jackson-core ---
+2025-12-13T04:04:37.6677456Z [INFO] No MANIFEST.MF file found, generating manifest.
+2025-12-13T04:04:38.7829117Z [INFO] Writing manifest: /home/runner/work/jackson-core/jackson-core/target/classes/META-INF/MANIFEST.MF
+2025-12-13T04:04:38.7846378Z [INFO] 
+2025-12-13T04:04:38.7848789Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ jackson-core ---
+2025-12-13T04:04:38.7896928Z [INFO] Copying 6 resources from src/test/resources to target/test-classes
+2025-12-13T04:04:38.7909967Z [INFO] 
+2025-12-13T04:04:38.7928648Z [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ jackson-core ---
+2025-12-13T04:04:38.8229292Z [INFO] Recompiling the module because of changed dependency.
+2025-12-13T04:04:38.8236014Z [INFO] Compiling 251 source files with javac [debug:lines,source,vars deprecation target 17 module-path] to target/test-classes
+2025-12-13T04:04:42.0615698Z [INFO] JDK-8318913 workaround: patched module-info.class requires version from [21.0.9] to [null] on 1 JDK modules [java.base]
+2025-12-13T04:04:42.0678210Z [WARNING] system modules path not set in conjunction with -source 17
+2025-12-13T04:04:42.0683315Z [WARNING] /home/runner/work/jackson-core/jackson-core/src/test/java/tools/jackson/core/unittest/json/InputStreamInitTest.java:[44,31] _optimizedStreamFromURL(java.net.URL) in tools.jackson.core.TokenStreamFactory has been deprecated
+2025-12-13T04:04:42.0686726Z [WARNING] /home/runner/work/jackson-core/jackson-core/src/test/java/tools/jackson/core/unittest/read/NextNameWithMatcherTest.java:[26,13] Locale(java.lang.String,java.lang.String) in java.util.Locale has been deprecated
+2025-12-13T04:04:42.0692471Z [WARNING] /home/runner/work/jackson-core/jackson-core/src/test/java/tools/jackson/core/unittest/sym/PropertyNameMatchersTest.java:[95,31] Locale(java.lang.String,java.lang.String) in java.util.Locale has been deprecated
+2025-12-13T04:04:42.0694620Z [INFO] 
+2025-12-13T04:04:42.0695229Z [INFO] --- surefire:3.5.4:test (default-test) @ jackson-core ---
+2025-12-13T04:04:42.1987202Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-12-13T04:04:42.2413424Z [INFO] 
+2025-12-13T04:04:42.2413871Z [INFO] -------------------------------------------------------
+2025-12-13T04:04:42.2414186Z [INFO]  T E S T S
+2025-12-13T04:04:42.2414432Z [INFO] -------------------------------------------------------
+2025-12-13T04:04:45.0957388Z [INFO] Running tools.jackson.core.unittest.ComponentVersionsTest
+2025-12-13T04:04:45.2368314Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 s -- in tools.jackson.core.unittest.ComponentVersionsTest
+2025-12-13T04:04:45.2382321Z [INFO] Running tools.jackson.core.unittest.base64.Base64GenerationTest
+2025-12-13T04:04:45.2735816Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in tools.jackson.core.unittest.base64.Base64GenerationTest
+2025-12-13T04:04:45.2764502Z [INFO] Running tools.jackson.core.unittest.base64.Base64Padding912Test
+2025-12-13T04:04:45.2891308Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in tools.jackson.core.unittest.base64.Base64Padding912Test
+2025-12-13T04:04:45.2895309Z [INFO] Running tools.jackson.core.unittest.base64.Base64CodecTest
+2025-12-13T04:04:45.3032182Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in tools.jackson.core.unittest.base64.Base64CodecTest
+2025-12-13T04:04:45.3037255Z [INFO] Running tools.jackson.core.unittest.base64.Base64BinaryParsingTest
+2025-12-13T04:04:45.5868659Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.274 s -- in tools.jackson.core.unittest.base64.Base64BinaryParsingTest
+2025-12-13T04:04:45.5869859Z [INFO] Running tools.jackson.core.unittest.JDKSerializabilityTest
+2025-12-13T04:04:45.6985442Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 s -- in tools.jackson.core.unittest.JDKSerializabilityTest
+2025-12-13T04:04:45.6992168Z [INFO] Running tools.jackson.core.unittest.TokenStreamLocationTest
+2025-12-13T04:04:45.8214292Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.121 s -- in tools.jackson.core.unittest.TokenStreamLocationTest
+2025-12-13T04:04:45.8218981Z [INFO] Running tools.jackson.core.unittest.dos.PerfBigDecimalParser967Test
+2025-12-13T04:04:45.8464895Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in tools.jackson.core.unittest.dos.PerfBigDecimalParser967Test
+2025-12-13T04:04:45.8548169Z [INFO] Running tools.jackson.core.unittest.dos.PerfBigDecimalToInteger968Test
+2025-12-13T04:04:45.8577193Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.dos.PerfBigDecimalToInteger968Test
+2025-12-13T04:04:45.8581780Z [INFO] Running tools.jackson.core.unittest.VersionClassTest
+2025-12-13T04:04:45.8792304Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in tools.jackson.core.unittest.VersionClassTest
+2025-12-13T04:04:45.8801876Z [INFO] Running tools.jackson.core.unittest.io.schubfach.SchubfachFloatTest
+2025-12-13T04:04:45.8935522Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in tools.jackson.core.unittest.io.schubfach.SchubfachFloatTest
+2025-12-13T04:04:45.8937101Z [INFO] Running tools.jackson.core.unittest.io.schubfach.MathUtilsTest
+2025-12-13T04:04:45.9306904Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in tools.jackson.core.unittest.io.schubfach.MathUtilsTest
+2025-12-13T04:04:45.9324558Z [INFO] Running tools.jackson.core.unittest.io.schubfach.DoubleToDecimalTest
+2025-12-13T04:04:52.1446892Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.216 s -- in tools.jackson.core.unittest.io.schubfach.DoubleToDecimalTest
+2025-12-13T04:04:52.1455576Z [INFO] Running tools.jackson.core.unittest.io.schubfach.FloatToDecimalTest
+2025-12-13T04:04:58.8208697Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.675 s -- in tools.jackson.core.unittest.io.schubfach.FloatToDecimalTest
+2025-12-13T04:04:58.8216037Z [INFO] Running tools.jackson.core.unittest.io.schubfach.SchubfachDoubleTest
+2025-12-13T04:04:58.8289693Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.io.schubfach.SchubfachDoubleTest
+2025-12-13T04:04:58.8294943Z [INFO] Running tools.jackson.core.unittest.io.TestJsonStringEncoder
+2025-12-13T04:04:58.9135467Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s -- in tools.jackson.core.unittest.io.TestJsonStringEncoder
+2025-12-13T04:04:58.9136900Z [INFO] Running tools.jackson.core.unittest.io.UTF8WriterTest
+2025-12-13T04:04:58.9405250Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in tools.jackson.core.unittest.io.UTF8WriterTest
+2025-12-13T04:04:58.9417560Z [INFO] Running tools.jackson.core.unittest.io.MergedStreamTest
+2025-12-13T04:04:58.9432500Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.io.MergedStreamTest
+2025-12-13T04:04:58.9433984Z [INFO] Running tools.jackson.core.unittest.io.BigDecimalParserTest
+2025-12-13T04:04:58.9476391Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in tools.jackson.core.unittest.io.BigDecimalParserTest
+2025-12-13T04:04:58.9482928Z [INFO] Running tools.jackson.core.unittest.io.NumberOutputTest
+2025-12-13T04:04:59.9058790Z [WARNING] Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.958 s -- in tools.jackson.core.unittest.io.NumberOutputTest
+2025-12-13T04:04:59.9061844Z [INFO] Running tools.jackson.core.unittest.io.SegmentedStringWriterTest
+2025-12-13T04:04:59.9105791Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.io.SegmentedStringWriterTest
+2025-12-13T04:04:59.9111953Z [INFO] Running tools.jackson.core.unittest.io.NumberInputTest
+2025-12-13T04:04:59.9467066Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in tools.jackson.core.unittest.io.NumberInputTest
+2025-12-13T04:04:59.9468750Z [INFO] Running tools.jackson.core.unittest.io.BigIntegerParserTest
+2025-12-13T04:04:59.9498276Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.io.BigIntegerParserTest
+2025-12-13T04:04:59.9499827Z [INFO] Running tools.jackson.core.unittest.io.TestIOContext
+2025-12-13T04:04:59.9534005Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.io.TestIOContext
+2025-12-13T04:04:59.9538930Z [INFO] Running tools.jackson.core.unittest.io.BufferRecyclerPoolTest
+2025-12-13T04:04:59.9635156Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in tools.jackson.core.unittest.io.BufferRecyclerPoolTest
+2025-12-13T04:04:59.9637925Z [INFO] Running tools.jackson.core.unittest.io.TestCharTypes
+2025-12-13T04:04:59.9660173Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.io.TestCharTypes
+2025-12-13T04:04:59.9665800Z [INFO] Running tools.jackson.core.unittest.base.ParserBaseNumberConversionTest
+2025-12-13T04:04:59.9848053Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in tools.jackson.core.unittest.base.ParserBaseNumberConversionTest
+2025-12-13T04:04:59.9851120Z [INFO] Running tools.jackson.core.unittest.tofix.ParserErrorHandlingDataInput105Test
+2025-12-13T04:04:59.9965410Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in tools.jackson.core.unittest.tofix.ParserErrorHandlingDataInput105Test
+2025-12-13T04:04:59.9967130Z [INFO] Running tools.jackson.core.unittest.tofix.ParserErrorHandlingChars105Test
+2025-12-13T04:04:59.9998900Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in tools.jackson.core.unittest.tofix.ParserErrorHandlingChars105Test
+2025-12-13T04:05:00.0000699Z [INFO] Running tools.jackson.core.unittest.tofix.ParserErrorHandling679Test
+2025-12-13T04:05:00.0166208Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in tools.jackson.core.unittest.tofix.ParserErrorHandling679Test
+2025-12-13T04:05:00.0171006Z [INFO] Running tools.jackson.core.unittest.tofix.ParserErrorHandlingBytes105Test
+2025-12-13T04:05:00.0254476Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in tools.jackson.core.unittest.tofix.ParserErrorHandlingBytes105Test
+2025-12-13T04:05:00.0259621Z [INFO] Running tools.jackson.core.unittest.tofix.async.AsyncTokenBranchNumberErrorTest
+2025-12-13T04:05:00.0330980Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in tools.jackson.core.unittest.tofix.async.AsyncTokenBranchNumberErrorTest
+2025-12-13T04:05:00.0337159Z [INFO] Running tools.jackson.core.unittest.jsonptr.JsonPointer1168Test
+2025-12-13T04:05:00.0438388Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.jsonptr.JsonPointer1168Test
+2025-12-13T04:05:00.0439684Z [INFO] Running tools.jackson.core.unittest.jsonptr.JsonPointer1425Test
+2025-12-13T04:05:00.0440933Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.jsonptr.JsonPointer1425Test
+2025-12-13T04:05:00.0442137Z [INFO] Running tools.jackson.core.unittest.jsonptr.JsonPointerTest
+2025-12-13T04:05:00.0606793Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in tools.jackson.core.unittest.jsonptr.JsonPointerTest
+2025-12-13T04:05:00.0608334Z [INFO] Running tools.jackson.core.unittest.jsonptr.JsonPointerOOME736Test
+2025-12-13T04:05:00.1305438Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s -- in tools.jackson.core.unittest.jsonptr.JsonPointerOOME736Test
+2025-12-13T04:05:00.1309805Z [INFO] Running tools.jackson.core.unittest.jsonptr.Fuzz51806JsonPointerParse818Test
+2025-12-13T04:05:00.9166412Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.786 s -- in tools.jackson.core.unittest.jsonptr.Fuzz51806JsonPointerParse818Test
+2025-12-13T04:05:00.9168214Z [INFO] Running tools.jackson.core.unittest.jsonptr.JsonPointer1328Test
+2025-12-13T04:05:00.9622818Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in tools.jackson.core.unittest.jsonptr.JsonPointer1328Test
+2025-12-13T04:05:00.9646215Z [INFO] Running tools.jackson.core.unittest.ErrorReportConfigurationTest
+2025-12-13T04:05:00.9903374Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in tools.jackson.core.unittest.ErrorReportConfigurationTest
+2025-12-13T04:05:00.9905851Z [INFO] Running tools.jackson.core.unittest.json.GeneratorFeaturesTest
+2025-12-13T04:05:01.0160429Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in tools.jackson.core.unittest.json.GeneratorFeaturesTest
+2025-12-13T04:05:01.0185372Z [INFO] Running tools.jackson.core.unittest.json.TestDecorators
+2025-12-13T04:05:01.0211998Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in tools.jackson.core.unittest.json.TestDecorators
+2025-12-13T04:05:01.0224193Z [INFO] Running tools.jackson.core.unittest.json.TestMaxErrorSize
+2025-12-13T04:05:01.0281025Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.json.TestMaxErrorSize
+2025-12-13T04:05:01.0288141Z [INFO] Running tools.jackson.core.unittest.json.TestWithTonsaSymbols
+2025-12-13T04:05:01.1291147Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 s -- in tools.jackson.core.unittest.json.TestWithTonsaSymbols
+2025-12-13T04:05:01.1321109Z [INFO] Running tools.jackson.core.unittest.json.BoundsChecksWithJsonFactoryTest
+2025-12-13T04:05:01.1355368Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.json.BoundsChecksWithJsonFactoryTest
+2025-12-13T04:05:01.1368740Z [INFO] Running tools.jackson.core.unittest.json.TestUnicode
+2025-12-13T04:05:01.1388757Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.json.TestUnicode
+2025-12-13T04:05:01.1407598Z [INFO] Running tools.jackson.core.unittest.json.CustomQuoteCharTest
+2025-12-13T04:05:01.1439462Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.json.CustomQuoteCharTest
+2025-12-13T04:05:01.1440727Z [INFO] Running tools.jackson.core.unittest.json.RawValueWithSurrogatesTest
+2025-12-13T04:05:01.1742203Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in tools.jackson.core.unittest.json.RawValueWithSurrogatesTest
+2025-12-13T04:05:01.1743406Z [INFO] Running tools.jackson.core.unittest.json.JsonParserClosedCaseTest
+2025-12-13T04:05:01.2455761Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 s -- in tools.jackson.core.unittest.json.JsonParserClosedCaseTest
+2025-12-13T04:05:01.2456997Z [INFO] Running tools.jackson.core.unittest.json.TestRootValues
+2025-12-13T04:05:01.2564246Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in tools.jackson.core.unittest.json.TestRootValues
+2025-12-13T04:05:01.2565588Z [INFO] Running tools.jackson.core.unittest.json.TestCustomEscaping
+2025-12-13T04:05:01.2666464Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in tools.jackson.core.unittest.json.TestCustomEscaping
+2025-12-13T04:05:01.2668053Z [INFO] Running tools.jackson.core.unittest.json.GeneratorFailFromReaderTest
+2025-12-13T04:05:01.2724440Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.json.GeneratorFailFromReaderTest
+2025-12-13T04:05:01.2726636Z [INFO] Running tools.jackson.core.unittest.json.JsonReadFeaturesTest
+2025-12-13T04:05:01.2812160Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in tools.jackson.core.unittest.json.JsonReadFeaturesTest
+2025-12-13T04:05:01.2820623Z [INFO] Running tools.jackson.core.unittest.json.JsonFactoryTest
+2025-12-13T04:05:01.3145306Z [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in tools.jackson.core.unittest.json.JsonFactoryTest
+2025-12-13T04:05:01.3159870Z [INFO] Running tools.jackson.core.unittest.json.StringGenerationFromReaderTest
+2025-12-13T04:05:02.9829525Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.667 s -- in tools.jackson.core.unittest.json.StringGenerationFromReaderTest
+2025-12-13T04:05:02.9834540Z [INFO] Running tools.jackson.core.unittest.json.OutputStreamInitTest
+2025-12-13T04:05:02.9855957Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.json.OutputStreamInitTest
+2025-12-13T04:05:02.9859217Z [INFO] Running tools.jackson.core.unittest.json.JsonReadContextTest
+2025-12-13T04:05:02.9890309Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.json.JsonReadContextTest
+2025-12-13T04:05:02.9895772Z [INFO] Running tools.jackson.core.unittest.json.GeneratorFailTest
+2025-12-13T04:05:02.9938476Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.json.GeneratorFailTest
+2025-12-13T04:05:02.9947135Z [INFO] Running tools.jackson.core.unittest.json.TestCharEscaping
+2025-12-13T04:05:03.0122496Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in tools.jackson.core.unittest.json.TestCharEscaping
+2025-12-13T04:05:03.0124831Z [INFO] Running tools.jackson.core.unittest.json.JsonWriteContextTest
+2025-12-13T04:05:03.0125940Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.json.JsonWriteContextTest
+2025-12-13T04:05:03.0127035Z [INFO] Running tools.jackson.core.unittest.json.StringGenerationTest
+2025-12-13T04:05:05.8067807Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.795 s -- in tools.jackson.core.unittest.json.StringGenerationTest
+2025-12-13T04:05:05.8072012Z [INFO] Running tools.jackson.core.unittest.json.InputStreamInitTest
+2025-12-13T04:05:05.8079540Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.json.InputStreamInitTest
+2025-12-13T04:05:05.8080776Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncConcurrencyTest
+2025-12-13T04:05:06.8632606Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.054 s -- in tools.jackson.core.unittest.json.async.AsyncConcurrencyTest
+2025-12-13T04:05:06.8635512Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncUnicodeHandlingTest
+2025-12-13T04:05:06.9315288Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in tools.jackson.core.unittest.json.async.AsyncUnicodeHandlingTest
+2025-12-13T04:05:06.9316614Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncPropertyNamesTest
+2025-12-13T04:05:06.9317846Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in tools.jackson.core.unittest.json.async.AsyncPropertyNamesTest
+2025-12-13T04:05:06.9319082Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncSimpleObjectTest
+2025-12-13T04:05:06.9320680Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in tools.jackson.core.unittest.json.async.AsyncSimpleObjectTest
+2025-12-13T04:05:06.9322093Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncNonStandardNumberParsingTest
+2025-12-13T04:05:06.9426149Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in tools.jackson.core.unittest.json.async.AsyncNonStandardNumberParsingTest
+2025-12-13T04:05:06.9427663Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncRootValuesTest
+2025-12-13T04:05:06.9467325Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.json.async.AsyncRootValuesTest
+2025-12-13T04:05:06.9472060Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncTokenFilterTest
+2025-12-13T04:05:06.9550442Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in tools.jackson.core.unittest.json.async.AsyncTokenFilterTest
+2025-12-13T04:05:06.9551672Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncCommentParsingTest
+2025-12-13T04:05:06.9622216Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in tools.jackson.core.unittest.json.async.AsyncCommentParsingTest
+2025-12-13T04:05:06.9631206Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncMissingValuesInObjectTest
+2025-12-13T04:05:07.0014746Z [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in tools.jackson.core.unittest.json.async.AsyncMissingValuesInObjectTest
+2025-12-13T04:05:07.0016470Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncNaNHandlingTest
+2025-12-13T04:05:07.0017689Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.json.async.AsyncNaNHandlingTest
+2025-12-13T04:05:07.0018898Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncInvalidCharsTest
+2025-12-13T04:05:07.0104534Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.json.async.AsyncInvalidCharsTest
+2025-12-13T04:05:07.0105851Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncScopeMatchingTest
+2025-12-13T04:05:07.0174366Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.json.async.AsyncScopeMatchingTest
+2025-12-13T04:05:07.0175687Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncStringArrayTest
+2025-12-13T04:05:07.0353411Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in tools.jackson.core.unittest.json.async.AsyncStringArrayTest
+2025-12-13T04:05:07.0355123Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncLocation1412Test
+2025-12-13T04:05:07.0399376Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.json.async.AsyncLocation1412Test
+2025-12-13T04:05:07.0412475Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncRootNumbersTest
+2025-12-13T04:05:07.0447150Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.json.async.AsyncRootNumbersTest
+2025-12-13T04:05:07.0450499Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncParserNamesTest
+2025-12-13T04:05:07.0535237Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.json.async.AsyncParserNamesTest
+2025-12-13T04:05:07.0550035Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncPointerFromContext563Test
+2025-12-13T04:05:07.0551768Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.json.async.AsyncPointerFromContext563Test
+2025-12-13T04:05:07.0558137Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncNonStdNumberHandlingTest
+2025-12-13T04:05:07.0611614Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in tools.jackson.core.unittest.json.async.AsyncNonStdNumberHandlingTest
+2025-12-13T04:05:07.0638630Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncBinaryParseTest
+2025-12-13T04:05:07.2031095Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.142 s -- in tools.jackson.core.unittest.json.async.AsyncBinaryParseTest
+2025-12-13T04:05:07.2032468Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncSimpleNestedTest
+2025-12-13T04:05:07.2115993Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.json.async.AsyncSimpleNestedTest
+2025-12-13T04:05:07.2117274Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncCharEscapingTest
+2025-12-13T04:05:07.2159365Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.json.async.AsyncCharEscapingTest
+2025-12-13T04:05:07.2175648Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncParserRootToken1506Test
+2025-12-13T04:05:07.2222671Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in tools.jackson.core.unittest.json.async.AsyncParserRootToken1506Test
+2025-12-13T04:05:07.2227642Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncParserInvalidKeywordsTest
+2025-12-13T04:05:07.2280598Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.json.async.AsyncParserInvalidKeywordsTest
+2025-12-13T04:05:07.2285535Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncLocationTest
+2025-12-13T04:05:07.2307865Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.json.async.AsyncLocationTest
+2025-12-13T04:05:07.2313034Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncMissingValuesInArrayTest
+2025-12-13T04:05:07.2585607Z [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in tools.jackson.core.unittest.json.async.AsyncMissingValuesInArrayTest
+2025-12-13T04:05:07.2587229Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncNumberCoercionTest
+2025-12-13T04:05:07.2663316Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.json.async.AsyncNumberCoercionTest
+2025-12-13T04:05:07.2664952Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncNonStdParsingTest
+2025-12-13T04:05:07.3017365Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in tools.jackson.core.unittest.json.async.AsyncNonStdParsingTest
+2025-12-13T04:05:07.3018938Z [INFO] Running tools.jackson.core.unittest.json.async.ConfigTest
+2025-12-13T04:05:07.3044139Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.json.async.ConfigTest
+2025-12-13T04:05:07.3045528Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncScalarArrayTest
+2025-12-13T04:05:07.3152618Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in tools.jackson.core.unittest.json.async.AsyncScalarArrayTest
+2025-12-13T04:05:07.3154157Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncStringObjectTest
+2025-12-13T04:05:07.3185494Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.json.async.AsyncStringObjectTest
+2025-12-13T04:05:07.3190204Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncConcurrencyByteBufferTest
+2025-12-13T04:05:08.5440829Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.225 s -- in tools.jackson.core.unittest.json.async.AsyncConcurrencyByteBufferTest
+2025-12-13T04:05:08.5444671Z [INFO] Running tools.jackson.core.unittest.json.async.AsyncNumberDeferredReadTest
+2025-12-13T04:05:08.5477279Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.json.async.AsyncNumberDeferredReadTest
+2025-12-13T04:05:08.5483305Z [INFO] Running tools.jackson.core.unittest.ExceptionsTest
+2025-12-13T04:05:08.5530363Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.ExceptionsTest
+2025-12-13T04:05:08.5537788Z [INFO] Running tools.jackson.core.unittest.Base64VariantTest
+2025-12-13T04:05:08.5609447Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.Base64VariantTest
+2025-12-13T04:05:08.5624455Z [INFO] Running tools.jackson.core.unittest.write.GeneratorCloseTest
+2025-12-13T04:05:08.5657344Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.write.GeneratorCloseTest
+2025-12-13T04:05:08.5658845Z [INFO] Running tools.jackson.core.unittest.write.SerializedStringWriteTest
+2025-12-13T04:05:08.5734357Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in tools.jackson.core.unittest.write.SerializedStringWriteTest
+2025-12-13T04:05:08.5740887Z [INFO] Running tools.jackson.core.unittest.write.GeneratorBasicTest
+2025-12-13T04:05:08.5917089Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in tools.jackson.core.unittest.write.GeneratorBasicTest
+2025-12-13T04:05:08.5919834Z [INFO] Running tools.jackson.core.unittest.write.GeneratorCopyTest
+2025-12-13T04:05:08.5966098Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.write.GeneratorCopyTest
+2025-12-13T04:05:08.5967308Z [INFO] Running tools.jackson.core.unittest.write.WriterBasedJsonGeneratorTest
+2025-12-13T04:05:08.6001038Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.write.WriterBasedJsonGeneratorTest
+2025-12-13T04:05:08.6002545Z [INFO] Running tools.jackson.core.unittest.write.RawStringWriteTest
+2025-12-13T04:05:08.6948530Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 s -- in tools.jackson.core.unittest.write.RawStringWriteTest
+2025-12-13T04:05:08.6956115Z [INFO] Running tools.jackson.core.unittest.write.GeneratorMiscTest
+2025-12-13T04:05:09.4510551Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.753 s -- in tools.jackson.core.unittest.write.GeneratorMiscTest
+2025-12-13T04:05:09.4511850Z [INFO] Running tools.jackson.core.unittest.write.JsonWriteFeatureEscapeForwardSlashTest
+2025-12-13T04:05:09.4516407Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.write.JsonWriteFeatureEscapeForwardSlashTest
+2025-12-13T04:05:09.4517666Z [INFO] Running tools.jackson.core.unittest.write.SurrogateWrite223Test
+2025-12-13T04:05:09.4596026Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.write.SurrogateWrite223Test
+2025-12-13T04:05:09.4597161Z [INFO] Running tools.jackson.core.unittest.write.ArrayGenerationTest
+2025-12-13T04:05:09.5901754Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.133 s -- in tools.jackson.core.unittest.write.ArrayGenerationTest
+2025-12-13T04:05:09.5907110Z [INFO] Running tools.jackson.core.unittest.write.FastDoubleArrayGenerationTest
+2025-12-13T04:05:09.6832426Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 s -- in tools.jackson.core.unittest.write.FastDoubleArrayGenerationTest
+2025-12-13T04:05:09.6837427Z [INFO] Running tools.jackson.core.unittest.write.BoundsChecksWithGeneratorTest
+2025-12-13T04:05:09.6996182Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in tools.jackson.core.unittest.write.BoundsChecksWithGeneratorTest
+2025-12-13T04:05:09.6997863Z [INFO] Running tools.jackson.core.unittest.write.ArrayWriteTest
+2025-12-13T04:05:09.7048458Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.write.ArrayWriteTest
+2025-12-13T04:05:09.7054345Z [INFO] Running tools.jackson.core.unittest.write.WriteTypeIdTest
+2025-12-13T04:05:09.7080978Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.write.WriteTypeIdTest
+2025-12-13T04:05:09.7086669Z [INFO] Running tools.jackson.core.unittest.write.UTF8GeneratorTest
+2025-12-13T04:05:09.7112495Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in tools.jackson.core.unittest.write.UTF8GeneratorTest
+2025-12-13T04:05:09.7117605Z [INFO] Running tools.jackson.core.unittest.write.PrettyPrinterTest
+2025-12-13T04:05:09.7267945Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in tools.jackson.core.unittest.write.PrettyPrinterTest
+2025-12-13T04:05:09.7294543Z [INFO] Running tools.jackson.core.unittest.filter.JsonPointerParserFilteringTest
+2025-12-13T04:05:09.7304513Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.filter.JsonPointerParserFilteringTest
+2025-12-13T04:05:09.7306037Z [INFO] Running tools.jackson.core.unittest.filter.ParserFiltering700Test
+2025-12-13T04:05:09.7359151Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.filter.ParserFiltering700Test
+2025-12-13T04:05:09.7361134Z [INFO] Running tools.jackson.core.unittest.filter.BasicGeneratorFilteringTest
+2025-12-13T04:05:09.7635791Z [INFO] Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in tools.jackson.core.unittest.filter.BasicGeneratorFilteringTest
+2025-12-13T04:05:09.7637190Z [INFO] Running tools.jackson.core.unittest.filter.ParserFilterEmpty1418Test
+2025-12-13T04:05:09.7665814Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.filter.ParserFilterEmpty1418Test
+2025-12-13T04:05:09.7670759Z [INFO] Running tools.jackson.core.unittest.filter.GeneratorFiltering609Test
+2025-12-13T04:05:09.7682081Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.filter.GeneratorFiltering609Test
+2025-12-13T04:05:09.7684637Z [INFO] Running tools.jackson.core.unittest.filter.ParserFilterEmpty708Test
+2025-12-13T04:05:09.7720183Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.filter.ParserFilterEmpty708Test
+2025-12-13T04:05:09.7723218Z [INFO] Running tools.jackson.core.unittest.filter.BasicParserFilteringTest
+2025-12-13T04:05:09.8215197Z [INFO] Tests run: 44, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in tools.jackson.core.unittest.filter.BasicParserFilteringTest
+2025-12-13T04:05:09.8216466Z [INFO] Running tools.jackson.core.unittest.filter.GeneratorFiltering890Test
+2025-12-13T04:05:09.8232122Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.filter.GeneratorFiltering890Test
+2025-12-13T04:05:09.8233674Z [INFO] Running tools.jackson.core.unittest.filter.JsonPointerGeneratorFilteringTest
+2025-12-13T04:05:09.8331429Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in tools.jackson.core.unittest.filter.JsonPointerGeneratorFilteringTest
+2025-12-13T04:05:09.8340888Z [INFO] Running tools.jackson.core.unittest.type.TypeReferenceTest
+2025-12-13T04:05:09.8376055Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.type.TypeReferenceTest
+2025-12-13T04:05:09.8393727Z [INFO] Running tools.jackson.core.unittest.sym.TestHashCollisionChars
+2025-12-13T04:05:09.8556982Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in tools.jackson.core.unittest.sym.TestHashCollisionChars
+2025-12-13T04:05:09.8561621Z [INFO] Running tools.jackson.core.unittest.sym.SymbolsViaParserTest
+2025-12-13T04:05:09.8591617Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.sym.SymbolsViaParserTest
+2025-12-13T04:05:09.8606527Z [INFO] Running tools.jackson.core.unittest.sym.SymbolTableMergingTest
+2025-12-13T04:05:09.8676718Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.sym.SymbolTableMergingTest
+2025-12-13T04:05:09.8684866Z [INFO] Running tools.jackson.core.unittest.sym.PlaceholderSymbolTableTest
+2025-12-13T04:05:09.8686058Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.sym.PlaceholderSymbolTableTest
+2025-12-13T04:05:09.8687215Z [INFO] Running tools.jackson.core.unittest.sym.TestByteBasedSymbols
+2025-12-13T04:05:09.8830667Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in tools.jackson.core.unittest.sym.TestByteBasedSymbols
+2025-12-13T04:05:09.8831914Z [INFO] Running tools.jackson.core.unittest.sym.PropertyNameMatcher1491Test
+2025-12-13T04:05:09.8916571Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in tools.jackson.core.unittest.sym.PropertyNameMatcher1491Test
+2025-12-13T04:05:09.8918708Z [INFO] Running tools.jackson.core.unittest.sym.PropertyNameMatchersTest
+2025-12-13T04:05:09.9020445Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in tools.jackson.core.unittest.sym.PropertyNameMatchersTest
+2025-12-13T04:05:09.9022736Z [INFO] Running tools.jackson.core.unittest.sym.TestSymbolsWithMediaItem
+2025-12-13T04:05:09.9048181Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.sym.TestSymbolsWithMediaItem
+2025-12-13T04:05:09.9052223Z [INFO] Running tools.jackson.core.unittest.sym.BinaryNameHashTest
+2025-12-13T04:05:09.9189688Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in tools.jackson.core.unittest.sym.BinaryNameHashTest
+2025-12-13T04:05:09.9192878Z [INFO] Running tools.jackson.core.unittest.sym.TestSymbolTables
+2025-12-13T04:05:10.0544358Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 s -- in tools.jackson.core.unittest.sym.TestSymbolTables
+2025-12-13T04:05:10.0550330Z [INFO] Running tools.jackson.core.unittest.sym.BinaryNameMatcherTest
+2025-12-13T04:05:10.0779265Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in tools.jackson.core.unittest.sym.BinaryNameMatcherTest
+2025-12-13T04:05:10.0784619Z [INFO] Running tools.jackson.core.unittest.sym.ByteQuadsCanonicalizerTest
+2025-12-13T04:05:10.7235676Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.648 s -- in tools.jackson.core.unittest.sym.ByteQuadsCanonicalizerTest
+2025-12-13T04:05:10.7243008Z [INFO] Running tools.jackson.core.unittest.sym.TextualNameHashTest
+2025-12-13T04:05:10.7384252Z [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in tools.jackson.core.unittest.sym.TextualNameHashTest
+2025-12-13T04:05:10.7402424Z [INFO] Running tools.jackson.core.unittest.fuzz.Fuzz52688ParseTest
+2025-12-13T04:05:10.7451849Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.fuzz.Fuzz52688ParseTest
+2025-12-13T04:05:10.7455245Z [INFO] Running tools.jackson.core.unittest.fuzz.Fuzz61198_1169_NumberParseTest
+2025-12-13T04:05:10.7489085Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.fuzz.Fuzz61198_1169_NumberParseTest
+2025-12-13T04:05:10.7504374Z [INFO] Running tools.jackson.core.unittest.fuzz.Fuzz34435ParseTest
+2025-12-13T04:05:10.7607175Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in tools.jackson.core.unittest.fuzz.Fuzz34435ParseTest
+2025-12-13T04:05:10.7613478Z [INFO] Running tools.jackson.core.unittest.fuzz.Fuzz32208UTF32ParseTest
+2025-12-13T04:05:10.7742603Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in tools.jackson.core.unittest.fuzz.Fuzz32208UTF32ParseTest
+2025-12-13T04:05:10.7748958Z [INFO] Running tools.jackson.core.unittest.util.JsonBufferRecyclersTest
+2025-12-13T04:05:10.7834889Z [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in tools.jackson.core.unittest.util.JsonBufferRecyclersTest
+2025-12-13T04:05:10.7841484Z [INFO] Running tools.jackson.core.unittest.util.ReadConstrainedTextBufferTest
+2025-12-13T04:05:10.7860757Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.util.ReadConstrainedTextBufferTest
+2025-12-13T04:05:10.7862672Z [INFO] Running tools.jackson.core.unittest.util.SimpleStreamWriteContextTest
+2025-12-13T04:05:10.7995769Z [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in tools.jackson.core.unittest.util.SimpleStreamWriteContextTest
+2025-12-13T04:05:10.8001785Z [INFO] Running tools.jackson.core.unittest.util.DefaultPrettyPrinterTest
+2025-12-13T04:05:10.8143971Z [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in tools.jackson.core.unittest.util.DefaultPrettyPrinterTest
+2025-12-13T04:05:10.8159006Z [INFO] Running tools.jackson.core.unittest.util.SerializedStringTest
+2025-12-13T04:05:10.8183276Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.util.SerializedStringTest
+2025-12-13T04:05:10.8188561Z [INFO] Running tools.jackson.core.unittest.util.SimpleStreamReadContextTest
+2025-12-13T04:05:10.8306121Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in tools.jackson.core.unittest.util.SimpleStreamReadContextTest
+2025-12-13T04:05:10.8314367Z [INFO] Running tools.jackson.core.unittest.util.DelegatesTest
+2025-12-13T04:05:10.8445823Z [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in tools.jackson.core.unittest.util.DelegatesTest
+2025-12-13T04:05:10.8452142Z [INFO] Running tools.jackson.core.unittest.util.CharTypesTest
+2025-12-13T04:05:10.8479038Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.util.CharTypesTest
+2025-12-13T04:05:10.8485250Z [INFO] Running tools.jackson.core.unittest.util.SeparatorsTest
+2025-12-13T04:05:10.8490732Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.util.SeparatorsTest
+2025-12-13T04:05:10.8493850Z [INFO] Running tools.jackson.core.unittest.util.TextBufferTest
+2025-12-13T04:05:10.8699296Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in tools.jackson.core.unittest.util.TextBufferTest
+2025-12-13T04:05:10.8701859Z [INFO] Running tools.jackson.core.unittest.util.VersionUtilTest
+2025-12-13T04:05:10.8745062Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.util.VersionUtilTest
+2025-12-13T04:05:10.8789109Z [INFO] Running tools.jackson.core.unittest.util.DefaultIndenterTest
+2025-12-13T04:05:10.8790540Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.util.DefaultIndenterTest
+2025-12-13T04:05:10.8791800Z [INFO] Running tools.jackson.core.unittest.JsonpCharacterEscapesTest
+2025-12-13T04:05:10.8793220Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.JsonpCharacterEscapesTest
+2025-12-13T04:05:10.8795040Z [INFO] Running tools.jackson.core.unittest.read.NextXxxAccessTest
+2025-12-13T04:05:11.6824245Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.803 s -- in tools.jackson.core.unittest.read.NextXxxAccessTest
+2025-12-13T04:05:11.6830348Z [INFO] Running tools.jackson.core.unittest.read.FastParserNumberParsingTest
+2025-12-13T04:05:12.1259453Z [INFO] Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.444 s -- in tools.jackson.core.unittest.read.FastParserNumberParsingTest
+2025-12-13T04:05:12.1271587Z [INFO] Running tools.jackson.core.unittest.read.LongName1516Test
+2025-12-13T04:05:12.1312311Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in tools.jackson.core.unittest.read.LongName1516Test
+2025-12-13T04:05:12.1406677Z [INFO] Running tools.jackson.core.unittest.read.NumberParsingTest
+2025-12-13T04:05:12.3800615Z [INFO] Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.244 s -- in tools.jackson.core.unittest.read.NumberParsingTest
+2025-12-13T04:05:12.3801886Z [INFO] Running tools.jackson.core.unittest.read.NumberCoercionTest
+2025-12-13T04:05:12.3823930Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.read.NumberCoercionTest
+2025-12-13T04:05:12.3827808Z [INFO] Running tools.jackson.core.unittest.read.ParserSequenceTest
+2025-12-13T04:05:12.3851148Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.read.ParserSequenceTest
+2025-12-13T04:05:12.3856218Z [INFO] Running tools.jackson.core.unittest.read.UTF32ParseTest
+2025-12-13T04:05:12.3910495Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.read.UTF32ParseTest
+2025-12-13T04:05:12.3916046Z [INFO] Running tools.jackson.core.unittest.read.ParserErrorRecovery1173Test
+2025-12-13T04:05:12.3935337Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.read.ParserErrorRecovery1173Test
+2025-12-13T04:05:12.3982966Z [INFO] Running tools.jackson.core.unittest.read.NumberDeferredReadTest
+2025-12-13T04:05:12.4000498Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.read.NumberDeferredReadTest
+2025-12-13T04:05:12.4002044Z [INFO] Running tools.jackson.core.unittest.read.ParserPrecisionLoss730Test
+2025-12-13T04:05:12.4018263Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.read.ParserPrecisionLoss730Test
+2025-12-13T04:05:12.4019675Z [INFO] Running tools.jackson.core.unittest.read.SimpleParserTest
+2025-12-13T04:05:12.4414866Z [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s -- in tools.jackson.core.unittest.read.SimpleParserTest
+2025-12-13T04:05:12.4416652Z [INFO] Running tools.jackson.core.unittest.read.NextNameParserTest
+2025-12-13T04:05:12.4447790Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.read.NextNameParserTest
+2025-12-13T04:05:12.4453778Z [INFO] Running tools.jackson.core.unittest.read.NonStandardUnquotedNamesTest
+2025-12-13T04:05:12.4601750Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in tools.jackson.core.unittest.read.NonStandardUnquotedNamesTest
+2025-12-13T04:05:12.4628680Z [INFO] Running tools.jackson.core.unittest.read.UTF8ParsingTest
+2025-12-13T04:05:12.4630049Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.read.UTF8ParsingTest
+2025-12-13T04:05:12.4631485Z [INFO] Running tools.jackson.core.unittest.read.TrailingCommasTest
+2025-12-13T04:05:12.7037168Z [INFO] Tests run: 260, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.234 s -- in tools.jackson.core.unittest.read.TrailingCommasTest
+2025-12-13T04:05:12.7094375Z [INFO] Running tools.jackson.core.unittest.read.NumberOverflowTest
+2025-12-13T04:05:12.8811918Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.184 s -- in tools.jackson.core.unittest.read.NumberOverflowTest
+2025-12-13T04:05:12.8813171Z [INFO] Running tools.jackson.core.unittest.read.TrailingCommas616Test
+2025-12-13T04:05:12.8830073Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.read.TrailingCommas616Test
+2025-12-13T04:05:12.8832160Z [INFO] Running tools.jackson.core.unittest.read.loc.LocationOffsets455Test
+2025-12-13T04:05:12.8864717Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.read.loc.LocationOffsets455Test
+2025-12-13T04:05:12.8875960Z [INFO] Running tools.jackson.core.unittest.read.loc.LocationInArrayTest
+2025-12-13T04:05:12.8916484Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.read.loc.LocationInArrayTest
+2025-12-13T04:05:12.8918058Z [INFO] Running tools.jackson.core.unittest.read.loc.LocationDuringReaderParsingTest
+2025-12-13T04:05:12.8919639Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.read.loc.LocationDuringReaderParsingTest
+2025-12-13T04:05:12.8921037Z [INFO] Running tools.jackson.core.unittest.read.loc.LocationOffsetsTest
+2025-12-13T04:05:12.9030646Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in tools.jackson.core.unittest.read.loc.LocationOffsetsTest
+2025-12-13T04:05:12.9032282Z [INFO] Running tools.jackson.core.unittest.read.loc.LocationOfError1173Test
+2025-12-13T04:05:12.9654477Z [INFO] Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s -- in tools.jackson.core.unittest.read.loc.LocationOfError1173Test
+2025-12-13T04:05:12.9665995Z [INFO] Running tools.jackson.core.unittest.read.loc.LocationOfError1180Test
+2025-12-13T04:05:12.9749186Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in tools.jackson.core.unittest.read.loc.LocationOfError1180Test
+2025-12-13T04:05:12.9756710Z [INFO] Running tools.jackson.core.unittest.read.loc.LocationInObjectTest
+2025-12-13T04:05:12.9775473Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.read.loc.LocationInObjectTest
+2025-12-13T04:05:12.9781950Z [INFO] Running tools.jackson.core.unittest.read.loc.LocationDuringStreamParsingTest
+2025-12-13T04:05:12.9817483Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.read.loc.LocationDuringStreamParsingTest
+2025-12-13T04:05:12.9820481Z [INFO] Running tools.jackson.core.unittest.read.TestReadHumongousString
+2025-12-13T04:05:12.9843423Z [WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.read.TestReadHumongousString
+2025-12-13T04:05:12.9850159Z [INFO] Running tools.jackson.core.unittest.read.FastParserNonStandardNumberParsingTest
+2025-12-13T04:05:13.0049066Z [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in tools.jackson.core.unittest.read.FastParserNonStandardNumberParsingTest
+2025-12-13T04:05:13.0053677Z [INFO] Running tools.jackson.core.unittest.read.NonStandardAposQuotedNamesTest
+2025-12-13T04:05:13.0054975Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.read.NonStandardAposQuotedNamesTest
+2025-12-13T04:05:13.0056220Z [INFO] Running tools.jackson.core.unittest.read.NonStandardAllowRSTest
+2025-12-13T04:05:13.0092376Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.read.NonStandardAllowRSTest
+2025-12-13T04:05:13.0094149Z [INFO] Running tools.jackson.core.unittest.read.UTF8SurrogateValidation363Test
+2025-12-13T04:05:13.0149765Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.read.UTF8SurrogateValidation363Test
+2025-12-13T04:05:13.0157821Z [INFO] Running tools.jackson.core.unittest.read.NonStandardLeadingPlusSign784Test
+2025-12-13T04:05:13.0159152Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.read.NonStandardLeadingPlusSign784Test
+2025-12-13T04:05:13.0160357Z [INFO] Running tools.jackson.core.unittest.read.ParserDupHandlingTest
+2025-12-13T04:05:13.0177376Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.read.ParserDupHandlingTest
+2025-12-13T04:05:13.0178602Z [INFO] Running tools.jackson.core.unittest.read.FloatParsingTest
+2025-12-13T04:05:13.0206303Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in tools.jackson.core.unittest.read.FloatParsingTest
+2025-12-13T04:05:13.0213416Z [INFO] Running tools.jackson.core.unittest.read.NumberParsingGetType1433Test
+2025-12-13T04:05:13.0231479Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.read.NumberParsingGetType1433Test
+2025-12-13T04:05:13.0243839Z [INFO] Running tools.jackson.core.unittest.read.ParserLinefeedsTest
+2025-12-13T04:05:13.0305140Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.read.ParserLinefeedsTest
+2025-12-13T04:05:13.0306716Z [INFO] Running tools.jackson.core.unittest.read.ParserErrorHandlingTest
+2025-12-13T04:05:13.0379476Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in tools.jackson.core.unittest.read.ParserErrorHandlingTest
+2025-12-13T04:05:13.0385170Z [INFO] Running tools.jackson.core.unittest.read.ValueConversionsTest
+2025-12-13T04:05:13.0450647Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.read.ValueConversionsTest
+2025-12-13T04:05:13.0451887Z [INFO] Running tools.jackson.core.unittest.read.ParserSymbolHandlingTest
+2025-12-13T04:05:13.0463057Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.read.ParserSymbolHandlingTest
+2025-12-13T04:05:13.0464574Z [INFO] Running tools.jackson.core.unittest.read.NonStandardParserFeaturesTest
+2025-12-13T04:05:13.0549529Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.read.NonStandardParserFeaturesTest
+2025-12-13T04:05:13.0553272Z [INFO] Running tools.jackson.core.unittest.read.NumberParsingDb4917Test
+2025-12-13T04:05:13.0589610Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.read.NumberParsingDb4917Test
+2025-12-13T04:05:13.0628275Z [INFO] Running tools.jackson.core.unittest.read.NonStandardNumberParsingTest
+2025-12-13T04:05:13.0722078Z [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in tools.jackson.core.unittest.read.NonStandardNumberParsingTest
+2025-12-13T04:05:13.0725124Z [INFO] Running tools.jackson.core.unittest.read.CommentParsingTest
+2025-12-13T04:05:13.0769863Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.read.CommentParsingTest
+2025-12-13T04:05:13.0772342Z [INFO] Running tools.jackson.core.unittest.read.ParserScopeMatchingTest
+2025-12-13T04:05:13.0805376Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in tools.jackson.core.unittest.read.ParserScopeMatchingTest
+2025-12-13T04:05:13.0806720Z [INFO] Running tools.jackson.core.unittest.read.NumberParsing1397Test
+2025-12-13T04:05:13.0841627Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in tools.jackson.core.unittest.read.NumberParsing1397Test
+2025-12-13T04:05:13.0843369Z [INFO] Running tools.jackson.core.unittest.read.ParserClosingTest
+2025-12-13T04:05:13.0863744Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in tools.jackson.core.unittest.read.ParserClosingTest
+2025-12-13T04:05:13.0865198Z [INFO] Running tools.jackson.core.unittest.read.DataInputTest
+2025-12-13T04:05:13.0889270Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in tools.jackson.core.unittest.read.DataInputTest
+2025-12-13T04:05:13.0891314Z [INFO] Running tools.jackson.core.unittest.read.UTF8NamesParseTest
+2025-12-13T04:05:13.1056062Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in tools.jackson.core.unittest.read.UTF8NamesParseTest
+2025-12-13T04:05:13.1058418Z [INFO] Running tools.jackson.core.unittest.constraints.LargeNumberReadTest
+2025-12-13T04:05:13.1237710Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in tools.jackson.core.unittest.constraints.LargeNumberReadTest
+2025-12-13T04:05:13.1241838Z [INFO] Running tools.jackson.core.unittest.constraints.StreamReadConstraintsDefaultsTest
+2025-12-13T04:05:13.1275109Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in tools.jackson.core.unittest.constraints.StreamReadConstraintsDefaultsTest
+2025-12-13T04:05:13.1279807Z [INFO] Running tools.jackson.core.unittest.constraints.TokenCountTest
+2025-12-13T04:05:13.1314793Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in tools.jackson.core.unittest.constraints.TokenCountTest
+2025-12-13T04:05:13.1316238Z [INFO] Running tools.jackson.core.unittest.constraints.LargeDocReadTest
+2025-12-13T04:05:13.1428771Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in tools.jackson.core.unittest.constraints.LargeDocReadTest
+2025-12-13T04:05:13.1432387Z [INFO] Running tools.jackson.core.unittest.constraints.LargeNameReadTest
+2025-12-13T04:05:13.1507365Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in tools.jackson.core.unittest.constraints.LargeNameReadTest
+2025-12-13T04:05:13.1518588Z [INFO] Running tools.jackson.core.unittest.constraints.LargeNumberWriteTest
+2025-12-13T04:05:13.1654138Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in tools.jackson.core.unittest.constraints.LargeNumberWriteTest
+2025-12-13T04:05:13.1655441Z [INFO] Running tools.jackson.core.unittest.constraints.StreamWriteConstraintsDefaultsTest
+2025-12-13T04:05:13.1687537Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in tools.jackson.core.unittest.constraints.StreamWriteConstraintsDefaultsTest
+2025-12-13T04:05:13.2337395Z [INFO] 
+2025-12-13T04:05:13.2337759Z [INFO] Results:
+2025-12-13T04:05:13.2338080Z [INFO] 
+2025-12-13T04:05:13.2340346Z [WARNING] Tests run: 1557, Failures: 0, Errors: 0, Skipped: 2
+2025-12-13T04:05:13.2340877Z [INFO] 
+2025-12-13T04:05:13.2360053Z [INFO] 
+2025-12-13T04:05:13.4688776Z [INFO] --- jar:3.4.2:jar (default-jar) @ jackson-core ---
+2025-12-13T04:05:13.4689763Z [INFO] Building jar: /home/runner/work/jackson-core/jackson-core/target/jackson-core-3.1.0-SNAPSHOT.jar
+2025-12-13T04:05:13.5966640Z [INFO] 
+2025-12-13T04:05:13.5970680Z [INFO] --- cyclonedx:2.9.1:makeBom (default) @ jackson-core ---
+2025-12-13T04:05:13.7134685Z [INFO] CycloneDX: Resolving Dependencies
+2025-12-13T04:05:14.4805485Z [INFO] CycloneDX: Creating BOM version 1.6 with 1 component(s)
+2025-12-13T04:05:14.5940947Z [INFO] CycloneDX: Writing and validating BOM (XML): /home/runner/work/jackson-core/jackson-core/target/bom.xml
+2025-12-13T04:05:14.9344930Z [INFO]            attaching as jackson-core-3.1.0-SNAPSHOT-sbom-cyclonedx.xml
+2025-12-13T04:05:14.9577331Z [INFO] CycloneDX: Writing and validating BOM (JSON): /home/runner/work/jackson-core/jackson-core/target/bom.json
+2025-12-13T04:05:15.0442889Z [WARNING] Unknown keyword meta:enum - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+2025-12-13T04:05:15.0445901Z [WARNING] Unknown keyword deprecated - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+2025-12-13T04:05:15.0961092Z [INFO]            attaching as jackson-core-3.1.0-SNAPSHOT-sbom-cyclonedx.json
+2025-12-13T04:05:15.0961775Z [INFO] 
+2025-12-13T04:05:15.0962356Z [INFO] --- moditect:1.3.0.Final:add-module-info (add-module-infos) @ jackson-core ---
+2025-12-13T04:05:15.4804366Z [INFO] 
+2025-12-13T04:05:15.4805882Z [INFO] --- shade:3.6.1:shade (shade-jackson-core) @ jackson-core ---
+2025-12-13T04:05:15.5099462Z [INFO] Minimizing jar tools.jackson.core:jackson-core:jar:3.1.0-SNAPSHOT
+2025-12-13T04:05:15.6691985Z [WARNING] ch.randelshofer:fastdoubleparser:jar:2.0.1:compile could not be analyzed for minimization; dependency is probably malformed.
+2025-12-13T04:05:15.6693228Z [WARNING] Removing module-info from jackson-core-3.1.0-SNAPSHOT.jar
+2025-12-13T04:05:15.6906817Z [WARNING] ch.randelshofer:fastdoubleparser:jar:2.0.1:compile could not be analyzed for minimization; dependency is probably malformed.
+2025-12-13T04:05:15.6920470Z [INFO] Dependency-reduced POM written at: /home/runner/work/jackson-core/jackson-core/dependency-reduced-pom.xml
+2025-12-13T04:05:16.0504540Z [INFO] Minimized 279 -> 227 (81%)
+2025-12-13T04:05:16.0509006Z [INFO] Replacing original artifact with shaded artifact.
+2025-12-13T04:05:16.0510734Z [INFO] 
+2025-12-13T04:05:16.0512406Z [INFO] --- gradle-module-metadata:1.2:gmm (default) @ jackson-core ---
+2025-12-13T04:05:16.0776796Z [INFO] 
+2025-12-13T04:05:16.0782177Z [INFO] --- site:4.0.0-M16:attach-descriptor (attach-descriptor) @ jackson-core ---
+2025-12-13T04:05:16.4229735Z [INFO] Skipping because packaging 'jar' is not pom.
+2025-12-13T04:05:16.4246270Z [INFO] 
+2025-12-13T04:05:16.4248362Z [INFO] --- failsafe:3.5.4:integration-test (default) @ jackson-core ---
+2025-12-13T04:05:16.5235977Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-12-13T04:05:16.5524492Z [INFO] 
+2025-12-13T04:05:16.5527262Z [INFO] -------------------------------------------------------
+2025-12-13T04:05:16.5529924Z [INFO]  T E S T S
+2025-12-13T04:05:16.5532461Z [INFO] -------------------------------------------------------
+2025-12-13T04:05:17.5230910Z [INFO] Running tools.jackson.core.it.FastDoubleParserShadingIT
+2025-12-13T04:05:17.5875627Z === FastDoubleParser Shading Verification Report ===
+2025-12-13T04:05:17.5876492Z JAR: jackson-core-3.1.0-SNAPSHOT.jar
+2025-12-13T04:05:17.5877006Z Shaded classes found: 37
+2025-12-13T04:05:17.5877841Z Multi-version shaded classes found: 6
+2025-12-13T04:05:17.5878177Z 
+2025-12-13T04:05:17.5878338Z Shaded classes (sample):
+2025-12-13T04:05:17.5885681Z   ✓ tools/jackson/core/internal/shaded/fdp/BigSignificand.class
+2025-12-13T04:05:17.5886657Z   ✓ tools/jackson/core/internal/shaded/fdp/chr/package-info.class
+2025-12-13T04:05:17.5887756Z   ✓ tools/jackson/core/internal/shaded/fdp/ParseDigitsTaskCharArray.class
+2025-12-13T04:05:17.5888884Z   ✓ tools/jackson/core/internal/shaded/fdp/JavaDoubleBitsFromCharSequence.class
+2025-12-13T04:05:17.5889887Z   ✓ tools/jackson/core/internal/shaded/fdp/FastDoubleSwar.class
+2025-12-13T04:05:17.5890351Z 
+2025-12-13T04:05:17.5890520Z Multi-version shaded classes:
+2025-12-13T04:05:17.5891374Z   ✓ META-INF/versions/17/tools/jackson/core/internal/shaded/fdp/FastDoubleSwar.class
+2025-12-13T04:05:17.5892556Z   ✓ META-INF/versions/17/tools/jackson/core/internal/shaded/fdp/FastIntegerMath.class
+2025-12-13T04:05:17.5893871Z   ✓ META-INF/versions/21/tools/jackson/core/internal/shaded/fdp/FastDoubleSwar.class
+2025-12-13T04:05:17.5895063Z   ✓ META-INF/versions/21/tools/jackson/core/internal/shaded/fdp/FastIntegerMath.class
+2025-12-13T04:05:17.5896218Z   ✓ META-INF/versions/23/tools/jackson/core/internal/shaded/fdp/FastDoubleSwar.class
+2025-12-13T04:05:17.5897355Z   ✓ META-INF/versions/23/tools/jackson/core/internal/shaded/fdp/FastIntegerMath.class
+2025-12-13T04:05:17.5897962Z 
+2025-12-13T04:05:17.5898316Z ✓ All FastDoubleParser classes are properly shaded!
+2025-12-13T04:05:17.5898891Z =====================================================
+2025-12-13T04:05:17.6180619Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in tools.jackson.core.it.FastDoubleParserShadingIT
+2025-12-13T04:05:17.6651021Z [INFO] 
+2025-12-13T04:05:17.6651399Z [INFO] Results:
+2025-12-13T04:05:17.6654391Z [INFO] 
+2025-12-13T04:05:17.6654817Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+2025-12-13T04:05:17.6655930Z [INFO] 
+2025-12-13T04:05:17.6679806Z [INFO] 
+2025-12-13T04:05:17.6681345Z [INFO] --- failsafe:3.5.4:verify (default) @ jackson-core ---
+2025-12-13T04:05:17.8390901Z [INFO] 
+2025-12-13T04:05:17.8391384Z [INFO] --- jacoco:0.8.14:report (report) @ jackson-core ---
+2025-12-13T04:05:17.8425086Z [INFO] Loading execution data file /home/runner/work/jackson-core/jackson-core/target/jacoco.exec
+2025-12-13T04:05:18.1230684Z [INFO] Analyzed bundle 'Jackson-core' with 145 classes
+2025-12-13T04:05:18.6517545Z [INFO] 
+2025-12-13T04:05:18.6518899Z [INFO] --- enforcer:3.6.2:enforce (enforce-jacoco-exec) @ jackson-core ---
+2025-12-13T04:05:18.6552676Z [INFO] Rule 0: org.apache.maven.enforcer.rules.files.RequireFilesExist passed
+2025-12-13T04:05:18.6556472Z [INFO] ------------------------------------------------------------------------
+2025-12-13T04:05:18.6557021Z [INFO] BUILD SUCCESS
+2025-12-13T04:05:18.6557497Z [INFO] ------------------------------------------------------------------------
+2025-12-13T04:05:18.6558280Z [INFO] Total time:  47.887 s
+2025-12-13T04:05:18.6558921Z [INFO] Finished at: 2025-12-13T04:05:18Z
+2025-12-13T04:05:18.6559758Z [INFO] ------------------------------------------------------------------------
+2025-12-13T04:05:18.7051995Z ##[group]Run echo "version=$(./mvnw org.apache.maven.plugins:maven-help-plugin:3.5.1:evaluate -DforceStdout -Dexpression=project.version -q)" >>$GITHUB_OUTPUT
+2025-12-13T04:05:18.7053057Z [36;1mecho "version=$(./mvnw org.apache.maven.plugins:maven-help-plugin:3.5.1:evaluate -DforceStdout -Dexpression=project.version -q)" >>$GITHUB_OUTPUT[0m
+2025-12-13T04:05:18.7085598Z shell: /usr/bin/bash -e {0}
+2025-12-13T04:05:18.7085847Z env:
+2025-12-13T04:05:18.7086102Z   JAVA_OPTS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+2025-12-13T04:05:18.7086556Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-12-13T04:05:18.7087024Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-12-13T04:05:18.7087384Z ##[endgroup]
+2025-12-13T04:05:21.7691730Z Post job cleanup.
+2025-12-13T04:05:21.8937315Z (node:2851) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-13T04:05:21.8938129Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-13T04:05:21.8943340Z Cache hit occurred on the primary key setup-java-Linux-x64-maven-8e809c06dafef8472557733ac63bd98466b8aaf672e394fb10c34a8603f5e2a4, not saving cache.
+2025-12-13T04:05:21.9085924Z Post job cleanup.
+2025-12-13T04:05:21.9866591Z [command]/usr/bin/git version
+2025-12-13T04:05:21.9917926Z git version 2.52.0
+2025-12-13T04:05:21.9967362Z Temporarily overriding HOME='/home/runner/work/_temp/8621e8d4-3691-45b7-9910-de61e6569f98' before making global git config changes
+2025-12-13T04:05:21.9969246Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-13T04:05:21.9975508Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jackson-core/jackson-core
+2025-12-13T04:05:22.0009962Z Removing SSH command configuration
+2025-12-13T04:05:22.0018630Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-13T04:05:22.0057725Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-13T04:05:22.0303235Z Removing HTTP extra header
+2025-12-13T04:05:22.0310252Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-13T04:05:22.0347611Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-13T04:05:22.0587850Z Removing includeIf entries pointing to credentials config files
+2025-12-13T04:05:22.0595391Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-13T04:05:22.0620923Z includeif.gitdir:/home/runner/work/jackson-core/jackson-core/.git.path
+2025-12-13T04:05:22.0622354Z includeif.gitdir:/github/workspace/.git.path
+2025-12-13T04:05:22.0663787Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/jackson-core/jackson-core/.git.path
+2025-12-13T04:05:22.0685634Z /home/runner/work/_temp/git-credentials-246089b4-03a6-4126-aee7-a83f3e8cfa84.config
+2025-12-13T04:05:22.0697022Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/jackson-core/jackson-core/.git.path /home/runner/work/_temp/git-credentials-246089b4-03a6-4126-aee7-a83f3e8cfa84.config
+2025-12-13T04:05:22.0730740Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2025-12-13T04:05:22.0753953Z /github/runner_temp/git-credentials-246089b4-03a6-4126-aee7-a83f3e8cfa84.config
+2025-12-13T04:05:22.0762612Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-246089b4-03a6-4126-aee7-a83f3e8cfa84.config
+2025-12-13T04:05:22.0795177Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-13T04:05:22.1031505Z Removing credentials config '/home/runner/work/_temp/git-credentials-246089b4-03a6-4126-aee7-a83f3e8cfa84.config'
+2025-12-13T04:05:22.1178497Z Cleaning up orphan processes

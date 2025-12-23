@@ -1,0 +1,68 @@
+
+> ramda@0.31.3 prepare
+> npm run clean && npm run build
+
+
+> ramda@0.31.3 clean
+> rimraf es/* src/* coverage/*
+
+
+> ramda@0.31.3 build
+> npm-run-all --parallel build:**
+
+
+> ramda@0.31.3 build:es
+> cross-env BABEL_ENV=es babel source --out-dir es && node ./scripts/addModulePackageScope.js
+
+
+> ramda@0.31.3 build:cjs
+> cross-env BABEL_ENV=cjs babel source --out-dir src
+
+Successfully compiled 369 files with Babel (1353ms).
+Successfully compiled 369 files with Babel (1514ms).
+
+up to date, audited 973 packages in 6s
+
+120 packages are looking for funding
+  run `npm fund` for details
+
+33 vulnerabilities (9 low, 5 moderate, 13 high, 6 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+
+ Exception during run: /usr/src/app/source/index.js:1
+export { default as F } from './F.js';
+^^^^^^
+
+SyntaxError: Unexpected token 'export'
+    at internalCompileFunction (node:internal/vm:76:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1283:20)
+    at Module._compile (node:internal/modules/cjs/loader:1328:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/usr/src/app/test/F.js:1:9)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:203:29)
+    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)
+    at async importModuleDynamicallyWrapper (node:internal/vm/module:432:15)
+    at async formattedImport (/usr/local/lib/node_modules/mocha/lib/nodejs/esm-utils.js:9:14)
+    at async Object.tryImportAndRequire [as requireOrImport] (/usr/local/lib/node_modules/mocha/lib/nodejs/esm-utils.js:46:28)
+    at async exports.loadFilesAsync (/usr/local/lib/node_modules/mocha/lib/nodejs/esm-utils.js:123:20)
+    at async singleRun (/usr/local/lib/node_modules/mocha/lib/cli/run-helpers.js:164:3)
+    at async exports.handler (/usr/local/lib/node_modules/mocha/lib/cli/run.js:379:5)

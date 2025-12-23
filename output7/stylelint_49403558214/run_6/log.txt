@@ -1,0 +1,102 @@
+
+> stylelint@16.23.1 pretest
+> npm run lint
+
+
+> stylelint@16.23.1 lint
+> npm-run-all --parallel --continue-on-error lint:*
+
+
+> stylelint@16.23.1 lint:md
+> remark . --quiet --frail
+
+
+> stylelint@16.23.1 lint:formatting
+> prettier . --check --cache
+
+
+> stylelint@16.23.1 lint:js
+> eslint . --cache --max-warnings=0
+
+
+> stylelint@16.23.1 lint:types
+> tsc
+
+Checking formatting...
+
+Oops! Something went wrong! :(
+
+ESLint: 9.34.0
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/@stylistic/eslint-plugin/dist/index.js from /app/node_modules/eslint-config-stylelint/index.js not supported.
+Instead change the require of /app/node_modules/@stylistic/eslint-plugin/dist/index.js in /app/node_modules/eslint-config-stylelint/index.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/node_modules/eslint-config-stylelint/index.js:7:25)
+    at async dynamicImportConfig (/app/node_modules/eslint/lib/config/config-loader.js:186:17)
+    at async loadConfigFile (/app/node_modules/eslint/lib/config/config-loader.js:276:9)
+    at async ConfigLoader.calculateConfigArray (/app/node_modules/eslint/lib/config/config-loader.js:589:23)
+    at async #calculateConfigArray (/app/node_modules/eslint/lib/config/config-loader.js:743:23)
+    at async directoryFilter (/app/node_modules/eslint/lib/eslint/eslint-helpers.js:308:5)
+    at async NodeHfs.<anonymous> (file:///app/node_modules/@humanfs/core/src/hfs.js:586:29)
+    at async NodeHfs.walk (file:///app/node_modules/@humanfs/core/src/hfs.js:614:3)
+    at async globSearch (/app/node_modules/eslint/lib/eslint/eslint-helpers.js:363:20)
+    at async Promise.allSettled (index 0)
+    at async globMultiSearch (/app/node_modules/eslint/lib/eslint/eslint-helpers.js:454:18)
+    at async Promise.all (index 0)
+    at async findFiles (/app/node_modules/eslint/lib/eslint/eslint-helpers.js:634:25)
+    at async ESLint.lintFiles (/app/node_modules/eslint/lib/eslint/eslint.js:882:21)
+    at async Object.execute (/app/node_modules/eslint/lib/cli.js:428:14)
+    at async main (/app/node_modules/eslint/bin/eslint.js:175:19)
+All matched files use Prettier code style!
+ERROR: "lint:js" exited with 2.
+Tests failed. Attempting to fix ESLint configuration for ES Modules.
+grep: .eslintrc.js: No such file or directory
+
+> stylelint@16.23.1 pretest
+> npm run lint
+
+
+> stylelint@16.23.1 lint
+> npm-run-all --parallel --continue-on-error lint:*
+
+
+> stylelint@16.23.1 lint:js
+> eslint . --cache --max-warnings=0
+
+
+> stylelint@16.23.1 lint:types
+> tsc
+
+
+> stylelint@16.23.1 lint:formatting
+> prettier . --check --cache
+
+
+> stylelint@16.23.1 lint:md
+> remark . --quiet --frail
+
+Checking formatting...
+
+Oops! Something went wrong! :(
+
+ESLint: 9.34.0
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/@stylistic/eslint-plugin/dist/index.js from /app/node_modules/eslint-config-stylelint/index.js not supported.
+Instead change the require of /app/node_modules/@stylistic/eslint-plugin/dist/index.js in /app/node_modules/eslint-config-stylelint/index.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/node_modules/eslint-config-stylelint/index.js:7:25)
+    at async dynamicImportConfig (/app/node_modules/eslint/lib/config/config-loader.js:186:17)
+    at async loadConfigFile (/app/node_modules/eslint/lib/config/config-loader.js:276:9)
+    at async ConfigLoader.calculateConfigArray (/app/node_modules/eslint/lib/config/config-loader.js:589:23)
+    at async #calculateConfigArray (/app/node_modules/eslint/lib/config/config-loader.js:743:23)
+    at async directoryFilter (/app/node_modules/eslint/lib/eslint/eslint-helpers.js:308:5)
+    at async NodeHfs.<anonymous> (file:///app/node_modules/@humanfs/core/src/hfs.js:586:29)
+    at async NodeHfs.walk (file:///app/node_modules/@humanfs/core/src/hfs.js:614:3)
+    at async globSearch (/app/node_modules/eslint/lib/eslint/eslint-helpers.js:363:20)
+    at async Promise.allSettled (index 0)
+    at async globMultiSearch (/app/node_modules/eslint/lib/eslint/eslint-helpers.js:454:18)
+    at async Promise.all (index 0)
+    at async findFiles (/app/node_modules/eslint/lib/eslint/eslint-helpers.js:634:25)
+    at async ESLint.lintFiles (/app/node_modules/eslint/lib/eslint/eslint.js:882:21)
+    at async Object.execute (/app/node_modules/eslint/lib/cli.js:428:14)
+    at async main (/app/node_modules/eslint/bin/eslint.js:175:19)
+All matched files use Prettier code style!
+ERROR: "lint:js" exited with 2.

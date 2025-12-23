@@ -1,0 +1,98 @@
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+ERROR: file or directory not found: tests
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.4.1, pluggy-1.6.0
+rootdir: /app
+configfile: pytest.ini
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.4.1, pluggy-1.6.0
+rootdir: /app
+configfile: pytest.ini
+collected 0 items / 2 errors
+
+==================================== ERRORS ====================================
+_ ERROR collecting benchmarks/benchmarks/tests/test_go_benchmark_functions.py __
+ImportError while importing test module '/app/benchmarks/benchmarks/tests/test_go_benchmark_functions.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+benchmarks/benchmarks/tests/test_go_benchmark_functions.py:5: in <module>
+    from .. import go_benchmark_functions as gbf
+benchmarks/benchmarks/go_benchmark_functions/__init__.py:44: in <module>
+    from .go_funcs_A import *
+benchmarks/benchmarks/go_benchmark_functions/go_funcs_A.py:2: in <module>
+    from .go_benchmark import Benchmark
+benchmarks/benchmarks/go_benchmark_functions/go_benchmark.py:4: in <module>
+    from ..common import safe_import  # noqa:F401
+benchmarks/benchmarks/common.py:13: in <module>
+    from asv_runner.benchmarks.mark import SkipNotImplemented
+E   ModuleNotFoundError: No module named 'asv_runner'
+____________________________ ERROR collecting scipy ____________________________
+/usr/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+        level      = 0
+        name       = 'scipy.conftest'
+        package    = None
+<frozen importlib._bootstrap>:1050: in _gcd_import
+    ???
+        level      = 0
+        name       = 'scipy.conftest'
+        package    = None
+<frozen importlib._bootstrap>:1027: in _find_and_load
+    ???
+        import_    = <function _gcd_import at 0x7efc82127400>
+        module     = <object object at 0x7efc8214c060>
+        name       = 'scipy.conftest'
+<frozen importlib._bootstrap>:1006: in _find_and_load_unlocked
+    ???
+        import_    = <function _gcd_import at 0x7efc82127400>
+        name       = 'scipy.conftest'
+        parent     = 'scipy'
+        parent_module = <module 'scipy' from '/usr/local/lib/python3.10/dist-packages/scipy/__init__.py'>
+        path       = ['/usr/local/lib/python3.10/dist-packages/scipy']
+        spec       = ModuleSpec(name='scipy.conftest', loader=<_pytest.assertion.rewrite.AssertionRewritingHook object at 0x7efc814a7040>, origin='/usr/local/lib/python3.10/dist-packages/scipy/conftest.py')
+<frozen importlib._bootstrap>:688: in _load_unlocked
+    ???
+        module     = <module 'scipy.conftest' from '/usr/local/lib/python3.10/dist-packages/scipy/conftest.py'>
+        spec       = ModuleSpec(name='scipy.conftest', loader=<_pytest.assertion.rewrite.AssertionRewritingHook object at 0x7efc814a7040>, origin='/usr/local/lib/python3.10/dist-packages/scipy/conftest.py')
+/usr/local/lib/python3.10/dist-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+        cache_dir  = PosixPath('/usr/local/lib/python3.10/dist-packages/scipy/__pycache__')
+        cache_name = 'conftest.cpython-310-pytest-8.4.1.pyc'
+        co         = <code object <module> at 0x7efb3a473310, file "/usr/local/lib/python3.10/dist-packages/scipy/conftest.py", line 1>
+        fn         = PosixPath('/usr/local/lib/python3.10/dist-packages/scipy/conftest.py')
+        module     = <module 'scipy.conftest' from '/usr/local/lib/python3.10/dist-packages/scipy/conftest.py'>
+        ok         = True
+        pyc        = PosixPath('/usr/local/lib/python3.10/dist-packages/scipy/__pycache__/conftest.cpython-310-pytest-8.4.1.pyc')
+        self       = <_pytest.assertion.rewrite.AssertionRewritingHook object at 0x7efc814a7040>
+        source_stat = os.stat_result(st_mode=33188, st_ino=1771859874, st_dev=75, st_nlink=1, st_uid=0, st_gid=0, st_size=22027, st_atime=1756250475, st_mtime=1756250474, st_ctime=1756250474)
+        state      = <_pytest.assertion.AssertionState object at 0x7efc814a72e0>
+        write      = True
+/usr/local/lib/python3.10/dist-packages/scipy/conftest.py:11: in <module>
+    import hypothesis
+E   ModuleNotFoundError: No module named 'hypothesis'
+        __builtins__ = <builtins>
+        __cached__ = '/usr/local/lib/python3.10/dist-packages/scipy/__pycache__/conftest.cpython-310.pyc'
+        __doc__    = None
+        __file__   = '/usr/local/lib/python3.10/dist-packages/scipy/conftest.py'
+        __loader__ = <_pytest.assertion.rewrite.AssertionRewritingHook object at 0x7efc814a7040>
+        __name__   = 'scipy.conftest'
+        __package__ = 'scipy'
+        __spec__   = ModuleSpec(name='scipy.conftest', loader=<_pytest.assertion.rewrite.AssertionRewritingHook object at 0x7efc814a7040>, origin='/usr/local/lib/python3.10/dist-packages/scipy/conftest.py')
+        contextmanager = <function contextmanager at 0x7efc81e5b5b0>
+        json       = <module 'json' from '/usr/lib/python3.10/json/__init__.py'>
+        np         = <module 'numpy' from '/usr/local/lib/python3.10/dist-packages/numpy/__init__.py'>
+        npt        = <module 'numpy.testing' from '/usr/local/lib/python3.10/dist-packages/numpy/testing/__init__.py'>
+        os         = <module 'os' from '/usr/lib/python3.10/os.py'>
+        pytest     = <module 'pytest' from '/usr/local/lib/python3.10/dist-packages/pytest/__init__.py'>
+        tempfile   = <module 'tempfile' from '/usr/lib/python3.10/tempfile.py'>
+        warnings   = <module 'warnings' from '/usr/lib/python3.10/warnings.py'>
+=========================== short test summary info ============================
+ERROR benchmarks/benchmarks/tests/test_go_benchmark_functions.py
+ERROR scipy - ModuleNotFoundError: No module named 'hypothesis'
+============================== 2 errors in 0.38s ===============================

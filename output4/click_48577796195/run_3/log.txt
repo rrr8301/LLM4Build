@@ -1,0 +1,30 @@
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+Downloading cpython-3.14.0-linux-x86_64-gnu (download) (33.7MiB)
+ Downloading cpython-3.14.0-linux-x86_64-gnu (download)
+Using CPython 3.14.0
+Creating virtual environment at: .venv
+   Building click @ file:///app
+Downloading ruff (11.0MiB)
+Downloading pygments (1.2MiB)
+Downloading virtualenv (5.8MiB)
+Downloading pyright (5.4MiB)
+Downloading uv (17.0MiB)
+Downloading mypy (2.2MiB)
+ Downloading virtualenv
+ Downloading ruff
+ Downloading uv
+ Downloading pygments
+   Building pyyaml==6.0.2
+      Built click @ file:///app
+ Downloading mypy
+ Downloading pyright
+      Built pyyaml==6.0.2
+Installed 29 packages in 123ms
+pypy3: venv> .venv/bin/uv venv -p pypy3 --allow-existing --python-preference system /app/.tox/pypy3
+pypy3: uv-sync> uv sync --locked --python-preference system --no-default-groups --no-editable --reinstall-package click --group tests -p pypy3
+[31mUsing PyPy 3.9.17 interpreter at: /opt/pypy3.9-v7.3.12-linux64/bin/pypy3
+error: The requested interpreter resolved to Python 3.9.17, which is incompatible with the project's Python requirement: `>=3.10`
+pypy3: exit 2 (1.15 seconds) /app> uv sync --locked --python-preference system --no-default-groups --no-editable --reinstall-package click --group tests -p pypy3 pid=130
+  pypy3: FAIL code 2 (1.67 seconds)
+  evaluation failed :( (1.89 seconds)
+[39m

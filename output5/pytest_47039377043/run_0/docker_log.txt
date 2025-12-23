@@ -1,0 +1,20 @@
+Step 1/7 : FROM python:3.9-slim
+---> 563a905f7a66
+Step 2/7 : RUN apt-get update && apt-get install -y --no-install-recommends     build-essential     python3-dev     libffi-dev     libssl-dev     && rm -rf /var/lib/apt/lists/*
+---> Using cache
+---> 63eb760d03b5
+Step 3/7 : WORKDIR /app
+---> Using cache
+---> 109a5fff8eb4
+Step 4/7 : COPY . /app
+---> 8a32c07eb123
+Step 5/7 : COPY run.sh /app/run.sh
+---> 1ad2ba3bac0c
+Step 6/7 : RUN chmod +x /app/run.sh
+---> Running in ee9ee1d06282
+---> 696fa9e1d3c3
+Step 7/7 : ENTRYPOINT ["/app/run.sh"]
+---> Running in a9ac2e51596e
+---> 65e7bd6bf4b4
+Successfully built 65e7bd6bf4b4
+Successfully tagged pytest:latest

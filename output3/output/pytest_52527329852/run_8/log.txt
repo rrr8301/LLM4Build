@@ -1,0 +1,979 @@
+py311-coverage: install_deps> python -I -m pip install coverage-enable-subprocess
+.pkg_external_sdist_meta: install_requires> python -I -m pip install 'setuptools-scm[toml]>=6.2.3' 'setuptools>=77'
+.pkg_external_sdist_meta: _optional_hooks /app/.tox/.pkg_external/tmp/sdist-extract/pytest-2.0.0> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg_external_sdist_meta: get_requires_for_build_sdist /app/.tox/.pkg_external/tmp/sdist-extract/pytest-2.0.0> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg_external_sdist_meta: get_requires_for_build_wheel /app/.tox/.pkg_external/tmp/sdist-extract/pytest-2.0.0> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg_external_sdist_meta: prepare_metadata_for_build_wheel /app/.tox/.pkg_external/tmp/sdist-extract/pytest-2.0.0> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+py311-coverage: install_package_deps> python -I -m pip install argcomplete 'attrs>=19.2' 'colorama>=0.4; sys_platform == "win32"' 'exceptiongroup>=1; python_version < "3.11"' 'hypothesis>=3.56' 'iniconfig>=1.0.1' mock 'packaging>=22' 'pluggy<2,>=1.5' 'pygments>=2.7.2' requests setuptools 'tomli>=1; python_version < "3.11"' xmlschema
+py311-coverage: install_package> python -I -m pip install --force-reinstall --no-deps /app/dist/pytest-2.0.0.tar.gz
+py311-coverage: commands[0]> coverage run -m pytest
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_hypothesis_pytestplugin.py:84: UserWarning:
+        You are using pytest version 2.0.0. Hypothesis tests work with any test
+        runner, but our pytest plugin requires pytest 4.6 or newer.
+        Note that the pytest developers no longer support your version either!
+        Disabling the Hypothesis pytest plugin...
+
+  warnings.warn(PYTEST_TOO_OLD_MESSAGE % (pytest.__version__,), stacklevel=1)
+============================= test session starts ==============================
+platform linux -- Python 3.11.0rc1, pytest-2.0.0, pluggy-1.6.0
+cachedir: .tox/py311-coverage/.pytest_cache
+rootdir: /app
+configfile: pyproject.toml
+testpaths: testing
+plugins: hypothesis-6.140.3
+collected 4017 items
+
+testing/_py/test_local.py .............................................. [  1%]
+...................ss..............s.................x.....Xs........... [  2%]
+..........................sssssss..........................ssx...        [  4%]
+testing/acceptance_test.py .....                                         [  4%]
+testing/code/test_code.py .................                              [  5%]
+testing/code/test_excinfo.py .................s.......s................. [  6%]
+........................................................................ [  7%]
+...........................................                              [  9%]
+testing/code/test_source.py ............................................ [ 10%]
+...........                                                              [ 10%]
+testing/deprecated_test.py ..........                                    [ 10%]
+testing/freeze/tests/test_doctest.txt .                                  [ 10%]
+testing/freeze/tests/test_trivial.py ..                                  [ 10%]
+testing/io/test_pprint.py ......................................         [ 11%]
+testing/io/test_saferepr.py .............                                [ 11%]
+testing/io/test_terminalwriter.py ...................................... [ 12%]
+...........                                                              [ 13%]
+testing/io/test_wcwidth.py .................                             [ 13%]
+testing/logging/test_fixture.py ...................                      [ 14%]
+testing/logging/test_formatter.py ....                                   [ 14%]
+testing/logging/test_reporting.py ..                                     [ 14%]
+testing/python/approx.py .sss..sssss............................s....... [ 15%]
+......sssssss................ss...........                               [ 16%]
+testing/python/collect.py ..                                             [ 16%]
+testing/python/fixtures.py ...........                                   [ 16%]
+testing/python/integration.py ....                                       [ 16%]
+testing/python/metafunc.py ...........................................   [ 17%]
+testing/python/raises.py ...........................                     [ 18%]
+testing/python/raises_group.py .............s.............               [ 19%]
+testing/test_argcomplete.py ..                                           [ 19%]
+testing/test_assertion.py .............................................. [ 20%]
+...........................                                              [ 21%]
+testing/test_assertrewrite.py .......................................... [ 22%]
+......                                                                   [ 22%]
+testing/test_capture.py ................................................ [ 23%]
+........s....s..                                                         [ 23%]
+testing/test_collection.py ..                                            [ 24%]
+testing/test_compat.py ..........                                        [ 24%]
+testing/test_config.py ................................................. [ 25%]
+...........                                                              [ 25%]
+testing/test_conftest.py ...........                                     [ 26%]
+testing/test_debugging.py .                                              [ 26%]
+testing/test_doctest.py .............                                    [ 26%]
+testing/test_entry_points.py .                                           [ 26%]
+testing/test_faulthandler.py ...                                         [ 26%]
+testing/test_findpaths.py ..............s...                             [ 26%]
+testing/test_helpconfig.py .                                             [ 26%]
+testing/test_junitxml.py .........                                       [ 27%]
+testing/test_legacypath.py ....                                          [ 27%]
+testing/test_main.py .....                                               [ 27%]
+testing/test_mark.py ..............                                      [ 27%]
+testing/test_mark_expression.py ........................................ [ 28%]
+........................................................................ [ 30%]
+.............................                                            [ 31%]
+testing/test_monkeypatch.py ...............................              [ 32%]
+testing/test_nodes.py ....                                               [ 32%]
+testing/test_parseopt.py .............................                   [ 32%]
+testing/test_pastebin.py .....                                           [ 32%]
+testing/test_pluginmanager.py .........                                  [ 33%]
+testing/test_pytester.py .....................                           [ 33%]
+testing/test_recwarn.py ................................................ [ 34%]
+.........                                                                [ 35%]
+testing/test_runner.py ...............                                   [ 35%]
+testing/test_scope.py ....                                               [ 35%]
+testing/test_skipping.py .                                               [ 35%]
+testing/test_stash.py .                                                  [ 35%]
+testing/test_terminal.py ............................................... [ 36%]
+.........                                                                [ 37%]
+testing/test_tmpdir.py ...s...............                               [ 37%]
+testing/test_warning_types.py ...............                            [ 37%]
+testing/test_warnings.py .                                               [ 37%]
+testing/acceptance_test.py ............................................. [ 39%]
+.....s...x.........................s...                                  [ 40%]
+testing/code/test_excinfo.py .............sssssssss.......               [ 40%]
+testing/deprecated_test.py .....                                         [ 40%]
+testing/examples/test_issue519.py .                                      [ 40%]
+testing/logging/test_fixture.py ........                                 [ 41%]
+testing/logging/test_reporting.py ...................................... [ 42%]
+............                                                             [ 42%]
+testing/python/approx.py .                                               [ 42%]
+testing/python/collect.py .............................................. [ 43%]
+.................................                                        [ 44%]
+testing/python/fixtures.py ............................................. [ 45%]
+..............................x......................................... [ 47%]
+................................................................s....... [ 49%]
+..........                                                               [ 49%]
+testing/python/integration.py ................                           [ 49%]
+testing/python/metafunc.py ............................................. [ 50%]
+........................                                                 [ 51%]
+testing/python/raises.py ....                                            [ 51%]
+testing/python/raises_group.py ..                                        [ 51%]
+testing/python/show_fixtures_per_test.py ........                        [ 51%]
+testing/test_assertion.py .............................................. [ 52%]
+.............................                                            [ 53%]
+testing/test_assertrewrite.py .......................................... [ 54%]
+..........................                                               [ 55%]
+testing/test_cacheprovider.py ....ss.................................... [ 56%]
+...............                                                          [ 56%]
+testing/test_capture.py ......x.........................s...........     [ 57%]
+testing/test_collect_imported_tests.py ...                               [ 57%]
+testing/test_collection.py ................x............................ [ 59%]
+................s................s.....s..................               [ 60%]
+testing/test_config.py .....FFFF.........x.FFF.......................... [ 61%]
+........................................................................ [ 63%]
+..............................                                           [ 64%]
+testing/test_conftest.py .............s.............................     [ 65%]
+testing/test_debugging.py .............                                  [ 65%]
+testing/test_doctest.py ................................................ [ 66%]
+................x....................................................... [ 68%]
+........                                                                 [ 68%]
+testing/test_error_diffs.py ............                                 [ 69%]
+testing/test_faulthandler.py ...                                         [ 69%]
+testing/test_helpconfig.py .......                                       [ 69%]
+testing/test_junitxml.py ............................................... [ 70%]
+...................................................s...s................ [ 72%]
+.........                                                                [ 72%]
+testing/test_legacypath.py ..........                                    [ 72%]
+testing/test_link_resolve.py .                                           [ 72%]
+testing/test_main.py ...................                                 [ 73%]
+testing/test_mark.py ................................................... [ 74%]
+...................x...................                                  [ 75%]
+testing/test_monkeypatch.py ...s                                         [ 75%]
+testing/test_nodes.py ....                                               [ 75%]
+testing/test_parseopt.py .                                               [ 75%]
+testing/test_pastebin.py ...                                             [ 75%]
+testing/test_pathlib.py ................................................ [ 77%]
+............s..................................................          [ 78%]
+testing/test_pluginmanager.py ....s............                          [ 79%]
+testing/test_pytester.py x........................                       [ 79%]
+testing/test_python_path.py ......                                       [ 79%]
+testing/test_recwarn.py .....                                            [ 79%]
+testing/test_reports.py ..................                               [ 80%]
+testing/test_runner.py ........................x........................ [ 81%]
+...                                                                      [ 81%]
+testing/test_runner_xunit.py .............                               [ 81%]
+testing/test_session.py ..........................                       [ 82%]
+testing/test_setuponly.py ..........................                     [ 83%]
+testing/test_setupplan.py ...                                            [ 83%]
+testing/test_skipping.py ................F.............................. [ 84%]
+............F.............................                               [ 85%]
+testing/test_stepwise.py ..................                              [ 86%]
+testing/test_subtests.py .s.s.s.s.s.....s..s.xxxxx...x..x..........      [ 87%]
+testing/test_terminal.py ............................................... [ 88%]
+.....s.............................................................ssss. [ 90%]
+.....s.....................................                              [ 91%]
+testing/test_threadexception.py ........                                 [ 91%]
+testing/test_tmpdir.py ....................                              [ 91%]
+testing/test_unittest.py ......................sssssss.................. [ 92%]
+...............s............                                             [ 93%]
+testing/test_unraisableexception.py .......                              [ 93%]
+testing/test_warning_types.py .                                          [ 93%]
+testing/test_warnings.py .....s..........................                [ 94%]
+testing/acceptance_test.py .....                                         [ 94%]
+testing/python/collect.py .                                              [ 94%]
+testing/python/fixtures.py ..                                            [ 94%]
+testing/test_assertion.py ............                                   [ 95%]
+testing/test_assertrewrite.py ..........                                 [ 95%]
+testing/test_capture.py ........................s                        [ 96%]
+testing/test_collection.py ...                                           [ 96%]
+testing/test_config.py ..                                                [ 96%]
+testing/test_debugging.py sssssssssss.ssssssssssssssss.sssss....ssss.sss [ 97%]
+                                                                         [ 97%]
+testing/test_faulthandler.py ......                                      [ 97%]
+testing/test_helpconfig.py ...                                           [ 97%]
+testing/test_legacypath.py .                                             [ 97%]
+testing/test_meta.py ................................................... [ 98%]
+..................                                                       [ 99%]
+testing/test_pytester.py ....s..                                         [ 99%]
+testing/test_recwarn.py .                                                [ 99%]
+testing/test_reports.py .                                                [ 99%]
+testing/test_terminal.py ss..                                            [ 99%]
+testing/test_unittest.py s.                                              [ 99%]
+testing/test_unraisableexception.py ....                                 [ 99%]
+testing/test_warnings.py ...........                                     [100%]
+
+=================================== FAILURES ===================================
+______________ TestParseIni.test_ini_names[tool:pytest-setup.cfg] ______________
+
+self = <test_config.TestParseIni object at 0x7fe61139e050>
+pytester = <Pytester PosixPath('/tmp/pytest-of-root/pytest-0/test_ini_names0')>
+name = 'setup.cfg', section = 'tool:pytest'
+
+    @pytest.mark.parametrize(
+        "section, name",
+        [
+            ("tool:pytest", "setup.cfg"),
+            ("pytest", "tox.ini"),
+            ("pytest", "pytest.ini"),
+            ("pytest", ".pytest.ini"),
+        ],
+    )
+    def test_ini_names(self, pytester: Pytester, name, section) -> None:
+        pytester.path.joinpath(name).write_text(
+            textwrap.dedent(
+                f"""
+            [{section}]
+            minversion = 3.36
+        """
+            ),
+            encoding="utf-8",
+        )
+>       config = pytester.parseconfig()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/app/testing/test_config.py:131:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/pytester.py:1236: in parseconfig
+    config = _pytest.config._prepareconfig(new_args, self.plugins)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:347: in _prepareconfig
+    config: Config = pluginmanager.hook.pytest_cmdline_parse(
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/helpconfig.py:112: in pytest_cmdline_parse
+    config = yield
+             ^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1151: in pytest_cmdline_parse
+    self.parse(args)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1535: in parse
+    self._preparse(args, addopts=addopts)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1410: in _preparse
+    self._checkversion()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.config.Config object at 0x7fe60d682610>
+
+    def _checkversion(self) -> None:
+        import pytest
+
+        minver = self.inicfg.get("minversion", None)
+        if minver:
+            # Imported lazily to improve start-up time.
+            from packaging.version import Version
+
+            if not isinstance(minver, str):
+                raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' must be a single value"
+                )
+
+            if Version(minver) > Version(pytest.__version__):
+>               raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' requires pytest-{minver}, actual pytest-{pytest.__version__}'"
+                )
+E               _pytest.config.exceptions.UsageError: /tmp/pytest-of-root/pytest-0/test_ini_names0/setup.cfg: 'minversion' requires pytest-3.36, actual pytest-2.0.0'
+
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1476: UsageError
+_________________ TestParseIni.test_ini_names[pytest-tox.ini] __________________
+
+self = <test_config.TestParseIni object at 0x7fe61139eb90>
+pytester = <Pytester PosixPath('/tmp/pytest-of-root/pytest-0/test_ini_names1')>
+name = 'tox.ini', section = 'pytest'
+
+    @pytest.mark.parametrize(
+        "section, name",
+        [
+            ("tool:pytest", "setup.cfg"),
+            ("pytest", "tox.ini"),
+            ("pytest", "pytest.ini"),
+            ("pytest", ".pytest.ini"),
+        ],
+    )
+    def test_ini_names(self, pytester: Pytester, name, section) -> None:
+        pytester.path.joinpath(name).write_text(
+            textwrap.dedent(
+                f"""
+            [{section}]
+            minversion = 3.36
+        """
+            ),
+            encoding="utf-8",
+        )
+>       config = pytester.parseconfig()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/app/testing/test_config.py:131:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/pytester.py:1236: in parseconfig
+    config = _pytest.config._prepareconfig(new_args, self.plugins)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:347: in _prepareconfig
+    config: Config = pluginmanager.hook.pytest_cmdline_parse(
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/helpconfig.py:112: in pytest_cmdline_parse
+    config = yield
+             ^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1151: in pytest_cmdline_parse
+    self.parse(args)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1535: in parse
+    self._preparse(args, addopts=addopts)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1410: in _preparse
+    self._checkversion()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.config.Config object at 0x7fe60da20a90>
+
+    def _checkversion(self) -> None:
+        import pytest
+
+        minver = self.inicfg.get("minversion", None)
+        if minver:
+            # Imported lazily to improve start-up time.
+            from packaging.version import Version
+
+            if not isinstance(minver, str):
+                raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' must be a single value"
+                )
+
+            if Version(minver) > Version(pytest.__version__):
+>               raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' requires pytest-{minver}, actual pytest-{pytest.__version__}'"
+                )
+E               _pytest.config.exceptions.UsageError: /tmp/pytest-of-root/pytest-0/test_ini_names1/tox.ini: 'minversion' requires pytest-3.36, actual pytest-2.0.0'
+
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1476: UsageError
+________________ TestParseIni.test_ini_names[pytest-pytest.ini] ________________
+
+self = <test_config.TestParseIni object at 0x7fe61139e750>
+pytester = <Pytester PosixPath('/tmp/pytest-of-root/pytest-0/test_ini_names2')>
+name = 'pytest.ini', section = 'pytest'
+
+    @pytest.mark.parametrize(
+        "section, name",
+        [
+            ("tool:pytest", "setup.cfg"),
+            ("pytest", "tox.ini"),
+            ("pytest", "pytest.ini"),
+            ("pytest", ".pytest.ini"),
+        ],
+    )
+    def test_ini_names(self, pytester: Pytester, name, section) -> None:
+        pytester.path.joinpath(name).write_text(
+            textwrap.dedent(
+                f"""
+            [{section}]
+            minversion = 3.36
+        """
+            ),
+            encoding="utf-8",
+        )
+>       config = pytester.parseconfig()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/app/testing/test_config.py:131:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/pytester.py:1236: in parseconfig
+    config = _pytest.config._prepareconfig(new_args, self.plugins)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:347: in _prepareconfig
+    config: Config = pluginmanager.hook.pytest_cmdline_parse(
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/helpconfig.py:112: in pytest_cmdline_parse
+    config = yield
+             ^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1151: in pytest_cmdline_parse
+    self.parse(args)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1535: in parse
+    self._preparse(args, addopts=addopts)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1410: in _preparse
+    self._checkversion()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.config.Config object at 0x7fe60d94fa10>
+
+    def _checkversion(self) -> None:
+        import pytest
+
+        minver = self.inicfg.get("minversion", None)
+        if minver:
+            # Imported lazily to improve start-up time.
+            from packaging.version import Version
+
+            if not isinstance(minver, str):
+                raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' must be a single value"
+                )
+
+            if Version(minver) > Version(pytest.__version__):
+>               raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' requires pytest-{minver}, actual pytest-{pytest.__version__}'"
+                )
+E               _pytest.config.exceptions.UsageError: /tmp/pytest-of-root/pytest-0/test_ini_names2/pytest.ini: 'minversion' requires pytest-3.36, actual pytest-2.0.0'
+
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1476: UsageError
+_______________ TestParseIni.test_ini_names[pytest-.pytest.ini] ________________
+
+self = <test_config.TestParseIni object at 0x7fe61139ef50>
+pytester = <Pytester PosixPath('/tmp/pytest-of-root/pytest-0/test_ini_names3')>
+name = '.pytest.ini', section = 'pytest'
+
+    @pytest.mark.parametrize(
+        "section, name",
+        [
+            ("tool:pytest", "setup.cfg"),
+            ("pytest", "tox.ini"),
+            ("pytest", "pytest.ini"),
+            ("pytest", ".pytest.ini"),
+        ],
+    )
+    def test_ini_names(self, pytester: Pytester, name, section) -> None:
+        pytester.path.joinpath(name).write_text(
+            textwrap.dedent(
+                f"""
+            [{section}]
+            minversion = 3.36
+        """
+            ),
+            encoding="utf-8",
+        )
+>       config = pytester.parseconfig()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/app/testing/test_config.py:131:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/pytester.py:1236: in parseconfig
+    config = _pytest.config._prepareconfig(new_args, self.plugins)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:347: in _prepareconfig
+    config: Config = pluginmanager.hook.pytest_cmdline_parse(
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/helpconfig.py:112: in pytest_cmdline_parse
+    config = yield
+             ^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1151: in pytest_cmdline_parse
+    self.parse(args)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1535: in parse
+    self._preparse(args, addopts=addopts)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1410: in _preparse
+    self._checkversion()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.config.Config object at 0x7fe60e941510>
+
+    def _checkversion(self) -> None:
+        import pytest
+
+        minver = self.inicfg.get("minversion", None)
+        if minver:
+            # Imported lazily to improve start-up time.
+            from packaging.version import Version
+
+            if not isinstance(minver, str):
+                raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' must be a single value"
+                )
+
+            if Version(minver) > Version(pytest.__version__):
+>               raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' requires pytest-{minver}, actual pytest-{pytest.__version__}'"
+                )
+E               _pytest.config.exceptions.UsageError: /tmp/pytest-of-root/pytest-0/test_ini_names3/.pytest.ini: 'minversion' requires pytest-3.36, actual pytest-2.0.0'
+
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1476: UsageError
+_____________ TestParseIni.test_invalid_config_options[1-unknown] ______________
+
+self = <test_config.TestParseIni object at 0x7fe611b81050>
+pytester = <Pytester PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_config_options1')>
+ini_file_text = '\n                [pytest]\n                unknown_ini = value1\n                minversion = 5.0.0\n                '
+invalid_keys = ['unknown_ini']
+warning_output = ['=*= warnings summary =*=', '*PytestConfigWarning:*Unknown config option: unknown_ini']
+exception_text = 'Unknown config option: unknown_ini'
+
+    @pytest.mark.parametrize(
+        "ini_file_text, invalid_keys, warning_output, exception_text",
+        [
+            pytest.param(
+                """
+                [pytest]
+                unknown_ini = value1
+                another_unknown_ini = value2
+                """,
+                ["unknown_ini", "another_unknown_ini"],
+                [
+                    "=*= warnings summary =*=",
+                    "*PytestConfigWarning:*Unknown config option: another_unknown_ini",
+                    "*PytestConfigWarning:*Unknown config option: unknown_ini",
+                ],
+                "Unknown config option: another_unknown_ini",
+                id="2-unknowns",
+            ),
+            pytest.param(
+                """
+                [pytest]
+                unknown_ini = value1
+                minversion = 5.0.0
+                """,
+                ["unknown_ini"],
+                [
+                    "=*= warnings summary =*=",
+                    "*PytestConfigWarning:*Unknown config option: unknown_ini",
+                ],
+                "Unknown config option: unknown_ini",
+                id="1-unknown",
+            ),
+            pytest.param(
+                """
+                [some_other_header]
+                unknown_ini = value1
+                [pytest]
+                minversion = 5.0.0
+                """,
+                [],
+                [],
+                "",
+                id="unknown-in-other-header",
+            ),
+            pytest.param(
+                """
+                [pytest]
+                minversion = 5.0.0
+                """,
+                [],
+                [],
+                "",
+                id="no-unknowns",
+            ),
+            pytest.param(
+                """
+                [pytest]
+                conftest_ini_key = 1
+                """,
+                [],
+                [],
+                "",
+                id="1-known",
+            ),
+        ],
+    )
+    @pytest.mark.filterwarnings("default")
+    def test_invalid_config_options(
+        self,
+        pytester: Pytester,
+        ini_file_text,
+        invalid_keys,
+        warning_output,
+        exception_text,
+    ) -> None:
+        pytester.makeconftest(
+            """
+            def pytest_addoption(parser):
+                parser.addini("conftest_ini_key", "")
+            """
+        )
+        pytester.makepyfile("def test(): pass")
+        pytester.makeini(ini_file_text)
+
+>       config = pytester.parseconfig()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/app/testing/test_config.py:329:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/pytester.py:1236: in parseconfig
+    config = _pytest.config._prepareconfig(new_args, self.plugins)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:347: in _prepareconfig
+    config: Config = pluginmanager.hook.pytest_cmdline_parse(
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/helpconfig.py:112: in pytest_cmdline_parse
+    config = yield
+             ^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1151: in pytest_cmdline_parse
+    self.parse(args)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1535: in parse
+    self._preparse(args, addopts=addopts)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1410: in _preparse
+    self._checkversion()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.config.Config object at 0x7fe5fc116d90>
+
+    def _checkversion(self) -> None:
+        import pytest
+
+        minver = self.inicfg.get("minversion", None)
+        if minver:
+            # Imported lazily to improve start-up time.
+            from packaging.version import Version
+
+            if not isinstance(minver, str):
+                raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' must be a single value"
+                )
+
+            if Version(minver) > Version(pytest.__version__):
+>               raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' requires pytest-{minver}, actual pytest-{pytest.__version__}'"
+                )
+E               _pytest.config.exceptions.UsageError: /tmp/pytest-of-root/pytest-0/test_invalid_config_options1/tox.ini: 'minversion' requires pytest-5.0.0, actual pytest-2.0.0'
+
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1476: UsageError
+______ TestParseIni.test_invalid_config_options[unknown-in-other-header] _______
+
+self = <test_config.TestParseIni object at 0x7fe611b82950>
+pytester = <Pytester PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_config_options2')>
+ini_file_text = '\n                [some_other_header]\n                unknown_ini = value1\n                [pytest]\n                minversion = 5.0.0\n                '
+invalid_keys = [], warning_output = [], exception_text = ''
+
+    @pytest.mark.parametrize(
+        "ini_file_text, invalid_keys, warning_output, exception_text",
+        [
+            pytest.param(
+                """
+                [pytest]
+                unknown_ini = value1
+                another_unknown_ini = value2
+                """,
+                ["unknown_ini", "another_unknown_ini"],
+                [
+                    "=*= warnings summary =*=",
+                    "*PytestConfigWarning:*Unknown config option: another_unknown_ini",
+                    "*PytestConfigWarning:*Unknown config option: unknown_ini",
+                ],
+                "Unknown config option: another_unknown_ini",
+                id="2-unknowns",
+            ),
+            pytest.param(
+                """
+                [pytest]
+                unknown_ini = value1
+                minversion = 5.0.0
+                """,
+                ["unknown_ini"],
+                [
+                    "=*= warnings summary =*=",
+                    "*PytestConfigWarning:*Unknown config option: unknown_ini",
+                ],
+                "Unknown config option: unknown_ini",
+                id="1-unknown",
+            ),
+            pytest.param(
+                """
+                [some_other_header]
+                unknown_ini = value1
+                [pytest]
+                minversion = 5.0.0
+                """,
+                [],
+                [],
+                "",
+                id="unknown-in-other-header",
+            ),
+            pytest.param(
+                """
+                [pytest]
+                minversion = 5.0.0
+                """,
+                [],
+                [],
+                "",
+                id="no-unknowns",
+            ),
+            pytest.param(
+                """
+                [pytest]
+                conftest_ini_key = 1
+                """,
+                [],
+                [],
+                "",
+                id="1-known",
+            ),
+        ],
+    )
+    @pytest.mark.filterwarnings("default")
+    def test_invalid_config_options(
+        self,
+        pytester: Pytester,
+        ini_file_text,
+        invalid_keys,
+        warning_output,
+        exception_text,
+    ) -> None:
+        pytester.makeconftest(
+            """
+            def pytest_addoption(parser):
+                parser.addini("conftest_ini_key", "")
+            """
+        )
+        pytester.makepyfile("def test(): pass")
+        pytester.makeini(ini_file_text)
+
+>       config = pytester.parseconfig()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/app/testing/test_config.py:329:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/pytester.py:1236: in parseconfig
+    config = _pytest.config._prepareconfig(new_args, self.plugins)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:347: in _prepareconfig
+    config: Config = pluginmanager.hook.pytest_cmdline_parse(
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/helpconfig.py:112: in pytest_cmdline_parse
+    config = yield
+             ^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1151: in pytest_cmdline_parse
+    self.parse(args)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1535: in parse
+    self._preparse(args, addopts=addopts)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1410: in _preparse
+    self._checkversion()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.config.Config object at 0x7fe60dd367d0>
+
+    def _checkversion(self) -> None:
+        import pytest
+
+        minver = self.inicfg.get("minversion", None)
+        if minver:
+            # Imported lazily to improve start-up time.
+            from packaging.version import Version
+
+            if not isinstance(minver, str):
+                raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' must be a single value"
+                )
+
+            if Version(minver) > Version(pytest.__version__):
+>               raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' requires pytest-{minver}, actual pytest-{pytest.__version__}'"
+                )
+E               _pytest.config.exceptions.UsageError: /tmp/pytest-of-root/pytest-0/test_invalid_config_options2/tox.ini: 'minversion' requires pytest-5.0.0, actual pytest-2.0.0'
+
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1476: UsageError
+____________ TestParseIni.test_invalid_config_options[no-unknowns] _____________
+
+self = <test_config.TestParseIni object at 0x7fe611b82e50>
+pytester = <Pytester PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_config_options3')>
+ini_file_text = '\n                [pytest]\n                minversion = 5.0.0\n                '
+invalid_keys = [], warning_output = [], exception_text = ''
+
+    @pytest.mark.parametrize(
+        "ini_file_text, invalid_keys, warning_output, exception_text",
+        [
+            pytest.param(
+                """
+                [pytest]
+                unknown_ini = value1
+                another_unknown_ini = value2
+                """,
+                ["unknown_ini", "another_unknown_ini"],
+                [
+                    "=*= warnings summary =*=",
+                    "*PytestConfigWarning:*Unknown config option: another_unknown_ini",
+                    "*PytestConfigWarning:*Unknown config option: unknown_ini",
+                ],
+                "Unknown config option: another_unknown_ini",
+                id="2-unknowns",
+            ),
+            pytest.param(
+                """
+                [pytest]
+                unknown_ini = value1
+                minversion = 5.0.0
+                """,
+                ["unknown_ini"],
+                [
+                    "=*= warnings summary =*=",
+                    "*PytestConfigWarning:*Unknown config option: unknown_ini",
+                ],
+                "Unknown config option: unknown_ini",
+                id="1-unknown",
+            ),
+            pytest.param(
+                """
+                [some_other_header]
+                unknown_ini = value1
+                [pytest]
+                minversion = 5.0.0
+                """,
+                [],
+                [],
+                "",
+                id="unknown-in-other-header",
+            ),
+            pytest.param(
+                """
+                [pytest]
+                minversion = 5.0.0
+                """,
+                [],
+                [],
+                "",
+                id="no-unknowns",
+            ),
+            pytest.param(
+                """
+                [pytest]
+                conftest_ini_key = 1
+                """,
+                [],
+                [],
+                "",
+                id="1-known",
+            ),
+        ],
+    )
+    @pytest.mark.filterwarnings("default")
+    def test_invalid_config_options(
+        self,
+        pytester: Pytester,
+        ini_file_text,
+        invalid_keys,
+        warning_output,
+        exception_text,
+    ) -> None:
+        pytester.makeconftest(
+            """
+            def pytest_addoption(parser):
+                parser.addini("conftest_ini_key", "")
+            """
+        )
+        pytester.makepyfile("def test(): pass")
+        pytester.makeini(ini_file_text)
+
+>       config = pytester.parseconfig()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+/app/testing/test_config.py:329:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/pytester.py:1236: in parseconfig
+    config = _pytest.config._prepareconfig(new_args, self.plugins)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:347: in _prepareconfig
+    config: Config = pluginmanager.hook.pytest_cmdline_parse(
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/pluggy/_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/helpconfig.py:112: in pytest_cmdline_parse
+    config = yield
+             ^^^^^
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1151: in pytest_cmdline_parse
+    self.parse(args)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1535: in parse
+    self._preparse(args, addopts=addopts)
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1410: in _preparse
+    self._checkversion()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.config.Config object at 0x7fe60dc99a90>
+
+    def _checkversion(self) -> None:
+        import pytest
+
+        minver = self.inicfg.get("minversion", None)
+        if minver:
+            # Imported lazily to improve start-up time.
+            from packaging.version import Version
+
+            if not isinstance(minver, str):
+                raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' must be a single value"
+                )
+
+            if Version(minver) > Version(pytest.__version__):
+>               raise pytest.UsageError(
+                    f"{self.inipath}: 'minversion' requires pytest-{minver}, actual pytest-{pytest.__version__}'"
+                )
+E               _pytest.config.exceptions.UsageError: /tmp/pytest-of-root/pytest-0/test_invalid_config_options3/tox.ini: 'minversion' requires pytest-5.0.0, actual pytest-2.0.0'
+
+/app/.tox/py311-coverage/lib/python3.11/site-packages/_pytest/config/__init__.py:1476: UsageError
+_____________________ TestXFail.test_xfail_using_platform ______________________
+
+self = <test_skipping.TestXFail object at 0x7fe6110ed190>
+pytester = <Pytester PosixPath('/tmp/pytest-of-root/pytest-0/test_xfail_using_platform0')>
+
+    def test_xfail_using_platform(self, pytester: Pytester) -> None:
+        """Verify that platform can be used with xfail statements."""
+        item = pytester.getitem(
+            """
+            import pytest
+            @pytest.mark.xfail("platform.platform() == platform.platform()")
+            def test_func():
+                assert 0
+        """
+        )
+        reports = runtestprotocol(item, log=False)
+>       assert len(reports) == 3
+E       AssertionError: assert 2 == 3
+E        +  where 2 = len([<TestReport 'test_xfail_using_platform.py::test_func' when='setup' outcome='failed'>, <TestReport 'test_xfail_using_platform.py::test_func' when='teardown' outcome='passed'>])
+
+/app/testing/test_skipping.py:340: AssertionError
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.11.0rc1, pytest-2.0.0, pluggy-1.6.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_xfail_using_platform0
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+____________________ TestSkipif.test_skipif_using_platform _____________________
+'encoding' argument not specified.
+
+During handling of the above exception, another exception occurred:
+Error evaluating 'skipif' condition
+    platform.platform() == platform.platform()
+EncodingWarning: 'encoding' argument not specified.
+
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform linux -- Python 3.11.0rc1, pytest-2.0.0, pluggy-1.6.0
+rootdir: /tmp/pytest-of-root/pytest-0/test_skipif_using_platform0
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+=================================== XPASSES ====================================
+=========================== short test summary info ============================
+FAILED testing/test_config.py::TestParseIni::test_ini_names[tool:pytest-setup.cfg]
+FAILED testing/test_config.py::TestParseIni::test_ini_names[pytest-tox.ini]
+FAILED testing/test_config.py::TestParseIni::test_ini_names[pytest-pytest.ini]
+FAILED testing/test_config.py::TestParseIni::test_ini_names[pytest-.pytest.ini]
+FAILED testing/test_config.py::TestParseIni::test_invalid_config_options[1-unknown]
+FAILED testing/test_config.py::TestParseIni::test_invalid_config_options[unknown-in-other-header]
+FAILED testing/test_config.py::TestParseIni::test_invalid_config_options[no-unknowns]
+FAILED testing/test_skipping.py::TestXFail::test_xfail_using_platform - Asser...
+FAILED testing/test_skipping.py::TestSkipif::test_skipif_using_platform - Fai...
+XPASS testing/_py/test_local.py::TestLocalPath::test_make_numbered_dir_multiprocess_safe - #11603
+= 9 failed, 3861 passed, 128 skipped, 18 xfailed, 1 xpassed in 429.49s (0:07:09) =
+py311-coverage: exit 1 (431.15 seconds) /app> coverage run -m pytest pid=83
+  py311-coverage: FAIL code 1 (446.35=setup[15.19]+cmd[431.15] seconds)
+  evaluation failed :( (446.40 seconds)
+No data to report.

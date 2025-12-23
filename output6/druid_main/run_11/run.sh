@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# run.sh
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Start Docker daemon
+service docker start
+
+# Run integration tests
+./it.sh ci
+
+# Run Maven verify, ensuring all tests are executed
+mvn verify -pl integration-tests -P integration-tests -Djvm.runtime=17 -Dit.indexer=middleManager -Dweb.console.skip=true -Dmaven.javadoc.skip=true -Denforcer.skip=true -Dlicense.skip=true
+
+# Run additional tests if needed
+mvn verify -pl benchmarks -P benchmarks -Djvm.runtime=17 -Dit.indexer=middleManager -Dweb.console.skip=true -Dmaven.javadoc.skip=true -Denforcer.skip=true -Dlicense.skip=true

@@ -1,0 +1,1867 @@
+Removing `build`
+Removing `build-install`
+$ /opt/venv/bin/python3.11 vendored-meson/meson/meson.py setup build --prefix=/usr
+The Meson build system
+Version: 1.8.3
+Source dir: /app
+Build dir: /app/build
+Build type: native build
+Project name: NumPy
+Project version: 2.4.0.dev0+git20251007.128d684
+C compiler for the host machine: cc (gcc 11.4.0 "cc (Ubuntu 11.4.0-1ubuntu1~22.04.2) 11.4.0")
+C linker for the host machine: cc ld.bfd 2.38
+C++ compiler for the host machine: c++ (gcc 11.4.0 "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.2) 11.4.0")
+C++ linker for the host machine: c++ ld.bfd 2.38
+Cython compiler for the host machine: cython (cython 3.1.4)
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Program python3 found: YES (/opt/venv/bin/python3.11)
+Found pkg-config: YES (/usr/bin/pkg-config) 0.29.2
+Run-time dependency python found: YES 3.11
+Has header "Python.h" with dependency python-3.11: YES
+Compiler for C supports arguments -fno-strict-aliasing: YES
+Test features "SSE SSE2 SSE3" : Supported
+Test features "SSSE3" : Supported
+Test features "SSE41" : Supported
+Test features "POPCNT" : Supported
+Test features "SSE42" : Supported
+Test features "AVX" : Supported
+Test features "F16C" : Supported
+Test features "FMA3" : Supported
+Test features "AVX2" : Supported
+Test features "AVX512F" : Supported
+Test features "AVX512CD" : Supported
+Test features "AVX512_KNL" : Supported
+Test features "AVX512_KNM" : Supported
+Test features "AVX512_SKX" : Supported
+Test features "AVX512_CLX" : Supported
+Test features "AVX512_CNL" : Supported
+Test features "AVX512_ICL" : Supported
+Test features "AVX512_SPR" : Unsupported due to Arguments "-msse, -msse2, -msse3, -mssse3, -msse4.1, -mpopcnt, -msse4.2, -mavx, -mf16c, -mfma, -mavx2, -maes, -mpclmul, -mbmi, -mbmi2, -mno-mmx, -mavx512f, -mavx512cd, -mavx512vl, -mavx512bw, -mavx512dq, -mavx512vnni, -mavx512ifma, -mavx512vbmi, -mavx512vbmi2, -mavx512bitalg, -mavx512vpopcntdq, -mavx512fp16" are not supported
+Configuring npy_cpu_dispatch_config.h using configuration
+Message:
+CPU Optimization Options
+  baseline:
+    Requested : min
+    Enabled   : SSE SSE2 SSE3
+  dispatch:
+    Requested : max -xop -fma4
+    Enabled   : SSSE3 SSE41 POPCNT SSE42 AVX F16C FMA3 AVX2 AVX512F AVX512CD AVX512_KNL AVX512_KNM AVX512_SKX AVX512_CLX AVX512_CNL AVX512_ICL
+
+Library m found: YES
+Run-time dependency scipy-openblas found: NO (tried pkgconfig)
+Run-time dependency mkl found: NO (tried pkgconfig and system)
+Run-time dependency mkl found: NO (tried pkgconfig and system)
+Run-time dependency openblas found: YES 0.3.20
+Message: BLAS symbol suffix:
+Run-time dependency mkl found: NO (tried pkgconfig and system)
+Run-time dependency openblas found: YES 0.3.20
+Checking if "Check atomic builtins without -latomic" links: YES
+Program _build_utils/process_src_template.py found: YES (/opt/venv/bin/python3.11 /app/numpy/_build_utils/process_src_template.py)
+Program _build_utils/tempita.py found: YES (/opt/venv/bin/python3.11 /app/numpy/_build_utils/tempita.py)
+Configuring __config__.py using configuration
+Checking for size of "short" : 2
+Checking for size of "int" : 4
+Checking for size of "long" : 8
+Checking for size of "long long" : 8
+Checking for size of "float" : 4
+Checking for size of "double" : 8
+Checking for size of "long double" : 16
+Checking for size of "size_t" : 8
+Checking for size of "size_t" : 8 (cached)
+Checking for size of "wchar_t" : 4
+Checking for size of "off_t" : 8
+Checking for size of "Py_intptr_t" with dependency python-3.11: 8
+Checking for size of "PY_LONG_LONG" with dependency python-3.11: 8
+Has header "complex.h" : YES
+Checking for type "complex float" : YES
+Checking for size of "complex float" : 8
+Checking for type "complex double" : YES
+Checking for size of "complex double" : 16
+Checking for type "complex long double" : YES
+Checking for size of "complex long double" : 32
+Checking for function "sin" with dependency -lm: YES
+Checking for function "cos" with dependency -lm: YES
+Checking for function "tan" with dependency -lm: YES
+Checking for function "sinh" with dependency -lm: YES
+Checking for function "cosh" with dependency -lm: YES
+Checking for function "tanh" with dependency -lm: YES
+Checking for function "fabs" with dependency -lm: YES
+Checking for function "floor" with dependency -lm: YES
+Checking for function "ceil" with dependency -lm: YES
+Checking for function "sqrt" with dependency -lm: YES
+Checking for function "log10" with dependency -lm: YES
+Checking for function "log" with dependency -lm: YES
+Checking for function "exp" with dependency -lm: YES
+Checking for function "asin" with dependency -lm: YES
+Checking for function "acos" with dependency -lm: YES
+Checking for function "atan" with dependency -lm: YES
+Checking for function "fmod" with dependency -lm: YES
+Checking for function "modf" with dependency -lm: YES
+Checking for function "frexp" with dependency -lm: YES
+Checking for function "ldexp" with dependency -lm: YES
+Checking for function "expm1" with dependency -lm: YES
+Checking for function "log1p" with dependency -lm: YES
+Checking for function "acosh" with dependency -lm: YES
+Checking for function "asinh" with dependency -lm: YES
+Checking for function "atanh" with dependency -lm: YES
+Checking for function "rint" with dependency -lm: YES
+Checking for function "trunc" with dependency -lm: YES
+Checking for function "exp2" with dependency -lm: YES
+Checking for function "copysign" with dependency -lm: YES
+Checking for function "nextafter" with dependency -lm: YES
+Checking for function "cbrt" with dependency -lm: YES
+Checking for function "log2" with dependency -lm: YES
+Checking for function "pow" with dependency -lm: YES
+Checking for function "hypot" with dependency -lm: YES
+Checking for function "atan2" with dependency -lm: YES
+Checking for function "csin" with dependency -lm: YES
+Checking for function "csinh" with dependency -lm: YES
+Checking for function "ccos" with dependency -lm: YES
+Checking for function "ccosh" with dependency -lm: YES
+Checking for function "ctan" with dependency -lm: YES
+Checking for function "ctanh" with dependency -lm: YES
+Checking for function "creal" with dependency -lm: YES
+Checking for function "cimag" with dependency -lm: YES
+Checking for function "conj" with dependency -lm: YES
+Checking for function "strtoll" : YES
+Checking for function "strtoull" : YES
+Checking for function "cabs" with dependency -lm: YES
+Checking for function "cabsf" with dependency -lm: YES
+Checking for function "cabsl" with dependency -lm: YES
+Checking for function "cacos" with dependency -lm: YES
+Checking for function "cacosf" with dependency -lm: YES
+Checking for function "cacosl" with dependency -lm: YES
+Checking for function "cacosh" with dependency -lm: YES
+Checking for function "cacoshf" with dependency -lm: YES
+Checking for function "cacoshl" with dependency -lm: YES
+Checking for function "carg" with dependency -lm: YES
+Checking for function "cargf" with dependency -lm: YES
+Checking for function "cargl" with dependency -lm: YES
+Checking for function "casin" with dependency -lm: YES
+Checking for function "casinf" with dependency -lm: YES
+Checking for function "casinl" with dependency -lm: YES
+Checking for function "casinh" with dependency -lm: YES
+Checking for function "casinhf" with dependency -lm: YES
+Checking for function "casinhl" with dependency -lm: YES
+Checking for function "catan" with dependency -lm: YES
+Checking for function "catanf" with dependency -lm: YES
+Checking for function "catanl" with dependency -lm: YES
+Checking for function "catanh" with dependency -lm: YES
+Checking for function "catanhf" with dependency -lm: YES
+Checking for function "catanhl" with dependency -lm: YES
+Checking for function "cexp" with dependency -lm: YES
+Checking for function "cexpf" with dependency -lm: YES
+Checking for function "cexpl" with dependency -lm: YES
+Checking for function "clog" with dependency -lm: YES
+Checking for function "clogf" with dependency -lm: YES
+Checking for function "clogl" with dependency -lm: YES
+Checking for function "cpow" with dependency -lm: YES
+Checking for function "cpowf" with dependency -lm: YES
+Checking for function "cpowl" with dependency -lm: YES
+Checking for function "csqrt" with dependency -lm: YES
+Checking for function "csqrtf" with dependency -lm: YES
+Checking for function "csqrtl" with dependency -lm: YES
+Checking for function "csin" with dependency -lm: YES (cached)
+Checking for function "csinf" with dependency -lm: YES
+Checking for function "csinl" with dependency -lm: YES
+Checking for function "csinh" with dependency -lm: YES (cached)
+Checking for function "csinhf" with dependency -lm: YES
+Checking for function "csinhl" with dependency -lm: YES
+Checking for function "ccos" with dependency -lm: YES (cached)
+Checking for function "ccosf" with dependency -lm: YES
+Checking for function "ccosl" with dependency -lm: YES
+Checking for function "ccosh" with dependency -lm: YES (cached)
+Checking for function "ccoshf" with dependency -lm: YES
+Checking for function "ccoshl" with dependency -lm: YES
+Checking for function "ctan" with dependency -lm: YES (cached)
+Checking for function "ctanf" with dependency -lm: YES
+Checking for function "ctanl" with dependency -lm: YES
+Checking for function "ctanh" with dependency -lm: YES (cached)
+Checking for function "ctanhf" with dependency -lm: YES
+Checking for function "ctanhl" with dependency -lm: YES
+Checking for function "isfinite" with dependency -lm: YES
+Header "Python.h" has symbol "isfinite" with dependency python-3.11: YES
+Checking for function "isinf" with dependency -lm: YES
+Header "Python.h" has symbol "isinf" with dependency python-3.11: YES
+Checking for function "isnan" with dependency -lm: YES
+Header "Python.h" has symbol "isnan" with dependency python-3.11: YES
+Checking for function "signbit" with dependency -lm: YES
+Header "Python.h" has symbol "signbit" with dependency python-3.11: YES
+Checking if "thread_local" compiles: NO
+Checking if "_Thread_local" compiles: YES
+Checking if "__thread" compiles: YES
+Checking if "__declspec(thread)" compiles: NO
+Checking for function "fallocate" : YES
+Header "Python.h" has symbol "HAVE_FTELLO" with dependency python-3.11: YES
+Header "Python.h" has symbol "HAVE_FSEEKO" with dependency python-3.11: YES
+Checking for function "backtrace" : YES
+Checking for function "madvise" : YES
+Has header "features.h" : YES
+Has header "xlocale.h" : NO
+Has header "dlfcn.h" : YES
+Has header "execinfo.h" : YES
+Has header "libunwind.h" : NO
+Has header "sys/mman.h" : YES
+Checking for function "strtold_l" : YES
+Checking if "__attribute__((optimize("unroll-loops")))" compiles: YES
+Checking if "__attribute__((optimize("O3")))" compiles: YES
+Checking if "__attribute__((nonnull(1)))" compiles: YES
+Compiler for C supports arguments -O3: YES
+Message: Long double format: INTEL_EXTENDED_16_BYTES_LE
+Has header "endian.h" : YES
+Has header "sys/endian.h" : NO
+Compiler for C supports function attribute visibility:hidden: YES
+Configuring config.h using configuration
+Configuring _numpyconfig.h using configuration
+Configuring npymath.ini using configuration
+Configuring mlib.ini using configuration
+Configuring numpy.pc using configuration
+Generating multi-targets for "_umath_tests.dispatch.h"
+  Enabled targets: AVX2, SSE41, baseline
+Generating multi-targets for "argfunc.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX2, SSE42, baseline
+Generating multi-targets for "x86_simd_argsort.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX2
+Generating multi-targets for "x86_simd_qsort.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX2
+Generating multi-targets for "x86_simd_qsort_16bit.dispatch.h"
+  Enabled targets: AVX512_ICL
+Generating multi-targets for "highway_qsort.dispatch.h"
+  Enabled targets:
+Generating multi-targets for "highway_qsort_16bit.dispatch.h"
+  Enabled targets:
+Generating multi-targets for "loops_arithm_fp.dispatch.h"
+  Enabled targets: AVX2, baseline
+Generating multi-targets for "loops_arithmetic.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX512F, AVX2, SSE41, baseline
+Generating multi-targets for "loops_comparison.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX512F, AVX2, SSE42, baseline
+Generating multi-targets for "loops_exponent_log.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX512F, AVX2, baseline
+Generating multi-targets for "loops_hyperbolic.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX2, baseline
+Generating multi-targets for "loops_logical.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX2, baseline
+Generating multi-targets for "loops_minmax.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX2, baseline
+Generating multi-targets for "loops_modulo.dispatch.h"
+  Enabled targets: baseline
+Generating multi-targets for "loops_trigonometric.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX2, baseline
+Generating multi-targets for "loops_umath_fp.dispatch.h"
+  Enabled targets: AVX512_SKX, baseline
+Generating multi-targets for "loops_unary.dispatch.h"
+  Enabled targets: AVX512_SKX, AVX2, baseline
+Generating multi-targets for "loops_unary_fp.dispatch.h"
+  Enabled targets: SSE41, baseline
+Generating multi-targets for "loops_unary_fp_le.dispatch.h"
+  Enabled targets: SSE41, baseline
+Generating multi-targets for "loops_unary_complex.dispatch.h"
+  Enabled targets: AVX512F, AVX2, baseline
+Generating multi-targets for "loops_autovec.dispatch.h"
+  Enabled targets: AVX2, baseline
+Generating multi-targets for "loops_half.dispatch.h"
+  Enabled targets: AVX512_SKX, baseline
+WARNING: Project targets '>=1.8.3' but uses feature deprecated since '1.3.0': Source file src/umath/svml/linux/avx512/svml_z0_acos_d_la.s in the 'objects' kwarg is not an object..
+Generating multi-targets for "_simd.dispatch.h"
+  Enabled targets: SSE42, AVX2, FMA3, AVX512F, AVX512_SKX, baseline
+Build targets in project: 107
+WARNING: Deprecated features used:
+ * 1.3.0: {'Source file src/umath/svml/linux/avx512/svml_z0_acos_d_la.s in the 'objects' kwarg is not an object.'}
+
+NumPy 2.4.0.dev0+git20251007.128d684
+
+  User defined options
+    prefix: /usr
+
+Found ninja-1.13.0.git.kitware.jobserver-pipe-1 at /opt/venv/bin/ninja
+$ /opt/venv/bin/python3.11 vendored-meson/meson/meson.py compile -C build
+ninja: Entering directory `/app/build'
+[1/523] Generating 'numpy/_core/libnpymath.a.p/ieee754.c'
+[2/523] Generating 'numpy/_core/libargfunc.dispatch.h_baseline.a.p/npy_sort.h'
+[3/523] Generating 'numpy/_core/libargfunc.dispatch.h_AVX512_SKX.a.p/npy_sort.h'
+[4/523] Generating 'numpy/_core/libargfunc.dispatch.h_AVX2.a.p/npy_sort.h'
+[5/523] Generating 'numpy/_core/libargfunc.dispatch.h_SSE42.a.p/arraytypes.h'
+[6/523] Generating 'numpy/_core/libargfunc.dispatch.h_baseline.a.p/arraytypes.h'
+[7/523] Generating 'numpy/_core/libargfunc.dispatch.h_AVX512_SKX.a.p/arraytypes.h'
+[8/523] Generating 'numpy/_core/libargfunc.dispatch.h_AVX2.a.p/arraytypes.h'
+[9/523] Generating 'numpy/_core/libargfunc.dispatch.h_baseline.a.p/argfunc.dispatch.c'
+[10/523] Generating 'numpy/_core/libargfunc.dispatch.h_SSE42.a.p/npy_sort.h'
+[11/523] Generating 'numpy/_core/libloops_arithm_fp.dispatch.h_AVX2.a.p/loops_utils.h'
+[12/523] Generating numpy/_core/npy_math_internal.h with a custom command
+[13/523] Generating 'numpy/_core/libnpymath.a.p/npy_math_complex.c'
+[14/523] Generating 'numpy/_core/libx86_simd_argsort.dispatch.h_AVX512_SKX.a.p/arraytypes.h'
+[15/523] Generating 'numpy/_core/libx86_simd_argsort.dispatch.h_AVX512_SKX.a.p/npy_sort.h'
+[16/523] Generating 'numpy/_core/libx86_simd_argsort.dispatch.h_AVX2.a.p/arraytypes.h'
+[17/523] Generating 'numpy/_core/libx86_simd_argsort.dispatch.h_AVX2.a.p/npy_sort.h'
+[18/523] Generating 'numpy/_core/libx86_simd_qsort.dispatch.h_AVX512_SKX.a.p/npy_sort.h'
+[19/523] Generating 'numpy/_core/libx86_simd_qsort.dispatch.h_AVX2.a.p/arraytypes.h'
+[20/523] Generating 'numpy/_core/libx86_simd_qsort_16bit.dispatch.h_AVX512_ICL.a.p/npy_sort.h'
+[21/523] Generating 'numpy/_core/libargfunc.dispatch.h_AVX512_SKX.a.p/argfunc.dispatch.c'
+[22/523] Generating 'numpy/_core/libx86_simd_qsort.dispatch.h_AVX512_SKX.a.p/arraytypes.h'
+[23/523] Generating 'numpy/_core/libx86_simd_qsort.dispatch.h_AVX2.a.p/npy_sort.h'
+[24/523] Generating 'numpy/_core/libx86_simd_qsort_16bit.dispatch.h_AVX512_ICL.a.p/arraytypes.h'
+[25/523] Generating 'numpy/_core/libloops_arithm_fp.dispatch.h_baseline.a.p/loops_utils.h'
+[26/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[27/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_AVX512F.a.p/loops_utils.h'
+[28/523] Generating 'numpy/_core/libargfunc.dispatch.h_AVX2.a.p/argfunc.dispatch.c'
+[29/523] Generating 'numpy/_core/libargfunc.dispatch.h_SSE42.a.p/argfunc.dispatch.c'
+[30/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_baseline.a.p/loops_utils.h'
+[31/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_baseline.a.p/loops_arithmetic.dispatch.c'
+[32/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_AVX512_SKX.a.p/loops_arithmetic.dispatch.c'
+[33/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_AVX512F.a.p/loops_arithmetic.dispatch.c'
+[34/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_AVX2.a.p/loops_utils.h'
+[35/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_AVX2.a.p/loops_arithmetic.dispatch.c'
+[36/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_SSE41.a.p/loops_utils.h'
+[37/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_SSE41.a.p/loops_arithmetic.dispatch.c'
+[38/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_baseline.a.p/loops_utils.h'
+[39/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[40/523] Copying file numpy/__init__.py
+[41/523] Copying file numpy/__init__.pxd
+[42/523] Copying file numpy/__init__.cython-30.pxd
+[43/523] Generating 'numpy/_core/libloops_arithm_fp.dispatch.h_baseline.a.p/loops_arithm_fp.dispatch.c'
+[44/523] Generating 'numpy/_core/libloops_arithm_fp.dispatch.h_AVX2.a.p/loops_arithm_fp.dispatch.c'
+[45/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_AVX2.a.p/loops.h'
+[46/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_baseline.a.p/loops.h'
+[47/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_AVX512F.a.p/loops_utils.h'
+[48/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_AVX2.a.p/loops_utils.h'
+[49/523] Generating 'numpy/_core/libloops_arithm_fp.dispatch.h_baseline.a.p/loops.h'
+[50/523] Generating 'numpy/_core/libloops_arithm_fp.dispatch.h_AVX2.a.p/loops.h'
+[51/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_baseline.a.p/loops.h'
+[52/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_AVX512_SKX.a.p/loops.h'
+[53/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_AVX512F.a.p/loops.h'
+[54/523] Generating 'numpy/_core/libloops_arithmetic.dispatch.h_SSE41.a.p/loops.h'
+[55/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_SSE42.a.p/loops_utils.h'
+[56/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[57/523] Generating numpy/_core/__umath_generated with a custom command
+[58/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_AVX512_SKX.a.p/loops.h'
+[59/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_AVX512F.a.p/loops.h'
+[60/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_baseline.a.p/loops_utils.h'
+[61/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_baseline.a.p/loops_exponent_log.dispatch.c'
+[62/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_AVX2.a.p/loops_utils.h'
+[63/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_AVX512F.a.p/loops_comparison.dispatch.c'
+[64/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_AVX2.a.p/loops.h'
+[65/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_AVX512_SKX.a.p/loops_exponent_log.dispatch.c'
+[66/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_AVX512F.a.p/loops_utils.h'
+[67/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_AVX512F.a.p/loops_exponent_log.dispatch.c'
+[68/523] Generating 'numpy/_core/libloops_hyperbolic.dispatch.h_baseline.a.p/loops_utils.h'
+[69/523] Generating 'numpy/_core/libloops_hyperbolic.dispatch.h_baseline.a.p/loops_hyperbolic.dispatch.cpp'
+[70/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_baseline.a.p/loops_comparison.dispatch.c'
+[71/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_SSE42.a.p/loops.h'
+[72/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_AVX2.a.p/loops_exponent_log.dispatch.c'
+[73/523] Generating 'numpy/_core/libloops_hyperbolic.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[74/523] Generating 'numpy/_core/libloops_hyperbolic.dispatch.h_AVX512_SKX.a.p/loops_hyperbolic.dispatch.cpp'
+[75/523] Generating 'numpy/_core/libloops_hyperbolic.dispatch.h_AVX2.a.p/loops_utils.h'
+[76/523] Generating 'numpy/_core/libloops_hyperbolic.dispatch.h_AVX2.a.p/loops_hyperbolic.dispatch.cpp'
+[77/523] Generating 'numpy/_core/libloops_logical.dispatch.h_baseline.a.p/loops_utils.h'
+[78/523] Generating 'numpy/_core/libloops_logical.dispatch.h_AVX2.a.p/loops_utils.h'
+[79/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_AVX512_SKX.a.p/loops_comparison.dispatch.c'
+[80/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_baseline.a.p/loops.h'
+[81/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_AVX2.a.p/loops.h'
+[82/523] Generating 'numpy/_core/libloops_logical.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[83/523] Generating 'numpy/_core/libloops_minmax.dispatch.h_baseline.a.p/loops_utils.h'
+[84/523] Generating 'numpy/_core/libloops_minmax.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[85/523] Generating 'numpy/_core/libloops_minmax.dispatch.h_AVX2.a.p/loops_utils.h'
+[86/523] Generating 'numpy/_core/libloops_modulo.dispatch.h_baseline.a.p/loops_utils.h'
+[87/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_SSE42.a.p/loops_comparison.dispatch.c'
+[88/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_AVX512_SKX.a.p/loops.h'
+[89/523] Generating 'numpy/_core/libloops_exponent_log.dispatch.h_AVX512F.a.p/loops.h'
+[90/523] Generating 'numpy/_core/libloops_hyperbolic.dispatch.h_baseline.a.p/loops.h'
+[91/523] Generating 'numpy/_core/libloops_hyperbolic.dispatch.h_AVX512_SKX.a.p/loops.h'
+[92/523] Generating 'numpy/_core/libloops_hyperbolic.dispatch.h_AVX2.a.p/loops.h'
+[93/523] Generating 'numpy/_core/libloops_logical.dispatch.h_baseline.a.p/loops.h'
+[94/523] Generating 'numpy/_core/libloops_modulo.dispatch.h_baseline.a.p/loops_modulo.dispatch.c'
+[95/523] Generating 'numpy/_core/libloops_trigonometric.dispatch.h_baseline.a.p/loops_utils.h'
+[96/523] Generating 'numpy/_core/libloops_trigonometric.dispatch.h_AVX2.a.p/loops_utils.h'
+[97/523] Generating 'numpy/_core/libloops_umath_fp.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[98/523] Generating 'numpy/_core/libloops_comparison.dispatch.h_AVX2.a.p/loops_comparison.dispatch.c'
+[99/523] Generating 'numpy/_core/libloops_logical.dispatch.h_AVX512_SKX.a.p/loops.h'
+[100/523] Generating 'numpy/_core/libloops_logical.dispatch.h_AVX2.a.p/loops.h'
+[101/523] Generating 'numpy/_core/libloops_minmax.dispatch.h_baseline.a.p/loops.h'
+[102/523] Generating 'numpy/_core/libloops_minmax.dispatch.h_AVX2.a.p/loops.h'
+[103/523] Generating 'numpy/_core/libloops_trigonometric.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[104/523] Generating 'numpy/_core/libloops_umath_fp.dispatch.h_baseline.a.p/loops_utils.h'
+[105/523] Generating 'numpy/_core/libloops_umath_fp.dispatch.h_baseline.a.p/loops_umath_fp.dispatch.c'
+[106/523] Generating 'numpy/_core/libloops_umath_fp.dispatch.h_AVX512_SKX.a.p/loops_umath_fp.dispatch.c'
+[107/523] Generating 'numpy/_core/libloops_unary.dispatch.h_baseline.a.p/loops_utils.h'
+[108/523] Generating 'numpy/_core/libloops_unary.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[109/523] Generating 'numpy/_core/libloops_minmax.dispatch.h_AVX512_SKX.a.p/loops.h'
+[110/523] Generating 'numpy/_core/libloops_modulo.dispatch.h_baseline.a.p/loops.h'
+[111/523] Generating 'numpy/_core/libloops_trigonometric.dispatch.h_baseline.a.p/loops.h'
+[112/523] Generating 'numpy/_core/libloops_trigonometric.dispatch.h_AVX512_SKX.a.p/loops.h'
+[113/523] Generating 'numpy/_core/libloops_umath_fp.dispatch.h_baseline.a.p/loops.h'
+[114/523] Generating 'numpy/_core/libloops_umath_fp.dispatch.h_AVX512_SKX.a.p/loops.h'
+[115/523] Generating 'numpy/_core/libloops_unary.dispatch.h_baseline.a.p/loops.h'
+[116/523] Generating 'numpy/_core/libloops_unary.dispatch.h_AVX2.a.p/loops_utils.h'
+[117/523] Generating 'numpy/_core/libloops_unary_fp.dispatch.h_baseline.a.p/loops_utils.h'
+[118/523] Generating 'numpy/_core/libloops_unary_fp.dispatch.h_SSE41.a.p/loops_utils.h'
+[119/523] Generating 'numpy/_core/libloops_unary_fp_le.dispatch.h_baseline.a.p/loops_utils.h'
+[120/523] Generating 'numpy/_core/libloops_trigonometric.dispatch.h_AVX2.a.p/loops.h'
+[121/523] Generating 'numpy/_core/libloops_unary.dispatch.h_AVX512_SKX.a.p/loops.h'
+[122/523] Generating 'numpy/_core/libloops_unary.dispatch.h_AVX2.a.p/loops.h'
+[123/523] Generating 'numpy/_core/libloops_unary_fp_le.dispatch.h_baseline.a.p/loops_unary_fp_le.dispatch.c'
+[124/523] Generating 'numpy/_core/libloops_unary_fp_le.dispatch.h_SSE41.a.p/loops.h'
+[125/523] Generating 'numpy/_core/libloops_unary_fp_le.dispatch.h_SSE41.a.p/loops_utils.h'
+[126/523] Generating 'numpy/_core/libloops_unary_complex.dispatch.h_baseline.a.p/loops_utils.h'
+[127/523] Generating 'numpy/_core/libloops_unary_complex.dispatch.h_baseline.a.p/loops_unary_complex.dispatch.c'
+[128/523] Generating 'numpy/_core/libloops_unary_complex.dispatch.h_AVX512F.a.p/loops.h'
+[129/523] Generating 'numpy/_core/libloops_unary_complex.dispatch.h_AVX512F.a.p/loops_utils.h'
+[130/523] Generating 'numpy/_core/libloops_unary_complex.dispatch.h_AVX512F.a.p/loops_unary_complex.dispatch.c'
+[131/523] Generating 'numpy/_core/libloops_unary_complex.dispatch.h_AVX2.a.p/loops_utils.h'
+[132/523] Generating 'numpy/_core/libloops_unary_complex.dispatch.h_AVX2.a.p/loops_unary_complex.dispatch.c'
+[133/523] Generating 'numpy/_core/libloops_unary.dispatch.h_baseline.a.p/loops_unary.dispatch.c'
+[134/523] Generating 'numpy/_core/libloops_unary.dispatch.h_AVX2.a.p/loops_unary.dispatch.c'
+[135/523] Generating 'numpy/_core/libloops_unary_fp.dispatch.h_baseline.a.p/loops.h'
+[136/523] Generating 'numpy/_core/libloops_unary_fp.dispatch.h_SSE41.a.p/loops.h'
+[137/523] Generating 'numpy/_core/libloops_unary_fp_le.dispatch.h_baseline.a.p/loops.h'
+[138/523] Generating 'numpy/_core/libloops_unary_fp_le.dispatch.h_SSE41.a.p/loops_unary_fp_le.dispatch.c'
+[139/523] Generating 'numpy/_core/libloops_unary_complex.dispatch.h_baseline.a.p/loops.h'
+[140/523] Generating 'numpy/_core/libloops_autovec.dispatch.h_baseline.a.p/loops_utils.h'
+[141/523] Generating 'numpy/_core/libloops_autovec.dispatch.h_baseline.a.p/loops_autovec.dispatch.c'
+[142/523] Generating 'numpy/_core/libloops_autovec.dispatch.h_AVX2.a.p/loops_utils.h'
+[143/523] Generating 'numpy/_core/libloops_half.dispatch.h_baseline.a.p/loops_utils.h'
+[144/523] Generating 'numpy/_core/libloops_half.dispatch.h_AVX512_SKX.a.p/loops_utils.h'
+[145/523] Generating 'numpy/_core/libloops_half.dispatch.h_AVX512_SKX.a.p/loops_half.dispatch.c'
+[146/523] Generating 'numpy/_core/libloops_minmax.dispatch.h_baseline.a.p/loops_minmax.dispatch.c'
+[147/523] Generating 'numpy/_core/libloops_minmax.dispatch.h_AVX512_SKX.a.p/loops_minmax.dispatch.c'
+[148/523] Generating 'numpy/_core/libloops_minmax.dispatch.h_AVX2.a.p/loops_minmax.dispatch.c'
+[149/523] Generating 'numpy/_core/libloops_unary.dispatch.h_AVX512_SKX.a.p/loops_unary.dispatch.c'
+[150/523] Generating 'numpy/_core/libloops_unary_fp.dispatch.h_baseline.a.p/loops_unary_fp.dispatch.c'
+[151/523] Generating 'numpy/_core/libloops_unary_complex.dispatch.h_AVX2.a.p/loops.h'
+[152/523] Generating 'numpy/_core/libloops_autovec.dispatch.h_AVX2.a.p/loops_autovec.dispatch.c'
+[153/523] Generating 'numpy/_core/libloops_half.dispatch.h_baseline.a.p/loops.h'
+[154/523] Generating 'numpy/_core/libloops_half.dispatch.h_baseline.a.p/loops_half.dispatch.c'
+[155/523] Generating 'numpy/_core/lib_simd.dispatch.h_baseline.a.p/_simd_inc.h'
+[156/523] Generating 'numpy/_core/lib_simd.dispatch.h_baseline.a.p/_simd_data.inc'
+[157/523] Generating 'numpy/_core/lib_simd.dispatch.h_SSE42.a.p/_simd_inc.h'
+[158/523] Generating 'numpy/_core/lib_simd.dispatch.h_SSE42.a.p/_simd_data.inc'
+[159/523] Generating 'numpy/_core/lib_simd.dispatch.h_AVX2.a.p/_simd_inc.h'
+[160/523] Generating 'numpy/_core/lib_simd.dispatch.h_FMA3.a.p/_simd_inc.h'
+[161/523] Generating 'numpy/_core/libloops_autovec.dispatch.h_baseline.a.p/loops.h'
+[162/523] Generating 'numpy/_core/lib_simd.dispatch.h_AVX2.a.p/_simd_data.inc'
+[163/523] Generating 'numpy/_core/lib_simd.dispatch.h_FMA3.a.p/_simd_data.inc'
+[164/523] Generating 'numpy/_core/libloops_unary_fp.dispatch.h_SSE41.a.p/loops_unary_fp.dispatch.c'
+[165/523] Generating 'numpy/_core/lib_simd.dispatch.h_AVX512_SKX.a.p/_simd_data.inc'
+[166/523] Generating 'numpy/_core/lib_simd.dispatch.h_AVX512F.a.p/_simd_inc.h'
+[167/523] Generating 'numpy/_core/lib_simd.dispatch.h_AVX512F.a.p/_simd_data.inc'
+[168/523] Generating 'numpy/_core/lib_simd.dispatch.h_AVX512_SKX.a.p/_simd_inc.h'
+[169/523] Generating 'numpy/_core/libloops_half.dispatch.h_AVX512_SKX.a.p/loops.h'
+[170/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/npy_sort.h'
+[171/523] Generating 'numpy/_core/libloops_autovec.dispatch.h_AVX2.a.p/loops.h'
+[172/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/templ_common.h'
+[173/523] Generating 'numpy/_core/_umath_tests.cpython-311-x86_64-linux-gnu.so.p/_umath_tests.c'
+[174/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/loops_utils.h'
+[175/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/funcs.inc'
+[176/523] Generating 'numpy/_core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so.p/templ_common.h'
+[177/523] Generating numpy/random/_bounded_integer_pxd with a custom command
+[178/523] Generating 'numpy/_core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so.p/_multiarray_tests.c'
+[179/523] Generating numpy/_core/__ufunc_api with a custom command
+[180/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/nditer_templ.c'
+[181/523] Generating numpy/random/_bounded_integer_pyx with a custom command
+[182/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/einsum.c'
+[183/523] Copying file numpy/random/_generator.pyx
+[184/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/matmul.h'
+[185/523] Generating 'numpy/_core/lib_simd.dispatch.h_SSE42.a.p/_simd.dispatch.c'
+[186/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/arraytypes.h'
+[187/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/loops.h'
+[188/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/matmul.c'
+[189/523] Copying file numpy/random/__init__.py
+[190/523] Generating numpy/generate-version with a custom command
+Saving version to numpy/version.py
+[191/523] Generating numpy/_core/_umath_doc_generated with a custom command
+[192/523] Copying file numpy/random/__init__.pxd
+[193/523] Copying file numpy/random/_common.pxd
+[194/523] Copying file numpy/random/c_distributions.pxd
+[195/523] Copying file numpy/random/mtrand.pyx
+[196/523] Generating 'numpy/_core/lib_simd.dispatch.h_AVX512_SKX.a.p/_simd.dispatch.c'
+[197/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/scalartypes.c'
+[198/523] Copying file numpy/random/bit_generator.pxd
+[199/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/loops.c'
+[200/523] Generating 'numpy/_core/lib_simd.dispatch.h_baseline.a.p/_simd.dispatch.c'
+[201/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/arraytypes.c'
+[202/523] Generating 'numpy/_core/lib_simd.dispatch.h_AVX512F.a.p/_simd.dispatch.c'
+[203/523] Generating 'numpy/_core/lib_simd.dispatch.h_AVX2.a.p/_simd.dispatch.c'
+[204/523] Generating 'numpy/_core/lib_simd.dispatch.h_FMA3.a.p/_simd.dispatch.c'
+[205/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/scalarmath.c'
+[206/523] Generating numpy/_core/__multiarray_api with a custom command
+[207/523] Compiling C object numpy/_core/libnpymath.a.p/meson-generated_ieee754.c.o
+[208/523] Compiling C object numpy/_core/libnpymath.a.p/meson-generated_npy_math_complex.c.o
+[209/523] Compiling C object numpy/_core/lib_umath_tests.dispatch.h_baseline.a.p/src_umath__umath_tests.dispatch.c.o
+[210/523] Compiling C object numpy/_core/lib_umath_tests.dispatch.h_SSE41.a.p/src_umath__umath_tests.dispatch.c.o
+[211/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/einsum_sumprod.c'
+[212/523] Compiling C object numpy/_core/libnpymath.a.p/src_npymath_npy_math.c.o
+[213/523] Compiling C++ object numpy/_core/libhighway.a.p/src_highway_hwy_abort.cc.o
+[214/523] Compiling C object numpy/random/libnpyrandom.a.p/src_distributions_logfactorial.c.o
+[215/523] Compiling C object numpy/_core/libloops_exponent_log.dispatch.h_baseline.a.p/meson-generated_loops_exponent_log.dispatch.c.o
+[216/523] Compiling C object numpy/_core/lib_umath_tests.dispatch.h_AVX2.a.p/src_umath__umath_tests.dispatch.c.o
+[217/523] Compiling C object numpy/_core/libloops_half.dispatch.h_baseline.a.p/meson-generated_loops_half.dispatch.c.o
+[218/523] Compiling C object numpy/_core/libloops_unary_complex.dispatch.h_baseline.a.p/meson-generated_loops_unary_complex.dispatch.c.o
+[219/523] Compiling C object numpy/_core/libloops_umath_fp.dispatch.h_baseline.a.p/meson-generated_loops_umath_fp.dispatch.c.o
+[220/523] Compiling C object numpy/random/libnpyrandom.a.p/src_distributions_random_mvhg_marginals.c.o
+[221/523] Compiling C object numpy/_core/libloops_modulo.dispatch.h_baseline.a.p/meson-generated_loops_modulo.dispatch.c.o
+[222/523] Compiling C object numpy/random/libnpyrandom.a.p/src_distributions_random_mvhg_count.c.o
+[223/523] Compiling C object numpy/random/libnpyrandom.a.p/src_distributions_random_hypergeometric.c.o
+[224/523] Compiling C object numpy/_core/libloops_unary_complex.dispatch.h_AVX512F.a.p/meson-generated_loops_unary_complex.dispatch.c.o
+[225/523] Compiling C object numpy/_core/libloops_exponent_log.dispatch.h_AVX2.a.p/meson-generated_loops_exponent_log.dispatch.c.o
+[226/523] Compiling C++ object numpy/_core/libnpymath.a.p/src_npymath_halffloat.cpp.o
+[227/523] Compiling C object numpy/_core/libloops_unary_complex.dispatch.h_AVX2.a.p/meson-generated_loops_unary_complex.dispatch.c.o
+[228/523] Linking static target numpy/_core/libhighway.a
+[229/523] Linking static target numpy/_core/libnpymath.a
+[230/523] Compiling C object numpy/_core/libloops_half.dispatch.h_AVX512_SKX.a.p/meson-generated_loops_half.dispatch.c.o
+[231/523] Compiling C object numpy/_core/libloops_exponent_log.dispatch.h_AVX512F.a.p/meson-generated_loops_exponent_log.dispatch.c.o
+[232/523] Compiling C object numpy/_core/libloops_arithmetic.dispatch.h_SSE41.a.p/meson-generated_loops_arithmetic.dispatch.c.o
+[233/523] Compiling C object numpy/_core/libloops_arithmetic.dispatch.h_baseline.a.p/meson-generated_loops_arithmetic.dispatch.c.o
+[234/523] Linking static target numpy/_core/lib_umath_tests_mtargets.a
+[235/523] Compiling C++ object numpy/_core/libloops_trigonometric.dispatch.h_baseline.a.p/src_umath_loops_trigonometric.dispatch.cpp.o
+[236/523] Compiling C object numpy/_core/libloops_exponent_log.dispatch.h_AVX512_SKX.a.p/meson-generated_loops_exponent_log.dispatch.c.o
+[237/523] Compiling C++ object numpy/_core/libloops_hyperbolic.dispatch.h_baseline.a.p/meson-generated_loops_hyperbolic.dispatch.cpp.o
+[238/523] Compiling C object numpy/random/libnpyrandom.a.p/src_distributions_distributions.c.o
+[239/523] Compiling C object numpy/_core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_argparse.c.o
+[240/523] Compiling C object numpy/_core/libloops_arithmetic.dispatch.h_AVX512_SKX.a.p/meson-generated_loops_arithmetic.dispatch.c.o
+[241/523] Compiling C object numpy/_core/libloops_arithmetic.dispatch.h_AVX2.a.p/meson-generated_loops_arithmetic.dispatch.c.o
+[242/523] Compiling C object numpy/_core/_umath_tests.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_cpu_features.c.o
+[243/523] Compiling C object numpy/_core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so.p/src_common_mem_overlap.c.o
+[244/523] Compiling C object numpy/_core/libloops_arithmetic.dispatch.h_AVX512F.a.p/meson-generated_loops_arithmetic.dispatch.c.o
+[245/523] Compiling C object numpy/_core/_operand_flag_tests.cpython-311-x86_64-linux-gnu.so.p/src_umath__operand_flag_tests.c.o
+[246/523] Compiling C object numpy/_core/libargfunc.dispatch.h_SSE42.a.p/meson-generated_argfunc.dispatch.c.o
+[247/523] Compiling C object numpy/_core/_struct_ufunc_tests.cpython-311-x86_64-linux-gnu.so.p/src_umath__struct_ufunc_tests.c.o
+[248/523] Compiling C++ object numpy/_core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_hashtable.cpp.o
+[249/523] Compiling C object numpy/_core/libloops_unary.dispatch.h_baseline.a.p/meson-generated_loops_unary.dispatch.c.o
+[250/523] Compiling Cython source /app/numpy/random/_mt19937.pyx
+[251/523] Compiling C object numpy/_core/libargfunc.dispatch.h_AVX512_SKX.a.p/meson-generated_argfunc.dispatch.c.o
+[252/523] Compiling Cython source /app/numpy/random/_pcg64.pyx
+[253/523] Compiling C object numpy/_core/libloops_unary.dispatch.h_AVX2.a.p/meson-generated_loops_unary.dispatch.c.o
+[254/523] Compiling Cython source /app/numpy/random/_sfc64.pyx
+[255/523] Compiling C object numpy/_core/_umath_tests.cpython-311-x86_64-linux-gnu.so.p/meson-generated__umath_tests.c.o
+[256/523] Compiling C object numpy/_core/libloops_unary.dispatch.h_AVX512_SKX.a.p/meson-generated_loops_unary.dispatch.c.o
+[257/523] Compiling C object numpy/_core/libargfunc.dispatch.h_AVX2.a.p/meson-generated_argfunc.dispatch.c.o
+[258/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_abstractdtypes.c.o
+[259/523] Compiling C object numpy/_core/libargfunc.dispatch.h_baseline.a.p/meson-generated_argfunc.dispatch.c.o
+[260/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/meson-generated_einsum.c.o
+[261/523] Compiling C object numpy/_core/libloops_unary_fp_le.dispatch.h_SSE41.a.p/meson-generated_loops_unary_fp_le.dispatch.c.o
+[262/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_alloc.c.o
+[263/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_array_api_standard.c.o
+[264/523] Compiling Cython source /app/numpy/random/_philox.pyx
+[265/523] Compiling C++ object numpy/_core/libloops_logical.dispatch.h_baseline.a.p/src_umath_loops_logical.dispatch.cpp.o
+[266/523] Compiling Cython source /app/numpy/random/bit_generator.pyx
+[267/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_array_converter.c.o
+[268/523] Compiling C object numpy/_core/libloops_unary_fp_le.dispatch.h_baseline.a.p/meson-generated_loops_unary_fp_le.dispatch.c.o
+[269/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_array_assign_scalar.c.o
+[270/523] Generating 'numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/lowlevel_strided_loops.c'
+[271/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_arraywrap.c.o
+[272/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_array_method.c.o
+[273/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_arrayobject.c.o
+[274/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_common_dtype.c.o
+[275/523] Compiling Cython source numpy/random/_bounded_integers.pyx
+[276/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_array_assign_array.c.o
+[277/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_array_coercion.c.o
+[278/523] Compiling C++ object numpy/_core/libloops_trigonometric.dispatch.h_AVX512_SKX.a.p/src_umath_loops_trigonometric.dispatch.cpp.o
+[279/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/meson-generated_nditer_templ.c.o
+[280/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_common.c.o
+[281/523] Compiling C++ object numpy/_core/libloops_hyperbolic.dispatch.h_AVX512_SKX.a.p/meson-generated_loops_hyperbolic.dispatch.cpp.o
+[282/523] Compiling C object numpy/_core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so.p/meson-generated__multiarray_tests.c.o
+[283/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_arrayfunction_override.c.o
+[284/523] Compiling C object numpy/_core/_rational_tests.cpython-311-x86_64-linux-gnu.so.p/src_umath__rational_tests.c.o
+[285/523] Compiling C object numpy/_core/libloops_unary_fp.dispatch.h_SSE41.a.p/meson-generated_loops_unary_fp.dispatch.c.o
+[286/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_buffer.c.o
+[287/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_calculation.c.o
+[288/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_convert.c.o
+[289/523] Compiling C object numpy/_core/libloops_arithm_fp.dispatch.h_baseline.a.p/meson-generated_loops_arithm_fp.dispatch.c.o
+[290/523] Compiling C++ object numpy/_core/libloops_trigonometric.dispatch.h_AVX2.a.p/src_umath_loops_trigonometric.dispatch.cpp.o
+[291/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_public_dtype_api.c.o
+[292/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_datetime_busdaycal.c.o
+[293/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_hashdescr.c.o
+[294/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_dtype_traversal.c.o
+[295/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_conversion_utils.c.o
+[296/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_dlpack.c.o
+[297/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_flagsobject.c.o
+[298/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_datetime_busday.c.o
+[299/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_datetime_strings.c.o
+[300/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_legacy_dtype_implementation.c.o
+[301/523] Compiling C++ object numpy/_core/libloops_logical.dispatch.h_AVX2.a.p/src_umath_loops_logical.dispatch.cpp.o
+[302/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_dtypemeta.c.o
+[303/523] Compiling Cython source /app/numpy/random/_common.pyx
+[304/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_getset.c.o
+[305/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_npy_static_data.c.o
+[306/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_sequence.c.o
+[307/523] Compiling C++ object numpy/_core/libloops_hyperbolic.dispatch.h_AVX2.a.p/meson-generated_loops_hyperbolic.dispatch.cpp.o
+[308/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_strfuncs.c.o
+[309/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_stringdtype_utf8_utils.c.o
+[310/523] Compiling C++ object numpy/_core/libloops_logical.dispatch.h_AVX512_SKX.a.p/src_umath_loops_logical.dispatch.cpp.o
+[311/523] Compiling Cython source numpy/random/mtrand.pyx
+[312/523] Compiling C object numpy/_core/libloops_umath_fp.dispatch.h_AVX512_SKX.a.p/meson-generated_loops_umath_fp.dispatch.c.o
+[313/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_refcount.c.o
+[314/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_temp_elide.c.o
+[315/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_scalarapi.c.o
+[316/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_dragon4.c.o
+[317/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_compiled_base.c.o
+[318/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_vdot.c.o
+[319/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_stringdtype_static_string.c.o
+[320/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_convert_datatype.c.o
+[321/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_stringdtype_dtype.c.o
+[322/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_usertypes.c.o
+[323/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_npymath_arm64_exports.c.o
+[324/523] Compiling C++ object numpy/_core/libunique_hash.a.p/src_multiarray_unique.cpp.o
+[325/523] Compiling C object numpy/_core/libloops_arithm_fp.dispatch.h_AVX2.a.p/meson-generated_loops_arithm_fp.dispatch.c.o
+[326/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_shape.c.o
+[327/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_textreading_growth.c.o
+[328/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_datetime.c.o
+[329/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_textreading_field_types.c.o
+[330/523] Linking static target numpy/_core/libunique_hash.a
+[331/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_fnv.c.o
+[332/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_textreading_readtext.c.o
+[333/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_nditer_pywrap.c.o
+[334/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_nditer_api.c.o
+[335/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_iterators.c.o
+[336/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_textreading_conversions.c.o
+[337/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_textreading_stream_pyobject.c.o
+[338/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_gil_utils.c.o
+[339/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_number.c.o
+[340/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_array_assign.c.o
+[341/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_import.c.o
+[342/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_textreading_rows.c.o
+[343/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_longdouble.c.o
+[344/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_textreading_str_to_int.c.o
+[345/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_argparse.c.o
+[346/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_cpu_dispatch.c.o
+[347/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_ufunc_override.c.o
+[348/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_ctors.c.o
+[349/523] Compiling C object numpy/_core/libloops_unary_fp.dispatch.h_baseline.a.p/meson-generated_loops_unary_fp.dispatch.c.o
+[350/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_blas_utils.c.o
+[351/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_python_xerbla.c.o
+[352/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_dtype_transfer.c.o
+[353/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_cpu_features.c.o
+[354/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_mapping.c.o
+[355/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_numpyos.c.o
+[356/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_legacy_array_method.c.o
+[357/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_extobj.c.o
+[358/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_methods.c.o
+[359/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_reduction.c.o
+[360/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_override.c.o
+[361/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_textreading_tokenize.cpp.o
+[362/523] Linking static target numpy/random/libnpyrandom.a
+[363/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_descriptor.c.o
+[364/523] Compiling C object numpy/_core/_simd.cpython-311-x86_64-linux-gnu.so.p/src__simd__simd.c.o
+[365/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/meson-generated_matmul.c.o
+[366/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_mem_overlap.c.o
+[367/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_hashtable.cpp.o
+[368/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_common_cblasfuncs.c.o
+[369/523] Compiling C object numpy/linalg/lapack_lite.cpython-311-x86_64-linux-gnu.so.p/lapack_lite_python_xerbla.c.o
+[370/523] Compiling C object numpy/_core/_simd.cpython-311-x86_64-linux-gnu.so.p/src_common_npy_cpu_features.c.o
+[371/523] Compiling C object numpy/linalg/_umath_linalg.cpython-311-x86_64-linux-gnu.so.p/lapack_lite_python_xerbla.c.o
+[372/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_wrapping_array_method.c.o
+[373/523] Compiling C object numpy/random/_mt19937.cpython-311-x86_64-linux-gnu.so.p/src_mt19937_mt19937-jump.c.o
+[374/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_nditer_constr.c.o
+[375/523] Compiling C object numpy/linalg/lapack_lite.cpython-311-x86_64-linux-gnu.so.p/lapack_litemodule.c.o
+[376/523] Linking static target numpy/_core/lib_umath_tests.dispatch.h_baseline.a
+[377/523] Compiling C object numpy/random/_mt19937.cpython-311-x86_64-linux-gnu.so.p/src_mt19937_mt19937.c.o
+[378/523] Linking static target numpy/_core/lib_umath_tests.dispatch.h_AVX2.a
+[379/523] Compiling C object numpy/random/_pcg64.cpython-311-x86_64-linux-gnu.so.p/src_pcg64_pcg64.c.o
+[380/523] Linking static target numpy/_core/lib_umath_tests.dispatch.h_SSE41.a
+[381/523] Linking target numpy/_core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so
+[382/523] Compiling C object numpy/random/_philox.cpython-311-x86_64-linux-gnu.so.p/src_philox_philox.c.o
+[383/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath__scaled_float_dtype.c.o
+[384/523] Linking target numpy/_core/_operand_flag_tests.cpython-311-x86_64-linux-gnu.so
+[385/523] Linking target numpy/_core/_umath_tests.cpython-311-x86_64-linux-gnu.so
+[386/523] Linking target numpy/_core/_rational_tests.cpython-311-x86_64-linux-gnu.so
+[387/523] Linking static target numpy/_core/libargfunc.dispatch.h_baseline.a
+[388/523] Linking static target numpy/_core/libargfunc.dispatch.h_SSE42.a
+[389/523] Linking static target numpy/_core/libargfunc.dispatch.h_AVX512_SKX.a
+[390/523] Linking static target numpy/_core/libloops_arithm_fp.dispatch.h_baseline.a
+[391/523] Linking target numpy/_core/_struct_ufunc_tests.cpython-311-x86_64-linux-gnu.so
+[392/523] Linking static target numpy/_core/libloops_arithmetic.dispatch.h_baseline.a
+[393/523] Linking static target numpy/_core/libargfunc.dispatch.h_AVX2.a
+[394/523] Linking static target numpy/_core/libloops_arithmetic.dispatch.h_SSE41.a
+[395/523] Linking static target numpy/_core/libloops_arithmetic.dispatch.h_AVX512_SKX.a
+[396/523] Linking static target numpy/_core/libloops_arithmetic.dispatch.h_AVX512F.a
+[397/523] Linking static target numpy/_core/libloops_arithmetic.dispatch.h_AVX2.a
+[398/523] Linking static target numpy/_core/libloops_arithm_fp.dispatch.h_AVX2.a
+[399/523] Linking static target numpy/_core/libloops_exponent_log.dispatch.h_baseline.a
+[400/523] Linking static target numpy/_core/libloops_exponent_log.dispatch.h_AVX512_SKX.a
+[401/523] Linking static target numpy/_core/libloops_exponent_log.dispatch.h_AVX512F.a
+[402/523] Linking static target numpy/_core/libloops_exponent_log.dispatch.h_AVX2.a
+[403/523] Linking static target numpy/_core/libloops_hyperbolic.dispatch.h_baseline.a
+[404/523] Linking static target numpy/_core/libloops_hyperbolic.dispatch.h_AVX512_SKX.a
+[405/523] Linking static target numpy/_core/libloops_logical.dispatch.h_AVX512_SKX.a
+[406/523] Linking static target numpy/_core/libloops_hyperbolic.dispatch.h_AVX2.a
+[407/523] Linking static target numpy/_core/libloops_logical.dispatch.h_AVX2.a
+[408/523] Compiling C object numpy/random/_sfc64.cpython-311-x86_64-linux-gnu.so.p/src_sfc64_sfc64.c.o
+[409/523] Linking static target numpy/_core/libloops_modulo.dispatch.h_baseline.a
+[410/523] Linking static target numpy/_core/libloops_logical.dispatch.h_baseline.a
+[411/523] Linking static target numpy/_core/libloops_trigonometric.dispatch.h_baseline.a
+[412/523] Linking static target numpy/_core/libloops_trigonometric.dispatch.h_AVX512_SKX.a
+[413/523] Linking static target numpy/_core/libloops_trigonometric.dispatch.h_AVX2.a
+[414/523] Linking static target numpy/_core/libloops_umath_fp.dispatch.h_baseline.a
+[415/523] Linking static target numpy/_core/libloops_umath_fp.dispatch.h_AVX512_SKX.a
+[416/523] Linking static target numpy/_core/libloops_unary.dispatch.h_baseline.a
+[417/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_npysort_radixsort.cpp.o
+[418/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_special_integer_comparisons.cpp.o
+[419/523] Linking static target numpy/_core/libloops_unary.dispatch.h_AVX2.a
+[420/523] Linking static target numpy/_core/libloops_unary_fp.dispatch.h_baseline.a
+[421/523] Linking static target numpy/_core/libloops_unary_fp_le.dispatch.h_baseline.a
+[422/523] Linking static target numpy/_core/libloops_unary_fp_le.dispatch.h_SSE41.a
+[423/523] Linking static target numpy/_core/libloops_unary.dispatch.h_AVX512_SKX.a
+[424/523] Linking static target numpy/_core/libloops_unary_fp.dispatch.h_SSE41.a
+[425/523] Linking static target numpy/_core/libloops_unary_complex.dispatch.h_baseline.a
+[426/523] Linking static target numpy/_core/libloops_unary_complex.dispatch.h_AVX512F.a
+[427/523] Linking static target numpy/_core/libloops_half.dispatch.h_baseline.a
+[428/523] Linking static target numpy/_core/libloops_unary_complex.dispatch.h_AVX2.a
+[429/523] Linking static target numpy/_core/libloops_half.dispatch.h_AVX512_SKX.a
+[430/523] Compiling Cython source numpy/random/_generator.pyx
+[431/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_item_selection.c.o
+[432/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_stringdtype_casts.cpp.o
+[433/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_ufunc_type_resolution.c.o
+[434/523] Linking target numpy/linalg/lapack_lite.cpython-311-x86_64-linux-gnu.so
+[435/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/meson-generated_scalartypes.c.o
+[436/523] Compiling C object numpy/random/mtrand.cpython-311-x86_64-linux-gnu.so.p/src_legacy_legacy-distributions.c.o
+[437/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_clip.cpp.o
+[438/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_dispatching.cpp.o
+[439/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_multiarray_multiarraymodule.c.o
+[440/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_npysort_mergesort.cpp.o
+[441/523] Compiling C object numpy/random/mtrand.cpython-311-x86_64-linux-gnu.so.p/src_distributions_distributions.c.o
+[442/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_npysort_heapsort.cpp.o
+[443/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_npysort_binsearch.cpp.o
+[444/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/meson-generated_loops.c.o
+[445/523] Compiling C object numpy/random/_sfc64.cpython-311-x86_64-linux-gnu.so.p/meson-generated_numpy_random__sfc64.pyx.c.o
+[446/523] Compiling C object numpy/_core/libloops_minmax.dispatch.h_baseline.a.p/meson-generated_loops_minmax.dispatch.c.o
+[447/523] Linking static target numpy/_core/libloops_minmax.dispatch.h_baseline.a
+[448/523] Linking target numpy/random/_sfc64.cpython-311-x86_64-linux-gnu.so
+[449/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/meson-generated_einsum_sumprod.c.o
+[450/523] Compiling C object numpy/random/_philox.cpython-311-x86_64-linux-gnu.so.p/meson-generated_numpy_random__philox.pyx.c.o
+[451/523] Linking target numpy/random/_philox.cpython-311-x86_64-linux-gnu.so
+[452/523] Compiling C object numpy/_core/libloops_comparison.dispatch.h_SSE42.a.p/meson-generated_loops_comparison.dispatch.c.o
+[453/523] Linking static target numpy/_core/libloops_comparison.dispatch.h_SSE42.a
+[454/523] Compiling C object numpy/_core/libloops_comparison.dispatch.h_baseline.a.p/meson-generated_loops_comparison.dispatch.c.o
+[455/523] Linking static target numpy/_core/libloops_comparison.dispatch.h_baseline.a
+[456/523] Compiling C object numpy/_core/libloops_minmax.dispatch.h_AVX2.a.p/meson-generated_loops_minmax.dispatch.c.o
+[457/523] Linking static target numpy/_core/libloops_minmax.dispatch.h_AVX2.a
+[458/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_stringdtype_ufuncs.cpp.o
+[459/523] Compiling C object numpy/_core/libloops_minmax.dispatch.h_AVX512_SKX.a.p/meson-generated_loops_minmax.dispatch.c.o
+[460/523] Linking static target numpy/_core/libloops_minmax.dispatch.h_AVX512_SKX.a
+[461/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_ufunc_object.c.o
+[462/523] Compiling C object numpy/random/_pcg64.cpython-311-x86_64-linux-gnu.so.p/meson-generated_numpy_random__pcg64.pyx.c.o
+[463/523] Linking target numpy/random/_pcg64.cpython-311-x86_64-linux-gnu.so
+[464/523] Compiling C object numpy/random/_mt19937.cpython-311-x86_64-linux-gnu.so.p/meson-generated_numpy_random__mt19937.pyx.c.o
+[465/523] Linking target numpy/random/_mt19937.cpython-311-x86_64-linux-gnu.so
+[466/523] Compiling C object numpy/_core/libloops_comparison.dispatch.h_AVX2.a.p/meson-generated_loops_comparison.dispatch.c.o
+[467/523] Linking static target numpy/_core/libloops_comparison.dispatch.h_AVX2.a
+[468/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_npysort_quicksort.cpp.o
+[469/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_string_ufuncs.cpp.o
+[470/523] Compiling C object numpy/_core/libloops_comparison.dispatch.h_AVX512F.a.p/meson-generated_loops_comparison.dispatch.c.o
+[471/523] Linking static target numpy/_core/libloops_comparison.dispatch.h_AVX512F.a
+[472/523] Compiling C++ object numpy/linalg/_umath_linalg.cpython-311-x86_64-linux-gnu.so.p/umath_linalg.cpp.o
+[473/523] Linking target numpy/linalg/_umath_linalg.cpython-311-x86_64-linux-gnu.so
+[474/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/meson-generated_arraytypes.c.o
+[475/523] Compiling C object numpy/_core/libloops_comparison.dispatch.h_AVX512_SKX.a.p/meson-generated_loops_comparison.dispatch.c.o
+[476/523] Linking static target numpy/_core/libloops_comparison.dispatch.h_AVX512_SKX.a
+[477/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/meson-generated_scalarmath.c.o
+[478/523] Compiling C object numpy/random/bit_generator.cpython-311-x86_64-linux-gnu.so.p/meson-generated_numpy_random_bit_generator.pyx.c.o
+[479/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_npysort_selection.cpp.o
+[480/523] Linking target numpy/random/bit_generator.cpython-311-x86_64-linux-gnu.so
+[481/523] Compiling C++ object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_npysort_timsort.cpp.o
+[482/523] Compiling C object numpy/_core/lib_simd.dispatch.h_SSE42.a.p/meson-generated__simd.dispatch.c.o
+[483/523] Linking static target numpy/_core/lib_simd.dispatch.h_SSE42.a
+[484/523] Compiling C object numpy/_core/lib_simd.dispatch.h_FMA3.a.p/meson-generated__simd.dispatch.c.o
+[485/523] Linking static target numpy/_core/lib_simd.dispatch.h_FMA3.a
+[486/523] Compiling C object numpy/_core/lib_simd.dispatch.h_baseline.a.p/meson-generated__simd.dispatch.c.o
+[487/523] Linking static target numpy/_core/lib_simd.dispatch.h_baseline.a
+[488/523] Compiling C object numpy/random/_common.cpython-311-x86_64-linux-gnu.so.p/meson-generated_numpy_random__common.pyx.c.o
+[489/523] Linking target numpy/random/_common.cpython-311-x86_64-linux-gnu.so
+[490/523] Compiling C object numpy/_core/lib_simd.dispatch.h_AVX512_SKX.a.p/meson-generated__simd.dispatch.c.o
+[491/523] Linking static target numpy/_core/lib_simd.dispatch.h_AVX512_SKX.a
+[492/523] Compiling C object numpy/_core/lib_simd.dispatch.h_AVX2.a.p/meson-generated__simd.dispatch.c.o
+[493/523] Linking static target numpy/_core/lib_simd.dispatch.h_AVX2.a
+[494/523] Compiling C object numpy/random/_bounded_integers.cpython-311-x86_64-linux-gnu.so.p/meson-generated_numpy_random__bounded_integers.pyx.c.o
+[495/523] Linking target numpy/random/_bounded_integers.cpython-311-x86_64-linux-gnu.so
+[496/523] Compiling C object numpy/_core/lib_simd.dispatch.h_AVX512F.a.p/meson-generated__simd.dispatch.c.o
+[497/523] Linking static target numpy/_core/lib_simd.dispatch.h_AVX512F.a
+[498/523] Linking static target numpy/_core/lib_simd_mtargets.a
+[499/523] Linking target numpy/_core/_simd.cpython-311-x86_64-linux-gnu.so
+[500/523] Compiling C object numpy/_core/libloops_autovec.dispatch.h_baseline.a.p/meson-generated_loops_autovec.dispatch.c.o
+[501/523] Linking static target numpy/_core/libloops_autovec.dispatch.h_baseline.a
+[502/523] Compiling C object numpy/random/mtrand.cpython-311-x86_64-linux-gnu.so.p/meson-generated_numpy_random_mtrand.pyx.c.o
+[503/523] Linking target numpy/random/mtrand.cpython-311-x86_64-linux-gnu.so
+[504/523] Compiling C object numpy/_core/libloops_autovec.dispatch.h_AVX2.a.p/meson-generated_loops_autovec.dispatch.c.o
+[505/523] Linking static target numpy/_core/libloops_autovec.dispatch.h_AVX2.a
+[506/523] Compiling C object numpy/random/_generator.cpython-311-x86_64-linux-gnu.so.p/meson-generated_numpy_random__generator.pyx.c.o
+[507/523] Linking target numpy/random/_generator.cpython-311-x86_64-linux-gnu.so
+[508/523] Compiling C++ object numpy/fft/_pocketfft_umath.cpython-311-x86_64-linux-gnu.so.p/_pocketfft_umath.cpp.o
+[509/523] Linking target numpy/fft/_pocketfft_umath.cpython-311-x86_64-linux-gnu.so
+[510/523] Compiling C++ object numpy/_core/libx86_simd_qsort_16bit.dispatch.h_AVX512_ICL.a.p/src_npysort_x86_simd_qsort_16bit.dispatch.cpp.o
+[511/523] Linking static target numpy/_core/libx86_simd_qsort_16bit.dispatch.h_AVX512_ICL.a
+[512/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/src_umath_umathmodule.c.o
+[513/523] Compiling C object numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so.p/meson-generated_lowlevel_strided_loops.c.o
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_cast_float_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1160:46: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1160 |         if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value) < 0) {
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_contig_cast_float_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1160:53: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1160 |         if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value) < 0) {
+      |                                                     ^~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_cast_double_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1160:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1160 |         if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value) < 0) {
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_contig_cast_double_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1160:54: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1160 |         if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value) < 0) {
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_aligned_cast_cfloat_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1128:59: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1128 |             if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value[0]) < 0) {
+      |                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_cast_cfloat_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1113:51: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1113 |             if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value[0]) < 0) {
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_aligned_contig_cast_cfloat_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1128:66: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1128 |             if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value[0]) < 0) {
+      |                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_contig_cast_cfloat_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1113:58: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1113 |             if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value[0]) < 0) {
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_aligned_cast_cdouble_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1128:60: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1128 |             if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value[0]) < 0) {
+      |                                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_cast_cdouble_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1113:52: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1113 |             if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value[0]) < 0) {
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_aligned_contig_cast_cdouble_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1128:67: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1128 |             if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value[0]) < 0) {
+      |                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src: In function ‘_contig_cast_cdouble_to_half_same_value’:
+../numpy/_core/src/multiarray/lowlevel_strided_loops.c.src:1113:59: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+ 1113 |             if (@prefix@_check_same_value_@name1@_to_@name2@(*(@rtype1@ *)&src_value[0]) < 0) {
+      |                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[514/523] Compiling C++ object numpy/_core/libx86_simd_qsort.dispatch.h_AVX2.a.p/src_npysort_x86_simd_qsort.dispatch.cpp.o
+[515/523] Linking static target numpy/_core/libx86_simd_qsort.dispatch.h_AVX2.a
+[516/523] Compiling C++ object numpy/_core/libx86_simd_argsort.dispatch.h_AVX512_SKX.a.p/src_npysort_x86_simd_argsort.dispatch.cpp.o
+[517/523] Linking static target numpy/_core/libx86_simd_argsort.dispatch.h_AVX512_SKX.a
+[518/523] Compiling C++ object numpy/_core/libx86_simd_qsort.dispatch.h_AVX512_SKX.a.p/src_npysort_x86_simd_qsort.dispatch.cpp.o
+[519/523] Linking static target numpy/_core/libx86_simd_qsort.dispatch.h_AVX512_SKX.a
+[520/523] Compiling C++ object numpy/_core/libx86_simd_argsort.dispatch.h_AVX2.a.p/src_npysort_x86_simd_argsort.dispatch.cpp.o
+[521/523] Linking static target numpy/_core/libx86_simd_argsort.dispatch.h_AVX2.a
+[522/523] Linking static target numpy/_core/lib_multiarray_umath_mtargets.a
+[523/523] Linking target numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /opt/venv/bin/ninja -C /app/build
+$ /opt/venv/bin/python3.11 vendored-meson/meson/meson.py install --only-changed -C build --destdir ../build-install
+Invoking `build` prior to running tests:
+$ /opt/venv/bin/python3.11 vendored-meson/meson/meson.py compile -C build
+ninja: Entering directory `/app/build'
+[1/1] Generating numpy/generate-version with a custom command
+Saving version to numpy/version.py
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /opt/venv/bin/ninja -C /app/build
+$ /opt/venv/bin/python3.11 vendored-meson/meson/meson.py install --only-changed -C build --destdir ../build-install
+$ export PYTHONPATH="/app/build-install/usr/lib/python3/dist-packages"
+$ /opt/venv/bin/python3.11 -P -c 'import numpy'
+$ cd /app/build-install/usr/lib/python3/dist-packages
+$ /opt/venv/bin/python3.11 -P -m pytest -m 'not slow' --timeout=600 --durations=10
+============================= test session starts ==============================
+platform linux -- Python 3.11.0rc1, pytest-7.4.0, pluggy-1.6.0
+rootdir: /app
+configfile: pytest.ini
+plugins: timeout-2.4.0, xdist-3.8.0, cov-4.1.0, hypothesis-6.137.1
+timeout: 600.0s
+timeout method: signal
+timeout func_only: False
+collected 52958 items / 2818 deselected / 1 skipped / 50140 selected
+
+numpy/_core/tests/test__exceptions.py ...........                        [  0%]
+numpy/_core/tests/test_abc.py .....                                      [  0%]
+numpy/_core/tests/test_api.py .......................................... [  0%]
+..............                                                           [  0%]
+numpy/_core/tests/test_argparse.py .......                               [  0%]
+numpy/_core/tests/test_array_api_info.py ...............                 [  0%]
+numpy/_core/tests/test_array_coercion.py ............................... [  0%]
+........................................................................ [  0%]
+........................................................................ [  0%]
+......................................                                   [  0%]
+numpy/_core/tests/test_arraymethod.py .................................. [  0%]
+......                                                                   [  0%]
+numpy/_core/tests/test_arrayobject.py ..............                     [  0%]
+numpy/_core/tests/test_arrayprint.py ..x................................ [  0%]
+........................................................................ [  0%]
+......................                                                   [  0%]
+numpy/_core/tests/test_casting_floatingpoint_errors.py ................. [  1%]
+........................................................................ [  1%]
+........................................................................ [  1%]
+..................................................                       [  1%]
+numpy/_core/tests/test_casting_unittests.py ............................ [  1%]
+........................................................................ [  1%]
+........................................................................ [  1%]
+........................................................................ [  1%]
+........................................................................ [  2%]
+........................................................................ [  2%]
+........................................................................ [  2%]
+........................................................................ [  2%]
+........................................................................ [  2%]
+........................................................................ [  2%]
+........................................................................ [  2%]
+........................................................................ [  3%]
+........................................................................ [  3%]
+.....................................................................    [  3%]
+numpy/_core/tests/test_conversion_utils.py ............................  [  3%]
+numpy/_core/tests/test_cpu_dispatcher.py .                               [  3%]
+numpy/_core/tests/test_cpu_features.py ........ssss                      [  3%]
+numpy/_core/tests/test_custom_dtypes.py ................................ [  3%]
+..............                                                           [  3%]
+numpy/_core/tests/test_cython.py .........................               [  3%]
+numpy/_core/tests/test_datetime.py ..................................... [  3%]
+........................................................................ [  3%]
+........................................................................ [  3%]
+.........................................................x..........x..x [  4%]
+..........x............................................................. [  4%]
+........................................................................ [  4%]
+.....................................................................    [  4%]
+numpy/_core/tests/test_defchararray.py ................................. [  4%]
+..................................................................       [  4%]
+numpy/_core/tests/test_deprecations.py ................................. [  4%]
+.................................                                        [  4%]
+numpy/_core/tests/test_dlpack.py ....................................... [  4%]
+...........................................                              [  4%]
+numpy/_core/tests/test_dtype.py ........................................ [  5%]
+..........................................................ssss.......... [  5%]
+........................................................................ [  5%]
+........................................................................ [  5%]
+........................................................................ [  5%]
+........................................................................ [  5%]
+........................................................................ [  5%]
+........................................................................ [  6%]
+........................................................................ [  6%]
+........................................................................ [  6%]
+........................................................................ [  6%]
+........................................................................ [  6%]
+........................................................................ [  6%]
+........................................................................ [  6%]
+........................................................................ [  7%]
+........................................................................ [  7%]
+............................................                             [  7%]
+numpy/_core/tests/test_einsum.py ....................................... [  7%]
+.....................................                                    [  7%]
+numpy/_core/tests/test_errstate.py ......                                [  7%]
+numpy/_core/tests/test_extint128.py ............                         [  7%]
+numpy/_core/tests/test_finfo.py ..............................           [  7%]
+numpy/_core/tests/test_function_base.py ................................ [  7%]
+........                                                                 [  7%]
+numpy/_core/tests/test_getlimits.py .................                    [  7%]
+numpy/_core/tests/test_half.py ....................................      [  7%]
+numpy/_core/tests/test_hashtable.py .........                            [  7%]
+numpy/_core/tests/test_indexerrors.py ........                           [  7%]
+numpy/_core/tests/test_indexing.py ..................................... [  7%]
+.................................................................        [  7%]
+numpy/_core/tests/test_item_selection.py ............................... [  8%]
+........................................................................ [  8%]
+........................................................................ [  8%]
+........................................................................ [  8%]
+.......................................                                  [  8%]
+numpy/_core/tests/test_limited_api.py .                                  [  8%]
+numpy/_core/tests/test_longdouble.py ....................ssssssss....s.  [  8%]
+numpy/_core/tests/test_mem_overlap.py ..................                 [  8%]
+numpy/_core/tests/test_mem_policy.py .....s....                          [  8%]
+numpy/_core/tests/test_memmap.py .....................                   [  8%]
+numpy/_core/tests/test_multiarray.py ................................... [  8%]
+........................................................................ [  8%]
+........................................................................ [  9%]
+........................................................................ [  9%]
+........................................................................ [  9%]
+........................................................................ [  9%]
+................................s....................................... [  9%]
+........................................................................ [  9%]
+........................................................................ [  9%]
+........................................................................ [ 10%]
+........................................................................ [ 10%]
+........................................................................ [ 10%]
+........................................................................ [ 10%]
+...s.s.s.s.s.s.....s.s.....s.s.s.s.......s.s.s.s........................ [ 10%]
+........................................................................ [ 10%]
+........................................................................ [ 10%]
+........................................................................ [ 11%]
+........................................................................ [ 11%]
+........................................................................ [ 11%]
+........................................................................ [ 11%]
+........................................................................ [ 11%]
+........................................................................ [ 11%]
+........................................................................ [ 11%]
+........................................................................ [ 12%]
+........................................................................ [ 12%]
+........................................................................ [ 12%]
+........................................................................ [ 12%]
+........................................................................ [ 12%]
+........................................................................ [ 12%]
+........................................................................ [ 12%]
+........................................................................ [ 13%]
+........................................................................ [ 13%]
+........................................................................ [ 13%]
+........................................................................ [ 13%]
+........................................................................ [ 13%]
+........................................................................ [ 13%]
+........................................................................ [ 13%]
+........................................................................ [ 14%]
+........................................................................ [ 14%]
+........................................................................ [ 14%]
+........................................................................ [ 14%]
+........................................................................ [ 14%]
+........................................................................ [ 14%]
+........................................................................ [ 14%]
+........................................................................ [ 15%]
+........................................................................ [ 15%]
+........................................................................ [ 15%]
+........................................................................ [ 15%]
+........................................................................ [ 15%]
+........................................................................ [ 15%]
+........................................................................ [ 15%]
+........................................................................ [ 16%]
+........................................................................ [ 16%]
+........................................................................ [ 16%]
+........................................................................ [ 16%]
+........................................................................ [ 16%]
+........................................................................ [ 16%]
+........................................................................ [ 16%]
+........................................................................ [ 17%]
+........................................................................ [ 17%]
+........................................................................ [ 17%]
+........................................................................ [ 17%]
+........................................................................ [ 17%]
+........................................................................ [ 17%]
+........................................................................ [ 17%]
+........................................................................ [ 18%]
+........................................................................ [ 18%]
+........................................................................ [ 18%]
+........................................................................ [ 18%]
+........................................................................ [ 18%]
+........................................................................ [ 18%]
+........................................................................ [ 18%]
+........................................................................ [ 19%]
+........................................................................ [ 19%]
+........................................................................ [ 19%]
+........................................................................ [ 19%]
+........................................................................ [ 19%]
+........................................................................ [ 19%]
+........................................................................ [ 19%]
+........................................................................ [ 20%]
+........................................................................ [ 20%]
+........................................................................ [ 20%]
+........................................................................ [ 20%]
+........................................................................ [ 20%]
+........................................................................ [ 20%]
+........................................................................ [ 20%]
+........................................................................ [ 21%]
+........................................................................ [ 21%]
+........................................................................ [ 21%]
+........................................................................ [ 21%]
+........................................................................ [ 21%]
+........................................................................ [ 21%]
+........................................................................ [ 21%]
+........................................................................ [ 22%]
+........................................................................ [ 22%]
+........................................................................ [ 22%]
+........................................................................ [ 22%]
+........................................................................ [ 22%]
+........................................................................ [ 22%]
+........................................................................ [ 22%]
+........................................................................ [ 23%]
+........................................................................ [ 23%]
+........................................................................ [ 23%]
+........................................................................ [ 23%]
+........................................................................ [ 23%]
+........................................................................ [ 23%]
+........................................................................ [ 23%]
+........................................................................ [ 24%]
+........................................................................ [ 24%]
+........................................................................ [ 24%]
+........................................................................ [ 24%]
+........................................................................ [ 24%]
+........................................................................ [ 24%]
+........................................................................ [ 24%]
+........................................................................ [ 25%]
+........................................................................ [ 25%]
+........................................................................ [ 25%]
+........................................................................ [ 25%]
+........................................................................ [ 25%]
+........................................................................ [ 25%]
+........................................................................ [ 25%]
+........................................................................ [ 26%]
+........................................................................ [ 26%]
+........................................................................ [ 26%]
+........................................................................ [ 26%]
+........................................................................ [ 26%]
+........................................................................ [ 26%]
+........................................................................ [ 26%]
+........................................................................ [ 27%]
+........................................................................ [ 27%]
+........................................................................ [ 27%]
+........................................................................ [ 27%]
+........................................................................ [ 27%]
+........................................................................ [ 27%]
+........................................................................ [ 28%]
+........................................................................ [ 28%]
+........................................................................ [ 28%]
+........................................................................ [ 28%]
+........................................................................ [ 28%]
+........................................................................ [ 28%]
+........................................................................ [ 28%]
+........................................................................ [ 29%]
+........................................................................ [ 29%]
+........................................................................ [ 29%]
+........................................................................ [ 29%]
+........................................................................ [ 29%]
+........................................................................ [ 29%]
+........................................................................ [ 29%]
+........................................................................ [ 30%]
+........................................................................ [ 30%]
+........................................................................ [ 30%]
+........................................................................ [ 30%]
+........................................................................ [ 30%]
+........................................................................ [ 30%]
+........................................................................ [ 30%]
+........................................................................ [ 31%]
+........................................................................ [ 31%]
+........................................................................ [ 31%]
+........................................................................ [ 31%]
+........................................................................ [ 31%]
+........................................................................ [ 31%]
+........................................................................ [ 31%]
+........................................................................ [ 32%]
+........................................................................ [ 32%]
+........................................................................ [ 32%]
+........................................................................ [ 32%]
+........................................................................ [ 32%]
+........................................................................ [ 32%]
+........................................................................ [ 32%]
+........................................................................ [ 33%]
+........................................................................ [ 33%]
+........................................................................ [ 33%]
+........................................................................ [ 33%]
+........................................................................ [ 33%]
+........................................................................ [ 33%]
+........................................................................ [ 33%]
+........................................................................ [ 34%]
+........................................................................ [ 34%]
+........................................................................ [ 34%]
+........................................................................ [ 34%]
+........................................................................ [ 34%]
+........................................................................ [ 34%]
+........................................................................ [ 34%]
+........................................................................ [ 35%]
+........................................................................ [ 35%]
+........................................................................ [ 35%]
+........................................................................ [ 35%]
+........................................................................ [ 35%]
+........................................................................ [ 35%]
+........................................................................ [ 35%]
+........................................................................ [ 36%]
+........................................................................ [ 36%]
+........................................................................ [ 36%]
+.........................................................                [ 36%]
+numpy/_core/tests/test_multithreading.py ..................              [ 36%]
+numpy/_core/tests/test_nditer.py ....................................... [ 36%]
+........................................................................ [ 36%]
+........................................................................ [ 36%]
+........................................................................ [ 36%]
+........................................................................ [ 37%]
+........................................................................ [ 37%]
+........................................................................ [ 37%]
+........................................................................ [ 37%]
+........................................................................ [ 37%]
+........................................................................ [ 37%]
+........................................................................ [ 37%]
+........................................................................ [ 38%]
+.........................x.............................................. [ 38%]
+................                                                         [ 38%]
+numpy/_core/tests/test_nep50_promotions.py ............................. [ 38%]
+........................................................................ [ 38%]
+........................................................................ [ 38%]
+........................................................................ [ 38%]
+........................................................................ [ 38%]
+........................................................................ [ 39%]
+......................................................                   [ 39%]
+numpy/_core/tests/test_numeric.py ................................s...x. [ 39%]
+........................................................................ [ 39%]
+........................................................................ [ 39%]
+........................................................................ [ 39%]
+........................................................................ [ 39%]
+........................................................................ [ 39%]
+........................................................................ [ 40%]
+.                                                                        [ 40%]
+numpy/_core/tests/test_numerictypes.py ................................. [ 40%]
+........................................................................ [ 40%]
+......................................................                   [ 40%]
+numpy/_core/tests/test_overrides.py .................................... [ 40%]
+........................................................................ [ 40%]
+...............................................                          [ 40%]
+numpy/_core/tests/test_print.py ...................sss                   [ 40%]
+numpy/_core/tests/test_protocols.py ..                                   [ 40%]
+numpy/_core/tests/test_records.py ...................................... [ 40%]
+...                                                                      [ 40%]
+numpy/_core/tests/test_regression.py ................................... [ 40%]
+........................................................................ [ 41%]
+........................................................................ [ 41%]
+........................................................................ [ 41%]
+........................................................................ [ 41%]
+........................................................................ [ 41%]
+.............................                                            [ 41%]
+numpy/_core/tests/test_scalar_ctors.py ................................. [ 41%]
+........................................................................ [ 41%]
+...........................................................x..x..x..x... [ 42%]
+........................                                                 [ 42%]
+numpy/_core/tests/test_scalar_methods.py ............................... [ 42%]
+........................................................................ [ 42%]
+..................................                                       [ 42%]
+numpy/_core/tests/test_scalarbuffer.py ................................. [ 42%]
+.............................................                            [ 42%]
+numpy/_core/tests/test_scalarinherit.py ......                           [ 42%]
+numpy/_core/tests/test_scalarmath.py ..........................s........ [ 42%]
+........................................................................ [ 42%]
+........................................................................ [ 42%]
+...................................................sssssss.............. [ 43%]
+........................................................................ [ 43%]
+..........................................                               [ 43%]
+numpy/_core/tests/test_scalarprint.py .................................. [ 43%]
+s                                                                        [ 43%]
+numpy/_core/tests/test_shape_base.py ................................... [ 43%]
+........................................................................ [ 43%]
+........................................................................ [ 43%]
+.................................                                        [ 43%]
+numpy/_core/tests/test_simd.py ......................................... [ 43%]
+........................................................................ [ 44%]
+........................................................................ [ 44%]
+........................................................................ [ 44%]
+........................................................................ [ 44%]
+........................................................................ [ 44%]
+........................................................................ [ 44%]
+........................................................................ [ 44%]
+........................................................................ [ 45%]
+........................................................................ [ 45%]
+........................................................................ [ 45%]
+........................................................................ [ 45%]
+........................................................................ [ 45%]
+........................................................................ [ 45%]
+........................................................................ [ 45%]
+........................................................................ [ 46%]
+........................................................................ [ 46%]
+........................................................................ [ 46%]
+........................................................................ [ 46%]
+........................................................................ [ 46%]
+........................................................................ [ 46%]
+........................................................................ [ 46%]
+........................................................................ [ 47%]
+........................................................................ [ 47%]
+........................................................................ [ 47%]
+........................................................................ [ 47%]
+........................................................................ [ 47%]
+........................................................................ [ 47%]
+........................................................................ [ 47%]
+........................................................................ [ 48%]
+........................................................................ [ 48%]
+........................................................................ [ 48%]
+........................................................................ [ 48%]
+........................................................................ [ 48%]
+........................................................................ [ 48%]
+........................................................................ [ 48%]
+........................................................................ [ 49%]
+........................................................................ [ 49%]
+........................................................................ [ 49%]
+........................................................................ [ 49%]
+........................................................................ [ 49%]
+........................................................................ [ 49%]
+........................................................................ [ 49%]
+........................................................................ [ 50%]
+........................................................................ [ 50%]
+........................................................................ [ 50%]
+........................................................................ [ 50%]
+........................................................................ [ 50%]
+........................................................................ [ 50%]
+........................................................................ [ 50%]
+........................................................................ [ 51%]
+........................................................................ [ 51%]
+........................................................................ [ 51%]
+........................................................................ [ 51%]
+........................................................................ [ 51%]
+........................................................................ [ 51%]
+........................................................................ [ 51%]
+........................................................................ [ 52%]
+........................................................................ [ 52%]
+.......                                                                  [ 52%]
+numpy/_core/tests/test_simd_module.py .................................. [ 52%]
+..                                                                       [ 52%]
+numpy/_core/tests/test_stringdtype.py .........................ss....... [ 52%]
+........................................................................ [ 52%]
+........................................................................ [ 52%]
+........................................................................ [ 52%]
+........................................................................ [ 52%]
+........................................................................ [ 53%]
+........................................................................ [ 53%]
+........................................................................ [ 53%]
+........................................................................ [ 53%]
+........................................................................ [ 53%]
+........................................................................ [ 53%]
+........................................................................ [ 53%]
+........................................................................ [ 54%]
+..........ss............................................................ [ 54%]
+........................................................................ [ 54%]
+......................................x......x.......................... [ 54%]
+........................................................................ [ 54%]
+........................................................................ [ 54%]
+........................................................................ [ 54%]
+........................................................................ [ 55%]
+........................................................................ [ 55%]
+........................................................................ [ 55%]
+........................................................................ [ 55%]
+........................................................................ [ 55%]
+........................................................................ [ 55%]
+........................................................................ [ 55%]
+........................................................................ [ 56%]
+........................................................................ [ 56%]
+........................................................................ [ 56%]
+........................................................................ [ 56%]
+........................................................................ [ 56%]
+........................................................................ [ 56%]
+........................................................................ [ 56%]
+........................................................................ [ 57%]
+........................................................................ [ 57%]
+........................................................................ [ 57%]
+........................................................................ [ 57%]
+........................................................................ [ 57%]
+........................................................................ [ 57%]
+.........................                                                [ 57%]
+numpy/_core/tests/test_strings.py ...................................... [ 57%]
+........................................................................ [ 58%]
+........................................................................ [ 58%]
+........................................................................ [ 58%]
+........................................................................ [ 58%]
+........................................................................ [ 58%]
+..........................................................s..s.......... [ 58%]
+............................s..s........................................ [ 58%]
+.................................................s...................... [ 59%]
+........................................................................ [ 59%]
+........................................................................ [ 59%]
+........................................................................ [ 59%]
+........................................................................ [ 59%]
+........................................................................ [ 59%]
+........................................................................ [ 59%]
+........................................................................ [ 60%]
+........................................................................ [ 60%]
+........................................................................ [ 60%]
+........................................................................ [ 60%]
+........................................................................ [ 60%]
+........................................................................ [ 60%]
+........................................................................ [ 60%]
+........................................................................ [ 61%]
+........................................................................ [ 61%]
+........................................................................ [ 61%]
+........................................................................ [ 61%]
+...........................                                              [ 61%]
+numpy/_core/tests/test_ufunc.py ........................................ [ 61%]
+........................................................................ [ 61%]
+........................................................................ [ 61%]
+........................................................................ [ 62%]
+........................................................................ [ 62%]
+........................................................................ [ 62%]
+........................................................................ [ 62%]
+........................................................................ [ 62%]
+........................................................................ [ 62%]
+........................................................................ [ 62%]
+........................................................................ [ 63%]
+...........................................xxxxxxx...................... [ 63%]
+........                                                                 [ 63%]
+numpy/_core/tests/test_umath.py ........................................ [ 63%]
+........................................................................ [ 63%]
+........................................................................ [ 63%]
+........................................................................ [ 63%]
+........................................................................ [ 63%]
+........................................................................ [ 64%]
+........................................................................ [ 64%]
+........................................................................ [ 64%]
+........................................................................ [ 64%]
+........................................................................ [ 64%]
+........................................................................ [ 64%]
+........................................................................ [ 64%]
+........................................................................ [ 65%]
+........................................................................ [ 65%]
+........................................................................ [ 65%]
+........................................................................ [ 65%]
+........................................................................ [ 65%]
+........................................................................ [ 65%]
+........................................................................ [ 65%]
+........................................................................ [ 66%]
+........................................................................ [ 66%]
+........................................................................ [ 66%]
+........................................................................ [ 66%]
+........................................................................ [ 66%]
+........................................................................ [ 66%]
+........................................................................ [ 66%]
+........................................................................ [ 67%]
+........................................................................ [ 67%]
+........................................................................ [ 67%]
+........................................................................ [ 67%]
+........................................................................ [ 67%]
+........................................................................ [ 67%]
+........................................................................ [ 67%]
+........................................................................ [ 68%]
+........................................................................ [ 68%]
+........................................................................ [ 68%]
+........................................................................ [ 68%]
+........................................................................ [ 68%]
+........................................................................ [ 68%]
+........................................................................ [ 68%]
+........................................................................ [ 69%]
+........................................................................ [ 69%]
+........................................................................ [ 69%]
+........................................................................ [ 69%]
+........................................................................ [ 69%]
+........................................................................ [ 69%]
+........................................................................ [ 69%]
+........................................................................ [ 70%]
+........................................................................ [ 70%]
+........................................................................ [ 70%]
+........................................................................ [ 70%]
+........................................................................ [ 70%]
+........................................................................ [ 70%]
+........................................................................ [ 70%]
+........................................................................ [ 71%]
+........................................................................ [ 71%]
+........................................................................ [ 71%]
+........................................................................ [ 71%]
+........................................................................ [ 71%]
+........................................................................ [ 71%]
+........................................................................ [ 71%]
+..........................ss....................ss...................... [ 72%]
+........................................................................ [ 72%]
+..................................................................ssssss [ 72%]
+ssssssssssssssssssssss.................................................. [ 72%]
+...................................................sssssssssssssssssssss [ 72%]
+sssssss.................................                                 [ 72%]
+numpy/_core/tests/test_umath_accuracy.py ............................... [ 72%]
+..........s                                                              [ 72%]
+numpy/_core/tests/test_umath_complex.py ..s............s................ [ 72%]
+........................................................................ [ 73%]
+........................................................................ [ 73%]
+........................................................................ [ 73%]
+........................................................................ [ 73%]
+.............                                                            [ 73%]
+numpy/_core/tests/test_unicode.py ...................................... [ 73%]
+......................................                                   [ 73%]
+numpy/distutils/tests/test_ccompiler_opt.py ............................ [ 73%]
+........................................................................ [ 73%]
+........................................................................ [ 74%]
+........................................................................ [ 74%]
+..........................................                               [ 74%]
+numpy/distutils/tests/test_ccompiler_opt_conf.py .                       [ 74%]
+numpy/distutils/tests/test_exec_command.py ...                           [ 74%]
+numpy/distutils/tests/test_fcompiler.py .                                [ 74%]
+numpy/distutils/tests/test_fcompiler_gnu.py ....                         [ 74%]
+numpy/distutils/tests/test_fcompiler_intel.py ..                         [ 74%]
+numpy/distutils/tests/test_fcompiler_nagfor.py .                         [ 74%]
+numpy/distutils/tests/test_from_template.py .                            [ 74%]
+numpy/distutils/tests/test_log.py ....                                   [ 74%]
+numpy/distutils/tests/test_mingw32ccompiler.py s                         [ 74%]
+numpy/distutils/tests/test_misc_util.py .......                          [ 74%]
+numpy/distutils/tests/test_npy_pkg_config.py ....                        [ 74%]
+numpy/distutils/tests/test_shell_utils.py sssssssssssssss............... [ 74%]
+sssssssssssssss...............                                           [ 74%]
+numpy/f2py/tests/test_array_from_pyobj.py ssssssssssssssssssssssssssssss [ 74%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 74%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 74%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 74%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 75%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 75%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 75%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 75%]
+sssssssssssssssssssssssssssssssssssssssssssssss                          [ 75%]
+numpy/f2py/tests/test_callback.py sssssssssss                            [ 75%]
+numpy/f2py/tests/test_character.py sssssssssssssssssssssssssssssss       [ 75%]
+numpy/f2py/tests/test_common.py s                                        [ 75%]
+numpy/f2py/tests/test_crackfortran.py s......ssss....sssssssss.......... [ 75%]
+......                                                                   [ 75%]
+numpy/f2py/tests/test_data.py sssss                                      [ 75%]
+numpy/f2py/tests/test_f2cmap.py s                                        [ 75%]
+numpy/f2py/tests/test_f2py2e.py ......ssx..............s...s......sss... [ 75%]
+...............                                                          [ 75%]
+numpy/f2py/tests/test_isoc.py sss.                                       [ 75%]
+numpy/f2py/tests/test_kind.py sss                                        [ 75%]
+numpy/f2py/tests/test_mixed.py s                                         [ 75%]
+numpy/f2py/tests/test_parameter.py sss                                   [ 75%]
+numpy/f2py/tests/test_pyf_src.py .                                       [ 75%]
+numpy/f2py/tests/test_regression.py .                                    [ 75%]
+numpy/f2py/tests/test_semicolon_split.py s                               [ 75%]
+numpy/f2py/tests/test_string.py sss                                      [ 75%]
+numpy/f2py/tests/test_symbolic.py ...........                            [ 75%]
+numpy/fft/tests/test_helper.py ........                                  [ 75%]
+numpy/fft/tests/test_pocketfft.py ...................................... [ 75%]
+........................................................................ [ 76%]
+......................................                                   [ 76%]
+numpy/lib/tests/test__datasource.py ..........................           [ 76%]
+numpy/lib/tests/test__iotools.py ........................                [ 76%]
+numpy/lib/tests/test__version.py ........                                [ 76%]
+numpy/lib/tests/test_array_utils.py ....                                 [ 76%]
+numpy/lib/tests/test_arraypad.py ....................................... [ 76%]
+........................................X............................... [ 76%]
+........................................................................ [ 76%]
+........................................................................ [ 76%]
+........................................................................ [ 76%]
+........................................................................ [ 77%]
+........................................................................ [ 77%]
+........................................................................ [ 77%]
+........................................................................ [ 77%]
+..                                                                       [ 77%]
+numpy/lib/tests/test_arraysetops.py .................................... [ 77%]
+........................................................................ [ 77%]
+...                                                                      [ 77%]
+numpy/lib/tests/test_arrayterator.py .                                   [ 77%]
+numpy/lib/tests/test_format.py ......................................... [ 77%]
+.                                                                        [ 77%]
+numpy/lib/tests/test_function_base.py .................................. [ 77%]
+........................................................................ [ 78%]
+........................................................................ [ 78%]
+............x........................................................... [ 78%]
+........................................................................ [ 78%]
+........................................................................ [ 78%]
+........................................................................ [ 78%]
+........................................................................ [ 78%]
+........................................................................ [ 79%]
+........................................................................ [ 79%]
+........................................................................ [ 79%]
+........................................................................ [ 79%]
+........................................................................ [ 79%]
+........................................................................ [ 79%]
+........................................................................ [ 79%]
+........................................................................ [ 80%]
+.............................s.s.s.s.s.s.s.s.s.s.s.s...s.s.s.s.s.s.s.s.s [ 80%]
+.s.s.s...s.s.s.s.s.s.s.s.s.s.s.s...s.s.s.s.s.s.s.s.s.s.s.s...s.s.s.s.s.s [ 80%]
+.s.s.s.s.s.s...s.s.s.s.s.s.s.s.s.s.s.s.................................. [ 80%]
+...........................                                              [ 80%]
+numpy/lib/tests/test_histograms.py ..........................s.......... [ 80%]
+................................                                         [ 80%]
+numpy/lib/tests/test_index_tricks.py ................................... [ 80%]
+..............................                                           [ 80%]
+numpy/lib/tests/test_io.py ............................................. [ 80%]
+........................................................................ [ 81%]
+........................................................................ [ 81%]
+............................                                             [ 81%]
+numpy/lib/tests/test_loadtxt.py ........................................ [ 81%]
+........................................................................ [ 81%]
+........................................................................ [ 81%]
+......................................x...x...............s.....x....... [ 81%]
+.............................................                            [ 81%]
+numpy/lib/tests/test_mixins.py ...........                               [ 81%]
+numpy/lib/tests/test_nanfunctions.py .....................ss.ss.ss.ss.ss [ 81%]
+.ss.ss..........................................ss.ss.ss.ss.ss.ss.ss.... [ 82%]
+........................................................................ [ 82%]
+........................................................................ [ 82%]
+........................................................................ [ 82%]
+........................................................................ [ 82%]
+........................................................................ [ 82%]
+........................................................................ [ 82%]
+........................................................................ [ 83%]
+........................................................................ [ 83%]
+........................................................................ [ 83%]
+........................................................................ [ 83%]
+........................................................................ [ 83%]
+............................................ss.ss.ss.ss.ss.ss.ss........ [ 83%]
+...................................ss.ss.ss.ss.ss.ss.ss................. [ 83%]
+......................ss.ss.ss.ss.ss.ss.ss.............................. [ 84%]
+........................................................................ [ 84%]
+......................ss.ss.ss.ss..............................ss.ss.ss. [ 84%]
+ss..................                                                     [ 84%]
+numpy/lib/tests/test_packbits.py ....................................... [ 84%]
+........................................................................ [ 84%]
+........................................................................ [ 84%]
+........................................................................ [ 84%]
+.........................                                                [ 85%]
+numpy/lib/tests/test_polynomial.py ..................................... [ 85%]
+..                                                                       [ 85%]
+numpy/lib/tests/test_recfunctions.py ................................... [ 85%]
+................                                                         [ 85%]
+numpy/lib/tests/test_regression.py .........................             [ 85%]
+numpy/lib/tests/test_shape_base.py ..................................... [ 85%]
+........................................                                 [ 85%]
+numpy/lib/tests/test_stride_tricks.py ..........................         [ 85%]
+numpy/lib/tests/test_twodim_base.py .................................... [ 85%]
+.                                                                        [ 85%]
+numpy/lib/tests/test_type_check.py ..................................... [ 85%]
+..............                                                           [ 85%]
+numpy/lib/tests/test_ufunclike.py .....                                  [ 85%]
+numpy/lib/tests/test_utils.py ......                                     [ 85%]
+numpy/linalg/tests/test_deprecations.py .                                [ 85%]
+numpy/linalg/tests/test_linalg.py ...................................... [ 85%]
+.......................................x................................ [ 85%]
+........................................................................ [ 86%]
+........................................................................ [ 86%]
+........................................................................ [ 86%]
+........................................................................ [ 86%]
+........s........................sx..........                            [ 86%]
+numpy/linalg/tests/test_regression.py ...............                    [ 86%]
+numpy/ma/tests/test_arrayobject.py .....                                 [ 86%]
+numpy/ma/tests/test_core.py ............................................ [ 86%]
+........................................................................ [ 86%]
+........................................................................ [ 86%]
+........................................................................ [ 87%]
+........................................................................ [ 87%]
+........................................................................ [ 87%]
+........................................................................ [ 87%]
+........................................................................ [ 87%]
+........................................................................ [ 87%]
+........................................................................ [ 87%]
+........................................................................ [ 88%]
+........................................................................ [ 88%]
+........................................................................ [ 88%]
+........................................................................ [ 88%]
+........................................................................ [ 88%]
+........................................................................ [ 88%]
+........................................................................ [ 88%]
+........................................................................ [ 89%]
+........................................................................ [ 89%]
+........................................................................ [ 89%]
+........................................................................ [ 89%]
+........................................................................ [ 89%]
+........................................................................ [ 89%]
+........................................................................ [ 89%]
+........................................................................ [ 90%]
+........................................................................ [ 90%]
+........................................................................ [ 90%]
+........................................................................ [ 90%]
+........................................................................ [ 90%]
+........................................................................ [ 90%]
+........................................................................ [ 90%]
+........................................................................ [ 91%]
+........................................................................ [ 91%]
+........................................................................ [ 91%]
+........................................................................ [ 91%]
+........................................................................ [ 91%]
+........................................................................ [ 91%]
+........................................................................ [ 91%]
+........................................................................ [ 92%]
+........................................................................ [ 92%]
+........................................................................ [ 92%]
+........................................................................ [ 92%]
+........................................................................ [ 92%]
+........................................................................ [ 92%]
+........................................................................ [ 92%]
+........................................................................ [ 93%]
+........................................................................ [ 93%]
+........................................................................ [ 93%]
+........................................................................ [ 93%]
+........................................................................ [ 93%]
+........................................................................ [ 93%]
+........................................................................ [ 93%]
+........................................................................ [ 94%]
+......................................................xx................ [ 94%]
+........................................................................ [ 94%]
+........................................................................ [ 94%]
+........................................................................ [ 94%]
+........................................................................ [ 94%]
+........                                                                 [ 94%]
+numpy/ma/tests/test_deprecations.py .....                                [ 94%]
+numpy/ma/tests/test_extras.py .......................................... [ 94%]
+............................................................             [ 95%]
+numpy/ma/tests/test_mrecords.py ........................                 [ 95%]
+numpy/ma/tests/test_old_ma.py .........................................  [ 95%]
+numpy/ma/tests/test_regression.py ..............                         [ 95%]
+numpy/ma/tests/test_subclassing.py ................                      [ 95%]
+numpy/matrixlib/tests/test_defmatrix.py ................................ [ 95%]
+...........                                                              [ 95%]
+numpy/matrixlib/tests/test_interaction.py .......................        [ 95%]
+numpy/matrixlib/tests/test_masked_matrix.py ..............               [ 95%]
+numpy/matrixlib/tests/test_matrix_linalg.py ............................ [ 95%]
+........................................................................ [ 95%]
+..                                                                       [ 95%]
+numpy/matrixlib/tests/test_multiarray.py ..                              [ 95%]
+numpy/matrixlib/tests/test_numeric.py ..                                 [ 95%]
+numpy/matrixlib/tests/test_regression.py ....                            [ 95%]
+numpy/polynomial/tests/test_chebyshev.py ............................... [ 95%]
+..........                                                               [ 95%]
+numpy/polynomial/tests/test_classes.py ................................. [ 95%]
+........................................................................ [ 95%]
+........................................................................ [ 96%]
+..................................................................       [ 96%]
+numpy/polynomial/tests/test_hermite.py ................................. [ 96%]
+.                                                                        [ 96%]
+numpy/polynomial/tests/test_hermite_e.py ............................... [ 96%]
+...                                                                      [ 96%]
+numpy/polynomial/tests/test_laguerre.py ................................ [ 96%]
+..                                                                       [ 96%]
+numpy/polynomial/tests/test_legendre.py ................................ [ 96%]
+......                                                                   [ 96%]
+numpy/polynomial/tests/test_polynomial.py .............................. [ 96%]
+..........                                                               [ 96%]
+numpy/polynomial/tests/test_polyutils.py ..........                      [ 96%]
+numpy/polynomial/tests/test_printing.py ................................ [ 96%]
+..............................................                           [ 96%]
+numpy/polynomial/tests/test_symbol.py .................................. [ 96%]
+..................                                                       [ 96%]
+numpy/random/tests/test_direct.py .................s.................s.. [ 96%]
+................s..................s..................s......            [ 97%]
+numpy/random/tests/test_extending.py ss                                  [ 97%]
+numpy/random/tests/test_generator_mt19937.py ........................... [ 97%]
+........................................................................ [ 97%]
+........................................................................ [ 97%]
+........................................................................ [ 97%]
+........................................................................ [ 97%]
+.                                                                        [ 97%]
+numpy/random/tests/test_generator_mt19937_regressions.py ............... [ 97%]
+...                                                                      [ 97%]
+numpy/random/tests/test_random.py ...................................... [ 97%]
+........................................................................ [ 97%]
+................................                                         [ 98%]
+numpy/random/tests/test_randomstate.py ................................. [ 98%]
+........................................................................ [ 98%]
+........................................................................ [ 98%]
+...                                                                      [ 98%]
+numpy/random/tests/test_randomstate_regression.py ...................    [ 98%]
+numpy/random/tests/test_regression.py ...........                        [ 98%]
+numpy/random/tests/test_seed_sequence.py ..                              [ 98%]
+numpy/random/tests/test_smoke.py .s..................................... [ 98%]
+........................................................................ [ 98%]
+........................................................................ [ 98%]
+.ss..................................................................... [ 98%]
+........................................................................ [ 99%]
+........................................................................ [ 99%]
+........................................................................ [ 99%]
+........................................................................ [ 99%]
+.....                                                                    [ 99%]
+numpy/testing/tests/test_utils.py ...................................... [ 99%]
+........................................................................ [ 99%]
+.......................................                                  [ 99%]
+numpy/tests/test__all__.py .                                             [ 99%]
+numpy/tests/test_configtool.py sssss                                     [ 99%]
+numpy/tests/test_ctypeslib.py .......................                    [ 99%]
+numpy/tests/test_lazyloading.py .                                        [ 99%]
+numpy/tests/test_matlib.py ........                                      [ 99%]
+numpy/tests/test_numpy_config.py ....                                    [ 99%]
+numpy/tests/test_numpy_version.py ...                                    [ 99%]
+numpy/tests/test_public_api.py ...............                           [ 99%]
+numpy/tests/test_reloading.py ...                                        [ 99%]
+numpy/tests/test_scripts.py xxx.                                         [ 99%]
+numpy/typing/tests/test_isfile.py .                                      [ 99%]
+numpy/typing/tests/test_runtime.py .....................x...             [100%]
+
+============================= slowest 10 durations =============================
+8.64s call     build-install/usr/lib/python3/dist-packages/numpy/linalg/tests/test_regression.py::TestRegression::test_openblas_threading
+4.60s setup    build-install/usr/lib/python3/dist-packages/numpy/_core/tests/test_cython.py::test_is_timedelta64_object
+4.08s call     build-install/usr/lib/python3/dist-packages/numpy/_core/tests/test_arrayprint.py::test_multithreaded_array_printing
+3.58s call     build-install/usr/lib/python3/dist-packages/numpy/testing/tests/test_utils.py::TestAssertNoGcCycles::test_asserts
+3.48s call     build-install/usr/lib/python3/dist-packages/numpy/testing/tests/test_utils.py::TestAssertNoGcCycles::test_passes
+3.31s setup    build-install/usr/lib/python3/dist-packages/numpy/_core/tests/test_limited_api.py::test_limited_api
+3.03s call     build-install/usr/lib/python3/dist-packages/numpy/lib/tests/test_io.py::test_load_refcount
+2.94s call     build-install/usr/lib/python3/dist-packages/numpy/lib/tests/test_function_base.py::TestLeaks::test_frompyfunc_leaks[bound-20]
+2.93s call     build-install/usr/lib/python3/dist-packages/numpy/lib/tests/test_function_base.py::TestLeaks::test_frompyfunc_leaks[unbound-0]
+2.21s call     build-install/usr/lib/python3/dist-packages/numpy/tests/test_ctypeslib.py::TestAsArray::test_reference_cycles
+=========================== short test summary info ============================
+SKIPPED [1] numpy/distutils/tests/test_system_info.py:21: setuptools is too new
+SKIPPED [1] numpy/_core/tests/test_cpu_features.py:78: Only for Linux and Power
+SKIPPED [1] numpy/_core/tests/test_cpu_features.py:78: Only for Linux and IBM Z
+SKIPPED [1] numpy/_core/tests/test_cpu_features.py:78: Only for Linux and ARM
+SKIPPED [1] numpy/_core/tests/test_cpu_features.py:78: Only for Linux and LoongArch
+SKIPPED [4] numpy/_core/tests/test_dtype.py:833: unreliable due to python's behaviour
+SKIPPED [1] numpy/_core/tests/test_longdouble.py:269: BUG #2376
+SKIPPED [1] numpy/_core/tests/test_longdouble.py:276: BUG #2376
+SKIPPED [1] numpy/_core/tests/test_longdouble.py:284: array repr problem
+SKIPPED [8] numpy/_core/tests/_locales.py:60: No French locale available
+SKIPPED [1] numpy/_core/tests/test_longdouble.py:353: only need to run on musllinux_x86_64
+SKIPPED [1] numpy/_core/tests/test_mem_policy.py:384: too slow, see gh-23975
+SKIPPED [1] numpy/_core/tests/test_multiarray.py:4487: this tests the error messages when trying toprotocol 5 although it is not available
+SKIPPED [2] numpy/_core/tests/test_multiarray.py:5894: No French locale available
+SKIPPED [2] numpy/_core/tests/test_multiarray.py:5901: No French locale available
+SKIPPED [2] numpy/_core/tests/test_multiarray.py:5908: No French locale available
+SKIPPED [2] numpy/_core/tests/test_multiarray.py:5925: No French locale available
+SKIPPED [2] numpy/_core/tests/test_multiarray.py:5942: No French locale available
+SKIPPED [2] numpy/_core/tests/test_multiarray.py:5948: No French locale available
+SKIPPED [2] numpy/_core/tests/test_multiarray.py:5971: No French locale available
+SKIPPED [2] numpy/_core/tests/test_multiarray.py:5981: No French locale available
+SKIPPED [1] numpy/_core/tests/test_numeric.py:256: Out of range of int32
+SKIPPED [1] numpy/_core/tests/test_scalarmath.py:523: Test is PyPy only (gh-9972)
+SKIPPED [7] numpy/_core/tests/test_scalarmath.py:969: broken on some platforms
+SKIPPED [1] numpy/_core/tests/test_scalarprint.py:332: only applies to ppc float128 values
+SKIPPED [2] numpy/_core/tests/test_stringdtype.py:137: does not have an na object
+SKIPPED [2] numpy/_core/tests/test_stringdtype.py:382: no na support
+SKIPPED [2] numpy/_core/tests/test_strings.py:400: Bytes dtype does not support non-ascii input
+SKIPPED [2] numpy/_core/tests/test_strings.py:423: Bytes dtype does not support non-ascii input
+SKIPPED [1] numpy/_core/tests/test_strings.py:468: Bytes dtype does not support non-ascii input
+SKIPPED [4] numpy/_core/tests/test_umath.py:4795: For generic signatures only
+SKIPPED [56] numpy/_core/tests/test_umath.py:4811: For generic signatures only
+SKIPPED [1] numpy/_core/tests/test_umath_accuracy.py:98: lower ULP only apply for SVML FP16
+SKIPPED [1] numpy/_core/tests/test_umath_complex.py:128: cexp(nan + 0I) is wrong on most platforms
+SKIPPED [1] numpy/_core/tests/test_umath_complex.py:485: Complex arithmetic with signed zero fails on most platforms
+SKIPPED [1] numpy/distutils/tests/test_mingw32ccompiler.py:11: test requires mingw library layout
+SKIPPED [15] numpy/distutils/tests/test_shell_utils.py:53: Unable to run with non-native parser
+SKIPPED [15] numpy/distutils/tests/test_shell_utils.py:79: Not implemented
+SKIPPED [581] numpy/f2py/tests/util.py:320: No Fortran compiler available
+SKIPPED [23] numpy/f2py/tests/util.py:397: No Fortran 77 compiler available
+SKIPPED [52] numpy/f2py/tests/util.py:399: No Fortran 90 compiler available
+SKIPPED [1] numpy/f2py/tests/test_character.py:421: fortran function returning array segfaults
+SKIPPED [1] numpy/f2py/tests/test_f2py2e.py:222: Python 3.12 required
+SKIPPED [1] numpy/f2py/tests/test_f2py2e.py:236: Compiler and 3.12 required
+SKIPPED [1] numpy/f2py/tests/test_f2py2e.py:583: Consistently fails on CI; noisy so skip not xfail.
+SKIPPED [1] numpy/f2py/tests/test_f2py2e.py:25: CLI command needs a Fortran compiler
+SKIPPED [1] numpy/f2py/tests/test_f2py2e.py:774: Consistently fails on CI; noisy so skip not xfail.
+SKIPPED [1] numpy/f2py/tests/test_f2py2e.py:790: Compiler and Python 3.12 or newer required
+SKIPPED [1] numpy/f2py/tests/test_f2py2e.py:815: Compiler and Python 3.12 or newer required
+SKIPPED [1] numpy/f2py/tests/util.py:401: No Fortran compiler available
+SKIPPED [36] numpy/lib/tests/test_function_base.py:3993: Weights not supported by method.
+SKIPPED [36] numpy/lib/tests/test_function_base.py:4030: Weights not supported by method.
+SKIPPED [1] numpy/lib/tests/test_histograms.py:408: Bad memory reports lead to OOM in ci testing
+SKIPPED [1] numpy/lib/tests/test_loadtxt.py:767: half assignment currently uses Python float converter
+SKIPPED [14] numpy/lib/tests/test_nanfunctions.py:149: `axis != None` not supported for 0d arrays
+SKIPPED [14] numpy/lib/tests/test_nanfunctions.py:302: `axis != None` not supported for 0d arrays
+SKIPPED [14] numpy/lib/tests/test_nanfunctions.py:582: `axis != None` not supported for 0d arrays
+SKIPPED [14] numpy/lib/tests/test_nanfunctions.py:641: `axis != None` not supported for 0d arrays
+SKIPPED [14] numpy/lib/tests/test_nanfunctions.py:751: `axis != None` not supported for 0d arrays
+SKIPPED [8] numpy/lib/tests/test_nanfunctions.py:1187: `axis != None` not supported for 0d arrays
+SKIPPED [8] numpy/lib/tests/test_nanfunctions.py:1363: `axis != None` not supported for 0d arrays
+SKIPPED [1] numpy/linalg/tests/test_linalg.py:2037: Numpy xerbla not linked in.
+SKIPPED [1] numpy/linalg/tests/test_linalg.py:2275: Bad memory reports lead to OOM in ci testing
+SKIPPED [5] numpy/random/tests/test_direct.py:363: cffi not available
+SKIPPED [1] numpy/random/tests/test_extending.py:120: requires numba and cffi
+SKIPPED [1] numpy/random/tests/test_extending.py:125: requires cffi
+SKIPPED [1] numpy/random/tests/test_smoke.py:130: Advance is not supported by MT19937
+SKIPPED [1] numpy/random/tests/test_smoke.py:130: Advance is not supported by SFC64
+SKIPPED [1] numpy/random/tests/test_smoke.py:148: Jump is not supported by SFC64
+SKIPPED [1] numpy/tests/test_configtool.py:28: `numpy-config` not expected to be installed
+SKIPPED [1] numpy/tests/test_configtool.py:32: `numpy-config` not expected to be installed
+SKIPPED [1] numpy/tests/test_configtool.py:36: `numpy-config` not expected to be installed
+SKIPPED [1] numpy/tests/test_configtool.py:41: numpy must be installed to check its entrypoints
+SKIPPED [1] numpy/tests/test_configtool.py:48: numpy.pc is only available when numpy is installed
+XFAIL numpy/_core/tests/test_arrayprint.py::TestArrayRepr::test_object_subclass - See gh-10544
+XFAIL numpy/_core/tests/test_datetime.py::TestDateTime::test_limit_str_roundtrip[-1-W] - gh-13197
+XFAIL numpy/_core/tests/test_datetime.py::TestDateTime::test_limit_str_roundtrip[-1-10D] - similar to gh-13197
+XFAIL numpy/_core/tests/test_datetime.py::TestDateTime::test_limit_str_roundtrip[1-W] - gh-13197
+XFAIL numpy/_core/tests/test_datetime.py::TestDateTime::test_limit_str_roundtrip[1-10D] - similar to gh-13197
+XFAIL numpy/_core/tests/test_nditer.py::test_iter_contig_flag_incorrect - The contig flag was always buggy.
+XFAIL numpy/_core/tests/test_numeric.py::TestNonarrayArgs::test_round_py_consistency - gh-15896
+XFAIL numpy/_core/tests/test_scalar_ctors.py::TestArrayFromScalar::test_complex[arg2-complex64-clongdouble] - reason: creating a clongdouble from real and imaginary parts isn't supported
+XFAIL numpy/_core/tests/test_scalar_ctors.py::TestArrayFromScalar::test_complex[arg2-complex128-clongdouble] - reason: creating a clongdouble from real and imaginary parts isn't supported
+XFAIL numpy/_core/tests/test_scalar_ctors.py::TestArrayFromScalar::test_complex[arg2-clongdouble-clongdouble] - reason: creating a clongdouble from real and imaginary parts isn't supported
+XFAIL numpy/_core/tests/test_scalar_ctors.py::TestArrayFromScalar::test_complex[arg2-None-clongdouble] - reason: creating a clongdouble from real and imaginary parts isn't supported
+XFAIL numpy/_core/tests/test_stringdtype.py::test_float_casts[longdouble] - numpy lacks an ld2a implementation
+XFAIL numpy/_core/tests/test_stringdtype.py::test_cfloat_casts[clongdouble] - numpy lacks an ld2a implementation
+XFAIL numpy/_core/tests/test_ufunc.py::test_addition_reduce_negative_zero[False-e] - reason: -0. propagation in sum currently requires initial
+XFAIL numpy/_core/tests/test_ufunc.py::test_addition_reduce_negative_zero[False-f] - reason: -0. propagation in sum currently requires initial
+XFAIL numpy/_core/tests/test_ufunc.py::test_addition_reduce_negative_zero[False-d] - reason: -0. propagation in sum currently requires initial
+XFAIL numpy/_core/tests/test_ufunc.py::test_addition_reduce_negative_zero[False-g] - reason: -0. propagation in sum currently requires initial
+XFAIL numpy/_core/tests/test_ufunc.py::test_addition_reduce_negative_zero[False-F] - reason: -0. propagation in sum currently requires initial
+XFAIL numpy/_core/tests/test_ufunc.py::test_addition_reduce_negative_zero[False-D] - reason: -0. propagation in sum currently requires initial
+XFAIL numpy/_core/tests/test_ufunc.py::test_addition_reduce_negative_zero[False-G] - reason: -0. propagation in sum currently requires initial
+XFAIL numpy/f2py/tests/test_f2py2e.py::test_f2py_skip
+XFAIL numpy/lib/tests/test_function_base.py::TestDigitize::test_large_integers_decreasing - gh-11022: np._core.multiarray._monoticity loses precision
+XFAIL numpy/lib/tests/test_loadtxt.py::test_nul_character_error[g] - reason: longdouble/clongdouble assignment may misbehave.
+XFAIL numpy/lib/tests/test_loadtxt.py::test_nul_character_error[G] - reason: longdouble/clongdouble assignment may misbehave.
+XFAIL numpy/lib/tests/test_loadtxt.py::test_no_thousands_support[G] - reason: clongdouble assignment is buggy (uses `complex`?).
+XFAIL numpy/linalg/tests/test_linalg.py::TestCond::test_nan - reason: [NOTRUN] Platform/LAPACK-dependent failure, see gh-18914
+XFAIL numpy/linalg/tests/test_linalg.py::test_blas64_geqrf_lwork_smoketest - Numpy not compiled with 64-bit BLAS/LAPACK
+XFAIL numpy/ma/tests/test_core.py::TestMaskedConstant::test_coercion_unicode - See gh-9750
+XFAIL numpy/ma/tests/test_core.py::TestMaskedConstant::test_coercion_bytes - See gh-9750
+XFAIL numpy/tests/test_scripts.py::test_f2py[f2py] - Test is unreliable
+XFAIL numpy/tests/test_scripts.py::test_f2py[f2py3] - Test is unreliable
+XFAIL numpy/tests/test_scripts.py::test_f2py[f2py3.11] - Test is unreliable
+XFAIL numpy/typing/tests/test_runtime.py::TestRuntimeProtocol::test_issubclass[_SupportsDType] - reason: Protocols with non-method members don't support issubclass()
+XPASS numpy/lib/tests/test_arraypad.py::TestLinearRamp::test_object_array
+= 49113 passed, 994 skipped, 2818 deselected, 33 xfailed, 1 xpassed in 232.49s (0:03:52) =

@@ -1,0 +1,1338 @@
+Requirement already satisfied: pip in ./venv/lib/python3.11/site-packages (22.0.2)
+Collecting pip
+  Using cached pip-25.2-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.2
+    Uninstalling pip-22.0.2:
+      Successfully uninstalled pip-22.0.2
+Successfully installed pip-25.2
+Collecting meson-python
+  Using cached meson_python-0.18.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting meson>=0.64.0 (from meson-python)
+  Using cached meson-1.8.3-py3-none-any.whl.metadata (1.8 kB)
+Collecting packaging>=23.2 (from meson-python)
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pyproject-metadata>=0.9.0 (from meson-python)
+  Using cached pyproject_metadata-0.9.1-py3-none-any.whl.metadata (7.0 kB)
+Using cached meson_python-0.18.0-py3-none-any.whl (28 kB)
+Using cached meson-1.8.3-py3-none-any.whl (1.0 MB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached pyproject_metadata-0.9.1-py3-none-any.whl (18 kB)
+Installing collected packages: packaging, meson, pyproject-metadata, meson-python
+
+Successfully installed meson-1.8.3 meson-python-0.18.0 packaging-25.0 pyproject-metadata-0.9.1
+Using pip 25.2 from /app/venv/lib/python3.11/site-packages/pip (python 3.11)
+Obtaining file:///app
+  Checking if build backend supports build_editable: started
+  Running command Checking if build backend supports build_editable
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Running command Preparing editable metadata (pyproject.toml)
+  + meson setup /app /app/build/cp311 -Dbuildtype=release -Db_ndebug=if-release -Db_vscrt=md --native-file=/app/build/cp311/meson-python-native-file.ini
+  The Meson build system
+  Version: 1.8.3
+  Source dir: /app
+  Build dir: /app/build/cp311
+  Build type: native build
+  Project name: beancount
+  Project version: 3.2.0.dev0
+  C compiler for the host machine: cc (gcc 11.4.0 "cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0")
+  C linker for the host machine: cc ld.bfd 2.38
+  Host machine cpu family: x86_64
+  Host machine cpu: x86_64
+  Program bison found: YES 3.8.2 3.8.2 (/usr/bin/bison)
+  Program flex found: YES 2.6.4 2.6.4 (/usr/bin/flex)
+  Program python found: YES (/app/venv/bin/python3.11)
+  Found pkg-config: YES (/usr/bin/pkg-config) 0.29.2
+  Run-time dependency python found: YES 3.11
+  Build targets in project: 2
+
+  beancount 3.2.0.dev0
+
+    User defined options
+      Native files: /app/build/cp311/meson-python-native-file.ini
+      b_ndebug    : if-release
+      b_vscrt     : md
+      buildtype   : release
+
+  Found ninja-1.13.0.git.kitware.jobserver-pipe-1 at /usr/local/bin/ninja
+  + /usr/local/bin/ninja
+  [1/8] Generating from 'beancount/parser/lexer.l'
+  [2/8] Generating from 'beancount/parser/grammar.y'
+  [3/8] Compiling C object _parser.cpython-311-x86_64-linux-gnu.so.p/beancount_parser_decimal.c.o
+  [4/8] Compiling C object _parser.cpython-311-x86_64-linux-gnu.so.p/beancount_parser_parser.c.o
+  [5/8] Compiling C object _parser.cpython-311-x86_64-linux-gnu.so.p/beancount_parser_tokens.c.o
+  [6/8] Compiling C object _parser.cpython-311-x86_64-linux-gnu.so.p/meson-generated_beancount_parser_grammar.c.o
+  [7/8] Compiling C object _parser.cpython-311-x86_64-linux-gnu.so.p/meson-generated_beancount_parser_lexer.c.o
+  [8/8] Linking target _parser.cpython-311-x86_64-linux-gnu.so
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Collecting click>=7.0 (from beancount==3.2.0.dev0)
+  Obtaining dependency information for click>=7.0 from https://files.pythonhosted.org/packages/85/32/10bb5764d90a8eee674e9dc6f4db6a0ab47c8c4d0d83c27f7c39ac415a4d/click-8.2.1-py3-none-any.whl.metadata
+  Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+Collecting python-dateutil>=2.6.0 (from beancount==3.2.0.dev0)
+  Obtaining dependency information for python-dateutil>=2.6.0 from https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting regex>=2022.9.13 (from beancount==3.2.0.dev0)
+  Obtaining dependency information for regex>=2022.9.13 from https://files.pythonhosted.org/packages/ee/2e/c689f274a92deffa03999a430505ff2aeace408fd681a90eafa92fdd6930/regex-2025.7.34-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata
+  Downloading regex-2025.7.34-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting six>=1.5 (from python-dateutil>=2.6.0->beancount==3.2.0.dev0)
+  Obtaining dependency information for six>=1.5 from https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl.metadata
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading click-8.2.1-py3-none-any.whl (102 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading regex-2025.7.34-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (798 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 798.9/798.9 kB 39.2 MB/s  0:00:00
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Building wheels for collected packages: beancount
+  Building editable for beancount (pyproject.toml): started
+  Running command Building editable for beancount (pyproject.toml)
+  Building editable for beancount (pyproject.toml): finished with status 'done'
+  Created wheel for beancount: filename=beancount-3.2.0.dev0-cp311-cp311-linux_x86_64.whl size=6255 sha256=c02467e5aa70251c4af12118213a5ae4c4bc7bb3d3b3a30a8bf6847b2d60d0ba
+  Stored in directory: /tmp/pip-ephem-wheel-cache-9dy7wwid/wheels/57/0f/98/bb57b2b57b95807699b822a35c022f139d38a02c27922f27ce
+Successfully built beancount
+Installing collected packages: six, regex, click, python-dateutil, beancount
+  changing mode of /app/venv/bin/bean-check to 755
+  changing mode of /app/venv/bin/bean-doctor to 755
+  changing mode of /app/venv/bin/bean-example to 755
+  changing mode of /app/venv/bin/bean-format to 755
+  changing mode of /app/venv/bin/treeify to 755
+
+Successfully installed beancount-3.2.0.dev0 click-8.2.1 python-dateutil-2.9.0.post0 regex-2025.7.34 six-1.17.0
+============================= test session starts ==============================
+platform linux -- Python 3.11.0rc1, pytest-8.4.1, pluggy-1.6.0
+rootdir: /app
+configfile: pyproject.toml
+collected 13 items / 75 errors
+
+==================================== ERRORS ====================================
+_______________ ERROR collecting beancount/core/account_test.py ________________
+ImportError while importing test module '/app/beancount/core/account_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+____________ ERROR collecting beancount/core/account_types_test.py _____________
+ImportError while importing test module '/app/beancount/core/account_types_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/account_types_test.py:7: in <module>
+    from beancount.core import account_types
+beancount/core/account_types.py:20: in <module>
+    from beancount.core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+________________ ERROR collecting beancount/core/amount_test.py ________________
+ImportError while importing test module '/app/beancount/core/amount_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/amount_test.py:6: in <module>
+    from beancount.core import amount
+beancount/core/amount.py:21: in <module>
+    from beancount.core.display_context import DEFAULT_FORMATTER
+beancount/core/display_context.py:75: in <module>
+    from beancount.core import distribution
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/core/compare_test.py ________________
+ImportError while importing test module '/app/beancount/core/compare_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/compare_test.py:6: in <module>
+    from beancount import loader
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/core/convert_test.py ________________
+ImportError while importing test module '/app/beancount/core/convert_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/convert_test.py:9: in <module>
+    from beancount import loader
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_________________ ERROR collecting beancount/core/data_test.py _________________
+ImportError while importing test module '/app/beancount/core/data_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/data_test.py:10: in <module>
+    from beancount.core import data
+beancount/core/data.py:21: in <module>
+    from beancount.core.account import has_component
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+___________ ERROR collecting beancount/core/display_context_test.py ____________
+ImportError while importing test module '/app/beancount/core/display_context_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/display_context_test.py:7: in <module>
+    from beancount.core import display_context
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+________________ ERROR collecting beancount/core/flags_test.py _________________
+ImportError while importing test module '/app/beancount/core/flags_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/flags_test.py:6: in <module>
+    from beancount.core import flags
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/core/getters_test.py ________________
+ImportError while importing test module '/app/beancount/core/getters_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/getters_test.py:8: in <module>
+    from beancount import loader
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/core/interpolate_test.py ______________
+ImportError while importing test module '/app/beancount/core/interpolate_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/interpolate_test.py:8: in <module>
+    from beancount import loader
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/core/inventory_test.py _______________
+ImportError while importing test module '/app/beancount/core/inventory_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/inventory_test.py:13: in <module>
+    from beancount.core import amount
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/core/position_test.py _______________
+ImportError while importing test module '/app/beancount/core/position_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/position_test.py:14: in <module>
+    from beancount.core import convert
+beancount/core/convert.py:27: in <module>
+    from beancount.core import prices
+beancount/core/prices.py:16: in <module>
+    from beancount.core import data
+beancount/core/data.py:21: in <module>
+    from beancount.core.account import has_component
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+________________ ERROR collecting beancount/core/prices_test.py ________________
+ImportError while importing test module '/app/beancount/core/prices_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/prices_test.py:7: in <module>
+    from beancount import loader
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/core/realization_test.py ______________
+ImportError while importing test module '/app/beancount/core/realization_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/core/realization_test.py:11: in <module>
+    from beancount import loader
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+__________________ ERROR collecting beancount/loader_test.py ___________________
+ImportError while importing test module '/app/beancount/loader_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+________________ ERROR collecting beancount/ops/balance_test.py ________________
+ImportError while importing test module '/app/beancount/ops/balance_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/ops/basicops_test.py ________________
+ImportError while importing test module '/app/beancount/ops/basicops_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/ops/compress_test.py ________________
+ImportError while importing test module '/app/beancount/ops/compress_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/ops/documents_test.py _______________
+ImportError while importing test module '/app/beancount/ops/documents_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/ops/find_prices_test.py ______________
+ImportError while importing test module '/app/beancount/ops/find_prices_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/ops/lifetimes_test.py _______________
+ImportError while importing test module '/app/beancount/ops/lifetimes_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+__________________ ERROR collecting beancount/ops/pad_test.py __________________
+ImportError while importing test module '/app/beancount/ops/pad_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/ops/summarize_test.py _______________
+ImportError while importing test module '/app/beancount/ops/summarize_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/ops/validation_test.py _______________
+ImportError while importing test module '/app/beancount/ops/validation_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+____________ ERROR collecting beancount/parser/booking_full_test.py ____________
+ImportError while importing test module '/app/beancount/parser/booking_full_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+___________ ERROR collecting beancount/parser/booking_method_test.py ___________
+ImportError while importing test module '/app/beancount/parser/booking_method_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/parser/booking_test.py _______________
+ImportError while importing test module '/app/beancount/parser/booking_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/parser/cmptest_test.py _______________
+ImportError while importing test module '/app/beancount/parser/cmptest_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/parser/context_test.py _______________
+ImportError while importing test module '/app/beancount/parser/context_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/parser/grammar_test.py _______________
+ImportError while importing test module '/app/beancount/parser/grammar_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/parser/hashsrc_test.py _______________
+ImportError while importing test module '/app/beancount/parser/hashsrc_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/parser/lexer_test.py ________________
+ImportError while importing test module '/app/beancount/parser/lexer_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/parser/options_test.py _______________
+ImportError while importing test module '/app/beancount/parser/options_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/parser/parser_test.py _______________
+ImportError while importing test module '/app/beancount/parser/parser_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/parser/printer_test.py _______________
+ImportError while importing test module '/app/beancount/parser/printer_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/parser/version_test.py _______________
+ImportError while importing test module '/app/beancount/parser/version_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+___________ ERROR collecting beancount/plugins/auto_accounts_test.py ___________
+ImportError while importing test module '/app/beancount/plugins/auto_accounts_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/plugins/auto_test.py ________________
+ImportError while importing test module '/app/beancount/plugins/auto_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+________ ERROR collecting beancount/plugins/check_average_cost_test.py _________
+ImportError while importing test module '/app/beancount/plugins/check_average_cost_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+___________ ERROR collecting beancount/plugins/check_closing_test.py ___________
+ImportError while importing test module '/app/beancount/plugins/check_closing_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+__________ ERROR collecting beancount/plugins/check_commodity_test.py __________
+ImportError while importing test module '/app/beancount/plugins/check_commodity_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+___________ ERROR collecting beancount/plugins/check_drained_test.py ___________
+ImportError while importing test module '/app/beancount/plugins/check_drained_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+____________ ERROR collecting beancount/plugins/close_tree_test.py _____________
+ImportError while importing test module '/app/beancount/plugins/close_tree_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+___________ ERROR collecting beancount/plugins/coherent_cost_test.py ___________
+ImportError while importing test module '/app/beancount/plugins/coherent_cost_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+__________ ERROR collecting beancount/plugins/commodity_attr_test.py ___________
+ImportError while importing test module '/app/beancount/plugins/commodity_attr_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_________ ERROR collecting beancount/plugins/currency_accounts_test.py _________
+ImportError while importing test module '/app/beancount/plugins/currency_accounts_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+__________ ERROR collecting beancount/plugins/implicit_prices_test.py __________
+ImportError while importing test module '/app/beancount/plugins/implicit_prices_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/plugins/leafonly_test.py ______________
+ImportError while importing test module '/app/beancount/plugins/leafonly_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+___________ ERROR collecting beancount/plugins/noduplicates_test.py ____________
+ImportError while importing test module '/app/beancount/plugins/noduplicates_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/plugins/nounused_test.py ______________
+ImportError while importing test module '/app/beancount/plugins/nounused_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+___________ ERROR collecting beancount/plugins/onecommodity_test.py ____________
+ImportError while importing test module '/app/beancount/plugins/onecommodity_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/plugins/pedantic_test.py ______________
+ImportError while importing test module '/app/beancount/plugins/pedantic_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/plugins/sellgains_test.py _____________
+ImportError while importing test module '/app/beancount/plugins/sellgains_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+___________ ERROR collecting beancount/plugins/unique_prices_test.py ___________
+ImportError while importing test module '/app/beancount/plugins/unique_prices_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/projects/export_test.py ______________
+ImportError while importing test module '/app/beancount/projects/export_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+__________ ERROR collecting beancount/scripts/check_examples_test.py ___________
+ImportError while importing test module '/app/beancount/scripts/check_examples_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/scripts/check_test.py _______________
+ImportError while importing test module '/app/beancount/scripts/check_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/scripts/deps_test.py ________________
+ImportError while importing test module '/app/beancount/scripts/deps_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+____________ ERROR collecting beancount/scripts/directories_test.py ____________
+ImportError while importing test module '/app/beancount/scripts/directories_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/scripts/doctor_test.py _______________
+ImportError while importing test module '/app/beancount/scripts/doctor_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/scripts/example_test.py ______________
+ImportError while importing test module '/app/beancount/scripts/example_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+______________ ERROR collecting beancount/scripts/format_test.py _______________
+ImportError while importing test module '/app/beancount/scripts/format_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/tools/treeify_test.py _______________
+ImportError while importing test module '/app/beancount/tools/treeify_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/utils/bisect_key_test.py ______________
+ImportError while importing test module '/app/beancount/utils/bisect_key_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_______________ ERROR collecting beancount/utils/defdict_test.py _______________
+ImportError while importing test module '/app/beancount/utils/defdict_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/utils/encryption_test.py ______________
+ImportError while importing test module '/app/beancount/utils/encryption_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/utils/file_utils_test.py ______________
+ImportError while importing test module '/app/beancount/utils/file_utils_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+____________ ERROR collecting beancount/utils/import_utils_test.py _____________
+ImportError while importing test module '/app/beancount/utils/import_utils_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/utils/invariants_test.py ______________
+ImportError while importing test module '/app/beancount/utils/invariants_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+________________ ERROR collecting beancount/utils/memo_test.py _________________
+ImportError while importing test module '/app/beancount/utils/memo_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/utils/misc_utils_test.py ______________
+ImportError while importing test module '/app/beancount/utils/misc_utils_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+________________ ERROR collecting beancount/utils/pager_test.py ________________
+ImportError while importing test module '/app/beancount/utils/pager_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+________________ ERROR collecting beancount/utils/table_test.py ________________
+ImportError while importing test module '/app/beancount/utils/table_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+________________ ERROR collecting beancount/utils/test_utils.py ________________
+ImportError while importing test module '/app/beancount/utils/test_utils.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+_____________ ERROR collecting beancount/utils/test_utils_test.py ______________
+ImportError while importing test module '/app/beancount/utils/test_utils_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+beancount/__init__.py:23: in <module>
+    from .api import *  # noqa: E402, F403
+    ^^^^^^^^^^^^^^^^^^
+beancount/api.py:19: in <module>
+    from .core import account
+beancount/core/account.py:22: in <module>
+    import regex
+E   ModuleNotFoundError: No module named 'regex'
+=========================== short test summary info ============================
+ERROR beancount/core/account_test.py
+ERROR beancount/core/account_types_test.py
+ERROR beancount/core/amount_test.py
+ERROR beancount/core/compare_test.py
+ERROR beancount/core/convert_test.py
+ERROR beancount/core/data_test.py
+ERROR beancount/core/display_context_test.py
+ERROR beancount/core/flags_test.py
+ERROR beancount/core/getters_test.py
+ERROR beancount/core/interpolate_test.py
+ERROR beancount/core/inventory_test.py
+ERROR beancount/core/position_test.py
+ERROR beancount/core/prices_test.py
+ERROR beancount/core/realization_test.py
+ERROR beancount/loader_test.py
+ERROR beancount/ops/balance_test.py
+ERROR beancount/ops/basicops_test.py
+ERROR beancount/ops/compress_test.py
+ERROR beancount/ops/documents_test.py
+ERROR beancount/ops/find_prices_test.py
+ERROR beancount/ops/lifetimes_test.py
+ERROR beancount/ops/pad_test.py
+ERROR beancount/ops/summarize_test.py
+ERROR beancount/ops/validation_test.py
+ERROR beancount/parser/booking_full_test.py
+ERROR beancount/parser/booking_method_test.py
+ERROR beancount/parser/booking_test.py
+ERROR beancount/parser/cmptest_test.py
+ERROR beancount/parser/context_test.py
+ERROR beancount/parser/grammar_test.py
+ERROR beancount/parser/hashsrc_test.py
+ERROR beancount/parser/lexer_test.py
+ERROR beancount/parser/options_test.py
+ERROR beancount/parser/parser_test.py
+ERROR beancount/parser/printer_test.py
+ERROR beancount/parser/version_test.py
+ERROR beancount/plugins/auto_accounts_test.py
+ERROR beancount/plugins/auto_test.py
+ERROR beancount/plugins/check_average_cost_test.py
+ERROR beancount/plugins/check_closing_test.py
+ERROR beancount/plugins/check_commodity_test.py
+ERROR beancount/plugins/check_drained_test.py
+ERROR beancount/plugins/close_tree_test.py
+ERROR beancount/plugins/coherent_cost_test.py
+ERROR beancount/plugins/commodity_attr_test.py
+ERROR beancount/plugins/currency_accounts_test.py
+ERROR beancount/plugins/implicit_prices_test.py
+ERROR beancount/plugins/leafonly_test.py
+ERROR beancount/plugins/noduplicates_test.py
+ERROR beancount/plugins/nounused_test.py
+ERROR beancount/plugins/onecommodity_test.py
+ERROR beancount/plugins/pedantic_test.py
+ERROR beancount/plugins/sellgains_test.py
+ERROR beancount/plugins/unique_prices_test.py
+ERROR beancount/projects/export_test.py
+ERROR beancount/scripts/check_examples_test.py
+ERROR beancount/scripts/check_test.py
+ERROR beancount/scripts/deps_test.py
+ERROR beancount/scripts/directories_test.py
+ERROR beancount/scripts/doctor_test.py
+ERROR beancount/scripts/example_test.py
+ERROR beancount/scripts/format_test.py
+ERROR beancount/tools/treeify_test.py
+ERROR beancount/utils/bisect_key_test.py
+ERROR beancount/utils/defdict_test.py
+ERROR beancount/utils/encryption_test.py
+ERROR beancount/utils/file_utils_test.py
+ERROR beancount/utils/import_utils_test.py
+ERROR beancount/utils/invariants_test.py
+ERROR beancount/utils/memo_test.py
+ERROR beancount/utils/misc_utils_test.py
+ERROR beancount/utils/pager_test.py
+ERROR beancount/utils/table_test.py
+ERROR beancount/utils/test_utils.py
+ERROR beancount/utils/test_utils_test.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 75 errors during collection !!!!!!!!!!!!!!!!!!!
+============================== 75 errors in 0.88s ==============================
+
+ERROR: No such build data file as '/app/build/meson-private/build.dat'.

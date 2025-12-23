@@ -1,0 +1,1091 @@
+﻿2025-12-21T02:34:30.7302117Z Current runner version: '2.330.0'
+2025-12-21T02:34:30.7325228Z ##[group]Runner Image Provisioner
+2025-12-21T02:34:30.7325938Z Hosted Compute Agent
+2025-12-21T02:34:30.7326527Z Version: 20251211.462
+2025-12-21T02:34:30.7327059Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2025-12-21T02:34:30.7327678Z Build Date: 2025-12-11T16:28:49Z
+2025-12-21T02:34:30.7328484Z Worker ID: {5b0bc69b-fd43-432d-a0b3-2071afdc65e3}
+2025-12-21T02:34:30.7329084Z ##[endgroup]
+2025-12-21T02:34:30.7329558Z ##[group]Operating System
+2025-12-21T02:34:30.7330084Z Ubuntu
+2025-12-21T02:34:30.7330509Z 24.04.3
+2025-12-21T02:34:30.7330893Z LTS
+2025-12-21T02:34:30.7331329Z ##[endgroup]
+2025-12-21T02:34:30.7331754Z ##[group]Runner Image
+2025-12-21T02:34:30.7332239Z Image: ubuntu-24.04
+2025-12-21T02:34:30.7332726Z Version: 20251215.174.1
+2025-12-21T02:34:30.7333598Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-21T02:34:30.7334992Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2025-12-21T02:34:30.7335824Z ##[endgroup]
+2025-12-21T02:34:30.7336752Z ##[group]GITHUB_TOKEN Permissions
+2025-12-21T02:34:30.7338959Z Contents: read
+2025-12-21T02:34:30.7339425Z Metadata: read
+2025-12-21T02:34:30.7339921Z ##[endgroup]
+2025-12-21T02:34:30.7341861Z Secret source: Actions
+2025-12-21T02:34:30.7342470Z Prepare workflow directory
+2025-12-21T02:34:30.7705321Z Prepare all required actions
+2025-12-21T02:34:30.7748223Z Getting action download info
+2025-12-21T02:34:31.1440512Z Download action repository 'actions/checkout@v6' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+2025-12-21T02:34:31.2382052Z Download action repository 'dtolnay/rust-toolchain@master' (SHA:f7ccc83f9ed1e5b9c81d8a67d7ad1a747e22a561)
+2025-12-21T02:34:31.7646272Z Complete job name: Rust stable
+2025-12-21T02:34:31.8233293Z ##[group]Run actions/checkout@v6
+2025-12-21T02:34:31.8234239Z with:
+2025-12-21T02:34:31.8234656Z   repository: dtolnay/proc-macro2
+2025-12-21T02:34:31.8235363Z   token: ***
+2025-12-21T02:34:31.8235850Z   ssh-strict: true
+2025-12-21T02:34:31.8236267Z   ssh-user: git
+2025-12-21T02:34:31.8236704Z   persist-credentials: true
+2025-12-21T02:34:31.8237173Z   clean: true
+2025-12-21T02:34:31.8237616Z   sparse-checkout-cone-mode: true
+2025-12-21T02:34:31.8238204Z   fetch-depth: 1
+2025-12-21T02:34:31.8238636Z   fetch-tags: false
+2025-12-21T02:34:31.8239056Z   show-progress: true
+2025-12-21T02:34:31.8239518Z   lfs: false
+2025-12-21T02:34:31.8239955Z   submodules: false
+2025-12-21T02:34:31.8240381Z   set-safe-directory: true
+2025-12-21T02:34:31.8241080Z env:
+2025-12-21T02:34:31.8241456Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:31.8241970Z ##[endgroup]
+2025-12-21T02:34:31.9120443Z Syncing repository: dtolnay/proc-macro2
+2025-12-21T02:34:31.9122449Z ##[group]Getting Git version info
+2025-12-21T02:34:31.9123357Z Working directory is '/home/runner/work/proc-macro2/proc-macro2'
+2025-12-21T02:34:31.9124337Z [command]/usr/bin/git version
+2025-12-21T02:34:31.9177127Z git version 2.52.0
+2025-12-21T02:34:31.9196449Z ##[endgroup]
+2025-12-21T02:34:31.9211478Z Temporarily overriding HOME='/home/runner/work/_temp/c49d6021-bf61-47eb-a5d6-bddb0af93351' before making global git config changes
+2025-12-21T02:34:31.9213809Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-21T02:34:31.9217897Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/proc-macro2/proc-macro2
+2025-12-21T02:34:31.9253567Z Deleting the contents of '/home/runner/work/proc-macro2/proc-macro2'
+2025-12-21T02:34:31.9257010Z ##[group]Initializing the repository
+2025-12-21T02:34:31.9261731Z [command]/usr/bin/git init /home/runner/work/proc-macro2/proc-macro2
+2025-12-21T02:34:31.9350652Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-21T02:34:31.9351714Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-21T02:34:31.9352886Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-21T02:34:31.9354597Z hint: call:
+2025-12-21T02:34:31.9355260Z hint:
+2025-12-21T02:34:31.9356084Z hint: 	git config --global init.defaultBranch <name>
+2025-12-21T02:34:31.9357073Z hint:
+2025-12-21T02:34:31.9358133Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-21T02:34:31.9359611Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-21T02:34:31.9360796Z hint:
+2025-12-21T02:34:31.9361637Z hint: 	git branch -m <name>
+2025-12-21T02:34:31.9362386Z hint:
+2025-12-21T02:34:31.9363307Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-21T02:34:31.9489639Z Initialized empty Git repository in /home/runner/work/proc-macro2/proc-macro2/.git/
+2025-12-21T02:34:31.9492227Z [command]/usr/bin/git remote add origin https://github.com/dtolnay/proc-macro2
+2025-12-21T02:34:31.9494612Z ##[endgroup]
+2025-12-21T02:34:31.9495254Z ##[group]Disabling automatic garbage collection
+2025-12-21T02:34:31.9495818Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-21T02:34:31.9497084Z ##[endgroup]
+2025-12-21T02:34:31.9497641Z ##[group]Setting up auth
+2025-12-21T02:34:31.9498392Z Removing SSH command configuration
+2025-12-21T02:34:31.9499021Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-21T02:34:31.9500729Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-21T02:34:31.9733395Z Removing HTTP extra header
+2025-12-21T02:34:31.9739613Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-21T02:34:31.9767922Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-21T02:34:31.9932245Z Removing includeIf entries pointing to credentials config files
+2025-12-21T02:34:31.9938190Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-21T02:34:31.9962690Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-21T02:34:32.0132200Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-21T02:34:32.0164281Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/proc-macro2/proc-macro2/.git.path /home/runner/work/_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:34:32.0187251Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/proc-macro2/proc-macro2/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:34:32.0211905Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:34:32.0235807Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:34:32.0255672Z ##[endgroup]
+2025-12-21T02:34:32.0256643Z ##[group]Fetching the repository
+2025-12-21T02:34:32.0265621Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +57fed011a3c73eefb6015422320aeb2a301ebb7d:refs/remotes/origin/master
+2025-12-21T02:34:32.4791631Z From https://github.com/dtolnay/proc-macro2
+2025-12-21T02:34:32.4793878Z  * [new ref]         57fed011a3c73eefb6015422320aeb2a301ebb7d -> origin/master
+2025-12-21T02:34:32.4816863Z ##[endgroup]
+2025-12-21T02:34:32.4820055Z ##[group]Determining the checkout info
+2025-12-21T02:34:32.4822290Z ##[endgroup]
+2025-12-21T02:34:32.4824197Z [command]/usr/bin/git sparse-checkout disable
+2025-12-21T02:34:32.4871488Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-21T02:34:32.4895244Z ##[group]Checking out the ref
+2025-12-21T02:34:32.4899294Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2025-12-21T02:34:32.4961764Z Reset branch 'master'
+2025-12-21T02:34:32.4963245Z branch 'master' set up to track 'origin/master'.
+2025-12-21T02:34:32.4967586Z ##[endgroup]
+2025-12-21T02:34:32.4994155Z [command]/usr/bin/git log -1 --format=%H
+2025-12-21T02:34:32.5012892Z 57fed011a3c73eefb6015422320aeb2a301ebb7d
+2025-12-21T02:34:32.5449953Z ##[group]Run dtolnay/rust-toolchain@master
+2025-12-21T02:34:32.5450998Z with:
+2025-12-21T02:34:32.5451666Z   toolchain: stable
+2025-12-21T02:34:32.5452412Z   components: rust-src
+2025-12-21T02:34:32.5453161Z env:
+2025-12-21T02:34:32.5453835Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:32.5454604Z ##[endgroup]
+2025-12-21T02:34:32.5589266Z ##[group]Run : parse toolchain version
+2025-12-21T02:34:32.5590488Z [36;1m: parse toolchain version[0m
+2025-12-21T02:34:32.5591460Z [36;1mif [[ -z $toolchain ]]; then[0m
+2025-12-21T02:34:32.5593113Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+2025-12-21T02:34:32.5594808Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+2025-12-21T02:34:32.5595801Z [36;1m  exit 1[0m
+2025-12-21T02:34:32.5596855Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2025-12-21T02:34:32.5598259Z [36;1m  if [[ Linux == macOS ]]; then[0m
+2025-12-21T02:34:32.5599906Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-12-21T02:34:32.5601470Z [36;1m  else[0m
+2025-12-21T02:34:32.5602714Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-12-21T02:34:32.5604143Z [36;1m  fi[0m
+2025-12-21T02:34:32.5605115Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2025-12-21T02:34:32.5606812Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2025-12-21T02:34:32.5608332Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2025-12-21T02:34:32.5609958Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2025-12-21T02:34:32.5611475Z [36;1melse[0m
+2025-12-21T02:34:32.5612290Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2025-12-21T02:34:32.5613280Z [36;1mfi[0m
+2025-12-21T02:34:32.5638200Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:32.5639324Z env:
+2025-12-21T02:34:32.5639954Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:32.5640689Z   toolchain: stable
+2025-12-21T02:34:32.5641384Z ##[endgroup]
+2025-12-21T02:34:32.5788924Z ##[group]Run : construct rustup command line
+2025-12-21T02:34:32.5790011Z [36;1m: construct rustup command line[0m
+2025-12-21T02:34:32.5791409Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2025-12-21T02:34:32.5793339Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2025-12-21T02:34:32.5794889Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2025-12-21T02:34:32.5814975Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:32.5816081Z env:
+2025-12-21T02:34:32.5816713Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:32.5817459Z   targets: 
+2025-12-21T02:34:32.5818267Z   components: rust-src
+2025-12-21T02:34:32.5818987Z ##[endgroup]
+2025-12-21T02:34:32.5908709Z ##[group]Run : set $CARGO_HOME
+2025-12-21T02:34:32.5909580Z [36;1m: set $CARGO_HOME[0m
+2025-12-21T02:34:32.5910629Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV[0m
+2025-12-21T02:34:32.5929961Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:32.5931157Z env:
+2025-12-21T02:34:32.5931763Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:32.5932476Z ##[endgroup]
+2025-12-21T02:34:32.6021919Z ##[group]Run : install rustup if needed
+2025-12-21T02:34:32.6022880Z [36;1m: install rustup if needed[0m
+2025-12-21T02:34:32.6023821Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2025-12-21T02:34:32.6026008Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y[0m
+2025-12-21T02:34:32.6028488Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+2025-12-21T02:34:32.6029446Z [36;1mfi[0m
+2025-12-21T02:34:32.6046987Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:32.6048291Z env:
+2025-12-21T02:34:32.6048915Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:32.6049669Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:32.6050471Z ##[endgroup]
+2025-12-21T02:34:32.6140329Z ##[group]Run rustup toolchain install stable --component rust-src --profile minimal --no-self-update
+2025-12-21T02:34:32.6142443Z [36;1mrustup toolchain install stable --component rust-src --profile minimal --no-self-update[0m
+2025-12-21T02:34:32.6160687Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:32.6161729Z env:
+2025-12-21T02:34:32.6162344Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:32.6163185Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:32.6164017Z   RUSTUP_PERMIT_COPY_RENAME: 1
+2025-12-21T02:34:32.6164776Z ##[endgroup]
+2025-12-21T02:34:33.9422104Z info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+2025-12-21T02:34:34.1904569Z info: latest update on 2025-12-11, rust version 1.92.0 (ded5c06cf 2025-12-08)
+2025-12-21T02:34:34.2290454Z info: downloading component 'rust-src'
+2025-12-21T02:34:34.3975847Z info: installing component 'rust-src'
+2025-12-21T02:34:34.8450108Z 
+2025-12-21T02:34:34.8533377Z   stable-x86_64-unknown-linux-gnu updated - rustc 1.92.0 (ded5c06cf 2025-12-08) (from rustc 1.92.0 (ded5c06cf 2025-12-08))
+2025-12-21T02:34:34.8534299Z 
+2025-12-21T02:34:34.8581229Z ##[group]Run rustup default stable
+2025-12-21T02:34:34.8581563Z [36;1mrustup default stable[0m
+2025-12-21T02:34:34.8603425Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:34.8603763Z env:
+2025-12-21T02:34:34.8604105Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:34.8604354Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:34.8604617Z ##[endgroup]
+2025-12-21T02:34:34.8691049Z info: using existing install for 'stable-x86_64-unknown-linux-gnu'
+2025-12-21T02:34:34.9021437Z info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+2025-12-21T02:34:34.9021885Z 
+2025-12-21T02:34:34.9101553Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.92.0 (ded5c06cf 2025-12-08)
+2025-12-21T02:34:34.9102177Z 
+2025-12-21T02:34:34.9103127Z info: note that the toolchain 'stable-x86_64-unknown-linux-gnu' is currently in use (overridden by '/home/runner/work/proc-macro2/proc-macro2/rust-toolchain.toml')
+2025-12-21T02:34:34.9138539Z ##[group]Run : create cachekey
+2025-12-21T02:34:34.9138864Z [36;1m: create cachekey[0m
+2025-12-21T02:34:34.9139342Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2025-12-21T02:34:34.9139911Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2025-12-21T02:34:34.9140396Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2025-12-21T02:34:34.9162246Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:34.9162606Z env:
+2025-12-21T02:34:34.9162840Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:34.9163086Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:34.9163371Z ##[endgroup]
+2025-12-21T02:34:35.0708526Z ##[group]Run : disable incremental compilation
+2025-12-21T02:34:35.0708916Z [36;1m: disable incremental compilation[0m
+2025-12-21T02:34:35.0709243Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2025-12-21T02:34:35.0709733Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2025-12-21T02:34:35.0710050Z [36;1mfi[0m
+2025-12-21T02:34:35.0731315Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:35.0731660Z env:
+2025-12-21T02:34:35.0731873Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:35.0732132Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:35.0732390Z ##[endgroup]
+2025-12-21T02:34:35.0790308Z ##[group]Run : enable colors in Cargo output
+2025-12-21T02:34:35.0790649Z [36;1m: enable colors in Cargo output[0m
+2025-12-21T02:34:35.0791099Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2025-12-21T02:34:35.0791480Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2025-12-21T02:34:35.0791765Z [36;1mfi[0m
+2025-12-21T02:34:35.0811391Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:35.0811741Z env:
+2025-12-21T02:34:35.0811966Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:35.0812210Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:35.0812489Z   CARGO_INCREMENTAL: 0
+2025-12-21T02:34:35.0812714Z ##[endgroup]
+2025-12-21T02:34:35.0872384Z ##[group]Run : enable Cargo sparse registry
+2025-12-21T02:34:35.0872723Z [36;1m: enable Cargo sparse registry[0m
+2025-12-21T02:34:35.0873074Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2025-12-21T02:34:35.0873705Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2025-12-21T02:34:35.0874332Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2025-12-21T02:34:35.0874867Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-12-21T02:34:35.0875361Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2025-12-21T02:34:35.0875810Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2025-12-21T02:34:35.0876321Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-12-21T02:34:35.0876810Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2025-12-21T02:34:35.0877139Z [36;1m  fi[0m
+2025-12-21T02:34:35.0877352Z [36;1mfi[0m
+2025-12-21T02:34:35.0896943Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:35.0897280Z env:
+2025-12-21T02:34:35.0897501Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:35.0897866Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:35.0898239Z   CARGO_INCREMENTAL: 0
+2025-12-21T02:34:35.0898472Z   CARGO_TERM_COLOR: always
+2025-12-21T02:34:35.0898729Z ##[endgroup]
+2025-12-21T02:34:35.1221404Z ##[group]Run : work around spurious network errors in curl 8.0
+2025-12-21T02:34:35.1221859Z [36;1m: work around spurious network errors in curl 8.0[0m
+2025-12-21T02:34:35.1222551Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2025-12-21T02:34:35.1223117Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2025-12-21T02:34:35.1223568Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2025-12-21T02:34:35.1223872Z [36;1mfi[0m
+2025-12-21T02:34:35.1245909Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:35.1246259Z env:
+2025-12-21T02:34:35.1246471Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:35.1246729Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:35.1246991Z   CARGO_INCREMENTAL: 0
+2025-12-21T02:34:35.1247223Z   CARGO_TERM_COLOR: always
+2025-12-21T02:34:35.1247455Z ##[endgroup]
+2025-12-21T02:34:35.1437271Z ##[group]Run rustc +stable --version --verbose
+2025-12-21T02:34:35.1437626Z [36;1mrustc +stable --version --verbose[0m
+2025-12-21T02:34:35.1459591Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-12-21T02:34:35.1459936Z env:
+2025-12-21T02:34:35.1460151Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:35.1460412Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:35.1460684Z   CARGO_INCREMENTAL: 0
+2025-12-21T02:34:35.1461047Z   CARGO_TERM_COLOR: always
+2025-12-21T02:34:35.1461282Z ##[endgroup]
+2025-12-21T02:34:35.1613189Z rustc 1.92.0 (ded5c06cf 2025-12-08)
+2025-12-21T02:34:35.1613780Z binary: rustc
+2025-12-21T02:34:35.1614214Z commit-hash: ded5c06cf21d2b93bffd5d884aa6e96934ee4234
+2025-12-21T02:34:35.1614803Z commit-date: 2025-12-08
+2025-12-21T02:34:35.1615194Z host: x86_64-unknown-linux-gnu
+2025-12-21T02:34:35.1615657Z release: 1.92.0
+2025-12-21T02:34:35.1616001Z LLVM version: 21.1.3
+2025-12-21T02:34:35.1684854Z ##[group]Run cargo test
+2025-12-21T02:34:35.1685125Z [36;1mcargo test[0m
+2025-12-21T02:34:35.1707009Z shell: /usr/bin/bash -e {0}
+2025-12-21T02:34:35.1707288Z env:
+2025-12-21T02:34:35.1707497Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:35.1707935Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:35.1708221Z   CARGO_INCREMENTAL: 0
+2025-12-21T02:34:35.1708472Z   CARGO_TERM_COLOR: always
+2025-12-21T02:34:35.1708711Z ##[endgroup]
+2025-12-21T02:34:38.8019895Z [1m[92m    Updating[0m crates.io index
+2025-12-21T02:34:39.5056989Z [1m[92m     Locking[0m 60 packages to latest compatible versions
+2025-12-21T02:34:39.5178667Z [1m[92m Downloading[0m crates ...
+2025-12-21T02:34:39.6653274Z [1m[92m  Downloaded[0m crossbeam-utils v0.8.21
+2025-12-21T02:34:39.7292426Z [1m[92m  Downloaded[0m xattr v1.6.1
+2025-12-21T02:34:39.7304733Z [1m[92m  Downloaded[0m errno v0.3.14
+2025-12-21T02:34:39.7314006Z [1m[92m  Downloaded[0m filetime v0.2.26
+2025-12-21T02:34:39.7324025Z [1m[92m  Downloaded[0m bitflags v2.10.0
+2025-12-21T02:34:39.7350353Z [1m[92m  Downloaded[0m either v1.15.0
+2025-12-21T02:34:39.7358812Z [1m[92m  Downloaded[0m crossbeam-epoch v0.9.18
+2025-12-21T02:34:39.7373268Z [1m[92m  Downloaded[0m crossbeam-deque v0.8.6
+2025-12-21T02:34:39.7382544Z [1m[92m  Downloaded[0m cfg-if v1.0.4
+2025-12-21T02:34:39.7390932Z [1m[92m  Downloaded[0m adler2 v2.0.1
+2025-12-21T02:34:39.7399551Z [1m[92m  Downloaded[0m crc32fast v1.5.0
+2025-12-21T02:34:39.7462942Z [1m[92m  Downloaded[0m rustversion v1.0.22
+2025-12-21T02:34:39.7480654Z [1m[92m  Downloaded[0m simd-adler32 v0.3.8
+2025-12-21T02:34:39.7539300Z [1m[92m  Downloaded[0m unicode-ident v1.0.22
+2025-12-21T02:34:39.7558475Z [1m[92m  Downloaded[0m tar v0.4.44
+2025-12-21T02:34:39.7576233Z [1m[92m  Downloaded[0m quote v1.0.42
+2025-12-21T02:34:39.7594062Z [1m[92m  Downloaded[0m rayon-core v1.13.0
+2025-12-21T02:34:39.7618133Z [1m[92m  Downloaded[0m miniz_oxide v0.8.9
+2025-12-21T02:34:39.7634125Z [1m[92m  Downloaded[0m flate2 v1.1.5
+2025-12-21T02:34:39.7700271Z [1m[92m  Downloaded[0m rayon v1.11.0
+2025-12-21T02:34:39.7811806Z [1m[92m  Downloaded[0m rustix v1.1.2
+2025-12-21T02:34:39.7962647Z [1m[92m  Downloaded[0m libc v0.2.178
+2025-12-21T02:34:39.8201132Z [1m[92m  Downloaded[0m linux-raw-sys v0.11.0
+2025-12-21T02:34:40.3885949Z [1m[92m   Compiling[0m crossbeam-utils v0.8.21
+2025-12-21T02:34:40.3886404Z [1m[92m   Compiling[0m cfg-if v1.0.4
+2025-12-21T02:34:40.3886702Z [1m[92m   Compiling[0m rustix v1.1.2
+2025-12-21T02:34:40.3894497Z [1m[92m   Compiling[0m libc v0.2.178
+2025-12-21T02:34:43.4148434Z [1m[92m   Compiling[0m proc-macro2 v1.0.103 (/home/runner/work/proc-macro2/proc-macro2)
+2025-12-21T02:34:50.1231914Z [1m[92m   Compiling[0m rayon-core v1.13.0
+2025-12-21T02:34:50.1378436Z [1m[92m   Compiling[0m crc32fast v1.5.0
+2025-12-21T02:34:50.1829984Z [1m[92m   Compiling[0m linux-raw-sys v0.11.0
+2025-12-21T02:34:50.2326806Z [1m[92m   Compiling[0m bitflags v2.10.0
+2025-12-21T02:34:51.5466864Z [1m[92m   Compiling[0m crossbeam-epoch v0.9.18
+2025-12-21T02:34:51.5911875Z [1m[92m   Compiling[0m adler2 v2.0.1
+2025-12-21T02:34:51.6400875Z [1m[92m   Compiling[0m quote v1.0.42
+2025-12-21T02:34:51.7279038Z [1m[92m   Compiling[0m simd-adler32 v0.3.8
+2025-12-21T02:34:51.9362666Z [1m[92m   Compiling[0m crossbeam-deque v0.8.6
+2025-12-21T02:34:52.0015780Z [1m[92m   Compiling[0m rustversion v1.0.22
+2025-12-21T02:34:52.0436751Z [1m[92m   Compiling[0m unicode-ident v1.0.22
+2025-12-21T02:34:52.1894905Z [1m[92m   Compiling[0m filetime v0.2.26
+2025-12-21T02:34:52.3186385Z [1m[92m   Compiling[0m miniz_oxide v0.8.9
+2025-12-21T02:34:52.9445626Z [1m[92m   Compiling[0m xattr v1.6.1
+2025-12-21T02:34:53.0907036Z [1m[92m   Compiling[0m either v1.15.0
+2025-12-21T02:34:53.2238114Z [1m[92m   Compiling[0m rayon v1.11.0
+2025-12-21T02:34:53.2332689Z [1m[92m   Compiling[0m flate2 v1.1.5
+2025-12-21T02:34:53.2436597Z [1m[92m   Compiling[0m tar v0.4.44
+2025-12-21T02:34:56.4669035Z [1m[92m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 20.10s
+2025-12-21T02:34:56.4806375Z [1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/proc_macro2-9b35a7bfc90bb8e6)
+2025-12-21T02:34:56.4819610Z 
+2025-12-21T02:34:56.4819994Z running 0 tests
+2025-12-21T02:34:56.4820206Z 
+2025-12-21T02:34:56.4820548Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:56.4820840Z 
+2025-12-21T02:34:56.4821544Z [1m[92m     Running[0m tests/comments.rs (target/debug/deps/comments-0ad5ab5bd42ce7f6)
+2025-12-21T02:34:56.4829818Z 
+2025-12-21T02:34:56.4830281Z running 4 tests
+2025-12-21T02:34:56.4832458Z test carriage_return ... ok
+2025-12-21T02:34:56.4832856Z test closed_immediately ... ok
+2025-12-21T02:34:56.4833457Z test incomplete ... ok
+2025-12-21T02:34:56.4833955Z test lit ... ok
+2025-12-21T02:34:56.4834132Z 
+2025-12-21T02:34:56.4834408Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:56.4834686Z 
+2025-12-21T02:34:56.4837027Z [1m[92m     Running[0m tests/features.rs (target/debug/deps/features-9b22bf23ce327981)
+2025-12-21T02:34:56.4844440Z 
+2025-12-21T02:34:56.4845945Z running 1 test
+2025-12-21T02:34:56.4846749Z test make_sure_no_proc_macro ... ignored
+2025-12-21T02:34:56.4847122Z 
+2025-12-21T02:34:56.4847519Z test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:56.4848227Z 
+2025-12-21T02:34:56.4848810Z [1m[92m     Running[0m tests/marker.rs (target/debug/deps/marker-74abe05a4b6aa088)
+2025-12-21T02:34:56.4854896Z 
+2025-12-21T02:34:56.4855168Z running 20 tests
+2025-12-21T02:34:56.4857509Z test Delimiter ... ok
+2025-12-21T02:34:56.4857969Z test LexError ... ok
+2025-12-21T02:34:56.4858365Z test Group ... ok
+2025-12-21T02:34:56.4858877Z test Ident ... ok
+2025-12-21T02:34:56.4859387Z test Spacing ... ok
+2025-12-21T02:34:56.4859776Z test Literal ... ok
+2025-12-21T02:34:56.4860404Z test Span ... ok
+2025-12-21T02:34:56.4942079Z [1m[92m     Running[0m tests/test.rs (target/debug/deps/test-271d80997ba6b678)
+2025-12-21T02:34:56.4942577Z test Punct ... ok
+2025-12-21T02:34:56.4942858Z test TokenTree ... ok
+2025-12-21T02:34:56.4943145Z test TokenStream ... ok
+2025-12-21T02:34:56.4943854Z [1m[92m     Running[0m tests/test_fmt.rs (target/debug/deps/test_fmt-d568b865361e148c)
+2025-12-21T02:34:56.4944828Z [1m[92m     Running[0m tests/test_size.rs (target/debug/deps/test_size-cedd6b12ad531271)
+2025-12-21T02:34:56.4945559Z [1m[92m   Doc-tests[0m proc_macro2
+2025-12-21T02:34:56.4949753Z test unwind_safe::Delimiter ... ok
+2025-12-21T02:34:56.4950113Z test unwind_safe::LexError ... ok
+2025-12-21T02:34:56.4950446Z test unwind_safe::Group ... ok
+2025-12-21T02:34:56.4950668Z test unwind_safe::Ident ... ok
+2025-12-21T02:34:56.4950876Z test unwind_safe::Literal ... ok
+2025-12-21T02:34:56.4951096Z test unwind_safe::Punct ... ok
+2025-12-21T02:34:56.4951300Z test unwind_safe::Spacing ... ok
+2025-12-21T02:34:56.4951609Z test unwind_safe::Span ... ok
+2025-12-21T02:34:56.4951925Z test unwind_safe::TokenStream ... ok
+2025-12-21T02:34:56.4952170Z test unwind_safe::TokenTree ... ok
+2025-12-21T02:34:56.4952317Z 
+2025-12-21T02:34:56.4952532Z test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:56.4952810Z 
+2025-12-21T02:34:56.4952814Z 
+2025-12-21T02:34:56.4952882Z running 41 tests
+2025-12-21T02:34:56.4953071Z test byte_order_mark ... ok
+2025-12-21T02:34:56.4953348Z test default_tokenstream_is_empty ... ok
+2025-12-21T02:34:56.4953861Z test fail ... ok
+2025-12-21T02:34:56.4954069Z test ident_invalid - should panic ... ok
+2025-12-21T02:34:56.4954355Z test ident_empty - should panic ... ok
+2025-12-21T02:34:56.4954614Z test ident_number - should panic ... ok
+2025-12-21T02:34:56.4954882Z test ident_raw_underscore - should panic ... ok
+2025-12-21T02:34:56.4955127Z test idents ... ok
+2025-12-21T02:34:56.4955334Z test ident_raw_reserved - should panic ... ok
+2025-12-21T02:34:56.4955686Z test joint_last_token ... ok
+2025-12-21T02:34:56.4955909Z test lifetime_empty - should panic ... ok
+2025-12-21T02:34:56.4956168Z test lifetime_invalid - should panic ... ok
+2025-12-21T02:34:56.4956419Z test lifetime_number - should panic ... ok
+2025-12-21T02:34:56.4956655Z test lifetimes ... ok
+2025-12-21T02:34:56.4956849Z test literal_byte_character ... ok
+2025-12-21T02:34:56.4957082Z test literal_byte_string ... ok
+2025-12-21T02:34:56.4957299Z test literal_character ... ok
+2025-12-21T02:34:56.4957504Z test literal_c_string ... ok
+2025-12-21T02:34:56.4957719Z test literal_float ... ok
+2025-12-21T02:34:56.4958274Z test literal_iter_negative ... ok
+2025-12-21T02:34:56.4958503Z test literal_parse ... ok
+2025-12-21T02:34:56.4958697Z test literal_integer ... ok
+2025-12-21T02:34:56.4958907Z test literal_raw_string ... ok
+2025-12-21T02:34:56.4959112Z test literal_span ... ok
+2025-12-21T02:34:56.4959317Z test literal_string ... ok
+2025-12-21T02:34:56.4959506Z test no_panic ... ok
+2025-12-21T02:34:56.4959702Z test literal_suffix ... ok
+2025-12-21T02:34:56.4959914Z test punct_before_comment ... ok
+2025-12-21T02:34:56.4960147Z test raw_ident_empty - should panic ... ok
+2025-12-21T02:34:56.4960413Z test raw_ident_invalid - should panic ... ok
+2025-12-21T02:34:56.4960648Z test raw_identifier ... ok
+2025-12-21T02:34:56.4960843Z test raw_idents ... ok
+2025-12-21T02:34:56.4961041Z test raw_ident_number - should panic ... ok
+2025-12-21T02:34:56.4961401Z test test_debug_ident ... ok
+2025-12-21T02:34:56.4961614Z test test_debug_tokenstream ... ok
+2025-12-21T02:34:56.4961849Z test test_display_ident ... ok
+2025-12-21T02:34:56.4962047Z test roundtrip ... ok
+2025-12-21T02:34:56.4962252Z test test_display_tokenstream ... ok
+2025-12-21T02:34:56.4962488Z test tokenstream_size_hint ... ok
+2025-12-21T02:34:56.4962700Z test tuple_indexing ... ok
+2025-12-21T02:34:56.4962900Z test whitespace ... ok
+2025-12-21T02:34:56.4963014Z 
+2025-12-21T02:34:56.4963216Z test result: ok. 41 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:56.4963495Z 
+2025-12-21T02:34:56.4963499Z 
+2025-12-21T02:34:56.4963567Z running 1 test
+2025-12-21T02:34:56.4963740Z test test_fmt_group ... ok
+2025-12-21T02:34:56.4963873Z 
+2025-12-21T02:34:56.4964067Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:56.4964336Z 
+2025-12-21T02:34:56.4964340Z 
+2025-12-21T02:34:56.4964419Z running 5 tests
+2025-12-21T02:34:56.4964695Z test test_proc_macro2_fallback_size_with_locations ... ignored, wrapper mode
+2025-12-21T02:34:56.4965131Z test test_proc_macro2_fallback_size_without_locations ... ignored, wrapper mode
+2025-12-21T02:34:56.4965579Z test test_proc_macro2_wrapper_size_with_locations ... ignored, span locations are off
+2025-12-21T02:34:56.4965986Z test test_proc_macro2_wrapper_size_without_locations ... ok
+2025-12-21T02:34:56.4966274Z test test_proc_macro_size ... ok
+2025-12-21T02:34:56.4966413Z 
+2025-12-21T02:34:56.4966608Z test result: ok. 2 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:56.4966879Z 
+2025-12-21T02:34:58.2195091Z 
+2025-12-21T02:34:58.2195445Z running 4 tests
+2025-12-21T02:34:58.3645833Z test src/lib.rs - (line 34) ... ok
+2025-12-21T02:34:58.3697499Z test src/lib.rs - Ident (line 925) ... ok
+2025-12-21T02:34:58.3701787Z test src/lib.rs - Ident (line 894) ... ok
+2025-12-21T02:34:58.3760033Z test src/lib.rs - Ident (line 906) ... ok
+2025-12-21T02:34:58.3760795Z 
+2025-12-21T02:34:58.3761082Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+2025-12-21T02:34:58.3761813Z 
+2025-12-21T02:34:58.3834924Z ##[group]Run cargo test --no-default-features
+2025-12-21T02:34:58.3835264Z [36;1mcargo test --no-default-features[0m
+2025-12-21T02:34:58.3853763Z shell: /usr/bin/bash -e {0}
+2025-12-21T02:34:58.3853993Z env:
+2025-12-21T02:34:58.3854159Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:58.3854369Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:58.3854587Z   CARGO_INCREMENTAL: 0
+2025-12-21T02:34:58.3854781Z   CARGO_TERM_COLOR: always
+2025-12-21T02:34:58.3854977Z ##[endgroup]
+2025-12-21T02:34:58.4545369Z [1m[92m   Compiling[0m proc-macro2 v1.0.103 (/home/runner/work/proc-macro2/proc-macro2)
+2025-12-21T02:34:58.7362655Z [1m[92m   Compiling[0m quote v1.0.42
+2025-12-21T02:34:59.2692924Z [1m[92m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 0.84s
+2025-12-21T02:34:59.2708503Z [1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/proc_macro2-43b8d5a6029b38de)
+2025-12-21T02:34:59.2716916Z 
+2025-12-21T02:34:59.2717047Z running 0 tests
+2025-12-21T02:34:59.2717560Z 
+2025-12-21T02:34:59.2719251Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:59.2720023Z 
+2025-12-21T02:34:59.2720539Z [1m[92m     Running[0m tests/comments.rs (target/debug/deps/comments-485c445f359e9074)
+2025-12-21T02:34:59.2727859Z 
+2025-12-21T02:34:59.2728000Z running 4 tests
+2025-12-21T02:34:59.2730432Z test closed_immediately ... ok
+2025-12-21T02:34:59.2730857Z test carriage_return ... ok
+2025-12-21T02:34:59.2731490Z test incomplete ... ok
+2025-12-21T02:34:59.2731793Z test lit ... ok
+2025-12-21T02:34:59.2731969Z 
+2025-12-21T02:34:59.2732536Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:59.2733079Z 
+2025-12-21T02:34:59.2734508Z [1m[92m     Running[0m tests/features.rs (target/debug/deps/features-0a509691bc4a1d51)
+2025-12-21T02:34:59.2742057Z 
+2025-12-21T02:34:59.2742404Z running 1 test
+2025-12-21T02:34:59.2742685Z test make_sure_no_proc_macro ... ignored
+2025-12-21T02:34:59.2742866Z 
+2025-12-21T02:34:59.2743090Z test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:59.2743607Z 
+2025-12-21T02:34:59.2744315Z [1m[92m     Running[0m tests/marker.rs (target/debug/deps/marker-e02089947a8442ea)
+2025-12-21T02:34:59.2751260Z 
+2025-12-21T02:34:59.2751372Z running 20 tests
+2025-12-21T02:34:59.2754788Z test Delimiter ... ok
+2025-12-21T02:34:59.2755136Z test Group ... ok
+2025-12-21T02:34:59.2755640Z test Ident ... ok
+2025-12-21T02:34:59.2756021Z test LexError ... ok
+2025-12-21T02:34:59.2756337Z test Literal ... ok
+2025-12-21T02:34:59.2756613Z test Punct ... ok
+2025-12-21T02:34:59.2756890Z test Spacing ... ok
+2025-12-21T02:34:59.2757170Z test Span ... ok
+2025-12-21T02:34:59.2757451Z test TokenStream ... ok
+2025-12-21T02:34:59.2758182Z test TokenTree ... ok
+2025-12-21T02:34:59.2758594Z test unwind_safe::Group ... ok
+2025-12-21T02:34:59.2759011Z test unwind_safe::Delimiter ... ok
+2025-12-21T02:34:59.2759269Z test unwind_safe::Ident ... ok
+2025-12-21T02:34:59.2759487Z test unwind_safe::LexError ... ok
+2025-12-21T02:34:59.2759790Z test unwind_safe::Literal ... ok
+2025-12-21T02:34:59.2760133Z test unwind_safe::Punct ... ok
+2025-12-21T02:34:59.2760503Z test unwind_safe::Spacing ... ok
+2025-12-21T02:34:59.2760896Z test unwind_safe::Span ... ok
+2025-12-21T02:34:59.2761240Z test unwind_safe::TokenStream ... ok
+2025-12-21T02:34:59.2761530Z test unwind_safe::TokenTree ... ok
+2025-12-21T02:34:59.2761679Z 
+2025-12-21T02:34:59.2761892Z test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:59.2762169Z 
+2025-12-21T02:34:59.2762577Z [1m[92m     Running[0m tests/test.rs (target/debug/deps/test-b688cf4742d68daa)
+2025-12-21T02:34:59.2770410Z 
+2025-12-21T02:34:59.2770537Z running 41 tests
+2025-12-21T02:34:59.2774118Z test fail ... ok
+2025-12-21T02:34:59.2774415Z test byte_order_mark ... ok
+2025-12-21T02:34:59.2775033Z test ident_empty - should panic ... ok
+2025-12-21T02:34:59.2775622Z test default_tokenstream_is_empty ... ok
+2025-12-21T02:34:59.2776733Z test ident_invalid - should panic ... ok
+2025-12-21T02:34:59.2777975Z test ident_number - should panic ... ok
+2025-12-21T02:34:59.2778411Z test ident_raw_reserved - should panic ... ok
+2025-12-21T02:34:59.2778837Z test joint_last_token ... ok
+2025-12-21T02:34:59.2779543Z test idents ... ok
+2025-12-21T02:34:59.2779975Z test lifetime_empty - should panic ... ok
+2025-12-21T02:34:59.2780654Z test lifetime_invalid - should panic ... ok
+2025-12-21T02:34:59.2781267Z test lifetime_number - should panic ... ok
+2025-12-21T02:34:59.2781988Z test lifetimes ... ok
+2025-12-21T02:34:59.2782372Z test literal_byte_character ... ok
+2025-12-21T02:34:59.2782765Z test literal_byte_string ... ok
+2025-12-21T02:34:59.2783132Z test literal_c_string ... ok
+2025-12-21T02:34:59.2784098Z test ident_raw_underscore - should panic ... ok
+2025-12-21T02:34:59.2784564Z test literal_character ... ok
+2025-12-21T02:34:59.2784937Z test literal_float ... ok
+2025-12-21T02:34:59.2785284Z test literal_integer ... ok
+2025-12-21T02:34:59.2785683Z test literal_iter_negative ... ok
+2025-12-21T02:34:59.2786376Z test literal_parse ... ok
+2025-12-21T02:34:59.2786709Z test literal_span ... ok
+2025-12-21T02:34:59.2787064Z test literal_raw_string ... ok
+2025-12-21T02:34:59.2787473Z test literal_string ... ok
+2025-12-21T02:34:59.2788049Z test no_panic ... ok
+2025-12-21T02:34:59.2788387Z test literal_suffix ... ok
+2025-12-21T02:34:59.2789102Z test raw_ident_empty - should panic ... ok
+2025-12-21T02:34:59.2789579Z test punct_before_comment ... ok
+2025-12-21T02:34:59.2790023Z test raw_ident_invalid - should panic ... ok
+2025-12-21T02:34:59.2790473Z test raw_ident_number - should panic ... ok
+2025-12-21T02:34:59.2790873Z test raw_idents ... ok
+2025-12-21T02:34:59.2791931Z test raw_identifier ... ok
+2025-12-21T02:34:59.2792433Z test test_debug_ident ... ok
+2025-12-21T02:34:59.2792798Z test test_debug_tokenstream ... ok
+2025-12-21T02:34:59.2793196Z test test_display_ident ... ok
+2025-12-21T02:34:59.2793551Z test roundtrip ... ok
+2025-12-21T02:34:59.2793871Z test tokenstream_size_hint ... ok
+2025-12-21T02:34:59.2794219Z test whitespace ... ok
+2025-12-21T02:34:59.2794423Z test test_display_tokenstream ... ok
+2025-12-21T02:34:59.2794652Z test tuple_indexing ... ok
+2025-12-21T02:34:59.2794785Z 
+2025-12-21T02:34:59.2795138Z test result: ok. 41 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:59.2795518Z 
+2025-12-21T02:34:59.2795849Z [1m[92m     Running[0m tests/test_fmt.rs (target/debug/deps/test_fmt-7b97d0ff84249910)
+2025-12-21T02:34:59.2802853Z 
+2025-12-21T02:34:59.2802976Z running 1 test
+2025-12-21T02:34:59.2804385Z test test_fmt_group ... ok
+2025-12-21T02:34:59.2804607Z 
+2025-12-21T02:34:59.2804963Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:59.2805300Z 
+2025-12-21T02:34:59.2805868Z [1m[92m     Running[0m tests/test_size.rs (target/debug/deps/test_size-8ff27ce2ad36da73)
+2025-12-21T02:34:59.2812791Z 
+2025-12-21T02:34:59.2812916Z running 5 tests
+2025-12-21T02:34:59.2813865Z test test_proc_macro2_fallback_size_with_locations ... ignored, span locations are off
+2025-12-21T02:34:59.2814745Z test test_proc_macro2_wrapper_size_with_locations ... ignored, fallback mode
+2025-12-21T02:34:59.2815565Z test test_proc_macro2_wrapper_size_without_locations ... ignored, fallback mode
+2025-12-21T02:34:59.2816301Z [1m[92m   Doc-tests[0m proc_macro2
+2025-12-21T02:34:59.2816830Z test test_proc_macro2_fallback_size_without_locations ... ok
+2025-12-21T02:34:59.2817365Z test test_proc_macro_size ... ok
+2025-12-21T02:34:59.2817639Z 
+2025-12-21T02:34:59.2818143Z test result: ok. 2 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:34:59.2818517Z 
+2025-12-21T02:34:59.3183852Z 
+2025-12-21T02:34:59.3184660Z running 4 tests
+2025-12-21T02:34:59.4019024Z test src/lib.rs - (line 34) ... ok
+2025-12-21T02:34:59.4024128Z test src/lib.rs - Ident (line 894) ... ok
+2025-12-21T02:34:59.4056992Z test src/lib.rs - Ident (line 925) ... ok
+2025-12-21T02:34:59.4108252Z test src/lib.rs - Ident (line 906) ... ok
+2025-12-21T02:34:59.4108631Z 
+2025-12-21T02:34:59.4109003Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+2025-12-21T02:34:59.4109513Z 
+2025-12-21T02:34:59.4165333Z ##[group]Run cargo test --features span-locations
+2025-12-21T02:34:59.4165660Z [36;1mcargo test --features span-locations[0m
+2025-12-21T02:34:59.4184307Z shell: /usr/bin/bash -e {0}
+2025-12-21T02:34:59.4184536Z env:
+2025-12-21T02:34:59.4184711Z   RUSTFLAGS: -Dwarnings
+2025-12-21T02:34:59.4184930Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:34:59.4185150Z   CARGO_INCREMENTAL: 0
+2025-12-21T02:34:59.4185350Z   CARGO_TERM_COLOR: always
+2025-12-21T02:34:59.4185543Z ##[endgroup]
+2025-12-21T02:34:59.4883086Z [1m[92m   Compiling[0m proc-macro2 v1.0.103 (/home/runner/work/proc-macro2/proc-macro2)
+2025-12-21T02:34:59.9271044Z [1m[92m   Compiling[0m quote v1.0.42
+2025-12-21T02:35:00.5400505Z [1m[92m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 1.07s
+2025-12-21T02:35:00.5417577Z [1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/proc_macro2-e258fd8a78cc26d9)
+2025-12-21T02:35:00.5425474Z 
+2025-12-21T02:35:00.5425601Z running 0 tests
+2025-12-21T02:35:00.5425960Z 
+2025-12-21T02:35:00.5427485Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:00.5428183Z 
+2025-12-21T02:35:00.5429586Z [1m[92m     Running[0m tests/comments.rs (target/debug/deps/comments-08e27648565ad891)
+2025-12-21T02:35:00.5439293Z 
+2025-12-21T02:35:00.5439435Z running 4 tests
+2025-12-21T02:35:00.5442454Z test incomplete ... ok
+2025-12-21T02:35:00.5442855Z test carriage_return ... ok
+2025-12-21T02:35:00.5444019Z test closed_immediately ... ok
+2025-12-21T02:35:00.5444376Z test lit ... ok
+2025-12-21T02:35:00.5444554Z 
+2025-12-21T02:35:00.5445596Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:00.5446102Z 
+2025-12-21T02:35:00.5446843Z [1m[92m     Running[0m tests/features.rs (target/debug/deps/features-94d18c3f0d1ceb12)
+2025-12-21T02:35:00.5454417Z 
+2025-12-21T02:35:00.5454837Z running 1 test
+2025-12-21T02:35:00.5455224Z test make_sure_no_proc_macro ... ignored
+2025-12-21T02:35:00.5455563Z 
+2025-12-21T02:35:00.5455967Z test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:00.5456366Z 
+2025-12-21T02:35:00.5457062Z [1m[92m     Running[0m tests/marker.rs (target/debug/deps/marker-e9c4b79422b678a8)
+2025-12-21T02:35:00.5464783Z 
+2025-12-21T02:35:00.5464880Z running 20 tests
+2025-12-21T02:35:00.5467185Z test Delimiter ... ok
+2025-12-21T02:35:00.5468075Z test Group ... ok
+2025-12-21T02:35:00.5468309Z test Ident ... ok
+2025-12-21T02:35:00.5469524Z test Spacing ... ok
+2025-12-21T02:35:00.5469913Z test LexError ... ok
+2025-12-21T02:35:00.5470453Z test Punct ... ok
+2025-12-21T02:35:00.5470749Z test Literal ... ok
+2025-12-21T02:35:00.5471040Z test Span ... ok
+2025-12-21T02:35:00.5471336Z test TokenStream ... ok
+2025-12-21T02:35:00.5471605Z test TokenTree ... ok
+2025-12-21T02:35:00.5472005Z test unwind_safe::Delimiter ... ok
+2025-12-21T02:35:00.5472402Z test unwind_safe::Group ... ok
+2025-12-21T02:35:00.5472769Z test unwind_safe::Ident ... ok
+2025-12-21T02:35:00.5473121Z test unwind_safe::LexError ... ok
+2025-12-21T02:35:00.5473506Z test unwind_safe::Literal ... ok
+2025-12-21T02:35:00.5473835Z test unwind_safe::Punct ... ok
+2025-12-21T02:35:00.5474044Z test unwind_safe::Spacing ... ok
+2025-12-21T02:35:00.5474308Z test unwind_safe::Span ... ok
+2025-12-21T02:35:00.5474655Z test unwind_safe::TokenStream ... ok
+2025-12-21T02:35:00.5475163Z test unwind_safe::TokenTree ... ok
+2025-12-21T02:35:00.5475439Z 
+2025-12-21T02:35:00.5475793Z test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:00.5476347Z 
+2025-12-21T02:35:00.5476667Z [1m[92m     Running[0m tests/test.rs (target/debug/deps/test-edb4f2e93102f513)
+2025-12-21T02:35:00.5485397Z 
+2025-12-21T02:35:00.5485525Z running 46 tests
+2025-12-21T02:35:00.5487982Z test default_tokenstream_is_empty ... ok
+2025-12-21T02:35:00.5488424Z test byte_order_mark ... ok
+2025-12-21T02:35:00.5488777Z test fail ... ok
+2025-12-21T02:35:00.5489991Z test ident_empty - should panic ... ok
+2025-12-21T02:35:00.5490973Z test ident_number - should panic ... ok
+2025-12-21T02:35:00.5491417Z test ident_invalid - should panic ... ok
+2025-12-21T02:35:00.5491859Z test ident_raw_underscore - should panic ... ok
+2025-12-21T02:35:00.5492334Z test ident_raw_reserved - should panic ... ok
+2025-12-21T02:35:00.5492741Z test idents ... ok
+2025-12-21T02:35:00.5493051Z test joint_last_token ... ok
+2025-12-21T02:35:00.5493407Z test lifetime_empty - should panic ... ok
+2025-12-21T02:35:00.5493841Z test lifetime_invalid - should panic ... ok
+2025-12-21T02:35:00.5494278Z test lifetime_number - should panic ... ok
+2025-12-21T02:35:00.5494678Z test literal_byte_character ... ok
+2025-12-21T02:35:00.5495032Z test lifetimes ... ok
+2025-12-21T02:35:00.5495355Z test literal_byte_string ... ok
+2025-12-21T02:35:00.5495717Z test literal_character ... ok
+2025-12-21T02:35:00.5496071Z test literal_c_string ... ok
+2025-12-21T02:35:00.5496408Z test literal_float ... ok
+2025-12-21T02:35:00.5496751Z test literal_integer ... ok
+2025-12-21T02:35:00.5497092Z test literal_iter_negative ... ok
+2025-12-21T02:35:00.5498987Z test literal_parse ... ok
+2025-12-21T02:35:00.5499324Z test literal_span ... ok
+2025-12-21T02:35:00.5499668Z test literal_raw_string ... ok
+2025-12-21T02:35:00.5500225Z test literal_string ... ok
+2025-12-21T02:35:00.5500543Z test literal_suffix ... ok
+2025-12-21T02:35:00.5502095Z test no_panic ... ok
+2025-12-21T02:35:00.5502507Z test punct_before_comment ... ok
+2025-12-21T02:35:00.5502916Z test raw_ident_empty - should panic ... ok
+2025-12-21T02:35:00.5503339Z test non_ascii_tokens ... ok
+2025-12-21T02:35:00.5503731Z test raw_ident_invalid - should panic ... ok
+2025-12-21T02:35:00.5504180Z test raw_ident_number - should panic ... ok
+2025-12-21T02:35:00.5504589Z test raw_identifier ... ok
+2025-12-21T02:35:00.5504921Z test raw_idents ... ok
+2025-12-21T02:35:00.5505255Z test source_text ... ok
+2025-12-21T02:35:00.5505586Z test test_debug_ident ... ok
+2025-12-21T02:35:00.5505912Z test roundtrip ... ok
+2025-12-21T02:35:00.5506223Z test span_test ... ok
+2025-12-21T02:35:00.5507129Z test test_invalidate_current_thread_spans ... ok
+2025-12-21T02:35:00.5507610Z test test_debug_tokenstream ... ok
+2025-12-21T02:35:00.5508101Z test test_display_ident ... ok
+2025-12-21T02:35:00.5508493Z test test_display_tokenstream ... ok
+2025-12-21T02:35:00.5509133Z test test_use_span_after_invalidation - should panic ... ok
+2025-12-21T02:35:00.5509648Z test tokenstream_size_hint ... ok
+2025-12-21T02:35:00.5509938Z test tuple_indexing ... ok
+2025-12-21T02:35:00.5510140Z test whitespace ... ok
+2025-12-21T02:35:00.5510257Z 
+2025-12-21T02:35:00.5510478Z test result: ok. 46 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:00.5510757Z 
+2025-12-21T02:35:00.5512067Z [1m[92m     Running[0m tests/test_fmt.rs (target/debug/deps/test_fmt-062bb2a00f304026)
+2025-12-21T02:35:00.5519377Z 
+2025-12-21T02:35:00.5519483Z running 1 test
+2025-12-21T02:35:00.5521237Z test test_fmt_group ... ok
+2025-12-21T02:35:00.5521398Z 
+2025-12-21T02:35:00.5521654Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:00.5522011Z 
+2025-12-21T02:35:00.5522969Z [1m[92m     Running[0m tests/test_size.rs (target/debug/deps/test_size-2f9e06ed810d37ab)
+2025-12-21T02:35:00.5529769Z 
+2025-12-21T02:35:00.5529866Z running 5 tests
+2025-12-21T02:35:00.5530962Z test test_proc_macro2_fallback_size_with_locations ... ignored, wrapper mode
+2025-12-21T02:35:00.5531875Z test test_proc_macro2_fallback_size_without_locations ... ignored, wrapper mode
+2025-12-21T02:35:00.5532336Z test test_proc_macro2_wrapper_size_without_locations ... ignored, span locations are on
+2025-12-21T02:35:00.5533038Z test test_proc_macro2_wrapper_size_with_locations ... ok
+2025-12-21T02:35:00.5533488Z test test_proc_macro_size ... ok
+2025-12-21T02:35:00.5533738Z 
+2025-12-21T02:35:00.5534244Z test result: ok. 2 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:00.5534720Z 
+2025-12-21T02:35:00.5534946Z [1m[92m   Doc-tests[0m proc_macro2
+2025-12-21T02:35:00.6369071Z 
+2025-12-21T02:35:00.6369425Z running 5 tests
+2025-12-21T02:35:00.7209521Z test src/lib.rs - (line 34) ... ok
+2025-12-21T02:35:00.7337048Z test src/lib.rs - Ident (line 894) ... ok
+2025-12-21T02:35:00.7342147Z test src/lib.rs - Ident (line 906) ... ok
+2025-12-21T02:35:00.7886463Z test src/lib.rs - Ident (line 925) ... ok
+2025-12-21T02:35:00.8402591Z test src/extra.rs - extra::invalidate_current_thread_spans (line 30) ... ok
+2025-12-21T02:35:00.8402936Z 
+2025-12-21T02:35:00.8403176Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+2025-12-21T02:35:00.8403532Z 
+2025-12-21T02:35:00.8465614Z ##[group]Run cargo test
+2025-12-21T02:35:00.8465839Z [36;1mcargo test[0m
+2025-12-21T02:35:00.8484130Z shell: /usr/bin/bash -e {0}
+2025-12-21T02:35:00.8484359Z env:
+2025-12-21T02:35:00.8484582Z   RUSTFLAGS: --cfg procmacro2_semver_exempt -Dwarnings
+2025-12-21T02:35:00.8484872Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:35:00.8485090Z   CARGO_INCREMENTAL: 0
+2025-12-21T02:35:00.8485284Z   CARGO_TERM_COLOR: always
+2025-12-21T02:35:00.8485478Z ##[endgroup]
+2025-12-21T02:35:00.9292957Z [1m[92m   Compiling[0m crossbeam-utils v0.8.21
+2025-12-21T02:35:00.9293564Z [1m[92m   Compiling[0m rustix v1.1.2
+2025-12-21T02:35:00.9294038Z [1m[92m   Compiling[0m libc v0.2.178
+2025-12-21T02:35:00.9294510Z [1m[92m   Compiling[0m cfg-if v1.0.4
+2025-12-21T02:35:00.9584091Z [1m[92m   Compiling[0m crc32fast v1.5.0
+2025-12-21T02:35:01.0858896Z [1m[92m   Compiling[0m proc-macro2 v1.0.103 (/home/runner/work/proc-macro2/proc-macro2)
+2025-12-21T02:35:01.1784806Z [1m[92m   Compiling[0m rayon-core v1.13.0
+2025-12-21T02:35:01.2221880Z [1m[92m   Compiling[0m linux-raw-sys v0.11.0
+2025-12-21T02:35:01.2625870Z [1m[92m   Compiling[0m bitflags v2.10.0
+2025-12-21T02:35:01.4440975Z [1m[92m   Compiling[0m adler2 v2.0.1
+2025-12-21T02:35:01.5086389Z [1m[92m   Compiling[0m crossbeam-epoch v0.9.18
+2025-12-21T02:35:01.5500877Z [1m[92m   Compiling[0m simd-adler32 v0.3.8
+2025-12-21T02:35:01.6895726Z [1m[92m   Compiling[0m unicode-ident v1.0.22
+2025-12-21T02:35:01.7504799Z [1m[92m   Compiling[0m crossbeam-deque v0.8.6
+2025-12-21T02:35:01.7830443Z [1m[92m   Compiling[0m quote v1.0.42
+2025-12-21T02:35:01.8899723Z [1m[92m   Compiling[0m rustversion v1.0.22
+2025-12-21T02:35:02.3329213Z [1m[92m   Compiling[0m filetime v0.2.26
+2025-12-21T02:35:02.4647466Z [1m[92m   Compiling[0m miniz_oxide v0.8.9
+2025-12-21T02:35:02.8394589Z [1m[92m   Compiling[0m either v1.15.0
+2025-12-21T02:35:02.9699911Z [1m[92m   Compiling[0m rayon v1.11.0
+2025-12-21T02:35:02.9941935Z [1m[92m   Compiling[0m flate2 v1.1.5
+2025-12-21T02:35:03.1639487Z [1m[92m   Compiling[0m xattr v1.6.1
+2025-12-21T02:35:03.3697203Z [1m[92m   Compiling[0m tar v0.4.44
+2025-12-21T02:35:05.0094493Z [1m[92m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 4.11s
+2025-12-21T02:35:05.0111965Z [1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/proc_macro2-5a5c73f9df57da16)
+2025-12-21T02:35:05.0121087Z 
+2025-12-21T02:35:05.0121368Z running 0 tests
+2025-12-21T02:35:05.0121592Z 
+2025-12-21T02:35:05.0121966Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:05.0122514Z 
+2025-12-21T02:35:05.0123196Z [1m[92m     Running[0m tests/comments.rs (target/debug/deps/comments-f912af02028767a1)
+2025-12-21T02:35:05.0131012Z 
+2025-12-21T02:35:05.0131235Z running 4 tests
+2025-12-21T02:35:05.0134828Z test closed_immediately ... ok
+2025-12-21T02:35:05.0135491Z test incomplete ... ok
+2025-12-21T02:35:05.0135836Z test carriage_return ... ok
+2025-12-21T02:35:05.0136074Z test lit ... ok
+2025-12-21T02:35:05.0136226Z 
+2025-12-21T02:35:05.0136539Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:05.0136861Z 
+2025-12-21T02:35:05.0137264Z [1m[92m     Running[0m tests/features.rs (target/debug/deps/features-2a00a105e2fc06b5)
+2025-12-21T02:35:05.0144372Z 
+2025-12-21T02:35:05.0144498Z running 1 test
+2025-12-21T02:35:05.0144902Z test make_sure_no_proc_macro ... ignored
+2025-12-21T02:35:05.0145126Z 
+2025-12-21T02:35:05.0145402Z test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:05.0145792Z 
+2025-12-21T02:35:05.0147079Z [1m[92m     Running[0m tests/marker.rs (target/debug/deps/marker-433bee8bf6b9412d)
+2025-12-21T02:35:05.0154264Z 
+2025-12-21T02:35:05.0154402Z running 22 tests
+2025-12-21T02:35:05.0156752Z test Delimiter ... ok
+2025-12-21T02:35:05.0158134Z test Group ... ok
+2025-12-21T02:35:05.0158440Z test Literal ... ok
+2025-12-21T02:35:05.0159069Z test Ident ... ok
+2025-12-21T02:35:05.0159373Z test Punct ... ok
+2025-12-21T02:35:05.0159838Z test Spacing ... ok
+2025-12-21T02:35:05.0160396Z test Span ... ok
+2025-12-21T02:35:05.0160815Z test TokenStream ... ok
+2025-12-21T02:35:05.0161146Z test TokenTree ... ok
+2025-12-21T02:35:05.0161533Z test semver_exempt::LineColumn ... ok
+2025-12-21T02:35:05.0161939Z test unwind_safe::Delimiter ... ok
+2025-12-21T02:35:05.0162325Z test unwind_safe::Group ... ok
+2025-12-21T02:35:05.0162679Z test unwind_safe::Ident ... ok
+2025-12-21T02:35:05.0163045Z test unwind_safe::LineColumn ... ok
+2025-12-21T02:35:05.0163421Z test LexError ... ok
+2025-12-21T02:35:05.0163770Z test unwind_safe::LexError ... ok
+2025-12-21T02:35:05.0164157Z test unwind_safe::Literal ... ok
+2025-12-21T02:35:05.0164526Z test unwind_safe::Punct ... ok
+2025-12-21T02:35:05.0164897Z test unwind_safe::Spacing ... ok
+2025-12-21T02:35:05.0165266Z test unwind_safe::Span ... ok
+2025-12-21T02:35:05.0165655Z test unwind_safe::TokenStream ... ok
+2025-12-21T02:35:05.0166068Z test unwind_safe::TokenTree ... ok
+2025-12-21T02:35:05.0166317Z 
+2025-12-21T02:35:05.0166674Z test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:05.0167188Z 
+2025-12-21T02:35:05.0167670Z [1m[92m     Running[0m tests/test.rs (target/debug/deps/test-bfd2b05e9f47c7ba)
+2025-12-21T02:35:05.0175511Z 
+2025-12-21T02:35:05.0175634Z running 51 tests
+2025-12-21T02:35:05.0179589Z test default_tokenstream_is_empty ... ok
+2025-12-21T02:35:05.0180094Z test byte_order_mark ... ok
+2025-12-21T02:35:05.0180535Z test default_span ... ok
+2025-12-21T02:35:05.0180863Z test fail ... ok
+2025-12-21T02:35:05.0181912Z test ident_empty - should panic ... ok
+2025-12-21T02:35:05.0183790Z test ident_invalid - should panic ... ok
+2025-12-21T02:35:05.0184231Z test ident_number - should panic ... ok
+2025-12-21T02:35:05.0184691Z test ident_raw_reserved - should panic ... ok
+2025-12-21T02:35:05.0185117Z test idents ... ok
+2025-12-21T02:35:05.0185428Z test joint_last_token ... ok
+2025-12-21T02:35:05.0185818Z test lifetime_empty - should panic ... ok
+2025-12-21T02:35:05.0186276Z test ident_raw_underscore - should panic ... ok
+2025-12-21T02:35:05.0187665Z test lifetime_number - should panic ... ok
+2025-12-21T02:35:05.0188189Z test lifetime_invalid - should panic ... ok
+2025-12-21T02:35:05.0188587Z test lifetimes ... ok
+2025-12-21T02:35:05.0188923Z test literal_byte_character ... ok
+2025-12-21T02:35:05.0190739Z test literal_byte_string ... ok
+2025-12-21T02:35:05.0192976Z test literal_c_string ... ok
+2025-12-21T02:35:05.0193360Z test literal_byte_string_value ... ok
+2025-12-21T02:35:05.0193759Z test literal_c_string_value ... ok
+2025-12-21T02:35:05.0194625Z test literal_character ... ok
+2025-12-21T02:35:05.0195001Z test literal_float ... ok
+2025-12-21T02:35:05.0195327Z test literal_iter_negative ... ok
+2025-12-21T02:35:05.0195760Z test literal_integer ... ok
+2025-12-21T02:35:05.0196488Z test literal_parse ... ok
+2025-12-21T02:35:05.0196850Z test literal_span ... ok
+2025-12-21T02:35:05.0197205Z test literal_raw_string ... ok
+2025-12-21T02:35:05.0197538Z test no_panic ... ok
+2025-12-21T02:35:05.0198204Z test literal_string ... ok
+2025-12-21T02:35:05.0198574Z test literal_string_value ... ok
+2025-12-21T02:35:05.0199444Z test literal_suffix ... ok
+2025-12-21T02:35:05.0199853Z test non_ascii_tokens ... ok
+2025-12-21T02:35:05.0200247Z test punct_before_comment ... ok
+2025-12-21T02:35:05.0200725Z test raw_ident_empty - should panic ... ok
+2025-12-21T02:35:05.0201225Z test raw_ident_invalid - should panic ... ok
+2025-12-21T02:35:05.0201715Z test raw_ident_number - should panic ... ok
+2025-12-21T02:35:05.0202107Z test raw_identifier ... ok
+2025-12-21T02:35:05.0202441Z test raw_idents ... ok
+2025-12-21T02:35:05.0202742Z test source_text ... ok
+2025-12-21T02:35:05.0203051Z test span_join ... ok
+2025-12-21T02:35:05.0203275Z test span_test ... ok
+2025-12-21T02:35:05.0203573Z test test_debug_ident ... ok
+2025-12-21T02:35:05.0203931Z test roundtrip ... ok
+2025-12-21T02:35:05.0204442Z test test_debug_tokenstream ... ok
+2025-12-21T02:35:05.0204840Z test test_display_ident ... ok
+2025-12-21T02:35:05.0205195Z test test_display_tokenstream ... ok
+2025-12-21T02:35:05.0205627Z test test_invalidate_current_thread_spans ... ok
+2025-12-21T02:35:05.0206078Z test test_use_span_after_invalidation - should panic ... ok
+2025-12-21T02:35:05.0206364Z test tuple_indexing ... ok
+2025-12-21T02:35:05.0206637Z test tokenstream_size_hint ... ok
+2025-12-21T02:35:05.0206980Z test whitespace ... ok
+2025-12-21T02:35:05.0207181Z 
+2025-12-21T02:35:05.0207570Z test result: ok. 51 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:05.0208209Z 
+2025-12-21T02:35:05.0208570Z [1m[92m     Running[0m tests/test_fmt.rs (target/debug/deps/test_fmt-4784f64d9e7d9885)
+2025-12-21T02:35:05.0214905Z 
+2025-12-21T02:35:05.0215283Z running 1 test
+2025-12-21T02:35:05.0216469Z test test_fmt_group ... ok
+2025-12-21T02:35:05.0216718Z 
+2025-12-21T02:35:05.0217091Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:05.0217603Z 
+2025-12-21T02:35:05.0219109Z [1m[92m     Running[0m tests/test_size.rs (target/debug/deps/test_size-0e7368105e0ffa9f)
+2025-12-21T02:35:05.0226054Z 
+2025-12-21T02:35:05.0226173Z running 5 tests
+2025-12-21T02:35:05.0227313Z test test_proc_macro2_fallback_size_without_locations ... ignored, span locations are on
+2025-12-21T02:35:05.0228020Z test test_proc_macro2_wrapper_size_with_locations ... ignored, fallback mode
+2025-12-21T02:35:05.0228527Z test test_proc_macro2_wrapper_size_without_locations ... ignored, fallback mode
+2025-12-21T02:35:05.0228921Z test test_proc_macro2_fallback_size_with_locations ... ok
+2025-12-21T02:35:05.0229193Z test test_proc_macro_size ... ok
+2025-12-21T02:35:05.0229346Z 
+2025-12-21T02:35:05.0229551Z test result: ok. 2 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:05.0230050Z 
+2025-12-21T02:35:05.0230279Z [1m[92m   Doc-tests[0m proc_macro2
+2025-12-21T02:35:05.0640187Z 
+2025-12-21T02:35:05.0640832Z running 5 tests
+2025-12-21T02:35:05.1487857Z test src/lib.rs - (line 34) ... ok
+2025-12-21T02:35:05.1562455Z test src/lib.rs - Ident (line 894) ... ok
+2025-12-21T02:35:05.1680023Z test src/lib.rs - Ident (line 906) ... ok
+2025-12-21T02:35:05.2172277Z test src/lib.rs - Ident (line 925) ... ok
+2025-12-21T02:35:05.2568567Z test src/extra.rs - extra::invalidate_current_thread_spans (line 30) ... ok
+2025-12-21T02:35:05.2569048Z 
+2025-12-21T02:35:05.2569506Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+2025-12-21T02:35:05.2569926Z 
+2025-12-21T02:35:05.2624933Z ##[group]Run cargo test --no-default-features
+2025-12-21T02:35:05.2625233Z [36;1mcargo test --no-default-features[0m
+2025-12-21T02:35:05.2643982Z shell: /usr/bin/bash -e {0}
+2025-12-21T02:35:05.2644212Z env:
+2025-12-21T02:35:05.2644434Z   RUSTFLAGS: --cfg procmacro2_semver_exempt -Dwarnings
+2025-12-21T02:35:05.2644863Z   CARGO_HOME: /home/runner/.cargo
+2025-12-21T02:35:05.2645081Z   CARGO_INCREMENTAL: 0
+2025-12-21T02:35:05.2645279Z   CARGO_TERM_COLOR: always
+2025-12-21T02:35:05.2645474Z ##[endgroup]
+2025-12-21T02:35:05.3335940Z [1m[92m   Compiling[0m proc-macro2 v1.0.103 (/home/runner/work/proc-macro2/proc-macro2)
+2025-12-21T02:35:05.6843319Z [1m[92m   Compiling[0m quote v1.0.42
+2025-12-21T02:35:06.3010002Z [1m[92m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 0.99s
+2025-12-21T02:35:06.3027015Z [1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/proc_macro2-08982d65116af32a)
+2025-12-21T02:35:06.3035128Z 
+2025-12-21T02:35:06.3035360Z running 0 tests
+2025-12-21T02:35:06.3035567Z 
+2025-12-21T02:35:06.3036376Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:06.3036801Z 
+2025-12-21T02:35:06.3037228Z [1m[92m     Running[0m tests/comments.rs (target/debug/deps/comments-b4b902162b3390d0)
+2025-12-21T02:35:06.3045169Z 
+2025-12-21T02:35:06.3045318Z running 4 tests
+2025-12-21T02:35:06.3048441Z test closed_immediately ... ok
+2025-12-21T02:35:06.3048876Z test carriage_return ... ok
+2025-12-21T02:35:06.3049220Z test incomplete ... ok
+2025-12-21T02:35:06.3049516Z test lit ... ok
+2025-12-21T02:35:06.3049670Z 
+2025-12-21T02:35:06.3049899Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:06.3050355Z 
+2025-12-21T02:35:06.3050701Z [1m[92m     Running[0m tests/features.rs (target/debug/deps/features-fab9f8ac7566a378)
+2025-12-21T02:35:06.3057881Z 
+2025-12-21T02:35:06.3058012Z running 1 test
+2025-12-21T02:35:06.3058326Z test make_sure_no_proc_macro ... ignored
+2025-12-21T02:35:06.3058547Z 
+2025-12-21T02:35:06.3058798Z test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:06.3059154Z 
+2025-12-21T02:35:06.3060119Z [1m[92m     Running[0m tests/marker.rs (target/debug/deps/marker-3cb68492f3f81183)
+2025-12-21T02:35:06.3067082Z 
+2025-12-21T02:35:06.3067213Z running 22 tests
+2025-12-21T02:35:06.3070087Z test Delimiter ... ok
+2025-12-21T02:35:06.3070484Z test Group ... ok
+2025-12-21T02:35:06.3070781Z test Literal ... ok
+2025-12-21T02:35:06.3071342Z test Ident ... ok
+2025-12-21T02:35:06.3072221Z test LexError ... ok
+2025-12-21T02:35:06.3072627Z test Spacing ... ok
+2025-12-21T02:35:06.3073114Z test Punct ... ok
+2025-12-21T02:35:06.3073599Z test Span ... ok
+2025-12-21T02:35:06.3073935Z test TokenStream ... ok
+2025-12-21T02:35:06.3074303Z test TokenTree ... ok
+2025-12-21T02:35:06.3074746Z test unwind_safe::Ident ... ok
+2025-12-21T02:35:06.3075211Z test semver_exempt::LineColumn ... ok
+2025-12-21T02:35:06.3075649Z test unwind_safe::Group ... ok
+2025-12-21T02:35:06.3076113Z test unwind_safe::Delimiter ... ok
+2025-12-21T02:35:06.3076964Z test unwind_safe::LexError ... ok
+2025-12-21T02:35:06.3077646Z test unwind_safe::LineColumn ... ok
+2025-12-21T02:35:06.3078344Z test unwind_safe::Literal ... ok
+2025-12-21T02:35:06.3079298Z test unwind_safe::Punct ... ok
+2025-12-21T02:35:06.3079692Z test unwind_safe::Spacing ... ok
+2025-12-21T02:35:06.3080066Z test unwind_safe::Span ... ok
+2025-12-21T02:35:06.3080489Z test unwind_safe::TokenStream ... ok
+2025-12-21T02:35:06.3080972Z test unwind_safe::TokenTree ... ok
+2025-12-21T02:35:06.3081241Z 
+2025-12-21T02:35:06.3081663Z test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:06.3082184Z 
+2025-12-21T02:35:06.3082659Z [1m[92m     Running[0m tests/test.rs (target/debug/deps/test-b3e12f0eeaa5300d)
+2025-12-21T02:35:06.3087609Z 
+2025-12-21T02:35:06.3088563Z running 51 tests
+2025-12-21T02:35:06.3090310Z test default_tokenstream_is_empty ... ok
+2025-12-21T02:35:06.3090748Z test byte_order_mark ... ok
+2025-12-21T02:35:06.3091087Z test default_span ... ok
+2025-12-21T02:35:06.3094641Z test fail ... ok
+2025-12-21T02:35:06.3094967Z test ident_empty - should panic ... ok
+2025-12-21T02:35:06.3095384Z test ident_invalid - should panic ... ok
+2025-12-21T02:35:06.3098158Z test ident_number - should panic ... ok
+2025-12-21T02:35:06.3099219Z test ident_raw_reserved - should panic ... ok
+2025-12-21T02:35:06.3099770Z test ident_raw_underscore - should panic ... ok
+2025-12-21T02:35:06.3100165Z test idents ... ok
+2025-12-21T02:35:06.3100479Z test joint_last_token ... ok
+2025-12-21T02:35:06.3100864Z test lifetime_empty - should panic ... ok
+2025-12-21T02:35:06.3101316Z test lifetime_invalid - should panic ... ok
+2025-12-21T02:35:06.3101765Z test lifetime_number - should panic ... ok
+2025-12-21T02:35:06.3102221Z test lifetimes ... ok
+2025-12-21T02:35:06.3102564Z test literal_byte_character ... ok
+2025-12-21T02:35:06.3102972Z test literal_byte_string ... ok
+2025-12-21T02:35:06.3103358Z test literal_byte_string_value ... ok
+2025-12-21T02:35:06.3105516Z test literal_c_string ... ok
+2025-12-21T02:35:06.3105913Z test literal_character ... ok
+2025-12-21T02:35:06.3106293Z test literal_c_string_value ... ok
+2025-12-21T02:35:06.3108014Z test literal_integer ... ok
+2025-12-21T02:35:06.3108405Z test literal_float ... ok
+2025-12-21T02:35:06.3108786Z test literal_iter_negative ... ok
+2025-12-21T02:35:06.3109177Z test literal_parse ... ok
+2025-12-21T02:35:06.3109518Z test literal_span ... ok
+2025-12-21T02:35:06.3109870Z test literal_raw_string ... ok
+2025-12-21T02:35:06.3110236Z test literal_string ... ok
+2025-12-21T02:35:06.3110590Z test literal_string_value ... ok
+2025-12-21T02:35:06.3110975Z test no_panic ... ok
+2025-12-21T02:35:06.3111299Z test literal_suffix ... ok
+2025-12-21T02:35:06.3111625Z test punct_before_comment ... ok
+2025-12-21T02:35:06.3112015Z test non_ascii_tokens ... ok
+2025-12-21T02:35:06.3112426Z test raw_ident_empty - should panic ... ok
+2025-12-21T02:35:06.3112919Z test raw_ident_invalid - should panic ... ok
+2025-12-21T02:35:06.3113368Z test raw_ident_number - should panic ... ok
+2025-12-21T02:35:06.3113797Z test raw_identifier ... ok
+2025-12-21T02:35:06.3114139Z test raw_idents ... ok
+2025-12-21T02:35:06.3114454Z test span_join ... ok
+2025-12-21T02:35:06.3114777Z test span_test ... ok
+2025-12-21T02:35:06.3115090Z test roundtrip ... ok
+2025-12-21T02:35:06.3115387Z test test_debug_ident ... ok
+2025-12-21T02:35:06.3115732Z test test_debug_tokenstream ... ok
+2025-12-21T02:35:06.3116186Z test test_display_ident ... ok
+2025-12-21T02:35:06.3116533Z test source_text ... ok
+2025-12-21T02:35:06.3116861Z test test_display_tokenstream ... ok
+2025-12-21T02:35:06.3117260Z test tuple_indexing ... ok
+2025-12-21T02:35:06.3117656Z test test_invalidate_current_thread_spans ... ok
+2025-12-21T02:35:06.3118329Z test test_use_span_after_invalidation - should panic ... ok
+2025-12-21T02:35:06.3118765Z test tokenstream_size_hint ... ok
+2025-12-21T02:35:06.3119107Z test whitespace ... ok
+2025-12-21T02:35:06.3119763Z [1m[92m     Running[0m tests/test_fmt.rs (target/debug/deps/test_fmt-099a18e04cdf2b82)
+2025-12-21T02:35:06.3120071Z 
+2025-12-21T02:35:06.3120362Z test result: ok. 51 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:06.3120867Z 
+2025-12-21T02:35:06.3120880Z 
+2025-12-21T02:35:06.3120990Z running 1 test
+2025-12-21T02:35:06.3122145Z test test_fmt_group ... ok
+2025-12-21T02:35:06.3122373Z 
+2025-12-21T02:35:06.3122718Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:06.3123003Z 
+2025-12-21T02:35:06.3123784Z [1m[92m     Running[0m tests/test_size.rs (target/debug/deps/test_size-ab8773f37b8aab39)
+2025-12-21T02:35:06.3130654Z 
+2025-12-21T02:35:06.3130846Z running 5 tests
+2025-12-21T02:35:06.3131633Z test test_proc_macro2_fallback_size_without_locations ... ignored, span locations are on
+2025-12-21T02:35:06.3132706Z test test_proc_macro2_wrapper_size_with_locations ... ignored, fallback mode
+2025-12-21T02:35:06.3133197Z test test_proc_macro2_wrapper_size_without_locations ... ignored, fallback mode
+2025-12-21T02:35:06.3133680Z test test_proc_macro2_fallback_size_with_locations ... ok
+2025-12-21T02:35:06.3134143Z test test_proc_macro_size ... ok
+2025-12-21T02:35:06.3134394Z 
+2025-12-21T02:35:06.3134577Z [1m[92m   Doc-tests[0m proc_macro2
+2025-12-21T02:35:06.3134934Z test result: ok. 2 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-12-21T02:35:06.3135203Z 
+2025-12-21T02:35:06.3538741Z 
+2025-12-21T02:35:06.3539086Z running 5 tests
+2025-12-21T02:35:06.4398382Z test src/lib.rs - (line 34) ... ok
+2025-12-21T02:35:06.4425920Z test src/lib.rs - Ident (line 894) ... ok
+2025-12-21T02:35:06.4471775Z test src/lib.rs - Ident (line 906) ... ok
+2025-12-21T02:35:06.5035227Z test src/lib.rs - Ident (line 925) ... ok
+2025-12-21T02:35:06.5373663Z test src/extra.rs - extra::invalidate_current_thread_spans (line 30) ... ok
+2025-12-21T02:35:06.5374031Z 
+2025-12-21T02:35:06.5374263Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+2025-12-21T02:35:06.5374578Z 
+2025-12-21T02:35:06.5483434Z Post job cleanup.
+2025-12-21T02:35:06.6200030Z [command]/usr/bin/git version
+2025-12-21T02:35:06.6262902Z git version 2.52.0
+2025-12-21T02:35:06.6294994Z Temporarily overriding HOME='/home/runner/work/_temp/fc714df8-4d6e-43af-8304-ffc17cc9ad4f' before making global git config changes
+2025-12-21T02:35:06.6295680Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-21T02:35:06.6300210Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/proc-macro2/proc-macro2
+2025-12-21T02:35:06.6325717Z Removing SSH command configuration
+2025-12-21T02:35:06.6331739Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-21T02:35:06.6358722Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-21T02:35:06.6529456Z Removing HTTP extra header
+2025-12-21T02:35:06.6533141Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-21T02:35:06.6559321Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-21T02:35:06.6719619Z Removing includeIf entries pointing to credentials config files
+2025-12-21T02:35:06.6725108Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-21T02:35:06.6742642Z includeif.gitdir:/home/runner/work/proc-macro2/proc-macro2/.git.path
+2025-12-21T02:35:06.6743464Z includeif.gitdir:/home/runner/work/proc-macro2/proc-macro2/.git/worktrees/*.path
+2025-12-21T02:35:06.6744141Z includeif.gitdir:/github/workspace/.git.path
+2025-12-21T02:35:06.6744664Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2025-12-21T02:35:06.6751016Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/proc-macro2/proc-macro2/.git.path
+2025-12-21T02:35:06.6766757Z /home/runner/work/_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:35:06.6776269Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/proc-macro2/proc-macro2/.git.path /home/runner/work/_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:35:06.6803164Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/proc-macro2/proc-macro2/.git/worktrees/*.path
+2025-12-21T02:35:06.6820312Z /home/runner/work/_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:35:06.6827314Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/proc-macro2/proc-macro2/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:35:06.6849865Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2025-12-21T02:35:06.6865954Z /github/runner_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:35:06.6872112Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:35:06.6894985Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2025-12-21T02:35:06.6910944Z /github/runner_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:35:06.6918145Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config
+2025-12-21T02:35:06.6942450Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-21T02:35:06.7099698Z Removing credentials config '/home/runner/work/_temp/git-credentials-f9746c71-0ebe-4cda-abc3-1d37e4955ea3.config'
+2025-12-21T02:35:06.7199155Z Cleaning up orphan processes

@@ -1,0 +1,192 @@
+ Downloading crates ...
+  Downloaded fnv v1.0.7
+  Downloaded futures-executor v0.3.31
+  Downloaded futures-channel v0.3.31
+  Downloaded autocfg v1.5.0
+  Downloaded futures v0.3.31
+  Downloaded rand_core v0.6.4
+  Downloaded byteorder v1.5.0
+  Downloaded cfg-if v1.0.3
+  Downloaded thread_local v1.1.9
+  Downloaded futures-macro v0.3.31
+  Downloaded sync_wrapper v1.0.2
+  Downloaded log v0.4.27
+  Downloaded futures-io v0.3.31
+  Downloaded itoa v1.0.15
+  Downloaded slab v0.4.11
+  Downloaded rand_chacha v0.9.0
+  Downloaded futures-task v0.3.31
+  Downloaded pin-utils v0.1.0
+  Downloaded lazy_static v1.5.0
+  Downloaded futures-sink v0.3.31
+  Downloaded ppv-lite86 v0.2.21
+  Downloaded once_cell v1.21.3
+  Downloaded num-traits v0.2.19
+  Downloaded getrandom v0.2.16
+  Downloaded rand_core v0.9.3
+  Downloaded quickcheck v1.0.3
+  Downloaded overload v0.1.1
+  Downloaded env_logger v0.8.4
+  Downloaded nu-ansi-term v0.46.0
+  Downloaded getrandom v0.3.3
+  Downloaded sharded-slab v0.1.7
+  Downloaded rand v0.8.5
+  Downloaded tracing-core v0.1.34
+  Downloaded tracing v0.1.41
+  Downloaded rand v0.9.2
+  Downloaded memchr v2.7.5
+  Downloaded http v1.3.1
+  Downloaded aho-corasick v1.1.3
+  Downloaded futures-util v0.3.31
+  Downloaded regex v1.11.2
+  Downloaded tracing-subscriber v0.3.19
+  Downloaded zerocopy v0.8.26
+  Downloaded hdrhistogram v7.5.4
+  Downloaded regex-syntax v0.8.6
+  Downloaded regex-automata v0.4.10
+  Downloaded libc v0.2.175
+   Compiling proc-macro2 v1.0.101
+   Compiling unicode-ident v1.0.18
+   Compiling pin-project-lite v0.2.16
+   Compiling futures-core v0.3.31
+   Compiling memchr v2.7.5
+   Compiling libc v0.2.175
+   Compiling cfg-if v1.0.3
+   Compiling futures-sink v0.3.31
+   Compiling tower-layer v0.3.3 (/usr/src/app/tower-layer)
+   Compiling slab v0.4.11
+   Compiling pin-utils v0.1.0
+   Compiling futures-task v0.3.31
+   Compiling tower-service v0.3.3 (/usr/src/app/tower-service)
+   Compiling futures-io v0.3.31
+   Compiling bytes v1.10.1
+   Compiling getrandom v0.3.3
+   Compiling zerocopy v0.8.26
+   Compiling regex-syntax v0.8.6
+   Compiling autocfg v1.5.0
+   Compiling itoa v1.0.15
+   Compiling once_cell v1.21.3
+   Compiling fnv v1.0.7
+   Compiling sync_wrapper v1.0.2
+   Compiling overload v0.1.1
+   Compiling log v0.4.27
+   Compiling lazy_static v1.5.0
+   Compiling byteorder v1.5.0
+   Compiling thread_local v1.1.9
+   Compiling futures-channel v0.3.31
+   Compiling nu-ansi-term v0.46.0
+   Compiling sharded-slab v0.1.7
+   Compiling tracing-core v0.1.34
+   Compiling num-traits v0.2.19
+   Compiling aho-corasick v1.1.3
+   Compiling http v1.3.1
+   Compiling tracing-subscriber v0.3.19
+   Compiling tracing v0.1.41
+   Compiling quote v1.0.40
+   Compiling getrandom v0.2.16
+   Compiling syn v2.0.106
+   Compiling rand_core v0.6.4
+   Compiling rand_core v0.9.3
+   Compiling hdrhistogram v7.5.4
+   Compiling rand v0.8.5
+   Compiling regex-automata v0.4.10
+   Compiling ppv-lite86 v0.2.21
+   Compiling rand_chacha v0.9.0
+   Compiling rand v0.9.2
+   Compiling regex v1.11.2
+   Compiling env_logger v0.8.4
+   Compiling quickcheck v1.0.3
+   Compiling tokio-macros v2.5.0
+   Compiling futures-macro v0.3.31
+   Compiling async-stream-impl v0.3.6
+   Compiling async-stream v0.3.6
+   Compiling tokio v1.47.1
+   Compiling futures-util v0.3.31
+   Compiling tokio-stream v0.1.17
+   Compiling tokio-test v0.4.4
+   Compiling futures-executor v0.3.31
+   Compiling tower v0.5.2 (/usr/src/app/tower)
+   Compiling tower-test v0.4.1 (/usr/src/app/tower-test)
+   Compiling futures v0.3.31
+error[E0425]: cannot find function `sample_floyd2` in module `super`
+   --> tower/src/util/rng.rs:169:33
+    |
+169 |             let [a, b] = super::sample_floyd2(&mut rng, length);
+    |                                 ^^^^^^^^^^^^^ not found in `super`
+    |
+note: found an item that was configured out
+   --> tower/src/util/rng.rs:120:15
+    |
+120 | pub(crate) fn sample_floyd2<R: Rng>(rng: &mut R, length: u64) -> [u64; 2] {
+    |               ^^^^^^^^^^^^^
+note: the item is gated behind the `balance` feature
+   --> tower/src/util/rng.rs:119:7
+    |
+119 | #[cfg(feature = "balance")]
+    |       ^^^^^^^^^^^^^^^^^^^
+help: consider importing this function
+    |
+130 +     use crate::util::rng::tests::sample_floyd2;
+    |
+help: if you import `sample_floyd2`, refer to it directly
+    |
+169 -             let [a, b] = super::sample_floyd2(&mut rng, length);
+169 +             let [a, b] = sample_floyd2(&mut rng, length);
+    |
+
+error[E0425]: cannot find function `sample_floyd2` in module `super`
+   --> tower/src/util/rng.rs:182:22
+    |
+182 |         match super::sample_floyd2(&mut r, 2) {
+    |                      ^^^^^^^^^^^^^ not found in `super`
+    |
+note: found an item that was configured out
+   --> tower/src/util/rng.rs:120:15
+    |
+120 | pub(crate) fn sample_floyd2<R: Rng>(rng: &mut R, length: u64) -> [u64; 2] {
+    |               ^^^^^^^^^^^^^
+note: the item is gated behind the `balance` feature
+   --> tower/src/util/rng.rs:119:7
+    |
+119 | #[cfg(feature = "balance")]
+    |       ^^^^^^^^^^^^^^^^^^^
+
+error[E0432]: unresolved import `tower::buffer`
+   --> tower/tests/util/call_all.rs:231:16
+    |
+231 |     use tower::buffer::Buffer;
+    |                ^^^^^^ could not find `buffer` in `tower`
+    |
+note: found an item that was configured out
+   --> /usr/src/app/tower/src/lib.rs:168:9
+    |
+168 | pub mod buffer;
+    |         ^^^^^^
+note: the item is gated behind the `buffer` feature
+   --> /usr/src/app/tower/src/lib.rs:167:7
+    |
+167 | #[cfg(feature = "buffer")]
+    |       ^^^^^^^^^^^^^^^^^^
+
+error[E0432]: unresolved import `tower::limit`
+   --> tower/tests/util/call_all.rs:232:16
+    |
+232 |     use tower::limit::ConcurrencyLimit;
+    |                ^^^^^ could not find `limit` in `tower`
+    |
+note: found an item that was configured out
+   --> /usr/src/app/tower/src/lib.rs:176:9
+    |
+176 | pub mod limit;
+    |         ^^^^^
+note: the item is gated behind the `limit` feature
+   --> /usr/src/app/tower/src/lib.rs:175:7
+    |
+175 | #[cfg(feature = "limit")]
+    |       ^^^^^^^^^^^^^^^^^
+
+For more information about this error, try `rustc --explain E0432`.
+error: could not compile `tower` (test "util") due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `tower` (lib test) due to 2 previous errors

@@ -1,0 +1,27 @@
+make: Entering directory '/app'
+make dist/zig
+make[1]: Entering directory '/app'
+mkdir -p deps-download
+curl -o deps-download/zig-linux-x86_64-0.13.0.tar.xz https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 44.9M    0  431k    0     0   285k      0  0:02:41  0:00:01  0:02:40  285k 20 44.9M   20 9599k    0     0  3992k      0  0:00:11  0:00:02  0:00:09 3993k 60 44.9M   60 26.9M    0     0  7968k      0  0:00:05  0:00:03  0:00:02 7967k 97 44.9M   97 43.9M    0     0   9.9M      0  0:00:04  0:00:04 --:--:--  9.9M100 44.9M  100 44.9M    0     0   9.8M      0  0:00:04  0:00:04 --:--:-- 10.9M
+mkdir -p dist/zig
+cd dist/zig && tar Jx --strip-components=1 -f ../../deps-download/zig-linux-x86_64-0.13.0.tar.xz
+tar (child): xz: Cannot exec: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+make[1]: *** [Makefile:408: dist/zig] Error 2
+make[1]: Leaving directory '/app'
+make: *** [Makefile:77: all] Error 2
+make: Leaving directory '/app'
+make: Entering directory '/app'
+cd compiler && stack test
+
+Error: [S-636]
+       Stack looks for packages in the directories configured in the packages and extra-deps fields
+       defined in its project-level configuration file (usually stack.yaml). The current entry
+       points to /app/compiler/lib/ but no Cabal file or package.yaml could be found there.
+make: Leaving directory '/app'
+make: *** [Makefile:295: test] Error 1

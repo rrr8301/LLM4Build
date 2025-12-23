@@ -1,0 +1,117 @@
+Scope: all 3 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+playgrounds/sandbox prepare$ node scripts/create-app-svelte.js
+playgrounds/sandbox prepare: Done
+Done in 1.1s
+
+> svelte-monorepo@0.0.1 test /app
+> vitest run
+
+
+ RUN  v2.1.9 /app
+
+ ✓ packages/svelte/src/internal/shared/clone.test.ts (11 tests) 16ms
+ ✓ packages/svelte/src/internal/client/proxy.test.ts (8 tests) 14ms
+ ✓ packages/svelte/src/reactivity/url.test.ts (4 tests) 13ms
+ ✓ packages/svelte/src/reactivity/set.test.ts (6 tests) 18ms
+ ✓ packages/svelte/src/reactivity/url-search-params.test.ts (8 tests) 20ms
+ ✓ packages/svelte/src/internal/server/renderer.test.ts (20 tests) 32ms
+ ✓ packages/svelte/src/reactivity/map.test.ts (8 tests) 46ms
+ ✓ packages/svelte/src/reactivity/date.test.ts (17 tests) 78ms
+ ✓ packages/svelte/tests/store/test.ts (33 tests) 127ms
+ ✓ packages/svelte/tests/signals/test.ts (94 tests | 2 skipped) 561ms
+ ✓ packages/svelte/tests/parser-modern/test.ts (22 tests) 112ms
+ ✓ packages/svelte/tests/parser-legacy/test.ts (83 tests | 1 skipped) 131ms
+ ✓ packages/svelte/tests/preprocess/test.ts (19 tests) 47ms
+ ✓ packages/svelte/tests/snapshot/test.ts (27 tests) 297ms
+ ✓ packages/svelte/tests/migrate/test.ts (75 tests) 314ms
+ ✓ packages/svelte/tests/validator/test.ts (328 tests | 4 skipped) 670ms
+ ✓ packages/svelte/tests/motion/test.ts (8 tests) 10ms
+ ❯ packages/svelte/tests/runtime-browser/test.ts (85 tests | 85 skipped) 75ms
+ ✓ packages/svelte/tests/compiler-errors/test.ts (145 tests) 249ms
+ ✓ packages/svelte/tests/runtime-browser/test-ssr.ts (30 tests) 662ms
+ ✓ packages/svelte/tests/sourcemaps/test.ts (28 tests | 2 skipped) 302ms
+stderr | packages/svelte/tests/server-side-rendering/test.ts > invalid-nested-svelte-element (sync)
+node_invalid_placement_ssr: `<p>` (packages/svelte/tests/server-side-rendering/samples/invalid-nested-svelte-element/main.svelte:2:1) cannot be a child of `<p>` (packages/svelte/tests/server-side-rendering/samples/invalid-nested-svelte-element/main.svelte:1:0)
+
+This can cause content to shift around as the browser repairs the HTML, and will likely result in a `hydration_mismatch` warning.
+
+stderr | packages/svelte/tests/server-side-rendering/test.ts > invalid-nested-svelte-element (async)
+node_invalid_placement_ssr: `<p>` (packages/svelte/tests/server-side-rendering/samples/invalid-nested-svelte-element/main.svelte:2:1) cannot be a child of `<p>` (packages/svelte/tests/server-side-rendering/samples/invalid-nested-svelte-element/main.svelte:1:0)
+
+This can cause content to shift around as the browser repairs the HTML, and will likely result in a `hydration_mismatch` warning.
+
+ ✓ packages/svelte/tests/server-side-rendering/test.ts (176 tests) 1416ms
+ ✓ packages/svelte/tests/hydration/test.ts (72 tests) 1356ms
+ ✓ packages/svelte/tests/css/test.ts (177 tests) 2480ms
+ ✓ packages/svelte/tests/runtime-legacy/test.ts (3292 tests | 10 skipped) 35949ms
+   ✓ before-render-chain-2 (dom) 2105ms
+   ✓ before-render-chain-2 (hydrate) 1878ms
+   ✓ each-block-keyed-random-permute (dom) 629ms
+   ✓ each-block-keyed-random-permute (hydrate) 517ms
+   ✓ each-block-random-permute (dom) 320ms
+   ✓ each-block-random-permute (hydrate) 456ms
+ ✓ packages/svelte/tests/runtime-runes/test.ts (2160 tests | 22 skipped) 39225ms
+   ✓ 1000-reading-derived-effects (dom) 304ms
+   ✓ effect-loop-3 (dom) 1036ms
+   ✓ effect-loop-3 (hydrate) 978ms
+   ✓ effect-loop-infinite (dom) 330ms
+   ✓ effect-loop-infinite (hydrate) 321ms
+   ✓ error-boundary-20 (dom) 402ms
+   ✓ error-boundary-20 (hydrate) 415ms
+   ✓ mount-unmount-anchor (dom) 6550ms
+   ✓ mount-unmount-anchor (hydrate) 6469ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/svelte/tests/runtime-browser/test.ts [ packages/svelte/tests/runtime-browser/test.ts ]
+Error: browserType.launch:
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     pnpm exec playwright install-deps                ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     apt-get install libglib2.0-0t64\                 ║
+║         libnss3\                                     ║
+║         libnspr4\                                    ║
+║         libdbus-1-3\                                 ║
+║         libatk1.0-0t64\                              ║
+║         libatk-bridge2.0-0t64\                       ║
+║         libcups2t64\                                 ║
+║         libdrm2\                                     ║
+║         libxcb1\                                     ║
+║         libxkbcommon0\                               ║
+║         libatspi2.0-0t64\                            ║
+║         libx11-6\                                    ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxext6\                                    ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libgbm1\                                     ║
+║         libpango-1.0-0\                              ║
+║         libcairo2\                                   ║
+║         libasound2t64                                ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+ ❯ packages/svelte/tests/runtime-browser/test.ts:16:27
+     14|
+     15| beforeAll(async () => {
+     16|  browser = await chromium.launch();
+       |                           ^
+     17| }, 20000);
+     18|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+ Test Files  1 failed | 25 passed (26)
+      Tests  6810 passed | 126 skipped (6936)
+   Start at  13:19:55
+   Duration  45.63s (transform 21.13s, setup 0ms, collect 64.01s, tests 84.22s, environment 3.22s, prepare 3.27s)
+
+ ELIFECYCLE  Test failed. See above for more details.

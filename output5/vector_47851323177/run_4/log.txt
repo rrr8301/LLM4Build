@@ -1,0 +1,88 @@
+Obtaining file:///app
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+
+  × Preparing editable metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [62 lines of output]
+      command git missing: [Errno 2] No such file or directory: 'git'
+      command git not found while parsing the scm, using fallbacks
+      Traceback (most recent call last):
+        File "/app/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 195, in prepare_metadata_for_build_editable
+          hook = backend.prepare_metadata_for_build_editable
+      AttributeError: module 'hatchling.build' has no attribute 'prepare_metadata_for_build_editable'
+
+      During handling of the above exception, another exception occurred:
+
+      Traceback (most recent call last):
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/setuptools_scm/_get_version_impl.py", line 41, in parse_scm_version
+          return _entrypoints.version_from_entrypoint(
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/setuptools_scm/_entrypoints.py", line 56, in version_from_entrypoint
+          maybe_version: version.ScmVersion | None = fn(root, config=config)
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/setuptools_scm/git.py", line 307, in parse
+          _require_command("git")
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/setuptools_scm/_run_cmd.py", line 221, in require_command
+          raise CommandNotFoundError(name)
+      setuptools_scm._run_cmd.CommandNotFoundError: git
+      /tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/setuptools_scm/git.py:427: UserWarning: git archive did not support describe output
+        warnings.warn("git archive did not support describe output")
+      /tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/setuptools_scm/git.py:445: UserWarning: unprocessed git archival found (no export subst applied)
+        warnings.warn("unprocessed git archival found (no export subst applied)")
+      Traceback (most recent call last):
+        File "/app/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/app/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+        File "/app/venv/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 204, in prepare_metadata_for_build_editable
+          whl_basename = build_hook(metadata_directory, config_settings)
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/hatchling/build.py", line 83, in build_editable
+          return os.path.basename(next(builder.build(directory=wheel_directory, versions=['editable'])))
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/hatchling/builders/plugin/interface.py", line 90, in build
+          self.metadata.validate_fields()
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/hatchling/metadata/core.py", line 265, in validate_fields
+          _ = self.version
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/hatchling/metadata/core.py", line 149, in version
+          self._version = self._get_version()
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/hatchling/metadata/core.py", line 248, in _get_version
+          version = self.hatch.version.cached
+        File "/tmp/pip-build-env-203hp2n7/overlay/lib/python3.10/site-packages/hatchling/metadata/core.py", line 1456, in cached
+          raise type(e)(message) from None
+      LookupError: Error getting the version from source `vcs`: setuptools-scm was unable to detect version for /app.
+
+      However, a repository was found in a parent directory: /app
+
+      To fix this, you have a few options:
+
+      1. Use the 'relative_to' parameter to specify the file that setuptools-scm should use as reference:
+         setuptools_scm.get_version(relative_to=__file__)
+
+      2. Enable parent directory search in your configuration:
+         [tool.setuptools_scm]
+         search_parent_directories = true
+
+      3. Change your working directory to the repository root: /app
+
+      4. Set the root explicitly in your configuration:
+         [tool.setuptools_scm]
+         root = "/app"
+
+      For more information, see: https://setuptools-scm.readthedocs.io/en/latest/config/
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.

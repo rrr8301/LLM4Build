@@ -1,0 +1,75 @@
+
+> typescript@6.0.0 test
+> hereby runtests-parallel --light=false --no-lint --bundle=true
+
+Using /app/Herebyfile.mjs to run runtests-parallel
+Starting lib
+Starting generate-diagnostics
+> /usr/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 136ms
+Finished generate-diagnostics in 145ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished bundle-tests in 635ms
+Finished build-tests in 31.9s
+Finished build-services in 31.9s
+Starting dts-services
+> /usr/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 4.1s
+Starting dts-lssl
+Finished dts-lssl in 2ms
+Starting do-runtests-parallel
+Running tests with config: {"light":false,"workerCount":39,"taskConfigsFolder":"/tmp/ts-tests1","noColor":false,"timeout":40000,"keepFailed":false}
+> /usr/bin/node ./built/local/run.js
+Discovered 326 unittest suites.
+Discovering runner-based tests...
+Discovered 19585 test files in 308ms.
+Starting to run tests using 39 threads...
+Batching initial test lists...
+Suboptimal packing detected: no tests remain to be stolen. Reduce packing fraction from 0.9 to fix.
+Batched into 39 groups with approximate total file sizes of 515570 bytes in each group. (100.0% of total tests batched)
+
+
+
+  98863 passing (3m)
+  1 failing
+
+  1)
+
+         unittests:: Public APIs
+           for typescript.d.ts
+             should be acknowledged when they change:
+     Error: The baseline file api/typescript.d.ts has changed. (Run "hereby baseline-accept" if the new baseline is correct.)[90m
+
+===================================================================
+--- Expected	The current baseline
++++ Actual	The new version
+@@ -9502,12 +9502,11 @@
+      * @param visitor The callback used to visit each child.
+      * @param context A lexical environment context for the visitor.
+      */
+     function visitEachChild<T extends Node>(node: T | undefined, visitor: Visitor, context: TransformationContext | undefined, nodesVisitor?: typeof visitNodes, tokenVisitor?: Visitor): T | undefined;
+-    function isBuildInfoFile(file: string): boolean;
+     function getTsBuildInfoEmitOutputFilePath(options: CompilerOptions): string | undefined;
+     function getOutputFileNames(commandLine: ParsedCommandLine, inputFileName: string, ignoreCase: boolean): readonly string[];
+-    function createPrinter(printerOptions?: PrinterOptions, handlers?: PrintHandlers, typeChecker?: TypeChecker): Printer;
++    function createPrinter(printerOptions?: PrinterOptions, handlers?: PrintHandlers): Printer;
+     enum ProgramUpdateLevel {
+         /** Program is updated with same root file names and options */
+         Update = 0,
+         /** Loads program after updating root file names from the disk */
+
+      at writeComparison (src/harness/harnessIO.ts:1542:23)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at Context.<anonymous> (src/testRunner/unittests/publicApi.ts:21:30)
+      at processImmediate (node:internal/timers:485:21)
+
+
+
+Error in do-runtests-parallel in 2m 59.7s
+Error: Process exited with code: 1
+Completed runtests-parallel with errors in 3m 35.9s
+Failed tasks: do-runtests-parallel

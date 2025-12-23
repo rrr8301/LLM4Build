@@ -1,0 +1,1633 @@
+Starting test execution...
+
+> htmx.org@2.0.7 test
+> npm run lint && npm run types-check && npm run test:chrome --verbose --bail=false --retries=2
+
+
+> htmx.org@2.0.7 lint
+> eslint src/htmx.js test/attributes/ test/core/ test/util/ scripts/*.mjs
+
+
+> htmx.org@2.0.7 types-check
+> tsc src/htmx.js --noEmit --checkJs --target es6 --lib dom,dom.iterable --moduleResolution node
+
+npm verbose cli /usr/bin/node /usr/bin/npm
+npm info using npm@10.8.2
+npm info using node@v20.19.6
+npm verbose title npm run test:chrome
+npm verbose argv "run" "test:chrome" "--loglevel" "verbose" "--bail" "false" "--retries" "2"
+npm verbose logfile logs-max:10 dir:/root/.npm/_logs/2025-12-12T22_05_31_311Z-
+npm verbose logfile /root/.npm/_logs/2025-12-12T22_05_31_311Z-debug-0.log
+
+> htmx.org@2.0.7 test:chrome
+> playwright install chromium && web-test-runner --browsers chromium --playwright
+
+
+Chromium: |████████████████████          | 0/48 test files | 0 passed, 0 failed
+
+Running tests...
+
+Running 48 test files...
+
+
+[2K[1A[2K[Gtest/attributes/hx-disabled-elt.js:
+
+ hx-disabled-elt attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m single element can be disabled w/ hx-disabled elts
+   [32m✓[89m[0m[0m single element can be disabled w/ data-hx-disabled elts
+   [32m✓[89m[0m[0m single element can be disabled w/ closest syntax
+   [32m✓[89m[0m[0m multiple requests with same disabled elt are handled properly
+   [32m✓[89m[0m[0m multiple elts can be disabled
+   [32m✓[89m[0m[0m load trigger does not prevent disabled element working
+   [32m✓[89m[0m[0m hx-disabled-elt supports multiple extended selectors
+   [32m✓[89m[0m[0m closest/find/next/previous handle nothing to find without exception
+
+ 🚧 Browser logs:
+      The selector "closest input" on hx-disabled-elt returned no matches!
+      The selector "find input" on hx-disabled-elt returned no matches!
+      The selector "next input" on hx-disabled-elt returned no matches!
+      The selector "previous input" on hx-disabled-elt returned no matches!
+
+test/attributes/hx-history.js:
+
+ hx-history attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m history cache should not contain embargoed content
+
+
+[2K[1A[2K[Gtest/attributes/hx-indicator.js:
+
+ hx-indicator attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m Indicator classes are properly put on element with no explicit indicator
+   [32m✓[89m[0m[0m Indicator classes are properly put on element with explicit indicator
+   [32m✓[89m[0m[0m Indicator classes are properly put on element with relative indicator
+   [32m✓[89m[0m[0m Indicator classes are properly put on element with explicit indicator w/ data-* prefix
+   [32m✓[89m[0m[0m allows closest syntax in hx-indicator
+   [32m✓[89m[0m[0m is removed when initiating element is removed from the DOM
+   [32m✓[89m[0m[0m allows this syntax in hx-indicator
+   [32m✓[89m[0m[0m multiple requests with same indicator are handled properly
+   [32m✓[89m[0m[0m `inherit` can be used to expand parent hx-indicator
+   [32m✓[89m[0m[0m `inherit` can be used to expand multiple parents hx-indicator
+   [32m✓[89m[0m[0m `inherit` chain breaks properly
+
+test/attributes/hx-headers.js:
+
+ hx-headers attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m basic hx-headers works
+   [32m✓[89m[0m[0m basic hx-headers works with braces
+   [32m✓[89m[0m[0m multiple hx-headers works
+   [32m✓[89m[0m[0m hx-headers can be on parents
+   [32m✓[89m[0m[0m hx-headers can override parents
+   [32m✓[89m[0m[0m hx-headers overrides inputs
+   [32m✓[89m[0m[0m basic hx-headers javascript: works
+   [32m✓[89m[0m[0m hx-headers works with braces
+   [32m✓[89m[0m[0m multiple hx-headers works with javascript
+   [32m✓[89m[0m[0m hx-headers can be on parents with javascript
+   [32m✓[89m[0m[0m hx-headers can override parents with javascript
+   [32m✓[89m[0m[0m hx-headers overrides inputs with javascript
+
+test/attributes/hx-params.js:
+
+ hx-params attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m none excludes all params
+   [32m✓[89m[0m[0m "*" includes all params
+   [32m✓[89m[0m[0m named includes works
+   [32m✓[89m[0m[0m named exclude works
+   [32m✓[89m[0m[0m named exclude works  w/ data-* prefix
+
+test/attributes/hx-confirm.js:
+
+ hx-confirm attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m prompts using window.confirm when hx-confirm is set
+   [32m✓[89m[0m[0m stops the request if confirm is cancelled
+   [32m✓[89m[0m[0m uses the value of hx-confirm as the prompt
+   [32m✓[89m[0m[0m should prompt when htmx:confirm handler calls issueRequest
+   [32m✓[89m[0m[0m should include the question in htmx:confirm event
+   [32m✓[89m[0m[0m should allow skipping built-in window.confirm when using issueRequest
+   [32m✓[89m[0m[0m should allow htmx:confirm even when no hx-confirm is set
+
+test/attributes/hx-prompt.js:
+
+ hx-prompt attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m hx-prompt should set request header to prompt response
+   [32m✓[89m[0m[0m hx-prompt that is cancled returns null and blocks the request
+
+test/attributes/hx-disinherit.js:
+
+ hx-disinherit attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m basic inheritance sanity-check
+   [32m✓[89m[0m[0m disinherit exclude single attribute
+   [32m✓[89m[0m[0m disinherit exclude multiple attributes
+   [32m✓[89m[0m[0m disinherit exclude all attributes
+   [32m✓[89m[0m[0m same-element inheritance disable
+   [32m✓[89m[0m[0m same-element inheritance disable with child nodes
+   [32m✓[89m[0m[0m boosted element hx-disinherit sanity check
+   [32m✓[89m[0m[0m boosted element inheritance manual unset
+   [32m✓[89m[0m[0m nested htmx-node with boosting parent
+
+ 🚧 Browser logs:
+      <span id="cta" class=""><div id="unique"><div id="snowflake">Hello world</div></div></span>
+      <div id="unique"><div id="snowflake">Hello world</div></div>
+
+test/attributes/hx-get.js:
+
+ hx-get attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m issues a GET request on click and swaps content
+   [32m✓[89m[0m[0m GET does not include surrounding data by default
+   [32m✓[89m[0m[0m GET on form includes its own data by default
+   [32m✓[89m[0m[0m GET on form with existing parameters works properly
+   [32m✓[89m[0m[0m GET on form with anchor works properly
+   [32m✓[89m[0m[0m GET on form with anchor works properly and scrolls to anchor id
+   [32m✓[89m[0m[0m issues a GET request on click and swaps content w/ data-* prefix
+   [32m✓[89m[0m[0m does not include a cache-busting parameter when not enabled
+   [32m✓[89m[0m[0m includes a cache-busting parameter when enabled w/ value "true" if no id on target
+   [32m✓[89m[0m[0m includes a cache-busting parameter when enabled w/ the id of the target if there is one
+
+test/attributes/hx-boost.js:
+
+ hx-boost attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m handles basic anchor properly
+   [32m✓[89m[0m[0m handles basic form post properly
+   [32m✓[89m[0m[0m handles basic form post with button formaction properly
+   [32m✓[89m[0m[0m handles basic form post with button formmethod properly
+   [32m✓[89m[0m[0m handles basic form post properly w/ explicit action
+   [32m✓[89m[0m[0m handles basic form get properly
+   [32m✓[89m[0m[0m handles basic form with no explicit method property
+   [32m✓[89m[0m[0m does not boost forms with method="dialog"
+   [32m✓[89m[0m[0m handles basic anchor properly w/ data-* prefix
+   [32m✓[89m[0m[0m overriding default swap style does not effect boosting
+   [32m✓[89m[0m[0m anchors w/ explicit targets are not boosted
+   [32m✓[89m[0m[0m includes an HX-Boosted Header
+   [32m✓[89m[0m[0m form get w/ search params in action property excludes search params
+   [32m✓[89m[0m[0m form post w/ query params in action property uses full url
+   [32m✓[89m[0m[0m form get with an unset action properly submits
+   [32m✓[89m[0m[0m form get with no action properly clears existing parameters on submit
+   [32m✓[89m[0m[0m form get with an empty action properly clears existing parameters on submit
+   [32m✓[89m[0m[0m ctrlKey mouse click does not boost
+
+test/attributes/hx-patch.js:
+
+ hx-patch attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m issues a PATCH request
+   [32m✓[89m[0m[0m issues a PATCH request w/ data-* prefix
+
+test/attributes/hx-put.js:
+
+ hx-put attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m issues a PUT request
+   [32m✓[89m[0m[0m issues a PUT request w/ data-* prefix
+
+test/attributes/hx-on-wildcard.js:
+
+ hx-on:* attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m can handle basic events w/ no other attributes
+   [32m✓[89m[0m[0m can use dashes rather than colons
+   [32m✓[89m[0m[0m can modify a parameter via htmx:configRequest
+   [32m✓[89m[0m[0m can modify a parameter via htmx:configRequest with dashes
+   [32m✓[89m[0m[0m expands :: shorthand into htmx:
+   [32m✓[89m[0m[0m expands -- shorthand into htmx:
+   [32m✓[89m[0m[0m can cancel an event via preventDefault for htmx:config-request
+   [32m✓[89m[0m[0m can respond to data-hx-on
+   [32m✓[89m[0m[0m has the this symbol set to the element
+   [32m✓[89m[0m[0m can handle multi-line JSON
+   [32m✓[89m[0m[0m can handle multiple event handlers in the presence of multi-line JSON
+   [32m✓[89m[0m[0m should fire when triggered by load
+   [32m✓[89m[0m[0m should fire when triggered by revealed
+   [32m✓[89m[0m[0m de-initializes hx-on-* content properly
+   [32m✓[89m[0m[0m is not evaluated when allowEval is false
+   [32m✓[89m[0m[0m can handle being swapped using innerHTML
+   [32m✓[89m[0m[0m cleans up all handlers when the DOM updates
+
+ 🚧 Browser logs:
+      htmx:evalDisallowedError
+
+
+[2K[1A[2K[Gtest/attributes/hx-inherit.js:
+
+ hx-inherit attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m can disable inheritance
+   [32m✓[89m[0m[0m can enable inheritance for all
+   [32m✓[89m[0m[0m can enable inheritance by name
+   [32m✓[89m[0m[0m can enable inheritance by name (bad name, no inheritance)
+   [32m✓[89m[0m[0m can enable inheritance by name with multiple attributes
+
+test/attributes/hx-post.js:
+
+ hx-post attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m issues a POST request with proper headers
+   [32m✓[89m[0m[0m issues a POST request with proper headers  w/ data-* prefix
+
+test/attributes/hx-preserve.js:
+
+ hx-preserve attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m handles basic response properly
+   [32m✓[89m[0m[0m handles preserved element that might not be existing
+   [32m✓[89m[0m[0m preserved element should not be swapped if it lies outside of hx-select
+   [32m✓[89m[0m[0m preserved element should not be swapped if it is part of a oob swap
+   [32m✓[89m[0m[0m preserved element should not be swapped if it is part of a hx-select-oob swap
+   [32m✓[89m[0m[0m preserved element should relocated unchanged if it is part of a oob swap targeting a different loction
+   [32m✓[89m[0m[0m when moveBefore is disabled/missing preseved content is copied into fragment instead of pantry
+
+test/attributes/hx-include.js:
+
+ hx-include attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m By default an input includes itself
+   [32m✓[89m[0m[0m non-GET includes closest form
+   [32m✓[89m[0m[0m non-GET includes closest form and overrides values included that exist outside the form
+   [32m✓[89m[0m[0m GET does not include closest form by default
+   [32m✓[89m[0m[0m Single input not included twice when in form
+   [32m✓[89m[0m[0m Two inputs are included twice when they have the same name
+   [32m✓[89m[0m[0m Two inputs are included twice when in form when they have the same name
+   [32m✓[89m[0m[0m Input not included twice when it explicitly refers to parent form
+   [32m✓[89m[0m[0m Input can be referred to externally
+   [32m✓[89m[0m[0m Input can be referred to externally and then via a form then it will only be included once
+   [32m✓[89m[0m[0m checkbox can be referred to externally
+   [32m✓[89m[0m[0m files input can be referred to externally
+   [32m✓[89m[0m[0m properly handles multiple select input referred to externally
+   [32m✓[89m[0m[0m properly handles multiple select input referred to externally and then via a form then it will only be included once
+   [32m✓[89m[0m[0m Two inputs can be referred to externally
+   [32m✓[89m[0m[0m A form can be referred to externally
+   [32m✓[89m[0m[0m By default an input includes itself w/ data-* prefix
+   [32m✓[89m[0m[0m If the element is not includeable, its descendant inputs are included
+   [32m✓[89m[0m[0m The `closest` modifier can be used in the hx-include selector
+   [32m✓[89m[0m[0m The `this` modifier can be used in the hx-include selector
+   [32m✓[89m[0m[0m Multiple extended selectors can be used in hx-include
+   [32m✓[89m[0m[0m hx-include processes extended selector in between standard selectors
+   [32m✓[89m[0m[0m hx-include processes nested standard selectors correctly
+   [32m✓[89m[0m[0m hx-include processes wrapped next/previous selectors correctly
+   [32m✓[89m[0m[0m hx-include processes wrapped closest selector correctly
+   [32m✓[89m[0m[0m `inherit` can be used to expand parent hx-include
+   [32m✓[89m[0m[0m `inherit` can be used to expand multiple parents hx-include
+   [32m✓[89m[0m[0m `inherit` chain breaks properly
+   [32m✓[89m[0m[0m `inherit` syntax regex properly catches keyword
+
+
+[2K[1A[2K[Gtest/attributes/hx-replace-url.js:
+
+ hx-replace-url attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m navigation should replace an element into the cache when true
+   [32m✓[89m[0m[0m should handle HX-Replace-Url response header
+
+
+[2K[1A[2K[Gtest/attributes/hx-request.js:
+
+ hx-request attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m basic hx-request timeout works
+   [32m✓[89m[0m[0m hx-request header works
+
+ 🚧 Browser logs:
+      htmx:afterRequest
+      htmx:timeout
+
+test/attributes/hx-history-elt.js:
+
+ hx-history attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m content of hx-history-elt is used during history replacment
+
+
+[2K[1A[2K[Gtest/attributes/hx-ext.js:
+
+ hx-ext attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m A simple extension is invoked properly
+   [32m✓[89m[0m[0m Extensions are merged properly
+   [32m✓[89m[0m[0m supports comma separated lists
+   [32m✓[89m[0m[0m A simple extension is invoked properly  w/ data-* prefix
+   [32m✓[89m[0m[0m A simple extension is invoked properly when an HX-Trigger event w/ a namespace fires
+   [32m✓[89m[0m[0m A simple extension is invoked properly for elements it specified in getSelectors
+   [32m✓[89m[0m[0m Extensions are ignored properly
+   [32m✓[89m[0m[0m oob swap via swap extension uses isInlineSwap correctly
+   [32m✓[89m[0m[0m isInlineSwap/handleSwap handling catches, logs and ignores exceptions in extension code
+
+ 🚧 Browser logs:
+      Error: simulate exception handling in isInlineSwap
+        at Object.isInlineSwap (test/attributes/hx-ext.js:29:44)
+        at isInlineSwap (src/htmx.js:1445:23)
+        at src/htmx.js:1487:16
+        at forEach (src/htmx.js:757:9)
+        at oobSwap (src/htmx.js:1480:7)
+        at src/htmx.js:1860:11
+        at forEach (src/htmx.js:757:9)
+        at findAndSwapOobElements (src/htmx.js:1856:5)
+        at doSwap (src/htmx.js:1934:9)
+        at swap (src/htmx.js:2050:9)
+      Error: simulate exception handling in handleSwap
+        at Object.handleSwap (test/attributes/hx-ext.js:32:44)
+        at swapWithStyle (src/htmx.js:1824:37)
+        at src/htmx.js:1497:13
+        at forEach (src/htmx.js:757:9)
+        at oobSwap (src/htmx.js:1480:7)
+        at src/htmx.js:1860:11
+        at forEach (src/htmx.js:757:9)
+        at findAndSwapOobElements (src/htmx.js:1856:5)
+        at doSwap (src/htmx.js:1934:9)
+        at swap (src/htmx.js:2050:9)
+
+
+[2K[1A[2K[Gtest/attributes/hx-sync.js:
+
+ hx-sync attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m can use drop strategy
+   [32m✓[89m[0m[0m defaults to the drop strategy
+   [32m✓[89m[0m[0m can use replace strategy
+   [32m✓[89m[0m[0m can use queue all strategy
+   [32m✓[89m[0m[0m can use queue last strategy
+   [32m✓[89m[0m[0m can use queue first strategy
+   [32m✓[89m[0m[0m can use abort strategy to end existing abortable request
+   [32m✓[89m[0m[0m can use abort strategy to drop abortable request when one is in flight
+   [32m✓[89m[0m[0m can abort a request programmatically
+
+ 🚧 Browser logs:
+      htmx:afterRequest
+      htmx:sendAbort
+      htmx:afterRequest
+      htmx:sendAbort
+      htmx:afterRequest
+      htmx:sendAbort
+
+test/attributes/hx-delete.js:
+
+ hx-delete attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m issues a DELETE request
+   [32m✓[89m[0m[0m issues a DELETE request w/ data-* prefix
+
+test/attributes/hx-select.js:
+
+ BOOTSTRAP - htmx AJAX Tests [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m properly handles a partial of HTML
+   [32m✓[89m[0m[0m properly handles a full HTML document
+   [32m✓[89m[0m[0m properly handles a full HTML document  w/ data-* prefix
+
+
+[2K[1A[2K[Gtest/attributes/hx-swap-oob.js:
+
+ hx-swap-oob attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m handles basic response properly with config {"allowNestedOobSwaps":true}
+   [32m✓[89m[0m[0m handles basic response properly with config {"allowNestedOobSwaps":false}
+   [32m✓[89m[0m[0m oob swap works when the response has a body tag with config {"allowNestedOobSwaps":true}
+   [32m✓[89m[0m[0m oob swap works when the response has a body tag with config {"allowNestedOobSwaps":false}
+   [32m✓[89m[0m[0m oob swap works when the response has html and body tags with config {"allowNestedOobSwaps":true}
+   [32m✓[89m[0m[0m oob swap works when the response has html and body tags with config {"allowNestedOobSwaps":false}
+   [32m✓[89m[0m[0m handles more than one oob swap properly with config {"allowNestedOobSwaps":true}
+   [32m✓[89m[0m[0m handles more than one oob swap properly with config {"allowNestedOobSwaps":false}
+   [32m✓[89m[0m[0m handles remvoing hx-swap-oob tag
+   [32m✓[89m[0m[0m handles remvoing data-hx-swap-oob tag
+   [32m✓[89m[0m[0m handles no id match properly
+   [32m✓[89m[0m[0m handles basic response properly w/ data-* prefix
+   [32m✓[89m[0m[0m handles outerHTML response properly
+   [32m✓[89m[0m[0m handles innerHTML response properly
+   [32m✓[89m[0m[0m oob swaps can be nested in content with config {"allowNestedOobSwaps": true}
+   [32m✓[89m[0m[0m oob swaps in nested content are ignored and stripped with config {"allowNestedOobSwaps": false}
+   [32m✓[89m[0m[0m oob swaps can use selectors to match up
+   [32m✓[89m[0m[0m swaps into all targets that match the selector (innerHTML)
+   [32m✓[89m[0m[0m swaps into all targets that match the selector (outerHTML)
+   [32m✓[89m[0m[0m oob swap delete works properly
+   [32m✓[89m[0m[0m oob swap removes templates used for oob encapsulation only properly
+   [32m✓[89m[0m[0m oob swap keeps templates not used for oob swap encapsulation
+   [32m✓[89m[0m[0m oob swap supports table row in fragment along other oob swap elements with config {"allowNestedOobSwaps":true}
+   [32m✓[89m[0m[0m oob swap supports table row in fragment along other oob swap elements with config {"allowNestedOobSwaps":false}
+   [32m✓[89m[0m[0m handles oob target in web components with both inside shadow root and config {"allowNestedOobSwaps":true}
+   [32m✓[89m[0m[0m handles oob target in web components with both inside shadow root and config {"allowNestedOobSwaps":false}
+   [32m✓[89m[0m[0m handles oob target in web components with main target outside web component config {"allowNestedOobSwaps":true}
+   [32m✓[89m[0m[0m handles oob target in web components with main target outside web component config {"allowNestedOobSwaps":false}
+   [32m✓[89m[0m[0m handles global oob target in web components with main target inside web component config {"allowNestedOobSwaps":true}
+   [32m✓[89m[0m[0m handles global oob target in web components with main target inside web component config {"allowNestedOobSwaps":false}
+   [2m-[0m[0m[0m triggers htmx:oobErrorNoTarget when no targets found
+   [32m✓[89m[0m[0m handles elements with IDs containing special characters properly
+   [32m✓[89m[0m[0m handles one swap into multiple elements with the same ID properly
+
+ 🚧 Browser logs:
+      htmx:oobErrorNoTarget
+
+
+[2K[1A[2K[Gtest/attributes/hx-select-oob.js:
+
+ hx-select-oob attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m basic hx-select-oob works
+   [32m✓[89m[0m[0m multiple hx-select-oobs works
+   [32m✓[89m[0m[0m basic hx-select-oob ignores bad selector
+
+
+[2K[1A[2K[Gtest/attributes/hx-vars.js:
+
+ hx-vars attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m basic hx-vars works
+   [32m✓[89m[0m[0m hx-vars works with braces
+   [32m✓[89m[0m[0m multiple hx-vars works
+   [32m✓[89m[0m[0m hx-vars can be on parents
+   [32m✓[89m[0m[0m hx-vars can override parents
+   [32m✓[89m[0m[0m hx-vars overrides inputs
+   [32m✓[89m[0m[0m basic hx-vars can be unset
+   [32m✓[89m[0m[0m basic hx-vars with braces can be unset
+   [32m✓[89m[0m[0m multiple hx-vars can be unset
+   [32m✓[89m[0m[0m unsetting hx-vars maintains input values
+   [32m✓[89m[0m[0m is not evaluated when allowEval is false
+
+ 🚧 Browser logs:
+      htmx:evalDisallowedError
+
+
+[2K[1A[2K[Gtest/attributes/hx-vals.js:
+
+ hx-vals attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m basic hx-vals works
+   [32m✓[89m[0m[0m basic hx-vals works with braces
+   [32m✓[89m[0m[0m multiple hx-vals works
+   [32m✓[89m[0m[0m Dynamic hx-vals using spread operator works
+   [32m✓[89m[0m[0m hx-vals can be on parents
+   [32m✓[89m[0m[0m hx-vals can override parents
+   [32m✓[89m[0m[0m hx-vals overrides inputs
+   [32m✓[89m[0m[0m hx-vals overrides hx-vars
+   [32m✓[89m[0m[0m basic hx-vals javascript: works
+   [32m✓[89m[0m[0m hx-vals works with braces
+   [32m✓[89m[0m[0m multiple hx-vals works with javascript
+   [32m✓[89m[0m[0m hx-vals can be on parents with javascript
+   [32m✓[89m[0m[0m hx-vals can override parents with javascript
+   [32m✓[89m[0m[0m hx-vals overrides inputs with javascript
+   [32m✓[89m[0m[0m hx-vals treats objects as JSON
+   [32m✓[89m[0m[0m basic hx-vals can be unset
+   [32m✓[89m[0m[0m basic hx-vals with braces can be unset
+   [32m✓[89m[0m[0m multiple hx-vals can be unset
+   [32m✓[89m[0m[0m unsetting hx-vals maintains input values
+   [32m✓[89m[0m[0m javascript: is not evaluated when allowEval is false
+   [32m✓[89m[0m[0m js: is not evaluated when allowEval is false
+   [32m✓[89m[0m[0m using js: with hx-vals has event available
+   [32m✓[89m[0m[0m using js: with hx-vals has event available when used with a delay
+   [32m✓[89m[0m[0m hx-vals works with null values
+   [32m✓[89m[0m[0m hx-vals works with object values
+   [32m✓[89m[0m[0m js: this refers to the element with the hx-vals attribute
+
+ 🚧 Browser logs:
+      htmx:evalDisallowedError
+      htmx:evalDisallowedError
+
+
+[2K[1A[2K[Gtest/attributes/hx-target.js:
+
+ hx-target attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m targets an adjacent element properly
+   [32m✓[89m[0m[0m targets a parent element properly
+   [32m✓[89m[0m[0m targets a `this` element properly
+   [32m✓[89m[0m[0m targets a `closest` element properly
+   [32m✓[89m[0m[0m targets a `closest` element properly w/ hyperscript syntax
+   [32m✓[89m[0m[0m targets a `find` element properly
+   [32m✓[89m[0m[0m targets a `find` element properly w/ hyperscript syntax
+   [32m✓[89m[0m[0m targets an inner element properly
+   [32m✓[89m[0m[0m targets an inner element properly w/ hyperscript syntax
+   [32m✓[89m[0m[0m handles bad target gracefully
+   [32m✓[89m[0m[0m targets an adjacent element properly w/ data-* prefix
+   [32m✓[89m[0m[0m targets a `next` element properly
+   [32m✓[89m[0m[0m targets a `next` element properly w/ hyperscript syntax
+   [32m✓[89m[0m[0m targets a `previous` element properly
+   [32m✓[89m[0m[0m targets a `previous` element properly w/ hyperscript syntax
+   [32m✓[89m[0m[0m targets a `next` element properly without selector
+   [32m✓[89m[0m[0m targets a `previous` element properly without selector
+
+ 🚧 Browser logs:
+      htmx:targetError
+
+
+[2K[1A[2K[Gtest/attributes/hx-swap.js:
+
+ hx-swap attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m swap innerHTML properly
+   [32m✓[89m[0m[0m swap textContent properly with HTML tags
+   [32m✓[89m[0m[0m swap textContent properly with HTML tags and text
+   [32m✓[89m[0m[0m swap textContent ignores OOB swaps
+   [32m✓[89m[0m[0m swap textContent properly with text
+   [32m✓[89m[0m[0m swap outerHTML properly
+   [32m✓[89m[0m[0m swap outerHTML on body falls back to innerHTML properly
+   [32m✓[89m[0m[0m swap beforebegin properly
+   [32m✓[89m[0m[0m swap afterbegin properly
+   [32m✓[89m[0m[0m swap afterbegin properly with no initial content
+   [32m✓[89m[0m[0m swap afterend properly
+   [32m✓[89m[0m[0m handles beforeend properly
+   [32m✓[89m[0m[0m handles beforeend properly with no initial content
+   [32m✓[89m[0m[0m properly parses various swap specifications
+   [32m✓[89m[0m[0m works with a swap delay
+   [32m✓[89m[0m[0m works immediately with no swap delay
+   [32m✓[89m[0m[0m works with transition:true
+   [32m✓[89m[0m[0m works with a settle delay
+   [32m✓[89m[0m[0m works with no settle delay
+   [32m✓[89m[0m[0m works with scroll:top
+   [32m✓[89m[0m[0m works with scroll:bottom
+   [32m✓[89m[0m[0m works with show:top
+   [32m✓[89m[0m[0m works with show:bottom
+   [32m✓[89m[0m[0m works with show:window:bottom
+   [32m✓[89m[0m[0m works with focus-scroll:true
+   [32m✓[89m[0m[0m swap outerHTML properly  w/ data-* prefix
+   [32m✓[89m[0m[0m swap none works properly
+   [32m✓[89m[0m[0m swap outerHTML does not trigger htmx:afterSwap on original element
+   [32m✓[89m[0m[0m swap delete works properly
+   [32m✓[89m[0m[0m in presence of bad swap spec, it uses the default swap strategy
+   [32m✓[89m[0m[0m hx-swap ignoreTitle works
+   [32m✓[89m[0m[0m swapError fires if swap throws exception
+
+ 🚧 Browser logs:
+      Unknown modifier in hx-swap: nonsense
+      Unknown modifier in hx-swap: nonsense
+      htmx:swapError
+      Error: throw
+        at makeSettleInfo (eval at <anonymous> (src/htmx.js:866:14)
+        at doSwap (src/htmx.js:1902:26)
+        at swap (src/htmx.js:2050:9)
+        at handleAjaxResponse (src/htmx.js:4925:7)
+        at xhr.onload (src/htmx.js:4568:9)
+        at FakeXMLHttpRequest.<anonymous> (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:77:0)
+        at node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:112:0
+        at Array.forEach (<anonymous>)
+        at FakeXMLHttpRequest.dispatchEvent (node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:109:0)
+        at FakeXMLHttpRequest.readyStateChange (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:553:0)
+
+
+[2K[1A[2K[Gtest/attributes/hx-push-url.js:
+
+ hx-push-url attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m navigation should push an element into the cache when true
+   [32m✓[89m[0m[0m navigation should not push an element into the cache when false
+   [32m✓[89m[0m[0m navigation should push an element into the cache when string
+   [32m✓[89m[0m[0m restore should return old value
+   [32m✓[89m[0m[0m history restore should not have htmx support classes in content
+   [32m✓[89m[0m[0m cache should only store 10 entries
+   [32m✓[89m[0m[0m cache miss should issue another GET
+   [32m✓[89m[0m[0m cache miss should refresh when refreshOnHistoryMiss true
+   [32m✓[89m[0m[0m navigation should push an element into the cache  w/ data-* prefix
+   [32m✓[89m[0m[0m deals with malformed JSON in history cache when getting
+   [32m✓[89m[0m[0m deals with malformed JSON in history cache when saving
+   [32m✓[89m[0m[0m does not blow out cache when saving a URL twice
+   [32m✓[89m[0m[0m setting history cache size to 0 clears cache
+   [32m✓[89m[0m[0m history cache is LRU
+   [32m✓[89m[0m[0m htmx:afterSettle is called when replacing outerHTML
+   [32m✓[89m[0m[0m should include parameters on a get
+   [32m✓[89m[0m[0m saveToHistoryCache should not throw
+   [32m✓[89m[0m[0m when sessionStorage disabled history not saved fine
+   [2m-[0m[0m[0m normalizePath falls back to no normalization if path not valid URL
+   [32m✓[89m[0m[0m history cache clears out disabled attribute
+   [32m✓[89m[0m[0m ensure cache-busting parameter not pushed to history url
+   [32m✓[89m[0m[0m ensure history pushState called
+   [32m✓[89m[0m[0m should handle HX-Push response header
+   [32m✓[89m[0m[0m should handle HX-Push-Url response header
+   [32m✓[89m[0m[0m should ignore HX-Push-Url=false response header
+   [32m✓[89m[0m[0m pushing url without anchor will retain the page anchor tag
+
+ 🚧 Browser logs:
+      SyntaxError: Unexpected token 'I', "Invalid JSON" is not valid JSON
+        at JSON.parse (<anonymous>)
+        at parseJSON (src/htmx.js:818:19)
+        at getCachedHistory (src/htmx.js:3220:26)
+        at n.<anonymous> (test/attributes/hx-push-url.js:161:45)
+      SyntaxError: Unexpected token 'I', "Invalid JSON" is not valid JSON
+        at JSON.parse (<anonymous>)
+        at parseJSON (src/htmx.js:818:19)
+        at saveToHistoryCache (src/htmx.js:3171:26)
+        at n.<anonymous> (test/attributes/hx-push-url.js:167:33)
+      htmx:historyCacheError
+
+
+[2K[1A[2K[Gtest/attributes/hx-trigger.js:
+
+ hx-trigger attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m non-default value works
+   [32m✓[89m[0m[0m changed modifier works
+   [32m✓[89m[0m[0m changed modifier works along from clause with single input
+   [32m✓[89m[0m[0m changed modifier works along from clause with two inputs
+   [32m✓[89m[0m[0m changed modifier counts each triggerspec separately
+   [32m✓[89m[0m[0m separate changed modifier works along from clause with two inputs
+   [32m✓[89m[0m[0m once modifier works
+   [32m✓[89m[0m[0m once modifier works with multiple triggers
+   [32m✓[89m[0m[0m polling works
+   [32m✓[89m[0m[0m non-default value works w/ data-* prefix
+   [32m✓[89m[0m[0m works with multiple events
+   [32m✓[89m[0m[0m parses spec strings
+   [32m✓[89m[0m[0m sets default trigger for forms
+   [32m✓[89m[0m[0m sets default trigger for form elements
+   [32m✓[89m[0m[0m filters properly with false filter spec
+   [32m✓[89m[0m[0m filters properly with true filter spec
+   [32m✓[89m[0m[0m filters properly compound filter spec
+   [32m✓[89m[0m[0m can refer to target element in condition
+   [32m✓[89m[0m[0m can refer to target element in condition w/ equality
+   [32m✓[89m[0m[0m negative condition
+   [32m✓[89m[0m[0m global function call works
+   [32m✓[89m[0m[0m global property event filter works
+   [32m✓[89m[0m[0m global variable filter works
+   [32m✓[89m[0m[0m can filter polling
+   [32m✓[89m[0m[0m bad condition issues error
+   [32m✓[89m[0m[0m filters properly with true for empty condition
+   [32m✓[89m[0m[0m syntax error in condition issues error
+   [32m✓[89m[0m[0m filters properly with condition containing square backets
+   [32m✓[89m[0m[0m from clause works
+   [32m✓[89m[0m[0m from clause works with body selector
+   [32m✓[89m[0m[0m from clause works with document selector
+   [32m✓[89m[0m[0m from clause works with window selector
+   [32m✓[89m[0m[0m from clause works with closest clause
+   [32m✓[89m[0m[0m from clause works with find clause
+   [32m✓[89m[0m[0m from clause works with next
+   [32m✓[89m[0m[0m from clause works with previous
+   [32m✓[89m[0m[0m event listeners on other elements are removed when an element is swapped out
+   [32m✓[89m[0m[0m multiple triggers with from clauses mixed in work
+   [32m✓[89m[0m[0m from clause works with multiple extended selectors
+   [32m✓[89m[0m[0m event listeners can filter on target
+   [32m✓[89m[0m[0m consume prevents event propagation
+   [32m✓[89m[0m[0m throttle prevents multiple requests from happening
+   [32m✓[89m[0m[0m A throttle of 0 does not prevent multiple requests from happening
+   [32m✓[89m[0m[0m delay delays the request
+   [32m✓[89m[0m[0m A 0 delay does not delay the request
+   [32m✓[89m[0m[0m requests are queued with last one winning by default
+   [32m✓[89m[0m[0m queue:all queues all requests
+   [32m✓[89m[0m[0m queue:first queues first request
+   [32m✓[89m[0m[0m queue:none queues no requests
+   [32m✓[89m[0m[0m load event works w/ positive filters
+   [32m✓[89m[0m[0m load event works w/ negative filters
+   [32m✓[89m[0m[0m reveal event works on two elements
+   [32m✓[89m[0m[0m scrolling triggers revealed event
+   [32m✓[89m[0m[0m scrolling triggers intersect event
+   [32m✓[89m[0m[0m triggering revealed while component not yet inited still works
+   [32m✓[89m[0m[0m reveal event works when triggered by window
+   [32m✓[89m[0m[0m revealed can be paired w/ other events
+   [32m✓[89m[0m[0m revealed doesnt cause other events to trigger
+   [32m✓[89m[0m[0m fires the htmx:trigger event when an AJAX attribute is specified
+   [32m✓[89m[0m[0m fires the htmx:trigger event when no AJAX attribute is specified
+   [32m✓[89m[0m[0m fires the htmx:trigger event for delayed triggers
+   [32m✓[89m[0m[0m fires the htmx:trigger event when the trigger is a load
+   [32m✓[89m[0m[0m filters support "this" reference to the current element
+   [32m✓[89m[0m[0m correctly handles CSS descendant combinators
+   [32m✓[89m[0m[0m correctly handles CSS descendant combinators in modifier target
+   [32m✓[89m[0m[0m correctly handles CSS descendant combinators in modifier root
+   [32m✓[89m[0m[0m correctly handles intersect with modifier threshold
+   [32m✓[89m[0m[0m issues error with invalid trigger spec
+   [32m✓[89m[0m[0m uses trigger specs cache if defined
+   [32m✓[89m[0m[0m correctly reuses trigger specs from the cache if defined
+   [32m✓[89m[0m[0m handles spaces at the end of trigger specs
+   [32m✓[89m[0m[0m Removing polling trigger and processing node removes timeout
+
+ 🚧 Browser logs:
+      htmx:syntax:error
+      htmx:syntax:error
+      htmx:syntax:error
+      htmx:syntax:error
+      TypeError: Cannot read properties of undefined (reading 'b')
+        at HTMLDivElement.eval (eval at <anonymous> (src/htmx.js:2172:24)
+        at maybeFilterEvent (src/htmx.js:2477:28)
+        at HTMLDivElement.eventListener (src/htmx.js:2529:13)
+        at n.<anonymous> (test/attributes/hx-trigger.js:490:11)
+       return (function(event){ return (((event.a) ? (event.a) : (window.a)).b)})
+      SyntaxError: Unexpected token ')'
+        at Function (<anonymous>)
+        at src/htmx.js:2172:24
+        at maybeEval (src/htmx.js:3966:14)
+        at maybeGenerateConditional (src/htmx.js:2171:41)
+        at parseAndCacheTrigger (src/htmx.js:2255:29)
+        at getTriggerSpecs (src/htmx.js:2330:59)
+        at initNode (src/htmx.js:2948:26)
+        at forEach (src/htmx.js:757:9)
+        at Object.processNode [as process] (src/htmx.js:3022:5)
+        at makeFn (test/util/util.js:22:12)
+       return (function(event){ return ({)})
+      htmx:syntax:error
+      htmx:syntax:error
+      htmx:syntax:error
+      [90mundefined[39m
+
+
+[2K[1A[2K[Gtest/core/events.js:
+
+ Core htmx Events [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m htmx:load fires properly
+   [32m✓[89m[0m[0m htmx:configRequest allows attribute addition
+   [32m✓[89m[0m[0m htmx:configRequest is also dispatched in kebab-case
+   [32m✓[89m[0m[0m events are only dispatched once if kebab and camel case match
+   [32m✓[89m[0m[0m events accept an options argument and the result works as expected
+   [32m✓[89m[0m[0m htmx:configRequest allows attribute removal
+   [32m✓[89m[0m[0m htmx:configRequest allows header tweaking
+   [32m✓[89m[0m[0m htmx:configRequest on form gives access to submit event
+   [32m✓[89m[0m[0m htmx:afterSwap is called when replacing outerHTML
+   [32m✓[89m[0m[0m htmx:afterSwap is called when replacing outerHTML, new line content
+   [32m✓[89m[0m[0m htmx:oobBeforeSwap is called before swap
+   [32m✓[89m[0m[0m htmx:oobBeforeSwap can abort a swap
+   [32m✓[89m[0m[0m htmx:oobBeforeSwap is not called on an oob miss
+   [32m✓[89m[0m[0m htmx:oobAfterSwap is called after swap
+   [32m✓[89m[0m[0m htmx:oobAfterSwap is not called on an oob miss
+   [32m✓[89m[0m[0m htmx:afterSettle is called once when replacing outerHTML
+   [32m✓[89m[0m[0m htmx:afterSettle is called once when replacing outerHTML with whitespace
+   [32m✓[89m[0m[0m htmx:afterSettle is called twice when replacing outerHTML with whitespace separated elements
+   [32m✓[89m[0m[0m htmx:afterSettle is called multiple times when doing OOB outerHTML swaps
+   [32m✓[89m[0m[0m htmx:afterRequest is called after a successful request
+   [32m✓[89m[0m[0m htmx:afterOnLoad is called after a successful request
+   [32m✓[89m[0m[0m htmx:afterRequest is called after a failed request
+   [32m✓[89m[0m[0m htmx:sendError is called after a failed request
+   [32m✓[89m[0m[0m htmx:afterRequest is called when replacing outerHTML
+   [32m✓[89m[0m[0m htmx:afterOnLoad is called when replacing outerHTML
+   [32m✓[89m[0m[0m htmx:beforeProcessNode is called when replacing outerHTML
+   [32m✓[89m[0m[0m htmx:beforeProcessNode allows htmx attribute tweaking
+   [32m✓[89m[0m[0m htmx:afterProcessNode is called after replacing outerHTML
+   [32m✓[89m[0m[0m htmx:afterRequest is called when targeting a parent div
+   [32m✓[89m[0m[0m adding an error in htmx:configRequest stops the request
+   [32m✓[89m[0m[0m preventDefault() in htmx:configRequest stops the request
+   [32m✓[89m[0m[0m preventDefault() in the htmx:beforeRequest event cancels the request
+   [32m✓[89m[0m[0m preventDefault() in the htmx:beforeOnLoad event cancels the swap
+   [32m✓[89m[0m[0m htmx:afterRequest event contains 'successful' and 'failed' properties indicating success after successful request
+   [32m✓[89m[0m[0m htmx:afterRequest event contains 'successful' and 'failed' properties indicating failure after failed request
+   [32m✓[89m[0m[0m htmx:confirm can cancel request
+   [32m✓[89m[0m[0m has updated target available when target set via htmx:beforeSwap
+   [32m✓[89m[0m[0m htmx:beforeSwap can override swap style using evt.detail.swapOverride and has final say on it
+   [32m✓[89m[0m[0m preventDefault() in htmx:historyCacheMiss stops the history request
+   [32m✓[89m[0m[0m htmx:historyCacheMissLoad event can update history swap
+   [32m✓[89m[0m[0m htmx:historyCacheMiss event can set custom request headers
+   [32m✓[89m[0m[0m preventDefault() in htmx:historyCacheHit stops the history action
+   [32m✓[89m[0m[0m htmx:historyCacheHit event can update history swap
+   [32m✓[89m[0m[0m htmx:targetError should include the hx-target value
+   [32m✓[89m[0m[0m htmx:targetError can include an inherited hx-target value
+
+ 🚧 Browser logs:
+      htmx:oobErrorNoTarget
+      htmx:oobErrorNoTarget
+      Response Status Error Code 500 from /test
+      htmx:afterRequest
+      htmx:sendError
+      Response Status Error Code 500 from /test
+      beforeSwap HTMLDivElement: <div id="d1"></div> HTMLDivElement: <div id="d2"></div>
+      afterSwap HTMLDivElement: <div id="d2" class="htmx-settling">updated</div> HTMLDivElement: <div id="d2" class="htmx-settling">updated</div>
+      afterSwap look at me. i’m the innerHTML now.
+      htmx:targetError
+      htmx:targetError
+
+
+[2K[1A[2K[Gtest/core/config.js:
+
+ htmx config test [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m swaps normally with no config update
+   [32m✓[89m[0m[0m swap all config should swap everything
+   [32m✓[89m[0m[0m non mapped responseHandling config will not swap
+   [32m✓[89m[0m[0m can change the target of a given response code
+   [32m✓[89m[0m[0m throws targetError if you the target in responseHandling is invalid
+   [32m✓[89m[0m[0m can change the target to "this" in a given response code
+   [32m✓[89m[0m[0m can change the swap type of a given response code
+   [32m✓[89m[0m[0m can change the select of a given response code
+   [32m✓[89m[0m[0m can change if the title is ignored for a given response code
+   [32m✓[89m[0m[0m can change if error for a given response code
+   [32m✓[89m[0m[0m can trigger an event for a given response code
+
+ 🚧 Browser logs:
+      Response Status Error Code 400 from /test
+      Response Status Error Code 500 from /test
+      htmx:targetError
+      Error: Invalid re-target #a-div
+        at resolveRetarget (src/htmx.js:4789:13)
+        at handleAjaxResponse (src/htmx.js:4850:29)
+        at xhr.onload (src/htmx.js:4568:9)
+        at FakeXMLHttpRequest.<anonymous> (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:77:0)
+        at node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:112:0
+        at Array.forEach (<anonymous>)
+        at FakeXMLHttpRequest.dispatchEvent (node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:109:0)
+        at FakeXMLHttpRequest.readyStateChange (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:553:0)
+        at FakeXMLHttpRequest.setResponseBody (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:796:0)
+        at FakeXMLHttpRequest.respond (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:802:0)
+
+test/core/ajax.js:
+
+ Core htmx AJAX Tests [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m issues a GET request on click and swaps content
+   [32m✓[89m[0m[0m processes inner content properly
+   [32m✓[89m[0m[0m handles swap outerHTML properly
+   [32m✓[89m[0m[0m handles beforebegin properly
+   [32m✓[89m[0m[0m handles afterbegin properly
+   [32m✓[89m[0m[0m handles afterbegin properly with no initial content
+   [32m✓[89m[0m[0m handles afterend properly
+   [32m✓[89m[0m[0m handles beforeend properly
+   [32m✓[89m[0m[0m handles beforeend properly with no initial content
+   [32m✓[89m[0m[0m handles hx-target properly
+   [32m✓[89m[0m[0m handles 204 NO CONTENT responses properly
+   [32m✓[89m[0m[0m handles 304 NOT MODIFIED responses properly
+   [32m✓[89m[0m[0m handles hx-trigger with non-default value
+   [32m✓[89m[0m[0m handles hx-trigger with load event
+   [32m✓[89m[0m[0m sets the content type of the request properly
+   [32m✓[89m[0m[0m issues two requests when clicked twice before response
+   [32m✓[89m[0m[0m issues two requests when clicked three times before response
+   [32m✓[89m[0m[0m properly handles hx-select for basic situation
+   [32m✓[89m[0m[0m properly handles hx-select for full html document situation
+   [32m✓[89m[0m[0m properly settles attributes on interior elements
+   [32m✓[89m[0m[0m properly settles attributes elements with single quotes in id
+   [32m✓[89m[0m[0m properly settles attributes elements with double quotes in id
+   [32m✓[89m[0m[0m properly handles multiple select input
+   [32m✓[89m[0m[0m properly handles multiple select input when "multiple" attribute is empty string
+   [32m✓[89m[0m[0m properly handles two multiple select inputs w/ same name
+   [32m✓[89m[0m[0m properly handles multiple email input
+   [32m✓[89m[0m[0m properly handles checkbox inputs
+   [32m✓[89m[0m[0m properly handles radio inputs
+   [32m✓[89m[0m[0m text nodes dont screw up settling via variable capture
+   [32m✓[89m[0m[0m script nodes evaluate
+   [32m✓[89m[0m[0m stand alone script nodes evaluate
+   [32m✓[89m[0m[0m script nodes can define global functions
+   [32m✓[89m[0m[0m child script nodes evaluate when children
+   [32m✓[89m[0m[0m child script nodes evaluate when first child
+   [32m✓[89m[0m[0m child script nodes evaluate when not explicitly marked javascript
+   [32m✓[89m[0m[0m script nodes do not evaluate when explicitly marked as something other than javascript
+   [32m✓[89m[0m[0m script nodes evaluate after swap
+   [2m-[0m[0m[0m script node exceptions do not break rendering
+   [32m✓[89m[0m[0m allows empty verb values
+   [32m✓[89m[0m[0m allows blank verb values
+   [32m✓[89m[0m[0m input values are not settle swapped (causes flicker)
+   [32m✓[89m[0m[0m autofocus attribute works properly
+   [32m✓[89m[0m[0m autofocus attribute works properly w/ child
+   [32m✓[89m[0m[0m autofocus attribute works properly w/ true value
+   [32m✓[89m[0m[0m multipart/form-data encoding works
+   [32m✓[89m[0m[0m removed elements do not issue requests
+   [32m✓[89m[0m[0m title tags update title
+   [32m✓[89m[0m[0m svg title tags do not update title
+   [32m✓[89m[0m[0m first title tag outside svg title tags updates title
+   [32m✓[89m[0m[0m title update does not URL escape
+   [32m✓[89m[0m[0m by default 400 content is not swapped
+   [32m✓[89m[0m[0m 400 content can be swapped if configured to do so
+   [32m✓[89m[0m[0m 400 content can be retargeted if configured to do so
+   [32m✓[89m[0m[0m errors are triggered only on 400+
+   [32m✓[89m[0m[0m content can be modified if configured to do so
+   [32m✓[89m[0m[0m scripts w/ src attribute are properly loaded
+   [32m✓[89m[0m[0m should load tags with colon in their names
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value inside a htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value inside a htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value inside a non-htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value inside a non-htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value outside a htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value outside a htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value stacking with regular input
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value stacking with regular input
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value inside a form, referencing another form
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value inside a form, referencing another form
+   [32m✓[89m[0m[0m sends referenced form values when a button referencing another form is clicked
+   [32m✓[89m[0m[0m sends referenced form values when a submit input referencing another form is clicked
+   [32m✓[89m[0m[0m properly handles inputs external to form
+   [32m✓[89m[0m[0m properly handles buttons with formmethod=dialog
+   [32m✓[89m[0m[0m can associate submit buttons from outside a form with the current version of the form after swap
+   [32m✓[89m[0m[0m properly handles form reset behaviour with a htmx enabled reset button inside a form
+   [32m✓[89m[0m[0m properly handles form reset behaviour with a htmx enabled reset button outside a form
+   [32m✓[89m[0m[0m script tags get swapped in with nonce applied from inlineScriptNonce
+   [32m✓[89m[0m[0m normalizeScriptTags logs error when insertBefore fails
+
+ 🚧 Browser logs:
+      Here...
+      Response Status Error Code 404 from http://localhost:8001/?wtr-session-id=kXWp0qb_2spAWjbytHmyy
+      Response Status Error Code 404 from http://localhost:8001/?wtr-session-id=kXWp0qb_2spAWjbytHmyy
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test2
+      Response Status Error Code 400 from /test
+      TypeError: parent.insertBefore is not a function
+        at src/htmx.js:580:18
+        at Array.forEach (<anonymous>)
+        at normalizeScriptTags (src/htmx.js:575:53)
+        at eval (eval at <anonymous> (src/htmx.js:866:14)
+        at src/htmx.js:866:14
+        at maybeEval (src/htmx.js:3966:14)
+        at Object.internalEval [as _] (src/htmx.js:865:12)
+        at n.<anonymous> (test/core/ajax.js:1356:10)
+
+
+[2K[1A[2K[Gtest/core/extensions.js:
+
+ Core htmx extension tests [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m should support event cancellation by returning false
+   [32m✓[89m[0m[0m should support event cancellation with preventDefault
+   [32m✓[89m[0m[0m withExtensions catches and logs any exceptions
+   [32m✓[89m[0m[0m encodeParameters works as expected
+   [32m✓[89m[0m[0m extensionBase return expected values
+
+ 🚧 Browser logs:
+      Error: throw error to catch and log
+        at test/core/extensions.js:54:13
+        at src/htmx.js:3079:9
+        at forEach (src/htmx.js:757:9)
+        at withExtensions (src/htmx.js:3077:5)
+        at n.<anonymous> (test/core/extensions.js:53:29)
+
+test/core/api.js:
+
+ Core htmx API test [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m should find properly
+   [32m✓[89m[0m[0m should find properly from elt
+   [32m✓[89m[0m[0m should find all properly
+   [32m✓[89m[0m[0m should find all properly from elt
+   [32m✓[89m[0m[0m should find closest element properly
+   [32m✓[89m[0m[0m should remove element properly
+   [32m✓[89m[0m[0m remove element with delay properly
+   [32m✓[89m[0m[0m should remove element properly w/ selector
+   [32m✓[89m[0m[0m should add class properly
+   [32m✓[89m[0m[0m should add class properly w/ selector
+   [32m✓[89m[0m[0m should add class properly after delay
+   [32m✓[89m[0m[0m should remove class properly
+   [32m✓[89m[0m[0m should not error if you remove class from invalid element
+   [32m✓[89m[0m[0m should remove class properly w/ selector
+   [32m✓[89m[0m[0m should remove class properly after delay
+   [32m✓[89m[0m[0m should toggle class properly
+   [32m✓[89m[0m[0m should toggle class properly w/ selector
+   [32m✓[89m[0m[0m should take class properly
+   [32m✓[89m[0m[0m should take class properly w/ selector
+   [32m✓[89m[0m[0m eval can be suppressed
+   [32m✓[89m[0m[0m ajax api works
+   [32m✓[89m[0m[0m ajax api works by ID
+   [32m✓[89m[0m[0m ajax api does not fall back to body when target invalid
+   [32m✓[89m[0m[0m ajax api fails when target invalid
+   [32m✓[89m[0m[0m ajax api fails when target invalid even if source set
+   [32m✓[89m[0m[0m ajax api fails when source invalid and no target set
+   [32m✓[89m[0m[0m ajax api falls back to targeting source if target not set
+   [32m✓[89m[0m[0m ajax api falls back to targeting body if target and source not set
+   [32m✓[89m[0m[0m ajax api works with swapSpec
+   [32m✓[89m[0m[0m ajax api works with select
+   [32m✓[89m[0m[0m ajax api works with Hx-Select overrides select
+   [32m✓[89m[0m[0m ajax returns a promise
+   [32m✓[89m[0m[0m ajax api can pass parameters
+   [32m✓[89m[0m[0m ajax api Content-Type header is application/x-www-form-urlencoded
+   [32m✓[89m[0m[0m ajax api Content-Type header override to application/json
+   [32m✓[89m[0m[0m can re-init with new attributes
+   [32m✓[89m[0m[0m does not trigger load on re-init of an existing element
+   [32m✓[89m[0m[0m onLoad is called... onLoad
+   [32m✓[89m[0m[0m triggers properly
+   [32m✓[89m[0m[0m triggers properly w/ selector
+   [32m✓[89m[0m[0m triggers with no details properly
+   [32m✓[89m[0m[0m swaps content properly (basic)
+   [32m✓[89m[0m[0m swap works with a swap delay
+   [32m✓[89m[0m[0m swap works with a view transition
+   [32m✓[89m[0m[0m swaps content properly (with select)
+   [32m✓[89m[0m[0m swaps content properly (with oob)
+   [32m✓[89m[0m[0m swaps content properly (with select oob)
+   [32m✓[89m[0m[0m swap delete works when parent is removed
+   [32m✓[89m[0m[0m swap outerHTML works when parent is removed
+   [32m✓[89m[0m[0m values api returns formDataProxy with correct form data even if clicked button removed
+   [32m✓[89m[0m[0m tests for formDataProxy array updating and testing for loc coverage
+   [32m✓[89m[0m[0m logAll() and logNone() run without error
+   [32m✓[89m[0m[0m querySelectorExt internal extension api works with just string
+   [32m✓[89m[0m[0m ajax api with no context works
+   [32m✓[89m[0m[0m ajax api with can pass in custom handler and handle if it throws error
+   [32m✓[89m[0m[0m process api can process non elements fine
+
+ 🚧 Browser logs:
+      htmx:evalDisallowedError
+      htmx:targetError
+      htmx:targetError
+      An error was thrown in a Promise outside a test. Did you forget to await a function or assertion?
+      [90mundefined[39m
+      htmx:targetError
+      htmx:targetError
+      test-event HTMLDivElement: <div id="d1"></div> { elt: [32m'HTMLDivElement: <div id="d1"></div>'[39m }
+      Error: throw
+        at handler (test/core/api.js:640:63)
+        at xhr.onload (src/htmx.js:4568:9)
+        at FakeXMLHttpRequest.<anonymous> (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:77:0)
+        at node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:112:0
+        at Array.forEach (<anonymous>)
+        at FakeXMLHttpRequest.dispatchEvent (node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:109:0)
+        at FakeXMLHttpRequest.readyStateChange (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:553:0)
+        at FakeXMLHttpRequest.setResponseBody (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:796:0)
+        at FakeXMLHttpRequest.respond (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:802:0)
+        at Object.response (test/core/api.js:636:11)
+      Error: throw
+        at handler (test/core/api.js:649:63)
+        at xhr.onload (src/htmx.js:4568:9)
+        at FakeXMLHttpRequest.<anonymous> (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:77:0)
+        at node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:112:0
+        at Array.forEach (<anonymous>)
+        at FakeXMLHttpRequest.dispatchEvent (node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:109:0)
+        at FakeXMLHttpRequest.readyStateChange (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:553:0)
+        at FakeXMLHttpRequest.setResponseBody (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:796:0)
+        at FakeXMLHttpRequest.respond (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:802:0)
+        at Object.response (test/core/api.js:636:11)
+
+
+[2K[1A[2K[Gtest/core/perf.js:
+
+ Core htmx perf Tests [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m history implementation should be fast
+   [32m✓[89m[0m[0m history snapshot cleaning should be fast
+
+
+[2K[1A[2K[Gtest/core/headers.js:
+
+ Core htmx AJAX headers [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m should include the HX-Request header
+   [32m✓[89m[0m[0m should include the HX-Trigger header
+   [32m✓[89m[0m[0m should include the HX-Trigger-Name header
+   [32m✓[89m[0m[0m should include the HX-Target header
+   [32m✓[89m[0m[0m should handle simple string HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle dot path HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle simple string HX-Trigger response header in different case properly
+   [32m✓[89m[0m[0m should handle a namespaced HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle basic JSON HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle JSON with array arg HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle JSON with object arg HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle JSON with target array arg HX-Trigger response header properly
+   [32m✓[89m[0m[0m should survive malformed JSON in HX-Trigger response header
+   [32m✓[89m[0m[0m should handle simple string HX-Trigger response header properly w/ outerHTML swap
+   [32m✓[89m[0m[0m should handle simple comma separated list HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle simple comma separated list without space HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle dot path in comma separated list HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle a namespaced comma separated list HX-Trigger response header properly
+   [32m✓[89m[0m[0m should handle HX-Retarget
+   [32m✓[89m[0m[0m should handle HX-Retarget override back to this
+   [32m✓[89m[0m[0m should handle report target:error when HX-Retarget invalid
+   [32m✓[89m[0m[0m should handle HX-Reswap
+   [32m✓[89m[0m[0m should handle HX-Reselect
+   [32m✓[89m[0m[0m should handle HX-Reselect unset
+   [32m✓[89m[0m[0m should handle simple string HX-Trigger-After-Swap response header properly w/ outerHTML swap
+   [32m✓[89m[0m[0m should handle simple comma separated list HX-Trigger-After-Swap response header properly w/ outerHTML swap
+   [32m✓[89m[0m[0m should handle simple string HX-Trigger-After-Settle response header properly w/ outerHTML swap
+   [32m✓[89m[0m[0m should handle simple comma separated list HX-Trigger-After-Settle response header properly w/ outerHTML swap
+   [32m✓[89m[0m[0m should change body content on HX-Location
+   [32m✓[89m[0m[0m should refresh page on HX-Refresh
+   [32m✓[89m[0m[0m should update location.href on HX-Redirect
+   [32m✓[89m[0m[0m request to restore history should include the HX-Request header when historyRestoreAsHxRequest true
+   [32m✓[89m[0m[0m request to restore history should not include the HX-Request header when historyRestoreAsHxRequest false
+   [32m✓[89m[0m[0m request history from server with error status code throws error event
+   [32m✓[89m[0m[0m request to restore history should include the HX-History-Restore-Request header
+   [32m✓[89m[0m[0m request to restore history should include the HX-Current-URL header
+
+ 🚧 Browser logs:
+      Response Status Error Code 404 from /test
+      SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+        SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+        at JSON.parse (<anonymous>)
+        at parseJSON (src/htmx.js:818:19)
+        at handleTriggerHeader (src/htmx.js:2067:24)
+        at handleAjaxResponse (src/htmx.js:4807:7)
+        at xhr.onload (src/htmx.js:4568:9)
+        at FakeXMLHttpRequest.<anonymous> (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:77:0)
+        at node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:112:0
+        at Array.forEach (<anonymous>)
+        at FakeXMLHttpRequest.dispatchEvent (node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:109:0)
+        at FakeXMLHttpRequest.readyStateChange (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:553:0)
+      htmx:targetError
+      Error: Invalid re-target #d2
+        at resolveRetarget (src/htmx.js:4789:13)
+        at handleAjaxResponse (src/htmx.js:4859:29)
+        at xhr.onload (src/htmx.js:4568:9)
+        at FakeXMLHttpRequest.<anonymous> (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:77:0)
+        at node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:112:0
+        at Array.forEach (<anonymous>)
+        at FakeXMLHttpRequest.dispatchEvent (node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:109:0)
+        at FakeXMLHttpRequest.readyStateChange (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:553:0)
+        at FakeXMLHttpRequest.setResponseBody (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:796:0)
+        at FakeXMLHttpRequest.respond (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:802:0)
+      htmx:historyCacheMissLoadError
+
+test/core/internals.js:
+
+ Core htmx internals Tests [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m makeFragment works with janky stuff
+   [32m✓[89m[0m[0m makeFragment works with template wrapping
+   [32m✓[89m[0m[0m makeFragment works with template wrapping and funky combos
+   [32m✓[89m[0m[0m set header works with non-ASCII values
+   [32m✓[89m[0m[0m handles parseInterval correctly
+   [32m✓[89m[0m[0m tokenizes correctly
+   [32m✓[89m[0m[0m tags respond correctly to shouldCancel
+   [32m✓[89m[0m[0m unset properly unsets a given attribute
+   [32m✓[89m[0m[0m unset properly unsets a given attribute on a parent
+   [32m✓[89m[0m[0m unset does not unset a value below it in the hierarchy
+   [32m✓[89m[0m[0m encoding values respects enctype on forms
+   [32m✓[89m[0m[0m Calling onpopstate to trigger backup and restore of page triggers htmx:restored event
+   [32m✓[89m[0m[0m scroll position is restored from history restore
+   [32m✓[89m[0m[0m calling onpopstate with no htmx state not true calls original popstate
+   [32m✓[89m[0m[0m getPathFromResponse returns paths when valid
+   [32m✓[89m[0m[0m appendParam can process objects
+   [32m✓[89m[0m[0m handleTitle falls back to setting document.title when no title head element
+   [32m✓[89m[0m[0m without meta config getMetaConfig returns null
+   [32m✓[89m[0m[0m internalAPI settleImmediately completes settle tasks
+
+ 🚧 Browser logs:
+      htmx:badResponseUrl
+
+
+[2K[1A[2K[Gtest/core/extension-swap.js:
+
+ default extensions behavior [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m handleSwap: afterSwap and afterSettle triggered if extension defined on parent
+   [32m✓[89m[0m[0m handleSwap: new content is handled by htmx
+
+
+[2K[1A[2K[Gtest/core/tokenizer.js:
+
+ Core htmx tokenizer tests [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m tokenizes properly
+   [32m✓[89m[0m[0m generates conditionals property
+
+
+[2K[1A[2K[Gtest/core/security.js:
+
+ security options [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m can disable a single elt
+   [32m✓[89m[0m[0m can disable a parent elt
+   [32m✓[89m[0m[0m can disable a child elt
+   [32m✓[89m[0m[0m can disable a single elt dynamically
+   [32m✓[89m[0m[0m can disable a single elt dynamically & enable it back
+   [32m✓[89m[0m[0m can disable a single a tag dynamically & enable it back with boost
+   [32m✓[89m[0m[0m can disable a single parent elt dynamically
+   [32m✓[89m[0m[0m can disable a single parent elt dynamically & enable it back
+   [32m✓[89m[0m[0m can make egress cross site requests when htmx.config.selfRequestsOnly is disabled
+   [32m✓[89m[0m[0m can make a real local data uri request when selfRequestOnly false
+   [32m✓[89m[0m[0m can disable hx-on on a single elt
+   [32m✓[89m[0m[0m can disable hx-on on a parent elt
+   [32m✓[89m[0m[0m can disable hx-on on a single elt dynamically
+   [32m✓[89m[0m[0m can disable hx-on on a parent elt dynamically
+   [32m✓[89m[0m[0m can't make egress cross site requests when htmx.config.selfRequestsOnly is true
+   [32m✓[89m[0m[0m can cancel egress request based on htmx:validateUrl event
+   [32m✓[89m[0m[0m can cancel egress request based on htmx:validateUrl event, sameHost is false
+   [32m✓[89m[0m[0m can cancel egress request based on htmx:validateUrl event and then allow a request
+   [32m✓[89m[0m[0m can disable script tag support with htmx.config.allowScriptTags
+
+ 🚧 Browser logs:
+      htmx:afterRequest
+      htmx:sendError
+      htmx:invalidPath
+      htmx:invalidPath
+      htmx:invalidPath
+      htmx:invalidPath
+
+
+[2K[1A[2K[Gtest/core/parameters.js:
+
+ Core htmx Parameter Handling [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m Input includes value
+   [32m✓[89m[0m[0m Input includes value on get
+   [32m✓[89m[0m[0m Input includes form
+   [32m✓[89m[0m[0m Input doesnt include form on get
+   [32m✓[89m[0m[0m non-input includes form
+   [32m✓[89m[0m[0m non-input doesnt include form on get
+   [32m✓[89m[0m[0m Basic form works on get
+   [32m✓[89m[0m[0m Basic form works on non-get
+   [32m✓[89m[0m[0m Double values are included as array
+   [32m✓[89m[0m[0m Double values are included as array in correct order
+   [32m✓[89m[0m[0m Double empty values are included as array in correct order
+   [32m✓[89m[0m[0m hx-include works with form
+   [32m✓[89m[0m[0m hx-include works with input
+   [32m✓[89m[0m[0m hx-include works with two inputs
+   [32m✓[89m[0m[0m hx-include works with two inputs, plus form
+   [32m✓[89m[0m[0m correctly URL escapes values
+   [32m✓[89m[0m[0m form includes last focused button
+   [32m✓[89m[0m[0m form includes last focused submit
+   [32m✓[89m[0m[0m form does not include button when focus is lost
+   [32m✓[89m[0m[0m form does not include button when focus is lost outside of form
+   [32m✓[89m[0m[0m form includes button name and value if button has nested elements when clicked
+   [32m✓[89m[0m[0m it puts GET params in the URL by default
+   [32m✓[89m[0m[0m it puts GET params in the body if methodsThatUseUrlParams is empty
+   [32m✓[89m[0m[0m it puts DELETE params in the body by default
+   [32m✓[89m[0m[0m it puts DELETE params in the URL if methodsThatUseUrlParams contains "delete"
+   [32m✓[89m[0m[0m Input within disabled fieldset is excluded
+   [32m✓[89m[0m[0m formdata works along web components
+   [32m✓[89m[0m[0m formdata works with null values
+   [32m✓[89m[0m[0m formdata can be used to construct a URLSearchParams instance
+   [32m✓[89m[0m[0m order of parameters follows order of input elements
+   [32m✓[89m[0m[0m order of parameters follows order of input elements with POST
+   [32m✓[89m[0m[0m file is correctly uploaded with file input
+   [32m✓[89m[0m[0m file is not uploaded with blank filename
+   [32m✓[89m[0m[0m file is correctly uploaded with htmx.ajax
+
+
+[2K[1A[2K[Gtest/core/verbs.js:
+
+ Core htmx AJAX Verbs [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m handles basic posts properly
+   [32m✓[89m[0m[0m handles basic put properly
+   [32m✓[89m[0m[0m handles basic patch properly
+   [32m✓[89m[0m[0m handles basic delete properly
+
+
+[2K[1A[2K[Gtest/core/validation.js:
+
+ Core htmx client side validation tests [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m HTML5 required validation error prevents request
+   [32m✓[89m[0m[0m Novalidate skips form validation
+   [32m✓[89m[0m[0m Validation skipped for indirect form submission
+   [32m✓[89m[0m[0m Formnovalidate skips form validation
+   [32m✓[89m[0m[0m HTML5 pattern validation error prevents request
+   [32m✓[89m[0m[0m Custom validation error prevents request
+   [32m✓[89m[0m[0m Custom validation error prevents request for unticked checkboxes
+   [32m✓[89m[0m[0m Custom validation error prevents request for unselected radiogroups
+   [32m✓[89m[0m[0m hyperscript validation error prevents request
+   [32m✓[89m[0m[0m calls htmx:validation:failed on failure
+   [32m✓[89m[0m[0m foucuses on first invalid input and reports error to user when reportValidityOfForms true
+   [32m✓[89m[0m[0m no focus on first invalid input or report errors when reportValidityOfForms false
+   [32m✓[89m[0m[0m can prevent reportValidity with preventDefault when reportValidityOfForms true
+   [32m✓[89m[0m[0m calls htmx:validation:halted on failure
+   [32m✓[89m[0m[0m hx-validate can prevent a single input from submitting
+
+
+[2K[1A[2K[Gtest/core/shadowdom.js:
+
+ Core htmx Shadow DOM Tests [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m properly retrieves shadow root for extended selector
+   [32m✓[89m[0m[0m properly escapes shadow root for extended selector
+   [32m✓[89m[0m[0m properly retrives shadow root host for extended selector
+   [32m✓[89m[0m[0m issues a GET request on click and swaps content
+   [32m✓[89m[0m[0m processes inner content properly
+   [32m✓[89m[0m[0m handles swap outerHTML properly
+   [32m✓[89m[0m[0m handles beforebegin properly
+   [32m✓[89m[0m[0m handles afterbegin properly
+   [32m✓[89m[0m[0m handles afterbegin properly with no initial content
+   [32m✓[89m[0m[0m handles afterend properly
+   [32m✓[89m[0m[0m handles beforeend properly
+   [32m✓[89m[0m[0m handles beforeend properly with no initial content
+   [32m✓[89m[0m[0m handles hx-target properly
+   [32m✓[89m[0m[0m handles 204 NO CONTENT responses properly
+   [32m✓[89m[0m[0m handles 304 NOT MODIFIED responses properly
+   [32m✓[89m[0m[0m handles hx-trigger with non-default value
+   [32m✓[89m[0m[0m handles hx-trigger with load event
+   [32m✓[89m[0m[0m sets the content type of the request properly
+   [32m✓[89m[0m[0m issues two requests when clicked twice before response
+   [32m✓[89m[0m[0m issues two requests when clicked three times before response
+   [32m✓[89m[0m[0m properly handles hx-select for basic situation
+   [32m✓[89m[0m[0m properly handles hx-select for full html document situation
+   [32m✓[89m[0m[0m properly settles attributes on interior elements
+   [32m✓[89m[0m[0m properly settles attributes elements with single quotes in id
+   [32m✓[89m[0m[0m properly settles attributes elements with double quotes in id
+   [32m✓[89m[0m[0m properly handles multiple select input
+   [32m✓[89m[0m[0m properly handles multiple select input when "multiple" attribute is empty string
+   [32m✓[89m[0m[0m properly handles two multiple select inputs w/ same name
+   [32m✓[89m[0m[0m properly handles multiple email input
+   [32m✓[89m[0m[0m properly handles checkbox inputs
+   [32m✓[89m[0m[0m text nodes dont screw up settling via variable capture
+   [32m✓[89m[0m[0m script nodes evaluate
+   [32m✓[89m[0m[0m stand alone script nodes evaluate
+   [32m✓[89m[0m[0m script nodes can define global functions
+   [32m✓[89m[0m[0m child script nodes evaluate when children
+   [32m✓[89m[0m[0m child script nodes evaluate when first child
+   [32m✓[89m[0m[0m child script nodes evaluate when not explicitly marked javascript
+   [32m✓[89m[0m[0m script nodes do not evaluate when explicitly marked as something other than javascript
+   [32m✓[89m[0m[0m script nodes evaluate after swap
+   [2m-[0m[0m[0m script node exceptions do not break rendering
+   [32m✓[89m[0m[0m allows empty verb values
+   [32m✓[89m[0m[0m allows blank verb values
+   [32m✓[89m[0m[0m input values are not settle swapped (causes flicker)
+   [32m✓[89m[0m[0m autofocus attribute works properly
+   [32m✓[89m[0m[0m autofocus attribute works properly w/ child
+   [32m✓[89m[0m[0m autofocus attribute works properly w/ true value
+   [32m✓[89m[0m[0m multipart/form-data encoding works
+   [32m✓[89m[0m[0m removed elements do not issue requests
+   [32m✓[89m[0m[0m title tags update title
+   [32m✓[89m[0m[0m svg title tags do not update title
+   [32m✓[89m[0m[0m first title tag outside svg title tags updates title
+   [32m✓[89m[0m[0m title update does not URL escape
+   [32m✓[89m[0m[0m by default 400 content is not swapped
+   [32m✓[89m[0m[0m 400 content can be swapped if configured to do so
+   [32m✓[89m[0m[0m 400 content can be retargeted if configured to do so
+   [32m✓[89m[0m[0m errors are triggered only on 400+
+   [32m✓[89m[0m[0m content can be modified if configured to do so
+   [2m-[0m[0m[0m scripts w/ src attribute are properly loaded
+   [32m✓[89m[0m[0m should load tags with colon in their names
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value inside a htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value inside a htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value inside a non-htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value inside a non-htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value outside a htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value outside a htmx form
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value stacking with regular input
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value stacking with regular input
+   [32m✓[89m[0m[0m properly handles clicked submit button with a value inside a form, referencing another form
+   [32m✓[89m[0m[0m properly handles clicked submit input with a value inside a form, referencing another form
+   [32m✓[89m[0m[0m properly handles inputs external to form
+   [32m✓[89m[0m[0m properly handles buttons with formmethod=dialog
+   [32m✓[89m[0m[0m can associate submit buttons from outside a form with the current version of the form after swap
+   [32m✓[89m[0m[0m can handle basic events w/ no other attributes
+   [32m✓[89m[0m[0m can handle basic events w/ no other attributes in child
+   [32m✓[89m[0m[0m can target shadow DOM Host and place content below web component
+   [32m✓[89m[0m[0m can target global id outside shadow DOM and place content
+   [32m✓[89m[0m[0m can target shadow DOM Host with outerHTML swap and replace it
+
+ 🚧 Browser logs:
+      Here...
+      Response Status Error Code 404 from http://localhost:8001/?wtr-session-id=_8UzsXr-XQCD6PB4irbNB
+      Response Status Error Code 404 from http://localhost:8001/?wtr-session-id=_8UzsXr-XQCD6PB4irbNB
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test2
+      Response Status Error Code 400 from /test
+
+
+[2K[1A[2K[Gtest/core/regressions.js:
+
+ Core htmx Regression Tests [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m SVGs process properly in IE11
+   [32m✓[89m[0m[0m Handles https://github.com/bigskysoftware/htmx/issues/4 properly
+   [32m✓[89m[0m[0m Handles https://github.com/bigskysoftware/htmx/issues/33 "empty values" properly
+   [32m✓[89m[0m[0m name=id doesnt cause an error
+   [32m✓[89m[0m[0m empty id doesnt cause an error
+   [32m✓[89m[0m[0m id with dot in value doesnt cause an error
+   [32m✓[89m[0m[0m @ symbol in attributes does not break requests
+   [32m✓[89m[0m[0m @ symbol in attributes does not break attribute settling requests
+   [32m✓[89m[0m[0m selected element with ID does not cause NPE when it disappears
+   [32m✓[89m[0m[0m does not submit with a false condition on a form
+   [32m✓[89m[0m[0m two elements can listen for the same event on another element
+   [32m✓[89m[0m[0m a form can reset based on the htmx:afterRequest event
+   [32m✓[89m[0m[0m supports image maps
+   [32m✓[89m[0m[0m supports unset on hx-select
+   [32m✓[89m[0m[0m can trigger swaps from fields that don't support setSelectionRange
+   [32m✓[89m[0m[0m script tags only execute once
+   [32m✓[89m[0m[0m script tags only execute once when nested
+   [32m✓[89m[0m[0m htmx.config.allowScriptTags properly disables script tags
+   [32m✓[89m[0m[0m htmx.config.allowScriptTags properly disables script tags when nested
+   [32m✓[89m[0m[0m a modified click trigger on a form does not prevent the default behaviour of other elements - https://github.com/bigskysoftware/htmx/issues/2755
+   [32m✓[89m[0m[0m swap=outerHTML clears htmx-swapping class when old node has a style attribute and no class
+   [32m✓[89m[0m[0m swap=outerHTML won't carry over user-defined classes when old node has a style attribute before the class attribute
+   [32m✓[89m[0m[0m a button clicked inside an htmx enabled link will prevent the link from navigating on click
+   [32m✓[89m[0m[0m a htmx enabled button clicked inside a link will prevent the link from navigating on click
+   [32m✓[89m[0m[0m a htmx enabled button containing sub elements will prevent the button submitting a form
+   [32m✓[89m[0m[0m a htmx enabled element inside a form button will prevent the button submitting a form
+   [32m✓[89m[0m[0m from: trigger on form prevents default form submission
+   [32m✓[89m[0m[0m from: trigger on button prevents default form submission
+   [32m✓[89m[0m[0m from: trigger on link prevents default navigation
+   [32m✓[89m[0m[0m check deleting button during click does not trigger exception error in getRelatedFormData when button can no longer find form
+
+ 🚧 404 network requests:
+    - img/bars.svg
+
+Chromium: |██████████████████████████████| 48/48 test files | 823 passed, 0 failed, 5 skipped
+
+Calculating code coverage...
+
+Chromium: |██████████████████████████████| 48/48 test files | 823 passed, 0 failed, 5 skipped
+
+Code coverage: 100 %
+View full coverage report at coverage/lcov-report/index.html
+
+Finished running tests in 13.2s, all tests passed! 🎉
+
+
+npm verbose cwd /app
+npm verbose os Linux 5.4.0-204-generic
+npm verbose node v20.19.6
+npm verbose npm  v10.8.2
+npm verbose exit 0
+npm info ok
+All tests passed successfully!
+ 🚧 Browser logs:
+      The selector "closest input" on hx-disabled-elt returned no matches!
+      The selector "find input" on hx-disabled-elt returned no matches!
+      The selector "next input" on hx-disabled-elt returned no matches!
+      The selector "previous input" on hx-disabled-elt returned no matches!
+
+test/attributes/hx-history.js:
+
+ hx-history attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m history cache should not contain embargoed content
+
+--
+ 🚧 Browser logs:
+      <span id="cta" class=""><div id="unique"><div id="snowflake">Hello world</div></div></span>
+      <div id="unique"><div id="snowflake">Hello world</div></div>
+
+test/attributes/hx-get.js:
+
+ hx-get attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m issues a GET request on click and swaps content
+   [32m✓[89m[0m[0m GET does not include surrounding data by default
+   [32m✓[89m[0m[0m GET on form includes its own data by default
+   [32m✓[89m[0m[0m GET on form with existing parameters works properly
+--
+ 🚧 Browser logs:
+      htmx:evalDisallowedError
+
+
+[2K[1A[2K[Gtest/attributes/hx-inherit.js:
+
+ hx-inherit attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m can disable inheritance
+   [32m✓[89m[0m[0m can enable inheritance for all
+   [32m✓[89m[0m[0m can enable inheritance by name
+   [32m✓[89m[0m[0m can enable inheritance by name (bad name, no inheritance)
+--
+ 🚧 Browser logs:
+      htmx:afterRequest
+      htmx:timeout
+
+test/attributes/hx-history-elt.js:
+
+ hx-history attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m content of hx-history-elt is used during history replacment
+
+
+[2K[1A[2K[Gtest/attributes/hx-ext.js:
+--
+ 🚧 Browser logs:
+      Error: simulate exception handling in isInlineSwap
+        at Object.isInlineSwap (test/attributes/hx-ext.js:29:44)
+        at isInlineSwap (src/htmx.js:1445:23)
+        at src/htmx.js:1487:16
+        at forEach (src/htmx.js:757:9)
+        at oobSwap (src/htmx.js:1480:7)
+        at src/htmx.js:1860:11
+        at forEach (src/htmx.js:757:9)
+        at findAndSwapOobElements (src/htmx.js:1856:5)
+        at doSwap (src/htmx.js:1934:9)
+--
+ 🚧 Browser logs:
+      htmx:afterRequest
+      htmx:sendAbort
+      htmx:afterRequest
+      htmx:sendAbort
+      htmx:afterRequest
+      htmx:sendAbort
+
+test/attributes/hx-delete.js:
+
+ hx-delete attribute [2m[Chromium][0m[0m[0m
+--
+ 🚧 Browser logs:
+      htmx:oobErrorNoTarget
+
+
+[2K[1A[2K[Gtest/attributes/hx-select-oob.js:
+
+ hx-select-oob attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m basic hx-select-oob works
+   [32m✓[89m[0m[0m multiple hx-select-oobs works
+   [32m✓[89m[0m[0m basic hx-select-oob ignores bad selector
+
+--
+ 🚧 Browser logs:
+      htmx:evalDisallowedError
+
+
+[2K[1A[2K[Gtest/attributes/hx-vals.js:
+
+ hx-vals attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m basic hx-vals works
+   [32m✓[89m[0m[0m basic hx-vals works with braces
+   [32m✓[89m[0m[0m multiple hx-vals works
+   [32m✓[89m[0m[0m Dynamic hx-vals using spread operator works
+--
+ 🚧 Browser logs:
+      htmx:evalDisallowedError
+      htmx:evalDisallowedError
+
+
+[2K[1A[2K[Gtest/attributes/hx-target.js:
+
+ hx-target attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m targets an adjacent element properly
+   [32m✓[89m[0m[0m targets a parent element properly
+   [32m✓[89m[0m[0m targets a `this` element properly
+--
+ 🚧 Browser logs:
+      htmx:targetError
+
+
+[2K[1A[2K[Gtest/attributes/hx-swap.js:
+
+ hx-swap attribute [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m swap innerHTML properly
+   [32m✓[89m[0m[0m swap textContent properly with HTML tags
+   [32m✓[89m[0m[0m swap textContent properly with HTML tags and text
+   [32m✓[89m[0m[0m swap textContent ignores OOB swaps
+--
+ 🚧 Browser logs:
+      Unknown modifier in hx-swap: nonsense
+      Unknown modifier in hx-swap: nonsense
+      htmx:swapError
+      Error: throw
+        at makeSettleInfo (eval at <anonymous> (src/htmx.js:866:14)
+        at doSwap (src/htmx.js:1902:26)
+        at swap (src/htmx.js:2050:9)
+        at handleAjaxResponse (src/htmx.js:4925:7)
+        at xhr.onload (src/htmx.js:4568:9)
+        at FakeXMLHttpRequest.<anonymous> (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:77:0)
+--
+ 🚧 Browser logs:
+      SyntaxError: Unexpected token 'I', "Invalid JSON" is not valid JSON
+        at JSON.parse (<anonymous>)
+        at parseJSON (src/htmx.js:818:19)
+        at getCachedHistory (src/htmx.js:3220:26)
+        at n.<anonymous> (test/attributes/hx-push-url.js:161:45)
+      SyntaxError: Unexpected token 'I', "Invalid JSON" is not valid JSON
+        at JSON.parse (<anonymous>)
+        at parseJSON (src/htmx.js:818:19)
+        at saveToHistoryCache (src/htmx.js:3171:26)
+        at n.<anonymous> (test/attributes/hx-push-url.js:167:33)
+--
+ 🚧 Browser logs:
+      htmx:syntax:error
+      htmx:syntax:error
+      htmx:syntax:error
+      htmx:syntax:error
+      TypeError: Cannot read properties of undefined (reading 'b')
+        at HTMLDivElement.eval (eval at <anonymous> (src/htmx.js:2172:24)
+        at maybeFilterEvent (src/htmx.js:2477:28)
+        at HTMLDivElement.eventListener (src/htmx.js:2529:13)
+        at n.<anonymous> (test/attributes/hx-trigger.js:490:11)
+       return (function(event){ return (((event.a) ? (event.a) : (window.a)).b)})
+--
+ 🚧 Browser logs:
+      htmx:oobErrorNoTarget
+      htmx:oobErrorNoTarget
+      Response Status Error Code 500 from /test
+      htmx:afterRequest
+      htmx:sendError
+      Response Status Error Code 500 from /test
+      beforeSwap HTMLDivElement: <div id="d1"></div> HTMLDivElement: <div id="d2"></div>
+      afterSwap HTMLDivElement: <div id="d2" class="htmx-settling">updated</div> HTMLDivElement: <div id="d2" class="htmx-settling">updated</div>
+      afterSwap look at me. i’m the innerHTML now.
+      htmx:targetError
+--
+ 🚧 Browser logs:
+      Response Status Error Code 400 from /test
+      Response Status Error Code 500 from /test
+      htmx:targetError
+      Error: Invalid re-target #a-div
+        at resolveRetarget (src/htmx.js:4789:13)
+        at handleAjaxResponse (src/htmx.js:4850:29)
+        at xhr.onload (src/htmx.js:4568:9)
+        at FakeXMLHttpRequest.<anonymous> (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:77:0)
+        at node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:112:0
+        at Array.forEach (<anonymous>)
+--
+ 🚧 Browser logs:
+      Here...
+      Response Status Error Code 404 from http://localhost:8001/?wtr-session-id=kXWp0qb_2spAWjbytHmyy
+      Response Status Error Code 404 from http://localhost:8001/?wtr-session-id=kXWp0qb_2spAWjbytHmyy
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test2
+      Response Status Error Code 400 from /test
+      TypeError: parent.insertBefore is not a function
+        at src/htmx.js:580:18
+--
+ 🚧 Browser logs:
+      Error: throw error to catch and log
+        at test/core/extensions.js:54:13
+        at src/htmx.js:3079:9
+        at forEach (src/htmx.js:757:9)
+        at withExtensions (src/htmx.js:3077:5)
+        at n.<anonymous> (test/core/extensions.js:53:29)
+
+test/core/api.js:
+
+ Core htmx API test [2m[Chromium][0m[0m[0m
+--
+ 🚧 Browser logs:
+      htmx:evalDisallowedError
+      htmx:targetError
+      htmx:targetError
+      An error was thrown in a Promise outside a test. Did you forget to await a function or assertion?
+      [90mundefined[39m
+      htmx:targetError
+      htmx:targetError
+      test-event HTMLDivElement: <div id="d1"></div> { elt: [32m'HTMLDivElement: <div id="d1"></div>'[39m }
+      Error: throw
+        at handler (test/core/api.js:640:63)
+--
+ 🚧 Browser logs:
+      Response Status Error Code 404 from /test
+      SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+        SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+        at JSON.parse (<anonymous>)
+        at parseJSON (src/htmx.js:818:19)
+        at handleTriggerHeader (src/htmx.js:2067:24)
+        at handleAjaxResponse (src/htmx.js:4807:7)
+        at xhr.onload (src/htmx.js:4568:9)
+        at FakeXMLHttpRequest.<anonymous> (node_modules/sinon/pkg/node_modules/nise/lib/fake-xhr/index.js:77:0)
+        at node_modules/sinon/pkg/node_modules/nise/lib/event/event-target.js:112:0
+--
+ 🚧 Browser logs:
+      htmx:badResponseUrl
+
+
+[2K[1A[2K[Gtest/core/extension-swap.js:
+
+ default extensions behavior [2m[Chromium][0m[0m[0m
+   [32m✓[89m[0m[0m handleSwap: afterSwap and afterSettle triggered if extension defined on parent
+   [32m✓[89m[0m[0m handleSwap: new content is handled by htmx
+
+
+--
+ 🚧 Browser logs:
+      htmx:afterRequest
+      htmx:sendError
+      htmx:invalidPath
+      htmx:invalidPath
+      htmx:invalidPath
+      htmx:invalidPath
+
+
+[2K[1A[2K[Gtest/core/parameters.js:
+
+--
+ 🚧 Browser logs:
+      Here...
+      Response Status Error Code 404 from http://localhost:8001/?wtr-session-id=_8UzsXr-XQCD6PB4irbNB
+      Response Status Error Code 404 from http://localhost:8001/?wtr-session-id=_8UzsXr-XQCD6PB4irbNB
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test
+      Response Status Error Code 400 from /test2
+      Response Status Error Code 400 from /test
+
+
+--
+ 🚧 404 network requests:
+    - img/bars.svg
+
+Chromium: |██████████████████████████████| 48/48 test files | 823 passed, 0 failed, 5 skipped
+
+Calculating code coverage...
+
+Chromium: |██████████████████████████████| 48/48 test files | 823 passed, 0 failed, 5 skipped
+
+Code coverage: 100 %
+View full coverage report at coverage/lcov-report/index.html
+Cleaning up...

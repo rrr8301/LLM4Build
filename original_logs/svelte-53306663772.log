@@ -1,0 +1,397 @@
+﻿2025-10-21T18:36:22.2438710Z Current runner version: '2.329.0'
+2025-10-21T18:36:22.2462290Z ##[group]Runner Image Provisioner
+2025-10-21T18:36:22.2463206Z Hosted Compute Agent
+2025-10-21T18:36:22.2463717Z Version: 20250912.392
+2025-10-21T18:36:22.2464507Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-21T18:36:22.2465311Z Build Date: 2025-09-12T15:23:14Z
+2025-10-21T18:36:22.2465872Z ##[endgroup]
+2025-10-21T18:36:22.2466411Z ##[group]Operating System
+2025-10-21T18:36:22.2466995Z Ubuntu
+2025-10-21T18:36:22.2467466Z 24.04.3
+2025-10-21T18:36:22.2467892Z LTS
+2025-10-21T18:36:22.2468386Z ##[endgroup]
+2025-10-21T18:36:22.2468834Z ##[group]Runner Image
+2025-10-21T18:36:22.2469389Z Image: ubuntu-24.04
+2025-10-21T18:36:22.2469941Z Version: 20250929.60.1
+2025-10-21T18:36:22.2470905Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-21T18:36:22.2472512Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-21T18:36:22.2473466Z ##[endgroup]
+2025-10-21T18:36:22.2474798Z ##[group]GITHUB_TOKEN Permissions
+2025-10-21T18:36:22.2476582Z Metadata: read
+2025-10-21T18:36:22.2477083Z ##[endgroup]
+2025-10-21T18:36:22.2479242Z Secret source: None
+2025-10-21T18:36:22.2479907Z Prepare workflow directory
+2025-10-21T18:36:22.2861981Z Prepare all required actions
+2025-10-21T18:36:22.2899859Z Getting action download info
+2025-10-21T18:36:22.7856947Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-10-21T18:36:22.9362025Z Download action repository 'pnpm/action-setup@v4' (SHA:41ff72655975bd51cab0327fa583b6e92b6d3061)
+2025-10-21T18:36:23.5182436Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-10-21T18:36:23.7499608Z Complete job name: Tests (22, ubuntu-latest)
+2025-10-21T18:36:23.8286158Z ##[group]Run actions/checkout@v4
+2025-10-21T18:36:23.8287444Z with:
+2025-10-21T18:36:23.8288196Z   repository: sveltejs/svelte
+2025-10-21T18:36:23.8289427Z   token: ***
+2025-10-21T18:36:23.8290165Z   ssh-strict: true
+2025-10-21T18:36:23.8290932Z   ssh-user: git
+2025-10-21T18:36:23.8291725Z   persist-credentials: true
+2025-10-21T18:36:23.8292608Z   clean: true
+2025-10-21T18:36:23.8293396Z   sparse-checkout-cone-mode: true
+2025-10-21T18:36:23.8294527Z   fetch-depth: 1
+2025-10-21T18:36:23.8295285Z   fetch-tags: false
+2025-10-21T18:36:23.8296064Z   show-progress: true
+2025-10-21T18:36:23.8296870Z   lfs: false
+2025-10-21T18:36:23.8297596Z   submodules: false
+2025-10-21T18:36:23.8298383Z   set-safe-directory: true
+2025-10-21T18:36:23.8299551Z env:
+2025-10-21T18:36:23.8300304Z   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+2025-10-21T18:36:23.8301280Z ##[endgroup]
+2025-10-21T18:36:23.9404517Z Syncing repository: sveltejs/svelte
+2025-10-21T18:36:23.9407271Z ##[group]Getting Git version info
+2025-10-21T18:36:23.9408565Z Working directory is '/home/runner/work/svelte/svelte'
+2025-10-21T18:36:23.9410326Z [command]/usr/bin/git version
+2025-10-21T18:36:23.9501213Z git version 2.51.0
+2025-10-21T18:36:23.9528281Z ##[endgroup]
+2025-10-21T18:36:23.9541729Z Temporarily overriding HOME='/home/runner/work/_temp/4cc3deef-6261-4fd9-bb0f-36a0d90dc1c7' before making global git config changes
+2025-10-21T18:36:23.9544683Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-21T18:36:23.9547487Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/svelte/svelte
+2025-10-21T18:36:23.9583055Z Deleting the contents of '/home/runner/work/svelte/svelte'
+2025-10-21T18:36:23.9587066Z ##[group]Initializing the repository
+2025-10-21T18:36:23.9592203Z [command]/usr/bin/git init /home/runner/work/svelte/svelte
+2025-10-21T18:36:23.9696952Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-21T18:36:23.9700138Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-21T18:36:23.9703554Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-21T18:36:23.9706268Z hint:
+2025-10-21T18:36:23.9707702Z hint: 	git config --global init.defaultBranch <name>
+2025-10-21T18:36:23.9709670Z hint:
+2025-10-21T18:36:23.9711523Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-21T18:36:23.9714618Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-21T18:36:23.9717073Z hint:
+2025-10-21T18:36:23.9718294Z hint: 	git branch -m <name>
+2025-10-21T18:36:23.9719722Z hint:
+2025-10-21T18:36:23.9721664Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-21T18:36:23.9724721Z Initialized empty Git repository in /home/runner/work/svelte/svelte/.git/
+2025-10-21T18:36:23.9727706Z [command]/usr/bin/git remote add origin https://github.com/sveltejs/svelte
+2025-10-21T18:36:23.9751693Z ##[endgroup]
+2025-10-21T18:36:23.9753204Z ##[group]Disabling automatic garbage collection
+2025-10-21T18:36:23.9755346Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-21T18:36:23.9787119Z ##[endgroup]
+2025-10-21T18:36:23.9788424Z ##[group]Setting up auth
+2025-10-21T18:36:23.9792222Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-21T18:36:23.9822913Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-21T18:36:24.0160339Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-21T18:36:24.0190418Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-21T18:36:24.0408163Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-21T18:36:24.0450151Z ##[endgroup]
+2025-10-21T18:36:24.0451834Z ##[group]Fetching the repository
+2025-10-21T18:36:24.0458777Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +38c4fa8ec048c75f1a64e42abd4e96ef928fba85:refs/remotes/pull/17002/merge
+2025-10-21T18:36:24.9872770Z From https://github.com/sveltejs/svelte
+2025-10-21T18:36:24.9876292Z  * [new ref]         38c4fa8ec048c75f1a64e42abd4e96ef928fba85 -> pull/17002/merge
+2025-10-21T18:36:24.9904930Z ##[endgroup]
+2025-10-21T18:36:24.9905426Z ##[group]Determining the checkout info
+2025-10-21T18:36:24.9907471Z ##[endgroup]
+2025-10-21T18:36:24.9912497Z [command]/usr/bin/git sparse-checkout disable
+2025-10-21T18:36:24.9952562Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-21T18:36:24.9979196Z ##[group]Checking out the ref
+2025-10-21T18:36:24.9983050Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/17002/merge
+2025-10-21T18:36:25.4226042Z Note: switching to 'refs/remotes/pull/17002/merge'.
+2025-10-21T18:36:25.4226730Z 
+2025-10-21T18:36:25.4227178Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-10-21T18:36:25.4228236Z changes and commit them, and you can discard any commits you make in this
+2025-10-21T18:36:25.4229200Z state without impacting any branches by switching back to a branch.
+2025-10-21T18:36:25.4229781Z 
+2025-10-21T18:36:25.4230165Z If you want to create a new branch to retain commits you create, you may
+2025-10-21T18:36:25.4231050Z do so (now or later) by using -c with the switch command. Example:
+2025-10-21T18:36:25.4231578Z 
+2025-10-21T18:36:25.4231822Z   git switch -c <new-branch-name>
+2025-10-21T18:36:25.4232238Z 
+2025-10-21T18:36:25.4232453Z Or undo this operation with:
+2025-10-21T18:36:25.4232799Z 
+2025-10-21T18:36:25.4232999Z   git switch -
+2025-10-21T18:36:25.4233312Z 
+2025-10-21T18:36:25.4233809Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-10-21T18:36:25.4234775Z 
+2025-10-21T18:36:25.4235483Z HEAD is now at 38c4fa8 Merge 8903cba2ebdb490e845520f3f913e4abfff98b78 into f549478dd0508074ac2b8c31777e598936e6f8c9
+2025-10-21T18:36:25.4237839Z ##[endgroup]
+2025-10-21T18:36:25.4275501Z [command]/usr/bin/git log -1 --format=%H
+2025-10-21T18:36:25.4297701Z 38c4fa8ec048c75f1a64e42abd4e96ef928fba85
+2025-10-21T18:36:25.4488970Z ##[group]Run pnpm/action-setup@v4
+2025-10-21T18:36:25.4489338Z with:
+2025-10-21T18:36:25.4489581Z   dest: ~/setup-pnpm
+2025-10-21T18:36:25.4489859Z   run_install: null
+2025-10-21T18:36:25.4490142Z   package_json_file: package.json
+2025-10-21T18:36:25.4490459Z   standalone: false
+2025-10-21T18:36:25.4490700Z env:
+2025-10-21T18:36:25.4490956Z   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+2025-10-21T18:36:25.4491283Z ##[endgroup]
+2025-10-21T18:36:25.5028568Z ##[group]Running self-installer...
+2025-10-21T18:36:26.3858891Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2025-10-21T18:36:26.3982379Z Packages: +1
+2025-10-21T18:36:26.3983517Z +
+2025-10-21T18:36:26.9677812Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2025-10-21T18:36:27.0065812Z 
+2025-10-21T18:36:27.0066231Z dependencies:
+2025-10-21T18:36:27.0066651Z + pnpm 10.4.0 (10.19.0 is available)
+2025-10-21T18:36:27.0066953Z 
+2025-10-21T18:36:27.0106663Z Done in 1.3s
+2025-10-21T18:36:27.0281980Z ##[endgroup]
+2025-10-21T18:36:27.0288291Z Installation Completed!
+2025-10-21T18:36:27.0431680Z ##[group]Run actions/setup-node@v4
+2025-10-21T18:36:27.0431957Z with:
+2025-10-21T18:36:27.0432136Z   node-version: 22
+2025-10-21T18:36:27.0432330Z   cache: pnpm
+2025-10-21T18:36:27.0432535Z   always-auth: false
+2025-10-21T18:36:27.0432733Z   check-latest: false
+2025-10-21T18:36:27.0433074Z   token: ***
+2025-10-21T18:36:27.0433256Z env:
+2025-10-21T18:36:27.0434458Z   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+2025-10-21T18:36:27.0434913Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-10-21T18:36:27.0435209Z ##[endgroup]
+2025-10-21T18:36:27.2313612Z Found in cache @ /opt/hostedtoolcache/node/22.20.0/x64
+2025-10-21T18:36:27.2320189Z ##[group]Environment details
+2025-10-21T18:36:29.7277058Z node: v22.20.0
+2025-10-21T18:36:29.7277339Z npm: 10.9.3
+2025-10-21T18:36:29.7277653Z yarn: 1.22.22
+2025-10-21T18:36:29.7278691Z ##[endgroup]
+2025-10-21T18:36:29.7307507Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+2025-10-21T18:36:30.2984699Z /home/runner/setup-pnpm/node_modules/.bin/store/v10
+2025-10-21T18:36:30.5958017Z Cache hit for: node-cache-Linux-x64-pnpm-67dddf0f44586fd2e7fce81718b8c8cebe5be6c8e4818bcf1233a7ba46490837
+2025-10-21T18:36:31.8711627Z Received 4194304 of 54044101 (7.8%), 4.0 MBs/sec
+2025-10-21T18:36:32.4173048Z Received 54044101 of 54044101 (100.0%), 33.3 MBs/sec
+2025-10-21T18:36:32.4175030Z Cache Size: ~52 MB (54044101 B)
+2025-10-21T18:36:32.4214326Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c105482a-ad96-490f-a5bb-c39211b11fd1/cache.tzst -P -C /home/runner/work/svelte/svelte --use-compress-program unzstd
+2025-10-21T18:36:33.0531664Z Cache restored successfully
+2025-10-21T18:36:33.0648093Z Cache restored from key: node-cache-Linux-x64-pnpm-67dddf0f44586fd2e7fce81718b8c8cebe5be6c8e4818bcf1233a7ba46490837
+2025-10-21T18:36:33.0793543Z ##[group]Run pnpm install --frozen-lockfile
+2025-10-21T18:36:33.0793937Z [36;1mpnpm install --frozen-lockfile[0m
+2025-10-21T18:36:33.0842630Z shell: /usr/bin/bash -e {0}
+2025-10-21T18:36:33.0842879Z env:
+2025-10-21T18:36:33.0843080Z   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+2025-10-21T18:36:33.0843397Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-10-21T18:36:33.0843692Z ##[endgroup]
+2025-10-21T18:36:33.3942224Z Scope: all 3 workspace projects
+2025-10-21T18:36:33.4524363Z Lockfile is up to date, resolution step is skipped
+2025-10-21T18:36:33.4931057Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2025-10-21T18:36:33.5771724Z Packages: +446
+2025-10-21T18:36:33.5772667Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2025-10-21T18:36:34.1096638Z Progress: resolved 446, reused 446, downloaded 0, added 446, done
+2025-10-21T18:36:34.3884544Z 
+2025-10-21T18:36:34.3885155Z devDependencies:
+2025-10-21T18:36:34.3885715Z + @changesets/cli 2.29.7
+2025-10-21T18:36:34.3886528Z + @sveltejs/eslint-config 8.3.3
+2025-10-21T18:36:34.3887147Z + @svitejs/changesets-changelog-github-compact 1.1.0
+2025-10-21T18:36:34.3887700Z + @types/node 20.19.17
+2025-10-21T18:36:34.3888098Z + @types/picomatch 4.0.2
+2025-10-21T18:36:34.3888483Z + @vitest/coverage-v8 2.1.9
+2025-10-21T18:36:34.3889129Z + eslint 9.9.1
+2025-10-21T18:36:34.3889554Z + eslint-plugin-lube 0.4.3
+2025-10-21T18:36:34.3890027Z + eslint-plugin-svelte 3.11.0
+2025-10-21T18:36:34.3890442Z + jsdom 25.0.1
+2025-10-21T18:36:34.3890789Z + playwright 1.46.1
+2025-10-21T18:36:34.3891139Z + prettier 3.2.4
+2025-10-21T18:36:34.3891569Z + prettier-plugin-svelte 3.4.0
+2025-10-21T18:36:34.3892109Z + svelte 5.41.1 <- packages/svelte
+2025-10-21T18:36:34.3892640Z + typescript 5.5.4
+2025-10-21T18:36:34.3893078Z + typescript-eslint 8.26.0
+2025-10-21T18:36:34.3893496Z + v8-natives 1.2.5
+2025-10-21T18:36:34.3893820Z + vitest 2.1.9
+2025-10-21T18:36:34.3894221Z 
+2025-10-21T18:36:34.3897490Z ╭ Warning ─────────────────────────────────────────────────────────────────────╮│                                                                              ││   Ignored build scripts: esbuild.                                            ││   Run "pnpm approve-builds" to pick which dependencies should be allowed     ││   to run scripts.                                                            ││                                                                              │╰──────────────────────────────────────────────────────────────────────────────╯
+2025-10-21T18:36:34.3898969Z 
+2025-10-21T18:36:34.4045247Z playgrounds/sandbox prepare$ node scripts/create-app-svelte.js
+2025-10-21T18:36:34.4404441Z playgrounds/sandbox prepare: Done
+2025-10-21T18:36:34.4427755Z Done in 1.3s
+2025-10-21T18:36:34.4673549Z ##[group]Run pnpm playwright install chromium
+2025-10-21T18:36:34.4673927Z [36;1mpnpm playwright install chromium[0m
+2025-10-21T18:36:34.4706859Z shell: /usr/bin/bash -e {0}
+2025-10-21T18:36:34.4707097Z env:
+2025-10-21T18:36:34.4707300Z   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+2025-10-21T18:36:34.4707649Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-10-21T18:36:34.4707948Z ##[endgroup]
+2025-10-21T18:36:35.1684630Z Downloading Chromium 128.0.6613.18 (playwright build v1129) from https://playwright.azureedge.net/builds/chromium/1129/chromium-linux.zip
+2025-10-21T18:36:35.3215384Z |                                                                                |   0% of 162.8 MiB
+2025-10-21T18:36:35.4539895Z |■■■■■■■■                                                                        |  10% of 162.8 MiB
+2025-10-21T18:36:35.5563602Z |■■■■■■■■■■■■■■■■                                                                |  20% of 162.8 MiB
+2025-10-21T18:36:35.6421961Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 162.8 MiB
+2025-10-21T18:36:35.7071633Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 162.8 MiB
+2025-10-21T18:36:35.7743097Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 162.8 MiB
+2025-10-21T18:36:35.8411340Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 162.8 MiB
+2025-10-21T18:36:35.9050509Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 162.8 MiB
+2025-10-21T18:36:35.9642461Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 162.8 MiB
+2025-10-21T18:36:36.0177768Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 162.8 MiB
+2025-10-21T18:36:36.1053206Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 162.8 MiB
+2025-10-21T18:36:38.8919791Z Chromium 128.0.6613.18 (playwright build v1129) downloaded to /home/runner/.cache/ms-playwright/chromium-1129
+2025-10-21T18:36:38.8922996Z Downloading FFMPEG playwright build v1009 from https://playwright.azureedge.net/builds/ffmpeg/1009/ffmpeg-linux.zip
+2025-10-21T18:36:39.0103858Z |                                                                                |   0% of 2.6 MiB
+2025-10-21T18:36:39.0149495Z |■■■■■■■■                                                                        |  10% of 2.6 MiB
+2025-10-21T18:36:39.0252938Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.6 MiB
+2025-10-21T18:36:39.0272674Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.6 MiB
+2025-10-21T18:36:39.0292903Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.6 MiB
+2025-10-21T18:36:39.0316248Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.6 MiB
+2025-10-21T18:36:39.0333615Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.6 MiB
+2025-10-21T18:36:39.0350321Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.6 MiB
+2025-10-21T18:36:39.0365960Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.6 MiB
+2025-10-21T18:36:39.0382530Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.6 MiB
+2025-10-21T18:36:39.0399880Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.6 MiB
+2025-10-21T18:36:39.1040487Z FFMPEG playwright build v1009 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1009
+2025-10-21T18:36:39.2061567Z ##[group]Run pnpm test
+2025-10-21T18:36:39.2061827Z [36;1mpnpm test[0m
+2025-10-21T18:36:39.2094357Z shell: /usr/bin/bash -e {0}
+2025-10-21T18:36:39.2094609Z env:
+2025-10-21T18:36:39.2094806Z   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+2025-10-21T18:36:39.2095132Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-10-21T18:36:39.2095412Z   CI: true
+2025-10-21T18:36:39.2095580Z ##[endgroup]
+2025-10-21T18:36:39.4968992Z 
+2025-10-21T18:36:39.4969730Z > svelte-monorepo@0.0.1 test /home/runner/work/svelte/svelte
+2025-10-21T18:36:39.4970542Z > vitest run
+2025-10-21T18:36:39.4970675Z 
+2025-10-21T18:36:39.8903280Z 
+2025-10-21T18:36:39.8905471Z [1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90m/home/runner/work/svelte/svelte[39m
+2025-10-21T18:36:39.8906038Z 
+2025-10-21T18:36:40.8380338Z  [32m✓[39m packages/svelte/tests/store/test.ts [2m([22m[2m33 tests[22m[2m)[22m[90m 125[2mms[22m[39m
+2025-10-21T18:36:41.1679153Z  [32m✓[39m packages/svelte/src/reactivity/date.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 440[2mms[22m[39m
+2025-10-21T18:36:41.1681721Z    [33m[2m✓[22m[39m Date fine grained tests [33m392[2mms[22m[39m
+2025-10-21T18:36:41.1701764Z  [32m✓[39m packages/svelte/tests/signals/test.ts [2m([22m[2m94 tests[22m[2m | [22m[33m2 skipped[39m[2m)[22m[33m 450[2mms[22m[39m
+2025-10-21T18:36:41.3255148Z  [32m✓[39m packages/svelte/src/internal/server/renderer.test.ts [2m([22m[2m20 tests[22m[2m)[22m[90m 28[2mms[22m[39m
+2025-10-21T18:36:41.6807558Z  [32m✓[39m packages/svelte/src/internal/shared/clone.test.ts [2m([22m[2m11 tests[22m[2m)[22m[90m 11[2mms[22m[39m
+2025-10-21T18:36:42.1148763Z  [32m✓[39m packages/svelte/src/reactivity/url-search-params.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 14[2mms[22m[39m
+2025-10-21T18:36:42.5594986Z  [32m✓[39m packages/svelte/src/reactivity/map.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 35[2mms[22m[39m
+2025-10-21T18:36:43.7763872Z  [32m✓[39m packages/svelte/tests/sourcemaps/test.ts [2m([22m[2m28 tests[22m[2m | [22m[33m2 skipped[39m[2m)[22m[33m 464[2mms[22m[39m
+2025-10-21T18:36:44.2087280Z  [32m✓[39m packages/svelte/src/internal/client/proxy.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 11[2mms[22m[39m
+2025-10-21T18:36:44.4108550Z  [32m✓[39m packages/svelte/tests/validator/test.ts [2m([22m[2m328 tests[22m[2m | [22m[33m4 skipped[39m[2m)[22m[33m 958[2mms[22m[39m
+2025-10-21T18:36:44.9379704Z  [32m✓[39m packages/svelte/src/reactivity/set.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 21[2mms[22m[39m
+2025-10-21T18:36:45.1372073Z  [32m✓[39m packages/svelte/src/reactivity/url.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 33[2mms[22m[39m
+2025-10-21T18:36:47.0634914Z  [32m✓[39m packages/svelte/tests/snapshot/test.ts [2m([22m[2m27 tests[22m[2m)[22m[33m 511[2mms[22m[39m
+2025-10-21T18:36:47.7372357Z  [32m✓[39m packages/svelte/tests/compiler-errors/test.ts [2m([22m[2m145 tests[22m[2m)[22m[33m 419[2mms[22m[39m
+2025-10-21T18:36:49.0686419Z  [32m✓[39m packages/svelte/tests/migrate/test.ts [2m([22m[2m75 tests[22m[2m)[22m[33m 478[2mms[22m[39m
+2025-10-21T18:36:49.1397944Z  [32m✓[39m packages/svelte/tests/parser-modern/test.ts [2m([22m[2m22 tests[22m[2m)[22m[90m 165[2mms[22m[39m
+2025-10-21T18:36:50.5219022Z  [32m✓[39m packages/svelte/tests/preprocess/test.ts [2m([22m[2m19 tests[22m[2m)[22m[90m 80[2mms[22m[39m
+2025-10-21T18:36:50.7501359Z  [32m✓[39m packages/svelte/tests/parser-legacy/test.ts [2m([22m[2m83 tests[22m[2m | [22m[33m1 skipped[39m[2m)[22m[90m 291[2mms[22m[39m
+2025-10-21T18:36:52.9932692Z  [32m✓[39m packages/svelte/tests/runtime-browser/test.ts [2m([22m[2m85 tests[22m[2m)[22m[33m 9942[2mms[22m[39m
+2025-10-21T18:36:52.9939382Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbind-muted (dom) [33m1009[2mms[22m[39m
+2025-10-21T18:36:52.9945218Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbind-playbackrate (dom) [33m1083[2mms[22m[39m
+2025-10-21T18:36:52.9949309Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbind-volume (dom) [33m948[2mms[22m[39m
+2025-10-21T18:36:52.9950579Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbinding-files (dom) [33m794[2mms[22m[39m
+2025-10-21T18:36:52.9951734Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbinding-files (hydrate) [33m1023[2mms[22m[39m
+2025-10-21T18:36:52.9953014Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbinding-width-height-initialize (dom) [33m372[2mms[22m[39m
+2025-10-21T18:36:52.9954846Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbinding-width-height-initialize (hydrate) [33m1184[2mms[22m[39m
+2025-10-21T18:36:52.9955970Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbinding-width-height-this-timing (dom) [33m399[2mms[22m[39m
+2025-10-21T18:36:52.9956873Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbinding-width-height-this-timing (hydrate) [33m1078[2mms[22m[39m
+2025-10-21T18:36:52.9957789Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbrowser-events-ending-with-capture (dom) [33m303[2mms[22m[39m
+2025-10-21T18:36:52.9958774Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mbrowser-events-ending-with-capture (hydrate) [33m966[2mms[22m[39m
+2025-10-21T18:36:52.9959619Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcomponent-css-custom-properties (hydrate) [33m845[2mms[22m[39m
+2025-10-21T18:36:52.9960754Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcomponent-css-custom-properties-dynamic (dom) [33m370[2mms[22m[39m
+2025-10-21T18:36:52.9962462Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcomponent-css-custom-properties-dynamic (hydrate) [33m951[2mms[22m[39m
+2025-10-21T18:36:52.9964439Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcomponent-css-custom-properties-dynamic-svg (dom) [33m326[2mms[22m[39m
+2025-10-21T18:36:52.9966213Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcomponent-css-custom-properties-dynamic-svg (hydrate) [33m916[2mms[22m[39m
+2025-10-21T18:36:52.9967950Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcomponent-event-handler-contenteditable-false (dom) [33m389[2mms[22m[39m
+2025-10-21T18:36:52.9969514Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcomponent-event-handler-contenteditable-false (hydrate) [33m840[2mms[22m[39m
+2025-10-21T18:36:52.9970955Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcomponent-slot-binding-dimensions (dom) [33m335[2mms[22m[39m
+2025-10-21T18:36:52.9972314Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcomponent-slot-binding-dimensions (hydrate) [33m740[2mms[22m[39m
+2025-10-21T18:36:52.9973642Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcss-props-dynamic-component (dom) [33m324[2mms[22m[39m
+2025-10-21T18:36:52.9975092Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mcss-props-dynamic-component (hydrate) [33m1028[2mms[22m[39m
+2025-10-21T18:36:52.9976514Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mfine-grained-hydration-clean-attr (hydrate) [33m937[2mms[22m[39m
+2025-10-21T18:36:52.9977759Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mhead-script (hydrate) [33m791[2mms[22m[39m
+2025-10-21T18:36:52.9978818Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mhtml-tag-script (dom) [33m325[2mms[22m[39m
+2025-10-21T18:36:52.9979896Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mhtml-tag-script-2 (dom) [33m310[2mms[22m[39m
+2025-10-21T18:36:52.9981191Z    [33m[2m✓[22m[39m runtime-browser[2m > [22minline-style-directive-important (dom) [33m367[2mms[22m[39m
+2025-10-21T18:36:52.9982616Z    [33m[2m✓[22m[39m runtime-browser[2m > [22minline-style-directive-important (hydrate) [33m1104[2mms[22m[39m
+2025-10-21T18:36:52.9983940Z    [33m[2m✓[22m[39m runtime-browser[2m > [22minline-style-directive-precedence (dom) [33m373[2mms[22m[39m
+2025-10-21T18:36:52.9985767Z    [33m[2m✓[22m[39m runtime-browser[2m > [22minline-style-directive-precedence (hydrate) [33m919[2mms[22m[39m
+2025-10-21T18:36:52.9987455Z    [33m[2m✓[22m[39m runtime-browser[2m > [22minline-style-directive-update-with-spread (hydrate) [33m947[2mms[22m[39m
+2025-10-21T18:36:52.9988703Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mmount-in-iframe (dom) [33m314[2mms[22m[39m
+2025-10-21T18:36:52.9989739Z    [33m[2m✓[22m[39m runtime-browser[2m > [22mmount-in-iframe (hydrate) [33m793[2mms[22m[39m
+2025-10-21T18:36:52.9990794Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msole-script-tag (dom) [33m485[2mms[22m[39m
+2025-10-21T18:36:52.9992022Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-component-css-custom-properties (dom) [33m374[2mms[22m[39m
+2025-10-21T18:36:52.9993610Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-component-css-custom-properties (hydrate) [33m1230[2mms[22m[39m
+2025-10-21T18:36:52.9995394Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-component-css-custom-properties-dynamic (dom) [33m460[2mms[22m[39m
+2025-10-21T18:36:52.9997005Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-component-css-custom-properties-dynamic (hydrate) [33m1203[2mms[22m[39m
+2025-10-21T18:36:52.9998506Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-component-css-custom-properties2 (dom) [33m343[2mms[22m[39m
+2025-10-21T18:36:52.9999983Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-component-css-custom-properties2 (hydrate) [33m1041[2mms[22m[39m
+2025-10-21T18:36:53.0001467Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-self-css-custom-properties (hydrate) [33m769[2mms[22m[39m
+2025-10-21T18:36:53.0002968Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-self-css-custom-properties-dynamic (dom) [33m379[2mms[22m[39m
+2025-10-21T18:36:53.0004823Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-self-css-custom-properties-dynamic (hydrate) [33m1143[2mms[22m[39m
+2025-10-21T18:36:53.0006337Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-self-css-custom-properties2 (dom) [33m513[2mms[22m[39m
+2025-10-21T18:36:53.0007770Z    [33m[2m✓[22m[39m runtime-browser[2m > [22msvelte-self-css-custom-properties2 (hydrate) [33m945[2mms[22m[39m
+2025-10-21T18:36:53.0008923Z    [33m[2m✓[22m[39m custom-elements[2m > [22m$$props [33m402[2mms[22m[39m
+2025-10-21T18:36:53.0009856Z    [33m[2m✓[22m[39m custom-elements[2m > [22m$$slot [33m432[2mms[22m[39m
+2025-10-21T18:36:53.0010763Z    [33m[2m✓[22m[39m custom-elements[2m > [22maction [33m349[2mms[22m[39m
+2025-10-21T18:36:53.0011773Z    [33m[2m✓[22m[39m custom-elements[2m > [22mcamel-case-attribute [33m368[2mms[22m[39m
+2025-10-21T18:36:53.0012844Z    [33m[2m✓[22m[39m custom-elements[2m > [22mce-options-valid [33m324[2mms[22m[39m
+2025-10-21T18:36:53.0013845Z    [33m[2m✓[22m[39m custom-elements[2m > [22mcustom-class [33m380[2mms[22m[39m
+2025-10-21T18:36:53.0014987Z    [33m[2m✓[22m[39m custom-elements[2m > [22mcustom-method [33m445[2mms[22m[39m
+2025-10-21T18:36:53.0016005Z    [33m[2m✓[22m[39m custom-elements[2m > [22meffect-sequence [33m417[2mms[22m[39m
+2025-10-21T18:36:53.0017076Z    [33m[2m✓[22m[39m custom-elements[2m > [22melement-effect-context [33m453[2mms[22m[39m
+2025-10-21T18:36:53.0018096Z    [33m[2m✓[22m[39m custom-elements[2m > [22mescaped-css [33m430[2mms[22m[39m
+2025-10-21T18:36:53.0018985Z    [33m[2m✓[22m[39m custom-elements[2m > [22mevents [33m352[2mms[22m[39m
+2025-10-21T18:36:53.0019891Z    [33m[2m✓[22m[39m custom-elements[2m > [22mevents-slotted [33m473[2mms[22m[39m
+2025-10-21T18:36:53.0020858Z    [33m[2m✓[22m[39m custom-elements[2m > [22mextend-with-ts [33m502[2mms[22m[39m
+2025-10-21T18:36:53.0021827Z    [33m[2m✓[22m[39m custom-elements[2m > [22mextended-builtin [33m525[2mms[22m[39m
+2025-10-21T18:36:53.0022776Z    [33m[2m✓[22m[39m custom-elements[2m > [22mhost-rune [33m419[2mms[22m[39m
+2025-10-21T18:36:53.0023831Z    [33m[2m✓[22m[39m custom-elements[2m > [22mhost-rune-access-injected-css [33m399[2mms[22m[39m
+2025-10-21T18:36:53.0025143Z    [33m[2m✓[22m[39m custom-elements[2m > [22mhtml [33m343[2mms[22m[39m
+2025-10-21T18:36:53.0026045Z    [33m[2m✓[22m[39m custom-elements[2m > [22mhtml-slots [33m592[2mms[22m[39m
+2025-10-21T18:36:53.0026982Z    [33m[2m✓[22m[39m custom-elements[2m > [22mlate-ce-mount [33m535[2mms[22m[39m
+2025-10-21T18:36:53.0027977Z    [33m[2m✓[22m[39m custom-elements[2m > [22mnested [33m587[2mms[22m[39m
+2025-10-21T18:36:53.0028915Z    [33m[2m✓[22m[39m custom-elements[2m > [22mnew-styled [33m516[2mms[22m[39m
+2025-10-21T18:36:53.0030041Z    [33m[2m✓[22m[39m custom-elements[2m > [22mno-shadow-dom [33m393[2mms[22m[39m
+2025-10-21T18:36:53.0031017Z    [33m[2m✓[22m[39m custom-elements[2m > [22mno-tag-ce-options [33m469[2mms[22m[39m
+2025-10-21T18:36:53.0031943Z    [33m[2m✓[22m[39m custom-elements[2m > [22moncreate [33m434[2mms[22m[39m
+2025-10-21T18:36:53.0032858Z    [33m[2m✓[22m[39m custom-elements[2m > [22mondestroy [33m515[2mms[22m[39m
+2025-10-21T18:36:53.0033864Z    [33m[2m✓[22m[39m custom-elements[2m > [22mpropagate-prop-changes [33m455[2mms[22m[39m
+2025-10-21T18:36:53.0035087Z    [33m[2m✓[22m[39m custom-elements[2m > [22mprops [33m338[2mms[22m[39m
+2025-10-21T18:36:53.0036055Z    [33m[2m✓[22m[39m custom-elements[2m > [22mprops-rune-attributes [33m305[2mms[22m[39m
+2025-10-21T18:36:53.0037098Z    [33m[2m✓[22m[39m custom-elements[2m > [22mreflect-attributes [33m348[2mms[22m[39m
+2025-10-21T18:36:55.0405888Z [90mstderr[2m | packages/svelte/tests/server-side-rendering/test.ts[2m > [22m[2minvalid-nested-svelte-element (sync)
+2025-10-21T18:36:55.0413138Z [22m[39mnode_invalid_placement_ssr: `<p>` (packages/svelte/tests/server-side-rendering/samples/invalid-nested-svelte-element/main.svelte:2:1) cannot be a child of `<p>` (packages/svelte/tests/server-side-rendering/samples/invalid-nested-svelte-element/main.svelte:1:0)
+2025-10-21T18:36:55.0416093Z 
+2025-10-21T18:36:55.0417798Z This can cause content to shift around as the browser repairs the HTML, and will likely result in a `hydration_mismatch` warning.
+2025-10-21T18:36:55.0419365Z 
+2025-10-21T18:36:55.0420631Z [90mstderr[2m | packages/svelte/tests/server-side-rendering/test.ts[2m > [22m[2minvalid-nested-svelte-element (async)
+2025-10-21T18:36:55.0424802Z [22m[39mnode_invalid_placement_ssr: `<p>` (packages/svelte/tests/server-side-rendering/samples/invalid-nested-svelte-element/main.svelte:2:1) cannot be a child of `<p>` (packages/svelte/tests/server-side-rendering/samples/invalid-nested-svelte-element/main.svelte:1:0)
+2025-10-21T18:36:55.0428989Z 
+2025-10-21T18:36:55.0429865Z This can cause content to shift around as the browser repairs the HTML, and will likely result in a `hydration_mismatch` warning.
+2025-10-21T18:36:55.0430647Z 
+2025-10-21T18:36:55.3155035Z  [32m✓[39m packages/svelte/tests/server-side-rendering/test.ts [2m([22m[2m176 tests[22m[2m)[22m[33m 1228[2mms[22m[39m
+2025-10-21T18:36:55.5773760Z  [32m✓[39m packages/svelte/tests/hydration/test.ts [2m([22m[2m72 tests[22m[2m)[22m[33m 1297[2mms[22m[39m
+2025-10-21T18:36:56.7332447Z  [32m✓[39m packages/svelte/tests/motion/test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 9[2mms[22m[39m
+2025-10-21T18:36:57.2130691Z  [32m✓[39m packages/svelte/tests/css/test.ts [2m([22m[2m177 tests[22m[2m)[22m[33m 2684[2mms[22m[39m
+2025-10-21T18:36:57.7087816Z  [32m✓[39m packages/svelte/tests/runtime-browser/test-ssr.ts [2m([22m[2m30 tests[22m[2m)[22m[33m 589[2mms[22m[39m
+2025-10-21T18:37:32.4108566Z  [32m✓[39m packages/svelte/tests/runtime-legacy/test.ts [2m([22m[2m3292 tests[22m[2m | [22m[33m10 skipped[39m[2m)[22m[33m 31710[2mms[22m[39m
+2025-10-21T18:37:32.4110510Z    [33m[2m✓[22m[39m before-render-chain-2 (dom) [33m2198[2mms[22m[39m
+2025-10-21T18:37:32.4111753Z    [33m[2m✓[22m[39m before-render-chain-2 (hydrate) [33m2018[2mms[22m[39m
+2025-10-21T18:37:32.4114172Z    [33m[2m✓[22m[39m each-block-keyed-random-permute (dom) [33m452[2mms[22m[39m
+2025-10-21T18:37:32.4115369Z    [33m[2m✓[22m[39m each-block-keyed-random-permute (hydrate) [33m606[2mms[22m[39m
+2025-10-21T18:37:32.4116235Z    [33m[2m✓[22m[39m each-block-random-permute (dom) [33m330[2mms[22m[39m
+2025-10-21T18:37:32.4116821Z    [33m[2m✓[22m[39m each-block-random-permute (hydrate) [33m360[2mms[22m[39m
+2025-10-21T18:37:35.5691867Z  [32m✓[39m packages/svelte/tests/runtime-runes/test.ts [2m([22m[2m2160 tests[22m[2m | [22m[33m22 skipped[39m[2m)[22m[33m 35370[2mms[22m[39m
+2025-10-21T18:37:35.5693548Z    [33m[2m✓[22m[39m effect-loop-3 (dom) [33m871[2mms[22m[39m
+2025-10-21T18:37:35.5694559Z    [33m[2m✓[22m[39m effect-loop-3 (hydrate) [33m776[2mms[22m[39m
+2025-10-21T18:37:35.5695193Z    [33m[2m✓[22m[39m effect-loop-infinite (hydrate) [33m333[2mms[22m[39m
+2025-10-21T18:37:35.5695962Z    [33m[2m✓[22m[39m error-boundary-20 (dom) [33m380[2mms[22m[39m
+2025-10-21T18:37:35.5696962Z    [33m[2m✓[22m[39m error-boundary-20 (hydrate) [33m366[2mms[22m[39m
+2025-10-21T18:37:35.5697968Z    [33m[2m✓[22m[39m mount-unmount-anchor (dom) [33m5857[2mms[22m[39m
+2025-10-21T18:37:35.5698703Z    [33m[2m✓[22m[39m mount-unmount-anchor (hydrate) [33m5900[2mms[22m[39m
+2025-10-21T18:37:35.6469134Z 
+2025-10-21T18:37:35.6521113Z [2m Test Files [22m [1m[32m26 passed[39m[22m[90m (26)[39m
+2025-10-21T18:37:35.6544619Z [2m      Tests [22m [1m[32m6895 passed[39m[22m[2m | [22m[33m41 skipped[39m[90m (6936)[39m
+2025-10-21T18:37:35.6545971Z [2m   Start at [22m 18:36:39
+2025-10-21T18:37:35.6563021Z [2m   Duration [22m 55.76s[2m (transform 13.69s, setup 0ms, collect 25.38s, tests 87.36s, environment 4.33s, prepare 3.04s)[22m
+2025-10-21T18:37:35.6564316Z 
+2025-10-21T18:37:35.8881578Z Post job cleanup.
+2025-10-21T18:37:36.0430161Z Cache hit occurred on the primary key node-cache-Linux-x64-pnpm-67dddf0f44586fd2e7fce81718b8c8cebe5be6c8e4818bcf1233a7ba46490837, not saving cache.
+2025-10-21T18:37:36.0526365Z Post job cleanup.
+2025-10-21T18:37:36.1061299Z Pruning is unnecessary.
+2025-10-21T18:37:36.1150831Z Post job cleanup.
+2025-10-21T18:37:36.2106199Z [command]/usr/bin/git version
+2025-10-21T18:37:36.2142505Z git version 2.51.0
+2025-10-21T18:37:36.2196933Z Temporarily overriding HOME='/home/runner/work/_temp/6e1b5a3b-c429-498e-a377-0c9a6d9981d9' before making global git config changes
+2025-10-21T18:37:36.2199898Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-21T18:37:36.2204241Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/svelte/svelte
+2025-10-21T18:37:36.2238749Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-21T18:37:36.2271319Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-21T18:37:36.2517962Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-21T18:37:36.2541500Z http.https://github.com/.extraheader
+2025-10-21T18:37:36.2555093Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-21T18:37:36.2587025Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-21T18:37:36.2928505Z Cleaning up orphan processes

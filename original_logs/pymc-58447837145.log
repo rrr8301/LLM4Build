@@ -1,0 +1,1522 @@
+﻿2025-12-18T16:03:14.3467281Z Current runner version: '2.330.0'
+2025-12-18T16:03:14.3490857Z ##[group]Runner Image Provisioner
+2025-12-18T16:03:14.3491994Z Hosted Compute Agent
+2025-12-18T16:03:14.3492526Z Version: 20251211.462
+2025-12-18T16:03:14.3493127Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2025-12-18T16:03:14.3493873Z Build Date: 2025-12-11T16:28:49Z
+2025-12-18T16:03:14.3494752Z Worker ID: {d419a871-d6cb-486f-baab-ace672c2094d}
+2025-12-18T16:03:14.3495464Z ##[endgroup]
+2025-12-18T16:03:14.3496004Z ##[group]Operating System
+2025-12-18T16:03:14.3496586Z Ubuntu
+2025-12-18T16:03:14.3497019Z 24.04.3
+2025-12-18T16:03:14.3497502Z LTS
+2025-12-18T16:03:14.3497933Z ##[endgroup]
+2025-12-18T16:03:14.3498458Z ##[group]Runner Image
+2025-12-18T16:03:14.3499030Z Image: ubuntu-24.04
+2025-12-18T16:03:14.3499516Z Version: 20251215.174.1
+2025-12-18T16:03:14.3500522Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-18T16:03:14.3502099Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2025-12-18T16:03:14.3503081Z ##[endgroup]
+2025-12-18T16:03:14.3504356Z ##[group]GITHUB_TOKEN Permissions
+2025-12-18T16:03:14.3506347Z Metadata: read
+2025-12-18T16:03:14.3506892Z ##[endgroup]
+2025-12-18T16:03:14.3508939Z Secret source: None
+2025-12-18T16:03:14.3509619Z Prepare workflow directory
+2025-12-18T16:03:14.4072683Z Prepare all required actions
+2025-12-18T16:03:14.4110245Z Getting action download info
+2025-12-18T16:03:14.9032989Z Download action repository 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-12-18T16:03:15.0925916Z Download action repository 'mamba-org/setup-micromamba@add3a49764cedee8ee24e82dfde87f5bc2914462' (SHA:add3a49764cedee8ee24e82dfde87f5bc2914462)
+2025-12-18T16:03:15.8515080Z Download action repository 'codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7' (SHA:5a1091511ad55cbe89839c7260b706298ca349f7)
+2025-12-18T16:03:16.4037420Z Getting action download info
+2025-12-18T16:03:16.5891292Z Download action repository 'actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea' (SHA:60a0d83039c74a4aee543508d2ffcb1c3799cdea)
+2025-12-18T16:03:17.0804680Z Complete job name: ubuntu (ubuntu-latest, float64, 3.14, tests/distributions/test_censored.py
+tests/distributions/te...
+2025-12-18T16:03:17.1396871Z ##[group]Run actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+2025-12-18T16:03:17.1397593Z with:
+2025-12-18T16:03:17.1397853Z   persist-credentials: false
+2025-12-18T16:03:17.1398153Z   repository: pymc-devs/pymc
+2025-12-18T16:03:17.1398569Z   token: ***
+2025-12-18T16:03:17.1398800Z   ssh-strict: true
+2025-12-18T16:03:17.1399031Z   ssh-user: git
+2025-12-18T16:03:17.1399250Z   clean: true
+2025-12-18T16:03:17.1399504Z   sparse-checkout-cone-mode: true
+2025-12-18T16:03:17.1399802Z   fetch-depth: 1
+2025-12-18T16:03:17.1400024Z   fetch-tags: false
+2025-12-18T16:03:17.1400260Z   show-progress: true
+2025-12-18T16:03:17.1400489Z   lfs: false
+2025-12-18T16:03:17.1400731Z   submodules: false
+2025-12-18T16:03:17.1400968Z   set-safe-directory: true
+2025-12-18T16:03:17.1401415Z env:
+2025-12-18T16:03:17.1402798Z   TEST_SUBSET: tests/distributions/test_censored.py
+tests/distributions/test_custom.py
+tests/distributions/test_simulator.py
+tests/sampling/test_deterministic.py
+tests/sampling/test_forward.py
+tests/sampling/test_population.py
+tests/stats/test_convergence.py
+tests/stats/test_log_density.py
+tests/distributions/test_distribution.py
+tests/distributions/test_discrete.py
+
+2025-12-18T16:03:17.1404421Z   PYTENSOR_FLAGS: floatX=float64
+2025-12-18T16:03:17.1404694Z ##[endgroup]
+2025-12-18T16:03:17.2355156Z Syncing repository: pymc-devs/pymc
+2025-12-18T16:03:17.2356597Z ##[group]Getting Git version info
+2025-12-18T16:03:17.2357184Z Working directory is '/home/runner/work/pymc/pymc'
+2025-12-18T16:03:17.2357801Z [command]/usr/bin/git version
+2025-12-18T16:03:17.2417444Z git version 2.52.0
+2025-12-18T16:03:17.2470352Z ##[endgroup]
+2025-12-18T16:03:17.2485577Z Temporarily overriding HOME='/home/runner/work/_temp/ce7ff742-cf6a-4303-b2d8-d0633401b1fc' before making global git config changes
+2025-12-18T16:03:17.2487409Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-18T16:03:17.2491552Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pymc/pymc
+2025-12-18T16:03:17.2532204Z Deleting the contents of '/home/runner/work/pymc/pymc'
+2025-12-18T16:03:17.2536069Z ##[group]Initializing the repository
+2025-12-18T16:03:17.2540434Z [command]/usr/bin/git init /home/runner/work/pymc/pymc
+2025-12-18T16:03:17.2673424Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-18T16:03:17.2674386Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-18T16:03:17.2675578Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-18T16:03:17.2676438Z hint: call:
+2025-12-18T16:03:17.2676883Z hint:
+2025-12-18T16:03:17.2677472Z hint: 	git config --global init.defaultBranch <name>
+2025-12-18T16:03:17.2678255Z hint:
+2025-12-18T16:03:17.2678983Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-18T16:03:17.2680184Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-18T16:03:17.2680986Z hint:
+2025-12-18T16:03:17.2681277Z hint: 	git branch -m <name>
+2025-12-18T16:03:17.2681603Z hint:
+2025-12-18T16:03:17.2682024Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-18T16:03:17.2682726Z Initialized empty Git repository in /home/runner/work/pymc/pymc/.git/
+2025-12-18T16:03:17.2690991Z [command]/usr/bin/git remote add origin https://github.com/pymc-devs/pymc
+2025-12-18T16:03:17.2725608Z ##[endgroup]
+2025-12-18T16:03:17.2726144Z ##[group]Disabling automatic garbage collection
+2025-12-18T16:03:17.2729447Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-18T16:03:17.2757508Z ##[endgroup]
+2025-12-18T16:03:17.2758178Z ##[group]Setting up auth
+2025-12-18T16:03:17.2763820Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-18T16:03:17.2793222Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-18T16:03:17.3147105Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-18T16:03:17.3182809Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-18T16:03:17.3421249Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-18T16:03:17.3458830Z ##[endgroup]
+2025-12-18T16:03:17.3528423Z ##[group]Fetching the repository
+2025-12-18T16:03:17.3530290Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3a655a4b5fcef5ae9d273fdca9cfeb7ecb07bf17:refs/remotes/pull/8010/merge
+2025-12-18T16:03:17.9624331Z From https://github.com/pymc-devs/pymc
+2025-12-18T16:03:17.9625070Z  * [new ref]         3a655a4b5fcef5ae9d273fdca9cfeb7ecb07bf17 -> pull/8010/merge
+2025-12-18T16:03:17.9657724Z ##[endgroup]
+2025-12-18T16:03:17.9658285Z ##[group]Determining the checkout info
+2025-12-18T16:03:17.9660578Z ##[endgroup]
+2025-12-18T16:03:17.9666024Z [command]/usr/bin/git sparse-checkout disable
+2025-12-18T16:03:17.9708635Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-18T16:03:17.9735513Z ##[group]Checking out the ref
+2025-12-18T16:03:17.9739245Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/8010/merge
+2025-12-18T16:03:18.0511729Z Note: switching to 'refs/remotes/pull/8010/merge'.
+2025-12-18T16:03:18.0512262Z 
+2025-12-18T16:03:18.0512623Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-12-18T16:03:18.0513739Z changes and commit them, and you can discard any commits you make in this
+2025-12-18T16:03:18.0514979Z state without impacting any branches by switching back to a branch.
+2025-12-18T16:03:18.0515468Z 
+2025-12-18T16:03:18.0515809Z If you want to create a new branch to retain commits you create, you may
+2025-12-18T16:03:18.0516564Z do so (now or later) by using -c with the switch command. Example:
+2025-12-18T16:03:18.0516993Z 
+2025-12-18T16:03:18.0517201Z   git switch -c <new-branch-name>
+2025-12-18T16:03:18.0517504Z 
+2025-12-18T16:03:18.0517685Z Or undo this operation with:
+2025-12-18T16:03:18.0517972Z 
+2025-12-18T16:03:18.0518113Z   git switch -
+2025-12-18T16:03:18.0518284Z 
+2025-12-18T16:03:18.0518734Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-12-18T16:03:18.0519407Z 
+2025-12-18T16:03:18.0520093Z HEAD is now at 3a655a4 Merge 1c1ff865c64ba22879284f4e7871b03eeee94559 into cadb97ad240f409be551364a5a96b10b3c9a5e52
+2025-12-18T16:03:18.0525257Z ##[endgroup]
+2025-12-18T16:03:18.0566584Z [command]/usr/bin/git log -1 --format=%H
+2025-12-18T16:03:18.0591131Z 3a655a4b5fcef5ae9d273fdca9cfeb7ecb07bf17
+2025-12-18T16:03:18.0600464Z ##[group]Removing auth
+2025-12-18T16:03:18.0604176Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-18T16:03:18.0631855Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-18T16:03:18.0853803Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-18T16:03:18.0875365Z http.https://github.com/.extraheader
+2025-12-18T16:03:18.0884956Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-12-18T16:03:18.0914569Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-18T16:03:18.1125720Z ##[endgroup]
+2025-12-18T16:03:18.1332283Z ##[group]Run mamba-org/setup-micromamba@add3a49764cedee8ee24e82dfde87f5bc2914462
+2025-12-18T16:03:18.1332763Z with:
+2025-12-18T16:03:18.1333053Z   environment-file: conda-envs/environment-test.yml
+2025-12-18T16:03:18.1333404Z   create-args: python=3.14
+2025-12-18T16:03:18.1333691Z   environment-name: pymc-test
+2025-12-18T16:03:18.1334281Z   init-shell: bash
+2025-12-18T16:03:18.1334558Z   cache-environment: true
+2025-12-18T16:03:18.1334812Z env:
+2025-12-18T16:03:18.1336145Z   TEST_SUBSET: tests/distributions/test_censored.py
+tests/distributions/test_custom.py
+tests/distributions/test_simulator.py
+tests/sampling/test_deterministic.py
+tests/sampling/test_forward.py
+tests/sampling/test_population.py
+tests/stats/test_convergence.py
+tests/stats/test_log_density.py
+tests/distributions/test_distribution.py
+tests/distributions/test_discrete.py
+
+2025-12-18T16:03:18.1337560Z   PYTENSOR_FLAGS: floatX=float64
+2025-12-18T16:03:18.1337890Z ##[endgroup]
+2025-12-18T16:03:18.2675866Z Will download micromamba to /home/runner/micromamba-bin/micromamba
+2025-12-18T16:03:18.2684897Z ##[group]Install micromamba
+2025-12-18T16:03:54.5521255Z micromamba installed to /home/runner/micromamba-bin/micromamba
+2025-12-18T16:03:54.5522455Z ##[endgroup]
+2025-12-18T16:03:54.5525176Z Adding conda-forge to condarc channels ...
+2025-12-18T16:03:54.5535469Z ##[group]Initialize micromamba for bash.
+2025-12-18T16:03:54.5552459Z [command]/home/runner/micromamba-bin/micromamba shell init -s bash -r /home/runner/micromamba --log-level warning --rc-file /home/runner/work/_temp/setup-micromamba/.condarc
+2025-12-18T16:03:54.5662812Z Running `shell init`, which:
+2025-12-18T16:03:54.5663673Z  - modifies RC file: "/home/runner/.bashrc"
+2025-12-18T16:03:54.5665486Z  - generates config for root prefix: [1m"/home/runner/micromamba"[0m
+2025-12-18T16:03:54.5666404Z  - sets mamba executable to: [1m"/home/runner/micromamba-bin/micromamba"[0m
+2025-12-18T16:03:54.5667174Z The following has been added in your "/home/runner/.bashrc" file
+2025-12-18T16:03:54.5667441Z 
+2025-12-18T16:03:54.5667540Z # >>> mamba initialize >>>
+2025-12-18T16:03:54.5667856Z # !! Contents within this block are managed by 'micromamba shell init' !!
+2025-12-18T16:03:54.5668264Z export MAMBA_EXE='/home/runner/micromamba-bin/micromamba';
+2025-12-18T16:03:54.5668640Z export MAMBA_ROOT_PREFIX='/home/runner/micromamba';
+2025-12-18T16:03:54.5669142Z __mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+2025-12-18T16:03:54.5669568Z if [ $? -eq 0 ]; then
+2025-12-18T16:03:54.5669774Z     eval "$__mamba_setup"
+2025-12-18T16:03:54.5669967Z else
+2025-12-18T16:03:54.5670242Z     alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+2025-12-18T16:03:54.5670579Z fi
+2025-12-18T16:03:54.5670731Z unset __mamba_setup
+2025-12-18T16:03:54.5670926Z # <<< mamba initialize <<<
+2025-12-18T16:03:54.5671062Z 
+2025-12-18T16:03:54.5679719Z Moving mamba initialize block to .bash_profile
+2025-12-18T16:03:54.5692888Z ##[endgroup]
+2025-12-18T16:03:54.5700385Z ##[group]Restoring environment `pymc-test` from `/home/runner/micromamba/envs/pymc-test` ...
+2025-12-18T16:03:55.0466712Z Cache hit for: micromamba-environment--linux-64-pymc-test-args-f1d7981-root-dcc80ee-bin-1f9bad5014ed731922e11591656e3bc56c5f1489830ebd18b5bf7a483e54e7b2-file-ee56e83a0de88e487b1f464e96e238990b1602b91478c3006a1894471faa633a
+2025-12-18T16:03:56.3195960Z Received 0 of 803877717 (0.0%), 0.0 MBs/sec
+2025-12-18T16:03:57.3197995Z Received 121634816 of 803877717 (15.1%), 58.0 MBs/sec
+2025-12-18T16:03:58.3205996Z Received 213909504 of 803877717 (26.6%), 68.0 MBs/sec
+2025-12-18T16:03:59.3199611Z Received 272629760 of 803877717 (33.9%), 65.0 MBs/sec
+2025-12-18T16:04:00.3212355Z Received 398458880 of 803877717 (49.6%), 76.0 MBs/sec
+2025-12-18T16:04:01.3224338Z Received 503316480 of 803877717 (62.6%), 79.9 MBs/sec
+2025-12-18T16:04:02.3229101Z Received 583008256 of 803877717 (72.5%), 79.4 MBs/sec
+2025-12-18T16:04:03.3255035Z Received 671088640 of 803877717 (83.5%), 79.9 MBs/sec
+2025-12-18T16:04:04.3259849Z Received 799683413 of 803877717 (99.5%), 84.7 MBs/sec
+2025-12-18T16:04:04.5106179Z Received 803877717 of 803877717 (100.0%), 83.4 MBs/sec
+2025-12-18T16:04:04.5108844Z Cache Size: ~767 MB (803877717 B)
+2025-12-18T16:04:04.5165495Z [command]/usr/bin/tar -xf /home/runner/work/_temp/fe68c318-a5be-48ce-bc45-c197b4bb8995/cache.tzst -P -C /home/runner/work/pymc/pymc --use-compress-program unzstd
+2025-12-18T16:04:11.2199416Z Cache restored successfully
+2025-12-18T16:04:11.3707455Z Restored cache with key `micromamba-environment--linux-64-pymc-test-args-f1d7981-root-dcc80ee-bin-1f9bad5014ed731922e11591656e3bc56c5f1489830ebd18b5bf7a483e54e7b2-file-ee56e83a0de88e487b1f464e96e238990b1602b91478c3006a1894471faa633a`
+2025-12-18T16:04:11.3710035Z ##[endgroup]
+2025-12-18T16:04:11.3710459Z Adding environment pymc-test to auto-activate bash ...
+2025-12-18T16:04:11.3720956Z Generating micromamba run shell.
+2025-12-18T16:04:11.3728961Z ##[endgroup]
+2025-12-18T16:04:11.3732392Z Set environment variables.
+2025-12-18T16:04:11.3738581Z ##[group]micromamba info
+2025-12-18T16:04:11.3740186Z [command]/home/runner/micromamba-bin/micromamba info -r /home/runner/micromamba -n pymc-test
+2025-12-18T16:04:11.3860174Z 
+2025-12-18T16:04:11.3860533Z        libmamba version : 2.4.0
+2025-12-18T16:04:11.3862069Z      micromamba version : 2.4.0
+2025-12-18T16:04:11.3862804Z            curl version : libcurl/8.17.0 OpenSSL/3.5.4 zlib/1.3.1 zstd/1.5.7 libssh2/1.11.1 nghttp2/1.67.0 mit-krb5/1.21.3
+2025-12-18T16:04:11.3863809Z      libarchive version : libarchive 3.8.2 zlib/1.3.1 bz2lib/1.0.8 libzstd/1.5.7 libb2/bundled
+2025-12-18T16:04:11.3864792Z        envs directories : /home/runner/micromamba/envs
+2025-12-18T16:04:11.3865359Z           package cache : /home/runner/micromamba/pkgs
+2025-12-18T16:04:11.3865881Z                           /home/runner/.mamba/pkgs
+2025-12-18T16:04:11.3866866Z             environment : pymc-test
+2025-12-18T16:04:11.3867778Z            env location : /home/runner/micromamba/envs/pymc-test
+2025-12-18T16:04:11.3868409Z       user config files : /home/runner/.mambarc
+2025-12-18T16:04:11.3869029Z  populated config files : /home/runner/work/_temp/setup-micromamba/.condarc
+2025-12-18T16:04:11.3869460Z        virtual packages : __unix=0=0
+2025-12-18T16:04:11.3869733Z                           __linux=6.11.0=0
+2025-12-18T16:04:11.3870000Z                           __glibc=2.39=0
+2025-12-18T16:04:11.3870273Z                           __archspec=1=x86_64_v3
+2025-12-18T16:04:11.3870918Z                channels : https://conda.anaconda.org/conda-forge/linux-64
+2025-12-18T16:04:11.3871662Z                           https://conda.anaconda.org/conda-forge/noarch
+2025-12-18T16:04:11.3872282Z        base environment : /home/runner/micromamba
+2025-12-18T16:04:11.3872802Z                platform : linux-64
+2025-12-18T16:04:11.3878464Z ##[endgroup]
+2025-12-18T16:04:11.3879120Z ##[group]micromamba list
+2025-12-18T16:04:11.3880287Z [command]/home/runner/micromamba-bin/micromamba list -r /home/runner/micromamba -n pymc-test
+2025-12-18T16:04:12.1719006Z List of packages in environment: "/home/runner/micromamba/envs/pymc-test"
+2025-12-18T16:04:12.1719588Z 
+2025-12-18T16:04:12.1719814Z   Name                       Version         Build                    Channel    
+2025-12-18T16:04:12.1720811Z ───────────────────────────────────────────────────────────────────────────────────
+2025-12-18T16:04:12.1721397Z   _openmp_mutex              4.5             7_kmp_llvm               conda-forge
+2025-12-18T16:04:12.1722011Z   adwaita-icon-theme         49.0            unix_0                   conda-forge
+2025-12-18T16:04:12.1722591Z   arviz                      0.23.0          pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1723133Z   asciitree                  0.3.3           py_2                     conda-forge
+2025-12-18T16:04:12.1723690Z   asttokens                  3.0.1           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1724493Z   at-spi2-atk                2.38.0          h0630a04_3               conda-forge
+2025-12-18T16:04:12.1725422Z   at-spi2-core               2.40.3          h0630a04_0               conda-forge
+2025-12-18T16:04:12.1725955Z   atk-1.0                    2.38.0          h04ea711_2               conda-forge
+2025-12-18T16:04:12.1726481Z   betterproto                2.0.0b7         pypi_0                   pypi       
+2025-12-18T16:04:12.1727089Z   binutils_impl_linux-64     2.45            default_hfdba357_104     conda-forge
+2025-12-18T16:04:12.1727733Z   binutils_linux-64          2.45            default_h4852527_104     conda-forge
+2025-12-18T16:04:12.1728261Z   blas                       2.305           mkl                      conda-forge
+2025-12-18T16:04:12.1728774Z   blas-devel                 3.11.0          5_hcf00494_mkl           conda-forge
+2025-12-18T16:04:12.1729297Z   brotli                     1.2.0           hed03a55_1               conda-forge
+2025-12-18T16:04:12.1729854Z   brotli-bin                 1.2.0           hb03c661_1               conda-forge
+2025-12-18T16:04:12.1730527Z   bzip2                      1.0.8           hda65f42_8               conda-forge
+2025-12-18T16:04:12.1731044Z   c-ares                     1.34.6          hb03c661_0               conda-forge
+2025-12-18T16:04:12.1731556Z   ca-certificates            2025.11.12      hbd8a1cb_0               conda-forge
+2025-12-18T16:04:12.1732172Z   cached-property            1.5.2           hd8ed1ab_1               conda-forge
+2025-12-18T16:04:12.1732734Z   cached_property            1.5.2           pyha770c72_1             conda-forge
+2025-12-18T16:04:12.1733114Z   cachetools                 6.2.4           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1733446Z   cairo                      1.18.4          h3394656_0               conda-forge
+2025-12-18T16:04:12.1733757Z   cffi                       2.0.0           py314h4a8dc5f_1          conda-forge
+2025-12-18T16:04:12.1734373Z   cfgv                       3.5.0           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1734930Z   cloudpickle                3.1.2           pyhcf101f3_1             conda-forge
+2025-12-18T16:04:12.1735278Z   colorama                   0.4.6           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1735629Z   conda-gcc-specs            14.3.0          he8ccf15_16              conda-forge
+2025-12-18T16:04:12.1735968Z   cons                       0.4.7           pyhd8ed1ab_2             conda-forge
+2025-12-18T16:04:12.1736290Z   contourpy                  1.3.3           py314h9891dd4_3          conda-forge
+2025-12-18T16:04:12.1736625Z   coverage                   7.13.0          py314h67df5f8_0          conda-forge
+2025-12-18T16:04:12.1736941Z   cycler                     0.12.1          pyhcf101f3_2             conda-forge
+2025-12-18T16:04:12.1737250Z   dbus                       1.16.2          h24cb091_1               conda-forge
+2025-12-18T16:04:12.1737568Z   decorator                  5.2.1           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1737920Z   deprecated                 1.3.1           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1738277Z   distlib                    0.4.0           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1738605Z   epoxy                      1.5.10          hb03c661_2               conda-forge
+2025-12-18T16:04:12.1738928Z   etuples                    0.3.10          pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1739277Z   exceptiongroup             1.3.1           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1739633Z   executing                  2.2.1           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1739972Z   fasteners                  0.19            pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1740309Z   filelock                   3.20.1          pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1740688Z   font-ttf-dejavu-sans-mono  2.37            hab24e00_0               conda-forge
+2025-12-18T16:04:12.1741303Z   font-ttf-inconsolata       3.000           h77eed37_0               conda-forge
+2025-12-18T16:04:12.1741733Z   font-ttf-source-code-pro   2.038           h77eed37_0               conda-forge
+2025-12-18T16:04:12.1742121Z   font-ttf-ubuntu            0.83            h77eed37_3               conda-forge
+2025-12-18T16:04:12.1742480Z   fontconfig                 2.15.0          h7e30c49_1               conda-forge
+2025-12-18T16:04:12.1742850Z   fonts-conda-ecosystem      1               0                        conda-forge
+2025-12-18T16:04:12.1743240Z   fonts-conda-forge          1               hc364b38_1               conda-forge
+2025-12-18T16:04:12.1743597Z   fonttools                  4.61.1          pyh7db6752_0             conda-forge
+2025-12-18T16:04:12.1744109Z   freetype                   2.14.1          ha770c72_0               conda-forge
+2025-12-18T16:04:12.1744492Z   fribidi                    1.0.16          hb03c661_0               conda-forge
+2025-12-18T16:04:12.1744802Z   gcc                        14.3.0          h0dff253_16              conda-forge
+2025-12-18T16:04:12.1745145Z   gcc_impl_linux-64          14.3.0          he8b2097_16              conda-forge
+2025-12-18T16:04:12.1745490Z   gcc_linux-64               14.3.0          h298d278_16              conda-forge
+2025-12-18T16:04:12.1745829Z   gdk-pixbuf                 2.44.4          h2b0a6b4_0               conda-forge
+2025-12-18T16:04:12.1746162Z   glib-tools                 2.86.3          hf516916_0               conda-forge
+2025-12-18T16:04:12.1746501Z   graphite2                  1.3.14          hecca717_2               conda-forge
+2025-12-18T16:04:12.1746833Z   graphviz                   14.1.0          h8b86629_0               conda-forge
+2025-12-18T16:04:12.1747160Z   grpclib                    0.4.9           pypi_0                   pypi       
+2025-12-18T16:04:12.1747534Z   gtk3                       3.24.43         h993cebd_6               conda-forge
+2025-12-18T16:04:12.1748039Z   gts                        0.7.6           h977cf35_4               conda-forge
+2025-12-18T16:04:12.1748776Z   gxx                        14.3.0          h76987e4_16              conda-forge
+2025-12-18T16:04:12.1749132Z   gxx_impl_linux-64          14.3.0          h2185e75_16              conda-forge
+2025-12-18T16:04:12.1749583Z   gxx_linux-64               14.3.0          h662a180_16              conda-forge
+2025-12-18T16:04:12.1749905Z   h2                         4.3.0           pypi_0                   pypi       
+2025-12-18T16:04:12.1750415Z   h5netcdf                   1.7.3           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1750873Z   h5py                       3.15.1          nompi_py314hc32fe06_101  conda-forge
+2025-12-18T16:04:12.1751201Z   hagelkorn                  1.2.3           pypi_0                   pypi       
+2025-12-18T16:04:12.1751779Z   harfbuzz                   12.2.0          h15599e2_0               conda-forge
+2025-12-18T16:04:12.1752323Z   hdf5                       1.14.6          nompi_h1b119a7_104       conda-forge
+2025-12-18T16:04:12.1752936Z   hicolor-icon-theme         0.17            ha770c72_2               conda-forge
+2025-12-18T16:04:12.1753618Z   hpack                      4.1.0           pypi_0                   pypi       
+2025-12-18T16:04:12.1754333Z   hyperframe                 6.1.0           pypi_0                   pypi       
+2025-12-18T16:04:12.1754901Z   icu                        75.1            he02047a_0               conda-forge
+2025-12-18T16:04:12.1755224Z   identify                   2.6.15          pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1755589Z   importlib-metadata         8.7.0           pyhe01879c_1             conda-forge
+2025-12-18T16:04:12.1755951Z   iniconfig                  2.3.0           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1756291Z   ipython                    9.8.0           pyh53cf698_0             conda-forge
+2025-12-18T16:04:12.1756651Z   ipython_pygments_lexers    1.1.1           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1757173Z   jax                        0.7.2           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1757488Z   jaxlib                     0.7.2           cpu_py314ha1d8ec1_2      conda-forge
+2025-12-18T16:04:12.1757795Z   jedi                       0.19.2          pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1758150Z   kernel-headers_linux-64    3.10.0          he073ed8_18              conda-forge
+2025-12-18T16:04:12.1758526Z   keyutils                   1.6.3           hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1758860Z   kiwisolver                 1.4.9           py314h97ea11e_2          conda-forge
+2025-12-18T16:04:12.1759174Z   krb5                       1.21.3          h659f571_0               conda-forge
+2025-12-18T16:04:12.1759481Z   lcms2                      2.17            h717163a_0               conda-forge
+2025-12-18T16:04:12.1759805Z   ld_impl_linux-64           2.45            default_hbd61a6d_104     conda-forge
+2025-12-18T16:04:12.1760136Z   lerc                       4.0.0           h0aef613_1               conda-forge
+2025-12-18T16:04:12.1760460Z   libabseil                  20250512.1      cxx17_hba17884_0         conda-forge
+2025-12-18T16:04:12.1760792Z   libaec                     1.1.4           h3f801dc_0               conda-forge
+2025-12-18T16:04:12.1761105Z   libblas                    3.11.0          5_h5875eb1_mkl           conda-forge
+2025-12-18T16:04:12.1761449Z   libbrotlicommon            1.2.0           hb03c661_1               conda-forge
+2025-12-18T16:04:12.1761807Z   libbrotlidec               1.2.0           hb03c661_1               conda-forge
+2025-12-18T16:04:12.1762187Z   libbrotlienc               1.2.0           hb03c661_1               conda-forge
+2025-12-18T16:04:12.1762528Z   libcblas                   3.11.0          5_hfef963f_mkl           conda-forge
+2025-12-18T16:04:12.1762938Z   libcups                    2.3.3           hb8b1518_5               conda-forge
+2025-12-18T16:04:12.1763417Z   libcurl                    8.17.0          h4e3cde8_1               conda-forge
+2025-12-18T16:04:12.1764302Z   libdeflate                 1.25            h17f619e_0               conda-forge
+2025-12-18T16:04:12.1764873Z   libdrm                     2.4.125         hb03c661_1               conda-forge
+2025-12-18T16:04:12.1765445Z   libedit                    3.1.20250104    pl5321h7949ede_0         conda-forge
+2025-12-18T16:04:12.1766000Z   libegl                     1.7.0           ha4b6fd6_2               conda-forge
+2025-12-18T16:04:12.1766571Z   libegl-devel               1.7.0           ha4b6fd6_2               conda-forge
+2025-12-18T16:04:12.1767129Z   libev                      4.33            hd590300_2               conda-forge
+2025-12-18T16:04:12.1767674Z   libexpat                   2.7.3           hecca717_0               conda-forge
+2025-12-18T16:04:12.1768213Z   libffi                     3.5.2           h9ec8514_0               conda-forge
+2025-12-18T16:04:12.1768780Z   libfreetype                2.14.1          ha770c72_0               conda-forge
+2025-12-18T16:04:12.1769395Z   libfreetype6               2.14.1          h73754d4_0               conda-forge
+2025-12-18T16:04:12.1769971Z   libgcc                     15.2.0          he0feb66_16              conda-forge
+2025-12-18T16:04:12.1770573Z   libgcc-devel_linux-64      14.3.0          hf649bbc_116             conda-forge
+2025-12-18T16:04:12.1771190Z   libgcc-ng                  15.2.0          h69a702a_16              conda-forge
+2025-12-18T16:04:12.1771731Z   libgd                      2.3.3           h6f5c62b_11              conda-forge
+2025-12-18T16:04:12.1772286Z   libgfortran                15.2.0          h69a702a_16              conda-forge
+2025-12-18T16:04:12.1772896Z   libgfortran5               15.2.0          h68bc16d_16              conda-forge
+2025-12-18T16:04:12.1773464Z   libgl                      1.7.0           ha4b6fd6_2               conda-forge
+2025-12-18T16:04:12.1774161Z   libgl-devel                1.7.0           ha4b6fd6_2               conda-forge
+2025-12-18T16:04:12.1774881Z   libglib                    2.86.3          h6548e54_0               conda-forge
+2025-12-18T16:04:12.1775447Z   libglvnd                   1.7.0           ha4b6fd6_2               conda-forge
+2025-12-18T16:04:12.1775996Z   libglx                     1.7.0           ha4b6fd6_2               conda-forge
+2025-12-18T16:04:12.1776560Z   libglx-devel               1.7.0           ha4b6fd6_2               conda-forge
+2025-12-18T16:04:12.1777139Z   libgomp                    15.2.0          he0feb66_16              conda-forge
+2025-12-18T16:04:12.1777695Z   libgrpc                    1.73.1          h3288cfb_1               conda-forge
+2025-12-18T16:04:12.1778263Z   libhwloc                   2.12.1          default_hafda6a7_1003    conda-forge
+2025-12-18T16:04:12.1778827Z   libiconv                   1.18            h3b78370_2               conda-forge
+2025-12-18T16:04:12.1779422Z   libjpeg-turbo              3.1.2           hb03c661_0               conda-forge
+2025-12-18T16:04:12.1780053Z   liblapack                  3.11.0          5_h5e43f62_mkl           conda-forge
+2025-12-18T16:04:12.1780651Z   liblapacke                 3.11.0          5_hdba1596_mkl           conda-forge
+2025-12-18T16:04:12.1781210Z   liblzma                    5.8.1           hb9d3cd8_2               conda-forge
+2025-12-18T16:04:12.1781755Z   libmpdec                   4.0.0           hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1782322Z   libnghttp2                 1.67.0          had1ee68_0               conda-forge
+2025-12-18T16:04:12.1782914Z   libpciaccess               0.18            hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1783473Z   libpng                     1.6.53          h421ea60_0               conda-forge
+2025-12-18T16:04:12.1784122Z   libprotobuf                6.31.1          h49aed37_2               conda-forge
+2025-12-18T16:04:12.1784673Z   libre2-11                  2025.11.05      h7b12aa8_0               conda-forge
+2025-12-18T16:04:12.1785214Z   librsvg                    2.60.0          h61e6d4b_0               conda-forge
+2025-12-18T16:04:12.1785946Z   libsanitizer               14.3.0          h8f1669f_16              conda-forge
+2025-12-18T16:04:12.1786529Z   libsqlite                  3.51.1          h0c1763c_0               conda-forge
+2025-12-18T16:04:12.1787078Z   libssh2                    1.11.1          hcf80075_0               conda-forge
+2025-12-18T16:04:12.1787619Z   libstdcxx                  15.2.0          h934c35e_16              conda-forge
+2025-12-18T16:04:12.1788263Z   libstdcxx-devel_linux-64   14.3.0          h9f08a49_116             conda-forge
+2025-12-18T16:04:12.1788908Z   libstdcxx-ng               15.2.0          hdf11a46_16              conda-forge
+2025-12-18T16:04:12.1789468Z   libtiff                    4.7.1           h9d88235_1               conda-forge
+2025-12-18T16:04:12.1790021Z   libuuid                    2.41.2          h5347b49_1               conda-forge
+2025-12-18T16:04:12.1790603Z   libwebp-base               1.6.0           hd42ef1d_0               conda-forge
+2025-12-18T16:04:12.1791160Z   libxcb                     1.17.0          h8a09558_0               conda-forge
+2025-12-18T16:04:12.1791728Z   libxkbcommon               1.13.1          hca5e8e5_0               conda-forge
+2025-12-18T16:04:12.1792308Z   libxml2                    2.15.1          h26afc86_0               conda-forge
+2025-12-18T16:04:12.1792866Z   libxml2-16                 2.15.1          ha9997c6_0               conda-forge
+2025-12-18T16:04:12.1793416Z   libzlib                    1.3.1           hb9d3cd8_2               conda-forge
+2025-12-18T16:04:12.1794115Z   llvm-openmp                21.1.8          h4922eb0_0               conda-forge
+2025-12-18T16:04:12.1794712Z   llvmlite                   0.46.0          py314h946fb2a_0          conda-forge
+2025-12-18T16:04:12.1795406Z   logical-unification        0.4.7           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1796066Z   markdown-it-py             4.0.0           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1796869Z   matplotlib-base            3.10.8          py314h1194b4b_0          conda-forge
+2025-12-18T16:04:12.1797537Z   matplotlib-inline          0.2.1           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1798164Z   mcbackend                  0.5.3           pypi_0                   pypi       
+2025-12-18T16:04:12.1798727Z   mdurl                      0.1.2           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1799298Z   minikanren                 1.0.5           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1799872Z   mkl                        2025.3.0        h0e700b2_462             conda-forge
+2025-12-18T16:04:12.1800420Z   mkl-devel                  2025.3.0        ha770c72_462             conda-forge
+2025-12-18T16:04:12.1801014Z   mkl-include                2025.3.0        hf2ce2f3_462             conda-forge
+2025-12-18T16:04:12.1801619Z   mkl-service                2.6.0           py314ha1a38ac_0          conda-forge
+2025-12-18T16:04:12.1802217Z   ml_dtypes                  0.5.4           np2py314h6477eea_0       conda-forge
+2025-12-18T16:04:12.1802819Z   msgpack-python             1.1.2           py314h9891dd4_1          conda-forge
+2025-12-18T16:04:12.1803428Z   multidict                  6.7.0           pypi_0                   pypi       
+2025-12-18T16:04:12.1804201Z   multipledispatch           0.6.0           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1804819Z   munkres                    1.1.4           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1805366Z   mypy                       1.19.1          py314h5bd0f2a_0          conda-forge
+2025-12-18T16:04:12.1805948Z   mypy_extensions            1.1.0           pyha770c72_0             conda-forge
+2025-12-18T16:04:12.1806533Z   ncurses                    6.5             h2d0b736_3               conda-forge
+2025-12-18T16:04:12.1807088Z   networkx                   3.6.1           pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1807813Z   nodeenv                    1.9.1           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1808369Z   numba                      0.63.1          py314h8169c2f_0          conda-forge
+2025-12-18T16:04:12.1808927Z   numcodecs                  0.15.1          py314ha0b5721_1          conda-forge
+2025-12-18T16:04:12.1809532Z   numdifftools               0.9.42          pypi_0                   pypi       
+2025-12-18T16:04:12.1810112Z   numpy                      2.3.5           py314h2b28147_0          conda-forge
+2025-12-18T16:04:12.1810664Z   openjpeg                   2.5.4           h55fea9a_0               conda-forge
+2025-12-18T16:04:12.1811219Z   openssl                    3.6.0           h26f9b46_0               conda-forge
+2025-12-18T16:04:12.1811788Z   opt_einsum                 3.4.0           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1812375Z   packaging                  25.0            pyh29332c3_1             conda-forge
+2025-12-18T16:04:12.1812942Z   pandas                     2.3.3           py314ha0b5721_2          conda-forge
+2025-12-18T16:04:12.1813502Z   pango                      1.56.4          hadf4263_0               conda-forge
+2025-12-18T16:04:12.1814202Z   parso                      0.8.5           pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1814759Z   pathspec                   0.12.1          pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1815279Z   pcre2                      10.47           haa7fec5_0               conda-forge
+2025-12-18T16:04:12.1815844Z   pexpect                    4.9.0           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1816412Z   pillow                     12.0.0          py314h8ec4b1a_2          conda-forge
+2025-12-18T16:04:12.1816941Z   pip                        25.3            pyh145f28c_0             conda-forge
+2025-12-18T16:04:12.1817410Z   pixman                     0.46.4          h54a6638_1               conda-forge
+2025-12-18T16:04:12.1817936Z   platformdirs               4.5.1           pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1818632Z   pluggy                     1.6.0           pyhf9edf01_1             conda-forge
+2025-12-18T16:04:12.1819185Z   polyagamma                 2.0.2           py314h5bd0f2a_1          conda-forge
+2025-12-18T16:04:12.1819763Z   pre-commit                 4.5.1           pyha770c72_0             conda-forge
+2025-12-18T16:04:12.1820363Z   prompt-toolkit             3.0.52          pyha770c72_0             conda-forge
+2025-12-18T16:04:12.1820939Z   psutil                     7.1.3           py314h0f05182_0          conda-forge
+2025-12-18T16:04:12.1821500Z   pthread-stubs              0.4             hb9d3cd8_1002            conda-forge
+2025-12-18T16:04:12.1822068Z   ptyprocess                 0.7.0           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1822638Z   pure_eval                  0.2.3           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1823200Z   pycparser                  2.22            pyh29332c3_1             conda-forge
+2025-12-18T16:04:12.1823774Z   pygments                   2.19.2          pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1824508Z   pyparsing                  3.2.5           pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1825074Z   pytensor                   2.36.0          py314h8fa1eac_1          conda-forge
+2025-12-18T16:04:12.1825661Z   pytensor-base              2.36.0          np2py314h6477eea_1       conda-forge
+2025-12-18T16:04:12.1826225Z   pytest                     9.0.2           pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1826773Z   pytest-cov                 7.0.0           pyhcf101f3_1             conda-forge
+2025-12-18T16:04:12.1827332Z   python                     3.14.2          h32b2ec7_100_cp314       conda-forge
+2025-12-18T16:04:12.1827925Z   python-dateutil            2.9.0.post0     pyhe01879c_2             conda-forge
+2025-12-18T16:04:12.1828588Z   python-graphviz            0.21            pyhbacfb6d_0             conda-forge
+2025-12-18T16:04:12.1829372Z   python-librt               0.7.4           py314h0f05182_0          conda-forge
+2025-12-18T16:04:12.1829999Z   python-tzdata              2025.3          pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1830570Z   python_abi                 3.14            8_cp314                  conda-forge
+2025-12-18T16:04:12.1831088Z   pytz                       2025.2          pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1831609Z   pyyaml                     6.0.3           pyh7db6752_0             conda-forge
+2025-12-18T16:04:12.1832135Z   qhull                      2020.2          h434a139_5               conda-forge
+2025-12-18T16:04:12.1832659Z   re2                        2025.11.05      h5301d42_0               conda-forge
+2025-12-18T16:04:12.1833175Z   readline                   8.3             h853b02a_0               conda-forge
+2025-12-18T16:04:12.1833707Z   rich                       14.2.0          pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1834423Z   scipy                      1.16.3          py314he7377e1_1          conda-forge
+2025-12-18T16:04:12.1835009Z   setuptools                 80.9.0          pyhff2d567_0             conda-forge
+2025-12-18T16:04:12.1835563Z   six                        1.17.0          pyhe01879c_1             conda-forge
+2025-12-18T16:04:12.1836114Z   stack_data                 0.6.3           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1836714Z   sysroot_linux-64           2.17            h0157908_18              conda-forge
+2025-12-18T16:04:12.1837274Z   tbb                        2022.3.0        h8d10470_1               conda-forge
+2025-12-18T16:04:12.1837864Z   threadpoolctl              3.6.0           pyhecae5ae_0             conda-forge
+2025-12-18T16:04:12.1838440Z   tk                         8.6.13          noxft_ha0e22de_103       conda-forge
+2025-12-18T16:04:12.1838965Z   tomli                      2.3.0           pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1839497Z   toolz                      1.1.0           pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1840227Z   traitlets                  5.14.3          pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:12.1840886Z   types-cachetools           6.2.0.20251022  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1841576Z   typing-extensions          4.15.0          h396c80c_0               conda-forge
+2025-12-18T16:04:12.1842236Z   typing_extensions          4.15.0          pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1842845Z   tzdata                     2025c           h8577fbf_0               conda-forge
+2025-12-18T16:04:12.1843406Z   ukkonen                    1.0.1           py314h9891dd4_6          conda-forge
+2025-12-18T16:04:12.1844144Z   unicodedata2               17.0.0          py314h5bd0f2a_1          conda-forge
+2025-12-18T16:04:12.1844771Z   virtualenv                 20.35.4         pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1845353Z   wayland                    1.24.0          hd6090a7_1               conda-forge
+2025-12-18T16:04:12.1845932Z   wcwidth                    0.2.14          pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1846481Z   wrapt                      1.17.3          py314h5bd0f2a_1          conda-forge
+2025-12-18T16:04:12.1847040Z   xarray                     2025.12.0       pyhcf101f3_0             conda-forge
+2025-12-18T16:04:12.1847655Z   xarray-einstats            0.9.1           pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1848303Z   xkeyboard-config           2.46            hb03c661_0               conda-forge
+2025-12-18T16:04:12.1848926Z   xorg-libice                1.1.2           hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1849511Z   xorg-libsm                 1.2.6           he73a12e_0               conda-forge
+2025-12-18T16:04:12.1850098Z   xorg-libx11                1.8.12          h4f16b4b_0               conda-forge
+2025-12-18T16:04:12.1850683Z   xorg-libxau                1.0.12          hb03c661_1               conda-forge
+2025-12-18T16:04:12.1851484Z   xorg-libxcomposite         0.4.6           hb9d3cd8_2               conda-forge
+2025-12-18T16:04:12.1852152Z   xorg-libxcursor            1.2.3           hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1852796Z   xorg-libxdamage            1.1.6           hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1853421Z   xorg-libxdmcp              1.1.5           hb03c661_1               conda-forge
+2025-12-18T16:04:12.1854181Z   xorg-libxext               1.3.6           hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1854799Z   xorg-libxfixes             6.0.2           hb03c661_0               conda-forge
+2025-12-18T16:04:12.1855398Z   xorg-libxi                 1.8.2           hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1856020Z   xorg-libxinerama           1.1.5           h5888daf_1               conda-forge
+2025-12-18T16:04:12.1856660Z   xorg-libxrandr             1.5.4           hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1857306Z   xorg-libxrender            0.9.12          hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1857932Z   xorg-libxtst               1.2.5           hb9d3cd8_3               conda-forge
+2025-12-18T16:04:12.1858562Z   xorg-libxxf86vm            1.1.6           hb9d3cd8_0               conda-forge
+2025-12-18T16:04:12.1859205Z   xorg-xorgproto             2024.1          hb9d3cd8_1               conda-forge
+2025-12-18T16:04:12.1859789Z   yaml                       0.2.5           h280c20c_3               conda-forge
+2025-12-18T16:04:12.1860314Z   zarr                       2.18.7          pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:12.1860846Z   zipp                       3.23.0          pyhcf101f3_1             conda-forge
+2025-12-18T16:04:12.1861379Z   zlib-ng                    2.3.2           h54a6638_0               conda-forge
+2025-12-18T16:04:12.1861901Z   zstd                       1.5.7           hb78ec9c_6               conda-forge
+2025-12-18T16:04:12.1862693Z ##[endgroup]
+2025-12-18T16:04:12.1927559Z ##[group]Run pip install -e .
+2025-12-18T16:04:12.1927868Z [36;1mpip install -e .[0m
+2025-12-18T16:04:12.1928122Z [36;1mpython --version[0m
+2025-12-18T16:04:12.1928340Z [36;1mmicromamba list[0m
+2025-12-18T16:04:12.1964701Z shell: /usr/bin/bash -leo pipefail {0}
+2025-12-18T16:04:12.1964996Z env:
+2025-12-18T16:04:12.1966439Z   TEST_SUBSET: tests/distributions/test_censored.py
+tests/distributions/test_custom.py
+tests/distributions/test_simulator.py
+tests/sampling/test_deterministic.py
+tests/sampling/test_forward.py
+tests/sampling/test_population.py
+tests/stats/test_convergence.py
+tests/stats/test_log_density.py
+tests/distributions/test_distribution.py
+tests/distributions/test_discrete.py
+
+2025-12-18T16:04:12.1967909Z   PYTENSOR_FLAGS: floatX=float64
+2025-12-18T16:04:12.1968182Z   MAMBA_ROOT_PREFIX: /home/runner/micromamba
+2025-12-18T16:04:12.1968489Z   MAMBA_EXE: /home/runner/micromamba-bin/micromamba
+2025-12-18T16:04:12.1968881Z   CONDARC: /home/runner/work/_temp/setup-micromamba/.condarc
+2025-12-18T16:04:12.1969197Z ##[endgroup]
+2025-12-18T16:04:13.1599050Z Obtaining file:///home/runner/work/pymc/pymc
+2025-12-18T16:04:13.1616325Z   Installing build dependencies: started
+2025-12-18T16:04:14.4093582Z   Installing build dependencies: finished with status 'done'
+2025-12-18T16:04:14.4099617Z   Checking if build backend supports build_editable: started
+2025-12-18T16:04:14.6486275Z   Checking if build backend supports build_editable: finished with status 'done'
+2025-12-18T16:04:14.6493568Z   Getting requirements to build editable: started
+2025-12-18T16:04:14.9021116Z   Getting requirements to build editable: finished with status 'done'
+2025-12-18T16:04:14.9029588Z   Preparing editable metadata (pyproject.toml): started
+2025-12-18T16:04:15.0992790Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2025-12-18T16:04:15.1079502Z Requirement already satisfied: arviz>=0.13.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (0.23.0)
+2025-12-18T16:04:15.1083641Z Requirement already satisfied: cachetools>=4.2.1 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (6.2.4)
+2025-12-18T16:04:15.1108467Z Requirement already satisfied: cloudpickle in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (3.1.2)
+2025-12-18T16:04:15.1110139Z Requirement already satisfied: numpy>=1.25.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (2.3.5)
+2025-12-18T16:04:15.1111782Z Requirement already satisfied: pandas>=0.24.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (2.3.3)
+2025-12-18T16:04:15.1116409Z Requirement already satisfied: pytensor<2.37,>=2.36.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (2.36.0)
+2025-12-18T16:04:15.1118757Z Requirement already satisfied: rich>=13.7.1 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (14.2.0)
+2025-12-18T16:04:15.1121988Z Requirement already satisfied: scipy>=1.4.1 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (1.16.3)
+2025-12-18T16:04:15.1124127Z Requirement already satisfied: threadpoolctl<4.0.0,>=3.1.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (3.6.0)
+2025-12-18T16:04:15.1126230Z Requirement already satisfied: typing-extensions>=3.7.4 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pymc==0+untagged.1.g3a655a4) (4.15.0)
+2025-12-18T16:04:15.1131735Z Requirement already satisfied: setuptools>=59.0.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (80.9.0)
+2025-12-18T16:04:15.1140903Z Requirement already satisfied: numba<1,>0.57 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (0.63.1)
+2025-12-18T16:04:15.1145019Z Requirement already satisfied: filelock>=3.15 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (3.20.1)
+2025-12-18T16:04:15.1148535Z Requirement already satisfied: etuples in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (0.3.10)
+2025-12-18T16:04:15.1151724Z Requirement already satisfied: logical-unification in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (0.4.7)
+2025-12-18T16:04:15.1155327Z Requirement already satisfied: miniKanren in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (1.0.5)
+2025-12-18T16:04:15.1158433Z Requirement already satisfied: cons in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (0.4.7)
+2025-12-18T16:04:15.1188642Z Requirement already satisfied: llvmlite<0.47,>=0.46.0dev0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from numba<1,>0.57->pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (0.46.0)
+2025-12-18T16:04:15.1260955Z Requirement already satisfied: matplotlib>=3.8 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (3.10.8)
+2025-12-18T16:04:15.1268422Z Requirement already satisfied: packaging in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (25.0)
+2025-12-18T16:04:15.1274200Z Requirement already satisfied: xarray>=2023.7.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (2025.12.0)
+2025-12-18T16:04:15.1278659Z Requirement already satisfied: h5netcdf>=1.0.2 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (1.7.3)
+2025-12-18T16:04:15.1284435Z Requirement already satisfied: xarray-einstats>=0.3 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (0.9.1)
+2025-12-18T16:04:15.1314454Z Requirement already satisfied: h5py in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from h5netcdf>=1.0.2->arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (3.15.1)
+2025-12-18T16:04:15.1327524Z Requirement already satisfied: contourpy>=1.0.1 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from matplotlib>=3.8->arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (1.3.3)
+2025-12-18T16:04:15.1331736Z Requirement already satisfied: cycler>=0.10 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from matplotlib>=3.8->arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (0.12.1)
+2025-12-18T16:04:15.1336143Z Requirement already satisfied: fonttools>=4.22.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from matplotlib>=3.8->arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (4.61.1)
+2025-12-18T16:04:15.1340236Z Requirement already satisfied: kiwisolver>=1.3.1 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from matplotlib>=3.8->arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (1.4.9)
+2025-12-18T16:04:15.1347916Z Requirement already satisfied: pillow>=8 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from matplotlib>=3.8->arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (12.0.0)
+2025-12-18T16:04:15.1351999Z Requirement already satisfied: pyparsing>=3 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from matplotlib>=3.8->arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (3.2.5)
+2025-12-18T16:04:15.1356558Z Requirement already satisfied: python-dateutil>=2.7 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from matplotlib>=3.8->arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (2.9.0.post0)
+2025-12-18T16:04:15.1472079Z Requirement already satisfied: pytz>=2020.1 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pandas>=0.24.0->pymc==0+untagged.1.g3a655a4) (2025.2)
+2025-12-18T16:04:15.1476175Z Requirement already satisfied: tzdata>=2022.7 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from pandas>=0.24.0->pymc==0+untagged.1.g3a655a4) (2025.3)
+2025-12-18T16:04:15.1590219Z Requirement already satisfied: six>=1.5 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from python-dateutil>=2.7->matplotlib>=3.8->arviz>=0.13.0->pymc==0+untagged.1.g3a655a4) (1.17.0)
+2025-12-18T16:04:15.1612700Z Requirement already satisfied: markdown-it-py>=2.2.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from rich>=13.7.1->pymc==0+untagged.1.g3a655a4) (4.0.0)
+2025-12-18T16:04:15.1618496Z Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from rich>=13.7.1->pymc==0+untagged.1.g3a655a4) (2.19.2)
+2025-12-18T16:04:15.1637334Z Requirement already satisfied: mdurl~=0.1 in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from markdown-it-py>=2.2.0->rich>=13.7.1->pymc==0+untagged.1.g3a655a4) (0.1.2)
+2025-12-18T16:04:15.1832954Z Requirement already satisfied: toolz in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from logical-unification->pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (1.1.0)
+2025-12-18T16:04:15.1836500Z Requirement already satisfied: multipledispatch in /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages (from logical-unification->pytensor<2.37,>=2.36.0->pymc==0+untagged.1.g3a655a4) (0.6.0)
+2025-12-18T16:04:15.1898672Z Building wheels for collected packages: pymc
+2025-12-18T16:04:15.1905861Z   Building editable for pymc (pyproject.toml): started
+2025-12-18T16:04:15.4335144Z   Building editable for pymc (pyproject.toml): finished with status 'done'
+2025-12-18T16:04:15.4341075Z   Created wheel for pymc: filename=pymc-0+untagged.1.g3a655a4-0.editable-py3-none-any.whl size=14004 sha256=8ad7b577fa5b4648e6b37e2a82990a3b66cf903d526edacedb0f6ebf1d380594
+2025-12-18T16:04:15.4342619Z   Stored in directory: /tmp/pip-ephem-wheel-cache-o22vpj3m/wheels/9a/27/e8/17cb2de1f16b7202680f13b5807fe0a2df69b98fcac0edfd96
+2025-12-18T16:04:15.4373639Z Successfully built pymc
+2025-12-18T16:04:15.5140025Z Installing collected packages: pymc
+2025-12-18T16:04:15.5297197Z Successfully installed pymc-0+untagged.1.g3a655a4
+2025-12-18T16:04:15.6621027Z Python 3.14.2
+2025-12-18T16:04:16.4588340Z List of packages in environment: "/home/runner/micromamba/envs/pymc-test"
+2025-12-18T16:04:16.4589206Z 
+2025-12-18T16:04:16.4589616Z   Name                       Version                Build                    Channel    
+2025-12-18T16:04:16.4591185Z ──────────────────────────────────────────────────────────────────────────────────────────
+2025-12-18T16:04:16.4591887Z   _openmp_mutex              4.5                    7_kmp_llvm               conda-forge
+2025-12-18T16:04:16.4592609Z   adwaita-icon-theme         49.0                   unix_0                   conda-forge
+2025-12-18T16:04:16.4593288Z   arviz                      0.23.0                 pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4593912Z   asciitree                  0.3.3                  py_2                     conda-forge
+2025-12-18T16:04:16.4594816Z   asttokens                  3.0.1                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4595473Z   at-spi2-atk                2.38.0                 h0630a04_3               conda-forge
+2025-12-18T16:04:16.4596111Z   at-spi2-core               2.40.3                 h0630a04_0               conda-forge
+2025-12-18T16:04:16.4596726Z   atk-1.0                    2.38.0                 h04ea711_2               conda-forge
+2025-12-18T16:04:16.4597761Z   betterproto                2.0.0b7                pypi_0                   pypi       
+2025-12-18T16:04:16.4598496Z   binutils_impl_linux-64     2.45                   default_hfdba357_104     conda-forge
+2025-12-18T16:04:16.4599290Z   binutils_linux-64          2.45                   default_h4852527_104     conda-forge
+2025-12-18T16:04:16.4599883Z   blas                       2.305                  mkl                      conda-forge
+2025-12-18T16:04:16.4600369Z   blas-devel                 3.11.0                 5_hcf00494_mkl           conda-forge
+2025-12-18T16:04:16.4601099Z   brotli                     1.2.0                  hed03a55_1               conda-forge
+2025-12-18T16:04:16.4601897Z   brotli-bin                 1.2.0                  hb03c661_1               conda-forge
+2025-12-18T16:04:16.4602672Z   bzip2                      1.0.8                  hda65f42_8               conda-forge
+2025-12-18T16:04:16.4603403Z   c-ares                     1.34.6                 hb03c661_0               conda-forge
+2025-12-18T16:04:16.4604424Z   ca-certificates            2025.11.12             hbd8a1cb_0               conda-forge
+2025-12-18T16:04:16.4605375Z   cached-property            1.5.2                  hd8ed1ab_1               conda-forge
+2025-12-18T16:04:16.4606220Z   cached_property            1.5.2                  pyha770c72_1             conda-forge
+2025-12-18T16:04:16.4607003Z   cachetools                 6.2.4                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4607709Z   cairo                      1.18.4                 h3394656_0               conda-forge
+2025-12-18T16:04:16.4608385Z   cffi                       2.0.0                  py314h4a8dc5f_1          conda-forge
+2025-12-18T16:04:16.4609119Z   cfgv                       3.5.0                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4609939Z   cloudpickle                3.1.2                  pyhcf101f3_1             conda-forge
+2025-12-18T16:04:16.4610653Z   colorama                   0.4.6                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4611446Z   conda-gcc-specs            14.3.0                 he8ccf15_16              conda-forge
+2025-12-18T16:04:16.4612073Z   cons                       0.4.7                  pyhd8ed1ab_2             conda-forge
+2025-12-18T16:04:16.4612675Z   contourpy                  1.3.3                  py314h9891dd4_3          conda-forge
+2025-12-18T16:04:16.4613283Z   coverage                   7.13.0                 py314h67df5f8_0          conda-forge
+2025-12-18T16:04:16.4613860Z   cycler                     0.12.1                 pyhcf101f3_2             conda-forge
+2025-12-18T16:04:16.4614565Z   dbus                       1.16.2                 h24cb091_1               conda-forge
+2025-12-18T16:04:16.4615145Z   decorator                  5.2.1                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4615765Z   deprecated                 1.3.1                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4616372Z   distlib                    0.4.0                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4616938Z   epoxy                      1.5.10                 hb03c661_2               conda-forge
+2025-12-18T16:04:16.4617457Z   etuples                    0.3.10                 pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4618012Z   exceptiongroup             1.3.1                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4618399Z   executing                  2.2.1                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4618769Z   fasteners                  0.19                   pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4619121Z   filelock                   3.20.1                 pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4619506Z   font-ttf-dejavu-sans-mono  2.37                   hab24e00_0               conda-forge
+2025-12-18T16:04:16.4619935Z   font-ttf-inconsolata       3.000                  h77eed37_0               conda-forge
+2025-12-18T16:04:16.4620507Z   font-ttf-source-code-pro   2.038                  h77eed37_0               conda-forge
+2025-12-18T16:04:16.4620916Z   font-ttf-ubuntu            0.83                   h77eed37_3               conda-forge
+2025-12-18T16:04:16.4621271Z   fontconfig                 2.15.0                 h7e30c49_1               conda-forge
+2025-12-18T16:04:16.4621646Z   fonts-conda-ecosystem      1                      0                        conda-forge
+2025-12-18T16:04:16.4622033Z   fonts-conda-forge          1                      hc364b38_1               conda-forge
+2025-12-18T16:04:16.4622389Z   fonttools                  4.61.1                 pyh7db6752_0             conda-forge
+2025-12-18T16:04:16.4622732Z   freetype                   2.14.1                 ha770c72_0               conda-forge
+2025-12-18T16:04:16.4623062Z   fribidi                    1.0.16                 hb03c661_0               conda-forge
+2025-12-18T16:04:16.4623385Z   gcc                        14.3.0                 h0dff253_16              conda-forge
+2025-12-18T16:04:16.4623715Z   gcc_impl_linux-64          14.3.0                 he8b2097_16              conda-forge
+2025-12-18T16:04:16.4624344Z   gcc_linux-64               14.3.0                 h298d278_16              conda-forge
+2025-12-18T16:04:16.4625172Z   gdk-pixbuf                 2.44.4                 h2b0a6b4_0               conda-forge
+2025-12-18T16:04:16.4625779Z   glib-tools                 2.86.3                 hf516916_0               conda-forge
+2025-12-18T16:04:16.4626345Z   graphite2                  1.3.14                 hecca717_2               conda-forge
+2025-12-18T16:04:16.4626700Z   graphviz                   14.1.0                 h8b86629_0               conda-forge
+2025-12-18T16:04:16.4627038Z   grpclib                    0.4.9                  pypi_0                   pypi       
+2025-12-18T16:04:16.4627363Z   gtk3                       3.24.43                h993cebd_6               conda-forge
+2025-12-18T16:04:16.4627686Z   gts                        0.7.6                  h977cf35_4               conda-forge
+2025-12-18T16:04:16.4628141Z   gxx                        14.3.0                 h76987e4_16              conda-forge
+2025-12-18T16:04:16.4628485Z   gxx_impl_linux-64          14.3.0                 h2185e75_16              conda-forge
+2025-12-18T16:04:16.4628831Z   gxx_linux-64               14.3.0                 h662a180_16              conda-forge
+2025-12-18T16:04:16.4629153Z   h2                         4.3.0                  pypi_0                   pypi       
+2025-12-18T16:04:16.4629477Z   h5netcdf                   1.7.3                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4629816Z   h5py                       3.15.1                 nompi_py314hc32fe06_101  conda-forge
+2025-12-18T16:04:16.4630160Z   hagelkorn                  1.2.3                  pypi_0                   pypi       
+2025-12-18T16:04:16.4630502Z   harfbuzz                   12.2.0                 h15599e2_0               conda-forge
+2025-12-18T16:04:16.4630842Z   hdf5                       1.14.6                 nompi_h1b119a7_104       conda-forge
+2025-12-18T16:04:16.4631193Z   hicolor-icon-theme         0.17                   ha770c72_2               conda-forge
+2025-12-18T16:04:16.4631551Z   hpack                      4.1.0                  pypi_0                   pypi       
+2025-12-18T16:04:16.4631882Z   hyperframe                 6.1.0                  pypi_0                   pypi       
+2025-12-18T16:04:16.4632208Z   icu                        75.1                   he02047a_0               conda-forge
+2025-12-18T16:04:16.4632520Z   identify                   2.6.15                 pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4632899Z   importlib-metadata         8.7.0                  pyhe01879c_1             conda-forge
+2025-12-18T16:04:16.4633272Z   iniconfig                  2.3.0                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4633725Z   ipython                    9.8.0                  pyh53cf698_0             conda-forge
+2025-12-18T16:04:16.4634365Z   ipython_pygments_lexers    1.1.1                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4634757Z   jax                        0.7.2                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4635099Z   jaxlib                     0.7.2                  cpu_py314ha1d8ec1_2      conda-forge
+2025-12-18T16:04:16.4635419Z   jedi                       0.19.2                 pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4635787Z   kernel-headers_linux-64    3.10.0                 he073ed8_18              conda-forge
+2025-12-18T16:04:16.4636160Z   keyutils                   1.6.3                  hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4636495Z   kiwisolver                 1.4.9                  py314h97ea11e_2          conda-forge
+2025-12-18T16:04:16.4636823Z   krb5                       1.21.3                 h659f571_0               conda-forge
+2025-12-18T16:04:16.4637133Z   lcms2                      2.17                   h717163a_0               conda-forge
+2025-12-18T16:04:16.4637471Z   ld_impl_linux-64           2.45                   default_hbd61a6d_104     conda-forge
+2025-12-18T16:04:16.4637801Z   lerc                       4.0.0                  h0aef613_1               conda-forge
+2025-12-18T16:04:16.4638144Z   libabseil                  20250512.1             cxx17_hba17884_0         conda-forge
+2025-12-18T16:04:16.4638493Z   libaec                     1.1.4                  h3f801dc_0               conda-forge
+2025-12-18T16:04:16.4638814Z   libblas                    3.11.0                 5_h5875eb1_mkl           conda-forge
+2025-12-18T16:04:16.4639164Z   libbrotlicommon            1.2.0                  hb03c661_1               conda-forge
+2025-12-18T16:04:16.4639529Z   libbrotlidec               1.2.0                  hb03c661_1               conda-forge
+2025-12-18T16:04:16.4639894Z   libbrotlienc               1.2.0                  hb03c661_1               conda-forge
+2025-12-18T16:04:16.4640369Z   libcblas                   3.11.0                 5_hfef963f_mkl           conda-forge
+2025-12-18T16:04:16.4640697Z   libcups                    2.3.3                  hb8b1518_5               conda-forge
+2025-12-18T16:04:16.4641021Z   libcurl                    8.17.0                 h4e3cde8_1               conda-forge
+2025-12-18T16:04:16.4641349Z   libdeflate                 1.25                   h17f619e_0               conda-forge
+2025-12-18T16:04:16.4641677Z   libdrm                     2.4.125                hb03c661_1               conda-forge
+2025-12-18T16:04:16.4642024Z   libedit                    3.1.20250104           pl5321h7949ede_0         conda-forge
+2025-12-18T16:04:16.4642362Z   libegl                     1.7.0                  ha4b6fd6_2               conda-forge
+2025-12-18T16:04:16.4642697Z   libegl-devel               1.7.0                  ha4b6fd6_2               conda-forge
+2025-12-18T16:04:16.4643025Z   libev                      4.33                   hd590300_2               conda-forge
+2025-12-18T16:04:16.4643350Z   libexpat                   2.7.3                  hecca717_0               conda-forge
+2025-12-18T16:04:16.4643678Z   libffi                     3.5.2                  h9ec8514_0               conda-forge
+2025-12-18T16:04:16.4644195Z   libfreetype                2.14.1                 ha770c72_0               conda-forge
+2025-12-18T16:04:16.4644558Z   libfreetype6               2.14.1                 h73754d4_0               conda-forge
+2025-12-18T16:04:16.4644900Z   libgcc                     15.2.0                 he0feb66_16              conda-forge
+2025-12-18T16:04:16.4645261Z   libgcc-devel_linux-64      14.3.0                 hf649bbc_116             conda-forge
+2025-12-18T16:04:16.4645622Z   libgcc-ng                  15.2.0                 h69a702a_16              conda-forge
+2025-12-18T16:04:16.4645950Z   libgd                      2.3.3                  h6f5c62b_11              conda-forge
+2025-12-18T16:04:16.4646400Z   libgfortran                15.2.0                 h69a702a_16              conda-forge
+2025-12-18T16:04:16.4646769Z   libgfortran5               15.2.0                 h68bc16d_16              conda-forge
+2025-12-18T16:04:16.4647101Z   libgl                      1.7.0                  ha4b6fd6_2               conda-forge
+2025-12-18T16:04:16.4647429Z   libgl-devel                1.7.0                  ha4b6fd6_2               conda-forge
+2025-12-18T16:04:16.4647765Z   libglib                    2.86.3                 h6548e54_0               conda-forge
+2025-12-18T16:04:16.4648088Z   libglvnd                   1.7.0                  ha4b6fd6_2               conda-forge
+2025-12-18T16:04:16.4648412Z   libglx                     1.7.0                  ha4b6fd6_2               conda-forge
+2025-12-18T16:04:16.4648747Z   libglx-devel               1.7.0                  ha4b6fd6_2               conda-forge
+2025-12-18T16:04:16.4649087Z   libgomp                    15.2.0                 he0feb66_16              conda-forge
+2025-12-18T16:04:16.4649420Z   libgrpc                    1.73.1                 h3288cfb_1               conda-forge
+2025-12-18T16:04:16.4649754Z   libhwloc                   2.12.1                 default_hafda6a7_1003    conda-forge
+2025-12-18T16:04:16.4650102Z   libiconv                   1.18                   h3b78370_2               conda-forge
+2025-12-18T16:04:16.4650446Z   libjpeg-turbo              3.1.2                  hb03c661_0               conda-forge
+2025-12-18T16:04:16.4650792Z   liblapack                  3.11.0                 5_h5e43f62_mkl           conda-forge
+2025-12-18T16:04:16.4651137Z   liblapacke                 3.11.0                 5_hdba1596_mkl           conda-forge
+2025-12-18T16:04:16.4651477Z   liblzma                    5.8.1                  hb9d3cd8_2               conda-forge
+2025-12-18T16:04:16.4651801Z   libmpdec                   4.0.0                  hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4652146Z   libnghttp2                 1.67.0                 had1ee68_0               conda-forge
+2025-12-18T16:04:16.4652611Z   libpciaccess               0.18                   hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4652949Z   libpng                     1.6.53                 h421ea60_0               conda-forge
+2025-12-18T16:04:16.4653279Z   libprotobuf                6.31.1                 h49aed37_2               conda-forge
+2025-12-18T16:04:16.4653626Z   libre2-11                  2025.11.05             h7b12aa8_0               conda-forge
+2025-12-18T16:04:16.4654150Z   librsvg                    2.60.0                 h61e6d4b_0               conda-forge
+2025-12-18T16:04:16.4654503Z   libsanitizer               14.3.0                 h8f1669f_16              conda-forge
+2025-12-18T16:04:16.4654847Z   libsqlite                  3.51.1                 h0c1763c_0               conda-forge
+2025-12-18T16:04:16.4655179Z   libssh2                    1.11.1                 hcf80075_0               conda-forge
+2025-12-18T16:04:16.4655546Z   libstdcxx                  15.2.0                 h934c35e_16              conda-forge
+2025-12-18T16:04:16.4655950Z   libstdcxx-devel_linux-64   14.3.0                 h9f08a49_116             conda-forge
+2025-12-18T16:04:16.4656350Z   libstdcxx-ng               15.2.0                 hdf11a46_16              conda-forge
+2025-12-18T16:04:16.4656701Z   libtiff                    4.7.1                  h9d88235_1               conda-forge
+2025-12-18T16:04:16.4657030Z   libuuid                    2.41.2                 h5347b49_1               conda-forge
+2025-12-18T16:04:16.4657366Z   libwebp-base               1.6.0                  hd42ef1d_0               conda-forge
+2025-12-18T16:04:16.4657704Z   libxcb                     1.17.0                 h8a09558_0               conda-forge
+2025-12-18T16:04:16.4658044Z   libxkbcommon               1.13.1                 hca5e8e5_0               conda-forge
+2025-12-18T16:04:16.4658393Z   libxml2                    2.15.1                 h26afc86_0               conda-forge
+2025-12-18T16:04:16.4658842Z   libxml2-16                 2.15.1                 ha9997c6_0               conda-forge
+2025-12-18T16:04:16.4659176Z   libzlib                    1.3.1                  hb9d3cd8_2               conda-forge
+2025-12-18T16:04:16.4659575Z   llvm-openmp                21.1.8                 h4922eb0_0               conda-forge
+2025-12-18T16:04:16.4659916Z   llvmlite                   0.46.0                 py314h946fb2a_0          conda-forge
+2025-12-18T16:04:16.4660296Z   logical-unification        0.4.7                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4660692Z   markdown-it-py             4.0.0                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4661069Z   matplotlib-base            3.10.8                 py314h1194b4b_0          conda-forge
+2025-12-18T16:04:16.4661451Z   matplotlib-inline          0.2.1                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4661828Z   mcbackend                  0.5.3                  pypi_0                   pypi       
+2025-12-18T16:04:16.4662167Z   mdurl                      0.1.2                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4662505Z   minikanren                 1.0.5                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4662833Z   mkl                        2025.3.0               h0e700b2_462             conda-forge
+2025-12-18T16:04:16.4663167Z   mkl-devel                  2025.3.0               ha770c72_462             conda-forge
+2025-12-18T16:04:16.4663519Z   mkl-include                2025.3.0               hf2ce2f3_462             conda-forge
+2025-12-18T16:04:16.4663871Z   mkl-service                2.6.0                  py314ha1a38ac_0          conda-forge
+2025-12-18T16:04:16.4664398Z   ml_dtypes                  0.5.4                  np2py314h6477eea_0       conda-forge
+2025-12-18T16:04:16.4664758Z   msgpack-python             1.1.2                  py314h9891dd4_1          conda-forge
+2025-12-18T16:04:16.4665121Z   multidict                  6.7.0                  pypi_0                   pypi       
+2025-12-18T16:04:16.4665604Z   multipledispatch           0.6.0                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4665969Z   munkres                    1.1.4                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4666292Z   mypy                       1.19.1                 py314h5bd0f2a_0          conda-forge
+2025-12-18T16:04:16.4666635Z   mypy_extensions            1.1.0                  pyha770c72_0             conda-forge
+2025-12-18T16:04:16.4666973Z   ncurses                    6.5                    h2d0b736_3               conda-forge
+2025-12-18T16:04:16.4667301Z   networkx                   3.6.1                  pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4667631Z   nodeenv                    1.9.1                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4667946Z   numba                      0.63.1                 py314h8169c2f_0          conda-forge
+2025-12-18T16:04:16.4668283Z   numcodecs                  0.15.1                 py314ha0b5721_1          conda-forge
+2025-12-18T16:04:16.4668644Z   numdifftools               0.9.42                 pypi_0                   pypi       
+2025-12-18T16:04:16.4668982Z   numpy                      2.3.5                  py314h2b28147_0          conda-forge
+2025-12-18T16:04:16.4669302Z   openjpeg                   2.5.4                  h55fea9a_0               conda-forge
+2025-12-18T16:04:16.4669630Z   openssl                    3.6.0                  h26f9b46_0               conda-forge
+2025-12-18T16:04:16.4669972Z   opt_einsum                 3.4.0                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4670321Z   packaging                  25.0                   pyh29332c3_1             conda-forge
+2025-12-18T16:04:16.4670651Z   pandas                     2.3.3                  py314ha0b5721_2          conda-forge
+2025-12-18T16:04:16.4671081Z   pango                      1.56.4                 hadf4263_0               conda-forge
+2025-12-18T16:04:16.4671406Z   parso                      0.8.5                  pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4671728Z   pathspec                   0.12.1                 pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4672057Z   pcre2                      10.47                  haa7fec5_0               conda-forge
+2025-12-18T16:04:16.4672379Z   pexpect                    4.9.0                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4672712Z   pillow                     12.0.0                 py314h8ec4b1a_2          conda-forge
+2025-12-18T16:04:16.4673022Z   pip                        25.3                   pyh145f28c_0             conda-forge
+2025-12-18T16:04:16.4673330Z   pixman                     0.46.4                 h54a6638_1               conda-forge
+2025-12-18T16:04:16.4673673Z   platformdirs               4.5.1                  pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4674235Z   pluggy                     1.6.0                  pyhf9edf01_1             conda-forge
+2025-12-18T16:04:16.4674589Z   polyagamma                 2.0.2                  py314h5bd0f2a_1          conda-forge
+2025-12-18T16:04:16.4674943Z   pre-commit                 4.5.1                  pyha770c72_0             conda-forge
+2025-12-18T16:04:16.4675307Z   prompt-toolkit             3.0.52                 pyha770c72_0             conda-forge
+2025-12-18T16:04:16.4675653Z   psutil                     7.1.3                  py314h0f05182_0          conda-forge
+2025-12-18T16:04:16.4675990Z   pthread-stubs              0.4                    hb9d3cd8_1002            conda-forge
+2025-12-18T16:04:16.4676384Z   ptyprocess                 0.7.0                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4676736Z   pure_eval                  0.2.3                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4677070Z   pycparser                  2.22                   pyh29332c3_1             conda-forge
+2025-12-18T16:04:16.4677420Z   pygments                   2.19.2                 pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4677919Z   pymc                       0+untagged.1.g3a655a4  pypi_0                   pypi       
+2025-12-18T16:04:16.4678286Z   pyparsing                  3.2.5                  pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4678630Z   pytensor                   2.36.0                 py314h8fa1eac_1          conda-forge
+2025-12-18T16:04:16.4678994Z   pytensor-base              2.36.0                 np2py314h6477eea_1       conda-forge
+2025-12-18T16:04:16.4679348Z   pytest                     9.0.2                  pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4679680Z   pytest-cov                 7.0.0                  pyhcf101f3_1             conda-forge
+2025-12-18T16:04:16.4680029Z   python                     3.14.2                 h32b2ec7_100_cp314       conda-forge
+2025-12-18T16:04:16.4680404Z   python-dateutil            2.9.0.post0            pyhe01879c_2             conda-forge
+2025-12-18T16:04:16.4680803Z   python-graphviz            0.21                   pyhbacfb6d_0             conda-forge
+2025-12-18T16:04:16.4681169Z   python-librt               0.7.4                  py314h0f05182_0          conda-forge
+2025-12-18T16:04:16.4681536Z   python-tzdata              2025.3                 pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4681894Z   python_abi                 3.14                   8_cp314                  conda-forge
+2025-12-18T16:04:16.4682221Z   pytz                       2025.2                 pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4682547Z   pyyaml                     6.0.3                  pyh7db6752_0             conda-forge
+2025-12-18T16:04:16.4682875Z   qhull                      2020.2                 h434a139_5               conda-forge
+2025-12-18T16:04:16.4683199Z   re2                        2025.11.05             h5301d42_0               conda-forge
+2025-12-18T16:04:16.4683653Z   readline                   8.3                    h853b02a_0               conda-forge
+2025-12-18T16:04:16.4684163Z   rich                       14.2.0                 pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4684489Z   scipy                      1.16.3                 py314he7377e1_1          conda-forge
+2025-12-18T16:04:16.4684824Z   setuptools                 80.9.0                 pyhff2d567_0             conda-forge
+2025-12-18T16:04:16.4685147Z   six                        1.17.0                 pyhe01879c_1             conda-forge
+2025-12-18T16:04:16.4685471Z   stack_data                 0.6.3                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4685823Z   sysroot_linux-64           2.17                   h0157908_18              conda-forge
+2025-12-18T16:04:16.4686154Z   tbb                        2022.3.0               h8d10470_1               conda-forge
+2025-12-18T16:04:16.4686494Z   threadpoolctl              3.6.0                  pyhecae5ae_0             conda-forge
+2025-12-18T16:04:16.4686839Z   tk                         8.6.13                 noxft_ha0e22de_103       conda-forge
+2025-12-18T16:04:16.4687154Z   tomli                      2.3.0                  pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4687461Z   toolz                      1.1.0                  pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4687812Z   traitlets                  5.14.3                 pyhd8ed1ab_1             conda-forge
+2025-12-18T16:04:16.4688202Z   types-cachetools           6.2.0.20251022         pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4688611Z   typing-extensions          4.15.0                 h396c80c_0               conda-forge
+2025-12-18T16:04:16.4688994Z   typing_extensions          4.15.0                 pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4689355Z   tzdata                     2025c                  h8577fbf_0               conda-forge
+2025-12-18T16:04:16.4689695Z   ukkonen                    1.0.1                  py314h9891dd4_6          conda-forge
+2025-12-18T16:04:16.4690180Z   unicodedata2               17.0.0                 py314h5bd0f2a_1          conda-forge
+2025-12-18T16:04:16.4690551Z   virtualenv                 20.35.4                pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4690892Z   wayland                    1.24.0                 hd6090a7_1               conda-forge
+2025-12-18T16:04:16.4691223Z   wcwidth                    0.2.14                 pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4691546Z   wrapt                      1.17.3                 py314h5bd0f2a_1          conda-forge
+2025-12-18T16:04:16.4691875Z   xarray                     2025.12.0              pyhcf101f3_0             conda-forge
+2025-12-18T16:04:16.4692242Z   xarray-einstats            0.9.1                  pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4692624Z   xkeyboard-config           2.46                   hb03c661_0               conda-forge
+2025-12-18T16:04:16.4692987Z   xorg-libice                1.1.2                  hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4693344Z   xorg-libsm                 1.2.6                  he73a12e_0               conda-forge
+2025-12-18T16:04:16.4693690Z   xorg-libx11                1.8.12                 h4f16b4b_0               conda-forge
+2025-12-18T16:04:16.4694273Z   xorg-libxau                1.0.12                 hb03c661_1               conda-forge
+2025-12-18T16:04:16.4694679Z   xorg-libxcomposite         0.4.6                  hb9d3cd8_2               conda-forge
+2025-12-18T16:04:16.4695078Z   xorg-libxcursor            1.2.3                  hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4695454Z   xorg-libxdamage            1.1.6                  hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4695828Z   xorg-libxdmcp              1.1.5                  hb03c661_1               conda-forge
+2025-12-18T16:04:16.4696190Z   xorg-libxext               1.3.6                  hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4696675Z   xorg-libxfixes             6.0.2                  hb03c661_0               conda-forge
+2025-12-18T16:04:16.4697051Z   xorg-libxi                 1.8.2                  hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4697418Z   xorg-libxinerama           1.1.5                  h5888daf_1               conda-forge
+2025-12-18T16:04:16.4697907Z   xorg-libxrandr             1.5.4                  hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4698307Z   xorg-libxrender            0.9.12                 hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4698683Z   xorg-libxtst               1.2.5                  hb9d3cd8_3               conda-forge
+2025-12-18T16:04:16.4699056Z   xorg-libxxf86vm            1.1.6                  hb9d3cd8_0               conda-forge
+2025-12-18T16:04:16.4699441Z   xorg-xorgproto             2024.1                 hb9d3cd8_1               conda-forge
+2025-12-18T16:04:16.4699790Z   yaml                       0.2.5                  h280c20c_3               conda-forge
+2025-12-18T16:04:16.4700121Z   zarr                       2.18.7                 pyhd8ed1ab_0             conda-forge
+2025-12-18T16:04:16.4700447Z   zipp                       3.23.0                 pyhcf101f3_1             conda-forge
+2025-12-18T16:04:16.4700764Z   zlib-ng                    2.3.2                  h54a6638_0               conda-forge
+2025-12-18T16:04:16.4701090Z   zstd                       1.5.7                  hb78ec9c_6               conda-forge
+2025-12-18T16:04:16.4733546Z ##[group]Run python -m pytest -vv --cov=pymc --cov-report=xml --no-cov-on-fail --cov-report term --durations=50 $TEST_SUBSET
+2025-12-18T16:04:16.4734582Z [36;1mpython -m pytest -vv --cov=pymc --cov-report=xml --no-cov-on-fail --cov-report term --durations=50 $TEST_SUBSET[0m
+2025-12-18T16:04:16.4767100Z shell: /usr/bin/bash -leo pipefail {0}
+2025-12-18T16:04:16.4767360Z env:
+2025-12-18T16:04:16.4768623Z   TEST_SUBSET: tests/distributions/test_censored.py
+tests/distributions/test_custom.py
+tests/distributions/test_simulator.py
+tests/sampling/test_deterministic.py
+tests/sampling/test_forward.py
+tests/sampling/test_population.py
+tests/stats/test_convergence.py
+tests/stats/test_log_density.py
+tests/distributions/test_distribution.py
+tests/distributions/test_discrete.py
+
+2025-12-18T16:04:16.4770130Z   PYTENSOR_FLAGS: floatX=float64
+2025-12-18T16:04:16.4770397Z   MAMBA_ROOT_PREFIX: /home/runner/micromamba
+2025-12-18T16:04:16.4770695Z   MAMBA_EXE: /home/runner/micromamba-bin/micromamba
+2025-12-18T16:04:16.4771063Z   CONDARC: /home/runner/work/_temp/setup-micromamba/.condarc
+2025-12-18T16:04:16.4771355Z ##[endgroup]
+2025-12-18T16:04:24.8692545Z [1m============================= test session starts ==============================[0m
+2025-12-18T16:04:24.8693320Z platform linux -- Python 3.14.2, pytest-9.0.2, pluggy-1.6.0 -- /home/runner/micromamba/envs/pymc-test/bin/python
+2025-12-18T16:04:24.8694313Z cachedir: .pytest_cache
+2025-12-18T16:04:24.8694789Z rootdir: /home/runner/work/pymc/pymc
+2025-12-18T16:04:24.8695372Z configfile: pyproject.toml
+2025-12-18T16:04:24.8695834Z plugins: cov-7.0.0
+2025-12-18T16:04:26.5329668Z [1mcollecting ... [0mcollected 381 items
+2025-12-18T16:04:26.5330090Z 
+2025-12-18T16:04:40.8796856Z tests/distributions/test_censored.py::TestCensored::test_censored_workflow[False] [32mPASSED[0m[33m [  0%][0m
+2025-12-18T16:04:51.2180961Z tests/distributions/test_censored.py::TestCensored::test_censored_workflow[True] [32mPASSED[0m[33m [  0%][0m
+2025-12-18T16:04:51.2245073Z tests/distributions/test_censored.py::TestCensored::test_censored_invalid_dist [32mPASSED[0m[33m [  0%][0m
+2025-12-18T16:04:52.7872244Z tests/distributions/test_censored.py::TestCensored::test_change_dist_size [32mPASSED[0m[33m [  1%][0m
+2025-12-18T16:04:53.2390922Z tests/distributions/test_censored.py::TestCensored::test_dist_broadcasted_by_lower_upper [32mPASSED[0m[33m [  1%][0m
+2025-12-18T16:04:53.4584432Z tests/distributions/test_censored.py::TestCensored::test_censored_categorical [32mPASSED[0m[33m [  1%][0m
+2025-12-18T16:04:53.6166366Z tests/distributions/test_censored.py::TestCensored::test_censored_logcdf_continuous [32mPASSED[0m[33m [  1%][0m
+2025-12-18T16:04:53.9507678Z tests/distributions/test_censored.py::TestCensored::test_censored_logcdf_discrete [32mPASSED[0m[33m [  2%][0m
+2025-12-18T16:04:53.9625254Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_with_random[()] [32mPASSED[0m[33m [  2%][0m
+2025-12-18T16:04:53.9749993Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_with_random[(3,)] [32mPASSED[0m[33m [  2%][0m
+2025-12-18T16:04:53.9882564Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_with_random[(3, 2)] [32mPASSED[0m[33m [  2%][0m
+2025-12-18T16:04:53.9904497Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_with_random_invalid_observed [32mPASSED[0m[33m [  3%][0m
+2025-12-18T16:04:55.3303474Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_without_random [32mPASSED[0m[33m [  3%][0m
+2025-12-18T16:04:55.3578646Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_with_random_multivariate[()] [32mPASSED[0m[33m [  3%][0m
+2025-12-18T16:04:55.3859599Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_with_random_multivariate[(3,)] [32mPASSED[0m[33m [  3%][0m
+2025-12-18T16:04:55.4151923Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_with_random_multivariate[(3, 2)] [32mPASSED[0m[33m [  4%][0m
+2025-12-18T16:05:02.7927565Z tests/distributions/test_custom.py::TestCustomDist::test_serialize_custom_dist [32mPASSED[0m[33m [  4%][0m
+2025-12-18T16:05:02.7936246Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_old_api_error [32mPASSED[0m[33m [  4%][0m
+2025-12-18T16:05:04.9205428Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_multivariate_logp[None] [32mPASSED[0m[33m [  4%][0m
+2025-12-18T16:05:04.9926108Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_multivariate_logp[()] [32mPASSED[0m[33m [  5%][0m
+2025-12-18T16:05:06.4056191Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_multivariate_logp[(2,)] [32mPASSED[0m[33m [  5%][0m
+2025-12-18T16:05:06.4173494Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_default_support_point_univariate[None-None-0.0] [32mPASSED[0m[33m [  5%][0m
+2025-12-18T16:05:06.4276138Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_default_support_point_univariate[None-5-expected1] [32mPASSED[0m[33m [  6%][0m
+2025-12-18T16:05:06.4381016Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_default_support_point_univariate[custom_support_point-size2-5] [32mPASSED[0m[33m [  6%][0m
+2025-12-18T16:05:06.4563002Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_default_support_point_univariate[custom_support_point-size3-expected3] [32mPASSED[0m[33m [  6%][0m
+2025-12-18T16:05:06.4646589Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_custom_support_point_univariate[()] [32mPASSED[0m[33m [  6%][0m
+2025-12-18T16:05:06.9396187Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_custom_support_point_univariate[(2,)] [32mPASSED[0m[33m [  7%][0m
+2025-12-18T16:05:07.4366043Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_custom_support_point_univariate[(3, 2)] [32mPASSED[0m[33m [  7%][0m
+2025-12-18T16:05:07.4566306Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_custom_support_point_multivariate[()] [32mPASSED[0m[33m [  7%][0m
+2025-12-18T16:05:07.4896251Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_custom_support_point_multivariate[(2,)] [32mPASSED[0m[33m [  7%][0m
+2025-12-18T16:05:08.0887014Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_custom_support_point_multivariate[(3, 2)] [32mPASSED[0m[33m [  8%][0m
+2025-12-18T16:05:08.5714828Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_default_support_point_multivariate[True-size0] [32mPASSED[0m[33m [  8%][0m
+2025-12-18T16:05:09.0743654Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_default_support_point_multivariate[True-size1] [32mPASSED[0m[33m [  8%][0m
+2025-12-18T16:05:09.6113775Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_default_support_point_multivariate[True-size2] [32mPASSED[0m[33m [  8%][0m
+2025-12-18T16:05:09.6242283Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_default_support_point_multivariate[False-size3] [32mPASSED[0m[33m [  9%][0m
+2025-12-18T16:05:09.6370273Z tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_default_support_point_multivariate[False-size4] [32mPASSED[0m[33m [  9%][0m
+2025-12-18T16:05:09.6762254Z tests/distributions/test_custom.py::TestCustomDist::test_dist [32mPASSED[0m[33m     [  9%][0m
+2025-12-18T16:05:09.6779399Z tests/distributions/test_custom.py::TestCustomDist::test_multivariate_insufficient_signature [32mPASSED[0m[33m [  9%][0m
+2025-12-18T16:05:12.2812965Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_basic [32mPASSED[0m[33m [ 10%][0m
+2025-12-18T16:05:12.8239795Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point[dist_params0-None-148.4131591025766-<lambda>] [32mPASSED[0m[33m [ 10%][0m
+2025-12-18T16:05:13.4322009Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point[dist_params1-None-expected1-<lambda>] [32mPASSED[0m[33m [ 10%][0m
+2025-12-18T16:05:13.9856657Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point[dist_params2-None-4.4816890703380645-<lambda>] [32mPASSED[0m[33m [ 11%][0m
+2025-12-18T16:05:14.6315154Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point[dist_params3-size3-expected3-<lambda>] [32mPASSED[0m[33m [ 11%][0m
+2025-12-18T16:05:14.6594152Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point[dist_params4-None-12-<lambda>] [32mPASSED[0m[33m [ 11%][0m
+2025-12-18T16:05:16.2957699Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point_scan [32mPASSED[0m[33m [ 11%][0m
+2025-12-18T16:05:18.8838214Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point_scan_recurring [32mPASSED[0m[33m [ 12%][0m
+2025-12-18T16:05:19.5331686Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point_nested[-1-1-None-5] [32mPASSED[0m[33m [ 12%][0m
+2025-12-18T16:05:19.6191259Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point_nested[-3--1-None-3] [32mPASSED[0m[33m [ 12%][0m
+2025-12-18T16:05:20.3599991Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point_nested[-3-1-size2-expected2] [32mPASSED[0m[33m [ 12%][0m
+2025-12-18T16:05:20.4231489Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_logcdf_inference [32mPASSED[0m[33m [ 13%][0m
+2025-12-18T16:05:21.2795918Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_random_multiple_rngs [32mPASSED[0m[33m [ 13%][0m
+2025-12-18T16:05:21.3168900Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_methods [32mPASSED[0m[33m [ 13%][0m
+2025-12-18T16:05:21.3733482Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_change_size [32mPASSED[0m[33m [ 13%][0m
+2025-12-18T16:05:21.3743280Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_error_model_access [32mPASSED[0m[33m [ 14%][0m
+2025-12-18T16:05:21.3771725Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_api_change_error [32mPASSED[0m[33m [ 14%][0m
+2025-12-18T16:05:24.2419686Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_scan [32mPASSED[0m[33m [ 14%][0m
+2025-12-18T16:05:29.2880814Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_inferred_logp_mixture [32mPASSED[0m[33m [ 14%][0m
+2025-12-18T16:05:29.3170092Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_symbolic_dist [32mPASSED[0m[33m [ 15%][0m
+2025-12-18T16:05:29.3577485Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_nested_custom_dist [32mPASSED[0m[33m [ 15%][0m
+2025-12-18T16:05:29.3997059Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_signature [32mPASSED[0m[33m [ 15%][0m
+2025-12-18T16:05:29.4039639Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_inline_does_not_duplicate_graph [32mPASSED[0m[33m [ 16%][0m
+2025-12-18T16:05:30.3609166Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_chained_custom_dist_bug [32mPASSED[0m[33m [ 16%][0m
+2025-12-18T16:05:30.3812783Z tests/distributions/test_custom.py::TestCustomSymbolicDist::test_explicit_rng [32mPASSED[0m[33m [ 16%][0m
+2025-12-18T16:05:36.8798071Z tests/distributions/test_simulator.py::TestSimulator::test_one_gaussian [32mPASSED[0m[33m [ 16%][0m
+2025-12-18T16:05:43.4398810Z tests/distributions/test_simulator.py::TestSimulator::test_custom_dist_sum_stat[float32] [31mFAILED[0m[31m [ 17%][0m
+2025-12-18T16:05:46.3681093Z tests/distributions/test_simulator.py::TestSimulator::test_custom_dist_sum_stat[float64] [32mPASSED[0m[31m [ 17%][0m
+2025-12-18T16:05:46.3898855Z tests/distributions/test_simulator.py::TestSimulator::test_custom_dist_sum_stat_scalar[float32] [32mPASSED[0m[31m [ 17%][0m
+2025-12-18T16:05:46.4097975Z tests/distributions/test_simulator.py::TestSimulator::test_custom_dist_sum_stat_scalar[float64] [32mPASSED[0m[31m [ 17%][0m
+2025-12-18T16:05:49.7331480Z tests/distributions/test_simulator.py::TestSimulator::test_model_with_potential [32mPASSED[0m[31m [ 18%][0m
+2025-12-18T16:05:56.8695644Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_metropolis_mcmc [32mPASSED[0m[31m [ 18%][0m
+2025-12-18T16:06:06.6120775Z tests/distributions/test_simulator.py::TestSimulator::test_multiple_simulators [32mPASSED[0m[31m [ 18%][0m
+2025-12-18T16:06:14.1653261Z tests/distributions/test_simulator.py::TestSimulator::test_nested_simulators [32mPASSED[0m[31m [ 18%][0m
+2025-12-18T16:06:14.5638381Z tests/distributions/test_simulator.py::TestSimulator::test_upstream_rngs_not_in_compiled_logp [32mPASSED[0m[31m [ 19%][0m
+2025-12-18T16:06:14.5651486Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_error_msg [32mPASSED[0m[31m [ 19%][0m
+2025-12-18T16:06:14.5835702Z tests/distributions/test_simulator.py::TestSimulator::test_automatic_use_of_sort [33mXFAIL[0m[31m [ 19%][0m
+2025-12-18T16:06:17.2465706Z tests/distributions/test_simulator.py::TestSimulator::test_name_is_string_type [32mPASSED[0m[31m [ 19%][0m
+2025-12-18T16:06:20.1475346Z tests/distributions/test_simulator.py::TestSimulator::test_named_model [32mPASSED[0m[31m [ 20%][0m
+2025-12-18T16:06:20.1723299Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[None-1-0] [32mPASSED[0m[31m [ 20%][0m
+2025-12-18T16:06:20.2047531Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[None-1-[0 1 2]] [32mPASSED[0m[31m [ 20%][0m
+2025-12-18T16:06:20.2363863Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[None-[1 2 5]-0] [32mPASSED[0m[31m [ 20%][0m
+2025-12-18T16:06:20.2658011Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[None-[1 2 5]-[0 1 2]] [32mPASSED[0m[31m [ 21%][0m
+2025-12-18T16:06:20.3009822Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[3-1-0] [32mPASSED[0m[31m [ 21%][0m
+2025-12-18T16:06:20.3343783Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[3-1-[0 1 2]] [32mPASSED[0m[31m [ 21%][0m
+2025-12-18T16:06:20.3675462Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[3-[1 2 5]-0] [32mPASSED[0m[31m [ 22%][0m
+2025-12-18T16:06:20.3979367Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[3-[1 2 5]-[0 1 2]] [32mPASSED[0m[31m [ 22%][0m
+2025-12-18T16:06:20.4358875Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[(5, 3)-1-0] [32mPASSED[0m[31m [ 22%][0m
+2025-12-18T16:06:20.4740195Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[(5, 3)-1-[0 1 2]] [32mPASSED[0m[31m [ 22%][0m
+2025-12-18T16:06:20.5123115Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[(5, 3)-[1 2 5]-0] [32mPASSED[0m[31m [ 23%][0m
+2025-12-18T16:06:20.5499125Z tests/distributions/test_simulator.py::TestSimulator::test_simulator_support_point[(5, 3)-[1 2 5]-[0 1 2]] [32mPASSED[0m[31m [ 23%][0m
+2025-12-18T16:06:21.1753087Z tests/distributions/test_simulator.py::TestSimulator::test_dist [32mPASSED[0m[31m   [ 23%][0m
+2025-12-18T16:06:22.0453315Z tests/sampling/test_deterministic.py::test_compute_deterministics [32mPASSED[0m[31m [ 23%][0m
+2025-12-18T16:06:26.2649622Z tests/sampling/test_deterministic.py::test_docstring_example [32mPASSED[0m[31m      [ 24%][0m
+2025-12-18T16:06:26.2802420Z tests/sampling/test_forward.py::TestDraw::test_univariate [32mPASSED[0m[31m         [ 24%][0m
+2025-12-18T16:06:26.3111067Z tests/sampling/test_forward.py::TestDraw::test_multivariate [32mPASSED[0m[31m       [ 24%][0m
+2025-12-18T16:06:26.3435124Z tests/sampling/test_forward.py::TestDraw::test_multiple_variables [32mPASSED[0m[31m [ 24%][0m
+2025-12-18T16:06:26.3527698Z tests/sampling/test_forward.py::TestDraw::test_draw_different_samples [32mPASSED[0m[31m [ 25%][0m
+2025-12-18T16:06:26.3619314Z tests/sampling/test_forward.py::TestDraw::test_draw_pytensor_function_kwargs [32mPASSED[0m[31m [ 25%][0m
+2025-12-18T16:06:27.3895803Z tests/sampling/test_forward.py::TestCompileForwardSampler::test_linear_model [32mPASSED[0m[31m [ 25%][0m
+2025-12-18T16:06:27.8651468Z tests/sampling/test_forward.py::TestCompileForwardSampler::test_nested_observed_model [32mPASSED[0m[31m [ 25%][0m
+2025-12-18T16:06:27.9000091Z tests/sampling/test_forward.py::TestCompileForwardSampler::test_volatile_parameters [32mPASSED[0m[31m [ 26%][0m
+2025-12-18T16:06:28.5035906Z tests/sampling/test_forward.py::TestCompileForwardSampler::test_mixture [32mPASSED[0m[31m [ 26%][0m
+2025-12-18T16:06:29.4499809Z tests/sampling/test_forward.py::TestCompileForwardSampler::test_censored [32mPASSED[0m[31m [ 26%][0m
+2025-12-18T16:06:36.3130158Z tests/sampling/test_forward.py::TestCompileForwardSampler::test_lkj_cholesky_cov [32mPASSED[0m[31m [ 27%][0m
+2025-12-18T16:06:36.8436845Z tests/sampling/test_forward.py::TestCompileForwardSampler::test_non_random_model_variable [32mPASSED[0m[31m [ 27%][0m
+2025-12-18T16:06:38.1499704Z tests/sampling/test_forward.py::TestCompileForwardSampler::test_mutable_coords_volatile [32mPASSED[0m[31m [ 27%][0m
+2025-12-18T16:06:38.7489219Z tests/sampling/test_forward.py::TestCompileForwardSampler::test_length_coords_volatile [32mPASSED[0m[31m [ 27%][0m
+2025-12-18T16:06:44.9970295Z tests/sampling/test_forward.py::TestSamplePPC::test_normal_scalar [32mPASSED[0m[31m [ 28%][0m
+2025-12-18T16:06:50.1398284Z tests/sampling/test_forward.py::TestSamplePPC::test_normal_scalar_idata [32mPASSED[0m[31m [ 28%][0m
+2025-12-18T16:06:50.8642096Z tests/sampling/test_forward.py::TestSamplePPC::test_external_trace_det [32mPASSED[0m[31m [ 28%][0m
+2025-12-18T16:06:52.5685597Z tests/sampling/test_forward.py::TestSamplePPC::test_normal_vector [32mPASSED[0m[31m [ 28%][0m
+2025-12-18T16:06:57.9872602Z tests/sampling/test_forward.py::TestSamplePPC::test_normal_vector_idata [32mPASSED[0m[31m [ 29%][0m
+2025-12-18T16:07:03.2397608Z tests/sampling/test_forward.py::TestSamplePPC::test_exceptions [32mPASSED[0m[31m    [ 29%][0m
+2025-12-18T16:07:05.6381558Z tests/sampling/test_forward.py::TestSamplePPC::test_sum_normal [32mPASSED[0m[31m    [ 29%][0m
+2025-12-18T16:07:05.8700153Z tests/sampling/test_forward.py::TestSamplePPC::test_model_not_drawable_prior [32mPASSED[0m[31m [ 29%][0m
+2025-12-18T16:07:09.6523072Z tests/sampling/test_forward.py::TestSamplePPC::test_model_shared_variable [32mPASSED[0m[31m [ 30%][0m
+2025-12-18T16:07:15.8171066Z tests/sampling/test_forward.py::TestSamplePPC::test_deterministic_of_observed [32mPASSED[0m[31m [ 30%][0m
+2025-12-18T16:07:21.6646914Z tests/sampling/test_forward.py::TestSamplePPC::test_deterministic_of_observed_modified_interface [32mPASSED[0m[31m [ 30%][0m
+2025-12-18T16:07:26.0710768Z tests/sampling/test_forward.py::TestSamplePPC::test_variable_type [32mPASSED[0m[31m [ 30%][0m
+2025-12-18T16:07:26.0833414Z tests/sampling/test_forward.py::TestSamplePPC::test_potentials_warning [32mPASSED[0m[31m [ 31%][0m
+2025-12-18T16:07:30.7443243Z tests/sampling/test_forward.py::TestSamplePPC::test_idata_extension [32mPASSED[0m[31m [ 31%][0m
+2025-12-18T16:07:30.7598654Z tests/sampling/test_forward.py::TestSamplePPC::test_deterministics_out_of_idata[False] [32mPASSED[0m[31m [ 31%][0m
+2025-12-18T16:07:30.7862904Z tests/sampling/test_forward.py::TestSamplePPC::test_deterministics_out_of_idata[True] [32mPASSED[0m[31m [ 32%][0m
+2025-12-18T16:07:30.8155487Z tests/sampling/test_forward.py::TestSamplePPC::test_logging_sampled_basic_rvs_prior [32mPASSED[0m[31m [ 32%][0m
+2025-12-18T16:07:30.8848759Z tests/sampling/test_forward.py::TestSamplePPC::test_logging_sampled_basic_rvs_posterior [32mPASSED[0m[31m [ 32%][0m
+2025-12-18T16:07:30.9022419Z tests/sampling/test_forward.py::TestSamplePPC::test_logging_sampled_basic_rvs_posterior_deterministic [32mPASSED[0m[31m [ 32%][0m
+2025-12-18T16:07:46.4370766Z tests/sampling/test_forward.py::TestSamplePPC::test_logging_sampled_basic_rvs_posterior_mutable[MultiTrace] [32mPASSED[0m[31m [ 33%][0m
+2025-12-18T16:07:46.5623360Z tests/sampling/test_forward.py::TestSamplePPC::test_logging_sampled_basic_rvs_posterior_mutable[InferenceData] [32mPASSED[0m[31m [ 33%][0m
+2025-12-18T16:07:46.6901786Z tests/sampling/test_forward.py::TestSamplePPC::test_logging_sampled_basic_rvs_posterior_mutable[Dataset] [32mPASSED[0m[31m [ 33%][0m
+2025-12-18T16:07:47.3314246Z tests/sampling/test_forward.py::TestSamplePPC::test_observed_data_needed_in_pp [32mPASSED[0m[31m [ 33%][0m
+2025-12-18T16:07:48.4724616Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_ignores_observed [32mPASSED[0m[31m [ 34%][0m
+2025-12-18T16:07:48.5887203Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_respects_shape [32mPASSED[0m[31m [ 34%][0m
+2025-12-18T16:07:48.6023446Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_multivariate [32mPASSED[0m[31m [ 34%][0m
+2025-12-18T16:07:49.3099211Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_multivariate2 [32mPASSED[0m[31m [ 34%][0m
+2025-12-18T16:07:49.6282006Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_layers [32mPASSED[0m[31m [ 35%][0m
+2025-12-18T16:07:50.2504175Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_transformed [32mPASSED[0m[31m [ 35%][0m
+2025-12-18T16:07:50.6962424Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_shared [32mPASSED[0m[31m [ 35%][0m
+2025-12-18T16:07:50.7449721Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_density_dist [32mPASSED[0m[31m [ 35%][0m
+2025-12-18T16:07:50.7656930Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_shape_edgecase [32mPASSED[0m[31m [ 36%][0m
+2025-12-18T16:07:53.4882082Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_zeroinflatedpoisson [32mPASSED[0m[31m [ 36%][0m
+2025-12-18T16:07:53.4968682Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_potentials_warning [32mPASSED[0m[31m [ 36%][0m
+2025-12-18T16:07:53.5013044Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_transformed_vars_not_supported [32mPASSED[0m[31m [ 37%][0m
+2025-12-18T16:07:53.5287428Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_issue_4490 [32mPASSED[0m[31m [ 37%][0m
+2025-12-18T16:07:53.5372262Z tests/sampling/test_forward.py::TestSamplePriorPredictive::test_pytensor_function_kwargs [32mPASSED[0m[31m [ 37%][0m
+2025-12-18T16:07:57.9486270Z tests/sampling/test_forward.py::TestSamplePosteriorPredictive::test_point_list_arg_bug_spp [32mPASSED[0m[31m [ 37%][0m
+2025-12-18T16:07:57.9798333Z tests/sampling/test_forward.py::TestSamplePosteriorPredictive::test_sample_from_xarray_prior [32mPASSED[0m[31m [ 38%][0m
+2025-12-18T16:07:58.0168771Z tests/sampling/test_forward.py::TestSamplePosteriorPredictive::test_sample_from_xarray_posterior [32mPASSED[0m[31m [ 38%][0m
+2025-12-18T16:07:58.0270059Z tests/sampling/test_forward.py::TestSamplePosteriorPredictive::test_pytensor_function_kwargs [32mPASSED[0m[31m [ 38%][0m
+2025-12-18T16:07:58.1584681Z tests/sampling/test_forward.py::TestSamplePosteriorPredictive::test_sample_dims [32mPASSED[0m[31m [ 38%][0m
+2025-12-18T16:07:58.1713502Z tests/sampling/test_forward.py::test_distinct_rvs [32mPASSED[0m[31m                 [ 39%][0m
+2025-12-18T16:07:58.7897685Z tests/sampling/test_forward.py::TestNestedRandom::test_NegativeBinomial[10-(3,)-(None, ())-(None, (3,))] [32mPASSED[0m[31m [ 39%][0m
+2025-12-18T16:07:59.4125529Z tests/sampling/test_forward.py::TestNestedRandom::test_NegativeBinomial[10-(3,)-(None, (3,))-(None, ())] [32mPASSED[0m[31m [ 39%][0m
+2025-12-18T16:08:00.2687499Z tests/sampling/test_forward.py::TestNestedRandom::test_NegativeBinomial[10-(4, 3)-(None, (3,))-(None, (3,))] [32mPASSED[0m[31m [ 39%][0m
+2025-12-18T16:08:01.0988213Z tests/sampling/test_forward.py::TestNestedRandom::test_NegativeBinomial[10-(4, 3)-(None, (3,))-(None, (4, 3))] [32mPASSED[0m[31m [ 40%][0m
+2025-12-18T16:08:01.1990023Z tests/sampling/test_forward.py::TestNestedRandom::test_ZeroInflatedNegativeBinomial[10-(3,)-(0.5, ())-(None, ())-(None, (3,))] [32mPASSED[0m[31m [ 40%][0m
+2025-12-18T16:08:01.3032356Z tests/sampling/test_forward.py::TestNestedRandom::test_ZeroInflatedNegativeBinomial[10-(3,)-(0.5, (3,))-(None, ())-(None, (3,))] [32mPASSED[0m[31m [ 40%][0m
+2025-12-18T16:08:01.3994941Z tests/sampling/test_forward.py::TestNestedRandom::test_ZeroInflatedNegativeBinomial[10-(3,)-(0.5, ())-(None, (3,))-(None, ())] [32mPASSED[0m[31m [ 40%][0m
+2025-12-18T16:08:01.7197946Z tests/sampling/test_forward.py::TestNestedRandom::test_ZeroInflatedNegativeBinomial[10-(3,)-(0.5, (3,))-(None, (3,))-(None, ())] [32mPASSED[0m[31m [ 41%][0m
+2025-12-18T16:08:02.8019904Z tests/sampling/test_forward.py::TestNestedRandom::test_ZeroInflatedNegativeBinomial[10-(4, 3)-(0.5, (3,))-(None, (3,))-(None, (3,))] [32mPASSED[0m[31m [ 41%][0m
+2025-12-18T16:08:02.9348259Z tests/sampling/test_forward.py::TestNestedRandom::test_ZeroInflatedNegativeBinomial[10-(4, 3)-(0.5, (3,))-(None, (3,))-(None, (4, 3))] [32mPASSED[0m[31m [ 41%][0m
+2025-12-18T16:08:03.5530680Z tests/sampling/test_forward.py::TestNestedRandom::test_Rice[10-(3,)-(None, ())-(None, (3,))0] [32mPASSED[0m[31m [ 41%][0m
+2025-12-18T16:08:03.5758371Z tests/sampling/test_forward.py::TestNestedRandom::test_Rice[10-(3,)-(None, ())-(None, (3,))1] [32mPASSED[0m[31m [ 42%][0m
+2025-12-18T16:08:04.1912046Z tests/sampling/test_forward.py::TestNestedRandom::test_Rice[10-(3,)-(None, (3,))-(None, ())0] [32mPASSED[0m[31m [ 42%][0m
+2025-12-18T16:08:04.2145636Z tests/sampling/test_forward.py::TestNestedRandom::test_Rice[10-(3,)-(None, (3,))-(None, ())1] [32mPASSED[0m[31m [ 42%][0m
+2025-12-18T16:08:05.0616026Z tests/sampling/test_forward.py::TestNestedRandom::test_Rice[10-(4, 3)-(None, (3,))-(None, (3,))] [32mPASSED[0m[31m [ 43%][0m
+2025-12-18T16:08:05.8863374Z tests/sampling/test_forward.py::TestNestedRandom::test_Rice[10-(4, 3)-(None, (3,))-(None, (4, 3))] [32mPASSED[0m[31m [ 43%][0m
+2025-12-18T16:08:05.9196857Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(3,)-(None, ())-(1.0, ())-(None, (), -1)-(None, (3,))0] [32mPASSED[0m[31m [ 43%][0m
+2025-12-18T16:08:05.9511916Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(3,)-(None, ())-(1.0, ())-(None, (), -1)-(None, (3,))1] [32mPASSED[0m[31m [ 43%][0m
+2025-12-18T16:08:05.9821470Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(3,)-(None, ())-(1.0, ())-(None, (3,), -1)-(None, ())0] [32mPASSED[0m[31m [ 44%][0m
+2025-12-18T16:08:06.0142193Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(3,)-(None, ())-(1.0, ())-(None, (3,), -1)-(None, ())1] [32mPASSED[0m[31m [ 44%][0m
+2025-12-18T16:08:06.0576864Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(4, 3)-(None, (3,))-(1.0, ())-(None, (3,), -1)-(None, (3,))] [32mPASSED[0m[31m [ 44%][0m
+2025-12-18T16:08:06.1408785Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(4, 3)-(None, (3,))-(1.0, ())-(None, (3,), -1)-(None, (4, 3))] [32mPASSED[0m[31m [ 44%][0m
+2025-12-18T16:08:06.1704404Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(3,)-(0.0, ())-(None, ())-(None, (), -1)-(None, (3,))0] [32mPASSED[0m[31m [ 45%][0m
+2025-12-18T16:08:06.1997650Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(3,)-(0.0, ())-(None, ())-(None, (), -1)-(None, (3,))1] [32mPASSED[0m[31m [ 45%][0m
+2025-12-18T16:08:06.2291267Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(3,)-(0.0, ())-(None, ())-(None, (3,), -1)-(None, ())0] [32mPASSED[0m[31m [ 45%][0m
+2025-12-18T16:08:06.2583409Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(3,)-(0.0, ())-(None, ())-(None, (3,), -1)-(None, ())1] [32mPASSED[0m[31m [ 45%][0m
+2025-12-18T16:08:06.2992051Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(4, 3)-(0.0, ())-(None, (3,))-(None, (3,), -1)-(None, (3,))] [32mPASSED[0m[31m [ 46%][0m
+2025-12-18T16:08:06.3494620Z tests/sampling/test_forward.py::TestNestedRandom::test_TruncatedNormal[10-(4, 3)-(0.0, ())-(None, (3,))-(None, (3,), -1)-(None, (4, 3))] [32mPASSED[0m[31m [ 46%][0m
+2025-12-18T16:08:06.3652785Z tests/sampling/test_forward.py::TestNestedRandom::test_Triangular[10-(3,)-(None, ())-(-1.0, (3,))-(2, ())] [32mPASSED[0m[31m [ 46%][0m
+2025-12-18T16:08:06.3848832Z tests/sampling/test_forward.py::TestNestedRandom::test_Triangular[10-(3,)-(None, ())-(-1.0, ())-(None, (), 1)] [32mPASSED[0m[31m [ 46%][0m
+2025-12-18T16:08:06.4065853Z tests/sampling/test_forward.py::TestNestedRandom::test_Triangular[10-(3,)-(None, (3,))-(-1.0, ())-(None, (), 1)] [32mPASSED[0m[31m [ 47%][0m
+2025-12-18T16:08:06.4390702Z tests/sampling/test_forward.py::TestNestedRandom::test_Triangular[10-(4, 3)-(None, (3,))-(-1.0, ())-(None, (3,), 1)] [32mPASSED[0m[31m [ 47%][0m
+2025-12-18T16:08:06.4738569Z tests/sampling/test_forward.py::TestNestedRandom::test_Triangular[10-(4, 3)-(None, (3,))-(None, (), -1)-(None, (3,), 1)] [32mPASSED[0m[31m [ 47%][0m
+2025-12-18T16:08:06.4747888Z tests/sampling/test_forward.py::test_get_constant_coords [32mPASSED[0m[31m          [ 48%][0m
+2025-12-18T16:08:06.4918236Z tests/sampling/test_forward.py::test_get_vars_in_point_list [32mPASSED[0m[31m       [ 48%][0m
+2025-12-18T16:08:06.4952229Z tests/sampling/test_forward.py::test_observed_dependent_deterministics [32mPASSED[0m[31m [ 48%][0m
+2025-12-18T16:08:06.5051193Z tests/sampling/test_forward.py::test_sample_prior_predictive_samples_deprecated_warns [32mPASSED[0m[31m [ 48%][0m
+2025-12-18T16:08:07.9238198Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-deterministic-rv_from_posterior-allow_rvs_in_graph] [32mPASSED[0m[31m [ 49%][0m
+2025-12-18T16:08:07.9290022Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-deterministic-rv_from_posterior-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 49%][0m
+2025-12-18T16:08:07.9340980Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-deterministic-resample_rv-allow_rvs_in_graph] [32mPASSED[0m[31m [ 49%][0m
+2025-12-18T16:08:07.9390765Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-deterministic-resample_rv-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 49%][0m
+2025-12-18T16:08:07.9657136Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-observed-rv_from_posterior-allow_rvs_in_graph] [32mPASSED[0m[31m [ 50%][0m
+2025-12-18T16:08:07.9913631Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-observed-rv_from_posterior-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 50%][0m
+2025-12-18T16:08:08.0210240Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-observed-resample_rv-allow_rvs_in_graph] [32mPASSED[0m[31m [ 50%][0m
+2025-12-18T16:08:08.0556669Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-observed-resample_rv-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 50%][0m
+2025-12-18T16:08:08.1467087Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-conditioned_on_observed-rv_from_posterior-allow_rvs_in_graph] [32mPASSED[0m[31m [ 51%][0m
+2025-12-18T16:08:08.1716292Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-conditioned_on_observed-rv_from_posterior-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 51%][0m
+2025-12-18T16:08:08.1993156Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-conditioned_on_observed-resample_rv-allow_rvs_in_graph] [32mPASSED[0m[31m [ 51%][0m
+2025-12-18T16:08:08.2267559Z tests/sampling/test_forward.py::test_vectorize_over_posterior[nested_random_variables-conditioned_on_observed-resample_rv-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 51%][0m
+2025-12-18T16:08:08.2838142Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-deterministic-rv_from_posterior-allow_rvs_in_graph] [32mPASSED[0m[31m [ 52%][0m
+2025-12-18T16:08:08.2856180Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-deterministic-rv_from_posterior-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 52%][0m
+2025-12-18T16:08:08.2893842Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-deterministic-resample_rv-allow_rvs_in_graph] [32mPASSED[0m[31m [ 52%][0m
+2025-12-18T16:08:08.2931567Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-deterministic-resample_rv-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 53%][0m
+2025-12-18T16:08:08.3157273Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-observed-rv_from_posterior-allow_rvs_in_graph] [32mPASSED[0m[31m [ 53%][0m
+2025-12-18T16:08:08.3383224Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-observed-rv_from_posterior-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 53%][0m
+2025-12-18T16:08:08.3636650Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-observed-resample_rv-allow_rvs_in_graph] [32mPASSED[0m[31m [ 53%][0m
+2025-12-18T16:08:08.3890610Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-observed-resample_rv-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 54%][0m
+2025-12-18T16:08:08.4119409Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-conditioned_on_observed-rv_from_posterior-allow_rvs_in_graph] [32mPASSED[0m[31m [ 54%][0m
+2025-12-18T16:08:08.4345901Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-conditioned_on_observed-rv_from_posterior-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 54%][0m
+2025-12-18T16:08:08.4604367Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-conditioned_on_observed-resample_rv-allow_rvs_in_graph] [32mPASSED[0m[31m [ 54%][0m
+2025-12-18T16:08:08.4860933Z tests/sampling/test_forward.py::test_vectorize_over_posterior[no_nested_random_variables-conditioned_on_observed-resample_rv-disallow_rvs_in_graph] [32mPASSED[0m[31m [ 55%][0m
+2025-12-18T16:08:09.8985265Z tests/sampling/test_forward.py::test_vectorize_over_posterior_matches_sample [32mPASSED[0m[31m [ 55%][0m
+2025-12-18T16:08:09.9226525Z tests/sampling/test_forward.py::test_vectorize_over_posterior_with_intermediate_rvs [32mPASSED[0m[31m [ 55%][0m
+2025-12-18T16:08:10.5519220Z tests/sampling/test_population.py::TestPopulationSamplers::test_checks_population_size [32mPASSED[0m[31m [ 55%][0m
+2025-12-18T16:08:12.3518544Z tests/sampling/test_population.py::TestPopulationSamplers::test_demcmc_warning_on_small_populations [32mPASSED[0m[31m [ 56%][0m
+2025-12-18T16:08:12.4191511Z tests/sampling/test_population.py::TestPopulationSamplers::test_nonparallelized_chains_are_random [32mPASSED[0m[31m [ 56%][0m
+2025-12-18T16:08:12.4903361Z tests/sampling/test_population.py::TestPopulationSamplers::test_parallelized_chains_are_random [32mPASSED[0m[31m [ 56%][0m
+2025-12-18T16:08:12.4922165Z tests/stats/test_convergence.py::test_warn_divergences[plural] [32mPASSED[0m[31m    [ 56%][0m
+2025-12-18T16:08:12.4938598Z tests/stats/test_convergence.py::test_warn_divergences[singular] [32mPASSED[0m[31m  [ 57%][0m
+2025-12-18T16:08:12.4967321Z tests/stats/test_convergence.py::test_warn_treedepth [32mPASSED[0m[31m              [ 57%][0m
+2025-12-18T16:08:12.5003359Z tests/stats/test_convergence.py::test_warn_treedepth_multiple_samplers [32mPASSED[0m[31m [ 57%][0m
+2025-12-18T16:08:12.5013602Z tests/stats/test_convergence.py::test_log_warning_stats [32mPASSED[0m[31m           [ 58%][0m
+2025-12-18T16:08:12.5023875Z tests/stats/test_convergence.py::test_log_warning_stats_knows_SamplerWarning [32mPASSED[0m[31m [ 58%][0m
+2025-12-18T16:08:12.5502028Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_basic[False] [32mPASSED[0m[31m [ 58%][0m
+2025-12-18T16:08:12.5945132Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_basic[True] [32mPASSED[0m[31m [ 58%][0m
+2025-12-18T16:08:16.1932636Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_multivariate [32mPASSED[0m[31m [ 59%][0m
+2025-12-18T16:08:16.3488437Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_var_names [32mPASSED[0m[31m [ 59%][0m
+2025-12-18T16:08:16.3539762Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_invalid_var_names [32mPASSED[0m[31m [ 59%][0m
+2025-12-18T16:08:16.9616305Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_dims_without_coords [32mPASSED[0m[31m [ 59%][0m
+2025-12-18T16:08:16.9942729Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_basic_log_prior[False] [32mPASSED[0m[31m [ 60%][0m
+2025-12-18T16:08:17.0257071Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_basic_log_prior[True] [32mPASSED[0m[31m [ 60%][0m
+2025-12-18T16:08:17.0576160Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_deterministic_log_prior [32mPASSED[0m[31m [ 60%][0m
+2025-12-18T16:08:17.0832196Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_compilation_kwargs [32mPASSED[0m[31m [ 60%][0m
+2025-12-18T16:08:17.1412708Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_3051[1-MvNormal-kwargs0] [32mPASSED[0m[31m [ 61%][0m
+2025-12-18T16:08:17.2259529Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_3051[1-MvStudentT-kwargs1] [32mPASSED[0m[31m [ 61%][0m
+2025-12-18T16:08:17.2705518Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_3051[2-MvNormal-kwargs0] [32mPASSED[0m[31m [ 61%][0m
+2025-12-18T16:08:17.3503264Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_3051[2-MvStudentT-kwargs1] [32mPASSED[0m[31m [ 61%][0m
+2025-12-18T16:08:17.3957637Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_3051[4-MvNormal-kwargs0] [32mPASSED[0m[31m [ 62%][0m
+2025-12-18T16:08:17.4750796Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_3051[4-MvStudentT-kwargs1] [32mPASSED[0m[31m [ 62%][0m
+2025-12-18T16:08:19.1825134Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_4499 [32mPASSED[0m[31m [ 62%][0m
+2025-12-18T16:08:19.1844551Z tests/distributions/test_distribution.py::test_all_distributions_have_support_points [32mPASSED[0m[31m [ 62%][0m
+2025-12-18T16:08:19.1964362Z tests/distributions/test_distribution.py::TestSymbolicRandomVariable::test_inline [32mPASSED[0m[31m [ 63%][0m
+2025-12-18T16:08:19.2033124Z tests/distributions/test_distribution.py::TestSymbolicRandomVariable::test_default_update [32mPASSED[0m[31m [ 63%][0m
+2025-12-18T16:08:19.2053875Z tests/distributions/test_distribution.py::TestSymbolicRandomVariable::test_recreate_with_different_rng_inputs [32mPASSED[0m[31m [ 63%][0m
+2025-12-18T16:08:19.2140257Z tests/distributions/test_distribution.py::TestSymbolicRandomVariable::test_change_dist_size_none [32mPASSED[0m[31m [ 64%][0m
+2025-12-18T16:08:19.2174529Z tests/distributions/test_distribution.py::test_distribution_op_registered [32mPASSED[0m[31m [ 64%][0m
+2025-12-18T16:08:20.3503446Z tests/distributions/test_distribution.py::TestDiracDelta::test_logp [32mPASSED[0m[31m [ 64%][0m
+2025-12-18T16:08:22.2619657Z tests/distributions/test_distribution.py::TestDiracDelta::TestDiracDelta::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 64%][0m
+2025-12-18T16:08:22.2651735Z tests/distributions/test_distribution.py::TestDiracDelta::TestDiracDelta::test_dtype[float32] [32mPASSED[0m[31m [ 65%][0m
+2025-12-18T16:08:22.2682028Z tests/distributions/test_distribution.py::TestDiracDelta::TestDiracDelta::test_dtype[float64] [32mPASSED[0m[31m [ 65%][0m
+2025-12-18T16:08:22.3491056Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_univariate[False] [32mPASSED[0m[31m [ 65%][0m
+2025-12-18T16:08:24.1642923Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_univariate[True] [32mPASSED[0m[31m [ 65%][0m
+2025-12-18T16:08:24.6628393Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_constant_mask_separable[True-False] [32mPASSED[0m[31m [ 66%][0m
+2025-12-18T16:08:32.5955587Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_constant_mask_separable[True-True] [32mPASSED[0m[31m [ 66%][0m
+2025-12-18T16:08:32.7877889Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_constant_mask_separable[False-False] [32mPASSED[0m[31m [ 66%][0m
+2025-12-18T16:08:33.0358324Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_constant_mask_separable[False-True] [32mPASSED[0m[31m [ 66%][0m
+2025-12-18T16:08:36.2464206Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_constant_mask_unseparable [32mPASSED[0m[31m [ 67%][0m
+2025-12-18T16:08:41.1239154Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_shared_mask_separable [32mPASSED[0m[31m [ 67%][0m
+2025-12-18T16:08:43.2376051Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_shared_mask_unseparable[False] [32mPASSED[0m[31m [ 67%][0m
+2025-12-18T16:08:44.9699490Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_shared_mask_unseparable[True] [32mPASSED[0m[31m [ 67%][0m
+2025-12-18T16:08:45.0462308Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_support_point [32mPASSED[0m[31m [ 68%][0m
+2025-12-18T16:08:45.0492446Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_wrong_mask [32mPASSED[0m[31m [ 68%][0m
+2025-12-18T16:08:45.0765324Z tests/distributions/test_distribution.py::TestPartialObservedRV::test_default_updates [32mPASSED[0m[31m [ 68%][0m
+2025-12-18T16:08:48.7895272Z tests/distributions/test_discrete.py::TestMatchesScipy::test_discrete_unif [32mPASSED[0m[31m [ 69%][0m
+2025-12-18T16:08:53.4425240Z tests/distributions/test_discrete.py::TestMatchesScipy::test_geometric [32mPASSED[0m[31m [ 69%][0m
+2025-12-18T16:09:04.6574700Z tests/distributions/test_discrete.py::TestMatchesScipy::test_hypergeometric [32mPASSED[0m[31m [ 69%][0m
+2025-12-18T16:09:12.2387270Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial [32mPASSED[0m[31m [ 69%][0m
+2025-12-18T16:09:12.2399544Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[5-None-None-None-Must specify either alpha or n.] [32mPASSED[0m[31m [ 70%][0m
+2025-12-18T16:09:12.2409996Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[None-0.5-None-None-Must specify either alpha or n.] [32mPASSED[0m[31m [ 70%][0m
+2025-12-18T16:09:12.2420221Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[None-None-None-None-Must specify either alpha or n.] [32mPASSED[0m[31m [ 70%][0m
+2025-12-18T16:09:12.2430978Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[5-None-2-2-Can't specify both alpha and n.] [32mPASSED[0m[31m [ 70%][0m
+2025-12-18T16:09:12.2441004Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[None-0.5-2-2-Can't specify both alpha and n.] [32mPASSED[0m[31m [ 71%][0m
+2025-12-18T16:09:12.2450947Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[None-None-2-2-Can't specify both alpha and n.] [32mPASSED[0m[31m [ 71%][0m
+2025-12-18T16:09:12.2461769Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[None-None-2-None-Must specify either mu or p.] [32mPASSED[0m[31m [ 71%][0m
+2025-12-18T16:09:12.2471462Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[None-None-None-2-Must specify either mu or p.] [32mPASSED[0m[31m [ 71%][0m
+2025-12-18T16:09:12.2481990Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[5-0.5-2-None-Can't specify both mu and p.] [32mPASSED[0m[31m [ 72%][0m
+2025-12-18T16:09:12.2492019Z tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial_init_fail[5-0.5-None-2-Can't specify both mu and p.] [32mPASSED[0m[31m [ 72%][0m
+2025-12-18T16:09:14.7169051Z tests/distributions/test_discrete.py::TestMatchesScipy::test_binomial [32mPASSED[0m[31m [ 72%][0m
+2025-12-18T16:09:19.3567964Z tests/distributions/test_discrete.py::TestMatchesScipy::test_beta_binomial [32mPASSED[0m[31m [ 72%][0m
+2025-12-18T16:09:23.1795778Z tests/distributions/test_discrete.py::TestMatchesScipy::test_bernoulli [32mPASSED[0m[31m [ 73%][0m
+2025-12-18T16:09:23.1805837Z tests/distributions/test_discrete.py::TestMatchesScipy::test_bernoulli_wrong_arguments [32mPASSED[0m[31m [ 73%][0m
+2025-12-18T16:09:25.4124665Z tests/distributions/test_discrete.py::TestMatchesScipy::test_discrete_weibull [32mPASSED[0m[31m [ 73%][0m
+2025-12-18T16:09:27.5582691Z tests/distributions/test_discrete.py::TestMatchesScipy::test_poisson [32mPASSED[0m[31m [ 74%][0m
+2025-12-18T16:09:31.6027642Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical[2] [32mPASSED[0m[31m [ 74%][0m
+2025-12-18T16:09:32.8802946Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical[3] [32mPASSED[0m[31m [ 74%][0m
+2025-12-18T16:09:34.1816587Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical[4] [32mPASSED[0m[31m [ 74%][0m
+2025-12-18T16:09:34.5286018Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_logp_batch_dims[logp] [32mPASSED[0m[31m [ 75%][0m
+2025-12-18T16:09:34.8721406Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_logp_batch_dims[logcdf] [32mPASSED[0m[31m [ 75%][0m
+2025-12-18T16:09:48.2802587Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_bounds [32mPASSED[0m[31m [ 75%][0m
+2025-12-18T16:09:48.2816050Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_negative_p[p0] [32mPASSED[0m[31m [ 75%][0m
+2025-12-18T16:09:48.2826209Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_negative_p[p1] [32mPASSED[0m[31m [ 76%][0m
+2025-12-18T16:09:48.2836564Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_negative_p[p2] [32mPASSED[0m[31m [ 76%][0m
+2025-12-18T16:09:48.2845788Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_negative_p[p3] [32mPASSED[0m[31m [ 76%][0m
+2025-12-18T16:09:48.2930368Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_p_not_normalized [32mPASSED[0m[31m [ 76%][0m
+2025-12-18T16:09:50.0269344Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_negative_p_symbolic [32mPASSED[0m[31m [ 77%][0m
+2025-12-18T16:09:50.1055565Z tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_p_not_normalized_symbolic [32mPASSED[0m[31m [ 77%][0m
+2025-12-18T16:09:51.6308089Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedlogistic[2] [32mPASSED[0m[31m [ 77%][0m
+2025-12-18T16:09:52.3085637Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedlogistic[3] [32mPASSED[0m[31m [ 77%][0m
+2025-12-18T16:09:52.4124993Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedlogistic[4] [32mPASSED[0m[31m [ 78%][0m
+2025-12-18T16:09:54.6274508Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedprobit[2] [32mPASSED[0m[31m [ 78%][0m
+2025-12-18T16:09:58.9959077Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedprobit[3] [32mPASSED[0m[31m [ 78%][0m
+2025-12-18T16:10:00.5123603Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedprobit[4] [32mPASSED[0m[31m [ 79%][0m
+2025-12-18T16:10:00.6773512Z tests/distributions/test_discrete.py::test_orderedlogistic_dimensions[()] [32mPASSED[0m[31m [ 79%][0m
+2025-12-18T16:10:00.8775483Z tests/distributions/test_discrete.py::test_orderedlogistic_dimensions[(1,)] [32mPASSED[0m[31m [ 79%][0m
+2025-12-18T16:10:01.1384493Z tests/distributions/test_discrete.py::test_orderedlogistic_dimensions[(3, 1)] [32mPASSED[0m[31m [ 79%][0m
+2025-12-18T16:10:01.3851850Z tests/distributions/test_discrete.py::test_orderedlogistic_dimensions[(3, 2)] [32mPASSED[0m[31m [ 80%][0m
+2025-12-18T16:10:01.4082634Z tests/distributions/test_discrete.py::TestMoments::test_bernoulli_support_point[0.3-None-0] [32mPASSED[0m[31m [ 80%][0m
+2025-12-18T16:10:01.4496567Z tests/distributions/test_discrete.py::TestMoments::test_bernoulli_support_point[0.9-5-expected1] [32mPASSED[0m[31m [ 80%][0m
+2025-12-18T16:10:01.4853599Z tests/distributions/test_discrete.py::TestMoments::test_bernoulli_support_point[p2-None-expected2] [32mPASSED[0m[31m [ 80%][0m
+2025-12-18T16:10:01.5337791Z tests/distributions/test_discrete.py::TestMoments::test_bernoulli_support_point[p3-size3-expected3] [32mPASSED[0m[31m [ 81%][0m
+2025-12-18T16:10:01.5676802Z tests/distributions/test_discrete.py::TestMoments::test_beta_binomial_support_point[10-1-1-None-5] [32mPASSED[0m[31m [ 81%][0m
+2025-12-18T16:10:01.6524886Z tests/distributions/test_discrete.py::TestMoments::test_beta_binomial_support_point[10-1-1-5-expected1] [32mPASSED[0m[31m [ 81%][0m
+2025-12-18T16:10:01.7209831Z tests/distributions/test_discrete.py::TestMoments::test_beta_binomial_support_point[10-1-beta2-None-expected2] [32mPASSED[0m[31m [ 81%][0m
+2025-12-18T16:10:01.8162386Z tests/distributions/test_discrete.py::TestMoments::test_beta_binomial_support_point[10-1-beta3-size3-expected3] [32mPASSED[0m[31m [ 82%][0m
+2025-12-18T16:10:01.8529763Z tests/distributions/test_discrete.py::TestMoments::test_binomial_support_point[7-0.7-None-5] [32mPASSED[0m[31m [ 82%][0m
+2025-12-18T16:10:01.9341222Z tests/distributions/test_discrete.py::TestMoments::test_binomial_support_point[7-0.3-5-expected1] [32mPASSED[0m[31m [ 82%][0m
+2025-12-18T16:10:02.0017724Z tests/distributions/test_discrete.py::TestMoments::test_binomial_support_point[10-p2-None-expected2] [32mPASSED[0m[31m [ 82%][0m
+2025-12-18T16:10:02.4792275Z tests/distributions/test_discrete.py::TestMoments::test_binomial_support_point[10-p3-size3-expected3] [32mPASSED[0m[31m [ 83%][0m
+2025-12-18T16:10:02.5082125Z tests/distributions/test_discrete.py::TestMoments::test_poisson_support_point[2.7-None-2] [32mPASSED[0m[31m [ 83%][0m
+2025-12-18T16:10:02.5618311Z tests/distributions/test_discrete.py::TestMoments::test_poisson_support_point[2.3-5-expected1] [32mPASSED[0m[31m [ 83%][0m
+2025-12-18T16:10:02.6031401Z tests/distributions/test_discrete.py::TestMoments::test_poisson_support_point[mu2-None-expected2] [32mPASSED[0m[31m [ 83%][0m
+2025-12-18T16:10:02.6582362Z tests/distributions/test_discrete.py::TestMoments::test_poisson_support_point[mu3-size3-expected3] [32mPASSED[0m[31m [ 84%][0m
+2025-12-18T16:10:02.7142499Z tests/distributions/test_discrete.py::TestMoments::test_negative_binomial_support_point[10-0.7-None-4] [32mPASSED[0m[31m [ 84%][0m
+2025-12-18T16:10:02.8415622Z tests/distributions/test_discrete.py::TestMoments::test_negative_binomial_support_point[10-0.7-5-expected1] [32mPASSED[0m[31m [ 84%][0m
+2025-12-18T16:10:02.9425847Z tests/distributions/test_discrete.py::TestMoments::test_negative_binomial_support_point[n2-p2-None-expected2] [32mPASSED[0m[31m [ 85%][0m
+2025-12-18T16:10:03.0871753Z tests/distributions/test_discrete.py::TestMoments::test_negative_binomial_support_point[10-p3-size3-expected3] [32mPASSED[0m[31m [ 85%][0m
+2025-12-18T16:10:03.1132835Z tests/distributions/test_discrete.py::TestMoments::test_geometric_support_point[0.5-None-2] [32mPASSED[0m[31m [ 85%][0m
+2025-12-18T16:10:03.1665733Z tests/distributions/test_discrete.py::TestMoments::test_geometric_support_point[0.2-5-expected1] [32mPASSED[0m[31m [ 85%][0m
+2025-12-18T16:10:03.2502011Z tests/distributions/test_discrete.py::TestMoments::test_geometric_support_point[p2-None-expected2] [32mPASSED[0m[31m [ 86%][0m
+2025-12-18T16:10:03.3109406Z tests/distributions/test_discrete.py::TestMoments::test_geometric_support_point[p3-size3-expected3] [32mPASSED[0m[31m [ 86%][0m
+2025-12-18T16:10:03.3654488Z tests/distributions/test_discrete.py::TestMoments::test_hyper_geometric_support_point[50-10-20-None-4] [32mPASSED[0m[31m [ 86%][0m
+2025-12-18T16:10:03.5186541Z tests/distributions/test_discrete.py::TestMoments::test_hyper_geometric_support_point[50-10-23-5-expected1] [32mPASSED[0m[31m [ 86%][0m
+2025-12-18T16:10:03.6582703Z tests/distributions/test_discrete.py::TestMoments::test_hyper_geometric_support_point[50-10-n2-None-expected2] [32mPASSED[0m[31m [ 87%][0m
+2025-12-18T16:10:03.8520880Z tests/distributions/test_discrete.py::TestMoments::test_hyper_geometric_support_point[50-10-n3-size3-expected3] [32mPASSED[0m[31m [ 87%][0m
+2025-12-18T16:10:04.2897170Z tests/distributions/test_discrete.py::TestMoments::test_discrete_uniform_support_point[1-5-None-3] [32mPASSED[0m[31m [ 87%][0m
+2025-12-18T16:10:04.4263868Z tests/distributions/test_discrete.py::TestMoments::test_discrete_uniform_support_point[1-5-5-expected1] [32mPASSED[0m[31m [ 87%][0m
+2025-12-18T16:10:04.4700358Z tests/distributions/test_discrete.py::TestMoments::test_discrete_uniform_support_point[1-upper2-None-expected2] [32mPASSED[0m[31m [ 88%][0m
+2025-12-18T16:10:04.5329793Z tests/distributions/test_discrete.py::TestMoments::test_discrete_uniform_support_point[1-upper3-size3-expected3] [32mPASSED[0m[31m [ 88%][0m
+2025-12-18T16:10:05.1121669Z tests/distributions/test_discrete.py::TestMoments::test_discrete_weibull_support_point[0.5-0.5-None-0] [32mPASSED[0m[31m [ 88%][0m
+2025-12-18T16:10:05.7334979Z tests/distributions/test_discrete.py::TestMoments::test_discrete_weibull_support_point[0.6-0.1-5-expected1] [32mPASSED[0m[31m [ 88%][0m
+2025-12-18T16:10:06.4208908Z tests/distributions/test_discrete.py::TestMoments::test_discrete_weibull_support_point[q2-0.42-None-expected2] [32mPASSED[0m[31m [ 89%][0m
+2025-12-18T16:10:07.3397386Z tests/distributions/test_discrete.py::TestMoments::test_discrete_weibull_support_point[q3-beta3-None-expected3] [32mPASSED[0m[31m [ 89%][0m
+2025-12-18T16:10:07.3824324Z tests/distributions/test_discrete.py::TestMoments::test_categorical_support_point[p0-None-2] [32mPASSED[0m[31m [ 89%][0m
+2025-12-18T16:10:07.4755469Z tests/distributions/test_discrete.py::TestMoments::test_categorical_support_point[p1-5-expected1] [32mPASSED[0m[31m [ 90%][0m
+2025-12-18T16:10:07.5589679Z tests/distributions/test_discrete.py::TestMoments::test_categorical_support_point[p2-None-expected2] [32mPASSED[0m[31m [ 90%][0m
+2025-12-18T16:10:07.6725543Z tests/distributions/test_discrete.py::TestMoments::test_categorical_support_point[p3-size3-expected3] [32mPASSED[0m[31m [ 90%][0m
+2025-12-18T16:10:11.0994642Z tests/distributions/test_discrete.py::TestDiscreteWeibull::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 90%][0m
+2025-12-18T16:10:11.1129385Z tests/distributions/test_discrete.py::TestBinomial::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 91%][0m
+2025-12-18T16:10:11.1237751Z tests/distributions/test_discrete.py::TestLogitBinomial::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 91%][0m
+2025-12-18T16:10:11.1251849Z tests/distributions/test_discrete.py::TestLogitBinomial::test_binomial_init_fail[5-None-None-Must specify either p or logit_p.] [32mPASSED[0m[31m [ 91%][0m
+2025-12-18T16:10:11.1263256Z tests/distributions/test_discrete.py::TestLogitBinomial::test_binomial_init_fail[5-0.5-0.5-Can't specify both p and logit_p.] [32mPASSED[0m[31m [ 91%][0m
+2025-12-18T16:10:11.1363648Z tests/distributions/test_discrete.py::TestNegativeBinomial::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 92%][0m
+2025-12-18T16:10:11.1483213Z tests/distributions/test_discrete.py::TestNegativeBinomialMuSigma::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 92%][0m
+2025-12-18T16:10:11.1593274Z tests/distributions/test_discrete.py::TestBernoulli::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 92%][0m
+2025-12-18T16:10:11.1665326Z tests/distributions/test_discrete.py::TestBernoulliLogitP::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 92%][0m
+2025-12-18T16:10:11.1730567Z tests/distributions/test_discrete.py::TestPoisson::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 93%][0m
+2025-12-18T16:10:11.2552700Z tests/distributions/test_discrete.py::TestCategorical::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 93%][0m
+2025-12-18T16:10:11.3099504Z tests/distributions/test_discrete.py::TestLogitCategorical::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 93%][0m
+2025-12-18T16:10:11.3110409Z tests/distributions/test_discrete.py::TestLogitCategorical::test_categorical_init_fail[None-None-Must specify either p or logit_p.] [32mPASSED[0m[31m [ 93%][0m
+2025-12-18T16:10:11.3120593Z tests/distributions/test_discrete.py::TestLogitCategorical::test_categorical_init_fail[0.5-0.5-Can't specify both p and logit_p.] [32mPASSED[0m[31m [ 94%][0m
+2025-12-18T16:10:11.3199297Z tests/distributions/test_discrete.py::TestGeometric::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 94%][0m
+2025-12-18T16:10:11.3420788Z tests/distributions/test_discrete.py::TestHyperGeometric::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 94%][0m
+2025-12-18T16:10:11.4489208Z tests/distributions/test_discrete.py::TestBetaBinomial::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 95%][0m
+2025-12-18T16:10:11.5747732Z tests/distributions/test_discrete.py::TestDiscreteUniform::test_distribution <- pymc/testing.py [32mPASSED[0m[31m [ 95%][0m
+2025-12-18T16:10:11.5849975Z tests/distributions/test_discrete.py::TestDiscreteUniform::test_implied_degenerate_shape [32mPASSED[0m[31m [ 95%][0m
+2025-12-18T16:10:11.6022186Z tests/distributions/test_discrete.py::TestOrderedLogistic::test_expected_categorical [32mPASSED[0m[31m [ 95%][0m
+2025-12-18T16:10:11.6155593Z tests/distributions/test_discrete.py::TestOrderedLogistic::test_shape_inputs[0-cutpoints0-expected0] [32mPASSED[0m[31m [ 96%][0m
+2025-12-18T16:10:11.6301983Z tests/distributions/test_discrete.py::TestOrderedLogistic::test_shape_inputs[eta1-cutpoints1-expected1] [32mPASSED[0m[31m [ 96%][0m
+2025-12-18T16:10:11.6445868Z tests/distributions/test_discrete.py::TestOrderedLogistic::test_shape_inputs[eta2-cutpoints2-expected2] [32mPASSED[0m[31m [ 96%][0m
+2025-12-18T16:10:11.6601261Z tests/distributions/test_discrete.py::TestOrderedLogistic::test_shape_inputs[eta3-cutpoints3-expected3] [32mPASSED[0m[31m [ 96%][0m
+2025-12-18T16:10:11.6761794Z tests/distributions/test_discrete.py::TestOrderedLogistic::test_shape_inputs[eta4-cutpoints4-expected4] [32mPASSED[0m[31m [ 97%][0m
+2025-12-18T16:10:11.6937865Z tests/distributions/test_discrete.py::TestOrderedLogistic::test_shape_inputs[eta5-cutpoints5-expected5] [32mPASSED[0m[31m [ 97%][0m
+2025-12-18T16:10:11.7438469Z tests/distributions/test_discrete.py::TestOrderedLogistic::test_compute_p [32mPASSED[0m[31m [ 97%][0m
+2025-12-18T16:10:11.8862250Z tests/distributions/test_discrete.py::TestOrderedProbit::test_expected_categorical [32mPASSED[0m[31m [ 97%][0m
+2025-12-18T16:10:11.9247024Z tests/distributions/test_discrete.py::TestOrderedProbit::test_shape_inputs[0-cutpoints0-1.0-expected0] [32mPASSED[0m[31m [ 98%][0m
+2025-12-18T16:10:11.9834387Z tests/distributions/test_discrete.py::TestOrderedProbit::test_shape_inputs[eta1-cutpoints1-sigma1-expected1] [32mPASSED[0m[31m [ 98%][0m
+2025-12-18T16:10:12.0362255Z tests/distributions/test_discrete.py::TestOrderedProbit::test_shape_inputs[eta2-cutpoints2-1.0-expected2] [32mPASSED[0m[31m [ 98%][0m
+2025-12-18T16:10:12.1051207Z tests/distributions/test_discrete.py::TestOrderedProbit::test_shape_inputs[eta3-cutpoints3-sigma3-expected3] [32mPASSED[0m[31m [ 98%][0m
+2025-12-18T16:10:12.1675121Z tests/distributions/test_discrete.py::TestOrderedProbit::test_shape_inputs[eta4-cutpoints4-sigma4-expected4] [32mPASSED[0m[31m [ 99%][0m
+2025-12-18T16:10:12.5723364Z tests/distributions/test_discrete.py::TestOrderedProbit::test_shape_inputs[eta5-cutpoints5-sigma5-expected5] [32mPASSED[0m[31m [ 99%][0m
+2025-12-18T16:10:12.6389979Z tests/distributions/test_discrete.py::TestOrderedProbit::test_shape_inputs[eta6-cutpoints6-sigma6-expected6] [32mPASSED[0m[31m [ 99%][0m
+2025-12-18T16:10:14.1297303Z tests/distributions/test_discrete.py::TestOrderedProbit::test_compute_p [32mPASSED[0m[31m [100%][0m
+2025-12-18T16:10:14.1298198Z 
+2025-12-18T16:10:14.1298433Z =================================== FAILURES ===================================
+2025-12-18T16:10:14.1299302Z [31m[1m_______________ TestSimulator.test_custom_dist_sum_stat[float32] _______________[0m
+2025-12-18T16:10:14.1299910Z concurrent.futures.process._RemoteTraceback: 
+2025-12-18T16:10:14.1300255Z """
+2025-12-18T16:10:14.1300481Z Traceback (most recent call last):
+2025-12-18T16:10:14.1301253Z   File "/home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages/pytensor/compile/function/types.py", line 1038, in __call__
+2025-12-18T16:10:14.1302164Z     outputs = vm() if output_subset is None else vm(output_subset=output_subset)
+2025-12-18T16:10:14.1302606Z               ~~^^
+2025-12-18T16:10:14.1302912Z TypeError: expected type_num 11 (NPY_FLOAT32) got 12
+2025-12-18T16:10:14.1303258Z 
+2025-12-18T16:10:14.1303484Z During handling of the above exception, another exception occurred:
+2025-12-18T16:10:14.1303826Z 
+2025-12-18T16:10:14.1304178Z Traceback (most recent call last):
+2025-12-18T16:10:14.1304973Z   File "/home/runner/micromamba/envs/pymc-test/lib/python3.14/concurrent/futures/process.py", line 254, in _process_worker
+2025-12-18T16:10:14.1305716Z     r = call_item.fn(*call_item.args, **call_item.kwargs)
+2025-12-18T16:10:14.1306274Z   File "/home/runner/work/pymc/pymc/pymc/smc/sampling.py", line 317, in _sample_smc_int
+2025-12-18T16:10:14.1306801Z     smc._initialize_kernel()
+2025-12-18T16:10:14.1307066Z     ~~~~~~~~~~~~~~~~~~~~~~^^
+2025-12-18T16:10:14.1307531Z   File "/home/runner/work/pymc/pymc/pymc/smc/kernels.py", line 252, in _initialize_kernel
+2025-12-18T16:10:14.1308213Z     priors = [self.prior_logp_func(sample) for sample in self.tempered_posterior]
+2025-12-18T16:10:14.1308679Z               ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2025-12-18T16:10:14.1309428Z   File "/home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages/pytensor/compile/function/types.py", line 1048, in __call__
+2025-12-18T16:10:14.1310170Z     raise_with_op(
+2025-12-18T16:10:14.1310394Z     ~~~~~~~~~~~~~^
+2025-12-18T16:10:14.1310626Z         self.maker.fgraph,
+2025-12-18T16:10:14.1310877Z         ^^^^^^^^^^^^^^^^^^
+2025-12-18T16:10:14.1311121Z     ...<2 lines>...
+2025-12-18T16:10:14.1311406Z         storage_map=getattr(self.vm, "storage_map", None),
+2025-12-18T16:10:14.1311766Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-18T16:10:14.1312061Z     )
+2025-12-18T16:10:14.1312252Z     ^
+2025-12-18T16:10:14.1312848Z   File "/home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages/pytensor/link/utils.py", line 526, in raise_with_op
+2025-12-18T16:10:14.1313596Z     raise exc_value.with_traceback(exc_trace)
+2025-12-18T16:10:14.1314437Z   File "/home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages/pytensor/compile/function/types.py", line 1038, in __call__
+2025-12-18T16:10:14.1315090Z     outputs = vm() if output_subset is None else vm(output_subset=output_subset)
+2025-12-18T16:10:14.1315404Z               ~~^^
+2025-12-18T16:10:14.1315625Z TypeError: expected type_num 11 (NPY_FLOAT32) got 12
+2025-12-18T16:10:14.1316553Z Apply node that caused the error: Composite{(-0.9189385332046727 + (-0.5 * sqr(i1)) + switch(ge(exp(i0), 0.0), (-0.22579135264472738 + (-0.5 * sqr(exp(i0)))), -inf) + i0)}(b_log___log_jacobian, Subtensor{i}.0)
+2025-12-18T16:10:14.1317159Z Toposort index: 2
+2025-12-18T16:10:14.1317446Z Inputs types: [TensorType(float32, shape=()), TensorType(float32, shape=())]
+2025-12-18T16:10:14.1317786Z Inputs shapes: [(), ()]
+2025-12-18T16:10:14.1317984Z Inputs strides: [(), ()]
+2025-12-18T16:10:14.1318215Z Inputs values: [array(-0.9087016), array(0.64370614)]
+2025-12-18T16:10:14.1318494Z Outputs clients: [[output[0](__logp)]]
+2025-12-18T16:10:14.1318788Z 
+2025-12-18T16:10:14.1319571Z HINT: Re-running with most PyTensor optimizations disabled could provide a back-trace showing when this node was created. This can be done by setting the PyTensor flag 'optimizer=fast_compile'. If that does not work, PyTensor optimizations can be disabled with 'optimizer=None'.
+2025-12-18T16:10:14.1320760Z HINT: Use the PyTensor flag `exception_verbosity=high` for a debug print-out and storage map footprint of this Apply node.
+2025-12-18T16:10:14.1321218Z """
+2025-12-18T16:10:14.1321303Z 
+2025-12-18T16:10:14.1321571Z [33mThe above exception was the direct cause of the following exception:[0m
+2025-12-18T16:10:14.1321846Z 
+2025-12-18T16:10:14.1322055Z self = <tests.distributions.test_simulator.TestSimulator object at 0x7f4add810910>
+2025-12-18T16:10:14.1322438Z seeded_test = None, floatX = 'float32'
+2025-12-18T16:10:14.1322599Z 
+2025-12-18T16:10:14.1323223Z     [0m[37m@pytest[39;49;00m.mark.parametrize([33m"[39;49;00m[33mfloatX[39;49;00m[33m"[39;49;00m, [[33m"[39;49;00m[33mfloat32[39;49;00m[33m"[39;49;00m, [33m"[39;49;00m[33mfloat64[39;49;00m[33m"[39;49;00m])[90m[39;49;00m
+2025-12-18T16:10:14.1324326Z     [94mdef[39;49;00m[90m [39;49;00m[92mtest_custom_dist_sum_stat[39;49;00m([96mself[39;49;00m, seeded_test, floatX):[90m[39;49;00m
+2025-12-18T16:10:14.1324950Z         [94mwith[39;49;00m pytensor.config.change_flags(floatX=floatX):[90m[39;49;00m
+2025-12-18T16:10:14.1325438Z             [94mwith[39;49;00m pm.Model() [94mas[39;49;00m m:[90m[39;49;00m
+2025-12-18T16:10:14.1325987Z                 a = pm.Normal([33m"[39;49;00m[33ma[39;49;00m[33m"[39;49;00m, mu=[94m0[39;49;00m, sigma=[94m1[39;49;00m)[90m[39;49;00m
+2025-12-18T16:10:14.1326578Z                 b = pm.HalfNormal([33m"[39;49;00m[33mb[39;49;00m[33m"[39;49;00m, sigma=[94m1[39;49;00m)[90m[39;49;00m
+2025-12-18T16:10:14.1327003Z                 s = pm.Simulator([90m[39;49;00m
+2025-12-18T16:10:14.1327360Z                     [33m"[39;49;00m[33ms[39;49;00m[33m"[39;49;00m,[90m[39;49;00m
+2025-12-18T16:10:14.1327729Z                     [96mself[39;49;00m.normal_sim,[90m[39;49;00m
+2025-12-18T16:10:14.1328033Z                     a,[90m[39;49;00m
+2025-12-18T16:10:14.1328285Z                     b,[90m[39;49;00m
+2025-12-18T16:10:14.1328609Z                     distance=[96mself[39;49;00m.abs_diff,[90m[39;49;00m
+2025-12-18T16:10:14.1328993Z                     sum_stat=[96mself[39;49;00m.quantiles,[90m[39;49;00m
+2025-12-18T16:10:14.1329364Z                     observed=[96mself[39;49;00m.data,[90m[39;49;00m
+2025-12-18T16:10:14.1329687Z                 )[90m[39;49;00m
+2025-12-18T16:10:14.1329924Z     [90m[39;49;00m
+2025-12-18T16:10:14.1330314Z             [94massert[39;49;00m [96mself[39;49;00m.count_rvs(m.logp()) == [94m1[39;49;00m[90m[39;49;00m
+2025-12-18T16:10:14.1330697Z     [90m[39;49;00m
+2025-12-18T16:10:14.1330930Z             [94mwith[39;49;00m m:[90m[39;49;00m
+2025-12-18T16:10:14.1331290Z                 [94mwith[39;49;00m warnings.catch_warnings():[90m[39;49;00m
+2025-12-18T16:10:14.1332083Z                     warnings.filterwarnings([33m"[39;49;00m[33mignore[39;49;00m[33m"[39;49;00m, [33m"[39;49;00m[33mMore chains .* than draws .*[39;49;00m[33m"[39;49;00m, [96mUserWarning[39;49;00m)[90m[39;49;00m
+2025-12-18T16:10:14.1332762Z >                   pm.sample_smc(draws=[94m100[39;49;00m)[90m[39;49;00m
+2025-12-18T16:10:14.1332969Z 
+2025-12-18T16:10:14.1333284Z [1m[31mtests/distributions/test_simulator.py[0m:113: 
+2025-12-18T16:10:14.1333592Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2025-12-18T16:10:14.1334101Z [1m[31mpymc/smc/sampling.py[0m:194: in sample_smc
+2025-12-18T16:10:14.1334669Z     [0mresults = run_chains(chains, progressbar, params, random_seed, kernel_kwargs, cores)[90m[39;49;00m
+2025-12-18T16:10:14.1335186Z               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+2025-12-18T16:10:14.1335663Z [1m[31mpymc/smc/sampling.py[0m:406: in run_chains
+2025-12-18T16:10:14.1336249Z     [0m[94mreturn[39;49;00m [96mtuple[39;49;00m(cloudpickle.loads(r.result()) [94mfor[39;49;00m r [95min[39;49;00m done)[90m[39;49;00m
+2025-12-18T16:10:14.1336744Z            ^^^^^[90m[39;49;00m
+2025-12-18T16:10:14.1337025Z [1m[31mpymc/smc/sampling.py[0m:406: in <genexpr>
+2025-12-18T16:10:14.1337610Z     [0m[94mreturn[39;49;00m [96mtuple[39;49;00m(cloudpickle.loads(r.result()) [94mfor[39;49;00m r [95min[39;49;00m done)[90m[39;49;00m
+2025-12-18T16:10:14.1338128Z                                    ^^^^^^^^^^[90m[39;49;00m
+2025-12-18T16:10:14.1338634Z [1m[31m../../../micromamba/envs/pymc-test/lib/python3.14/concurrent/futures/_base.py[0m:443: in result
+2025-12-18T16:10:14.1339181Z     [0m[94mreturn[39;49;00m [96mself[39;49;00m.__get_result()[90m[39;49;00m
+2025-12-18T16:10:14.1339538Z            ^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+2025-12-18T16:10:14.1339801Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2025-12-18T16:10:14.1339999Z 
+2025-12-18T16:10:14.1340065Z self = None
+2025-12-18T16:10:14.1340167Z 
+2025-12-18T16:10:14.1340442Z     [0m[94mdef[39;49;00m[90m [39;49;00m[92m__get_result[39;49;00m([96mself[39;49;00m):[90m[39;49;00m
+2025-12-18T16:10:14.1341060Z         [94mif[39;49;00m [96mself[39;49;00m._exception [95mis[39;49;00m [95mnot[39;49;00m [94mNone[39;49;00m:[90m[39;49;00m
+2025-12-18T16:10:14.1341517Z             [94mtry[39;49;00m:[90m[39;49;00m
+2025-12-18T16:10:14.1341880Z >               [94mraise[39;49;00m [96mself[39;49;00m._exception[90m[39;49;00m
+2025-12-18T16:10:14.1342315Z [1m[31mE               TypeError: expected type_num 11 (NPY_FLOAT32) got 12[0m
+2025-12-18T16:10:14.1343187Z [1m[31mE               Apply node that caused the error: Composite{(-0.9189385332046727 + (-0.5 * sqr(i1)) + switch(ge(exp(i0), 0.0), (-0.22579135264472738 + (-0.5 * sqr(exp(i0)))), -inf) + i0)}(b_log___log_jacobian, Subtensor{i}.0)[0m
+2025-12-18T16:10:14.1343876Z [1m[31mE               Toposort index: 2[0m
+2025-12-18T16:10:14.1344559Z [1m[31mE               Inputs types: [TensorType(float32, shape=()), TensorType(float32, shape=())][0m
+2025-12-18T16:10:14.1345002Z [1m[31mE               Inputs shapes: [(), ()][0m
+2025-12-18T16:10:14.1345319Z [1m[31mE               Inputs strides: [(), ()][0m
+2025-12-18T16:10:14.1345695Z [1m[31mE               Inputs values: [array(-0.9087016), array(0.64370614)][0m
+2025-12-18T16:10:14.1346085Z [1m[31mE               Outputs clients: [[output[0](__logp)]][0m
+2025-12-18T16:10:14.1346389Z [1m[31mE               [0m
+2025-12-18T16:10:14.1347517Z [1m[31mE               HINT: Re-running with most PyTensor optimizations disabled could provide a back-trace showing when this node was created. This can be done by setting the PyTensor flag 'optimizer=fast_compile'. If that does not work, PyTensor optimizations can be disabled with 'optimizer=None'.[0m
+2025-12-18T16:10:14.1348837Z [1m[31mE               HINT: Use the PyTensor flag `exception_verbosity=high` for a debug print-out and storage map footprint of this Apply node.[0m
+2025-12-18T16:10:14.1349260Z 
+2025-12-18T16:10:14.1349589Z [1m[31m../../../micromamba/envs/pymc-test/lib/python3.14/concurrent/futures/_base.py[0m:395: TypeError
+2025-12-18T16:10:14.1350071Z ----------------------------- Captured stdout call -----------------------------
+2025-12-18T16:10:14.1350859Z   Chain 0 ⠋ -:--:-- / 0:00:06 Stage: 0 Beta: 0
+2025-12-18T16:10:14.1351201Z Chain 1 ⠋ -:--:-- / 0:00:06 Stage: 0 Beta: 0
+2025-12-18T16:10:14.1351518Z ----------------------------- Captured stderr call -----------------------------
+2025-12-18T16:10:14.1351833Z Initializing SMC sampler...
+2025-12-18T16:10:14.1352051Z Sampling 2 chains in 2 jobs
+2025-12-18T16:10:14.1352320Z ------------------------------ Captured log call -------------------------------
+2025-12-18T16:10:14.1352784Z [32mINFO    [0m pymc.smc.sampling:sampling.py:179 Initializing SMC sampler...
+2025-12-18T16:10:14.1353398Z [32mINFO    [0m pymc.smc.sampling:sampling.py:180 Sampling 2 chains in 2 jobs
+2025-12-18T16:10:14.1353847Z [33m=============================== warnings summary ===============================[0m
+2025-12-18T16:10:14.1354484Z ../../../micromamba/envs/pymc-test/lib/python3.14/site-packages/arviz/__init__.py:39
+2025-12-18T16:10:14.1355093Z   /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages/arviz/__init__.py:39: FutureWarning: 
+2025-12-18T16:10:14.1355815Z   ArviZ is undergoing a major refactor to improve flexibility and extensibility while maintaining a user-friendly interface.
+2025-12-18T16:10:14.1356343Z   Some upcoming changes may be backward incompatible.
+2025-12-18T16:10:14.1356853Z   For details and migration guidance, visit: https://python.arviz.org/en/latest/user_guide/migration_guide.html
+2025-12-18T16:10:14.1357303Z     warn(
+2025-12-18T16:10:14.1357396Z 
+2025-12-18T16:10:14.1357512Z tests/sampling/test_population.py: 300 warnings
+2025-12-18T16:10:14.1358508Z   /home/runner/work/pymc/pymc/pymc/backends/ndarray.py:116: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+2025-12-18T16:10:14.1359466Z     data[key][draw_idx] = val
+2025-12-18T16:10:14.1359612Z 
+2025-12-18T16:10:14.1359906Z tests/sampling/test_population.py::TestPopulationSamplers::test_demcmc_warning_on_small_populations
+2025-12-18T16:10:14.1360541Z tests/sampling/test_population.py::TestPopulationSamplers::test_demcmc_warning_on_small_populations
+2025-12-18T16:10:14.1361161Z tests/sampling/test_population.py::TestPopulationSamplers::test_demcmc_warning_on_small_populations
+2025-12-18T16:10:14.1361783Z tests/sampling/test_population.py::TestPopulationSamplers::test_demcmc_warning_on_small_populations
+2025-12-18T16:10:14.1362405Z tests/sampling/test_population.py::TestPopulationSamplers::test_demcmc_warning_on_small_populations
+2025-12-18T16:10:14.1363318Z   /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages/arviz/data/base.py:272: UserWarning: More chains (6) than draws (5). Passed array should have shape (chains, draws, *shape)
+2025-12-18T16:10:14.1364187Z     warnings.warn(
+2025-12-18T16:10:14.1364307Z 
+2025-12-18T16:10:14.1364489Z tests/stats/test_convergence.py::test_warn_treedepth_multiple_samplers
+2025-12-18T16:10:14.1365304Z   /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages/arviz/data/base.py:272: UserWarning: More chains (3) than draws (2). Passed array should have shape (chains, draws, *shape)
+2025-12-18T16:10:14.1366003Z     warnings.warn(
+2025-12-18T16:10:14.1366107Z 
+2025-12-18T16:10:14.1366308Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_basic[False]
+2025-12-18T16:10:14.1366812Z tests/stats/test_log_density.py::TestComputeLogLikelihood::test_basic_log_prior[False]
+2025-12-18T16:10:14.1367759Z   /home/runner/work/pymc/pymc/pymc/model/core.py:1409: UserWarning: To disable default transform, please use default_transform=None instead of transform=None. Setting transform to None will not have any effect in future.
+2025-12-18T16:10:14.1368550Z     warnings.warn(
+2025-12-18T16:10:14.1368656Z 
+2025-12-18T16:10:14.1368910Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_3051[1-MvStudentT-kwargs1]
+2025-12-18T16:10:14.1369618Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_3051[2-MvStudentT-kwargs1]
+2025-12-18T16:10:14.1370197Z tests/distributions/test_distribution.py::TestBugfixes::test_issue_3051[4-MvStudentT-kwargs1]
+2025-12-18T16:10:14.1371054Z   /home/runner/work/pymc/pymc/pymc/distributions/multivariate.py:468: FutureWarning: Use the scale argument to specify the scale matrix. cov will be removed in future versions.
+2025-12-18T16:10:14.1371718Z     warnings.warn(
+2025-12-18T16:10:14.1371829Z 
+2025-12-18T16:10:14.1372039Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedlogistic[2]
+2025-12-18T16:10:14.1372541Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedlogistic[3]
+2025-12-18T16:10:14.1373129Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedlogistic[4]
+2025-12-18T16:10:14.1373612Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedprobit[2]
+2025-12-18T16:10:14.1374291Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedprobit[3]
+2025-12-18T16:10:14.1374777Z tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedprobit[4]
+2025-12-18T16:10:14.1375498Z   /home/runner/micromamba/envs/pymc-test/lib/python3.14/site-packages/numpy/_core/numeric.py:476: RuntimeWarning: invalid value encountered in cast
+2025-12-18T16:10:14.1376146Z     multiarray.copyto(res, fill_value, casting='unsafe')
+2025-12-18T16:10:14.1376363Z 
+2025-12-18T16:10:14.1376580Z tests/distributions/test_discrete.py::TestOrderedLogistic::test_compute_p
+2025-12-18T16:10:14.1377049Z tests/distributions/test_discrete.py::TestOrderedProbit::test_compute_p
+2025-12-18T16:10:14.1377605Z   /home/runner/work/pymc/pymc/pymc/model/core.py:1302: RuntimeWarning: invalid value encountered in cast
+2025-12-18T16:10:14.1378103Z     data = convert_observed_data(data).astype(rv_var.dtype)
+2025-12-18T16:10:14.1378314Z 
+2025-12-18T16:10:14.1378500Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2025-12-18T16:10:14.1378867Z ============================= slowest 50 durations =============================
+2025-12-18T16:10:14.1379405Z 15.42s setup    tests/sampling/test_forward.py::TestSamplePPC::test_logging_sampled_basic_rvs_posterior_mutable[MultiTrace]
+2025-12-18T16:10:14.1380055Z 14.34s call     tests/distributions/test_censored.py::TestCensored::test_censored_workflow[False]
+2025-12-18T16:10:14.1380617Z 13.41s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical_bounds
+2025-12-18T16:10:14.1381155Z 11.21s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_hypergeometric
+2025-12-18T16:10:14.1381698Z 10.34s call     tests/distributions/test_censored.py::TestCensored::test_censored_workflow[True]
+2025-12-18T16:10:14.1382248Z 9.74s call     tests/distributions/test_simulator.py::TestSimulator::test_multiple_simulators
+2025-12-18T16:10:14.1382925Z 7.93s call     tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_constant_mask_separable[True-True]
+2025-12-18T16:10:14.1383596Z 7.58s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_negative_binomial
+2025-12-18T16:10:14.1384366Z 7.55s call     tests/distributions/test_simulator.py::TestSimulator::test_nested_simulators
+2025-12-18T16:10:14.1384906Z 7.38s call     tests/distributions/test_custom.py::TestCustomDist::test_serialize_custom_dist
+2025-12-18T16:10:14.1385460Z 7.14s call     tests/distributions/test_simulator.py::TestSimulator::test_simulator_metropolis_mcmc
+2025-12-18T16:10:14.1386031Z 6.86s call     tests/sampling/test_forward.py::TestCompileForwardSampler::test_lkj_cholesky_cov
+2025-12-18T16:10:14.1386607Z 6.53s call     tests/distributions/test_simulator.py::TestSimulator::test_custom_dist_sum_stat[float32]
+2025-12-18T16:10:14.1387166Z 6.49s call     tests/distributions/test_simulator.py::TestSimulator::test_one_gaussian
+2025-12-18T16:10:14.1387654Z 6.25s call     tests/sampling/test_forward.py::TestSamplePPC::test_normal_scalar
+2025-12-18T16:10:14.1388140Z 6.16s call     tests/sampling/test_forward.py::TestSamplePPC::test_deterministic_of_observed
+2025-12-18T16:10:14.1388855Z 5.85s call     tests/sampling/test_forward.py::TestSamplePPC::test_deterministic_of_observed_modified_interface
+2025-12-18T16:10:14.1389426Z 5.42s call     tests/sampling/test_forward.py::TestSamplePPC::test_normal_vector_idata
+2025-12-18T16:10:14.1389889Z 5.25s call     tests/sampling/test_forward.py::TestSamplePPC::test_exceptions
+2025-12-18T16:10:14.1390346Z 5.14s call     tests/sampling/test_forward.py::TestSamplePPC::test_normal_scalar_idata
+2025-12-18T16:10:14.1390885Z 5.05s call     tests/distributions/test_custom.py::TestCustomSymbolicDist::test_inferred_logp_mixture
+2025-12-18T16:10:14.1391706Z 4.88s call     tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_shared_mask_separable
+2025-12-18T16:10:14.1392309Z 4.66s call     tests/sampling/test_forward.py::TestSamplePPC::test_idata_extension
+2025-12-18T16:10:14.1392793Z 4.65s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_geometric
+2025-12-18T16:10:14.1393308Z 4.64s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_beta_binomial
+2025-12-18T16:10:14.1393798Z 4.41s call     tests/sampling/test_forward.py::TestSamplePPC::test_variable_type
+2025-12-18T16:10:14.1394511Z 4.37s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedprobit[3]
+2025-12-18T16:10:14.1394996Z 4.22s call     tests/sampling/test_deterministic.py::test_docstring_example
+2025-12-18T16:10:14.1395473Z 4.04s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_categorical[2]
+2025-12-18T16:10:14.1396054Z 3.85s setup    tests/sampling/test_forward.py::TestSamplePosteriorPredictive::test_point_list_arg_bug_spp
+2025-12-18T16:10:14.1396625Z 3.82s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_bernoulli
+2025-12-18T16:10:14.1397123Z 3.78s call     tests/sampling/test_forward.py::TestSamplePPC::test_model_shared_variable
+2025-12-18T16:10:14.1397634Z 3.71s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_discrete_unif
+2025-12-18T16:10:14.1398150Z 3.60s call     tests/stats/test_log_density.py::TestComputeLogLikelihood::test_multivariate
+2025-12-18T16:10:14.1398674Z 3.43s call     tests/distributions/test_discrete.py::TestDiscreteWeibull::test_distribution
+2025-12-18T16:10:14.1399211Z 3.32s call     tests/distributions/test_simulator.py::TestSimulator::test_model_with_potential
+2025-12-18T16:10:14.1399854Z 3.21s call     tests/distributions/test_distribution.py::TestPartialObservedRV::test_multivariate_constant_mask_unseparable
+2025-12-18T16:10:14.1400527Z 2.93s call     tests/distributions/test_simulator.py::TestSimulator::test_custom_dist_sum_stat[float64]
+2025-12-18T16:10:14.1401073Z 2.90s call     tests/distributions/test_simulator.py::TestSimulator::test_named_model
+2025-12-18T16:10:14.1401565Z 2.86s call     tests/distributions/test_custom.py::TestCustomSymbolicDist::test_scan
+2025-12-18T16:10:14.1402097Z 2.72s call     tests/sampling/test_forward.py::TestSamplePriorPredictive::test_zeroinflatedpoisson
+2025-12-18T16:10:14.1402659Z 2.66s call     tests/distributions/test_simulator.py::TestSimulator::test_name_is_string_type
+2025-12-18T16:10:14.1403177Z 2.60s call     tests/distributions/test_custom.py::TestCustomSymbolicDist::test_basic
+2025-12-18T16:10:14.1403812Z 2.59s call     tests/distributions/test_custom.py::TestCustomSymbolicDist::test_custom_dist_default_support_point_scan_recurring
+2025-12-18T16:10:14.1404540Z 2.47s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_binomial
+2025-12-18T16:10:14.1405006Z 2.40s call     tests/sampling/test_forward.py::TestSamplePPC::test_sum_normal
+2025-12-18T16:10:14.1405495Z 2.23s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_discrete_weibull
+2025-12-18T16:10:14.1406027Z 2.21s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_orderedprobit[2]
+2025-12-18T16:10:14.1406532Z 2.14s call     tests/distributions/test_discrete.py::TestMatchesScipy::test_poisson
+2025-12-18T16:10:14.1407213Z 2.13s call     tests/distributions/test_custom.py::TestCustomDist::test_custom_dist_multivariate_logp[None]
+2025-12-18T16:10:14.1407798Z [36m[1m=========================== short test summary info ============================[0m
+2025-12-18T16:10:14.1408830Z [31mFAILED[0m tests/distributions/test_simulator.py::[1mTestSimulator::test_custom_dist_sum_stat[float32][0m - TypeError: expected type_num 11 (NPY_FLOAT32) got 12
+2025-12-18T16:10:14.1409811Z Apply node that caused the error: Composite{(-0.9189385332046727 + (-0.5 * sqr(i1)) + switch(ge(exp(i0), 0.0), (-0.22579135264472738 + (-0.5 * sqr(exp(i0)))), -inf) + i0)}(b_log___log_jacobian, Subtensor{i}.0)
+2025-12-18T16:10:14.1410536Z Toposort index: 2
+2025-12-18T16:10:14.1410832Z Inputs types: [TensorType(float32, shape=()), TensorType(float32, shape=())]
+2025-12-18T16:10:14.1411175Z Inputs shapes: [(), ()]
+2025-12-18T16:10:14.1411369Z Inputs strides: [(), ()]
+2025-12-18T16:10:14.1411610Z Inputs values: [array(-0.9087016), array(0.64370614)]
+2025-12-18T16:10:14.1411895Z Outputs clients: [[output[0](__logp)]]
+2025-12-18T16:10:14.1412062Z 
+2025-12-18T16:10:14.1412839Z HINT: Re-running with most PyTensor optimizations disabled could provide a back-trace showing when this node was created. This can be done by setting the PyTensor flag 'optimizer=fast_compile'. If that does not work, PyTensor optimizations can be disabled with 'optimizer=None'.
+2025-12-18T16:10:14.1414113Z HINT: Use the PyTensor flag `exception_verbosity=high` for a debug print-out and storage map footprint of this Apply node.
+2025-12-18T16:10:14.1414909Z [31m====== [31m[1m1 failed[0m, [32m379 passed[0m, [33m1 xfailed[0m, [33m320 warnings[0m[31m in 347.93s (0:05:47)[0m[31m ======[0m
+2025-12-18T16:10:15.3760801Z ##[error]Process completed with exit code 1.
+2025-12-18T16:10:15.3882824Z Post job cleanup.
+2025-12-18T16:10:15.5203210Z Will use pre-installed micromamba at /home/runner/micromamba-bin/micromamba
+2025-12-18T16:10:15.5211607Z Removing micromamba run shell ...
+2025-12-18T16:10:15.5215957Z ##[group]Deinitialize micromamba for bash
+2025-12-18T16:10:15.5233766Z [command]/home/runner/micromamba-bin/micromamba shell deinit -s bash -r /home/runner/micromamba --log-level warning --rc-file /home/runner/work/_temp/setup-micromamba/.condarc
+2025-12-18T16:10:15.5344890Z Resetting RC file "/home/runner/.bashrc"
+2025-12-18T16:10:15.5348996Z Deleting config for root prefix 
+2025-12-18T16:10:15.5349715Z Clearing mamba executable environment variable
+2025-12-18T16:10:15.5350321Z Removing the following in your "/home/runner/.bashrc" file
+2025-12-18T16:10:15.5350848Z # >>> mamba initialize >>>
+2025-12-18T16:10:15.5351201Z ...
+2025-12-18T16:10:15.5351466Z # <<< mamba initialize <<<
+2025-12-18T16:10:15.5379654Z Removing mamba initialize block from .bash_profile
+2025-12-18T16:10:15.5396457Z ##[endgroup]
+2025-12-18T16:10:15.5401883Z Removing environment pymc-test from auto-activate bash ...
+2025-12-18T16:10:15.5555632Z Post job cleanup.
+2025-12-18T16:10:15.6359396Z [command]/usr/bin/git version
+2025-12-18T16:10:15.6401378Z git version 2.52.0
+2025-12-18T16:10:15.6442553Z Temporarily overriding HOME='/home/runner/work/_temp/8651ab2a-dab2-40de-86cf-217eff348f42' before making global git config changes
+2025-12-18T16:10:15.6444645Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-18T16:10:15.6451088Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pymc/pymc
+2025-12-18T16:10:15.6490389Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-18T16:10:15.6529559Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-18T16:10:15.6770114Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-18T16:10:15.6803577Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-18T16:10:15.7227027Z Cleaning up orphan processes

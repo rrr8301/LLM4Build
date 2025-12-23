@@ -1,0 +1,23 @@
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+Traceback (most recent call last):
+  File "/opt/pypy3.9-v7.3.12-linux64/bin/tox", line 7, in <module>
+    sys.exit(run())
+  File "/opt/pypy3.9-v7.3.12-linux64/lib/pypy3.9/site-packages/tox/run.py", line 20, in run
+    result = main(sys.argv[1:] if args is None else args)
+  File "/opt/pypy3.9-v7.3.12-linux64/lib/pypy3.9/site-packages/tox/run.py", line 46, in main
+    return handler(state)
+  File "/opt/pypy3.9-v7.3.12-linux64/lib/pypy3.9/site-packages/tox/session/cmd/legacy.py", line 115, in legacy
+    return run_sequential(state)
+  File "/opt/pypy3.9-v7.3.12-linux64/lib/pypy3.9/site-packages/tox/session/cmd/run/sequential.py", line 25, in run_sequential
+    return execute(state, max_workers=1, has_spinner=False, live=True)
+  File "/opt/pypy3.9-v7.3.12-linux64/lib/pypy3.9/site-packages/tox/session/cmd/run/common.py", line 167, in execute
+    state.envs.ensure_only_run_env_is_active()
+  File "/opt/pypy3.9-v7.3.12-linux64/lib/pypy3.9/site-packages/tox/session/env_select.py", line 436, in ensure_only_run_env_is_active
+    envs, active = self._defined_envs, self._env_name_to_active()
+  File "/opt/pypy3.9-v7.3.12-linux64/lib/pypy3.9/site-packages/tox/session/env_select.py", line 258, in _defined_envs
+    run_env = self._build_run_env(name)
+  File "/opt/pypy3.9-v7.3.12-linux64/lib/pypy3.9/site-packages/tox/session/env_select.py", line 319, in _build_run_env
+    runner = REGISTER.runner(cast("str", env_conf["runner"]))
+  File "/opt/pypy3.9-v7.3.12-linux64/lib/pypy3.9/site-packages/tox/tox_env/register.py", line 72, in runner
+    return self._run_envs[name]
+KeyError: 'uv-venv-lock-runner'

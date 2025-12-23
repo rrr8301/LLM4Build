@@ -1,0 +1,61 @@
+Requirement already satisfied: pip in /usr/local/lib/python3.9/dist-packages (25.2)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Requirement already satisfied: tox in /usr/local/lib/python3.9/dist-packages (4.30.2)
+Requirement already satisfied: coverage in /usr/local/lib/python3.9/dist-packages (7.10.6)
+Requirement already satisfied: cachetools>=6.1 in /usr/local/lib/python3.9/dist-packages (from tox) (6.2.0)
+Requirement already satisfied: chardet>=5.2 in /usr/local/lib/python3.9/dist-packages (from tox) (5.2.0)
+Requirement already satisfied: colorama>=0.4.6 in /usr/local/lib/python3.9/dist-packages (from tox) (0.4.6)
+Requirement already satisfied: filelock>=3.18 in /usr/local/lib/python3.9/dist-packages (from tox) (3.19.1)
+Requirement already satisfied: packaging>=25 in /usr/local/lib/python3.9/dist-packages (from tox) (25.0)
+Requirement already satisfied: platformdirs>=4.3.8 in /usr/local/lib/python3.9/dist-packages (from tox) (4.4.0)
+Requirement already satisfied: pluggy>=1.6 in /usr/local/lib/python3.9/dist-packages (from tox) (1.6.0)
+Requirement already satisfied: pyproject-api>=1.9.1 in /usr/local/lib/python3.9/dist-packages (from tox) (1.9.1)
+Requirement already satisfied: tomli>=2.2.1 in /usr/local/lib/python3.9/dist-packages (from tox) (2.2.1)
+Requirement already satisfied: typing-extensions>=4.14.1 in /usr/local/lib/python3.9/dist-packages (from tox) (4.15.0)
+Requirement already satisfied: virtualenv>=20.31.2 in /usr/local/lib/python3.9/dist-packages (from tox) (20.34.0)
+Requirement already satisfied: distlib<1,>=0.3.7 in /usr/local/lib/python3.9/dist-packages (from virtualenv>=20.31.2->tox) (0.4.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+py39: internal error
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/tarfile.py", line 2712, in next
+    tarinfo = self.tarinfo.fromtarfile(self)
+  File "/usr/lib/python3.9/tarfile.py", line 1312, in fromtarfile
+    obj = cls.frombuf(buf, tarfile.encoding, tarfile.errors)
+  File "/usr/lib/python3.9/tarfile.py", line 1248, in frombuf
+    raise EmptyHeaderError("empty header")
+tarfile.EmptyHeaderError: empty header
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/tox/session/cmd/run/single.py", line 47, in _evaluate
+    tox_env.setup()
+  File "/usr/local/lib/python3.9/dist-packages/tox/tox_env/api.py", line 285, in setup
+    self._setup_with_env()
+  File "/usr/local/lib/python3.9/dist-packages/tox/tox_env/runner.py", line 146, in _setup_with_env
+    self._setup_pkg()
+  File "/usr/local/lib/python3.9/dist-packages/tox/tox_env/runner.py", line 169, in _setup_pkg
+    self._packages = self._build_packages()
+  File "/usr/local/lib/python3.9/dist-packages/tox/tox_env/python/runner.py", line 122, in _build_packages
+    packages = package_env.perform_packaging(self.conf)
+  File "/usr/local/lib/python3.9/dist-packages/tox/tox_env/package.py", line 46, in _func
+    return meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/dist-packages/tox/tox_env/python/virtual_env/package/cmd_builder.py", line 97, in perform_packaging
+    return self.extract_install_info(for_env, path)
+  File "/usr/local/lib/python3.9/dist-packages/tox/tox_env/package.py", line 46, in _func
+    return meth(*args, **kwargs)
+  File "/usr/local/lib/python3.9/dist-packages/tox/tox_env/python/virtual_env/package/cmd_builder.py", line 110, in extract_install_info
+    with tarfile.open(str(path), "r:gz") as tar:
+  File "/usr/lib/python3.9/tarfile.py", line 1856, in open
+    return func(name, filemode, fileobj, **kwargs)
+  File "/usr/lib/python3.9/tarfile.py", line 1909, in gzopen
+    t = cls.taropen(name, mode, fileobj, **kwargs)
+  File "/usr/lib/python3.9/tarfile.py", line 1886, in taropen
+    return cls(name, mode, fileobj, **kwargs)
+  File "/usr/lib/python3.9/tarfile.py", line 1749, in __init__
+    self.firstmember = self.next()
+  File "/usr/lib/python3.9/tarfile.py", line 2727, in next
+    raise ReadError("empty file")
+tarfile.ReadError: empty file
+  py39: FAIL code 2 (0.89 seconds)
+  evaluation failed :( (0.98 seconds)

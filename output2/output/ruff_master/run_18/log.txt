@@ -1,0 +1,104 @@
+python3.11: can't open file '/app/setup.py': [Errno 2] No such file or directory
+============================= test session starts ==============================
+platform linux -- Python 3.11.13, pytest-8.4.2, pluggy-1.6.0
+rootdir: /app
+configfile: pyproject.toml
+collected 4 items / 3 errors
+
+==================================== ERRORS ====================================
+_ ERROR collecting crates/ruff_python_parser/resources/inline/err/assert_empty_test.py _
+/usr/local/lib/python3.11/dist-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.11/dist-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1204: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1176: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1147: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:690: in _load_unlocked
+    ???
+/usr/local/lib/python3.11/dist-packages/_pytest/assertion/rewrite.py:177: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.11/dist-packages/_pytest/assertion/rewrite.py:357: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/app/crates/ruff_python_parser/resources/inline/err/assert_empty_test.py", line 1
+E       assert
+E             ^
+E   SyntaxError: invalid syntax
+_ ERROR collecting crates/ruff_python_parser/resources/inline/err/if_stmt_missing_test.py _
+/usr/local/lib/python3.11/dist-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.11/dist-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1204: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1176: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1147: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:690: in _load_unlocked
+    ???
+/usr/local/lib/python3.11/dist-packages/_pytest/assertion/rewrite.py:177: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.11/dist-packages/_pytest/assertion/rewrite.py:357: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/app/crates/ruff_python_parser/resources/inline/err/if_stmt_missing_test.py", line 1
+E       if : ...
+E          ^
+E   SyntaxError: invalid syntax
+_ ERROR collecting crates/ruff_python_parser/resources/inline/err/while_stmt_missing_test.py _
+/usr/local/lib/python3.11/dist-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.11/dist-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1204: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1176: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1147: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:690: in _load_unlocked
+    ???
+/usr/local/lib/python3.11/dist-packages/_pytest/assertion/rewrite.py:177: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.11/dist-packages/_pytest/assertion/rewrite.py:357: in _rewrite_test
+    tree = ast.parse(source, filename=strfn)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.11/ast.py:50: in parse
+    return compile(source, filename, mode, flags,
+E     File "/app/crates/ruff_python_parser/resources/inline/err/while_stmt_missing_test.py", line 1
+E       while : ...
+E             ^
+E   SyntaxError: invalid syntax
+=============================== warnings summary ===============================
+crates/ruff_linter/resources/test/fixtures/flake8_pytest_style/is_pytest_test.py:15
+  /app/crates/ruff_linter/resources/test/fixtures/flake8_pytest_style/is_pytest_test.py:15: PytestCollectionWarning: cannot collect test class 'TestClassLookalike' because it has a __init__ constructor (from: crates/ruff_linter/resources/test/fixtures/flake8_pytest_style/is_pytest_test.py)
+    class TestClassLookalike:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR crates/ruff_python_parser/resources/inline/err/assert_empty_test.py
+ERROR crates/ruff_python_parser/resources/inline/err/if_stmt_missing_test.py
+ERROR crates/ruff_python_parser/resources/inline/err/while_stmt_missing_test.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!!
+========================= 1 warning, 3 errors in 1.38s =========================

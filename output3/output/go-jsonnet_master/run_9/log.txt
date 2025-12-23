@@ -1,0 +1,272 @@
+Submodule 'cpp-jsonnet' (https://github.com/google/jsonnet.git) registered for path 'cpp-jsonnet'
+Cloning into '/app/cpp-jsonnet'...
+Submodule path 'cpp-jsonnet': checked out 'bbb38f1020be1f5aed560928fb839b2c448cefb4'
+go: downloading github.com/fatih/color v1.18.0
+go: downloading golang.org/x/crypto v0.36.0
+go: downloading github.com/sergi/go-diff v1.3.1
+go: downloading sigs.k8s.io/yaml v1.4.0
+go: downloading golang.org/x/sys v0.31.0
+go: downloading github.com/mattn/go-colorable v0.1.13
+go: downloading github.com/mattn/go-isatty v0.0.20
+go: downloading github.com/google/go-cmp v0.5.9
+go: downloading gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15
+go: downloading github.com/kr/pretty v0.1.0
+go: downloading github.com/kr/text v0.1.0
+go: downloading github.com/stretchr/testify v1.4.0
+go: downloading gopkg.in/yaml.v2 v2.4.0
+go: downloading github.com/davecgh/go-spew v1.1.1
+go: downloading github.com/pmezard/go-difflib v1.0.0
+git submodule init
+git submodule update
+./tests.sh
++ go test -covermode atomic -coverprofile=coverage.out ./...
+?   	github.com/google/go-jsonnet/astgen	[no test files]
+	github.com/google/go-jsonnet/cmd/dumpstdlibast		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/cmd/jsonnet-deps		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/cmd/jsonnet		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/linter/internal/common		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/c-bindings		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/cmd/jsonnetfmt		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/cmd/jsonnet-lint		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/toolutils		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/internal/errors		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/internal/pass		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/internal/formatter		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/linter/internal/types		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/linter/internal/traversal		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/linter/internal/variables		coverage: 0.0% of statements
+	github.com/google/go-jsonnet/internal/testutils		coverage: 0.0% of statements
+ok  	github.com/google/go-jsonnet	0.723s	coverage: 76.2% of statements
+ok  	github.com/google/go-jsonnet/ast	0.007s	coverage: 0.0% of statements [no tests to run]
+ok  	github.com/google/go-jsonnet/cmd/internal/cmd	0.008s	coverage: 9.8% of statements
+ok  	github.com/google/go-jsonnet/formatter	0.016s	coverage: 50.0% of statements
+ok  	github.com/google/go-jsonnet/internal/dump	0.014s	coverage: 70.9% of statements
+ok  	github.com/google/go-jsonnet/internal/parser	0.030s	coverage: 85.7% of statements
+ok  	github.com/google/go-jsonnet/internal/program	0.008s	coverage: 6.3% of statements
+ok  	github.com/google/go-jsonnet/linter	41.925s	coverage: 96.7% of statements
++ '[' '' == 1 ']'
++ c-bindings-tests/run.sh
+Running tests for C bindings
+...............................
+----------------------------------------------------------------------
+Ran 31 tests in 0.037s
+
+OK
++ python3 setup.py build --build-platlib .
+running build
+running build_ext
+WORK=/tmp/go-build2011689530
+cd /app
+git status --porcelain
+cd /app
+git -c log.showsignature=false log -1 --format=%H:%ct
+mkdir -p $WORK/b094/
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' CGO_LDFLAGS='' /usr/local/go/pkg/tool/linux_amd64/cgo -objdir $WORK/b094/ -importpath runtime/cgo -import_runtime_cgo=false -import_syscall=false -exportheader=$WORK/b094/_cgo_install.h "-ldflags=\"-O2\" \"-g\" \"-lpthread\"" -- -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector ./cgo.go
+cd $WORK/b094
+TERM='dumb' gcc -I /usr/local/go/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x001.o -c _cgo_export.c
+TERM='dumb' gcc -I /usr/local/go/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x002.o -c cgo.cgo2.c
+cd /usr/local/go/src/runtime/cgo
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x003.o -c gcc_context.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x004.o -c gcc_fatalf.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x005.o -c gcc_libinit.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x006.o -c gcc_linux_amd64.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x007.o -c gcc_mmap.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x008.o -c gcc_setenv.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x009.o -c gcc_sigaction.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x010.o -c gcc_stack_unix.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x011.o -c gcc_traceback.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x012.o -c gcc_util.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x013.o -c linux_syscall.c
+TERM='dumb' gcc -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_x014.o -c gcc_amd64.S
+cd $WORK/b094
+TERM='dumb' gcc -I /usr/local/go/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -I $WORK/b094/ -O2 -g -Wall -Werror -fno-stack-protector -ffile-prefix-map=/usr/local/go=/_/GOROOT -frandom-seed=sYr_6Lc7-UMLMrIkzTnj -o $WORK/b094/_cgo_main.o -c _cgo_main.c
+cd /app/c-bindings
+TERM='dumb' gcc -I /usr/local/go/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b094=/tmp/go-build -gno-record-gcc-switches -o $WORK/b094/_cgo_.o $WORK/b094/_cgo_main.o $WORK/b094/_x001.o $WORK/b094/_x002.o $WORK/b094/_x003.o $WORK/b094/_x004.o $WORK/b094/_x005.o $WORK/b094/_x006.o $WORK/b094/_x007.o $WORK/b094/_x008.o $WORK/b094/_x009.o $WORK/b094/_x010.o $WORK/b094/_x011.o $WORK/b094/_x012.o $WORK/b094/_x013.o $WORK/b094/_x014.o -O2 -g -lpthread
+TERM='dumb' /usr/local/go/pkg/tool/linux_amd64/cgo -dynpackage cgo -dynimport $WORK/b094/_cgo_.o -dynout $WORK/b094/_cgo_import.go -dynlinker
+mkdir -p $WORK/b001/
+TERM='dumb' CGO_LDFLAGS='' /usr/local/go/pkg/tool/linux_amd64/cgo -objdir $WORK/b001/ -importpath github.com/google/go-jsonnet/c-bindings -exportheader=$WORK/b001/_cgo_install.h "-ldflags=\"-O2\" \"-g\"" -- -I $WORK/b001/ -O2 -g ./c-bindings.go
+cd $WORK/b001
+TERM='dumb' gcc -I /app/c-bindings -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b001=/tmp/go-build -gno-record-gcc-switches -I $WORK/b001/ -O2 -g -frandom-seed=PGGam11RiS35iRyoJaaJ -o $WORK/b001/_x001.o -c _cgo_export.c
+TERM='dumb' gcc -I /app/c-bindings -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b001=/tmp/go-build -gno-record-gcc-switches -I $WORK/b001/ -O2 -g -frandom-seed=PGGam11RiS35iRyoJaaJ -o $WORK/b001/_x002.o -c c-bindings.cgo2.c
+cd /app/c-bindings
+TERM='dumb' g++ -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b001=/tmp/go-build -gno-record-gcc-switches -I $WORK/b001/ -O2 -g -std=c++11 -Wall -frandom-seed=PGGam11RiS35iRyoJaaJ -o $WORK/b001/_x003.o -c libjsonnet.cpp
+cd $WORK/b001
+TERM='dumb' gcc -I /app/c-bindings -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b001=/tmp/go-build -gno-record-gcc-switches -I $WORK/b001/ -O2 -g -frandom-seed=PGGam11RiS35iRyoJaaJ -o $WORK/b001/_cgo_main.o -c _cgo_main.c
+cd /app/c-bindings
+TERM='dumb' g++ -I . -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=$WORK/b001=/tmp/go-build -gno-record-gcc-switches -o $WORK/b001/_cgo_.o $WORK/b001/_cgo_main.o $WORK/b001/_x001.o $WORK/b001/_x002.o $WORK/b001/_x003.o -O2 -g
+TERM='dumb' /usr/local/go/pkg/tool/linux_amd64/cgo -dynpackage main -dynimport $WORK/b001/_cgo_.o -dynout $WORK/b001/_cgo_import.go
+cat >/tmp/go-build2011689530/b001/importcfg << 'EOF' # internal
+# import config
+packagefile errors=/root/.cache/go-build/0e/0e1fe5c76860a5375d090313c240ce6c42530b13b96d2a2f8342893386833de1-d
+packagefile fmt=/root/.cache/go-build/d8/d88b17b3996622b9aa3994bfe98cfddd6553d8f3f9abf71d589292e19141b2b8-d
+packagefile github.com/google/go-jsonnet=/root/.cache/go-build/7b/7b43fa127ce240052bed4aa158bcf9e75b066cbc753cde6fef321e3f9b68bdcf-d
+packagefile github.com/google/go-jsonnet/ast=/root/.cache/go-build/5b/5beb67c2f1aa6754257a69fd0ace3d1125ded7f790b00bc5dbb893d0c5308fe3-d
+packagefile github.com/google/go-jsonnet/formatter=/root/.cache/go-build/96/965339cc3b51eea66ba5aec53adbe15753cb331f2f557436401ea20af64ee4f7-d
+packagefile os=/root/.cache/go-build/2e/2e32723f97ba39317ae6ca508a20038c8c8916ca3814a5146fa5ce354bbfd540-d
+packagefile path=/root/.cache/go-build/00/00f8fbfb99af004936f555552a1619c8d73af8c159de0fcda49cb15851f80e6a-d
+packagefile sort=/root/.cache/go-build/0d/0d7843673ff838b5d41365f4d23ea2e30dce2bdd4f59127b98c7527c216a396a-d
+packagefile strings=/root/.cache/go-build/fa/fa59cf4448a761bffca122171bed1ada8756f6034ea043851d0d9c7dd386c1b3-d
+packagefile sync=/root/.cache/go-build/59/5969bf372f27b2c8269aa9db8fa6f3992cc57847d04e0518e2b415ae8e6f8539-d
+packagefile runtime/cgo=/root/.cache/go-build/38/387d3bb88ebec8612043c1e1a09f373660b1337d54f1e28cc24d54c6e485aad2-d
+packagefile syscall=/root/.cache/go-build/bc/bc49c3dacdb0d9ccf8f1682494e25620c228a6a7348206d24102751a5a9a42f2-d
+packagefile runtime=/root/.cache/go-build/4d/4dbca2611be0211fcfc1c586452a9e5e3fc4cc513a2bbe427f42c1d4fd4591f6-d
+EOF
+/usr/local/go/pkg/tool/linux_amd64/compile -o $WORK/b001/_pkg_.a -trimpath "$WORK/b001=>" -p main -lang=go1.23 -installsuffix shared -buildid PGGam11RiS35iRyoJaaJ/PGGam11RiS35iRyoJaaJ -goversion go1.23.0 -c=4 -shared -nolocalimports -importcfg $WORK/b001/importcfg -pack ./handles.go $WORK/b001/_cgo_gotypes.go $WORK/b001/c-bindings.cgo1.go $WORK/b001/_cgo_import.go
+/usr/local/go/pkg/tool/linux_amd64/pack r $WORK/b001/_pkg_.a $WORK/b001/_x001.o $WORK/b001/_x002.o $WORK/b001/_x003.o # internal
+/usr/local/go/pkg/tool/linux_amd64/buildid -w $WORK/b001/_pkg_.a # internal
+cp $WORK/b001/_pkg_.a /root/.cache/go-build/cb/cb621b27b11f56f0184bfd799160790befd24c05412cde9472ddf4ef0c8580c1-d # internal
+cat >/tmp/go-build2011689530/b001/importcfg.link << 'EOF' # internal
+packagefile github.com/google/go-jsonnet/c-bindings=/tmp/go-build2011689530/b001/_pkg_.a
+packagefile errors=/root/.cache/go-build/0e/0e1fe5c76860a5375d090313c240ce6c42530b13b96d2a2f8342893386833de1-d
+packagefile fmt=/root/.cache/go-build/d8/d88b17b3996622b9aa3994bfe98cfddd6553d8f3f9abf71d589292e19141b2b8-d
+packagefile github.com/google/go-jsonnet=/root/.cache/go-build/7b/7b43fa127ce240052bed4aa158bcf9e75b066cbc753cde6fef321e3f9b68bdcf-d
+packagefile github.com/google/go-jsonnet/ast=/root/.cache/go-build/5b/5beb67c2f1aa6754257a69fd0ace3d1125ded7f790b00bc5dbb893d0c5308fe3-d
+packagefile github.com/google/go-jsonnet/formatter=/root/.cache/go-build/96/965339cc3b51eea66ba5aec53adbe15753cb331f2f557436401ea20af64ee4f7-d
+packagefile os=/root/.cache/go-build/2e/2e32723f97ba39317ae6ca508a20038c8c8916ca3814a5146fa5ce354bbfd540-d
+packagefile path=/root/.cache/go-build/00/00f8fbfb99af004936f555552a1619c8d73af8c159de0fcda49cb15851f80e6a-d
+packagefile sort=/root/.cache/go-build/0d/0d7843673ff838b5d41365f4d23ea2e30dce2bdd4f59127b98c7527c216a396a-d
+packagefile strings=/root/.cache/go-build/fa/fa59cf4448a761bffca122171bed1ada8756f6034ea043851d0d9c7dd386c1b3-d
+packagefile sync=/root/.cache/go-build/59/5969bf372f27b2c8269aa9db8fa6f3992cc57847d04e0518e2b415ae8e6f8539-d
+packagefile runtime/cgo=/root/.cache/go-build/38/387d3bb88ebec8612043c1e1a09f373660b1337d54f1e28cc24d54c6e485aad2-d
+packagefile syscall=/root/.cache/go-build/bc/bc49c3dacdb0d9ccf8f1682494e25620c228a6a7348206d24102751a5a9a42f2-d
+packagefile runtime=/root/.cache/go-build/4d/4dbca2611be0211fcfc1c586452a9e5e3fc4cc513a2bbe427f42c1d4fd4591f6-d
+packagefile internal/reflectlite=/root/.cache/go-build/cc/cc45950964886f64a94b18769a519360e60050ea9dc3ceb0fce5b2f42a5734d6-d
+packagefile internal/fmtsort=/root/.cache/go-build/c5/c51ec335048d1849a3e4732a061fdde849aeca16458cd330cd7cdabfe3e7108a-d
+packagefile io=/root/.cache/go-build/d9/d9f7b74fff03e422c812b36ae77f00d03802422c35ee26a29d97616831aac8bf-d
+packagefile math=/root/.cache/go-build/cd/cd3951cad9cc8dac2da0a35444445fad0820dd273dd877483cc3a1f7e0f15779-d
+packagefile reflect=/root/.cache/go-build/ea/ea993d10775bda22cc328097e39999b725e19c618b6ba11a63946d487ce776d5-d
+packagefile slices=/root/.cache/go-build/67/6747f051667ee3dc8ba675738376a6799897e864528e9ff3bcae2014ef890e96-d
+packagefile strconv=/root/.cache/go-build/c5/c52d0b9d25650aa9c12f7e8c160d3dfb9ccc32ae67fec161aea6dfe6a99c5080-d
+packagefile unicode/utf8=/root/.cache/go-build/e7/e713f7e8b2d8f2fdd3e8fcc4a4e025856d33dd8b880a212a552238e78399ecae-d
+packagefile bufio=/root/.cache/go-build/92/92deb1002f756f1618eb3d3b8c34cbdee36e0d9830d1a8587a99e2e7a425b0ea-d
+packagefile bytes=/root/.cache/go-build/28/2838952e578bbe111f56c577406642ee9c8e81a022eab6f3fb65e13214b6a281-d
+packagefile crypto/md5=/root/.cache/go-build/f1/f10f3993f4abb18d3757cba1f49fc2ad2eb698c7968c21c7df2c47fe29fe9cab-d
+packagefile crypto/sha1=/root/.cache/go-build/25/25bd99c79fc2b3097b3dccebe3219b1fcddd7915b67f293bd1ef15dc8b7dbcde-d
+packagefile crypto/sha256=/root/.cache/go-build/fd/fdeb5f8f545d3b8bc7297a252217dcc1f7bf10627bdc718e8aede3cf3a4d2979-d
+packagefile crypto/sha512=/root/.cache/go-build/1c/1c508ce906130b77dec12a877f79e751f5a35c2346f0b87891c857eaddfc007f-d
+packagefile encoding/base64=/root/.cache/go-build/ca/cac4d11ed6b439bcbf5decc2d895cb69078ef0d09f0a5d58da7a2c29bf7a0b77-d
+packagefile encoding/hex=/root/.cache/go-build/78/782a354e4df3d9e8ec160b4277d89c3569b9b440379f097d275682c7b5ee6971-d
+packagefile encoding/json=/root/.cache/go-build/cb/cbf7ea994f0141c71b056925ee3df168790cc5895c49116ac35749bcebb0f127-d
+packagefile github.com/google/go-jsonnet/astgen=/root/.cache/go-build/96/96b2c7dc095ddc3f6ecd88ddc9c5fb98b21fcb5aca3bb2740b5585f30e25ab75-d
+packagefile github.com/google/go-jsonnet/internal/errors=/root/.cache/go-build/fe/fe5392ff8b1dcdb15a72c37a66505d44cd110653bed8262b5ce5dfeb7a59cd39-d
+packagefile github.com/google/go-jsonnet/internal/parser=/root/.cache/go-build/7a/7afcd1f2e7d29579018d8ec755454831a476e48492e86dd7ce45ceac6562ff61-d
+packagefile github.com/google/go-jsonnet/internal/program=/root/.cache/go-build/67/67a582d3a35931dcad98e59daf7a5418941e1fe5e7d442f42decbda8af032c7f-d
+packagefile github.com/google/go-jsonnet/toolutils=/root/.cache/go-build/16/16747d7d187f343bc2d8e6c85016fe60403674fc6c3893ba86278637f83fce3a-d
+packagefile golang.org/x/crypto/sha3=/root/.cache/go-build/20/204e6fb46a91c303007e1bbf3af1924cee1684a56fca9fb1087220d258d8b6cf-d
+packagefile path/filepath=/root/.cache/go-build/01/01f148fc90e5ceaf935170defa967d92e3130d5ee37aaa2fe468bff651152b4f-d
+packagefile regexp=/root/.cache/go-build/68/6886cd3800f71c47f56bd6d242fccd78dd906f791dcae5e9eb1886fae4d7f83a-d
+packagefile runtime/debug=/root/.cache/go-build/f3/f3a7cc0e17e94183da23f11f121490b835384d3775ff2aaa2220a77e4e0fcdef-d
+packagefile sigs.k8s.io/yaml=/root/.cache/go-build/2e/2e97d4791098e8f50287c25b1b7996abfad643f58ef8577442f70351200aad7d-d
+packagefile unicode=/root/.cache/go-build/ea/ea08805a27b58baa2f48365ef28b38c5421eedb718389ce9aa76071e935f9915-d
+packagefile github.com/google/go-jsonnet/internal/formatter=/root/.cache/go-build/40/40535463498b366bcc45fa43e7590901ebd3c1ca41306fa3e58a3170367387f7-d
+packagefile internal/bytealg=/root/.cache/go-build/ea/eaef3183b7d8a31ae8228703393245eef50ba27a480406fe5f0c21f6b9240685-d
+packagefile internal/byteorder=/root/.cache/go-build/2d/2df9216aa967755f76418acd85ff94436413a8e0786383a6f0c53868a77a8d27-d
+packagefile internal/filepathlite=/root/.cache/go-build/20/20dcdc81f31ef326e540c769c8a11f02805d29c3109d206bb90215c688496ee5-d
+packagefile internal/goarch=/root/.cache/go-build/e1/e180baa81d8c017e39020f926b224bb6f3045df9d35f84d60cb6ea20bf9b84d3-d
+packagefile internal/itoa=/root/.cache/go-build/24/245c4bc4a32a9962855deec6264489cc6b47661a19b9883e820d413926c4a49b-d
+packagefile internal/poll=/root/.cache/go-build/ba/ba93bea48b2a8e86dadf0845e86eb90337f749b20427c5da203285b605d8838e-d
+packagefile internal/stringslite=/root/.cache/go-build/73/73b4224957a7c77a504875812b484bab9c424fa8d2c6d7706e3bea192b75b596-d
+packagefile internal/syscall/execenv=/root/.cache/go-build/ff/ffdf5af0da1b896be72fa751c76c2eea7c19e8a103e39669af481c91576f36fb-d
+packagefile internal/syscall/unix=/root/.cache/go-build/9a/9a78bbd18923579916ad8e722176a2241ebb2f8858e51ed4940fb58897612a18-d
+packagefile internal/testlog=/root/.cache/go-build/38/3873398fb054a1b0849bb2f9db1933724730d0bdf9e5d3910dac99aa8521fb04-d
+packagefile io/fs=/root/.cache/go-build/25/259be31ce6ec6836bbee4206e9117b68547aa35e3ebfe6cde868f829d0322e64-d
+packagefile sync/atomic=/root/.cache/go-build/b3/b399ace523a666602f372c9f53cb9411175371fc8a67da373ac7d0e7472c72a0-d
+packagefile time=/root/.cache/go-build/3e/3ee95fb4956919ee25152535ff3a2427341dd652c90cefb84e123a515744a1c7-d
+packagefile math/bits=/root/.cache/go-build/70/70ab416410019e34360909e61e340aca57ec4b7a2fe65242f0cdc83977e92cb2-d
+packagefile internal/abi=/root/.cache/go-build/63/63c3d376021257269eebae37da8ccf9ccf7f74132857502897b8251f1c6d0bb0-d
+packagefile internal/race=/root/.cache/go-build/74/7496c8cdb177c901372d44872b3fc585f901cbf8a54d0700aa0fd636922c4101-d
+packagefile runtime/internal/sys=/root/.cache/go-build/2c/2cfb69cfae056473a0868d05a93de777cf43ce1c4853082777c4da1815c512dd-d
+packagefile internal/asan=/root/.cache/go-build/10/1058ee7de6ca33483e73558d63f3ebe3afbcfc4c9390ec47a9ddc71195fb28c4-d
+packagefile internal/msan=/root/.cache/go-build/f1/f188a646f40fb15b0aa70e38131dfc4296285736ae05333f57584f0286fd4545-d
+packagefile internal/oserror=/root/.cache/go-build/52/521438215165496a1ba4fd482b417e1de36bbc4a7f66e12e898a4b641aef6cd2-d
+packagefile internal/runtime/syscall=/root/.cache/go-build/27/279b76879ad7f165f86c130c1af70fd53fbdb0301b535937732e574e138cb8ce-d
+packagefile internal/chacha8rand=/root/.cache/go-build/6b/6b6106baedad613acc7c5676c35ee941753d86239212866febc196dc16e9ee74-d
+packagefile internal/coverage/rtcov=/root/.cache/go-build/ef/efbecb4f1ab55e4d1e389009ecec16d63af03fdf3487cf8ad8f20824995c35ac-d
+packagefile internal/cpu=/root/.cache/go-build/4a/4ac3ea10c221372a0d2e6cdf42a63b6040fca835e9483bb70c306fa412f83236-d
+packagefile internal/godebugs=/root/.cache/go-build/3b/3ba8da3c623f7cfad1772462941142ab15e80eed58b0e1201905b070c11d3c60-d
+packagefile internal/goexperiment=/root/.cache/go-build/3f/3f85fee4e90b2ac26e5f439b138393ed75c351209dbf557fccb0da7c86aaf4f5-d
+packagefile internal/goos=/root/.cache/go-build/e6/e68c21fb5828ad881545a0aed2a6d2bbbc8e7d8cbbf4ad1c3143250e891af827-d
+packagefile internal/profilerecord=/root/.cache/go-build/a5/a5b3b543f6d245d137a645ae46a26d138df96f8aac3f92d26cbc854afbea99c9-d
+packagefile internal/runtime/atomic=/root/.cache/go-build/6d/6d02259537e7b84bb243ea983e0be91197abbcb76d1d24a04d59805757eef43b-d
+packagefile internal/runtime/exithook=/root/.cache/go-build/1c/1c5c88151a03df999f3953e4d8d4757e7b3e3272bd528c476389abc3d80de1e6-d
+packagefile runtime/internal/math=/root/.cache/go-build/c0/c0b79f05853d3f482ee75ab88af069c0633629f5364a8411cfa5f3a22e82b0a8-d
+packagefile internal/unsafeheader=/root/.cache/go-build/58/5811d7922320a40805f7ca02b6a7fdf1dae9d1463f1ec31b094f5e806ffffadf-d
+packagefile cmp=/root/.cache/go-build/67/67cfb9c68e7f964f1dcfb8972470b918a79375accf043f594acfa62bca8d1d8a-d
+packagefile iter=/root/.cache/go-build/48/48d18ac61a2fbc77eb4e20e1e378b75ba2833928f7f0b4dc0070808afaed98f6-d
+packagefile crypto=/root/.cache/go-build/bf/bfbafaa3dacfd2ee9740860bb0045a9ebc575880fbeb7764d86b9f72c0e993f2-d
+packagefile hash=/root/.cache/go-build/20/20059086b2f2b77a3bbeab738decf98255ebf8970f4d28dd851558fa33f49f3a-d
+packagefile crypto/internal/boring=/root/.cache/go-build/ca/cacea3c597e68add92b5fb0f0dca36736d1592efb13970a8392c825d4898ecbf-d
+packagefile encoding/binary=/root/.cache/go-build/dc/dc5c41bb23bda7645f01d34e0ec1bb78440c67cd900156c16f8c4bcef7cf0ab5-d
+packagefile encoding=/root/.cache/go-build/91/918ed5a55e1c637e11d5e14f6b2f3a36db5ac3be046435fc8d446efc93d8fb45-d
+packagefile unicode/utf16=/root/.cache/go-build/65/651bdd1b313d320c716d34a07d66bd4f6278d3fbbcb19fd4e2a59f3d74ee6f67-d
+packagefile crypto/subtle=/root/.cache/go-build/c7/c7397bfc0698047e542152eb841b401576f2ac19d12e3f1e95ebba5063736592-d
+packagefile golang.org/x/sys/cpu=/root/.cache/go-build/e4/e47e3ecba1da6b16267f53451b8640deb2010c0f7cdf8ec0dfed7b5743d35cc5-d
+packagefile regexp/syntax=/root/.cache/go-build/1c/1cdca016e90d47f185efe3bfe24f5206f1026e95438f380a9261c76595d63272-d
+packagefile sigs.k8s.io/yaml/goyaml.v2=/root/.cache/go-build/88/88509d84c1fdf91652dd71701f1763f700d9045efd1bbaaf0e44f1d86b613b18-d
+packagefile github.com/google/go-jsonnet/internal/pass=/root/.cache/go-build/c7/c77c4b248e6d747d356fab7cddf0a2c4145644b99e3b728a21387c5b944bb90e-d
+packagefile internal/godebug=/root/.cache/go-build/37/37069568b85302501e3e4eeaa1a7f3794ae90d92fe4bd6d0cbf737ba267e8a30-d
+packagefile crypto/cipher=/root/.cache/go-build/95/9572747e79d6ec028bbb70539decaaa7a420b1a775df903fb3a71361b5bb4f01-d
+packagefile crypto/internal/boring/sig=/root/.cache/go-build/9c/9c89903d8d5af0ebb5371ff0a15280d3c5e067149877997a245ea80cfa759ded-d
+packagefile internal/bisect=/root/.cache/go-build/a9/a908ed401b5d8884081afe56e3dcf48c32122ffe8bc21e215603f5a172413c4f-d
+packagefile crypto/internal/alias=/root/.cache/go-build/61/6140ecc01ecb1544c68bf44ad8408aced2b20f05c2d9f9b2e3ab05c53d804d6c-d
+modinfo "0w\xaf\f\x92t\b\x02A\xe1\xc1\a\xe6\xd6\x18\xe6path\tgithub.com/google/go-jsonnet/c-bindings\nmod\tgithub.com/google/go-jsonnet\t(devel)\t\ndep\tgolang.org/x/crypto\tv0.36.0\th1:AnAEvhDddvBdpY+uR+MyHmuZzzNqXSe/GvuDeob5L34=\ndep\tgolang.org/x/sys\tv0.31.0\th1:ioabZlmFYtWhL+TRYpcnNlLwhyxaM9kWTDEmfnprqik=\ndep\tsigs.k8s.io/yaml\tv1.4.0\th1:Mk1wCc2gy/F0THH0TAp1QYyJNzRm2KCLy3o5ASXVI5E=\nbuild\t-buildmode=c-archive\nbuild\t-compiler=gc\nbuild\tCGO_ENABLED=1\nbuild\tCGO_CFLAGS=\nbuild\tCGO_CPPFLAGS=\nbuild\tCGO_CXXFLAGS=\nbuild\tCGO_LDFLAGS=\nbuild\tGOARCH=amd64\nbuild\tGOOS=linux\nbuild\tGOAMD64=v1\nbuild\tvcs=git\nbuild\tvcs.revision=10aef6a96ca825c97c87df137a837e39f5df174c\nbuild\tvcs.time=2025-06-19T14:46:07Z\nbuild\tvcs.modified=true\n\xf92C1\x86\x18 r\x00\x82B\x10A\x16\xd8\xf2"
+EOF
+mkdir -p $WORK/b001/exe/
+cd .
+GOROOT='/usr/local/go' /usr/local/go/pkg/tool/linux_amd64/link -o $WORK/b001/exe/a.out.a -importcfg $WORK/b001/importcfg.link -installsuffix shared -buildmode=c-archive -buildid=cvNpqkjp4FO3_WbwepDL/PGGam11RiS35iRyoJaaJ/9x64Jq8Dfkx-xSWJcPqf/cvNpqkjp4FO3_WbwepDL -extld=g++ $WORK/b001/_pkg_.a
+/usr/local/go/pkg/tool/linux_amd64/buildid -w $WORK/b001/exe/a.out.a # internal
+mv $WORK/b001/_cgo_install.h libgojsonnet.h
+mv $WORK/b001/exe/a.out.a libgojsonnet.a
+rm -rf $WORK/b001/
+building '_gojsonnet' extension
+creating build/temp.linux-x86_64-cpython-310/python
+x86_64-linux-gnu-gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -fPIC -Icpp-jsonnet/include -I/usr/include/python3.10 -c python/_jsonnet.c -o build/temp.linux-x86_64-cpython-310/python/_jsonnet.o
+x86_64-linux-gnu-g++ -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -shared -Wl,-O1 -Wl,-Bsymbolic-functions build/temp.linux-x86_64-cpython-310/python/_jsonnet.o /app/c-bindings/libgojsonnet.a -L/usr/lib/x86_64-linux-gnu -o ./_gojsonnet.cpython-310-x86_64-linux-gnu.so
++ python3 -m pytest python
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /app
+configfile: pyproject.toml
+collected 10 items
+
+python/_jsonnet_test.py ..........                                       [100%]
+
+============================== 10 passed in 0.08s ==============================
++ export IMPLEMENTATION=golang
++ IMPLEMENTATION=golang
++ export OVERRIDE_DIR=/app/testdata/cpp-tests-override/
++ OVERRIDE_DIR=/app/testdata/cpp-tests-override/
++ go build ./cmd/jsonnet
++ go build ./cmd/jsonnetfmt
++ GOOS=js
++ GOARCH=wasm
++ go build -o libjsonnet.wasm ./cmd/wasm
++ export DISABLE_LIB_TESTS=true
++ DISABLE_LIB_TESTS=true
++ export DISABLE_ERROR_TESTS=true
++ DISABLE_ERROR_TESTS=true
++ export JSONNETFMT_BIN=/app/jsonnetfmt
++ JSONNETFMT_BIN=/app/jsonnetfmt
++ export JSONNET_BIN=/app/jsonnet
++ JSONNET_BIN=/app/jsonnet
++ cd /app/cpp-jsonnet
++ exec ./tests.sh
+snippet: true
+examples/check.sh: All 21 tests executed correctly.
+examples/terraform/check.sh: All 4 tests executed correctly.
+/app/cpp-jsonnet/test_cmd /app/cpp-jsonnet
+/app/cpp-jsonnet
+test_cmd/run_cmd_tests.sh: All 77 test scripts pass.
+test_suite/run_tests.sh: All 66 test scripts pass.
+doc/_stdlib_gen/run_tests.sh: All 1 tests executed correctly.
+test_suite/run_fmt_tests.sh: All 178 test scripts pass.
+test_suite/run_fmt_idempotence_tests.sh: All 356 test scripts pass.
+git submodule init
+git submodule update
+go generate
+go run cmd/dumpstdlibast/dumpstdlibast.go cpp-jsonnet/stdlib/std.jsonnet > astgen/stdast.go
+bazel build //cmd/jsonnet
+make: bazel: No such file or directory
+make: *** [Makefile:10: build.bazel] Error 127
+COVERALLS_TOKEN is not set. Please set it to send coverage data.

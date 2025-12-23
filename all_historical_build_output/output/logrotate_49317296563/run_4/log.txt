@@ -1,0 +1,1012 @@
+configure.ac:13: installing './compile'
+configure.ac:19: installing './config.guess'
+configure.ac:19: installing './config.sub'
+configure.ac:6: installing './install-sh'
+configure.ac:6: installing './missing'
+Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+The logrotate build system is now prepared.  To build here, run:
+  ./configure && make
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for gcc... (cached) gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C11 features... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for struct stat.st_blksize... yes
+checking for struct stat.st_blocks... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for uint32_t... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for libgen.h... yes
+checking for poptParseArgvString in -lpopt... yes
+checking for getfscreatecon_raw in -lselinux... yes
+checking for acl_get_file in -lacl... yes
+checking for asprintf... yes
+checking for futimens... yes
+checking for madvise... yes
+checking for reallocarray... yes
+checking for secure_getenv... yes
+checking for strndup... yes
+checking for utimensat... yes
+checking for vsyslog... yes
+checking for struct stat.st_atim... yes
+checking for struct stat.st_mtim... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating test/Makefile
+config.status: creating logrotate.8
+config.status: creating logrotate.spec
+config.status: creating config.h
+config.status: executing depfiles commands
+
+  logrotate app
+
+  SELinux support:        yes
+  ACL support:            yes
+  default mail command:   /bin/mail
+  compress command:       /bin/gzip
+  uncompress command:     /bin/gunzip
+  compress extension:     .gz
+  statefile path:         /var/lib/logrotate.status
+
+echo app > .version-t && mv .version-t .version
+make  all-recursive
+make[1]: Entering directory '/app'
+Making all in .
+make[2]: Entering directory '/app'
+gcc -DHAVE_CONFIG_H -I.  -include config.h  -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -Werror -g -O2 -MT config.o -MD -MP -MF .deps/config.Tpo -c -o config.o config.c
+mv -f .deps/config.Tpo .deps/config.Po
+gcc -DHAVE_CONFIG_H -I.  -include config.h  -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -Werror -g -O2 -MT log.o -MD -MP -MF .deps/log.Tpo -c -o log.o log.c
+mv -f .deps/log.Tpo .deps/log.Po
+gcc -DHAVE_CONFIG_H -I.  -include config.h  -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -Werror -g -O2 -MT logrotate.o -MD -MP -MF .deps/logrotate.Tpo -c -o logrotate.o logrotate.c
+mv -f .deps/logrotate.Tpo .deps/logrotate.Po
+gcc -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -Werror -g -O2   -o logrotate config.o log.o logrotate.o  -lacl -lselinux -lpopt
+make[2]: Leaving directory '/app'
+Making all in test
+make[2]: Entering directory '/app/test'
+test .. = .. || ln -fs ../test/* .
+make[2]: Leaving directory '/app/test'
+make[1]: Leaving directory '/app'
+make  check-recursive
+make[1]: Entering directory '/app'
+Making check in .
+make[2]: Entering directory '/app'
+make[2]: Leaving directory '/app'
+Making check in test
+make[2]: Entering directory '/app/test'
+make  check-TESTS
+make[3]: Entering directory '/app/test'
+make[4]: Entering directory '/app/test'
+PASS: test-0002.sh
+PASS: test-0009.sh
+PASS: test-0008.sh
+PASS: test-0007.sh
+PASS: test-0005.sh
+PASS: test-0006.sh
+PASS: test-0004.sh
+PASS: test-0001.sh
+PASS: test-0011.sh
+PASS: test-0012.sh
+PASS: test-0003.sh
+PASS: test-0014.sh
+PASS: test-0010.sh
+PASS: test-0016.sh
+PASS: test-0017.sh
+PASS: test-0013.sh
+PASS: test-0020.sh
+PASS: test-0019.sh
+PASS: test-0022.sh
+PASS: test-0023.sh
+PASS: test-0015.sh
+PASS: test-0021.sh
+PASS: test-0018.sh
+PASS: test-0025.sh
+PASS: test-0024.sh
+PASS: test-0028.sh
+PASS: test-0027.sh
+PASS: test-0026.sh
+PASS: test-0029.sh
+PASS: test-0034.sh
+PASS: test-0031.sh
+PASS: test-0030.sh
+PASS: test-0032.sh
+PASS: test-0033.sh
+PASS: test-0040.sh
+PASS: test-0035.sh
+PASS: test-0036.sh
+PASS: test-0037.sh
+PASS: test-0038.sh
+SKIP: test-0047.sh
+PASS: test-0039.sh
+PASS: test-0046.sh
+PASS: test-0041.sh
+PASS: test-0045.sh
+PASS: test-0042.sh
+PASS: test-0044.sh
+PASS: test-0043.sh
+PASS: test-0048.sh
+PASS: test-0051.sh
+PASS: test-0053.sh
+PASS: test-0049.sh
+PASS: test-0052.sh
+PASS: test-0050.sh
+PASS: test-0059.sh
+PASS: test-0058.sh
+PASS: test-0060.sh
+PASS: test-0057.sh
+PASS: test-0061.sh
+PASS: test-0065.sh
+PASS: test-0064.sh
+PASS: test-0066.sh
+PASS: test-0062.sh
+PASS: test-0067.sh
+PASS: test-0054.sh
+PASS: test-0055.sh
+PASS: test-0056.sh
+PASS: test-0063.sh
+PASS: test-0069.sh
+PASS: test-0071.sh
+PASS: test-0074.sh
+PASS: test-0073.sh
+PASS: test-0076.sh
+PASS: test-0075.sh
+PASS: test-0078.sh
+PASS: test-0072.sh
+PASS: test-0070.sh
+PASS: test-0077.sh
+PASS: test-0079.sh
+PASS: test-0080.sh
+PASS: test-0081.sh
+PASS: test-0083.sh
+PASS: test-0089.sh
+PASS: test-0084.sh
+PASS: test-0086.sh
+PASS: test-0088.sh
+PASS: test-0090.sh
+PASS: test-0091.sh
+PASS: test-0094.sh
+PASS: test-0100.sh
+PASS: test-0102.sh
+PASS: test-0101.sh
+PASS: test-0103.sh
+PASS: test-0085.sh
+PASS: test-0106.sh
+PASS: test-0104.sh
+PASS: test-0105.sh
+PASS: test-0107.sh
+PASS: test-0108.sh
+PASS: test-0111.sh
+PASS: test-0110.sh
+PASS: test-0112.sh
+PASS: test-0113.sh
+PASS: test-0082.sh
+PASS: test-0109.sh
+PASS: test-0093.sh
+PASS: test-0068.sh
+PASS: test-0087.sh
+PASS: test-0092.sh
+============================================================================
+Testsuite summary for logrotate app
+============================================================================
+# TOTAL: 108
+# PASS:  107
+# SKIP:  1
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[4]: Leaving directory '/app/test'
+make[3]: Leaving directory '/app/test'
+make[2]: Leaving directory '/app/test'
+make[1]: Leaving directory '/app'
+make  install-recursive
+make[1]: Entering directory '/app'
+Making install in .
+make[2]: Entering directory '/app'
+make[3]: Entering directory '/app'
+ /usr/bin/mkdir -p '/usr/local/sbin'
+  /usr/bin/install -c logrotate '/usr/local/sbin'
+ /usr/bin/mkdir -p '/usr/local/share/man/man5'
+ /usr/bin/install -c -m 644 logrotate.conf.5 '/usr/local/share/man/man5'
+ /usr/bin/mkdir -p '/usr/local/share/man/man8'
+ /usr/bin/install -c -m 644 logrotate.8 '/usr/local/share/man/man8'
+make[3]: Leaving directory '/app'
+make[2]: Leaving directory '/app'
+Making install in test
+make[2]: Entering directory '/app/test'
+make[3]: Entering directory '/app/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/app/test'
+make[2]: Leaving directory '/app/test'
+make[1]: Leaving directory '/app'
+Making installcheck in .
+make[1]: Entering directory '/app'
+bad=0; pid=$$; list="logrotate"; for p in $list; do \
+  case '  ' in \
+   *" $p "* | *" ./$p "*) continue;; \
+  esac; \
+  f=`echo "$p" | \
+     sed 's,^.*/,,;s/$//;s,x,x,;s/$//'`; \
+  for opt in --help --version; do \
+    if "/usr/local/sbin/$f" $opt >c${pid}_.out \
+         2>c${pid}_.err </dev/null \
+	 && test -n "`cat c${pid}_.out`" \
+	 && test -z "`cat c${pid}_.err`"; then :; \
+    else echo "$f does not support $opt" 1>&2; bad=1; fi; \
+  done; \
+done; rm -f c${pid}_.???; exit $bad
+make[1]: Leaving directory '/app'
+Making installcheck in test
+make[1]: Entering directory '/app/test'
+make[1]: Nothing to be done for 'installcheck'.
+make[1]: Leaving directory '/app/test'
+make  dist-xz dist-gzip am__post_remove_distdir='@:'
+make[1]: Entering directory '/app'
+make  distdir-am
+make[2]: Entering directory '/app'
+if test -d "logrotate-app"; then find "logrotate-app" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "logrotate-app" || { sleep 5 && rm -rf "logrotate-app"; }; else :; fi
+test -d "logrotate-app" || mkdir "logrotate-app"
+ (cd test && make  top_distdir=../logrotate-app distdir=../logrotate-app/test \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/test'
+make  distdir-am
+make[4]: Entering directory '/app/test'
+make[4]: Leaving directory '/app/test'
+make[3]: Leaving directory '/app/test'
+make  \
+  top_distdir="logrotate-app" distdir="logrotate-app" \
+  dist-hook
+make[3]: Entering directory '/app'
+echo app > logrotate-app/.tarball-version
+make[3]: Leaving directory '/app'
+test -n "" \
+|| find "logrotate-app" -type d ! -perm -755 \
+	-exec chmod u+rwx,go+rx {} \; -o \
+  ! -type d ! -perm -444 -links 1 -exec chmod a+r {} \; -o \
+  ! -type d ! -perm -400 -exec chmod a+r {} \; -o \
+  ! -type d ! -perm -444 -exec /bin/bash /app/install-sh -c -m a+r {} {} \; \
+|| chmod -R a+r "logrotate-app"
+make[2]: Leaving directory '/app'
+tardir=logrotate-app && ${TAR-tar} chof - "$tardir" | XZ_OPT=${XZ_OPT--e} xz -c >logrotate-app.tar.xz
+tardir=logrotate-app && ${TAR-tar} chof - "$tardir" | eval GZIP= gzip --best -c >logrotate-app.tar.gz
+make[1]: Leaving directory '/app'
+if test -d "logrotate-app"; then find "logrotate-app" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "logrotate-app" || { sleep 5 && rm -rf "logrotate-app"; }; else :; fi
+case 'logrotate-app.tar.gz logrotate-app.tar.xz' in \
+*.tar.gz*) \
+  eval GZIP= gzip --best -dc logrotate-app.tar.gz | ${TAR-tar} xf - ;;\
+*.tar.bz2*) \
+  bzip2 -dc logrotate-app.tar.bz2 | ${TAR-tar} xf - ;;\
+*.tar.lz*) \
+  lzip -dc logrotate-app.tar.lz | ${TAR-tar} xf - ;;\
+*.tar.xz*) \
+  xz -dc logrotate-app.tar.xz | ${TAR-tar} xf - ;;\
+*.tar.Z*) \
+  uncompress -c logrotate-app.tar.Z | ${TAR-tar} xf - ;;\
+*.shar.gz*) \
+  eval GZIP= gzip --best -dc logrotate-app.shar.gz | unshar ;;\
+*.zip*) \
+  unzip logrotate-app.zip ;;\
+*.tar.zst*) \
+  zstd -dc logrotate-app.tar.zst | ${TAR-tar} xf - ;;\
+esac
+chmod -R a-w logrotate-app
+chmod u+w logrotate-app
+mkdir logrotate-app/_build logrotate-app/_build/sub logrotate-app/_inst
+chmod a-w logrotate-app
+test -d logrotate-app/_build || exit 0; \
+dc_install_base=`CDPATH="${ZSH_VERSION+.}:" && cd logrotate-app/_inst && pwd | sed -e 's,^[^:\\/]:[\\/],/,'` \
+  && dc_destdir="${TMPDIR-/tmp}/am-dc-$$/" \
+  && am__cwd=`pwd` \
+  && CDPATH="${ZSH_VERSION+.}:" && cd logrotate-app/_build/sub \
+  && ../../configure \
+     \
+    --enable-werror --disable-silent-rules \
+    --srcdir=../.. --prefix="$dc_install_base" \
+  && make  \
+  && make  dvi \
+  && make  check \
+  && make  install \
+  && make  installcheck \
+  && make  uninstall \
+  && make  distuninstallcheck_dir="$dc_install_base" \
+        distuninstallcheck \
+  && chmod -R a-w "$dc_install_base" \
+  && ({ \
+       (cd ../.. && umask 077 && mkdir "$dc_destdir") \
+       && make  DESTDIR="$dc_destdir" install \
+       && make  DESTDIR="$dc_destdir" uninstall \
+       && make  DESTDIR="$dc_destdir" \
+            distuninstallcheck_dir="$dc_destdir" distuninstallcheck; \
+      } || { rm -rf "$dc_destdir"; exit 1; }) \
+  && rm -rf "$dc_destdir" \
+  && make  dist \
+  && rm -rf logrotate-app.tar.gz logrotate-app.tar.xz \
+  && make  distcleancheck \
+  && cd "$am__cwd" \
+  || exit 1
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for gcc... (cached) gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C11 features... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for struct stat.st_blksize... yes
+checking for struct stat.st_blocks... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for uint32_t... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for libgen.h... yes
+checking for poptParseArgvString in -lpopt... yes
+checking for getfscreatecon_raw in -lselinux... yes
+checking for acl_get_file in -lacl... yes
+checking for asprintf... yes
+checking for futimens... yes
+checking for madvise... yes
+checking for reallocarray... yes
+checking for secure_getenv... yes
+checking for strndup... yes
+checking for utimensat... yes
+checking for vsyslog... yes
+checking for struct stat.st_atim... yes
+checking for struct stat.st_mtim... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating test/Makefile
+config.status: creating logrotate.8
+config.status: creating logrotate.spec
+config.status: creating config.h
+config.status: executing depfiles commands
+
+  logrotate app
+
+  SELinux support:        yes
+  ACL support:            yes
+  default mail command:   /bin/mail
+  compress command:       /bin/gzip
+  uncompress command:     /bin/gunzip
+  compress extension:     .gz
+  statefile path:         /var/lib/logrotate.status
+
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+make  all-recursive
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+Making all in .
+make[3]: Entering directory '/app/logrotate-app/_build/sub'
+gcc -DHAVE_CONFIG_H -I. -I../..  -include config.h  -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -Werror -g -O2 -MT config.o -MD -MP -MF .deps/config.Tpo -c -o config.o ../../config.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -include config.h  -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -Werror -g -O2 -MT log.o -MD -MP -MF .deps/log.Tpo -c -o log.o ../../log.c
+gcc -DHAVE_CONFIG_H -I. -I../..  -include config.h  -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -Werror -g -O2 -MT logrotate.o -MD -MP -MF .deps/logrotate.Tpo -c -o logrotate.o ../../logrotate.c
+mv -f .deps/log.Tpo .deps/log.Po
+mv -f .deps/config.Tpo .deps/config.Po
+mv -f .deps/logrotate.Tpo .deps/logrotate.Po
+gcc -Wall -Wconversion -Wdeclaration-after-statement -Wextra -Wmissing-format-attribute -Wmissing-noreturn -Wmissing-prototypes -Wpointer-arith -Wshadow -Wstrict-prototypes -Wundef -Wunused -Wwrite-strings -Werror -g -O2   -o logrotate config.o log.o logrotate.o  -lacl -lselinux -lpopt
+make[3]: Leaving directory '/app/logrotate-app/_build/sub'
+Making all in test
+make[3]: Entering directory '/app/logrotate-app/_build/sub/test'
+test ../../.. = .. || ln -fs ../../../test/* .
+make[3]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+Making dvi in .
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+make[2]: Nothing to be done for 'dvi-am'.
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+Making dvi in test
+make[2]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[2]: Nothing to be done for 'dvi'.
+make[2]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+make  check-recursive
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+Making check in .
+make[3]: Entering directory '/app/logrotate-app/_build/sub'
+make[3]: Leaving directory '/app/logrotate-app/_build/sub'
+Making check in test
+make[3]: Entering directory '/app/logrotate-app/_build/sub/test'
+make  check-TESTS
+make[4]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[5]: Entering directory '/app/logrotate-app/_build/sub/test'
+PASS: test-0002.sh
+PASS: test-0009.sh
+PASS: test-0008.sh
+PASS: test-0005.sh
+PASS: test-0007.sh
+PASS: test-0006.sh
+PASS: test-0004.sh
+PASS: test-0001.sh
+PASS: test-0012.sh
+PASS: test-0011.sh
+PASS: test-0003.sh
+PASS: test-0010.sh
+PASS: test-0014.sh
+PASS: test-0017.sh
+PASS: test-0016.sh
+PASS: test-0013.sh
+PASS: test-0020.sh
+PASS: test-0019.sh
+PASS: test-0022.sh
+PASS: test-0018.sh
+PASS: test-0015.sh
+PASS: test-0021.sh
+PASS: test-0023.sh
+PASS: test-0025.sh
+PASS: test-0024.sh
+PASS: test-0027.sh
+PASS: test-0028.sh
+PASS: test-0026.sh
+PASS: test-0029.sh
+PASS: test-0030.sh
+PASS: test-0034.sh
+PASS: test-0031.sh
+PASS: test-0032.sh
+PASS: test-0036.sh
+PASS: test-0033.sh
+PASS: test-0040.sh
+PASS: test-0035.sh
+PASS: test-0037.sh
+PASS: test-0038.sh
+SKIP: test-0047.sh
+PASS: test-0039.sh
+PASS: test-0041.sh
+PASS: test-0045.sh
+PASS: test-0042.sh
+PASS: test-0043.sh
+PASS: test-0046.sh
+PASS: test-0044.sh
+PASS: test-0051.sh
+PASS: test-0049.sh
+PASS: test-0048.sh
+PASS: test-0053.sh
+PASS: test-0050.sh
+PASS: test-0052.sh
+PASS: test-0059.sh
+PASS: test-0057.sh
+PASS: test-0058.sh
+PASS: test-0060.sh
+PASS: test-0061.sh
+PASS: test-0065.sh
+PASS: test-0066.sh
+PASS: test-0064.sh
+PASS: test-0062.sh
+PASS: test-0067.sh
+PASS: test-0055.sh
+PASS: test-0056.sh
+PASS: test-0054.sh
+PASS: test-0063.sh
+PASS: test-0069.sh
+PASS: test-0071.sh
+PASS: test-0074.sh
+PASS: test-0075.sh
+PASS: test-0073.sh
+PASS: test-0070.sh
+PASS: test-0077.sh
+PASS: test-0076.sh
+PASS: test-0078.sh
+PASS: test-0072.sh
+PASS: test-0081.sh
+PASS: test-0079.sh
+PASS: test-0083.sh
+PASS: test-0080.sh
+PASS: test-0084.sh
+PASS: test-0089.sh
+PASS: test-0088.sh
+PASS: test-0086.sh
+PASS: test-0090.sh
+PASS: test-0091.sh
+PASS: test-0094.sh
+PASS: test-0100.sh
+PASS: test-0102.sh
+PASS: test-0101.sh
+PASS: test-0103.sh
+PASS: test-0085.sh
+PASS: test-0104.sh
+PASS: test-0105.sh
+PASS: test-0106.sh
+PASS: test-0107.sh
+PASS: test-0108.sh
+PASS: test-0110.sh
+PASS: test-0111.sh
+PASS: test-0112.sh
+PASS: test-0113.sh
+PASS: test-0082.sh
+PASS: test-0109.sh
+PASS: test-0093.sh
+PASS: test-0068.sh
+PASS: test-0087.sh
+PASS: test-0092.sh
+============================================================================
+Testsuite summary for logrotate app
+============================================================================
+# TOTAL: 108
+# PASS:  107
+# SKIP:  1
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[5]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[4]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[3]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+make  install-recursive
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+Making install in .
+make[3]: Entering directory '/app/logrotate-app/_build/sub'
+make[4]: Entering directory '/app/logrotate-app/_build/sub'
+ /usr/bin/mkdir -p '/app/logrotate-app/_inst/share/man/man5'
+ /usr/bin/mkdir -p '/app/logrotate-app/_inst/share/man/man8'
+ /usr/bin/install -c -m 644 ../../logrotate.conf.5 '/app/logrotate-app/_inst/share/man/man5'
+ /usr/bin/mkdir -p '/app/logrotate-app/_inst/sbin'
+ /usr/bin/install -c -m 644 logrotate.8 '/app/logrotate-app/_inst/share/man/man8'
+  /usr/bin/install -c logrotate '/app/logrotate-app/_inst/sbin'
+make[4]: Leaving directory '/app/logrotate-app/_build/sub'
+make[3]: Leaving directory '/app/logrotate-app/_build/sub'
+Making install in test
+make[3]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[4]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[3]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+Making installcheck in .
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+bad=0; pid=$$; list="logrotate"; for p in $list; do \
+  case '  ' in \
+   *" $p "* | *" ../../$p "*) continue;; \
+  esac; \
+  f=`echo "$p" | \
+     sed 's,^.*/,,;s/$//;s,x,x,;s/$//'`; \
+  for opt in --help --version; do \
+    if "/app/logrotate-app/_inst/sbin/$f" $opt >c${pid}_.out \
+         2>c${pid}_.err </dev/null \
+	 && test -n "`cat c${pid}_.out`" \
+	 && test -z "`cat c${pid}_.err`"; then :; \
+    else echo "$f does not support $opt" 1>&2; bad=1; fi; \
+  done; \
+done; rm -f c${pid}_.???; exit $bad
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+Making installcheck in test
+make[2]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[2]: Nothing to be done for 'installcheck'.
+make[2]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+Making uninstall in .
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+ ( cd '/app/logrotate-app/_inst/share/man/man8' && rm -f logrotate.8 )
+ ( cd '/app/logrotate-app/_inst/sbin' && rm -f logrotate )
+ ( cd '/app/logrotate-app/_inst/share/man/man5' && rm -f logrotate.conf.5 )
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+Making uninstall in test
+make[2]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[2]: Nothing to be done for 'uninstall'.
+make[2]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+make  install-recursive
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+Making install in .
+make[3]: Entering directory '/app/logrotate-app/_build/sub'
+make[4]: Entering directory '/app/logrotate-app/_build/sub'
+ /usr/bin/mkdir -p '/tmp/am-dc-10457//app/logrotate-app/_inst/share/man/man5'
+ /usr/bin/mkdir -p '/tmp/am-dc-10457//app/logrotate-app/_inst/share/man/man8'
+ /usr/bin/mkdir -p '/tmp/am-dc-10457//app/logrotate-app/_inst/sbin'
+  /usr/bin/install -c logrotate '/tmp/am-dc-10457//app/logrotate-app/_inst/sbin'
+ /usr/bin/install -c -m 644 logrotate.8 '/tmp/am-dc-10457//app/logrotate-app/_inst/share/man/man8'
+ /usr/bin/install -c -m 644 ../../logrotate.conf.5 '/tmp/am-dc-10457//app/logrotate-app/_inst/share/man/man5'
+make[4]: Leaving directory '/app/logrotate-app/_build/sub'
+make[3]: Leaving directory '/app/logrotate-app/_build/sub'
+Making install in test
+make[3]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[4]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[3]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+Making uninstall in .
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+ ( cd '/tmp/am-dc-10457//app/logrotate-app/_inst/sbin' && rm -f logrotate )
+ ( cd '/tmp/am-dc-10457//app/logrotate-app/_inst/share/man/man8' && rm -f logrotate.8 )
+ ( cd '/tmp/am-dc-10457//app/logrotate-app/_inst/share/man/man5' && rm -f logrotate.conf.5 )
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+Making uninstall in test
+make[2]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[2]: Nothing to be done for 'uninstall'.
+make[2]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+make  dist-xz dist-gzip am__post_remove_distdir='@:'
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+make  distdir-am
+make[3]: Entering directory '/app/logrotate-app/_build/sub'
+if test -d "logrotate-app"; then find "logrotate-app" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "logrotate-app" || { sleep 5 && rm -rf "logrotate-app"; }; else :; fi
+test -d "logrotate-app" || mkdir "logrotate-app"
+ (cd test && make  top_distdir=../logrotate-app distdir=../logrotate-app/test \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[4]: Entering directory '/app/logrotate-app/_build/sub/test'
+make  distdir-am
+make[5]: Entering directory '/app/logrotate-app/_build/sub/test'
+make[5]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make[4]: Leaving directory '/app/logrotate-app/_build/sub/test'
+make  \
+  top_distdir="logrotate-app" distdir="logrotate-app" \
+  dist-hook
+make[4]: Entering directory '/app/logrotate-app/_build/sub'
+echo app > logrotate-app/.tarball-version
+make[4]: Leaving directory '/app/logrotate-app/_build/sub'
+test -n "" \
+|| find "logrotate-app" -type d ! -perm -755 \
+	-exec chmod u+rwx,go+rx {} \; -o \
+  ! -type d ! -perm -444 -links 1 -exec chmod a+r {} \; -o \
+  ! -type d ! -perm -400 -exec chmod a+r {} \; -o \
+  ! -type d ! -perm -444 -exec /bin/bash /app/logrotate-app/install-sh -c -m a+r {} {} \; \
+|| chmod -R a+r "logrotate-app"
+make[3]: Leaving directory '/app/logrotate-app/_build/sub'
+tardir=logrotate-app && ${TAR-tar} chof - "$tardir" | XZ_OPT=${XZ_OPT--e} xz -c >logrotate-app.tar.xz
+tardir=logrotate-app && ${TAR-tar} chof - "$tardir" | eval GZIP= gzip --best -c >logrotate-app.tar.gz
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+if test -d "logrotate-app"; then find "logrotate-app" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "logrotate-app" || { sleep 5 && rm -rf "logrotate-app"; }; else :; fi
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+make[1]: Entering directory '/app/logrotate-app/_build/sub'
+Making distclean in .
+make[2]: Entering directory '/app/logrotate-app/_build/sub'
+test -z "logrotate" || rm -f logrotate
+rm -f *.o
+rm -f *.tab.c
+test -z "logrotate.8 logrotate.spec" || rm -f logrotate.8 logrotate.spec
+rm -f config.h stamp-h1
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+test . = "../.." || test -z "" || rm -f
+rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+make[2]: Leaving directory '/app/logrotate-app/_build/sub'
+Making distclean in test
+make[2]: Entering directory '/app/logrotate-app/_build/sub/test'
+test -z "test-0001.sh.log test-0002.sh.log test-0003.sh.log test-0004.sh.log test-0005.sh.log test-0006.sh.log test-0007.sh.log test-0008.sh.log test-0009.sh.log test-0010.sh.log test-0011.sh.log test-0012.sh.log test-0013.sh.log test-0014.sh.log test-0015.sh.log test-0016.sh.log test-0017.sh.log test-0018.sh.log test-0019.sh.log test-0020.sh.log test-0021.sh.log test-0022.sh.log test-0023.sh.log test-0024.sh.log test-0025.sh.log test-0026.sh.log test-0027.sh.log test-0028.sh.log test-0029.sh.log test-0030.sh.log test-0031.sh.log test-0032.sh.log test-0033.sh.log test-0034.sh.log test-0035.sh.log test-0036.sh.log test-0037.sh.log test-0038.sh.log test-0039.sh.log test-0040.sh.log test-0041.sh.log test-0042.sh.log test-0043.sh.log test-0044.sh.log test-0045.sh.log test-0046.sh.log test-0047.sh.log test-0048.sh.log test-0049.sh.log test-0050.sh.log test-0051.sh.log test-0052.sh.log test-0053.sh.log test-0054.sh.log test-0055.sh.log test-0056.sh.log test-0057.sh.log test-0058.sh.log test-0059.sh.log test-0060.sh.log test-0061.sh.log test-0062.sh.log test-0063.sh.log test-0064.sh.log test-0065.sh.log test-0066.sh.log test-0067.sh.log test-0068.sh.log test-0069.sh.log test-0070.sh.log test-0071.sh.log test-0072.sh.log test-0073.sh.log test-0074.sh.log test-0075.sh.log test-0076.sh.log test-0077.sh.log test-0078.sh.log test-0079.sh.log test-0080.sh.log test-0081.sh.log test-0082.sh.log test-0083.sh.log test-0084.sh.log test-0085.sh.log test-0086.sh.log test-0087.sh.log test-0088.sh.log test-0089.sh.log test-0090.sh.log test-0091.sh.log test-0092.sh.log test-0093.sh.log test-0094.sh.log test-0100.sh.log test-0101.sh.log test-0102.sh.log test-0103.sh.log test-0104.sh.log test-0105.sh.log test-0106.sh.log test-0107.sh.log test-0108.sh.log test-0109.sh.log test-0110.sh.log test-0111.sh.log test-0112.sh.log test-0113.sh.log" || rm -f test-0001.sh.log test-0002.sh.log test-0003.sh.log test-0004.sh.log test-0005.sh.log test-0006.sh.log test-0007.sh.log test-0008.sh.log test-0009.sh.log test-0010.sh.log test-0011.sh.log test-0012.sh.log test-0013.sh.log test-0014.sh.log test-0015.sh.log test-0016.sh.log test-0017.sh.log test-0018.sh.log test-0019.sh.log test-0020.sh.log test-0021.sh.log test-0022.sh.log test-0023.sh.log test-0024.sh.log test-0025.sh.log test-0026.sh.log test-0027.sh.log test-0028.sh.log test-0029.sh.log test-0030.sh.log test-0031.sh.log test-0032.sh.log test-0033.sh.log test-0034.sh.log test-0035.sh.log test-0036.sh.log test-0037.sh.log test-0038.sh.log test-0039.sh.log test-0040.sh.log test-0041.sh.log test-0042.sh.log test-0043.sh.log test-0044.sh.log test-0045.sh.log test-0046.sh.log test-0047.sh.log test-0048.sh.log test-0049.sh.log test-0050.sh.log test-0051.sh.log test-0052.sh.log test-0053.sh.log test-0054.sh.log test-0055.sh.log test-0056.sh.log test-0057.sh.log test-0058.sh.log test-0059.sh.log test-0060.sh.log test-0061.sh.log test-0062.sh.log test-0063.sh.log test-0064.sh.log test-0065.sh.log test-0066.sh.log test-0067.sh.log test-0068.sh.log test-0069.sh.log test-0070.sh.log test-0071.sh.log test-0072.sh.log test-0073.sh.log test-0074.sh.log test-0075.sh.log test-0076.sh.log test-0077.sh.log test-0078.sh.log test-0079.sh.log test-0080.sh.log test-0081.sh.log test-0082.sh.log test-0083.sh.log test-0084.sh.log test-0085.sh.log test-0086.sh.log test-0087.sh.log test-0088.sh.log test-0089.sh.log test-0090.sh.log test-0091.sh.log test-0092.sh.log test-0093.sh.log test-0094.sh.log test-0100.sh.log test-0101.sh.log test-0102.sh.log test-0103.sh.log test-0104.sh.log test-0105.sh.log test-0106.sh.log test-0107.sh.log test-0108.sh.log test-0109.sh.log test-0110.sh.log test-0111.sh.log test-0112.sh.log test-0113.sh.log
+test -z "" || rm -f
+rm -rf test-????/
+test . = "../../../test" || test -z "" || rm -f
+test -z "test.ACL test.SELINUX test.example" || rm -f test.ACL test.SELINUX test.example
+test -z "test-0001.sh.trs test-0002.sh.trs test-0003.sh.trs test-0004.sh.trs test-0005.sh.trs test-0006.sh.trs test-0007.sh.trs test-0008.sh.trs test-0009.sh.trs test-0010.sh.trs test-0011.sh.trs test-0012.sh.trs test-0013.sh.trs test-0014.sh.trs test-0015.sh.trs test-0016.sh.trs test-0017.sh.trs test-0018.sh.trs test-0019.sh.trs test-0020.sh.trs test-0021.sh.trs test-0022.sh.trs test-0023.sh.trs test-0024.sh.trs test-0025.sh.trs test-0026.sh.trs test-0027.sh.trs test-0028.sh.trs test-0029.sh.trs test-0030.sh.trs test-0031.sh.trs test-0032.sh.trs test-0033.sh.trs test-0034.sh.trs test-0035.sh.trs test-0036.sh.trs test-0037.sh.trs test-0038.sh.trs test-0039.sh.trs test-0040.sh.trs test-0041.sh.trs test-0042.sh.trs test-0043.sh.trs test-0044.sh.trs test-0045.sh.trs test-0046.sh.trs test-0047.sh.trs test-0048.sh.trs test-0049.sh.trs test-0050.sh.trs test-0051.sh.trs test-0052.sh.trs test-0053.sh.trs test-0054.sh.trs test-0055.sh.trs test-0056.sh.trs test-0057.sh.trs test-0058.sh.trs test-0059.sh.trs test-0060.sh.trs test-0061.sh.trs test-0062.sh.trs test-0063.sh.trs test-0064.sh.trs test-0065.sh.trs test-0066.sh.trs test-0067.sh.trs test-0068.sh.trs test-0069.sh.trs test-0070.sh.trs test-0071.sh.trs test-0072.sh.trs test-0073.sh.trs test-0074.sh.trs test-0075.sh.trs test-0076.sh.trs test-0077.sh.trs test-0078.sh.trs test-0079.sh.trs test-0080.sh.trs test-0081.sh.trs test-0082.sh.trs test-0083.sh.trs test-0084.sh.trs test-0085.sh.trs test-0086.sh.trs test-0087.sh.trs test-0088.sh.trs test-0089.sh.trs test-0090.sh.trs test-0091.sh.trs test-0092.sh.trs test-0093.sh.trs test-0094.sh.trs test-0100.sh.trs test-0101.sh.trs test-0102.sh.trs test-0103.sh.trs test-0104.sh.trs test-0105.sh.trs test-0106.sh.trs test-0107.sh.trs test-0108.sh.trs test-0109.sh.trs test-0110.sh.trs test-0111.sh.trs test-0112.sh.trs test-0113.sh.trs" || rm -f test-0001.sh.trs test-0002.sh.trs test-0003.sh.trs test-0004.sh.trs test-0005.sh.trs test-0006.sh.trs test-0007.sh.trs test-0008.sh.trs test-0009.sh.trs test-0010.sh.trs test-0011.sh.trs test-0012.sh.trs test-0013.sh.trs test-0014.sh.trs test-0015.sh.trs test-0016.sh.trs test-0017.sh.trs test-0018.sh.trs test-0019.sh.trs test-0020.sh.trs test-0021.sh.trs test-0022.sh.trs test-0023.sh.trs test-0024.sh.trs test-0025.sh.trs test-0026.sh.trs test-0027.sh.trs test-0028.sh.trs test-0029.sh.trs test-0030.sh.trs test-0031.sh.trs test-0032.sh.trs test-0033.sh.trs test-0034.sh.trs test-0035.sh.trs test-0036.sh.trs test-0037.sh.trs test-0038.sh.trs test-0039.sh.trs test-0040.sh.trs test-0041.sh.trs test-0042.sh.trs test-0043.sh.trs test-0044.sh.trs test-0045.sh.trs test-0046.sh.trs test-0047.sh.trs test-0048.sh.trs test-0049.sh.trs test-0050.sh.trs test-0051.sh.trs test-0052.sh.trs test-0053.sh.trs test-0054.sh.trs test-0055.sh.trs test-0056.sh.trs test-0057.sh.trs test-0058.sh.trs test-0059.sh.trs test-0060.sh.trs test-0061.sh.trs test-0062.sh.trs test-0063.sh.trs test-0064.sh.trs test-0065.sh.trs test-0066.sh.trs test-0067.sh.trs test-0068.sh.trs test-0069.sh.trs test-0070.sh.trs test-0071.sh.trs test-0072.sh.trs test-0073.sh.trs test-0074.sh.trs test-0075.sh.trs test-0076.sh.trs test-0077.sh.trs test-0078.sh.trs test-0079.sh.trs test-0080.sh.trs test-0081.sh.trs test-0082.sh.trs test-0083.sh.trs test-0084.sh.trs test-0085.sh.trs test-0086.sh.trs test-0087.sh.trs test-0088.sh.trs test-0089.sh.trs test-0090.sh.trs test-0091.sh.trs test-0092.sh.trs test-0093.sh.trs test-0094.sh.trs test-0100.sh.trs test-0101.sh.trs test-0102.sh.trs test-0103.sh.trs test-0104.sh.trs test-0105.sh.trs test-0106.sh.trs test-0107.sh.trs test-0108.sh.trs test-0109.sh.trs test-0110.sh.trs test-0111.sh.trs test-0112.sh.trs test-0113.sh.trs
+test -z "test-suite.log" || rm -f test-suite.log
+rm -f Makefile
+make[2]: Leaving directory '/app/logrotate-app/_build/sub/test'
+rm -f config.status config.cache config.log configure.lineno config.status.lineno
+rm -f ./.deps/config.Po
+rm -f ./.deps/log.Po
+rm -f ./.deps/logrotate.Po
+rm -f Makefile
+make[1]: Leaving directory '/app/logrotate-app/_build/sub'
+if test -d "logrotate-app"; then find "logrotate-app" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "logrotate-app" || { sleep 5 && rm -rf "logrotate-app"; }; else :; fi
+===============================================
+logrotate-app archives ready for distribution:
+logrotate-app.tar.gz
+logrotate-app.tar.xz
+===============================================
+make  dist-xz dist-gzip am__post_remove_distdir='@:'
+make[1]: Entering directory '/app'
+make  distdir-am
+make[2]: Entering directory '/app'
+if test -d "logrotate-app"; then find "logrotate-app" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "logrotate-app" || { sleep 5 && rm -rf "logrotate-app"; }; else :; fi
+test -d "logrotate-app" || mkdir "logrotate-app"
+ (cd test && make  top_distdir=../logrotate-app distdir=../logrotate-app/test \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/test'
+make  distdir-am
+make[4]: Entering directory '/app/test'
+make[4]: Leaving directory '/app/test'
+make[3]: Leaving directory '/app/test'
+make  \
+  top_distdir="logrotate-app" distdir="logrotate-app" \
+  dist-hook
+make[3]: Entering directory '/app'
+echo app > logrotate-app/.tarball-version
+make[3]: Leaving directory '/app'
+test -n "" \
+|| find "logrotate-app" -type d ! -perm -755 \
+	-exec chmod u+rwx,go+rx {} \; -o \
+  ! -type d ! -perm -444 -links 1 -exec chmod a+r {} \; -o \
+  ! -type d ! -perm -400 -exec chmod a+r {} \; -o \
+  ! -type d ! -perm -444 -exec /bin/bash /app/install-sh -c -m a+r {} {} \; \
+|| chmod -R a+r "logrotate-app"
+make[2]: Leaving directory '/app'
+tardir=logrotate-app && ${TAR-tar} chof - "$tardir" | XZ_OPT=${XZ_OPT--e} xz -c >logrotate-app.tar.xz
+tardir=logrotate-app && ${TAR-tar} chof - "$tardir" | eval GZIP= gzip --best -c >logrotate-app.tar.gz
+make[1]: Leaving directory '/app'
+if test -d "logrotate-app"; then find "logrotate-app" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "logrotate-app" || { sleep 5 && rm -rf "logrotate-app"; }; else :; fi
+rpmbuild --nodeps -ts logrotate-app.tar.gz
+Wrote: /root/rpmbuild/SRPMS/logrotate-app-1.src.rpm
+rpmbuild --nodeps -ta logrotate-app.tar.gz
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.QXttKI
++ umask 022
++ cd /root/rpmbuild/BUILD
++ cd /root/rpmbuild/BUILD
++ rm -rf logrotate-app
++ /bin/tar -xof -
++ /bin/gzip -dc /app/logrotate-app.tar.gz
++ STATUS=0
++ [ 0 -ne 0 ]
++ cd logrotate-app
++ /bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ RPM_EC=0
++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.XACIBF
++ umask 022
++ cd /root/rpmbuild/BUILD
++ cd logrotate-app
++ CFLAGS=-O2 -g
++ export CFLAGS
++ CXXFLAGS=-O2 -g
++ export CXXFLAGS
++ FFLAGS=-O2 -g
++ export FFLAGS
++ FCFLAGS=-O2 -g
++ export FCFLAGS
++ LDFLAGS=
++ export LDFLAGS
++ ./configure --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/usr/com --mandir=/usr/share/man --infodir=/usr/share/info --with-selinux
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for x86_64-pc-linux-gnu-gcc... no
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... none
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for x86_64-pc-linux-gnu-gcc... gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C11 features... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) none
+checking for struct stat.st_blksize... yes
+checking for struct stat.st_blocks... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for uint32_t... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for libgen.h... yes
+checking for poptParseArgvString in -lpopt... yes
+checking for getfscreatecon_raw in -lselinux... yes
+checking for acl_get_file in -lacl... yes
+checking for asprintf... yes
+checking for futimens... yes
+checking for madvise... yes
+checking for reallocarray... yes
+checking for secure_getenv... yes
+checking for strndup... yes
+checking for utimensat... yes
+checking for vsyslog... yes
+checking for struct stat.st_atim... yes
+checking for struct stat.st_mtim... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating test/Makefile
+config.status: creating logrotate.8
+config.status: creating logrotate.spec
+config.status: creating config.h
+config.status: executing depfiles commands
+
+  logrotate app
+
+  SELinux support:        yes
+  ACL support:            yes
+  default mail command:   /bin/mail
+  compress command:       /bin/gzip
+  uncompress command:     /bin/gunzip
+  compress extension:     .gz
+  statefile path:         /var/lib/logrotate.status
+
++ make -j64 RPM_OPT_FLAGS=-O2 -g
+make[1]: Entering directory '/root/rpmbuild/BUILD/logrotate-app'
+make  all-recursive
+make[2]: Entering directory '/root/rpmbuild/BUILD/logrotate-app'
+Making all in .
+make[3]: Entering directory '/root/rpmbuild/BUILD/logrotate-app'
+  CC       config.o
+  CC       log.o
+  CC       logrotate.o
+  CCLD     logrotate
+make[3]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app'
+Making all in test
+make[3]: Entering directory '/root/rpmbuild/BUILD/logrotate-app/test'
+test .. = .. || ln -fs ../test/* .
+make[3]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app/test'
+make[2]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app'
+make[1]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app'
++ RPM_EC=0
++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.3DVjKC
++ umask 022
++ cd /root/rpmbuild/BUILD
++ /bin/rm -rf /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64
++ /bin/mkdir -p /root/rpmbuild/BUILDROOT
++ /bin/mkdir /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64
++ cd logrotate-app
++ rm -rf /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64
++ make install DESTDIR=/root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64
+make[1]: Entering directory '/root/rpmbuild/BUILD/logrotate-app'
+make  install-recursive
+make[2]: Entering directory '/root/rpmbuild/BUILD/logrotate-app'
+Making install in .
+make[3]: Entering directory '/root/rpmbuild/BUILD/logrotate-app'
+make[4]: Entering directory '/root/rpmbuild/BUILD/logrotate-app'
+ /usr/bin/mkdir -p '/root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/usr/sbin'
+  /usr/bin/install -c logrotate '/root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/usr/sbin'
+ /usr/bin/mkdir -p '/root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/usr/share/man/man5'
+ /usr/bin/install -c -m 644 logrotate.conf.5 '/root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/usr/share/man/man5'
+ /usr/bin/mkdir -p '/root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/usr/share/man/man8'
+ /usr/bin/install -c -m 644 logrotate.8 '/root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/usr/share/man/man8'
+make[4]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app'
+make[3]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app'
+Making install in test
+make[3]: Entering directory '/root/rpmbuild/BUILD/logrotate-app/test'
+make[4]: Entering directory '/root/rpmbuild/BUILD/logrotate-app/test'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app/test'
+make[3]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app/test'
+make[2]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app'
+make[1]: Leaving directory '/root/rpmbuild/BUILD/logrotate-app'
++ mkdir -p /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/etc/logrotate.d
++ mkdir -p /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/etc/cron.daily
++ mkdir -p /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/var/lib
++ install -p -m 644 examples/logrotate.conf /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/etc/logrotate.conf
++ install -p -m 644 examples/btmp /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/etc/logrotate.d/btmp
++ install -p -m 644 examples/wtmp /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/etc/logrotate.d/wtmp
++ install -p -m 755 examples/logrotate.cron /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/etc/cron.daily/logrotate
++ /usr/lib/rpm/brp-compress /usr
++ /usr/lib/rpm/brp-elfperms
++ /usr/lib/rpm/brp-strip /usr/bin/strip
+ARG0: 1: file: not found
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
+ARG0: 1: file: not found
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
+find: 'file': No such file or directory
+find: 'file': No such file or directory
++ /usr/lib/rpm/brp-remove-la-files
+Processing files: logrotate-app-1.x86_64
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.xbdhK0
++ umask 022
++ cd /root/rpmbuild/BUILD
++ cd logrotate-app
++ LICENSEDIR=/root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/usr/share/licenses/logrotate-app
++ export LC_ALL=C
++ export LICENSEDIR
++ /bin/mkdir -p /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/usr/share/licenses/logrotate-app
++ cp -pr COPYING /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64/usr/share/licenses/logrotate-app
++ RPM_EC=0
++ jobs -p
++ exit 0
+Provides: config(logrotate) = app-1 logrotate = app-1 logrotate(x86-64) = app-1
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: /bin/sh libacl.so.1()(64bit) libacl.so.1(ACL_1.0)(64bit) libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.17)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.26)(64bit) libc.so.6(GLIBC_2.27)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.3.4)(64bit) libc.so.6(GLIBC_2.33)(64bit) libc.so.6(GLIBC_2.34)(64bit) libc.so.6(GLIBC_2.4)(64bit) libc.so.6(GLIBC_2.6)(64bit) libc.so.6(GLIBC_2.7)(64bit) libc.so.6(GLIBC_2.8)(64bit) libpopt.so.0()(64bit) libpopt.so.0(LIBPOPT_0)(64bit) libselinux.so.1()(64bit) libselinux.so.1(LIBSELINUX_1.0)(64bit) rtld(GNU_HASH)
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64
+Wrote: /root/rpmbuild/SRPMS/logrotate-app-1.src.rpm
+Wrote: /root/rpmbuild/RPMS/x86_64/logrotate-app-1.x86_64.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.4QVxTU
++ umask 022
++ cd /root/rpmbuild/BUILD
++ cd logrotate-app
++ rm -rf /root/rpmbuild/BUILDROOT/logrotate-app-1.x86_64
++ RPM_EC=0
++ jobs -p
++ exit 0

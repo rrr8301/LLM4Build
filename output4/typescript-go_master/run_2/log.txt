@@ -1,0 +1,66 @@
+Using /app/Herebyfile.mjs to run build
+Starting lib
+Starting tsgo:build
+[22:08:36.105] [0] $ go build '-tags=noembed,release' -o ./built/local/ ./cmd/tsgo
+[22:08:36.118] [0] ✘ Command failed with ENOENT: go build '-tags=noembed,release' -o ./built/local/ ./cmd/tsgo
+[22:08:36.118] [0] ✘ spawn go ENOENT
+[22:08:36.119] [0] ✘ (done in 14ms)
+Error in tsgo:build in 16ms
+ExecaError: Command failed with ENOENT: go build '-tags=noembed,release' -o ./built/local/ ./cmd/tsgo
+spawn go ENOENT
+Completed build with errors in 19ms
+Failed tasks: tsgo:build
+Using /app/Herebyfile.mjs to run test
+Starting test
+Warning: TypeScript submodule is not cloned; some tests may be skipped.
+[22:08:36.739] [0] $ go test ./...
+[22:08:36.751] [0] ✘ Command failed with ENOENT: go test ./...
+[22:08:36.751] [0] ✘ spawn go ENOENT
+[22:08:36.752] [0] ✘ (done in 12ms)
+Error in test in 17ms
+ExecaError: Command failed with ENOENT: go test ./...
+spawn go ENOENT
+Completed test with errors in 17ms
+Failed tasks: test
+Using /app/Herebyfile.mjs to run test:benchmarks
+Starting test:benchmarks
+Warning: TypeScript submodule is not cloned; some tests may be skipped.
+[22:08:37.352] [0] $ go test '-run=-' '-bench=.' '-benchtime=1x' ./...
+[22:08:37.364] [0] ✘ Command failed with ENOENT: go test '-run=-' '-bench=.' '-benchtime=1x' ./...
+[22:08:37.364] [0] ✘ spawn go ENOENT
+[22:08:37.365] [0] ✘ (done in 12ms)
+Error in test:benchmarks in 14ms
+ExecaError: Command failed with ENOENT: go test '-run=-' '-bench=.' '-benchtime=1x' ./...
+spawn go ENOENT
+Completed test:benchmarks with errors in 15ms
+Failed tasks: test:benchmarks
+Using /app/Herebyfile.mjs to run test:tools
+Starting test:tools
+[22:08:37.997] [0] $ go test ./...
+[22:08:38.008] [0] ✘ Command failed with ENOENT: go test ./...
+[22:08:38.008] [0] ✘ spawn go ENOENT
+[22:08:38.009] [0] ✘ (done in 11ms)
+Error in test:tools in 14ms
+ExecaError: Command failed with ENOENT: go test ./...
+spawn go ENOENT
+Completed test:tools with errors in 14ms
+Failed tasks: test:tools
+Using /app/Herebyfile.mjs to run test:api
+Starting lib
+Starting tsgo:build
+[22:08:38.658] [0] $ go build '-tags=noembed,release' -o ./built/local/ ./cmd/tsgo
+Starting build:api:test
+[22:08:38.667] [1] $ npm run -w '@typescript/api' 'build:test'
+[22:08:38.673] [0] ✘ Command failed with ENOENT: go build '-tags=noembed,release' -o ./built/local/ ./cmd/tsgo
+[22:08:38.673] [0] ✘ spawn go ENOENT
+[22:08:38.674] [0] ✘ (done in 15ms)
+Error in tsgo:build in 17ms
+ExecaError: Command failed with ENOENT: go build '-tags=noembed,release' -o ./built/local/ ./cmd/tsgo
+spawn go ENOENT
+
+> @typescript/api@1.0.0 build:test
+> tsc -b test
+
+[22:08:46.720] [1] ✔ (done in 8s)
+Completed test:api with errors in 8s
+Failed tasks: tsgo:build

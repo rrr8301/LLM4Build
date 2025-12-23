@@ -1,0 +1,2122 @@
+﻿2025-10-09T10:13:32.1964657Z Current runner version: '2.328.0'
+2025-10-09T10:13:32.1989218Z ##[group]Runner Image Provisioner
+2025-10-09T10:13:32.1990023Z Hosted Compute Agent
+2025-10-09T10:13:32.1990674Z Version: 20250912.392
+2025-10-09T10:13:32.1991337Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-09T10:13:32.1992024Z Build Date: 2025-09-12T15:23:14Z
+2025-10-09T10:13:32.1992680Z ##[endgroup]
+2025-10-09T10:13:32.1993257Z ##[group]Operating System
+2025-10-09T10:13:32.1993799Z Ubuntu
+2025-10-09T10:13:32.1994338Z 24.04.3
+2025-10-09T10:13:32.1994779Z LTS
+2025-10-09T10:13:32.1995595Z ##[endgroup]
+2025-10-09T10:13:32.1996119Z ##[group]Runner Image
+2025-10-09T10:13:32.1996736Z Image: ubuntu-24.04
+2025-10-09T10:13:32.1997257Z Version: 20250929.60.1
+2025-10-09T10:13:32.1998276Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-09T10:13:32.1999866Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-09T10:13:32.2000921Z ##[endgroup]
+2025-10-09T10:13:32.2001914Z ##[group]GITHUB_TOKEN Permissions
+2025-10-09T10:13:32.2003759Z Contents: read
+2025-10-09T10:13:32.2004319Z Metadata: read
+2025-10-09T10:13:32.2004823Z ##[endgroup]
+2025-10-09T10:13:32.2007010Z Secret source: None
+2025-10-09T10:13:32.2008094Z Prepare workflow directory
+2025-10-09T10:13:32.2327617Z Prepare all required actions
+2025-10-09T10:13:32.2366193Z Getting action download info
+2025-10-09T10:13:32.6894619Z Download action repository 'actions/checkout@v5' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-10-09T10:13:32.9439298Z Complete job name: cargo test
+2025-10-09T10:13:33.0092223Z ##[group]Run actions/checkout@v5
+2025-10-09T10:13:33.0093044Z with:
+2025-10-09T10:13:33.0093445Z   repository: TheAlgorithms/Rust
+2025-10-09T10:13:33.0094074Z   token: ***
+2025-10-09T10:13:33.0094442Z   ssh-strict: true
+2025-10-09T10:13:33.0094825Z   ssh-user: git
+2025-10-09T10:13:33.0095381Z   persist-credentials: true
+2025-10-09T10:13:33.0095833Z   clean: true
+2025-10-09T10:13:33.0096239Z   sparse-checkout-cone-mode: true
+2025-10-09T10:13:33.0096710Z   fetch-depth: 1
+2025-10-09T10:13:33.0097082Z   fetch-tags: false
+2025-10-09T10:13:33.0097473Z   show-progress: true
+2025-10-09T10:13:33.0097869Z   lfs: false
+2025-10-09T10:13:33.0098221Z   submodules: false
+2025-10-09T10:13:33.0098621Z   set-safe-directory: true
+2025-10-09T10:13:33.0099291Z ##[endgroup]
+2025-10-09T10:13:33.1055377Z Syncing repository: TheAlgorithms/Rust
+2025-10-09T10:13:33.1057238Z ##[group]Getting Git version info
+2025-10-09T10:13:33.1057876Z Working directory is '/home/runner/work/Rust/Rust'
+2025-10-09T10:13:33.1058835Z [command]/usr/bin/git version
+2025-10-09T10:13:33.1121704Z git version 2.51.0
+2025-10-09T10:13:33.1142672Z ##[endgroup]
+2025-10-09T10:13:33.1159240Z Temporarily overriding HOME='/home/runner/work/_temp/7b2e9b82-9ab9-4099-97a3-f04c64f3904e' before making global git config changes
+2025-10-09T10:13:33.1161636Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-09T10:13:33.1165069Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Rust/Rust
+2025-10-09T10:13:33.1210359Z Deleting the contents of '/home/runner/work/Rust/Rust'
+2025-10-09T10:13:33.1214960Z ##[group]Initializing the repository
+2025-10-09T10:13:33.1220431Z [command]/usr/bin/git init /home/runner/work/Rust/Rust
+2025-10-09T10:13:33.1354208Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-09T10:13:33.1355764Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-09T10:13:33.1356795Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-09T10:13:33.1357438Z hint:
+2025-10-09T10:13:33.1357934Z hint: 	git config --global init.defaultBranch <name>
+2025-10-09T10:13:33.1358499Z hint:
+2025-10-09T10:13:33.1359300Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-09T10:13:33.1360508Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-09T10:13:33.1361465Z hint:
+2025-10-09T10:13:33.1361858Z hint: 	git branch -m <name>
+2025-10-09T10:13:33.1362296Z hint:
+2025-10-09T10:13:33.1362874Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-09T10:13:33.1363787Z Initialized empty Git repository in /home/runner/work/Rust/Rust/.git/
+2025-10-09T10:13:33.1370784Z [command]/usr/bin/git remote add origin https://github.com/TheAlgorithms/Rust
+2025-10-09T10:13:33.1407354Z ##[endgroup]
+2025-10-09T10:13:33.1408056Z ##[group]Disabling automatic garbage collection
+2025-10-09T10:13:33.1410898Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-09T10:13:33.1437624Z ##[endgroup]
+2025-10-09T10:13:33.1438375Z ##[group]Setting up auth
+2025-10-09T10:13:33.1444065Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-09T10:13:33.1472964Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-09T10:13:33.1830151Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-09T10:13:33.1860541Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-09T10:13:33.2079578Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-09T10:13:33.2114021Z ##[endgroup]
+2025-10-09T10:13:33.2115862Z ##[group]Fetching the repository
+2025-10-09T10:13:33.2123998Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6aa6ce56058e48c24905f6eeadb926d7c2114c43:refs/remotes/pull/926/merge
+2025-10-09T10:13:33.7317719Z From https://github.com/TheAlgorithms/Rust
+2025-10-09T10:13:33.7319056Z  * [new ref]         6aa6ce56058e48c24905f6eeadb926d7c2114c43 -> pull/926/merge
+2025-10-09T10:13:33.7386541Z ##[endgroup]
+2025-10-09T10:13:33.7387596Z ##[group]Determining the checkout info
+2025-10-09T10:13:33.7388851Z ##[endgroup]
+2025-10-09T10:13:33.7393660Z [command]/usr/bin/git sparse-checkout disable
+2025-10-09T10:13:33.7434818Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-09T10:13:33.7459990Z ##[group]Checking out the ref
+2025-10-09T10:13:33.7463839Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/926/merge
+2025-10-09T10:13:33.7668193Z Note: switching to 'refs/remotes/pull/926/merge'.
+2025-10-09T10:13:33.7669130Z 
+2025-10-09T10:13:33.7669813Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-10-09T10:13:33.7671500Z changes and commit them, and you can discard any commits you make in this
+2025-10-09T10:13:33.7673378Z state without impacting any branches by switching back to a branch.
+2025-10-09T10:13:33.7674561Z 
+2025-10-09T10:13:33.7675600Z If you want to create a new branch to retain commits you create, you may
+2025-10-09T10:13:33.7677400Z do so (now or later) by using -c with the switch command. Example:
+2025-10-09T10:13:33.7678420Z 
+2025-10-09T10:13:33.7678841Z   git switch -c <new-branch-name>
+2025-10-09T10:13:33.7679576Z 
+2025-10-09T10:13:33.7679926Z Or undo this operation with:
+2025-10-09T10:13:33.7680439Z 
+2025-10-09T10:13:33.7680728Z   git switch -
+2025-10-09T10:13:33.7681099Z 
+2025-10-09T10:13:33.7681716Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-10-09T10:13:33.7682684Z 
+2025-10-09T10:13:33.7683814Z HEAD is now at 6aa6ce5 Merge f0f4b8f237dc3fe9d7408f39edb846a2b9539ab5 into ed7a42e71f3d1a877876c38dfa1ec0ee9a69e83c
+2025-10-09T10:13:33.7686922Z ##[endgroup]
+2025-10-09T10:13:33.7716105Z [command]/usr/bin/git log -1 --format=%H
+2025-10-09T10:13:33.7737837Z 6aa6ce56058e48c24905f6eeadb926d7c2114c43
+2025-10-09T10:13:33.7934955Z ##[group]Run cargo test
+2025-10-09T10:13:33.7935813Z [36;1mcargo test[0m
+2025-10-09T10:13:33.7971606Z shell: /usr/bin/bash -e {0}
+2025-10-09T10:13:33.7972304Z ##[endgroup]
+2025-10-09T10:13:36.0683955Z     Updating crates.io index
+2025-10-09T10:13:36.4118045Z      Locking 63 packages to latest compatible versions
+2025-10-09T10:13:36.4252677Z  Downloading crates ...
+2025-10-09T10:13:36.4660850Z   Downloaded rawpointer v0.2.1
+2025-10-09T10:13:36.4863461Z   Downloaded num-integer v0.1.46
+2025-10-09T10:13:36.4884503Z   Downloaded nalgebra-macros v0.3.0
+2025-10-09T10:13:36.4907639Z   Downloaded glam v0.15.2
+2025-10-09T10:13:36.5020525Z   Downloaded rand_core v0.6.4
+2025-10-09T10:13:36.5041924Z   Downloaded rand_core v0.9.3
+2025-10-09T10:13:36.5079528Z   Downloaded wide v0.7.33
+2025-10-09T10:13:36.5136921Z   Downloaded simba v0.9.1
+2025-10-09T10:13:36.5170309Z   Downloaded typenum v1.19.0
+2025-10-09T10:13:36.5204853Z   Downloaded safe_arch v0.7.4
+2025-10-09T10:13:36.5254305Z   Downloaded rand v0.9.2
+2025-10-09T10:13:36.5298779Z   Downloaded glam v0.14.0
+2025-10-09T10:13:36.5379735Z   Downloaded glam v0.16.0
+2025-10-09T10:13:36.5467258Z   Downloaded regex v1.11.3
+2025-10-09T10:13:36.5532106Z   Downloaded glam v0.21.3
+2025-10-09T10:13:36.5669458Z   Downloaded glam v0.20.5
+2025-10-09T10:13:36.5769235Z   Downloaded glam v0.19.0
+2025-10-09T10:13:36.5866923Z   Downloaded regex-syntax v0.8.6
+2025-10-09T10:13:36.5937722Z   Downloaded zerocopy v0.8.27
+2025-10-09T10:13:36.6190618Z   Downloaded glam v0.17.3
+2025-10-09T10:13:36.6274988Z   Downloaded syn v2.0.106
+2025-10-09T10:13:36.6379881Z   Downloaded glam v0.27.0
+2025-10-09T10:13:36.6561104Z   Downloaded glam v0.24.2
+2025-10-09T10:13:36.6716328Z   Downloaded glam v0.25.0
+2025-10-09T10:13:36.6891605Z   Downloaded glam v0.23.0
+2025-10-09T10:13:36.7028828Z   Downloaded nalgebra v0.34.1
+2025-10-09T10:13:36.7314825Z   Downloaded glam v0.22.0
+2025-10-09T10:13:36.7455620Z   Downloaded num-bigint v0.4.6
+2025-10-09T10:13:36.7502314Z   Downloaded glam v0.28.0
+2025-10-09T10:13:36.7693695Z   Downloaded memchr v2.7.6
+2025-10-09T10:13:36.7747502Z   Downloaded rand v0.8.5
+2025-10-09T10:13:36.7783572Z   Downloaded glam v0.18.0
+2025-10-09T10:13:36.7877249Z   Downloaded aho-corasick v1.1.3
+2025-10-09T10:13:36.7928977Z   Downloaded quote v1.0.41
+2025-10-09T10:13:36.7958641Z   Downloaded matrixmultiply v0.3.10
+2025-10-09T10:13:36.7995524Z   Downloaded getrandom v0.3.3
+2025-10-09T10:13:36.8028356Z   Downloaded glam v0.29.3
+2025-10-09T10:13:36.8247355Z   Downloaded regex-automata v0.4.11
+2025-10-09T10:13:36.8395926Z   Downloaded unicode-ident v1.0.19
+2025-10-09T10:13:36.8422709Z   Downloaded quickcheck v1.0.3
+2025-10-09T10:13:36.8441641Z   Downloaded proc-macro2 v1.0.101
+2025-10-09T10:13:36.8468770Z   Downloaded num-traits v0.2.19
+2025-10-09T10:13:36.8494036Z   Downloaded num-rational v0.4.2
+2025-10-09T10:13:36.8506241Z   Downloaded num-complex v0.4.6
+2025-10-09T10:13:36.8520150Z   Downloaded glam v0.30.8
+2025-10-09T10:13:36.8782205Z   Downloaded log v0.4.28
+2025-10-09T10:13:36.8806627Z   Downloaded libc v0.2.176
+2025-10-09T10:13:36.9073235Z   Downloaded env_logger v0.8.4
+2025-10-09T10:13:36.9096150Z   Downloaded quickcheck_macros v1.1.0
+2025-10-09T10:13:36.9107255Z   Downloaded ppv-lite86 v0.2.21
+2025-10-09T10:13:36.9119109Z   Downloaded cfg-if v1.0.3
+2025-10-09T10:13:36.9131312Z   Downloaded rand_chacha v0.9.0
+2025-10-09T10:13:36.9142402Z   Downloaded paste v1.0.15
+2025-10-09T10:13:36.9172585Z   Downloaded approx v0.5.1
+2025-10-09T10:13:36.9189198Z   Downloaded getrandom v0.2.16
+2025-10-09T10:13:36.9216930Z   Downloaded autocfg v1.5.0
+2025-10-09T10:13:36.9234645Z   Downloaded bytemuck v1.24.0
+2025-10-09T10:13:36.9802226Z    Compiling autocfg v1.5.0
+2025-10-09T10:13:36.9802816Z    Compiling libc v0.2.176
+2025-10-09T10:13:36.9803281Z    Compiling cfg-if v1.0.3
+2025-10-09T10:13:36.9803751Z    Compiling proc-macro2 v1.0.101
+2025-10-09T10:13:38.3302061Z    Compiling unicode-ident v1.0.19
+2025-10-09T10:13:39.4281083Z    Compiling quote v1.0.41
+2025-10-09T10:13:39.6641514Z    Compiling num-traits v0.2.19
+2025-10-09T10:13:41.3805137Z    Compiling getrandom v0.3.3
+2025-10-09T10:13:41.5328972Z    Compiling zerocopy v0.8.27
+2025-10-09T10:13:41.7776563Z    Compiling memchr v2.7.6
+2025-10-09T10:13:42.2937730Z    Compiling paste v1.0.15
+2025-10-09T10:13:42.4349164Z    Compiling bytemuck v1.24.0
+2025-10-09T10:13:42.4711999Z    Compiling syn v2.0.106
+2025-10-09T10:13:42.5493922Z    Compiling aho-corasick v1.1.3
+2025-10-09T10:13:42.6059834Z    Compiling safe_arch v0.7.4
+2025-10-09T10:13:42.6229935Z    Compiling num-integer v0.1.46
+2025-10-09T10:13:43.1827739Z    Compiling matrixmultiply v0.3.10
+2025-10-09T10:13:43.2897938Z    Compiling regex-syntax v0.8.6
+2025-10-09T10:13:44.7709946Z    Compiling typenum v1.19.0
+2025-10-09T10:13:45.0131857Z    Compiling ppv-lite86 v0.2.21
+2025-10-09T10:13:45.0304450Z    Compiling regex-automata v0.4.11
+2025-10-09T10:13:45.3733389Z    Compiling wide v0.7.33
+2025-10-09T10:13:45.6878916Z    Compiling rand_core v0.9.3
+2025-10-09T10:13:46.1369216Z    Compiling getrandom v0.2.16
+2025-10-09T10:13:46.2484312Z    Compiling num-complex v0.4.6
+2025-10-09T10:13:46.2815733Z    Compiling approx v0.5.1
+2025-10-09T10:13:46.3602629Z    Compiling rawpointer v0.2.1
+2025-10-09T10:13:46.6361530Z    Compiling rand_core v0.6.4
+2025-10-09T10:13:46.7444468Z    Compiling nalgebra-macros v0.3.0
+2025-10-09T10:13:47.0477899Z    Compiling regex v1.11.3
+2025-10-09T10:13:47.0891093Z    Compiling simba v0.9.1
+2025-10-09T10:13:47.1273191Z    Compiling rand_chacha v0.9.0
+2025-10-09T10:13:47.6060615Z    Compiling num-rational v0.4.2
+2025-10-09T10:13:48.0826765Z    Compiling log v0.4.28
+2025-10-09T10:13:48.2263924Z    Compiling env_logger v0.8.4
+2025-10-09T10:13:48.3811798Z    Compiling rand v0.9.2
+2025-10-09T10:13:48.7956598Z    Compiling rand v0.8.5
+2025-10-09T10:13:49.0194515Z    Compiling num-bigint v0.4.6
+2025-10-09T10:13:49.1450270Z    Compiling quickcheck_macros v1.1.0
+2025-10-09T10:13:49.2855952Z    Compiling quickcheck v1.0.3
+2025-10-09T10:13:51.3556733Z    Compiling nalgebra v0.34.1
+2025-10-09T10:13:55.4562661Z    Compiling the_algorithms_rust v0.1.0 (/home/runner/work/Rust/Rust)
+2025-10-09T10:14:06.8223814Z     Finished `test` profile [unoptimized + debuginfo] target(s) in 32.59s
+2025-10-09T10:14:06.8342278Z      Running unittests src/lib.rs (target/debug/deps/the_algorithms_rust-04b7d33e1ca36f3f)
+2025-10-09T10:14:06.8366062Z 
+2025-10-09T10:14:06.8368365Z running 1873 tests
+2025-10-09T10:14:06.8376414Z test backtracking::all_combination_of_size_k::tests::test_generate_4_3 ... ok
+2025-10-09T10:14:06.8377316Z test backtracking::all_combination_of_size_k::tests::test_generate_4_2 ... ok
+2025-10-09T10:14:06.8378092Z test backtracking::all_combination_of_size_k::tests::test_empty ... ok
+2025-10-09T10:14:06.8378837Z test backtracking::all_combination_of_size_k::tests::test_generate_5_1 ... ok
+2025-10-09T10:14:06.8379615Z test backtracking::all_combination_of_size_k::tests::test_generate_5_3 ... ok
+2025-10-09T10:14:06.8380485Z test backtracking::all_combination_of_size_k::tests::test_generate_k_greater_than_n ... ok
+2025-10-09T10:14:06.8381343Z test backtracking::all_combination_of_size_k::tests::test_generate_n_eq_k ... ok
+2025-10-09T10:14:06.8382205Z test backtracking::all_combination_of_size_k::tests::test_zero_range_with_nonzero_k ... ok
+2025-10-09T10:14:06.8383075Z test backtracking::graph_coloring::tests::test_bipartite_graph_with_2_colors ... ok
+2025-10-09T10:14:06.8383922Z test backtracking::graph_coloring::tests::test_complete_graph_with_3_colors ... ok
+2025-10-09T10:14:06.8384825Z test backtracking::graph_coloring::tests::test_complete_graph_with_3_vertices_and_3_colors ... ok
+2025-10-09T10:14:06.8385942Z test backtracking::graph_coloring::tests::test_directed_graph_with_3_colors ... ok
+2025-10-09T10:14:06.8386752Z test backtracking::graph_coloring::tests::test_disconnected_graph ... ok
+2025-10-09T10:14:06.8387460Z test backtracking::graph_coloring::tests::test_empty_graph ... ok
+2025-10-09T10:14:06.8388236Z test backtracking::graph_coloring::tests::test_directed_graph_no_valid_coloring ... ok
+2025-10-09T10:14:06.8389517Z test backtracking::graph_coloring::tests::test_incomplete_graph_with_insufficient_colors ... ok
+2025-10-09T10:14:06.8390673Z test backtracking::graph_coloring::tests::test_large_directed_graph_with_3_colors ... ok
+2025-10-09T10:14:06.8391527Z test backtracking::graph_coloring::tests::test_large_graph_with_3_colors ... ok
+2025-10-09T10:14:06.8392325Z test backtracking::graph_coloring::tests::test_linear_graph_with_2_colors ... ok
+2025-10-09T10:14:06.8393118Z test backtracking::graph_coloring::tests::test_more_colors_than_nodes ... ok
+2025-10-09T10:14:06.8393909Z test backtracking::graph_coloring::tests::test_no_coloring_with_zero_colors ... ok
+2025-10-09T10:14:06.8394720Z test backtracking::graph_coloring::tests::test_single_vertex_graph ... ok
+2025-10-09T10:14:06.8395717Z test backtracking::hamiltonian_cycle::tests::single_node ... ok
+2025-10-09T10:14:06.8396415Z test backtracking::graph_coloring::tests::test_no_valid_coloring ... ok
+2025-10-09T10:14:06.8397210Z test backtracking::hamiltonian_cycle::tests::single_node_self_loop ... ok
+2025-10-09T10:14:06.8397961Z test backtracking::graph_coloring::tests::test_non_square_matrix ... ok
+2025-10-09T10:14:06.8398761Z test backtracking::hamiltonian_cycle::tests::test_directed_graph_no_cycle ... ok
+2025-10-09T10:14:06.8399558Z test backtracking::hamiltonian_cycle::tests::test_complete_graph ... ok
+2025-10-09T10:14:06.8400381Z test backtracking::hamiltonian_cycle::tests::test_complex_directed_graph ... ok
+2025-10-09T10:14:06.8401257Z test backtracking::hamiltonian_cycle::tests::test_directed_graph_with_cycle ... ok
+2025-10-09T10:14:06.8402045Z test backtracking::hamiltonian_cycle::tests::test_empty_graph ... ok
+2025-10-09T10:14:06.8402775Z test backtracking::hamiltonian_cycle::tests::test_improper_graph ... ok
+2025-10-09T10:14:06.8403533Z test backtracking::hamiltonian_cycle::tests::test_start_out_of_bound ... ok
+2025-10-09T10:14:06.8404277Z test backtracking::hamiltonian_cycle::tests::test_tree_graph ... ok
+2025-10-09T10:14:06.8404993Z test backtracking::hamiltonian_cycle::tests::test_triangle_graph ... ok
+2025-10-09T10:14:06.8405974Z test backtracking::hamiltonian_cycle::tests::test_undirected_graph_no_cycle ... ok
+2025-10-09T10:14:06.8406791Z test backtracking::knight_tour::tests::test_invalid_start_position ... ok
+2025-10-09T10:14:06.8407606Z test backtracking::hamiltonian_cycle::tests::test_undirected_graph_with_cycle ... ok
+2025-10-09T10:14:06.8465869Z test backtracking::knight_tour::tests::test_knight_tour_5x5 ... ok
+2025-10-09T10:14:06.8466781Z test backtracking::n_queens::tests::test_0_queens ... ok
+2025-10-09T10:14:06.8467507Z test backtracking::n_queens::tests::test_1_queen ... ok
+2025-10-09T10:14:06.8468260Z test backtracking::n_queens::tests::test_2_queens ... ok
+2025-10-09T10:14:06.8469737Z test backtracking::n_queens::tests::test_3_queens ... ok
+2025-10-09T10:14:06.8470803Z test backtracking::n_queens::tests::test_4_queens ... ok
+2025-10-09T10:14:06.8471372Z test backtracking::n_queens::tests::test_5_queens ... ok
+2025-10-09T10:14:06.8471938Z test backtracking::n_queens::tests::test_6_queens ... ok
+2025-10-09T10:14:06.8472670Z test backtracking::parentheses_generator::tests::test_generate_parentheses_0 ... ok
+2025-10-09T10:14:06.8473576Z test backtracking::parentheses_generator::tests::test_generate_parentheses_1 ... ok
+2025-10-09T10:14:06.8474456Z test backtracking::parentheses_generator::tests::test_generate_parentheses_2 ... ok
+2025-10-09T10:14:06.8475483Z test backtracking::parentheses_generator::tests::test_generate_parentheses_3 ... ok
+2025-10-09T10:14:06.8476356Z test backtracking::parentheses_generator::tests::test_generate_parentheses_4 ... ok
+2025-10-09T10:14:06.8477194Z test backtracking::permutations::tests::test_permute_all_duplicates ... ok
+2025-10-09T10:14:06.8477960Z test backtracking::permutations::tests::test_permute_basic ... ok
+2025-10-09T10:14:06.8478677Z test backtracking::permutations::tests::test_permute_duplicates ... ok
+2025-10-09T10:14:06.8479600Z test backtracking::permutations::tests::test_permute_empty ... ok
+2025-10-09T10:14:06.8480313Z test backtracking::permutations::tests::test_permute_larger ... ok
+2025-10-09T10:14:06.8481011Z test backtracking::permutations::tests::test_permute_mixed ... ok
+2025-10-09T10:14:06.8481864Z test backtracking::permutations::tests::test_permute_negative ... ok
+2025-10-09T10:14:06.8482576Z test backtracking::permutations::tests::test_permute_single ... ok
+2025-10-09T10:14:06.8483212Z test backtracking::rat_in_maze::tests::empty_maze ... ok
+2025-10-09T10:14:06.8483869Z test backtracking::rat_in_maze::tests::improper_maze_representation ... ok
+2025-10-09T10:14:06.8484589Z test backtracking::rat_in_maze::tests::maze_with_going_back ... ok
+2025-10-09T10:14:06.8485499Z test backtracking::rat_in_maze::tests::maze_with_multiple_rows_and_one_column ... ok
+2025-10-09T10:14:06.8486328Z test backtracking::rat_in_maze::tests::maze_with_no_walls ... ok
+2025-10-09T10:14:06.8487080Z test backtracking::rat_in_maze::tests::maze_with_one_row_and_multiple_columns ... ok
+2025-10-09T10:14:06.8487848Z test backtracking::rat_in_maze::tests::maze_with_single_cell ... ok
+2025-10-09T10:14:06.8488560Z test backtracking::rat_in_maze::tests::maze_with_solution_3x4 ... ok
+2025-10-09T10:14:06.8489248Z test backtracking::rat_in_maze::tests::maze_with_solution_5x5 ... ok
+2025-10-09T10:14:06.8489929Z test backtracking::rat_in_maze::tests::maze_with_solution_6x6 ... ok
+2025-10-09T10:14:06.8490616Z test backtracking::rat_in_maze::tests::maze_with_solution_8x8 ... ok
+2025-10-09T10:14:06.8491349Z test backtracking::rat_in_maze::tests::maze_with_walls_surrounding_border ... ok
+2025-10-09T10:14:06.8492113Z test backtracking::rat_in_maze::tests::maze_without_solution_3x4 ... ok
+2025-10-09T10:14:06.8492829Z test backtracking::rat_in_maze::tests::maze_without_solution_4x4 ... ok
+2025-10-09T10:14:06.8493520Z test backtracking::rat_in_maze::tests::out_of_bound_start ... ok
+2025-10-09T10:14:06.8494226Z test backtracking::subset_sum::tests::test_consecutive_set_with_sum ... ok
+2025-10-09T10:14:06.8495012Z test backtracking::subset_sum::tests::test_consecutive_set_without_sum ... ok
+2025-10-09T10:14:06.8495869Z test backtracking::subset_sum::tests::test_empty_set ... ok
+2025-10-09T10:14:06.8496578Z test backtracking::subset_sum::tests::test_empty_set_with_nonzero_sum ... ok
+2025-10-09T10:14:06.8497343Z test backtracking::subset_sum::tests::test_even_inputs_odd_target ... ok
+2025-10-09T10:14:06.8498060Z test backtracking::subset_sum::tests::test_large_set_with_sum ... ok
+2025-10-09T10:14:06.8498768Z test backtracking::subset_sum::tests::test_negative_set_with_sum ... ok
+2025-10-09T10:14:06.8499452Z test backtracking::subset_sum::tests::test_negative_sum ... ok
+2025-10-09T10:14:06.8500167Z test backtracking::subset_sum::tests::test_negative_sum_with_negatives ... ok
+2025-10-09T10:14:06.8501009Z test backtracking::subset_sum::tests::test_negative_sum_with_negatives_no_solution ... ok
+2025-10-09T10:14:06.8501862Z test backtracking::subset_sum::tests::test_single_element_equal_to_sum ... ok
+2025-10-09T10:14:06.8525953Z test backtracking::subset_sum::tests::test_single_element_not_equal_to_sum ... ok
+2025-10-09T10:14:06.8526933Z test backtracking::subset_sum::tests::test_small_set_with_sum ... ok
+2025-10-09T10:14:06.8527785Z test backtracking::subset_sum::tests::test_small_set_without_sum ... ok
+2025-10-09T10:14:06.8528453Z test backtracking::sudoku::tests::test_sudoku_correct ... ok
+2025-10-09T10:14:06.8529073Z test backtracking::sudoku::tests::test_sudoku_incorrect ... ok
+2025-10-09T10:14:06.9017770Z test big_integer::fast_factorial::tests::fact ... ok
+2025-10-09T10:14:06.9019666Z test big_integer::multiply::tests::empty_input - should panic ... ok
+2025-10-09T10:14:06.9023253Z test big_integer::multiply::tests::leading_zero - should panic ... ok
+2025-10-09T10:14:06.9024283Z test big_integer::multiply::tests::multiply0 ... ok
+2025-10-09T10:14:06.9026317Z test big_integer::multiply::tests::multiply1 ... ok
+2025-10-09T10:14:06.9027248Z test big_integer::multiply::tests::multiply_zero ... ok
+2025-10-09T10:14:06.9028337Z test big_integer::multiply::tests::other_1 ... ok
+2025-10-09T10:14:06.9029050Z test big_integer::multiply::tests::other_2 ... ok
+2025-10-09T10:14:06.9029754Z test big_integer::multiply::tests::other_3 ... ok
+2025-10-09T10:14:06.9030561Z test big_integer::multiply::tests::other_4 ... ok
+2025-10-09T10:14:06.9031182Z test big_integer::multiply::tests::wrong_characters - should panic ... ok
+2025-10-09T10:14:06.9031936Z test big_integer::multiply::tests::wrong_input_and_zero_1 - should panic ... ok
+2025-10-09T10:14:06.9032725Z test big_integer::multiply::tests::wrong_input_and_zero_2 - should panic ... ok
+2025-10-09T10:14:06.9033392Z test big_integer::poly1305::tests::basic_tv1 ... ok
+2025-10-09T10:14:06.9034058Z test bit_manipulation::counting_bits::tests::test_count_set_bits_all_set_bits ... ok
+2025-10-09T10:14:06.9034913Z test bit_manipulation::counting_bits::tests::test_count_set_bits_alternating_bits ... ok
+2025-10-09T10:14:06.9035914Z test bit_manipulation::counting_bits::tests::test_count_set_bits_mixed_bits ... ok
+2025-10-09T10:14:06.9036704Z test bit_manipulation::counting_bits::tests::test_count_set_bits_one ... ok
+2025-10-09T10:14:06.9037499Z test bit_manipulation::counting_bits::tests::test_count_set_bits_power_of_two ... ok
+2025-10-09T10:14:06.9038297Z test bit_manipulation::counting_bits::tests::test_count_set_bits_zero ... ok
+2025-10-09T10:14:06.9038986Z test bit_manipulation::highest_set_bit::tests::test_0 ... ok
+2025-10-09T10:14:06.9039574Z test bit_manipulation::highest_set_bit::tests::test_1 ... ok
+2025-10-09T10:14:06.9040150Z test bit_manipulation::highest_set_bit::tests::test_2 ... ok
+2025-10-09T10:14:06.9040727Z test bit_manipulation::highest_set_bit::tests::test_3 ... ok
+2025-10-09T10:14:06.9041377Z test bit_manipulation::highest_set_bit::tests::test_positive_number ... ok
+2025-10-09T10:14:06.9042102Z test bit_manipulation::n_bits_gray_code::tests::gray_code_1_bit ... ok
+2025-10-09T10:14:06.9042794Z test bit_manipulation::n_bits_gray_code::tests::gray_code_2_bit ... ok
+2025-10-09T10:14:06.9043474Z test bit_manipulation::n_bits_gray_code::tests::gray_code_3_bit ... ok
+2025-10-09T10:14:06.9044164Z test bit_manipulation::n_bits_gray_code::tests::zero_bit_count ... ok
+2025-10-09T10:14:06.9044952Z test bit_manipulation::sum_of_two_integers::tests::test_add_two_integers_both_negative ... ok
+2025-10-09T10:14:06.9045998Z test bit_manipulation::sum_of_two_integers::tests::test_add_two_integers_edge_negative ... ok
+2025-10-09T10:14:06.9046892Z test bit_manipulation::sum_of_two_integers::tests::test_add_two_integers_edge_positive ... ok
+2025-10-09T10:14:06.9047797Z test bit_manipulation::sum_of_two_integers::tests::test_add_two_integers_large_positive ... ok
+2025-10-09T10:14:06.9048683Z test bit_manipulation::sum_of_two_integers::tests::test_add_two_integers_negative ... ok
+2025-10-09T10:14:06.9049535Z test bit_manipulation::sum_of_two_integers::tests::test_add_two_integers_positive ... ok
+2025-10-09T10:14:06.9050391Z test bit_manipulation::sum_of_two_integers::tests::test_add_two_integers_zero ... ok
+2025-10-09T10:14:06.9051305Z test bit_manipulation::sum_of_two_integers::tests::test_add_two_integers_zero_with_negative ... ok
+2025-10-09T10:14:06.9052286Z test bit_manipulation::sum_of_two_integers::tests::test_add_two_integers_zero_with_positive ... ok
+2025-10-09T10:14:06.9075659Z test ciphers::aes::tests::test_aes_128 ... ok
+2025-10-09T10:14:06.9076236Z test ciphers::aes::tests::test_aes_192 ... ok
+2025-10-09T10:14:06.9076781Z test ciphers::aes::tests::test_aes_256 ... ok
+2025-10-09T10:14:06.9077314Z test ciphers::aes::tests::test_str ... ok
+2025-10-09T10:14:06.9077979Z test ciphers::another_rot13::tests::test_every_alphabet_with_space ... ok
+2025-10-09T10:14:06.9078743Z test ciphers::another_rot13::tests::test_non_alphabet ... ok
+2025-10-09T10:14:06.9079402Z test ciphers::another_rot13::tests::test_simple ... ok
+2025-10-09T10:14:06.9080106Z test ciphers::baconian_cipher::tests::test_baconian_decoding ... ok
+2025-10-09T10:14:06.9080875Z test ciphers::baconian_cipher::tests::test_baconian_encoding ... ok
+2025-10-09T10:14:06.9081780Z test ciphers::base64::tests::decode_encode ... ok
+2025-10-09T10:14:06.9082423Z test ciphers::base64::tests::encode_decode ... ok
+2025-10-09T10:14:06.9083322Z test ciphers::base64::tests::pregenerated_random_bytes_decode ... ok
+2025-10-09T10:14:06.9084102Z test ciphers::base64::tests::pregenerated_random_bytes_encode ... ok
+2025-10-09T10:14:06.9084786Z test ciphers::blake2b::test::blake2b_empty ... ok
+2025-10-09T10:14:06.9085613Z test ciphers::blake2b::test::blake2b_empty_with_key ... ok
+2025-10-09T10:14:06.9086180Z test ciphers::blake2b::test::blake2b_from_rfc ... ok
+2025-10-09T10:14:06.9086819Z test ciphers::blake2b::test::blake2b_key_shortin ... ok
+2025-10-09T10:14:06.9089431Z test ciphers::blake2b::test::blake2b_keyed_filled ... ok
+2025-10-09T10:14:06.9090028Z test ciphers::caesar::tests::alphabet_length_should_be_26 ... ok
+2025-10-09T10:14:06.9090753Z test ciphers::caesar::tests::empty_input_large_rotation ... ok
+2025-10-09T10:14:06.9115797Z test ciphers::caesar::tests::empty_input_negative_rotation ... ok
+2025-10-09T10:14:06.9116390Z test ciphers::caesar::tests::empty_text ... ok
+2025-10-09T10:14:06.9116879Z test ciphers::caesar::tests::large_rotation ... ok
+2025-10-09T10:14:06.9117366Z test ciphers::caesar::tests::longer ... ok
+2025-10-09T10:14:06.9117812Z test ciphers::caesar::tests::mixed_case ... ok
+2025-10-09T10:14:06.9118311Z test ciphers::caesar::tests::negative_rotation ... ok
+2025-10-09T10:14:06.9118818Z test ciphers::caesar::tests::no_rotation ... ok
+2025-10-09T10:14:06.9119378Z test ciphers::caesar::tests::non_alphabetic_characters ... ok
+2025-10-09T10:14:06.9119922Z test ciphers::caesar::tests::rot_13 ... ok
+2025-10-09T10:14:06.9120448Z test ciphers::caesar::tests::rotation_at_alphabet_end ... ok
+2025-10-09T10:14:06.9121092Z test ciphers::caesar::tests::rotation_within_alphabet_range ... ok
+2025-10-09T10:14:06.9121653Z test ciphers::caesar::tests::unicode ... ok
+2025-10-09T10:14:06.9122155Z test ciphers::caesar::tests::uppercase_letters ... ok
+2025-10-09T10:14:06.9122729Z test ciphers::caesar::tests::with_numbers ... ok
+2025-10-09T10:14:06.9123278Z test ciphers::caesar::tests::with_special_characters ... ok
+2025-10-09T10:14:06.9208857Z test ciphers::caesar::tests::with_whitespace ... ok
+2025-10-09T10:14:06.9209424Z test ciphers::chacha::tests::basic_tv1 ... ok
+2025-10-09T10:14:06.9210014Z test ciphers::diffie_hellman::tests::verify_invalid_pub_key ... ok
+2025-10-09T10:14:06.9210823Z test ciphers::diffie_hellman::tests::verify_invalid_pub_key_same_as_prime ... ok
+2025-10-09T10:14:06.9786804Z test backtracking::knight_tour::tests::test_knight_tour_6x6 ... ok
+2025-10-09T10:14:07.2024566Z test ciphers::diffie_hellman::tests::verify_valid_pub_key ... ok
+2025-10-09T10:14:07.2029678Z test ciphers::hashing_traits::tests::sha256_basic ... ok
+2025-10-09T10:14:07.2033382Z test ciphers::kerninghan::tests::count_set_bits ... ok
+2025-10-09T10:14:07.2037452Z test ciphers::morse_code::tests::decrypt_invalid_morsecode_with_spaces ... ok
+2025-10-09T10:14:07.2044449Z test ciphers::morse_code::tests::decrypt_valid_character_set_invalid_morsecode ... ok
+2025-10-09T10:14:07.2062931Z test ciphers::morse_code::tests::decrypt_valid_morsecode_with_spaces ... ok
+2025-10-09T10:14:07.2066453Z test ciphers::morse_code::tests::encrypt_letters_and_special_characters ... ok
+2025-10-09T10:14:07.2071750Z test ciphers::morse_code::tests::encrypt_message_with_unsupported_character ... ok
+2025-10-09T10:14:07.2079871Z test ciphers::morse_code::tests::encrypt_only_letters ... ok
+2025-10-09T10:14:07.2080483Z test ciphers::polybius::tests::decode_emoji ... ok
+2025-10-09T10:14:07.2086224Z test ciphers::polybius::tests::decode_empty ... ok
+2025-10-09T10:14:07.2100585Z test ciphers::polybius::tests::decode_odd_length ... ok
+2025-10-09T10:14:07.2101262Z test ciphers::polybius::tests::decode_string_with_whitespace ... ok
+2025-10-09T10:14:07.2101921Z test ciphers::polybius::tests::decode_unknown_string ... ok
+2025-10-09T10:14:07.2102528Z test ciphers::polybius::tests::decode_valid_string ... ok
+2025-10-09T10:14:07.2103399Z test ciphers::polybius::tests::encode_and_decode ... ok
+2025-10-09T10:14:07.2105701Z test ciphers::polybius::tests::encode_emoji ... ok
+2025-10-09T10:14:07.2110597Z test ciphers::polybius::tests::encode_empty ... ok
+2025-10-09T10:14:07.2115859Z test ciphers::polybius::tests::encode_valid_string ... ok
+2025-10-09T10:14:07.2124073Z test ciphers::rail_fence::test::rails_basic ... ok
+2025-10-09T10:14:07.2131920Z test ciphers::rot13::test::test_bunch_of_letters ... ok
+2025-10-09T10:14:07.2132483Z test ciphers::rot13::test::test_non_ascii ... ok
+2025-10-09T10:14:07.2144385Z test ciphers::rot13::test::test_single_letter ... ok
+2025-10-09T10:14:07.2144907Z test ciphers::rot13::test::test_twice ... ok
+2025-10-09T10:14:07.2154558Z test ciphers::salsa::tests::basic_tv1 ... ok
+2025-10-09T10:14:07.2155043Z test ciphers::sha256::tests::ascii ... ok
+2025-10-09T10:14:07.2155859Z test ciphers::sha256::tests::ascii_avalanche ... ok
+2025-10-09T10:14:07.2186193Z test ciphers::sha256::tests::empty ... ok
+2025-10-09T10:14:07.2204744Z test ciphers::sha256::tests::long_ascii ... ok
+2025-10-09T10:14:07.2210051Z test ciphers::sha256::tests::short_ascii ... ok
+2025-10-09T10:14:07.2213970Z test ciphers::sha256::tests::test_constants ... ok
+2025-10-09T10:14:07.2364936Z test ciphers::sha3::tests::sha3_224_0 ... ok
+2025-10-09T10:14:07.2671396Z test ciphers::sha3::tests::sha3_224_2312 ... ok
+2025-10-09T10:14:07.2824712Z test ciphers::sha3::tests::sha3_224_8 ... ok
+2025-10-09T10:14:07.2978229Z test ciphers::sha3::tests::sha3_256_0 ... ok
+2025-10-09T10:14:07.3284943Z test ciphers::sha3::tests::sha3_256_2184 ... ok
+2025-10-09T10:14:07.3439044Z test ciphers::sha3::tests::sha3_256_8 ... ok
+2025-10-09T10:14:07.3592654Z test ciphers::sha3::tests::sha3_384_0 ... ok
+2025-10-09T10:14:07.3945839Z test backtracking::knight_tour::tests::test_no_solution ... ok
+2025-10-09T10:14:07.3973542Z test ciphers::sha3::tests::sha3_384_2512 ... ok
+2025-10-09T10:14:07.4072066Z test ciphers::sha3::tests::sha3_384_8 ... ok
+2025-10-09T10:14:07.4145729Z test ciphers::sha3::tests::sha3_512_0 ... ok
+2025-10-09T10:14:07.4280761Z test ciphers::sha3::tests::sha3_512_8 ... ok
+2025-10-09T10:14:07.4284872Z test ciphers::tea::test::test_block_convert ... ok
+2025-10-09T10:14:07.4289154Z test ciphers::tea::test::test_tea_encdec ... ok
+2025-10-09T10:14:07.4293260Z test ciphers::tea::test::test_tea_encrypt ... ok
+2025-10-09T10:14:07.4297745Z test ciphers::theoretical_rot13::tests::test_bunch_of_letters ... ok
+2025-10-09T10:14:07.4301977Z test ciphers::theoretical_rot13::tests::test_non_ascii ... ok
+2025-10-09T10:14:07.4306560Z test ciphers::theoretical_rot13::tests::test_single_letter ... ok
+2025-10-09T10:14:07.4307540Z test ciphers::theoretical_rot13::tests::test_twice ... ok
+2025-10-09T10:14:07.4308515Z test ciphers::transposition::tests::decryption ... ok
+2025-10-09T10:14:07.4312338Z test ciphers::transposition::tests::double_decryption ... ok
+2025-10-09T10:14:07.4313089Z test ciphers::transposition::tests::double_encryption ... ok
+2025-10-09T10:14:07.4313694Z test ciphers::transposition::tests::encryption ... ok
+2025-10-09T10:14:07.4314230Z test ciphers::vigenere::tests::empty ... ok
+2025-10-09T10:14:07.4314712Z test ciphers::vigenere::tests::vigenere_base ... ok
+2025-10-09T10:14:07.4315471Z test ciphers::vigenere::tests::vigenere_empty_key ... ok
+2025-10-09T10:14:07.4316096Z test ciphers::vigenere::tests::vigenere_unicode_and_numbers ... ok
+2025-10-09T10:14:07.4316738Z test ciphers::vigenere::tests::vigenere_unicode_key ... ok
+2025-10-09T10:14:07.4317320Z test ciphers::vigenere::tests::vigenere_with_spaces ... ok
+2025-10-09T10:14:07.4317935Z test ciphers::xor::tests::test_every_alphabet_with_space ... ok
+2025-10-09T10:14:07.4318509Z test ciphers::xor::tests::test_invalid_byte ... ok
+2025-10-09T10:14:07.4319009Z test ciphers::xor::tests::test_multi_byte ... ok
+2025-10-09T10:14:07.4319494Z test ciphers::xor::tests::test_simple ... ok
+2025-10-09T10:14:07.4319959Z test ciphers::xor::tests::test_zero_byte ... ok
+2025-10-09T10:14:07.4320530Z test compression::move_to_front::test::empty ... ok
+2025-10-09T10:14:07.4321408Z test compression::move_to_front::test::mixed_chars ... ok
+2025-10-09T10:14:07.4322021Z test compression::move_to_front::test::repeated_chars ... ok
+2025-10-09T10:14:07.4322784Z test compression::move_to_front::test::single_char ... ok
+2025-10-09T10:14:07.4323374Z test compression::move_to_front::test::special_chars ... ok
+2025-10-09T10:14:07.4323985Z test compression::move_to_front::test::word ... ok
+2025-10-09T10:14:07.4324634Z test compression::run_length_encoding::test::test_run_length_decode ... ok
+2025-10-09T10:14:07.4325541Z test compression::run_length_encoding::test::test_run_length_encode ... ok
+2025-10-09T10:14:07.4326290Z test conversions::binary_to_decimal::tests::basic_binary_to_decimal ... ok
+2025-10-09T10:14:07.4327040Z test conversions::binary_to_decimal::tests::big_binary_to_decimal ... ok
+2025-10-09T10:14:07.4327836Z test conversions::binary_to_decimal::tests::very_big_binary_to_decimal ... ok
+2025-10-09T10:14:07.4328573Z test conversions::binary_to_hexadecimal::tests::test_binary ... ok
+2025-10-09T10:14:07.4329297Z test conversions::binary_to_hexadecimal::tests::test_empty_string ... ok
+2025-10-09T10:14:07.4340516Z test conversions::binary_to_hexadecimal::tests::test_invalid_binary ... ok
+2025-10-09T10:14:07.4357084Z test conversions::binary_to_hexadecimal::tests::test_padded_binary ... ok
+2025-10-09T10:14:07.4357941Z test conversions::decimal_to_binary::tests::converting_decimal_to_binary ... ok
+2025-10-09T10:14:07.4358685Z test conversions::decimal_to_hexadecimal::tests::test_big ... ok
+2025-10-09T10:14:07.4359473Z test conversions::decimal_to_hexadecimal::tests::test_multiple_digit_hexadecimal ... ok
+2025-10-09T10:14:07.4360294Z test conversions::decimal_to_hexadecimal::tests::test_random ... ok
+2025-10-09T10:14:07.4361055Z test conversions::decimal_to_hexadecimal::tests::test_single_digit_decimal ... ok
+2025-10-09T10:14:07.4361917Z test conversions::decimal_to_hexadecimal::tests::test_single_digit_hexadecimal ... ok
+2025-10-09T10:14:07.4362735Z test conversions::decimal_to_hexadecimal::tests::test_zero ... ok
+2025-10-09T10:14:07.4363469Z test conversions::hexadecimal_to_binary::tests::test_empty_string ... ok
+2025-10-09T10:14:07.4364232Z test conversions::hexadecimal_to_binary::tests::test_hexadecimal ... ok
+2025-10-09T10:14:07.4365017Z test conversions::hexadecimal_to_binary::tests::test_hexadecimal2 ... ok
+2025-10-09T10:14:07.4365960Z test conversions::hexadecimal_to_binary::tests::test_invalid_hexadecimal ... ok
+2025-10-09T10:14:07.4366857Z test conversions::hexadecimal_to_decimal::tests::test_hexadecimal_to_decimal_empty ... ok
+2025-10-09T10:14:07.4367813Z test conversions::hexadecimal_to_decimal::tests::test_hexadecimal_to_decimal_invalid ... ok
+2025-10-09T10:14:07.4368764Z test conversions::hexadecimal_to_decimal::tests::test_hexadecimal_to_decimal_valid1 ... ok
+2025-10-09T10:14:07.4369721Z test conversions::hexadecimal_to_decimal::tests::test_hexadecimal_to_decimal_valid2 ... ok
+2025-10-09T10:14:07.4370677Z test conversions::hexadecimal_to_decimal::tests::test_hexadecimal_to_decimal_valid3 ... ok
+2025-10-09T10:14:07.4371644Z test conversions::length_conversion::length_conversion_tests::length_of_one_meter ... ok
+2025-10-09T10:14:07.4372552Z test conversions::length_conversion::length_conversion_tests::zero_to_zero ... ok
+2025-10-09T10:14:07.4373345Z test conversions::octal_to_binary::tests::test_empty_string ... ok
+2025-10-09T10:14:07.4374044Z test conversions::octal_to_binary::tests::test_invalid_octal ... ok
+2025-10-09T10:14:07.4374743Z test conversions::octal_to_binary::tests::test_valid_octal ... ok
+2025-10-09T10:14:07.4375559Z test conversions::octal_to_decimal::tests::test_empty_string ... ok
+2025-10-09T10:14:07.4376257Z test conversions::octal_to_decimal::tests::test_invalid_octal ... ok
+2025-10-09T10:14:07.4377002Z test conversions::octal_to_decimal::tests::test_valid_octal ... ok
+2025-10-09T10:14:07.4377684Z test conversions::octal_to_decimal::tests::test_valid_octal2 ... ok
+2025-10-09T10:14:07.4378375Z test conversions::octal_to_decimal::tests::test_valid_octal3 ... ok
+2025-10-09T10:14:07.4379281Z test conversions::rgb_cmyk_conversion::tests::black ... ok
+2025-10-09T10:14:07.4379892Z test conversions::rgb_cmyk_conversion::tests::blue ... ok
+2025-10-09T10:14:07.4380660Z test conversions::rgb_cmyk_conversion::tests::gray ... ok
+2025-10-09T10:14:07.4381248Z test conversions::rgb_cmyk_conversion::tests::green ... ok
+2025-10-09T10:14:07.4381835Z test conversions::rgb_cmyk_conversion::tests::red ... ok
+2025-10-09T10:14:07.4382440Z test conversions::rgb_cmyk_conversion::tests::white ... ok
+2025-10-09T10:14:07.4382993Z test data_structures::avl_tree::tests::balanced ... ok
+2025-10-09T10:14:07.4383542Z test data_structures::avl_tree::tests::contains ... ok
+2025-10-09T10:14:07.4384078Z test data_structures::avl_tree::tests::insert ... ok
+2025-10-09T10:14:07.4384590Z test data_structures::avl_tree::tests::len ... ok
+2025-10-09T10:14:07.4385129Z test data_structures::avl_tree::tests::remove ... ok
+2025-10-09T10:14:07.4415851Z test data_structures::avl_tree::tests::sorted ... ok
+2025-10-09T10:14:07.4416405Z test data_structures::b_tree::test::children_10 ... ok
+2025-10-09T10:14:07.4416957Z test data_structures::b_tree::test::children_101 ... ok
+2025-10-09T10:14:07.4417510Z test data_structures::b_tree::test::children_2 ... ok
+2025-10-09T10:14:07.4418033Z test data_structures::b_tree::test::children_3 ... ok
+2025-10-09T10:14:07.4418552Z test data_structures::b_tree::test::children_4 ... ok
+2025-10-09T10:14:07.4419060Z test data_structures::b_tree::test::children_5 ... ok
+2025-10-09T10:14:07.4419583Z test data_structures::b_tree::test::children_60 ... ok
+2025-10-09T10:14:07.4420224Z test data_structures::binary_search_tree::test::test_floor_and_ceil ... ok
+2025-10-09T10:14:07.4420955Z test data_structures::binary_search_tree::test::test_iterator ... ok
+2025-10-09T10:14:07.4421696Z test data_structures::binary_search_tree::test::test_maximum_and_minimum ... ok
+2025-10-09T10:14:07.4422425Z test data_structures::binary_search_tree::test::test_search ... ok
+2025-10-09T10:14:07.4423092Z test data_structures::fenwick_tree::tests::test_fenwick_tree ... ok
+2025-10-09T10:14:07.4423827Z test data_structures::floyds_algorithm::tests::test_detect_cycle_no_cycle ... ok
+2025-10-09T10:14:07.4424646Z test data_structures::floyds_algorithm::tests::test_detect_cycle_with_cycle ... ok
+2025-10-09T10:14:07.4425574Z test data_structures::graph::test_directed_graph::test_add_edge ... ok
+2025-10-09T10:14:07.4426270Z test data_structures::graph::test_directed_graph::test_add_node ... ok
+2025-10-09T10:14:07.4426969Z test data_structures::graph::test_directed_graph::test_contains ... ok
+2025-10-09T10:14:07.4427692Z test data_structures::graph::test_directed_graph::test_neighbours ... ok
+2025-10-09T10:14:07.4428425Z test data_structures::graph::test_undirected_graph::test_add_edge ... ok
+2025-10-09T10:14:07.4429164Z test data_structures::graph::test_undirected_graph::test_neighbours ... ok
+2025-10-09T10:14:07.4429883Z test data_structures::hash_table::tests::test_empty_search ... ok
+2025-10-09T10:14:07.4430575Z test data_structures::hash_table::tests::test_insert_and_search ... ok
+2025-10-09T10:14:07.4431340Z test data_structures::hash_table::tests::test_multiple_inserts_and_searches ... ok
+2025-10-09T10:14:07.4432170Z test data_structures::hash_table::tests::test_not_overwrite_existing_key ... ok
+2025-10-09T10:14:07.4432873Z test data_structures::hash_table::tests::test_resize ... ok
+2025-10-09T10:14:07.4433537Z test data_structures::hash_table::tests::test_search_nonexistent ... ok
+2025-10-09T10:14:07.4434195Z test data_structures::heap::tests::test_empty_heap ... ok
+2025-10-09T10:14:07.4434787Z test data_structures::heap::tests::test_from_vec_max ... ok
+2025-10-09T10:14:07.4435580Z test data_structures::heap::tests::test_from_vec_min ... ok
+2025-10-09T10:14:07.4436159Z test data_structures::heap::tests::test_iter_heap ... ok
+2025-10-09T10:14:07.4436726Z test data_structures::heap::tests::test_max_heap ... ok
+2025-10-09T10:14:07.4437268Z test data_structures::heap::tests::test_min_heap ... ok
+2025-10-09T10:14:07.4476113Z test data_structures::lazy_segment_tree::tests::check_overall_interval_max ... ok
+2025-10-09T10:14:07.4477021Z test data_structures::lazy_segment_tree::tests::check_overall_interval_min ... ok
+2025-10-09T10:14:07.4483674Z test data_structures::lazy_segment_tree::tests::check_overall_interval_sum ... ok
+2025-10-09T10:14:07.4519946Z test data_structures::lazy_segment_tree::tests::check_single_interval_max ... ok
+2025-10-09T10:14:07.4553715Z test data_structures::lazy_segment_tree::tests::check_single_interval_min ... ok
+2025-10-09T10:14:07.4584980Z test data_structures::lazy_segment_tree::tests::check_single_interval_sum ... ok
+2025-10-09T10:14:07.4585938Z test data_structures::lazy_segment_tree::tests::test_max_segments ... ok
+2025-10-09T10:14:07.4586704Z test data_structures::lazy_segment_tree::tests::test_min_segments ... ok
+2025-10-09T10:14:07.4587461Z test data_structures::lazy_segment_tree::tests::test_sum_segments ... ok
+2025-10-09T10:14:07.4588253Z test data_structures::lazy_segment_tree::tests::test_update_segments ... ok
+2025-10-09T10:14:07.4589312Z test data_structures::lazy_segment_tree::tests::test_update_segments_tiny ... ok
+2025-10-09T10:14:07.4590205Z test data_structures::linked_list::tests::create_numeric_list ... ok
+2025-10-09T10:14:07.4591155Z test data_structures::linked_list::tests::create_string_list ... ok
+2025-10-09T10:14:07.4592067Z test data_structures::linked_list::tests::delete_head_works ... ok
+2025-10-09T10:14:07.4593015Z test data_structures::linked_list::tests::delete_ith_can_delete_at_head ... ok
+2025-10-09T10:14:07.4593919Z test data_structures::linked_list::tests::delete_ith_can_delete_at_tail ... ok
+2025-10-09T10:14:07.4594849Z test data_structures::linked_list::tests::delete_ith_can_delete_in_middle ... ok
+2025-10-09T10:14:07.4597448Z test data_structures::linked_list::tests::delete_ith_panics_if_index_equals_length - should panic ... ok
+2025-10-09T10:14:07.4599106Z test data_structures::linked_list::tests::delete_tail_works ... ok
+2025-10-09T10:14:07.4599974Z test data_structures::linked_list::tests::get_by_index_in_numeric_list ... ok
+2025-10-09T10:14:07.4600925Z test data_structures::linked_list::tests::get_by_index_in_string_list ... ok
+2025-10-09T10:14:07.4601791Z test data_structures::linked_list::tests::insert_at_head_works ... ok
+2025-10-09T10:14:07.4602634Z test data_structures::linked_list::tests::insert_at_ith_and_delete_at_ith_in_the_middle ... ok
+2025-10-09T10:14:07.4604025Z test data_structures::linked_list::tests::insert_at_ith_and_delete_ith_work_over_many_iterations ... ok
+2025-10-09T10:14:07.4604958Z test data_structures::linked_list::tests::insert_at_ith_can_add_to_head ... ok
+2025-10-09T10:14:07.4606024Z test data_structures::linked_list::tests::insert_at_ith_can_add_to_middle ... ok
+2025-10-09T10:14:07.4607016Z test data_structures::linked_list::tests::insert_at_ith_can_add_to_tail ... ok
+2025-10-09T10:14:07.4607949Z test data_structures::linked_list::tests::insert_at_tail_works ... ok
+2025-10-09T10:14:07.4876561Z test ciphers::sha3::tests::sha3_512_4080 ... ok
+2025-10-09T10:14:07.8437693Z test data_structures::probabilistic::bloom_filter::tests::a_basic_filter_of_capacity_128_is_the_same_as_a_binary_filter ... ok
+2025-10-09T10:14:08.1751475Z test data_structures::probabilistic::bloom_filter::tests::basic_filter_must_not_return_false_negative ... ok
+2025-10-09T10:14:08.3406654Z test data_structures::probabilistic::bloom_filter::tests::a_multi_binary_bloom_filter_must_not_return_false_negatives ... ok
+2025-10-09T10:14:08.3408257Z test data_structures::probabilistic::count_min_sketch::tests::hash_functions_should_hash_differently ... ok
+2025-10-09T10:14:08.3409449Z test data_structures::probabilistic::count_min_sketch::tests::inspect_counts ... ok
+2025-10-09T10:14:08.4233763Z test data_structures::probabilistic::count_min_sketch::tests::must_not_understimate_count ... ok
+2025-10-09T10:14:08.4234757Z test data_structures::queue::tests::test_queue_functionality ... ok
+2025-10-09T10:14:08.4235738Z test data_structures::range_minimum_query::tests::float_query_tests ... ok
+2025-10-09T10:14:08.4237241Z test data_structures::range_minimum_query::tests::large ... ok
+2025-10-09T10:14:08.4238238Z test data_structures::range_minimum_query::tests::medium ... ok
+2025-10-09T10:14:08.4239438Z test data_structures::range_minimum_query::tests::simple_query_tests ... ok
+2025-10-09T10:14:08.4240201Z test data_structures::range_minimum_query::tests::small ... ok
+2025-10-09T10:14:08.4255988Z test data_structures::rb_tree::tests::delete ... ok
+2025-10-09T10:14:08.4256590Z test data_structures::rb_tree::tests::find ... ok
+2025-10-09T10:14:08.4257122Z test data_structures::rb_tree::tests::insert ... ok
+2025-10-09T10:14:08.4257764Z test data_structures::segment_tree::tests::test_max_segments ... ok
+2025-10-09T10:14:08.4258496Z test data_structures::segment_tree::tests::test_min_segments ... ok
+2025-10-09T10:14:08.4259220Z test data_structures::segment_tree::tests::test_sum_segments ... ok
+2025-10-09T10:14:08.4259994Z test data_structures::segment_tree_recursive::tests::test_max_segments ... ok
+2025-10-09T10:14:08.4260866Z test data_structures::segment_tree_recursive::tests::test_min_segments ... ok
+2025-10-09T10:14:08.4261717Z test data_structures::segment_tree_recursive::tests::test_sum_segments ... ok
+2025-10-09T10:14:08.4262565Z test data_structures::stack_using_singly_linked_list::test_stack::basics ... ok
+2025-10-09T10:14:08.4263456Z test data_structures::stack_using_singly_linked_list::test_stack::into_iter ... ok
+2025-10-09T10:14:08.4264305Z test data_structures::stack_using_singly_linked_list::test_stack::iter ... ok
+2025-10-09T10:14:08.4265147Z test data_structures::stack_using_singly_linked_list::test_stack::iter_mut ... ok
+2025-10-09T10:14:08.4266193Z test data_structures::stack_using_singly_linked_list::test_stack::peek ... ok
+2025-10-09T10:14:08.4266876Z test data_structures::treap::tests::contains ... ok
+2025-10-09T10:14:08.4267422Z test data_structures::treap::tests::insert ... ok
+2025-10-09T10:14:08.4267939Z test data_structures::treap::tests::len ... ok
+2025-10-09T10:14:08.4268457Z test data_structures::treap::tests::remove ... ok
+2025-10-09T10:14:08.4268952Z test data_structures::treap::tests::sorted ... ok
+2025-10-09T10:14:08.4269472Z test data_structures::treap::tests::valid ... ok
+2025-10-09T10:14:08.4270048Z test data_structures::trie::tests::test_empty_trie ... ok
+2025-10-09T10:14:08.4270701Z test data_structures::trie::tests::test_insert_empty_key ... ok
+2025-10-09T10:14:08.4271474Z test data_structures::trie::tests::test_insertion_and_retrieval_with_integers ... ok
+2025-10-09T10:14:08.4272357Z test data_structures::trie::tests::test_insertion_and_retrieval_with_strings ... ok
+2025-10-09T10:14:08.4273140Z test data_structures::trie::tests::test_overlapping_keys ... ok
+2025-10-09T10:14:08.4273786Z test data_structures::trie::tests::test_partial_match ... ok
+2025-10-09T10:14:08.4274475Z test data_structures::union_find::tests::test_spanning_tree ... ok
+2025-10-09T10:14:08.4275156Z test data_structures::union_find::tests::test_union_find ... ok
+2025-10-09T10:14:08.4276081Z test data_structures::union_find::tests::test_with_capacity ... ok
+2025-10-09T10:14:08.4321997Z test data_structures::veb_tree::test::test_100_256 ... ok
+2025-10-09T10:14:08.5347215Z test data_structures::probabilistic::bloom_filter::tests::binary_filter_must_not_return_false_negative ... ok
+2025-10-09T10:14:08.5436394Z test data_structures::veb_tree::test::test_10_256 ... ok
+2025-10-09T10:14:08.5445041Z test data_structures::veb_tree::test::test_empty ... ok
+2025-10-09T10:14:08.5519780Z test data_structures::veb_tree::test::test_full_256 ... ok
+2025-10-09T10:14:08.5529686Z test data_structures::veb_tree::test::test_full_small ... ok
+2025-10-09T10:14:08.5547173Z test data_structures::veb_tree::test::test_linear ... ok
+2025-10-09T10:14:08.5552870Z test data_structures::veb_tree::test::test_repeat_insert ... ok
+2025-10-09T10:14:08.5566941Z test data_structures::veb_tree::test::test_single ... ok
+2025-10-09T10:14:08.5576945Z test data_structures::veb_tree::test::test_two ... ok
+2025-10-09T10:14:08.5597485Z test dynamic_programming::coin_change::tests::test_all_multiples ... ok
+2025-10-09T10:14:08.5606324Z test dynamic_programming::coin_change::tests::test_basic_case ... ok
+2025-10-09T10:14:08.5617639Z test dynamic_programming::coin_change::tests::test_coins_larger_than_amount ... ok
+2025-10-09T10:14:08.5621501Z test dynamic_programming::coin_change::tests::test_empty_coins ... ok
+2025-10-09T10:14:08.5636881Z test dynamic_programming::coin_change::tests::test_exact_combination ... ok
+2025-10-09T10:14:08.5640970Z test dynamic_programming::coin_change::tests::test_fibonacci_sequence ... ok
+2025-10-09T10:14:08.5675948Z test dynamic_programming::coin_change::tests::test_greedy_approach_does_not_work ... ok
+2025-10-09T10:14:08.5677069Z test dynamic_programming::coin_change::tests::test_impossible_combinations ... ok
+2025-10-09T10:14:08.5678189Z test dynamic_programming::coin_change::tests::test_large_amount_mixed_coins ... ok
+2025-10-09T10:14:08.5754683Z test dynamic_programming::coin_change::tests::test_large_amount_multiple_coins ... ok
+2025-10-09T10:14:08.5897151Z test dynamic_programming::coin_change::tests::test_large_amount_performance ... ok
+2025-10-09T10:14:08.5926127Z test dynamic_programming::coin_change::tests::test_large_denomination_multiple_coins ... ok
+2025-10-09T10:14:08.6023120Z test dynamic_programming::coin_change::tests::test_mixed_small_large ... ok
+2025-10-09T10:14:08.6047142Z test dynamic_programming::coin_change::tests::test_multiple_denominations ... ok
+2025-10-09T10:14:08.6066695Z test dynamic_programming::coin_change::tests::test_no_combination_possible ... ok
+2025-10-09T10:14:08.6071469Z test dynamic_programming::coin_change::tests::test_no_solution_large_coin ... ok
+2025-10-09T10:14:08.6096673Z test dynamic_programming::coin_change::tests::test_no_solution_small_coin ... ok
+2025-10-09T10:14:08.6150722Z test dynamic_programming::coin_change::tests::test_non_divisible_amount ... ok
+2025-10-09T10:14:08.6176371Z test data_structures::veb_tree::test::test_100_300 ... ok
+2025-10-09T10:14:08.6199108Z test dynamic_programming::coin_change::tests::test_non_standard_denominations ... ok
+2025-10-09T10:14:08.6200345Z test dynamic_programming::coin_change::tests::test_prime_coins_and_amount ... ok
+2025-10-09T10:14:08.6201570Z test dynamic_programming::coin_change::tests::test_repeating_denominations ... ok
+2025-10-09T10:14:08.6202577Z test dynamic_programming::coin_change::tests::test_single_coin_large_amount ... ok
+2025-10-09T10:14:08.6206219Z test dynamic_programming::coin_change::tests::test_small_amount_not_possible ... ok
+2025-10-09T10:14:08.6208784Z test dynamic_programming::coin_change::tests::test_very_large_denominations ... ok
+2025-10-09T10:14:08.6214637Z test dynamic_programming::coin_change::tests::test_zero_amount ... ok
+2025-10-09T10:14:08.6227433Z test dynamic_programming::coin_change::tests::test_zero_denominations_no_solution ... ok
+2025-10-09T10:14:08.6231465Z test dynamic_programming::coin_change::tests::test_zero_denominations_solution ... ok
+2025-10-09T10:14:08.6400981Z test dynamic_programming::coin_change::tests::test_powers_of_two ... ok
+2025-10-09T10:14:08.6429238Z test dynamic_programming::egg_dropping::tests::test_many_eggs_few_floors ... ok
+2025-10-09T10:14:08.6431344Z test dynamic_programming::egg_dropping::tests::test_many_eggs_one_floor ... ok
+2025-10-09T10:14:08.6456693Z test dynamic_programming::egg_dropping::tests::test_maximum_floors_one_egg ... ok
+2025-10-09T10:14:08.6461864Z test dynamic_programming::egg_dropping::tests::test_multiple_eggs_one_floor ... ok
+2025-10-09T10:14:08.6466762Z test dynamic_programming::egg_dropping::tests::test_no_eggs_no_floors ... ok
+2025-10-09T10:14:08.6471639Z test dynamic_programming::egg_dropping::tests::test_no_floors ... ok
+2025-10-09T10:14:08.6476639Z test dynamic_programming::egg_dropping::tests::test_one_egg_multiple_floors ... ok
+2025-10-09T10:14:08.6481532Z test dynamic_programming::egg_dropping::tests::test_one_egg_no_floors ... ok
+2025-10-09T10:14:08.6486506Z test dynamic_programming::egg_dropping::tests::test_one_egg_one_floor ... ok
+2025-10-09T10:14:08.6505050Z test dynamic_programming::egg_dropping::tests::test_three_eggs_five_floors ... ok
+2025-10-09T10:14:08.6527343Z test dynamic_programming::egg_dropping::tests::test_two_eggs_ten_floors ... ok
+2025-10-09T10:14:08.6537855Z test dynamic_programming::egg_dropping::tests::test_two_eggs_thirty_six_floors ... ok
+2025-10-09T10:14:08.6546682Z test dynamic_programming::egg_dropping::tests::test_two_eggs_two_floors ... ok
+2025-10-09T10:14:08.6596186Z test dynamic_programming::egg_dropping::tests::test_zero_eggs ... ok
+2025-10-09T10:14:08.6606761Z test dynamic_programming::fibonacci::tests::test_binary_lifting_fibonacci ... ok
+2025-10-09T10:14:08.6636867Z test dynamic_programming::fibonacci::tests::test_classical_and_combinatorial_are_off_by_one ... ok
+2025-10-09T10:14:08.6666717Z test dynamic_programming::fibonacci::tests::test_classical_fibonacci ... ok
+2025-10-09T10:14:08.6696616Z test dynamic_programming::fibonacci::tests::test_fibonacci ... ok
+2025-10-09T10:14:08.6707221Z test dynamic_programming::fibonacci::tests::test_iterative_and_recursive_equivalence ... ok
+2025-10-09T10:14:08.6727075Z test dynamic_programming::fibonacci::tests::test_last_digit_of_the_sum_of_nth_fibonacci_number ... ok
+2025-10-09T10:14:08.6737735Z test dynamic_programming::fibonacci::tests::test_logarithmic_fibonacci ... ok
+2025-10-09T10:14:08.6761805Z test dynamic_programming::fibonacci::tests::test_matrix_fibonacci ... ok
+2025-10-09T10:14:08.6793038Z test dynamic_programming::fibonacci::tests::test_memoized_fibonacci ... ok
+2025-10-09T10:14:08.7030668Z test dynamic_programming::egg_dropping::tests::test_few_eggs_many_floors ... ok
+2025-10-09T10:14:08.7034832Z test dynamic_programming::fibonacci::tests::test_recursive_fibonacci ... ok
+2025-10-09T10:14:08.7040100Z test dynamic_programming::fractional_knapsack::tests::test ... ok
+2025-10-09T10:14:08.7043900Z test dynamic_programming::fractional_knapsack::tests::test2 ... ok
+2025-10-09T10:14:08.7049342Z test dynamic_programming::fractional_knapsack::tests::test3 ... ok
+2025-10-09T10:14:08.7050077Z test dynamic_programming::fractional_knapsack::tests::test4 ... ok
+2025-10-09T10:14:08.7050763Z test dynamic_programming::fractional_knapsack::tests::test5 ... ok
+2025-10-09T10:14:08.7051438Z test dynamic_programming::fractional_knapsack::tests::test6 ... ok
+2025-10-09T10:14:08.7054741Z test dynamic_programming::fractional_knapsack::tests::test_nan - should panic ... ok
+2025-10-09T10:14:08.7056075Z test dynamic_programming::is_subsequence::tests::test_case_sensitive ... ok
+2025-10-09T10:14:08.7057182Z test dynamic_programming::is_subsequence::tests::test_different_chars_in_subsequence ... ok
+2025-10-09T10:14:08.7063515Z test dynamic_programming::is_subsequence::tests::test_empty_strings ... ok
+2025-10-09T10:14:08.7069439Z test dynamic_programming::is_subsequence::tests::test_empty_subsequence ... ok
+2025-10-09T10:14:08.7071060Z test dynamic_programming::is_subsequence::tests::test_interspersed_subsequence ... ok
+2025-10-09T10:14:08.7073873Z test dynamic_programming::is_subsequence::tests::test_longer_sub ... ok
+2025-10-09T10:14:08.7078255Z test dynamic_programming::is_subsequence::tests::test_non_empty_sub_empty_main ... ok
+2025-10-09T10:14:08.7080838Z test dynamic_programming::is_subsequence::tests::test_same_characters ... ok
+2025-10-09T10:14:08.7083303Z test dynamic_programming::is_subsequence::tests::test_single_character_in_main_match ... ok
+2025-10-09T10:14:08.7086523Z test dynamic_programming::is_subsequence::tests::test_single_character_in_main_not_match ... ok
+2025-10-09T10:14:08.7089152Z test dynamic_programming::is_subsequence::tests::test_single_character_match ... ok
+2025-10-09T10:14:08.7090975Z test dynamic_programming::is_subsequence::tests::test_single_character_not_match ... ok
+2025-10-09T10:14:08.7092719Z test dynamic_programming::is_subsequence::tests::test_subsequence_at_end ... ok
+2025-10-09T10:14:08.7095675Z test dynamic_programming::is_subsequence::tests::test_subsequence_at_start ... ok
+2025-10-09T10:14:08.7098834Z test dynamic_programming::is_subsequence::tests::test_subsequence_found ... ok
+2025-10-09T10:14:08.7101839Z test dynamic_programming::is_subsequence::tests::test_subsequence_not_found ... ok
+2025-10-09T10:14:08.7105561Z test dynamic_programming::is_subsequence::tests::test_subsequence_with_special_chars ... ok
+2025-10-09T10:14:08.7108447Z test dynamic_programming::is_subsequence::tests::test_subsequence_with_whitespace ... ok
+2025-10-09T10:14:08.7118599Z test dynamic_programming::knapsack::tests::test_basic_knapsack_medium ... ok
+2025-10-09T10:14:08.7120615Z test dynamic_programming::knapsack::tests::test_basic_knapsack_small ... ok
+2025-10-09T10:14:08.7123728Z test dynamic_programming::knapsack::tests::test_basic_knapsack_tiny ... ok
+2025-10-09T10:14:08.7127540Z test dynamic_programming::knapsack::tests::test_diverse_weights_values_medium ... ok
+2025-10-09T10:14:08.7136833Z test dynamic_programming::knapsack::tests::test_diverse_weights_values_small ... ok
+2025-10-09T10:14:08.7140508Z test dynamic_programming::knapsack::tests::test_greedy_algorithm_does_not_work ... ok
+2025-10-09T10:14:08.7144516Z test dynamic_programming::knapsack::tests::test_greedy_algorithm_does_not_work_weight_smaller_than_capacity ... ok
+2025-10-09T10:14:08.7151136Z test dynamic_programming::knapsack::tests::test_high_value_items ... ok
+2025-10-09T10:14:08.7155150Z test dynamic_programming::knapsack::tests::test_item_too_heavy ... ok
+2025-10-09T10:14:08.7176822Z test dynamic_programming::knapsack::tests::test_large_knapsack ... ok
+2025-10-09T10:14:08.7180760Z test dynamic_programming::knapsack::tests::test_no_items ... ok
+2025-10-09T10:14:08.7184080Z test dynamic_programming::knapsack::tests::test_very_small_capacity ... ok
+2025-10-09T10:14:08.7187705Z test dynamic_programming::knapsack::tests::test_zero_capacity ... ok
+2025-10-09T10:14:08.7191636Z test dynamic_programming::longest_common_subsequence::tests::completely_different ... ok
+2025-10-09T10:14:08.7195907Z test dynamic_programming::longest_common_subsequence::tests::different_length ... ok
+2025-10-09T10:14:08.7199951Z test dynamic_programming::longest_common_subsequence::tests::empty_case ... ok
+2025-10-09T10:14:08.7204083Z test dynamic_programming::longest_common_subsequence::tests::identical_strings ... ok
+2025-10-09T10:14:08.7217858Z test dynamic_programming::longest_common_subsequence::tests::long_strings ... ok
+2025-10-09T10:14:08.7221833Z test dynamic_programming::longest_common_subsequence::tests::one_empty ... ok
+2025-10-09T10:14:08.7225957Z test dynamic_programming::longest_common_subsequence::tests::random_case_1 ... ok
+2025-10-09T10:14:08.7230104Z test dynamic_programming::longest_common_subsequence::tests::random_case_2 ... ok
+2025-10-09T10:14:08.7233667Z test dynamic_programming::longest_common_subsequence::tests::random_case_3 ... ok
+2025-10-09T10:14:08.7238092Z test dynamic_programming::longest_common_subsequence::tests::single_character ... ok
+2025-10-09T10:14:08.7242563Z test dynamic_programming::longest_common_subsequence::tests::spaces_and_punctuation_0 ... ok
+2025-10-09T10:14:08.7247517Z test dynamic_programming::longest_common_subsequence::tests::spaces_and_punctuation_1 ... ok
+2025-10-09T10:14:08.7252032Z test dynamic_programming::longest_common_subsequence::tests::special_characters ... ok
+2025-10-09T10:14:08.7256594Z test dynamic_programming::longest_common_subsequence::tests::unicode_characters ... ok
+2025-10-09T10:14:08.7260851Z test dynamic_programming::longest_common_substring::tests::test_case_sensitive ... ok
+2025-10-09T10:14:08.7265077Z test dynamic_programming::longest_common_substring::tests::test_common_substring_at_end ... ok
+2025-10-09T10:14:08.7270309Z test dynamic_programming::longest_common_substring::tests::test_common_substring_at_middle ... ok
+2025-10-09T10:14:08.7274916Z test dynamic_programming::longest_common_substring::tests::test_common_substring_at_start ... ok
+2025-10-09T10:14:08.7279749Z test dynamic_programming::longest_common_substring::tests::test_different_single_char ... ok
+2025-10-09T10:14:08.7284262Z test dynamic_programming::longest_common_substring::tests::test_empty_strings ... ok
+2025-10-09T10:14:08.7288171Z test dynamic_programming::longest_common_substring::tests::test_full_string_match ... ok
+2025-10-09T10:14:08.7290799Z test dynamic_programming::longest_common_substring::tests::test_identical_single_char ... ok
+2025-10-09T10:14:08.7296489Z test dynamic_programming::longest_common_substring::tests::test_longer_strings_with_common_substring ... ok
+2025-10-09T10:14:08.7300798Z test dynamic_programming::longest_common_substring::tests::test_no_common_substring ... ok
+2025-10-09T10:14:08.7305040Z test dynamic_programming::longest_common_substring::tests::test_no_common_substring_with_special_chars ... ok
+2025-10-09T10:14:08.7310365Z test dynamic_programming::longest_common_substring::tests::test_one_empty_string ... ok
+2025-10-09T10:14:08.7314857Z test dynamic_programming::longest_common_substring::tests::test_overlapping_substrings ... ok
+2025-10-09T10:14:08.7319460Z test dynamic_programming::longest_common_substring::tests::test_special_characters ... ok
+2025-10-09T10:14:08.7324088Z test dynamic_programming::longest_common_substring::tests::test_substring_with_repeated_chars ... ok
+2025-10-09T10:14:08.7328597Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::all_decreasing ... ok
+2025-10-09T10:14:08.7332939Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::all_increasing ... ok
+2025-10-09T10:14:08.7337499Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::alternating_increase_decrease ... ok
+2025-10-09T10:14:08.7341858Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::empty_array ... ok
+2025-10-09T10:14:08.7346364Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::increasing_then_decreasing ... ok
+2025-10-09T10:14:08.7351124Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::increasing_with_plateau ... ok
+2025-10-09T10:14:08.7356196Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::longer_subsequence_at_end ... ok
+2025-10-09T10:14:08.7360786Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::longer_subsequence_at_start ... ok
+2025-10-09T10:14:08.7363496Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::longest_subsequence_at_end ... ok
+2025-10-09T10:14:08.7368847Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::longest_subsequence_at_start ... ok
+2025-10-09T10:14:08.7373494Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::mixed_elements ... ok
+2025-10-09T10:14:08.7378104Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::negative_and_positive_mixed ... ok
+2025-10-09T10:14:08.7382769Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::repeated_elements ... ok
+2025-10-09T10:14:08.7387136Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::single_element ... ok
+2025-10-09T10:14:08.7391831Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::single_increasing_subsequence_later ... ok
+2025-10-09T10:14:08.7396473Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::single_negative_element ... ok
+2025-10-09T10:14:08.7401453Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::with_equal_elements ... ok
+2025-10-09T10:14:08.7405913Z test dynamic_programming::longest_continuous_increasing_subsequence::tests::zigzag ... ok
+2025-10-09T10:14:08.7410320Z test dynamic_programming::longest_increasing_subsequence::tests::test_empty_vec ... ok
+2025-10-09T10:14:08.7414681Z test dynamic_programming::longest_increasing_subsequence::tests::test_example_1 ... ok
+2025-10-09T10:14:08.7419650Z test dynamic_programming::longest_increasing_subsequence::tests::test_example_2 ... ok
+2025-10-09T10:14:08.7423838Z test dynamic_programming::longest_increasing_subsequence::tests::test_example_3 ... ok
+2025-10-09T10:14:08.7428104Z test dynamic_programming::longest_increasing_subsequence::tests::test_negative_elements ... ok
+2025-10-09T10:14:08.7789785Z test dynamic_programming::longest_increasing_subsequence::tests::test_tle ... ok
+2025-10-09T10:14:08.7793788Z test dynamic_programming::matrix_chain_multiply::tests::basic_chain_of_matrices ... ok
+2025-10-09T10:14:08.7797012Z test dynamic_programming::matrix_chain_multiply::tests::chain_of_large_matrices ... ok
+2025-10-09T10:14:08.7800009Z test dynamic_programming::matrix_chain_multiply::tests::complex_chain_of_matrices ... ok
+2025-10-09T10:14:08.7802122Z test dynamic_programming::matrix_chain_multiply::tests::empty_dimensions_input ... ok
+2025-10-09T10:14:08.7810549Z test dynamic_programming::matrix_chain_multiply::tests::long_chain_of_matrices ... ok
+2025-10-09T10:14:08.7814809Z test dynamic_programming::matrix_chain_multiply::tests::single_dimensions_input ... ok
+2025-10-09T10:14:08.7816416Z test dynamic_programming::matrix_chain_multiply::tests::single_matrix_input ... ok
+2025-10-09T10:14:08.7818383Z test dynamic_programming::maximal_square::tests::test ... ok
+2025-10-09T10:14:08.7820288Z test dynamic_programming::maximum_subarray::tests::test_all_negative ... ok
+2025-10-09T10:14:08.7824285Z test dynamic_programming::maximum_subarray::tests::test_all_negatives_with_one_positive ... ok
+2025-10-09T10:14:08.7826491Z test dynamic_programming::maximum_subarray::tests::test_all_non_negative ... ok
+2025-10-09T10:14:08.7828812Z test dynamic_programming::maximum_subarray::tests::test_all_positives ... ok
+2025-10-09T10:14:08.7831139Z test dynamic_programming::maximum_subarray::tests::test_all_positives_with_one_negative ... ok
+2025-10-09T10:14:08.7833734Z test dynamic_programming::maximum_subarray::tests::test_all_zeroes ... ok
+2025-10-09T10:14:08.7836175Z test dynamic_programming::maximum_subarray::tests::test_alternating_signs ... ok
+2025-10-09T10:14:08.7843804Z test dynamic_programming::maximum_subarray::tests::test_empty_array ... ok
+2025-10-09T10:14:08.7847860Z test dynamic_programming::maximum_subarray::tests::test_large_array ... ok
+2025-10-09T10:14:08.7852078Z test dynamic_programming::maximum_subarray::tests::test_large_negative_array ... ok
+2025-10-09T10:14:08.7856350Z test dynamic_programming::maximum_subarray::tests::test_large_values ... ok
+2025-10-09T10:14:08.7860235Z test dynamic_programming::maximum_subarray::tests::test_mixed_elements ... ok
+2025-10-09T10:14:08.7864134Z test dynamic_programming::maximum_subarray::tests::test_mixed_negative_and_positive ... ok
+2025-10-09T10:14:08.7868308Z test dynamic_programming::maximum_subarray::tests::test_single_element_negative ... ok
+2025-10-09T10:14:08.7872278Z test dynamic_programming::maximum_subarray::tests::test_single_element_positive ... ok
+2025-10-09T10:14:08.7876454Z test dynamic_programming::maximum_subarray::tests::test_single_large_negative ... ok
+2025-10-09T10:14:08.7878162Z test dynamic_programming::maximum_subarray::tests::test_single_large_positive ... ok
+2025-10-09T10:14:08.7882829Z test dynamic_programming::maximum_subarray::tests::test_single_zero ... ok
+2025-10-09T10:14:08.7886879Z test dynamic_programming::minimum_cost_path::tests::basic ... ok
+2025-10-09T10:14:08.7894845Z test dynamic_programming::minimum_cost_path::tests::complex_matrix ... ok
+2025-10-09T10:14:08.7900590Z test dynamic_programming::minimum_cost_path::tests::empty_matrix ... ok
+2025-10-09T10:14:08.7901746Z test dynamic_programming::minimum_cost_path::tests::empty_row ... ok
+2025-10-09T10:14:08.7902820Z test dynamic_programming::minimum_cost_path::tests::high_cost_path ... ok
+2025-10-09T10:14:08.7903889Z test dynamic_programming::minimum_cost_path::tests::increasing_values ... ok
+2025-10-09T10:14:08.7905059Z test dynamic_programming::minimum_cost_path::tests::large_matrix ... ok
+2025-10-09T10:14:08.7906795Z test dynamic_programming::minimum_cost_path::tests::non_rectangular ... ok
+2025-10-09T10:14:08.7907645Z test dynamic_programming::minimum_cost_path::tests::single_column ... ok
+2025-10-09T10:14:08.7908683Z test dynamic_programming::minimum_cost_path::tests::single_element ... ok
+2025-10-09T10:14:08.7909895Z test dynamic_programming::minimum_cost_path::tests::single_row ... ok
+2025-10-09T10:14:08.7910876Z test dynamic_programming::minimum_cost_path::tests::uniform_matrix ... ok
+2025-10-09T10:14:08.7912206Z test dynamic_programming::optimal_bst::tests::test_case_1 ... ok
+2025-10-09T10:14:08.7946728Z test dynamic_programming::optimal_bst::tests::test_case_2 ... ok
+2025-10-09T10:14:08.7956625Z test dynamic_programming::optimal_bst::tests::test_case_3 ... ok
+2025-10-09T10:14:08.7966847Z test dynamic_programming::optimal_bst::tests::test_case_4 ... ok
+2025-10-09T10:14:08.7986533Z test dynamic_programming::optimal_bst::tests::test_case_5 ... ok
+2025-10-09T10:14:08.8016599Z test dynamic_programming::optimal_bst::tests::test_case_empty ... ok
+2025-10-09T10:14:08.8054271Z test dynamic_programming::optimal_bst::tests::test_case_single ... ok
+2025-10-09T10:14:08.8058606Z test dynamic_programming::fibonacci::tests::test_nth_fibonacci_number_modulo_m ... ok
+2025-10-09T10:14:08.8063837Z test dynamic_programming::rod_cutting::tests::test_all_zeros_except_last ... ok
+2025-10-09T10:14:08.8066160Z test dynamic_programming::rod_cutting::tests::test_complex_prices ... ok
+2025-10-09T10:14:08.8068293Z test dynamic_programming::rod_cutting::tests::test_descending_prices ... ok
+2025-10-09T10:14:08.8085752Z test dynamic_programming::rod_cutting::tests::test_empty_prices ... ok
+2025-10-09T10:14:08.8086816Z test dynamic_programming::rod_cutting::tests::test_example_with_five_prices ... ok
+2025-10-09T10:14:08.8088763Z test dynamic_programming::rod_cutting::tests::test_example_with_four_prices ... ok
+2025-10-09T10:14:08.8089739Z test dynamic_programming::rod_cutting::tests::test_example_with_three_prices ... ok
+2025-10-09T10:14:08.8090937Z test dynamic_programming::rod_cutting::tests::test_greedy_does_not_work ... ok
+2025-10-09T10:14:08.8091938Z test dynamic_programming::rod_cutting::tests::test_increasing_prices ... ok
+2025-10-09T10:14:08.8092878Z test dynamic_programming::rod_cutting::tests::test_all_zero_input ... ok
+2025-10-09T10:14:08.8093930Z test dynamic_programming::rod_cutting::tests::test_large_range_prices ... ok
+2025-10-09T10:14:08.8094716Z test dynamic_programming::rod_cutting::tests::test_no_profit ... ok
+2025-10-09T10:14:08.8095622Z test dynamic_programming::rod_cutting::tests::test_repeated_prices ... ok
+2025-10-09T10:14:08.8096409Z test dynamic_programming::rod_cutting::tests::test_single_length_price ... ok
+2025-10-09T10:14:08.8097201Z test dynamic_programming::rod_cutting::tests::test_varied_prices ... ok
+2025-10-09T10:14:08.8097944Z test dynamic_programming::rod_cutting::tests::test_very_large_prices ... ok
+2025-10-09T10:14:08.8098702Z test dynamic_programming::rod_cutting::tests::test_zero_length_price ... ok
+2025-10-09T10:14:08.8099366Z test dynamic_programming::snail::test::test_char ... ok
+2025-10-09T10:14:08.8099918Z test dynamic_programming::snail::test::test_empty ... ok
+2025-10-09T10:14:08.8100478Z test dynamic_programming::snail::test::test_int ... ok
+2025-10-09T10:14:08.8101019Z test dynamic_programming::snail::test::test_rect ... ok
+2025-10-09T10:14:08.8101741Z test dynamic_programming::subset_generation::tests::test_print_incorrect_subset ... ok
+2025-10-09T10:14:08.8102597Z test dynamic_programming::subset_generation::tests::test_print_subset3 ... ok
+2025-10-09T10:14:08.8115604Z test dynamic_programming::subset_generation::tests::test_print_subset4 ... ok
+2025-10-09T10:14:08.8116613Z test dynamic_programming::subset_generation::tests::test_print_subset5 ... ok
+2025-10-09T10:14:08.8117479Z test dynamic_programming::trapped_rainwater::tests::test_bucket ... ok
+2025-10-09T10:14:08.8118427Z test dynamic_programming::trapped_rainwater::tests::test_skewed_bucket ... ok
+2025-10-09T10:14:08.8119397Z test dynamic_programming::trapped_rainwater::tests::test_trapped_rainwater_basic ... ok
+2025-10-09T10:14:08.8120949Z test dynamic_programming::trapped_rainwater::tests::test_trapped_rainwater_empty ... ok
+2025-10-09T10:14:08.8121862Z test dynamic_programming::trapped_rainwater::tests::test_trapped_rainwater_flat ... ok
+2025-10-09T10:14:08.8123130Z test dynamic_programming::trapped_rainwater::tests::test_trapped_rainwater_large_elevation_map_difference ... ok
+2025-10-09T10:14:08.8124256Z test dynamic_programming::trapped_rainwater::tests::test_trapped_rainwater_no_trapped_water ... ok
+2025-10-09T10:14:08.8125576Z test dynamic_programming::trapped_rainwater::tests::test_trapped_rainwater_peak_under_water ... ok
+2025-10-09T10:14:08.8126635Z test dynamic_programming::trapped_rainwater::tests::test_trapped_rainwater_single_elevation_map ... ok
+2025-10-09T10:14:08.8127733Z test dynamic_programming::trapped_rainwater::tests::test_trapped_rainwater_two_point_elevation_map ... ok
+2025-10-09T10:14:08.8138733Z test dynamic_programming::word_break::tests::edge_case_all_words_larger_than_input ... ok
+2025-10-09T10:14:08.8140045Z test dynamic_programming::word_break::tests::edge_case_empty_dict ... ok
+2025-10-09T10:14:08.8166378Z test dynamic_programming::word_break::tests::edge_case_empty_string ... ok
+2025-10-09T10:14:08.8172503Z test dynamic_programming::word_break::tests::edge_case_no_solution_large_string ... ok
+2025-10-09T10:14:08.8197930Z test dynamic_programming::word_break::tests::edge_case_single_char_in_dict ... ok
+2025-10-09T10:14:08.8202306Z test dynamic_programming::word_break::tests::edge_case_single_char_not_in_dict ... ok
+2025-10-09T10:14:08.8227703Z test dynamic_programming::word_break::tests::long_string_no_solution ... ok
+2025-10-09T10:14:08.8238836Z test dynamic_programming::word_break::tests::long_string_repeated_pattern ... ok
+2025-10-09T10:14:08.8247123Z test dynamic_programming::word_break::tests::mixed_size_dict_1 ... ok
+2025-10-09T10:14:08.8297414Z test dynamic_programming::word_break::tests::mixed_size_dict_2 ... ok
+2025-10-09T10:14:08.8306944Z test dynamic_programming::word_break::tests::mixed_size_dict_3 ... ok
+2025-10-09T10:14:08.8346405Z test dynamic_programming::word_break::tests::performance_stress_test_large_invalid ... ok
+2025-10-09T10:14:08.8469373Z test dynamic_programming::rod_cutting::tests::test_large_input ... ok
+2025-10-09T10:14:08.8497227Z test dynamic_programming::word_break::tests::successful_segmentation_large_string ... ok
+2025-10-09T10:14:08.8507038Z test dynamic_programming::word_break::tests::typical_case_1 ... ok
+2025-10-09T10:14:08.8517182Z test dynamic_programming::word_break::tests::typical_case_2 ... ok
+2025-10-09T10:14:08.8546210Z test dynamic_programming::word_break::tests::typical_case_3 ... ok
+2025-10-09T10:14:08.8556640Z test financial::present_value::tests::empty_cash_flow ... ok
+2025-10-09T10:14:08.8586762Z test financial::present_value::tests::general_inputs1 ... ok
+2025-10-09T10:14:08.8616771Z test financial::present_value::tests::general_inputs2 ... ok
+2025-10-09T10:14:08.8646560Z test financial::present_value::tests::general_inputs3 ... ok
+2025-10-09T10:14:08.8656692Z test financial::present_value::tests::negative_discount_rate ... ok
+2025-10-09T10:14:08.8676509Z test financial::present_value::tests::test1 ... ok
+2025-10-09T10:14:08.8716089Z test financial::present_value::tests::test2 ... ok
+2025-10-09T10:14:08.8736531Z test financial::present_value::tests::test3 ... ok
+2025-10-09T10:14:08.8746707Z test financial::present_value::tests::zero_input ... ok
+2025-10-09T10:14:08.8766489Z test general::convex_hull::tests::empty ... ok
+2025-10-09T10:14:08.8787016Z test general::convex_hull::tests::lots_of_points ... ok
+2025-10-09T10:14:08.8796781Z test general::convex_hull::tests::lots_of_points2 ... ok
+2025-10-09T10:14:08.8826537Z test general::convex_hull::tests::not_enough_points ... ok
+2025-10-09T10:14:08.8840183Z test general::convex_hull::tests::not_enough_points1 ... ok
+2025-10-09T10:14:08.8840838Z test general::convex_hull::tests::not_enough_points2 ... ok
+2025-10-09T10:14:08.8841412Z test general::genetic::tests::find_secret ... ignored
+2025-10-09T10:14:08.8841980Z test general::genetic::tests::solve_mastermind ... ignored
+2025-10-09T10:14:08.8865644Z test general::hanoi::tests::hanoi_simple ... ok
+2025-10-09T10:14:08.8866284Z test general::huffman_encoding::tests::empty_text ... ok
+2025-10-09T10:14:08.8873774Z test general::huffman_encoding::tests::lorem_ipsum ... ok
+2025-10-09T10:14:08.8896745Z test general::huffman_encoding::tests::minimal_decode_end_check ... ok
+2025-10-09T10:14:08.8916142Z test general::huffman_encoding::tests::one_symbol_text ... ok
+2025-10-09T10:14:08.8919460Z test general::huffman_encoding::tests::small_text ... ok
+2025-10-09T10:14:08.8926946Z test general::huffman_encoding::tests::test_decode_corrupted_stream_dead_end ... ok
+2025-10-09T10:14:08.8956015Z test general::huffman_encoding::tests::test_decode_empty_encoding_struct ... ok
+2025-10-09T10:14:08.8957011Z test general::kadane_algorithm::tests::test_kadanes_algorithm_empty ... ok
+2025-10-09T10:14:08.8958005Z test general::kadane_algorithm::tests::test_kadanes_algorithm_mixed ... ok
+2025-10-09T10:14:08.8986632Z test general::kadane_algorithm::tests::test_kadanes_algorithm_negative ... ok
+2025-10-09T10:14:08.8988455Z test general::kadane_algorithm::tests::test_kadanes_algorithm_positive ... ok
+2025-10-09T10:14:08.9016833Z test general::kadane_algorithm::tests::test_kadanes_algorithm_single_positive ... ok
+2025-10-09T10:14:08.9037034Z test general::kmeans::test::easy_bivariate_clustering ... ok
+2025-10-09T10:14:08.9046782Z test general::kmeans::test::easy_univariate_clustering ... ok
+2025-10-09T10:14:08.9077023Z test general::kmeans::test::easy_univariate_clustering_odd_number_of_data ... ok
+2025-10-09T10:14:08.9086818Z test general::kmeans::test::high_dims ... ok
+2025-10-09T10:14:08.9097181Z test general::mex::tests::test_mex_using_set ... ok
+2025-10-09T10:14:08.9106561Z test general::mex::tests::test_mex_using_sort ... ok
+2025-10-09T10:14:08.9117233Z test general::permutations::heap::tests::test_3_different_values ... ok
+2025-10-09T10:14:08.9145929Z test general::permutations::heap::tests::test_3_times_the_same_value ... ok
+2025-10-09T10:14:09.9473730Z test general::permutations::heap::tests::test_some_elements ... ok
+2025-10-09T10:14:09.9506120Z test general::permutations::naive::tests::empty_array ... ok
+2025-10-09T10:14:09.9535927Z test general::permutations::naive::tests::test_3_different_values ... ok
+2025-10-09T10:14:09.9537011Z test general::permutations::naive::tests::test_3_times_the_same_value ... ok
+2025-10-09T10:14:10.1226602Z test ciphers::diffie_hellman::tests::verify_key_exchange ... ok
+2025-10-09T10:14:10.1230812Z test general::permutations::naive::tests::test_unique_values ... ok
+2025-10-09T10:14:10.1234968Z test general::permutations::steinhaus_johnson_trotter::tests::test_3_different_values ... ok
+2025-10-09T10:14:10.1239337Z test general::permutations::steinhaus_johnson_trotter::tests::test_3_times_the_same_value ... ok
+2025-10-09T10:14:10.4470179Z test dynamic_programming::word_break::tests::performance_stress_test_large_valid ... ok
+2025-10-09T10:14:10.4473288Z test general::permutations::tests::test_invalid_permutation_1 - should panic ... ok
+2025-10-09T10:14:10.4489968Z test general::permutations::tests::test_invalid_permutation_2 - should panic ... ok
+2025-10-09T10:14:10.4506037Z test general::permutations::tests::test_invalid_permutation_3 - should panic ... ok
+2025-10-09T10:14:10.4507345Z test general::permutations::tests::test_invalid_permutation_repeat - should panic ... ok
+2025-10-09T10:14:10.4516700Z test general::permutations::tests::test_valid_permutations ... ok
+2025-10-09T10:14:10.4518395Z test general::two_sum::test::test ... ok
+2025-10-09T10:14:10.4565780Z test geometry::closest_points::tests::list_1 ... ok
+2025-10-09T10:14:10.4576926Z test geometry::closest_points::tests::list_2 ... ok
+2025-10-09T10:14:10.4606631Z test geometry::closest_points::tests::one_points ... ok
+2025-10-09T10:14:10.4636535Z test geometry::closest_points::tests::three_points ... ok
+2025-10-09T10:14:10.4666471Z test geometry::closest_points::tests::two_points ... ok
+2025-10-09T10:14:10.4687509Z test geometry::closest_points::tests::vertical_points ... ok
+2025-10-09T10:14:10.4696343Z test geometry::closest_points::tests::zero_points ... ok
+2025-10-09T10:14:10.4725823Z test geometry::graham_scan::tests::duplicate_point ... ok
+2025-10-09T10:14:10.4736955Z test geometry::graham_scan::tests::points_same_line ... ok
+2025-10-09T10:14:10.4756999Z test geometry::graham_scan::tests::rectangle ... ok
+2025-10-09T10:14:10.4781734Z test geometry::graham_scan::tests::rectangle_with_points_in_middle ... ok
+2025-10-09T10:14:10.4787072Z test geometry::graham_scan::tests::rectangle_with_points_on_same_line ... ok
+2025-10-09T10:14:10.4806695Z test geometry::graham_scan::tests::star ... ok
+2025-10-09T10:14:10.4826500Z test geometry::graham_scan::tests::too_few_points ... ok
+2025-10-09T10:14:10.4831451Z test geometry::graham_scan::tests::triangle ... ok
+2025-10-09T10:14:10.4886206Z test geometry::graham_scan::tests::triangle_with_points_in_middle ... ok
+2025-10-09T10:14:10.4896698Z test geometry::jarvis_scan::tests::duplicate_point ... ok
+2025-10-09T10:14:10.4916603Z test geometry::jarvis_scan::tests::points_same_line ... ok
+2025-10-09T10:14:10.4946686Z test geometry::jarvis_scan::tests::rectangle ... ok
+2025-10-09T10:14:10.4956923Z test geometry::jarvis_scan::tests::rectangle_with_points_in_middle ... ok
+2025-10-09T10:14:10.4976767Z test geometry::jarvis_scan::tests::rectangle_with_points_on_same_line ... ok
+2025-10-09T10:14:10.4986807Z test geometry::jarvis_scan::tests::star ... ok
+2025-10-09T10:14:10.5026177Z test geometry::jarvis_scan::tests::too_few_points ... ok
+2025-10-09T10:14:10.5036522Z test geometry::jarvis_scan::tests::triangle ... ok
+2025-10-09T10:14:10.5066732Z test geometry::jarvis_scan::tests::triangle_with_points_in_middle ... ok
+2025-10-09T10:14:10.5081424Z test geometry::polygon_points::tests::test_boundary ... ok
+2025-10-09T10:14:10.5096590Z test geometry::polygon_points::tests::test_calculate_cross ... ok
+2025-10-09T10:14:10.5106756Z test geometry::polygon_points::tests::test_gcd_multiple_of_common_factor ... ok
+2025-10-09T10:14:10.5126563Z test geometry::polygon_points::tests::test_lattice_points ... ok
+2025-10-09T10:14:10.5156634Z test geometry::polygon_points::tests::test_polygon_3_coordinates ... ok
+2025-10-09T10:14:10.5166782Z test geometry::polygon_points::tests::test_polygon_4_coordinates ... ok
+2025-10-09T10:14:10.5186421Z test geometry::ramer_douglas_peucker::tests::basic ... ok
+2025-10-09T10:14:10.5207324Z test geometry::ramer_douglas_peucker::tests::basic_shifted_1 ... ok
+2025-10-09T10:14:10.5235866Z test geometry::ramer_douglas_peucker::tests::basic_shifted_2 ... ok
+2025-10-09T10:14:10.5236880Z test geometry::ramer_douglas_peucker::tests::test_less_than_three_points ... ok
+2025-10-09T10:14:10.5266629Z test geometry::ramer_douglas_peucker::tests::test_ramer_douglas_peucker_polygon ... ok
+2025-10-09T10:14:10.5276741Z test geometry::ramer_douglas_peucker::tests::test_ramer_douglas_peucker_polygonal_chain ... ok
+2025-10-09T10:14:10.5296314Z test geometry::segment::tests::colinear ... ok
+2025-10-09T10:14:10.5316432Z test geometry::segment::tests::colinear_vertical ... ok
+2025-10-09T10:14:10.5326323Z test geometry::segment::tests::intersects ... ok
+2025-10-09T10:14:10.5356738Z test geometry::segment::tests::intersects_endpoint_on_segment ... ok
+2025-10-09T10:14:10.5387570Z test geometry::segment::tests::intersects_self ... ok
+2025-10-09T10:14:10.5407349Z test geometry::segment::tests::parallel_segments ... ok
+2025-10-09T10:14:10.5416307Z test geometry::segment::tests::too_short_to_intersect ... ok
+2025-10-09T10:14:10.5428960Z test graph::astar::tests::graph_1 ... ok
+2025-10-09T10:14:10.5447992Z test graph::astar::tests::single_edge ... ok
+2025-10-09T10:14:10.5475953Z test graph::astar::tests::single_vertex ... ok
+2025-10-09T10:14:10.7246424Z test graph::astar::tests::test_heuristic ... ok
+2025-10-09T10:14:10.7247556Z test graph::bellman_ford::tests::graph_1 ... ok
+2025-10-09T10:14:10.7248191Z test graph::bellman_ford::tests::graph_2 ... ok
+2025-10-09T10:14:10.7248894Z test graph::bellman_ford::tests::graph_with_negative_loop ... ok
+2025-10-09T10:14:10.7249614Z test graph::bellman_ford::tests::single_edge ... ok
+2025-10-09T10:14:10.7250288Z test graph::bellman_ford::tests::single_vertex ... ok
+2025-10-09T10:14:10.7591995Z test graph::bellman_ford::tests::tree_1 ... ok
+2025-10-09T10:14:10.7593445Z test graph::bipartite_matching::tests::only_one_vertex_graph_hopcroft ... ok
+2025-10-09T10:14:10.7594374Z test graph::bipartite_matching::tests::only_one_vertex_graph_kuhn ... ok
+2025-10-09T10:14:10.7595554Z test graph::bipartite_matching::tests::small_graph_hopcroft ... ok
+2025-10-09T10:14:10.7596388Z test graph::bipartite_matching::tests::small_graph_kuhn ... ok
+2025-10-09T10:14:10.7597227Z test graph::bipartite_matching::tests::super_small_graph_hopcroft ... ok
+2025-10-09T10:14:10.7598091Z test graph::bipartite_matching::tests::super_small_graph_kuhn ... ok
+2025-10-09T10:14:10.7599345Z test graph::breadth_first_search::tests::breadth_first_search_graph1_when_node_not_found_returns_none ... ok
+2025-10-09T10:14:10.7600613Z test graph::breadth_first_search::tests::breadth_first_search_graph1_when_target_8_should_evaluate_all_nodes_first ... ok
+2025-10-09T10:14:10.7601899Z test graph::breadth_first_search::tests::breadth_first_search_graph2_should_find_path_from_4_to_1 ... ok
+2025-10-09T10:14:10.7603113Z test graph::breadth_first_search::tests::breadth_first_search_graph2_when_no_path_to_node_returns_none ... ok
+2025-10-09T10:14:10.7604187Z test graph::centroid_decomposition::tests::random_tree_height ... ignored
+2025-10-09T10:14:10.7605028Z test graph::centroid_decomposition::tests::single_path ... ok
+2025-10-09T10:14:10.7605984Z test graph::decremental_connectivity::tests::construction_test ... ok
+2025-10-09T10:14:10.7606952Z test graph::decremental_connectivity::tests::delete_panic_test - should panic ... ok
+2025-10-09T10:14:10.7607999Z test graph::decremental_connectivity::tests::non_bidirectional_test - should panic ... ok
+2025-10-09T10:14:10.7608987Z test graph::decremental_connectivity::tests::query_test ... ok
+2025-10-09T10:14:10.7609727Z test graph::depth_first_search::tests::find_1_fail ... ok
+2025-10-09T10:14:10.7610429Z test graph::depth_first_search::tests::find_1_sucess ... ok
+2025-10-09T10:14:10.7611881Z test graph::depth_first_search::tests::find_2_sucess ... ok
+2025-10-09T10:14:10.7613269Z test graph::depth_first_search::tests::find_3_sucess ... ok
+2025-10-09T10:14:10.7637233Z test graph::depth_first_search_tic_tac_toe::test::block_move ... ok
+2025-10-09T10:14:10.7641220Z test graph::depth_first_search_tic_tac_toe::test::block_win_move ... ok
+2025-10-09T10:14:10.7642963Z test graph::depth_first_search_tic_tac_toe::test::expected_loss ... ok
+2025-10-09T10:14:10.7643915Z test graph::depth_first_search_tic_tac_toe::test::win_state_check ... ok
+2025-10-09T10:14:10.7644807Z test graph::depth_first_search_tic_tac_toe::test::win_state_check2 ... ok
+2025-10-09T10:14:10.7645752Z test graph::detect_cycle::test::directed_empty ... ok
+2025-10-09T10:14:10.7646469Z test graph::detect_cycle::test::directed_graph_with_cycle ... ok
+2025-10-09T10:14:10.7647270Z test graph::detect_cycle::test::directed_graph_without_cycle ... ok
+2025-10-09T10:14:10.7648085Z test graph::detect_cycle::test::directed_single_node_with_loop ... ok
+2025-10-09T10:14:10.7649475Z test graph::detect_cycle::test::directed_triangle ... ok
+2025-10-09T10:14:10.7651104Z test graph::detect_cycle::test::directed_triangle_with_tail ... ok
+2025-10-09T10:14:10.7652454Z test graph::detect_cycle::test::directed_two_nodes ... ok
+2025-10-09T10:14:10.7654279Z test graph::detect_cycle::test::directed_two_nodes_connected ... ok
+2025-10-09T10:14:10.7655898Z test graph::detect_cycle::test::undirected_empty ... ok
+2025-10-09T10:14:10.7661762Z test graph::detect_cycle::test::undirected_graph_with_cycle ... ok
+2025-10-09T10:14:10.7668380Z test graph::detect_cycle::test::undirected_graph_without_cycle ... ok
+2025-10-09T10:14:10.7672118Z test graph::detect_cycle::test::undirected_single_node_with_loop ... ok
+2025-10-09T10:14:10.7674322Z test graph::detect_cycle::test::undirected_triangle ... ok
+2025-10-09T10:14:10.7678461Z test graph::detect_cycle::test::undirected_triangle_with_tail ... ok
+2025-10-09T10:14:10.7680751Z test graph::detect_cycle::test::undirected_two_nodes_connected ... ok
+2025-10-09T10:14:10.7695674Z test graph::dijkstra::tests::graph_1 ... ok
+2025-10-09T10:14:10.7698902Z test graph::dijkstra::tests::single_edge ... ok
+2025-10-09T10:14:10.7701831Z test graph::dijkstra::tests::single_vertex ... ok
+2025-10-09T10:14:10.7702778Z test graph::dijkstra::tests::tree_1 ... ok
+2025-10-09T10:14:10.7704470Z test graph::dinic_maxflow::tests::small_graph ... ok
+2025-10-09T10:14:10.7705489Z test graph::disjoint_set_union::tests::test_disjoint_set_union ... ok
+2025-10-09T10:14:10.7706270Z test graph::eulerian_path::tests::test_complete_graph ... ok
+2025-10-09T10:14:10.7707701Z test graph::eulerian_path::tests::test_complex_eulerian_path ... ok
+2025-10-09T10:14:10.7709729Z test graph::eulerian_path::tests::test_dag_path ... ok
+2025-10-09T10:14:10.7711826Z test graph::eulerian_path::tests::test_disconnected_graph ... ok
+2025-10-09T10:14:10.7714255Z test graph::eulerian_path::tests::test_empty_graph ... ok
+2025-10-09T10:14:10.7716783Z test graph::eulerian_path::tests::test_eulerian_cycle ... ok
+2025-10-09T10:14:10.7719295Z test graph::eulerian_path::tests::test_larger_graph_with_eulerian_path ... ok
+2025-10-09T10:14:10.7722047Z test graph::eulerian_path::tests::test_multiple_disconnected_components ... ok
+2025-10-09T10:14:10.7724469Z test graph::eulerian_path::tests::test_multiple_edges_between_same_nodes ... ok
+2025-10-09T10:14:10.7728566Z test graph::eulerian_path::tests::test_multiple_eulerian_paths ... ok
+2025-10-09T10:14:10.7731566Z test graph::eulerian_path::tests::test_multiple_start_and_end_nodes ... ok
+2025-10-09T10:14:10.7734222Z test graph::eulerian_path::tests::test_no_edges_multiple_nodes ... ok
+2025-10-09T10:14:10.7738539Z test graph::eulerian_path::tests::test_no_eulerian_path ... ok
+2025-10-09T10:14:10.7740865Z test graph::eulerian_path::tests::test_node_with_no_edges ... ok
+2025-10-09T10:14:10.7776177Z test graph::eulerian_path::tests::test_parallel_edges_case ... ok
+2025-10-09T10:14:10.7777232Z test graph::eulerian_path::tests::test_simple_path ... ok
+2025-10-09T10:14:10.7778019Z test graph::eulerian_path::tests::test_single_cycle ... ok
+2025-10-09T10:14:10.7778871Z test graph::eulerian_path::tests::test_single_edge ... ok
+2025-10-09T10:14:10.7779678Z test graph::eulerian_path::tests::test_single_node_self_loop ... ok
+2025-10-09T10:14:10.7780558Z test graph::eulerian_path::tests::test_unbalanced_graph_with_path ... ok
+2025-10-09T10:14:10.7781401Z test graph::eulerian_path::tests::test_unbalanced_path ... ok
+2025-10-09T10:14:10.7782136Z test graph::floyd_warshall::tests::graph_1 ... ok
+2025-10-09T10:14:10.7782821Z test graph::floyd_warshall::tests::single_edge ... ok
+2025-10-09T10:14:10.7783529Z test graph::floyd_warshall::tests::single_vertex ... ok
+2025-10-09T10:14:10.7784257Z test graph::ford_fulkerson::tests::test_complex_graph ... ok
+2025-10-09T10:14:10.7785038Z test graph::ford_fulkerson::tests::test_disconnected_graph ... ok
+2025-10-09T10:14:10.7785998Z test graph::ford_fulkerson::tests::test_empty_graph ... ok
+2025-10-09T10:14:10.7786789Z test graph::ford_fulkerson::tests::test_graph_with_large_flow ... ok
+2025-10-09T10:14:10.7787624Z test graph::ford_fulkerson::tests::test_graph_with_medium_flow ... ok
+2025-10-09T10:14:10.7788455Z test graph::ford_fulkerson::tests::test_graph_with_small_flow ... ok
+2025-10-09T10:14:10.7789266Z test graph::ford_fulkerson::tests::test_improper_graph ... ok
+2025-10-09T10:14:10.7790013Z test graph::ford_fulkerson::tests::test_no_edges ... ok
+2025-10-09T10:14:10.7790738Z test graph::ford_fulkerson::tests::test_same_source_sink ... ok
+2025-10-09T10:14:10.7791490Z test graph::ford_fulkerson::tests::test_self_loop ... ok
+2025-10-09T10:14:10.7792194Z test graph::ford_fulkerson::tests::test_single_vertex ... ok
+2025-10-09T10:14:10.7792914Z test graph::ford_fulkerson::tests::test_sink_out_of_bound ... ok
+2025-10-09T10:14:10.7793684Z test graph::ford_fulkerson::tests::test_source_out_of_bound ... ok
+2025-10-09T10:14:10.7794744Z test graph::ford_fulkerson::tests::test_unconnected_sink ... ok
+2025-10-09T10:14:10.7795603Z test graph::graph_enumeration::tests::integer_vertices ... ok
+2025-10-09T10:14:10.7796518Z test graph::graph_enumeration::tests::string_vertices ... ok
+2025-10-09T10:14:10.7822292Z test graph::heavy_light_decomposition::tests::random_tree ... ok
+2025-10-09T10:14:10.7825813Z test graph::heavy_light_decomposition::tests::single_path ... ok
+2025-10-09T10:14:10.7827646Z test graph::kosaraju::tests::test_kosaraju_empty_graph ... ok
+2025-10-09T10:14:10.7831619Z test graph::kosaraju::tests::test_kosaraju_multiple_sccs ... ok
+2025-10-09T10:14:10.7832390Z test graph::kosaraju::tests::test_kosaraju_multiple_sccs1 ... ok
+2025-10-09T10:14:10.7833090Z test graph::kosaraju::tests::test_kosaraju_no_scc ... ok
+2025-10-09T10:14:10.7836005Z test graph::kosaraju::tests::test_kosaraju_single_sccs ... ok
+2025-10-09T10:14:10.7836808Z test graph::lee_breadth_first_search::tests::test_lee_does_not_exist ... ok
+2025-10-09T10:14:10.7838412Z test graph::lee_breadth_first_search::tests::test_lee_exists ... ok
+2025-10-09T10:14:10.7846189Z test graph::lee_breadth_first_search::tests::test_lee_exists_2 ... ok
+2025-10-09T10:14:10.7848971Z test graph::lee_breadth_first_search::tests::test_source_equals_destination ... ok
+2025-10-09T10:14:10.7973715Z test graph::lowest_common_ancestor::tests::small_binary_tree ... ok
+2025-10-09T10:14:10.7979325Z test graph::minimum_spanning_tree::tests::test_disconnected_graph ... ok
+2025-10-09T10:14:10.8027140Z test graph::minimum_spanning_tree::tests::test_seven_vertices_eleven_edges ... ok
+2025-10-09T10:14:10.8056784Z test graph::minimum_spanning_tree::tests::test_ten_vertices_twenty_edges ... ok
+2025-10-09T10:14:10.8062113Z test graph::prim::tests::empty ... ok
+2025-10-09T10:14:10.8067097Z test graph::prim::tests::graph_1 ... ok
+2025-10-09T10:14:10.8085541Z test graph::prim::tests::graph_2 ... ok
+2025-10-09T10:14:10.8107386Z test graph::prim::tests::graph_3 ... ok
+2025-10-09T10:14:10.8136342Z test graph::prim::tests::single_edge ... ok
+2025-10-09T10:14:10.8146554Z test graph::prim::tests::single_vertex ... ok
+2025-10-09T10:14:10.8157123Z test graph::prim::tests::tree_1 ... ok
+2025-10-09T10:14:10.8166964Z test graph::prim::tests::tree_2 ... ok
+2025-10-09T10:14:10.8191429Z test graph::prim::tests::tree_3 ... ok
+2025-10-09T10:14:10.8204623Z test general::permutations::naive::tests::test_some_elements ... ok
+2025-10-09T10:14:10.8209409Z test graph::strongly_connected_components::tests::acyclic ... ok
+2025-10-09T10:14:10.8211939Z test graph::strongly_connected_components::tests::connected_dumbbell ... ok
+2025-10-09T10:14:10.8220740Z test graph::strongly_connected_components::tests::cycle ... ok
+2025-10-09T10:14:10.8221345Z test graph::prufer_code::tests::small_trees ... ok
+2025-10-09T10:14:10.8221873Z test graph::tarjans_ssc::tests::test_tarjan_scc ... ok
+2025-10-09T10:14:10.8222469Z test graph::strongly_connected_components::tests::dumbbell ... ok
+2025-10-09T10:14:10.8223058Z test graph::topological_sort::tests::it_works ... ok
+2025-10-09T10:14:10.8223655Z test graph::topological_sort::tests::test_wikipedia_example ... ok
+2025-10-09T10:14:10.8224264Z test graph::two_satisfiability::tests::basic_test ... ok
+2025-10-09T10:14:10.8225037Z test graph::two_satisfiability::tests::big_test ... ignored
+2025-10-09T10:14:10.8226188Z test greedy::stable_matching::tests::test_stable_matching_duplicate_preferences ... ok
+2025-10-09T10:14:10.8227147Z test graph::topological_sort::tests::test_cyclic_graph ... ok
+2025-10-09T10:14:10.8228096Z test greedy::stable_matching::tests::test_stable_matching_empty ... ok
+2025-10-09T10:14:10.8229097Z test greedy::stable_matching::tests::test_stable_matching_single_pair ... ok
+2025-10-09T10:14:10.8229914Z test greedy::stable_matching::tests::test_stable_matching_scenario_1 ... ok
+2025-10-09T10:14:10.8230666Z test greedy::stable_matching::tests::test_woman_prefers_new_man ... ok
+2025-10-09T10:14:10.8231326Z test machine_learning::cholesky::tests::empty_matrix ... ok
+2025-10-09T10:14:10.8231982Z test machine_learning::cholesky::tests::matrix_with_all_zeros ... ok
+2025-10-09T10:14:10.8232631Z test machine_learning::cholesky::tests::test_cholesky ... ok
+2025-10-09T10:14:10.8233497Z test machine_learning::cholesky::tests::test_matrix_operations ... ok
+2025-10-09T10:14:10.8234333Z test machine_learning::linear_regression::test::test_empty_list_linear_regression ... ok
+2025-10-09T10:14:10.8235601Z test machine_learning::linear_regression::test::test_linear_regression ... ok
+2025-10-09T10:14:10.8576426Z test machine_learning::logistic_regression::test::test_logistic_regression_extreme_data ... ok
+2025-10-09T10:14:10.8579533Z test machine_learning::logistic_regression::test::test_logistic_regression_no_data ... ok
+2025-10-09T10:14:10.8877050Z test machine_learning::k_means::test::test_k_means ... ok
+2025-10-09T10:14:10.8898566Z test machine_learning::loss_function::average_margin_ranking_loss::tests::empty_inputs ... ok
+2025-10-09T10:14:10.8900912Z test machine_learning::loss_function::average_margin_ranking_loss::tests::invalid_length0 ... ok
+2025-10-09T10:14:10.8920878Z test machine_learning::loss_function::average_margin_ranking_loss::tests::invalid_length1 ... ok
+2025-10-09T10:14:10.8921902Z test machine_learning::loss_function::average_margin_ranking_loss::tests::invalid_length2 ... ok
+2025-10-09T10:14:10.8922888Z test machine_learning::loss_function::average_margin_ranking_loss::tests::invalid_length3 ... ok
+2025-10-09T10:14:10.8923867Z test machine_learning::loss_function::average_margin_ranking_loss::tests::invalid_values ... ok
+2025-10-09T10:14:10.8924845Z test machine_learning::loss_function::average_margin_ranking_loss::tests::invalid_y_true ... ok
+2025-10-09T10:14:10.8925946Z test machine_learning::loss_function::average_margin_ranking_loss::tests::set_0 ... ok
+2025-10-09T10:14:10.8926820Z test machine_learning::loss_function::average_margin_ranking_loss::tests::set_1 ... ok
+2025-10-09T10:14:10.8927686Z test machine_learning::loss_function::average_margin_ranking_loss::tests::set_2 ... ok
+2025-10-09T10:14:10.8928544Z test machine_learning::loss_function::average_margin_ranking_loss::tests::set_3 ... ok
+2025-10-09T10:14:10.8929384Z test machine_learning::loss_function::hinge_loss::tests::test_hinge_loss ... ok
+2025-10-09T10:14:10.8930332Z test machine_learning::loss_function::huber_loss::tests::test_huber_loss_empty_prediction ... ok
+2025-10-09T10:14:10.8931295Z test machine_learning::loss_function::huber_loss::tests::test_huber_loss_invalid_length ... ok
+2025-10-09T10:14:10.8932313Z test machine_learning::loss_function::huber_loss::tests::test_huber_loss_residual_greater_than_delta ... ok
+2025-10-09T10:14:10.8933375Z test machine_learning::loss_function::huber_loss::tests::test_huber_loss_residual_less_than_delta ... ok
+2025-10-09T10:14:10.8934333Z test machine_learning::loss_function::kl_divergence_loss::tests::test_kld_loss ... ok
+2025-10-09T10:14:10.8935773Z test machine_learning::loss_function::mean_absolute_error_loss::tests::test_mae_loss ... ok
+2025-10-09T10:14:10.8936704Z test machine_learning::loss_function::mean_squared_error_loss::tests::test_mse_loss ... ok
+2025-10-09T10:14:10.8937638Z test machine_learning::loss_function::negative_log_likelihood::tests::different_length ... ok
+2025-10-09T10:14:10.8938751Z test machine_learning::loss_function::negative_log_likelihood::tests::different_length_one_empty ... ok
+2025-10-09T10:14:10.8967542Z test machine_learning::loss_function::negative_log_likelihood::tests::empty_input ... ok
+2025-10-09T10:14:10.8968476Z test machine_learning::loss_function::negative_log_likelihood::tests::set_0 ... ok
+2025-10-09T10:14:10.8969317Z test machine_learning::loss_function::negative_log_likelihood::tests::set_1 ... ok
+2025-10-09T10:14:10.8970133Z test machine_learning::loss_function::negative_log_likelihood::tests::set_2 ... ok
+2025-10-09T10:14:10.8970958Z test machine_learning::loss_function::negative_log_likelihood::tests::set_3 ... ok
+2025-10-09T10:14:10.8971919Z test machine_learning::loss_function::negative_log_likelihood::tests::value_greater_smaller_than_0 ... ok
+2025-10-09T10:14:10.8972972Z test machine_learning::loss_function::negative_log_likelihood::tests::value_greater_than_1 ... ok
+2025-10-09T10:14:10.8974140Z test machine_learning::optimization::adam::tests::test_adam_init_all_custom_values ... ok
+2025-10-09T10:14:10.8975073Z test machine_learning::optimization::adam::tests::test_adam_init_custom_betas_value ... ok
+2025-10-09T10:14:10.8976301Z test machine_learning::optimization::adam::tests::test_adam_init_custom_epsilon_value ... ok
+2025-10-09T10:14:10.8977216Z test machine_learning::optimization::adam::tests::test_adam_init_custom_lr_value ... ok
+2025-10-09T10:14:10.8978105Z test machine_learning::optimization::adam::tests::test_adam_init_default_values ... ok
+2025-10-09T10:14:10.8978990Z test machine_learning::optimization::adam::tests::test_adam_step_custom_params ... ok
+2025-10-09T10:14:10.8979865Z test machine_learning::optimization::adam::tests::test_adam_step_default_params ... ok
+2025-10-09T10:14:10.8980785Z test machine_learning::optimization::adam::tests::test_adam_step_empty_gradients_array ... ok
+2025-10-09T10:14:10.8981915Z test machine_learning::optimization::adam::tests::test_adam_step_iteratively_until_convergence_with_custom_params ... ignored
+2025-10-09T10:14:10.8983239Z test machine_learning::optimization::adam::tests::test_adam_step_iteratively_until_convergence_with_default_params ... ignored
+2025-10-09T10:14:10.8987270Z test machine_learning::optimization::gradient_descent::test::test_gradient_descent_optimized ... ok
+2025-10-09T10:14:10.9002283Z test machine_learning::optimization::gradient_descent::test::test_gradient_descent_unoptimized ... ok
+2025-10-09T10:14:10.9003103Z test math::abs::test::positive_number ... ok
+2025-10-09T10:14:10.9003596Z test math::abs::test::test_negative_number_f64 ... ok
+2025-10-09T10:14:10.9004117Z test math::abs::test::test_negative_number_i32 ... ok
+2025-10-09T10:14:10.9004576Z test math::abs::test::zero ... ok
+2025-10-09T10:14:10.9005128Z test math::aliquot_sum::tests::panics_if_input_is_zero - should panic ... ok
+2025-10-09T10:14:10.9005908Z test math::aliquot_sum::tests::test_with_1 ... ok
+2025-10-09T10:14:10.9006387Z test math::aliquot_sum::tests::test_with_10 ... ok
+2025-10-09T10:14:10.9006884Z test math::aliquot_sum::tests::test_with_15 ... ok
+2025-10-09T10:14:10.9007355Z test math::aliquot_sum::tests::test_with_2 ... ok
+2025-10-09T10:14:10.9007827Z test math::aliquot_sum::tests::test_with_3 ... ok
+2025-10-09T10:14:10.9008312Z test math::aliquot_sum::tests::test_with_343 ... ok
+2025-10-09T10:14:10.9008803Z test math::aliquot_sum::tests::test_with_344 ... ok
+2025-10-09T10:14:10.9009283Z test math::aliquot_sum::tests::test_with_4 ... ok
+2025-10-09T10:14:10.9012386Z test math::aliquot_sum::tests::test_with_5 ... ok
+2025-10-09T10:14:10.9016502Z test machine_learning::logistic_regression::test::test_logistic_regression_simple ... ok
+2025-10-09T10:14:10.9019340Z test math::aliquot_sum::tests::test_with_500 ... ok
+2025-10-09T10:14:10.9022758Z test math::aliquot_sum::tests::test_with_501 ... ok
+2025-10-09T10:14:10.9026596Z test math::aliquot_sum::tests::test_with_7 ... ok
+2025-10-09T10:14:10.9030190Z test math::aliquot_sum::tests::test_with_8 ... ok
+2025-10-09T10:14:10.9033878Z test math::aliquot_sum::tests::test_with_9 ... ok
+2025-10-09T10:14:10.9036660Z test math::aliquot_sum::tests::test_with_6 ... ok
+2025-10-09T10:14:10.9046415Z test math::area_of_polygon::tests::test_area_hexagon ... ok
+2025-10-09T10:14:10.9066446Z test math::area_of_polygon::tests::test_area_square ... ok
+2025-10-09T10:14:10.9070189Z test math::area_of_polygon::tests::test_area_triangle ... ok
+2025-10-09T10:14:10.9096308Z test math::area_under_curve::test::test_linear_func ... ok
+2025-10-09T10:14:10.9135762Z test math::area_under_curve::test::test_quadratic_func ... ok
+2025-10-09T10:14:10.9136526Z test math::area_under_curve::test::test_reverse ... ok
+2025-10-09T10:14:10.9156862Z test math::area_under_curve::test::test_zero_length ... ok
+2025-10-09T10:14:10.9205760Z test math::armstrong_number::tests::big_armstrong_number ... ok
+2025-10-09T10:14:10.9216009Z test math::armstrong_number::tests::one_digit_armstrong_number ... ok
+2025-10-09T10:14:10.9226508Z test math::armstrong_number::tests::three_digit_armstrong_number ... ok
+2025-10-09T10:14:10.9246609Z test math::armstrong_number::tests::three_digit_non_armstrong_number ... ok
+2025-10-09T10:14:10.9276642Z test math::armstrong_number::tests::two_digit_numbers_are_not_armstrong_numbers ... ok
+2025-10-09T10:14:10.9286433Z test math::average::test::mean_test ... ok
+2025-10-09T10:14:10.9306310Z test math::average::test::median_test ... ok
+2025-10-09T10:14:10.9317279Z test math::average::test::mode_test ... ok
+2025-10-09T10:14:10.9336626Z test math::baby_step_giant_step::tests::no_solution ... ok
+2025-10-09T10:14:10.9555796Z test math::amicable_numbers::tests::test_amicable_numbers_below_n ... ok
+2025-10-09T10:14:10.9820278Z test math::baby_step_giant_step::tests::random_numbers ... ok
+2025-10-09T10:14:10.9875893Z test math::baby_step_giant_step::tests::small_numbers ... ok
+2025-10-09T10:14:10.9879865Z test math::bell_numbers::tests::test_bell_numbers ... ok
+2025-10-09T10:14:10.9880631Z test math::bell_numbers::tests::test_choose_zero ... ok
+2025-10-09T10:14:10.9884456Z test math::bell_numbers::tests::test_combination ... ok
+2025-10-09T10:14:10.9885434Z test math::binary_exponentiation::tests::basic ... ok
+2025-10-09T10:14:10.9886265Z test math::binary_exponentiation::tests::up_to_ten ... ok
+2025-10-09T10:14:10.9887119Z test math::binomial_coefficient::tests::test_binom_0_0 ... ok
+2025-10-09T10:14:10.9887938Z test math::binomial_coefficient::tests::test_binom_10_5 ... ok
+2025-10-09T10:14:10.9888686Z test math::binomial_coefficient::tests::test_binom_5_2 ... ok
+2025-10-09T10:14:10.9889527Z test math::binomial_coefficient::tests::test_binom_large_n_small_k ... ok
+2025-10-09T10:14:10.9890479Z test math::binomial_coefficient::tests::test_binom_random_1 ... ok
+2025-10-09T10:14:10.9891191Z test math::binomial_coefficient::tests::test_binom_random_2 ... ok
+2025-10-09T10:14:10.9891857Z test math::binomial_coefficient::tests::test_binom_random_3 ... ok
+2025-10-09T10:14:11.0414754Z test math::catalan_numbers::tests::test_catalan ... ok
+2025-10-09T10:14:11.0431979Z test math::ceil::tests::negative_decimal ... ok
+2025-10-09T10:14:11.0436059Z test math::ceil::tests::negative_decimal_with_small_number ... ok
+2025-10-09T10:14:11.0439758Z test math::ceil::tests::negative_integer ... ok
+2025-10-09T10:14:11.0443347Z test math::ceil::tests::positive_decimal ... ok
+2025-10-09T10:14:11.0477110Z test math::ceil::tests::positive_decimal_with_small_number ... ok
+2025-10-09T10:14:11.0478092Z test math::ceil::tests::positive_integer ... ok
+2025-10-09T10:14:11.0479049Z test math::ceil::tests::zero ... ok
+2025-10-09T10:14:11.0479643Z test math::chinese_remainder_theorem::tests::basic ... ok
+2025-10-09T10:14:11.0480368Z test math::collatz_sequence::tests::validity_check ... ok
+2025-10-09T10:14:11.0481202Z test math::combinations::tests::test_combinations_10_choose_5 ... ok
+2025-10-09T10:14:11.0481923Z test math::combinations::tests::test_combinations_20_choose_5 ... ok
+2025-10-09T10:14:11.0482618Z test math::combinations::tests::test_combinations_6_choose_3 ... ok
+2025-10-09T10:14:11.0483415Z test math::combinations::tests::test_combinations_invalid_input - should panic ... ok
+2025-10-09T10:14:11.0484255Z test math::cross_entropy_loss::tests::test_cross_entropy_loss ... ok
+2025-10-09T10:14:11.0484945Z test math::decimal_to_fraction::tests::test_decimal_to_fraction_1 ... ok
+2025-10-09T10:14:11.0485797Z test math::decimal_to_fraction::tests::test_decimal_to_fraction_2 ... ok
+2025-10-09T10:14:11.0486501Z test math::decimal_to_fraction::tests::test_decimal_to_fraction_3 ... ok
+2025-10-09T10:14:11.0487194Z test math::decimal_to_fraction::tests::test_decimal_to_fraction_4 ... ok
+2025-10-09T10:14:11.0487893Z test math::decimal_to_fraction::tests::test_decimal_to_fraction_5 ... ok
+2025-10-09T10:14:11.0488583Z test math::decimal_to_fraction::tests::test_decimal_to_fraction_6 ... ok
+2025-10-09T10:14:11.0489199Z test math::doomsday::tests::doomsday_test ... ok
+2025-10-09T10:14:11.0489715Z test math::elliptic_curve::tests::cardinality ... ok
+2025-10-09T10:14:11.0491105Z test math::elliptic_curve::tests::cardinality_large_prime ... ignored, slow test showing that cadinality is not yet feasible to compute for a large prime
+2025-10-09T10:14:11.0492365Z test math::elliptic_curve::tests::cardinality_perf ... ignored, slow test for measuring time
+2025-10-09T10:14:11.0493285Z test math::elliptic_curve::tests::e_5_1_0_group_table ... ok
+2025-10-09T10:14:11.0789371Z test math::baby_step_giant_step::tests::primitive_root_tests ... ok
+2025-10-09T10:14:11.0793060Z test math::elliptic_curve::tests::test_char_2_panic - should panic ... ok
+2025-10-09T10:14:11.0802321Z test math::elliptic_curve::tests::test_char_3_panic - should panic ... ok
+2025-10-09T10:14:11.0807589Z test math::elliptic_curve::tests::test_points ... ok
+2025-10-09T10:14:11.0816762Z test math::elliptic_curve::tests::test_singular_panic - should panic ... ok
+2025-10-09T10:14:11.0820528Z test math::euclidean_distance::tests::test_euclidean_distance ... ok
+2025-10-09T10:14:11.0827688Z test math::exponential_linear_unit::tests::test_exponential_linear_unit ... ok
+2025-10-09T10:14:11.0856759Z test math::extended_euclidean_algorithm::tests::basic ... ok
+2025-10-09T10:14:11.0866970Z test math::factorial::tests::basic_factorial ... ok
+2025-10-09T10:14:11.0886431Z test math::factorial::tests::test_factorial ... ok
+2025-10-09T10:14:11.0907488Z test math::factorial::tests::test_factorial_recursive ... ok
+2025-10-09T10:14:11.0927523Z test math::factors::tests::composite_number ... ok
+2025-10-09T10:14:11.0938209Z test math::factors::tests::highly_composite_number ... ok
+2025-10-09T10:14:11.0947886Z test math::factors::tests::prime_number ... ok
+2025-10-09T10:14:11.0968270Z test math::fast_fourier_transform::tests::small_polynomial_returns_self ... ok
+2025-10-09T10:14:11.0970132Z test math::fast_fourier_transform::tests::square_big_polynomial ... ignored
+2025-10-09T10:14:11.0978193Z test math::fast_fourier_transform::tests::square_small_polynomial ... ok
+2025-10-09T10:14:11.0988154Z test math::fast_power::tests::test ... ok
+2025-10-09T10:14:11.0998033Z test math::faster_perfect_numbers::tests::perfect_numbers_till_n ... ok
+2025-10-09T10:14:11.1028133Z test math::field::tests::from_integer ... ok
+2025-10-09T10:14:11.1047021Z test math::field::tests::integer_mul ... ok
+2025-10-09T10:14:11.1057240Z test math::field::tests::inverse ... ok
+2025-10-09T10:14:11.1099533Z test math::field::tests::large_prime_field ... ok
+2025-10-09T10:14:11.1126491Z test math::elliptic_curve::tests::group_law ... ok
+2025-10-09T10:14:11.1127411Z test math::field::tests::test_mod_inverse ... ok
+2025-10-09T10:14:11.1146542Z test math::frizzy_number::tests::test_get_nth_frizzy ... ok
+2025-10-09T10:14:11.1151648Z test math::gaussian_elimination::tests::test_gauss ... ok
+2025-10-09T10:14:11.1167011Z test math::gaussian_error_linear_unit::tests::test_gaussian_error_linear_unit ... ok
+2025-10-09T10:14:11.1176765Z test math::gcd_of_n_numbers::tests::it_works ... ok
+2025-10-09T10:14:11.1204529Z test math::geometric_series::tests::test_geometric_series ... ok
+2025-10-09T10:14:11.1208785Z test math::greatest_common_divisor::tests::mix_iterative ... ok
+2025-10-09T10:14:11.1209714Z test math::greatest_common_divisor::tests::mix_recursive ... ok
+2025-10-09T10:14:11.1236788Z test math::greatest_common_divisor::tests::negative_number_iterative ... ok
+2025-10-09T10:14:11.1237605Z test math::greatest_common_divisor::tests::negative_number_recursive ... ok
+2025-10-09T10:14:11.1267684Z test math::greatest_common_divisor::tests::positive_number_iterative ... ok
+2025-10-09T10:14:11.1270137Z test math::greatest_common_divisor::tests::positive_number_recursive ... ok
+2025-10-09T10:14:11.1296410Z test math::greatest_common_divisor::tests::positive_number_stein ... ok
+2025-10-09T10:14:11.1297301Z test math::huber_loss::tests::test_huber_loss ... ok
+2025-10-09T10:14:11.1305060Z test math::infix_to_postfix::tests::multiply_sum_left ... ok
+2025-10-09T10:14:11.1307913Z test math::infix_to_postfix::tests::multiply_sum_right ... ok
+2025-10-09T10:14:11.1316538Z test math::infix_to_postfix::tests::multiply_two_sums ... ok
+2025-10-09T10:14:11.1341722Z test math::field::tests::test_field_elements ... ok
+2025-10-09T10:14:11.1352060Z test math::infix_to_postfix::tests::power_and_product ... ok
+2025-10-09T10:14:11.1352710Z test math::infix_to_postfix::tests::product_and_power ... ok
+2025-10-09T10:14:11.1353472Z test math::infix_to_postfix::tests::product_in_exponent ... ok
+2025-10-09T10:14:11.1354070Z test math::infix_to_postfix::tests::product_of_powers ... ok
+2025-10-09T10:14:11.1354621Z test math::infix_to_postfix::tests::regular_0 ... ok
+2025-10-09T10:14:11.1355805Z test math::infix_to_postfix::tests::regular_1 ... ok
+2025-10-09T10:14:11.1363404Z test math::infix_to_postfix::tests::regular_2 ... ok
+2025-10-09T10:14:11.1366906Z test math::infix_to_postfix::tests::simple_sum ... ok
+2025-10-09T10:14:11.1368776Z test math::infix_to_postfix::tests::single_symbol ... ok
+2025-10-09T10:14:11.1373197Z test math::infix_to_postfix::tests::unmatched_paren ... ok
+2025-10-09T10:14:11.1373756Z test math::interest::tests::test_compounding ... ok
+2025-10-09T10:14:11.1374245Z test math::interest::tests::test_simple ... ok
+2025-10-09T10:14:11.1374896Z test math::interpolation::tests::test_lagrange_polynomial_interpolation ... ok
+2025-10-09T10:14:11.1375836Z test math::interpolation::tests::test_linear_intepolation ... ok
+2025-10-09T10:14:11.1376483Z test math::interquartile_range::tests::test_find_median ... ok
+2025-10-09T10:14:11.1377158Z test math::interquartile_range::tests::test_interquartile_range ... ok
+2025-10-09T10:14:11.1378013Z test math::interquartile_range::tests::test_interquartile_range_empty_list - should panic ... ok
+2025-10-09T10:14:11.1378800Z test math::karatsuba_multiplication::test::test_1 ... ok
+2025-10-09T10:14:11.1379373Z test math::infix_to_postfix::tests::unknown_character ... ok
+2025-10-09T10:14:11.1439696Z test math::karatsuba_multiplication::test::test_2 ... ok
+2025-10-09T10:14:11.1440396Z test math::karatsuba_multiplication::test::test_3 ... ok
+2025-10-09T10:14:11.1441031Z test math::leaky_relu::tests::test_leaky_relu ... ok
+2025-10-09T10:14:11.1441725Z test math::least_square_approx::tests::eight_points_5th_degree ... ok
+2025-10-09T10:14:11.1442487Z test math::least_square_approx::tests::four_points_2nd_degree ... ok
+2025-10-09T10:14:11.1443227Z test math::least_square_approx::tests::ten_points_1st_degree ... ok
+2025-10-09T10:14:11.1443892Z test math::lcm_of_n_numbers::tests::it_works ... ok
+2025-10-09T10:14:11.1444505Z test math::linear_sieve::tests::check_factorization ... ok
+2025-10-09T10:14:11.1470953Z test math::linear_sieve::tests::divisible_by_mpf ... ok
+2025-10-09T10:14:11.1471568Z test math::linear_sieve::tests::small_primes_list ... ok
+2025-10-09T10:14:11.1486392Z test math::logarithm::test::basic ... ok
+2025-10-09T10:14:11.1496570Z test math::logarithm::test::test_log_negative_base ... ok
+2025-10-09T10:14:11.1516413Z test math::logarithm::test::test_log_positive_base ... ok
+2025-10-09T10:14:11.1520444Z test math::logarithm::test::test_log_tolerance ... ok
+2025-10-09T10:14:11.1524371Z test math::logarithm::test::test_log_zero_base ... ok
+2025-10-09T10:14:11.1529562Z test math::lucas_series::tests::input_0 ... ok
+2025-10-09T10:14:11.1531434Z test math::lucas_series::tests::input_1 ... ok
+2025-10-09T10:14:11.1533267Z test math::lucas_series::tests::input_10 ... ok
+2025-10-09T10:14:11.1535135Z test math::lucas_series::tests::input_15 ... ok
+2025-10-09T10:14:11.1537242Z test math::lucas_series::tests::input_2 ... ok
+2025-10-09T10:14:11.1539083Z test math::lucas_series::tests::input_20 ... ok
+2025-10-09T10:14:11.1562962Z test math::linear_sieve::tests::check_number_of_primes ... ok
+2025-10-09T10:14:11.1563524Z test math::lucas_series::tests::input_25 ... ok
+2025-10-09T10:14:11.1564000Z test math::lucas_series::tests::input_3 ... ok
+2025-10-09T10:14:11.1564456Z test math::lucas_series::tests::input_5 ... ok
+2025-10-09T10:14:11.1569108Z test math::lucas_series::tests::input_6 ... ok
+2025-10-09T10:14:11.1575801Z test math::lucas_series::tests::input_7 ... ok
+2025-10-09T10:14:11.1579192Z test math::lucas_series::tests::input_8 ... ok
+2025-10-09T10:14:11.1579930Z test math::lucas_series::tests::input_9 ... ok
+2025-10-09T10:14:11.1580772Z test math::lucas_series::tests::input_4 ... ok
+2025-10-09T10:14:11.1581477Z test math::matrix_ops::tests::test_add_f64 ... ok
+2025-10-09T10:14:11.1582311Z test math::matrix_ops::tests::test_empty_matrix ... ok
+2025-10-09T10:14:11.1583046Z test math::matrix_ops::tests::test_identity_matrix ... ok
+2025-10-09T10:14:11.1583738Z test math::matrix_ops::tests::test_invalid_add ... ok
+2025-10-09T10:14:11.1585515Z test math::matrix_ops::tests::test_invalid_matrix ... ok
+2025-10-09T10:14:11.1586974Z test math::matrix_ops::tests::test_invalid_mul ... ok
+2025-10-09T10:14:11.1587832Z test math::matrix_ops::tests::test_add_i32 ... ok
+2025-10-09T10:14:11.1588424Z test math::matrix_ops::tests::test_matrix_scalar_mul_f64 ... ok
+2025-10-09T10:14:11.1589036Z test math::matrix_ops::tests::test_matrix_scalar_mul_i32 ... ok
+2025-10-09T10:14:11.1589646Z test math::matrix_ops::tests::test_matrix_scalar_zero_mul ... ok
+2025-10-09T10:14:11.1592912Z test math::matrix_ops::tests::test_mul_f64 ... ok
+2025-10-09T10:14:11.1596524Z test math::matrix_ops::tests::test_invalid_sub ... ok
+2025-10-09T10:14:11.1597998Z test math::matrix_ops::tests::test_subtract_f64 ... ok
+2025-10-09T10:14:11.1598910Z test math::matrix_ops::tests::test_subtract_i32 ... ok
+2025-10-09T10:14:11.1600549Z test math::matrix_ops::tests::test_transpose_f64 ... ok
+2025-10-09T10:14:11.1601280Z test math::matrix_ops::tests::test_transpose_i32 ... ok
+2025-10-09T10:14:11.1601974Z test math::matrix_ops::tests::test_zero_matrix ... ok
+2025-10-09T10:14:11.1602642Z test math::mersenne_primes::tests::validity_check ... ok
+2025-10-09T10:14:11.1606572Z test math::miller_rabin::tests::basic ... ok
+2025-10-09T10:14:11.1635752Z test math::matrix_ops::tests::test_mul_i32 ... ok
+2025-10-09T10:14:11.1636494Z test math::miller_rabin::tests::big_primes ... ignored
+2025-10-09T10:14:11.1637262Z test math::modular_exponential::tests::test_modular_exponential_edge_cases ... ok
+2025-10-09T10:14:11.1638312Z test math::modular_exponential::tests::test_modular_exponential_negative ... ok
+2025-10-09T10:14:11.1639206Z test math::modular_exponential::tests::test_modular_exponential_positive ... ok
+2025-10-09T10:14:11.1640029Z test math::modular_exponential::tests::test_modular_inverse ... ok
+2025-10-09T10:14:11.1640687Z test math::newton_raphson::tests::basic ... ok
+2025-10-09T10:14:11.1646393Z test math::nthprime::tests::my_test ... ok
+2025-10-09T10:14:11.1656470Z test math::pascal_triangle::tests::test ... ok
+2025-10-09T10:14:11.1666525Z test math::perfect_cube::tests::num_0_a_perfect_cube ... ok
+2025-10-09T10:14:11.1674352Z test math::miller_rabin::tests::big_basic ... ok
+2025-10-09T10:14:11.1678886Z test math::perfect_cube::tests::num_1001_is_not_a_perfect_cube ... ok
+2025-10-09T10:14:11.1683269Z test math::perfect_cube::tests::num_1_is_a_perfect_cube ... ok
+2025-10-09T10:14:11.1687966Z test math::perfect_cube::tests::num_1000_is_a_perfect_cube ... ok
+2025-10-09T10:14:11.1692329Z test math::perfect_cube::tests::num_27_is_a_perfect_cube ... ok
+2025-10-09T10:14:11.1696325Z test math::perfect_cube::tests::num_3_is_not_a_perfect_cube ... ok
+2025-10-09T10:14:11.1700046Z test math::perfect_cube::tests::num_4_is_not_a_perfect_cube ... ok
+2025-10-09T10:14:11.1704000Z test math::perfect_cube::tests::num_5_is_not_a_perfect_cube ... ok
+2025-10-09T10:14:11.1706986Z test math::perfect_cube::tests::num_64_is_a_perfect_cube ... ok
+2025-10-09T10:14:11.1709495Z test math::perfect_cube::tests::num_8_is_a_perfect_cube ... ok
+2025-10-09T10:14:11.1715899Z test math::perfect_cube::tests::num_999_is_not_a_perfect_cube ... ok
+2025-10-09T10:14:11.1716583Z test math::perfect_cube::tests::num_2_is_not_a_perfect_cube ... ok
+2025-10-09T10:14:11.1725855Z test math::perfect_square::tests::test_perfect_square ... ok
+2025-10-09T10:14:11.1726519Z test math::perfect_square::tests::test_perfect_square_binary_search ... ok
+2025-10-09T10:14:11.1915606Z test math::perfect_numbers::tests::basic ... ok
+2025-10-09T10:14:11.1932401Z test math::pollard_rho::test::big_numbers ... ok
+2025-10-09T10:14:11.1948529Z test math::postfix_evaluation::tests::test_addition_of_negative_numbers ... ok
+2025-10-09T10:14:11.1958053Z test math::postfix_evaluation::tests::test_addition_of_two_numbers ... ok
+2025-10-09T10:14:11.1976817Z test math::postfix_evaluation::tests::test_complex_expression_with_multiple_operators ... ok
+2025-10-09T10:14:11.1986874Z test math::postfix_evaluation::tests::test_complex_expression_with_multiplication_and_addition ... ok
+2025-10-09T10:14:11.2006647Z test math::postfix_evaluation::tests::test_division_by_zero_error ... ok
+2025-10-09T10:14:11.2010487Z test math::postfix_evaluation::tests::test_empty_expression_error ... ok
+2025-10-09T10:14:11.2017680Z test math::postfix_evaluation::tests::test_expression_with_extra_whitespace ... ok
+2025-10-09T10:14:11.2027706Z test math::postfix_evaluation::tests::test_expression_with_only_whitespace ... ok
+2025-10-09T10:14:11.2067448Z test math::postfix_evaluation::tests::test_extra_operands_in_expression ... ok
+2025-10-09T10:14:11.2096785Z test math::postfix_evaluation::tests::test_first_division_by_zero ... ok
+2025-10-09T10:14:11.2106710Z test math::postfix_evaluation::tests::test_invalid_operator_in_expression ... ok
+2025-10-09T10:14:11.2114718Z test math::pollard_rho::test::one_factor ... ok
+2025-10-09T10:14:11.2118979Z test math::postfix_evaluation::tests::test_multiplication_and_addition ... ok
+2025-10-09T10:14:11.2120036Z test math::postfix_evaluation::tests::test_operator_without_operands ... ok
+2025-10-09T10:14:11.2120860Z test math::postfix_evaluation::tests::test_simple_division ... ok
+2025-10-09T10:14:11.2121650Z test math::postfix_evaluation::tests::test_single_number_expression ... ok
+2025-10-09T10:14:11.2122523Z test math::postfix_evaluation::tests::test_valid_then_invalid_operator ... ok
+2025-10-09T10:14:11.2123231Z test math::prime_check::tests::basic ... ok
+2025-10-09T10:14:11.2123783Z test math::prime_factors::tests::it_works ... ok
+2025-10-09T10:14:11.2124368Z test math::prime_numbers::tests::basic ... ok
+2025-10-09T10:14:11.2125021Z test math::quadratic_residue::tests::cipolla_random_numbers ... ok
+2025-10-09T10:14:11.2125958Z test math::quadratic_residue::tests::cipolla_small_numbers ... ok
+2025-10-09T10:14:11.2126648Z test math::quadratic_residue::tests::no_answer ... ok
+2025-10-09T10:14:11.2127389Z test math::quadratic_residue::tests::tonelli_shanks_random_numbers ... ok
+2025-10-09T10:14:11.2128266Z test math::postfix_evaluation::tests::test_missing_operator_for_expression ... ok
+2025-10-09T10:14:11.2129143Z test math::quadratic_residue::tests::tonelli_shanks_small_numbers ... ok
+2025-10-09T10:14:11.2156484Z test math::relu::tests::test_relu ... ok
+2025-10-09T10:14:11.2160279Z test math::sieve_of_eratosthenes::tests::test_0 ... ok
+2025-10-09T10:14:11.2161831Z test math::sieve_of_eratosthenes::tests::test_1 ... ok
+2025-10-09T10:14:11.2163268Z test math::sieve_of_eratosthenes::tests::test_100 ... ok
+2025-10-09T10:14:11.2164014Z test math::sieve_of_eratosthenes::tests::test_1000 ... ok
+2025-10-09T10:14:11.2164807Z test math::sieve_of_eratosthenes::tests::test_11 ... ok
+2025-10-09T10:14:11.2165582Z test math::sieve_of_eratosthenes::tests::test_2 ... ok
+2025-10-09T10:14:11.2166354Z test math::sieve_of_eratosthenes::tests::test_23 ... ok
+2025-10-09T10:14:11.2167126Z test math::sieve_of_eratosthenes::tests::test_24 ... ok
+2025-10-09T10:14:11.2167853Z test math::sieve_of_eratosthenes::tests::test_25 ... ok
+2025-10-09T10:14:11.2168515Z test math::sieve_of_eratosthenes::tests::test_26 ... ok
+2025-10-09T10:14:11.2169176Z test math::sieve_of_eratosthenes::tests::test_27 ... ok
+2025-10-09T10:14:11.2169856Z test math::sieve_of_eratosthenes::tests::test_28 ... ok
+2025-10-09T10:14:11.2170509Z test math::sieve_of_eratosthenes::tests::test_29 ... ok
+2025-10-09T10:14:11.2171161Z test math::sieve_of_eratosthenes::tests::test_3 ... ok
+2025-10-09T10:14:11.2171835Z test math::sieve_of_eratosthenes::tests::test_33 ... ok
+2025-10-09T10:14:11.2172483Z test math::sieve_of_eratosthenes::tests::test_4 ... ok
+2025-10-09T10:14:11.2173133Z test math::sieve_of_eratosthenes::tests::test_5 ... ok
+2025-10-09T10:14:11.2174029Z test math::sieve_of_eratosthenes::tests::test_6 ... ok
+2025-10-09T10:14:11.2174776Z test math::sieve_of_eratosthenes::tests::test_7 ... ok
+2025-10-09T10:14:11.2175788Z test math::sieve_of_eratosthenes::tests::test_997 ... ok
+2025-10-09T10:14:11.2178115Z test math::sieve_of_eratosthenes::tests::test_998 ... ok
+2025-10-09T10:14:11.2179889Z test math::sieve_of_eratosthenes::tests::test_999 ... ok
+2025-10-09T10:14:11.2182300Z test math::sigmoid::tests::test_sigmoid ... ok
+2025-10-09T10:14:11.2182804Z test math::signum::tests::negative_integer ... ok
+2025-10-09T10:14:11.2183303Z test math::signum::tests::positive_integer ... ok
+2025-10-09T10:14:11.2184191Z test math::signum::tests::zero ... ok
+2025-10-09T10:14:11.2184971Z test math::simpsons_integration::tests::area_under_cosine ... ok
+2025-10-09T10:14:11.2186279Z test math::simpsons_integration::tests::parabola_curve_length ... ok
+2025-10-09T10:14:11.2187578Z test math::simpsons_integration::tests::test_convergence ... ok
+2025-10-09T10:14:11.2188542Z test math::simpsons_integration::tests::test_error ... ok
+2025-10-09T10:14:11.2189775Z test math::simpsons_integration::tests::test_negative ... ok
+2025-10-09T10:14:11.2190502Z test math::simpsons_integration::tests::test_non_zero_lower_and_upper_bound ... ok
+2025-10-09T10:14:11.2206169Z test math::simpsons_integration::tests::test_non_zero_lower_and_upper_bound_negative ... ok
+2025-10-09T10:14:11.2207215Z test math::simpsons_integration::tests::test_non_zero_lower_bound ... ok
+2025-10-09T10:14:11.2208374Z test math::simpsons_integration::tests::test_non_zero_upper_bound ... ok
+2025-10-09T10:14:11.2209572Z test math::simpsons_integration::tests::test_simpsons_integration ... ok
+2025-10-09T10:14:11.2211786Z test math::softmax::tests::test_softmax ... ok
+2025-10-09T10:14:11.2214267Z test math::sprague_grundy_theorem::tests::calculate_grundy_number_test ... ok
+2025-10-09T10:14:11.2216572Z test math::square_pyramidal_numbers::tests::test0 ... ok
+2025-10-09T10:14:11.2219536Z test math::square_root::tests::test_fast_inv_sqrt ... ok
+2025-10-09T10:14:11.2220085Z test math::square_root::tests::test_sqare_root ... ok
+2025-10-09T10:14:11.2220666Z test math::sum_of_digits::tests::iterative::negative_number ... ok
+2025-10-09T10:14:11.2221323Z test math::sum_of_digits::tests::iterative::positive_number ... ok
+2025-10-09T10:14:11.2221968Z test math::sum_of_digits::tests::iterative::trailing_zeros ... ok
+2025-10-09T10:14:11.2222560Z test math::sum_of_digits::tests::iterative::zero ... ok
+2025-10-09T10:14:11.2223140Z test math::sum_of_digits::tests::recursive::negative_number ... ok
+2025-10-09T10:14:11.2223770Z test math::sum_of_digits::tests::recursive::positive_number ... ok
+2025-10-09T10:14:11.2224398Z test math::sum_of_digits::tests::recursive::trailing_zeros ... ok
+2025-10-09T10:14:11.2224974Z test math::sum_of_digits::tests::recursive::zero ... ok
+2025-10-09T10:14:11.2225743Z test math::sum_of_geometric_progression::tests::common_ratio_one ... ok
+2025-10-09T10:14:11.2226440Z test math::sum_of_geometric_progression::tests::regular_input_0 ... ok
+2025-10-09T10:14:11.2227132Z test math::sum_of_geometric_progression::tests::regular_input_1 ... ok
+2025-10-09T10:14:11.2238091Z test math::sum_of_geometric_progression::tests::regular_input_2 ... ok
+2025-10-09T10:14:11.2239554Z test math::sum_of_harmonic_series::tests::test_sum_of_harmonic_progression ... ok
+2025-10-09T10:14:11.2241951Z test math::sylvester_sequence::tests::test_sylvester ... ok
+2025-10-09T10:14:11.2244354Z test math::sylvester_sequence::tests::test_sylvester_negative - should panic ... ok
+2025-10-09T10:14:11.2246726Z test math::tanh::tests::test_tanh ... ok
+2025-10-09T10:14:11.2265715Z test math::trapezoidal_integration::tests::basic_0 ... ok
+2025-10-09T10:14:11.2266907Z test math::trapezoidal_integration::tests::basic_0_higher_prec ... ok
+2025-10-09T10:14:11.2276107Z test math::trapezoidal_integration::tests::basic_1 ... ok
+2025-10-09T10:14:11.2380162Z test math::trapezoidal_integration::tests::basic_1_higher_prec ... ok
+2025-10-09T10:14:11.2384309Z test math::trapezoidal_integration::tests::empty_range ... ok
+2025-10-09T10:14:11.2388368Z test math::trapezoidal_integration::tests::flipped_limits ... ok
+2025-10-09T10:14:11.2392822Z test math::trial_division::tests::basic ... ok
+2025-10-09T10:14:11.2394896Z test math::trig_functions::tests::test_cosine ... ok
+2025-10-09T10:14:11.2397450Z test math::trig_functions::tests::test_cosine_bad_arg ... ok
+2025-10-09T10:14:11.2399412Z test math::trig_functions::tests::test_cotan ... ok
+2025-10-09T10:14:11.2416034Z test math::trig_functions::tests::test_cotan_bad_arg ... ok
+2025-10-09T10:14:11.2416821Z test math::trig_functions::tests::test_sine ... ok
+2025-10-09T10:14:11.2417467Z test math::trig_functions::tests::test_sine_bad_arg ... ok
+2025-10-09T10:14:11.2419848Z test math::trig_functions::tests::test_tan ... ok
+2025-10-09T10:14:11.2422116Z test math::trig_functions::tests::test_tan_bad_arg ... ok
+2025-10-09T10:14:11.2422909Z test math::vector_cross_product::tests::test_cross_product_and_magnitude_1 ... ok
+2025-10-09T10:14:11.2423819Z test math::vector_cross_product::tests::test_cross_product_and_magnitude_2 ... ok
+2025-10-09T10:14:11.2426008Z test math::vector_cross_product::tests::test_cross_product_and_magnitude_3 ... ok
+2025-10-09T10:14:11.2427948Z test math::vector_cross_product::tests::test_cross_product_and_magnitude_4 ... ok
+2025-10-09T10:14:11.2428741Z test math::vector_cross_product::tests::test_cross_product_and_magnitude_5 ... ok
+2025-10-09T10:14:11.2430397Z test math::zellers_congruence_algorithm::tests::it_works ... ok
+2025-10-09T10:14:11.2431006Z test navigation::bearing::tests::testing ... ok
+2025-10-09T10:14:11.2431506Z test navigation::haversine::tests::testing ... ok
+2025-10-09T10:14:11.2432042Z test number_theory::compute_totient::tests::test_1 ... ok
+2025-10-09T10:14:11.2432613Z test number_theory::compute_totient::tests::test_2 ... ok
+2025-10-09T10:14:11.2433167Z test number_theory::compute_totient::tests::test_3 ... ok
+2025-10-09T10:14:11.2433754Z test number_theory::euler_totient::tests::composite_10 ... ok
+2025-10-09T10:14:11.2434366Z test number_theory::euler_totient::tests::composite_12 ... ok
+2025-10-09T10:14:11.2434975Z test number_theory::euler_totient::tests::composite_15 ... ok
+2025-10-09T10:14:11.2435715Z test number_theory::euler_totient::tests::composite_18 ... ok
+2025-10-09T10:14:11.2436313Z test number_theory::euler_totient::tests::composite_20 ... ok
+2025-10-09T10:14:11.2475901Z test number_theory::euler_totient::tests::composite_30 ... ok
+2025-10-09T10:14:11.2476528Z test number_theory::euler_totient::tests::composite_6 ... ok
+2025-10-09T10:14:11.2477124Z test number_theory::euler_totient::tests::large_100 ... ok
+2025-10-09T10:14:11.2477699Z test number_theory::euler_totient::tests::large_1000 ... ok
+2025-10-09T10:14:11.2478278Z test number_theory::euler_totient::tests::large_50 ... ok
+2025-10-09T10:14:11.2478839Z test number_theory::euler_totient::tests::prime_11 ... ok
+2025-10-09T10:14:11.2479401Z test number_theory::euler_totient::tests::prime_13 ... ok
+2025-10-09T10:14:11.2479966Z test number_theory::euler_totient::tests::prime_17 ... ok
+2025-10-09T10:14:11.2480537Z test number_theory::euler_totient::tests::prime_19 ... ok
+2025-10-09T10:14:11.2481100Z test number_theory::euler_totient::tests::prime_2 ... ok
+2025-10-09T10:14:11.2481646Z test number_theory::euler_totient::tests::prime_3 ... ok
+2025-10-09T10:14:11.2482203Z test number_theory::euler_totient::tests::prime_5 ... ok
+2025-10-09T10:14:11.2482757Z test number_theory::euler_totient::tests::prime_7 ... ok
+2025-10-09T10:14:11.2483368Z test number_theory::euler_totient::tests::prime_power_2_to_2 ... ok
+2025-10-09T10:14:11.2484046Z test number_theory::euler_totient::tests::prime_power_2_to_3 ... ok
+2025-10-09T10:14:11.2484700Z test number_theory::euler_totient::tests::prime_power_2_to_4 ... ok
+2025-10-09T10:14:11.2485503Z test number_theory::euler_totient::tests::prime_power_2_to_5 ... ok
+2025-10-09T10:14:11.2486174Z test number_theory::euler_totient::tests::prime_power_3_to_2 ... ok
+2025-10-09T10:14:11.2487031Z test number_theory::euler_totient::tests::prime_power_3_to_3 ... ok
+2025-10-09T10:14:11.2487704Z test number_theory::euler_totient::tests::prime_power_5_to_2 ... ok
+2025-10-09T10:14:11.2488437Z test number_theory::kth_factor::tests::test_1 ... ok
+2025-10-09T10:14:11.2488959Z test number_theory::kth_factor::tests::test_2 ... ok
+2025-10-09T10:14:11.2489472Z test number_theory::kth_factor::tests::test_3 ... ok
+2025-10-09T10:14:11.2489983Z test number_theory::kth_factor::tests::test_4 ... ok
+2025-10-09T10:14:11.2490487Z test searching::binary_search::tests::empty ... ok
+2025-10-09T10:14:11.2491047Z test searching::binary_search::tests::one_item_found ... ok
+2025-10-09T10:14:11.2491664Z test searching::binary_search::tests::one_item_not_found ... ok
+2025-10-09T10:14:11.2492316Z test searching::binary_search::tests::search_ints_asc_end ... ok
+2025-10-09T10:14:11.2492983Z test searching::binary_search::tests::search_ints_asc_middle ... ok
+2025-10-09T10:14:11.2493672Z test searching::binary_search::tests::search_ints_asc_not_found ... ok
+2025-10-09T10:14:11.2494390Z test searching::binary_search::tests::search_ints_asc_start ... ok
+2025-10-09T10:14:11.2495062Z test searching::binary_search::tests::search_ints_desc_end ... ok
+2025-10-09T10:14:11.2495879Z test searching::binary_search::tests::search_ints_desc_middle ... ok
+2025-10-09T10:14:11.2496587Z test searching::binary_search::tests::search_ints_desc_not_found ... ok
+2025-10-09T10:14:11.2497277Z test searching::binary_search::tests::search_ints_desc_start ... ok
+2025-10-09T10:14:11.2497956Z test searching::binary_search::tests::search_strings_asc_last ... ok
+2025-10-09T10:14:11.2498652Z test searching::binary_search::tests::search_strings_asc_middle ... ok
+2025-10-09T10:14:11.2499374Z test searching::binary_search::tests::search_strings_asc_not_found ... ok
+2025-10-09T10:14:11.2500102Z test searching::binary_search::tests::search_strings_asc_start ... ok
+2025-10-09T10:14:11.2500791Z test searching::binary_search::tests::search_strings_desc_last ... ok
+2025-10-09T10:14:11.2501709Z test searching::binary_search::tests::search_strings_desc_middle ... ok
+2025-10-09T10:14:11.2502545Z test searching::binary_search::tests::search_strings_desc_not_found ... ok
+2025-10-09T10:14:11.2503376Z test searching::binary_search::tests::search_strings_desc_start ... ok
+2025-10-09T10:14:11.2504104Z test searching::binary_search::tests::with_gaps_0 ... ok
+2025-10-09T10:14:11.2504744Z test searching::binary_search::tests::with_gaps_1 ... ok
+2025-10-09T10:14:11.2505574Z test searching::binary_search::tests::with_gaps_10 ... ok
+2025-10-09T10:14:11.2506238Z test searching::binary_search::tests::with_gaps_11 ... ok
+2025-10-09T10:14:11.2506888Z test searching::binary_search::tests::with_gaps_12 ... ok
+2025-10-09T10:14:11.2507532Z test searching::binary_search::tests::with_gaps_13 ... ok
+2025-10-09T10:14:11.2508170Z test searching::binary_search::tests::with_gaps_2 ... ok
+2025-10-09T10:14:11.2508805Z test searching::binary_search::tests::with_gaps_3 ... ok
+2025-10-09T10:14:11.2509440Z test searching::binary_search::tests::with_gaps_4 ... ok
+2025-10-09T10:14:11.2510075Z test searching::binary_search::tests::with_gaps_5 ... ok
+2025-10-09T10:14:11.2510708Z test searching::binary_search::tests::with_gaps_6 ... ok
+2025-10-09T10:14:11.2511339Z test searching::binary_search::tests::with_gaps_7 ... ok
+2025-10-09T10:14:11.2511973Z test searching::binary_search::tests::with_gaps_8 ... ok
+2025-10-09T10:14:11.2512602Z test searching::binary_search::tests::with_gaps_9 ... ok
+2025-10-09T10:14:11.2513265Z test searching::binary_search_recursive::tests::empty ... ok
+2025-10-09T10:14:11.2514012Z test searching::binary_search_recursive::tests::one_item_found ... ok
+2025-10-09T10:14:11.2514819Z test searching::binary_search_recursive::tests::one_item_not_found ... ok
+2025-10-09T10:14:11.2515796Z test searching::binary_search_recursive::tests::search_ints_asc_end ... ok
+2025-10-09T10:14:11.2525382Z test searching::binary_search_recursive::tests::search_ints_asc_middle ... ok
+2025-10-09T10:14:11.2527375Z test searching::binary_search_recursive::tests::search_ints_asc_not_found ... ok
+2025-10-09T10:14:11.2528197Z test searching::binary_search_recursive::tests::search_ints_asc_start ... ok
+2025-10-09T10:14:11.2529112Z test searching::binary_search_recursive::tests::search_ints_desc_end ... ok
+2025-10-09T10:14:11.2529891Z test searching::binary_search_recursive::tests::search_ints_desc_middle ... ok
+2025-10-09T10:14:11.2530708Z test searching::binary_search_recursive::tests::search_ints_desc_not_found ... ok
+2025-10-09T10:14:11.2531607Z test searching::binary_search_recursive::tests::search_ints_desc_start ... ok
+2025-10-09T10:14:11.2532415Z test searching::binary_search_recursive::tests::search_strings_asc_last ... ok
+2025-10-09T10:14:11.2533238Z test searching::binary_search_recursive::tests::search_strings_asc_middle ... ok
+2025-10-09T10:14:11.2534075Z test searching::binary_search_recursive::tests::search_strings_asc_not_found ... ok
+2025-10-09T10:14:11.2534920Z test searching::binary_search_recursive::tests::search_strings_asc_start ... ok
+2025-10-09T10:14:11.2535872Z test searching::binary_search_recursive::tests::search_strings_desc_last ... ok
+2025-10-09T10:14:11.2536701Z test searching::binary_search_recursive::tests::search_strings_desc_middle ... ok
+2025-10-09T10:14:11.2565919Z test searching::binary_search_recursive::tests::search_strings_desc_not_found ... ok
+2025-10-09T10:14:11.2566788Z test searching::binary_search_recursive::tests::search_strings_desc_start ... ok
+2025-10-09T10:14:11.2567647Z test searching::binary_search_recursive::tests::with_gaps_0 ... ok
+2025-10-09T10:14:11.2568316Z test searching::binary_search_recursive::tests::with_gaps_1 ... ok
+2025-10-09T10:14:11.2569021Z test searching::binary_search_recursive::tests::with_gaps_10 ... ok
+2025-10-09T10:14:11.2569725Z test searching::binary_search_recursive::tests::with_gaps_11 ... ok
+2025-10-09T10:14:11.2570419Z test searching::binary_search_recursive::tests::with_gaps_12 ... ok
+2025-10-09T10:14:11.2571093Z test searching::binary_search_recursive::tests::with_gaps_13 ... ok
+2025-10-09T10:14:11.2571767Z test searching::binary_search_recursive::tests::with_gaps_2 ... ok
+2025-10-09T10:14:11.2572457Z test searching::binary_search_recursive::tests::with_gaps_3 ... ok
+2025-10-09T10:14:11.2573128Z test searching::binary_search_recursive::tests::with_gaps_4 ... ok
+2025-10-09T10:14:11.2573795Z test searching::binary_search_recursive::tests::with_gaps_5 ... ok
+2025-10-09T10:14:11.2574449Z test searching::binary_search_recursive::tests::with_gaps_6 ... ok
+2025-10-09T10:14:11.2575113Z test searching::binary_search_recursive::tests::with_gaps_7 ... ok
+2025-10-09T10:14:11.2576168Z test searching::binary_search_recursive::tests::with_gaps_8 ... ok
+2025-10-09T10:14:11.2576951Z test searching::binary_search_recursive::tests::with_gaps_9 ... ok
+2025-10-09T10:14:11.2577671Z test searching::exponential_search::tests::empty ... ok
+2025-10-09T10:14:11.2607680Z test searching::exponential_search::tests::not_found ... ok
+2025-10-09T10:14:11.2608296Z test searching::exponential_search::tests::one_item ... ok
+2025-10-09T10:14:11.2636592Z test searching::exponential_search::tests::search_ints ... ok
+2025-10-09T10:14:11.2637550Z test searching::exponential_search::tests::search_strings ... ok
+2025-10-09T10:14:11.2666354Z test searching::fibonacci_search::tests::empty ... ok
+2025-10-09T10:14:11.2670197Z test searching::fibonacci_search::tests::not_found ... ok
+2025-10-09T10:14:11.2687529Z test searching::fibonacci_search::tests::one_item ... ok
+2025-10-09T10:14:11.2690078Z test searching::fibonacci_search::tests::search_ints ... ok
+2025-10-09T10:14:11.2705649Z test searching::fibonacci_search::tests::search_strings ... ok
+2025-10-09T10:14:11.2706584Z test searching::interpolation_search::tests::returns_err_if_empty_slice ... ok
+2025-10-09T10:14:11.2707575Z test searching::interpolation_search::tests::returns_err_if_target_not_found ... ok
+2025-10-09T10:14:11.2708529Z test searching::interpolation_search::tests::returns_first_index ... ok
+2025-10-09T10:14:11.2726583Z test searching::interpolation_search::tests::returns_last_index ... ok
+2025-10-09T10:14:11.2730269Z test searching::interpolation_search::tests::returns_middle_index ... ok
+2025-10-09T10:14:11.2737358Z test searching::jump_search::tests::empty ... ok
+2025-10-09T10:14:11.2739222Z test searching::jump_search::tests::not_found ... ok
+2025-10-09T10:14:11.2757191Z test searching::jump_search::tests::one_item ... ok
+2025-10-09T10:14:11.2775601Z test searching::jump_search::tests::search_ints ... ok
+2025-10-09T10:14:11.2776477Z test searching::jump_search::tests::search_strings ... ok
+2025-10-09T10:14:11.2777257Z test searching::kth_smallest::tests::empty ... ok
+2025-10-09T10:14:11.2786388Z test searching::kth_smallest::tests::many_elements ... ok
+2025-10-09T10:14:11.2815677Z test searching::kth_smallest::tests::one_element ... ok
+2025-10-09T10:14:11.2816435Z test searching::kth_smallest_heap::tests::empty ... ok
+2025-10-09T10:14:11.2817161Z test searching::kth_smallest_heap::tests::many_elements ... ok
+2025-10-09T10:14:11.2817946Z test searching::kth_smallest_heap::tests::one_element ... ok
+2025-10-09T10:14:11.2818657Z test searching::linear_search::tests::empty ... ok
+2025-10-09T10:14:11.2826449Z test searching::linear_search::tests::one_item_found ... ok
+2025-10-09T10:14:11.2827296Z test searching::linear_search::tests::one_item_not_found ... ok
+2025-10-09T10:14:11.2846360Z test searching::linear_search::tests::search_ints_asc_end ... ok
+2025-10-09T10:14:11.2850376Z test searching::linear_search::tests::search_ints_asc_middle ... ok
+2025-10-09T10:14:11.2856629Z test searching::linear_search::tests::search_ints_asc_not_found ... ok
+2025-10-09T10:14:11.2860438Z test searching::linear_search::tests::search_ints_asc_start ... ok
+2025-10-09T10:14:11.2866555Z test searching::linear_search::tests::search_ints_desc_end ... ok
+2025-10-09T10:14:11.2870331Z test searching::linear_search::tests::search_ints_desc_middle ... ok
+2025-10-09T10:14:11.2886976Z test searching::linear_search::tests::search_ints_desc_not_found ... ok
+2025-10-09T10:14:11.2887695Z test searching::linear_search::tests::search_ints_desc_start ... ok
+2025-10-09T10:14:11.2925901Z test searching::linear_search::tests::search_strings_asc_last ... ok
+2025-10-09T10:14:11.2928550Z test searching::linear_search::tests::search_strings_asc_middle ... ok
+2025-10-09T10:14:11.2937295Z test searching::linear_search::tests::search_strings_asc_not_found ... ok
+2025-10-09T10:14:11.2939106Z test searching::linear_search::tests::search_strings_asc_start ... ok
+2025-10-09T10:14:11.2967357Z test searching::linear_search::tests::search_strings_desc_last ... ok
+2025-10-09T10:14:11.2969793Z test searching::linear_search::tests::search_strings_desc_middle ... ok
+2025-10-09T10:14:11.2976661Z test searching::linear_search::tests::search_strings_desc_not_found ... ok
+2025-10-09T10:14:11.2977587Z test searching::linear_search::tests::search_strings_desc_start ... ok
+2025-10-09T10:14:11.2996298Z test searching::linear_search::tests::with_gaps_0 ... ok
+2025-10-09T10:14:11.2998324Z test searching::linear_search::tests::with_gaps_1 ... ok
+2025-10-09T10:14:11.3026497Z test searching::linear_search::tests::with_gaps_10 ... ok
+2025-10-09T10:14:11.3030206Z test searching::linear_search::tests::with_gaps_11 ... ok
+2025-10-09T10:14:11.3066812Z test searching::linear_search::tests::with_gaps_12 ... ok
+2025-10-09T10:14:11.3067388Z test searching::linear_search::tests::with_gaps_13 ... ok
+2025-10-09T10:14:11.3067950Z test searching::linear_search::tests::with_gaps_2 ... ok
+2025-10-09T10:14:11.3068501Z test searching::linear_search::tests::with_gaps_3 ... ok
+2025-10-09T10:14:11.3076381Z test searching::linear_search::tests::with_gaps_4 ... ok
+2025-10-09T10:14:11.3081044Z test searching::linear_search::tests::with_gaps_5 ... ok
+2025-10-09T10:14:11.3086382Z test searching::linear_search::tests::with_gaps_6 ... ok
+2025-10-09T10:14:11.3090771Z test searching::linear_search::tests::with_gaps_7 ... ok
+2025-10-09T10:14:11.3107299Z test searching::linear_search::tests::with_gaps_8 ... ok
+2025-10-09T10:14:11.3109730Z test searching::linear_search::tests::with_gaps_9 ... ok
+2025-10-09T10:14:11.3137199Z test searching::moore_voting::tests::test_moore_voting ... ok
+2025-10-09T10:14:11.3137801Z test searching::quick_select::tests::it_works ... ok
+2025-10-09T10:14:11.3138622Z test searching::saddleback_search::tests::test_element_at_bottom_left ... ok
+2025-10-09T10:14:11.3139415Z test searching::saddleback_search::tests::test_element_at_bottom_right ... ok
+2025-10-09T10:14:11.3147167Z test searching::saddleback_search::tests::test_element_at_top_left ... ok
+2025-10-09T10:14:11.3148094Z test searching::saddleback_search::tests::test_element_at_top_right ... ok
+2025-10-09T10:14:11.3176624Z test searching::saddleback_search::tests::test_element_in_middle ... ok
+2025-10-09T10:14:11.3180923Z test searching::saddleback_search::tests::test_element_not_found ... ok
+2025-10-09T10:14:11.3237257Z test searching::ternary_search::tests::empty ... ok
+2025-10-09T10:14:11.3237839Z test searching::ternary_search::tests::one_item_found ... ok
+2025-10-09T10:14:11.3238486Z test searching::ternary_search::tests::one_item_not_found ... ok
+2025-10-09T10:14:11.3239568Z test searching::ternary_search::tests::search_ints_asc_end ... ok
+2025-10-09T10:14:11.3259795Z test searching::ternary_search::tests::search_ints_asc_middle ... ok
+2025-10-09T10:14:11.3260763Z test searching::ternary_search::tests::search_ints_asc_not_found ... ok
+2025-10-09T10:14:11.3261607Z test searching::ternary_search::tests::search_ints_asc_start ... ok
+2025-10-09T10:14:11.3262422Z test searching::ternary_search::tests::search_ints_desc_end ... ok
+2025-10-09T10:14:11.3276501Z test searching::ternary_search::tests::search_ints_desc_middle ... ok
+2025-10-09T10:14:11.3280358Z test searching::ternary_search::tests::search_ints_desc_not_found ... ok
+2025-10-09T10:14:11.3286365Z test searching::ternary_search::tests::search_ints_desc_start ... ok
+2025-10-09T10:14:11.3296511Z test searching::ternary_search::tests::search_strings_asc_last ... ok
+2025-10-09T10:14:11.3316433Z test searching::ternary_search::tests::search_strings_asc_middle ... ok
+2025-10-09T10:14:11.3320318Z test searching::ternary_search::tests::search_strings_asc_not_found ... ok
+2025-10-09T10:14:11.3340867Z test math::random::tests::no_birthday ... ok
+2025-10-09T10:14:11.3356992Z test searching::ternary_search::tests::search_strings_desc_last ... ok
+2025-10-09T10:14:11.3358101Z test searching::ternary_search::tests::search_strings_desc_middle ... ok
+2025-10-09T10:14:11.3359256Z test searching::ternary_search::tests::search_strings_desc_not_found ... ok
+2025-10-09T10:14:11.3360020Z test searching::ternary_search::tests::search_strings_desc_start ... ok
+2025-10-09T10:14:11.3361957Z test searching::ternary_search::tests::search_three_elements_found_end ... ok
+2025-10-09T10:14:11.3362752Z test searching::ternary_search::tests::search_three_elements_found_middle ... ok
+2025-10-09T10:14:11.3363525Z test searching::ternary_search::tests::search_strings_asc_start ... ok
+2025-10-09T10:14:11.3364275Z test searching::ternary_search::tests::search_three_elements_found_start ... ok
+2025-10-09T10:14:11.3365099Z test searching::ternary_search::tests::search_three_elements_not_found_end ... ok
+2025-10-09T10:14:11.3366077Z test searching::ternary_search::tests::search_three_elements_not_found_start ... ok
+2025-10-09T10:14:11.3366895Z test searching::ternary_search::tests::search_two_elements_found_at_end ... ok
+2025-10-09T10:14:11.3367701Z test searching::ternary_search::tests::search_two_elements_found_at_start ... ok
+2025-10-09T10:14:11.3368497Z test searching::ternary_search::tests::search_two_elements_not_found_end ... ok
+2025-10-09T10:14:11.3369302Z test searching::ternary_search::tests::search_two_elements_not_found_start ... ok
+2025-10-09T10:14:11.3369999Z test searching::ternary_search::tests::with_gaps_0 ... ok
+2025-10-09T10:14:11.3370568Z test searching::ternary_search::tests::with_gaps_1 ... ok
+2025-10-09T10:14:11.3371138Z test searching::ternary_search::tests::with_gaps_10 ... ok
+2025-10-09T10:14:11.3371704Z test searching::ternary_search::tests::with_gaps_11 ... ok
+2025-10-09T10:14:11.3372470Z test searching::ternary_search::tests::with_gaps_12 ... ok
+2025-10-09T10:14:11.3373055Z test searching::ternary_search::tests::with_gaps_13 ... ok
+2025-10-09T10:14:11.3373827Z test searching::ternary_search::tests::with_gaps_2 ... ok
+2025-10-09T10:14:11.3374389Z test searching::ternary_search::tests::with_gaps_3 ... ok
+2025-10-09T10:14:11.3374950Z test searching::ternary_search::tests::with_gaps_4 ... ok
+2025-10-09T10:14:11.3375658Z test searching::ternary_search::tests::with_gaps_5 ... ok
+2025-10-09T10:14:11.3376227Z test searching::ternary_search::tests::with_gaps_6 ... ok
+2025-10-09T10:14:11.3376785Z test searching::ternary_search::tests::with_gaps_7 ... ok
+2025-10-09T10:14:11.3377335Z test searching::ternary_search::tests::with_gaps_8 ... ok
+2025-10-09T10:14:11.3377894Z test searching::ternary_search::tests::with_gaps_9 ... ok
+2025-10-09T10:14:11.3378518Z test searching::ternary_search_min_max::tests::finds_max_value ... ok
+2025-10-09T10:14:11.3379239Z test searching::ternary_search_min_max::tests::finds_max_value_2 ... ok
+2025-10-09T10:14:11.3406520Z test searching::ternary_search_min_max::tests::finds_min_value ... ok
+2025-10-09T10:14:11.3407631Z test searching::ternary_search_min_max::tests::finds_min_value_2 ... ok
+2025-10-09T10:14:11.3408422Z test searching::ternary_search_min_max_recursive::tests::finds_max_value ... ok
+2025-10-09T10:14:11.3409231Z test searching::ternary_search_min_max_recursive::tests::finds_max_value_2 ... ok
+2025-10-09T10:14:11.3410043Z test searching::ternary_search_min_max_recursive::tests::finds_min_value ... ok
+2025-10-09T10:14:11.3410851Z test searching::ternary_search_min_max_recursive::tests::finds_min_value_2 ... ok
+2025-10-09T10:14:11.3411636Z test searching::ternary_search_recursive::tests::returns_first_index ... ok
+2025-10-09T10:14:11.3412515Z test searching::ternary_search_recursive::tests::returns_first_index_if_end_out_of_bounds ... ok
+2025-10-09T10:14:11.3413479Z test searching::ternary_search_recursive::tests::returns_index_if_list_has_one_item ... ok
+2025-10-09T10:14:11.3414332Z test searching::ternary_search_recursive::tests::returns_last_index ... ok
+2025-10-09T10:14:11.3415350Z test searching::ternary_search_recursive::tests::returns_last_index_if_end_out_of_bounds ... ok
+2025-10-09T10:14:11.3416236Z test searching::ternary_search_recursive::tests::returns_middle_index ... ok
+2025-10-09T10:14:11.3417128Z test searching::ternary_search_recursive::tests::returns_middle_index_if_end_out_of_bounds ... ok
+2025-10-09T10:14:11.3418050Z test searching::ternary_search_recursive::tests::returns_none_if_empty_list ... ok
+2025-10-09T10:14:11.3418934Z test searching::ternary_search_recursive::tests::returns_none_if_range_is_invalid ... ok
+2025-10-09T10:14:11.3419643Z test sorting::bead_sort::tests::descending ... ok
+2025-10-09T10:14:11.3420144Z test sorting::bead_sort::tests::mix_values ... ok
+2025-10-09T10:14:11.3420774Z test sorting::binary_insertion_sort::tests::test_binary_insertion_sort ... ok
+2025-10-09T10:14:11.3421467Z test sorting::bingo_sort::tests::test_already_sorted ... ok
+2025-10-09T10:14:11.3422035Z test sorting::bingo_sort::tests::test_bingo_sort ... ok
+2025-10-09T10:14:11.3422569Z test sorting::bingo_sort::tests::test_duplicates ... ok
+2025-10-09T10:14:11.3423118Z test sorting::bingo_sort::tests::test_empty_array ... ok
+2025-10-09T10:14:11.3423697Z test sorting::bingo_sort::tests::test_negative_numbers ... ok
+2025-10-09T10:14:11.3424318Z test sorting::bingo_sort::tests::test_reverse_sorted ... ok
+2025-10-09T10:14:11.3424930Z test sorting::bingo_sort::tests::test_single_element_array ... ok
+2025-10-09T10:14:11.3425641Z test sorting::bitonic_sort::tests::ascending ... ok
+2025-10-09T10:14:11.3426159Z test sorting::bitonic_sort::tests::descending ... ok
+2025-10-09T10:14:11.3426663Z test sorting::bogo_sort::tests::sorted_array ... ok
+2025-10-09T10:14:11.3427164Z test sorting::bubble_sort::tests::ascending ... ok
+2025-10-09T10:14:11.3427660Z test sorting::bubble_sort::tests::descending ... ok
+2025-10-09T10:14:11.3428153Z test sorting::bubble_sort::tests::empty ... ok
+2025-10-09T10:14:11.3428814Z test sorting::bucket_sort::tests::already_sorted ... ok
+2025-10-09T10:14:11.3429332Z test sorting::bucket_sort::tests::basic ... ok
+2025-10-09T10:14:11.3429927Z test sorting::bucket_sort::tests::empty ... ok
+2025-10-09T10:14:11.3430465Z test sorting::bucket_sort::tests::odd_number_of_elements ... ok
+2025-10-09T10:14:11.3431088Z test sorting::bucket_sort::tests::one_element ... ok
+2025-10-09T10:14:11.3431631Z test sorting::bucket_sort::tests::repeated_elements ... ok
+2025-10-09T10:14:11.3432193Z test sorting::cocktail_shaker_sort::tests::basic ... ok
+2025-10-09T10:14:11.3466965Z test sorting::cocktail_shaker_sort::tests::empty ... ok
+2025-10-09T10:14:11.3467561Z test sorting::cocktail_shaker_sort::tests::one_element ... ok
+2025-10-09T10:14:11.3468177Z test sorting::cocktail_shaker_sort::tests::pre_sorted ... ok
+2025-10-09T10:14:11.3468725Z test sorting::comb_sort::tests::ascending ... ok
+2025-10-09T10:14:11.3469217Z test sorting::comb_sort::tests::descending ... ok
+2025-10-09T10:14:11.3469709Z test sorting::comb_sort::tests::duplicates ... ok
+2025-10-09T10:14:11.3470290Z test sorting::counting_sort::test::counting_sort_descending ... ok
+2025-10-09T10:14:11.3470951Z test sorting::counting_sort::test::counting_sort_pre_sorted ... ok
+2025-10-09T10:14:11.3471606Z test sorting::counting_sort::test::generic_counting_sort ... ok
+2025-10-09T10:14:11.3472278Z test sorting::counting_sort::test::presorted_u64_counting_sort ... ok
+2025-10-09T10:14:11.3472867Z test sorting::cycle_sort::tests::it_works ... ok
+2025-10-09T10:14:11.3473437Z test sorting::dutch_national_flag_sort::tests::random_array ... ok
+2025-10-09T10:14:11.3474087Z test sorting::dutch_national_flag_sort::tests::sorted_array ... ok
+2025-10-09T10:14:11.3474666Z test sorting::exchange_sort::tests::it_works ... ok
+2025-10-09T10:14:11.3475186Z test sorting::gnome_sort::tests::already_sorted ... ok
+2025-10-09T10:14:11.3477679Z test sorting::gnome_sort::tests::basic ... ok
+2025-10-09T10:14:11.3478138Z test sorting::gnome_sort::tests::empty ... ok
+2025-10-09T10:14:11.3478669Z test sorting::gnome_sort::tests::odd_number_of_elements ... ok
+2025-10-09T10:14:11.3479233Z test sorting::gnome_sort::tests::one_element ... ok
+2025-10-09T10:14:11.3479718Z test sorting::heap_sort::tests::basic_0 ... ok
+2025-10-09T10:14:11.3480181Z test sorting::heap_sort::tests::basic_1 ... ok
+2025-10-09T10:14:11.3480632Z test sorting::heap_sort::tests::basic_2 ... ok
+2025-10-09T10:14:11.3481150Z test sorting::heap_sort::tests::duplicated_elements ... ok
+2025-10-09T10:14:11.3481688Z test sorting::heap_sort::tests::empty_array ... ok
+2025-10-09T10:14:11.3482233Z test sorting::heap_sort::tests::single_element_array ... ok
+2025-10-09T10:14:11.3482758Z test sorting::heap_sort::tests::sorted ... ok
+2025-10-09T10:14:11.3483224Z test sorting::heap_sort::tests::sorted_desc ... ok
+2025-10-09T10:14:11.3483705Z test sorting::heap_sort::tests::strings ... ok
+2025-10-09T10:14:11.3484216Z test sorting::insertion_sort::tests::already_sorted ... ok
+2025-10-09T10:14:11.3484760Z test sorting::insertion_sort::tests::basic ... ok
+2025-10-09T10:14:11.3485379Z test sorting::insertion_sort::tests::empty ... ok
+2025-10-09T10:14:11.3485966Z test sorting::insertion_sort::tests::odd_number_of_elements ... ok
+2025-10-09T10:14:11.3486581Z test sorting::insertion_sort::tests::one_element ... ok
+2025-10-09T10:14:11.3515674Z test sorting::insertion_sort::tests::repeated_elements ... ok
+2025-10-09T10:14:11.3516538Z test sorting::intro_sort::tests::test_intro_sort ... ok
+2025-10-09T10:14:11.3517237Z test sorting::merge_sort::tests::bottom_up_merge_sort::basic ... ok
+2025-10-09T10:14:11.3518018Z test sorting::merge_sort::tests::bottom_up_merge_sort::basic_string ... ok
+2025-10-09T10:14:11.3518793Z test sorting::merge_sort::tests::bottom_up_merge_sort::empty ... ok
+2025-10-09T10:14:11.3519562Z test sorting::merge_sort::tests::bottom_up_merge_sort::one_element ... ok
+2025-10-09T10:14:11.3520356Z test sorting::merge_sort::tests::bottom_up_merge_sort::pre_sorted ... ok
+2025-10-09T10:14:11.3521320Z test sorting::merge_sort::tests::bottom_up_merge_sort::reverse_sorted ... ok
+2025-10-09T10:14:11.3522123Z test sorting::merge_sort::tests::top_down_merge_sort::basic ... ok
+2025-10-09T10:14:11.3523031Z test sorting::merge_sort::tests::top_down_merge_sort::basic_string ... ok
+2025-10-09T10:14:11.3523951Z test sorting::merge_sort::tests::top_down_merge_sort::empty ... ok
+2025-10-09T10:14:11.3524754Z test sorting::merge_sort::tests::top_down_merge_sort::one_element ... ok
+2025-10-09T10:14:11.3525734Z test sorting::merge_sort::tests::top_down_merge_sort::pre_sorted ... ok
+2025-10-09T10:14:11.3526581Z test sorting::merge_sort::tests::top_down_merge_sort::reverse_sorted ... ok
+2025-10-09T10:14:11.3527312Z test sorting::odd_even_sort::tests::basic ... ok
+2025-10-09T10:14:11.3527916Z test sorting::odd_even_sort::tests::empty ... ok
+2025-10-09T10:14:11.3528546Z test sorting::odd_even_sort::tests::one_element ... ok
+2025-10-09T10:14:11.3529202Z test sorting::odd_even_sort::tests::pre_sorted ... ok
+2025-10-09T10:14:11.3529878Z test sorting::pancake_sort::tests::already_sorted ... ok
+2025-10-09T10:14:11.3530517Z test sorting::pancake_sort::tests::basic ... ok
+2025-10-09T10:14:11.3531167Z test sorting::pancake_sort::tests::empty ... ok
+2025-10-09T10:14:11.3531858Z test sorting::pancake_sort::tests::odd_number_of_elements ... ok
+2025-10-09T10:14:11.3532573Z test sorting::pancake_sort::tests::one_element ... ok
+2025-10-09T10:14:11.3533208Z test sorting::patience_sort::tests::basic ... ok
+2025-10-09T10:14:11.3533806Z test sorting::patience_sort::tests::empty ... ok
+2025-10-09T10:14:11.3534436Z test sorting::patience_sort::tests::one_element ... ok
+2025-10-09T10:14:11.3535093Z test sorting::patience_sort::tests::pre_sorted ... ok
+2025-10-09T10:14:11.3535966Z test sorting::pigeonhole_sort::tests::test1 ... ok
+2025-10-09T10:14:11.3536588Z test sorting::quick_sort::tests::basic ... ok
+2025-10-09T10:14:11.3537200Z test sorting::quick_sort::tests::basic_string ... ok
+2025-10-09T10:14:11.3537822Z test sorting::quick_sort::tests::empty ... ok
+2025-10-09T10:14:11.4346390Z test sorting::bogo_sort::tests::random_array ... ok
+2025-10-09T10:14:11.4493311Z test general::permutations::steinhaus_johnson_trotter::tests::test_some_elements ... ok
+2025-10-09T10:14:11.4497687Z test sorting::quick_sort::tests::one_element ... ok
+2025-10-09T10:14:11.4498495Z test sorting::quick_sort::tests::pre_sorted ... ok
+2025-10-09T10:14:11.4586031Z test sorting::quick_sort::tests::nearly_ordered_elements ... ok
+2025-10-09T10:14:11.4589746Z test sorting::quick_sort::tests::reverse_sorted ... ok
+2025-10-09T10:14:11.4591285Z test sorting::quick_sort_3_ways::tests::basic ... ok
+2025-10-09T10:14:11.4592819Z test sorting::quick_sort_3_ways::tests::basic_string ... ok
+2025-10-09T10:14:11.4594480Z test sorting::quick_sort_3_ways::tests::empty ... ok
+2025-10-09T10:14:12.2426502Z test sorting::quick_sort::tests::large_elements ... ok
+2025-10-09T10:14:12.3566353Z test backtracking::knight_tour::tests::test_knight_tour_8x8 ... ok
+2025-10-09T10:14:12.3567382Z test sorting::quick_sort_3_ways::tests::one_element ... ok
+2025-10-09T10:14:12.8963908Z test sorting::quick_sort_3_ways::tests::large_elements ... ok
+2025-10-09T10:14:13.2506949Z test sorting::quick_sort::tests::repeated_elements ... ok
+2025-10-09T10:14:13.6539942Z test sorting::quick_sort_3_ways::tests::nearly_ordered_elements ... ok
+2025-10-09T10:14:13.6540612Z test sorting::radix_sort::tests::ascending ... ok
+2025-10-09T10:14:13.6543628Z test sorting::radix_sort::tests::descending ... ok
+2025-10-09T10:14:13.6548137Z test sorting::radix_sort::tests::empty ... ok
+2025-10-09T10:14:13.6551619Z test sorting::selection_sort::tests::basic ... ok
+2025-10-09T10:14:13.6555522Z test sorting::selection_sort::tests::empty ... ok
+2025-10-09T10:14:13.6563917Z test sorting::selection_sort::tests::one_element ... ok
+2025-10-09T10:14:13.6564500Z test sorting::selection_sort::tests::pre_sorted ... ok
+2025-10-09T10:14:13.6565043Z test sorting::shell_sort::test::already_sorted ... ok
+2025-10-09T10:14:13.6565708Z test sorting::shell_sort::test::basic ... ok
+2025-10-09T10:14:13.6574174Z test sorting::shell_sort::test::empty ... ok
+2025-10-09T10:14:13.6574685Z test sorting::shell_sort::test::reverse ... ok
+2025-10-09T10:14:13.6575498Z test sorting::sleep_sort::tests::empty ... ok
+2025-10-09T10:14:13.6609836Z test sorting::quick_sort_3_ways::tests::pre_sorted ... ok
+2025-10-09T10:14:13.7975530Z test sorting::sleep_sort::tests::odd_number_of_elements ... ok
+2025-10-09T10:14:13.8178473Z test sorting::sleep_sort::tests::repeated_elements ... ok
+2025-10-09T10:14:13.8381727Z test sorting::sleep_sort::tests::single_element ... ok
+2025-10-09T10:14:13.8618145Z test sorting::sleep_sort::tests::random_elements ... ok
+2025-10-09T10:14:13.9184463Z test sorting::sleep_sort::tests::sorted_array ... ok
+2025-10-09T10:14:13.9199373Z test sorting::stooge_sort::test::already_sorted ... ok
+2025-10-09T10:14:13.9199931Z test sorting::stooge_sort::test::basic ... ok
+2025-10-09T10:14:13.9200400Z test sorting::stooge_sort::test::empty ... ok
+2025-10-09T10:14:13.9200908Z test sorting::stooge_sort::test::reverse ... ok
+2025-10-09T10:14:13.9201363Z test sorting::tests::is_sorted ... ok
+2025-10-09T10:14:13.9201846Z test sorting::tim_sort::tests::handles_empty_array ... ok
+2025-10-09T10:14:13.9202454Z test sorting::tim_sort::tests::handles_pre_sorted_array ... ok
+2025-10-09T10:14:13.9203079Z test sorting::tim_sort::tests::handles_single_element_array ... ok
+2025-10-09T10:14:13.9203762Z test sorting::tim_sort::tests::left_and_right_subarrays_into_array ... ok
+2025-10-09T10:14:13.9204472Z test sorting::tim_sort::tests::min_run_length_returns_correct_value ... ok
+2025-10-09T10:14:13.9205158Z test sorting::tim_sort::tests::sorts_basic_array_correctly ... ok
+2025-10-09T10:14:13.9205998Z test sorting::tim_sort::tests::sorts_long_array_correctly ... ok
+2025-10-09T10:14:13.9206697Z test sorting::tim_sort::tests::with_empty_left_and_right_subarrays ... ok
+2025-10-09T10:14:13.9207361Z test sorting::tim_sort::tests::with_empty_left_subarray ... ok
+2025-10-09T10:14:13.9207984Z test sorting::tim_sort::tests::with_empty_right_subarray ... ok
+2025-10-09T10:14:13.9212010Z test sorting::tree_sort::tests::test_already_sorted ... ok
+2025-10-09T10:14:13.9216112Z test sorting::tree_sort::tests::test_empty_array ... ok
+2025-10-09T10:14:13.9222821Z test sorting::tree_sort::tests::test_random ... ok
+2025-10-09T10:14:13.9225787Z test sorting::tree_sort::tests::test_reverse_sorted ... ok
+2025-10-09T10:14:13.9231689Z test sorting::tree_sort::tests::test_single_element ... ok
+2025-10-09T10:14:13.9232256Z test sorting::wave_sort::tests::test_case_1 ... ok
+2025-10-09T10:14:13.9232757Z test sorting::wave_sort::tests::test_case_2 ... ok
+2025-10-09T10:14:13.9233236Z test sorting::wave_sort::tests::test_case_3 ... ok
+2025-10-09T10:14:13.9233719Z test sorting::wave_sort::tests::test_case_4 ... ok
+2025-10-09T10:14:13.9234200Z test sorting::wave_sort::tests::test_case_5 ... ok
+2025-10-09T10:14:13.9234749Z test sorting::wiggle_sort::tests::odd_number_of_elements ... ok
+2025-10-09T10:14:13.9235660Z test sorting::wiggle_sort::tests::repeated_elements ... ok
+2025-10-09T10:14:13.9236239Z test sorting::wiggle_sort::tests::wingle_elements ... ok
+2025-10-09T10:14:13.9236846Z test string::aho_corasick::tests::test_aho_corasick ... ok
+2025-10-09T10:14:13.9237463Z test string::aho_corasick::tests::test_aho_corasick_with_utf8 ... ok
+2025-10-09T10:14:13.9238055Z test string::anagram::tests::anagrammatized ... ok
+2025-10-09T10:14:13.9238535Z test string::anagram::tests::antigram ... ok
+2025-10-09T10:14:13.9239045Z test string::anagram::tests::church_of_scientology ... ok
+2025-10-09T10:14:13.9239586Z test string::anagram::tests::coronavirus ... ok
+2025-10-09T10:14:13.9240110Z test string::anagram::tests::empty_and_non_empty ... ok
+2025-10-09T10:14:13.9240635Z test string::anagram::tests::empty_strings ... ok
+2025-10-09T10:14:13.9241226Z test string::anagram::tests::invalid_anagram_with_numeric_chars ... ok
+2025-10-09T10:14:13.9241924Z test string::anagram::tests::invalid_anagram_with_special_char ... ok
+2025-10-09T10:14:13.9242874Z test string::anagram::tests::invalid_anagram_with_symbols ... ok
+2025-10-09T10:14:13.9243501Z test string::anagram::tests::mcdonalds_restaurants ... ok
+2025-10-09T10:14:13.9244042Z test string::anagram::tests::new_york_times ... ok
+2025-10-09T10:14:13.9244739Z test string::anagram::tests::non_anagram ... ok
+2025-10-09T10:14:13.9246767Z test string::anagram::tests::non_anagram_length_mismatch ... ok
+2025-10-09T10:14:13.9249447Z test string::anagram::tests::part_of_speech_adj_to_verb ... ok
+2025-10-09T10:14:13.9251273Z test string::anagram::tests::sentences ... ok
+2025-10-09T10:14:13.9253556Z test string::anagram::tests::single_char_diff ... ok
+2025-10-09T10:14:13.9256070Z test string::anagram::tests::single_char_same ... ok
+2025-10-09T10:14:13.9258623Z test string::anagram::tests::synonym_evil ... ok
+2025-10-09T10:14:13.9260850Z test string::anagram::tests::synonym_gentleman ... ok
+2025-10-09T10:14:13.9263167Z test string::anagram::tests::valid_anagram_lowercase ... ok
+2025-10-09T10:14:13.9265533Z test string::anagram::tests::valid_anagram_mixed_cases ... ok
+2025-10-09T10:14:13.9268431Z test string::anagram::tests::valid_anagram_with_spaces ... ok
+2025-10-09T10:14:13.9273101Z test string::anagram::tests::valid_anagram_with_spaces_and_mixed_cases ... ok
+2025-10-09T10:14:13.9274606Z test string::autocomplete_using_trie::tests::test_autocomplete ... ok
+2025-10-09T10:14:13.9276398Z test string::boyer_moore_search::tests::test_both_empty ... ok
+2025-10-09T10:14:13.9278355Z test string::boyer_moore_search::tests::test_case_sensitivity ... ok
+2025-10-09T10:14:13.9279510Z test string::boyer_moore_search::tests::test_empty_pattern ... ok
+2025-10-09T10:14:13.9282323Z test string::boyer_moore_search::tests::test_empty_text ... ok
+2025-10-09T10:14:13.9283410Z test string::boyer_moore_search::tests::test_no_match ... ok
+2025-10-09T10:14:13.9285618Z test string::boyer_moore_search::tests::test_numerical_pattern ... ok
+2025-10-09T10:14:13.9288130Z test string::boyer_moore_search::tests::test_overlapping_patterns ... ok
+2025-10-09T10:14:13.9290524Z test string::boyer_moore_search::tests::test_partial_match ... ok
+2025-10-09T10:14:13.9292638Z test string::boyer_moore_search::tests::test_partial_overlap_no_match ... ok
+2025-10-09T10:14:13.9295051Z test string::boyer_moore_search::tests::test_pattern_longer_than_text ... ok
+2025-10-09T10:14:13.9298083Z test string::boyer_moore_search::tests::test_simple_match ... ok
+2025-10-09T10:14:13.9299849Z test string::boyer_moore_search::tests::test_single_character_pattern ... ok
+2025-10-09T10:14:13.9301783Z test string::boyer_moore_search::tests::test_single_character_text ... ok
+2025-10-09T10:14:13.9322392Z test string::boyer_moore_search::tests::test_single_occurrence ... ok
+2025-10-09T10:14:13.9326125Z test string::boyer_moore_search::tests::test_single_occurrence_with_noise ... ok
+2025-10-09T10:14:13.9326925Z test string::boyer_moore_search::tests::test_special_characters ... ok
+2025-10-09T10:14:13.9328116Z test string::burrows_wheeler_transform::tests::basic_characters ... ok
+2025-10-09T10:14:13.9329023Z test string::burrows_wheeler_transform::tests::empty ... ok
+2025-10-09T10:14:13.9329948Z test string::burrows_wheeler_transform::tests::special_characters ... ok
+2025-10-09T10:14:13.9331561Z test string::burrows_wheeler_transform::tests::stand_alone_function ... ok
+2025-10-09T10:14:13.9332567Z test string::duval_algorithm::test::alphanumeric_mixed ... ok
+2025-10-09T10:14:13.9333775Z test string::duval_algorithm::test::alternating_increasing ... ok
+2025-10-09T10:14:13.9334575Z test string::duval_algorithm::test::decreasing_order ... ok
+2025-10-09T10:14:13.9335488Z test string::duval_algorithm::test::empty_string ... ok
+2025-10-09T10:14:13.9336263Z test string::duval_algorithm::test::interrupted_lyndon ... ok
+2025-10-09T10:14:13.9337100Z test string::duval_algorithm::test::long_repeating ... ok
+2025-10-09T10:14:13.9339231Z test string::duval_algorithm::test::long_repeating_lyndon ... ok
+2025-10-09T10:14:13.9420027Z test sorting::sleep_sort::tests::unsorted_array ... ok
+2025-10-09T10:14:13.9428813Z test string::duval_algorithm::test::mixed_repeating ... ok
+2025-10-09T10:14:13.9429529Z test string::duval_algorithm::test::non_repeating_sorted ... ok
+2025-10-09T10:14:13.9430161Z test string::duval_algorithm::test::palindrome ... ok
+2025-10-09T10:14:13.9431939Z test string::duval_algorithm::test::palindrome_repeating_prefix ... ok
+2025-10-09T10:14:13.9433545Z test string::duval_algorithm::test::repeating_with_suffix ... ok
+2025-10-09T10:14:13.9438702Z test string::duval_algorithm::test::single ... ok
+2025-10-09T10:14:13.9441866Z test string::duval_algorithm::test::single_char ... ok
+2025-10-09T10:14:13.9444242Z test string::duval_algorithm::test::single_repeating_char ... ok
+2025-10-09T10:14:13.9446566Z test string::duval_algorithm::test::special_characters ... ok
+2025-10-09T10:14:13.9448560Z test string::duval_algorithm::test::unicode ... ok
+2025-10-09T10:14:13.9451348Z test string::duval_algorithm::test::unicode_complex ... ok
+2025-10-09T10:14:13.9453193Z test string::hamming_distance::tests::different_case ... ok
+2025-10-09T10:14:13.9456010Z test string::hamming_distance::tests::different_length ... ok
+2025-10-09T10:14:13.9459381Z test string::hamming_distance::tests::empty_inputs ... ok
+2025-10-09T10:14:13.9461900Z test string::hamming_distance::tests::length_1_inputs_different ... ok
+2025-10-09T10:14:13.9467654Z test string::hamming_distance::tests::length_1_inputs_identical ... ok
+2025-10-09T10:14:13.9472971Z test string::hamming_distance::tests::long_strings_many_diffs ... ok
+2025-10-09T10:14:13.9478363Z test string::hamming_distance::tests::long_strings_one_diff ... ok
+2025-10-09T10:14:13.9482086Z test string::hamming_distance::tests::regular_input_0 ... ok
+2025-10-09T10:14:13.9486146Z test string::hamming_distance::tests::regular_input_1 ... ok
+2025-10-09T10:14:13.9489965Z test string::hamming_distance::tests::regular_input_2 ... ok
+2025-10-09T10:14:13.9493772Z test string::hamming_distance::tests::same_strings ... ok
+2025-10-09T10:14:13.9497634Z test string::hamming_distance::tests::strings_with_no_common_chars ... ok
+2025-10-09T10:14:13.9501414Z test string::hamming_distance::tests::strings_with_special_chars_diff ... ok
+2025-10-09T10:14:13.9505513Z test string::hamming_distance::tests::strings_with_special_chars_identical ... ok
+2025-10-09T10:14:13.9509935Z test string::isogram::tests::invalid_isogram_multiple_same_characters ... ok
+2025-10-09T10:14:13.9513869Z test string::isogram::tests::invalid_isogram_with_comma ... ok
+2025-10-09T10:14:13.9518193Z test string::isogram::tests::invalid_isogram_with_numbers ... ok
+2025-10-09T10:14:13.9522300Z test string::isogram::tests::invalid_isogram_with_repeated_char ... ok
+2025-10-09T10:14:13.9526778Z test string::isogram::tests::invalid_isogram_with_repeated_phrase ... ok
+2025-10-09T10:14:13.9530747Z test string::isogram::tests::invalid_isogram_with_spaces ... ok
+2025-10-09T10:14:13.9535431Z test string::isogram::tests::invalid_isogram_with_special_char ... ok
+2025-10-09T10:14:13.9539196Z test string::isogram::tests::invalid_isogram_with_symbols ... ok
+2025-10-09T10:14:13.9542840Z test string::isogram::tests::isogram_case_insensitive ... ok
+2025-10-09T10:14:13.9547230Z test string::isogram::tests::isogram_empty_string ... ok
+2025-10-09T10:14:13.9549766Z test string::isogram::tests::isogram_french ... ok
+2025-10-09T10:14:13.9553546Z test string::isogram::tests::isogram_german_city ... ok
+2025-10-09T10:14:13.9557661Z test string::isogram::tests::isogram_long ... ok
+2025-10-09T10:14:13.9561805Z test string::isogram::tests::isogram_mixed ... ok
+2025-10-09T10:14:13.9566114Z test string::isogram::tests::isogram_portuguese ... ok
+2025-10-09T10:14:13.9570463Z test string::isogram::tests::isogram_sentences ... ok
+2025-10-09T10:14:13.9573599Z test string::isogram::tests::isogram_simple ... ok
+2025-10-09T10:14:13.9577396Z test string::isogram::tests::isogram_single_character ... ok
+2025-10-09T10:14:13.9581108Z test string::isogram::tests::isogram_spanis ... ok
+2025-10-09T10:14:13.9585130Z test string::isogram::tests::isogram_with_spaces ... ok
+2025-10-09T10:14:13.9589570Z test string::isogram::tests::perfect_pangram ... ok
+2025-10-09T10:14:13.9593532Z test string::isomorphism::tests::different_length ... ok
+2025-10-09T10:14:13.9597871Z test string::isomorphism::tests::empty ... ok
+2025-10-09T10:14:13.9601895Z test string::isomorphism::tests::isomorphic ... ok
+2025-10-09T10:14:13.9606910Z test string::isomorphism::tests::isomorphic_long ... ok
+2025-10-09T10:14:13.9610978Z test string::isomorphism::tests::isomorphic_unicode ... ok
+2025-10-09T10:14:13.9615105Z test string::isomorphism::tests::isomorphic_unicode_different_byte_size ... ok
+2025-10-09T10:14:13.9620338Z test string::isomorphism::tests::non_isomorphic_long ... ok
+2025-10-09T10:14:13.9623855Z test string::isomorphism::tests::not_isomorphic ... ok
+2025-10-09T10:14:13.9628162Z test string::jaro_winkler_distance::tests::test_jaro_winkler_distance ... ok
+2025-10-09T10:14:13.9632032Z test string::knuth_morris_pratt::tests::a_few_seperate_matches ... ok
+2025-10-09T10:14:13.9636071Z test string::knuth_morris_pratt::tests::each_letter_matches ... ok
+2025-10-09T10:14:13.9639802Z test string::knuth_morris_pratt::tests::empty_pattern ... ok
+2025-10-09T10:14:13.9643531Z test string::knuth_morris_pratt::tests::empty_string ... ok
+2025-10-09T10:14:13.9647727Z test string::knuth_morris_pratt::tests::lots_of_intricate_matches ... ok
+2025-10-09T10:14:13.9651440Z test string::knuth_morris_pratt::tests::lots_of_matches ... ok
+2025-10-09T10:14:13.9654990Z test string::knuth_morris_pratt::tests::no_match_with_repeated_characters ... ok
+2025-10-09T10:14:13.9659387Z test string::knuth_morris_pratt::tests::not_found0 ... ok
+2025-10-09T10:14:13.9662997Z test string::knuth_morris_pratt::tests::not_found1 ... ok
+2025-10-09T10:14:13.9667145Z test string::knuth_morris_pratt::tests::not_found2 ... ok
+2025-10-09T10:14:13.9671072Z test string::knuth_morris_pratt::tests::one_match ... ok
+2025-10-09T10:14:13.9675011Z test string::knuth_morris_pratt::tests::pattern_at_end ... ok
+2025-10-09T10:14:13.9679247Z test string::knuth_morris_pratt::tests::pattern_at_start ... ok
+2025-10-09T10:14:13.9682963Z test string::knuth_morris_pratt::tests::pattern_in_middle ... ok
+2025-10-09T10:14:13.9686850Z test string::knuth_morris_pratt::tests::pattern_longer_than_string ... ok
+2025-10-09T10:14:13.9690895Z test string::knuth_morris_pratt::tests::single_character_pattern ... ok
+2025-10-09T10:14:13.9694742Z test string::knuth_morris_pratt::tests::single_character_string ... ok
+2025-10-09T10:14:13.9699268Z test string::knuth_morris_pratt::tests::unicode ... ok
+2025-10-09T10:14:13.9702930Z test string::knuth_morris_pratt::tests::unicode_no_match_but_similar_bytes ... ok
+2025-10-09T10:14:13.9722059Z test string::knuth_morris_pratt::tests::very_long_pattern ... ok
+2025-10-09T10:14:13.9734706Z test string::knuth_morris_pratt::tests::very_long_string ... ok
+2025-10-09T10:14:13.9742601Z test string::levenshtein_distance::tests::naive_levenshtein_distance::test_levenshtein_distance ... ok
+2025-10-09T10:14:13.9749006Z test string::levenshtein_distance::tests::optimized_levenshtein_distance::test_levenshtein_distance ... ok
+2025-10-09T10:14:13.9751530Z test string::lipogram::tests::invalid_non_alphabetic_input ... ok
+2025-10-09T10:14:13.9756617Z test string::lipogram::tests::invalid_non_lowercase_chars ... ok
+2025-10-09T10:14:13.9761340Z test string::lipogram::tests::lipogram_multiple_missing ... ok
+2025-10-09T10:14:13.9765982Z test string::lipogram::tests::lipogram_single_missing ... ok
+2025-10-09T10:14:13.9770701Z test string::lipogram::tests::long_lipogram_single_missing ... ok
+2025-10-09T10:14:13.9775030Z test string::lipogram::tests::perfect_pangram ... ok
+2025-10-09T10:14:13.9779162Z test string::manacher::tests::get_longest_palindrome_by_manacher ... ok
+2025-10-09T10:14:13.9782816Z test string::palindrome::tests::actor ... ok
+2025-10-09T10:14:13.9787168Z test string::palindrome::tests::case_insensitive_palindrome ... ok
+2025-10-09T10:14:13.9790943Z test string::palindrome::tests::empty_string ... ok
+2025-10-09T10:14:13.9794878Z test string::palindrome::tests::even_palindrome ... ok
+2025-10-09T10:14:13.9799017Z test string::palindrome::tests::finnish_palindrome ... ok
+2025-10-09T10:14:13.9802586Z test string::palindrome::tests::french_palindrome ... ok
+2025-10-09T10:14:13.9806976Z test string::palindrome::tests::japanese_novelist_and_manga_writer ... ok
+2025-10-09T10:14:13.9810728Z test string::palindrome::tests::john_taylor_palindrome ... ok
+2025-10-09T10:14:13.9814504Z test string::palindrome::tests::lychrel_num_56 ... ok
+2025-10-09T10:14:13.9819238Z test string::palindrome::tests::mixed_case_and_punctuation_palindrome ... ok
+2025-10-09T10:14:13.9823074Z test string::palindrome::tests::mixed_case_and_space_palindrome ... ok
+2025-10-09T10:14:13.9826954Z test string::palindrome::tests::names_palindrome ... ok
+2025-10-09T10:14:13.9830660Z test string::palindrome::tests::napoleon_palindrome ... ok
+2025-10-09T10:14:13.9834533Z test string::palindrome::tests::non_palindrome_mixed_case ... ok
+2025-10-09T10:14:13.9838538Z test string::palindrome::tests::non_palindrome_simple ... ok
+2025-10-09T10:14:13.9842443Z test string::palindrome::tests::non_palindrome_with_punctuation ... ok
+2025-10-09T10:14:13.9846148Z test string::palindrome::tests::odd_palindrome ... ok
+2025-10-09T10:14:13.9851538Z test string::palindrome::tests::palindromic_phrase ... ok
+2025-10-09T10:14:13.9854837Z test string::palindrome::tests::pokemon_species ... ok
+2025-10-09T10:14:13.9858642Z test string::palindrome::tests::pompeii_palindrome ... ok
+2025-10-09T10:14:13.9862485Z test string::palindrome::tests::prime_minister_of_cambodia ... ok
+2025-10-09T10:14:13.9866362Z test string::palindrome::tests::rock_vocalist ... ok
+2025-10-09T10:14:13.9869549Z test string::palindrome::tests::single_character_palindrome ... ok
+2025-10-09T10:14:13.9873095Z test string::palindrome::tests::single_word_palindrome ... ok
+2025-10-09T10:14:13.9876926Z test string::palindrome::tests::universal_palindrome_date ... ok
+2025-10-09T10:14:13.9880805Z test string::palindrome::tests::well_know_english_palindrome ... ok
+2025-10-09T10:14:13.9887236Z test string::pangram::tests::test_empty_string ... ok
+2025-10-09T10:14:13.9895779Z test string::pangram::tests::test_long_non_pangram ... ok
+2025-10-09T10:14:13.9900492Z test string::pangram::tests::test_mixed_case_pangram ... ok
+2025-10-09T10:14:13.9904963Z test string::pangram::tests::test_near_pangram_missing_one_letter ... ok
+2025-10-09T10:14:13.9910006Z test string::pangram::tests::test_near_pangram_missing_two_letters ... ok
+2025-10-09T10:14:13.9914386Z test string::pangram::tests::test_near_pangram_with_special_characters ... ok
+2025-10-09T10:14:13.9918773Z test string::pangram::tests::test_non_alphabetic ... ok
+2025-10-09T10:14:13.9923216Z test string::pangram::tests::test_not_pangram_almost ... ok
+2025-10-09T10:14:13.9927206Z test string::pangram::tests::test_not_pangram_day ... ok
+2025-10-09T10:14:13.9931321Z test string::pangram::tests::test_not_pangram_simple ... ok
+2025-10-09T10:14:13.9936154Z test string::pangram::tests::test_pangram_boxer ... ok
+2025-10-09T10:14:13.9940776Z test string::pangram::tests::test_pangram_discotheques ... ok
+2025-10-09T10:14:13.9945592Z test string::pangram::tests::test_pangram_standard ... ok
+2025-10-09T10:14:13.9950121Z test string::pangram::tests::test_pangram_zebras ... ok
+2025-10-09T10:14:13.9954615Z test string::pangram::tests::test_perfect_pangram_jock ... ok
+2025-10-09T10:14:13.9959755Z test string::pangram::tests::test_perfect_pangram_with_symbols ... ok
+2025-10-09T10:14:13.9963707Z test string::pangram::tests::test_repeated_letter ... ok
+2025-10-09T10:14:13.9967609Z test string::rabin_karp::tests::case_sensitivity ... ok
+2025-10-09T10:14:13.9972179Z test string::rabin_karp::tests::empty_pattern ... ok
+2025-10-09T10:14:13.9972689Z test string::rabin_karp::tests::empty_text ... ok
+2025-10-09T10:14:13.9978565Z test string::rabin_karp::tests::empty_text_and_pattern ... ok
+2025-10-09T10:14:13.9982358Z test string::rabin_karp::tests::large_pattern_no_match ... ok
+2025-10-09T10:14:13.9986818Z test string::rabin_karp::tests::large_text_small_pattern ... ok
+2025-10-09T10:14:13.9990862Z test string::rabin_karp::tests::multiple_matches ... ok
+2025-10-09T10:14:13.9994588Z test string::rabin_karp::tests::no_match ... ok
+2025-10-09T10:14:13.9999214Z test string::rabin_karp::tests::numeric_and_alphabetic_mix ... ok
+2025-10-09T10:14:14.0003235Z test string::rabin_karp::tests::overlapping_matches ... ok
+2025-10-09T10:14:14.0007505Z test string::rabin_karp::tests::pattern_is_entire_string ... ok
+2025-10-09T10:14:14.0011701Z test string::rabin_karp::tests::pattern_larger_than_text ... ok
+2025-10-09T10:14:14.0015701Z test string::rabin_karp::tests::repeating_chars ... ok
+2025-10-09T10:14:14.0019746Z test string::rabin_karp::tests::single_char_match ... ok
+2025-10-09T10:14:14.0020878Z test string::rabin_karp::tests::single_char_no_match ... ok
+2025-10-09T10:14:14.0025946Z test string::rabin_karp::tests::single_match_at_end ... ok
+2025-10-09T10:14:14.0029874Z test string::rabin_karp::tests::single_match_at_start ... ok
+2025-10-09T10:14:14.0033728Z test string::rabin_karp::tests::single_match_in_middle ... ok
+2025-10-09T10:14:14.0037911Z test string::rabin_karp::tests::special_characters ... ok
+2025-10-09T10:14:14.0041303Z test string::rabin_karp::tests::target_is_multiple_patterns ... ok
+2025-10-09T10:14:14.0044299Z test string::reverse::tests::test_empty_string ... ok
+2025-10-09T10:14:14.0047191Z test string::reverse::tests::test_leading_trailing_spaces ... ok
+2025-10-09T10:14:14.0050803Z test string::reverse::tests::test_mixed_content ... ok
+2025-10-09T10:14:14.0054722Z test string::reverse::tests::test_non_palindrome ... ok
+2025-10-09T10:14:14.0058828Z test string::reverse::tests::test_sentence_with_spaces ... ok
+2025-10-09T10:14:14.0062571Z test string::reverse::tests::test_simple_palindrome ... ok
+2025-10-09T10:14:14.0066816Z test string::reverse::tests::test_single_character ... ok
+2025-10-09T10:14:14.0070714Z test string::reverse::tests::test_unicode_characters ... ok
+2025-10-09T10:14:14.0074563Z test string::run_length_encoding::tests::empty_input ... ok
+2025-10-09T10:14:14.0079395Z test string::run_length_encoding::tests::long_input ... ok
+2025-10-09T10:14:14.0083448Z test string::run_length_encoding::tests::no_repeated ... ok
+2025-10-09T10:14:14.0087840Z test string::run_length_encoding::tests::regular_input ... ok
+2025-10-09T10:14:14.0092032Z test string::run_length_encoding::tests::repeated_char ... ok
+2025-10-09T10:14:14.0095924Z test string::run_length_encoding::tests::two_blocks_with_same_char ... ok
+2025-10-09T10:14:14.0099707Z test string::shortest_palindrome::tests::already_palindrome ... ok
+2025-10-09T10:14:14.0103782Z test string::shortest_palindrome::tests::complex ... ok
+2025-10-09T10:14:14.0107992Z test string::shortest_palindrome::tests::empty ... ok
+2025-10-09T10:14:14.0111998Z test string::shortest_palindrome::tests::extend_left_1 ... ok
+2025-10-09T10:14:14.0116090Z test string::shortest_palindrome::tests::extend_left_2 ... ok
+2025-10-09T10:14:14.0119493Z test string::shortest_palindrome::tests::extend_left_3 ... ok
+2025-10-09T10:14:14.0122917Z test string::shortest_palindrome::tests::extend_left_4 ... ok
+2025-10-09T10:14:14.0127132Z test string::shortest_palindrome::tests::long_string ... ok
+2025-10-09T10:14:14.0130994Z test string::shortest_palindrome::tests::repetitive ... ok
+2025-10-09T10:14:14.0134862Z test string::shortest_palindrome::tests::single_char ... ok
+2025-10-09T10:14:14.0139087Z test string::shortest_palindrome::tests::unicode_1 ... ok
+2025-10-09T10:14:14.0143106Z test string::shortest_palindrome::tests::unicode_2 ... ok
+2025-10-09T10:14:14.0146663Z test string::suffix_array::tests::test_suffix_array ... ok
+2025-10-09T10:14:14.0150818Z test string::suffix_array_manber_myers::tests::test_empty_string ... ok
+2025-10-09T10:14:14.0155119Z test string::suffix_array_manber_myers::tests::test_long_string ... ok
+2025-10-09T10:14:14.0159527Z test string::suffix_array_manber_myers::tests::test_mix_of_characters ... ok
+2025-10-09T10:14:14.0163338Z test string::suffix_array_manber_myers::tests::test_repeating_characters ... ok
+2025-10-09T10:14:14.0167837Z test string::suffix_array_manber_myers::tests::test_single_character ... ok
+2025-10-09T10:14:14.0169106Z test string::suffix_array_manber_myers::tests::test_suffix_array ... ok
+2025-10-09T10:14:14.0172684Z test string::suffix_array_manber_myers::tests::test_whitespace_characters ... ok
+2025-10-09T10:14:14.0174093Z test string::suffix_tree::tests::test_suffix_tree ... ok
+2025-10-09T10:14:14.0178250Z test string::z_algorithm::tests::basic_z_array ... ok
+2025-10-09T10:14:14.0182176Z test string::z_algorithm::tests::empty_pattern ... ok
+2025-10-09T10:14:14.0186240Z test string::z_algorithm::tests::empty_string ... ok
+2025-10-09T10:14:14.0190210Z test string::z_algorithm::tests::full_string_match ... ok
+2025-10-09T10:14:14.0194081Z test string::z_algorithm::tests::no_match ... ok
+2025-10-09T10:14:14.0197551Z test string::z_algorithm::tests::overlapping_match ... ok
+2025-10-09T10:14:14.0200629Z test string::z_algorithm::tests::pattern_in_lipsum ... ok
+2025-10-09T10:14:14.0204319Z test string::z_algorithm::tests::pattern_larger_than_text ... ok
+2025-10-09T10:14:14.0208977Z test string::z_algorithm::tests::pattern_not_in_lipsum ... ok
+2025-10-09T10:14:14.0212770Z test string::z_algorithm::tests::repeated_char_z_array ... ok
+2025-10-09T10:14:14.0216715Z test string::z_algorithm::tests::repeated_pattern_in_text ... ok
+2025-10-09T10:14:14.0220522Z test string::z_algorithm::tests::simple_match ... ok
+2025-10-09T10:14:14.0224496Z test string::z_algorithm::tests::single_char_match ... ok
+2025-10-09T10:14:14.0228761Z test string::z_algorithm::tests::single_char_z_array ... ok
+2025-10-09T10:14:14.0232607Z test tests::quick_sort ... ok
+2025-10-09T10:14:14.0637123Z test sorting::quick_sort_3_ways::tests::repeated_elements ... ok
+2025-10-09T10:14:14.1697345Z test string::duval_algorithm::test::long_string_performance ... ok
+2025-10-09T10:14:14.1711272Z test sorting::quick_sort_3_ways::tests::reverse_sorted ... ok
+2025-10-09T10:14:14.1711635Z 
+2025-10-09T10:14:14.1711876Z test result: ok. 1863 passed; 0 failed; 10 ignored; 0 measured; 0 filtered out; finished in 7.33s
+2025-10-09T10:14:14.1712228Z 
+2025-10-09T10:14:14.1747747Z    Doc-tests the_algorithms_rust
+2025-10-09T10:14:14.8163219Z 
+2025-10-09T10:14:14.8163684Z running 4 tests
+2025-10-09T10:14:15.0311954Z test src/math/elliptic_curve.rs - math::elliptic_curve::EllipticCurve (line 20) ... ok
+2025-10-09T10:14:15.0354802Z test src/math/sum_of_digits.rs - math::sum_of_digits::sum_digits_recursive (line 38) ... ok
+2025-10-09T10:14:15.0360683Z test src/math/sum_of_digits.rs - math::sum_of_digits::sum_digits_iterative (line 9) ... ok
+2025-10-09T10:14:15.0584496Z test src/general/huffman_encoding.rs - general::huffman_encoding::HuffmanDictionary<T>::new (line 88) ... ok
+2025-10-09T10:14:15.0585081Z 
+2025-10-09T10:14:15.0585591Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+2025-10-09T10:14:15.0585922Z 
+2025-10-09T10:14:15.0740030Z Post job cleanup.
+2025-10-09T10:14:15.1504233Z [command]/usr/bin/git version
+2025-10-09T10:14:15.1539382Z git version 2.51.0
+2025-10-09T10:14:15.1579681Z Temporarily overriding HOME='/home/runner/work/_temp/ad960534-c602-4296-9afc-7d217d6ce3e1' before making global git config changes
+2025-10-09T10:14:15.1581021Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-09T10:14:15.1585494Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Rust/Rust
+2025-10-09T10:14:15.1619668Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-09T10:14:15.1651279Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-09T10:14:15.1873255Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-09T10:14:15.1894238Z http.https://github.com/.extraheader
+2025-10-09T10:14:15.1904678Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-09T10:14:15.1934164Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-09T10:14:15.2263555Z Cleaning up orphan processes

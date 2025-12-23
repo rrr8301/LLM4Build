@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e
+
+# Compile and install xrdp
+./bootstrap
+./configure
+make
+
+# Run tests
+# Check if CTest is available and use it if possible
+if [ -f CMakeLists.txt ]; then
+    mkdir -p build
+    cd build
+    cmake ..
+    make # Ensure all targets are built
+    ctest --output-on-failure
+else
+    # Fallback to running a custom test script if available
+    if [ -f run_tests.sh ]; then
+        ./run_tests.sh
+    else
+        # Attempt to run make check if available
+        if make -q check 2>/dev/null; then
+            make check
+        else
+            # Attempt to run any available test binaries in the tests directory
+            if [ -d tests ]; then
+                for test_binary in tests/*; do
+                    if [ -f "$test_binary" ] && [ -x "$test_binary" ]; then
+                        echo "Running test: $test_binary"
+                        "$test_binary"
+                    fi
+                done
+            else
+                echo "No test target or test script found."
+                exit 1
+            fi
+        fi
+    fi
+fi

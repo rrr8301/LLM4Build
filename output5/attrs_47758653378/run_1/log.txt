@@ -1,0 +1,125 @@
+tar: dist/*.tar.gz: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+Downloading uv (18.3MiB)
+Downloading virtualenv (5.8MiB)
+ Downloading uv
+ Downloading virtualenv
+Installed 15 packages in 28ms
+py311-mypy: venv> /root/.cache/uv/archive-v0/HzTeSBSLXNHwtKjEY6vv4/bin/uv venv -p cpython3.11 --allow-existing --python-preference system /app/.tox/py311-mypy
+py311-mypy: uv-sync> uv sync --locked --python-preference system --no-default-groups --no-editable --reinstall-package attrs --group mypy -p cpython3.11
+[31mResolved 82 packages in 2ms
+   Building attrs @ file:///app
+Downloading mypy (12.0MiB)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+ Downloading mypy
+  × Failed to build `attrs @ file:///app`
+  ├─▶ The build backend returned an error
+  ╰─▶ Call to `hatchling.build.build_wheel` failed (exit status: 1)
+
+      [stderr]
+      command git missing: [Errno 2] No such file or directory: 'git'
+      command git not found while parsing the scm, using fallbacks
+      Traceback (most recent call last):
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/setuptools_scm/_get_version_impl.py",
+      line 41, in parse_scm_version
+          return _entrypoints.version_from_entrypoint(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/setuptools_scm/_entrypoints.py",
+      line 56, in version_from_entrypoint
+          maybe_version: version.ScmVersion | None = fn(root, config=config)
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/setuptools_scm/git.py",
+      line 307, in parse
+py311-mypy: exit 1 (1.16 seconds) /app> uv sync --locked --python-preference system --no-default-groups --no-editable --reinstall-package attrs --group mypy -p cpython3.11 pid=113
+          _require_command("git")
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/setuptools_scm/_run_cmd.py",
+      line 221, in require_command
+          raise CommandNotFoundError(name)
+      setuptools_scm._run_cmd.CommandNotFoundError: git
+      /root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/setuptools_scm/git.py:427:
+      UserWarning: git archive did not support describe output
+        warnings.warn("git archive did not support describe output")
+      /root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/setuptools_scm/git.py:445:
+      UserWarning: unprocessed git archival found (no export subst applied)
+        warnings.warn("unprocessed git archival found (no export subst
+      applied)")
+      Traceback (most recent call last):
+        File "<string>", line 11, in <module>
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/hatchling/build.py",
+      line 58, in build_wheel
+          return os.path.basename(next(builder.build(directory=wheel_directory,
+      versions=['standard'])))
+
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/hatchling/builders/plugin/interface.py",
+      line 90, in build
+          self.metadata.validate_fields()
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/hatchling/metadata/core.py",
+      line 265, in validate_fields
+          _ = self.version
+              ^^^^^^^^^^^^
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/hatchling/metadata/core.py",
+      line 149, in version
+          self._version = self._get_version()
+                          ^^^^^^^^^^^^^^^^^^^
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/hatchling/metadata/core.py",
+      line 244, in _get_version
+          core_metadata = self.core
+                          ^^^^^^^^^
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/hatchling/metadata/core.py",
+      line 191, in core
+          self._version = self._get_version(metadata)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/hatchling/metadata/core.py",
+      line 248, in _get_version
+          version = self.hatch.version.cached
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/root/.cache/uv/builds-v0/.tmpfEF0iI/lib/python3.11/site-packages/hatchling/metadata/core.py",
+      line 1456, in cached
+          raise type(e)(message) from None
+      LookupError: Error getting the version from source `vcs`: setuptools-scm
+      was unable to detect version for /app.
+
+      However, a repository was found in a parent directory: /app
+
+      To fix this, you have a few options:
+
+      1. Use the 'relative_to' parameter to specify the file that
+      setuptools-scm should use as reference:
+         setuptools_scm.get_version(relative_to=__file__)
+
+      2. Enable parent directory search in your configuration:
+         [tool.setuptools_scm]
+         search_parent_directories = true
+
+      3. Change your working directory to the repository root: /app
+
+      4. Set the root explicitly in your configuration:
+         [tool.setuptools_scm]
+         root = "/app"
+  py311-mypy: FAIL code 1 (1.35 seconds)
+  evaluation failed :( (1.53 seconds)
+
+      For more information, see:
+      https://setuptools-scm.readthedocs.io/en/latest/config/
+
+      hint: This usually indicates a problem with the package or the build
+      environment.
+[39musage: tox run [-h] [--colored {yes,no}] [--stderr-color {BLACK,BLUE,CYAN,GREEN,LIGHTBLACK_EX,LIGHTBLUE_EX,LIGHTCYAN_EX,LIGHTGREEN_EX,LIGHTMAGENTA_EX,LIGHTRED_EX,LIGHTWHITE_EX,LIGHTYELLOW_EX,MAGENTA,RED,RESET,WHITE,YELLOW}]
+               [--exit-and-dump-after seconds] [-c file] [--workdir dir] [--root dir] [--runner {virtualenv,uv-venv-runner,uv-venv-lock-runner}] [-v | -q] [--result-json path] [--hashseed SEED] [--discover path [path ...]]
+               [--list-dependencies | --no-list-dependencies] [-e ENV | -m label [label ...] | -f factor [factor ...] | --skip-env re] [-s [v]] [-n] [-b] [--installpkg INSTALL_PKG] [--develop] [--no-recreate-pkg] [--skip-pkg-install]
+               [--version] [--no-provision [REQ_JSON]] [--no-recreate-provision] [-r] [-x OVERRIDE] [--skip-uv-sync]
+tox run: error: argument --installpkg: /app/dist/*.whl does not exist

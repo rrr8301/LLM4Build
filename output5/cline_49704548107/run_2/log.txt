@@ -1,0 +1,81 @@
+
+> claude-dev@3.27.1 prepare
+> husky
+
+git command not found
+added 1489 packages, and audited 1491 packages in 60s
+
+255 packages are looking for funding
+  run `npm fund` for details
+
+4 vulnerabilities (3 low, 1 moderate)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+npm notice
+npm notice New major version of npm available! 10.9.3 -> 11.6.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.0
+npm notice To update run: npm install -g npm@11.6.0
+npm notice
+npm warn deprecated boolean@3.2.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+npm warn deprecated @vscode/webview-ui-toolkit@1.4.0: This package has been deprecated, https://github.com/microsoft/vscode-webview-ui-toolkit/issues/561
+
+added 1126 packages, and audited 1128 packages in 29s
+
+193 packages are looking for funding
+  run `npm fund` for details
+
+11 vulnerabilities (5 moderate, 6 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> claude-dev@3.27.1 check-types
+> npm run protos && npx tsc --noEmit && cd webview-ui && npx tsc -b --noEmit
+
+
+> claude-dev@3.27.1 protos
+> node scripts/build-proto.mjs
+
+Compiling Protocol Buffers...
+Processing 19 proto files from /app/proto
+
+Warning: Found 23 fields using 64-bit integer types
+Generated ProtoBus files at:
+- /app/webview-ui/src/services/grpc-client.ts
+- /app/src/generated/hosts/vscode/protobus-service-types.ts
+- /app/src/generated/hosts/vscode/protobus-services.ts
+- /app/src/generated/hosts/standalone/protobus-server-setup.ts
+Generated Host Bridge client files at:
+- /app/src/generated/hosts/host-bridge-client-types.ts
+- /app/src/generated/hosts/standalone/host-bridge-clients.ts
+- /app/src/generated/hosts/vscode/hostbridge-grpc-service-config.ts
+
+> claude-dev@3.27.1 postprotos
+> biome format src/shared/proto src/core/controller src/hosts/ webview-ui/src/services src/generated --write --no-errors-on-unmatched
+
+Formatted 176 files in 231ms. No fixes applied.
+
+> claude-dev@3.27.1 lint
+> biome lint --no-errors-on-unmatched --files-ignore-unknown=true --diagnostic-level=error && buf lint
+
+Checked 820 files in 1587ms. No fixes applied.
+
+> claude-dev@3.27.1 format
+> biome format --changed --no-errors-on-unmatched --files-ignore-unknown=true --diagnostic-level=error
+
+internalError/io ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Errors occurred while executing I/O operations.
+
+    Caused by:
+      No such file or directory (os error 2)
+
+

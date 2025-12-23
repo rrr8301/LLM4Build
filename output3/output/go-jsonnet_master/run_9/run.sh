@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Activate environments if needed (e.g., virtualenv, conda)
+# Placeholder for environment activation
+
+# Ensure Go version in go.mod is correct
+sed -i 's/^go [0-9]*\.[0-9]*\.[0-9]*/go 1.23/' go.mod
+
+# Initialize and update git submodules
+git submodule init
+git submodule update
+
+# Ensure go.mod is up to date
+go mod tidy
+
+# Install project dependencies
+make install.dependencies
+
+# Run tests
+make test  # Ensure all tests run
+
+# Run all build steps
+make all
+
+# Check if COVERALLS_TOKEN is set
+if [ -z "$COVERALLS_TOKEN" ]; then
+  echo "COVERALLS_TOKEN is not set. Please set it to send coverage data."
+  # Exit with a non-zero status if COVERALLS_TOKEN is critical
+  # exit 1
+else
+  # Send coverage
+  $GOPATH/bin/goveralls -coverprofile=coverage.out -service=github
+fi

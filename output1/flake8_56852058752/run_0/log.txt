@@ -1,0 +1,913 @@
+Obtaining file:///app
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in /usr/local/lib/python3.11/site-packages (from flake8==7.3.0) (0.7.0)
+Requirement already satisfied: pycodestyle<2.15.0,>=2.14.0 in /usr/local/lib/python3.11/site-packages (from flake8==7.3.0) (2.14.0)
+Requirement already satisfied: pyflakes<3.5.0,>=3.4.0 in /usr/local/lib/python3.11/site-packages (from flake8==7.3.0) (3.4.0)
+Building wheels for collected packages: flake8
+  Building editable for flake8 (pyproject.toml): started
+  Building editable for flake8 (pyproject.toml): finished with status 'done'
+  Created wheel for flake8: filename=flake8-7.3.0-0.editable-py2.py3-none-any.whl size=4024 sha256=d8384d78f496a33b3c072a0fca07141aa3f03b6186500116d4d49a0be5e859d1
+  Stored in directory: /tmp/pip-ephem-wheel-cache-zpows84r/wheels/57/0f/98/bb57b2b57b95807699b822a35c022f139d38a02c27922f27ce
+Successfully built flake8
+Installing collected packages: flake8
+  Attempting uninstall: flake8
+    Found existing installation: flake8 7.3.0
+    Uninstalling flake8-7.3.0:
+      Successfully uninstalled flake8-7.3.0
+Successfully installed flake8-7.3.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Running tests with pytest...
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.1, pluggy-1.6.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /app
+configfile: pytest.ini
+collecting ... collected 466 items
+
+tests/integration/test_aggregator.py::test_aggregate_options_with_config PASSED [  0%]
+tests/integration/test_aggregator.py::test_aggregate_options_when_isolated PASSED [  0%]
+tests/integration/test_api_legacy.py::test_legacy_api PASSED             [  0%]
+tests/integration/test_checker.py::test_handle_file_plugins[PluginClass] PASSED [  0%]
+tests/integration/test_checker.py::test_handle_file_plugins[plugin_func_gen] PASSED [  1%]
+tests/integration/test_checker.py::test_handle_file_plugins[plugin_func_list] PASSED [  1%]
+tests/integration/test_checker.py::test_line_check_results[plugin_func_physical_ret-1] PASSED [  1%]
+tests/integration/test_checker.py::test_line_check_results[plugin_func_physical_none-0] PASSED [  1%]
+tests/integration/test_checker.py::test_line_check_results[plugin_func_physical_list_single-1] PASSED [  1%]
+tests/integration/test_checker.py::test_line_check_results[plugin_func_physical_list_multiple-2] PASSED [  2%]
+tests/integration/test_checker.py::test_line_check_results[plugin_func_physical_gen_single-1] PASSED [  2%]
+tests/integration/test_checker.py::test_line_check_results[plugin_func_physical_gen_multiple-3] PASSED [  2%]
+tests/integration/test_checker.py::test_logical_line_offset_out_of_bounds PASSED [  2%]
+tests/integration/test_checker.py::test_report_order[results0-expected_order0] PASSED [  3%]
+tests/integration/test_checker.py::test_report_order[results1-expected_order1] PASSED [  3%]
+tests/integration/test_checker.py::test_report_order[results2-expected_order2] PASSED [  3%]
+tests/integration/test_checker.py::test_report_order[results3-expected_order3] PASSED [  3%]
+tests/integration/test_checker.py::test_report_order[results4-expected_order4] PASSED [  3%]
+tests/integration/test_checker.py::test_report_order[results5-expected_order5] PASSED [  4%]
+tests/integration/test_checker.py::test_report_order[results6-expected_order6] PASSED [  4%]
+tests/integration/test_checker.py::test_report_order[results7-expected_order7] PASSED [  4%]
+tests/integration/test_checker.py::test_report_order[results8-expected_order8] PASSED [  4%]
+tests/integration/test_checker.py::test_acquire_when_multiprocessing_pool_can_initialize PASSED [  4%]
+tests/integration/test_checker.py::test_acquire_when_multiprocessing_pool_can_not_initialize PASSED [  5%]
+tests/integration/test_checker.py::test_handling_syntaxerrors_across_pythons PASSED [  5%]
+tests/integration/test_main.py::test_form_feed_line_split PASSED         [  5%]
+tests/integration/test_main.py::test_e101_indent_char_does_not_reset PASSED [  5%]
+tests/integration/test_main.py::test_statistics_option PASSED            [  6%]
+tests/integration/test_main.py::test_show_source_option PASSED           [  6%]
+tests/integration/test_main.py::test_errors_sorted PASSED                [  6%]
+tests/integration/test_main.py::test_extend_exclude PASSED               [  6%]
+tests/integration/test_main.py::test_malformed_per_file_ignores_error PASSED [  6%]
+tests/integration/test_main.py::test_tokenization_error_but_not_syntax_error PASSED [  7%]
+tests/integration/test_main.py::test_tokenization_error_is_a_syntax_error PASSED [  7%]
+tests/integration/test_main.py::test_bug_report_successful PASSED        [  7%]
+tests/integration/test_main.py::test_benchmark_successful PASSED         [  7%]
+tests/integration/test_main.py::test_specific_noqa_does_not_clobber_pycodestyle_noqa PASSED [  7%]
+tests/integration/test_main.py::test_specific_noqa_on_line_with_continuation PASSED [  8%]
+tests/integration/test_main.py::test_physical_line_file_not_ending_in_newline PASSED [  8%]
+tests/integration/test_main.py::test_physical_line_file_not_ending_in_newline_trailing_ws PASSED [  8%]
+tests/integration/test_main.py::test_obtaining_args_from_sys_argv_when_not_explicity_provided PASSED [  8%]
+tests/integration/test_main.py::test_cli_config_option_respected PASSED  [  9%]
+tests/integration/test_main.py::test_cli_isolated_overrides_config_option PASSED [  9%]
+tests/integration/test_main.py::test_file_not_found PASSED               [  9%]
+tests/integration/test_main.py::test_output_file PASSED                  [  9%]
+tests/integration/test_main.py::test_early_keyboard_interrupt_does_not_crash PASSED [  9%]
+tests/integration/test_main.py::test_config_file_not_found PASSED        [ 10%]
+tests/integration/test_main.py::test_format_option_help PASSED           [ 10%]
+tests/integration/test_plugins.py::test_enable_local_plugin_from_config PASSED [ 10%]
+tests/integration/test_plugins.py::test_local_plugin_can_add_option PASSED [ 10%]
+tests/integration/test_plugins.py::test_plugin_gets_enabled_by_default PASSED [ 10%]
+tests/integration/test_plugins.py::test_plugin_off_by_default PASSED     [ 11%]
+tests/integration/test_plugins.py::test_physical_line_plugin_multiline_string PASSED [ 11%]
+tests/integration/test_plugins.py::test_physical_line_plugin_multiline_fstring PASSED [ 11%]
+tests/integration/test_plugins.py::test_logical_line_plugin PASSED       [ 11%]
+tests/integration/test_plugins.py::test_escaping_of_fstrings_in_string_redacter PASSED [ 12%]
+tests/integration/test_plugins.py::test_tstring_logical_line XFAIL (...) [ 12%]
+tests/unit/plugins/finder_test.py::test_loaded_plugin_entry_name_vs_display_name PASSED [ 12%]
+tests/unit/plugins/finder_test.py::test_plugins_all_plugins PASSED       [ 12%]
+tests/unit/plugins/finder_test.py::test_plugins_versions_str PASSED      [ 12%]
+tests/unit/plugins/finder_test.py::test_flake8_plugins PASSED            [ 13%]
+tests/unit/plugins/finder_test.py::test_importlib_plugins PASSED         [ 13%]
+tests/unit/plugins/finder_test.py::test_duplicate_dists PASSED           [ 13%]
+tests/unit/plugins/finder_test.py::test_find_local_plugins_nothing PASSED [ 13%]
+tests/unit/plugins/finder_test.py::test_find_local_plugins PASSED        [ 13%]
+tests/unit/plugins/finder_test.py::test_parse_plugin_options_not_specified PASSED [ 14%]
+tests/unit/plugins/finder_test.py::test_parse_enabled_from_commandline PASSED [ 14%]
+tests/unit/plugins/finder_test.py::test_parse_enabled_from_config[enable_extensions] PASSED [ 14%]
+tests/unit/plugins/finder_test.py::test_parse_enabled_from_config[enable-extensions] PASSED [ 14%]
+tests/unit/plugins/finder_test.py::test_parse_plugin_options_local_plugin_paths_missing PASSED [ 15%]
+tests/unit/plugins/finder_test.py::test_parse_plugin_options_local_plugin_paths PASSED [ 15%]
+tests/unit/plugins/finder_test.py::test_find_plugins PASSED              [ 15%]
+tests/unit/plugins/finder_test.py::test_find_plugins_plugin_is_present PASSED [ 15%]
+tests/unit/plugins/finder_test.py::test_find_plugins_plugin_is_missing PASSED [ 15%]
+tests/unit/plugins/finder_test.py::test_find_plugins_name_normalization PASSED [ 16%]
+tests/unit/plugins/finder_test.py::test_parameters_for_class_plugin PASSED [ 16%]
+tests/unit/plugins/finder_test.py::test_parameters_for_function_plugin PASSED [ 16%]
+tests/unit/plugins/finder_test.py::test_load_plugin_import_error PASSED  [ 16%]
+tests/unit/plugins/finder_test.py::test_load_plugin_not_callable PASSED  [ 16%]
+tests/unit/plugins/finder_test.py::test_load_plugin_ok PASSED            [ 17%]
+tests/unit/plugins/finder_test.py::test_import_plugins_extends_sys_path PASSED [ 17%]
+tests/unit/plugins/finder_test.py::test_classify_plugins PASSED          [ 17%]
+tests/unit/plugins/finder_test.py::test_classify_plugins_enable_a_disabled_plugin PASSED [ 17%]
+tests/unit/plugins/finder_test.py::test_classify_plugins_does_not_error_on_reporter_prefix PASSED [ 18%]
+tests/unit/plugins/finder_test.py::test_classify_plugins_errors_on_incorrect_checker_name PASSED [ 18%]
+tests/unit/plugins/finder_test.py::test_load_plugins PASSED              [ 18%]
+tests/unit/plugins/pycodestyle_test.py::test_up_to_date PASSED           [ 18%]
+tests/unit/plugins/reporter_test.py::test_make_formatter_default PASSED  [ 18%]
+tests/unit/plugins/reporter_test.py::test_make_formatter_quiet_filename PASSED [ 19%]
+tests/unit/plugins/reporter_test.py::test_make_formatter_very_quiet[2] PASSED [ 19%]
+tests/unit/plugins/reporter_test.py::test_make_formatter_very_quiet[3] PASSED [ 19%]
+tests/unit/plugins/reporter_test.py::test_make_formatter_custom PASSED   [ 19%]
+tests/unit/plugins/reporter_test.py::test_make_formatter_format_string PASSED [ 19%]
+tests/unit/test_application.py::test_application_exit_code[0-False-False-0] PASSED [ 20%]
+tests/unit/test_application.py::test_application_exit_code[0-True-False-1] PASSED [ 20%]
+tests/unit/test_application.py::test_application_exit_code[2-False-False-1] PASSED [ 20%]
+tests/unit/test_application.py::test_application_exit_code[2-True-False-1] PASSED [ 20%]
+tests/unit/test_application.py::test_application_exit_code[0-True-True-1] PASSED [ 21%]
+tests/unit/test_application.py::test_application_exit_code[2-False-True-0] PASSED [ 21%]
+tests/unit/test_application.py::test_application_exit_code[2-True-True-1] PASSED [ 21%]
+tests/unit/test_base_formatter.py::test_start[None] PASSED               [ 21%]
+tests/unit/test_base_formatter.py::test_start[out.txt] PASSED            [ 21%]
+tests/unit/test_base_formatter.py::test_stop PASSED                      [ 22%]
+tests/unit/test_base_formatter.py::test_format_needs_to_be_implemented PASSED [ 22%]
+tests/unit/test_base_formatter.py::test_show_source_returns_nothing_when_not_showing_source PASSED [ 22%]
+tests/unit/test_base_formatter.py::test_show_source_returns_nothing_when_there_is_source PASSED [ 22%]
+tests/unit/test_base_formatter.py::test_show_source_updates_physical_line_appropriately[x=1\n- ^-2] PASSED [ 22%]
+tests/unit/test_base_formatter.py::test_show_source_updates_physical_line_appropriately[    x=(1\n       +2)\n-    ^-5] PASSED [ 23%]
+tests/unit/test_base_formatter.py::test_show_source_updates_physical_line_appropriately[\tx\t=\ty\n-\t \t \t^-6] PASSED [ 23%]
+tests/unit/test_base_formatter.py::test_write_uses_an_output_file[False] PASSED [ 23%]
+tests/unit/test_base_formatter.py::test_write_uses_an_output_file[True] PASSED [ 23%]
+tests/unit/test_base_formatter.py::test_write_produces_stdout PASSED     [ 24%]
+tests/unit/test_base_formatter.py::test_color_always_is_true PASSED      [ 24%]
+tests/unit/test_base_formatter.py::test_color_auto_is_true_for_tty PASSED [ 24%]
+tests/unit/test_base_formatter.py::test_color_auto_is_false_without_tty PASSED [ 24%]
+tests/unit/test_base_formatter.py::test_color_auto_is_false_if_not_supported_on_windows PASSED [ 24%]
+tests/unit/test_base_formatter.py::test_color_never_is_false PASSED      [ 25%]
+tests/unit/test_base_formatter.py::test_after_init_is_always_called PASSED [ 25%]
+tests/unit/test_base_formatter.py::test_handle_formats_the_error PASSED  [ 25%]
+tests/unit/test_checker_manager.py::test_oserrors_cause_serial_fall_back PASSED [ 25%]
+tests/unit/test_checker_manager.py::test_oserrors_are_reraised PASSED    [ 25%]
+tests/unit/test_checker_manager.py::test_multiprocessing_cpu_count_not_implemented PASSED [ 26%]
+tests/unit/test_checker_manager.py::test_jobs_count_limited_to_file_count PASSED [ 26%]
+tests/unit/test_checker_manager.py::test_make_checkers PASSED            [ 26%]
+tests/unit/test_debug.py::test_debug_information PASSED                  [ 26%]
+tests/unit/test_decision_engine.py::test_was_ignored_ignores_errors[ignore_list0-extend_ignore0-E111] PASSED [ 27%]
+tests/unit/test_decision_engine.py::test_was_ignored_ignores_errors[ignore_list1-extend_ignore1-E121] PASSED [ 27%]
+tests/unit/test_decision_engine.py::test_was_ignored_ignores_errors[ignore_list2-extend_ignore2-E121] PASSED [ 27%]
+tests/unit/test_decision_engine.py::test_was_ignored_ignores_errors[ignore_list3-extend_ignore3-E121] PASSED [ 27%]
+tests/unit/test_decision_engine.py::test_was_ignored_ignores_errors[ignore_list4-extend_ignore4-E121] PASSED [ 27%]
+tests/unit/test_decision_engine.py::test_was_ignored_ignores_errors[ignore_list5-extend_ignore5-E211] PASSED [ 28%]
+tests/unit/test_decision_engine.py::test_was_ignored_ignores_errors[ignore_list6-extend_ignore6-E211] PASSED [ 28%]
+tests/unit/test_decision_engine.py::test_was_ignored_implicitly_selects_errors[ignore_list0-extend_ignore0-E112] PASSED [ 28%]
+tests/unit/test_decision_engine.py::test_was_ignored_implicitly_selects_errors[ignore_list1-extend_ignore1-E122] PASSED [ 28%]
+tests/unit/test_decision_engine.py::test_was_ignored_implicitly_selects_errors[ignore_list2-extend_ignore2-W121] PASSED [ 28%]
+tests/unit/test_decision_engine.py::test_was_ignored_implicitly_selects_errors[ignore_list3-extend_ignore3-E112] PASSED [ 29%]
+tests/unit/test_decision_engine.py::test_was_ignored_implicitly_selects_errors[ignore_list4-extend_ignore4-E111] PASSED [ 29%]
+tests/unit/test_decision_engine.py::test_was_ignored_implicitly_selects_errors[ignore_list5-extend_ignore5-E111] PASSED [ 29%]
+tests/unit/test_decision_engine.py::test_was_selected_selects_errors[select_list0-extend_select0-E111] PASSED [ 29%]
+tests/unit/test_decision_engine.py::test_was_selected_selects_errors[select_list1-extend_select1-E121] PASSED [ 30%]
+tests/unit/test_decision_engine.py::test_was_selected_selects_errors[select_list2-extend_select2-E121] PASSED [ 30%]
+tests/unit/test_decision_engine.py::test_was_selected_selects_errors[select_list3-extend_select3-E121] PASSED [ 30%]
+tests/unit/test_decision_engine.py::test_was_selected_selects_errors[select_list4-extend_select4-E211] PASSED [ 30%]
+tests/unit/test_decision_engine.py::test_was_selected_selects_errors[select_list5-extend_select5-E211] PASSED [ 30%]
+tests/unit/test_decision_engine.py::test_was_selected_selects_errors[select_list6-extend_select6-E211] PASSED [ 31%]
+tests/unit/test_decision_engine.py::test_was_selected_selects_errors[select_list7-extend_select7-E211] PASSED [ 31%]
+tests/unit/test_decision_engine.py::test_was_selected_selects_errors[select_list8-extend_select8-E121] PASSED [ 31%]
+tests/unit/test_decision_engine.py::test_was_selected_implicitly_selects_errors PASSED [ 31%]
+tests/unit/test_decision_engine.py::test_was_selected_excludes_errors[select_list0-E112] PASSED [ 31%]
+tests/unit/test_decision_engine.py::test_was_selected_excludes_errors[select_list1-E122] PASSED [ 32%]
+tests/unit/test_decision_engine.py::test_was_selected_excludes_errors[select_list2-E132] PASSED [ 32%]
+tests/unit/test_decision_engine.py::test_was_selected_excludes_errors[select_list3-E321] PASSED [ 32%]
+tests/unit/test_decision_engine.py::test_was_selected_excludes_errors[select_list4-E410] PASSED [ 32%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list0-ignore_list0-None-E111-Decision.Selected] PASSED [ 33%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list1-ignore_list1-None-E112-Decision.Ignored] PASSED [ 33%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list2-ignore_list2-None-E121-Decision.Selected] PASSED [ 33%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list3-ignore_list3-None-E122-Decision.Ignored] PASSED [ 33%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list4-ignore_list4-None-E132-Decision.Ignored] PASSED [ 33%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list5-ignore_list5-None-E321-Decision.Ignored] PASSED [ 34%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list6-ignore_list6-None-E410-Decision.Ignored] PASSED [ 34%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list7-ignore_list7-extend_ignore7-E112-Decision.Selected] PASSED [ 34%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list8-ignore_list8-extend_ignore8-E112-Decision.Selected] PASSED [ 34%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list9-ignore_list9-extend_ignore9-E122-Decision.Ignored] PASSED [ 34%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list10-ignore_list10-None-E132-Decision.Ignored] PASSED [ 35%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list11-ignore_list11-None-E321-Decision.Ignored] PASSED [ 35%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list12-ignore_list12-None-E410-Decision.Ignored] PASSED [ 35%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list13-ignore_list13-None-E410-Decision.Ignored] PASSED [ 35%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list14-ignore_list14-None-E410-Decision.Selected] PASSED [ 36%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list15-ignore_list15-None-E410-Decision.Selected] PASSED [ 36%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list16-ignore_list16-None-E410-Decision.Ignored] PASSED [ 36%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list17-None-None-E126-Decision.Selected] PASSED [ 36%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list18-None-None-E126-Decision.Ignored] PASSED [ 36%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list19-None-None-W391-Decision.Ignored] PASSED [ 37%]
+tests/unit/test_decision_engine.py::test_decision_for[select_list20-ignore_list20-None-E131-Decision.Ignored] PASSED [ 37%]
+tests/unit/test_decision_engine.py::test_decision_for[None-ignore_list21-None-E131-Decision.Ignored] PASSED [ 37%]
+tests/unit/test_decision_engine.py::test_decision_for[None-None-extend_ignore22-E126-Decision.Ignored] PASSED [ 37%]
+tests/unit/test_decision_engine.py::test_decision_for[None-None-None-W391-Decision.Selected] PASSED [ 37%]
+tests/unit/test_decision_engine.py::test_implicitly_selected_and_implicitly_ignored_defers_to_length PASSED [ 38%]
+tests/unit/test_decision_engine.py::test_user_can_extend_select_to_enable_plugin_default_ignored PASSED [ 38%]
+tests/unit/test_decision_engine.py::test_plugin_extends_default_ignore_but_extend_selected PASSED [ 38%]
+tests/unit/test_defaults.py::test_valid_plugin_prefixes[E] PASSED        [ 38%]
+tests/unit/test_defaults.py::test_valid_plugin_prefixes[E1] PASSED       [ 39%]
+tests/unit/test_defaults.py::test_valid_plugin_prefixes[E123] PASSED     [ 39%]
+tests/unit/test_defaults.py::test_valid_plugin_prefixes[ABC] PASSED      [ 39%]
+tests/unit/test_defaults.py::test_valid_plugin_prefixes[ABC1] PASSED     [ 39%]
+tests/unit/test_defaults.py::test_valid_plugin_prefixes[ABC123] PASSED   [ 39%]
+tests/unit/test_defaults.py::test_invalid_plugin_prefixes[] PASSED       [ 40%]
+tests/unit/test_defaults.py::test_invalid_plugin_prefixes[A1234] PASSED  [ 40%]
+tests/unit/test_defaults.py::test_invalid_plugin_prefixes[ABCD] PASSED   [ 40%]
+tests/unit/test_defaults.py::test_invalid_plugin_prefixes[abc] PASSED    [ 40%]
+tests/unit/test_defaults.py::test_invalid_plugin_prefixes[a-b] PASSED    [ 40%]
+tests/unit/test_defaults.py::test_invalid_plugin_prefixes[\u2603] PASSED [ 41%]
+tests/unit/test_defaults.py::test_invalid_plugin_prefixes[A\U0001d7d7] PASSED [ 41%]
+tests/unit/test_discover_files.py::test_filenames_from_a_directory PASSED [ 41%]
+tests/unit/test_discover_files.py::test_filenames_from_a_directory_with_a_predicate PASSED [ 41%]
+tests/unit/test_discover_files.py::test_filenames_from_a_directory_with_a_predicate_from_the_current_dir PASSED [ 42%]
+tests/unit/test_discover_files.py::test_filenames_from_a_single_file PASSED [ 42%]
+tests/unit/test_discover_files.py::test_filenames_from_a_single_file_does_not_exist PASSED [ 42%]
+tests/unit/test_discover_files.py::test_filenames_from_exclude_doesnt_exclude_directory_names PASSED [ 42%]
+tests/unit/test_discover_files.py::test_filenames_from_predicate_applies_to_initial_arg PASSED [ 42%]
+tests/unit/test_discover_files.py::test_filenames_from_predicate_applies_to_dirname PASSED [ 43%]
+tests/unit/test_discover_files.py::test_expand_paths_honors_exclude PASSED [ 43%]
+tests/unit/test_discover_files.py::test_expand_paths_defaults_to_dot PASSED [ 43%]
+tests/unit/test_discover_files.py::test_default_stdin_name_is_not_filtered PASSED [ 43%]
+tests/unit/test_discover_files.py::test_alternate_stdin_name_is_filtered PASSED [ 43%]
+tests/unit/test_discover_files.py::test_filename_included_even_if_not_matching_include PASSED [ 44%]
+tests/unit/test_exceptions.py::test_pickleable[err0] PASSED              [ 44%]
+tests/unit/test_exceptions.py::test_pickleable[err1] PASSED              [ 44%]
+tests/unit/test_exceptions.py::test_pickleable[err2] PASSED              [ 44%]
+tests/unit/test_file_checker.py::test_repr PASSED                        [ 45%]
+tests/unit/test_file_checker.py::test_nonexistent_file PASSED            [ 45%]
+tests/unit/test_file_checker.py::test_raises_exception_on_failed_plugin PASSED [ 45%]
+tests/unit/test_file_processor.py::test_read_lines_splits_lines PASSED   [ 45%]
+tests/unit/test_file_processor.py::test_read_lines_universal_newlines PASSED [ 45%]
+tests/unit/test_file_processor.py::test_read_lines_incorrect_utf_16 PASSED [ 46%]
+tests/unit/test_file_processor.py::test_read_lines_unknown_encoding PASSED [ 46%]
+tests/unit/test_file_processor.py::test_strip_utf_bom[\xef\xbb\xbf"""Module docstring."""\n] PASSED [ 46%]
+tests/unit/test_file_processor.py::test_strip_utf_bom[\ufeff"""Module docstring."""\n] PASSED [ 46%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines0-False] PASSED [ 46%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines1-False] PASSED [ 47%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines2-False] PASSED [ 47%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines3-True] PASSED [ 47%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines4-True] PASSED [ 47%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines5-True] PASSED [ 48%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines6-True] PASSED [ 48%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines7-True] PASSED [ 48%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines8-True] PASSED [ 48%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines9-False] PASSED [ 48%]
+tests/unit/test_file_processor.py::test_should_ignore_file[lines10-False] PASSED [ 49%]
+tests/unit/test_file_processor.py::test_should_ignore_file_to_handle_disable_noqa PASSED [ 49%]
+tests/unit/test_file_processor.py::test_read_lines_from_stdin PASSED     [ 49%]
+tests/unit/test_file_processor.py::test_stdin_filename_attribute PASSED  [ 49%]
+tests/unit/test_file_processor.py::test_read_lines_uses_display_name PASSED [ 50%]
+tests/unit/test_file_processor.py::test_read_lines_ignores_empty_display_name PASSED [ 50%]
+tests/unit/test_file_processor.py::test_noqa_line_for PASSED             [ 50%]
+tests/unit/test_file_processor.py::test_noqa_line_for_continuation PASSED [ 50%]
+tests/unit/test_file_processor.py::test_noqa_line_for_no_eol_at_end_of_file PASSED [ 50%]
+tests/unit/test_file_processor.py::test_next_line PASSED                 [ 51%]
+tests/unit/test_file_processor.py::test_keyword_arguments_for[params0-args0-expected_kwargs0] PASSED [ 51%]
+tests/unit/test_file_processor.py::test_keyword_arguments_for[params1-args1-expected_kwargs1] PASSED [ 51%]
+tests/unit/test_file_processor.py::test_keyword_arguments_for[params2-args2-expected_kwargs2] PASSED [ 51%]
+tests/unit/test_file_processor.py::test_keyword_arguments_for[params3-args3-expected_kwargs3] PASSED [ 51%]
+tests/unit/test_file_processor.py::test_keyword_arguments_for[params4-args4-expected_kwargs4] PASSED [ 52%]
+tests/unit/test_file_processor.py::test_keyword_arguments_for_does_not_handle_attribute_errors PASSED [ 52%]
+tests/unit/test_file_processor.py::test_processor_split_line PASSED      [ 52%]
+tests/unit/test_file_processor.py::test_build_ast PASSED                 [ 52%]
+tests/unit/test_file_processor.py::test_next_logical_line_updates_the_previous_logical_line PASSED [ 53%]
+tests/unit/test_file_processor.py::test_visited_new_blank_line PASSED    [ 53%]
+tests/unit/test_file_processor.py::test_mutate_string[""-""] PASSED      [ 53%]
+tests/unit/test_file_processor.py::test_mutate_string[''-''] PASSED      [ 53%]
+tests/unit/test_file_processor.py::test_mutate_string["a"-"x"] PASSED    [ 53%]
+tests/unit/test_file_processor.py::test_mutate_string['a'-'x'] PASSED    [ 54%]
+tests/unit/test_file_processor.py::test_mutate_string["x"-"x"] PASSED    [ 54%]
+tests/unit/test_file_processor.py::test_mutate_string['x'-'x'] PASSED    [ 54%]
+tests/unit/test_file_processor.py::test_mutate_string["abcdef"-"xxxxxx"] PASSED [ 54%]
+tests/unit/test_file_processor.py::test_mutate_string['abcdef'-'xxxxxx'] PASSED [ 54%]
+tests/unit/test_file_processor.py::test_mutate_string[""""""-""""""] PASSED [ 55%]
+tests/unit/test_file_processor.py::test_mutate_string[''''''-''''''] PASSED [ 55%]
+tests/unit/test_file_processor.py::test_mutate_string["""a"""-"""x"""] PASSED [ 55%]
+tests/unit/test_file_processor.py::test_mutate_string['''a'''-'''x'''] PASSED [ 55%]
+tests/unit/test_file_processor.py::test_mutate_string["""x"""-"""x"""] PASSED [ 56%]
+tests/unit/test_file_processor.py::test_mutate_string['''x'''-'''x'''] PASSED [ 56%]
+tests/unit/test_file_processor.py::test_mutate_string["""abcdef"""-"""xxxxxx"""] PASSED [ 56%]
+tests/unit/test_file_processor.py::test_mutate_string['''abcdef'''-'''xxxxxx'''] PASSED [ 56%]
+tests/unit/test_file_processor.py::test_mutate_string["""xxxxxx"""-"""xxxxxx"""] PASSED [ 56%]
+tests/unit/test_file_processor.py::test_mutate_string['''xxxxxx'''-'''xxxxxx'''] PASSED [ 57%]
+tests/unit/test_file_processor.py::test_expand_indent[    -4] PASSED     [ 57%]
+tests/unit/test_file_processor.py::test_expand_indent[      -6] PASSED   [ 57%]
+tests/unit/test_file_processor.py::test_expand_indent[\t-8] PASSED       [ 57%]
+tests/unit/test_file_processor.py::test_expand_indent[\t\t-16] PASSED    [ 57%]
+tests/unit/test_file_processor.py::test_expand_indent[       \t-8] PASSED [ 58%]
+tests/unit/test_file_processor.py::test_expand_indent[        \t-16] PASSED [ 58%]
+tests/unit/test_file_processor.py::test_count_parentheses[0-(-1] PASSED  [ 58%]
+tests/unit/test_file_processor.py::test_count_parentheses[0-[-1] PASSED  [ 58%]
+tests/unit/test_file_processor.py::test_count_parentheses[0-{-1] PASSED  [ 59%]
+tests/unit/test_file_processor.py::test_count_parentheses[1-)-0] PASSED  [ 59%]
+tests/unit/test_file_processor.py::test_count_parentheses[1-]-0] PASSED  [ 59%]
+tests/unit/test_file_processor.py::test_count_parentheses[1-}-0] PASSED  [ 59%]
+tests/unit/test_file_processor.py::test_count_parentheses[10-+-10] PASSED [ 59%]
+tests/unit/test_file_processor.py::test_nonexistent_file PASSED          [ 60%]
+tests/unit/test_filenameonly_formatter.py::test_caches_filenames_already_printed PASSED [ 60%]
+tests/unit/test_filenameonly_formatter.py::test_only_returns_a_string_once_from_format PASSED [ 60%]
+tests/unit/test_filenameonly_formatter.py::test_show_source_returns_nothing PASSED [ 60%]
+tests/unit/test_legacy_api.py::test_styleguide_options PASSED            [ 60%]
+tests/unit/test_legacy_api.py::test_styleguide_paths PASSED              [ 61%]
+tests/unit/test_legacy_api.py::test_styleguide_check_files PASSED        [ 61%]
+tests/unit/test_legacy_api.py::test_styleguide_excluded PASSED           [ 61%]
+tests/unit/test_legacy_api.py::test_styleguide_init_report_does_nothing PASSED [ 61%]
+tests/unit/test_legacy_api.py::test_styleguide_init_report_with_non_subclass PASSED [ 62%]
+tests/unit/test_legacy_api.py::test_styleguide_init_report PASSED        [ 62%]
+tests/unit/test_legacy_api.py::test_styleguide_input_file PASSED         [ 62%]
+tests/unit/test_legacy_api.py::test_report_total_errors PASSED           [ 62%]
+tests/unit/test_legacy_api.py::test_report_get_statistics PASSED         [ 62%]
+tests/unit/test_main_options.py::test_stage1_arg_parser PASSED           [ 63%]
+tests/unit/test_main_options.py::test_stage1_arg_parser_ignores_help PASSED [ 63%]
+tests/unit/test_nothing_formatter.py::test_format_returns_nothing PASSED [ 63%]
+tests/unit/test_nothing_formatter.py::test_show_source_returns_nothing PASSED [ 63%]
+tests/unit/test_option.py::test_to_argparse PASSED                       [ 63%]
+tests/unit/test_option.py::test_to_argparse_creates_an_option_as_we_expect PASSED [ 64%]
+tests/unit/test_option.py::test_config_name_generation PASSED            [ 64%]
+tests/unit/test_option.py::test_config_name_needs_long_option_name PASSED [ 64%]
+tests/unit/test_option.py::test_dest_is_not_overridden PASSED            [ 64%]
+tests/unit/test_option_manager.py::test_option_manager_creates_option_parser PASSED [ 65%]
+tests/unit/test_option_manager.py::test_option_manager_including_parent_options PASSED [ 65%]
+tests/unit/test_option_manager.py::test_parse_args_forwarding_default_values PASSED [ 65%]
+tests/unit/test_option_manager.py::test_parse_args_forwarding_type_coercion PASSED [ 65%]
+tests/unit/test_option_manager.py::test_add_option_short_option_only PASSED [ 65%]
+tests/unit/test_option_manager.py::test_add_option_long_option_only PASSED [ 66%]
+tests/unit/test_option_manager.py::test_add_short_and_long_option_names PASSED [ 66%]
+tests/unit/test_option_manager.py::test_add_option_with_custom_args PASSED [ 66%]
+tests/unit/test_option_manager.py::test_parse_args_normalize_path PASSED [ 66%]
+tests/unit/test_option_manager.py::test_parse_args_handles_comma_separated_defaults PASSED [ 66%]
+tests/unit/test_option_manager.py::test_parse_args_handles_comma_separated_lists PASSED [ 67%]
+tests/unit/test_option_manager.py::test_parse_args_normalize_paths PASSED [ 67%]
+tests/unit/test_option_manager.py::test_extend_default_ignore PASSED     [ 67%]
+tests/unit/test_option_manager.py::test_parse_valid_jobs_argument[auto-True--1] PASSED [ 67%]
+tests/unit/test_option_manager.py::test_parse_valid_jobs_argument[4-False-4] PASSED [ 68%]
+tests/unit/test_option_manager.py::test_parse_invalid_jobs_argument PASSED [ 68%]
+tests/unit/test_option_manager.py::test_jobs_argument_str PASSED         [ 68%]
+tests/unit/test_option_manager.py::test_jobs_argument_repr PASSED        [ 68%]
+tests/unit/test_options_config.py::test_config_not_found_returns_none PASSED [ 68%]
+tests/unit/test_options_config.py::test_config_file_without_section_is_not_considered PASSED [ 69%]
+tests/unit/test_options_config.py::test_config_file_with_parse_error_is_not_considered PASSED [ 69%]
+tests/unit/test_options_config.py::test_config_file_with_encoding_error_is_not_considered PASSED [ 69%]
+tests/unit/test_options_config.py::test_find_config_file_exists_at_path[setup.cfg] PASSED [ 69%]
+tests/unit/test_options_config.py::test_find_config_file_exists_at_path[tox.ini] PASSED [ 69%]
+tests/unit/test_options_config.py::test_find_config_file_exists_at_path[.flake8] PASSED [ 70%]
+tests/unit/test_options_config.py::test_find_config_either_section[flake8] PASSED [ 70%]
+tests/unit/test_options_config.py::test_find_config_either_section[flake8:local-plugins] PASSED [ 70%]
+tests/unit/test_options_config.py::test_find_config_searches_upwards PASSED [ 70%]
+tests/unit/test_options_config.py::test_find_config_ignores_homedir PASSED [ 71%]
+tests/unit/test_options_config.py::test_find_config_ignores_unknown_homedir PASSED [ 71%]
+tests/unit/test_options_config.py::test_load_config_config_specified_skips_discovery PASSED [ 71%]
+tests/unit/test_options_config.py::test_load_config_no_config_file_does_discovery PASSED [ 71%]
+tests/unit/test_options_config.py::test_load_config_no_config_found_sets_cfg_dir_to_pwd PASSED [ 71%]
+tests/unit/test_options_config.py::test_load_config_isolated_ignores_configuration PASSED [ 72%]
+tests/unit/test_options_config.py::test_load_config_append_config PASSED [ 72%]
+tests/unit/test_options_config.py::test_load_auto_config_utf8 PASSED     [ 72%]
+tests/unit/test_options_config.py::test_load_explicit_config_utf8 PASSED [ 72%]
+tests/unit/test_options_config.py::test_load_extra_config_utf8 PASSED    [ 72%]
+tests/unit/test_options_config.py::test_parse_config_no_values PASSED    [ 73%]
+tests/unit/test_options_config.py::test_parse_config_typed_values PASSED [ 73%]
+tests/unit/test_options_config.py::test_parse_config_ignores_unknowns PASSED [ 73%]
+tests/unit/test_options_config.py::test_load_config_missing_file_raises_exception PASSED [ 73%]
+tests/unit/test_options_config.py::test_load_config_missing_append_config_raise_exception PASSED [ 74%]
+tests/unit/test_options_config.py::test_invalid_ignore_codes_raise_error PASSED [ 74%]
+tests/unit/test_options_config.py::test_invalid_extend_ignore_codes_raise_error PASSED [ 74%]
+tests/unit/test_pyflakes_codes.py::test_all_pyflakes_messages_have_flake8_codes_assigned PASSED [ 74%]
+tests/unit/test_pyflakes_codes.py::test_undefined_local_code PASSED      [ 74%]
+tests/unit/test_statistics.py::test_key_creation PASSED                  [ 75%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args0-True] PASSED [ 75%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args1-True] PASSED [ 75%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args2-True] PASSED [ 75%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args3-True] PASSED [ 75%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args4-True] PASSED [ 76%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args5-True] PASSED [ 76%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args6-True] PASSED [ 76%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args7-True] PASSED [ 76%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args8-False] PASSED [ 77%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args9-False] PASSED [ 77%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args10-False] PASSED [ 77%]
+tests/unit/test_statistics.py::test_key_matching[E123-file000.py-args11-False] PASSED [ 77%]
+tests/unit/test_statistics.py::test_statistic_creation PASSED            [ 77%]
+tests/unit/test_statistics.py::test_statistic_increment PASSED           [ 78%]
+tests/unit/test_statistics.py::test_recording_statistics PASSED          [ 78%]
+tests/unit/test_statistics.py::test_statistics_for_single_record PASSED  [ 78%]
+tests/unit/test_statistics.py::test_statistics_for_filters_by_filename PASSED [ 78%]
+tests/unit/test_statistics.py::test_statistic_for_retrieves_more_than_one_value PASSED [ 78%]
+tests/unit/test_style_guide.py::test_handle_error_does_not_raise_type_errors PASSED [ 79%]
+tests/unit/test_style_guide.py::test_style_guide_manager PASSED          [ 79%]
+tests/unit/test_style_guide.py::test_style_guide_applies_to[first_file.py-first_file.py-True] PASSED [ 79%]
+tests/unit/test_style_guide.py::test_style_guide_applies_to[first_file.py-second_file.py-False] PASSED [ 79%]
+tests/unit/test_style_guide.py::test_style_guide_applies_to[sub_dir/*.py-first_file.py-False] PASSED [ 80%]
+tests/unit/test_style_guide.py::test_style_guide_applies_to[sub_dir/*.py-sub_dir/file.py-True] PASSED [ 80%]
+tests/unit/test_style_guide.py::test_style_guide_applies_to[sub_dir/*.py-other_dir/file.py-False] PASSED [ 80%]
+tests/unit/test_style_guide.py::test_style_guide_manager_pre_file_ignores_parsing PASSED [ 80%]
+tests/unit/test_style_guide.py::test_style_guide_manager_pre_file_ignores[ignores0-F401-first_file.py-1] PASSED [ 80%]
+tests/unit/test_style_guide.py::test_style_guide_manager_pre_file_ignores[ignores1-E121-first_file.py-0] PASSED [ 81%]
+tests/unit/test_style_guide.py::test_style_guide_manager_pre_file_ignores[ignores2-F401-second_file.py-0] PASSED [ 81%]
+tests/unit/test_style_guide.py::test_style_guide_manager_pre_file_ignores[ignores3-F401-third_file.py-1] PASSED [ 81%]
+tests/unit/test_style_guide.py::test_style_guide_manager_pre_file_ignores[ignores4-E311-third_file.py-0] PASSED [ 81%]
+tests/unit/test_style_guide.py::test_style_guide_manager_pre_file_ignores[ignores5-F401-sub_dir/file.py-0] PASSED [ 81%]
+tests/unit/test_style_guide.py::test_style_guide_manager_style_guide_for[first_file.py-first_file.py] PASSED [ 82%]
+tests/unit/test_style_guide.py::test_style_guide_manager_style_guide_for[second_file.py-second_file.py] PASSED [ 82%]
+tests/unit/test_style_guide.py::test_style_guide_manager_style_guide_for[third_file.py-third_file.py] PASSED [ 82%]
+tests/unit/test_style_guide.py::test_style_guide_manager_style_guide_for[fourth_file.py-None] PASSED [ 82%]
+tests/unit/test_style_guide.py::test_style_guide_manager_style_guide_for[sub_dir/__init__.py-/app/sub_dir/*] PASSED [ 83%]
+tests/unit/test_style_guide.py::test_style_guide_manager_style_guide_for[other_dir/__init__.py-None] PASSED [ 83%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123,\n\tW234,\n    E206-expected0] PASSED [ 83%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123,W234,E206-expected1] PASSED [ 83%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123 W234 E206-expected2] PASSED [ 83%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123\nW234 E206-expected3] PASSED [ 84%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123\nW234\nE206-expected4] PASSED [ 84%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123,W234,E206,-expected5] PASSED [ 84%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123,W234,E206, ,\n-expected6] PASSED [ 84%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123,W234,,E206,,-expected7] PASSED [ 84%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123, W234,, E206,,-expected8] PASSED [ 85%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[E123,,W234,,E206,,-expected9] PASSED [ 85%]
+tests/unit/test_utils.py::test_parse_comma_separated_list[-expected10] PASSED [ 85%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[-expected0] PASSED [ 85%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[   -expected1] PASSED [ 86%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[\n\n\n-expected2] PASSED [ 86%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py:E123-expected3] PASSED [ 86%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py,g.py:E,F-expected4] PASSED [ 86%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[   f.py  , g.py  : E  , F  -expected5] PASSED [ 86%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py:E g.py:F-expected6] PASSED [ 87%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py: E\ng.py: F\n-expected7] PASSED [ 87%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py g.py: E F-expected8] PASSED [ 87%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py:\n    E,F\ng.py:\n    G,H-expected9] PASSED [ 87%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[F.py,G.py: F,G-expected10] PASSED [ 87%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[:E-expected11] PASSED [ 88%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py:-expected12] PASSED [ 88%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[:E f.py:F-expected13] PASSED [ 88%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py: g.py:F-expected14] PASSED [ 88%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py:E:-expected15] PASSED [ 89%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py:E.py:-expected16] PASSED [ 89%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py:Eg.py:F-expected17] PASSED [ 89%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[value18-expected18] PASSED [ 89%]
+tests/unit/test_utils.py::test_parse_files_to_codes_mapping[f.py: ABC123-expected19] PASSED [ 89%]
+tests/unit/test_utils.py::test_invalid_file_list[E123] PASSED            [ 90%]
+tests/unit/test_utils.py::test_invalid_file_list[f.py,E123] PASSED       [ 90%]
+tests/unit/test_utils.py::test_invalid_file_list[f.py E123] PASSED       [ 90%]
+tests/unit/test_utils.py::test_invalid_file_list[f.py] PASSED            [ 90%]
+tests/unit/test_utils.py::test_invalid_file_list[f.py:E,g.pyf.py::] PASSED [ 90%]
+tests/unit/test_utils.py::test_invalid_file_list[f.py:E1F1] PASSED       [ 91%]
+tests/unit/test_utils.py::test_normalize_path[flake8-flake8] PASSED      [ 91%]
+tests/unit/test_utils.py::test_normalize_path[.-/app] PASSED             [ 91%]
+tests/unit/test_utils.py::test_normalize_path[../flake8-/flake8] PASSED  [ 91%]
+tests/unit/test_utils.py::test_normalize_path[flake8/-/app/flake8] PASSED [ 92%]
+tests/unit/test_utils.py::test_normalize_paths[value0-expected0] PASSED  [ 92%]
+tests/unit/test_utils.py::test_normalize_paths[value1-expected1] PASSED  [ 92%]
+tests/unit/test_utils.py::test_matches_filename_for_excluding_dotfiles PASSED [ 92%]
+tests/unit/test_utils.py::test_fnmatch[foo.py-patterns0-True] PASSED     [ 92%]
+tests/unit/test_utils.py::test_fnmatch[foo.py-patterns1-False] PASSED    [ 93%]
+tests/unit/test_utils.py::test_fnmatch[foo.pyc-patterns2-True] PASSED    [ 93%]
+tests/unit/test_utils.py::test_fnmatch[foo.pyc-patterns3-True] PASSED    [ 93%]
+tests/unit/test_utils.py::test_stdin_get_value_crlf PASSED               [ 93%]
+tests/unit/test_utils.py::test_stdin_unknown_coding_token PASSED         [ 93%]
+tests/unit/test_utils.py::test_normalize_pypi_name[-] PASSED             [ 94%]
+tests/unit/test_utils.py::test_normalize_pypi_name[my-plugin-my-plugin] PASSED [ 94%]
+tests/unit/test_utils.py::test_normalize_pypi_name[MyPlugin-myplugin] PASSED [ 94%]
+tests/unit/test_utils.py::test_normalize_pypi_name[my_plugin-my-plugin] PASSED [ 94%]
+tests/unit/test_utils.py::test_normalize_pypi_name[my.plugin-my-plugin] PASSED [ 95%]
+tests/unit/test_utils.py::test_normalize_pypi_name[my--plugin-my-plugin] PASSED [ 95%]
+tests/unit/test_utils.py::test_normalize_pypi_name[my__plugin-my-plugin] PASSED [ 95%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1-False] PASSED [ 95%]
+tests/unit/test_violation.py::test_is_inline_ignored[E121-a = 1  # noqa: E111-False] PASSED [ 95%]
+tests/unit/test_violation.py::test_is_inline_ignored[E121-a = 1  # noqa: E111,W123,F821-False] PASSED [ 96%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa: E111,W123,F821-True] PASSED [ 96%]
+tests/unit/test_violation.py::test_is_inline_ignored[W123-a = 1  # noqa: E111,W123,F821-True] PASSED [ 96%]
+tests/unit/test_violation.py::test_is_inline_ignored[W123-a = 1  # noqa: E111, W123,F821-True] PASSED [ 96%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa: E11,W123,F821-True] PASSED [ 96%]
+tests/unit/test_violation.py::test_is_inline_ignored[E121-a = 1  # noqa:E111,W123,F821-False] PASSED [ 97%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa:E111,W123,F821-True] PASSED [ 97%]
+tests/unit/test_violation.py::test_is_inline_ignored[W123-a = 1  # noqa:E111,W123,F821-True] PASSED [ 97%]
+tests/unit/test_violation.py::test_is_inline_ignored[W123-a = 1  # noqa:E111, W123,F821-True] PASSED [ 97%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa:E11,W123,F821-True] PASSED [ 98%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa, analysis:ignore-True] PASSED [ 98%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa analysis:ignore-True] PASSED [ 98%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa - We do not care-True] PASSED [ 98%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa: We do not care-True] PASSED [ 98%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa:We do not care-True] PASSED [ 99%]
+tests/unit/test_violation.py::test_is_inline_ignored[ABC123-a = 1  # noqa: ABC123-True] PASSED [ 99%]
+tests/unit/test_violation.py::test_is_inline_ignored[E111-a = 1  # noqa: ABC123-False] PASSED [ 99%]
+tests/unit/test_violation.py::test_is_inline_ignored[ABC123-a = 1  # noqa: ABC124-False] PASSED [ 99%]
+tests/unit/test_violation.py::test_disable_is_inline_ignored PASSED      [100%]
+
+======================== 465 passed, 1 xfailed in 1.75s ========================
+Running tox...
+py: install_deps> python -I -m pip install covdefaults 'coverage>=6' 'pytest!=3.0.5,!=5.2.3'
+.pkg: install_requires> python -I -m pip install 'setuptools>=40.8.0'
+.pkg: _optional_hooks> python /usr/local/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: get_requires_for_build_sdist> python /usr/local/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: get_requires_for_build_wheel> python /usr/local/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: prepare_metadata_for_build_wheel> python /usr/local/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: build_sdist> python /usr/local/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+py: install_package_deps> python -I -m pip install 'mccabe<0.8.0,>=0.7.0' 'pycodestyle<2.15.0,>=2.14.0' 'pyflakes<3.5.0,>=3.4.0'
+py: install_package> python -I -m pip install --force-reinstall --no-deps /app/.tox/.tmp/package/1/flake8-7.3.0.tar.gz
+py: commands[0]> coverage run -m pytest
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.1, pluggy-1.6.0
+cachedir: .tox/py/.pytest_cache
+rootdir: /app
+configfile: pytest.ini
+collected 466 items
+
+tests/integration/test_aggregator.py ..                                  [  0%]
+tests/integration/test_api_legacy.py .                                   [  0%]
+tests/integration/test_checker.py ......................                 [  5%]
+tests/integration/test_main.py .......................                   [ 10%]
+tests/integration/test_plugins.py ........x                              [ 12%]
+tests/unit/plugins/finder_test.py .............................          [ 18%]
+tests/unit/plugins/pycodestyle_test.py .                                 [ 18%]
+tests/unit/plugins/reporter_test.py ......                               [ 19%]
+tests/unit/test_application.py .......                                   [ 21%]
+tests/unit/test_base_formatter.py ...................                    [ 25%]
+tests/unit/test_checker_manager.py .....                                 [ 26%]
+tests/unit/test_debug.py .                                               [ 26%]
+tests/unit/test_decision_engine.py ..................................... [ 34%]
+..................                                                       [ 38%]
+tests/unit/test_defaults.py .............                                [ 41%]
+tests/unit/test_discover_files.py .............                          [ 44%]
+tests/unit/test_exceptions.py ...                                        [ 44%]
+tests/unit/test_file_checker.py ...                                      [ 45%]
+tests/unit/test_file_processor.py ...................................... [ 53%]
+..............................                                           [ 60%]
+tests/unit/test_filenameonly_formatter.py ...                            [ 60%]
+tests/unit/test_legacy_api.py ..........                                 [ 62%]
+tests/unit/test_main_options.py ..                                       [ 63%]
+tests/unit/test_nothing_formatter.py ..                                  [ 63%]
+tests/unit/test_option.py .....                                          [ 64%]
+tests/unit/test_option_manager.py ..................                     [ 68%]
+tests/unit/test_options_config.py ...........................            [ 74%]
+tests/unit/test_pyflakes_codes.py ..                                     [ 74%]
+tests/unit/test_statistics.py ...................                        [ 78%]
+tests/unit/test_style_guide.py ....................                      [ 83%]
+tests/unit/test_utils.py ............................................... [ 93%]
+..........                                                               [ 95%]
+tests/unit/test_violation.py .....................                       [100%]
+
+======================== 465 passed, 1 xfailed in 2.48s ========================
+py: commands[1]> coverage report
+Name                                                                 Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------------------------------------------------------------------
+.tox/py/lib/python3.11/site-packages/flake8/__init__.py                 24      2      4      1    89%   58-59
+.tox/py/lib/python3.11/site-packages/flake8/api/legacy.py               71      2      6      0    97%   211-212
+.tox/py/lib/python3.11/site-packages/flake8/checker.py                 280     22     80      5    91%   68-73, 77-79, 209-210, 238-239, 337-338, 364-373, 403, 479-480, 511
+.tox/py/lib/python3.11/site-packages/flake8/formatting/base.py          63      0     20      1    99%   193->195
+.tox/py/lib/python3.11/site-packages/flake8/main/application.py        129      7     14      1    94%   104-107, 210-211, 215
+.tox/py/lib/python3.11/site-packages/flake8/options/aggregator.py       22      3      4      1    85%   42-44
+.tox/py/lib/python3.11/site-packages/flake8/options/manager.py         120      1     36      1    99%   198
+.tox/py/lib/python3.11/site-packages/flake8/plugins/pycodestyle.py      75      2     10      2    95%   100, 106
+.tox/py/lib/python3.11/site-packages/flake8/plugins/pyflakes.py         27      1      4      1    94%   99
+.tox/py/lib/python3.11/site-packages/flake8/processor.py               222      0     62      2    99%   226->232, 275->exit
+----------------------------------------------------------------------------------------------------------------
+TOTAL                                                                 3725     40    482     15    99%
+
+60 files skipped due to complete coverage.
+py: commands[2]> coverage report --fail-under 100 --include 'tests/*'
+Name    Stmts   Miss Branch BrPart  Cover   Missing
+---------------------------------------------------
+TOTAL    1876      0     30      0   100%
+
+38 files skipped due to complete coverage.
+py: OK ✔ in 12.57 seconds
+flake8: install_deps> python -I -m pip install flake8 flake8-bugbear 'flake8-docstrings>=1.3.1' 'flake8-typing-imports>=1.1' pep8-naming
+flake8: commands[0]> flake8 src/flake8/ tests/ setup.py
+flake8: OK ✔ in 3.44 seconds
+linters: install_deps> python -I -m pip install bandit doc8 flake8 flake8-bugbear 'flake8-docstrings>=1.3.1' 'flake8-typing-imports>=1.1' pep8-naming pyflakes 'pylint!=2.5.0' readme_renderer sphinx
+linters: commands[0]> flake8 src/flake8/ tests/ setup.py
+linters: commands[1]> pylint src/flake8
+
+------------------------------------
+Your code has been rated at 10.00/10
+
+linters: commands[2]> doc8 docs/source/
+Scanning...
+Validating...
+========
+Total files scanned = 112
+Total files ignored = 0
+Total accumulated errors = 0
+Detailed error counts:
+    - doc8.checks.CheckCarriageReturn = 0
+    - doc8.checks.CheckIndentationNoTab = 0
+    - doc8.checks.CheckMaxLineLength = 0
+    - doc8.checks.CheckNewlineEndOfFile = 0
+    - doc8.checks.CheckTrailingWhitespace = 0
+    - doc8.checks.CheckValidity = 0
+linters: commands[3]> python setup.py check -r -s
+running check
+linters: commands[4]> bandit -r src/flake8/ -c .bandit.yml
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: B101,B404,B603,B607
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[main]	INFO	using config: .bandit.yml
+[main]	INFO	running on Python 3.11.14
+Run started:2025-12-04 00:03:59.770145+00:00
+
+Test results:
+	No issues identified.
+
+Code scanned:
+	Total lines of code: 3749
+	Total lines skipped (#nosec): 2
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 0
+Files skipped (0):
+linters: OK ✔ in 17.67 seconds
+docs: install_deps> python -I -m pip install -r docs/source/requirements.txt
+docs: install_package_deps> python -I -m pip install 'mccabe<0.8.0,>=0.7.0' 'pycodestyle<2.15.0,>=2.14.0' 'pyflakes<3.5.0,>=3.4.0'
+docs: install_package> python -I -m pip install --force-reinstall --no-deps /app/.tox/.tmp/package/2/flake8-7.3.0.tar.gz
+docs: commands[0]> sphinx-build -E -W -c docs/source/ -b html docs/source/ docs/build/html
+Running Sphinx v8.2.3
+loading translations [en]... done
+making output directory... done
+Converting `source_suffix = '.rst'` to `source_suffix = {'.rst': 'restructuredtext'}`.
+loading intersphinx inventory 'python' from https://docs.python.org/3/objects.inv ...
+loading intersphinx inventory 'packaging' from https://packaging.python.org/en/latest/objects.inv ...
+loading intersphinx inventory 'setuptools' from https://setuptools.pypa.io/en/latest/objects.inv ...
+building [mo]: targets for 0 po files that are out of date
+writing output...
+building [html]: targets for 111 source files that are out of date
+updating environment: [new config] 111 added, 0 changed, 0 removed
+reading sources... [  1%] faq
+reading sources... [  2%] glossary
+reading sources... [  3%] index
+reading sources... [  4%] internal/checker
+reading sources... [  5%] internal/cli
+reading sources... [  5%] internal/contributing
+reading sources... [  6%] internal/formatters
+reading sources... [  7%] internal/index
+reading sources... [  8%] internal/option_handling
+reading sources... [  9%] internal/plugin_handling
+reading sources... [ 10%] internal/releases
+reading sources... [ 11%] internal/start-to-finish
+reading sources... [ 12%] internal/utils
+reading sources... [ 13%] internal/writing-code
+reading sources... [ 14%] internal/writing-documentation
+reading sources... [ 14%] plugin-development/formatters
+reading sources... [ 15%] plugin-development/index
+reading sources... [ 16%] plugin-development/plugin-parameters
+reading sources... [ 17%] plugin-development/registering-plugins
+reading sources... [ 18%] release-notes/0.6.0
+reading sources... [ 19%] release-notes/0.7.0
+reading sources... [ 20%] release-notes/0.8.0
+reading sources... [ 21%] release-notes/0.9.0
+reading sources... [ 22%] release-notes/1.0.0
+reading sources... [ 23%] release-notes/1.1.0
+reading sources... [ 23%] release-notes/1.2.0
+reading sources... [ 24%] release-notes/1.3.0
+reading sources... [ 25%] release-notes/1.3.1
+reading sources... [ 26%] release-notes/1.4.0
+reading sources... [ 27%] release-notes/1.5.0
+reading sources... [ 28%] release-notes/1.6.0
+reading sources... [ 29%] release-notes/1.6.1
+reading sources... [ 30%] release-notes/1.6.2
+reading sources... [ 31%] release-notes/1.7.0
+reading sources... [ 32%] release-notes/2.0.0
+reading sources... [ 32%] release-notes/2.1.0
+reading sources... [ 33%] release-notes/2.2.0
+reading sources... [ 34%] release-notes/2.2.1
+reading sources... [ 35%] release-notes/2.2.2
+reading sources... [ 36%] release-notes/2.2.3
+reading sources... [ 37%] release-notes/2.2.4
+reading sources... [ 38%] release-notes/2.2.5
+reading sources... [ 39%] release-notes/2.3.0
+reading sources... [ 40%] release-notes/2.4.0
+reading sources... [ 41%] release-notes/2.4.1
+reading sources... [ 41%] release-notes/2.5.0
+reading sources... [ 42%] release-notes/2.5.1
+reading sources... [ 43%] release-notes/2.5.2
+reading sources... [ 44%] release-notes/2.5.3
+reading sources... [ 45%] release-notes/2.5.4
+reading sources... [ 46%] release-notes/2.5.5
+reading sources... [ 47%] release-notes/2.6.0
+reading sources... [ 48%] release-notes/2.6.1
+reading sources... [ 49%] release-notes/2.6.2
+reading sources... [ 50%] release-notes/3.0.0
+reading sources... [ 50%] release-notes/3.0.1
+reading sources... [ 51%] release-notes/3.0.2
+reading sources... [ 52%] release-notes/3.0.3
+reading sources... [ 53%] release-notes/3.0.4
+reading sources... [ 54%] release-notes/3.1.0
+reading sources... [ 55%] release-notes/3.1.1
+reading sources... [ 56%] release-notes/3.2.0
+reading sources... [ 57%] release-notes/3.2.1
+reading sources... [ 58%] release-notes/3.3.0
+reading sources... [ 59%] release-notes/3.4.0
+reading sources... [ 59%] release-notes/3.4.1
+reading sources... [ 60%] release-notes/3.5.0
+reading sources... [ 61%] release-notes/3.6.0
+reading sources... [ 62%] release-notes/3.7.0
+reading sources... [ 63%] release-notes/3.7.1
+reading sources... [ 64%] release-notes/3.7.2
+reading sources... [ 65%] release-notes/3.7.3
+reading sources... [ 66%] release-notes/3.7.4
+reading sources... [ 67%] release-notes/3.7.5
+reading sources... [ 68%] release-notes/3.7.6
+reading sources... [ 68%] release-notes/3.7.7
+reading sources... [ 69%] release-notes/3.7.8
+reading sources... [ 70%] release-notes/3.7.9
+reading sources... [ 71%] release-notes/3.8.0
+reading sources... [ 72%] release-notes/3.8.1
+reading sources... [ 73%] release-notes/3.8.2
+reading sources... [ 74%] release-notes/3.8.3
+reading sources... [ 75%] release-notes/3.8.4
+reading sources... [ 76%] release-notes/3.9.0
+reading sources... [ 77%] release-notes/3.9.1
+reading sources... [ 77%] release-notes/3.9.2
+reading sources... [ 78%] release-notes/4.0.0
+reading sources... [ 79%] release-notes/4.0.1
+reading sources... [ 80%] release-notes/5.0.0
+reading sources... [ 81%] release-notes/5.0.1
+reading sources... [ 82%] release-notes/5.0.2
+reading sources... [ 83%] release-notes/5.0.3
+reading sources... [ 84%] release-notes/5.0.4
+reading sources... [ 85%] release-notes/6.0.0
+reading sources... [ 86%] release-notes/6.1.0
+reading sources... [ 86%] release-notes/7.0.0
+reading sources... [ 87%] release-notes/7.1.0
+reading sources... [ 88%] release-notes/7.1.1
+reading sources... [ 89%] release-notes/7.1.2
+reading sources... [ 90%] release-notes/7.2.0
+reading sources... [ 91%] release-notes/7.3.0
+reading sources... [ 92%] release-notes/index
+reading sources... [ 93%] user/configuration
+reading sources... [ 94%] user/error-codes
+reading sources... [ 95%] user/index
+reading sources... [ 95%] user/invocation
+reading sources... [ 96%] user/options
+reading sources... [ 97%] user/python-api
+reading sources... [ 98%] user/using-hooks
+reading sources... [ 99%] user/using-plugins
+reading sources... [100%] user/violations
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+copying assets...
+copying static files...
+Writing evaluated template result to /app/docs/build/html/_static/basic.css
+Writing evaluated template result to /app/docs/build/html/_static/language_data.js
+Writing evaluated template result to /app/docs/build/html/_static/documentation_options.js
+Writing evaluated template result to /app/docs/build/html/_static/js/versions.js
+copying static files: done
+copying extra files...
+copying extra files: done
+copying assets: done
+writing output... [  1%] faq
+writing output... [  2%] glossary
+writing output... [  3%] index
+writing output... [  4%] internal/checker
+writing output... [  5%] internal/cli
+writing output... [  5%] internal/contributing
+writing output... [  6%] internal/formatters
+writing output... [  7%] internal/index
+writing output... [  8%] internal/option_handling
+writing output... [  9%] internal/plugin_handling
+writing output... [ 10%] internal/releases
+writing output... [ 11%] internal/start-to-finish
+writing output... [ 12%] internal/utils
+writing output... [ 13%] internal/writing-code
+writing output... [ 14%] internal/writing-documentation
+writing output... [ 14%] plugin-development/formatters
+writing output... [ 15%] plugin-development/index
+writing output... [ 16%] plugin-development/plugin-parameters
+writing output... [ 17%] plugin-development/registering-plugins
+writing output... [ 18%] release-notes/0.6.0
+writing output... [ 19%] release-notes/0.7.0
+writing output... [ 20%] release-notes/0.8.0
+writing output... [ 21%] release-notes/0.9.0
+writing output... [ 22%] release-notes/1.0.0
+writing output... [ 23%] release-notes/1.1.0
+writing output... [ 23%] release-notes/1.2.0
+writing output... [ 24%] release-notes/1.3.0
+writing output... [ 25%] release-notes/1.3.1
+writing output... [ 26%] release-notes/1.4.0
+writing output... [ 27%] release-notes/1.5.0
+writing output... [ 28%] release-notes/1.6.0
+writing output... [ 29%] release-notes/1.6.1
+writing output... [ 30%] release-notes/1.6.2
+writing output... [ 31%] release-notes/1.7.0
+writing output... [ 32%] release-notes/2.0.0
+writing output... [ 32%] release-notes/2.1.0
+writing output... [ 33%] release-notes/2.2.0
+writing output... [ 34%] release-notes/2.2.1
+writing output... [ 35%] release-notes/2.2.2
+writing output... [ 36%] release-notes/2.2.3
+writing output... [ 37%] release-notes/2.2.4
+writing output... [ 38%] release-notes/2.2.5
+writing output... [ 39%] release-notes/2.3.0
+writing output... [ 40%] release-notes/2.4.0
+writing output... [ 41%] release-notes/2.4.1
+writing output... [ 41%] release-notes/2.5.0
+writing output... [ 42%] release-notes/2.5.1
+writing output... [ 43%] release-notes/2.5.2
+writing output... [ 44%] release-notes/2.5.3
+writing output... [ 45%] release-notes/2.5.4
+writing output... [ 46%] release-notes/2.5.5
+writing output... [ 47%] release-notes/2.6.0
+writing output... [ 48%] release-notes/2.6.1
+writing output... [ 49%] release-notes/2.6.2
+writing output... [ 50%] release-notes/3.0.0
+writing output... [ 50%] release-notes/3.0.1
+writing output... [ 51%] release-notes/3.0.2
+writing output... [ 52%] release-notes/3.0.3
+writing output... [ 53%] release-notes/3.0.4
+writing output... [ 54%] release-notes/3.1.0
+writing output... [ 55%] release-notes/3.1.1
+writing output... [ 56%] release-notes/3.2.0
+writing output... [ 57%] release-notes/3.2.1
+writing output... [ 58%] release-notes/3.3.0
+writing output... [ 59%] release-notes/3.4.0
+writing output... [ 59%] release-notes/3.4.1
+writing output... [ 60%] release-notes/3.5.0
+writing output... [ 61%] release-notes/3.6.0
+writing output... [ 62%] release-notes/3.7.0
+writing output... [ 63%] release-notes/3.7.1
+writing output... [ 64%] release-notes/3.7.2
+writing output... [ 65%] release-notes/3.7.3
+writing output... [ 66%] release-notes/3.7.4
+writing output... [ 67%] release-notes/3.7.5
+writing output... [ 68%] release-notes/3.7.6
+writing output... [ 68%] release-notes/3.7.7
+writing output... [ 69%] release-notes/3.7.8
+writing output... [ 70%] release-notes/3.7.9
+writing output... [ 71%] release-notes/3.8.0
+writing output... [ 72%] release-notes/3.8.1
+writing output... [ 73%] release-notes/3.8.2
+writing output... [ 74%] release-notes/3.8.3
+writing output... [ 75%] release-notes/3.8.4
+writing output... [ 76%] release-notes/3.9.0
+writing output... [ 77%] release-notes/3.9.1
+writing output... [ 77%] release-notes/3.9.2
+writing output... [ 78%] release-notes/4.0.0
+writing output... [ 79%] release-notes/4.0.1
+writing output... [ 80%] release-notes/5.0.0
+writing output... [ 81%] release-notes/5.0.1
+writing output... [ 82%] release-notes/5.0.2
+writing output... [ 83%] release-notes/5.0.3
+writing output... [ 84%] release-notes/5.0.4
+writing output... [ 85%] release-notes/6.0.0
+writing output... [ 86%] release-notes/6.1.0
+writing output... [ 86%] release-notes/7.0.0
+writing output... [ 87%] release-notes/7.1.0
+writing output... [ 88%] release-notes/7.1.1
+writing output... [ 89%] release-notes/7.1.2
+writing output... [ 90%] release-notes/7.2.0
+writing output... [ 91%] release-notes/7.3.0
+writing output... [ 92%] release-notes/index
+writing output... [ 93%] user/configuration
+writing output... [ 94%] user/error-codes
+writing output... [ 95%] user/index
+writing output... [ 95%] user/invocation
+writing output... [ 96%] user/options
+writing output... [ 97%] user/python-api
+writing output... [ 98%] user/using-hooks
+writing output... [ 99%] user/using-plugins
+writing output... [100%] user/violations
+
+generating indices... genindex py-modindex done
+highlighting module code... [  8%] flake8.api.legacy
+highlighting module code... [ 15%] flake8.checker
+highlighting module code... [ 23%] flake8.formatting.base
+highlighting module code... [ 31%] flake8.formatting.default
+highlighting module code... [ 38%] flake8.main.application
+highlighting module code... [ 46%] flake8.main.cli
+highlighting module code... [ 54%] flake8.main.options
+highlighting module code... [ 62%] flake8.options.aggregator
+highlighting module code... [ 69%] flake8.options.config
+highlighting module code... [ 77%] flake8.options.manager
+highlighting module code... [ 85%] flake8.plugins.finder
+highlighting module code... [ 92%] flake8.processor
+highlighting module code... [100%] flake8.utils
+
+writing additional pages... search done
+dumping search index in English (code: en)... done
+dumping object inventory... done
+build succeeded.
+
+The HTML pages are in docs/build/html.
+  py: OK (12.57=setup[8.38]+cmd[2.95,0.81,0.44] seconds)
+  flake8: OK (3.44=setup[2.81]+cmd[0.63] seconds)
+  linters: OK (17.67=setup[10.14]+cmd[0.72,4.16,1.72,0.37,0.56] seconds)
+  docs: OK (14.58=setup[8.49]+cmd[6.09] seconds)
+  congratulations :) (48.30 seconds)

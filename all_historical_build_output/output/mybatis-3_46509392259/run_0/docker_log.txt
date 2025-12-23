@@ -1,0 +1,68 @@
+Step 1/7 : FROM eclipse-temurin:21-jdk
+---> 6cae872dd710
+Step 2/7 : RUN apt-get update && apt-get install -y --no-install-recommends unzip ca-certificates && rm -rf /var/lib/apt/lists/*
+---> Running in 6a978b44c99e
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,132 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1,879 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [23.0 kB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,288 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1,808 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,444 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1,992 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,625 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [45.2 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [33.0 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [48.8 kB]
+Fetched 31.7 MB in 4s (7,445 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20240203).
+Suggested packages:
+  zip
+The following NEW packages will be installed:
+  unzip
+0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+Need to get 174 kB of archives.
+After this operation, 384 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 unzip amd64 6.0-28ubuntu4.1 [174 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0m
+Fetched 174 kB in 1s (309 kB/s)
+Selecting previously unselected package unzip.
+(Reading database ...
+(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%(Reading database ... 6864 files and directories currently installed.)
+Preparing to unpack .../unzip_6.0-28ubuntu4.1_amd64.deb ...
+Unpacking unzip (6.0-28ubuntu4.1) ...
+Setting up unzip (6.0-28ubuntu4.1) ...
+---> 0e74e95f7d34
+Step 3/7 : WORKDIR /app
+---> Running in ed587ec1d7af
+---> 1b0ae3efd010
+Step 4/7 : COPY . /app
+---> 1ab1bb7a28bb
+Step 5/7 : COPY run.sh /app/run.sh
+---> 2281d2d277b7
+Step 6/7 : RUN chmod +x /app/run.sh
+---> Running in e9c1798ce395
+---> e11807a2837d
+Step 7/7 : ENTRYPOINT ["/app/run.sh"]
+---> Running in 87d66d2c0c09
+---> 0d66e38bc5e9
+Successfully built 0d66e38bc5e9
+Successfully tagged mybatis:latest

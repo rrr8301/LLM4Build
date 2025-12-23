@@ -1,0 +1,65 @@
+Requirement already satisfied: pip in ./venv/lib/python3.11/site-packages (22.0.2)
+Collecting pip
+  Using cached pip-25.2-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.2
+    Uninstalling pip-22.0.2:
+      Successfully uninstalled pip-22.0.2
+Successfully installed pip-25.2
+Collecting meson-python
+  Using cached meson_python-0.18.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting meson>=0.64.0 (from meson-python)
+  Using cached meson-1.8.3-py3-none-any.whl.metadata (1.8 kB)
+Collecting packaging>=23.2 (from meson-python)
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pyproject-metadata>=0.9.0 (from meson-python)
+  Using cached pyproject_metadata-0.9.1-py3-none-any.whl.metadata (7.0 kB)
+Using cached meson_python-0.18.0-py3-none-any.whl (28 kB)
+Using cached meson-1.8.3-py3-none-any.whl (1.0 MB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached pyproject_metadata-0.9.1-py3-none-any.whl (18 kB)
+Installing collected packages: packaging, meson, pyproject-metadata, meson-python
+
+Successfully installed meson-1.8.3 meson-python-0.18.0 packaging-25.0 pyproject-metadata-0.9.1
+Using pip 25.2 from /app/venv/lib/python3.11/site-packages/pip (python 3.11)
+Obtaining file:///app
+  Checking if build backend supports build_editable: started
+  Running command Checking if build backend supports build_editable
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Running command Preparing editable metadata (pyproject.toml)
+  + meson setup /app /app/build/cp311 -Dbuildtype=release -Db_ndebug=if-release -Db_vscrt=md --native-file=/app/build/cp311/meson-python-native-file.ini
+  The Meson build system
+  Version: 1.8.3
+  Source dir: /app
+  Build dir: /app/build/cp311
+  Build type: native build
+  Project name: beancount
+  Project version: 3.2.0.dev0
+  C compiler for the host machine: cc (gcc 11.4.0 "cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0")
+  C linker for the host machine: cc ld.bfd 2.38
+  Host machine cpu family: x86_64
+  Host machine cpu: x86_64
+  Program bison win_bison found: NO
+
+  ../../meson.build:3:8: ERROR: Program 'bison win_bison' not found or not executable
+
+  A full log can be found at /app/build/cp311/meson-logs/meson-log.txt
+  error: subprocess-exited-with-error
+
+  × Preparing editable metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> See above for output.
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  full command: /app/venv/bin/python3.11 /app/venv/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py prepare_metadata_for_build_editable /tmp/tmpsopl1suc
+  cwd: /app
+  Preparing editable metadata (pyproject.toml): finished with status 'error'
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.

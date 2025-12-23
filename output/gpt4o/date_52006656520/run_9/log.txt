@@ -1,0 +1,43 @@
+++ date
+Starting test execution at Sat Dec 20 03:40:36 America 2025
++ echo 'Starting test execution at Sat Dec 20 03:40:36 America 2025'
+++ ruby -v
++ echo 'Ruby version: ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]'
+Ruby version: ruby 3.2.3 (2024-01-18 revision 52bb2ac0a6) [x86_64-linux-gnu]
+++ bundle -v
++ echo 'Bundler version: 4.0.2'
++ bundle exec rake compile test
+Bundler version: 4.0.2
+mkdir -p lib/3.2.3/x86_64-linux-gnu
+/usr/bin/ruby3.2 -I. ../../../../ext/date/extconf.rb
+mkdir -p tmp/x86_64-linux-gnu/date_core/3.2.3
+cd tmp/x86_64-linux-gnu/date_core/3.2.3
+checking for rb_category_warn()... yes
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+cd -
+cd tmp/x86_64-linux-gnu/date_core/3.2.3
+/usr/bin/gmake
+compiling ../../../../ext/date/date_core.c
+compiling ../../../../ext/date/date_parse.c
+compiling ../../../../ext/date/date_strftime.c
+compiling ../../../../ext/date/date_strptime.c
+linking shared-object date_core.so
+cd -
+mkdir -p tmp/x86_64-linux-gnu/stage/lib/3.2.3/x86_64-linux-gnu
+/usr/bin/gmake install sitearchdir=../../../../lib/3.2.3/x86_64-linux-gnu sitelibdir=../../../../lib/3.2.3/x86_64-linux-gnu target_prefix=
+/usr/bin/install -c -m 0755 date_core.so ../../../../lib/3.2.3/x86_64-linux-gnu
+cp tmp/x86_64-linux-gnu/date_core/3.2.3/date_core.so tmp/x86_64-linux-gnu/stage/lib/3.2.3/x86_64-linux-gnu/date_core.so
+Loaded suite /app/vendor/bundle/ruby/3.2.0/gems/rake-13.3.1/lib/rake/rake_test_loader
+Started
+Finished in 2.468435884 seconds.
+-------------------------------------------------------------------------------
+142 tests, 162583 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+100% passed
+-------------------------------------------------------------------------------
+57.53 tests/s, 65864.79 assertions/s
+++ date
++ echo 'All tests completed successfully at Sat Dec 20 03:40:48 America 2025'
++ exit 0
+All tests completed successfully at Sat Dec 20 03:40:48 America 2025

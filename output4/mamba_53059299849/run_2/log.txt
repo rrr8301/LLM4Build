@@ -1,0 +1,220 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+/app/run.sh: line 13: /opt/conda/etc/profile.d/conda.sh: No such file or directory
+/app/run.sh: line 14: conda: command not found
+Preset CMake variables:
+
+  BUILD_LIBMAMBA="ON"
+  BUILD_LIBMAMBA_TESTS="ON"
+  BUILD_MAMBA="ON"
+  BUILD_MAMBA_PACKAGE="ON"
+  BUILD_SHARED="ON"
+  CMAKE_AR=""
+  CMAKE_BUILD_TYPE="Debug"
+  CMAKE_CXX_COMPILER=""
+  CMAKE_CXX_FLAGS_DEBUG=""
+  CMAKE_CXX_FLAGS_RELEASE=""
+  CMAKE_C_COMPILER=""
+  CMAKE_C_FLAGS_DEBUG=""
+  CMAKE_C_FLAGS_RELEASE=""
+  CMAKE_EXE_LINKER_FLAGS=""
+  CMAKE_Fortran_COMPILER=""
+  CMAKE_Fortran_FLAGS_DEBUG=""
+  CMAKE_Fortran_FLAGS_RELEASE=""
+  CMAKE_INSTALL_LIBDIR="lib"
+  CMAKE_INSTALL_PREFIX=""
+  CMAKE_LINKER=""
+  CMAKE_PREFIX_PATH=""
+  CMAKE_RANLIB=""
+
+-- The C compiler identification is unknown
+-- The CXX compiler identification is unknown
+CMake Error at CMakeLists.txt:9 (project):
+  No CMAKE_C_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+  the compiler, or to the compiler name if it is in the PATH.
+
+
+CMake Error at CMakeLists.txt:9 (project):
+  No CMAKE_CXX_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+  to the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+ninja: error: loading 'build.ninja': No such file or directory
+/app/run.sh: line 28: ./build/libmamba/ext/solv-cpp/tests/test_solv_cpp: No such file or directory
+/app/run.sh: line 29: ./build/libmamba/tests/test_libmamba: No such file or directory
+CMake Error: Not a file: /app/build/cmake_install.cmake
+CMake Error: Error processing file: /app/build/cmake_install.cmake
+Processing ./libmambapy
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+ERROR: Exception:
+Traceback (most recent call last):
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/cli/base_command.py", line 107, in _run_wrapper
+    status = _inner_run()
+             ^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/cli/base_command.py", line 98, in _inner_run
+    return self.run(options, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/cli/req_command.py", line 71, in wrapper
+    return func(self, options, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/commands/install.py", line 393, in run
+    requirement_set = resolver.resolve(
+                      ^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/resolver.py", line 79, in resolve
+    collected = self.factory.collect_root_requirements(root_reqs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 538, in collect_root_requirements
+    reqs = list(
+           ^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 494, in _make_requirements_from_install_req
+    cand = self._make_base_candidate_from_link(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 226, in _make_base_candidate_from_link
+    self._link_candidate_cache[link] = LinkCandidate(
+                                       ^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 309, in __init__
+    super().__init__(
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 162, in __init__
+    self.dist = self._prepare()
+                ^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 239, in _prepare
+    dist = self._prepare_distribution()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 320, in _prepare_distribution
+    return preparer.prepare_linked_requirement(self._ireq, parallel_builds=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 537, in prepare_linked_requirement
+    return self._prepare_linked_requirement(req, parallel_builds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 652, in _prepare_linked_requirement
+    dist = _get_prepared_distribution(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 77, in _get_prepared_distribution
+    abstract_dist.prepare_distribution_metadata(
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/distributions/sdist.py", line 72, in prepare_distribution_metadata
+    self.req.prepare_metadata()
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/req/req_install.py", line 578, in prepare_metadata
+    self.metadata_directory = generate_metadata(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/operations/build/metadata.py", line 34, in generate_metadata
+    distinfo_dir = backend.prepare_metadata_for_build_wheel(metadata_dir)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_internal/utils/misc.py", line 715, in prepare_metadata_for_build_wheel
+    return super().prepare_metadata_for_build_wheel(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 224, in prepare_metadata_for_build_wheel
+    return self._call_hook(
+           ^^^^^^^^^^^^^^^^
+  File "/app/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 402, in _call_hook
+    raise BackendUnavailable(
+pip._vendor.pyproject_hooks._impl.BackendUnavailable: Cannot import 'scikit_build_core.build'
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
+rootdir: /app
+configfile: pyproject.toml
+collected 3 items / 1 error
+
+==================================== ERRORS ====================================
+[31m[1m_______________ ERROR collecting libmambapy/tests/test_solver.py _______________[0m
+[1m[31mlibmambapy/tests/test_solver.py[0m:26: in <module>
+    [0mlibmambapy.solver.Request.Install,[90m[39;49;00m
+    ^^^^^^^^^^^^^^^^^[90m[39;49;00m
+[1m[31mE   AttributeError: module 'libmambapy' has no attribute 'solver'[0m
+[36m[1m=========================== short test summary info ============================[0m
+[31mERROR[0m libmambapy/tests/test_solver.py - AttributeError: module 'libmambapy' has no attribute 'solver'
+[31m!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!![0m
+[31m=============================== [31m[1m1 error[0m[31m in 0.11s[0m[31m ===============================[0m
+error: Can't determine which types to install with no files to check (and no cache from previous mypy run)
+Process ForkServerProcess-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "mypy/moduleinspect.py", line 99, in worker
+  File "mypy/moduleinspect.py", line 58, in get_package_properties
+TypeError: list or None object expected; got _frozen_importlib_external._NamespacePath
+Process ForkServerProcess-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "mypy/moduleinspect.py", line 99, in worker
+  File "mypy/moduleinspect.py", line 58, in get_package_properties
+TypeError: list or None object expected; got _frozen_importlib_external._NamespacePath
+libmambapy: Failed to import, skipping
+libmambapy.bindings: Failed to import, skipping
+/app/venv/bin/python3: No module named build.__main__; 'build' is a package and cannot be directly executed
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
+rootdir: /app
+configfile: pyproject.toml
+collected 173 items / 1 error
+
+==================================== ERRORS ====================================
+[31m[1m____________ ERROR collecting micromamba/tests/test_constructor.py _____________[0m
+[1m[31mmicromamba/tests/test_constructor.py[0m:31: in <module>
+    [0m[94mclass[39;49;00m[90m [39;49;00m[04m[92mTestInstall[39;49;00m:[90m[39;49;00m
+[1m[31mmicromamba/tests/test_constructor.py[0m:32: in TestInstall
+    [0mcurrent_root_prefix = os.environ[[33m"[39;49;00m[33mMAMBA_ROOT_PREFIX[39;49;00m[33m"[39;49;00m][90m[39;49;00m
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+[1m[31m<frozen os>[0m:685: in __getitem__
+    [0m[04m[91m?[39;49;00m[04m[91m?[39;49;00m[04m[91m?[39;49;00m[90m[39;49;00m
+[1m[31mE   KeyError: 'MAMBA_ROOT_PREFIX'[0m
+[36m[1m=========================== short test summary info ============================[0m
+[31mERROR[0m micromamba/tests/test_constructor.py - KeyError: 'MAMBA_ROOT_PREFIX'
+[31m!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!![0m
+[31m=============================== [31m[1m1 error[0m[31m in 0.65s[0m[31m ===============================[0m
++ cat
++ gpg --batch --generate-key
+gpg: directory '/root/.gnupg' created
+gpg: keybox '/root/.gnupg/pubring.kbx' created
+gpg: /root/.gnupg/trustdb.gpg: trustdb created
+gpg: directory '/root/.gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/root/.gnupg/openpgp-revocs.d/EE01B1315518AF73B2858E268A64B262692EA889.rev'
++ cat
++ gpg --batch --generate-key
+gpg: revocation certificate stored as '/root/.gnupg/openpgp-revocs.d/38CCEB490F324FDB65A449CDB94A0FB0406D4BFA.rev'
++++ dirname ./testserver_auth_pkg_signing.sh
+++ cd .
+++ pwd
++ readonly __DIR__=/app/micromamba/test-server
++ __DIR__=/app/micromamba/test-server
++ readonly reposerver=/app/micromamba/test-server/reposerver.py
++ reposerver=/app/micromamba/test-server/reposerver.py
++ readonly repo=/app/micromamba/test-server/repo/
++ repo=/app/micromamba/test-server/repo/
++ export TEST_MAMBA_EXE=/app/build/micromamba/mamba
++ TEST_MAMBA_EXE=/app/build/micromamba/mamba
++ unset CONDARC
+++ mktemp -d -t mamba-test-reposerver-XXXXXXXXXX
++ readonly test_dir=/tmp/mamba-test-reposerver-nR8TfPw2U1
++ test_dir=/tmp/mamba-test-reposerver-nR8TfPw2U1
++ export CONDA_ENVS_DIRS=/tmp/mamba-test-reposerver-nR8TfPw2U1/envs
++ CONDA_ENVS_DIRS=/tmp/mamba-test-reposerver-nR8TfPw2U1/envs
++ export CONDA_PKGS_DIRS=/tmp/mamba-test-reposerver-nR8TfPw2U1/pkgs
++ CONDA_PKGS_DIRS=/tmp/mamba-test-reposerver-nR8TfPw2U1/pkgs
++ readonly this_pid=89
++ this_pid=89
++ trap 'rm -rf "${test_dir}"; pkill -P ${this_pid} || true' EXIT
++ PID=93
++ test_install http://localhost:8000
++ start_server
++ exec python /app/micromamba/test-server/reposerver.py -n mychannel -d /app/micromamba/test-server/repo/
+++ mktemp -d
++ local tmp=/tmp/tmp.vPBskzqdKD
++ local condarc=/tmp/tmp.vPBskzqdKD/condarc
++ /app/build/micromamba/mamba create -y -p /tmp/tmp.vPBskzqdKD/env1 --override-channels -c http://localhost:8000/mychannel test-package -vvv --repodata-ttl=0
+./testserver_auth_pkg_signing.sh: line 42: /app/build/micromamba/mamba: No such file or directory
++ rm -rf /tmp/mamba-test-reposerver-nR8TfPw2U1
++ pkill -P 89

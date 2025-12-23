@@ -1,0 +1,36 @@
+FROM ubuntu:latest
+
+# Set timezone to Pacific Time
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    git \
+    wget \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Go (using --no-check-certificate as fallback)
+RUN wget --no-check-certificate https://dl.google.com/go/go1.24.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf go1.24.linux-amd64.tar.gz && \
+    rm go1.24.linux-amd64.tar.gz
+
+# Set Go environment variables
+ENV PATH="/usr/local/go/bin:${PATH}"
+ENV GOPATH=/go
+ENV PATH=$GOPATH/bin:$PATH
+
+# Create work directory
+WORKDIR /app
+
+# Copy repository files
+COPY . .
+
+# Copy run.sh and make it executable
+COPY run.sh /app/run.sh
+RUN chmod +x /app/run.sh
+
+# Set entrypoint
+ENTRYPOINT ["/app/run.sh"]

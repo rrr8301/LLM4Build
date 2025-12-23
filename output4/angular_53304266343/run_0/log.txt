@@ -1,0 +1,43 @@
+
+> angular-srcs@21.0.0-next.8 test:ci /app
+> bazelisk test -- //... -//integration/... -//adev/... -//vscode-ng-language-service/... -//devtools/... -//modules/ssr-benchmarks/...
+
+2025/10/21 17:31:01 Downloading https://releases.bazel.build/7.6.2/release/bazel-7.6.2-linux-x86_64...
+Extracting Bazel installation...
+Starting local Bazel server and connecting to it...
+Computing main repo mapping:
+INFO: Repository devinfra~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_sass~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_browsers~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_angular~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl:210:9: An error occurred during the fetch of repository 'rules_angular~':
+   Traceback (most recent call last):
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 180, column 35, in _git_repository_implementation
+		update = _clone_or_update_repo(ctx)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 43, column 20, in _clone_or_update_repo
+		git_ = git_repo(ctx, directory)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 98, column 12, in git_repo
+		_update(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 114, column 9, in _update
+		init(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 131, column 15, in init
+		_error(ctx.name, cl, st.stderr)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 210, column 9, in _error
+		fail("error running '%s' while working with @%s:\n%s" % (command_text, name, stderr))
+Error in fail: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_angular~' while working with @rules_angular~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+ERROR: Error computing the main repository mapping: error during computation of main repo mapping: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_angular~' while working with @rules_angular~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+ ELIFECYCLE  Command failed with exit code 37.

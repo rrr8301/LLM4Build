@@ -1,0 +1,37 @@
+go: downloading go1.24.0 (linux/amd64)
+building .gotmp/bin/linux_amd64/ddev from ./cmd/... ./pkg/... GORACE=halt_on_error=1 CGO_ENABLED=0 BUILDARGS=
+go: downloading go1.24.0 (linux/amd64)
+building .gotmp/bin/linux_amd64/ddev-hostname from ./cmd/... ./pkg/... GORACE=halt_on_error=1 CGO_ENABLED=0 BUILDARGS=
+building .gotmp/bin/linux_amd64/ddev from ./cmd/... ./pkg/... GORACE=halt_on_error=1 CGO_ENABLED=0 BUILDARGS=
+building .gotmp/bin/linux_amd64/ddev-hostname from ./cmd/... ./pkg/... GORACE=halt_on_error=1 CGO_ENABLED=0 BUILDARGS=
+export PATH="/app/.gotmp/bin/linux_amd64:$PATH" DDEV_NO_INSTRUMENTATION=true CGO_ENABLED=0 DDEV_BINARY_FULLPATH=/app/.gotmp/bin/linux_amd64/ddev; go test  -p 1 -timeout 4h -v -installsuffix static -ldflags " -extldflags -static -X 'github.com/ddev/ddev/pkg/versionconstants.DdevVersion=v1.24.8-34-gcae714079-dirty' -X 'github.com/ddev/ddev/pkg/versionconstants.AmplitudeAPIKey=' -s -w " ./pkg/util ./pkg/config ./pkg/nodeps ./pkg/environment ./pkg/netutil ./pkg/fileutil ./pkg/amplitude ./pkg/output ./pkg/composer ./pkg/archive ./pkg/dockerutil ./pkg/hostname ./pkg/docker ./pkg/updatecheck ./pkg/exec ./pkg/heredoc ./pkg/testcommon ./pkg/appimport ./pkg/build ./pkg/globalconfig ./pkg/github ./pkg/version ./pkg/versionconstants ./pkg/ddevhosts ./pkg/styles -failfast
+=== RUN   TestDownloadFile
+=== RUN   TestDownloadFile/no_shasum
+=== RUN   TestDownloadFile/correct_shasum
+=== RUN   TestDownloadFile/incorrect_shasum
+--- PASS: TestDownloadFile (0.01s)
+    --- PASS: TestDownloadFile/no_shasum (0.00s)
+    --- PASS: TestDownloadFile/correct_shasum (0.00s)
+    --- PASS: TestDownloadFile/incorrect_shasum (0.00s)
+=== RUN   TestDownloadFileRetryLogic
+=== RUN   TestDownloadFileRetryLogic/server_errors_then_success_with_retries
+=== NAME  TestDownloadFileRetryLogic
+    network_test.go:78: simulating server error (attempt 1)
+    network_test.go:78: simulating server error (attempt 2)
+    network_test.go:82: responding 200 OK (attempt 3)
+=== RUN   TestDownloadFileRetryLogic/server_errors_exhaust_all_retries
+    network_test.go:108: simulating server error (attempt 1)
+    network_test.go:108: simulating server error (attempt 2)
+    network_test.go:108: simulating server error (attempt 3)
+    network_test.go:122:
+        	Error Trace:	/app/pkg/util/network_test.go:122
+        	Error:      	"" does not contain "Retrying download of http://127.0.0.1:45159/testfile.txt try #1"
+        	Test:       	TestDownloadFileRetryLogic/server_errors_exhaust_all_retries
+        	Messages:   	expected log output for first retry, but got:
+--- FAIL: TestDownloadFileRetryLogic (3.01s)
+    --- PASS: TestDownloadFileRetryLogic/server_errors_then_success_with_retries (1.50s)
+    --- FAIL: TestDownloadFileRetryLogic/server_errors_exhaust_all_retries (1.50s)
+FAIL
+FAIL	github.com/ddev/ddev/pkg/util	3.026s
+FAIL
+make: *** [Makefile:153: testnotddevapp] Error 1

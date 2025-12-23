@@ -1,0 +1,27 @@
+env RUNNER_TMPDIR is required
+go lint SDK and vendor packages
+/bin/sh: 1: golint: not found
+
+cd ./internal/repotools/cmd/eachmodule \
+	&& go run . -p . -c 1 -fail-fast=true -skip="" \
+	"go vet -tags "example,codegen,integration,ec2env,perftest" --all ./..." \
+	"go test -tags "example,codegen,integration,ec2env,perftest" -run NONE ./..." \
+	"go test -timeout=2m  -race -cpu=4 ./..."
+go: downloading github.com/awslabs/aws-go-multi-module-repository-tools v0.0.0-20210920212330-85c4889f37d1
+go: downloading github.com/pelletier/go-toml v1.9.0
+go: downloading github.com/aws/smithy-go v1.23.0
+/root/go/pkg/mod/github.com/aws/smithy-go@v1.23.0/properties.go:3:8: package maps is not in GOROOT (/usr/local/go/src/maps)
+note: imported by a module that requires go 1.22
+2025/10/12 14:17:49 .: go vet -tags example,codegen,integration,ec2env,perftest --all ./... => error: failed to run command, exit status 1
+2025/10/12 14:17:49 a command failed
+exit status 1
+make: *** [Makefile:264: unit-race-modules-.] Error 1
+make: *** /smithy-go: No such file or directory.  Stop.
+cd codegen && ./gradlew clean build -Plog-tests && ./gradlew clean
+
+ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation.
+
+make: *** [Makefile:103: smithy-generate] Error 1

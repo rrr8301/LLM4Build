@@ -1,0 +1,97 @@
+Traceback (most recent call last):
+  File "/app/build/fbcode_builder/getdeps/runcmd.py", line 109, in _run_cmd
+    p = subprocess.Popen(
+  File "/usr/lib/python3.10/subprocess.py", line 971, in __init__
+---
++ sudo \
++      --preserve-env=http_proxy \
++      apt-get \
++      install \
++      -y \
++      autoconf \
++      automake \
++      binutils-dev \
++      cmake \
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.10/subprocess.py", line 1863, in _execute_child
++      libboost-all-dev \
++      libdouble-conversion-dev \
++      libdwarf-dev \
++      libevent-dev \
++      libgflags-dev \
++      liblz4-dev \
++      libsnappy-dev \
++      libsodium-dev \
++      libssl-dev \
++      libtool \
++      libzstd-dev \
++      ninja-build \
++      zlib1g-dev \
++      zstd
+error running `sudo \
++      --preserve-env=http_proxy \
++      apt-get \
++      install \
++      -y \
++      autoconf \
++      automake \
++      binutils-dev \
++      cmake \
++      libboost-all-dev \
++      libdouble-conversion-dev \
++      libdwarf-dev \
++      libevent-dev \
++      libgflags-dev \
++      liblz4-dev \
++      libsnappy-dev \
++      libsodium-dev \
++      libssl-dev \
++      libtool \
++      libzstd-dev \
++      ninja-build \
++      zlib1g-dev \
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sudo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/./build/fbcode_builder/getdeps.py", line 1603, in <module>
+    sys.exit(main())
+  File "/app/./build/fbcode_builder/getdeps.py", line 1586, in main
+    return args.func(args)
+  File "/app/./build/fbcode_builder/getdeps.py", line 108, in run
+    self.run_project_cmd(args, loader, manifest)
+  File "/app/./build/fbcode_builder/getdeps.py", line 475, in run_project_cmd
+    check_cmd(cmd_args)
+  File "/app/build/fbcode_builder/getdeps/runcmd.py", line 47, in check_cmd
+    rc = run_cmd(cmd, **kwargs)
+  File "/app/build/fbcode_builder/getdeps/runcmd.py", line 67, in run_cmd
+    return _run_cmd(
+  File "/app/build/fbcode_builder/getdeps/runcmd.py", line 114, in _run_cmd
+    raise RunCommandError(
+getdeps.runcmd.RunCommandError: [Errno 2] No such file or directory: 'sudo' while running `sudo \
++      --preserve-env=http_proxy \
++      apt-get \
++      install \
++      -y \
++      autoconf \
++      automake \
++      binutils-dev \
++      cmake \
++      libboost-all-dev \
++      libdouble-conversion-dev \
++      libdwarf-dev \
++      libevent-dev \
++      libgflags-dev \
++      liblz4-dev \
++      libsnappy-dev \
++      libsodium-dev \
++      libssl-dev \
++      libtool \
++      libzstd-dev \
++      ninja-build \
++      zlib1g-dev \
++      zstd` with env=None
+os.environ=environ({'HOSTNAME': 'ed5eca42b68e', 'PWD': '/app', 'TZ': 'America/Los_Angeles', 'HOME': '/root', 'SHLVL': '1', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', '_': './build/fbcode_builder/getdeps.py', 'LC_CTYPE': 'C.UTF-8', 'GETDEPS_CMAKE_DEFINES': ''})
++      zstd`: [Errno 2] No such file or directory: 'sudo'

@@ -1,0 +1,1748 @@
+
+> claude-dev@3.27.1 prepare
+> husky
+
+git command not found
+added 1489 packages, and audited 1491 packages in 45s
+
+255 packages are looking for funding
+  run `npm fund` for details
+
+4 vulnerabilities (3 low, 1 moderate)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+npm warn deprecated boolean@3.2.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+npm warn deprecated @vscode/webview-ui-toolkit@1.4.0: This package has been deprecated, https://github.com/microsoft/vscode-webview-ui-toolkit/issues/561
+
+added 1126 packages, and audited 1128 packages in 24s
+
+193 packages are looking for funding
+  run `npm fund` for details
+
+11 vulnerabilities (5 moderate, 6 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> claude-dev@3.27.1 pretest
+> npm run compile && npm run compile-tests && npm run compile-standalone && npm run lint
+
+
+> claude-dev@3.27.1 compile
+> npm run check-types && npm run lint && node esbuild.mjs
+
+
+> claude-dev@3.27.1 check-types
+> npm run protos && npx tsc --noEmit && cd webview-ui && npx tsc -b --noEmit
+
+
+> claude-dev@3.27.1 protos
+> node scripts/build-proto.mjs
+
+Compiling Protocol Buffers...
+Processing 19 proto files from /app/proto
+
+Warning: Found 23 fields using 64-bit integer types
+Generated ProtoBus files at:
+- /app/webview-ui/src/services/grpc-client.ts
+- /app/src/generated/hosts/vscode/protobus-service-types.ts
+- /app/src/generated/hosts/vscode/protobus-services.ts
+- /app/src/generated/hosts/standalone/protobus-server-setup.ts
+Generated Host Bridge client files at:
+- /app/src/generated/hosts/host-bridge-client-types.ts
+- /app/src/generated/hosts/standalone/host-bridge-clients.ts
+- /app/src/generated/hosts/vscode/hostbridge-grpc-service-config.ts
+
+> claude-dev@3.27.1 postprotos
+> biome format src/shared/proto src/core/controller src/hosts/ webview-ui/src/services src/generated --write --no-errors-on-unmatched
+
+Formatted 176 files in 246ms. No fixes applied.
+
+> claude-dev@3.27.1 lint
+> biome lint --no-errors-on-unmatched --files-ignore-unknown=true --diagnostic-level=error && buf lint
+
+Checked 821 files in 1538ms. No fixes applied.
+[watch] build started
+[watch] build finished
+
+> claude-dev@3.27.1 compile-tests
+> node ./scripts/build-tests.js
+
+[watch] build started
+[watch] build finished
+
+> claude-dev@3.27.1 compile-standalone
+> npm run check-types && npm run lint && node esbuild.mjs --standalone
+
+
+> claude-dev@3.27.1 check-types
+> npm run protos && npx tsc --noEmit && cd webview-ui && npx tsc -b --noEmit
+
+
+> claude-dev@3.27.1 protos
+> node scripts/build-proto.mjs
+
+Compiling Protocol Buffers...
+Processing 19 proto files from /app/proto
+
+Warning: Found 23 fields using 64-bit integer types
+Generated ProtoBus files at:
+- /app/webview-ui/src/services/grpc-client.ts
+- /app/src/generated/hosts/vscode/protobus-service-types.ts
+- /app/src/generated/hosts/vscode/protobus-services.ts
+- /app/src/generated/hosts/standalone/protobus-server-setup.ts
+Generated Host Bridge client files at:
+- /app/src/generated/hosts/host-bridge-client-types.ts
+- /app/src/generated/hosts/standalone/host-bridge-clients.ts
+- /app/src/generated/hosts/vscode/hostbridge-grpc-service-config.ts
+
+> claude-dev@3.27.1 postprotos
+> biome format src/shared/proto src/core/controller src/hosts/ webview-ui/src/services src/generated --write --no-errors-on-unmatched
+
+Formatted 176 files in 40ms. No fixes applied.
+
+> claude-dev@3.27.1 lint
+> biome lint --no-errors-on-unmatched --files-ignore-unknown=true --diagnostic-level=error && buf lint
+
+Checked 821 files in 1387ms. No fixes applied.
+[watch] build started
+[watch] build finished
+
+> claude-dev@3.27.1 postcompile-standalone
+> node scripts/package-standalone.mjs
+
+Running npm install in distribution directory...
+
+added 46 packages, and audited 48 packages in 2s
+
+12 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Zipping package...
+Created dist-standalone/standalone.zip (15.0 MB) in 61.56 seconds
+
+> claude-dev@3.27.1 lint
+> biome lint --no-errors-on-unmatched --files-ignore-unknown=true --diagnostic-level=error && buf lint
+
+Checked 821 files in 1375ms. No fixes applied.
+
+> claude-dev@3.27.1 test:e2e:optimal
+> vsce package --no-dependencies --allow-package-secrets sendgrid --out dist/e2e.vsix && node src/test/e2e/utils/build.mjs && playwright test
+
+Executing prepublish script 'npm run vscode:prepublish'...
+
+> claude-dev@3.27.1 vscode:prepublish
+> npm run package
+
+
+> claude-dev@3.27.1 package
+> npm run check-types && npm run build:webview && npm run lint && node esbuild.mjs --production
+
+
+> claude-dev@3.27.1 check-types
+> npm run protos && npx tsc --noEmit && cd webview-ui && npx tsc -b --noEmit
+
+
+> claude-dev@3.27.1 protos
+> node scripts/build-proto.mjs
+
+Compiling Protocol Buffers...
+Processing 19 proto files from /app/proto
+
+Warning: Found 23 fields using 64-bit integer types
+Generated ProtoBus files at:
+- /app/webview-ui/src/services/grpc-client.ts
+- /app/src/generated/hosts/vscode/protobus-service-types.ts
+- /app/src/generated/hosts/vscode/protobus-services.ts
+- /app/src/generated/hosts/standalone/protobus-server-setup.ts
+Generated Host Bridge client files at:
+- /app/src/generated/hosts/host-bridge-client-types.ts
+- /app/src/generated/hosts/standalone/host-bridge-clients.ts
+- /app/src/generated/hosts/vscode/hostbridge-grpc-service-config.ts
+
+> claude-dev@3.27.1 postprotos
+> biome format src/shared/proto src/core/controller src/hosts/ webview-ui/src/services src/generated --write --no-errors-on-unmatched
+
+Formatted 176 files in 43ms. No fixes applied.
+
+> claude-dev@3.27.1 build:webview
+> cd webview-ui && npm run build
+
+
+> webview-ui@0.3.0 build
+> tsc -b && vite build
+
+vite v6.3.4 building for production...
+transforming...
+[plugin vite:resolve] Module "path" has been externalized for browser compatibility, imported by "/app/webview-ui/src/utils/context-mentions.ts". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+src/utils/context-mentions.ts (130:31): "basename" is not exported by "__vite-browser-external", imported by "src/utils/context-mentions.ts".
+✓ 6716 modules transformed.
+rendering chunks...
+build/index.html                                         0.36 kB
+build/assets/azeret-mono-latin-ext-700-normal.woff2      6.75 kB
+build/assets/azeret-mono-latin-ext-400-normal.woff2      6.82 kB
+build/assets/azeret-mono-latin-ext-300-normal.woff2      6.86 kB
+build/assets/azeret-mono-latin-ext-700-normal.woff       9.34 kB
+build/assets/azeret-mono-latin-ext-400-normal.woff       9.46 kB
+build/assets/azeret-mono-latin-ext-300-normal.woff       9.50 kB
+build/assets/azeret-mono-latin-700-normal.woff2         10.59 kB
+build/assets/azeret-mono-latin-400-normal.woff2         10.80 kB
+build/assets/azeret-mono-latin-300-normal.woff2         10.81 kB
+build/assets/azeret-mono-latin-700-normal.woff          14.01 kB
+build/assets/azeret-mono-latin-300-normal.woff          14.22 kB
+build/assets/azeret-mono-latin-400-normal.woff          14.23 kB
+build/assets/codicon.ttf                                80.19 kB
+build/assets/index.css                                 173.11 kB
+build/assets/index.js                                4,771.02 kB
+✓ built in 31.49s
+
+> claude-dev@3.27.1 lint
+> biome lint --no-errors-on-unmatched --files-ignore-unknown=true --diagnostic-level=error && buf lint
+
+Checked 821 files in 1224ms. No fixes applied.
+[watch] build started
+[watch] build finished
+ INFO  Files included in the VSIX:
+e2e.vsix
+├─ [Content_Types].xml
+├─ extension.vsixmanifest
+└─ extension/
+   ├─ Dockerfile [0.74 KB]
+   ├─ LICENSE.txt [11.08 KB]
+   ├─ biome.jsonc [3.76 KB]
+   ├─ changelog.md
+   ├─ esbuild.mjs [5.29 KB]
+   ├─ knip.json [0.48 KB]
+   ├─ package.json [14.18 KB]
+   ├─ readme.md
+   ├─ run.sh [0.52 KB]
+   ├─ test-setup.js [1.36 KB]
+   ├─ assets/ (4 files) [8.5 KB]
+   ├─ dist/ (16 files) [40.52 MB]
+   ├─ locales/ (24 files) [170.62 KB]
+   ├─ proto/ (19 files) [63.48 KB]
+   ├─ scripts/ (12 files) [43.33 KB]
+   ├─ walkthrough/ (5 files) [2.62 KB]
+   └─ webview-ui/ (20 files) [4.91 MB]
+
+=> Run vsce ls --tree to see all included files.
+
+ DONE  Packaged: dist/e2e.vsix (112 files, 8.25 MB)
+Downloading VS Code...
+Installing Playwright Chromium...
+Downloading Chromium 138.0.7204.23 (playwright build v1179) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1179/chromium-linux.zip
+|                                                                                |   0% of 171.6 MiB
+|■■■■■■■■                                                                        |  10% of 171.6 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 171.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 171.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 171.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 171.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 171.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 171.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 171.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 171.6 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 171.6 MiB
+Chromium 138.0.7204.23 (playwright build v1179) downloaded to /root/.cache/ms-playwright/chromium-1179
+Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+|                                                                                |   0% of 2.3 MiB
+|■■■■■■■■                                                                        |  10% of 2.3 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+FFMPEG playwright build v1011 downloaded to /root/.cache/ms-playwright/ffmpeg-1011
+Downloading Chromium Headless Shell 138.0.7204.23 (playwright build v1179) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1179/chromium-headless-shell-linux.zip
+|                                                                                |   0% of 104.5 MiB
+|■■■■■■■■                                                                        |  10% of 104.5 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 104.5 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.5 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.5 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.5 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.5 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.5 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.5 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.5 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.5 MiB
+Chromium Headless Shell 138.0.7204.23 (playwright build v1179) downloaded to /root/.cache/ms-playwright/chromium_headless_shell-1179
+Playwright Host validation warning:
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     npx playwright install-deps                      ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     apt-get install libglib2.0-0\                    ║
+║         libnspr4\                                    ║
+║         libnss3\                                     ║
+║         libdbus-1-3\                                 ║
+║         libatk1.0-0\                                 ║
+║         libatk-bridge2.0-0\                          ║
+║         libcups2\                                    ║
+║         libxkbcommon0\                               ║
+║         libatspi2.0-0\                               ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxrandr2\                                  ║
+║         libgbm1\                                     ║
+║         libcairo2\                                   ║
+║         libpango-1.0-0\                              ║
+║         libasound2                                   ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+    at validateDependenciesLinux (/app/node_modules/playwright-core/lib/server/registry/dependencies.js:269:9)
+    at async Registry._validateHostRequirements (/app/node_modules/playwright-core/lib/server/registry/index.js:927:14)
+    at async Registry._validateHostRequirementsForExecutableIfNeeded (/app/node_modules/playwright-core/lib/server/registry/index.js:1049:7)
+    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/app/node_modules/playwright-core/lib/server/registry/index.js:1038:7)
+    at async t.<anonymous> (/app/node_modules/playwright-core/lib/cli/program.js:217:7)
+Playwright Chromium installation completed successfully
+Installation complete.
+
+Running 9 tests using 1 worker
+
+  ✓  1 [setup test environment] › src/test/e2e/utils/global.setup.ts:5:6 › setup test environment (5ms)
+  ✘  2 [e2e tests] › src/test/e2e/auth.test.ts:5:4 › Views - can set up API keys and navigate to Settings from Chat (225ms)
+  ✘  3 [e2e tests] › src/test/e2e/auth.test.ts:5:4 › Views - can set up API keys and navigate to Settings from Chat (retry #1) (284ms)
+  ✘  4 [e2e tests] › src/test/e2e/chat.test.ts:4:4 › Chat - can send messages and switch between modes (235ms)
+  ✘  5 [e2e tests] › src/test/e2e/chat.test.ts:4:4 › Chat - can send messages and switch between modes (retry #1) (197ms)
+  ✘  6 [e2e tests] › src/test/e2e/chat.test.ts:51:4 › Chat - slash commands preserve following text (204ms)
+  ✘  7 [e2e tests] › src/test/e2e/chat.test.ts:51:4 › Chat - slash commands preserve following text (retry #1) (221ms)
+  ✘  8 [e2e tests] › src/test/e2e/chat.test.ts:71:4 › Chat - @ mentions preserve following text (221ms)
+  ✘  9 [e2e tests] › src/test/e2e/chat.test.ts:71:4 › Chat - @ mentions preserve following text (retry #1) (297ms)
+  ✘  10 [e2e tests] › src/test/e2e/chat.test.ts:91:4 › Chat - partial slash command completion preserves text (323ms)
+  ✘  11 [e2e tests] › src/test/e2e/chat.test.ts:91:4 › Chat - partial slash command completion preserves text (retry #1) (261ms)
+  ✘  12 [e2e tests] › src/test/e2e/chat.test.ts:111:4 › Chat - partial @ mention completion preserves text (211ms)
+  ✘  13 [e2e tests] › src/test/e2e/chat.test.ts:111:4 › Chat - partial @ mention completion preserves text (retry #1) (219ms)
+  ✘  14 [e2e tests] › src/test/e2e/diff.test.ts:5:4 › Diff editor (216ms)
+  ✘  15 [e2e tests] › src/test/e2e/diff.test.ts:5:4 › Diff editor (retry #1) (343ms)
+  ✘  16 [e2e tests] › src/test/e2e/editor.test.ts:5:4 › code actions and editor panel (253ms)
+  ✘  17 [e2e tests] › src/test/e2e/editor.test.ts:5:4 › code actions and editor panel (retry #1) (197ms)
+
+
+  1) [e2e tests] › src/test/e2e/auth.test.ts:5:4 › Views - can set up API keys and navigate to Settings from Chat
+
+    Error: Process failed to launch!
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Process failed to launch!
+
+  2) [e2e tests] › src/test/e2e/chat.test.ts:4:4 › Chat - can send messages and switch between modes
+
+    Error: Process failed to launch!
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Process failed to launch!
+
+  3) [e2e tests] › src/test/e2e/chat.test.ts:51:4 › Chat - slash commands preserve following text ──
+
+    Error: Process failed to launch!
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Process failed to launch!
+
+  4) [e2e tests] › src/test/e2e/chat.test.ts:71:4 › Chat - @ mentions preserve following text ──────
+
+    Error: Process failed to launch!
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Process failed to launch!
+
+  5) [e2e tests] › src/test/e2e/chat.test.ts:91:4 › Chat - partial slash command completion preserves text
+
+    Error: Process failed to launch!
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Process failed to launch!
+
+  6) [e2e tests] › src/test/e2e/chat.test.ts:111:4 › Chat - partial @ mention completion preserves text
+
+    Error: Process failed to launch!
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Process failed to launch!
+
+  7) [e2e tests] › src/test/e2e/diff.test.ts:5:4 › Diff editor ─────────────────────────────────────
+
+    Error: Process failed to launch!
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Process failed to launch!
+
+  8) [e2e tests] › src/test/e2e/editor.test.ts:5:4 › code actions and editor panel ─────────────────
+
+    Error: Process failed to launch!
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Process failed to launch!
+
+  8 failed
+    [e2e tests] › src/test/e2e/auth.test.ts:5:4 › Views - can set up API keys and navigate to Settings from Chat
+    [e2e tests] › src/test/e2e/chat.test.ts:4:4 › Chat - can send messages and switch between modes
+    [e2e tests] › src/test/e2e/chat.test.ts:51:4 › Chat - slash commands preserve following text ───
+    [e2e tests] › src/test/e2e/chat.test.ts:71:4 › Chat - @ mentions preserve following text ───────
+    [e2e tests] › src/test/e2e/chat.test.ts:91:4 › Chat - partial slash command completion preserves text
+    [e2e tests] › src/test/e2e/chat.test.ts:111:4 › Chat - partial @ mention completion preserves text
+    [e2e tests] › src/test/e2e/diff.test.ts:5:4 › Diff editor ──────────────────────────────────────
+    [e2e tests] › src/test/e2e/editor.test.ts:5:4 › code actions and editor panel ──────────────────
+  1 passed (21.8s)
+
+> claude-dev@3.27.1 test:unit
+> TS_NODE_PROJECT='./tsconfig.unit-test.json' mocha
+
+XS variant configuration warnings: [
+  'Component overrides for unused components: TOOL_USE_SECTION, TOOLS_SECTION, MCP_SECTION, TODO_SECTION, FEEDBACK_SECTION',
+  'Missing recommended components: TOOL_USE_SECTION'
+]
+(node:2187) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///app/src/test/requires.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+  AwsBedrockHandler
+    withTempEnv
+      ✔ should restore original environment variables after operation
+      ✔ should handle undefined environment variables
+      ✔ should handle errors and still restore environment
+      ✔ should handle multiple environment variable changes
+      ✔ should work with AWS_PROFILE
+      ✔ should work with AWS_BEARER_TOKEN_BEDROCK
+    executeConverseStream
+      thinking response handling (new API structure)
+        ✔ should handle thinking response in additionalModelResponseFields
+        ✔ should not parse thinking tags in text content
+        ✔ should handle thinking response with empty reasoning array
+        ✔ should handle thinking response interleaved with text chunks
+      multiple content blocks
+        ✔ should handle multiple content blocks (reasoning + text)
+        ✔ should handle real-world Japanese content
+        ✔ should handle interleaved content blocks
+      error handling
+        ✔ should handle internalServerException
+        ✔ should handle throttlingException
+      usage tracking
+        ✔ should track usage with cache tokens
+
+  ClaudeCodeHandler
+    token counting
+      ✔ should correctly handle token usage from assistant messages
+      ✔ should handle missing usage fields with nullish coalescing
+      ✔ should handle completely missing usage object
+    getModel
+      ✔ should return the correct model when specified
+      ✔ should return default model when not specified
+
+  LiteLlmHandler
+    prompt cache
+      when the model doesn't support prompt caching
+        ✔ sends the system prompt and messages with the openai format
+      when the model supports prompt caching
+        ✔ inserts the cache control in the system prompt and the last two user messages
+
+  OllamaHandler
+Ollama server not available, skipping tests
+    createMessage
+      - should handle successful responses
+      - should handle timeout errors
+      - should retry on errors when using the withRetry decorator
+      - should handle stream processing errors
+
+  SapAiCoreHandler
+    image processing
+      ✔ should handle image processing for Claude 4 models
+      ✔ should create proper user readable request with images
+      ✔ should support different Claude model variants
+    getModel
+      ✔ should return default model when no apiModelId is provided
+      ✔ should return specified model when apiModelId is provided
+    createUserReadableRequest
+      ✔ should create a readable request format
+
+  ContextManager
+    getNextTruncationRange
+      ✔ first truncation with half keep
+      ✔ first truncation with quarter keep
+      ✔ sequential truncation with half keep
+      ✔ sequential truncation with quarter keep
+      ✔ ensures the last message in range is a user message
+      ✔ handles small message arrays
+      ✔ preserves the message structure when truncating
+    getTruncatedMessages
+      ✔ returns original messages when no range is provided
+      ✔ correctly removes messages in the specified range
+      ✔ works with a range that starts at the first message after task
+      ✔ correctly handles removing a range while preserving alternation pattern
+
+  ifFileExistsRelativePath
+    ✔ should return BooleanResponse with boolean value
+    ✔ should return false and log error when no workspace path is available
+    ✔ should return false when path is invalid
+    ✔ should handle valid relative paths correctly
+
+  openFileRelativePath
+    ✔ should return Empty response on successful execution
+    ✔ should call openFileIntegration with absolute path when relative path is provided
+    ✔ should not call openFileIntegration when path is invalid
+    ✔ should return Empty and log error when no workspace path is available
+    ✔ should handle nested directory paths
+
+  Prompt System Integration Tests
+✅ SNAPSHOT TEST MODE: Will compare against existing snapshots
+    Snapshot Testing
+      generic Model Group
+Registry health check: 4 variants, 13 components loaded
+✓ Snapshot matches: openai_gpt_3-basic.snap
+        ✔ should generate consistent prompt for openai/gpt-3 with basic context
+✓ Snapshot matches: openai_gpt_3-no-browser.snap
+        ✔ should generate consistent prompt for openai/gpt-3 with no-browser context
+✓ Snapshot matches: openai_gpt_3-no-mcp.snap
+        ✔ should generate consistent prompt for openai/gpt-3 with no-mcp context
+✓ Snapshot matches: openai_gpt_3-no-focus-chain.snap
+        ✔ should generate consistent prompt for openai/gpt-3 with no-focus-chain context
+      next-gen Model Group
+✓ Snapshot matches: anthropic_claude_sonnet_4-basic.snap
+        ✔ should generate consistent prompt for anthropic/claude-sonnet-4 with basic context
+✓ Snapshot matches: anthropic_claude_sonnet_4-no-browser.snap
+        ✔ should generate consistent prompt for anthropic/claude-sonnet-4 with no-browser context
+✓ Snapshot matches: anthropic_claude_sonnet_4-no-mcp.snap
+        ✔ should generate consistent prompt for anthropic/claude-sonnet-4 with no-mcp context
+✓ Snapshot matches: anthropic_claude_sonnet_4-no-focus-chain.snap
+        ✔ should generate consistent prompt for anthropic/claude-sonnet-4 with no-focus-chain context
+      xs Model Group
+✓ Snapshot matches: lmstudio_qwen3_coder-basic.snap
+        ✔ should generate consistent prompt for lmstudio/qwen3_coder with basic context
+✓ Snapshot matches: lmstudio_qwen3_coder-no-browser.snap
+        ✔ should generate consistent prompt for lmstudio/qwen3_coder with no-browser context
+✓ Snapshot matches: lmstudio_qwen3_coder-no-mcp.snap
+        ✔ should generate consistent prompt for lmstudio/qwen3_coder with no-mcp context
+✓ Snapshot matches: lmstudio_qwen3_coder-no-focus-chain.snap
+        ✔ should generate consistent prompt for lmstudio/qwen3_coder with no-focus-chain context
+    Context-Specific Features
+      ✔ should include browser-specific content when browser is enabled
+      ✔ should include MCP content when MCP servers are present
+      ✔ should include TODO content when focus chain is enabled
+      ✔ should include user instructions when provided
+    Error Handling
+      ✔ should handle completely invalid context gracefully
+      ✔ should handle undefined context properties
+    Legacy Prompt Compatibility
+✓ Old prompt snapshot matches: old-next-gen-with-focus.snap
+✓ Old prompt snapshot matches: old-next-gen-without-focus.snap
+✓ Old prompt snapshot matches: old-generic-with-focus.snap
+✓ Old prompt snapshot matches: old-generic-without-focus.snap
+      ✔ should generate old prompts with focus chain enabled and disabled
+✓ Section title comparison matches
+      ✔ should compare old and new prompts for section title compatibility
+
+  PromptBuilder
+    build
+      ✔ should build a complete prompt
+      ✔ should handle missing components gracefully
+      ✔ should apply component overrides
+      ✔ should resolve runtime placeholders
+      ✔ should handle component errors gracefully
+    getBuildMetadata
+      ✔ should return build metadata
+    postProcess
+      ✔ should clean up multiple empty lines
+      ✔ should ensure proper section separation
+    VariantBuilder auto-generation
+      ✔ should auto-generate baseTemplate from componentOrder when not provided
+      ✔ should use explicit baseTemplate when provided
+      ✔ should throw error when componentOrder is empty
+
+  PromptRegistry
+    getInstance
+      ✔ should return singleton instance
+    getModelFamily
+      ✔ should extract correct model families
+    get method
+Registry health check: 4 variants, 13 components loaded
+      ✔ should handle fallback to generic variant
+    getAvailableModels
+      ✔ should return list of available model IDs
+    registerComponent
+      ✔ should register custom components
+    basic functionality
+      ✔ should be able to create registry instance
+      ✔ should have required methods
+
+  TemplateEngine
+    resolve
+      ✔ should resolve simple placeholders
+      ✔ should resolve multiple placeholders
+      ✔ should handle nested object placeholders
+      ✔ should preserve unmatched placeholders
+      ✔ should handle object and array values
+      ✔ should handle whitespace around placeholder names
+    extractPlaceholders
+      ✔ should extract all unique placeholders
+      ✔ should handle nested placeholders
+      ✔ should handle whitespace in placeholders
+      ✔ should return empty array for template without placeholders
+    validate
+      ✔ should return missing placeholders
+      ✔ should return empty array when all required placeholders are present
+    escape and unescape
+      ✔ should escape placeholder markers
+      ✔ should unescape placeholder markers
+      ✔ should handle round-trip escaping/unescaping
+
+  WorkspaceResolver
+    resolveWorkspacePath - Single Root Mode
+      ✔ should resolve path without context
+      ✔ should resolve path with context and track usage
+      ✔ should track multiple calls to same context
+      ✔ should not log when tracing is disabled
+      ✔ should handle absolute paths correctly
+      ✔ should handle empty relative path
+      ✔ should handle relative paths with .. navigation
+    resolveWorkspacePath - Multi Root Mode
+      ✔ should handle absolute paths in multi-root mode
+      ✔ should fallback to primary root for unmatched absolute paths
+      ✔ should resolve relative paths against primary root
+      ✔ should handle empty workspace roots array
+    getBasename
+      ✔ should return basename without context
+      ✔ should return basename with context and track usage
+    Usage Statistics Management
+      ✔ should track usage statistics correctly
+    Edge Cases
+      ✔ should handle null/undefined inputs gracefully
+      ✔ should handle special characters in paths
+      ✔ should handle very long paths
+
+  Diagnostics Tests
+    getNewDiagnostics
+      ✔ should return empty array when both old and new diagnostics are empty
+      ✔ should return all diagnostics when old diagnostics is empty
+      ✔ should return empty array when new diagnostics is empty
+      ✔ should return only new diagnostics not present in old diagnostics
+      ✔ should handle multiple files correctly
+      ✔ should handle diagnostics with source and code properties
+    diagnosticsToProblemsString
+      ✔ should return empty string when diagnostics array is empty
+      ✔ should return empty string when no diagnostics match the severity filter
+      ✔ should format error diagnostics correctly with line numbers
+      ✔ should handle diagnostics without range information
+      ✔ should handle diagnostics with missing start property in range
+      ✔ should include source information when available
+      ✔ should handle multiple severities
+      ✔ should handle multiple files
+      ✔ should handle absolute paths outside workspace
+      ✔ should handle all diagnostic severity types
+      ✔ should handle edge case with line number 0
+      ✔ should include all diagnostics when severities is undefined
+
+  Telemetry system is abstracted and can easily switch between providers
+    Telemetry Service
+[TelemetryService] Initialized with telemetry provider
+      ✔ should include correct metadata with telemetry events
+    PostHog Provider
+=== Testing PostHog Provider ===
+[TelemetryService] Initialized with telemetry provider
+PostHog Provider enabled: true
+PostHog Provider settings: { extensionEnabled: true, hostEnabled: true, level: 'all' }
+      ✔ should create PostHog provider and track events
+    No-Op Provider
+
+=== Testing No-Op Provider ===
+[TelemetryService] Initialized with telemetry provider
+No-Op Provider enabled: false
+No-Op Provider settings: { extensionEnabled: false, hostEnabled: false, level: 'off' }
+      ✔ should create No-Op provider and handle all operations safely
+
+=== Testing Unsupported Provider Type ===
+[TelemetryService] Initialized with telemetry provider
+      ✔ should handle unsupported provider types by returning No-Op provider
+    Factory Configuration
+      ✔ should return default configuration
+
+=== Testing Provider Switching ===
+[TelemetryService] Initialized with telemetry provider
+Captured event with PostHog provider
+[TelemetryService] Initialized with telemetry provider
+Captured event with No-Op provider
+      ✔ should handle provider switching seamlessly
+
+  Mention Regex
+    Windows Path Support
+      ✔ matches simple Windows paths
+    Edge Cases
+      ✔ handles edge cases correctly
+      ✔ handles unquoted paths with spaces correctly
+    Existing Functionality
+      ✔ matches Unix paths
+      ✔ matches URLs
+      ✔ matches git hashes
+      ✔ matches special keywords
+    Invalid Patterns
+      ✔ rejects invalid patterns
+      ✔ matches only until invalid characters
+    In Context
+      ✔ matches mentions within text
+    Multiple Mentions
+      ✔ finds all mentions in a string using global regex
+    Special Characters in Paths
+      ✔ handles special characters in file paths
+    Mixed Path Types in Single String
+      ✔ correctly identifies the first path in a string with multiple path types
+    Non-Latin Character Support
+      ✔ handles international characters in paths
+    Git Hash Edge Cases
+      ✔ matches git hashes of various valid lengths
+    Punctuation at Boundaries
+      ✔ excludes all types of trailing punctuation
+      ✔ handles multiple punctuation marks
+      ✔ doesn't match trailing punctuation in context
+    URL Protocol Variations
+      ✔ matches various URL protocols
+      ✔ matches URLs with complex structures
+    End of String Handling
+      ✔ matches mentions at end of string
+    Complex Real-World Scenarios
+      ✔ handles mentions in markdown-like text
+      ✔ handles mentions in code comments
+    Quoted file paths
+      ✔ handles quoted paths correctly
+      ✔ handles quotes inside file paths correctly
+    Path Edge Cases
+      ✔ matches various path structures
+    Whitespace Handling
+      ✔ stops at various whitespace characters
+    Keyword Boundaries
+      ✔ only matches exact keywords
+      ✔ matches keywords with trailing punctuation
+
+  shouldSkipReasoningForModel
+    ✔ should return true for grok-4 models
+    ✔ should return false for non-grok-4 models
+    ✔ should return false for undefined or empty model IDs
+    ✔ should be case sensitive
+
+
+  176 passing (282ms)
+  4 pending
+
+Detected Linux environment.
+xvfb-run is installed. Running tests with xvfb-run...
+
+> claude-dev@3.27.1 test:coverage
+> vscode-test --coverage
+
+- Resolving version...
+✔ Validated version: 1.103.2
+✔ Found existing install in /app/.vscode-test/vscode-linux-x64-1.103.2
+/app/.vscode-test/vscode-linux-x64-1.103.2/code: error while loading shared libraries: libglib-2.0.so.0: cannot open shared object file: No such file or directory
+Exit code:   127
+Error: Coverage report generated failed, please file an issue with original reports located in /tmp/vsc-coverage-f30971c4-6586-459e-9306-1f0718ca611d:
+
+TypeError: Cannot read properties of null (reading 'result')
+    at Coverage.write (file:///app/node_modules/@vscode/test-cli/out/cli/coverage.mjs:69:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async runPreparedConfigs (file:///app/node_modules/@vscode/test-cli/out/bin.mjs:123:5)
+    at async main (file:///app/node_modules/@vscode/test-cli/out/bin.mjs:34:20)
+Error: xvfb-run is not installed.
+Please install it using the following command:
+  Debian/Ubuntu: sudo apt install xvfb
+  RHEL/CentOS: sudo yum install xvfb
+  Arch Linux: sudo pacman -S xvfb
+
+up to date, audited 1128 packages in 6s
+
+193 packages are looking for funding
+  run `npm fund` for details
+
+11 vulnerabilities (5 moderate, 6 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> webview-ui@0.3.0 test:coverage
+> vitest run --coverage
+
+
+ RUN  v3.2.4 /app/webview-ui
+      Coverage enabled with v8
+
+ ✓ src/utils/__tests__/platformUtils.spec.ts (4 tests) 6ms
+ ✓ src/components/chat/chat-view/shared/buttonConfig.test.ts (21 tests) 13ms
+ ✓ src/utils/__tests__/context-mentions.test.ts (9 tests) 10ms
+ ✓ src/utils/__tests__/hooks.spec.ts (6 tests) 55ms
+stderr | src/components/chat/ErrorRow.test.tsx > ErrorRow > API error handling > renders rate limit error with request ID
+Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+    at div
+    at p
+    at /app/webview-ui/src/components/chat/ErrorRow.tsx:9:66
+
+stdout | src/components/chat/__tests__/Announcement.spec.tsx > Announcement > renders the announcement with the correct version
+Extension: ClineAuthContext: user updated: [90mundefined[39m
+
+stdout | src/components/chat/__tests__/Announcement.spec.tsx > Announcement > calls hideAnnouncement when close button is clicked
+Extension: ClineAuthContext: user updated: [90mundefined[39m
+
+ ✓ src/components/chat/__tests__/Announcement.spec.tsx (2 tests) 131ms
+ ✓ src/components/chat/ErrorRow.test.tsx (12 tests) 305ms
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > renders the model search input
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > renders the model search input
+[DEBUG] Sent cancellation for request: 3f370d4c-d92b-4fc0-adba-a9f1efae0f07
+[DEBUG] Sent cancellation for request: 220fbdef-8b57-4214-979a-6bfa9032fccf
+[DEBUG] Sent cancellation for request: bd4b4577-b395-49c3-87c9-8902566bf7e5
+[DEBUG] Sent cancellation for request: 9c17d004-55fc-40a1-ae89-1eab9d2afe55
+[DEBUG] Sent cancellation for request: 031e5c8b-e996-436a-9b28-418b03036c15
+[DEBUG] Sent cancellation for request: b683f719-8c1a-4e5d-b7bd-148faff13941
+[DEBUG] Sent cancellation for request: 137fbd2b-c54b-4368-ad66-295622c9e96f
+[DEBUG] Sent cancellation for request: d15afa4b-ce39-44d0-81e3-700936021cca
+[DEBUG] Sent cancellation for request: eae5ece2-3f44-473c-bd6a-33d339a92e59
+[DEBUG] Sent cancellation for request: 91d8c82a-8338-4c23-bcdd-828b444b86e8
+[DEBUG] Sent cancellation for request: 29a73ce9-7b33-441c-84b9-d2e180f10fac
+[DEBUG] Sent cancellation for request: de0ccc2a-4a92-4844-b6a5-a46a3ba632c5
+
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > renders with custom placeholder
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > renders with custom placeholder
+[DEBUG] Sent cancellation for request: 637c1257-3882-4f10-959d-655b3c2b93d2
+[DEBUG] Sent cancellation for request: c688fc69-7d4b-48dc-b8bc-ccadf353b978
+[DEBUG] Sent cancellation for request: 7f7c9ba0-bfd2-4649-a0d0-b2eb8019b8bd
+[DEBUG] Sent cancellation for request: ff88156a-c8c8-42d4-af22-73ecbe3cd376
+[DEBUG] Sent cancellation for request: 47ca32d8-f10a-4fd0-ad11-b817ee09d2d6
+[DEBUG] Sent cancellation for request: 95e5123c-706e-46dd-bdd8-877995186b23
+[DEBUG] Sent cancellation for request: 81a60843-1063-4d30-8051-8452f6b45458
+[DEBUG] Sent cancellation for request: 33d04f2d-025a-48fd-bad3-a018c00f6ba7
+[DEBUG] Sent cancellation for request: 659eda01-228d-4cd6-92fd-6d925ca871ed
+[DEBUG] Sent cancellation for request: 19a19a29-c793-4f73-adcf-dd52dc825835
+[DEBUG] Sent cancellation for request: 2a545560-9b9c-4687-acc6-3d47435e6946
+[DEBUG] Sent cancellation for request: af459a32-2e00-4ae0-a90a-7a07b86b638e
+
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > shows dropdown when input is focused
+Client ID not found in window object
+Warning: React does not recognize the `isSelected` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `isselected` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at div
+    at I (/app/webview-ui/node_modules/styled-components/dist/styled-components.cjs.js:1:22771)
+    at div
+    at I (/app/webview-ui/node_modules/styled-components/dist/styled-components.cjs.js:1:22771)
+    at div
+    at I (/app/webview-ui/node_modules/styled-components/dist/styled-components.cjs.js:1:22771)
+    at div
+    at OllamaModelPicker (/app/webview-ui/src/components/settings/OllamaModelPicker.tsx:10:30)
+    at ExtensionStateContextProvider (/app/webview-ui/src/context/ExtensionStateContext.tsx:19:42)
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > shows dropdown when input is focused
+[DEBUG] Sent cancellation for request: 415014d5-2dd6-42b6-a1a1-773bee90f021
+[DEBUG] Sent cancellation for request: 5b255f4b-b2cb-4f73-bd20-9de010f17366
+[DEBUG] Sent cancellation for request: 2fddf8b5-10ed-462d-affc-872a3ac3c62d
+[DEBUG] Sent cancellation for request: cac8203c-d87c-47a4-88d9-40a099e14292
+[DEBUG] Sent cancellation for request: 5ff5a011-c24a-4579-979f-e09cfa7cda7b
+[DEBUG] Sent cancellation for request: d7259064-7314-43b3-86f9-0c3db28dede2
+[DEBUG] Sent cancellation for request: 607119af-72b3-4ad7-b26c-fa9ecc314704
+[DEBUG] Sent cancellation for request: a38dcde8-7f2b-44c9-8758-a45693ed16c8
+[DEBUG] Sent cancellation for request: 2eda41b8-b239-4ed1-a078-6fddbeaff8a8
+[DEBUG] Sent cancellation for request: 2285d966-235a-4761-810b-73179fd7db76
+[DEBUG] Sent cancellation for request: aaf6e5fc-1a16-415d-a92f-637ddf231c9a
+[DEBUG] Sent cancellation for request: fd34a9a4-1403-4471-bf14-d92f716f75c6
+
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > filters models when searching
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > filters models when searching
+[DEBUG] Sent cancellation for request: 691399ef-9ae5-468b-93c4-42e613ccee2d
+[DEBUG] Sent cancellation for request: c4970c3f-158c-4f66-87fb-22d495a26e11
+[DEBUG] Sent cancellation for request: f4778b7d-298f-49f9-92b8-def72f58be94
+[DEBUG] Sent cancellation for request: f90c901a-932f-40f6-b376-47268e616d73
+[DEBUG] Sent cancellation for request: 35964022-2a7e-496c-a150-e41e39620371
+[DEBUG] Sent cancellation for request: 1636801e-09b7-4eeb-b459-d87e4acdbd64
+[DEBUG] Sent cancellation for request: b3084823-d99f-4f4e-b719-2918a236f850
+[DEBUG] Sent cancellation for request: 8fac13db-045f-49ee-b398-bac34c3615bd
+[DEBUG] Sent cancellation for request: a3447323-1b30-43e1-8fae-3f4aba676019
+[DEBUG] Sent cancellation for request: 3ef9956b-eb04-40bf-bef2-ee706895b8af
+[DEBUG] Sent cancellation for request: 4637e5cf-2e41-4e7c-a18d-e3e8edb3ade9
+[DEBUG] Sent cancellation for request: 5a9e6810-1ed8-492d-8d1e-dffa87e07ba5
+
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > calls onModelChange when a model is selected
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > calls onModelChange when a model is selected
+[DEBUG] Sent cancellation for request: 050b96f5-8470-4a7c-8fae-e56d573201a7
+[DEBUG] Sent cancellation for request: 2bec44b0-b391-4604-9ba7-1d79b3ba5f98
+[DEBUG] Sent cancellation for request: 3dc94491-1074-4172-8478-db1b51e90149
+[DEBUG] Sent cancellation for request: e956be28-37d4-4156-8089-fef72f3b6fa8
+[DEBUG] Sent cancellation for request: 0bfb2ce1-2891-4a2c-ad82-47485e7b55e0
+[DEBUG] Sent cancellation for request: cf337957-d1f6-41a6-984b-88cb6c7cd109
+[DEBUG] Sent cancellation for request: cd892e59-d250-4fba-95ac-feb8c09cf28c
+[DEBUG] Sent cancellation for request: db95db7f-d058-44b5-b5a1-4ff8f680643c
+[DEBUG] Sent cancellation for request: 0f44d0ef-9396-44fe-aa99-6d6d149ace7a
+[DEBUG] Sent cancellation for request: 7b2ff642-ff02-4d57-afae-d03d6a2059b8
+[DEBUG] Sent cancellation for request: 4784d420-ab5c-4a6a-8b1c-6139b9c7691e
+[DEBUG] Sent cancellation for request: 9a06f779-c439-4f50-8755-c137d8aaeae9
+
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > clears input when clear button is clicked
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > clears input when clear button is clicked
+[DEBUG] Sent cancellation for request: 30206f14-ed24-449f-b3db-61f6635f71c7
+[DEBUG] Sent cancellation for request: b61e1b9e-0422-48ca-a446-20f6eb3a132b
+[DEBUG] Sent cancellation for request: 4b1cd085-e15e-4736-a334-2896b2769d7e
+[DEBUG] Sent cancellation for request: 5eeb13c5-d118-42a8-b7fa-b37baa04ee1d
+[DEBUG] Sent cancellation for request: cde1289c-97ad-4cf5-83bb-8e2cf3922c75
+[DEBUG] Sent cancellation for request: 9ee386f5-16e3-41f0-af5b-df10baf6bd6c
+[DEBUG] Sent cancellation for request: 950de148-1185-4f8e-a7d6-ff4cb2b9f1b2
+[DEBUG] Sent cancellation for request: 48bea9f0-a499-438b-9f63-617214e491e3
+[DEBUG] Sent cancellation for request: 90a78503-0e11-408b-808a-97d5bf7212d1
+[DEBUG] Sent cancellation for request: dd969e2e-71f8-4f5d-80e6-0acb4aff72ca
+[DEBUG] Sent cancellation for request: 7be29560-af34-4af2-a04e-93e30c9a1639
+[DEBUG] Sent cancellation for request: e3e25847-faaa-4cad-bed4-9271927f35d6
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > renders the model dropdown with correct label
+Warning: React does not recognize the `zIndex` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `zindex` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at div
+    at I (/app/webview-ui/node_modules/styled-components/dist/styled-components.cjs.js:1:22771)
+    at SapAiCoreModelPicker (/app/webview-ui/src/components/settings/SapAiCoreModelPicker.tsx:9:33)
+    at ExtensionStateContextProvider (/app/webview-ui/src/context/ExtensionStateContext.tsx:19:42)
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > renders the model dropdown with correct label
+[DEBUG] Sent cancellation for request: 35673f5d-6919-4802-b976-b0c2dc163b97
+[DEBUG] Sent cancellation for request: a4ed7a20-f805-4753-bc1a-9f31637d66bc
+[DEBUG] Sent cancellation for request: ea455e3c-d366-4554-ac2a-9dea30722bc3
+[DEBUG] Sent cancellation for request: e75c26c4-acec-4fdb-892a-1a33da30e684
+[DEBUG] Sent cancellation for request: d5bc6779-7330-4853-ab52-7075a037a5e6
+[DEBUG] Sent cancellation for request: d2111df2-2ab1-4db8-8550-b43ad569d71d
+[DEBUG] Sent cancellation for request: 8a2c3a76-0403-4396-a60f-7d75ce5c678a
+[DEBUG] Sent cancellation for request: 4f5602f9-2f4e-4849-a94e-4dda26d2f4b0
+[DEBUG] Sent cancellation for request: d3572680-afc8-459c-83f9-9e36a8e356b6
+[DEBUG] Sent cancellation for request: 241ddbe2-4942-4bfe-b28d-203826ea9cd0
+[DEBUG] Sent cancellation for request: 315fa172-2f3f-4a9f-bd1a-6ab8876b94d7
+[DEBUG] Sent cancellation for request: 2df03ff7-26f4-46c2-a6c8-5346c177a04b
+
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > updates search term when selectedModelId changes externally
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > updates search term when selectedModelId changes externally
+[DEBUG] Sent cancellation for request: f14d84b9-1e30-44a4-855c-53a0dee9418b
+[DEBUG] Sent cancellation for request: 2acf9851-9631-427a-8e29-a3e30890c0c8
+[DEBUG] Sent cancellation for request: 2abff9b5-17cd-443f-a7a4-3e7bae3a80e2
+[DEBUG] Sent cancellation for request: cc8b27f5-75c4-4da1-80a5-5124c75f224e
+[DEBUG] Sent cancellation for request: cd847df1-22f1-436b-a098-20d709831644
+[DEBUG] Sent cancellation for request: ae392d1b-c967-4c3d-b6e6-6dc3eff0f39a
+[DEBUG] Sent cancellation for request: 531e3f5f-1133-44e3-9376-6037c7cbde93
+[DEBUG] Sent cancellation for request: b140afe4-3b56-4028-a919-4664cc59200d
+[DEBUG] Sent cancellation for request: 325a9e15-df33-4e2f-a3e1-422ab4e71d0d
+[DEBUG] Sent cancellation for request: ead02487-3fc9-45d6-98d9-95a056be0cb7
+[DEBUG] Sent cancellation for request: e8e5656a-542c-47c7-8822-4d1e57cb2943
+[DEBUG] Sent cancellation for request: 24e7e562-306d-4832-9306-c16ea50ae4b2
+
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > handles keyboard navigation in dropdown
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > handles keyboard navigation in dropdown
+[DEBUG] Sent cancellation for request: 27bc4db9-f950-4694-b8b1-5e9951f717e6
+[DEBUG] Sent cancellation for request: a9c936d3-81ee-44fe-8d87-36d61c5858a1
+[DEBUG] Sent cancellation for request: 9082f576-9f3b-4e87-a8c0-a48ab76242a7
+[DEBUG] Sent cancellation for request: c4b06ed0-17f8-40b7-8368-766304defd43
+[DEBUG] Sent cancellation for request: ee669592-e41f-40d8-912b-98ef3dfc26f8
+[DEBUG] Sent cancellation for request: d4e04390-77d3-4852-9a37-9516e482a00e
+[DEBUG] Sent cancellation for request: 43087dfd-c189-4a52-8294-bdaacfa70f61
+[DEBUG] Sent cancellation for request: 51882c2a-67bc-4606-8399-7bd7908527a4
+[DEBUG] Sent cancellation for request: 4b388690-c3a9-4277-9f48-3c0934f9d6d6
+[DEBUG] Sent cancellation for request: 80debb94-6a9f-4599-803f-254a63c4235b
+[DEBUG] Sent cancellation for request: 8f5422d9-8de1-4ce6-a15d-2b7874bb3b93
+[DEBUG] Sent cancellation for request: 543c2c71-4ca7-459d-a235-c898b83d75a1
+
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > closes dropdown when Escape key is pressed
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > closes dropdown when Escape key is pressed
+[DEBUG] Sent cancellation for request: acbe5619-b1ee-477c-bf4d-a964e4d33559
+[DEBUG] Sent cancellation for request: 11a1d801-e850-489e-99c4-e53e24fca96f
+[DEBUG] Sent cancellation for request: d95a8b51-cd6d-4fde-b959-9a51d20a309a
+[DEBUG] Sent cancellation for request: 6ea8ae1f-fe59-4046-9f2c-f4ae87cf6c68
+[DEBUG] Sent cancellation for request: 18aaa0c1-c356-4d93-ae1b-14afef381685
+[DEBUG] Sent cancellation for request: 6fa4bfe7-6a22-41f4-ba85-523f5ae7c32a
+[DEBUG] Sent cancellation for request: 148297bf-8888-4a37-92c4-fe7a068e435a
+[DEBUG] Sent cancellation for request: a9560b84-3b9e-4145-8c69-299eca567229
+[DEBUG] Sent cancellation for request: 391e5422-5f9f-45a5-9565-2a3f3d4cf6fd
+[DEBUG] Sent cancellation for request: db2677a4-76c9-43b6-8830-1f0ba9788d6e
+[DEBUG] Sent cancellation for request: 6e32632c-6522-4367-9f34-4ff277c2e28a
+[DEBUG] Sent cancellation for request: b5c6c72e-b78d-440c-9311-32f791bb54e4
+
+stderr | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > handles empty models array
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/OllamaModelPicker.spec.tsx > OllamaModelPicker Component > handles empty models array
+[DEBUG] Sent cancellation for request: df45567c-5bdd-4f42-8d85-4118331a30a0
+[DEBUG] Sent cancellation for request: bda56236-779e-4ef3-ab62-dc95bfa47a1d
+[DEBUG] Sent cancellation for request: 1c0775a1-498d-4032-8a16-a74170b57858
+[DEBUG] Sent cancellation for request: e37ba5f8-96d7-4583-82ff-2906f285f4f7
+[DEBUG] Sent cancellation for request: 13537bed-2e63-4153-8533-e64a9c7d56cd
+[DEBUG] Sent cancellation for request: 4576768d-2f48-465c-a28c-f8c7898c2113
+[DEBUG] Sent cancellation for request: e3f6abc7-b9ce-46e5-a202-baee7d001db9
+[DEBUG] Sent cancellation for request: daacc5f7-6730-48a1-92dc-c8e0f3a908ab
+[DEBUG] Sent cancellation for request: f7946125-b364-4519-8d41-f95054d9efbc
+[DEBUG] Sent cancellation for request: 4558fc06-611f-4501-921a-6eba0d0a15f5
+[DEBUG] Sent cancellation for request: 563e523d-7b44-476b-a72f-3b69da7f66ca
+[DEBUG] Sent cancellation for request: b5d5e5b9-7080-40a3-8cdf-c1116427ce4f
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > renders with default placeholder
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > renders with default placeholder
+[DEBUG] Sent cancellation for request: 873c8a8b-544a-4be5-9db8-4d538eeb587e
+[DEBUG] Sent cancellation for request: 7f56dd08-eee9-4cb3-83eb-bafda994bb6e
+[DEBUG] Sent cancellation for request: 6c928cdb-b5d4-40f8-a9ca-9499f0279640
+[DEBUG] Sent cancellation for request: 7fa83ba4-8848-4a18-9612-453a64c56052
+[DEBUG] Sent cancellation for request: 01dc16f2-eb51-417c-8c6f-b70dde693819
+[DEBUG] Sent cancellation for request: 6a70298f-05fd-48f8-9b51-0876c5537bea
+[DEBUG] Sent cancellation for request: 594e2708-d099-44b5-9cd3-b00d03cda69d
+[DEBUG] Sent cancellation for request: c64e3e2a-3b9c-4cad-9a57-31f0481b0d90
+[DEBUG] Sent cancellation for request: 4ef17d98-e31e-49c4-b5fd-c606ec206013
+[DEBUG] Sent cancellation for request: dd648180-8e91-4bd5-a343-0856a43fee81
+[DEBUG] Sent cancellation for request: 600b18a2-49bd-4353-8ab9-1ec47bde666c
+[DEBUG] Sent cancellation for request: 32fc8bde-ce67-4d62-ac0e-0ae062ba727e
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > renders with custom placeholder
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > renders with custom placeholder
+[DEBUG] Sent cancellation for request: 5fb09cb9-b0f0-4178-b92b-51c2d3c2d911
+[DEBUG] Sent cancellation for request: a8f445a1-cf43-4ff2-8e2d-224a12d8c14a
+[DEBUG] Sent cancellation for request: a959672d-3352-4e2c-8370-2813e0089752
+[DEBUG] Sent cancellation for request: 8fbc9ee3-f5d6-494b-bf58-828551bf5cb5
+[DEBUG] Sent cancellation for request: 1f491eb4-3018-40b3-a0a1-63ddb33e35ae
+[DEBUG] Sent cancellation for request: f687dcca-f215-40cc-b4d8-617271ba2944
+[DEBUG] Sent cancellation for request: c127a6b0-b620-4845-8764-f8bd09527aba
+[DEBUG] Sent cancellation for request: ba8b2303-581c-476a-b762-a8fb8d79d796
+[DEBUG] Sent cancellation for request: d140c5aa-e00d-4a60-9136-65d67a166f51
+[DEBUG] Sent cancellation for request: 73aaf1e3-0baa-4f5a-bc9f-4b25c980f069
+[DEBUG] Sent cancellation for request: 192b197c-d263-4db2-b0c4-2e1091a37986
+[DEBUG] Sent cancellation for request: e82553ac-3df5-4faa-9bb4-57415ee5b67f
+
+ ✓ src/components/settings/__tests__/OllamaModelPicker.spec.tsx (10 tests) 462ms
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > shows deployed models section when deployed models exist
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > shows deployed models section when deployed models exist
+[DEBUG] Sent cancellation for request: ae6cce5f-ae91-4123-b8f0-f8664fed7d67
+[DEBUG] Sent cancellation for request: b000f2c2-3c0c-4e33-ace4-dce6bf9f4320
+[DEBUG] Sent cancellation for request: fcdb96d3-8205-4803-b44d-0eba825e6031
+[DEBUG] Sent cancellation for request: 5e22e322-4011-4c4b-9c43-7567353b0665
+[DEBUG] Sent cancellation for request: 8b152e90-d32c-461a-adfc-a764de65bfbf
+[DEBUG] Sent cancellation for request: c7085f29-a516-4872-862a-b97903e4db3c
+[DEBUG] Sent cancellation for request: 6de48dbd-a1ad-4620-84ca-27214f9f2db6
+[DEBUG] Sent cancellation for request: 7b2196fe-2840-4cca-8f68-4886dc9d9639
+[DEBUG] Sent cancellation for request: 9e83793c-48a6-42e3-9422-a4b24b1e8c4f
+[DEBUG] Sent cancellation for request: 4408ac50-35a0-4c65-ae92-fd40bbc530e7
+[DEBUG] Sent cancellation for request: 07cbd2f8-b704-461f-bd31-13105ac970c1
+[DEBUG] Sent cancellation for request: 71424aa6-e358-4c09-b255-da15419a6f77
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > shows not deployed models section when supported but not deployed models exist
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > shows not deployed models section when supported but not deployed models exist
+[DEBUG] Sent cancellation for request: 98f331c4-4115-4c47-9607-462bb000d0fd
+[DEBUG] Sent cancellation for request: baec14ea-c13b-4a13-8995-3dc481cc2aaa
+[DEBUG] Sent cancellation for request: e279a608-40b7-4c36-a4e7-4cf244e81abf
+[DEBUG] Sent cancellation for request: 21274b16-c507-4d58-8fa3-b09ba17979c1
+[DEBUG] Sent cancellation for request: f4ac3ac8-58bc-47ea-a278-54b85aee3176
+[DEBUG] Sent cancellation for request: f4f4bd25-fcdd-4efd-b482-cf5530f7ef69
+[DEBUG] Sent cancellation for request: bb908407-7153-4f99-bd51-02a12857a9da
+[DEBUG] Sent cancellation for request: 667639a9-09ff-405f-8ddf-0f7b984c3aa2
+[DEBUG] Sent cancellation for request: 640738c0-b134-4e3c-9dcd-e4a2329e374c
+[DEBUG] Sent cancellation for request: a375ff41-cbe4-4fd5-bc39-cd77a8fe1877
+[DEBUG] Sent cancellation for request: 821877f5-87dd-4190-a377-dcb996377798
+[DEBUG] Sent cancellation for request: 1ec9abef-d29f-4921-a2c2-8f1e10229360
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > correctly categorizes models into deployed and not deployed
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > correctly categorizes models into deployed and not deployed
+[DEBUG] Sent cancellation for request: 18dfa991-7543-4b9a-a8ce-80fff7bba0c5
+[DEBUG] Sent cancellation for request: 3f7ea173-0e8f-4a36-81a6-247a3fab5a59
+[DEBUG] Sent cancellation for request: 80a62fb0-4215-49eb-9112-def101a8859d
+[DEBUG] Sent cancellation for request: 7458dbee-6ff3-4692-8f2b-965e7d9fdbee
+[DEBUG] Sent cancellation for request: 54f55e32-6b8d-4b16-81a0-2500f721c431
+[DEBUG] Sent cancellation for request: 9641c896-3961-4647-a47a-6ea463793885
+[DEBUG] Sent cancellation for request: a0da2908-4781-4987-b1c9-1286de12c172
+[DEBUG] Sent cancellation for request: 32d3fc0e-124a-4adc-8c22-3850c29379a8
+[DEBUG] Sent cancellation for request: 9cac426e-8273-4e67-8cf1-c1ac8188334b
+[DEBUG] Sent cancellation for request: 4edbfc50-efce-4808-899d-b041a579b8f5
+[DEBUG] Sent cancellation for request: dfd6bf3e-d410-4b5d-837d-17de06ecc720
+[DEBUG] Sent cancellation for request: a8b337b8-6920-42ba-8f6a-fccd690366c5
+
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Requesty API Key input
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Requesty API Key input
+[DEBUG] Sent cancellation for request: 62314ef1-ea95-4067-a990-a06a2a7f1372
+[DEBUG] Sent cancellation for request: ae1ad3cd-8bce-46ce-a628-46efa8127824
+[DEBUG] Sent cancellation for request: 2cbe591b-dbd8-4aae-94b6-484394c4a53b
+[DEBUG] Sent cancellation for request: 5dc57ae8-951c-4678-ae78-b7f5969af16a
+[DEBUG] Sent cancellation for request: 569199b0-610b-4879-9d9f-ec81db7eb020
+[DEBUG] Sent cancellation for request: b09dd4b2-be45-43b9-a599-84af2f459088
+[DEBUG] Sent cancellation for request: d28ccbaf-a857-4b50-a09e-ddfeba940833
+[DEBUG] Sent cancellation for request: 00d5d20f-130c-4541-9a31-d0516dd31efc
+[DEBUG] Sent cancellation for request: a37c62a6-7238-4d77-be34-97c55df2da2b
+[DEBUG] Sent cancellation for request: a7e52c0e-9b19-4b1a-b98d-e6d6f9ace840
+[DEBUG] Sent cancellation for request: 258b1f2f-396e-4429-8d44-c9104ed4e7dd
+[DEBUG] Sent cancellation for request: 7459a54b-cf7f-4f96-8306-c23abdcaa774
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > calls onModelChange when a model is selected
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > calls onModelChange when a model is selected
+[DEBUG] Sent cancellation for request: bb6337ef-5be7-4e79-b461-9349e7d41ae8
+[DEBUG] Sent cancellation for request: cb83f43b-6799-437b-b793-9fe00614a985
+[DEBUG] Sent cancellation for request: a60d5df5-f49d-4f0f-94e9-437601c2a26c
+[DEBUG] Sent cancellation for request: 22ed9f83-573b-4469-8da3-d7ec59ade0d4
+[DEBUG] Sent cancellation for request: 250784d0-cb75-4e3d-b7de-7cc43fe43e94
+[DEBUG] Sent cancellation for request: 64b2b66a-8cf5-419e-9267-75314fb1e90f
+[DEBUG] Sent cancellation for request: 7eda8d89-ae14-4bc5-b723-7ecb117ced8d
+[DEBUG] Sent cancellation for request: dfcec1c1-d929-4681-bc37-05d6a924192a
+[DEBUG] Sent cancellation for request: d3c7b1f9-d9c8-431c-a6e2-6b72735506a2
+[DEBUG] Sent cancellation for request: 92858aac-841c-4d15-af06-97cd1474f4f6
+[DEBUG] Sent cancellation for request: f7389f21-9843-407a-9c63-7dcdd79b273b
+[DEBUG] Sent cancellation for request: 13ddac26-28fa-4e04-bed4-1535849d4566
+
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Requesty Model ID input
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Requesty Model ID input
+[DEBUG] Sent cancellation for request: 01b937e2-4515-471f-a611-0c0007f2416d
+[DEBUG] Sent cancellation for request: 8201b39e-f573-406c-9311-6c2ec576c940
+[DEBUG] Sent cancellation for request: 5550cdee-a504-4b75-b46b-dfd7634de2b2
+[DEBUG] Sent cancellation for request: b0f55cdc-1984-4e66-ba39-60dd48025b8c
+[DEBUG] Sent cancellation for request: 686e1ac0-d629-45ec-b8e4-89fcf1d44d98
+[DEBUG] Sent cancellation for request: 1d53ec5e-f8fe-4bd4-8df2-6ffcff6e0a6a
+[DEBUG] Sent cancellation for request: cf1e5108-6432-449b-b539-24cca7aab73c
+[DEBUG] Sent cancellation for request: 9ed3de0d-bc9f-4bdd-8cd1-19fa4ccc1186
+[DEBUG] Sent cancellation for request: 2382d65f-a87c-45b0-82e9-1a134d547c05
+[DEBUG] Sent cancellation for request: c336745e-b4ed-434b-bf8c-286c6b1021d1
+[DEBUG] Sent cancellation for request: 3c7b5782-5f13-4c77-9e30-66e8f9002a3e
+[DEBUG] Sent cancellation for request: 96387e29-0d85-4738-8e5b-c3c1522a612c
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles selection of not deployed models
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles selection of not deployed models
+[DEBUG] Sent cancellation for request: ba7fd087-c70a-4cb1-9b35-d25233e2a28a
+[DEBUG] Sent cancellation for request: f0e5e2d1-61ee-4fbf-8b9b-512fdc63d9fe
+[DEBUG] Sent cancellation for request: 4307fab3-307c-4d57-808e-b56e08cc6f2c
+[DEBUG] Sent cancellation for request: 611fce8e-06c2-473a-b01d-51eb03d009a4
+[DEBUG] Sent cancellation for request: 3a7b4bd3-c5fb-4542-b06f-e3199d48fbe6
+[DEBUG] Sent cancellation for request: 183e4dae-02fd-4301-ba34-43ac1142ca80
+[DEBUG] Sent cancellation for request: 54e4dba3-2999-4e4e-aada-88841ba182eb
+[DEBUG] Sent cancellation for request: 6656cd50-8098-40aa-a838-199ae14330be
+[DEBUG] Sent cancellation for request: f4c76db6-2e4d-4258-99c4-2d1e5ab665c0
+[DEBUG] Sent cancellation for request: 3dda1893-43b2-4fe6-a6f2-1716e74309b4
+[DEBUG] Sent cancellation for request: 372d319d-690d-476a-ad39-3544a50342c0
+[DEBUG] Sent cancellation for request: 3a5e21a2-f4fa-4131-987a-6f5707f8538b
+
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Together API Key input
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Together API Key input
+[DEBUG] Sent cancellation for request: 9e29bcbb-02c4-454c-b311-e1383facbc4c
+[DEBUG] Sent cancellation for request: 8229288f-65cc-4c6c-a2b1-2304f418a4cb
+[DEBUG] Sent cancellation for request: f1b7ae89-38e1-4a24-b86b-49810c2f0570
+[DEBUG] Sent cancellation for request: 4f2d3777-fb98-4a37-bb4c-ae8a9869d746
+[DEBUG] Sent cancellation for request: 405eb5fb-09f0-48b0-9c26-537650f3cc8f
+[DEBUG] Sent cancellation for request: f5eed59a-dc8a-4e43-b293-6407e3bd3938
+[DEBUG] Sent cancellation for request: 739b64fc-8670-43c8-b62e-02cafd72d97e
+[DEBUG] Sent cancellation for request: 013d5853-b0fc-4fb9-b0e8-0ddb964d984f
+[DEBUG] Sent cancellation for request: 186a6815-ce9a-46a0-a667-cb652ce3fa28
+[DEBUG] Sent cancellation for request: 63e42a35-4766-4a39-b081-2d2a1b4a80c1
+[DEBUG] Sent cancellation for request: b0f5b60b-59bd-44eb-9fa5-681297b73979
+[DEBUG] Sent cancellation for request: 760bdd48-033a-4eb4-b736-14fa6bb593bb
+
+ ✓ src/components/chat/__tests__/UserMessage.ime.test.tsx (1 test) 57ms
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Together Model ID input
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Together Model ID input
+[DEBUG] Sent cancellation for request: 14083327-a8ae-456a-99ab-a51b84a93871
+[DEBUG] Sent cancellation for request: 3eda1c36-0852-4062-8529-889c3e41901c
+[DEBUG] Sent cancellation for request: 4e016486-25ed-492b-948b-43ec39f27d07
+[DEBUG] Sent cancellation for request: 17ede393-9971-4a9e-b333-92a6cbb7150b
+[DEBUG] Sent cancellation for request: caa15eeb-330e-4e82-92ab-b768369bfc56
+[DEBUG] Sent cancellation for request: 556dd633-9b18-495f-a542-d602132b8a25
+[DEBUG] Sent cancellation for request: e531a035-0c97-4469-8ea1-abf0a65feb7c
+[DEBUG] Sent cancellation for request: e1cfc9ce-be70-4f71-bc3a-c3eaa5fb2c81
+[DEBUG] Sent cancellation for request: 9f89dfc1-9d4e-4d56-96c8-b12c21ffc936
+[DEBUG] Sent cancellation for request: 1445e549-a134-4aa5-a69c-3e9f82675eb4
+[DEBUG] Sent cancellation for request: 4a2b406f-5fa5-4a92-a3ff-02e7d7d01995
+[DEBUG] Sent cancellation for request: 1b354472-116e-4208-bd92-1a7af2fa52d1
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > updates selected value when selectedModelId prop changes
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > updates selected value when selectedModelId prop changes
+[DEBUG] Sent cancellation for request: d4014e1a-9133-4283-9c1c-9d7e07791cac
+[DEBUG] Sent cancellation for request: 4f1ad01c-3d3e-4c69-94bc-3b9872ba8b16
+[DEBUG] Sent cancellation for request: b0846889-2118-4b9d-9302-4ab0ee115e9e
+[DEBUG] Sent cancellation for request: 8ddb48b4-a738-4b9a-95b5-6093ce1cfa9e
+[DEBUG] Sent cancellation for request: 31af25c0-aeea-4d11-8757-f6a2bae769be
+[DEBUG] Sent cancellation for request: 77f355a7-dea0-4267-baca-c7e6caa324a7
+[DEBUG] Sent cancellation for request: ff0040e0-5205-4223-896a-afc1fef682fe
+[DEBUG] Sent cancellation for request: 62706d07-67d0-4998-b210-f3f02748f558
+[DEBUG] Sent cancellation for request: dc909a9a-91c9-4235-a4fe-b171e577aeef
+[DEBUG] Sent cancellation for request: e662d6eb-8289-435a-94ae-bca8cc7b7a75
+[DEBUG] Sent cancellation for request: b90bc40e-9d3d-4175-88a8-73ab5f7d1597
+[DEBUG] Sent cancellation for request: d42a616e-493f-4df0-ae39-9fcb1af0001e
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles empty deployed models array
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles empty deployed models array
+[DEBUG] Sent cancellation for request: 0cd41d5d-ceb3-4134-8f53-230cd01df05b
+[DEBUG] Sent cancellation for request: 10dc445d-d262-4ffe-bcbb-33bac793a3db
+[DEBUG] Sent cancellation for request: e79155c1-f28f-4338-af13-a19bd92b6b39
+[DEBUG] Sent cancellation for request: 8bc31028-0586-4008-8b45-4796957f5d9b
+[DEBUG] Sent cancellation for request: b4d620d0-6d68-4de5-b0a8-88df4a937679
+[DEBUG] Sent cancellation for request: c9f4c750-0823-42a8-a4ec-345fb9a962c9
+[DEBUG] Sent cancellation for request: 854e2176-6705-41c4-a7f7-95475a3f9323
+[DEBUG] Sent cancellation for request: 44fb606a-cf77-4d3c-9c96-b5bd7d79d064
+[DEBUG] Sent cancellation for request: 51cbb664-4067-45cf-a2e4-bd12dab58845
+[DEBUG] Sent cancellation for request: 0de037a9-8f2d-4628-8fef-5b3517f9e2b4
+[DEBUG] Sent cancellation for request: 2fc08dbf-a78f-49b5-a301-36f31576849c
+[DEBUG] Sent cancellation for request: b5588dcf-f4e0-4cec-ae75-8331e0dd9c87
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles case where all supported models are deployed
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles case where all supported models are deployed
+[DEBUG] Sent cancellation for request: 9bca8811-27be-4a3a-9055-b2f49197aef8
+[DEBUG] Sent cancellation for request: dfa1b7e8-d9a1-46e9-a9da-8a8142cc5f83
+[DEBUG] Sent cancellation for request: bc8abf14-cc9c-4fa5-ac7d-8c9f9f91b710
+[DEBUG] Sent cancellation for request: 10e92d2b-a33d-47c2-8cdc-ce8ad2f864e0
+[DEBUG] Sent cancellation for request: 85bc4323-69e4-41d5-bce0-963c25735e58
+[DEBUG] Sent cancellation for request: 180ffb8c-3742-415b-a006-9584456500aa
+[DEBUG] Sent cancellation for request: 271ebf42-275d-4bb7-9629-3e6d4c02d7f4
+[DEBUG] Sent cancellation for request: 47379b7d-a3a0-48d6-a79d-beffda10a704
+[DEBUG] Sent cancellation for request: ee8b5bf3-34c5-4634-9f55-ab81acbcd49e
+[DEBUG] Sent cancellation for request: 33a94862-39e6-4f22-9007-a311068856d7
+[DEBUG] Sent cancellation for request: 3746be12-ed25-416f-8dac-c6a3b1b314ab
+[DEBUG] Sent cancellation for request: 40d5219a-05aa-4660-a489-aafa545b61b8
+
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Fireworks API Key input
+Warning: [object Object]: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)
+    at /app/webview-ui/src/components/settings/OpenRouterModelPicker.tsx:589:82
+    at p
+    at ModelInfoView (/app/webview-ui/src/components/settings/common/ModelInfoView.tsx:94:30)
+    at div
+    at FireworksProvider (/app/webview-ui/src/components/settings/providers/FireworksProvider.tsx:12:34)
+    at div
+    at ApiOptions (/app/webview-ui/src/components/settings/ApiOptions.tsx:66:23)
+    at ExtensionStateContextProvider (/app/webview-ui/src/context/ExtensionStateContext.tsx:19:42)
+Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+    at div
+    at div
+    at div
+    at I (/app/webview-ui/node_modules/styled-components/dist/styled-components.cjs.js:1:22771)
+    at /app/webview-ui/src/components/settings/OpenRouterModelPicker.tsx:589:82
+    at p
+    at ModelInfoView (/app/webview-ui/src/components/settings/common/ModelInfoView.tsx:94:30)
+    at div
+    at FireworksProvider (/app/webview-ui/src/components/settings/providers/FireworksProvider.tsx:12:34)
+    at div
+    at ApiOptions (/app/webview-ui/src/components/settings/ApiOptions.tsx:66:23)
+    at ExtensionStateContextProvider (/app/webview-ui/src/context/ExtensionStateContext.tsx:19:42)
+Client ID not found in window object
+Warning: An update to null inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at /app/webview-ui/src/components/settings/OpenRouterModelPicker.tsx:589:82
+    at p
+    at ModelInfoView (/app/webview-ui/src/components/settings/common/ModelInfoView.tsx:94:30)
+    at div
+    at FireworksProvider (/app/webview-ui/src/components/settings/providers/FireworksProvider.tsx:12:34)
+    at div
+    at ApiOptions (/app/webview-ui/src/components/settings/ApiOptions.tsx:66:23)
+    at ExtensionStateContextProvider (/app/webview-ui/src/context/ExtensionStateContext.tsx:19:42)
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Fireworks API Key input
+[DEBUG] Sent cancellation for request: 7635cde9-5c91-40a4-a363-60acd7c8585e
+[DEBUG] Sent cancellation for request: 4ccd5e5d-10a9-4a81-86b5-938f3866cb28
+[DEBUG] Sent cancellation for request: 46269c46-6ab0-4852-aefc-ea22bc5cda48
+[DEBUG] Sent cancellation for request: fafed88d-7946-45e7-be59-5e1350b19f83
+[DEBUG] Sent cancellation for request: c6ad76a4-aec2-43e0-944f-ead6bdd5ee2f
+[DEBUG] Sent cancellation for request: 226b91c1-d66a-4a4c-a346-158a6b7b9d21
+[DEBUG] Sent cancellation for request: 5d48ae14-4302-4b64-8d24-a02f8b79a4b6
+[DEBUG] Sent cancellation for request: 1d6260cd-a57d-4a6b-8ba3-700a7b678572
+[DEBUG] Sent cancellation for request: bf27bc0d-3c45-455e-8fd0-d4a8a507126d
+[DEBUG] Sent cancellation for request: 38ec85c1-cc72-4f39-8b3e-240e843d7ce5
+[DEBUG] Sent cancellation for request: daadf3a1-d541-498b-9c1a-f6535ee38a3d
+[DEBUG] Sent cancellation for request: 135edc8f-ee61-4629-8a69-960d89812d1e
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles models that are deployed but not in supported list
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles models that are deployed but not in supported list
+[DEBUG] Sent cancellation for request: 65c229c5-1e74-40db-ad3c-21f26dccf846
+[DEBUG] Sent cancellation for request: 49da932a-dd75-47ec-acb0-24f4410c18ce
+[DEBUG] Sent cancellation for request: 5e295bd3-becb-42c5-84ba-7c21dd01d95f
+[DEBUG] Sent cancellation for request: d11d1e07-1f3b-4dd0-9c3b-8a8b4f3dccd2
+[DEBUG] Sent cancellation for request: 00688c6d-c906-4404-9aea-91df4f76351c
+[DEBUG] Sent cancellation for request: b7a8f247-3058-4a58-a32a-84450bef4a01
+[DEBUG] Sent cancellation for request: 7741faac-6b9b-4d43-8868-b543830b838c
+[DEBUG] Sent cancellation for request: d2bbbfef-817e-4407-858f-c73871ce4dab
+[DEBUG] Sent cancellation for request: 1ac95e0a-efed-441f-b0b1-dae9b114fc6c
+[DEBUG] Sent cancellation for request: cd850a4c-0a3f-4e08-a422-035fec6162c7
+[DEBUG] Sent cancellation for request: af29d79f-1413-43d4-b01a-051f41457823
+[DEBUG] Sent cancellation for request: 4767ab81-d79b-4323-ad50-a241ce44dce0
+
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Fireworks Model Select
+Client ID not found in window object
+Warning: An update to null inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at /app/webview-ui/src/components/settings/OpenRouterModelPicker.tsx:589:82
+    at p
+    at ModelInfoView (/app/webview-ui/src/components/settings/common/ModelInfoView.tsx:94:30)
+    at div
+    at FireworksProvider (/app/webview-ui/src/components/settings/providers/FireworksProvider.tsx:12:34)
+    at div
+    at ApiOptions (/app/webview-ui/src/components/settings/ApiOptions.tsx:66:23)
+    at ExtensionStateContextProvider (/app/webview-ui/src/context/ExtensionStateContext.tsx:19:42)
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > maintains correct dropdown structure with sections
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Fireworks Model Select
+[DEBUG] Sent cancellation for request: 76269fd3-0d27-4a40-ba56-1f585da3ec8f
+[DEBUG] Sent cancellation for request: 60ea5198-b44c-4dcc-a543-d67863828487
+[DEBUG] Sent cancellation for request: 355c7c0a-782e-4541-8d51-049fabd99fae
+[DEBUG] Sent cancellation for request: 7d447bb2-ff48-4d55-b4d1-531743978b5e
+[DEBUG] Sent cancellation for request: 8c475b77-e362-48c5-b753-c1627f25a27a
+[DEBUG] Sent cancellation for request: e6dc158b-7aea-4515-8197-e0b8523af4bb
+[DEBUG] Sent cancellation for request: 2c435ef9-3cba-4b27-8c78-707aa1206c2c
+[DEBUG] Sent cancellation for request: 509617cf-fbfd-4620-9e3c-c875a4f09699
+[DEBUG] Sent cancellation for request: 23ebfa4d-c596-43be-9898-ef748bdca37e
+[DEBUG] Sent cancellation for request: 2e9cc96b-b31a-4dbb-941c-b5f6ee6e96b1
+[DEBUG] Sent cancellation for request: 0e2e32a0-ea4f-4507-b471-152950558023
+[DEBUG] Sent cancellation for request: 5ef5d5c6-c0fb-4f3c-9c9f-6cf535719558
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > maintains correct dropdown structure with sections
+[DEBUG] Sent cancellation for request: 98680b50-bd81-4064-babe-bed453468351
+[DEBUG] Sent cancellation for request: 70d040c2-4aaf-4c91-9e5f-0a35cea1db9b
+[DEBUG] Sent cancellation for request: 6b463cea-f492-4d28-9f3c-e2047dba8554
+[DEBUG] Sent cancellation for request: 7c5fd9c4-7347-457c-bfb2-c2cb7597e747
+[DEBUG] Sent cancellation for request: f7b49499-5de4-47fc-999c-ac92216c5089
+[DEBUG] Sent cancellation for request: e8dea3ae-c829-482a-bd34-57e0f61cfc4b
+[DEBUG] Sent cancellation for request: 4e679fd4-dc9c-4dca-95f9-a55c7f71d61d
+[DEBUG] Sent cancellation for request: 6c63463a-0d18-46cc-b5f6-73063880631b
+[DEBUG] Sent cancellation for request: 104694df-ef63-4054-8696-7e3fc1c1fe59
+[DEBUG] Sent cancellation for request: 1785c822-a41f-407a-9b03-4106abf5311c
+[DEBUG] Sent cancellation for request: 016c3f15-7933-4d1c-93b0-9726c098fa82
+[DEBUG] Sent cancellation for request: 358f07b4-277d-4d73-a272-e4686a7da6b7
+
+stderr | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles model selection with empty string
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx > SapAiCoreModelPicker Component > handles model selection with empty string
+[DEBUG] Sent cancellation for request: 8e65edcd-b6d4-463d-a53d-b5bb578ad996
+[DEBUG] Sent cancellation for request: 29b55624-ca6a-4a04-b202-310b12ae7a58
+[DEBUG] Sent cancellation for request: aecf2a72-6597-483b-8278-53e40706a969
+[DEBUG] Sent cancellation for request: 16e74d49-8687-4f27-9665-1af28565d926
+[DEBUG] Sent cancellation for request: d6396acc-6928-49b3-ac11-f887a93694fe
+[DEBUG] Sent cancellation for request: 4bac45bb-28a2-4917-9747-3fee2f6b3c46
+[DEBUG] Sent cancellation for request: 51519ce6-4407-487e-a985-8d657d0eddd5
+[DEBUG] Sent cancellation for request: cb15eb56-20b5-4a73-b480-13cf881baa02
+[DEBUG] Sent cancellation for request: a7d70f82-a7bd-4456-858b-7f70bddbb523
+[DEBUG] Sent cancellation for request: 5dfad383-3d22-4499-8a34-2cd17d9329c1
+[DEBUG] Sent cancellation for request: 9ae65c08-3631-4de7-8740-6091a3efbbce
+[DEBUG] Sent cancellation for request: 7b473a82-b94e-4115-8ba4-7b9275def03f
+
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > OpenApiInfoOptions > renders OpenAI Supports Images input
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > OpenApiInfoOptions > renders OpenAI Supports Images input
+[DEBUG] Sent cancellation for request: e771043c-f278-4941-8697-80ffec68a220
+[DEBUG] Sent cancellation for request: 5685b8da-f352-45ac-af45-824febbb843c
+[DEBUG] Sent cancellation for request: e46f8033-9017-4c03-9b43-1d162442bcb3
+[DEBUG] Sent cancellation for request: 8b921c4a-5da0-46ee-8f50-533fb341545f
+[DEBUG] Sent cancellation for request: 07dfaa18-e222-4218-a5e8-75d948a327db
+[DEBUG] Sent cancellation for request: 1808d675-cc64-4a04-acd3-bfdf2b1ba69b
+[DEBUG] Sent cancellation for request: 27ebcca4-eaef-4c58-b79a-d3f98fa4bafc
+[DEBUG] Sent cancellation for request: 76b975eb-6384-448d-a8b5-b829e55ca820
+[DEBUG] Sent cancellation for request: 1cee3761-52a1-41e6-82b9-e836c9280eeb
+[DEBUG] Sent cancellation for request: 38159fad-f6ef-4f80-b411-0c5d0ce5db9c
+[DEBUG] Sent cancellation for request: 93525fbd-35dd-4fa2-ab68-712ba44155e7
+[DEBUG] Sent cancellation for request: 8482731b-25c5-4309-8004-74eae052e81f
+
+ ✓ src/components/settings/__tests__/SapAiCoreModelPicker.spec.tsx (14 tests) 2154ms
+   ✓ SapAiCoreModelPicker Component > renders the model dropdown with correct label  487ms
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > OpenApiInfoOptions > renders OpenAI Context Window Size input
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > OpenApiInfoOptions > renders OpenAI Context Window Size input
+[DEBUG] Sent cancellation for request: 2811651e-6891-4954-a044-57c461e4c5d0
+[DEBUG] Sent cancellation for request: aa6b1b1b-4161-43ab-ad59-19944447280a
+[DEBUG] Sent cancellation for request: 635a4390-c394-4a5f-ba4e-487b18430e04
+[DEBUG] Sent cancellation for request: f7305349-8891-4eb8-8675-3b5fe00080b9
+[DEBUG] Sent cancellation for request: 58d0bb4a-f73e-460b-aa5d-f0f0677064c9
+[DEBUG] Sent cancellation for request: 3d791ae4-4b2c-485a-8609-c7f8f3bfa1e6
+[DEBUG] Sent cancellation for request: 67398e7c-10ef-42fc-be1e-e80c1b626a5c
+[DEBUG] Sent cancellation for request: 8d15d7f8-3d7f-45dd-9663-c7d058b5eb10
+[DEBUG] Sent cancellation for request: 4deeac0e-bc6c-4621-ba7c-1d22656025ac
+[DEBUG] Sent cancellation for request: eec7cf97-3ffb-407d-81bb-8645c6af529e
+[DEBUG] Sent cancellation for request: 68d80607-674a-4d68-b0bc-98790403156d
+[DEBUG] Sent cancellation for request: ff31b896-ba70-49ee-8478-50bd64dde018
+
+ ✓ src/components/chat/__tests__/ErrorBlockTitle.spec.tsx (5 tests) 8ms
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > OpenApiInfoOptions > renders OpenAI Max Output Tokens input
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > OpenApiInfoOptions > renders OpenAI Max Output Tokens input
+[DEBUG] Sent cancellation for request: 72f05610-3bf8-4a19-ad27-f63427eccf08
+[DEBUG] Sent cancellation for request: c003665d-1401-4787-b303-e6cacef121fb
+[DEBUG] Sent cancellation for request: 5d2dfc46-fba1-475e-ac5c-dce52fc5f41a
+[DEBUG] Sent cancellation for request: 00dbe1cc-fc83-4cf8-90ad-83d8adac01d8
+[DEBUG] Sent cancellation for request: efee77c0-46a3-4869-874f-343ec9ea7df5
+[DEBUG] Sent cancellation for request: b74c5537-aab3-4977-ad7f-6c50af5985be
+[DEBUG] Sent cancellation for request: 44bba01a-7c6d-413b-8fee-4fa2d0661918
+[DEBUG] Sent cancellation for request: 4a8339f8-45b4-44e8-b28e-2acb80bae429
+[DEBUG] Sent cancellation for request: 0403f94f-3daa-40a3-b428-f94081b1f0d9
+[DEBUG] Sent cancellation for request: 08359c1b-68db-4933-831b-1ec0ca6ffed7
+[DEBUG] Sent cancellation for request: e07f66bd-37c9-401c-b1c0-35c7a544fd8d
+[DEBUG] Sent cancellation for request: 60387a97-06ee-46d4-bec1-db4a0608fa72
+
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Nebius API Key input
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Nebius API Key input
+[DEBUG] Sent cancellation for request: a4850df9-f2af-4cb0-90af-615b7a0c0a99
+[DEBUG] Sent cancellation for request: 3dcc99f9-00d0-4371-a3da-68ef15c55d45
+[DEBUG] Sent cancellation for request: 7aa979f3-a56b-44d4-8c81-fb04f9523b41
+[DEBUG] Sent cancellation for request: 5855d3bf-fcd6-44d7-80ea-8963ddef2157
+[DEBUG] Sent cancellation for request: ad5f2d1c-74f4-4bcd-adfc-1ab3058f3691
+[DEBUG] Sent cancellation for request: 5c9a9963-6273-47b6-8240-104bafb9d125
+[DEBUG] Sent cancellation for request: 22512293-77ca-48b4-afb6-412013ca9f47
+[DEBUG] Sent cancellation for request: ad084ed0-cbba-4950-885c-570b30823602
+[DEBUG] Sent cancellation for request: 6a63c42b-0ae1-4fcc-bad5-b6421df5f273
+[DEBUG] Sent cancellation for request: a7fdcd99-7c07-47d8-acdc-0c6d338447fc
+[DEBUG] Sent cancellation for request: 5dd8d853-d293-480d-baa5-ed732672cd0c
+[DEBUG] Sent cancellation for request: 81881b41-f204-44e7-882a-1271ccb5b24e
+
+stderr | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Nebius Model ID select with a default model
+Client ID not found in window object
+
+stdout | src/components/settings/__tests__/APIOptions.spec.tsx > ApiOptions Component > renders Nebius Model ID select with a default model
+[DEBUG] Sent cancellation for request: 438a989a-e87d-41bb-ad3c-48fe48d687ec
+[DEBUG] Sent cancellation for request: 0ef4a4e8-c791-4629-be96-2c9b6bbd5a17
+[DEBUG] Sent cancellation for request: 2a66ee34-e1fe-4a23-a973-d208be736f6d
+[DEBUG] Sent cancellation for request: 3258f638-aa6a-462c-9762-03506bec8ba0
+[DEBUG] Sent cancellation for request: 66722141-07d4-4233-ba67-888edd36a1fe
+[DEBUG] Sent cancellation for request: 538a59eb-bc3f-4ceb-b476-1b6e2c62cf88
+[DEBUG] Sent cancellation for request: 45299fa0-69b7-4545-bb50-4f5618a21f76
+[DEBUG] Sent cancellation for request: e47f4c39-901f-438f-8e78-08de9028b937
+[DEBUG] Sent cancellation for request: 3d06feb0-27e2-4666-b949-a8661198be84
+[DEBUG] Sent cancellation for request: 4d5c3d3f-2657-48a7-b07b-b72bb8757c80
+[DEBUG] Sent cancellation for request: 619ac621-7521-4490-9b41-1d862d3f4772
+[DEBUG] Sent cancellation for request: ab9231a7-1909-4200-95ef-034a7ba0601d
+
+ ✓ src/components/settings/__tests__/APIOptions.spec.tsx (11 tests) 2459ms
+   ✓ ApiOptions Component > renders Fireworks API Key input  328ms
+   ✓ ApiOptions Component > renders Nebius API Key input  386ms
+   ✓ ApiOptions Component > renders Nebius Model ID select with a default model  386ms
+
+ Test Files  11 passed (11)
+      Tests  95 passed (95)
+   Start at  14:41:13
+   Duration  21.29s (transform 4.19s, setup 1.55s, collect 17.16s, tests 5.66s, environment 7.73s, prepare 2.08s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   14.88 |    57.82 |   20.03 |   14.88 |
+ webview-ui        |       0 |        0 |       0 |       0 |
+  ...nd.config.mjs |       0 |        0 |       0 |       0 | 1-109
+ ...i/build/assets |       0 |        0 |       0 |       0 |
+  index.js         |       0 |        0 |       0 |       0 | 1-5628
+ webview-ui/src    |       0 |       20 |      20 |       0 |
+  App.tsx          |       0 |      100 |     100 |       0 | 2-92
+  ...gProvider.tsx |       0 |        0 |       0 |       0 | 1-74
+  Providers.tsx    |       0 |        0 |       0 |       0 | 1-17
+  constants.ts     |       0 |        0 |       0 |       0 | 1-6
+  main.tsx         |       0 |        0 |       0 |       0 | 1-9
+ ...-ui/src/assets |       0 |      100 |     100 |       0 |
+  ...LogoBlack.tsx |       0 |      100 |     100 |       0 | 3-11
+  ...oVariable.tsx |       0 |      100 |     100 |       0 | 3-21
+  ...LogoWhite.tsx |       0 |      100 |     100 |       0 | 3-11
+ ...onents/account |       0 |    42.85 |   42.85 |       0 |
+  ...ntOptions.tsx |       0 |        0 |       0 |       0 | 1-18
+  AccountView.tsx  |       0 |      100 |     100 |       0 | 3-373
+  ...lcomeView.tsx |       0 |        0 |       0 |       0 | 1-20
+  ...itBalance.tsx |       0 |        0 |       0 |       0 | 1-40
+  ...toryTable.tsx |       0 |      100 |     100 |       0 | 2-110
+  ...itDisplay.tsx |       0 |        0 |       0 |       0 | 1-60
+  helpers.ts       |       0 |      100 |     100 |       0 | 4-53
+ ...onents/browser |       0 |        0 |       0 |       0 |
+  ...tingsMenu.tsx |       0 |        0 |       0 |       0 | 1-217
+ ...omponents/chat |    8.58 |    61.01 |   10.81 |    8.58 |
+  Announcement.tsx |   81.41 |       25 |   33.33 |   81.41 | ...7,70-73,99-103
+  ...essionRow.tsx |       0 |        0 |       0 |       0 | 1-639
+  ...rBoundary.tsx |   19.54 |      100 |       0 |   19.54 | ...04-107,110-127
+  ChatRow.tsx      |    4.62 |      100 |     100 |    4.62 | ...6-132,141-1472
+  ChatTextArea.tsx |       0 |        0 |       0 |       0 | 1-1823
+  ChatView.tsx     |       0 |        0 |       0 |       0 | 1-401
+  ContextMenu.tsx  |       0 |        0 |       0 |       0 | 1-278
+  ...imitError.tsx |   16.66 |      100 |       0 |   16.66 | 18-83
+  ...lockTitle.tsx |   67.56 |       80 |     100 |   67.56 | 7-34,66,84-85
+  ErrorRow.tsx     |   97.59 |     87.5 |     100 |   97.59 | 81,118
+  ...skPreview.tsx |   44.44 |      100 |       0 |   44.44 | 9-15
+  ...nsButtons.tsx |   21.81 |      100 |       0 |   21.81 | 17-18,27-83
+  QuoteButton.tsx  |   34.61 |      100 |       0 |   34.61 | 35-56
+  ...gePreview.tsx |       0 |        0 |       0 |       0 | 1-89
+  ...ugPreview.tsx |       8 |      100 |       0 |       8 | 9-82
+  ...ggleModal.tsx |       0 |        0 |       0 |       0 | 1-112
+  ...mmandMenu.tsx |       0 |        0 |       0 |       0 | 1-115
+  ...ckButtons.tsx |   18.51 |      100 |       0 |   18.51 | 23-114
+  UserMessage.tsx  |   28.18 |    22.22 |   14.28 |   28.18 | ...00-143,169-195
+  colors.ts        |     100 |      100 |     100 |     100 |
+ ...o-approve-menu |       0 |       50 |      50 |       0 |
+  ...pproveBar.tsx |       0 |        0 |       0 |       0 | 1-117
+  ...eMenuItem.tsx |       0 |        0 |       0 |       0 | 1-138
+  ...roveModal.tsx |       0 |        0 |       0 |       0 | 1-235
+  ...ettingsAPI.ts |       0 |      100 |     100 |       0 | 2-18
+  constants.ts     |       0 |      100 |     100 |       0 | 3-86
+  types.ts         |       0 |        0 |       0 |       0 |
+ ...chat/chat-view |       0 |        0 |       0 |       0 |
+  constants.ts     |       0 |        0 |       0 |       0 | 1-7
+  index.ts         |       0 |        0 |       0 |       0 | 1-18
+ ...ponents/layout |       0 |    57.14 |   57.14 |       0 |
+  ...onButtons.tsx |       0 |      100 |     100 |       0 | 3-157
+  ChatLayout.tsx   |       0 |      100 |     100 |       0 | 2-40
+  InputSection.tsx |       0 |        0 |       0 |       0 | 1-78
+  MessagesArea.tsx |       0 |      100 |     100 |       0 | 2-97
+  TaskSection.tsx  |       0 |      100 |     100 |       0 | 2-53
+  ...meSection.tsx |       0 |        0 |       0 |       0 | 1-33
+  index.ts         |       0 |        0 |       0 |       0 | 1-10
+ ...nents/messages |       0 |       50 |      50 |       0 |
+  ...eRenderer.tsx |       0 |      100 |     100 |       0 | 2-103
+  index.ts         |       0 |        0 |       0 |       0 | 1-5
+ ...hat-view/hooks |       0 |       75 |      75 |       0 |
+  index.ts         |       0 |        0 |       0 |       0 | 1-7
+  useChatState.ts  |       0 |      100 |     100 |       0 | 2-88
+  ...geHandlers.ts |       0 |      100 |     100 |       0 | 2-292
+  ...llBehavior.ts |       0 |      100 |     100 |       0 | 2-227
+ ...at-view/shared |   97.97 |    88.23 |     100 |   97.97 |
+  buttonConfig.ts  |   97.97 |    88.23 |     100 |   97.97 | ...51,288,297-298
+ ...hat-view/types |       0 |        0 |       0 |       0 |
+  chatTypes.ts     |       0 |        0 |       0 |       0 | 1-156
+ ...hat-view/utils |       0 |        0 |       0 |       0 |
+  markdownUtils.ts |       0 |        0 |       0 |       0 | 1-58
+  messageUtils.ts  |       0 |        0 |       0 |       0 | 1-152
+  scrollUtils.ts   |       0 |        0 |       0 |       0 | 1-60
+ ...at/task-header |    7.14 |    36.36 |   33.33 |    7.14 |
+  TaskHeader.tsx   |    8.24 |    36.36 |      50 |    8.24 | ...69-870,880-886
+  TaskTimeline.tsx |     8.8 |      100 |       0 |     8.8 | 22-206
+  ...neTooltip.tsx |    2.68 |      100 |       0 |    2.68 | 12-211
+  util.ts          |    4.76 |      100 |       0 |    4.76 | 12-91
+ ...header/buttons |   48.05 |      100 |       0 |   48.05 |
+  ...askButton.tsx |   22.22 |      100 |       0 |   22.22 | 8-35
+  ...askButton.tsx |     100 |      100 |     100 |     100 |
+  ...oryButton.tsx |   26.92 |      100 |       0 |   26.92 | 9-33
+ ...ts/cline-rules |       0 |       25 |      25 |       0 |
+  ...ggleModal.tsx |       0 |      100 |     100 |       0 | 2-403
+  NewRuleRow.tsx   |       0 |        0 |       0 |       0 | 1-154
+  RuleRow.tsx      |       0 |        0 |       0 |       0 | 1-132
+  ...oggleList.tsx |       0 |        0 |       0 |       0 | 1-59
+ ...ponents/common |   14.24 |        0 |       0 |   14.24 |
+  AlertDialog.tsx  |       0 |        0 |       0 |       0 | 1-119
+  ...tRenderer.tsx |    3.57 |      100 |       0 |    3.57 | 14-138
+  ...rkControl.tsx |   15.64 |      100 |       0 |   15.64 | ...24-327,343-347
+  ...tControls.tsx |   11.04 |      100 |       0 |   11.04 | 16-192
+  ...Accordian.tsx |    8.73 |      100 |       0 |    8.73 | 26-137
+  CodeBlock.tsx    |   28.98 |      100 |       0 |   28.98 | ...02-110,114-158
+  CopyButton.tsx   |   31.81 |      100 |       0 |   31.81 | ...,62-98,105-132
+  DangerButton.tsx |      30 |      100 |       0 |      30 | 6-21
+  Demo.tsx         |       0 |        0 |       0 |       0 | 1-123
+  HeroTooltip.tsx  |   15.78 |      100 |       0 |   15.78 | 18-57
+  ...downBlock.tsx |      12 |      100 |       0 |      12 | ...06-332,335-431
+  MermaidBlock.tsx |      40 |      100 |       0 |      40 | 84-223
+  ...ngsButton.tsx |       0 |        0 |       0 |       0 | 1-36
+  ...essButton.tsx |      25 |      100 |       0 |      25 | 6-23
+  Tab.tsx          |       0 |        0 |       0 |       0 | 1-90
+  ...tryBanner.tsx |       0 |        0 |       0 |       0 | 1-50
+  Thumbnails.tsx   |    3.97 |      100 |       0 |    3.97 | 16-184
+  Tooltip.tsx      |       0 |        0 |       0 |       0 | 1-65
+  ...uttonLink.tsx |   30.76 |      100 |       0 |   30.76 | 11-21
+ ...onents/history |    9.28 |    61.53 |   57.14 |    9.28 |
+  ...ryPreview.tsx |       0 |        0 |       0 |       0 | 1-220
+  HistoryView.tsx  |   11.45 |    66.66 |   66.66 |   11.45 | ...72-781,788-789
+ ...p/chat-display |   13.27 |      100 |       0 |   13.27 |
+  ImagePreview.tsx |    16.3 |      100 |       0 |    16.3 | ...51-329,340-345
+  LinkPreview.tsx  |    8.51 |      100 |       0 |    8.51 | ...67-394,405-410
+  ...eDropdown.tsx |   28.57 |      100 |       0 |   28.57 | 15-27
+  ...seDisplay.tsx |   15.97 |      100 |       0 |   15.97 | 77-261,265-270
+ ...-display/utils |    8.75 |      100 |       0 |    8.75 |
+  mcpRichUtil.ts   |    8.75 |      100 |       0 |    8.75 | ...05-336,345-412
+ .../configuration |       0 |      100 |     100 |       0 |
+  ...ationView.tsx |       0 |      100 |     100 |       0 | 2-153
+ ...abs/add-server |       0 |        0 |       0 |       0 |
+  ...erverForm.tsx |       0 |        0 |       0 |       0 | 1-43
+  ...erverForm.tsx |       0 |        0 |       0 |       0 | 1-133
+ ...tabs/installed |       0 |       50 |      50 |       0 |
+  ...rversView.tsx |       0 |        0 |       0 |       0 | 1-74
+  ...oggleList.tsx |       0 |      100 |     100 |       0 | 2-36
+ ...led/server-row |    1.86 |        0 |       0 |    1.86 |
+  ...sourceRow.tsx |    4.44 |      100 |       0 |    4.44 | 8-57
+  McpToolRow.tsx   |    6.73 |      100 |       0 |    6.73 | 14-135
+  ServerRow.tsx    |       0 |        0 |       0 |       0 | 1-427
+ ...bs/marketplace |       0 |    33.33 |   33.33 |       0 |
+  ...placeCard.tsx |       0 |      100 |     100 |       0 | 2-319
+  ...placeView.tsx |       0 |        0 |       0 |       0 | 1-287
+  ...ubmitCard.tsx |       0 |        0 |       0 |       0 | 1-45
+ ...omponents/menu |       0 |        0 |       0 |       0 |
+  Navbar.tsx       |       0 |        0 |       0 |       0 | 1-89
+ ...nents/settings |   35.47 |    78.87 |   34.09 |   35.47 |
+  ApiOptions.tsx   |   81.89 |     87.3 |   14.28 |   81.89 | ...01-303,318-320
+  ...delPicker.tsx |    6.12 |      100 |       0 |    6.12 | 21-302
+  ...tInfoCard.tsx |   26.08 |      100 |       0 |   26.08 | 8-38
+  ...ModelCard.tsx |   68.18 |      100 |       0 |   68.18 | 54-63
+  ...delPicker.tsx |    6.81 |      100 |       0 |    6.81 | 21-270
+  ...delPicker.tsx |    6.66 |      100 |       0 |    6.66 | 21-235
+  ...nMarkdown.tsx |       0 |        0 |       0 |       0 | 1-138
+  ...delPicker.tsx |   85.62 |    72.72 |      80 |   85.62 | ...,85-90,107-111
+  ...delPicker.tsx |   30.84 |    66.66 |       0 |   30.84 | 22-39,66-392
+  ...geSetting.tsx |       0 |        0 |       0 |       0 | 1-51
+  ...delPicker.tsx |   53.15 |    68.42 |    12.5 |   53.15 | ...40-242,354-457
+  ...delPicker.tsx |   88.88 |    91.66 |   66.66 |   88.88 | 30-32,73-81
+  Section.tsx      |       0 |      100 |     100 |       0 | 5-9
+  ...ionHeader.tsx |       0 |      100 |     100 |       0 | 3-22
+  SettingsView.tsx |       0 |      100 |     100 |       0 | 2-318
+  ...mitSlider.tsx |       0 |        0 |       0 |       0 | 1-39
+  ...getSlider.tsx |   28.86 |      100 |       0 |   28.86 | 51-56,92-180
+  ...tCheckbox.tsx |   38.09 |      100 |       0 |   38.09 | 14-36
+ ...ettings/common |   76.08 |    74.28 |   45.45 |   76.08 |
+  ApiKeyField.tsx  |     100 |    66.66 |      50 |     100 | 54
+  BaseUrlField.tsx |   81.25 |      100 |   33.33 |   81.25 | 29-34
+  ...TextField.tsx |   82.35 |      100 |      50 |   82.35 | 32-34
+  ErrorMessage.tsx |       0 |        0 |       0 |       0 | 1-26
+  ...lInfoView.tsx |   69.71 |    73.07 |      50 |   69.71 | ...23-129,133-139
+  ...lSelector.tsx |     100 |      100 |     100 |     100 |
+ ...ings/providers |   25.91 |    42.42 |   10.16 |   25.91 |
+  ...cProvider.tsx |   25.88 |      100 |       0 |   25.88 | 36-121
+  ...eProvider.tsx |   26.19 |      100 |       0 |   26.19 | 24-68
+  ...nProvider.tsx |   38.88 |      100 |       0 |   38.88 | 20-35
+  ...kProvider.tsx |     5.2 |      100 |       0 |     5.2 | 23-329
+  ...sProvider.tsx |   29.41 |      100 |       0 |   29.41 | 23-58
+  ...eProvider.tsx |   26.08 |      100 |       0 |   26.08 | 25-75
+  ...eProvider.tsx |   18.86 |      100 |       0 |   18.86 | 23-85
+  ...kProvider.tsx |   29.41 |      100 |       0 |   29.41 | 23-58
+  DifyProvider.tsx |   19.04 |      100 |       0 |   19.04 | 17-70
+  ...oProvider.tsx |   29.41 |      100 |       0 |   29.41 | 23-58
+  ...sProvider.tsx |   77.14 |      100 |   33.33 |   77.14 | 40-48
+  ...iProvider.tsx |   31.11 |      100 |       0 |   31.11 | 28-74
+  GroqProvider.tsx |   38.88 |      100 |       0 |   38.88 | 20-35
+  ...sProvider.tsx |   16.66 |      100 |       0 |   16.66 | 17-65
+  ...eProvider.tsx |    25.8 |      100 |       0 |    25.8 | 21-53
+  ...oProvider.tsx |   12.38 |      100 |       0 |   12.38 | 40-173
+  ...mProvider.tsx |    8.17 |      100 |       0 |    8.17 | 26-225
+  ...lProvider.tsx |   29.41 |      100 |       0 |   29.41 | 23-58
+  ...tProvider.tsx |   21.15 |      100 |       0 |   21.15 | 24-80
+  ...sProvider.tsx |   88.23 |      100 |   33.33 |   88.23 | 44-47
+  ...aProvider.tsx |      16 |      100 |       0 |      16 | 29-149
+  ...ompatible.tsx |   63.76 |    29.62 |   13.33 |   63.76 | ...17,327,331-347
+  OpenAINative.tsx |   29.41 |      100 |       0 |   29.41 | 23-58
+  ...rProvider.tsx |   15.31 |      100 |       0 |   15.31 | 18-48,63-156
+  ...eProvider.tsx |   20.83 |      100 |       0 |   20.83 | 23-86
+  QwenProvider.tsx |   35.44 |      100 |       0 |   35.44 | 43-118
+  ...yProvider.tsx |      80 |      100 |      25 |      80 | 39-45,52-53
+  ...aProvider.tsx |   29.41 |      100 |       0 |   29.41 | 23-58
+  ...eProvider.tsx |     7.6 |      100 |       0 |     7.6 | 26-246
+  ...rProvider.tsx |   96.96 |      100 |   33.33 |   96.96 | 36
+  ...mProvider.tsx |   13.88 |      100 |       0 |   13.88 | 18-103
+  ...yProvider.tsx |    9.48 |      100 |       0 |    9.48 | 26-186
+  ...xProvider.tsx |   26.13 |      100 |       0 |   26.13 | 37-124
+  XaiProvider.tsx  |   12.79 |      100 |       0 |   12.79 | 23-130
+  ZAiProvider.tsx  |   19.35 |      100 |       0 |   19.35 | 25-95
+ ...tings/sections |       0 |    28.57 |   28.57 |       0 |
+  AboutSection.tsx |       0 |        0 |       0 |       0 | 1-28
+  ...onSection.tsx |       0 |        0 |       0 |       0 | 1-92
+  ...gsSection.tsx |       0 |        0 |       0 |       0 | 1-416
+  DebugSection.tsx |       0 |        0 |       0 |       0 | 1-34
+  ...gsSection.tsx |       0 |      100 |     100 |       0 | 3-198
+  ...gsSection.tsx |       0 |        0 |       0 |       0 | 1-48
+  ...gsSection.tsx |       0 |      100 |     100 |       0 | 2-160
+ ...settings/utils |   34.89 |    18.88 |   63.15 |   34.89 |
+  pricingUtils.ts  |     100 |      100 |     100 |     100 |
+  providerUtils.ts |   30.45 |     9.87 |      75 |   30.45 | ...61-403,475-630
+  ...gsHandlers.ts |   19.04 |      100 |       0 |   19.04 | 12-38,47-55
+  ...onHandlers.ts |      25 |      100 |      20 |      25 | ...6,59-72,85-106
+  ...uncedInput.ts |   89.47 |      100 |     100 |   89.47 | 24-25
+ ...nents/ui/hooks |   18.89 |      100 |       0 |   18.89 |
+  ...terKeyInfo.ts |   18.89 |      100 |       0 |   18.89 | 27-59,68-148
+ ...onents/welcome |       0 |       20 |      20 |       0 |
+  HomeHeader.tsx   |       0 |        0 |       0 |       0 | 1-50
+  QuickWinCard.tsx |       0 |        0 |       0 |       0 | 1-52
+  ...stedTasks.tsx |       0 |        0 |       0 |       0 | 1-28
+  WelcomeView.tsx  |       0 |        0 |       0 |       0 | 1-85
+  quickWinTasks.ts |       0 |      100 |     100 |       0 | 11-39
+ ...ui/src/context |   59.11 |    41.66 |    4.76 |   59.11 |
+  ...thContext.tsx |   51.76 |       60 |   28.57 |   51.76 | ...98-106,109-117
+  ...teContext.tsx |   60.16 |    28.57 |    1.78 |   60.16 | ...05-708,720-725
+ ...w-ui/src/hooks |       0 |       50 |      50 |       0 |
+  ...oveActions.ts |       0 |      100 |     100 |       0 | 2-172
+  ...eatureFlag.ts |       0 |        0 |       0 |       0 | 1-14
+ ...i/src/services |   51.42 |    95.23 |   15.38 |   51.42 |
+  ...lient-base.ts |    60.5 |    83.33 |      50 |    60.5 | ...19-120,126-131
+  grpc-client.ts   |   48.52 |      100 |   13.51 |   48.52 | ...69-370,372-373
+ ...w-ui/src/utils |   38.07 |    75.51 |   29.41 |   38.07 |
+  ...t-mentions.ts |   22.11 |    88.88 |   33.33 |   22.11 | ...13-261,264-292
+  format.ts        |   20.93 |      100 |       0 |   20.93 | ...41,44-56,59-64
+  ...geFromPath.ts |    96.1 |      100 |       0 |    96.1 | 87-89
+  hooks.ts         |   78.08 |    58.82 |     100 |   78.08 | ...69,71-72,77-78
+  mcp.ts           |   24.32 |      100 |       0 |   24.32 | 10-22,32-44,53-58
+  platformUtils.ts |     100 |     92.3 |     100 |     100 | 38
+  ...h-commands.ts |   30.76 |      100 |       0 |   30.76 | ...61-175,182-207
+  ...unceEffect.ts |   86.66 |       80 |     100 |   86.66 | 22-23,27-28
+  validate.ts      |       0 |        0 |       0 |       0 | 1-187
+  vscStyles.ts     |    72.5 |      100 |   33.33 |    72.5 | 31-34,37-44
+  vscode.ts        |   51.02 |    66.66 |      50 |   51.02 | 43-52,64-70,84-90
+-------------------|---------|----------|---------|---------|-------------------

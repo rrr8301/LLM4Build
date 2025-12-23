@@ -1,0 +1,77 @@
+
+> jquery@4.0.0-rc.1 prepare
+> husky
+
+git command not found
+up to date, audited 802 packages in 1s
+
+212 packages are looking for funding
+  run `npm fund` for details
+
+2 vulnerabilities (1 low, 1 moderate)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+> jquery@4.0.0-rc.1 test:browserless
+> npm run pretest && npm run build:all && node test/bundler_smoke_tests/run-jsdom-tests.js && node build/tasks/node_smoke_tests.js && node build/tasks/promises_aplus_tests.js && npm run test:unit -- -b jsdom -f module=basic
+
+
+> jquery@4.0.0-rc.1 pretest
+> npm run qunit-fixture && npm run babel:tests && npm run npmcopy
+
+
+> jquery@4.0.0-rc.1 qunit-fixture
+> node build/tasks/qunit-fixture.js
+
+Updated ./test/data/qunit-fixture.js
+
+> jquery@4.0.0-rc.1 babel:tests
+> babel test/data/core/jquery-iterability-transpiled-es6.js --out-file test/data/core/jquery-iterability-transpiled.js
+
+
+> jquery@4.0.0-rc.1 npmcopy
+> node build/tasks/npmcopy.js
+
+bootstrap/dist/css/bootstrap.css → bootstrap/bootstrap.css
+bootstrap/dist/css/bootstrap.min.css → bootstrap/bootstrap.min.css
+bootstrap/dist/css/bootstrap.min.css.map → bootstrap/bootstrap.min.css.map
+core-js-bundle/minified.js → core-js-bundle/core-js-bundle.js
+core-js-bundle/LICENSE → core-js-bundle/LICENSE
+native-promise-only/lib/npo.src.js → npo/npo.js
+qunit/qunit/qunit.js → qunit/qunit.js
+qunit/qunit/qunit.css → qunit/qunit.css
+qunit/LICENSE.txt → qunit/LICENSE.txt
+requirejs/require.js → requirejs/require.js
+sinon/pkg/sinon.js → sinon/sinon.js
+sinon/LICENSE → sinon/LICENSE.txt
+
+> jquery@4.0.0-rc.1 build:all
+> node --input-type=module -e "import { buildDefaultFiles } from './build/tasks/build.js'; buildDefaultFiles()"
+
+node:internal/errors:983
+  const err = new Error(message);
+              ^
+
+Error: Command failed: git rev-parse --short HEAD
+/bin/sh: 1: git: not found
+
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at ChildProcess.exithandler (node:child_process:417:12)
+    at ChildProcess.emit (node:events:519:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Socket.<anonymous> (node:internal/child_process:456:11)
+    at Socket.emit (node:events:519:28)
+    at Pipe.<anonymous> (node:net:346:12) {
+  code: 127,
+  killed: false,
+  signal: null,
+  cmd: 'git rev-parse --short HEAD',
+  stdout: '',
+  stderr: '/bin/sh: 1: git: not found\n'
+}
+
+Node.js v22.19.0

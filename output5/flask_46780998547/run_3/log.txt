@@ -1,0 +1,39 @@
+Requirement already satisfied: pip in ./venv/lib/python3.11/site-packages (22.0.2)
+Collecting pip
+  Downloading pip-25.2-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 11.2 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.2
+    Uninstalling pip-22.0.2:
+      Successfully uninstalled pip-22.0.2
+Successfully installed pip-25.2
+Traceback (most recent call last):
+  File "/usr/bin/tox", line 33, in <module>
+    sys.exit(load_entry_point('tox==3.21.4', 'console_scripts', 'tox')())
+  File "/usr/lib/python3/dist-packages/tox/session/__init__.py", line 44, in cmdline
+    main(args)
+  File "/usr/lib/python3/dist-packages/tox/session/__init__.py", line 65, in main
+    config = load_config(args)
+  File "/usr/lib/python3/dist-packages/tox/session/__init__.py", line 81, in load_config
+    config = parseconfig(args)
+  File "/usr/lib/python3/dist-packages/tox/config/__init__.py", line 274, in parseconfig
+    toml_content = get_py_project_toml(config_file)
+  File "/usr/lib/python3/dist-packages/tox/config/__init__.py", line 306, in get_py_project_toml
+    config_data = toml.load(file_handler)
+  File "/usr/lib/python3/dist-packages/toml/decoder.py", line 156, in load
+    return loads(f.read(), _dict, decoder)
+  File "/usr/lib/python3/dist-packages/toml/decoder.py", line 511, in loads
+    ret = decoder.load_line(line, currentlevel, multikey,
+  File "/usr/lib/python3/dist-packages/toml/decoder.py", line 778, in load_line
+    value, vtype = self.load_value(pair[1], strictly_valid)
+  File "/usr/lib/python3/dist-packages/toml/decoder.py", line 880, in load_value
+    return (self.load_array(v), "array")
+  File "/usr/lib/python3/dist-packages/toml/decoder.py", line 1026, in load_array
+    nval, ntype = self.load_value(a[i])
+  File "/usr/lib/python3/dist-packages/toml/decoder.py", line 880, in load_value
+    return (self.load_array(v), "array")
+  File "/usr/lib/python3/dist-packages/toml/decoder.py", line 1002, in load_array
+    a[b] = a[b] + ',' + a[b + 1]
+IndexError: list index out of range
+Tox tests failed

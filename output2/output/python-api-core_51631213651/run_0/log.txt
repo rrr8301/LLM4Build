@@ -1,0 +1,615 @@
+/app/run.sh: line 4: /usr/bin/activate: No such file or directory
+Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (80.9.0)
+Requirement already satisfied: pip in /usr/local/lib/python3.10/dist-packages (25.2)
+Requirement already satisfied: wheel in /usr/local/lib/python3.10/dist-packages (0.45.1)
+Requirement already satisfied: nox in /usr/local/lib/python3.10/dist-packages (2025.5.1)
+Requirement already satisfied: argcomplete<4,>=1.9.4 in /usr/local/lib/python3.10/dist-packages (from nox) (3.6.2)
+Requirement already satisfied: attrs>=23.1 in /usr/local/lib/python3.10/dist-packages (from nox) (25.3.0)
+Requirement already satisfied: colorlog<7,>=2.6.1 in /usr/local/lib/python3.10/dist-packages (from nox) (6.9.0)
+Requirement already satisfied: dependency-groups>=1.1 in /usr/local/lib/python3.10/dist-packages (from nox) (1.3.1)
+Requirement already satisfied: packaging>=20.9 in /usr/local/lib/python3.10/dist-packages (from nox) (25.0)
+Requirement already satisfied: tomli>=1 in /usr/local/lib/python3.10/dist-packages (from nox) (2.2.1)
+Requirement already satisfied: virtualenv>=20.14.1 in /usr/local/lib/python3.10/dist-packages (from nox) (20.34.0)
+Requirement already satisfied: distlib<1,>=0.3.7 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.14.1->nox) (0.4.0)
+Requirement already satisfied: filelock<4,>=3.12.2 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.14.1->nox) (3.19.1)
+Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.14.1->nox) (4.4.0)
+Requirement already satisfied: typing-extensions>=4.13.2 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.14.1->nox) (4.15.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+nox > Running session unit-3.10
+nox > Creating virtual environment (virtualenv) using python3.10 in .nox/unit-3-10
+nox > python -m pip install dataclasses 'mock; python_version=='"'"'3.7'"'"'' pytest pytest-cov pytest-xdist
+nox > python -m pip install -e '.[grpc]' -c /app/testing/constraints-3.10.txt
+nox > python -c 'import google.protobuf; print(google.protobuf.__version__)'
+6.32.1
+nox > python -c 'import proto; hasattr(proto, "version") and print(proto.version.__version__)'
+1.26.1
+nox > python -c 'import grpc; print(grpc.__version__)'
+1.75.1
+nox > python -c 'import google.auth; print(google.auth.__version__)'
+2.41.1
+nox > python -m pip install asyncmock pytest-asyncio
+nox > python -m pytest --quiet --cov=google.api_core --cov=tests.unit --cov-append --cov-config=.coveragerc --cov-report= --cov-fail-under=0 -n=auto tests/unit --cov=tests.asyncio tests/asyncio
+bringing up nodes...
+bringing up nodes...
+
+..s..............s.s.......s.s.......................................... [  7%]
+.......ss.s............................................................. [ 14%]
+........................................................................ [ 21%]
+........................................................................ [ 28%]
+........................................................................ [ 35%]
+........................................................................ [ 42%]
+........................................................................ [ 49%]
+.....................................................s.................. [ 56%]
+........................................................................ [ 63%]
+........................................................................ [ 70%]
+........................................................................ [ 77%]
+........................................................................ [ 84%]
+........................................................................ [ 91%]
+........................................................................ [ 98%]
+.............FFs.                                                        [100%]
+=================================== FAILURES ===================================
+_______________________ test_list_operations_rest[None] ________________________
+[gw14] linux -- Python 3.10.12 /app/.nox/unit-3-10/bin/python
+
+credentials_file = None
+
+    @pytest.mark.parametrize(
+        "credentials_file",
+        [None, "credentials.json"],
+    )
+    def test_list_operations_rest(credentials_file):
+>       sync_transport = transports.rest.OperationsRestTransport(
+            credentials_file=credentials_file,
+            http_options=HTTP_OPTIONS,
+        )
+
+tests/unit/operations_v1/test_operations_rest_client.py:568:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+google/api_core/operations_v1/transports/rest.py:144: in __init__
+    super().__init__(
+google/api_core/operations_v1/transports/base.py:140: in __init__
+    credentials, _ = google.auth.default(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+scopes = None, request = None, quota_project_id = None, default_scopes = ()
+
+    def default(scopes=None, request=None, quota_project_id=None, default_scopes=None):
+        """Gets the default credentials for the current environment.
+
+        `Application Default Credentials`_ provides an easy way to obtain
+        credentials to call Google APIs for server-to-server or local applications.
+        This function acquires credentials from the environment in the following
+        order:
+
+        1. If the environment variable ``GOOGLE_APPLICATION_CREDENTIALS`` is set
+           to the path of a valid service account JSON private key file, then it is
+           loaded and returned. The project ID returned is the project ID defined
+           in the service account file if available (some older files do not
+           contain project ID information).
+
+           If the environment variable is set to the path of a valid external
+           account JSON configuration file (workload identity federation), then the
+           configuration file is used to determine and retrieve the external
+           credentials from the current environment (AWS, Azure, etc).
+           These will then be exchanged for Google access tokens via the Google STS
+           endpoint.
+           The project ID returned in this case is the one corresponding to the
+           underlying workload identity pool resource if determinable.
+
+           If the environment variable is set to the path of a valid GDCH service
+           account JSON file (`Google Distributed Cloud Hosted`_), then a GDCH
+           credential will be returned. The project ID returned is the project
+           specified in the JSON file.
+        2. If the `Google Cloud SDK`_ is installed and has application default
+           credentials set they are loaded and returned.
+
+           To enable application default credentials with the Cloud SDK run::
+
+                gcloud auth application-default login
+
+           If the Cloud SDK has an active project, the project ID is returned. The
+           active project can be set using::
+
+                gcloud config set project
+
+        3. If the application is running in the `App Engine standard environment`_
+           (first generation) then the credentials and project ID from the
+           `App Identity Service`_ are used.
+        4. If the application is running in `Compute Engine`_ or `Cloud Run`_ or
+           the `App Engine flexible environment`_ or the `App Engine standard
+           environment`_ (second generation) then the credentials and project ID
+           are obtained from the `Metadata Service`_.
+        5. If no credentials are found,
+           :class:`~google.auth.exceptions.DefaultCredentialsError` will be raised.
+
+        .. _Application Default Credentials: https://developers.google.com\
+                /identity/protocols/application-default-credentials
+        .. _Google Cloud SDK: https://cloud.google.com/sdk
+        .. _App Engine standard environment: https://cloud.google.com/appengine
+        .. _App Identity Service: https://cloud.google.com/appengine/docs/python\
+                /appidentity/
+        .. _Compute Engine: https://cloud.google.com/compute
+        .. _App Engine flexible environment: https://cloud.google.com\
+                /appengine/flexible
+        .. _Metadata Service: https://cloud.google.com/compute/docs\
+                /storing-retrieving-metadata
+        .. _Cloud Run: https://cloud.google.com/run
+        .. _Google Distributed Cloud Hosted: https://cloud.google.com/blog/topics\
+                /hybrid-cloud/announcing-google-distributed-cloud-edge-and-hosted
+
+        Example::
+
+            import google.auth
+
+            credentials, project_id = google.auth.default()
+
+        Args:
+            scopes (Sequence[str]): The list of scopes for the credentials. If
+                specified, the credentials will automatically be scoped if
+                necessary.
+            request (Optional[google.auth.transport.Request]): An object used to make
+                HTTP requests. This is used to either detect whether the application
+                is running on Compute Engine or to determine the associated project
+                ID for a workload identity pool resource (external account
+                credentials). If not specified, then it will either use the standard
+                library http client to make requests for Compute Engine credentials
+                or a google.auth.transport.requests.Request client for external
+                account credentials.
+            quota_project_id (Optional[str]): The project ID used for
+                quota and billing.
+            default_scopes (Optional[Sequence[str]]): Default scopes passed by a
+                Google client library. Use 'scopes' for user-defined scopes.
+        Returns:
+            Tuple[~google.auth.credentials.Credentials, Optional[str]]:
+                the current environment's credentials and project ID. Project ID
+                may be None, which indicates that the Project ID could not be
+                ascertained from the environment.
+
+        Raises:
+            ~google.auth.exceptions.DefaultCredentialsError:
+                If no credentials were found, or if the credentials found were
+                invalid.
+        """
+        from google.auth.credentials import with_scopes_if_required
+        from google.auth.credentials import CredentialsWithQuotaProject
+
+        explicit_project_id = os.environ.get(
+            environment_vars.PROJECT, os.environ.get(environment_vars.LEGACY_PROJECT)
+        )
+
+        checkers = (
+            # Avoid passing scopes here to prevent passing scopes to user credentials.
+            # with_scopes_if_required() below will ensure scopes/default scopes are
+            # safely set on the returned credentials since requires_scopes will
+            # guard against setting scopes on user credentials.
+            lambda: _get_explicit_environ_credentials(quota_project_id=quota_project_id),
+            lambda: _get_gcloud_sdk_credentials(quota_project_id=quota_project_id),
+            _get_gae_credentials,
+            lambda: _get_gce_credentials(request, quota_project_id=quota_project_id),
+        )
+
+        for checker in checkers:
+            credentials, project_id = checker()
+            if credentials is not None:
+                credentials = with_scopes_if_required(
+                    credentials, scopes, default_scopes=default_scopes
+                )
+
+                effective_project_id = explicit_project_id or project_id
+
+                # For external account credentials, scopes are required to determine
+                # the project ID. Try to get the project ID again if not yet
+                # determined.
+                if not effective_project_id and callable(
+                    getattr(credentials, "get_project_id", None)
+                ):
+                    if request is None:
+                        import google.auth.transport.requests
+
+                        request = google.auth.transport.requests.Request()
+                    effective_project_id = credentials.get_project_id(request=request)
+
+                if quota_project_id and isinstance(
+                    credentials, CredentialsWithQuotaProject
+                ):
+                    credentials = credentials.with_quota_project(quota_project_id)
+
+                if not effective_project_id:
+                    _LOGGER.warning(
+                        "No project ID could be determined. Consider running "
+                        "`gcloud config set project` or setting the %s "
+                        "environment variable",
+                        environment_vars.PROJECT,
+                    )
+                return credentials, effective_project_id
+
+>       raise exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+E       google.auth.exceptions.DefaultCredentialsError: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+
+.nox/unit-3-10/lib/python3.10/site-packages/google/auth/_default.py:739: DefaultCredentialsError
+_________________ test_list_operations_rest[credentials.json] __________________
+[gw14] linux -- Python 3.10.12 /app/.nox/unit-3-10/bin/python
+
+credentials_file = 'credentials.json'
+
+    @pytest.mark.parametrize(
+        "credentials_file",
+        [None, "credentials.json"],
+    )
+    def test_list_operations_rest(credentials_file):
+>       sync_transport = transports.rest.OperationsRestTransport(
+            credentials_file=credentials_file,
+            http_options=HTTP_OPTIONS,
+        )
+
+tests/unit/operations_v1/test_operations_rest_client.py:568:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+google/api_core/operations_v1/transports/rest.py:144: in __init__
+    super().__init__(
+google/api_core/operations_v1/transports/base.py:140: in __init__
+    credentials, _ = google.auth.default(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+scopes = None, request = None, quota_project_id = None, default_scopes = ()
+
+    def default(scopes=None, request=None, quota_project_id=None, default_scopes=None):
+        """Gets the default credentials for the current environment.
+
+        `Application Default Credentials`_ provides an easy way to obtain
+        credentials to call Google APIs for server-to-server or local applications.
+        This function acquires credentials from the environment in the following
+        order:
+
+        1. If the environment variable ``GOOGLE_APPLICATION_CREDENTIALS`` is set
+           to the path of a valid service account JSON private key file, then it is
+           loaded and returned. The project ID returned is the project ID defined
+           in the service account file if available (some older files do not
+           contain project ID information).
+
+           If the environment variable is set to the path of a valid external
+           account JSON configuration file (workload identity federation), then the
+           configuration file is used to determine and retrieve the external
+           credentials from the current environment (AWS, Azure, etc).
+           These will then be exchanged for Google access tokens via the Google STS
+           endpoint.
+           The project ID returned in this case is the one corresponding to the
+           underlying workload identity pool resource if determinable.
+
+           If the environment variable is set to the path of a valid GDCH service
+           account JSON file (`Google Distributed Cloud Hosted`_), then a GDCH
+           credential will be returned. The project ID returned is the project
+           specified in the JSON file.
+        2. If the `Google Cloud SDK`_ is installed and has application default
+           credentials set they are loaded and returned.
+
+           To enable application default credentials with the Cloud SDK run::
+
+                gcloud auth application-default login
+
+           If the Cloud SDK has an active project, the project ID is returned. The
+           active project can be set using::
+
+                gcloud config set project
+
+        3. If the application is running in the `App Engine standard environment`_
+           (first generation) then the credentials and project ID from the
+           `App Identity Service`_ are used.
+        4. If the application is running in `Compute Engine`_ or `Cloud Run`_ or
+           the `App Engine flexible environment`_ or the `App Engine standard
+           environment`_ (second generation) then the credentials and project ID
+           are obtained from the `Metadata Service`_.
+        5. If no credentials are found,
+           :class:`~google.auth.exceptions.DefaultCredentialsError` will be raised.
+
+        .. _Application Default Credentials: https://developers.google.com\
+                /identity/protocols/application-default-credentials
+        .. _Google Cloud SDK: https://cloud.google.com/sdk
+        .. _App Engine standard environment: https://cloud.google.com/appengine
+        .. _App Identity Service: https://cloud.google.com/appengine/docs/python\
+                /appidentity/
+        .. _Compute Engine: https://cloud.google.com/compute
+        .. _App Engine flexible environment: https://cloud.google.com\
+                /appengine/flexible
+        .. _Metadata Service: https://cloud.google.com/compute/docs\
+                /storing-retrieving-metadata
+        .. _Cloud Run: https://cloud.google.com/run
+        .. _Google Distributed Cloud Hosted: https://cloud.google.com/blog/topics\
+                /hybrid-cloud/announcing-google-distributed-cloud-edge-and-hosted
+
+        Example::
+
+            import google.auth
+
+            credentials, project_id = google.auth.default()
+
+        Args:
+            scopes (Sequence[str]): The list of scopes for the credentials. If
+                specified, the credentials will automatically be scoped if
+                necessary.
+            request (Optional[google.auth.transport.Request]): An object used to make
+                HTTP requests. This is used to either detect whether the application
+                is running on Compute Engine or to determine the associated project
+                ID for a workload identity pool resource (external account
+                credentials). If not specified, then it will either use the standard
+                library http client to make requests for Compute Engine credentials
+                or a google.auth.transport.requests.Request client for external
+                account credentials.
+            quota_project_id (Optional[str]): The project ID used for
+                quota and billing.
+            default_scopes (Optional[Sequence[str]]): Default scopes passed by a
+                Google client library. Use 'scopes' for user-defined scopes.
+        Returns:
+            Tuple[~google.auth.credentials.Credentials, Optional[str]]:
+                the current environment's credentials and project ID. Project ID
+                may be None, which indicates that the Project ID could not be
+                ascertained from the environment.
+
+        Raises:
+            ~google.auth.exceptions.DefaultCredentialsError:
+                If no credentials were found, or if the credentials found were
+                invalid.
+        """
+        from google.auth.credentials import with_scopes_if_required
+        from google.auth.credentials import CredentialsWithQuotaProject
+
+        explicit_project_id = os.environ.get(
+            environment_vars.PROJECT, os.environ.get(environment_vars.LEGACY_PROJECT)
+        )
+
+        checkers = (
+            # Avoid passing scopes here to prevent passing scopes to user credentials.
+            # with_scopes_if_required() below will ensure scopes/default scopes are
+            # safely set on the returned credentials since requires_scopes will
+            # guard against setting scopes on user credentials.
+            lambda: _get_explicit_environ_credentials(quota_project_id=quota_project_id),
+            lambda: _get_gcloud_sdk_credentials(quota_project_id=quota_project_id),
+            _get_gae_credentials,
+            lambda: _get_gce_credentials(request, quota_project_id=quota_project_id),
+        )
+
+        for checker in checkers:
+            credentials, project_id = checker()
+            if credentials is not None:
+                credentials = with_scopes_if_required(
+                    credentials, scopes, default_scopes=default_scopes
+                )
+
+                effective_project_id = explicit_project_id or project_id
+
+                # For external account credentials, scopes are required to determine
+                # the project ID. Try to get the project ID again if not yet
+                # determined.
+                if not effective_project_id and callable(
+                    getattr(credentials, "get_project_id", None)
+                ):
+                    if request is None:
+                        import google.auth.transport.requests
+
+                        request = google.auth.transport.requests.Request()
+                    effective_project_id = credentials.get_project_id(request=request)
+
+                if quota_project_id and isinstance(
+                    credentials, CredentialsWithQuotaProject
+                ):
+                    credentials = credentials.with_quota_project(quota_project_id)
+
+                if not effective_project_id:
+                    _LOGGER.warning(
+                        "No project ID could be determined. Consider running "
+                        "`gcloud config set project` or setting the %s "
+                        "environment variable",
+                        environment_vars.PROJECT,
+                    )
+                return credentials, effective_project_id
+
+>       raise exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+E       google.auth.exceptions.DefaultCredentialsError: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+
+.nox/unit-3-10/lib/python3.10/site-packages/google/auth/_default.py:739: DefaultCredentialsError
+=============================== warnings summary ===============================
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport_error
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport_with_credentials_file
+  /app/google/api_core/operations_v1/transports/base.py:105: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_client_options_credentials_file[AbstractOperationsClient-OperationsRestTransport-rest]
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_client_options[AbstractOperationsClient-OperationsRestTransport-rest]
+tests/unit/test_client_options.py::test_constructor
+tests/unit/test_client_options.py::test_constructor_with_both_api_key_and_credentials_file
+  /app/google/api_core/client_options.py:122: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/unit/test_grpc_helpers.py::test_create_channel_explicit_with_duplicate_credentials
+tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file_and_scopes
+tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file_and_default_scopes
+tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_with_duplicate_credentials
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_default_scopes
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_scopes
+  /app/google/api_core/grpc_helpers.py:249: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_with_duplicate_credentials
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_default_scopes
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_scopes
+  /app/google/api_core/grpc_helpers_async.py:286: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/unit/operations_v1/test_operations_rest_client.py::test_list_operations_rest[credentials.json]
+  /app/google/api_core/operations_v1/transports/rest.py:138: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/unit/operations_v1/test_operations_rest_client.py::test_list_operations_rest[None]
+FAILED tests/unit/operations_v1/test_operations_rest_client.py::test_list_operations_rest[credentials.json]
+2 failed, 1013 passed, 10 skipped, 19 warnings in 30.99s
+nox > Command python -m pytest --quiet --cov=google.api_core --cov=tests.unit --cov-append --cov-config=.coveragerc --cov-report= --cov-fail-under=0 -n=auto tests/unit --cov=tests.asyncio tests/asyncio failed with exit code 1
+nox > Session unit-3.10 failed.

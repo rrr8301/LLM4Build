@@ -1,0 +1,208 @@
+Using read-only remote cache
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - numpy>=2.0.0
+  - setuptools>=64
+  - setuptools_scm>=8.1.0
+  - wheel
+* Getting build dependencies for sdist...
+* Installing packages in isolated environment:
+  - setuptools_scm>=8.1.0
+* Building sdist...
+WARNING setuptools_scm.run_cmd command git missing: [Errno 2] No such file or directory: 'git'
+ERROR setuptools_scm._get_version_impl command git not found while parsing the scm, using fallbacks
+Traceback (most recent call last):
+  File "/tmp/build-env-wkv0ocot/lib/python3.12/site-packages/setuptools_scm/_get_version_impl.py", line 40, in parse_scm_version
+    return _entrypoints.version_from_entrypoint(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/build-env-wkv0ocot/lib/python3.12/site-packages/setuptools_scm/_entrypoints.py", line 50, in version_from_entrypoint
+    maybe_version: version.ScmVersion | None = fn(root, config=config)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/build-env-wkv0ocot/lib/python3.12/site-packages/setuptools_scm/git.py", line 212, in parse
+    _require_command("git")
+  File "/tmp/build-env-wkv0ocot/lib/python3.12/site-packages/setuptools_scm/_run_cmd.py", line 215, in require_command
+    raise CommandNotFoundError(name)
+setuptools_scm._run_cmd.CommandNotFoundError: git
+/tmp/build-env-wkv0ocot/lib/python3.12/site-packages/setuptools/config/_apply_pyprojecttoml.py:82: SetuptoolsDeprecationWarning: `project.license` as a TOML table is deprecated
+!!
+
+        ********************************************************************************
+        Please use a simple string containing a SPDX expression for `project.license`. You can also use `project.license-files`. (Both options available on setuptools>=77.0.0).
+
+        By 2026-Feb-18, you need to update your project and remove deprecated calls
+        or your builds will no longer be supported.
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+  corresp(dist, value, root_dir)
+/tmp/build-env-wkv0ocot/lib/python3.12/site-packages/setuptools/config/_apply_pyprojecttoml.py:61: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+!!
+
+        ********************************************************************************
+        Please consider removing the following classifiers in favor of a SPDX license expression:
+
+        License :: OSI Approved :: Apache Software License
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+  dist._finalize_license_expression()
+/tmp/build-env-wkv0ocot/lib/python3.12/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+!!
+
+        ********************************************************************************
+        Please consider removing the following classifiers in favor of a SPDX license expression:
+
+        License :: OSI Approved :: Apache Software License
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+  self._finalize_license_expression()
+running sdist
+running egg_info
+creating /app/tmp92t3io93/tensorstore.egg-info
+writing /app/tmp92t3io93/tensorstore.egg-info/PKG-INFO
+writing dependency_links to /app/tmp92t3io93/tensorstore.egg-info/dependency_links.txt
+writing requirements to /app/tmp92t3io93/tensorstore.egg-info/requires.txt
+writing top-level names to /app/tmp92t3io93/tensorstore.egg-info/top_level.txt
+writing manifest file '/app/tmp92t3io93/tensorstore.egg-info/SOURCES.txt'
+reading manifest file '/app/tmp92t3io93/tensorstore.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+adding license file 'AUTHORS'
+writing manifest file '/app/tmp92t3io93/tensorstore.egg-info/SOURCES.txt'
+running check
+creating tensorstore-0.0.0
+creating tensorstore-0.0.0/python/tensorstore
+copying files to tensorstore-0.0.0...
+copying AUTHORS -> tensorstore-0.0.0
+copying LICENSE -> tensorstore-0.0.0
+copying README.md -> tensorstore-0.0.0
+copying pyproject.toml -> tensorstore-0.0.0
+copying setup.py -> tensorstore-0.0.0
+copying python/tensorstore/__init__.py -> tensorstore-0.0.0/python/tensorstore
+Writing tensorstore-0.0.0/setup.cfg
+Creating tar archive
+removing 'tensorstore-0.0.0' (and everything under it)
+Successfully built tensorstore-0.0.0.tar.gz
+
+     _ _       _ _   _       _           _
+ ___|_| |_ _ _|_| |_| |_ _ _| |_ ___ ___| |
+|  _| | . | | | | | . | | | |   | -_| -_| |
+|___|_|___|___|_|_|___|_____|_|_|___|___|_|
+
+cibuildwheel version 2.22.0
+
+Build options:
+  platform: linux
+  allow_empty: False
+  architectures: i686, x86_64
+  build_selector:
+    build_config: *
+    skip_config: cp36-* cp37-* cp38-* cp39-* pp* *_i686 *-win32 *-musllinux*
+    requires_python: >=3.10
+    enable: ['pypy']
+  output_dir: /app/dist
+  package_dir: /app
+  test_selector:
+    skip_config:
+  before_all: /host/app/tools/ci/cibuildwheel_linux_cache_setup.sh /host/root/.cache/pip /host/root/.cache/cibuildwheel_bazel_cache
+  before_build: pip install -r {package}/third_party/pypa/build_requirements_frozen.txt -r {package}/third_party/pypa/wheel_requirements_frozen.txt
+  before_test: pip install -r {package}/third_party/pypa/python_test_requirements_frozen.txt
+  build_frontend: None
+  build_verbosity: 1
+  config_settings:
+  container_engine: docker
+  dependency_constraints: pinned
+  environment:
+    PIP_NO_BUILD_ISOLATION=0
+    PIP_CACHE_DIR=/host/root/.cache/pip
+    BAZELISK_HOME=/host/root/.cache/bazelisk
+    TENSORSTORE_BAZEL_STARTUP_OPTIONS='--output_user_root=/host/root/.cache/cibuildwheel_bazel_cache --bazelrc=/host/tmp/tmpgw2u9v_t/bazelrc'
+    TENSORSTORE_BAZEL_BUILD_OPTIONS='--announce_rc --show_timestamps --keep_going --color=yes --incompatible_strict_action_env'
+  manylinux_images:
+    x86_64: quay.io/pypa/manylinux2014_x86_64:2024.11.16-1
+    i686: quay.io/pypa/manylinux2014_i686:2024.11.16-1
+    pypy_x86_64: quay.io/pypa/manylinux2014_x86_64:2024.11.16-1
+    aarch64: quay.io/pypa/manylinux2014_aarch64:2024.11.16-1
+    ppc64le: quay.io/pypa/manylinux2014_ppc64le:2024.11.16-1
+    s390x: quay.io/pypa/manylinux2014_s390x:2024.11.16-1
+    armv7l: ghcr.io/mayeut/manylinux_2_31:2024.11.16-1
+    pypy_aarch64: quay.io/pypa/manylinux2014_aarch64:2024.11.16-1
+    pypy_i686: quay.io/pypa/manylinux2014_i686:2024.11.16-1
+  musllinux_images:
+    x86_64: quay.io/pypa/musllinux_1_2_x86_64:2024.11.16-1
+    i686: quay.io/pypa/musllinux_1_2_i686:2024.11.16-1
+    aarch64: quay.io/pypa/musllinux_1_2_aarch64:2024.11.16-1
+    ppc64le: quay.io/pypa/musllinux_1_2_ppc64le:2024.11.16-1
+    s390x: quay.io/pypa/musllinux_1_2_s390x:2024.11.16-1
+    armv7l: quay.io/pypa/musllinux_1_2_armv7l:2024.11.16-1
+  repair_command: auditwheel repair -w {dest_dir} {wheel}
+  test_command: python -m pytest {project}/python/tensorstore/tests -vv -s
+  test_extras:
+  test_groups:
+  test_requires:
+
+Cache folder: /root/.cache/cibuildwheel
+
+Here we go!
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/venv/lib/python3.12/site-packages/cibuildwheel/__main__.py", line 430, in <module>
+    main()
+  File "/app/venv/lib/python3.12/site-packages/cibuildwheel/__main__.py", line 49, in main
+    main_inner(global_options)
+  File "/app/venv/lib/python3.12/site-packages/cibuildwheel/__main__.py", line 184, in main_inner
+    build_in_directory(args)
+  File "/app/venv/lib/python3.12/site-packages/cibuildwheel/__main__.py", line 351, in build_in_directory
+    platform_module.build(options, tmp_path)
+  File "/app/venv/lib/python3.12/site-packages/cibuildwheel/linux.py", line 446, in build
+    subprocess.run(
+  File "/usr/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'docker'
+Traceback (most recent call last):
+  File "/app/./tools/ci/cibuildwheel.py", line 78, in preserve_permissions
+    yield
+  File "/app/./tools/ci/cibuildwheel.py", line 230, in run
+    perform_build()
+  File "/app/./tools/ci/cibuildwheel.py", line 174, in perform_build
+    sys.exit(
+SystemExit: 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/./tools/ci/cibuildwheel.py", line 265, in <module>
+    main()
+  File "/app/./tools/ci/cibuildwheel.py", line 261, in main
+    run(args, extra_args)
+  File "/app/./tools/ci/cibuildwheel.py", line 229, in run
+    with preserve_permissions([pip_cache_dir, bazel_cache_dir]):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/app/./tools/ci/cibuildwheel.py", line 80, in preserve_permissions
+    subprocess.check_call(
+  File "/usr/lib/python3.12/subprocess.py", line 408, in check_call
+    retcode = call(*popenargs, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sudo'

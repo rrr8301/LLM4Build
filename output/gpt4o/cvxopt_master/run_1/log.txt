@@ -1,0 +1,128 @@
+Processing /app
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [51 lines of output]
+      command git missing: [Errno 2] No such file or directory: 'git'
+      command git not found while parsing the scm, using fallbacks
+      Traceback (most recent call last):
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools_scm/_get_version_impl.py", line 41, in parse_scm_version
+          return _entrypoints.version_from_entrypoint(
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools_scm/_entrypoints.py", line 56, in version_from_entrypoint
+          maybe_version: version.ScmVersion | None = fn(root, config=config)
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools_scm/git.py", line 307, in parse
+          _require_command("git")
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools_scm/_run_cmd.py", line 221, in require_command
+          raise CommandNotFoundError(name)
+      setuptools_scm._run_cmd.CommandNotFoundError: git
+      Traceback (most recent call last):
+        File "/venv/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 363, in <module>
+          main()
+        File "/venv/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 345, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+        File "/venv/lib/python3.10/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 130, in get_requires_for_build_wheel
+          return hook(config_settings)
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 331, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 260, in <module>
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools/__init__.py", line 115, in setup
+          return distutils.core.setup(**attrs)
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 148, in setup
+          _setup_distribution = dist = klass(attrs)
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools/dist.py", line 321, in __init__
+          _Distribution.__init__(self, dist_attrs)
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 309, in __init__
+          self.finalize_options()
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools/dist.py", line 784, in finalize_options
+          ep(self)
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools_scm/_integration/setuptools.py", line 159, in infer_version
+          result.apply(dist)
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools_scm/_integration/version_inference.py", line 28, in apply
+          version_string = infer_version_string(
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools_scm/_integration/version_inference.py", line 102, in infer_version_string
+          _version_missing(config)
+        File "/tmp/pip-build-env-1c_3_3n_/overlay/lib/python3.10/site-packages/setuptools_scm/_get_version_impl.py", line 188, in _version_missing
+          raise LookupError(error_msg)
+      LookupError: setuptools-scm was unable to detect version for /app.
+
+      Make sure you're either building from a fully intact git repository or PyPI tarballs. Most other sources (such as GitHub's tarballs, a git checkout without the .git folder) don't contain the necessary metadata and will not work.
+
+      For example, if you're using pip, instead of https://github.com/user/proj/archive/master.zip use git+https://github.com/user/proj.git#egg=proj
+
+      Alternatively, set the version with the environment variable SETUPTOOLS_SCM_PRETEND_VERSION_FOR_${NORMALIZED_DIST_NAME} as described in https://setuptools-scm.readthedocs.io/en/latest/config/
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+--2025-12-15 06:05:38--  https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v.tar.gz
+Resolving github.com (github.com)... 140.82.116.4
+Connecting to github.com (github.com)|140.82.116.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://codeload.github.com/DrTimothyAldenDavis/SuiteSparse/tar.gz/v [following]
+--2025-12-15 06:05:39--  https://codeload.github.com/DrTimothyAldenDavis/SuiteSparse/tar.gz/v
+Resolving codeload.github.com (codeload.github.com)... 140.82.116.9
+Connecting to codeload.github.com (codeload.github.com)|140.82.116.9|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2025-12-15 06:05:39 ERROR 404: Not Found.
+
+sha256sum: SuiteSparse.sha256: no properly formatted SHA256 checksum lines found
+tar: v.tar.gz: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+/venv/bin/python: No module named build
+Looking in links: ./dist
+WARNING: Location './dist' is ignored: it is either a non-existing path or lacks a specific scheme.
+ERROR: Could not find a version that satisfies the requirement cvxopt (from versions: none)
+ERROR: No matching distribution found for cvxopt
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'cvxopt'
+
+==================================== ERRORS ====================================
+_____________________ ERROR collecting tests/test_blas.py ______________________
+ImportError while importing test module '/app/tests/test_blas.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/test_blas.py:2: in <module>
+    from cvxopt import blas, matrix
+E   ModuleNotFoundError: No module named 'cvxopt'
+__________________ ERROR collecting tests/test_custom_kkt.py ___________________
+ImportError while importing test module '/app/tests/test_custom_kkt.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/test_custom_kkt.py:2: in <module>
+    from cvxopt import matrix, spdiag, mul, div, sqrt, normal, setseed, base, blas, lapack, solvers, sparse, spmatrix
+E   ModuleNotFoundError: No module named 'cvxopt'
+___________________ ERROR collecting tests/test_modeling.py ____________________
+ImportError while importing test module '/app/tests/test_modeling.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/test_modeling.py:2: in <module>
+    from cvxopt import matrix, normal, setseed
+E   ModuleNotFoundError: No module named 'cvxopt'
+=========================== short test summary info ============================
+ERROR tests/test_blas.py
+ERROR tests/test_custom_kkt.py
+ERROR tests/test_modeling.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!!
+3 errors in 0.27s

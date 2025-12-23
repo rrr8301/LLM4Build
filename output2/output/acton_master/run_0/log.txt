@@ -1,0 +1,18 @@
+make: Entering directory '/app'
+make dist/zig
+make[1]: Entering directory '/app'
+mkdir -p deps-download
+make[1]: curl: No such file or directory
+make[1]: *** [Makefile:417: deps-download/zig-linux-x86_64-0.13.0.tar.xz] Error 127
+curl -o deps-download/zig-linux-x86_64-0.13.0.tar.xz https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz
+make[1]: Leaving directory '/app'
+make: *** [Makefile:77: all] Error 2
+make: Leaving directory '/app'
+make: Entering directory '/app'
+cd compiler && stack test
+Stack looks for packages in the directories configured in
+the 'packages' and 'extra-deps' fields defined in your stack.yaml
+The current entry points to /app/compiler/lib/,
+but no .cabal or package.yaml file could be found there.
+make: Leaving directory '/app'
+make: *** [Makefile:295: test] Error 1

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# run.sh
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Run tests with verbose output to get more information
+cargo test -- --nocapture

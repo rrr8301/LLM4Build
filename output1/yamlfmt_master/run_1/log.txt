@@ -1,0 +1,485 @@
+go install github.com/google/addlicense@latest
+go: downloading github.com/google/addlicense v1.2.0
+go: downloading github.com/bmatcuk/doublestar/v4 v4.0.2
+go: downloading golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
+addlicense -ignore "**/testdata/**" -ignore "**/pkg/yaml/**" -c "Google LLC" -l apache -check .
+/bin/sh: 1: addlicense: not found
+make: *** [Makefile:69: addlicense_check] Error 127
+go vet $(go list ./... | grep -v "pkg/yaml")
+?   	github.com/google/yamlfmt/cmd/yamlfmt	[no test files]
+?   	github.com/google/yamlfmt/engine	[no test files]
+?   	github.com/google/yamlfmt/internal/features	[no test files]
+?   	github.com/google/yamlfmt/internal/hotfix	[no test files]
+=== RUN   TestBasicContentAnalyzer
+=== RUN   TestBasicContentAnalyzer/has_ignore_metadata
+=== PAUSE TestBasicContentAnalyzer/has_ignore_metadata
+=== RUN   TestBasicContentAnalyzer/matches_regex_pattern
+=== PAUSE TestBasicContentAnalyzer/matches_regex_pattern
+=== CONT  TestBasicContentAnalyzer/has_ignore_metadata
+=== CONT  TestBasicContentAnalyzer/matches_regex_pattern
+--- PASS: TestBasicContentAnalyzer (0.00s)
+    --- PASS: TestBasicContentAnalyzer/matches_regex_pattern (0.00s)
+    --- PASS: TestBasicContentAnalyzer/has_ignore_metadata (0.00s)
+=== RUN   TestBadNewContentAnalyzer
+--- PASS: TestBadNewContentAnalyzer (0.00s)
+=== RUN   TestReadMetadata
+=== RUN   TestReadMetadata/contains_no_metadata
+    metadata_test.go:89: got error: []
+=== RUN   TestReadMetadata/has_ignore_metadata
+    metadata_test.go:89: got error: []
+=== RUN   TestReadMetadata/has_bad_metadata
+    metadata_test.go:89: got error: [metadata: malformed string: test.yaml:1:# !yamlfmt!fjghgh]
+=== RUN   TestReadMetadata/has_unrecognized_metadata_type
+    metadata_test.go:89: got error: [metadata: unrecognized type: test.yaml:1:# !yamlfmt!:lulsorandom]
+--- PASS: TestReadMetadata (0.00s)
+    --- PASS: TestReadMetadata/contains_no_metadata (0.00s)
+    --- PASS: TestReadMetadata/has_ignore_metadata (0.00s)
+    --- PASS: TestReadMetadata/has_bad_metadata (0.00s)
+    --- PASS: TestReadMetadata/has_unrecognized_metadata_type (0.00s)
+=== RUN   TestFilepathCollector
+=== RUN   TestFilepathCollector/finds_direct_paths
+=== RUN   TestFilepathCollector/finds_all_in_directory_one_layer
+=== RUN   TestFilepathCollector/finds_direct_path_to_subdirectory
+=== RUN   TestFilepathCollector/finds_all_in_layered_directories
+=== RUN   TestFilepathCollector/exclude_files
+=== RUN   TestFilepathCollector/exclude_directory
+=== RUN   TestFilepathCollector/don't_get_files_with_wrong_extension
+=== RUN   TestFilepathCollector/multi-part_extension
+--- PASS: TestFilepathCollector (0.01s)
+    --- PASS: TestFilepathCollector/finds_direct_paths (0.00s)
+    --- PASS: TestFilepathCollector/finds_all_in_directory_one_layer (0.00s)
+    --- PASS: TestFilepathCollector/finds_direct_path_to_subdirectory (0.00s)
+    --- PASS: TestFilepathCollector/finds_all_in_layered_directories (0.00s)
+    --- PASS: TestFilepathCollector/exclude_files (0.00s)
+    --- PASS: TestFilepathCollector/exclude_directory (0.00s)
+    --- PASS: TestFilepathCollector/don't_get_files_with_wrong_extension (0.00s)
+    --- PASS: TestFilepathCollector/multi-part_extension (0.00s)
+=== RUN   TestDoublestarCollectorBasic
+=== RUN   TestDoublestarCollectorBasic/no_excludes
+--- PASS: TestDoublestarCollectorBasic (0.00s)
+    --- PASS: TestDoublestarCollectorBasic/no_excludes (0.00s)
+=== RUN   TestDoublestarCollectorExcludeDirectory
+=== RUN   TestDoublestarCollectorExcludeDirectory/exclude_directory/start_with_doublestar
+=== RUN   TestDoublestarCollectorExcludeDirectory/exclude_directory/relative_include_and_exclude
+=== RUN   TestDoublestarCollectorExcludeDirectory/exclude_directory/absolute_include_and_exclude
+=== RUN   TestDoublestarCollectorExcludeDirectory/exclude_directory/absolute_include_relative_exclude
+    path_collector_test.go:381:
+=== RUN   TestDoublestarCollectorExcludeDirectory/exclude_directory/relative_include_absolute_exclude
+    path_collector_test.go:381:
+--- PASS: TestDoublestarCollectorExcludeDirectory (0.00s)
+    --- PASS: TestDoublestarCollectorExcludeDirectory/exclude_directory/start_with_doublestar (0.00s)
+    --- PASS: TestDoublestarCollectorExcludeDirectory/exclude_directory/relative_include_and_exclude (0.00s)
+    --- PASS: TestDoublestarCollectorExcludeDirectory/exclude_directory/absolute_include_and_exclude (0.00s)
+    --- SKIP: TestDoublestarCollectorExcludeDirectory/exclude_directory/absolute_include_relative_exclude (0.00s)
+    --- SKIP: TestDoublestarCollectorExcludeDirectory/exclude_directory/relative_include_absolute_exclude (0.00s)
+=== RUN   TestPatternFile
+=== PAUSE TestPatternFile
+=== CONT  TestPatternFile
+=== RUN   TestPatternFile/yaml_and_yml_files
+=== PAUSE TestPatternFile/yaml_and_yml_files
+=== RUN   TestPatternFile/ignore_pattern
+=== PAUSE TestPatternFile/ignore_pattern
+=== RUN   TestPatternFile/descent_into_directories
+=== PAUSE TestPatternFile/descent_into_directories
+=== RUN   TestPatternFile/exclude_directories
+=== PAUSE TestPatternFile/exclude_directories
+=== RUN   TestPatternFile/matches_are_rooted_at_the_working_directory
+=== PAUSE TestPatternFile/matches_are_rooted_at_the_working_directory
+=== CONT  TestPatternFile/yaml_and_yml_files
+=== CONT  TestPatternFile/matches_are_rooted_at_the_working_directory
+=== CONT  TestPatternFile/descent_into_directories
+=== CONT  TestPatternFile/ignore_pattern
+=== CONT  TestPatternFile/exclude_directories
+--- PASS: TestPatternFile (0.00s)
+    --- PASS: TestPatternFile/yaml_and_yml_files (0.00s)
+    --- PASS: TestPatternFile/matches_are_rooted_at_the_working_directory (0.00s)
+    --- PASS: TestPatternFile/ignore_pattern (0.00s)
+    --- PASS: TestPatternFile/descent_into_directories (0.00s)
+    --- PASS: TestPatternFile/exclude_directories (0.00s)
+PASS
+ok  	github.com/google/yamlfmt	0.019s
+=== RUN   TestLineEndingFormatterVsGlobal
+--- PASS: TestLineEndingFormatterVsGlobal (0.00s)
+PASS
+ok  	github.com/google/yamlfmt/command	0.007s
+=== RUN   TestNewWithConfigRetainsDefaultValues
+=== RUN   TestNewWithConfigRetainsDefaultValues/only_indent_specified
+=== RUN   TestNewWithConfigRetainsDefaultValues/only_include_document_start_specified
+=== RUN   TestNewWithConfigRetainsDefaultValues/only_line_ending_style_specified
+=== RUN   TestNewWithConfigRetainsDefaultValues/only_pad_line_comments_specified
+=== RUN   TestNewWithConfigRetainsDefaultValues/only_indentless_arrays_specified
+=== RUN   TestNewWithConfigRetainsDefaultValues/all_specified
+--- PASS: TestNewWithConfigRetainsDefaultValues (0.00s)
+    --- PASS: TestNewWithConfigRetainsDefaultValues/only_indent_specified (0.00s)
+    --- PASS: TestNewWithConfigRetainsDefaultValues/only_include_document_start_specified (0.00s)
+    --- PASS: TestNewWithConfigRetainsDefaultValues/only_line_ending_style_specified (0.00s)
+    --- PASS: TestNewWithConfigRetainsDefaultValues/only_pad_line_comments_specified (0.00s)
+    --- PASS: TestNewWithConfigRetainsDefaultValues/only_indentless_arrays_specified (0.00s)
+    --- PASS: TestNewWithConfigRetainsDefaultValues/all_specified (0.00s)
+=== RUN   TestFormatterRetainsComments
+--- PASS: TestFormatterRetainsComments (0.00s)
+=== RUN   TestFormatterPreservesKeyOrder
+--- PASS: TestFormatterPreservesKeyOrder (0.00s)
+=== RUN   TestFormatterParsesMultipleDocuments
+--- PASS: TestFormatterParsesMultipleDocuments (0.00s)
+=== RUN   TestWithDocumentStart
+--- PASS: TestWithDocumentStart (0.00s)
+=== RUN   TestCRLFLineEnding
+--- PASS: TestCRLFLineEnding (0.00s)
+=== RUN   TestEmojiSupport
+--- PASS: TestEmojiSupport (0.00s)
+=== RUN   TestRetainLineBreaks
+=== RUN   TestRetainLineBreaks/basic
+=== RUN   TestRetainLineBreaks/multi-doc
+=== RUN   TestRetainLineBreaks/literal_string
+=== RUN   TestRetainLineBreaks/multi_level_nested_literal_string
+=== RUN   TestRetainLineBreaks/retain_single_line_break
+--- PASS: TestRetainLineBreaks (0.00s)
+    --- PASS: TestRetainLineBreaks/basic (0.00s)
+    --- PASS: TestRetainLineBreaks/multi-doc (0.00s)
+    --- PASS: TestRetainLineBreaks/literal_string (0.00s)
+    --- PASS: TestRetainLineBreaks/multi_level_nested_literal_string (0.00s)
+    --- PASS: TestRetainLineBreaks/retain_single_line_break (0.00s)
+=== RUN   TestScanFoldedAsLiteral
+--- PASS: TestScanFoldedAsLiteral (0.00s)
+=== RUN   TestIndentlessArrays
+--- PASS: TestIndentlessArrays (0.00s)
+=== RUN   TestDropMergeTag
+--- PASS: TestDropMergeTag (0.00s)
+=== RUN   TestPadLineComments
+--- PASS: TestPadLineComments (0.00s)
+=== RUN   TestTrimTrailingWhitespace
+--- PASS: TestTrimTrailingWhitespace (0.00s)
+=== RUN   TestEOFNewline
+--- PASS: TestEOFNewline (0.00s)
+=== RUN   TestStripDirectives
+--- PASS: TestStripDirectives (0.00s)
+=== RUN   TestArrayIndent
+--- PASS: TestArrayIndent (0.00s)
+=== RUN   TestIndentRootArray
+--- PASS: TestIndentRootArray (0.00s)
+=== RUN   TestForceFlowSequence
+--- PASS: TestForceFlowSequence (0.00s)
+=== RUN   TestForceBlockSequence
+--- PASS: TestForceBlockSequence (0.00s)
+=== RUN   TestJustComments
+--- PASS: TestJustComments (0.00s)
+PASS
+ok  	github.com/google/yamlfmt/formatters/basic	0.006s
+=== RUN   TestCheck
+=== RUN   TestCheck/no_anchors
+=== RUN   TestCheck/anchor
+--- PASS: TestCheck (0.00s)
+    --- PASS: TestCheck/no_anchors (0.00s)
+    --- PASS: TestCheck/anchor (0.00s)
+PASS
+ok  	github.com/google/yamlfmt/formatters/basic/features	0.005s
+=== RUN   TestAssertFail
+--- PASS: TestAssertFail (0.00s)
+=== RUN   TestEqualFail
+--- PASS: TestEqualFail (0.00s)
+=== RUN   TestDereferenceEqualErr
+--- PASS: TestDereferenceEqualErr (0.00s)
+=== RUN   TestDereferenceEqualFail
+--- PASS: TestDereferenceEqualFail (0.00s)
+=== RUN   TestDereferenceEqualPass
+--- PASS: TestDereferenceEqualPass (0.00s)
+=== RUN   TestSliceEqualFailDiffSize
+--- PASS: TestSliceEqualFailDiffSize (0.00s)
+=== RUN   TestSliceEqualMismatch
+--- PASS: TestSliceEqualMismatch (0.00s)
+PASS
+ok  	github.com/google/yamlfmt/internal/assert	0.006s
+=== RUN   TestErrorsCombine
+--- PASS: TestErrorsCombine (0.00s)
+=== RUN   TestErrorsCombineEmpty
+--- PASS: TestErrorsCombineEmpty (0.00s)
+=== RUN   TestErrorsCombineNilElements
+--- PASS: TestErrorsCombineNilElements (0.00s)
+PASS
+ok  	github.com/google/yamlfmt/internal/collections	0.004s
+=== RUN   TestCodeQuality
+=== PAUSE TestCodeQuality
+=== CONT  TestCodeQuality
+=== RUN   TestCodeQuality/no_diff
+=== PAUSE TestCodeQuality/no_diff
+=== RUN   TestCodeQuality/with_diff
+=== PAUSE TestCodeQuality/with_diff
+=== CONT  TestCodeQuality/no_diff
+=== CONT  TestCodeQuality/with_diff
+--- PASS: TestCodeQuality (0.00s)
+    --- PASS: TestCodeQuality/no_diff (0.00s)
+    --- PASS: TestCodeQuality/with_diff (0.00s)
+PASS
+ok  	github.com/google/yamlfmt/internal/gitlab	0.007s
+?   	github.com/google/yamlfmt/internal/logger	[no test files]
+?   	github.com/google/yamlfmt/internal/multilinediff	[no test files]
+?   	github.com/google/yamlfmt/internal/tempfile	[no test files]
+=== RUN   TestJSONSchemaIsValid
+--- PASS: TestJSONSchemaIsValid (0.00s)
+PASS
+ok  	github.com/google/yamlfmt/internal/jsonschema	0.014s
+ok  	github.com/google/yamlfmt/pkg/yaml/formattest	0.011s
+make build
+make[1]: Entering directory '/app'
+go build -ldflags "-X 'main.version=0.20.0' -X 'main.commit=42486ac'" -o dist/yamlfmt ./cmd/yamlfmt
+make[1]: Leaving directory '/app'
+go test -v -tags=integration_test ./integrationtest/command
+=== RUN   TestPathArg
+=== RUN   TestPathArg/path_arg
+stdout:
+stderr:
+--- PASS: TestPathArg (0.01s)
+    --- PASS: TestPathArg/path_arg (0.01s)
+=== RUN   TestIncludeDocumentStart
+=== RUN   TestIncludeDocumentStart/include_document_start
+stdout:
+stderr:
+--- PASS: TestIncludeDocumentStart (0.01s)
+    --- PASS: TestIncludeDocumentStart/include_document_start (0.01s)
+=== RUN   TestGitignore
+=== RUN   TestGitignore/gitignore
+stdout:
+stderr:
+--- PASS: TestGitignore (0.01s)
+    --- PASS: TestGitignore/gitignore (0.01s)
+=== RUN   TestLint
+=== RUN   TestLint/lint
+stdout:
+stderr: The following formatting differences were found:
+
+a.yaml:
+  a:     a:
+-  b: 1    b: 1
++
+
+
+--- PASS: TestLint (0.01s)
+    --- PASS: TestLint/lint (0.01s)
+=== RUN   TestLineOutput
+=== RUN   TestLineOutput/line_output
+stdout:
+stderr: x.yaml: formatting difference found
+
+--- PASS: TestLineOutput (0.01s)
+    --- PASS: TestLineOutput/line_output (0.01s)
+=== RUN   TestDry
+=== RUN   TestDry/dry
+stdout: No files will be changed.
+
+stderr:
+--- PASS: TestDry (0.01s)
+    --- PASS: TestDry/dry (0.01s)
+=== RUN   TestDryQuiet
+=== RUN   TestDryQuiet/dry_quiet
+stdout:
+stderr:
+--- PASS: TestDryQuiet (0.01s)
+    --- PASS: TestDryQuiet/dry_quiet (0.01s)
+=== RUN   TestPrintConfFlags
+=== RUN   TestPrintConfFlags/print_conf_flags
+stdout: continue_on_error: true
+doublestar: false
+exclude: []
+extensions:
+    - yaml
+    - yml
+gitignore_excludes: false
+gitignore_path: .gitignore
+include: []
+line_ending: lf
+match_type: standard
+output_format: default
+regex_exclude: []
+formatter:
+    array_indent: 0
+    disable_alias_key_correction: false
+    disallow_anchors: false
+    drop_merge_tag: false
+    eof_newline: false
+    force_array_style: ""
+    include_document_start: false
+    indent: 2
+    indent_root_array: false
+    indentless_arrays: false
+    line_ending: lf
+    max_line_length: 0
+    pad_line_comments: 1
+    retain_line_breaks: true
+    retain_line_breaks_single: false
+    scan_folded_as_literal: false
+    strip_directives: false
+    trim_trailing_whitespace: false
+    type: basic
+
+stderr:
+--- PASS: TestPrintConfFlags (0.01s)
+    --- PASS: TestPrintConfFlags/print_conf_flags (0.01s)
+=== RUN   TestPrintConfFile
+=== RUN   TestPrintConfFile/print_conf_file
+stdout: continue_on_error: false
+doublestar: true
+exclude:
+    - '**/templates/*.yaml'
+extensions:
+    - yaml
+    - yml
+gitignore_excludes: false
+gitignore_path: .my_gitignore
+include: []
+line_ending: crlf
+match_type: doublestar
+output_format: default
+regex_exclude: []
+formatter:
+    array_indent: 0
+    disable_alias_key_correction: false
+    disallow_anchors: false
+    drop_merge_tag: false
+    eof_newline: false
+    force_array_style: ""
+    include_document_start: true
+    indent: 2
+    indent_root_array: false
+    indentless_arrays: false
+    line_ending: crlf
+    max_line_length: 0
+    pad_line_comments: 1
+    retain_line_breaks: false
+    retain_line_breaks_single: true
+    scan_folded_as_literal: false
+    strip_directives: false
+    trim_trailing_whitespace: false
+    type: basic
+
+stderr:
+--- PASS: TestPrintConfFile (0.01s)
+    --- PASS: TestPrintConfFile/print_conf_file (0.01s)
+=== RUN   TestPrintConfFlagsAndFile
+=== RUN   TestPrintConfFlagsAndFile/print_conf_flags_and_file
+stdout: continue_on_error: true
+doublestar: true
+exclude:
+    - '**/templates/*.yaml'
+extensions:
+    - yaml
+    - yml
+gitignore_excludes: false
+gitignore_path: .my_gitignore
+include: []
+line_ending: crlf
+match_type: doublestar
+output_format: default
+regex_exclude: []
+formatter:
+    array_indent: 0
+    disable_alias_key_correction: false
+    disallow_anchors: false
+    drop_merge_tag: false
+    eof_newline: false
+    force_array_style: ""
+    include_document_start: true
+    indent: 2
+    indent_root_array: false
+    indentless_arrays: false
+    line_ending: crlf
+    max_line_length: 0
+    pad_line_comments: 1
+    retain_line_breaks: true
+    retain_line_breaks_single: true
+    scan_folded_as_literal: false
+    strip_directives: false
+    trim_trailing_whitespace: false
+    type: basic
+
+stderr:
+--- PASS: TestPrintConfFlagsAndFile (0.01s)
+    --- PASS: TestPrintConfFlagsAndFile/print_conf_flags_and_file (0.01s)
+=== RUN   TestMultilineStringBug
+=== RUN   TestMultilineStringBug/multiline_string_bug
+stdout:
+stderr:
+--- PASS: TestMultilineStringBug (0.01s)
+    --- PASS: TestMultilineStringBug/multiline_string_bug (0.01s)
+=== RUN   TestEOFNewline
+=== RUN   TestEOFNewline/eof_newline
+stdout:
+stderr:
+--- PASS: TestEOFNewline (0.01s)
+    --- PASS: TestEOFNewline/eof_newline (0.01s)
+=== RUN   TestStripDirectives
+=== RUN   TestStripDirectives/strip_directives
+stdout:
+stderr:
+--- PASS: TestStripDirectives (0.01s)
+    --- PASS: TestStripDirectives/strip_directives (0.01s)
+=== RUN   TestGitLabOutput
+=== RUN   TestGitLabOutput/gitlab_output
+stdout: [
+  {
+    "description": "Not formatted correctly, run yamlfmt to resolve.",
+    "check_name": "yamlfmt",
+    "fingerprint": "e9b14e45ca01a9a72fda9b8356a9ddbbaf7fe8c47116790a51cd699ae1679353",
+    "severity": "major",
+    "location": {
+      "path": "needs_format.yaml"
+    }
+  }
+]
+
+stderr:
+--- PASS: TestGitLabOutput (0.01s)
+    --- PASS: TestGitLabOutput/gitlab_output (0.01s)
+=== RUN   TestPatternFile
+=== RUN   TestPatternFile/pattern_file
+stdout:
+stderr:
+--- PASS: TestPatternFile (0.01s)
+    --- PASS: TestPatternFile/pattern_file (0.01s)
+=== RUN   TestAliasKeyCorrection
+=== RUN   TestAliasKeyCorrection/alias_key_correction
+stdout:
+stderr:
+--- PASS: TestAliasKeyCorrection (0.01s)
+    --- PASS: TestAliasKeyCorrection/alias_key_correction (0.01s)
+=== RUN   TestForceBlockStyle
+=== RUN   TestForceBlockStyle/force_block_style
+stdout:
+stderr:
+--- PASS: TestForceBlockStyle (0.01s)
+    --- PASS: TestForceBlockStyle/force_block_style (0.01s)
+=== RUN   TestForceFlowStyle
+=== RUN   TestForceFlowStyle/force_flow_style
+stdout:
+stderr:
+--- PASS: TestForceFlowStyle (0.01s)
+    --- PASS: TestForceFlowStyle/force_flow_style (0.01s)
+=== RUN   TestVerboseFormat
+=== RUN   TestVerboseFormat/verbose_format
+stdout: The following files were modified:
+a.yaml
+b.yaml
+c.yaml
+
+stderr:
+--- PASS: TestVerboseFormat (0.01s)
+    --- PASS: TestVerboseFormat/verbose_format (0.01s)
+=== RUN   TestDebugDiffs
+=== RUN   TestDebugDiffs/debug_diffs
+stdout: [DEBUG]: The following files were modified:
+a.yaml:
+- a:  1  a: 1
++
+b.yaml:
+- a:  1  a: 1
++
+c.yaml:
+- a:  1  a: 1
++
+
+
+stderr:
+--- PASS: TestDebugDiffs (0.01s)
+    --- PASS: TestDebugDiffs/debug_diffs (0.01s)
+PASS
+ok  	github.com/google/yamlfmt/integrationtest/command	0.163s

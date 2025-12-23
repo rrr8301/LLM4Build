@@ -1,0 +1,649 @@
+﻿2025-10-03T15:55:33.2797578Z Current runner version: '2.328.0'
+2025-10-03T15:55:33.2819413Z ##[group]Runner Image Provisioner
+2025-10-03T15:55:33.2820156Z Hosted Compute Agent
+2025-10-03T15:55:33.2820805Z Version: 20250912.392
+2025-10-03T15:55:33.2821377Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-03T15:55:33.2822052Z Build Date: 2025-09-12T15:23:14Z
+2025-10-03T15:55:33.2822720Z ##[endgroup]
+2025-10-03T15:55:33.2823464Z ##[group]Operating System
+2025-10-03T15:55:33.2824018Z Ubuntu
+2025-10-03T15:55:33.2824549Z 24.04.3
+2025-10-03T15:55:33.2825023Z LTS
+2025-10-03T15:55:33.2825461Z ##[endgroup]
+2025-10-03T15:55:33.2826004Z ##[group]Runner Image
+2025-10-03T15:55:33.2826551Z Image: ubuntu-24.04
+2025-10-03T15:55:33.2827074Z Version: 20250922.53.1
+2025-10-03T15:55:33.2828118Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250922.53/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-03T15:55:33.2829619Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250922.53
+2025-10-03T15:55:33.2830605Z ##[endgroup]
+2025-10-03T15:55:33.2831682Z ##[group]GITHUB_TOKEN Permissions
+2025-10-03T15:55:33.2833711Z Contents: read
+2025-10-03T15:55:33.2834275Z Metadata: read
+2025-10-03T15:55:33.2834750Z Packages: read
+2025-10-03T15:55:33.2835305Z ##[endgroup]
+2025-10-03T15:55:33.2837248Z Secret source: None
+2025-10-03T15:55:33.2837917Z Prepare workflow directory
+2025-10-03T15:55:33.3217896Z Prepare all required actions
+2025-10-03T15:55:33.3256948Z Getting action download info
+2025-10-03T15:55:33.7279069Z Download action repository 'actions/checkout@v5' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-10-03T15:55:33.9740605Z Complete job name: cargo (ubuntu-latest)
+2025-10-03T15:55:34.0399383Z ##[group]Run actions/checkout@v5
+2025-10-03T15:55:34.0400232Z with:
+2025-10-03T15:55:34.0400669Z   repository: google/comprehensive-rust
+2025-10-03T15:55:34.0401356Z   token: ***
+2025-10-03T15:55:34.0401763Z   ssh-strict: true
+2025-10-03T15:55:34.0402183Z   ssh-user: git
+2025-10-03T15:55:34.0402623Z   persist-credentials: true
+2025-10-03T15:55:34.0403292Z   clean: true
+2025-10-03T15:55:34.0403720Z   sparse-checkout-cone-mode: true
+2025-10-03T15:55:34.0404216Z   fetch-depth: 1
+2025-10-03T15:55:34.0404622Z   fetch-tags: false
+2025-10-03T15:55:34.0405047Z   show-progress: true
+2025-10-03T15:55:34.0405466Z   lfs: false
+2025-10-03T15:55:34.0405848Z   submodules: false
+2025-10-03T15:55:34.0406270Z   set-safe-directory: true
+2025-10-03T15:55:34.0406971Z env:
+2025-10-03T15:55:34.0407367Z   CARGO_TERM_COLOR: always
+2025-10-03T15:55:34.0407835Z ##[endgroup]
+2025-10-03T15:55:34.1306784Z Syncing repository: google/comprehensive-rust
+2025-10-03T15:55:34.1308576Z ##[group]Getting Git version info
+2025-10-03T15:55:34.1309373Z Working directory is '/home/runner/work/comprehensive-rust/comprehensive-rust'
+2025-10-03T15:55:34.1310663Z [command]/usr/bin/git version
+2025-10-03T15:55:34.1378228Z git version 2.51.0
+2025-10-03T15:55:34.1397801Z ##[endgroup]
+2025-10-03T15:55:34.1413549Z Temporarily overriding HOME='/home/runner/work/_temp/aa5a66ec-ee0e-4072-b7c3-8af6d3cb5c02' before making global git config changes
+2025-10-03T15:55:34.1415949Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-03T15:55:34.1418978Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/comprehensive-rust/comprehensive-rust
+2025-10-03T15:55:34.1456280Z Deleting the contents of '/home/runner/work/comprehensive-rust/comprehensive-rust'
+2025-10-03T15:55:34.1460245Z ##[group]Initializing the repository
+2025-10-03T15:55:34.1465066Z [command]/usr/bin/git init /home/runner/work/comprehensive-rust/comprehensive-rust
+2025-10-03T15:55:34.1580241Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-03T15:55:34.1581324Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-03T15:55:34.1582227Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-03T15:55:34.1583227Z hint:
+2025-10-03T15:55:34.1583932Z hint: 	git config --global init.defaultBranch <name>
+2025-10-03T15:55:34.1585164Z hint:
+2025-10-03T15:55:34.1585812Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-03T15:55:34.1587452Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-03T15:55:34.1588816Z hint:
+2025-10-03T15:55:34.1589538Z hint: 	git branch -m <name>
+2025-10-03T15:55:34.1590376Z hint:
+2025-10-03T15:55:34.1591478Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-03T15:55:34.1593922Z Initialized empty Git repository in /home/runner/work/comprehensive-rust/comprehensive-rust/.git/
+2025-10-03T15:55:34.1596995Z [command]/usr/bin/git remote add origin https://github.com/google/comprehensive-rust
+2025-10-03T15:55:34.1634246Z ##[endgroup]
+2025-10-03T15:55:34.1635426Z ##[group]Disabling automatic garbage collection
+2025-10-03T15:55:34.1638504Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-03T15:55:34.1666287Z ##[endgroup]
+2025-10-03T15:55:34.1667474Z ##[group]Setting up auth
+2025-10-03T15:55:34.1673150Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-03T15:55:34.1703469Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-03T15:55:34.2045769Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-03T15:55:34.2075435Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-03T15:55:34.2288347Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-03T15:55:34.2321579Z ##[endgroup]
+2025-10-03T15:55:34.2322505Z ##[group]Fetching the repository
+2025-10-03T15:55:34.2330128Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1b43369f0647869c07922ea542985c98acab6407:refs/remotes/pull/2943/merge
+2025-10-03T15:55:35.0964284Z From https://github.com/google/comprehensive-rust
+2025-10-03T15:55:35.0966381Z  * [new ref]         1b43369f0647869c07922ea542985c98acab6407 -> pull/2943/merge
+2025-10-03T15:55:35.0998885Z ##[endgroup]
+2025-10-03T15:55:35.1000161Z ##[group]Determining the checkout info
+2025-10-03T15:55:35.1001675Z ##[endgroup]
+2025-10-03T15:55:35.1007219Z [command]/usr/bin/git sparse-checkout disable
+2025-10-03T15:55:35.1061101Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-03T15:55:35.1088615Z ##[group]Checking out the ref
+2025-10-03T15:55:35.1093083Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2943/merge
+2025-10-03T15:55:35.1961305Z Note: switching to 'refs/remotes/pull/2943/merge'.
+2025-10-03T15:55:35.1962125Z 
+2025-10-03T15:55:35.1962734Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-10-03T15:55:35.1964396Z changes and commit them, and you can discard any commits you make in this
+2025-10-03T15:55:35.1965816Z state without impacting any branches by switching back to a branch.
+2025-10-03T15:55:35.1966638Z 
+2025-10-03T15:55:35.1967220Z If you want to create a new branch to retain commits you create, you may
+2025-10-03T15:55:35.1968526Z do so (now or later) by using -c with the switch command. Example:
+2025-10-03T15:55:35.1969249Z 
+2025-10-03T15:55:35.1969626Z   git switch -c <new-branch-name>
+2025-10-03T15:55:35.1970176Z 
+2025-10-03T15:55:35.1970560Z Or undo this operation with:
+2025-10-03T15:55:35.1971104Z 
+2025-10-03T15:55:35.1971449Z   git switch -
+2025-10-03T15:55:35.1971924Z 
+2025-10-03T15:55:35.1972639Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-10-03T15:55:35.1974111Z 
+2025-10-03T15:55:35.1975564Z HEAD is now at 1b43369 Merge 8be3ff924a92d71bdbf3fcf2a446f3c9f1991bee into 17a04070ed4dc896f60d008d2e61b4c247bb64bd
+2025-10-03T15:55:35.1979437Z ##[endgroup]
+2025-10-03T15:55:35.2014006Z [command]/usr/bin/git log -1 --format=%H
+2025-10-03T15:55:35.2035885Z 1b43369f0647869c07922ea542985c98acab6407
+2025-10-03T15:55:35.2282283Z ##[group]Run rustup update
+2025-10-03T15:55:35.2283712Z [36;1mrustup update[0m
+2025-10-03T15:55:35.2321012Z shell: /usr/bin/bash -e {0}
+2025-10-03T15:55:35.2322148Z env:
+2025-10-03T15:55:35.2323180Z   CARGO_TERM_COLOR: always
+2025-10-03T15:55:35.2324259Z ##[endgroup]
+2025-10-03T15:55:35.7103432Z info: no updatable toolchains installed
+2025-10-03T15:55:35.7104186Z info: cleaning up downloads & tmp directories
+2025-10-03T15:55:35.7321379Z Prepare all required actions
+2025-10-03T15:55:35.7321846Z Getting action download info
+2025-10-03T15:55:35.9186756Z Download action repository 'Swatinem/rust-cache@v2' (SHA:98c8021b550208e191a6a3145459bfc9fb29c4c0)
+2025-10-03T15:55:36.8556351Z ##[group]Run ./.github/workflows/setup-rust-cache
+2025-10-03T15:55:36.8556667Z with:
+2025-10-03T15:55:36.8556827Z env:
+2025-10-03T15:55:36.8557025Z   CARGO_TERM_COLOR: always
+2025-10-03T15:55:36.8557232Z ##[endgroup]
+2025-10-03T15:55:36.8683348Z ##[group]Run Swatinem/rust-cache@v2
+2025-10-03T15:55:36.8683619Z with:
+2025-10-03T15:55:36.8683817Z   save-if: false
+2025-10-03T15:55:36.8684012Z   prefix-key: v0-rust
+2025-10-03T15:55:36.8684224Z   cache-targets: true
+2025-10-03T15:55:36.8684468Z   cache-all-crates: false
+2025-10-03T15:55:36.8684690Z   cache-workspace-crates: false
+2025-10-03T15:55:36.8684916Z   cache-provider: github
+2025-10-03T15:55:36.8685115Z   cache-bin: true
+2025-10-03T15:55:36.8685290Z   lookup-only: false
+2025-10-03T15:55:36.8685517Z env:
+2025-10-03T15:55:36.8685674Z   CARGO_TERM_COLOR: always
+2025-10-03T15:55:36.8685870Z ##[endgroup]
+2025-10-03T15:55:42.9000562Z ##[group]Cache Configuration
+2025-10-03T15:55:42.9001024Z Cache Provider:
+2025-10-03T15:55:42.9001322Z     github
+2025-10-03T15:55:42.9001600Z Workspaces:
+2025-10-03T15:55:42.9002044Z     /home/runner/work/comprehensive-rust/comprehensive-rust
+2025-10-03T15:55:42.9002617Z Cache Paths:
+2025-10-03T15:55:42.9003107Z     /home/runner/.cargo/bin
+2025-10-03T15:55:42.9003475Z     /home/runner/.cargo/.crates.toml
+2025-10-03T15:55:42.9003892Z     /home/runner/.cargo/.crates2.json
+2025-10-03T15:55:42.9004351Z     /home/runner/.cargo/registry
+2025-10-03T15:55:42.9004737Z     /home/runner/.cargo/git
+2025-10-03T15:55:42.9005283Z     /home/runner/work/comprehensive-rust/comprehensive-rust/target
+2025-10-03T15:55:42.9005925Z Restore Key:
+2025-10-03T15:55:42.9006264Z     v0-rust-cargo-Linux-x64-24112c57
+2025-10-03T15:55:42.9006666Z Cache Key:
+2025-10-03T15:55:42.9007043Z     v0-rust-cargo-Linux-x64-24112c57-aac3a166
+2025-10-03T15:55:42.9007481Z .. Prefix:
+2025-10-03T15:55:42.9007837Z   - v0-rust-cargo-Linux-x64
+2025-10-03T15:55:42.9008266Z .. Environment considered:
+2025-10-03T15:55:42.9008865Z   - Rust Version: 1.89.0 x86_64-unknown-linux-gnu (29483883eed69d5fb4db01964cdf2af4d86e9cb2)
+2025-10-03T15:55:42.9009525Z   - CARGO_INCREMENTAL
+2025-10-03T15:55:42.9009852Z   - CARGO_TERM_COLOR
+2025-10-03T15:55:42.9010176Z .. Lockfiles considered:
+2025-10-03T15:55:42.9010758Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/.cargo/config.toml
+2025-10-03T15:55:42.9011591Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/Cargo.lock
+2025-10-03T15:55:42.9012448Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/mdbook-course/Cargo.toml
+2025-10-03T15:55:42.9013644Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/mdbook-exerciser/Cargo.toml
+2025-10-03T15:55:42.9014621Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/android/testing/Cargo.toml
+2025-10-03T15:55:42.9015745Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/bare-metal/alloc-example/.cargo/config.toml
+2025-10-03T15:55:42.9017032Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/bare-metal/aps/examples/.cargo/config.toml
+2025-10-03T15:55:42.9018354Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/bare-metal/microcontrollers/examples/.cargo/config.toml
+2025-10-03T15:55:42.9020203Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/bare-metal/useful-crates/allocator-example/Cargo.toml
+2025-10-03T15:55:42.9021300Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/bare-metal/useful-crates/zerocopy-example/Cargo.toml
+2025-10-03T15:55:42.9022161Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/borrowing/Cargo.toml
+2025-10-03T15:55:42.9023179Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/concurrency/async-exercises/chat-async/Cargo.toml
+2025-10-03T15:55:42.9024302Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/concurrency/sync-exercises/Cargo.toml
+2025-10-03T15:55:42.9024967Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/control-flow-basics/Cargo.toml
+2025-10-03T15:55:42.9025737Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/error-handling/Cargo.toml
+2025-10-03T15:55:42.9026619Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/exercises/bare-metal/compass/.cargo/config.toml
+2025-10-03T15:55:42.9027379Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/exercises/bare-metal/rtc/.cargo/config.toml
+2025-10-03T15:55:42.9027966Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/generics/Cargo.toml
+2025-10-03T15:55:42.9028489Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/iterators/Cargo.toml
+2025-10-03T15:55:42.9029206Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/lifetimes/Cargo.toml
+2025-10-03T15:55:42.9029914Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/memory-management/Cargo.toml
+2025-10-03T15:55:42.9030660Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/methods-and-traits/Cargo.toml
+2025-10-03T15:55:42.9031203Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/modules/Cargo.toml
+2025-10-03T15:55:42.9031899Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/pattern-matching/Cargo.toml
+2025-10-03T15:55:42.9032607Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/references/Cargo.toml
+2025-10-03T15:55:42.9033408Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/smart-pointers/Cargo.toml
+2025-10-03T15:55:42.9033941Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/std-traits/Cargo.toml
+2025-10-03T15:55:42.9034457Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/std-types/Cargo.toml
+2025-10-03T15:55:42.9034958Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/testing/Cargo.toml
+2025-10-03T15:55:42.9035489Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/tuples-and-arrays/Cargo.toml
+2025-10-03T15:55:42.9036047Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/types-and-values/Cargo.toml
+2025-10-03T15:55:42.9036582Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/unsafe-rust/Cargo.toml
+2025-10-03T15:55:42.9037136Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/src/user-defined-types/Cargo.toml
+2025-10-03T15:55:42.9037729Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/third_party/cxx/blobstore/Cargo.toml
+2025-10-03T15:55:42.9038255Z   - /home/runner/work/comprehensive-rust/comprehensive-rust/xtask/Cargo.toml
+2025-10-03T15:55:42.9038784Z ##[endgroup]
+2025-10-03T15:55:42.9038890Z 
+2025-10-03T15:55:42.9038971Z ... Restoring cache ...
+2025-10-03T15:55:43.1271963Z Cache hit for: v0-rust-cargo-Linux-x64-24112c57-aac3a166
+2025-10-03T15:55:44.3852004Z Received 16777216 of 328542928 (5.1%), 16.0 MBs/sec
+2025-10-03T15:55:45.3866487Z Received 134217728 of 328542928 (40.9%), 63.9 MBs/sec
+2025-10-03T15:55:46.3868491Z Received 264241152 of 328542928 (80.4%), 83.9 MBs/sec
+2025-10-03T15:55:46.9965380Z Received 328542928 of 328542928 (100.0%), 86.7 MBs/sec
+2025-10-03T15:55:46.9966890Z Cache Size: ~313 MB (328542928 B)
+2025-10-03T15:55:47.0004504Z [command]/usr/bin/tar -xf /home/runner/work/_temp/6c50d129-80d3-4a38-b520-2d49077eed95/cache.tzst -P -C /home/runner/work/comprehensive-rust/comprehensive-rust --use-compress-program unzstd
+2025-10-03T15:55:49.0570104Z Cache restored successfully
+2025-10-03T15:55:49.1172347Z Restored from cache key "v0-rust-cargo-Linux-x64-24112c57-aac3a166" full match: true.
+2025-10-03T15:55:49.1323882Z ##[group]Run cargo build
+2025-10-03T15:55:49.1324133Z [36;1mcargo build[0m
+2025-10-03T15:55:49.1357113Z shell: /usr/bin/bash -e {0}
+2025-10-03T15:55:49.1357334Z env:
+2025-10-03T15:55:49.1357496Z   CARGO_TERM_COLOR: always
+2025-10-03T15:55:49.1357704Z   CACHE_ON_FAILURE: false
+2025-10-03T15:55:49.1357893Z   CARGO_INCREMENTAL: 0
+2025-10-03T15:55:49.1358080Z ##[endgroup]
+2025-10-03T15:55:50.1364035Z [1m[32m    Updating[0m crates.io index
+2025-10-03T15:55:51.7642263Z [1m[32m   Compiling[0m mdbook-course v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/mdbook-course)
+2025-10-03T15:55:51.7645064Z [1m[32m   Compiling[0m demo v0.0.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/third_party/cxx/blobstore)
+2025-10-03T15:55:51.7674507Z [1m[32m   Compiling[0m mdbook-exerciser v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/mdbook-exerciser)
+2025-10-03T15:55:51.7676796Z [1m[32m   Compiling[0m allocator-example v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/bare-metal/useful-crates/allocator-example)
+2025-10-03T15:56:02.7025532Z [1m[32m   Compiling[0m android-testing v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/android/testing)
+2025-10-03T15:56:02.7493372Z [1m[32m   Compiling[0m sync-exercises v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/concurrency/sync-exercises)
+2025-10-03T15:56:04.3884929Z [1m[32m   Compiling[0m chat-async v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/concurrency/async-exercises/chat-async)
+2025-10-03T15:56:05.1516612Z [1m[32m   Compiling[0m unsafe-rust v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/unsafe-rust)
+2025-10-03T15:56:05.3259891Z [1m[32m   Compiling[0m error-handling v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/error-handling)
+2025-10-03T15:56:05.3769162Z [1m[32m   Compiling[0m xtask v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/xtask)
+2025-10-03T15:56:06.0277356Z [1m[32m   Compiling[0m zerocopy-example v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/bare-metal/useful-crates/zerocopy-example)
+2025-10-03T15:56:06.1597850Z [1m[32m   Compiling[0m lifetimes v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/lifetimes)
+2025-10-03T15:56:06.1623062Z [1m[32m   Compiling[0m borrowing v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/borrowing)
+2025-10-03T15:56:06.2017034Z [1m[32m   Compiling[0m generics v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/generics)
+2025-10-03T15:56:06.2289957Z [1m[32m   Compiling[0m smart-pointers v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/smart-pointers)
+2025-10-03T15:56:06.2623646Z [1m[32m   Compiling[0m pattern-matching v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/pattern-matching)
+2025-10-03T15:56:06.2924292Z [1m[32m   Compiling[0m iterators v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/iterators)
+2025-10-03T15:56:06.2997661Z [1m[32m   Compiling[0m std-traits v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/std-traits)
+2025-10-03T15:56:06.3264053Z [1m[32m   Compiling[0m user-defined-types v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/user-defined-types)
+2025-10-03T15:56:06.3824633Z [1m[32m   Compiling[0m references v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/references)
+2025-10-03T15:56:06.3859770Z [1m[32m   Compiling[0m modules v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/modules)
+2025-10-03T15:56:06.4721908Z [1m[32m   Compiling[0m std-types v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/std-types)
+2025-10-03T15:56:06.5109625Z [1m[32m   Compiling[0m control-flow-basics v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/control-flow-basics)
+2025-10-03T15:56:06.5855248Z [1m[32m   Compiling[0m methods-and-traits v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/methods-and-traits)
+2025-10-03T15:56:06.6372334Z [1m[32m   Compiling[0m types-and-values v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/types-and-values)
+2025-10-03T15:56:06.7066616Z [1m[32m   Compiling[0m tuples-and-arrays v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/tuples-and-arrays)
+2025-10-03T15:56:06.7656873Z [1m[32m   Compiling[0m testing v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/testing)
+2025-10-03T15:56:06.7718428Z [1m[32m   Compiling[0m memory-management v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/memory-management)
+2025-10-03T15:56:22.0293465Z [1m[32m    Finished[0m `dev` profile [unoptimized + debuginfo] target(s) in 32.84s
+2025-10-03T15:56:22.0609894Z ##[group]Run cargo test
+2025-10-03T15:56:22.0610140Z [36;1mcargo test[0m
+2025-10-03T15:56:22.0641930Z shell: /usr/bin/bash -e {0}
+2025-10-03T15:56:22.0642171Z env:
+2025-10-03T15:56:22.0642355Z   CARGO_TERM_COLOR: always
+2025-10-03T15:56:22.0642582Z   CACHE_ON_FAILURE: false
+2025-10-03T15:56:22.0642925Z   CARGO_INCREMENTAL: 0
+2025-10-03T15:56:22.0643133Z ##[endgroup]
+2025-10-03T15:56:22.2809458Z [1m[32m   Compiling[0m allocator-example v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/bare-metal/useful-crates/allocator-example)
+2025-10-03T15:56:22.2811204Z [1m[32m   Compiling[0m demo v0.0.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/third_party/cxx/blobstore)
+2025-10-03T15:56:22.2813019Z [1m[32m   Compiling[0m mdbook-exerciser v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/mdbook-exerciser)
+2025-10-03T15:56:22.2815646Z [1m[32m   Compiling[0m chat-async v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/concurrency/async-exercises/chat-async)
+2025-10-03T15:56:23.3958429Z [1m[32m   Compiling[0m sync-exercises v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/concurrency/sync-exercises)
+2025-10-03T15:56:23.4066670Z [1m[32m   Compiling[0m android-testing v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/android/testing)
+2025-10-03T15:56:23.7067379Z [1m[32m   Compiling[0m mdbook-course v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/mdbook-course)
+2025-10-03T15:56:24.1670911Z [1m[32m   Compiling[0m xtask v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/xtask)
+2025-10-03T15:56:24.2224911Z [1m[32m   Compiling[0m error-handling v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/error-handling)
+2025-10-03T15:56:24.2746280Z [1m[32m   Compiling[0m unsafe-rust v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/unsafe-rust)
+2025-10-03T15:56:24.4477951Z [1m[32m   Compiling[0m zerocopy-example v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/bare-metal/useful-crates/zerocopy-example)
+2025-10-03T15:56:24.4809034Z [1m[32m   Compiling[0m lifetimes v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/lifetimes)
+2025-10-03T15:56:24.6570146Z [1m[32m   Compiling[0m tuples-and-arrays v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/tuples-and-arrays)
+2025-10-03T15:56:24.7042775Z [1m[32m   Compiling[0m iterators v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/iterators)
+2025-10-03T15:56:24.7722200Z [1m[32m   Compiling[0m references v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/references)
+2025-10-03T15:56:24.8925813Z [1m[32m   Compiling[0m user-defined-types v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/user-defined-types)
+2025-10-03T15:56:24.9647250Z [1m[32m   Compiling[0m std-traits v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/std-traits)
+2025-10-03T15:56:24.9765990Z [1m[32m   Compiling[0m borrowing v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/borrowing)
+2025-10-03T15:56:25.0946856Z [1m[32m   Compiling[0m std-types v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/std-types)
+2025-10-03T15:56:25.2240069Z [1m[32m   Compiling[0m testing v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/testing)
+2025-10-03T15:56:25.2515964Z [1m[32m   Compiling[0m control-flow-basics v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/control-flow-basics)
+2025-10-03T15:56:25.2941642Z [1m[32m   Compiling[0m modules v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/modules)
+2025-10-03T15:56:25.4510363Z [1m[32m   Compiling[0m pattern-matching v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/pattern-matching)
+2025-10-03T15:56:25.4672632Z [1m[32m   Compiling[0m smart-pointers v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/smart-pointers)
+2025-10-03T15:56:25.5056477Z [1m[32m   Compiling[0m types-and-values v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/types-and-values)
+2025-10-03T15:56:25.6767175Z [1m[32m   Compiling[0m generics v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/generics)
+2025-10-03T15:56:25.6916605Z [1m[32m   Compiling[0m methods-and-traits v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/methods-and-traits)
+2025-10-03T15:56:25.6954631Z [1m[32m   Compiling[0m memory-management v0.1.0 (/home/runner/work/comprehensive-rust/comprehensive-rust/src/memory-management)
+2025-10-03T15:56:25.8951604Z [1m[32m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 3.78s
+2025-10-03T15:56:25.9131374Z [1m[32m     Running[0m unittests src/main.rs (target/debug/deps/allocator_example-fb876dc9df1ed013)
+2025-10-03T15:56:25.9143811Z 
+2025-10-03T15:56:25.9143972Z running 0 tests
+2025-10-03T15:56:25.9145826Z 
+2025-10-03T15:56:25.9146780Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9147343Z 
+2025-10-03T15:56:25.9147931Z [1m[32m     Running[0m unittests src/lib.rs (target/debug/deps/android_testing-c39f2b14b40abe6b)
+2025-10-03T15:56:25.9159210Z 
+2025-10-03T15:56:25.9159342Z running 2 tests
+2025-10-03T15:56:25.9165882Z test tests::long_string ... ok
+2025-10-03T15:56:25.9166625Z [1m[32m     Running[0m unittests googletest.rs (target/debug/examples/googletest_example-845bbc321352e000)
+2025-10-03T15:56:25.9167138Z test tests::short_string ... ok
+2025-10-03T15:56:25.9167296Z 
+2025-10-03T15:56:25.9167530Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9167847Z 
+2025-10-03T15:56:25.9175511Z 
+2025-10-03T15:56:25.9175630Z running 2 tests
+2025-10-03T15:56:25.9178072Z test test_elements_are ... ok
+2025-10-03T15:56:25.9181759Z test test_multiline_string_diff - should panic ... ok
+2025-10-03T15:56:25.9182134Z 
+2025-10-03T15:56:25.9182517Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9183098Z 
+2025-10-03T15:56:25.9184809Z [1m[32m     Running[0m unittests mockall.rs (target/debug/examples/mockall_example-44161ebec28270f8)
+2025-10-03T15:56:25.9194365Z 
+2025-10-03T15:56:25.9194535Z running 2 tests
+2025-10-03T15:56:25.9197646Z test test_robot_dog ... ok
+2025-10-03T15:56:25.9198033Z test test_robot_cat ... ok
+2025-10-03T15:56:25.9198267Z 
+2025-10-03T15:56:25.9198492Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9198807Z 
+2025-10-03T15:56:25.9201542Z [1m[32m     Running[0m unittests ../../third_party/rust-on-exercism/health-statistics.rs (target/debug/deps/borrowing-fd4ad4dc382619aa)
+2025-10-03T15:56:25.9209959Z 
+2025-10-03T15:56:25.9210062Z running 1 test
+2025-10-03T15:56:25.9212053Z test test_visit ... ok
+2025-10-03T15:56:25.9212294Z 
+2025-10-03T15:56:25.9212569Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9213317Z 
+2025-10-03T15:56:25.9215129Z [1m[32m     Running[0m unittests src/bin/client.rs (target/debug/deps/client-9e68eecca3b9ef44)
+2025-10-03T15:56:25.9223422Z 
+2025-10-03T15:56:25.9223636Z running 0 tests
+2025-10-03T15:56:25.9224542Z 
+2025-10-03T15:56:25.9225025Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9225533Z 
+2025-10-03T15:56:25.9227268Z [1m[32m     Running[0m unittests src/bin/server.rs (target/debug/deps/server-9af325e66671062d)
+2025-10-03T15:56:25.9236270Z 
+2025-10-03T15:56:25.9236539Z running 0 tests
+2025-10-03T15:56:25.9236753Z 
+2025-10-03T15:56:25.9237002Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9237317Z 
+2025-10-03T15:56:25.9239287Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/collatz-743f1741ec5a625a)
+2025-10-03T15:56:25.9247642Z 
+2025-10-03T15:56:25.9248043Z running 1 test
+2025-10-03T15:56:25.9249746Z test test_collatz_length ... ok
+2025-10-03T15:56:25.9249966Z 
+2025-10-03T15:56:25.9250216Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9250543Z 
+2025-10-03T15:56:25.9252528Z [1m[32m     Running[0m unittests src/main.rs (target/debug/deps/demo-f3ae77353c493f3e)
+2025-10-03T15:56:25.9267665Z 
+2025-10-03T15:56:25.9267834Z running 0 tests
+2025-10-03T15:56:25.9268084Z 
+2025-10-03T15:56:25.9268460Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9268980Z 
+2025-10-03T15:56:25.9272189Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/parser-893f1f691e908712)
+2025-10-03T15:56:25.9283710Z 
+2025-10-03T15:56:25.9284291Z running 2 tests
+2025-10-03T15:56:25.9286567Z test test::test_error ... ok
+2025-10-03T15:56:25.9289425Z test test::test_ok ... ok
+2025-10-03T15:56:25.9289700Z 
+2025-10-03T15:56:25.9290234Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9290798Z 
+2025-10-03T15:56:25.9291983Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/generics-3aa9f8a5adff7e5f)
+2025-10-03T15:56:25.9301349Z 
+2025-10-03T15:56:25.9301488Z running 3 tests
+2025-10-03T15:56:25.9304779Z test chars ... ok
+2025-10-03T15:56:25.9305129Z test integers ... ok
+2025-10-03T15:56:25.9305468Z test strings ... ok
+2025-10-03T15:56:25.9305660Z 
+2025-10-03T15:56:25.9306031Z test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9306550Z 
+2025-10-03T15:56:25.9307678Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/offset_differences-53d3e9b46fdfbb8e)
+2025-10-03T15:56:25.9316488Z 
+2025-10-03T15:56:25.9316672Z running 3 tests
+2025-10-03T15:56:25.9319790Z test test_degenerate_cases ... ok
+2025-10-03T15:56:25.9320220Z test test_larger_offsets ... ok
+2025-10-03T15:56:25.9320609Z test test_offset_one ... ok
+2025-10-03T15:56:25.9320848Z 
+2025-10-03T15:56:25.9321207Z test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9321660Z 
+2025-10-03T15:56:25.9322375Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/protobuf-a607fce9b2090e70)
+2025-10-03T15:56:25.9331410Z 
+2025-10-03T15:56:25.9331692Z running 5 tests
+2025-10-03T15:56:25.9335607Z test test_just_person ... ok
+2025-10-03T15:56:25.9336024Z test test_name ... ok
+2025-10-03T15:56:25.9336540Z test test_id ... ok
+2025-10-03T15:56:25.9336870Z test test_phone ... ok
+2025-10-03T15:56:25.9337211Z test test_full_person ... ok
+2025-10-03T15:56:25.9337452Z 
+2025-10-03T15:56:25.9337813Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9338319Z 
+2025-10-03T15:56:25.9340471Z [1m[32m     Running[0m unittests src/lib.rs (target/debug/deps/mdbook_course-d579c1910514306f)
+2025-10-03T15:56:25.9349699Z 
+2025-10-03T15:56:25.9350014Z running 14 tests
+2025-10-03T15:56:25.9353458Z test markdown::test::duration_hour ... ok
+2025-10-03T15:56:25.9353971Z test markdown::test::duration_hour_mins ... ok
+2025-10-03T15:56:25.9354855Z test markdown::test::duration_hours ... ok
+2025-10-03T15:56:25.9355552Z test markdown::test::duration_no_time ... ok
+2025-10-03T15:56:25.9356090Z test markdown::test::duration_seven_minutes ... ok
+2025-10-03T15:56:25.9356674Z test markdown::test::duration_hours_mins ... ok
+2025-10-03T15:56:25.9357185Z test markdown::test::duration_single_minute ... ok
+2025-10-03T15:56:25.9357713Z test markdown::test::duration_two_minutes ... ok
+2025-10-03T15:56:25.9358316Z test markdown::test::relative_link_deep_parent_dir ... ok
+2025-10-03T15:56:25.9358998Z test markdown::test::relative_link_parent_dir ... ok
+2025-10-03T15:56:25.9359549Z test markdown::test::relative_link_peer_dir ... ok
+2025-10-03T15:56:25.9360062Z test markdown::test::relative_link_same_dir ... ok
+2025-10-03T15:56:25.9360774Z test markdown::test::relative_link_subdir ... ok
+2025-10-03T15:56:25.9361239Z test markdown::test::table ... ok
+2025-10-03T15:56:25.9361499Z 
+2025-10-03T15:56:25.9361861Z test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9362295Z 
+2025-10-03T15:56:25.9363509Z [1m[32m     Running[0m unittests src/bin/course-content.rs (target/debug/deps/course_content-b54ea849b824a005)
+2025-10-03T15:56:25.9372160Z 
+2025-10-03T15:56:25.9372290Z running 0 tests
+2025-10-03T15:56:25.9372483Z 
+2025-10-03T15:56:25.9373050Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9373546Z 
+2025-10-03T15:56:25.9375370Z [1m[32m     Running[0m unittests src/bin/course-schedule.rs (target/debug/deps/course_schedule-b9ec19972fa238a1)
+2025-10-03T15:56:25.9383787Z 
+2025-10-03T15:56:25.9383921Z running 0 tests
+2025-10-03T15:56:25.9384138Z 
+2025-10-03T15:56:25.9384540Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9385036Z 
+2025-10-03T15:56:25.9386811Z [1m[32m     Running[0m unittests src/bin/mdbook-course.rs (target/debug/deps/mdbook_course-4d680c927d77e7d6)
+2025-10-03T15:56:25.9395274Z 
+2025-10-03T15:56:25.9395436Z running 0 tests
+2025-10-03T15:56:25.9395632Z 
+2025-10-03T15:56:25.9395980Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9396470Z 
+2025-10-03T15:56:25.9398300Z [1m[32m     Running[0m unittests src/lib.rs (target/debug/deps/mdbook_exerciser-0806e2b161cc6d7c)
+2025-10-03T15:56:25.9407133Z 
+2025-10-03T15:56:25.9407294Z running 0 tests
+2025-10-03T15:56:25.9407485Z 
+2025-10-03T15:56:25.9407841Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9408328Z 
+2025-10-03T15:56:25.9410045Z [1m[32m     Running[0m unittests src/main.rs (target/debug/deps/mdbook_exerciser-7b38fd7e0c8e0c0f)
+2025-10-03T15:56:25.9418631Z 
+2025-10-03T15:56:25.9418795Z running 0 tests
+2025-10-03T15:56:25.9418990Z 
+2025-10-03T15:56:25.9419337Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9419821Z 
+2025-10-03T15:56:25.9421547Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/package_builder-eb2e1150cc1316b9)
+2025-10-03T15:56:25.9430171Z 
+2025-10-03T15:56:25.9430321Z running 0 tests
+2025-10-03T15:56:25.9430506Z 
+2025-10-03T15:56:25.9430852Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9431350Z 
+2025-10-03T15:56:25.9433253Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/methods_and_traits-fd7123335931e5b5)
+2025-10-03T15:56:25.9441602Z 
+2025-10-03T15:56:25.9441732Z running 0 tests
+2025-10-03T15:56:25.9441942Z 
+2025-10-03T15:56:25.9442319Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9442962Z 
+2025-10-03T15:56:25.9444820Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/modules-95186b91811f15bb)
+2025-10-03T15:56:25.9453926Z 
+2025-10-03T15:56:25.9454076Z running 0 tests
+2025-10-03T15:56:25.9454268Z 
+2025-10-03T15:56:25.9454625Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9455143Z 
+2025-10-03T15:56:25.9456552Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/eval-13e9b9e2255d4fc1)
+2025-10-03T15:56:25.9465819Z 
+2025-10-03T15:56:25.9465980Z running 5 tests
+2025-10-03T15:56:25.9469741Z test test_div ... ok
+2025-10-03T15:56:25.9470095Z test test_recursion ... ok
+2025-10-03T15:56:25.9470426Z test test_value ... ok
+2025-10-03T15:56:25.9471106Z test test_sum ... ok
+2025-10-03T15:56:25.9471437Z test test_zeros ... ok
+2025-10-03T15:56:25.9471646Z 
+2025-10-03T15:56:25.9472026Z test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9472567Z 
+2025-10-03T15:56:25.9474584Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/references-59dd8b65e15de140)
+2025-10-03T15:56:25.9483290Z 
+2025-10-03T15:56:25.9483434Z running 0 tests
+2025-10-03T15:56:25.9483945Z 
+2025-10-03T15:56:25.9484313Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9484826Z 
+2025-10-03T15:56:25.9486877Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/binary_tree-102f7a8f1e3bdd8f)
+2025-10-03T15:56:25.9496495Z 
+2025-10-03T15:56:25.9496630Z running 3 tests
+2025-10-03T15:56:25.9499421Z test tests::has ... ok
+2025-10-03T15:56:25.9499792Z test tests::len ... ok
+2025-10-03T15:56:25.9500204Z test tests::unbalanced ... ok
+2025-10-03T15:56:25.9500470Z 
+2025-10-03T15:56:25.9500874Z test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9501285Z 
+2025-10-03T15:56:25.9503208Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/std_traits-530b996278cd918d)
+2025-10-03T15:56:25.9511768Z 
+2025-10-03T15:56:25.9512046Z running 2 tests
+2025-10-03T15:56:25.9515536Z test test::binary ... ok
+2025-10-03T15:56:25.9515963Z test test::joke ... ok
+2025-10-03T15:56:25.9516180Z 
+2025-10-03T15:56:25.9516543Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9517057Z 
+2025-10-03T15:56:25.9518065Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/hashset-a0f41b7709e26cac)
+2025-10-03T15:56:25.9527121Z 
+2025-10-03T15:56:25.9527283Z running 0 tests
+2025-10-03T15:56:25.9527496Z 
+2025-10-03T15:56:25.9527884Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9528398Z 
+2025-10-03T15:56:25.9530233Z [1m[32m     Running[0m unittests dining-philosophers.rs (target/debug/deps/dining_philosophers-a350f942b639539f)
+2025-10-03T15:56:25.9539038Z 
+2025-10-03T15:56:25.9539152Z running 0 tests
+2025-10-03T15:56:25.9539357Z 
+2025-10-03T15:56:25.9539605Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9539926Z 
+2025-10-03T15:56:25.9541924Z [1m[32m     Running[0m unittests link-checker.rs (target/debug/deps/link_checker-ac4db0840d2cf5fd)
+2025-10-03T15:56:25.9550991Z 
+2025-10-03T15:56:25.9551142Z running 0 tests
+2025-10-03T15:56:25.9551340Z 
+2025-10-03T15:56:25.9551565Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9551885Z 
+2025-10-03T15:56:25.9554110Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/luhn-9aef4e7d273d705b)
+2025-10-03T15:56:25.9563073Z 
+2025-10-03T15:56:25.9563240Z running 6 tests
+2025-10-03T15:56:25.9566187Z test test::test_empty_cc_number ... ok
+2025-10-03T15:56:25.9567068Z test test::test_non_digit_cc_number ... ok
+2025-10-03T15:56:25.9567576Z test test::test_two_digit_cc_number ... ok
+2025-10-03T15:56:25.9568029Z test test::test_single_digit_cc_number ... ok
+2025-10-03T15:56:25.9568364Z test test::test_invalid_cc_number ... ok
+2025-10-03T15:56:25.9568846Z test test::test_valid_cc_number ... ok
+2025-10-03T15:56:25.9569027Z 
+2025-10-03T15:56:25.9569367Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9569957Z 
+2025-10-03T15:56:25.9570632Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/transpose-08cc25cb1ac3565f)
+2025-10-03T15:56:25.9579394Z 
+2025-10-03T15:56:25.9579528Z running 1 test
+2025-10-03T15:56:25.9581442Z test test_transpose ... ok
+2025-10-03T15:56:25.9581637Z 
+2025-10-03T15:56:25.9581890Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9582211Z 
+2025-10-03T15:56:25.9584246Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/fizzbuzz-0a4f7c3357252f12)
+2025-10-03T15:56:25.9592421Z 
+2025-10-03T15:56:25.9592538Z running 0 tests
+2025-10-03T15:56:25.9592726Z 
+2025-10-03T15:56:25.9593353Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9593704Z 
+2025-10-03T15:56:25.9595809Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/listdir-3c1a0ed5806899bf)
+2025-10-03T15:56:25.9604213Z 
+2025-10-03T15:56:25.9604333Z running 3 tests
+2025-10-03T15:56:25.9608110Z test tests::test_nonexisting_directory ... ok
+2025-10-03T15:56:25.9609305Z test tests::test_empty_directory ... ok
+2025-10-03T15:56:25.9610477Z test tests::test_nonempty_directory ... ok
+2025-10-03T15:56:25.9610782Z 
+2025-10-03T15:56:25.9611132Z test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9611533Z 
+2025-10-03T15:56:25.9613262Z [1m[32m     Running[0m unittests exercise.rs (target/debug/deps/elevator-59dfe9fbb2cfceb5)
+2025-10-03T15:56:25.9621535Z 
+2025-10-03T15:56:25.9621665Z running 0 tests
+2025-10-03T15:56:25.9621855Z 
+2025-10-03T15:56:25.9622280Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9622777Z 
+2025-10-03T15:56:25.9624854Z [1m[32m     Running[0m unittests src/main.rs (target/debug/deps/xtask-8dffe49bf0ef58bb)
+2025-10-03T15:56:25.9633570Z 
+2025-10-03T15:56:25.9633710Z running 0 tests
+2025-10-03T15:56:25.9633909Z 
+2025-10-03T15:56:25.9634264Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9634759Z 
+2025-10-03T15:56:25.9636605Z [1m[32m     Running[0m unittests src/main.rs (target/debug/deps/zerocopy_example-6544a04c94a67498)
+2025-10-03T15:56:25.9645373Z 
+2025-10-03T15:56:25.9645516Z running 0 tests
+2025-10-03T15:56:25.9645711Z 
+2025-10-03T15:56:25.9646072Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:25.9646569Z 
+2025-10-03T15:56:25.9647894Z [1m[32m   Doc-tests[0m android_testing
+2025-10-03T15:56:27.2620120Z 
+2025-10-03T15:56:27.2620716Z running 0 tests
+2025-10-03T15:56:27.2621048Z 
+2025-10-03T15:56:27.2663512Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.2663869Z 
+2025-10-03T15:56:27.2780845Z [1m[32m   Doc-tests[0m borrowing
+2025-10-03T15:56:27.2951735Z 
+2025-10-03T15:56:27.2952098Z running 0 tests
+2025-10-03T15:56:27.2952333Z 
+2025-10-03T15:56:27.2952704Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.2953312Z 
+2025-10-03T15:56:27.2978878Z [1m[32m   Doc-tests[0m parser
+2025-10-03T15:56:27.3155851Z 
+2025-10-03T15:56:27.3156179Z running 0 tests
+2025-10-03T15:56:27.3156409Z 
+2025-10-03T15:56:27.3156781Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.3157086Z 
+2025-10-03T15:56:27.3182123Z [1m[32m   Doc-tests[0m generics
+2025-10-03T15:56:27.3347006Z 
+2025-10-03T15:56:27.3347315Z running 0 tests
+2025-10-03T15:56:27.3347543Z 
+2025-10-03T15:56:27.3347912Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.3348522Z 
+2025-10-03T15:56:27.3373090Z [1m[32m   Doc-tests[0m offset_differences
+2025-10-03T15:56:27.3537731Z 
+2025-10-03T15:56:27.3538050Z running 0 tests
+2025-10-03T15:56:27.3538274Z 
+2025-10-03T15:56:27.3538651Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.3539053Z 
+2025-10-03T15:56:27.3563283Z [1m[32m   Doc-tests[0m protobuf
+2025-10-03T15:56:27.3754385Z 
+2025-10-03T15:56:27.3754717Z running 0 tests
+2025-10-03T15:56:27.3754877Z 
+2025-10-03T15:56:27.3755121Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.3755439Z 
+2025-10-03T15:56:27.3780463Z [1m[32m   Doc-tests[0m mdbook_course
+2025-10-03T15:56:27.7106881Z 
+2025-10-03T15:56:27.7107191Z running 1 test
+2025-10-03T15:56:27.7108200Z test mdbook-course/src/course.rs - course (line 17) ... ignored
+2025-10-03T15:56:27.7108619Z 
+2025-10-03T15:56:27.7109255Z test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.7109625Z 
+2025-10-03T15:56:27.7144613Z [1m[32m   Doc-tests[0m mdbook_exerciser
+2025-10-03T15:56:27.7336736Z 
+2025-10-03T15:56:27.7337116Z running 0 tests
+2025-10-03T15:56:27.7337343Z 
+2025-10-03T15:56:27.7337672Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.7337994Z 
+2025-10-03T15:56:27.7362214Z [1m[32m   Doc-tests[0m eval
+2025-10-03T15:56:27.7539767Z 
+2025-10-03T15:56:27.7540105Z running 0 tests
+2025-10-03T15:56:27.7540338Z 
+2025-10-03T15:56:27.7540706Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.7541051Z 
+2025-10-03T15:56:27.7566053Z [1m[32m   Doc-tests[0m binary_tree
+2025-10-03T15:56:27.7742557Z 
+2025-10-03T15:56:27.7743064Z running 0 tests
+2025-10-03T15:56:27.7743300Z 
+2025-10-03T15:56:27.7743673Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.7744097Z 
+2025-10-03T15:56:27.7769601Z [1m[32m   Doc-tests[0m std_traits
+2025-10-03T15:56:27.7940516Z 
+2025-10-03T15:56:27.7940896Z running 0 tests
+2025-10-03T15:56:27.7941098Z 
+2025-10-03T15:56:27.7941347Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.7941663Z 
+2025-10-03T15:56:27.7966826Z [1m[32m   Doc-tests[0m luhn
+2025-10-03T15:56:27.8134158Z 
+2025-10-03T15:56:27.8134469Z running 0 tests
+2025-10-03T15:56:27.8134703Z 
+2025-10-03T15:56:27.8135053Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-10-03T15:56:27.8135372Z 
+2025-10-03T15:56:27.8266587Z Post job cleanup.
+2025-10-03T15:56:27.8310363Z Post job cleanup.
+2025-10-03T15:56:28.0853754Z Post job cleanup.
+2025-10-03T15:56:28.1613399Z [command]/usr/bin/git version
+2025-10-03T15:56:28.1680905Z git version 2.51.0
+2025-10-03T15:56:28.1717270Z Temporarily overriding HOME='/home/runner/work/_temp/c3554a54-082e-4022-9ece-d9985b51e9e8' before making global git config changes
+2025-10-03T15:56:28.1718347Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-03T15:56:28.1722596Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/comprehensive-rust/comprehensive-rust
+2025-10-03T15:56:28.1756916Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-03T15:56:28.1787476Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-03T15:56:28.2009179Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-03T15:56:28.2029364Z http.https://github.com/.extraheader
+2025-10-03T15:56:28.2039730Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-03T15:56:28.2069887Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-03T15:56:28.2410277Z Cleaning up orphan processes

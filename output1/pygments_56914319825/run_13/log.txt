@@ -1,0 +1,50 @@
+Obtaining file:///app
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: Pygments
+  Building editable for Pygments (pyproject.toml): started
+  Building editable for Pygments (pyproject.toml): finished with status 'done'
+  Created wheel for Pygments: filename=pygments-2.19.2-py3-none-any.whl size=8231 sha256=6803755d87c82c72e9b27e478855f26cc7e0405c7d1fe8e59669084d26aecb56
+  Stored in directory: /tmp/pip-ephem-wheel-cache-4a2tvk_r/wheels/57/0f/98/bb57b2b57b95807699b822a35c022f139d38a02c27922f27ce
+Successfully built Pygments
+Installing collected packages: Pygments
+  Attempting uninstall: Pygments
+    Found existing installation: Pygments 2.19.2
+    Uninstalling Pygments-2.19.2:
+      Successfully uninstalled Pygments-2.19.2
+Successfully installed Pygments-2.19.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+[notice] A new release of pip is available: 24.0 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+Running tests with tox...
+py: install_deps> python -I -m pip install pytest-cov pytest-randomly 'pytest~=8.2' wcag-contrast-ratio
+.pkg: install_requires> python -I -m pip install 'hatchling>=1.27'
+.pkg: _optional_hooks> python /usr/local/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
+.pkg: get_requires_for_build_editable> python /usr/local/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
+.pkg: install_requires_for_build_editable> python -I -m pip install 'editables~=0.3'
+.pkg: build_editable> python /usr/local/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
+py: install_package> python -I -m pip install --force-reinstall --no-deps /app/.tox/.tmp/package/1/pygments-2.19.2-py3-none-any.whl
+py: commands[0]> pytest -W error --rootdir=/app -v
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-8.4.2, pluggy-1.6.0 -- /app/.tox/py/bin/python
+cachedir: .tox/py/.pytest_cache
+Using --randomly-seed=1873237718
+rootdir: /app
+configfile: pyproject.toml
+plugins: cov-7.0.0, randomly-4.0.1
+collecting ... collected 0 items
+
+============================ no tests ran in 0.04s =============================
+py: exit 5 (0.42 seconds) /app> pytest -W error --rootdir=/app -v pid=69
+.pkg: _exit> python /usr/local/lib/python3.11/site-packages/pyproject_api/_backend.py True hatchling.build
+  py: FAIL code 5 (8.70=setup[8.28]+cmd[0.42] seconds)
+  evaluation failed :( (8.78 seconds)

@@ -1,0 +1,122 @@
+
+> typescript@6.0.0 test
+> hereby runtests-parallel --light=false --no-lint --bundle=true
+
+Using /app/Herebyfile.mjs to run runtests-parallel
+Starting lib
+Starting generate-diagnostics
+> /usr/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 103ms
+Finished generate-diagnostics in 143ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished bundle-tests in 604ms
+Finished build-tests in 26.6s
+Finished build-services in 26.6s
+Starting dts-services
+> /usr/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 3.3s
+Starting dts-lssl
+Finished dts-lssl in 2ms
+Starting do-runtests-parallel
+Running tests with config: {"light":false,"workerCount":63,"taskConfigsFolder":"/tmp/ts-tests1","noColor":false,"timeout":40000,"keepFailed":false}
+> /usr/bin/node ./built/local/run.js
+Discovered 326 unittest suites.
+Discovering runner-based tests...
+Discovered 19585 test files in 199ms.
+Starting to run tests using 63 threads...
+Batching initial test lists...
+Suboptimal packing detected: no tests remain to be stolen. Reduce packing fraction from 0.9 to fix.
+Batched into 63 groups with approximate total file sizes of 319296 bytes in each group. (100.0% of total tests batched)
+
+
+
+  98881 passing (2m)
+  2 failing
+
+  1)
+
+         compiler tests
+           compiler tests for tests/cases/compiler/uniqueSymbolReassignment.ts
+             Correct JS output for tests/cases/compiler/uniqueSymbolReassignment.ts:
+     Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.js
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at Object.doJsEmitBaseline (src/harness/harnessIO.ts:1034:18)
+      at _CompilerTest.verifyJavaScriptOutput (src/testRunner/compilerRunner.ts:298:22)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:102:82)
+      at processImmediate (node:internal/timers:485:21)
+
+  2)
+
+         compiler tests
+           compiler tests for tests/cases/compiler/uniqueSymbolReassignment.ts
+             Correct type/symbol baselines for tests/cases/compiler/uniqueSymbolReassignment.ts:
+     Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.types
+    at writeComparison (/app/src/harness/harnessIO.ts:1546:27)
+    at Object.runBaseline2 [as runBaseline] (/app/src/harness/harnessIO.ts:1565:9)
+    at checkBaseLines (/app/src/harness/harnessIO.ts:788:26)
+    at Object.doTypeAndSymbolBaseline (/app/src/harness/harnessIO.ts:751:13)
+    at _CompilerTest.verifyTypesAndSymbols (/app/src/testRunner/compilerRunner.ts:327:18)
+    at Context.<anonymous> (/app/src/testRunner/compilerRunner.ts:104:80)
+    at callFn (/app/node_modules/mocha/lib/runnable.js:364:21)
+    at Test2.Runnable.run (/app/node_modules/mocha/lib/runnable.js:352:5)
+    at Runner.runTest (/app/node_modules/mocha/lib/runner.js:677:10)
+    at /app/node_modules/mocha/lib/runner.js:800:12
+    at next (/app/node_modules/mocha/lib/runner.js:592:14)
+    at /app/node_modules/mocha/lib/runner.js:602:7
+    at next (/app/node_modules/mocha/lib/runner.js:485:14)
+    at Immediate._onImmediate (/app/node_modules/mocha/lib/runner.js:570:5)
+    at processImmediate (node:internal/timers:485:21)
+Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.symbols
+    at writeComparison (/app/src/harness/harnessIO.ts:1546:27)
+    at Object.runBaseline2 [as runBaseline] (/app/src/harness/harnessIO.ts:1565:9)
+    at checkBaseLines (/app/src/harness/harnessIO.ts:788:26)
+    at Object.doTypeAndSymbolBaseline (/app/src/harness/harnessIO.ts:758:13)
+    at _CompilerTest.verifyTypesAndSymbols (/app/src/testRunner/compilerRunner.ts:327:18)
+    at Context.<anonymous> (/app/src/testRunner/compilerRunner.ts:104:80)
+    at callFn (/app/node_modules/mocha/lib/runnable.js:364:21)
+    at Test2.Runnable.run (/app/node_modules/mocha/lib/runnable.js:352:5)
+    at Runner.runTest (/app/node_modules/mocha/lib/runner.js:677:10)
+    at /app/node_modules/mocha/lib/runner.js:800:12
+    at next (/app/node_modules/mocha/lib/runner.js:592:14)
+    at /app/node_modules/mocha/lib/runner.js:602:7
+    at next (/app/node_modules/mocha/lib/runner.js:485:14)
+    at Immediate._onImmediate (/app/node_modules/mocha/lib/runner.js:570:5)
+    at processImmediate (node:internal/timers:485:21)
+  Error: Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.types
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at checkBaseLines (src/harness/harnessIO.ts:788:26)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:751:13)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:485:21)
+  Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.symbols
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at checkBaseLines (src/harness/harnessIO.ts:788:26)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:758:13)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:485:21)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:765:19)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:485:21)
+
+
+
+Error in do-runtests-parallel in 1m 47.7s
+Error: Process exited with code: 2
+Completed runtests-parallel with errors in 2m 17.8s
+Failed tasks: do-runtests-parallel
+Using /app/Herebyfile.mjs to run baseline-accept
+Starting baseline-accept
+Finished baseline-accept in 263ms
+Completed baseline-accept in 263ms
+/usr/local/bin/run.sh: line 12: git: command not found
+/usr/local/bin/run.sh: line 13: git: command not found

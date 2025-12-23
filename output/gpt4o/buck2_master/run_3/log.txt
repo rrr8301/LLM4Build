@@ -1,0 +1,26 @@
+[93m[1mWARNING: Skipping starlark linter on git[0m
+Finished in 0.00 seconds.
+[92mRunning clippy[0m
+Running rustup which rustc
+Traceback (most recent call last):
+  File "/app/test.py", line 517, in <module>
+    main()
+  File "/app/test.py", line 485, in main
+    clippy(package_args, args.clippy_fix)
+  File "/app/test.py", line 273, in clippy
+    rustc_default_warnings = _get_default_rustc_warnings()
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/test.py", line 247, in _get_default_rustc_warnings
+    rustc = run(["rustup", "which", "rustc"], capture_output=True).stdout.strip()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/test.py", line 103, in run
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'rustup'

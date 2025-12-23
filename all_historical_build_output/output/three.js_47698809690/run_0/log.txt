@@ -1,0 +1,36 @@
+Running lint tests...
+
+> three@0.179.1 lint
+> npm run lint-core
+
+
+> three@0.179.1 lint-core
+> eslint src
+
+Running unit tests...
+
+> three@0.179.1 test-unit
+> qunit -r failonlyreporter -f !-webonly test/unit/three.source.unit.js
+
+1..2760
+# pass 1285
+# skip 0
+# todo 1475
+# fail 0
+Running circular dependencies tests...
+
+> three@0.179.1 test-circular-deps
+> dpdm --no-warning --no-tree --exit-code circular:1 src/nodes/Nodes.js
+
+- Start analyzing dependencies...
+✔ [233/233] Analyze done!
+• Circular Dependencies
+  ✅ Congratulations, no circular dependency was found in your project.
+
+Running e2e coverage tests...
+
+> three@0.179.1 test-e2e-cov
+> node test/e2e/check-coverage.js
+
+TEST PASSED! All examples is covered with screenshots and descriptions in files.json!
+All tests executed.

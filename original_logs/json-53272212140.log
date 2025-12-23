@@ -1,0 +1,705 @@
+﻿2025-10-21T12:52:36.1160892Z Current runner version: '2.329.0'
+2025-10-21T12:52:36.1183943Z ##[group]Runner Image Provisioner
+2025-10-21T12:52:36.1184734Z Hosted Compute Agent
+2025-10-21T12:52:36.1185370Z Version: 20250912.392
+2025-10-21T12:52:36.1185936Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-21T12:52:36.1186615Z Build Date: 2025-09-12T15:23:14Z
+2025-10-21T12:52:36.1187211Z ##[endgroup]
+2025-10-21T12:52:36.1187791Z ##[group]Operating System
+2025-10-21T12:52:36.1188314Z Ubuntu
+2025-10-21T12:52:36.1188832Z 24.04.3
+2025-10-21T12:52:36.1189588Z LTS
+2025-10-21T12:52:36.1190074Z ##[endgroup]
+2025-10-21T12:52:36.1190509Z ##[group]Runner Image
+2025-10-21T12:52:36.1191179Z Image: ubuntu-24.04
+2025-10-21T12:52:36.1191685Z Version: 20250929.60.1
+2025-10-21T12:52:36.1192634Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-21T12:52:36.1194202Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-21T12:52:36.1195175Z ##[endgroup]
+2025-10-21T12:52:36.1196167Z ##[group]GITHUB_TOKEN Permissions
+2025-10-21T12:52:36.1197908Z Contents: read
+2025-10-21T12:52:36.1198530Z Metadata: read
+2025-10-21T12:52:36.1199249Z ##[endgroup]
+2025-10-21T12:52:36.1201311Z Secret source: Actions
+2025-10-21T12:52:36.1202124Z Prepare workflow directory
+2025-10-21T12:52:36.1590193Z Prepare all required actions
+2025-10-21T12:52:36.1629724Z Getting action download info
+2025-10-21T12:52:36.6301479Z Download action repository 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-10-21T12:52:36.8359908Z Download action repository 'lukka/get-cmake@2ecc21724e5215b0e567bc399a2602d2ecb48541' (SHA:2ecc21724e5215b0e567bc399a2602d2ecb48541)
+2025-10-21T12:52:37.5130847Z Complete job name: ci_test_gcc
+2025-10-21T12:52:37.5654338Z ##[group]Checking docker version
+2025-10-21T12:52:37.5667986Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2025-10-21T12:52:37.6882089Z '1.48'
+2025-10-21T12:52:37.6900456Z Docker daemon API version: '1.48'
+2025-10-21T12:52:37.6901976Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2025-10-21T12:52:37.7078662Z '1.48'
+2025-10-21T12:52:37.7093051Z Docker client API version: '1.48'
+2025-10-21T12:52:37.7099612Z ##[endgroup]
+2025-10-21T12:52:37.7103521Z ##[group]Clean up resources from previous jobs
+2025-10-21T12:52:37.7110129Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=c68932"
+2025-10-21T12:52:37.7253853Z ##[command]/usr/bin/docker network prune --force --filter "label=c68932"
+2025-10-21T12:52:37.7387923Z ##[endgroup]
+2025-10-21T12:52:37.7388866Z ##[group]Create local container network
+2025-10-21T12:52:37.7400726Z ##[command]/usr/bin/docker network create --label c68932 github_network_5eb7490aecde4aa4984128d3ab0efac6
+2025-10-21T12:52:37.7926205Z cbac785b664404dbf64e3bb4eee27b4311b1f2ee2dca7e69362a0fdb69c744be
+2025-10-21T12:52:37.7943487Z ##[endgroup]
+2025-10-21T12:52:37.7968222Z ##[group]Starting job container
+2025-10-21T12:52:37.7987873Z ##[command]/usr/bin/docker pull gcc:latest
+2025-10-21T12:52:38.8045796Z latest: Pulling from library/gcc
+2025-10-21T12:52:39.0514917Z 795dbedde24d: Pulling fs layer
+2025-10-21T12:52:39.0516121Z 89d573bf42b3: Pulling fs layer
+2025-10-21T12:52:39.0517320Z 26dfe2fac1c4: Pulling fs layer
+2025-10-21T12:52:39.0518860Z 79d5bd8a8d26: Pulling fs layer
+2025-10-21T12:52:39.0520337Z 30fdd4a523b0: Pulling fs layer
+2025-10-21T12:52:39.0521429Z 021e005a8df2: Pulling fs layer
+2025-10-21T12:52:39.0522522Z 0ba056477ba8: Pulling fs layer
+2025-10-21T12:52:39.0523522Z 9c3c751126a3: Pulling fs layer
+2025-10-21T12:52:39.0524475Z 79d5bd8a8d26: Waiting
+2025-10-21T12:52:39.0525359Z 30fdd4a523b0: Waiting
+2025-10-21T12:52:39.0526176Z 021e005a8df2: Waiting
+2025-10-21T12:52:39.0526989Z 0ba056477ba8: Waiting
+2025-10-21T12:52:39.0527871Z 9c3c751126a3: Waiting
+2025-10-21T12:52:39.6143160Z 89d573bf42b3: Verifying Checksum
+2025-10-21T12:52:39.6143813Z 89d573bf42b3: Download complete
+2025-10-21T12:52:39.9502079Z 795dbedde24d: Verifying Checksum
+2025-10-21T12:52:39.9502867Z 795dbedde24d: Download complete
+2025-10-21T12:52:39.9911605Z 26dfe2fac1c4: Download complete
+2025-10-21T12:52:40.2376323Z 30fdd4a523b0: Verifying Checksum
+2025-10-21T12:52:40.2376859Z 30fdd4a523b0: Download complete
+2025-10-21T12:52:40.4988941Z 0ba056477ba8: Verifying Checksum
+2025-10-21T12:52:40.4991589Z 0ba056477ba8: Download complete
+2025-10-21T12:52:40.7609295Z 9c3c751126a3: Verifying Checksum
+2025-10-21T12:52:40.7609926Z 9c3c751126a3: Download complete
+2025-10-21T12:52:41.6176651Z 795dbedde24d: Pull complete
+2025-10-21T12:52:42.3358428Z 021e005a8df2: Verifying Checksum
+2025-10-21T12:52:42.3359231Z 021e005a8df2: Download complete
+2025-10-21T12:52:42.7086299Z 79d5bd8a8d26: Verifying Checksum
+2025-10-21T12:52:42.7086836Z 79d5bd8a8d26: Download complete
+2025-10-21T12:52:45.3208992Z 89d573bf42b3: Pull complete
+2025-10-21T12:52:47.7673296Z 26dfe2fac1c4: Pull complete
+2025-10-21T12:52:55.2570856Z 79d5bd8a8d26: Pull complete
+2025-10-21T12:52:55.4025549Z 30fdd4a523b0: Pull complete
+2025-10-21T12:52:58.9255882Z 021e005a8df2: Pull complete
+2025-10-21T12:52:58.9396801Z 0ba056477ba8: Pull complete
+2025-10-21T12:52:58.9561792Z 9c3c751126a3: Pull complete
+2025-10-21T12:52:58.9606508Z Digest: sha256:ff774ba437fa734572d945ceb9d355b7257500e6d306e9a00ef5b51109aebc52
+2025-10-21T12:52:58.9619584Z Status: Downloaded newer image for gcc:latest
+2025-10-21T12:52:58.9628778Z docker.io/library/gcc:latest
+2025-10-21T12:52:58.9710766Z ##[command]/usr/bin/docker create --name 78e046d6085b45a58c701713b270bb35_gcclatest_85d111 --label c68932 --workdir /__w/json/json --network github_network_5eb7490aecde4aa4984128d3ab0efac6  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/actions-runner/cached/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" gcc:latest "-f" "/dev/null"
+2025-10-21T12:52:58.9979603Z 0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367
+2025-10-21T12:52:59.0004302Z ##[command]/usr/bin/docker start 0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367
+2025-10-21T12:52:59.2227706Z 0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367
+2025-10-21T12:52:59.2247778Z ##[command]/usr/bin/docker ps --all --filter id=0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2025-10-21T12:52:59.2362334Z 0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367 Up Less than a second
+2025-10-21T12:52:59.2383854Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367
+2025-10-21T12:52:59.2501834Z HOME=/github/home
+2025-10-21T12:52:59.2502237Z GITHUB_ACTIONS=true
+2025-10-21T12:52:59.2502565Z CI=true
+2025-10-21T12:52:59.2502990Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2025-10-21T12:52:59.2505233Z GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06 	D3A93CAD751C2AF4F8C7AD516C35B99309B5FA62
+2025-10-21T12:52:59.2508889Z GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://mirrors.kernel.org/gnu/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		http://www.netgull.com/gcc/releases 		https://ftpmirror.gnu.org/gcc 		https://sourceware.org/pub/gcc/releases 		ftp://ftp.gnu.org/gnu/gcc
+2025-10-21T12:52:59.2510786Z GCC_VERSION=15.2.0
+2025-10-21T12:52:59.2526602Z ##[endgroup]
+2025-10-21T12:52:59.2535790Z ##[group]Waiting for all services to be ready
+2025-10-21T12:52:59.2537477Z ##[endgroup]
+2025-10-21T12:52:59.2784171Z ##[group]Run actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+2025-10-21T12:52:59.2785040Z with:
+2025-10-21T12:52:59.2785240Z   repository: nlohmann/json
+2025-10-21T12:52:59.2785591Z   token: ***
+2025-10-21T12:52:59.2785773Z   ssh-strict: true
+2025-10-21T12:52:59.2785949Z   ssh-user: git
+2025-10-21T12:52:59.2786142Z   persist-credentials: true
+2025-10-21T12:52:59.2786347Z   clean: true
+2025-10-21T12:52:59.2786539Z   sparse-checkout-cone-mode: true
+2025-10-21T12:52:59.2786760Z   fetch-depth: 1
+2025-10-21T12:52:59.2786940Z   fetch-tags: false
+2025-10-21T12:52:59.2787124Z   show-progress: true
+2025-10-21T12:52:59.2787307Z   lfs: false
+2025-10-21T12:52:59.2787477Z   submodules: false
+2025-10-21T12:52:59.2787658Z   set-safe-directory: true
+2025-10-21T12:52:59.2788051Z ##[endgroup]
+2025-10-21T12:52:59.2844126Z ##[command]/usr/bin/docker exec  0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367 sh -c "cat /etc/*release | grep ^ID"
+2025-10-21T12:52:59.4745456Z Syncing repository: nlohmann/json
+2025-10-21T12:52:59.4746719Z ##[group]Getting Git version info
+2025-10-21T12:52:59.4747040Z Working directory is '/__w/json/json'
+2025-10-21T12:52:59.4747479Z [command]/usr/bin/git version
+2025-10-21T12:52:59.4747708Z git version 2.47.3
+2025-10-21T12:52:59.4763953Z ##[endgroup]
+2025-10-21T12:52:59.4778560Z Temporarily overriding HOME='/__w/_temp/0a1149fb-818f-4b3e-a61b-720a850fa3b4' before making global git config changes
+2025-10-21T12:52:59.4780009Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-21T12:52:59.4783752Z [command]/usr/bin/git config --global --add safe.directory /__w/json/json
+2025-10-21T12:52:59.4816371Z Deleting the contents of '/__w/json/json'
+2025-10-21T12:52:59.4820366Z ##[group]Initializing the repository
+2025-10-21T12:52:59.4823600Z [command]/usr/bin/git init /__w/json/json
+2025-10-21T12:52:59.4864811Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-21T12:52:59.4865676Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-21T12:52:59.4866475Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-21T12:52:59.4867023Z hint:
+2025-10-21T12:52:59.4867445Z hint: 	git config --global init.defaultBranch <name>
+2025-10-21T12:52:59.4867904Z hint:
+2025-10-21T12:52:59.4868359Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-21T12:52:59.4869282Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-21T12:52:59.4869786Z hint:
+2025-10-21T12:52:59.4869985Z hint: 	git branch -m <name>
+2025-10-21T12:52:59.4870314Z Initialized empty Git repository in /__w/json/json/.git/
+2025-10-21T12:52:59.4878722Z [command]/usr/bin/git remote add origin https://github.com/nlohmann/json
+2025-10-21T12:52:59.4908792Z ##[endgroup]
+2025-10-21T12:52:59.4909600Z ##[group]Disabling automatic garbage collection
+2025-10-21T12:52:59.4912485Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-21T12:52:59.4938363Z ##[endgroup]
+2025-10-21T12:52:59.4939003Z ##[group]Setting up auth
+2025-10-21T12:52:59.4945837Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-21T12:52:59.4975949Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-21T12:52:59.5206509Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-21T12:52:59.5236609Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-21T12:52:59.5467197Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-21T12:52:59.5502645Z ##[endgroup]
+2025-10-21T12:52:59.5503361Z ##[group]Fetching the repository
+2025-10-21T12:52:59.5511694Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +784122ee0f8573db2d7fbe448c4b5b0a26c131ac:refs/remotes/pull/4954/merge
+2025-10-21T12:53:00.3051053Z From https://github.com/nlohmann/json
+2025-10-21T12:53:00.3051784Z  * [new ref]         784122ee0f8573db2d7fbe448c4b5b0a26c131ac -> pull/4954/merge
+2025-10-21T12:53:00.3072881Z ##[endgroup]
+2025-10-21T12:53:00.3073363Z ##[group]Determining the checkout info
+2025-10-21T12:53:00.3075049Z ##[endgroup]
+2025-10-21T12:53:00.3079818Z [command]/usr/bin/git sparse-checkout disable
+2025-10-21T12:53:00.3115004Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-21T12:53:00.3140876Z ##[group]Checking out the ref
+2025-10-21T12:53:00.3144396Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4954/merge
+2025-10-21T12:53:00.4165022Z Note: switching to 'refs/remotes/pull/4954/merge'.
+2025-10-21T12:53:00.4165449Z 
+2025-10-21T12:53:00.4165781Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-10-21T12:53:00.4166523Z changes and commit them, and you can discard any commits you make in this
+2025-10-21T12:53:00.4167242Z state without impacting any branches by switching back to a branch.
+2025-10-21T12:53:00.4167662Z 
+2025-10-21T12:53:00.4167936Z If you want to create a new branch to retain commits you create, you may
+2025-10-21T12:53:00.4168611Z do so (now or later) by using -c with the switch command. Example:
+2025-10-21T12:53:00.4169001Z 
+2025-10-21T12:53:00.4169374Z   git switch -c <new-branch-name>
+2025-10-21T12:53:00.4169637Z 
+2025-10-21T12:53:00.4169778Z Or undo this operation with:
+2025-10-21T12:53:00.4170029Z 
+2025-10-21T12:53:00.4170148Z   git switch -
+2025-10-21T12:53:00.4170422Z 
+2025-10-21T12:53:00.4170751Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-10-21T12:53:00.4171221Z 
+2025-10-21T12:53:00.4171765Z HEAD is now at 784122e Merge 410eaad8f55657e39ba042294ed191dc0d2be772 into 3ed64e502a6371311af3c2f309e6525b2f5f6f18
+2025-10-21T12:53:00.4181344Z ##[endgroup]
+2025-10-21T12:53:00.4220180Z [command]/usr/bin/git log -1 --format=%H
+2025-10-21T12:53:00.4241826Z 784122ee0f8573db2d7fbe448c4b5b0a26c131ac
+2025-10-21T12:53:00.4508555Z ##[group]Run lukka/get-cmake@2ecc21724e5215b0e567bc399a2602d2ecb48541
+2025-10-21T12:53:00.4508911Z with:
+2025-10-21T12:53:00.4509401Z   useCloudCache: true
+2025-10-21T12:53:00.4509604Z   useLocalCache: false
+2025-10-21T12:53:00.4509793Z ##[endgroup]
+2025-10-21T12:53:00.4512107Z ##[command]/usr/bin/docker exec  0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367 sh -c "cat /etc/*release | grep ^ID"
+2025-10-21T12:53:00.7099254Z useCloudCache:true
+2025-10-21T12:53:00.7100411Z useLocalCache:false
+2025-10-21T12:53:00.7100690Z user defined cmake version:
+2025-10-21T12:53:00.7101078Z user defined ninja version:
+2025-10-21T12:53:00.7101409Z cmake version:latest
+2025-10-21T12:53:00.7101647Z ninja version:latest
+2025-10-21T12:53:00.7108588Z ##[group]Computing cache key from the downloads' URLs
+2025-10-21T12:53:00.7108966Z Cache key: '-1583124222'.
+2025-10-21T12:53:00.7112193Z Local install root: '/__w/_temp/-1583124222''.
+2025-10-21T12:53:00.7112759Z ##[endgroup]
+2025-10-21T12:53:00.7113365Z ##[group]Restoring from GitHub cloud cache using key '-1583124222' into '/__w/_temp/-1583124222'
+2025-10-21T12:53:01.0037971Z Cache hit for: -1583124222
+2025-10-21T12:53:02.2884757Z Received 0 of 57026851 (0.0%), 0.0 MBs/sec
+2025-10-21T12:53:02.8756029Z Received 57026851 of 57026851 (100.0%), 34.2 MBs/sec
+2025-10-21T12:53:02.8760194Z Cache Size: ~54 MB (57026851 B)
+2025-10-21T12:53:02.8786173Z [command]/usr/bin/tar -xf /__w/_temp/65890c1d-2bd3-4017-aebd-aa0c3a011e22/cache.tgz -P -C /__w/json/json -z
+2025-10-21T12:53:04.1576518Z Cache restored successfully
+2025-10-21T12:53:04.1685471Z Cloud cache hit.
+2025-10-21T12:53:04.1686136Z ##[endgroup]
+2025-10-21T12:53:04.1687835Z ##[group]Add CMake and Ninja to PATH
+2025-10-21T12:53:04.1688620Z CMake path: '/__w/_temp/-1583124222/cmake-4.1.1-linux-x86_64/bin/'
+2025-10-21T12:53:04.1692148Z Ninja path: '/__w/_temp/-1583124222'
+2025-10-21T12:53:04.1698682Z ##[group]Validating the installed CMake and Ninja
+2025-10-21T12:53:04.1712236Z CMake actual path is: '/__w/_temp/-1583124222/cmake-4.1.1-linux-x86_64/bin/cmake'
+2025-10-21T12:53:04.1712901Z Ninja actual path is: '/__w/_temp/-1583124222/ninja'
+2025-10-21T12:53:04.1713643Z ##[endgroup]
+2025-10-21T12:53:04.1714145Z ##[endgroup]
+2025-10-21T12:53:04.1714447Z get-cmake action execution succeeded
+2025-10-21T12:53:04.1877530Z ##[group]Run cmake -S . -B build -DJSON_CI=On
+2025-10-21T12:53:04.1877912Z [36;1mcmake -S . -B build -DJSON_CI=On[0m
+2025-10-21T12:53:04.1881952Z shell: sh -e {0}
+2025-10-21T12:53:04.1882180Z ##[endgroup]
+2025-10-21T12:53:04.3281187Z -- The CXX compiler identification is GNU 15.2.0
+2025-10-21T12:53:04.3387068Z -- Detecting CXX compiler ABI info
+2025-10-21T12:53:04.4206773Z -- Detecting CXX compiler ABI info - done
+2025-10-21T12:53:04.4356831Z -- Check for working CXX compiler: /usr/local/bin/c++ - skipped
+2025-10-21T12:53:04.4360535Z -- Detecting CXX compile features
+2025-10-21T12:53:04.4367527Z -- Detecting CXX compile features - done
+2025-10-21T12:53:04.5909908Z -- Found Python3: /usr/bin/python3.13 (found version "3.13.5") found components: Interpreter
+2025-10-21T12:53:04.6936353Z -- 🔖 Clang  (CLANG_TOOL-NOTFOUND)
+2025-10-21T12:53:04.6969747Z -- 🔖 Clang-Tidy  (CLANG_TIDY_TOOL-NOTFOUND)
+2025-10-21T12:53:04.6970455Z -- 🔖 CMake 4.1.1 (/__w/_temp/-1583124222/cmake-4.1.1-linux-x86_64/bin/cmake)
+2025-10-21T12:53:04.6993835Z -- 🔖 GCC 15.2.0 (/usr/local/bin/g++)
+2025-10-21T12:53:04.7011903Z -- 🔖 GCOV 15.2.0 (/usr/local/bin/gcov)
+2025-10-21T12:53:04.7028579Z -- 🔖 Git 2.47.3 (/usr/bin/git)
+2025-10-21T12:53:04.7043319Z -- 🔖 include-what-you-use  (IWYU_TOOL-NOTFOUND)
+2025-10-21T12:53:04.7055488Z -- 🔖 Infer  (INFER_TOOL-NOTFOUND)
+2025-10-21T12:53:04.7067509Z -- 🔖 LCOV  (LCOV_TOOL-NOTFOUND)
+2025-10-21T12:53:04.7090009Z -- 🔖 Ninja 1.13.1 (/__w/_temp/-1583124222/ninja)
+2025-10-21T12:53:04.7108596Z -- 🔖 OCLint  (OCLINT_TOOL-NOTFOUND)
+2025-10-21T12:53:04.7121907Z -- 🔖 Valgrind  (VALGRIND_TOOL-NOTFOUND)
+2025-10-21T12:53:04.7436066Z -- Using the multi-header code from /__w/json/json/include/
+2025-10-21T12:53:04.7672514Z -- Operating system: Linux-6.11.0-1018-azure; Linux 0b952874344f 6.11.0-1018-azure #18~24.04.1-Ubuntu SMP Sat Jun 28 04:46:03 UTC 2025 x86_64 GNU/Linux
+2025-10-21T12:53:04.7688938Z -- Compiler: c++ (GCC) 15.2.0; Copyright (C) 2025 Free Software Foundation, Inc.; This is free software; see the source for copying conditions.  There is NO; warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+2025-10-21T12:53:04.8536280Z -- C++ standard library: GNU C++ Standard Library (libstdc++), __GLIBCXX__=20250808
+2025-10-21T12:53:04.8548264Z -- Testing standards: 11 14 17 20 23
+2025-10-21T12:53:04.8558734Z -- Looking for C++ include sys/types.h
+2025-10-21T12:53:04.9378115Z -- Looking for C++ include sys/types.h - found
+2025-10-21T12:53:04.9379545Z -- Looking for C++ include stdint.h
+2025-10-21T12:53:05.0162935Z -- Looking for C++ include stdint.h - found
+2025-10-21T12:53:05.0163482Z -- Looking for C++ include stddef.h
+2025-10-21T12:53:05.0911716Z -- Looking for C++ include stddef.h - found
+2025-10-21T12:53:05.0912233Z -- Check size of size_t
+2025-10-21T12:53:05.1750892Z -- Check size of size_t - done
+2025-10-21T12:53:05.2133216Z -- Configuring done (1.0s)
+2025-10-21T12:53:05.5120698Z -- Generating done (0.3s)
+2025-10-21T12:53:05.5125968Z -- Build files have been written to: /__w/json/json/build
+2025-10-21T12:53:05.5264352Z ##[group]Run cmake --build build --target ci_test_gcc
+2025-10-21T12:53:05.5264735Z [36;1mcmake --build build --target ci_test_gcc[0m
+2025-10-21T12:53:05.5265128Z shell: sh -e {0}
+2025-10-21T12:53:05.5265304Z ##[endgroup]
+2025-10-21T12:53:05.6175663Z [100%] Compile and test with GCC using maximal warning flags
+2025-10-21T12:53:05.8245875Z -- The CXX compiler identification is GNU 15.2.0
+2025-10-21T12:53:05.8346475Z -- Detecting CXX compiler ABI info
+2025-10-21T12:53:05.9166727Z -- Detecting CXX compiler ABI info - done
+2025-10-21T12:53:05.9524912Z -- Check for working CXX compiler: /usr/local/bin/g++ - skipped
+2025-10-21T12:53:05.9528629Z -- Detecting CXX compile features
+2025-10-21T12:53:05.9540020Z -- Detecting CXX compile features - done
+2025-10-21T12:53:05.9714160Z -- Using the multi-header code from /__w/json/json/include/
+2025-10-21T12:53:05.9942167Z -- Operating system: Linux-6.11.0-1018-azure; Linux 0b952874344f 6.11.0-1018-azure #18~24.04.1-Ubuntu SMP Sat Jun 28 04:46:03 UTC 2025 x86_64 GNU/Linux
+2025-10-21T12:53:05.9958819Z -- Compiler: g++ (GCC) 15.2.0; Copyright (C) 2025 Free Software Foundation, Inc.; This is free software; see the source for copying conditions.  There is NO; warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+2025-10-21T12:53:06.0901589Z -- C++ standard library: GNU C++ Standard Library (libstdc++), __GLIBCXX__=20250808
+2025-10-21T12:53:06.0911864Z -- Testing standards: 11 14 17 20 23
+2025-10-21T12:53:06.0921590Z -- Looking for C++ include sys/types.h
+2025-10-21T12:53:06.1796841Z -- Looking for C++ include sys/types.h - found
+2025-10-21T12:53:06.1797396Z -- Looking for C++ include stdint.h
+2025-10-21T12:53:06.2640629Z -- Looking for C++ include stdint.h - found
+2025-10-21T12:53:06.2641163Z -- Looking for C++ include stddef.h
+2025-10-21T12:53:06.3428688Z -- Looking for C++ include stddef.h - found
+2025-10-21T12:53:06.3430652Z -- Check size of size_t
+2025-10-21T12:53:06.4322873Z -- Check size of size_t - done
+2025-10-21T12:53:06.4696850Z -- Configuring done (0.8s)
+2025-10-21T12:53:06.5634925Z -- Generating done (0.1s)
+2025-10-21T12:53:06.5639895Z -- Build files have been written to: /__w/json/json/build/build_gcc
+2025-10-21T12:53:11.3270501Z [1/184] Building CXX object tests/abi/diag/CMakeFiles/abi_compat_diag_on.dir/diag_on.cpp.o
+2025-10-21T12:53:11.3896742Z [2/184] Building CXX object tests/CMakeFiles/test_main.dir/src/unit.cpp.o
+2025-10-21T12:53:11.7085541Z [3/184] Building CXX object tests/abi/diag/CMakeFiles/abi_compat_diag_off.dir/diag_off.cpp.o
+2025-10-21T12:53:12.3568943Z [4/184] Building CXX object tests/abi/CMakeFiles/abi_compat_main.dir/main.cpp.o
+2025-10-21T12:53:13.5506020Z [5/184] Building CXX object tests/CMakeFiles/test-allocator_cpp11.dir/src/unit-allocator.cpp.o
+2025-10-21T12:53:14.5739744Z [6/184] Building CXX object tests/CMakeFiles/test-algorithms_cpp11.dir/src/unit-algorithms.cpp.o
+2025-10-21T12:53:15.2320662Z [7/184] Building CXX object tests/CMakeFiles/test-assert_macro_cpp11.dir/src/unit-assert_macro.cpp.o
+2025-10-21T12:53:17.8479619Z [8/184] Building CXX object tests/CMakeFiles/test-byte_container_with_subtype_cpp11.dir/src/unit-byte_container_with_subtype.cpp.o
+2025-10-21T12:53:19.0596511Z [9/184] Building CXX object tests/CMakeFiles/test-binary_formats_cpp11.dir/src/unit-binary_formats.cpp.o
+2025-10-21T12:53:19.9449882Z [10/184] Building CXX object tests/CMakeFiles/test-capacity_cpp11.dir/src/unit-capacity.cpp.o
+2025-10-21T12:53:21.1064467Z [11/184] Building CXX object tests/CMakeFiles/test-alt-string_cpp11.dir/src/unit-alt-string.cpp.o
+2025-10-21T12:53:24.4246406Z [12/184] Building CXX object tests/CMakeFiles/test-class_const_iterator_cpp11.dir/src/unit-class_const_iterator.cpp.o
+2025-10-21T12:53:24.4391332Z [13/184] Building CXX object tests/CMakeFiles/test-class_lexer_cpp11.dir/src/unit-class_lexer.cpp.o
+2025-10-21T12:53:25.9210825Z [14/184] Building CXX object tests/CMakeFiles/test-class_iterator_cpp11.dir/src/unit-class_iterator.cpp.o
+2025-10-21T12:53:27.6172033Z [15/184] Building CXX object tests/CMakeFiles/test-bson_cpp11.dir/src/unit-bson.cpp.o
+2025-10-21T12:53:32.0460649Z [16/184] Building CXX object tests/CMakeFiles/test-comparison_cpp11.dir/src/unit-comparison.cpp.o
+2025-10-21T12:53:35.8525461Z [17/184] Building CXX object tests/CMakeFiles/test-bjdata_cpp11.dir/src/unit-bjdata.cpp.o
+2025-10-21T12:53:36.1739459Z [18/184] Building CXX object tests/CMakeFiles/test-comparison_cpp20.dir/src/unit-comparison.cpp.o
+2025-10-21T12:53:36.2888156Z [19/184] Building CXX object tests/CMakeFiles/test-concepts_cpp11.dir/src/unit-concepts.cpp.o
+2025-10-21T12:53:38.8085978Z [20/184] Building CXX object tests/CMakeFiles/test-cbor_cpp11.dir/src/unit-cbor.cpp.o
+2025-10-21T12:53:40.3732146Z [21/184] Building CXX object tests/CMakeFiles/test-convenience_cpp11.dir/src/unit-convenience.cpp.o
+2025-10-21T12:53:41.5343683Z [22/184] Building CXX object tests/CMakeFiles/test-constructor2_cpp11.dir/src/unit-constructor2.cpp.o
+2025-10-21T12:53:43.1890118Z [23/184] Building CXX object tests/CMakeFiles/test-class_parser_cpp11.dir/src/unit-class_parser.cpp.o
+2025-10-21T12:53:44.0157196Z [24/184] Building CXX object tests/CMakeFiles/test-class_parser_diagnostic_positions_cpp11.dir/src/unit-class_parser_diagnostic_positions.cpp.o
+2025-10-21T12:53:51.7689670Z [25/184] Building CXX object tests/CMakeFiles/test-constructor1_cpp11.dir/src/unit-constructor1.cpp.o
+2025-10-21T12:53:53.7030115Z [26/184] Building CXX object tests/CMakeFiles/test-custom-base-class_cpp11.dir/src/unit-custom-base-class.cpp.o
+2025-10-21T12:53:56.6697685Z [27/184] Building CXX object tests/CMakeFiles/test-diagnostic-positions-only_cpp11.dir/src/unit-diagnostic-positions-only.cpp.o
+2025-10-21T12:53:59.2074947Z [28/184] Building CXX object tests/CMakeFiles/test-diagnostic-positions_cpp11.dir/src/unit-diagnostic-positions.cpp.o
+2025-10-21T12:54:02.9484580Z [29/184] Building CXX object tests/CMakeFiles/test-conversions_cpp11.dir/src/unit-conversions.cpp.o
+2025-10-21T12:54:04.1752109Z [30/184] Building CXX object tests/CMakeFiles/test-conversions_cpp14.dir/src/unit-conversions.cpp.o
+2025-10-21T12:54:04.7547361Z [31/184] Building CXX object tests/CMakeFiles/test-disabled_exceptions_cpp11.dir/src/unit-disabled_exceptions.cpp.o
+2025-10-21T12:54:05.6795435Z [32/184] Building CXX object tests/CMakeFiles/test-diagnostics_cpp11.dir/src/unit-diagnostics.cpp.o
+2025-10-21T12:54:07.0382406Z [33/184] Building CXX object tests/CMakeFiles/test-conversions_cpp17.dir/src/unit-conversions.cpp.o
+2025-10-21T12:54:10.4157319Z [34/184] Building CXX object tests/CMakeFiles/test-element_access1_cpp11.dir/src/unit-element_access1.cpp.o
+2025-10-21T12:54:13.9143700Z [35/184] Building CXX object tests/CMakeFiles/test-hash_cpp11.dir/src/unit-hash.cpp.o
+2025-10-21T12:54:16.5211259Z [36/184] Building CXX object tests/CMakeFiles/test-deserialization_cpp11.dir/src/unit-deserialization.cpp.o
+2025-10-21T12:54:19.8967763Z [37/184] Building CXX object tests/CMakeFiles/test-inspection_cpp11.dir/src/unit-inspection.cpp.o
+2025-10-21T12:54:20.3997918Z [38/184] Building CXX object tests/CMakeFiles/test-items_cpp11.dir/src/unit-items.cpp.o
+2025-10-21T12:54:21.9488513Z [39/184] Building CXX object tests/CMakeFiles/test-element_access2_cpp11.dir/src/unit-element_access2.cpp.o
+2025-10-21T12:54:22.9994453Z [40/184] Building CXX object tests/CMakeFiles/test-element_access2_cpp14.dir/src/unit-element_access2.cpp.o
+2025-10-21T12:54:24.4605889Z [41/184] Building CXX object tests/CMakeFiles/test-items_cpp17.dir/src/unit-items.cpp.o
+2025-10-21T12:54:25.7382618Z [42/184] Building CXX object tests/CMakeFiles/test-iterators3_cpp11.dir/src/unit-iterators3.cpp.o
+2025-10-21T12:54:27.7267489Z [43/184] Building CXX object tests/CMakeFiles/test-iterators3_cpp14.dir/src/unit-iterators3.cpp.o
+2025-10-21T12:54:27.8583481Z [44/184] Building CXX object tests/CMakeFiles/test-iterators2_cpp11.dir/src/unit-iterators2.cpp.o
+2025-10-21T12:54:28.1050890Z [45/184] Building CXX object tests/CMakeFiles/test-iterators1_cpp11.dir/src/unit-iterators1.cpp.o
+2025-10-21T12:54:28.5326375Z [46/184] Building CXX object tests/CMakeFiles/test-element_access2_cpp17.dir/src/unit-element_access2.cpp.o
+2025-10-21T12:54:32.4005662Z [47/184] Building CXX object tests/CMakeFiles/test-iterators2_cpp20.dir/src/unit-iterators2.cpp.o
+2025-10-21T12:54:33.1058607Z [48/184] Building CXX object tests/CMakeFiles/test-large_json_cpp11.dir/src/unit-large_json.cpp.o
+2025-10-21T12:54:35.4951465Z [49/184] Building CXX object tests/CMakeFiles/test-locale-cpp_cpp11.dir/src/unit-locale-cpp.cpp.o
+2025-10-21T12:54:36.4386251Z [50/184] Building CXX object tests/CMakeFiles/test-json_patch_cpp11.dir/src/unit-json_patch.cpp.o
+2025-10-21T12:54:38.6557380Z [51/184] Building CXX object tests/CMakeFiles/test-merge_patch_cpp11.dir/src/unit-merge_patch.cpp.o
+2025-10-21T12:54:39.2548993Z [52/184] Building CXX object tests/CMakeFiles/test-json_pointer_cpp11.dir/src/unit-json_pointer.cpp.o
+2025-10-21T12:54:39.2604039Z [53/184] Building CXX object tests/CMakeFiles/test-meta_cpp11.dir/src/unit-meta.cpp.o
+2025-10-21T12:54:41.3333652Z [54/184] Building CXX object tests/CMakeFiles/test-json_pointer_cpp20.dir/src/unit-json_pointer.cpp.o
+2025-10-21T12:54:41.8339703Z [55/184] Building CXX object tests/CMakeFiles/test-noexcept_cpp11.dir/src/unit-noexcept.cpp.o
+2025-10-21T12:54:43.3590904Z [56/184] Building CXX object tests/CMakeFiles/test-no-mem-leak-on-adl-serialize_cpp11.dir/src/unit-no-mem-leak-on-adl-serialize.cpp.o
+2025-10-21T12:54:44.9816134Z [57/184] Building CXX object tests/CMakeFiles/test-modifiers_cpp11.dir/src/unit-modifiers.cpp.o
+2025-10-21T12:54:45.3870702Z [58/184] Building CXX object tests/CMakeFiles/test-ordered_map_cpp11.dir/src/unit-ordered_map.cpp.o
+2025-10-21T12:54:49.8209973Z [59/184] Building CXX object tests/CMakeFiles/test-ordered_json_cpp11.dir/src/unit-ordered_json.cpp.o
+2025-10-21T12:54:50.7517806Z [60/184] Building CXX object tests/CMakeFiles/test-pointer_access_cpp11.dir/src/unit-pointer_access.cpp.o
+2025-10-21T12:54:51.8618377Z [61/184] Building CXX object tests/CMakeFiles/test-reference_access_cpp11.dir/src/unit-reference_access.cpp.o
+2025-10-21T12:54:54.1750286Z [62/184] Building CXX object tests/CMakeFiles/test-msgpack_cpp11.dir/src/unit-msgpack.cpp.o
+2025-10-21T12:54:57.5244320Z [63/184] Building CXX object tests/CMakeFiles/test-readme_cpp11.dir/src/unit-readme.cpp.o
+2025-10-21T12:55:00.2520292Z [64/184] Building CXX object tests/CMakeFiles/test-msgpack_cpp17.dir/src/unit-msgpack.cpp.o
+2025-10-21T12:55:06.8086809Z [65/184] Building CXX object tests/CMakeFiles/test-serialization_cpp11.dir/src/unit-serialization.cpp.o
+2025-10-21T12:55:16.0492481Z [66/184] Building CXX object tests/CMakeFiles/test-testsuites_cpp11.dir/src/unit-testsuites.cpp.o
+2025-10-21T12:55:18.2937052Z [67/184] Building CXX object tests/CMakeFiles/test-regression1_cpp11.dir/src/unit-regression1.cpp.o
+2025-10-21T12:55:19.2271301Z [68/184] Building CXX object tests/CMakeFiles/test-type_traits_cpp11.dir/src/unit-type_traits.cpp.o
+2025-10-21T12:55:19.5401208Z [69/184] Building CXX object tests/CMakeFiles/test-regression2_cpp11.dir/src/unit-regression2.cpp.o
+2025-10-21T12:55:19.9558049Z [70/184] Building CXX object tests/CMakeFiles/test-regression1_cpp17.dir/src/unit-regression1.cpp.o
+2025-10-21T12:55:20.1723937Z [71/184] Building CXX object tests/CMakeFiles/test-to_chars_cpp11.dir/src/unit-to_chars.cpp.o
+2025-10-21T12:55:26.0363456Z [72/184] Building CXX object tests/CMakeFiles/test-udl_cpp11.dir/src/unit-udl.cpp.o
+2025-10-21T12:55:26.7241562Z [73/184] Building CXX object tests/CMakeFiles/test-regression2_cpp17.dir/src/unit-regression2.cpp.o
+2025-10-21T12:55:32.4067807Z [74/184] Building CXX object tests/CMakeFiles/test-unicode2_cpp11.dir/src/unit-unicode2.cpp.o
+2025-10-21T12:55:33.9224090Z [75/184] Building CXX object tests/CMakeFiles/test-regression2_cpp20.dir/src/unit-regression2.cpp.o
+2025-10-21T12:55:34.1171225Z [76/184] Building CXX object tests/CMakeFiles/test-unicode1_cpp11.dir/src/unit-unicode1.cpp.o
+2025-10-21T12:55:34.3642330Z [77/184] Building CXX object tests/CMakeFiles/test-udt_macro_cpp11.dir/src/unit-udt_macro.cpp.o
+2025-10-21T12:55:35.3131496Z [78/184] Building CXX object tests/CMakeFiles/test-udt_cpp11.dir/src/unit-udt.cpp.o
+2025-10-21T12:55:37.9113045Z [79/184] Building CXX object tests/CMakeFiles/test-unicode3_cpp11.dir/src/unit-unicode3.cpp.o
+2025-10-21T12:55:38.0058764Z [80/184] Building CXX object tests/CMakeFiles/test-windows_h_cpp11.dir/src/unit-windows_h.cpp.o
+2025-10-21T12:55:39.7717212Z [81/184] Building CXX object tests/CMakeFiles/test-ubjson_cpp11.dir/src/unit-ubjson.cpp.o
+2025-10-21T12:55:40.0127895Z [82/184] Building CXX object tests/CMakeFiles/test-unicode4_cpp11.dir/src/unit-unicode4.cpp.o
+2025-10-21T12:55:40.0999547Z [83/184] Linking CXX static library tests/abi/libabi_compat_main.a
+2025-10-21T12:55:40.2974226Z [84/184] Building CXX object tests/CMakeFiles/test-unicode5_cpp11.dir/src/unit-unicode5.cpp.o
+2025-10-21T12:55:40.8380044Z [85/184] Building CXX object tests/CMakeFiles/test-user_defined_input_cpp11.dir/src/unit-user_defined_input.cpp.o
+2025-10-21T12:55:44.6530069Z [86/184] Building CXX object tests/CMakeFiles/test-wstring_cpp11.dir/src/unit-wstring.cpp.o
+2025-10-21T12:55:44.7253460Z [87/184] Linking CXX static library tests/abi/diag/libabi_compat_diag_on.a
+2025-10-21T12:55:44.7993598Z [88/184] Linking CXX static library tests/abi/diag/libabi_compat_diag_off.a
+2025-10-21T12:55:44.9504273Z [89/184] Building CXX object tests/abi/diag/CMakeFiles/abi_compat_diag.dir/diag.cpp.o
+2025-10-21T12:55:45.3196818Z [90/184] Building CXX object tests/abi/config/CMakeFiles/abi_config_default.dir/default.cpp.o
+2025-10-21T12:55:45.6624075Z [91/184] Building CXX object tests/abi/config/CMakeFiles/abi_config_noversion.dir/noversion.cpp.o
+2025-10-21T12:55:45.8953196Z [92/184] Linking CXX executable tests/test-algorithms_cpp11
+2025-10-21T12:55:46.1461273Z [93/184] Building CXX object tests/CMakeFiles/test-comparison_legacy_cpp11.dir/src/unit-comparison.cpp.o
+2025-10-21T12:55:46.1467695Z [94/184] Linking CXX executable tests/test-allocator_cpp11
+2025-10-21T12:55:46.2670872Z [95/184] Building CXX object tests/abi/config/CMakeFiles/abi_config_custom.dir/custom.cpp.o
+2025-10-21T12:55:46.3862866Z [96/184] Linking CXX executable tests/test-alt-string_cpp11
+2025-10-21T12:55:46.4283504Z [97/184] Linking CXX executable tests/test-assert_macro_cpp11
+2025-10-21T12:55:46.4840773Z [98/184] Linking CXX executable tests/test-binary_formats_cpp11
+2025-10-21T12:55:46.7044854Z [99/184] Linking CXX executable tests/test-bson_cpp11
+2025-10-21T12:55:46.7064468Z [100/184] Linking CXX executable tests/test-byte_container_with_subtype_cpp11
+2025-10-21T12:55:46.8403763Z [101/184] Linking CXX executable tests/test-bjdata_cpp11
+2025-10-21T12:55:46.9165498Z [102/184] Linking CXX executable tests/test-capacity_cpp11
+2025-10-21T12:55:46.9420549Z [103/184] Linking CXX executable tests/test-cbor_cpp11
+2025-10-21T12:55:47.0693940Z [104/184] Linking CXX executable tests/test-class_const_iterator_cpp11
+2025-10-21T12:55:47.1075907Z [105/184] Linking CXX executable tests/test-class_lexer_cpp11
+2025-10-21T12:55:47.1727452Z [106/184] Linking CXX executable tests/test-class_iterator_cpp11
+2025-10-21T12:55:47.2588864Z [107/184] Linking CXX executable tests/test-class_parser_cpp11
+2025-10-21T12:55:47.3112373Z [108/184] Linking CXX executable tests/test-class_parser_diagnostic_positions_cpp11
+2025-10-21T12:55:47.4043842Z [109/184] Linking CXX executable tests/test-comparison_cpp20
+2025-10-21T12:55:47.4324552Z [110/184] Linking CXX executable tests/test-concepts_cpp11
+2025-10-21T12:55:47.5165559Z [111/184] Linking CXX executable tests/test-comparison_cpp11
+2025-10-21T12:55:47.5986917Z [112/184] Linking CXX executable tests/test-constructor2_cpp11
+2025-10-21T12:55:47.6306632Z [113/184] Linking CXX executable tests/test-constructor1_cpp11
+2025-10-21T12:55:47.6793009Z [114/184] Linking CXX executable tests/test-convenience_cpp11
+2025-10-21T12:55:47.9810198Z [115/184] Linking CXX executable tests/test-conversions_cpp11
+2025-10-21T12:55:48.0116112Z [116/184] Linking CXX executable tests/test-conversions_cpp17
+2025-10-21T12:55:48.1710763Z [117/184] Linking CXX executable tests/test-custom-base-class_cpp11
+2025-10-21T12:55:48.2272757Z [118/184] Linking CXX executable tests/test-deserialization_cpp11
+2025-10-21T12:55:48.3309326Z [119/184] Linking CXX executable tests/test-conversions_cpp14
+2025-10-21T12:55:48.3521560Z [120/184] Linking CXX executable tests/test-diagnostic-positions-only_cpp11
+2025-10-21T12:55:48.4067929Z [121/184] Linking CXX executable tests/test-diagnostic-positions_cpp11
+2025-10-21T12:55:48.4851955Z [122/184] Linking CXX executable tests/test-disabled_exceptions_cpp11
+2025-10-21T12:55:48.5413996Z [123/184] Linking CXX executable tests/test-element_access1_cpp11
+2025-10-21T12:55:48.6723646Z [124/184] Linking CXX executable tests/test-element_access2_cpp11
+2025-10-21T12:55:48.7366576Z [125/184] Linking CXX executable tests/test-element_access2_cpp14
+2025-10-21T12:55:48.7676190Z [126/184] Linking CXX executable tests/test-diagnostics_cpp11
+2025-10-21T12:55:48.8924342Z [127/184] Linking CXX executable tests/test-element_access2_cpp17
+2025-10-21T12:55:48.9763861Z [128/184] Linking CXX executable tests/test-inspection_cpp11
+2025-10-21T12:55:49.0096722Z [129/184] Linking CXX executable tests/test-hash_cpp11
+2025-10-21T12:55:49.0313791Z [130/184] Linking CXX executable tests/test-items_cpp11
+2025-10-21T12:55:49.1568234Z [131/184] Linking CXX executable tests/test-iterators1_cpp11
+2025-10-21T12:55:49.2979318Z [132/184] Linking CXX executable tests/test-items_cpp17
+2025-10-21T12:55:49.3560071Z [133/184] Linking CXX executable tests/test-iterators2_cpp11
+2025-10-21T12:55:49.3589749Z [134/184] Linking CXX executable tests/test-iterators2_cpp20
+2025-10-21T12:55:49.4732896Z [135/184] Linking CXX executable tests/test-iterators3_cpp14
+2025-10-21T12:55:49.4795278Z [136/184] Linking CXX executable tests/test-iterators3_cpp11
+2025-10-21T12:55:49.5246347Z [137/184] Linking CXX executable tests/test-json_patch_cpp11
+2025-10-21T12:55:49.6909243Z [138/184] Linking CXX executable tests/test-large_json_cpp11
+2025-10-21T12:55:49.7758979Z [139/184] Linking CXX executable tests/test-json_pointer_cpp11
+2025-10-21T12:55:49.8005837Z [140/184] Linking CXX executable tests/test-json_pointer_cpp20
+2025-10-21T12:55:49.8764765Z [141/184] Linking CXX executable tests/test-locale-cpp_cpp11
+2025-10-21T12:55:49.9847612Z [142/184] Building CXX object tests/CMakeFiles/test-comparison_legacy_cpp20.dir/src/unit-comparison.cpp.o
+2025-10-21T12:55:50.0790757Z [143/184] Linking CXX executable tests/test-modifiers_cpp11
+2025-10-21T12:55:50.0962610Z [144/184] Linking CXX executable tests/test-meta_cpp11
+2025-10-21T12:55:50.1040499Z [145/184] Linking CXX executable tests/test-merge_patch_cpp11
+2025-10-21T12:55:50.2282828Z [146/184] Linking CXX executable tests/test-msgpack_cpp11
+2025-10-21T12:55:50.2896197Z [147/184] Linking CXX executable tests/test-noexcept_cpp11
+2025-10-21T12:55:50.2962273Z [148/184] Linking CXX executable tests/test-no-mem-leak-on-adl-serialize_cpp11
+2025-10-21T12:55:50.3386587Z [149/184] Linking CXX executable tests/test-msgpack_cpp17
+2025-10-21T12:55:50.4770029Z [150/184] Linking CXX executable tests/test-pointer_access_cpp11
+2025-10-21T12:55:50.5233031Z [151/184] Linking CXX executable tests/test-ordered_map_cpp11
+2025-10-21T12:55:50.5735688Z [152/184] Linking CXX executable tests/test-ordered_json_cpp11
+2025-10-21T12:55:50.6796340Z [153/184] Linking CXX executable tests/test-reference_access_cpp11
+2025-10-21T12:55:50.7550205Z [154/184] Building CXX object tests/abi/inline_ns/CMakeFiles/abi_compat_inline_ns.dir/use_v3_10_5.cpp.o
+2025-10-21T12:55:50.7745076Z [155/184] Linking CXX executable tests/test-readme_cpp11
+2025-10-21T12:55:50.9684022Z [156/184] Linking CXX executable tests/test-regression1_cpp11
+2025-10-21T12:55:51.1030334Z [157/184] Building CXX object tests/abi/inline_ns/CMakeFiles/abi_compat_inline_ns.dir/use_current.cpp.o
+2025-10-21T12:55:51.1129457Z [158/184] Linking CXX executable tests/test-regression1_cpp17
+2025-10-21T12:55:51.1842793Z [159/184] Linking CXX executable tests/test-serialization_cpp11
+2025-10-21T12:55:51.1970491Z [160/184] Linking CXX executable tests/test-regression2_cpp11
+2025-10-21T12:55:51.2686267Z [161/184] Linking CXX executable tests/test-to_chars_cpp11
+2025-10-21T12:55:51.3280092Z [162/184] Linking CXX executable tests/test-type_traits_cpp11
+2025-10-21T12:55:51.3430563Z [163/184] Linking CXX executable tests/test-regression2_cpp20
+2025-10-21T12:55:51.3550425Z [164/184] Linking CXX executable tests/test-regression2_cpp17
+2025-10-21T12:55:51.3962322Z [165/184] Linking CXX executable tests/test-testsuites_cpp11
+2025-10-21T12:55:51.4568878Z [166/184] Linking CXX executable tests/test-udl_cpp11
+2025-10-21T12:55:51.4919725Z [167/184] Linking CXX executable tests/test-ubjson_cpp11
+2025-10-21T12:55:51.5516404Z [168/184] Linking CXX executable tests/test-unicode2_cpp11
+2025-10-21T12:55:51.6414173Z [169/184] Linking CXX executable tests/test-unicode1_cpp11
+2025-10-21T12:55:51.6584657Z [170/184] Linking CXX executable tests/test-udt_cpp11
+2025-10-21T12:55:51.7118317Z [171/184] Linking CXX executable tests/test-unicode5_cpp11
+2025-10-21T12:55:51.7256329Z [172/184] Linking CXX executable tests/test-unicode4_cpp11
+2025-10-21T12:55:51.7576610Z [173/184] Linking CXX executable tests/test-udt_macro_cpp11
+2025-10-21T12:55:51.7593940Z [174/184] Linking CXX executable tests/test-unicode3_cpp11
+2025-10-21T12:55:51.8207021Z [175/184] Linking CXX executable tests/test-windows_h_cpp11
+2025-10-21T12:55:51.8875213Z [176/184] Linking CXX executable tests/test-wstring_cpp11
+2025-10-21T12:55:51.9088351Z [177/184] Linking CXX executable tests/test-user_defined_input_cpp11
+2025-10-21T12:55:51.9869797Z [178/184] Linking CXX executable tests/test-comparison_legacy_cpp20
+2025-10-21T12:55:51.9990074Z [179/184] Linking CXX executable tests/test-comparison_legacy_cpp11
+2025-10-21T12:55:52.0017640Z [180/184] Linking CXX executable tests/abi/config/abi_config_default
+2025-10-21T12:55:52.0319935Z [181/184] Linking CXX executable tests/abi/config/abi_config_noversion
+2025-10-21T12:55:52.0772469Z [182/184] Linking CXX executable tests/abi/diag/abi_compat_diag
+2025-10-21T12:55:52.0872614Z [183/184] Linking CXX executable tests/abi/config/abi_config_custom
+2025-10-21T12:55:52.1164743Z [184/184] Linking CXX executable tests/abi/inline_ns/abi_compat_inline_ns
+2025-10-21T12:55:52.1199856Z Test project /__w/json/json/build/build_gcc
+2025-10-21T12:55:52.1230312Z         Start   1: download_test_data
+2025-10-21T12:55:52.1237274Z         Start  90: cmake_import_configure
+2025-10-21T12:55:52.1245738Z         Start  92: cmake_import_minver_configure
+2025-10-21T12:55:52.1255226Z         Start  94: cmake_add_subdirectory_configure
+2025-10-21T12:55:52.1293913Z         Start  96: cmake_fetch_content_configure
+2025-10-21T12:55:52.1301286Z         Start  98: cmake_fetch_content2_configure
+2025-10-21T12:55:52.1344746Z         Start 100: cmake_target_include_directories_configure
+2025-10-21T12:55:52.1368605Z         Start  85: test-abi_config_default
+2025-10-21T12:55:52.1374623Z         Start  86: test-abi_config_noversion
+2025-10-21T12:55:52.1420272Z         Start  87: test-abi_config_custom
+2025-10-21T12:55:52.1476089Z   1/101 Test  #85: test-abi_config_default ........................   Passed    0.01 sec
+2025-10-21T12:55:52.1487484Z   2/101 Test  #86: test-abi_config_noversion ......................   Passed    0.01 sec
+2025-10-21T12:55:52.1488359Z         Start  88: test-abi_compat_diag
+2025-10-21T12:55:52.1544253Z         Start  89: test-abi_compat_inline_ns
+2025-10-21T12:55:52.1564781Z   3/101 Test  #87: test-abi_config_custom .........................   Passed    0.01 sec
+2025-10-21T12:55:52.1570490Z   4/101 Test  #88: test-abi_compat_diag ...........................   Passed    0.01 sec
+2025-10-21T12:55:52.1690063Z   5/101 Test  #89: test-abi_compat_inline_ns ......................   Passed    0.01 sec
+2025-10-21T12:55:53.0054063Z   6/101 Test  #94: cmake_add_subdirectory_configure ...............   Passed    0.88 sec
+2025-10-21T12:55:53.0057378Z         Start  95: cmake_add_subdirectory_build
+2025-10-21T12:55:53.0090312Z   7/101 Test  #92: cmake_import_minver_configure ..................   Passed    0.88 sec
+2025-10-21T12:55:53.0093764Z         Start  93: cmake_import_minver_build
+2025-10-21T12:55:53.0254560Z   8/101 Test  #90: cmake_import_configure .........................   Passed    0.90 sec
+2025-10-21T12:55:53.0256819Z         Start  91: cmake_import_build
+2025-10-21T12:55:53.0706852Z   9/101 Test #100: cmake_target_include_directories_configure .....   Passed    0.94 sec
+2025-10-21T12:55:53.0707957Z         Start 101: cmake_target_include_directories_build
+2025-10-21T12:55:55.2252566Z  10/101 Test  #96: cmake_fetch_content_configure ..................   Passed    3.10 sec
+2025-10-21T12:55:55.2259675Z         Start  97: cmake_fetch_content_build
+2025-10-21T12:55:55.3065762Z  11/101 Test  #98: cmake_fetch_content2_configure .................   Passed    3.18 sec
+2025-10-21T12:55:55.3076002Z         Start  99: cmake_fetch_content2_build
+2025-10-21T12:56:01.0034969Z  12/101 Test #101: cmake_target_include_directories_build .........   Passed    7.93 sec
+2025-10-21T12:56:01.4413770Z  13/101 Test  #91: cmake_import_build .............................   Passed    8.42 sec
+2025-10-21T12:56:01.9041410Z  14/101 Test  #93: cmake_import_minver_build ......................   Passed    8.89 sec
+2025-10-21T12:56:01.9824797Z  15/101 Test  #95: cmake_add_subdirectory_build ...................   Passed    8.98 sec
+2025-10-21T12:56:02.5187740Z  16/101 Test  #97: cmake_fetch_content_build ......................   Passed    7.29 sec
+2025-10-21T12:56:02.5853090Z  17/101 Test  #99: cmake_fetch_content2_build .....................   Passed    7.28 sec
+2025-10-21T12:56:02.7183637Z  18/101 Test   #1: download_test_data .............................   Passed   10.60 sec
+2025-10-21T12:56:02.7185518Z         Start   2: test-algorithms_cpp11
+2025-10-21T12:56:02.7191904Z         Start   3: test-allocator_cpp11
+2025-10-21T12:56:02.7198657Z         Start   4: test-alt-string_cpp11
+2025-10-21T12:56:02.7213388Z         Start   5: test-assert_macro_cpp11
+2025-10-21T12:56:02.7220913Z         Start   6: test-binary_formats_cpp11
+2025-10-21T12:56:02.7228164Z         Start   7: test-bjdata_cpp11
+2025-10-21T12:56:02.7242611Z         Start   8: test-bson_cpp11
+2025-10-21T12:56:02.7253125Z         Start   9: test-byte_container_with_subtype_cpp11
+2025-10-21T12:56:02.7275633Z         Start  10: test-capacity_cpp11
+2025-10-21T12:56:02.7312042Z         Start  11: test-cbor_cpp11
+2025-10-21T12:56:02.7360064Z  19/101 Test   #2: test-algorithms_cpp11 ..........................   Passed    0.02 sec
+2025-10-21T12:56:02.7363045Z  20/101 Test   #3: test-allocator_cpp11 ...........................   Passed    0.02 sec
+2025-10-21T12:56:02.7366508Z  21/101 Test   #4: test-alt-string_cpp11 ..........................   Passed    0.02 sec
+2025-10-21T12:56:02.7370881Z  22/101 Test   #5: test-assert_macro_cpp11 ........................   Passed    0.02 sec
+2025-10-21T12:56:02.7374908Z  23/101 Test   #9: test-byte_container_with_subtype_cpp11 .........   Passed    0.01 sec
+2025-10-21T12:56:02.7400823Z  24/101 Test  #10: test-capacity_cpp11 ............................   Passed    0.01 sec
+2025-10-21T12:56:02.7401560Z         Start  12: test-class_const_iterator_cpp11
+2025-10-21T12:56:02.7402059Z         Start  13: test-class_iterator_cpp11
+2025-10-21T12:56:02.7443407Z         Start  14: test-class_lexer_cpp11
+2025-10-21T12:56:02.7451935Z         Start  15: test-class_parser_cpp11
+2025-10-21T12:56:02.7504288Z         Start  16: test-class_parser_diagnostic_positions_cpp11
+2025-10-21T12:56:02.7509631Z         Start  17: test-comparison_cpp11
+2025-10-21T12:56:02.7574938Z  25/101 Test   #8: test-bson_cpp11 ................................   Passed    0.03 sec
+2025-10-21T12:56:02.7577699Z  26/101 Test  #12: test-class_const_iterator_cpp11 ................   Passed    0.02 sec
+2025-10-21T12:56:02.7581606Z  27/101 Test  #13: test-class_iterator_cpp11 ......................   Passed    0.02 sec
+2025-10-21T12:56:02.7582789Z  28/101 Test  #14: test-class_lexer_cpp11 .........................   Passed    0.01 sec
+2025-10-21T12:56:02.7588709Z         Start  18: test-comparison_cpp20
+2025-10-21T12:56:02.7634109Z         Start  19: test-concepts_cpp11
+2025-10-21T12:56:02.7656264Z         Start  20: test-constructor1_cpp11
+2025-10-21T12:56:02.7701824Z         Start  21: test-constructor2_cpp11
+2025-10-21T12:56:02.7748348Z  29/101 Test  #17: test-comparison_cpp11 ..........................   Passed    0.02 sec
+2025-10-21T12:56:02.7757706Z  30/101 Test  #18: test-comparison_cpp20 ..........................   Passed    0.02 sec
+2025-10-21T12:56:02.7758855Z  31/101 Test  #19: test-concepts_cpp11 ............................   Passed    0.01 sec
+2025-10-21T12:56:02.7759976Z         Start  22: test-convenience_cpp11
+2025-10-21T12:56:02.7772182Z         Start  23: test-conversions_cpp11
+2025-10-21T12:56:02.7842534Z         Start  24: test-conversions_cpp14
+2025-10-21T12:56:02.7881191Z  32/101 Test  #21: test-constructor2_cpp11 ........................   Passed    0.02 sec
+2025-10-21T12:56:02.7884782Z  33/101 Test  #22: test-convenience_cpp11 .........................   Passed    0.01 sec
+2025-10-21T12:56:02.7887815Z         Start  25: test-conversions_cpp17
+2025-10-21T12:56:02.7916307Z         Start  26: test-custom-base-class_cpp11
+2025-10-21T12:56:02.7981257Z  34/101 Test  #20: test-constructor1_cpp11 ........................   Passed    0.03 sec
+2025-10-21T12:56:02.7985099Z  35/101 Test  #26: test-custom-base-class_cpp11 ...................   Passed    0.01 sec
+2025-10-21T12:56:02.7989737Z         Start  27: test-deserialization_cpp11
+2025-10-21T12:56:02.8052945Z         Start  28: test-diagnostic-positions-only_cpp11
+2025-10-21T12:56:02.8062848Z  36/101 Test  #23: test-conversions_cpp11 .........................   Passed    0.03 sec
+2025-10-21T12:56:02.8079804Z         Start  29: test-diagnostic-positions_cpp11
+2025-10-21T12:56:02.8134389Z  37/101 Test  #28: test-diagnostic-positions-only_cpp11 ...........   Passed    0.01 sec
+2025-10-21T12:56:02.8138447Z  38/101 Test  #29: test-diagnostic-positions_cpp11 ................   Passed    0.01 sec
+2025-10-21T12:56:02.8143691Z         Start  30: test-diagnostics_cpp11
+2025-10-21T12:56:02.8177896Z         Start  31: test-disabled_exceptions_cpp11
+2025-10-21T12:56:02.8188684Z  39/101 Test  #24: test-conversions_cpp14 .........................   Passed    0.03 sec
+2025-10-21T12:56:02.8202683Z         Start  32: test-element_access1_cpp11
+2025-10-21T12:56:02.8274424Z  40/101 Test  #25: test-conversions_cpp17 .........................   Passed    0.04 sec
+2025-10-21T12:56:02.8278414Z  41/101 Test  #30: test-diagnostics_cpp11 .........................   Passed    0.01 sec
+2025-10-21T12:56:02.8281840Z  42/101 Test  #31: test-disabled_exceptions_cpp11 .................   Passed    0.01 sec
+2025-10-21T12:56:02.8283708Z         Start  33: test-element_access2_cpp11
+2025-10-21T12:56:02.8292129Z         Start  34: test-element_access2_cpp14
+2025-10-21T12:56:02.8342982Z         Start  35: test-element_access2_cpp17
+2025-10-21T12:56:02.8475909Z  43/101 Test  #32: test-element_access1_cpp11 .....................   Passed    0.03 sec
+2025-10-21T12:56:02.8479385Z         Start  36: test-hash_cpp11
+2025-10-21T12:56:02.8584830Z  44/101 Test  #36: test-hash_cpp11 ................................   Passed    0.01 sec
+2025-10-21T12:56:02.8588563Z         Start  37: test-inspection_cpp11
+2025-10-21T12:56:02.8664607Z  45/101 Test  #27: test-deserialization_cpp11 .....................   Passed    0.07 sec
+2025-10-21T12:56:02.8667872Z         Start  38: test-items_cpp11
+2025-10-21T12:56:02.8743697Z  46/101 Test  #38: test-items_cpp11 ...............................   Passed    0.01 sec
+2025-10-21T12:56:02.8748011Z         Start  39: test-items_cpp17
+2025-10-21T12:56:02.8923261Z  47/101 Test  #39: test-items_cpp17 ...............................   Passed    0.02 sec
+2025-10-21T12:56:02.8927043Z         Start  40: test-iterators1_cpp11
+2025-10-21T12:56:02.8953153Z  48/101 Test  #34: test-element_access2_cpp14 .....................   Passed    0.07 sec
+2025-10-21T12:56:02.8956668Z         Start  41: test-iterators2_cpp11
+2025-10-21T12:56:02.9136706Z  49/101 Test  #40: test-iterators1_cpp11 ..........................   Passed    0.02 sec
+2025-10-21T12:56:02.9140421Z         Start  42: test-iterators2_cpp20
+2025-10-21T12:56:02.9226313Z  50/101 Test  #33: test-element_access2_cpp11 .....................   Passed    0.09 sec
+2025-10-21T12:56:02.9229637Z         Start  43: test-iterators3_cpp11
+2025-10-21T12:56:02.9266992Z  51/101 Test  #43: test-iterators3_cpp11 ..........................   Passed    0.00 sec
+2025-10-21T12:56:02.9271157Z         Start  44: test-iterators3_cpp14
+2025-10-21T12:56:02.9308949Z  52/101 Test  #44: test-iterators3_cpp14 ..........................   Passed    0.00 sec
+2025-10-21T12:56:02.9332590Z         Start  45: test-json_patch_cpp11
+2025-10-21T12:56:02.9485723Z  53/101 Test  #35: test-element_access2_cpp17 .....................   Passed    0.11 sec
+2025-10-21T12:56:02.9487629Z         Start  46: test-json_pointer_cpp11
+2025-10-21T12:56:02.9716870Z  54/101 Test  #45: test-json_patch_cpp11 ..........................   Passed    0.04 sec
+2025-10-21T12:56:02.9723131Z         Start  47: test-json_pointer_cpp20
+2025-10-21T12:56:02.9741006Z  55/101 Test  #41: test-iterators2_cpp11 ..........................   Passed    0.08 sec
+2025-10-21T12:56:02.9750826Z  56/101 Test  #42: test-iterators2_cpp20 ..........................   Passed    0.06 sec
+2025-10-21T12:56:02.9753991Z  57/101 Test  #46: test-json_pointer_cpp11 ........................   Passed    0.03 sec
+2025-10-21T12:56:02.9754988Z         Start  48: test-large_json_cpp11
+2025-10-21T12:56:02.9854572Z         Start  49: test-locale-cpp_cpp11
+2025-10-21T12:56:02.9864298Z         Start  50: test-merge_patch_cpp11
+2025-10-21T12:56:02.9888085Z  58/101 Test  #47: test-json_pointer_cpp20 ........................   Passed    0.02 sec
+2025-10-21T12:56:02.9893371Z         Start  51: test-meta_cpp11
+2025-10-21T12:56:02.9944870Z  59/101 Test  #49: test-locale-cpp_cpp11 ..........................   Passed    0.01 sec
+2025-10-21T12:56:02.9951468Z  60/101 Test  #50: test-merge_patch_cpp11 .........................   Passed    0.01 sec
+2025-10-21T12:56:02.9958005Z  61/101 Test  #51: test-meta_cpp11 ................................   Passed    0.01 sec
+2025-10-21T12:56:02.9965914Z         Start  52: test-modifiers_cpp11
+2025-10-21T12:56:03.0042567Z         Start  53: test-msgpack_cpp11
+2025-10-21T12:56:03.0106826Z         Start  54: test-msgpack_cpp17
+2025-10-21T12:56:03.0154151Z  62/101 Test  #52: test-modifiers_cpp11 ...........................   Passed    0.02 sec
+2025-10-21T12:56:03.0158493Z         Start  55: test-no-mem-leak-on-adl-serialize_cpp11
+2025-10-21T12:56:03.0233032Z  63/101 Test  #55: test-no-mem-leak-on-adl-serialize_cpp11 ........   Passed    0.01 sec
+2025-10-21T12:56:03.0237628Z         Start  56: test-noexcept_cpp11
+2025-10-21T12:56:03.0311523Z  64/101 Test  #56: test-noexcept_cpp11 ............................   Passed    0.01 sec
+2025-10-21T12:56:03.0314632Z         Start  57: test-ordered_json_cpp11
+2025-10-21T12:56:03.0395461Z  65/101 Test  #57: test-ordered_json_cpp11 ........................   Passed    0.01 sec
+2025-10-21T12:56:03.0397520Z         Start  58: test-ordered_map_cpp11
+2025-10-21T12:56:03.0456712Z  66/101 Test  #58: test-ordered_map_cpp11 .........................   Passed    0.01 sec
+2025-10-21T12:56:03.0460780Z         Start  59: test-pointer_access_cpp11
+2025-10-21T12:56:03.0516361Z  67/101 Test  #59: test-pointer_access_cpp11 ......................   Passed    0.01 sec
+2025-10-21T12:56:03.0520416Z         Start  60: test-readme_cpp11
+2025-10-21T12:56:03.0665908Z  68/101 Test  #60: test-readme_cpp11 ..............................   Passed    0.01 sec
+2025-10-21T12:56:03.0670198Z         Start  61: test-reference_access_cpp11
+2025-10-21T12:56:03.0797585Z  69/101 Test  #61: test-reference_access_cpp11 ....................   Passed    0.01 sec
+2025-10-21T12:56:03.0798609Z         Start  62: test-regression1_cpp11
+2025-10-21T12:56:03.2000156Z  70/101 Test  #16: test-class_parser_diagnostic_positions_cpp11 ...   Passed    0.45 sec
+2025-10-21T12:56:03.2004625Z         Start  63: test-regression1_cpp17
+2025-10-21T12:56:03.2103014Z  71/101 Test  #15: test-class_parser_cpp11 ........................   Passed    0.46 sec
+2025-10-21T12:56:03.2106702Z         Start  64: test-regression2_cpp11
+2025-10-21T12:56:03.2252923Z  72/101 Test  #64: test-regression2_cpp11 .........................   Passed    0.01 sec
+2025-10-21T12:56:03.2257183Z         Start  65: test-regression2_cpp17
+2025-10-21T12:56:03.2433439Z  73/101 Test  #65: test-regression2_cpp17 .........................   Passed    0.02 sec
+2025-10-21T12:56:03.2437707Z         Start  66: test-regression2_cpp20
+2025-10-21T12:56:03.2597361Z  74/101 Test  #66: test-regression2_cpp20 .........................   Passed    0.02 sec
+2025-10-21T12:56:03.2602175Z         Start  67: test-serialization_cpp11
+2025-10-21T12:56:03.2675165Z  75/101 Test  #67: test-serialization_cpp11 .......................   Passed    0.01 sec
+2025-10-21T12:56:03.2677422Z         Start  68: test-testsuites_cpp11
+2025-10-21T12:56:03.5910582Z  76/101 Test  #68: test-testsuites_cpp11 ..........................   Passed    0.32 sec
+2025-10-21T12:56:03.5912425Z         Start  69: test-to_chars_cpp11
+2025-10-21T12:56:03.6014953Z  77/101 Test  #69: test-to_chars_cpp11 ............................   Passed    0.01 sec
+2025-10-21T12:56:03.6017488Z         Start  70: test-type_traits_cpp11
+2025-10-21T12:56:03.6072710Z  78/101 Test  #70: test-type_traits_cpp11 .........................   Passed    0.01 sec
+2025-10-21T12:56:03.6074968Z         Start  71: test-ubjson_cpp11
+2025-10-21T12:56:21.9757661Z  79/101 Test  #48: test-large_json_cpp11 ..........................   Passed   19.00 sec
+2025-10-21T12:56:21.9761440Z         Start  72: test-udl_cpp11
+2025-10-21T12:56:21.9861527Z  80/101 Test  #72: test-udl_cpp11 .................................   Passed    0.01 sec
+2025-10-21T12:56:21.9863661Z         Start  73: test-udt_cpp11
+2025-10-21T12:56:22.0001102Z  81/101 Test  #73: test-udt_cpp11 .................................   Passed    0.01 sec
+2025-10-21T12:56:22.0003306Z         Start  74: test-udt_macro_cpp11
+2025-10-21T12:56:22.0164425Z  82/101 Test  #74: test-udt_macro_cpp11 ...........................   Passed    0.02 sec
+2025-10-21T12:56:22.0167832Z         Start  75: test-unicode1_cpp11
+2025-10-21T12:56:27.6905432Z  83/101 Test  #37: test-inspection_cpp11 ..........................   Passed   24.83 sec
+2025-10-21T12:56:27.6909231Z         Start  76: test-unicode2_cpp11
+2025-10-21T12:56:36.7784784Z  84/101 Test  #62: test-regression1_cpp11 .........................   Passed   33.70 sec
+2025-10-21T12:56:36.7789657Z         Start  77: test-unicode3_cpp11
+2025-10-21T12:56:44.8477054Z  85/101 Test  #63: test-regression1_cpp17 .........................   Passed   41.65 sec
+2025-10-21T12:56:44.8485569Z         Start  78: test-unicode4_cpp11
+2025-10-21T12:56:45.7692266Z  86/101 Test   #7: test-bjdata_cpp11 ..............................   Passed   43.05 sec
+2025-10-21T12:56:45.7700689Z         Start  79: test-unicode5_cpp11
+2025-10-21T12:56:57.6263756Z  87/101 Test  #71: test-ubjson_cpp11 ..............................   Passed   54.02 sec
+2025-10-21T12:56:57.6267594Z         Start  80: test-user_defined_input_cpp11
+2025-10-21T12:56:57.6319210Z  88/101 Test  #80: test-user_defined_input_cpp11 ..................   Passed    0.00 sec
+2025-10-21T12:56:57.6320081Z         Start  81: test-windows_h_cpp11
+2025-10-21T12:56:57.6374758Z  89/101 Test  #81: test-windows_h_cpp11 ...........................   Passed    0.01 sec
+2025-10-21T12:56:57.6376369Z         Start  82: test-wstring_cpp11
+2025-10-21T12:56:57.6442838Z  90/101 Test  #82: test-wstring_cpp11 .............................   Passed    0.01 sec
+2025-10-21T12:56:57.6445943Z         Start  83: test-comparison_legacy_cpp11
+2025-10-21T12:56:57.6582177Z  91/101 Test  #83: test-comparison_legacy_cpp11 ...................   Passed    0.01 sec
+2025-10-21T12:56:57.6584837Z         Start  84: test-comparison_legacy_cpp20
+2025-10-21T12:56:57.6765542Z  92/101 Test  #84: test-comparison_legacy_cpp20 ...................   Passed    0.02 sec
+2025-10-21T12:56:57.8162582Z  93/101 Test  #75: test-unicode1_cpp11 ............................   Passed   35.80 sec
+2025-10-21T12:57:25.8641187Z  94/101 Test  #76: test-unicode2_cpp11 ............................   Passed   58.17 sec
+2025-10-21T12:57:51.2245398Z  95/101 Test   #6: test-binary_formats_cpp11 ......................   Passed  108.50 sec
+2025-10-21T12:58:26.3600342Z  96/101 Test  #11: test-cbor_cpp11 ................................   Passed  143.63 sec
+2025-10-21T12:58:26.5624691Z  97/101 Test  #53: test-msgpack_cpp11 .............................   Passed  143.56 sec
+2025-10-21T12:58:38.1711145Z  98/101 Test  #54: test-msgpack_cpp17 .............................   Passed  155.16 sec
+2025-10-21T12:58:40.9622920Z  99/101 Test  #79: test-unicode5_cpp11 ............................   Passed  115.19 sec
+2025-10-21T12:58:53.3823866Z 100/101 Test  #77: test-unicode3_cpp11 ............................   Passed  136.60 sec
+2025-10-21T13:01:09.6183239Z 101/101 Test  #78: test-unicode4_cpp11 ............................   Passed  264.77 sec
+2025-10-21T13:01:09.6187863Z 
+2025-10-21T13:01:09.6188088Z 100% tests passed, 0 tests failed out of 101
+2025-10-21T13:01:09.6188521Z 
+2025-10-21T13:01:09.6188809Z Label Time Summary:
+2025-10-21T13:01:09.6189520Z all                 = 1380.20 sec*proc (83 tests)
+2025-10-21T13:01:09.6190078Z git_required        =  20.84 sec*proc (4 tests)
+2025-10-21T13:01:09.6190616Z not_reproducible    =  58.66 sec*proc (12 tests)
+2025-10-21T13:01:09.6190979Z 
+2025-10-21T13:01:09.6191115Z Total Test time (real) = 317.50 sec
+2025-10-21T13:01:09.6221500Z [100%] Built target ci_test_gcc
+2025-10-21T13:01:09.6352440Z Post job cleanup.
+2025-10-21T13:01:09.6356232Z ##[command]/usr/bin/docker exec  0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367 sh -c "cat /etc/*release | grep ^ID"
+2025-10-21T13:01:09.8062929Z [command]/usr/bin/git version
+2025-10-21T13:01:09.8099464Z git version 2.47.3
+2025-10-21T13:01:09.8173061Z Temporarily overriding HOME='/__w/_temp/9ead3024-89e7-4a5d-9b3d-f6e91e1ac43e' before making global git config changes
+2025-10-21T13:01:09.8173876Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-21T13:01:09.8178377Z [command]/usr/bin/git config --global --add safe.directory /__w/json/json
+2025-10-21T13:01:09.8211177Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-21T13:01:09.8242028Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-21T13:01:09.8484602Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-21T13:01:09.8508532Z http.https://github.com/.extraheader
+2025-10-21T13:01:09.8520052Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-21T13:01:09.8553629Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-21T13:01:09.8923450Z Stop and remove container: 78e046d6085b45a58c701713b270bb35_gcclatest_85d111
+2025-10-21T13:01:09.8928096Z ##[command]/usr/bin/docker rm --force 0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367
+2025-10-21T13:01:09.9762775Z 0b952874344f64ee7e5c507b614b3e40b66a08e3d196cdf6932e451362540367
+2025-10-21T13:01:09.9791576Z Remove container network: github_network_5eb7490aecde4aa4984128d3ab0efac6
+2025-10-21T13:01:09.9795981Z ##[command]/usr/bin/docker network rm github_network_5eb7490aecde4aa4984128d3ab0efac6
+2025-10-21T13:01:10.0984332Z github_network_5eb7490aecde4aa4984128d3ab0efac6
+2025-10-21T13:01:10.1042881Z Cleaning up orphan processes

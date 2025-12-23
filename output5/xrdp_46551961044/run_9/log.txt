@@ -1,0 +1,831 @@
+Installing project dependencies...
++ FEATURE_SET=min
++ ARCH=amd64
++ DEBUG_OPTS=
++ [ 5 -ge 1 ]
++ FEATURE_SET=max
++ shift
++ [ 4 -ge 1 ]
++ ARCH=amd64
++ shift
++ APT_EXTRA_ARGS=--allow-downgrades --allow-remove-essential --allow-change-held-packages
++ PACKAGES=     autoconf     automake     clang     gcc     g++     libtool     make     nasm     pkg-config     check     libcmocka-dev
+
++ lsb_release -si
++ lsb_release -sr
++ LIBFREETYPE_DEV=libfreetype-dev
++ command -v systemctl
++ PACKAGES_AMD64_MIN=             libpam0g-dev             libssl-dev             libx11-dev             libxrandr-dev             libxfixes-dev
++ PACKAGES=     autoconf     automake     clang     gcc     g++     libtool     make     nasm     pkg-config     check     libcmocka-dev
+                                      libpam0g-dev             libssl-dev             libx11-dev             libxrandr-dev             libxfixes-dev                     libfreetype-dev                     libfuse3-dev                     libjpeg-dev                     libmp3lame-dev                     libfdk-aac-dev                     libimlib2-dev                     libopus-dev                     libpixman-1-dev                     libx264-dev
+                    libopenh264-dev
++ apt-get update
+Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [3204 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [5290 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [3519 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1575 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [75.9 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.2 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [83.2 kB]
+Get:16 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [5094 kB]
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [48.5 kB]
+Get:18 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1270 kB]
+Fetched 40.5 MB in 4s (11.3 MB/s)
+Reading package lists...
++ apt-get upgrade
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages will be upgraded:
+  gpgv libgnutls30 libpam-modules libpam-modules-bin libpam-runtime
+  libsystemd0 libudev1
+7 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 1858 kB of archives.
+After this operation, 5120 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
+Bootstrapping the project...
+/usr/bin/autoconf
+/usr/bin/automake
+/usr/bin/libtoolize
+/usr/bin/pkg-config
+Submodule 'libpainter' (https://github.com/neutrinolabs/libpainter.git) registered for path 'libpainter'
+Cloning into '/app/libpainter'...
+Submodule path 'libpainter': checked out '2255b3865e7b89afcbd2c310241d54dfa787b63e'
+Submodule 'librfxcodec' (https://github.com/neutrinolabs/librfxcodec.git) registered for path 'librfxcodec'
+Cloning into '/app/librfxcodec'...
+Submodule path 'librfxcodec': checked out 'c6b41afa6986d5e6df18778a342b407cae40e1b5'
+Submodule 'ulalaca' (https://github.com/neutrinolabs/ulalaca-xrdp.git) registered for path 'ulalaca'
+Cloning into '/app/ulalaca'...
+Submodule path 'ulalaca': checked out 'f683d173a3feaa41c170d4d9ab572bdb60c03d7d'
+autoreconf: export WARNINGS=
+autoreconf: Entering directory '.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: adding subdirectory libpainter to autoreconf
+autoreconf: Entering directory 'libpainter'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force -I m4
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:8: installing './compile'
+configure.ac:10: installing './config.guess'
+configure.ac:10: installing './config.sub'
+configure.ac:6: installing './install-sh'
+configure.ac:6: installing './missing'
+src/Makefile.am: installing './depcomp'
+autoreconf: Leaving directory 'libpainter'
+autoreconf: configure.ac: adding subdirectory librfxcodec to autoreconf
+autoreconf: Entering directory 'librfxcodec'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force -I m4
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:9: installing './compile'
+configure.ac:11: installing './config.guess'
+configure.ac:11: installing './config.sub'
+configure.ac:6: installing './install-sh'
+configure.ac:6: installing './missing'
+src/Makefile.am: installing './depcomp'
+autoreconf: Leaving directory 'librfxcodec'
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force -I m4
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:9: installing './compile'
+configure.ac:14: installing './config.guess'
+configure.ac:14: installing './config.sub'
+configure.ac:7: installing './install-sh'
+configure.ac:7: installing './missing'
+configure.ac:649: installing './tap-driver.sh'
+common/Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+autoreconf: Leaving directory '.'
+Configuring the project...
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for gcc... (cached) gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C11 features... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking dependency style of g++... gcc3
+checking whether ln -s works... yes
+checking for an ANSI C-conforming const... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether make supports nested variables... (cached) yes
+checking size of int... 4
+checking size of long... 8
+checking size of void *... 8
+Package systemd was not found in the pkg-config search path.
+Perhaps you should add the directory containing `systemd.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'systemd' found
+checking for __attribute__((format))... yes
+checking for socklen_t... yes
+checking CFLAGS for maximum warnings... -Wall
+checking whether C compiler accepts -Wwrite-strings... yes
+checking whether C compiler accepts -Werror... yes
+checking whether C compiler accepts -O2... yes
+checking for library containing setusercontext... no
+checking for setusercontext... no
+checking for getgrouplist... yes
+checking for clearenv... yes
+checking how to run the C preprocessor... gcc -E
+checking for uid_t in sys/types.h... yes
+checking type of array argument to getgroups... gid_t
+checking for dlopen... yes
+checking for OPENSSL... yes
+checking for openssl... /usr/bin/openssl
+checking for security/_pam_types.h... yes
+checking for security/pam_constants.h... no
+checking for IMLIB2... yes
+checking for FREETYPE2... yes
+checking for security/pam_appl.h... yes
+checking for jpeglib.h... yes
+checking for FUSE... yes
+checking for FDKAAC... yes
+checking for opus/opus.h... yes
+checking for lame/lame.h... yes
+checking for PIXMAN... yes
+checking for XRDP_X264... yes
+checking for XRDP_OPENH264... yes
+checking for X... libraries , headers
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... no
+checking for X11/extensions/Xfixes.h... yes
+checking for X11/extensions/Xrandr.h... yes
+checking for utmp.h... yes
+checking for utmpx.h... yes
+checking for ut_host in struct utmpx... yes
+checking for ut_exit in struct utmpx... yes
+checking for CHECK... yes
+checking for CMOCKA... yes
+configure: libcheck found, unit tests will be performed
+checking for sys/prctl.h... yes
+checking for uchar.h... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating common/Makefile
+config.status: creating docs/Makefile
+config.status: creating docs/man/Makefile
+config.status: creating fontutils/Makefile
+config.status: creating genkeymap/Makefile
+config.status: creating instfiles/default/Makefile
+config.status: creating instfiles/init.d/Makefile
+config.status: creating instfiles/Makefile
+config.status: creating instfiles/pam.d/Makefile
+config.status: creating instfiles/pulse/Makefile
+config.status: creating instfiles/rc.d/Makefile
+config.status: creating keygen/Makefile
+config.status: creating waitforx/Makefile
+config.status: creating libipm/Makefile
+config.status: creating libxrdp/Makefile
+config.status: creating Makefile
+config.status: creating mc/Makefile
+config.status: creating neutrinordp/Makefile
+config.status: creating ulalaca/Makefile
+config.status: creating pkgconfig/Makefile
+config.status: creating pkgconfig/xrdp.pc
+config.status: creating pkgconfig/xrdp-uninstalled.pc
+config.status: creating sesman/libsesman/Makefile
+config.status: creating sesman/chansrv/Makefile
+config.status: creating sesman/Makefile
+config.status: creating sesman/sesexec/Makefile
+config.status: creating sesman/tools/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/common/Makefile
+config.status: creating tests/libipm/Makefile
+config.status: creating tests/libxrdp/Makefile
+config.status: creating tests/memtest/Makefile
+config.status: creating tests/xrdp/Makefile
+config.status: creating tools/Makefile
+config.status: creating tools/devel/Makefile
+config.status: creating tools/devel/tcp_proxy/Makefile
+config.status: creating tools/chkpriv/Makefile
+config.status: creating vnc/Makefile
+config.status: creating xrdpapi/Makefile
+config.status: creating xrdp/Makefile
+config.status: creating xrdpvr/Makefile
+config.status: creating xup/Makefile
+config.status: creating third_party/Makefile
+config.status: creating third_party/tomlc99/Makefile
+config.status: creating config_ac.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+=== configuring in libpainter (/app/libpainter)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--enable-ipv6' '--enable-jpeg' '--enable-fuse' '--enable-mp3lame' '--enable-fdkaac' '--enable-opus' '--enable-rfxcodec' '--enable-painter' '--enable-pixman' '--enable-utmp' '--with-imlib2' '--with-freetype2' '--enable-tests' '--enable-x264' '--enable-openh264' 'CC=gcc' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc... gcc3
+checking for an ANSI C-conforming const... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether make supports nested variables... (cached) yes
+checking CFLAGS for maximum warnings... -Wall
+checking whether C compiler accepts -Wwrite-strings... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating include/Makefile
+config.status: creating pkgconfig/libpainter.pc
+config.status: creating pkgconfig/libpainter-uninstalled.pc
+config.status: creating pkgconfig/Makefile
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating config_ac.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+=== configuring in librfxcodec (/app/librfxcodec)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--enable-ipv6' '--enable-jpeg' '--enable-fuse' '--enable-mp3lame' '--enable-fdkaac' '--enable-opus' '--enable-rfxcodec' '--enable-painter' '--enable-pixman' '--enable-utmp' '--with-imlib2' '--with-freetype2' '--enable-tests' '--enable-x264' '--enable-openh264' 'CC=gcc' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc... gcc3
+checking for an ANSI C-conforming const... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking CFLAGS for maximum warnings... -Wall
+checking whether C compiler accepts -Wwrite-strings... yes
+checking whether C compiler accepts -Wmissing-prototypes... yes
+checking if we have SIMD optimisations for cpu type... yes (x86_64)
+checking for nasm... no
+checking for nasmw... no
+checking for yasm... no
+configure: error: no nasm (Netwide Assembler) found
+configure: error: ./configure failed for librfxcodec
+Building the project...
+make  all-recursive
+make[1]: Entering directory '/app'
+Making all in third_party
+make[2]: Entering directory '/app/third_party'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/app/third_party'
+Making all in third_party/tomlc99
+make[2]: Entering directory '/app/third_party/tomlc99'
+  CC       toml.lo
+  CCLD     libtoml.la
+make[2]: Leaving directory '/app/third_party/tomlc99'
+Making all in common
+make[2]: Entering directory '/app/common'
+  CC       base64.lo
+  CC       fifo.lo
+  CC       file.lo
+  CC       guid.lo
+  CC       list.lo
+  CC       list16.lo
+  CC       log.lo
+  CC       os_calls.lo
+  CC       parse.lo
+  CC       ssl_calls.lo
+  CC       string_calls.lo
+  CC       thread_calls.lo
+  CC       trans.lo
+  CCLD     libcommon.la
+make[2]: Leaving directory '/app/common'
+Making all in vnc
+make[2]: Entering directory '/app/vnc'
+  CC       vnc.lo
+  CC       vnc_clip.lo
+  CC       rfb.lo
+  CCLD     libvnc.la
+make[2]: Leaving directory '/app/vnc'
+Making all in xup
+make[2]: Entering directory '/app/xup'
+  CC       xup.lo
+  CCLD     libxup.la
+make[2]: Leaving directory '/app/xup'
+Making all in mc
+make[2]: Entering directory '/app/mc'
+  CC       mc.lo
+  CCLD     libmc.la
+make[2]: Leaving directory '/app/mc'
+Making all in libipm
+make[2]: Entering directory '/app/libipm'
+  CC       libipm.lo
+  CC       libipm_send.lo
+  CC       libipm_recv.lo
+  CC       eicp.lo
+  CC       ercp.lo
+  CC       scp.lo
+  CC       scp_sync.lo
+  CC       scp_application_types.lo
+  CCLD     libipm.la
+make[2]: Leaving directory '/app/libipm'
+Making all in libxrdp
+make[2]: Entering directory '/app/libxrdp'
+  CC       libxrdp.lo
+  CC       xrdp_bitmap32_compress.lo
+  CC       xrdp_bitmap_compress.lo
+  CC       xrdp_caps.lo
+  CC       xrdp_channel.lo
+  CC       xrdp_fastpath.lo
+  CC       xrdp_iso.lo
+  CC       xrdp_jpeg_compress.lo
+  CC       xrdp_mcs.lo
+  CC       xrdp_mppc_enc.lo
+  CC       xrdp_orders.lo
+  CC       xrdp_orders_rail.lo
+  CC       xrdp_rdp.lo
+  CC       xrdp_sec.lo
+  CCLD     libxrdp.la
+make[2]: Leaving directory '/app/libxrdp'
+Making all in libpainter
+make[2]: Entering directory '/app/libpainter'
+make  all-recursive
+make[3]: Entering directory '/app/libpainter'
+Making all in src
+make[4]: Entering directory '/app/libpainter/src'
+  CC       painter.lo
+  CC       painter_utils.lo
+  CCLD     libpainter.la
+make[4]: Leaving directory '/app/libpainter/src'
+Making all in include
+make[4]: Entering directory '/app/libpainter/include'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/app/libpainter/include'
+Making all in pkgconfig
+make[4]: Entering directory '/app/libpainter/pkgconfig'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/app/libpainter/pkgconfig'
+Making all in tests
+make[4]: Entering directory '/app/libpainter/tests'
+  CC       paintertest.o
+  CCLD     paintertest
+make[4]: Leaving directory '/app/libpainter/tests'
+make[4]: Entering directory '/app/libpainter'
+make[4]: Leaving directory '/app/libpainter'
+make[3]: Leaving directory '/app/libpainter'
+make[2]: Leaving directory '/app/libpainter'
+Making all in librfxcodec
+make[2]: Entering directory '/app/librfxcodec'
+make[2]: Leaving directory '/app/librfxcodec'
+make[2]: *** No rule to make target 'all'.  Stop.
+make[1]: *** [Makefile:509: all-recursive] Error 1
+make[1]: Leaving directory '/app'
+make: *** [Makefile:441: all] Error 2
+Running unittests...
+Making check in third_party
+make[1]: Entering directory '/app/third_party'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/app/third_party'
+Making check in third_party/tomlc99
+make[1]: Entering directory '/app/third_party/tomlc99'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/app/third_party/tomlc99'
+Making check in common
+make[1]: Entering directory '/app/common'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/app/common'
+Making check in vnc
+make[1]: Entering directory '/app/vnc'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/app/vnc'
+Making check in xup
+make[1]: Entering directory '/app/xup'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/app/xup'
+Making check in mc
+make[1]: Entering directory '/app/mc'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/app/mc'
+Making check in libipm
+make[1]: Entering directory '/app/libipm'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/app/libipm'
+Making check in libxrdp
+make[1]: Entering directory '/app/libxrdp'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/app/libxrdp'
+Making check in libpainter
+make[1]: Entering directory '/app/libpainter'
+Making check in src
+make[2]: Entering directory '/app/libpainter/src'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/app/libpainter/src'
+Making check in include
+make[2]: Entering directory '/app/libpainter/include'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/app/libpainter/include'
+Making check in pkgconfig
+make[2]: Entering directory '/app/libpainter/pkgconfig'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/app/libpainter/pkgconfig'
+Making check in tests
+make[2]: Entering directory '/app/libpainter/tests'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/app/libpainter/tests'
+make[2]: Entering directory '/app/libpainter'
+make[2]: Leaving directory '/app/libpainter'
+make[1]: Leaving directory '/app/libpainter'
+Making check in librfxcodec
+make[1]: Entering directory '/app/librfxcodec'
+make[1]: Leaving directory '/app/librfxcodec'
+make[1]: *** No rule to make target 'check'.  Stop.
+make: *** [Makefile:509: check-recursive] Error 1
+Running distcheck...
+make  dist-gzip am__post_remove_distdir='@:'
+make[1]: Entering directory '/app'
+make  distdir-am
+make[2]: Entering directory '/app'
+if test -d "xrdp-0.10.4.1"; then find "xrdp-0.10.4.1" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "xrdp-0.10.4.1" || { sleep 5 && rm -rf "xrdp-0.10.4.1"; }; else :; fi
+test -d "xrdp-0.10.4.1" || mkdir "xrdp-0.10.4.1"
+ (cd third_party && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/third_party \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/third_party'
+make  distdir-am
+make[4]: Entering directory '/app/third_party'
+make[4]: Leaving directory '/app/third_party'
+make[3]: Leaving directory '/app/third_party'
+ (cd third_party/tomlc99 && make  top_distdir=../../xrdp-0.10.4.1 distdir=../../xrdp-0.10.4.1/third_party/tomlc99 \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/third_party/tomlc99'
+make  distdir-am
+make[4]: Entering directory '/app/third_party/tomlc99'
+make[4]: Leaving directory '/app/third_party/tomlc99'
+make[3]: Leaving directory '/app/third_party/tomlc99'
+ (cd common && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/common \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/common'
+make  distdir-am
+make[4]: Entering directory '/app/common'
+make[4]: Leaving directory '/app/common'
+make[3]: Leaving directory '/app/common'
+ (cd vnc && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/vnc \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/vnc'
+make  distdir-am
+make[4]: Entering directory '/app/vnc'
+make[4]: Leaving directory '/app/vnc'
+make[3]: Leaving directory '/app/vnc'
+ (cd xup && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/xup \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/xup'
+make  distdir-am
+make[4]: Entering directory '/app/xup'
+make[4]: Leaving directory '/app/xup'
+make[3]: Leaving directory '/app/xup'
+ (cd mc && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/mc \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/mc'
+make  distdir-am
+make[4]: Entering directory '/app/mc'
+make[4]: Leaving directory '/app/mc'
+make[3]: Leaving directory '/app/mc'
+ (cd neutrinordp && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/neutrinordp \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/neutrinordp'
+make  distdir-am
+make[4]: Entering directory '/app/neutrinordp'
+make[4]: Leaving directory '/app/neutrinordp'
+make[3]: Leaving directory '/app/neutrinordp'
+ (cd libipm && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/libipm \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/libipm'
+make  distdir-am
+make[4]: Entering directory '/app/libipm'
+make[4]: Leaving directory '/app/libipm'
+make[3]: Leaving directory '/app/libipm'
+ (cd libxrdp && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/libxrdp \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/libxrdp'
+make  distdir-am
+make[4]: Entering directory '/app/libxrdp'
+make[4]: Leaving directory '/app/libxrdp'
+make[3]: Leaving directory '/app/libxrdp'
+ (cd libpainter && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/libpainter \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/libpainter'
+make  distdir-am
+make[4]: Entering directory '/app/libpainter'
+:
+test -d "../xrdp-0.10.4.1/libpainter" || mkdir "../xrdp-0.10.4.1/libpainter"
+ (cd src && make  top_distdir=../../xrdp-0.10.4.1 distdir=../../xrdp-0.10.4.1/libpainter/src \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[5]: Entering directory '/app/libpainter/src'
+make  distdir-am
+make[6]: Entering directory '/app/libpainter/src'
+make[6]: Leaving directory '/app/libpainter/src'
+make[5]: Leaving directory '/app/libpainter/src'
+ (cd include && make  top_distdir=../../xrdp-0.10.4.1 distdir=../../xrdp-0.10.4.1/libpainter/include \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[5]: Entering directory '/app/libpainter/include'
+make  distdir-am
+make[6]: Entering directory '/app/libpainter/include'
+make[6]: Leaving directory '/app/libpainter/include'
+make[5]: Leaving directory '/app/libpainter/include'
+ (cd pkgconfig && make  top_distdir=../../xrdp-0.10.4.1 distdir=../../xrdp-0.10.4.1/libpainter/pkgconfig \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[5]: Entering directory '/app/libpainter/pkgconfig'
+make  distdir-am
+make[6]: Entering directory '/app/libpainter/pkgconfig'
+make[6]: Leaving directory '/app/libpainter/pkgconfig'
+make[5]: Leaving directory '/app/libpainter/pkgconfig'
+ (cd tests && make  top_distdir=../../xrdp-0.10.4.1 distdir=../../xrdp-0.10.4.1/libpainter/tests \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[5]: Entering directory '/app/libpainter/tests'
+make  distdir-am
+make[6]: Entering directory '/app/libpainter/tests'
+make[6]: Leaving directory '/app/libpainter/tests'
+make[5]: Leaving directory '/app/libpainter/tests'
+test -n ":" \
+|| find "../xrdp-0.10.4.1/libpainter" -type d ! -perm -755 \
+	-exec chmod u+rwx,go+rx {} \; -o \
+  ! -type d ! -perm -444 -links 1 -exec chmod a+r {} \; -o \
+  ! -type d ! -perm -400 -exec chmod a+r {} \; -o \
+  ! -type d ! -perm -444 -exec /bin/bash /app/libpainter/install-sh -c -m a+r {} {} \; \
+|| chmod -R a+r "../xrdp-0.10.4.1/libpainter"
+make[4]: Leaving directory '/app/libpainter'
+make[3]: Leaving directory '/app/libpainter'
+ (cd librfxcodec && make  top_distdir=../xrdp-0.10.4.1 distdir=../xrdp-0.10.4.1/librfxcodec \
+     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)
+make[3]: Entering directory '/app/librfxcodec'
+make[3]: Leaving directory '/app/librfxcodec'
+make[3]: *** No rule to make target 'distdir'.  Stop.
+make[2]: *** [Makefile:614: distdir-am] Error 1
+make[2]: Leaving directory '/app'
+make[1]: *** [Makefile:608: distdir] Error 2
+make[1]: Leaving directory '/app'
+make: *** [Makefile:714: dist] Error 2

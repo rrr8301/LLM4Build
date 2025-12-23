@@ -1,0 +1,252 @@
+
+> @lexical/monorepo@0.35.0 ci-check
+> npm-run-all --parallel tsc tsc-extension flow prettier lint
+
+
+> @lexical/monorepo@0.35.0 tsc
+> tsc
+
+
+> @lexical/monorepo@0.35.0 tsc-extension
+> npm run compile -w @lexical/devtools
+
+
+> @lexical/monorepo@0.35.0 flow
+> node ./scripts/check-flow-types.js
+
+
+> @lexical/monorepo@0.35.0 lint
+> eslint ./
+
+
+> @lexical/monorepo@0.35.0 prettier
+> prettier --list-different .
+
+Running Flow...
+
+> @lexical/devtools@0.35.0 compile
+> tsc --noEmit
+
+Launching Flow server for /app
+Spawned flow server (pid=158)
+Logs will go to /tmp/flow/zSapp.log
+Monitor logs will go to /tmp/flow/zSapp.monitor_log
+Started a new flow server: -Please wait. Server is starting up Flow server
+Please wait. Server is initializing (parsed files 0)
+Please wait. Server is initializing (parsed files 507)
+Please wait. Server is initializing (loading libraries)
+Please wait. Server is initializing (resolving dependencies)
+Please wait. Server is initializing (indexing files 0/84 (0.0%))
+Please wait. Server is initializing (indexing files (post-process))
+Please wait. Server is initializing (post-Indexing work)
+Please wait. Server is initializing (parsed files 0/0 (0.0%))
+Please wait. Server is initializing (calculating dependencies)
+Please wait. Server is initializing (merged module interfaces 0/84 (0.0%))
+Please wait. Server is initializing (checked files 12/84 (14.3%))
+Please wait. Server is initializing (checked files 62/84 (73.8%))
+Please wait. Server is initializing (collating errors)
+Please wait. Dfind file watcher is still initializing
+Please wait. Dfind file watcher is still initializing
+Please wait. Dfind file watcher is still initializing
+Please wait. Dfind file watcher is still initializing
+No errors!
+
+> @lexical/monorepo@0.35.0 build
+> node scripts/build.js
+
+
+> @lexical/monorepo@0.35.0 build-www
+> npm run clean && npm run build -- --www && npm run build -- --www --prod && npm run prepare-www
+
+
+> @lexical/monorepo@0.35.0 clean
+> node scripts/clean.js
+
+
+> @lexical/monorepo@0.35.0 build
+> node scripts/build.js --www
+
+
+> @lexical/monorepo@0.35.0 build
+> node scripts/build.js --www --prod
+
+
+> @lexical/monorepo@0.35.0 prepare-www
+> node scripts/www/rewriteImports.js
+
+
+> @lexical/monorepo@0.35.0 test-unit
+> vitest --no-watch
+
+WebSocket server error: Port is already in use
+
+ RUN  v3.2.4 /app
+
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalContentEditableElement.test.tsx (13 tests) 359ms
+ ✓ |unit| packages/lexical-html/src/__tests__/unit/LexicalHtml.test.ts (6 tests) 60ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/iterators.test.tsx (7 tests) 46ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/CollaborationWithCollisions.test.ts (3 tests) 539ms
+   ✓ CollaborationWithCollisions > Remove text at within the first of multiple paragraphs colliding with removing first paragraph  370ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/useLexicalCharacterLimit.test.ts (2 tests) 167ms
+ ✓ |unit| packages/lexical-eslint-plugin/src/__tests__/unit/rules-of-lexical.test.ts (3 tests) 15ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalUtilsInsertNodeToNearestRoot.test.tsx (8 tests) 127ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/Collaboration.test.ts (7 tests) 670ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/PlainRichTextPlugin.test.tsx (6 tests) 495ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalNodeHelpers.test.ts (10 tests) 300ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalSerialization.test.ts (1 test) 245ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/utils.test.ts (10 tests) 292ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalNormalization.test.tsx (10 tests) 300ms
+ ✓ |unit| packages/lexical-rich-text/src/__tests__/unit/LexicalHeadingNode.test.ts (9 tests) 325ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalUtils.test.ts (25 tests) 312ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/LexicalListNode.test.ts (12 tests) 284ms
+ ✓ |unit| packages/lexical-history/src/__tests__/unit/LexicalHistory.test.tsx (5 tests) 345ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/HTMLCopyAndPaste.test.ts (10 tests) 446ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/CodeBlock.test.ts (13 tests) 581ms
+ ✓ |unit| packages/lexical-link/src/__tests__/unit/LexicalLinkNode.test.ts (36 tests) 592ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableMobileSelection.test.tsx (5 tests) 213ms
+ ✓ |unit| packages/lexical-selection/src/__tests__/unit/LexicalSelectionHelpers.test.ts (49 tests) 592ms
+ ✓ |unit| packages/lexical-link/src/__tests__/unit/LexicalAutoLinkNode.test.ts (27 tests) 480ms
+ ✓ |unit| packages/lexical-markdown/src/__tests__/unit/LexicalMarkdown.test.ts (234 tests) 977ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalSelection.test.ts (43 tests) 789ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalNode.test.ts (70 tests) 1055ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalNodeState.test.ts (83 tests) 1231ms
+ ✓ |unit| packages/lexical-code/src/__tests__/unit/LexicalCodeNodeTabs.test.ts (74 tests) 1415ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTablePlugin.test.tsx (4 tests) 41ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalEventHelpers.test.tsx (57 tests) 1628ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/registerListStrictIndentTransform.test.ts (1 test) 2211ms
+   ✓ Lexical List StrictIndentTransform tests > applyStrictListIndentation  2209ms
+ ✓ |unit| packages/lexical-code/src/__tests__/unit/LexicalCodeNode.test.ts (54 tests | 1 skipped) 2202ms
+   ✓ LexicalCodeNode tests > initial editor state before transforms > can be registered after initial editor state (regression #7014)  1138ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableCellNode.test.ts (3 tests) 2070ms
+   ✓ LexicalTableCellNode tests > TableCellNode.importDOM  1898ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalListPlugin.test.tsx (3 tests) 2128ms
+   ✓ @lexical/list tests > Toggle an empty list on/off  1869ms
+ ✓ |unit| packages/lexical-code-shiki/src/__tests__/unit/LexicalCodeNodeTabs.test.ts (74 tests) 2153ms
+   ✓ LexicalCodeNode tests > Tabs > testing tab: >| => >-| (forwards)  768ms
+ ✓ |unit| packages/lexical-eslint-plugin/src/__tests__/unit/buildMatcher.test.ts (4 tests) 10ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalReconciler.test.ts (5 tests) 196ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/React19.test.tsx (1 test) 30ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalComposer.test.tsx (3 tests) 64ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalNestedComposer.test.tsx (8 tests) 2747ms
+   ✓ LexicalNestedComposer > with inherited configuration and namespace  1954ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalElementHelpers.test.ts (5 tests) 14ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalEditor.test.tsx (73 tests) 2762ms
+   ✓ LexicalEditor tests > transforms do not discard unintentional dirtyElements  1770ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/useLexicalIsTextContentEmpty.test.tsx (1 test) 140ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/LexicalCollaborationPlugin.test.tsx (1 test) 126ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/mergeRegister.test.ts (2 tests) 9ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/LexicalListItemNode.test.ts (26 tests) 3351ms
+   ✓ LexicalListItemNode tests > ListItemNode.createDOM()  1151ms
+   ✓ LexicalListItemNode tests > ListItemNode.replace() > another list item node  729ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalUtilsSplitNode.test.tsx (7 tests) 115ms
+ ✓ |unit| packages/lexical-rich-text/src/__tests__/unit/LexicalQuoteNode.test.ts (5 tests) 178ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/unwrapAndFilterDescendants.test.tsx (4 tests) 30ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalEditorState.test.ts (4 tests) 156ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/descendantsMatching.test.tsx (3 tests) 23ms
+ ✓ |unit| packages/lexical-list/src/__tests__/unit/formatList.test.ts (4 tests) 159ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableSelection.test.tsx (1 test) 140ms
+ ✓ |unit| packages/lexical/src/__tests__/unit/LexicalUpdateTags.test.ts (6 tests) 184ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalRootHelpers.test.ts (2 tests) 129ms
+ ✓ |unit| packages/lexical-react/src/__tests__/unit/useMenuAnchorRef.test.tsx (1 test) 34ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableRowNode.test.ts (2 tests) 102ms
+ ✓ |unit| packages/lexical-hashtag/src/__tests__/unit/LexicalHashtagNode.test.ts (1 test) 111ms
+ ✓ |unit| packages/lexical-utils/src/__tests__/unit/LexicalUtilsKlassEqual.test.ts (1 test) 82ms
+ ✓ |unit| packages/lexical-selection/src/__tests__/unit/LexicalSelection.test.tsx (233 tests) 3913ms
+ ✓ |unit| packages/lexical-headless/src/__tests__/unit/LexicalHeadlessEditor.test.ts (6 tests) 124ms
+ ✓ |unit| packages/lexical-table/src/__tests__/unit/LexicalTableNode.test.tsx (38 tests) 4865ms
+   ✓ LexicalTableNode tests > hasHorizontalScroll={false} > TableNode.createDOM()  1084ms
+   ✓ LexicalTableNode tests > hasHorizontalScroll={false} > TableNode.createDOM() and updateDOM() style  789ms
+   ✓ LexicalTableNode tests > hasHorizontalScroll={false} > Copy table with caption from an external source  412ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| packages/lexical/src/__tests__/unit/LexicalExtensionCore.test.ts [ packages/lexical/src/__tests__/unit/LexicalExtensionCore.test.ts ]
+ReferenceError: describe is not defined
+ ❯ packages/lexical/src/__tests__/unit/LexicalExtensionCore.test.ts:20:1
+     18| function assertType<T>(value: T): void {}
+     19|
+     20| describe('defineExtension', () => {
+       | ^
+     21|   it('does not change identity', () => {
+     22|     const extensionArg: LexicalExtension<
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  |unit| packages/lexical-extension/src/__tests__/unit/LexicalBuilder.test.ts [ packages/lexical-extension/src/__tests__/unit/LexicalBuilder.test.ts ]
+ReferenceError: describe is not defined
+ ❯ packages/lexical-extension/src/__tests__/unit/LexicalBuilder.test.ts:20:1
+     18| const InitialStateExtensionName = '@lexical/extension/InitialState';
+     19|
+     20| describe('LexicalBuilder', () => {
+       | ^
+     21|   const ConfigExtension = defineExtension({
+     22|     config: safeCast<{a: 1; b: string | null}>({a: 1, b: 'b'}),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  |unit| packages/lexical-extension/src/__tests__/unit/deepThemeMergeInPlace.test.ts [ packages/lexical-extension/src/__tests__/unit/deepThemeMergeInPlace.test.ts ]
+ReferenceError: describe is not defined
+ ❯ packages/lexical-extension/src/__tests__/unit/deepThemeMergeInPlace.test.ts:11:1
+      9| import {deepThemeMergeInPlace} from '../../deepThemeMergeInPlace';
+     10|
+     11| describe('deepThemeMergeInPlace', () => {
+       | ^
+     12|   it('merges recursively', () => {
+     13|     const a = {a: 'a', nested: {a: 1}};
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  |unit| packages/lexical-react/src/__tests__/unit/LexicalExtensionComposer.test.tsx [ packages/lexical-react/src/__tests__/unit/LexicalExtensionComposer.test.tsx ]
+ReferenceError: describe is not defined
+ ❯ packages/lexical-react/src/__tests__/unit/LexicalExtensionComposer.test.tsx:21:1
+     19| import * as ReactTestUtils from 'shared/react-test-utils';
+     20|
+     21| describe('LexicalExtensionComposer', () => {
+       | ^
+     22|   const extension = defineExtension({
+     23|     dependencies: [RichTextExtension],
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  |unit| packages/lexical-react/src/__tests__/unit/ReactExtension.test.tsx [ packages/lexical-react/src/__tests__/unit/ReactExtension.test.tsx ]
+ReferenceError: describe is not defined
+ ❯ packages/lexical-react/src/__tests__/unit/ReactExtension.test.tsx:12:1
+     10| import {ReactPluginHostExtension} from '@lexical/react/ReactPluginHost…
+     11|
+     12| describe('ReactExtension', () => {
+       | ^
+     13|   it('Requires a provider', () => {
+     14|     expect(() =>
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  |unit| packages/lexical-react/src/__tests__/unit/ReactPluginHostExtension.test.tsx [ packages/lexical-react/src/__tests__/unit/ReactPluginHostExtension.test.tsx ]
+ReferenceError: describe is not defined
+ ❯ packages/lexical-react/src/__tests__/unit/ReactPluginHostExtension.test.tsx:46:1
+     44| }
+     45|
+     46| describe('configExtension', () => {
+       | ^
+     47|   it('returns what is expected', () => {
+     48|     const arg = configExtension(ReactExtension, {contentEditable: null…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  |unit| packages/lexical-tailwind/src/__tests__/unit/LexicalTailwind.test.ts [ packages/lexical-tailwind/src/__tests__/unit/LexicalTailwind.test.ts ]
+ReferenceError: describe is not defined
+ ❯ packages/lexical-tailwind/src/__tests__/unit/LexicalTailwind.test.ts:15:1
+     13| import {expectHtmlToBeEqual, html} from 'lexical/src/__tests__/utils';
+     14|
+     15| describe('TailwindExtension', () => {
+       | ^
+     16|   it('applies the expected classes', () => {
+     17|     const container = document.createElement('div');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+
+
+ Test Files  7 failed | 62 passed (69)
+      Tests  1423 passed | 1 skipped (1424)
+   Start at  03:14:24
+   Duration  10.83s (transform 20.15s, setup 10.19s, collect 162.55s, tests 45.48s, environment 77.49s, prepare 14.58s)
+

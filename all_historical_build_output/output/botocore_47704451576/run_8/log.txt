@@ -1,0 +1,46 @@
+Ignoring setuptools: markers 'python_version >= "3.12"' don't match your environment
+Ignoring packaging: markers 'python_version >= "3.12"' don't match your environment
+Requirement already satisfied: wheel==0.43.0 in /usr/local/lib/python3.9/site-packages (from -r /app/requirements-dev.txt (line 1)) (0.43.0)
+Requirement already satisfied: behave==1.2.5 in /usr/local/lib/python3.9/site-packages (from -r /app/requirements-dev.txt (line 2)) (1.2.5)
+Requirement already satisfied: jsonschema==4.23.0 in /usr/local/lib/python3.9/site-packages (from -r /app/requirements-dev.txt (line 3)) (4.23.0)
+Requirement already satisfied: coverage==7.2.7 in /usr/local/lib/python3.9/site-packages (from -r /app/requirements-dev.txt (line 4)) (7.2.7)
+Requirement already satisfied: pytest==8.1.1 in /usr/local/lib/python3.9/site-packages (from -r /app/requirements-dev.txt (line 9)) (8.1.1)
+Requirement already satisfied: pytest-cov==5.0.0 in /usr/local/lib/python3.9/site-packages (from -r /app/requirements-dev.txt (line 10)) (5.0.0)
+Requirement already satisfied: pytest-xdist==3.5.0 in /usr/local/lib/python3.9/site-packages (from -r /app/requirements-dev.txt (line 11)) (3.5.0)
+Requirement already satisfied: atomicwrites>=1.0 in /usr/local/lib/python3.9/site-packages (from -r /app/requirements-dev.txt (line 12)) (1.4.1)
+Requirement already satisfied: colorama>0.3.0 in /usr/local/lib/python3.9/site-packages (from -r /app/requirements-dev.txt (line 13)) (0.4.6)
+Requirement already satisfied: parse>=1.6.3 in /usr/local/lib/python3.9/site-packages (from behave==1.2.5->-r /app/requirements-dev.txt (line 2)) (1.20.2)
+Requirement already satisfied: parse-type>=0.3.4 in /usr/local/lib/python3.9/site-packages (from behave==1.2.5->-r /app/requirements-dev.txt (line 2)) (0.6.4)
+Requirement already satisfied: six in /usr/local/lib/python3.9/site-packages (from behave==1.2.5->-r /app/requirements-dev.txt (line 2)) (1.17.0)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.9/site-packages (from jsonschema==4.23.0->-r /app/requirements-dev.txt (line 3)) (25.3.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.9/site-packages (from jsonschema==4.23.0->-r /app/requirements-dev.txt (line 3)) (2025.4.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.9/site-packages (from jsonschema==4.23.0->-r /app/requirements-dev.txt (line 3)) (0.36.2)
+Requirement already satisfied: rpds-py>=0.7.1 in /usr/local/lib/python3.9/site-packages (from jsonschema==4.23.0->-r /app/requirements-dev.txt (line 3)) (0.27.0)
+Requirement already satisfied: iniconfig in /usr/local/lib/python3.9/site-packages (from pytest==8.1.1->-r /app/requirements-dev.txt (line 9)) (2.1.0)
+Requirement already satisfied: packaging in /usr/local/lib/python3.9/site-packages (from pytest==8.1.1->-r /app/requirements-dev.txt (line 9)) (25.0)
+Requirement already satisfied: pluggy<2.0,>=1.4 in /usr/local/lib/python3.9/site-packages (from pytest==8.1.1->-r /app/requirements-dev.txt (line 9)) (1.6.0)
+Requirement already satisfied: exceptiongroup>=1.0.0rc8 in /usr/local/lib/python3.9/site-packages (from pytest==8.1.1->-r /app/requirements-dev.txt (line 9)) (1.3.0)
+Requirement already satisfied: tomli>=1 in /usr/local/lib/python3.9/site-packages (from pytest==8.1.1->-r /app/requirements-dev.txt (line 9)) (2.2.1)
+Requirement already satisfied: execnet>=1.1 in /usr/local/lib/python3.9/site-packages (from pytest-xdist==3.5.0->-r /app/requirements-dev.txt (line 11)) (2.1.1)
+Requirement already satisfied: typing-extensions>=4.6.0 in /usr/local/lib/python3.9/site-packages (from exceptiongroup>=1.0.0rc8->pytest==8.1.1->-r /app/requirements-dev.txt (line 9)) (4.14.1)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Requirement already satisfied: python-dateutil in /usr/local/lib/python3.9/site-packages (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.9/site-packages (from python-dateutil) (1.17.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+ImportError while loading conftest '/app/tests/unit/conftest.py'.
+__init__.py:33: in <module>
+    import botocore.loaders
+../botocore/loaders.py:109: in <module>
+    from botocore.compat import HAS_GZIP, OrderedDict, json
+../botocore/compat.py:32: in <module>
+    from urllib3 import exceptions
+E   ModuleNotFoundError: No module named 'urllib3'
+Traceback (most recent call last):
+  File "/app/scripts/ci/run-tests", line 78, in <module>
+Running pytest -n auto --dist=loadfile --maxprocesses=4 --cov=botocore --cov-report xml unit/ functional/...
+    run(cmd)
+  File "/app/scripts/ci/run-tests", line 29, in run
+    return check_call(command, shell=True)
+  File "/usr/local/lib/python3.9/subprocess.py", line 373, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'pytest -n auto --dist=loadfile --maxprocesses=4 --cov=botocore --cov-report xml unit/ functional/' returned non-zero exit status 4.

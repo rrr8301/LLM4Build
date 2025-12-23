@@ -1,0 +1,338 @@
+Obtaining file:///app
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Collecting portpicker (from mobly==1.13)
+  Downloading portpicker-1.6.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting pyyaml (from mobly==1.13)
+  Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting psutil (from portpicker->mobly==1.13)
+  Downloading psutil-7.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (23 kB)
+Downloading portpicker-1.6.0-py3-none-any.whl (16 kB)
+Downloading psutil-7.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (291 kB)
+Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 32.6 MB/s  0:00:00
+Building wheels for collected packages: mobly
+  Building editable for mobly (pyproject.toml): started
+  Building editable for mobly (pyproject.toml): finished with status 'done'
+  Created wheel for mobly: filename=mobly-1.13-0.editable-py3-none-any.whl size=8455 sha256=a1aea9a946c20018fa2b53c19c5481712c3c643abbc6754cfa78fa11ed9ade2c
+  Stored in directory: /tmp/pip-ephem-wheel-cache-2y4b87ya/wheels/54/1b/b7/aa63e25c8f14f4f2ae7b04e6097bdecb770e455c5c1ee0a600
+Successfully built mobly
+Installing collected packages: pyyaml, psutil, portpicker, mobly
+
+Successfully installed mobly-1.13 portpicker-1.6.0 psutil-7.1.0 pyyaml-6.0.3
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+py3: install_deps> python -I -m pip install pytest pytz
+.pkg: install_requires> python -I -m pip install 'setuptools>=61.2'
+.pkg: _optional_hooks> python /usr/local/lib/python3.12/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: get_requires_for_build_sdist> python /usr/local/lib/python3.12/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+.pkg: build_sdist> python /usr/local/lib/python3.12/dist-packages/pyproject_api/_backend.py True setuptools.build_meta
+py3: install_package_deps> python -I -m pip install portpicker 'pywin32; platform_system == "Windows"' pyyaml
+py3: install_package> python -I -m pip install --force-reinstall --no-deps /app/.tox/.tmp/package/1/mobly-1.13.tar.gz
+py3: commands[0]> pytest
+============================= test session starts ==============================
+platform linux -- Python 3.12.11, pytest-8.4.2, pluggy-1.6.0
+cachedir: .tox/py3/.pytest_cache
+rootdir: /app
+configfile: pyproject.toml
+testpaths: tests/mobly
+collected 801 items
+
+tests/mobly/asserts_test.py ............................................ [  5%]
+............                                                             [  6%]
+tests/mobly/base_instrumentation_test_test.py ......................     [  9%]
+tests/mobly/base_suite_test.py ....                                      [ 10%]
+tests/mobly/base_test_test.py .......................................... [ 15%]
+........................................................................ [ 24%]
+...........                                                              [ 25%]
+tests/mobly/config_parser_test.py .....                                  [ 26%]
+tests/mobly/controller_manager_test.py ..................                [ 28%]
+tests/mobly/controllers/android_device_lib/adb_test.py ................. [ 30%]
+.....................................................                    [ 37%]
+tests/mobly/controllers/android_device_lib/apk_utils_test.py ........... [ 38%]
+.........                                                                [ 39%]
+tests/mobly/controllers/android_device_lib/callback_handler_test.py .... [ 40%]
+...                                                                      [ 40%]
+tests/mobly/controllers/android_device_lib/callback_handler_v2_test.py . [ 40%]
+.....                                                                    [ 41%]
+tests/mobly/controllers/android_device_lib/errors_test.py ...            [ 41%]
+tests/mobly/controllers/android_device_lib/fastboot_test.py .........    [ 43%]
+tests/mobly/controllers/android_device_lib/jsonrpc_client_base_test.py . [ 43%]
+.....................                                                    [ 45%]
+tests/mobly/controllers/android_device_lib/jsonrpc_shell_base_test.py .. [ 46%]
+....                                                                     [ 46%]
+tests/mobly/controllers/android_device_lib/service_manager_test.py ..... [ 47%]
+.............................                                            [ 50%]
+tests/mobly/controllers/android_device_lib/services/base_service_test.py . [ 50%]
+                                                                         [ 50%]
+tests/mobly/controllers/android_device_lib/services/logcat_test.py ..... [ 51%]
+.........                                                                [ 52%]
+tests/mobly/controllers/android_device_lib/services/snippet_management_service_test.py . [ 52%]
+.............                                                            [ 54%]
+tests/mobly/controllers/android_device_lib/snippet_client_test.py ...... [ 55%]
+...................                                                      [ 57%]
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py ... [ 57%]
+.........................................................                [ 65%]
+tests/mobly/controllers/android_device_lib/snippet_event_test.py .       [ 65%]
+tests/mobly/controllers/android_device_test.py ......................... [ 68%]
+..............................................................           [ 76%]
+tests/mobly/logger_test.py ..........................                    [ 79%]
+tests/mobly/output_test.py .......s....                                  [ 80%]
+tests/mobly/records_test.py ..............................               [ 84%]
+tests/mobly/snippet/callback_event_test.py .                             [ 84%]
+tests/mobly/snippet/callback_handler_base_test.py ..........             [ 85%]
+tests/mobly/snippet/client_base_test.py ...................              [ 88%]
+tests/mobly/suite_runner_test.py ................                        [ 90%]
+tests/mobly/test_runner_test.py ......................                   [ 93%]
+tests/mobly/test_suite_test.py .                                         [ 93%]
+tests/mobly/utils_test.py ..s......................................FF... [ 98%]
+.........                                                                [100%]
+
+=================================== FAILURES ===================================
+________________ UtilsTest.test_run_command_with_custom_params _________________
+
+self = <tests.mobly.utils_test.UtilsTest testMethod=test_run_command_with_custom_params>
+mock_popen = <MagicMock name='Popen' id='139997597179376'>
+mock_timer = <MagicMock name='Timer' id='139997593237360'>
+
+    @mock.patch('threading.Timer')
+    @mock.patch('subprocess.Popen')
+    def test_run_command_with_custom_params(self, mock_popen, mock_timer):
+      mock_command = mock.MagicMock(spec=dict)
+      mock_stdout = mock.MagicMock(spec=int)
+      mock_stderr = mock.MagicMock(spec=int)
+      mock_shell = mock.MagicMock(spec=bool)
+      mock_timeout = 1234
+      mock_env = mock.MagicMock(spec=dict)
+      mock_universal_newlines = mock.MagicMock(spec=bool)
+      mock_proc = mock_popen.return_value
+      mock_proc.communicate.return_value = ('fake_out', 'fake_err')
+      mock_proc.returncode = 127
+
+      out = utils.run_command(
+          mock_command,
+          stdout=mock_stdout,
+          stderr=mock_stderr,
+          shell=mock_shell,
+          timeout=mock_timeout,
+          env=mock_env,
+          universal_newlines=mock_universal_newlines,
+      )
+
+      self.assertEqual(out, (127, 'fake_out', 'fake_err'))
+>     mock_popen.assert_called_with(
+          mock_command,
+          stdout=mock_stdout,
+          stderr=mock_stderr,
+          shell=mock_shell,
+          cwd=None,
+          env=mock_env,
+          universal_newlines=mock_universal_newlines,
+      )
+
+tests/mobly/utils_test.py:348:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='Popen' id='139997597179376'>
+args = (<MagicMock spec='dict' id='139997597179232'>,)
+kwargs = {'cwd': None, 'env': <MagicMock spec='dict' id='139997597186672'>, 'shell': <MagicMock spec='bool' id='139997605365376'>, 'stderr': <MagicMock spec='int' id='139997594355376'>, ...}
+expected = call(<MagicMock spec='dict' id='139997597179232'>, stdout=<MagicMock spec='int' id='139997618116160'>, stderr=<MagicMo...one, env=<MagicMock spec='dict' id='139997597186672'>, universal_newlines=<MagicMock spec='bool' id='139997597180816'>)
+actual = call(<MagicMock spec='dict' id='139997597179232'>, stdout=<MagicMock spec='int' id='139997618116160'>, stderr=<MagicMo...65376'>, cwd=None, env=<MagicMock spec='dict' id='139997597186672'>, text=<MagicMock spec='bool' id='139997597180816'>)
+_error_message = <function NonCallableMock.assert_called_with.<locals>._error_message at 0x7f53bb006840>
+cause = None
+
+    def assert_called_with(self, /, *args, **kwargs):
+        """assert that the last call was made with the specified arguments.
+
+        Raises an AssertionError if the args and keyword args passed in are
+        different to the last call to the mock."""
+        if self.call_args is None:
+            expected = self._format_mock_call_signature(args, kwargs)
+            actual = 'not called.'
+            error_message = ('expected call not found.\nExpected: %s\n  Actual: %s'
+                    % (expected, actual))
+            raise AssertionError(error_message)
+
+        def _error_message():
+            msg = self._format_mock_failure_message(args, kwargs)
+            return msg
+        expected = self._call_matcher(_Call((args, kwargs), two=True))
+        actual = self._call_matcher(self.call_args)
+        if actual != expected:
+            cause = expected if isinstance(expected, Exception) else None
+>           raise AssertionError(_error_message()) from cause
+E           AssertionError: expected call not found.
+E           Expected: Popen(<MagicMock spec='dict' id='139997597179232'>, stdout=<MagicMock spec='int' id='139997618116160'>, stderr=<MagicMock spec='int' id='139997594355376'>, shell=<MagicMock spec='bool' id='139997605365376'>, cwd=None, env=<MagicMock spec='dict' id='139997597186672'>, universal_newlines=<MagicMock spec='bool' id='139997597180816'>)
+E             Actual: Popen(<MagicMock spec='dict' id='139997597179232'>, stdout=<MagicMock spec='int' id='139997618116160'>, stderr=<MagicMock spec='int' id='139997594355376'>, shell=<MagicMock spec='bool' id='139997605365376'>, cwd=None, env=<MagicMock spec='dict' id='139997597186672'>, text=<MagicMock spec='bool' id='139997597180816'>)
+
+/usr/lib/python3.12/unittest/mock.py:949: AssertionError
+------------------------------ Captured log call -------------------------------
+DEBUG    root:utils.py:487 cmd: , stdout: fake_out, stderr: fake_err, ret: 127
+________________ UtilsTest.test_run_command_with_default_params ________________
+
+self = <tests.mobly.utils_test.UtilsTest testMethod=test_run_command_with_default_params>
+mock_popen = <MagicMock name='Popen' id='139997594578400'>
+mock_timer = <MagicMock name='Timer' id='139997594580800'>
+
+    @mock.patch('threading.Timer')
+    @mock.patch('subprocess.Popen')
+    def test_run_command_with_default_params(self, mock_popen, mock_timer):
+      mock_command = mock.MagicMock(spec=dict)
+      mock_proc = mock_popen.return_value
+      mock_proc.communicate.return_value = ('fake_out', 'fake_err')
+      mock_proc.returncode = 0
+
+      out = utils.run_command(mock_command)
+
+      self.assertEqual(out, (0, 'fake_out', 'fake_err'))
+>     mock_popen.assert_called_with(
+          mock_command,
+          stdout=subprocess.PIPE,
+          stderr=subprocess.PIPE,
+          shell=False,
+          cwd=None,
+          env=None,
+          universal_newlines=False,
+      )
+
+tests/mobly/utils_test.py:312:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='Popen' id='139997594578400'>
+args = (<MagicMock spec='dict' id='139997594579360'>,)
+kwargs = {'cwd': None, 'env': None, 'shell': False, 'stderr': -1, ...}
+expected = call(<MagicMock spec='dict' id='139997594579360'>, stdout=-1, stderr=-1, shell=False, cwd=None, env=None, universal_newlines=False)
+actual = call(<MagicMock spec='dict' id='139997594579360'>, stdout=-1, stderr=-1, shell=False, cwd=None, env=None, text=False)
+_error_message = <function NonCallableMock.assert_called_with.<locals>._error_message at 0x7f53bb2be980>
+cause = None
+
+    def assert_called_with(self, /, *args, **kwargs):
+        """assert that the last call was made with the specified arguments.
+
+        Raises an AssertionError if the args and keyword args passed in are
+        different to the last call to the mock."""
+        if self.call_args is None:
+            expected = self._format_mock_call_signature(args, kwargs)
+            actual = 'not called.'
+            error_message = ('expected call not found.\nExpected: %s\n  Actual: %s'
+                    % (expected, actual))
+            raise AssertionError(error_message)
+
+        def _error_message():
+            msg = self._format_mock_failure_message(args, kwargs)
+            return msg
+        expected = self._call_matcher(_Call((args, kwargs), two=True))
+        actual = self._call_matcher(self.call_args)
+        if actual != expected:
+            cause = expected if isinstance(expected, Exception) else None
+>           raise AssertionError(_error_message()) from cause
+E           AssertionError: expected call not found.
+E           Expected: Popen(<MagicMock spec='dict' id='139997594579360'>, stdout=-1, stderr=-1, shell=False, cwd=None, env=None, universal_newlines=False)
+E             Actual: Popen(<MagicMock spec='dict' id='139997594579360'>, stdout=-1, stderr=-1, shell=False, cwd=None, env=None, text=False)
+
+/usr/lib/python3.12/unittest/mock.py:949: AssertionError
+------------------------------ Captured log call -------------------------------
+DEBUG    root:utils.py:487 cmd: , stdout: fake_out, stderr: fake_err, ret: 0
+=============================== warnings summary ===============================
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py::SnippetClientV2Test::test_make_conn_with_forwarded_port_init
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py::SnippetClientV2Test::test_make_connection_io_error
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py::SnippetClientV2Test::test_make_connection_send_handshake_request_error
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py::SnippetClientV2Test::test_make_connection_timeout
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py::SnippetClientV2Test::test_restore_event_client
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py::SnippetClientV2Test::test_restore_server_connection_with_event_client
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py::SnippetClientV2Test::test_start_server_error_message_include_discarded_output
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py::SnippetClientV2Test::test_start_server_without_persisting_commands
+  /app/.tox/py3/lib/python3.12/site-packages/_pytest/unraisableexception.py:67: PytestUnraisableExceptionWarning: Exception ignored in: <function ClientBase.__del__ at 0x7f53bba19300>
+
+  Traceback (most recent call last):
+    File "/app/mobly/snippet/client_base.py", line 94, in __del__
+      self.close_connection()
+    File "/app/mobly/controllers/android_device_lib/snippet_client_v2.py", line 720, in close_connection
+      self._stop_port_forwarding()
+    File "/app/mobly/controllers/android_device_lib/snippet_client_v2.py", line 731, in _stop_port_forwarding
+      occupied_ports = adb.list_occupied_adb_ports()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/controllers/android_device_lib/adb.py", line 135, in list_occupied_adb_ports
+      out = AdbProxy().forward('--list')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/controllers/android_device_lib/adb.py", line 452, in forward
+      return self._exec_adb_cmd(
+             ^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/controllers/android_device_lib/adb.py", line 303, in _exec_adb_cmd
+      out = self._exec_cmd(adb_cmd, shell=shell, timeout=timeout, stderr=stderr)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/controllers/android_device_lib/adb.py", line 196, in _exec_cmd
+      (ret, out, err) = utils.run_command(args, shell=shell, timeout=timeout)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/utils.py", line 470, in run_command
+      process = subprocess.Popen(
+                ^^^^^^^^^^^^^^^^^
+    File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+      self._execute_child(args, executable, preexec_fn, close_fds,
+    File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+      raise child_exception_type(errno_num, err_msg, err_filename)
+  FileNotFoundError: [Errno 2] No such file or directory: 'adb'
+
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+
+tests/mobly/controllers/android_device_lib/snippet_client_v2_test.py::SnippetClientV2Test::test_rpc_send_decode_socket_response_bytes_error
+  /app/.tox/py3/lib/python3.12/site-packages/_pytest/unraisableexception.py:67: PytestUnraisableExceptionWarning: Exception ignored in: <function ClientBase.__del__ at 0x7f53bba19300>
+
+  Traceback (most recent call last):
+    File "/app/mobly/controllers/android_device_lib/snippet_client_v2.py", line 610, in _decode_socket_response_bytes
+      return str(response, encoding='utf8')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc0 in position 0: invalid start byte
+
+  During handling of the above exception, another exception occurred:
+
+  Traceback (most recent call last):
+    File "/app/mobly/snippet/client_base.py", line 94, in __del__
+      self.close_connection()
+    File "/app/mobly/controllers/android_device_lib/snippet_client_v2.py", line 720, in close_connection
+      self._stop_port_forwarding()
+    File "/app/mobly/controllers/android_device_lib/snippet_client_v2.py", line 731, in _stop_port_forwarding
+      occupied_ports = adb.list_occupied_adb_ports()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/controllers/android_device_lib/adb.py", line 135, in list_occupied_adb_ports
+      out = AdbProxy().forward('--list')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/controllers/android_device_lib/adb.py", line 452, in forward
+      return self._exec_adb_cmd(
+             ^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/controllers/android_device_lib/adb.py", line 303, in _exec_adb_cmd
+      out = self._exec_cmd(adb_cmd, shell=shell, timeout=timeout, stderr=stderr)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/controllers/android_device_lib/adb.py", line 196, in _exec_cmd
+      (ret, out, err) = utils.run_command(args, shell=shell, timeout=timeout)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/mobly/utils.py", line 470, in run_command
+      process = subprocess.Popen(
+                ^^^^^^^^^^^^^^^^^
+    File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+      self._execute_child(args, executable, preexec_fn, close_fds,
+    File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+      raise child_exception_type(errno_num, err_msg, err_filename)
+  FileNotFoundError: [Errno 2] No such file or directory: 'adb'
+
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/mobly/utils_test.py::UtilsTest::test_run_command_with_custom_params
+FAILED tests/mobly/utils_test.py::UtilsTest::test_run_command_with_default_params
+============= 2 failed, 797 passed, 2 skipped, 9 warnings in 2.64s =============
+py3: exit 1 (2.98 seconds) /app> pytest pid=74
+  py3: FAIL code 1 (12.53=setup[9.54]+cmd[2.98] seconds)
+  evaluation failed :( (12.55 seconds)
+All done! ✨ 🍰 ✨
+105 files would be left unchanged.

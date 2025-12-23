@@ -1,0 +1,624 @@
+Scope: all 49 workspace projects
+ WARN  There are cyclic workspace dependencies: /app/packages/browser, /app/packages/vitest, /app/packages/browser-playwright
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +11
++++++++++++
+Progress: resolved 11, reused 11, downloaded 0, added 11, done
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: @parcel/watcher, oxc-resolver.                      │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 2.9s using pnpm v10.17.0
+
+> @vitest/monorepo@4.0.0-beta.18 test:ci /app
+> CI=true pnpm -r --reporter-hide-prefix --stream --sequential --filter '@vitest/test-*' --filter !test-browser run test
+
+Scope: 19 of 49 workspace projects
+test/benchmark test$ vitest
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/test/benchmark[39m
+ [32m✓[39m test/sequential.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 769[2mms[22m[39m
+   [33m[2m✓[22m[39m sequential [33m 768[2mms[22m[39m
+ [32m✓[39m test/compare.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 2282[2mms[22m[39m
+   [33m[2m✓[22m[39m compare [33m 2280[2mms[22m[39m
+ [32m✓[39m test/basic.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 4277[2mms[22m[39m
+   [33m[2m✓[22m[39m basic [33m 4275[2mms[22m[39m
+ [32m✓[39m test/reporter.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 4544[2mms[22m[39m
+   [33m[2m✓[22m[39m summary [33m 1127[2mms[22m[39m
+   [33m[2m✓[22m[39m non-tty [33m 1338[2mms[22m[39m
+   [33m[2m✓[22m[39m includeSamples true [33m 1030[2mms[22m[39m
+   [33m[2m✓[22m[39m includeSamples false [33m 1046[2mms[22m[39m
+[2m Test Files [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+[2m      Tests [22m [1m[32m7 passed[39m[22m[90m (7)[39m
+[2m   Start at [22m 13:10:02
+[2m   Duration [22m 5.06s[2m (transform 291ms, setup 0ms, collect 1.34s, tests 11.87s, environment 1ms, prepare 29ms)[22m
+test/benchmark test: Done
+test/cli test$ vitest
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/test/cli[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:15:1[22m[2m > [22mtest fixture cannot import from file fixture[33m 340[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:35:1[22m[2m > [22mcan import file fixture inside the local fixture[32m 274[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:69:1[22m[2m > [22mcan import worker fixture inside the local fixture[32m 244[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:105:1[22m[2m > [22mtest fixture cannot import from worker fixture[32m 184[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:125:1[22m[2m > [22mauto worker fixture is initialised always before the first test[32m 204[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:157:1[22m[2m > [22mworker fixture can import a static value from test fixture[32m 237[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:181:1[22m[2m > [22mfile fixture can import a static value from test fixture[32m 188[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:205:1[22m[2m > [22mworker fixture works in vmThreads and runs for every file[33m 444[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:237:1[22m[2m > [22mworker fixtures in isolated tests init and teardown twice[32m 285[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:273:1[22m[2m > [22mworker fixture initiates and torn down in different workers[32m 278[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:310:1[22m[2m > [22mworker fixture initiates and torn down in one non-isolated worker[32m 198[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:345:1[22m[2m > [22mworker fixtures are available in beforeEach and afterEach[32m 201[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:383:1[22m[2m > [22mfile fixtures are available in beforeEach and afterEach[32m 192[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:423:1[22m[2m > [22mauto file fixture is initialised always before the first test[32m 201[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:460:2[22m[2m > [22mfile fixture is provided as a factory and is initialised once in all suites, teardown is called once per file (isolate true)[33m 559[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:460:2[22m[2m > [22mfile fixture is provided as a factory and is initialised once in all suites, teardown is called once per file (isolate false)[32m 207[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:563:3[22m[2m > [22mworks properly in 'forks'[2m > [22mfile and worker fixtures are initiated[32m 230[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:601:3[22m[2m > [22mworks properly in 'forks'[2m > [22mfile and worker fixtures are initiated with auto[32m 188[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:563:3[22m[2m > [22mworks properly in 'threads'[2m > [22mfile and worker fixtures are initiated[32m 174[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:601:3[22m[2m > [22mworks properly in 'threads'[2m > [22mfile and worker fixtures are initiated with auto[32m 175[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:563:3[22m[2m > [22mworks properly in 'browser'[2m > [22mfile and worker fixtures are initiated[33m 1250[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:601:3[22m[2m > [22mworks properly in 'browser'[2m > [22mfile and worker fixtures are initiated with auto[33m 680[2mms[22m[39m
+ [32m✓[39m test/scoped-fixtures.test.ts[2m:641:3[22m[2m > [22mbrowser tests[2m > [22minitiates worker scope once for non-isolated tests[33m 781[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:47:4[22m[2m > [22mAPI[2m > [22mannotations are exposed correctly in 'forks'[33m 355[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:47:4[22m[2m > [22mAPI[2m > [22mannotations are exposed correctly in 'threads'[32m 254[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:47:4[22m[2m > [22mAPI[2m > [22mannotations are exposed correctly in 'browser'[33m 1262[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:197:3[22m[2m > [22mAPI[2m > [22mcannot annotate tests when the test finished running[33m 363[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:216:3[22m[2m > [22mreporters[2m > [22mtap reporter prints annotations[32m 269[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:248:3[22m[2m > [22mreporters[2m > [22mtap-flat reporter prints annotations[32m 203[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:274:3[22m[2m > [22mreporters[2m > [22mjunit reporter prints annotations[32m 237[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:321:3[22m[2m > [22mreporters[2m > [22mgithub-actions reporter prints annotations[32m 272[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:356:3[22m[2m > [22mreporters[2m > [22mverbose non-tty reporter prints annotations[32m 225[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:399:5[22m[2m > [22mreporters[2m > [22mdefault[2m > [22mdefault reporter prints annotations after the error[32m 208[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:447:5[22m[2m > [22mreporters[2m > [22mdefault[2m > [22mdefault reporter prints the same error with the same annotations only once[32m 256[2mms[22m[39m
+ [32m✓[39m test/annotations.test.ts[2m:486:5[22m[2m > [22mreporters[2m > [22mdefault[2m > [22mdefault reporter prints different annotations after the same error[32m 258[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:42:1[22m[2m > [22mcorrectly reports a file[32m 4[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:83:1[22m[2m > [22mcorrectly reports a passed test[32m 2[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:116:1[22m[2m > [22mcorrectly reports failed test[32m 2[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:163:1[22m[2m > [22mcorrectly reports a skipped test[32m 1[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:200:1[22m[2m > [22mcorrectly reports multiple failures[32m 1[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:214:1[22m[2m > [22mcorrectly reports test assigned options[32m 0[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:232:1[22m[2m > [22mcorrectly reports retried tests[32m 0[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:239:1[22m[2m > [22mcorrectly reports flaky tests[32m 0[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:250:1[22m[2m > [22mcorrectly reports repeated tests[32m 0[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:261:1[22m[2m > [22mcorrectly passed down metadata[32m 0[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:267:1[22m[2m > [22mcorrectly builds the full name[32m 0[2mms[22m[39m
+ [32m✓[39m test/reported-tasks.test.ts[2m:276:1[22m[2m > [22mcorrectly reports import durations[32m 0[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:7:3[22m[2m > [22mlocation filter with list command[2m > [22mfinds test at correct line number[33m 683[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:21:3[22m[2m > [22mlocation filter with list command[2m > [22mfinds "basic suite" at correct line number[33m 666[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:37:3[22m[2m > [22mlocation filter with list command[2m > [22mfinds "inner suite" at correct line number[33m 647[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:52:3[22m[2m > [22mlocation filter with list command[2m > [22mhandles matching test inside a suite[33m 653[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:69:3[22m[2m > [22mlocation filter with list command[2m > [22mhandles file with a dash in the name[33m 646[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:83:3[22m[2m > [22mlocation filter with list command[2m > [22mreports not found test[33m 657[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:97:3[22m[2m > [22mlocation filter with list command[2m > [22mreports multiple not found tests[33m 600[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:113:3[22m[2m > [22mlocation filter with list command[2m > [22merrors if range location is provided[33m 365[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:125:3[22m[2m > [22mlocation filter with list command[2m > [22mparses file with a colon and dash in the name correctly[33m 362[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:137:3[22m[2m > [22mlocation filter with list command[2m > [22mfails on part of filename with location filter[33m 365[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:151:3[22m[2m > [22mlocation filter with run command[2m > [22mfinds test at correct line number[33m 638[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:163:3[22m[2m > [22mlocation filter with run command[2m > [22mfinds "basic suite" at correct line number[33m 649[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:175:3[22m[2m > [22mlocation filter with run command[2m > [22mfinds "inner suite" at correct line number[33m 648[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:187:3[22m[2m > [22mlocation filter with run command[2m > [22mhandles matching test inside a suite[33m 641[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:200:3[22m[2m > [22mlocation filter with run command[2m > [22mhandles file with a dash in the name[33m 632[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:212:3[22m[2m > [22mlocation filter with run command[2m > [22mreports not found test[33m 639[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:223:3[22m[2m > [22mlocation filter with run command[2m > [22mreports multiple not found tests[33m 638[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:236:3[22m[2m > [22mlocation filter with run command[2m > [22merrors if range location is provided[33m 373[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:246:3[22m[2m > [22mlocation filter with run command[2m > [22mparses file with a colon and dash in the name correctly[33m 383[2mms[22m[39m
+ [32m✓[39m test/location-filters.test.ts[2m:257:3[22m[2m > [22mlocation filter with run command[2m > [22mfails on part of filename with location filter[33m 431[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:12:2[22m[2m > [22mcorrectly outputs all tests with args: "--pool=threads"[33m 908[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:12:2[22m[2m > [22mcorrectly outputs all tests with args: "--pool=forks"[33m 954[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:12:2[22m[2m > [22mcorrectly outputs all tests with args: "--pool=vmForks"[33m 843[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:12:2[22m[2m > [22mcorrectly outputs all tests with args: "--browser.enabled"[33m 1860[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:12:2[22m[2m > [22mcorrectly outputs all tests with args: "--typecheck"[33m 949[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:12:2[22m[2m > [22mcorrectly outputs all tests with args: "--typecheck.only"[33m 543[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:22:2[22m[2m > [22mbasic output shows error[33m 858[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:22:2[22m[2m > [22mjson output shows error[33m 807[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:22:2[22m[2m > [22mjson with a file output shows error[33m 891[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:29:1[22m[2m > [22mcorrectly outputs json[33m 917[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:63:1[22m[2m > [22mcorrectly outputs files only json[33m 424[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:79:1[22m[2m > [22mcorrectly saves json[33m 937[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:117:1[22m[2m > [22mcorrectly saves files only json[33m 420[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:137:1[22m[2m > [22mcorrectly filters by file[33m 701[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:147:1[22m[2m > [22mcorrectly filters by file when using --filesOnly[33m 425[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:156:1[22m[2m > [22mcorrectly prints project name in basic report[33m 654[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:165:1[22m[2m > [22mcorrectly prints project name in basic report when using --filesOnly[33m 380[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:173:1[22m[2m > [22mcorrectly prints project name and locations in json report[33m 636[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:200:1[22m[2m > [22mcorrectly prints project name in json report when using --filesOnly[33m 373[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:213:1[22m[2m > [22mcorrectly filters by test name[33m 891[2mms[22m[39m
+ [32m✓[39m test/list.test.ts[2m:222:1[22m[2m > [22mignores watch flag[33m 865[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail async-assertion.test.ts[33m 358[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail concurrent-suite-deadlock.test.ts[33m 767[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail concurrent-test-deadlock.test.ts[33m 763[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail each-timeout.test.ts[32m 263[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail empty.test.ts[32m 189[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail expect-soft.test.ts[32m 196[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail expect-unreachable.test.ts[32m 194[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail expect.test.ts[32m 198[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail hook-timeout.test.ts[32m 213[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail hooks-called.test.ts[32m 201[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail hooks-fail-afterAll.test.ts[32m 202[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail hooks-fail-afterEach.test.ts[32m 188[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail hooks-fail-beforeAll.test.ts[32m 243[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail hooks-fail-beforeEach.test.ts[32m 248[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail hooks-timeout-before-hook-cleanup-callback.test.ts[33m 421[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail inline-snapshop-inside-each.test.ts[32m 199[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail mock-import-proxy-module.test.ts[32m 194[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail nested-suite.test.ts[32m 257[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail no-assertions.test.ts[32m 190[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail node-browser-context.test.ts[32m 181[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail poll-no-awaited.test.ts[32m 259[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail primitive-error.test.ts[32m 183[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail skip-conditional.test.ts[32m 190[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail snapshot-with-not.test.ts[32m 197[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail stall.test.ts[32m 194[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail test-timeout.test.ts[33m 615[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail unhandled-suite.test.ts[32m 195[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail unhandled.test.ts[33m 606[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail .dot-folder/dot-test.test.ts[32m 186[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail test-extend/circular-dependency.test.ts[32m 189[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail test-extend/fixture-error.test.ts[32m 225[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail test-extend/fixture-rest-params.test.ts[32m 183[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail test-extend/fixture-rest-props.test.ts[32m 180[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail test-extend/fixture-without-destructuring.test.ts[32m 180[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail test-extend/test-rest-params.test.ts[32m 183[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail test-extend/test-rest-props.test.ts[32m 241[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:12:14[22m[2m > [22mshould fail test-extend/test-without-destructuring.test.ts[32m 255[2mms[22m[39m
+----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------|---------|----------|---------|---------|-------------------
+All files |       0 |        0 |       0 |       0 |
+----------|---------|----------|---------|---------|-------------------
+ [32m✓[39m test/fails.test.ts[2m:26:1[22m[2m > [22mshould report coverage when "coverage.reportOnFailure: true" and tests fail[33m 641[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:40:1[22m[2m > [22mshould not report coverage when "coverage.reportOnFailure" has default value and tests fail[32m 267[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:53:1[22m[2m > [22mprints a warning if the assertion is not awaited[32m 204[2mms[22m[39m
+ [32m✓[39m test/fails.test.ts[2m:110:1[22m[2m > [22mprints a warning if the assertion is not awaited in the browser mode[33m 1217[2mms[22m[39m
+ [32m✓[39m test/signal.test.ts[2m:6:1[22m[2m > [22mtimeout aborts the signal without fixtures[33m 371[2mms[22m[39m
+ [32m✓[39m test/signal.test.ts[2m:26:1[22m[2m > [22mtimeout aborts the signal[32m 269[2mms[22m[39m
+ [32m✓[39m test/signal.test.ts[2m:49:1[22m[2m > [22mtimeout aborts all signals in concurrent tests[32m 215[2mms[22m[39m
+ [32m✓[39m test/signal.test.ts[2m:93:1[22m[2m > [22mcancelling test run aborts the signal[32m 192[2mms[22m[39m
+ [32m✓[39m test/signal.test.ts[2m:120:1[22m[2m > [22mcancelling test run aborts the signal in all concurrent tests[32m 194[2mms[22m[39m
+ [32m✓[39m test/console.test.ts[2m:6:1[22m[2m > [22mcan run custom pools with Vitest[33m 347[2mms[22m[39m
+ [32m✓[39m test/console.test.ts[2m:76:1[22m[2m > [22monConsoleLog receives the entity[32m 254[2mms[22m[39m
+ [32m✓[39m test/public-api.test.ts[2m:17:22[22m[2m > [22mpasses down metadata when 'threads are enabled'[33m 355[2mms[22m[39m
+ [32m✓[39m test/public-api.test.ts[2m:17:22[22m[2m > [22mpasses down metadata when 'threads are disabled'[32m 276[2mms[22m[39m
+ [32m✓[39m test/public-api.test.ts[2m:17:22[22m[2m > [22mpasses down metadata when 'running in the browser'[33m 1259[2mms[22m[39m
+ [32m✓[39m test/public-api.test.ts[2m:98:1[22m[2m > [22mcan modify the global test name pattern[32m 20[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22madd-in-imba.test.imba[33m 341[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22madd-in-js.test.js[32m 282[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22madd.test.ts[32m 269[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22merror-in-deps.test.js[32m 198[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22merror-in-package.test.js[32m 280[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22merror-with-stack.test.js[32m 195[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22mmocked-global.test.js[32m 200[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22mmocked-imported.test.js[32m 201[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22mmocked-imported.test.ts[32m 213[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22mrequire-assertions.test.js[32m 191[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:14:5[22m[2m > [22mstacktraces should respect sourcemaps[2m > [22mreset-modules.test.ts[32m 215[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:31:5[22m[2m > [22mstacktraces should pick error frame if present[2m > [22mframe.spec.imba[32m 178[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:47:3[22m[2m > [22mstacktrace should print error frame source file correctly[2m > [22merror-in-deps[32m 191[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:59:3[22m[2m > [22mstacktrace filtering[2m > [22mfilters stacktraces[32m 191[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:73:3[22m[2m > [22mstacktrace in dependency package[2m > [22mexternal[32m 210[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:80:3[22m[2m > [22mstacktrace in dependency package[2m > [22minline[32m 230[2mms[22m[39m
+ [32m✓[39m test/stacktraces.test.ts[2m:93:1[22m[2m > [22mstacktrace in vmThreads[32m 210[2mms[22m[39m
+ [32m✓[39m test/inspect.test.ts[2m:10:1[22m[2m > [22m--inspect-brk stops at test file[33m 818[2mms[22m[39m
+ [31m×[39m test/git-changed.test.ts[2m:22:3[22m[2m > [22mforceRerunTrigger[2m > [22mshould run the whole test suite if file exists[32m 77[2mms[22m[39m
+[31m   → expected 'Could not find Git root. Have you initialized git with `git init`?\n' to be '' // Object.is equality[39m
+ [31m×[39m test/git-changed.test.ts[2m:31:3[22m[2m > [22mforceRerunTrigger[2m > [22mshould run no tests if file does not exist[32m 27[2mms[22m[39m
+[31m   → expected '\n RUN  v4.0.0-beta.18 /app/test/cli/fixtures/git-changed/related\n\n' to contain 'No test files found, exiting with code 0'[39m
+ [32m✓[39m test/git-changed.test.ts[2m:37:35[22m[2m > [22mrelated correctly runs only related tests[33m 937[2mms[22m[39m
+ [31m×[39m test/git-changed.test.ts[2m:52:35[22m[2m > [22mdoesn't run any test in a workspace because there are no changes[32m 53[2mms[22m[39m
+[31m   → expected '\n RUN  v4.0.0-beta.18 /app/test/cli/fixtures/git-changed/workspace\n\n' to contain 'No test files found, exiting with code 0'[39m
+ [31m×[39m test/git-changed.test.ts[2m:62:35[22m[2m > [22mrelated correctly runs only related tests inside a workspace[32m 46[2mms[22m[39m
+[31m   → expected 'Could not find Git root. Have you initialized git with `git init`?\n' to be '' // Object.is equality[39m
+ [32m✓[39m test/expect-soft.test.ts[2m:17:3[22m[2m > [22mexpect.soft[2m > [22mbasic[33m 349[2mms[22m[39m
+ [32m✓[39m test/expect-soft.test.ts[2m:23:3[22m[2m > [22mexpect.soft[2m > [22mpromise[32m 257[2mms[22m[39m
+ [32m✓[39m test/expect-soft.test.ts[2m:29:3[22m[2m > [22mexpect.soft[2m > [22mwith expect[32m 209[2mms[22m[39m
+ [32m✓[39m test/expect-soft.test.ts[2m:36:3[22m[2m > [22mexpect.soft[2m > [22mwith expect.extend[32m 215[2mms[22m[39m
+ [32m✓[39m test/expect-soft.test.ts[2m:43:3[22m[2m > [22mexpect.soft[2m > [22mpromise with expect.extend[32m 202[2mms[22m[39m
+ [32m✓[39m test/expect-soft.test.ts[2m:49:3[22m[2m > [22mexpect.soft[2m > [22mpassed[32m 200[2mms[22m[39m
+ [32m✓[39m test/expect-soft.test.ts[2m:54:3[22m[2m > [22mexpect.soft[2m > [22mretry will passed[32m 262[2mms[22m[39m
+ [32m✓[39m test/expect-soft.test.ts[2m:59:3[22m[2m > [22mexpect.soft[2m > [22mretry will failed[32m 269[2mms[22m[39m
+ [31m×[39m test/list-changed.test.ts[2m:7:1[22m[2m > [22mlist command with --changed flag shows only changed tests[33m 1827[2mms[22m[39m
+[31m   → expected '' to contain 'related.test.ts'[39m
+ [31m×[39m test/list-changed.test.ts[2m:24:1[22m[2m > [22mlist command with --changed flag and --filesOnly shows only changed test files[33m 376[2mms[22m[39m
+[31m   → expected '' to contain 'related.test.ts'[39m
+ [31m×[39m test/list-changed.test.ts[2m:33:1[22m[2m > [22mlist command with --changed flag and --json outputs changed tests in JSON format[33m 383[2mms[22m[39m
+[31m   → Unexpected end of JSON input[39m
+ [32m✓[39m test/list-changed.test.ts[2m:44:1[22m[2m > [22mlist command with --changed flag when no changes exist should show no tests[33m 378[2mms[22m[39m
+ [32m✓[39m test/init.test.ts[2m:25:1[22m[2m > [22minitializes project[33m 339[2mms[22m[39m
+ [32m✓[39m test/retry-clear-mocks.test.ts[2m:5:1[22m[2m > [22mvitest correctly resets mocks between tests[33m 319[2mms[22m[39m
+ [32m✓[39m test/retry-clear-mocks.test.ts[2m:32:1[22m[2m > [22mvitest correctly clears mocks between tests[32m 193[2mms[22m[39m
+ [32m✓[39m test/retry-clear-mocks.test.ts[2m:58:1[22m[2m > [22mvitest correctly restores mocks between tests[32m 192[2mms[22m[39m
+ [32m✓[39m test/print-error.test.ts[2m:4:1[22m[2m > [22mprints a custom error stack[33m 343[2mms[22m[39m
+ [32m✓[39m test/print-error.test.ts[2m:45:1[22m[2m > [22mprints buffer and UintArray[32m 244[2mms[22m[39m
+ [32m✓[39m test/setup-files.test.ts[2m:5:35[22m[2m > [22mthreads: print stdout and stderr correctly when called in the setup file[33m 322[2mms[22m[39m
+ [32m✓[39m test/setup-files.test.ts[2m:5:35[22m[2m > [22mvmThreads: print stdout and stderr correctly when called in the setup file[32m 256[2mms[22m[39m
+ [2m[90m↓[39m[22m test/setup-files.test.ts[2m:31:67[22m[2m > [22msetup files with forceRerunTrigger[2m > [22mshould run no tests if setup file is not changed
+ [31m×[39m test/setup-files.test.ts[2m:36:3[22m[2m > [22msetup files with forceRerunTrigger[2m > [22mshould run the whole test suite if setup file is changed[32m 38[2mms[22m[39m
+[31m   → expected '\n RUN  v4.0.0-beta.18 /app/test/cli/fixtures/setup-files\n\n' to contain '1 passed'[39m
+ [32m✓[39m test/group-order.test.ts[2m:4:1[22m[2m > [22mtests run according to the group order[33m 939[2mms[22m[39m
+ [32m✓[39m test/standalone.test.ts[2m:4:1[22m[2m > [22mtest run is not started when --standalone[32m 80[2mms[22m[39m
+ [32m✓[39m test/standalone.test.ts[2m:16:1[22m[2m > [22mtest run is started when --standalone and filename filter[33m 306[2mms[22m[39m
+ [32m✓[39m test/browser-multiple.test.ts[2m:7:1[22m[2m > [22mautomatically assigns the port[33m 1660[2mms[22m[39m
+ [32m✓[39m test/run-custom-env.test.ts[2m:6:1[22m[2m > [22mcorrectly runs tests if custom env is a file[33m 369[2mms[22m[39m
+ [32m✓[39m test/run-custom-env.test.ts[2m:22:1[22m[2m > [22mcorrectly runs tests if custom env is an absolute path[32m 267[2mms[22m[39m
+ [32m✓[39m test/skip-note.test.ts[2m:11:2[22m[2m > [22mcan leave a note when skipping in the 'default' reporter[33m 330[2mms[22m[39m
+ [32m✓[39m test/skip-note.test.ts[2m:11:2[22m[2m > [22mcan leave a note when skipping in the 'verbose' reporter[32m 180[2mms[22m[39m
+ [32m✓[39m test/config-loader.test.ts[2m:6:1[22m[2m > [22mconfigLoader default[33m 344[2mms[22m[39m
+ [32m✓[39m test/config-loader.test.ts[2m:21:1[22m[2m > [22mconfigLoader runner[33m 1989[2mms[22m[39m
+ [32m✓[39m test/custom-pool.test.ts[2m:4:1[22m[2m > [22mcan run custom pools with Vitest[33m 381[2mms[22m[39m
+ [32m✓[39m test/create-vitest.test.ts[2m:5:1[22m[2m > [22mcreateVitest[33m 322[2mms[22m[39m
+(node:4987) ExperimentalWarning: Network Imports is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5009) ExperimentalWarning: Network Imports is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m test/network-imports.test.ts[2m:18:2[22m[2m > [22mimporting from network in threads[33m 362[2mms[22m[39m
+(node:4987) ExperimentalWarning: Network Imports is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m test/network-imports.test.ts[2m:18:2[22m[2m > [22mimporting from network in forks[32m 268[2mms[22m[39m
+ [32m✓[39m test/network-imports.test.ts[2m:18:2[22m[2m > [22mimporting from network in vmThreads[32m 260[2mms[22m[39m
+ [32m✓[39m test/server-url.test.ts[2m:5:1[22m[2m > [22mapi server-url http[33m 355[2mms[22m[39m
+ [32m✓[39m test/server-url.test.ts[2m:13:1[22m[2m > [22mapi server-url https[33m 652[2mms[22m[39m
+ [2m[90m↓[39m[22m test/server-url.test.ts[2m:21:4[22m[2m > [22mapi server-url fallback if resolvedUrls is null
+ [2m[90m↓[39m[22m test/windows-drive-case.test.ts[2m:9:40[22m[2m > [22mworks on windows with a lowercase drive: /app/test/cli/fixtures/windows-drive-case
+ [32m✓[39m test/global-setup-fail.test.ts[2m:6:1[22m[2m > [22mshould fail[32m 116[2mms[22m[39m
+ [32m✓[39m test/path-filter.test.ts[2m:4:1[22m[2m > [22mtest path is shown when filtering[33m 354[2mms[22m[39m
+ [32m✓[39m test/unhandled-ignore.test.ts[2m:4:1[22m[2m > [22mrun mode does not get stuck when TTY[33m 792[2mms[22m[39m
+ [32m✓[39m test/forks-channel.test.ts[2m:4:40[22m[2m > [22mtest case's process.send() calls are handled[33m 338[2mms[22m[39m
+ [32m✓[39m test/forks-channel.test.ts[2m:4:40[22m[2m > [22mtest case's process.send() calls are handled[32m 277[2mms[22m[39m
+ [32m✓[39m test/tty.test.ts[2m:4:1[22m[2m > [22mrun mode does not get stuck when TTY[33m 993[2mms[22m[39m
+ [32m✓[39m test/vm-threads.test.ts[2m:5:1[22m[2m > [22mimporting files in restricted fs works correctly[33m 1266[2mms[22m[39m
+ [32m✓[39m test/restricted-fs.test.ts[2m:5:1[22m[2m > [22mimporting files in restricted fs works correctly[33m 723[2mms[22m[39m
+ [32m✓[39m test/plugin.test.ts[2m:4:1[22m[2m > [22mplugin hooks[33m 340[2mms[22m[39m
+ [32m✓[39m test/dotted-files.test.ts[2m:5:1[22m[2m > [22mrun tests even though they are inside the .cache directory[33m 655[2mms[22m[39m
+ [32m✓[39m test/custom-runner.test.ts[2m:4:1[22m[2m > [22mextendTaskContext provides correct context.task.suite[33m 365[2mms[22m[39m
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 8 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[41m[1m FAIL [22m[49m test/git-changed.test.ts[2m:22:3[22m[2m > [22mforceRerunTrigger[2m > [22mshould run the whole test suite if file exists
+[31m[1mAssertionError[22m: expected 'Could not find Git root. Have you initialized git with `git init`?\n' to be '' // Object.is equality[39m
+- Expected
++ Received
++ Could not find Git root. Have you initialized git with `git init`?
++
+[36m [2m❯[22m test/git-changed.test.ts:[2m25:20[22m[39m
+    [90m 23| [39m    [34mcreateFile[39m(fileName[33m,[39m [32m''[39m)
+    [90m 24| [39m    [35mconst[39m { stdout[33m,[39m stderr } [33m=[39m [35mawait[39m [34mrun[39m()
+    [90m 25| [39m    [34mexpect[39m(stderr)[33m.[39m[34mtoBe[39m([32m''[39m)
+    [90m   | [39m                   [31m^[39m
+    [90m 26| [39m    [34mexpect[39m(stdout)[33m.[39m[34mtoContain[39m([32m'1 passed'[39m)
+    [90m 27| [39m    [34mexpect[39m(stdout)[33m.[39m[34mtoContain[39m([32m'related.test.ts'[39m)
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯[22m[39m
+[41m[1m FAIL [22m[49m test/git-changed.test.ts[2m:31:3[22m[2m > [22mforceRerunTrigger[2m > [22mshould run no tests if file does not exist
+[31m[1mAssertionError[22m: expected '\n RUN  v4.0.0-beta.18 /app/test/cli/fixtures/git-changed/related\n\n' to contain 'No test files found, exiting with code 0'[39m
+- Expected
++ Received
+- No test files found, exiting with code 0
++
++  RUN  v4.0.0-beta.18 /app/test/cli/fixtures/git-changed/related
++
++
+[36m [2m❯[22m test/git-changed.test.ts:[2m33:20[22m[39m
+    [90m 31| [39m  [34mit[39m([32m'should run no tests if file does not exist'[39m[33m,[39m [35masync[39m () [33m=>[39m {
+    [90m 32| [39m    [35mconst[39m { stdout } [33m=[39m [35mawait[39m [34mrun[39m()
+    [90m 33| [39m    expect(stdout).toContain('No test files found, exiting with code 0…
+    [90m   | [39m                   [31m^[39m
+    [90m 34| [39m  })
+    [90m 35| [39m})
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯[22m[39m
+[41m[1m FAIL [22m[49m test/git-changed.test.ts[2m:52:35[22m[2m > [22mdoesn't run any test in a workspace because there are no changes
+[31m[1mAssertionError[22m: expected '\n RUN  v4.0.0-beta.18 /app/test/cli/fixtures/git-changed/workspace\n\n' to contain 'No test files found, exiting with code 0'[39m
+- Expected
++ Received
+- No test files found, exiting with code 0
++
++  RUN  v4.0.0-beta.18 /app/test/cli/fixtures/git-changed/workspace
++
++
+[36m [2m❯[22m test/git-changed.test.ts:[2m58:18[22m[39m
+    [90m 56| [39m  })
+    [90m 57| [39m
+    [90m 58| [39m  [34mexpect[39m(stdout)[33m.[39m[34mtoContain[39m([32m'No test files found, exiting with code 0'[39m)
+    [90m   | [39m                 [31m^[39m
+    [90m 59| [39m})
+    [90m 60| [39m
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯[22m[39m
+[41m[1m FAIL [22m[49m test/git-changed.test.ts[2m:62:35[22m[2m > [22mrelated correctly runs only related tests inside a workspace
+[31m[1mAssertionError[22m: expected 'Could not find Git root. Have you initialized git with `git init`?\n' to be '' // Object.is equality[39m
+- Expected
++ Received
++ Could not find Git root. Have you initialized git with `git init`?
++
+[36m [2m❯[22m test/git-changed.test.ts:[2m73:18[22m[39m
+    [90m 71| [39m  })
+    [90m 72| [39m
+    [90m 73| [39m  [34mexpect[39m(stderr)[33m.[39m[34mtoBe[39m([32m''[39m)
+    [90m   | [39m                 [31m^[39m
+    [90m 74| [39m  [34mexpect[39m(stdout)[33m.[39m[34mtoContain[39m([32m'1 passed'[39m)
+    [90m 75| [39m  [34mexpect[39m(stdout)[33m.[39m[34mtoContain[39m([32m'packageA'[39m)
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯[22m[39m
+[41m[1m FAIL [22m[49m test/list-changed.test.ts[2m:7:1[22m[2m > [22mlist command with --changed flag shows only changed tests
+[31m[1mAssertionError[22m: expected '' to contain 'related.test.ts'[39m
+- Expected
++ Received
+- related.test.ts
+[36m [2m❯[22m test/list-changed.test.ts:[2m20:24[22m[39m
+    [90m 18| [39m  [90m// Run list with --changed flag[39m
+    [90m 19| [39m  const { stdout: changedTests } = await runVitestCli('list', '-r=./fi…
+    [90m 20| [39m  [34mexpect[39m(changedTests)[33m.[39m[34mtoContain[39m([32m'related.test.ts'[39m)
+    [90m   | [39m                       [31m^[39m
+    [90m 21| [39m  [34mexpect[39m(changedTests)[33m.[39mnot[33m.[39m[34mtoContain[39m([32m'not-related.test.ts'[39m)
+    [90m 22| [39m})
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯[22m[39m
+[41m[1m FAIL [22m[49m test/list-changed.test.ts[2m:24:1[22m[2m > [22mlist command with --changed flag and --filesOnly shows only changed test files
+[31m[1mAssertionError[22m: expected '' to contain 'related.test.ts'[39m
+- Expected
++ Received
+- related.test.ts
+[36m [2m❯[22m test/list-changed.test.ts:[2m29:24[22m[39m
+    [90m 27| [39m
+    [90m 28| [39m  const { stdout: changedFiles } = await runVitestCli('list', '-r=./fi…
+    [90m 29| [39m  [34mexpect[39m(changedFiles)[33m.[39m[34mtoContain[39m([32m'related.test.ts'[39m)
+    [90m   | [39m                       [31m^[39m
+    [90m 30| [39m  [34mexpect[39m(changedFiles)[33m.[39mnot[33m.[39m[34mtoContain[39m([32m'not-related.test.ts'[39m)
+    [90m 31| [39m})
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯[22m[39m
+[41m[1m FAIL [22m[49m test/list-changed.test.ts[2m:33:1[22m[2m > [22mlist command with --changed flag and --json outputs changed tests in JSON format
+[31m[1mSyntaxError[22m: Unexpected end of JSON input[39m
+[36m [2m❯[22m test/list-changed.test.ts:[2m38:27[22m[39m
+    [90m 36| [39m
+    [90m 37| [39m  const { stdout: changedJson } = await runVitestCli('list', '-r=./fix…
+    [90m 38| [39m  [35mconst[39m jsonOutput [33m=[39m [33mJSON[39m[33m.[39m[34mparse[39m(changedJson)
+    [90m   | [39m                          [31m^[39m
+    [90m 39| [39m  [34mexpect[39m([33mArray[39m[33m.[39m[34misArray[39m(jsonOutput))[33m.[39m[34mtoBe[39m([35mtrue[39m)
+    [90m 40| [39m  const relatedTest = jsonOutput.find((test: any) => test.file?.includ…
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯[22m[39m
+[41m[1m FAIL [22m[49m test/setup-files.test.ts[2m:36:3[22m[2m > [22msetup files with forceRerunTrigger[2m > [22mshould run the whole test suite if setup file is changed
+[31m[1mAssertionError[22m: expected '\n RUN  v4.0.0-beta.18 /app/test/cli/fixtures/setup-files\n\n' to contain '1 passed'[39m
+- Expected
++ Received
+- 1 passed
++
++  RUN  v4.0.0-beta.18 /app/test/cli/fixtures/setup-files
++
++
+[36m [2m❯[22m test/setup-files.test.ts:[2m41:20[22m[39m
+    [90m 39| [39m    [35mawait[39m fs[33m.[39m[34mwriteFile[39m(file[33m,[39m codes[33m,[39m [32m'utf-8'[39m)
+    [90m 40| [39m    [35mconst[39m { stdout } [33m=[39m [35mawait[39m [34mrun[39m()
+    [90m 41| [39m    [34mexpect[39m(stdout)[33m.[39m[34mtoContain[39m([32m'1 passed'[39m)
+    [90m   | [39m                   [31m^[39m
+    [90m 42| [39m  })
+    [90m 43| [39m})
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯[22m[39m
+[2m Test Files [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m35 passed[39m[22m[2m | [22m[33m1 skipped[39m[90m (39)[39m
+[2m      Tests [22m [1m[31m8 failed[39m[22m[2m | [22m[1m[32m204 passed[39m[22m[2m | [22m[33m2 skipped[39m[2m | [22m[90m1 todo[39m[90m (215)[39m
+[2m   Start at [22m 13:10:08
+[2m   Duration [22m 102.36s[2m (transform 868ms, setup 0ms, collect 11.30s, tests 84.13s, environment 8ms, prepare 472ms)[22m
+test/cli test: Failed
+/app/test/cli:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @vitest/test-cli@ test: `vitest`
+Exit status 1
+test/config test$ vitest --typecheck.enabled
+ ELIFECYCLE  Command failed with exit code 1.
+
+> @vitest/monorepo@4.0.0-beta.18 test:examples /app
+> CI=true pnpm -r --reporter-hide-prefix --stream --filter '@vitest/example-*' run test
+
+Scope: 7 of 49 workspace projects
+examples/basic test$ vitest
+examples/fastify test$ vitest
+examples/in-source-test test$ vitest
+examples/lit test$ vitest
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/examples/fastify[39m
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/examples/basic[39m
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/examples/in-source-test[39m
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/examples/lit[39m
+ [32m✓[39m test/suite.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m test/basic.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+[2m   Start at [22m 13:11:52
+[2m   Duration [22m 288ms[2m (transform 106ms, setup 0ms, collect 147ms, tests 12ms, environment 0ms, prepare 14ms)[22m
+examples/basic test: Done
+examples/profiling test$ vitest
+ [32m✓[39m src/index.ts [2m([22m[2m1 test[22m[2m)[22m[32m 3[2mms[22m[39m
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m   Start at [22m 13:11:52
+[2m   Duration [22m 259ms[2m (transform 35ms, setup 0ms, collect 48ms, tests 3ms, environment 0ms, prepare 8ms)[22m
+examples/in-source-test test: Done
+examples/projects test$ vitest
+ [32m✓[39m test/app.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 77[2mms[22m[39m
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m   Start at [22m 13:11:52
+[2m   Duration [22m 594ms[2m (transform 103ms, setup 0ms, collect 312ms, tests 77ms, environment 0ms, prepare 6ms)[22m
+examples/fastify test: Done
+examples/typecheck test$ vitest
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/examples/profiling[39m
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/examples/projects[39m
+ [32m✓[39m test/prime-number.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 5[2mms[22m[39m
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m   Start at [22m 13:11:53
+[2m   Duration [22m 288ms[2m (transform 29ms, setup 0ms, collect 48ms, tests 5ms, environment 0ms, prepare 8ms)[22m
+examples/profiling test: Done
+[33mTesting types with tsc and vue-tsc is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.[39m
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/examples/typecheck[39m
+[90mstderr[2m | unknown test
+[22m[39mLit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+ [32m✓[39m test/normal.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m [30m[42m server [49m[39m test/app.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 107[2mms[22m[39m
+ [32m✓[39m [30m[43m chromium [49m[39m test/basic.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 192[2mms[22m[39m
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m   Start at [22m 13:11:52
+[2m   Duration [22m 1.44s[2m (transform 0ms, setup 0ms, collect 37ms, tests 192ms, environment 0ms, prepare 176ms)[22m
+examples/lit test: Done
+[90mstderr[2m | test/basic.test.tsx[2m > [22m[2mLink changes the state when hovered
+[22m[39m`ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+ [32m✓[39m [30m[42m client [49m[39m test/basic.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 146[2mms[22m[39m
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+[2m   Start at [22m 13:11:53
+[2m   Duration [22m 1.15s[2m (transform 129ms, setup 106ms, collect 589ms, tests 253ms, environment 452ms, prepare 16ms)[22m
+examples/projects test: Done
+ [32m✓[39m [44m[1m TS [22m[49m test/type.test-d.ts [2m([22m[2m1 test[22m[2m)[22m
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2mType Errors [22m [2mno errors[22m
+[2m   Start at [22m 13:11:53
+[2m   Duration [22m 1.58s[2m (transform 40ms, setup 0ms, collect 60ms, tests 3ms, environment 0ms, prepare 8ms, typecheck 1.30s)[22m
+examples/typecheck test: Done
+
+> @vitest/ui@4.0.0-beta.18 test:ui /app/packages/ui
+> vitest --browser
+
+
+[1m[46m RUN [49m[22m [36mv4.0.0-beta.18 [39m[90m/app/packages/ui[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Unhandled Errors [49m[22m[31m⎯⎯⎯⎯⎯⎯[39m
+[31m[1m
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Unhandled Error [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[31m[1mError[22m: browserType.launch: Executable doesn't exist at /root/.cache/ms-playwright/chromium-1187/chrome-linux/chrome
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     pnpm exec playwright install                                        ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝[39m
+[90m [2m❯[22m ../browser-playwright/dist/index.js:[2m820:54[22m[39m
+[90m [2m❯[22m PlaywrightBrowserProvider.createContext ../browser-playwright/dist/index.js:[2m946:19[22m[39m
+[90m [2m❯[22m PlaywrightBrowserProvider.openBrowserPage ../browser-playwright/dist/index.js:[2m1007:19[22m[39m
+[90m [2m❯[22m PlaywrightBrowserProvider.openPage ../browser-playwright/dist/index.js:[2m1021:23[22m[39m
+[90m [2m❯[22m BrowserPool.openPage ../vitest/dist/chunks/cli-api.DHzxabgb.js:[2m6261:3[22m[39m
+[90m [2m❯[22m BrowserPool.runTests ../vitest/dist/chunks/cli-api.DHzxabgb.js:[2m6255:10[22m[39m
+[90m [2m❯[22m runWorkspaceTests ../vitest/dist/chunks/cli-api.DHzxabgb.js:[2m6193:3[22m[39m
+[90m [2m❯[22m executeTests ../vitest/dist/chunks/cli-api.DHzxabgb.js:[2m6965:25[22m[39m
+[90m [2m❯[22m ../vitest/dist/chunks/cli-api.DHzxabgb.js:[2m10588:6[22m[39m
+[90m [2m❯[22m Vitest.runFiles ../vitest/dist/chunks/cli-api.DHzxabgb.js:[2m10607:7[22m[39m
+[90m [2m❯[22m Vitest.start ../vitest/dist/chunks/cli-api.DHzxabgb.js:[2m10521:98[22m[39m
+[90m [2m❯[22m startVitest ../vitest/dist/chunks/cli-api.DHzxabgb.js:[2m11342:8[22m[39m
+[90m [2m❯[22m start ../vitest/dist/chunks/cac.175yah_a.js:[2m1297:107[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+
+
+[2m Test Files [22m [90m (3)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m     Errors [22m [1m[31m1 error[39m[22m
+[2m   Start at [22m 13:11:58
+[2m   Duration [22m 939ms[2m (transform 0ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 0ms)[22m
+
+error during close browserType.launch: Executable doesn't exist at /root/.cache/ms-playwright/chromium-1187/chrome-linux/chrome
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     pnpm exec playwright install                                        ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝
+    at /app/packages/browser-playwright/dist/index.js:820:54
+    at PlaywrightBrowserProvider.createContext (/app/packages/browser-playwright/dist/index.js:946:19)
+    at PlaywrightBrowserProvider.openBrowserPage (/app/packages/browser-playwright/dist/index.js:1007:19)
+    at PlaywrightBrowserProvider.openPage (/app/packages/browser-playwright/dist/index.js:1021:23)
+    at BrowserPool.openPage (/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js:6261:3)
+    at BrowserPool.runTests (/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js:6255:10)
+    at runWorkspaceTests (/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js:6193:3)
+    at executeTests (/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js:6965:25)
+    at /app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js:10588:6
+    at Vitest.runFiles (/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js:10607:7)
+    at Vitest.start (/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js:10521:98)
+    at startVitest (/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js:11342:8)
+    at start (/app/packages/vitest/dist/chunks/cac.175yah_a.js:1297:107) {
+  name: 'Error',
+  type: 'Unhandled Error',
+  stacks: [
+    {
+      method: '',
+      file: '/app/packages/browser-playwright/dist/index.js',
+      line: 820,
+      column: 54
+    },
+    {
+      method: 'PlaywrightBrowserProvider.createContext',
+      file: '/app/packages/browser-playwright/dist/index.js',
+      line: 946,
+      column: 19
+    },
+    {
+      method: 'PlaywrightBrowserProvider.openBrowserPage',
+      file: '/app/packages/browser-playwright/dist/index.js',
+      line: 1007,
+      column: 19
+    },
+    {
+      method: 'PlaywrightBrowserProvider.openPage',
+      file: '/app/packages/browser-playwright/dist/index.js',
+      line: 1021,
+      column: 23
+    },
+    {
+      method: 'BrowserPool.openPage',
+      file: '/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js',
+      line: 6261,
+      column: 3
+    },
+    {
+      method: 'BrowserPool.runTests',
+      file: '/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js',
+      line: 6255,
+      column: 10
+    },
+    {
+      method: 'runWorkspaceTests',
+      file: '/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js',
+      line: 6193,
+      column: 3
+    },
+    {
+      method: 'executeTests',
+      file: '/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js',
+      line: 6965,
+      column: 25
+    },
+    {
+      method: '',
+      file: '/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js',
+      line: 10588,
+      column: 6
+    },
+    {
+      method: 'Vitest.runFiles',
+      file: '/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js',
+      line: 10607,
+      column: 7
+    },
+    {
+      method: 'Vitest.start',
+      file: '/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js',
+      line: 10521,
+      column: 98
+    },
+    {
+      method: 'startVitest',
+      file: '/app/packages/vitest/dist/chunks/cli-api.DHzxabgb.js',
+      line: 11342,
+      column: 8
+    },
+    {
+      method: 'start',
+      file: '/app/packages/vitest/dist/chunks/cac.175yah_a.js',
+      line: 1297,
+      column: 107
+    }
+  ]
+}
+ ELIFECYCLE  Command failed with exit code 1.

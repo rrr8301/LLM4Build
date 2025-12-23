@@ -1,0 +1,1089 @@
+Scope: all 12 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: electron.                                           │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+. prepare$ simple-git-hooks
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: [INFO] Successfully set the pre-commit with command: npx lint-staged
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: /bin/sh: 1: git: not found
+. prepare: [INFO] Successfully set all git hooks
+. prepare: Done
+Done in 5.8s using pnpm v10.15.1
+
+> @vueuse/monorepo@14.0.0-alpha.1 build /app
+> nr update && nr build:packages
+
+
+> @vueuse/monorepo@14.0.0-alpha.1 update /app
+> nr -C packages/metadata update && tsx scripts/update.ts
+
+
+> @vueuse/metadata@14.0.0-alpha.1 update /app/packages/metadata
+> tsx scripts/update.ts
+
+/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/plugins/error-detection.plugin.ts:42
+            return { error: new GitError(undefined, error.toString('utf-8')) };
+                            ^
+
+
+GitError: Error: spawn git ENOENT
+    at ChildProcess._handle.onexit (node:internal/child_process:285:19)
+    at onErrorNT (node:internal/child_process:483:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Object.action (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/plugins/error-detection.plugin.ts:42:29)
+    at PluginStore.exec (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/plugins/plugin-store.ts:54:29)
+    at <anonymous> (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/runners/git-executor-chain.ts:124:42)
+    at new Promise (<anonymous>)
+    at GitExecutorChain.handleTaskData (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/runners/git-executor-chain.ts:121:14)
+    at GitExecutorChain.attemptRemoteTask (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/runners/git-executor-chain.ts:97:40)
+    at async GitExecutorChain.attemptTask (/app/node_modules/.pnpm/simple-git@3.28.0/node_modules/simple-git/src/lib/runners/git-executor-chain.ts:61:18) {
+  task: {
+    commands: [
+      'log',
+      '-1',
+      '--format=%at',
+      '/app/packages/shared/createInjectionState/index.ts'
+    ],
+    format: 'utf-8',
+    parser: [Function: parser]
+  }
+}
+
+Node.js v20.19.5
+ ELIFECYCLE  Command failed with exit code 1.
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.
+
+> @vueuse/monorepo@14.0.0-alpha.1 typecheck /app
+> vue-tsc --noEmit
+
+packages/metadata/metadata.ts(2,102): error TS2307: Cannot find module './index.json' or its corresponding type declarations.
+tsdown.config.ts(4,22): error TS2307: Cannot find module './packages/metadata/index.json' or its corresponding type declarations.
+ ELIFECYCLE  Command failed with exit code 2.
+
+> @vueuse/monorepo@14.0.0-alpha.1 test:unit /app
+> vitest --project unit
+
+
+ RUN  v3.2.4 /app
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config options
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/2
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config options
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/2
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url instance
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url instance
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url instance options
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url instance options
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config instance
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config instance
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config instance options
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config instance options
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config instance options, execute: config
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params: url config instance options, execute: config
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params no url: nil
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params no url: nil
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params no url: config
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params no url: config
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params no url: instance
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params no url: instance
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params no url: config instance
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > params no url: config instance
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > execute is awaitable
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > execute is awaitable
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > execute rejects on error
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1/wrong-url
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > execute rejects on error
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1/wrong-url
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > calling axios with config change(param/data etc.) only
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/comments?postId=1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > calling axios with config change(param/data etc.) only
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/comments?postId=1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > calling axios with config change(param/data etc.) only
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/comments?postId=2
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > calling axios with config change(param/data etc.) only
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/comments?postId=2
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > use generic type
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • POST https://jsonplaceholder.typicode.com/posts
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > use generic type
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/posts
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should not abort when finished
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/2
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should not abort when finished
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/2
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should abort when loading
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/2
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should be loading on re-execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should be loading on re-execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should be loading on re-execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should be loading on re-execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/2
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should be loading on re-execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should be loading on re-execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should be loading on re-execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should call onSuccess when success
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should call onSuccess when success
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should call onError when error
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/2/3
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should call onError when error
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/2/3
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should not crash when options is undefined
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should not crash when options is undefined
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should reset data when execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should reset data when execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should reset data when execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /todos/312
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should not reset data when execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should not reset data when execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should not reset data when execute
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET /todos/312
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should call onFinish
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • GET https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+stderr | packages/integrations/useAxios/index.test.ts > useAxios > should call onFinish
+[MSW] Warning: intercepted a request without a matching request handler:
+
+  • OPTIONS https://jsonplaceholder.typicode.com/todos/1
+
+If you still wish to intercept this unhandled request, please create a request handler for it.
+Read more: https://mswjs.io/docs/getting-started/mocks
+
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/components
+···································································································································································································-························································································································································································································································································································-·······················································································································································································································································································································································································································································································································································································································································································································································································································x···········xxxxxxxxxx··············
+Error: Cannot find module '/app/packages/components/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/components/dist/index.js (resolved id: /app/packages/components/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/core
+Error: Cannot find module '/app/packages/core/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/core/dist/index.js (resolved id: /app/packages/core/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/electron
+Error: Cannot find module '/app/packages/electron/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/electron/dist/index.js (resolved id: /app/packages/electron/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/firebase
+Error: Cannot find module '/app/packages/firebase/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/firebase/dist/index.js (resolved id: /app/packages/firebase/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/integrations
+Error: Cannot find module '/app/packages/integrations/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/integrations/dist/index.js (resolved id: /app/packages/integrations/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/math
+Error: Cannot find module '/app/packages/math/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/math/dist/index.js (resolved id: /app/packages/math/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/metadata
+Error: Cannot find module '/app/packages/metadata/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/metadata/dist/index.js (resolved id: /app/packages/metadata/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/nuxt
+Error: Cannot find module '/app/packages/nuxt/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/nuxt/dist/index.js (resolved id: /app/packages/nuxt/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/router
+Error: Cannot find module '/app/packages/router/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/router/dist/index.js (resolved id: /app/packages/router/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/rxjs
+Error: Cannot find module '/app/packages/rxjs/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/rxjs/dist/index.js (resolved id: /app/packages/rxjs/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/11]⎯
+
+ FAIL  |unit| test/exports.test.ts > exports-snapshot > @vueuse/shared
+Error: Cannot find module '/app/packages/shared/dist/index.js' imported from '/app/node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs'
+ ❯ node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:35:17
+     33|           obj = await import(join(pkg.name, key));
+     34|         } else if (importMode === "dist") {
+     35|           obj = await import(join(pkgRoot, value));
+       |                 ^
+     36|         } else if (importMode === "src") {
+     37|           obj = await import(join(pkgRoot, resolveSourcePath(value)));
+ ❯ getPackageExportsManifest node_modules/.pnpm/vitest-package-exports@0.1.1/node_modules/vitest-package-exports/dist/index.mjs:29:5
+ ❯ test/exports.test.ts:15:24
+
+Caused by: Error: Failed to load url /app/packages/shared/dist/index.js (resolved id: /app/packages/shared/dist/index.js). Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:26400:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/11]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 6 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+ReferenceError: getComputedStyle is not defined
+ ❯ setArrivedState packages/core/useScroll/index.ts:213:51
+ ❯ Proxy.measure packages/core/useScroll/index.ts:335:9
+ ❯ checkAndLoad packages/core/useInfiniteScroll/index.ts:80:11
+ ❯ packages/core/useInfiniteScroll/index.ts:98:28
+
+This error originated in "packages/core/useInfiniteScroll/index.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+This error was caught after test environment was torn down. Make sure to cancel any running tasks before test finishes:
+- cancel timeouts using clearTimeout and clearInterval
+- wait for promises to resolve using the await keyword
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+ReferenceError: getComputedStyle is not defined
+ ❯ setArrivedState packages/core/useScroll/index.ts:213:51
+ ❯ Proxy.measure packages/core/useScroll/index.ts:335:9
+ ❯ checkAndLoad packages/core/useInfiniteScroll/index.ts:80:11
+ ❯ packages/core/useInfiniteScroll/index.ts:98:28
+
+This error originated in "packages/core/useInfiniteScroll/index.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+This error was caught after test environment was torn down. Make sure to cancel any running tasks before test finishes:
+- cancel timeouts using clearTimeout and clearInterval
+- wait for promises to resolve using the await keyword
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+ReferenceError: getComputedStyle is not defined
+ ❯ setArrivedState packages/core/useScroll/index.ts:213:51
+ ❯ Proxy.measure packages/core/useScroll/index.ts:335:9
+ ❯ checkAndLoad packages/core/useInfiniteScroll/index.ts:80:11
+ ❯ packages/core/useInfiniteScroll/index.ts:98:28
+
+This error originated in "packages/core/useInfiniteScroll/index.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+This error was caught after test environment was torn down. Make sure to cancel any running tasks before test finishes:
+- cancel timeouts using clearTimeout and clearInterval
+- wait for promises to resolve using the await keyword
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+ReferenceError: getComputedStyle is not defined
+ ❯ setArrivedState packages/core/useScroll/index.ts:213:51
+ ❯ Proxy.measure packages/core/useScroll/index.ts:335:9
+ ❯ checkAndLoad packages/core/useInfiniteScroll/index.ts:80:11
+ ❯ packages/core/useInfiniteScroll/index.ts:98:28
+
+This error originated in "packages/core/useInfiniteScroll/index.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+This error was caught after test environment was torn down. Make sure to cancel any running tasks before test finishes:
+- cancel timeouts using clearTimeout and clearInterval
+- wait for promises to resolve using the await keyword
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+ReferenceError: getComputedStyle is not defined
+ ❯ setArrivedState packages/core/useScroll/index.ts:213:51
+ ❯ Proxy.measure packages/core/useScroll/index.ts:335:9
+ ❯ checkAndLoad packages/core/useInfiniteScroll/index.ts:80:11
+ ❯ packages/core/useInfiniteScroll/index.ts:98:28
+
+This error originated in "packages/core/useInfiniteScroll/index.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+This error was caught after test environment was torn down. Make sure to cancel any running tasks before test finishes:
+- cancel timeouts using clearTimeout and clearInterval
+- wait for promises to resolve using the await keyword
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+ReferenceError: getComputedStyle is not defined
+ ❯ setArrivedState packages/core/useScroll/index.ts:213:51
+ ❯ Proxy.measure packages/core/useScroll/index.ts:335:9
+ ❯ checkAndLoad packages/core/useInfiniteScroll/index.ts:80:11
+ ❯ packages/core/useInfiniteScroll/index.ts:98:28
+
+This error originated in "packages/core/useInfiniteScroll/index.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+This error was caught after test environment was torn down. Make sure to cancel any running tasks before test finishes:
+- cancel timeouts using clearTimeout and clearInterval
+- wait for promises to resolve using the await keyword
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  1 failed | 177 passed (178)
+      Tests  11 failed | 1323 passed | 1 skipped | 1 todo (1336)
+     Errors  6 errors
+   Start at  09:20:35
+   Duration  19.73s (transform 39.33s, setup 226.66s, collect 387.93s, tests 27.90s, environment 203.32s, prepare 41.97s)
+
+ ELIFECYCLE  Command failed with exit code 1.
+
+> @vueuse/monorepo@14.0.0-alpha.1 test:browser /app
+> vitest --project="browser*"
+
+
+ RUN  v3.2.4 /app
+
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯
+Error: browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /root/.cache/ms-playwright/webkit-2104/pw_run.sh --inspector-pipe --headless --no-startup-window
+<launched> pid=5915
+[pid=5915][err]
+[pid=5915][err] (MiniBrowser:5924): GStreamer-WARNING **: 16:20:57.985: External plugin loader failed. This most likely means that the plugin loader helper binary was not found or could not be run. You might need to set the GST_PLUGIN_SCANNER environment variable if your setup is unusual. This should normally not be required though.
+[pid=5915][err]
+[pid=5915][err] (MiniBrowser:5924): libsoup-ERROR **: 16:20:58.255: libsoup3 symbols detected. Using libsoup2 and libsoup3 in the same process is not supported.
+[pid=5915][err] /root/.cache/ms-playwright/webkit-2104/pw_run.sh: line 24:  5924 Trace/breakpoint trap   (core dumped) WEBKIT_FORCE_COMPLEX_TEXT="1" "$MINIBROWSER" "$@"
+[pid=5915] <process did exit: exitCode=133, signal=null>
+[pid=5915] starting temporary directories cleanup
+Call log:
+  - <launching> /root/.cache/ms-playwright/webkit-2104/pw_run.sh --inspector-pipe --headless --no-startup-window
+  - <launched> pid=5915
+  - [pid=5915][err]
+  - [pid=5915][err] (MiniBrowser:5924): GStreamer-WARNING **: 16:20:57.985: External plugin loader failed. This most likely means that the plugin loader helper binary was not found or could not be run. You might need to set the GST_PLUGIN_SCANNER environment variable if your setup is unusual. This should normally not be required though.
+  - [pid=5915][err]
+  - [pid=5915][err] (MiniBrowser:5924): libsoup-ERROR **: 16:20:58.255: libsoup3 symbols detected. Using libsoup2 and libsoup3 in the same process is not supported.
+  - [pid=5915][err] /root/.cache/ms-playwright/webkit-2104/pw_run.sh: line 24:  5924 Trace/breakpoint trap   (core dumped) WEBKIT_FORCE_COMPLEX_TEXT="1" "$MINIBROWSER" "$@"
+  - [pid=5915] <process did exit: exitCode=133, signal=null>
+  - [pid=5915] starting temporary directories cleanup
+
+ ❯ node_modules/.pnpm/@vitest+browser@3.2.4_msw@2.3.0_typescript@5.9.2__playwright@1.49.0_vite@7.1.4_@types+n_e45b7afbdf059a8decd48e1152e98b5a/node_modules/@vitest/browser/dist/webdriver-KA1WiV0q.js:80:54
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files   (18)
+      Tests  no tests
+     Errors  1 error
+   Start at  09:20:57
+   Duration  1.37s (transform 0ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 0ms)
+
+(!) Failed to run dependency scan. Skipping dependency pre-bundling. Error:   Failed to scan for dependencies from entries:
+  /app/node_modules/.pnpm/vitest-browser-vue@1.1.0_@vitest+browser@3.2.4_vitest@3.2.4_vue@3.5.20_typescript@5.9.2_/node_modules/vitest-browser-vue/dist/index.js
+/app/node_modules/.pnpm/vitest@3.2.4_@types+node@24.3.0_@vitest+browser@3.2.4_@vitest+ui@3.2.4_jiti@2.5.1_jsdom_56c524f9fb68fc1a2bb3ea2c120a83fe/node_modules/vitest/dist/browser.js
+/app/node_modules/.pnpm/vitest@3.2.4_@types+node@24.3.0_@vitest+browser@3.2.4_@vitest+ui@3.2.4_jiti@2.5.1_jsdom_56c524f9fb68fc1a2bb3ea2c120a83fe/node_modules/vitest/dist/index.js
+/app/node_modules/.pnpm/vitest@3.2.4_@types+node@24.3.0_@vitest+browser@3.2.4_@vitest+ui@3.2.4_jiti@2.5.1_jsdom_56c524f9fb68fc1a2bb3ea2c120a83fe/node_modules/vitest/dist/runners.js
+/app/packages/core/onClickOutside/index.browser.test.ts
+/app/packages/core/useClipboard/index.browser.test.ts
+/app/packages/core/useAnimate/index.browser.test.ts
+/app/packages/core/useElementBounding/index.browser.test.ts
+/app/packages/core/useMouse/demo.browser.test.ts
+/app/packages/core/usePointerLock/demo.browser.test.ts
+/app/packages/core/useScroll/index.browser.test.ts
+/app/packages/core/useWebSocket/index.browser.test.ts
+/app/packages/integrations/useSortable/index.browser.test.ts
+
+  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mThe server is being restarted or closed. Request is outdated[0m [1m[35m[plugin vite:dep-scan][0m
+
+    node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1217:27:
+[37m      1217 │         let result = await [32m[37mcallback({
+           ╵                            [32m^[0m
+
+    at throwClosedServerError (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:31082:32)
+    at EnvironmentPluginContainer.resolveId (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:31214:65)
+    at resolveId (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10723:38)
+    at resolve$4 (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10728:26)
+    at file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10883:28
+    at requestCallbacks.on-resolve (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:524:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1141:20:
+[37m      1141 │       let promise = [32m[37msetup({
+           ╵                     [32m^[0m
+
+    at setup (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10882:12)
+    at handlePlugins (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:680:5)
+    at /app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:2035:68
+    at new Promise (<anonymous>)
+    at Object.context (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:2035:27)
+    at Object.context (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1877:58)
+    at prepareEsbuildScanner (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10676:23)
+
+  The plugin "vite:dep-scan" was triggered by this import
+
+    packages/core/useWebWorkerFn/lib/createWorkerBlobUrl.ts:1:23:
+[37m      1 │ import depsParser from [32m'./depsParser'[37m
+        ╵                        [32m~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mThe server is being restarted or closed. Request is outdated[0m [1m[35m[plugin vite:dep-scan][0m
+
+    node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1217:27:
+[37m      1217 │         let result = await [32m[37mcallback({
+           ╵                            [32m^[0m
+
+    at throwClosedServerError (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:31082:32)
+    at EnvironmentPluginContainer.resolveId (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:31214:65)
+    at resolveId (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10723:38)
+    at resolve$4 (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10728:26)
+    at file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10883:28
+    at requestCallbacks.on-resolve (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:524:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1141:20:
+[37m      1141 │       let promise = [32m[37msetup({
+           ╵                     [32m^[0m
+
+    at setup (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10882:12)
+    at handlePlugins (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:680:5)
+    at /app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:2035:68
+    at new Promise (<anonymous>)
+    at Object.context (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:2035:27)
+    at Object.context (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1877:58)
+    at prepareEsbuildScanner (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10676:23)
+
+  The plugin "vite:dep-scan" was triggered by this import
+
+    packages/shared/utils/filters.ts:4:22:
+[37m      4 │ import { toRef } from [32m'../toRef'[37m
+        ╵                       [32m~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mThe server is being restarted or closed. Request is outdated[0m [1m[35m[plugin vite:dep-scan][0m
+
+    node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1217:27:
+[37m      1217 │         let result = await [32m[37mcallback({
+           ╵                            [32m^[0m
+
+    at throwClosedServerError (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:31082:32)
+    at EnvironmentPluginContainer.resolveId (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:31214:65)
+    at resolveId (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10723:38)
+    at resolve$4 (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10728:26)
+    at file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10883:28
+    at requestCallbacks.on-resolve (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1217:28)
+    at handleRequest (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:524:28)
+
+  This error came from the "onResolve" callback registered here:
+
+    node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1141:20:
+[37m      1141 │       let promise = [32m[37msetup({
+           ╵                     [32m^[0m
+
+    at setup (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10882:12)
+    at handlePlugins (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:680:5)
+    at /app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:2035:68
+    at new Promise (<anonymous>)
+    at Object.context (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:2035:27)
+    at Object.context (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1877:58)
+    at prepareEsbuildScanner (file:///app/node_modules/.pnpm/vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightningcss@1.30.1_terser@5.24.0_tsx@4.20.5_yaml@2.8.1/node_modules/vite/dist/node/chunks/dep-C6pp_iVS.js:10676:23)
+
+  The plugin "vite:dep-scan" was triggered by this import
+
+    packages/core/useWebWorkerFn/lib/createWorkerBlobUrl.ts:2:22:
+[37m      2 │ import jobRunner from [32m'./jobRunner'[37m
+        ╵                       [32m~~~~~~~~~~~~~[0m
+
+
+    at failureErrorWithLog (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1467:15)
+    at /app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:924:7)
+    at /app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:936:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:935:54)
+    at handleRequest (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/app/node_modules/.pnpm/esbuild@0.25.8/node_modules/esbuild/lib/main.js:581:7)
+error during close browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /root/.cache/ms-playwright/webkit-2104/pw_run.sh --inspector-pipe --headless --no-startup-window
+<launched> pid=5915
+[pid=5915][err]
+[pid=5915][err] (MiniBrowser:5924): GStreamer-WARNING **: 16:20:57.985: External plugin loader failed. This most likely means that the plugin loader helper binary was not found or could not be run. You might need to set the GST_PLUGIN_SCANNER environment variable if your setup is unusual. This should normally not be required though.
+[pid=5915][err]
+[pid=5915][err] (MiniBrowser:5924): libsoup-ERROR **: 16:20:58.255: libsoup3 symbols detected. Using libsoup2 and libsoup3 in the same process is not supported.
+[pid=5915][err] /root/.cache/ms-playwright/webkit-2104/pw_run.sh: line 24:  5924 Trace/breakpoint trap   (core dumped) WEBKIT_FORCE_COMPLEX_TEXT="1" "$MINIBROWSER" "$@"
+[pid=5915] <process did exit: exitCode=133, signal=null>
+[pid=5915] starting temporary directories cleanup
+Call log:
+  - <launching> /root/.cache/ms-playwright/webkit-2104/pw_run.sh --inspector-pipe --headless --no-startup-window
+  - <launched> pid=5915
+  - [pid=5915][err]
+  - [pid=5915][err] (MiniBrowser:5924): GStreamer-WARNING **: 16:20:57.985: External plugin loader failed. This most likely means that the plugin loader helper binary was not found or could not be run. You might need to set the GST_PLUGIN_SCANNER environment variable if your setup is unusual. This should normally not be required though.
+  - [pid=5915][err]
+  - [pid=5915][err] (MiniBrowser:5924): libsoup-ERROR **: 16:20:58.255: libsoup3 symbols detected. Using libsoup2 and libsoup3 in the same process is not supported.
+  - [pid=5915][err] /root/.cache/ms-playwright/webkit-2104/pw_run.sh: line 24:  5924 Trace/breakpoint trap   (core dumped) WEBKIT_FORCE_COMPLEX_TEXT="1" "$MINIBROWSER" "$@"
+  - [pid=5915] <process did exit: exitCode=133, signal=null>
+  - [pid=5915] starting temporary directories cleanup
+
+    at /app/node_modules/.pnpm/@vitest+browser@3.2.4_msw@2.3.0_typescript@5.9.2__playwright@1.49.0_vite@7.1.4_@types+n_e45b7afbdf059a8decd48e1152e98b5a/node_modules/@vitest/browser/dist/webdriver-KA1WiV0q.js:80:54 {
+  type: 'Unhandled Error',
+  stacks: [
+    {
+      method: '',
+      file: '/app/node_modules/.pnpm/@vitest+browser@3.2.4_msw@2.3.0_typescript@5.9.2__playwright@1.49.0_vite@7.1.4_@types+n_e45b7afbdf059a8decd48e1152e98b5a/node_modules/@vitest/browser/dist/webdriver-KA1WiV0q.js',
+      line: 80,
+      column: 54
+    }
+  ]
+}
+ ELIFECYCLE  Command failed with exit code 1.
+
+> @vueuse/monorepo@14.0.0-alpha.1 test:attw /app
+> pnpm -r test:attw
+
+Scope: 11 of 12 workspace projects
+packages/metadata test:attw$ attw --pack --config-path ../../.attw.json .
+packages/shared test:attw$ attw --pack --config-path ../../.attw.json .
+packages/shared test:attw: error while checking file:
+packages/shared test:attw: Command failed: npm pack
+packages/shared test:attw: Failed
+/app/packages/shared:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @vueuse/shared@14.0.0-alpha.1 test:attw: `attw --pack --config-path ../../.attw.json .`
+Exit status 3
+packages/metadata test:attw: error while checking file:
+packages/metadata test:attw: Command failed: npm pack
+ ELIFECYCLE  Command failed with exit code 3.

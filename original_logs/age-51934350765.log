@@ -1,0 +1,1118 @@
+﻿2025-10-04T01:32:48.8994695Z Current runner version: '2.328.0'
+2025-10-04T01:32:48.9017585Z ##[group]Runner Image Provisioner
+2025-10-04T01:32:48.9018462Z Hosted Compute Agent
+2025-10-04T01:32:48.9018968Z Version: 20250912.392
+2025-10-04T01:32:48.9019552Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-04T01:32:48.9020501Z Build Date: 2025-09-12T15:23:14Z
+2025-10-04T01:32:48.9021058Z ##[endgroup]
+2025-10-04T01:32:48.9021571Z ##[group]Operating System
+2025-10-04T01:32:48.9022175Z Ubuntu
+2025-10-04T01:32:48.9022664Z 24.04.3
+2025-10-04T01:32:48.9023087Z LTS
+2025-10-04T01:32:48.9023594Z ##[endgroup]
+2025-10-04T01:32:48.9024061Z ##[group]Runner Image
+2025-10-04T01:32:48.9024593Z Image: ubuntu-24.04
+2025-10-04T01:32:48.9025043Z Version: 20250929.60.1
+2025-10-04T01:32:48.9026111Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-04T01:32:48.9027656Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-04T01:32:48.9028660Z ##[endgroup]
+2025-10-04T01:32:48.9031349Z ##[group]GITHUB_TOKEN Permissions
+2025-10-04T01:32:48.9033418Z Actions: write
+2025-10-04T01:32:48.9033924Z Attestations: write
+2025-10-04T01:32:48.9034448Z Checks: write
+2025-10-04T01:32:48.9034993Z Contents: write
+2025-10-04T01:32:48.9035490Z Deployments: write
+2025-10-04T01:32:48.9036116Z Discussions: write
+2025-10-04T01:32:48.9036641Z Issues: write
+2025-10-04T01:32:48.9037114Z Metadata: read
+2025-10-04T01:32:48.9037590Z Models: read
+2025-10-04T01:32:48.9038115Z Packages: write
+2025-10-04T01:32:48.9038570Z Pages: write
+2025-10-04T01:32:48.9039051Z PullRequests: write
+2025-10-04T01:32:48.9040163Z RepositoryProjects: write
+2025-10-04T01:32:48.9040821Z SecurityEvents: write
+2025-10-04T01:32:48.9041445Z Statuses: write
+2025-10-04T01:32:48.9041957Z ##[endgroup]
+2025-10-04T01:32:48.9044016Z Secret source: Actions
+2025-10-04T01:32:48.9044716Z Prepare workflow directory
+2025-10-04T01:32:48.9421340Z Prepare all required actions
+2025-10-04T01:32:48.9458625Z Getting action download info
+2025-10-04T01:32:49.3583556Z Download action repository 'actions/cache@v3' (SHA:6f8efc29b200d32929f49075959781ed54ec270c)
+2025-10-04T01:32:49.7382366Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-10-04T01:32:49.8517933Z Complete job name: build
+2025-10-04T01:32:49.9117184Z ##[group]Run echo "PG_COMMIT_HASH=$(git ls-remote https://git.postgresql.org/git/postgresql.git refs/heads/REL_17_STABLE | awk '{print $1}')" >> $GITHUB_ENV
+2025-10-04T01:32:49.9118971Z [36;1mecho "PG_COMMIT_HASH=$(git ls-remote https://git.postgresql.org/git/postgresql.git refs/heads/REL_17_STABLE | awk '{print $1}')" >> $GITHUB_ENV[0m
+2025-10-04T01:32:49.9155736Z shell: /usr/bin/bash -e {0}
+2025-10-04T01:32:49.9156496Z ##[endgroup]
+2025-10-04T01:32:51.8132712Z ##[group]Run actions/cache@v3
+2025-10-04T01:32:51.8133057Z with:
+2025-10-04T01:32:51.8133276Z   path: ~/pg17
+2025-10-04T01:32:51.8133581Z   key: Linux-v1-pg17-3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:32:51.8133968Z   enableCrossOsArchive: false
+2025-10-04T01:32:51.8134243Z   fail-on-cache-miss: false
+2025-10-04T01:32:51.8134493Z   lookup-only: false
+2025-10-04T01:32:51.8134714Z env:
+2025-10-04T01:32:51.8134973Z   PG_COMMIT_HASH: 3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:32:51.8135295Z ##[endgroup]
+2025-10-04T01:32:52.2238793Z Cache not found for input keys: Linux-v1-pg17-3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:32:52.2319045Z ##[group]Run sudo apt-get update
+2025-10-04T01:32:52.2319391Z [36;1msudo apt-get update[0m
+2025-10-04T01:32:52.2319801Z [36;1msudo apt-get install -y build-essential libreadline-dev zlib1g-dev flex bison[0m
+2025-10-04T01:32:52.2353431Z shell: /usr/bin/bash -e {0}
+2025-10-04T01:32:52.2353725Z env:
+2025-10-04T01:32:52.2354004Z   PG_COMMIT_HASH: 3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:32:52.2354331Z ##[endgroup]
+2025-10-04T01:32:52.4846584Z Hit:1 https://packages.microsoft.com/repos/azure-cli noble InRelease
+2025-10-04T01:32:52.4848132Z Get:2 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2025-10-04T01:32:52.4851029Z Get:3 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-10-04T01:32:52.5024159Z Hit:4 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2025-10-04T01:32:52.5043187Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2025-10-04T01:32:52.5084984Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2025-10-04T01:32:52.5107271Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2025-10-04T01:32:52.7549870Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [42.4 kB]
+2025-10-04T01:32:52.8063903Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [10.5 kB]
+2025-10-04T01:32:52.8305393Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [59.5 kB]
+2025-10-04T01:32:52.8751521Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1484 kB]
+2025-10-04T01:32:52.8867938Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [286 kB]
+2025-10-04T01:32:52.8897197Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [175 kB]
+2025-10-04T01:32:52.8918589Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [15.3 kB]
+2025-10-04T01:32:52.8931614Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1486 kB]
+2025-10-04T01:32:52.9022002Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [300 kB]
+2025-10-04T01:32:52.9057314Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [378 kB]
+2025-10-04T01:32:52.9090256Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [31.1 kB]
+2025-10-04T01:32:52.9103135Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2053 kB]
+2025-10-04T01:32:52.9216118Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [463 kB]
+2025-10-04T01:32:52.9691076Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+2025-10-04T01:32:52.9701207Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [6116 B]
+2025-10-04T01:32:52.9715488Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2025-10-04T01:32:52.9727821Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7156 B]
+2025-10-04T01:32:52.9740660Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [11.0 kB]
+2025-10-04T01:32:52.9758055Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+2025-10-04T01:32:52.9773799Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+2025-10-04T01:32:52.9865818Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1201 kB]
+2025-10-04T01:32:52.9933833Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [201 kB]
+2025-10-04T01:32:52.9973766Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+2025-10-04T01:32:52.9987017Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [8744 B]
+2025-10-04T01:32:52.9999295Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [881 kB]
+2025-10-04T01:32:53.0053807Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [196 kB]
+2025-10-04T01:32:53.0078026Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.3 kB]
+2025-10-04T01:32:53.0567705Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1938 kB]
+2025-10-04T01:32:53.0678087Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [439 kB]
+2025-10-04T01:32:53.0712220Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+2025-10-04T01:32:53.0724523Z Get:38 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [5844 B]
+2025-10-04T01:32:53.0737182Z Get:39 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+2025-10-04T01:33:02.8522775Z Fetched 12.1 MB in 2s (7106 kB/s)
+2025-10-04T01:33:03.6341141Z Reading package lists...
+2025-10-04T01:33:03.6667677Z Reading package lists...
+2025-10-04T01:33:03.8692691Z Building dependency tree...
+2025-10-04T01:33:03.8700951Z Reading state information...
+2025-10-04T01:33:04.0669764Z zlib1g-dev is already the newest version (1:1.3.dfsg-3.1ubuntu2.1).
+2025-10-04T01:33:04.0670475Z flex is already the newest version (2.6.4-8.2build1).
+2025-10-04T01:33:04.0670834Z bison is already the newest version (2:3.8.2+dfsg-1build2).
+2025-10-04T01:33:04.0671240Z Suggested packages:
+2025-10-04T01:33:04.0671531Z   readline-doc
+2025-10-04T01:33:04.1544303Z The following NEW packages will be installed:
+2025-10-04T01:33:04.1555850Z   build-essential libreadline-dev
+2025-10-04T01:33:04.1737931Z 0 upgraded, 2 newly installed, 0 to remove and 21 not upgraded.
+2025-10-04T01:33:04.1738742Z Need to get 172 kB of archives.
+2025-10-04T01:33:04.1739356Z After this operation, 831 kB of additional disk space will be used.
+2025-10-04T01:33:04.1740337Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-10-04T01:33:04.2713291Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 build-essential amd64 12.10ubuntu1 [4928 B]
+2025-10-04T01:33:04.3524967Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libreadline-dev amd64 8.2-4build1 [167 kB]
+2025-10-04T01:33:04.6619604Z Fetched 172 kB in 0s (895 kB/s)
+2025-10-04T01:33:04.8359589Z Selecting previously unselected package build-essential.
+2025-10-04T01:33:04.9100423Z (Reading database ... 
+2025-10-04T01:33:04.9100977Z (Reading database ... 5%
+2025-10-04T01:33:04.9101421Z (Reading database ... 10%
+2025-10-04T01:33:04.9101829Z (Reading database ... 15%
+2025-10-04T01:33:04.9102284Z (Reading database ... 20%
+2025-10-04T01:33:04.9102765Z (Reading database ... 25%
+2025-10-04T01:33:04.9103262Z (Reading database ... 30%
+2025-10-04T01:33:04.9103733Z (Reading database ... 35%
+2025-10-04T01:33:04.9104106Z (Reading database ... 40%
+2025-10-04T01:33:04.9104591Z (Reading database ... 45%
+2025-10-04T01:33:04.9105047Z (Reading database ... 50%
+2025-10-04T01:33:05.0802963Z (Reading database ... 55%
+2025-10-04T01:33:05.9694337Z (Reading database ... 60%
+2025-10-04T01:33:06.6442799Z (Reading database ... 65%
+2025-10-04T01:33:07.2801695Z (Reading database ... 70%
+2025-10-04T01:33:07.9236938Z (Reading database ... 75%
+2025-10-04T01:33:08.9698241Z (Reading database ... 80%
+2025-10-04T01:33:11.3364778Z (Reading database ... 85%
+2025-10-04T01:33:14.0705213Z (Reading database ... 90%
+2025-10-04T01:33:16.7991528Z (Reading database ... 95%
+2025-10-04T01:33:16.7991956Z (Reading database ... 100%
+2025-10-04T01:33:16.7992358Z (Reading database ... 214596 files and directories currently installed.)
+2025-10-04T01:33:16.8037122Z Preparing to unpack .../build-essential_12.10ubuntu1_amd64.deb ...
+2025-10-04T01:33:16.8074820Z Unpacking build-essential (12.10ubuntu1) ...
+2025-10-04T01:33:16.8325650Z Selecting previously unselected package libreadline-dev:amd64.
+2025-10-04T01:33:16.8459122Z Preparing to unpack .../libreadline-dev_8.2-4build1_amd64.deb ...
+2025-10-04T01:33:16.8470851Z Unpacking libreadline-dev:amd64 (8.2-4build1) ...
+2025-10-04T01:33:16.8956488Z Setting up libreadline-dev:amd64 (8.2-4build1) ...
+2025-10-04T01:33:16.9001527Z Setting up build-essential (12.10ubuntu1) ...
+2025-10-04T01:33:16.9051517Z Processing triggers for install-info (7.1-3build2) ...
+2025-10-04T01:33:19.1998387Z 
+2025-10-04T01:33:19.1998837Z Running kernel seems to be up-to-date.
+2025-10-04T01:33:19.1999196Z 
+2025-10-04T01:33:19.1999351Z Restarting services...
+2025-10-04T01:33:19.2074252Z 
+2025-10-04T01:33:19.2074639Z Service restarts being deferred:
+2025-10-04T01:33:19.2077660Z  systemctl restart hosted-compute-agent.service
+2025-10-04T01:33:19.2077875Z 
+2025-10-04T01:33:19.2078321Z No containers need to be restarted.
+2025-10-04T01:33:19.2078593Z 
+2025-10-04T01:33:19.2078706Z No user sessions are running outdated binaries.
+2025-10-04T01:33:19.2078899Z 
+2025-10-04T01:33:19.2079098Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2025-10-04T01:33:20.2312711Z ##[group]Run git clone --depth 1 --branch REL_17_STABLE https://git.postgresql.org/git/postgresql.git ~/pg17source
+2025-10-04T01:33:20.2313448Z [36;1mgit clone --depth 1 --branch REL_17_STABLE https://git.postgresql.org/git/postgresql.git ~/pg17source[0m
+2025-10-04T01:33:20.2313889Z [36;1mcd ~/pg17source[0m
+2025-10-04T01:33:20.2314225Z [36;1m./configure --prefix=$HOME/pg17 CFLAGS="-std=gnu99 -ggdb -O0" --enable-cassert[0m
+2025-10-04T01:33:20.2314610Z [36;1mmake install -j$(nproc) > /dev/null[0m
+2025-10-04T01:33:20.2314872Z [36;1mcd contrib[0m
+2025-10-04T01:33:20.2315056Z [36;1mcd fuzzystrmatch[0m
+2025-10-04T01:33:20.2315365Z [36;1mmake PG_CONFIG=$HOME/pg17/bin/pg_config install -j$(nproc) > /dev/null[0m
+2025-10-04T01:33:20.2315702Z [36;1mcd ../pg_trgm[0m
+2025-10-04T01:33:20.2315996Z [36;1mmake PG_CONFIG=$HOME/pg17/bin/pg_config install -j$(nproc) > /dev/null[0m
+2025-10-04T01:33:20.2349045Z shell: /usr/bin/bash -e {0}
+2025-10-04T01:33:20.2349261Z env:
+2025-10-04T01:33:20.2349520Z   PG_COMMIT_HASH: 3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:33:20.2349804Z ##[endgroup]
+2025-10-04T01:33:20.2412056Z Cloning into '/home/runner/pg17source'...
+2025-10-04T01:33:27.1269396Z checking build system type... x86_64-pc-linux-gnu
+2025-10-04T01:33:27.1270429Z checking host system type... x86_64-pc-linux-gnu
+2025-10-04T01:33:27.1272729Z checking which template to use... linux
+2025-10-04T01:33:27.1275034Z checking whether NLS is wanted... no
+2025-10-04T01:33:27.1275773Z checking for default port number... 5432
+2025-10-04T01:33:27.1334295Z checking for block size... 8kB
+2025-10-04T01:33:27.1356524Z checking for segment size... 1GB
+2025-10-04T01:33:27.1366597Z checking for WAL block size... 8kB
+2025-10-04T01:33:27.1379707Z checking for gcc... gcc
+2025-10-04T01:33:27.8462579Z checking whether the C compiler works... yes
+2025-10-04T01:33:27.8463238Z checking for C compiler default output file name... a.out
+2025-10-04T01:33:27.8745828Z checking for suffix of executables... 
+2025-10-04T01:33:28.1412382Z checking whether we are cross compiling... no
+2025-10-04T01:33:28.1577706Z checking for suffix of object files... o
+2025-10-04T01:33:28.1723922Z checking whether we are using the GNU C compiler... yes
+2025-10-04T01:33:28.1867583Z checking whether gcc accepts -g... yes
+2025-10-04T01:33:28.4051417Z checking for gcc option to accept ISO C89... none needed
+2025-10-04T01:33:28.6661776Z checking for gcc option to accept ISO C99... none needed
+2025-10-04T01:33:28.6665901Z checking for g++... g++
+2025-10-04T01:33:29.7814710Z checking whether we are using the GNU C++ compiler... yes
+2025-10-04T01:33:29.8091310Z checking whether g++ accepts -g... yes
+2025-10-04T01:33:29.8356750Z checking for gawk... gawk
+2025-10-04T01:33:29.8522398Z checking whether gcc supports -Wdeclaration-after-statement, for CFLAGS... yes
+2025-10-04T01:33:29.8664378Z checking whether gcc supports -Werror=vla, for CFLAGS... yes
+2025-10-04T01:33:29.9037632Z checking whether gcc supports -Werror=unguarded-availability-new, for CFLAGS... no
+2025-10-04T01:33:29.9926245Z checking whether g++ supports -Werror=unguarded-availability-new, for CXXFLAGS... no
+2025-10-04T01:33:30.0074305Z checking whether gcc supports -Wendif-labels, for CFLAGS... yes
+2025-10-04T01:33:30.0237207Z checking whether g++ supports -Wendif-labels, for CXXFLAGS... yes
+2025-10-04T01:33:30.0383895Z checking whether gcc supports -Wmissing-format-attribute, for CFLAGS... yes
+2025-10-04T01:33:30.0543024Z checking whether g++ supports -Wmissing-format-attribute, for CXXFLAGS... yes
+2025-10-04T01:33:30.0694777Z checking whether gcc supports -Wimplicit-fallthrough=3, for CFLAGS... yes
+2025-10-04T01:33:30.0849516Z checking whether g++ supports -Wimplicit-fallthrough=3, for CXXFLAGS... yes
+2025-10-04T01:33:30.0999291Z checking whether gcc supports -Wcast-function-type, for CFLAGS... yes
+2025-10-04T01:33:30.1154468Z checking whether g++ supports -Wcast-function-type, for CXXFLAGS... yes
+2025-10-04T01:33:30.1305697Z checking whether gcc supports -Wshadow=compatible-local, for CFLAGS... yes
+2025-10-04T01:33:30.1461962Z checking whether g++ supports -Wshadow=compatible-local, for CXXFLAGS... yes
+2025-10-04T01:33:30.1614000Z checking whether gcc supports -Wformat-security, for CFLAGS... yes
+2025-10-04T01:33:30.1771520Z checking whether g++ supports -Wformat-security, for CXXFLAGS... yes
+2025-10-04T01:33:30.1926208Z checking whether gcc supports -fno-strict-aliasing, for CFLAGS... yes
+2025-10-04T01:33:30.2085283Z checking whether g++ supports -fno-strict-aliasing, for CXXFLAGS... yes
+2025-10-04T01:33:30.2240609Z checking whether gcc supports -fwrapv, for CFLAGS... yes
+2025-10-04T01:33:30.2399716Z checking whether g++ supports -fwrapv, for CXXFLAGS... yes
+2025-10-04T01:33:30.2552417Z checking whether gcc supports -fexcess-precision=standard, for CFLAGS... yes
+2025-10-04T01:33:30.2716717Z checking whether g++ supports -fexcess-precision=standard, for CXXFLAGS... yes
+2025-10-04T01:33:30.2868779Z checking whether gcc supports -funroll-loops, for CFLAGS_UNROLL_LOOPS... yes
+2025-10-04T01:33:30.3021265Z checking whether gcc supports -ftree-vectorize, for CFLAGS_VECTORIZE... yes
+2025-10-04T01:33:30.3271098Z checking whether gcc supports -Wunused-command-line-argument, for NOT_THE_CFLAGS... no
+2025-10-04T01:33:30.3530756Z checking whether gcc supports -Wcompound-token-split-by-macro, for NOT_THE_CFLAGS... no
+2025-10-04T01:33:30.3682574Z checking whether gcc supports -Wformat-truncation, for NOT_THE_CFLAGS... yes
+2025-10-04T01:33:30.3834404Z checking whether gcc supports -Wstringop-truncation, for NOT_THE_CFLAGS... yes
+2025-10-04T01:33:30.4059864Z checking whether gcc supports -Wcast-function-type-strict, for NOT_THE_CFLAGS... no
+2025-10-04T01:33:30.4217613Z checking whether gcc supports -fvisibility=hidden, for CFLAGS_SL_MODULE... yes
+2025-10-04T01:33:30.4374558Z checking whether g++ supports -fvisibility=hidden, for CXXFLAGS_SL_MODULE... yes
+2025-10-04T01:33:30.4533487Z checking whether g++ supports -fvisibility-inlines-hidden, for CXXFLAGS_SL_MODULE... yes
+2025-10-04T01:33:30.4852105Z checking whether the C compiler still works... yes
+2025-10-04T01:33:30.6138704Z checking how to run the C preprocessor... gcc -E
+2025-10-04T01:33:30.6365895Z checking for pkg-config... /usr/bin/pkg-config
+2025-10-04T01:33:30.6814730Z checking pkg-config is at least version 0.9.0... yes
+2025-10-04T01:33:30.6816980Z checking whether to build with ICU support... yes
+2025-10-04T01:33:30.7204539Z checking for icu-uc icu-i18n... yes
+2025-10-04T01:33:30.7205356Z checking whether to build with Tcl... no
+2025-10-04T01:33:30.7206445Z checking whether to build Perl modules... no
+2025-10-04T01:33:30.7207265Z checking whether to build Python modules... no
+2025-10-04T01:33:30.7208273Z checking whether to build with GSSAPI support... no
+2025-10-04T01:33:30.7219796Z checking whether to build with PAM support... no
+2025-10-04T01:33:30.7220985Z checking whether to build with BSD Authentication support... no
+2025-10-04T01:33:30.7221776Z checking whether to build with LDAP support... no
+2025-10-04T01:33:30.7222658Z checking whether to build with Bonjour support... no
+2025-10-04T01:33:30.7223389Z checking whether to build with SELinux support... no
+2025-10-04T01:33:30.7224290Z checking whether to build with systemd support... no
+2025-10-04T01:33:30.7226416Z checking whether to build with XML support... no
+2025-10-04T01:33:30.7229946Z checking whether to build with LZ4 support... no
+2025-10-04T01:33:30.7232449Z checking whether to build with ZSTD support... no
+2025-10-04T01:33:30.7237230Z checking for strip... strip
+2025-10-04T01:33:30.7397845Z checking whether it is possible to strip libraries... yes
+2025-10-04T01:33:30.7402326Z checking for ar... ar
+2025-10-04T01:33:30.7497114Z checking for a BSD-compatible install... /usr/bin/install -c
+2025-10-04T01:33:30.7502793Z checking for tar... /usr/bin/tar
+2025-10-04T01:33:30.7504678Z checking whether ln -s works... yes
+2025-10-04T01:33:30.7527169Z checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+2025-10-04T01:33:30.7532062Z checking for bison... /usr/bin/bison
+2025-10-04T01:33:30.8521520Z configure: using bison (GNU Bison) 3.8.2
+2025-10-04T01:33:30.9686903Z checking for flex... /usr/bin/flex
+2025-10-04T01:33:30.9702113Z configure: using flex 2.6.4
+2025-10-04T01:33:30.9706594Z checking for perl... /usr/bin/perl
+2025-10-04T01:33:30.9729261Z configure: using perl 5.38.2
+2025-10-04T01:33:30.9794039Z checking for a sed that does not truncate output... /usr/bin/sed
+2025-10-04T01:33:30.9824422Z checking for grep that handles long lines and -e... /usr/bin/grep
+2025-10-04T01:33:30.9839443Z checking for egrep... /usr/bin/grep -E
+2025-10-04T01:33:31.0863115Z checking for ANSI C header files... yes
+2025-10-04T01:33:31.1066051Z checking for sys/types.h... yes
+2025-10-04T01:33:31.2685276Z checking for sys/stat.h... yes
+2025-10-04T01:33:31.2957278Z checking for stdlib.h... yes
+2025-10-04T01:33:31.3227127Z checking for string.h... yes
+2025-10-04T01:33:31.3548225Z checking for memory.h... yes
+2025-10-04T01:33:31.3817308Z checking for strings.h... yes
+2025-10-04T01:33:31.4336705Z checking for inttypes.h... yes
+2025-10-04T01:33:31.4605420Z checking for stdint.h... yes
+2025-10-04T01:33:31.5512744Z checking for unistd.h... yes
+2025-10-04T01:33:31.5630814Z checking whether gcc is Clang... no
+2025-10-04T01:33:31.6609618Z checking whether pthreads work with -pthread... yes
+2025-10-04T01:33:31.6958371Z checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+2025-10-04T01:33:31.6958854Z checking whether more special flags are required for pthreads... no
+2025-10-04T01:33:31.7345439Z checking for PTHREAD_PRIO_INHERIT... yes
+2025-10-04T01:33:31.7600213Z checking pthread.h usability... yes
+2025-10-04T01:33:31.7715595Z checking pthread.h presence... yes
+2025-10-04T01:33:31.7716029Z checking for pthread.h... yes
+2025-10-04T01:33:31.8046050Z checking for strerror_r... yes
+2025-10-04T01:33:31.8275396Z checking whether strerror_r returns int... no
+2025-10-04T01:33:31.9378198Z checking for main in -lm... yes
+2025-10-04T01:33:32.0194733Z checking for library containing setproctitle... no
+2025-10-04T01:33:32.0538815Z checking for library containing dlsym... none required
+2025-10-04T01:33:32.0891625Z checking for library containing socket... none required
+2025-10-04T01:33:32.1237429Z checking for library containing getopt_long... none required
+2025-10-04T01:33:32.1589681Z checking for library containing shm_open... none required
+2025-10-04T01:33:32.1936724Z checking for library containing shm_unlink... none required
+2025-10-04T01:33:32.2283277Z checking for library containing clock_gettime... none required
+2025-10-04T01:33:32.2686316Z checking for library containing shmget... none required
+2025-10-04T01:33:32.2989107Z checking for library containing backtrace_symbols... none required
+2025-10-04T01:33:32.3334706Z checking for library containing pthread_barrier_wait... none required
+2025-10-04T01:33:32.3758100Z checking for library containing readline... -lreadline
+2025-10-04T01:33:32.4103776Z checking for inflate in -lz... yes
+2025-10-04T01:33:32.4401338Z checking atomic.h usability... no
+2025-10-04T01:33:32.4519907Z checking atomic.h presence... no
+2025-10-04T01:33:32.4520757Z checking for atomic.h... no
+2025-10-04T01:33:32.4801703Z checking copyfile.h usability... no
+2025-10-04T01:33:32.4919166Z checking copyfile.h presence... no
+2025-10-04T01:33:32.4919756Z checking for copyfile.h... no
+2025-10-04T01:33:32.5229214Z checking execinfo.h usability... yes
+2025-10-04T01:33:32.5314935Z checking execinfo.h presence... yes
+2025-10-04T01:33:32.5315762Z checking for execinfo.h... yes
+2025-10-04T01:33:32.5705018Z checking getopt.h usability... yes
+2025-10-04T01:33:32.5790214Z checking getopt.h presence... yes
+2025-10-04T01:33:32.5790804Z checking for getopt.h... yes
+2025-10-04T01:33:32.6591811Z checking ifaddrs.h usability... yes
+2025-10-04T01:33:32.6705615Z checking ifaddrs.h presence... yes
+2025-10-04T01:33:32.6706148Z checking for ifaddrs.h... yes
+2025-10-04T01:33:32.7148521Z checking langinfo.h usability... yes
+2025-10-04T01:33:32.7238584Z checking langinfo.h presence... yes
+2025-10-04T01:33:32.7239136Z checking for langinfo.h... yes
+2025-10-04T01:33:32.7556676Z checking mbarrier.h usability... no
+2025-10-04T01:33:32.7675668Z checking mbarrier.h presence... no
+2025-10-04T01:33:32.7676234Z checking for mbarrier.h... no
+2025-10-04T01:33:32.8035333Z checking sys/epoll.h usability... yes
+2025-10-04T01:33:32.8137513Z checking sys/epoll.h presence... yes
+2025-10-04T01:33:32.8138061Z checking for sys/epoll.h... yes
+2025-10-04T01:33:32.8448768Z checking sys/event.h usability... no
+2025-10-04T01:33:32.8568261Z checking sys/event.h presence... no
+2025-10-04T01:33:32.8569227Z checking for sys/event.h... no
+2025-10-04T01:33:32.8892954Z checking sys/personality.h usability... yes
+2025-10-04T01:33:32.8978448Z checking sys/personality.h presence... yes
+2025-10-04T01:33:32.8979069Z checking for sys/personality.h... yes
+2025-10-04T01:33:32.9381310Z checking sys/prctl.h usability... yes
+2025-10-04T01:33:32.9472244Z checking sys/prctl.h presence... yes
+2025-10-04T01:33:32.9472806Z checking for sys/prctl.h... yes
+2025-10-04T01:33:32.9786290Z checking sys/procctl.h usability... no
+2025-10-04T01:33:32.9903578Z checking sys/procctl.h presence... no
+2025-10-04T01:33:32.9904144Z checking for sys/procctl.h... no
+2025-10-04T01:33:33.0239063Z checking sys/signalfd.h usability... yes
+2025-10-04T01:33:33.0331025Z checking sys/signalfd.h presence... yes
+2025-10-04T01:33:33.0331463Z checking for sys/signalfd.h... yes
+2025-10-04T01:33:33.0647830Z checking sys/ucred.h usability... no
+2025-10-04T01:33:33.0769713Z checking sys/ucred.h presence... no
+2025-10-04T01:33:33.0770371Z checking for sys/ucred.h... no
+2025-10-04T01:33:33.1644538Z checking termios.h usability... yes
+2025-10-04T01:33:33.1738610Z checking termios.h presence... yes
+2025-10-04T01:33:33.1739113Z checking for termios.h... yes
+2025-10-04T01:33:33.2057052Z checking ucred.h usability... no
+2025-10-04T01:33:33.2177294Z checking ucred.h presence... no
+2025-10-04T01:33:33.2177755Z checking for ucred.h... no
+2025-10-04T01:33:33.2441728Z checking readline/readline.h usability... yes
+2025-10-04T01:33:33.2564050Z checking readline/readline.h presence... yes
+2025-10-04T01:33:33.2564892Z checking for readline/readline.h... yes
+2025-10-04T01:33:33.2817352Z checking readline/history.h usability... yes
+2025-10-04T01:33:33.2932587Z checking readline/history.h presence... yes
+2025-10-04T01:33:33.2933012Z checking for readline/history.h... yes
+2025-10-04T01:33:33.3555259Z checking zlib.h usability... yes
+2025-10-04T01:33:33.3684720Z checking zlib.h presence... yes
+2025-10-04T01:33:33.3685122Z checking for zlib.h... yes
+2025-10-04T01:33:33.3690530Z checking for lz4... /usr/bin/lz4
+2025-10-04T01:33:33.3694743Z checking for zstd... /usr/local/bin/zstd
+2025-10-04T01:33:33.3699533Z checking for openssl... /usr/bin/openssl
+2025-10-04T01:33:33.3732463Z configure: using openssl: OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)
+2025-10-04T01:33:33.5565990Z checking whether byte ordering is bigendian... no
+2025-10-04T01:33:33.5684811Z checking for inline... inline
+2025-10-04T01:33:33.5844710Z checking for printf format archetype... gnu_printf
+2025-10-04T01:33:33.6198104Z checking for _Static_assert... yes
+2025-10-04T01:33:33.6356275Z checking for typeof... typeof
+2025-10-04T01:33:33.6545051Z checking for __builtin_types_compatible_p... yes
+2025-10-04T01:33:33.6695558Z checking for __builtin_constant_p... yes
+2025-10-04T01:33:33.7037257Z checking for __builtin_unreachable... yes
+2025-10-04T01:33:33.7596843Z checking for computed goto support... yes
+2025-10-04T01:33:33.7792764Z checking for struct tm.tm_zone... yes
+2025-10-04T01:33:33.8351754Z checking for union semun... no
+2025-10-04T01:33:33.8736214Z checking for socklen_t... yes
+2025-10-04T01:33:33.9170888Z checking for struct sockaddr.sa_len... no
+2025-10-04T01:33:33.9395128Z checking for locale_t... yes
+2025-10-04T01:33:33.9599717Z checking for C/C++ restrict keyword... __restrict
+2025-10-04T01:33:33.9937695Z checking for struct option... yes
+2025-10-04T01:33:34.0234546Z checking whether assembler supports x86_64 popcntq... yes
+2025-10-04T01:33:34.0238154Z checking for special C compiler options needed for large files... no
+2025-10-04T01:33:34.0422866Z checking for _FILE_OFFSET_BITS value needed for large files... no
+2025-10-04T01:33:34.0924417Z checking size of off_t... 8
+2025-10-04T01:33:34.1385154Z checking size of bool... 1
+2025-10-04T01:33:34.1765994Z checking for int timezone... yes
+2025-10-04T01:33:34.2156182Z checking for wcstombs_l declaration... no
+2025-10-04T01:33:34.2557743Z checking for backtrace_symbols... yes
+2025-10-04T01:33:34.3019174Z checking for copyfile... no
+2025-10-04T01:33:34.3402672Z checking for copy_file_range... yes
+2025-10-04T01:33:34.3817746Z checking for getifaddrs... yes
+2025-10-04T01:33:34.4277272Z checking for getpeerucred... no
+2025-10-04T01:33:34.4666552Z checking for inet_pton... yes
+2025-10-04T01:33:34.5130656Z checking for kqueue... no
+2025-10-04T01:33:34.5558119Z checking for mbstowcs_l... no
+2025-10-04T01:33:34.5942698Z checking for posix_fallocate... yes
+2025-10-04T01:33:34.6358622Z checking for ppoll... yes
+2025-10-04T01:33:34.6819567Z checking for pthread_is_threaded_np... no
+2025-10-04T01:33:34.7243299Z checking for setproctitle... no
+2025-10-04T01:33:34.7673816Z checking for setproctitle_fast... no
+2025-10-04T01:33:34.8064602Z checking for strsignal... yes
+2025-10-04T01:33:34.8485511Z checking for syncfs... yes
+2025-10-04T01:33:34.8914319Z checking for sync_file_range... yes
+2025-10-04T01:33:34.9334868Z checking for uselocale... yes
+2025-10-04T01:33:34.9799229Z checking for wcstombs_l... no
+2025-10-04T01:33:35.0233628Z checking for __builtin_bswap16... yes
+2025-10-04T01:33:35.0624736Z checking for __builtin_bswap32... yes
+2025-10-04T01:33:35.1019288Z checking for __builtin_bswap64... yes
+2025-10-04T01:33:35.1410123Z checking for __builtin_clz... yes
+2025-10-04T01:33:35.2002637Z checking for __builtin_ctz... yes
+2025-10-04T01:33:35.2397782Z checking for __builtin_popcount... yes
+2025-10-04T01:33:35.2790159Z checking for __builtin_frame_address... yes
+2025-10-04T01:33:35.3188936Z checking for _LARGEFILE_SOURCE value needed for large files... no
+2025-10-04T01:33:35.3342967Z checking how gcc reports undeclared, standard C functions... error
+2025-10-04T01:33:35.3697589Z checking for posix_fadvise... yes
+2025-10-04T01:33:35.4179672Z checking whether posix_fadvise is declared... yes
+2025-10-04T01:33:35.4417393Z checking whether fdatasync is declared... yes
+2025-10-04T01:33:35.4741954Z checking whether strlcat is declared... yes
+2025-10-04T01:33:35.5065015Z checking whether strlcpy is declared... yes
+2025-10-04T01:33:35.5389574Z checking whether strnlen is declared... yes
+2025-10-04T01:33:35.5734109Z checking whether preadv is declared... yes
+2025-10-04T01:33:35.5977681Z checking whether pwritev is declared... yes
+2025-10-04T01:33:35.6208478Z checking whether strchrnul is declared... yes
+2025-10-04T01:33:35.6426885Z checking whether memset_s is declared... no
+2025-10-04T01:33:35.6642836Z checking whether F_FULLFSYNC is declared... no
+2025-10-04T01:33:35.7008142Z checking for explicit_bzero... yes
+2025-10-04T01:33:35.7366746Z checking for getopt... yes
+2025-10-04T01:33:35.7772882Z checking for getpeereid... no
+2025-10-04T01:33:35.8132573Z checking for inet_aton... yes
+2025-10-04T01:33:35.8494765Z checking for mkdtemp... yes
+2025-10-04T01:33:35.8854688Z checking for strlcat... yes
+2025-10-04T01:33:35.9214683Z checking for strlcpy... yes
+2025-10-04T01:33:35.9611885Z checking for strnlen... yes
+2025-10-04T01:33:35.9974501Z checking for pthread_barrier_wait... yes
+2025-10-04T01:33:36.0336442Z checking for getopt_long... yes
+2025-10-04T01:33:36.0703824Z checking for syslog... yes
+2025-10-04T01:33:36.1078077Z checking syslog.h usability... yes
+2025-10-04T01:33:36.1169356Z checking syslog.h presence... yes
+2025-10-04T01:33:36.1169839Z checking for syslog.h... yes
+2025-10-04T01:33:36.1547383Z checking for opterr... yes
+2025-10-04T01:33:36.1967617Z checking for optreset... no
+2025-10-04T01:33:36.7011518Z checking unicode/ucol.h usability... yes
+2025-10-04T01:33:36.7178324Z checking unicode/ucol.h presence... yes
+2025-10-04T01:33:36.7179093Z checking for unicode/ucol.h... yes
+2025-10-04T01:33:36.7595566Z checking for rl_completion_suppress_quote... yes
+2025-10-04T01:33:36.8009220Z checking for rl_filename_quote_characters... yes
+2025-10-04T01:33:36.8440599Z checking for rl_filename_quoting_function... yes
+2025-10-04T01:33:36.8835755Z checking for append_history... yes
+2025-10-04T01:33:36.9263638Z checking for history_truncate_file... yes
+2025-10-04T01:33:36.9702512Z checking for rl_completion_matches... yes
+2025-10-04T01:33:37.0127688Z checking for rl_filename_completion_function... yes
+2025-10-04T01:33:37.0555436Z checking for rl_reset_screen_size... yes
+2025-10-04T01:33:37.0985016Z checking for rl_variable_bind... yes
+2025-10-04T01:33:37.1360230Z checking test program... ok
+2025-10-04T01:33:37.1743564Z checking whether long int is 64 bits... yes
+2025-10-04T01:33:37.2123135Z checking for __builtin_mul_overflow... yes
+2025-10-04T01:33:37.2613109Z checking size of void *... 8
+2025-10-04T01:33:37.3109487Z checking size of size_t... 8
+2025-10-04T01:33:37.3617661Z checking size of long... 8
+2025-10-04T01:33:37.4119857Z checking alignment of short... 2
+2025-10-04T01:33:37.4617468Z checking alignment of int... 4
+2025-10-04T01:33:37.5125343Z checking alignment of long... 8
+2025-10-04T01:33:37.5633792Z checking alignment of double... 8
+2025-10-04T01:33:37.5834036Z checking for int8... no
+2025-10-04T01:33:37.6018537Z checking for uint8... no
+2025-10-04T01:33:37.6200502Z checking for int64... no
+2025-10-04T01:33:37.6378807Z checking for uint64... no
+2025-10-04T01:33:37.7324086Z checking for __int128... yes
+2025-10-04T01:33:37.7696076Z checking for __int128 alignment bug... ok
+2025-10-04T01:33:37.8187660Z checking alignment of PG_INT128_TYPE... 16
+2025-10-04T01:33:37.8773793Z checking for builtin __sync char locking functions... yes
+2025-10-04T01:33:37.9128163Z checking for builtin __sync int32 locking functions... yes
+2025-10-04T01:33:37.9579812Z checking for builtin __sync int32 atomic operations... yes
+2025-10-04T01:33:37.9934846Z checking for builtin __sync int64 atomic operations... yes
+2025-10-04T01:33:38.0295039Z checking for builtin __atomic int32 atomic operations... yes
+2025-10-04T01:33:38.0652490Z checking for builtin __atomic int64 atomic operations... yes
+2025-10-04T01:33:38.1073688Z checking for __get_cpuid... yes
+2025-10-04T01:33:38.1451591Z checking for __get_cpuid_count... yes
+2025-10-04T01:33:38.9118591Z checking for _xgetbv with CFLAGS=... no
+2025-10-04T01:33:39.1878950Z checking for _xgetbv with CFLAGS=-mxsave... yes
+2025-10-04T01:33:39.4404046Z checking for _mm512_popcnt_epi64 with CFLAGS=... no
+2025-10-04T01:33:39.7480749Z checking for _mm512_popcnt_epi64 with CFLAGS=-mavx512vpopcntdq -mavx512bw... yes
+2025-10-04T01:33:39.7862200Z checking for _mm_crc32_u8 and _mm_crc32_u32 with CFLAGS=... no
+2025-10-04T01:33:39.8360505Z checking for _mm_crc32_u8 and _mm_crc32_u32 with CFLAGS=-msse4.2... yes
+2025-10-04T01:33:39.8648868Z checking for __crc32cb, __crc32ch, __crc32cw, and __crc32cd with CFLAGS=... no
+2025-10-04T01:33:39.8836693Z checking for __crc32cb, __crc32ch, __crc32cw, and __crc32cd with CFLAGS=-march=armv8-a+crc+simd... no
+2025-10-04T01:33:39.8961432Z checking for __crc32cb, __crc32ch, __crc32cw, and __crc32cd with CFLAGS=-march=armv8-a+crc... no
+2025-10-04T01:33:39.9457714Z checking for __builtin_loongarch_crcc_w_b_w, __builtin_loongarch_crcc_w_h_w, __builtin_loongarch_crcc_w_w_w and __builtin_loongarch_crcc_w_d_w... no
+2025-10-04T01:33:39.9465664Z checking which CRC-32C implementation to use... SSE 4.2 with runtime check
+2025-10-04T01:33:39.9828086Z checking for library containing sem_init... none required
+2025-10-04T01:33:39.9829104Z checking which semaphore API to use... unnamed POSIX
+2025-10-04T01:33:39.9832261Z checking which random number source to use... /dev/urandom
+2025-10-04T01:33:39.9833103Z checking for /dev/urandom... yes
+2025-10-04T01:33:39.9852787Z checking for xmllint... no
+2025-10-04T01:33:39.9857163Z checking for xsltproc... no
+2025-10-04T01:33:39.9861783Z checking for fop... no
+2025-10-04T01:33:39.9866035Z checking for dbtoepub... no
+2025-10-04T01:33:40.0231066Z checking whether gcc supports -Wl,--as-needed, for LDFLAGS... yes
+2025-10-04T01:33:40.0593833Z checking whether gcc supports -Wl,--export-dynamic, for LDFLAGS_EX_BE... yes
+2025-10-04T01:33:40.0670814Z configure: using compiler=gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+2025-10-04T01:33:40.0673936Z configure: using CFLAGS=-Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0
+2025-10-04T01:33:40.0675707Z configure: using CPPFLAGS= -D_GNU_SOURCE 
+2025-10-04T01:33:40.0676047Z configure: using LDFLAGS=  -Wl,--as-needed
+2025-10-04T01:33:40.0911098Z configure: creating ./config.status
+2025-10-04T01:33:40.1635882Z config.status: creating GNUmakefile
+2025-10-04T01:33:40.1747680Z config.status: creating src/Makefile.global
+2025-10-04T01:33:40.1888343Z config.status: creating src/include/pg_config.h
+2025-10-04T01:33:40.2009305Z config.status: creating src/include/pg_config_ext.h
+2025-10-04T01:33:40.2123002Z config.status: creating src/interfaces/ecpg/include/ecpg_config.h
+2025-10-04T01:33:40.2265635Z config.status: linking src/backend/port/tas/dummy.s to src/backend/port/tas.s
+2025-10-04T01:33:40.2327440Z config.status: linking src/backend/port/posix_sema.c to src/backend/port/pg_sema.c
+2025-10-04T01:33:40.2389700Z config.status: linking src/backend/port/sysv_shmem.c to src/backend/port/pg_shmem.c
+2025-10-04T01:33:40.2453609Z config.status: linking src/include/port/linux.h to src/include/pg_config_os.h
+2025-10-04T01:33:40.2515470Z config.status: linking src/makefiles/Makefile.linux to src/Makefile.port
+2025-10-04T01:34:52.9747422Z ##[group]Run actions/checkout@v3
+2025-10-04T01:34:52.9747674Z with:
+2025-10-04T01:34:52.9747857Z   repository: apache/age
+2025-10-04T01:34:52.9748179Z   token: ***
+2025-10-04T01:34:52.9748356Z   ssh-strict: true
+2025-10-04T01:34:52.9748550Z   persist-credentials: true
+2025-10-04T01:34:52.9748755Z   clean: true
+2025-10-04T01:34:52.9748945Z   sparse-checkout-cone-mode: true
+2025-10-04T01:34:52.9749165Z   fetch-depth: 1
+2025-10-04T01:34:52.9749341Z   fetch-tags: false
+2025-10-04T01:34:52.9749509Z   lfs: false
+2025-10-04T01:34:52.9749673Z   submodules: false
+2025-10-04T01:34:52.9749851Z   set-safe-directory: true
+2025-10-04T01:34:52.9750278Z env:
+2025-10-04T01:34:52.9750500Z   PG_COMMIT_HASH: 3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:34:52.9750803Z ##[endgroup]
+2025-10-04T01:34:53.0596037Z Syncing repository: apache/age
+2025-10-04T01:34:53.0598037Z ##[group]Getting Git version info
+2025-10-04T01:34:53.0598563Z Working directory is '/home/runner/work/age/age'
+2025-10-04T01:34:53.0599442Z [command]/usr/bin/git version
+2025-10-04T01:34:53.0599840Z git version 2.51.0
+2025-10-04T01:34:53.0617341Z ##[endgroup]
+2025-10-04T01:34:53.0633487Z Temporarily overriding HOME='/home/runner/work/_temp/e4db71cb-6324-44e0-be3d-0353692c6c89' before making global git config changes
+2025-10-04T01:34:53.0634737Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-04T01:34:53.0637941Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/age/age
+2025-10-04T01:34:53.0685573Z Deleting the contents of '/home/runner/work/age/age'
+2025-10-04T01:34:53.0689463Z ##[group]Initializing the repository
+2025-10-04T01:34:53.0693239Z [command]/usr/bin/git init /home/runner/work/age/age
+2025-10-04T01:34:53.0732070Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-04T01:34:53.0732895Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-04T01:34:53.0733674Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-04T01:34:53.0734237Z hint:
+2025-10-04T01:34:53.0734629Z hint: 	git config --global init.defaultBranch <name>
+2025-10-04T01:34:53.0735083Z hint:
+2025-10-04T01:34:53.0735504Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-04T01:34:53.0736012Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-04T01:34:53.0736391Z hint:
+2025-10-04T01:34:53.0736568Z hint: 	git branch -m <name>
+2025-10-04T01:34:53.0736774Z hint:
+2025-10-04T01:34:53.0737059Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-04T01:34:53.0737537Z Initialized empty Git repository in /home/runner/work/age/age/.git/
+2025-10-04T01:34:53.0743764Z [command]/usr/bin/git remote add origin https://github.com/apache/age
+2025-10-04T01:34:53.0783228Z ##[endgroup]
+2025-10-04T01:34:53.0783830Z ##[group]Disabling automatic garbage collection
+2025-10-04T01:34:53.0786893Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-04T01:34:53.0814832Z ##[endgroup]
+2025-10-04T01:34:53.0815390Z ##[group]Setting up auth
+2025-10-04T01:34:53.0820942Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-04T01:34:53.0849392Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-04T01:34:53.1115093Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-04T01:34:53.1144293Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-04T01:34:53.1369043Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-04T01:34:53.1403205Z ##[endgroup]
+2025-10-04T01:34:53.1404024Z ##[group]Fetching the repository
+2025-10-04T01:34:53.1411568Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +ec457345e25601c947aff73bfcc7354d97e238a6:refs/remotes/origin/master
+2025-10-04T01:34:53.5192911Z remote: Enumerating objects: 417, done.        
+2025-10-04T01:34:53.5193485Z remote: Counting objects:   0% (1/417)        
+2025-10-04T01:34:53.5194009Z remote: Counting objects:   1% (5/417)        
+2025-10-04T01:34:53.5194469Z remote: Counting objects:   2% (9/417)        
+2025-10-04T01:34:53.5194935Z remote: Counting objects:   3% (13/417)        
+2025-10-04T01:34:53.5195421Z remote: Counting objects:   4% (17/417)        
+2025-10-04T01:34:53.5195907Z remote: Counting objects:   5% (21/417)        
+2025-10-04T01:34:53.5196392Z remote: Counting objects:   6% (26/417)        
+2025-10-04T01:34:53.5196844Z remote: Counting objects:   7% (30/417)        
+2025-10-04T01:34:53.5197296Z remote: Counting objects:   8% (34/417)        
+2025-10-04T01:34:53.5197762Z remote: Counting objects:   9% (38/417)        
+2025-10-04T01:34:53.5198220Z remote: Counting objects:  10% (42/417)        
+2025-10-04T01:34:53.5198676Z remote: Counting objects:  11% (46/417)        
+2025-10-04T01:34:53.5198979Z remote: Counting objects:  12% (51/417)        
+2025-10-04T01:34:53.5199261Z remote: Counting objects:  13% (55/417)        
+2025-10-04T01:34:53.5199527Z remote: Counting objects:  14% (59/417)        
+2025-10-04T01:34:53.5199784Z remote: Counting objects:  15% (63/417)        
+2025-10-04T01:34:53.5200274Z remote: Counting objects:  16% (67/417)        
+2025-10-04T01:34:53.5200545Z remote: Counting objects:  17% (71/417)        
+2025-10-04T01:34:53.5200811Z remote: Counting objects:  18% (76/417)        
+2025-10-04T01:34:53.5201332Z remote: Counting objects:  19% (80/417)        
+2025-10-04T01:34:53.5201602Z remote: Counting objects:  20% (84/417)        
+2025-10-04T01:34:53.5201857Z remote: Counting objects:  21% (88/417)        
+2025-10-04T01:34:53.5202118Z remote: Counting objects:  22% (92/417)        
+2025-10-04T01:34:53.5202372Z remote: Counting objects:  23% (96/417)        
+2025-10-04T01:34:53.5202632Z remote: Counting objects:  24% (101/417)        
+2025-10-04T01:34:53.5202904Z remote: Counting objects:  25% (105/417)        
+2025-10-04T01:34:53.5203166Z remote: Counting objects:  26% (109/417)        
+2025-10-04T01:34:53.5203424Z remote: Counting objects:  27% (113/417)        
+2025-10-04T01:34:53.5203735Z remote: Counting objects:  28% (117/417)        
+2025-10-04T01:34:53.5203995Z remote: Counting objects:  29% (121/417)        
+2025-10-04T01:34:53.5204245Z remote: Counting objects:  30% (126/417)        
+2025-10-04T01:34:53.5204500Z remote: Counting objects:  31% (130/417)        
+2025-10-04T01:34:53.5204762Z remote: Counting objects:  32% (134/417)        
+2025-10-04T01:34:53.5205013Z remote: Counting objects:  33% (138/417)        
+2025-10-04T01:34:53.5205268Z remote: Counting objects:  34% (142/417)        
+2025-10-04T01:34:53.5205524Z remote: Counting objects:  35% (146/417)        
+2025-10-04T01:34:53.5205781Z remote: Counting objects:  36% (151/417)        
+2025-10-04T01:34:53.5206033Z remote: Counting objects:  37% (155/417)        
+2025-10-04T01:34:53.5206293Z remote: Counting objects:  38% (159/417)        
+2025-10-04T01:34:53.5206543Z remote: Counting objects:  39% (163/417)        
+2025-10-04T01:34:53.5206799Z remote: Counting objects:  40% (167/417)        
+2025-10-04T01:34:53.5207058Z remote: Counting objects:  41% (171/417)        
+2025-10-04T01:34:53.5207308Z remote: Counting objects:  42% (176/417)        
+2025-10-04T01:34:53.5207564Z remote: Counting objects:  43% (180/417)        
+2025-10-04T01:34:53.5207815Z remote: Counting objects:  44% (184/417)        
+2025-10-04T01:34:53.5208073Z remote: Counting objects:  45% (188/417)        
+2025-10-04T01:34:53.5208328Z remote: Counting objects:  46% (192/417)        
+2025-10-04T01:34:53.5208586Z remote: Counting objects:  47% (196/417)        
+2025-10-04T01:34:53.5208993Z remote: Counting objects:  48% (201/417)        
+2025-10-04T01:34:53.5209251Z remote: Counting objects:  49% (205/417)        
+2025-10-04T01:34:53.5209508Z remote: Counting objects:  50% (209/417)        
+2025-10-04T01:34:53.5209761Z remote: Counting objects:  51% (213/417)        
+2025-10-04T01:34:53.5210206Z remote: Counting objects:  52% (217/417)        
+2025-10-04T01:34:53.5210469Z remote: Counting objects:  53% (222/417)        
+2025-10-04T01:34:53.5210723Z remote: Counting objects:  54% (226/417)        
+2025-10-04T01:34:53.5210977Z remote: Counting objects:  55% (230/417)        
+2025-10-04T01:34:53.5211244Z remote: Counting objects:  56% (234/417)        
+2025-10-04T01:34:53.5211504Z remote: Counting objects:  57% (238/417)        
+2025-10-04T01:34:53.5211771Z remote: Counting objects:  58% (242/417)        
+2025-10-04T01:34:53.5212085Z remote: Counting objects:  59% (247/417)        
+2025-10-04T01:34:53.5212340Z remote: Counting objects:  60% (251/417)        
+2025-10-04T01:34:53.5212597Z remote: Counting objects:  61% (255/417)        
+2025-10-04T01:34:53.5212856Z remote: Counting objects:  62% (259/417)        
+2025-10-04T01:34:53.5213108Z remote: Counting objects:  63% (263/417)        
+2025-10-04T01:34:53.5213363Z remote: Counting objects:  64% (267/417)        
+2025-10-04T01:34:53.5213612Z remote: Counting objects:  65% (272/417)        
+2025-10-04T01:34:53.5213868Z remote: Counting objects:  66% (276/417)        
+2025-10-04T01:34:53.5214117Z remote: Counting objects:  67% (280/417)        
+2025-10-04T01:34:53.5214371Z remote: Counting objects:  68% (284/417)        
+2025-10-04T01:34:53.5214628Z remote: Counting objects:  69% (288/417)        
+2025-10-04T01:34:53.5214882Z remote: Counting objects:  70% (292/417)        
+2025-10-04T01:34:53.5215137Z remote: Counting objects:  71% (297/417)        
+2025-10-04T01:34:53.5215547Z remote: Counting objects:  72% (301/417)        
+2025-10-04T01:34:53.5215813Z remote: Counting objects:  73% (305/417)        
+2025-10-04T01:34:53.5216066Z remote: Counting objects:  74% (309/417)        
+2025-10-04T01:34:53.5216326Z remote: Counting objects:  75% (313/417)        
+2025-10-04T01:34:53.5293500Z remote: Counting objects:  76% (317/417)        
+2025-10-04T01:34:53.5294042Z remote: Counting objects:  77% (322/417)        
+2025-10-04T01:34:53.5294519Z remote: Counting objects:  78% (326/417)        
+2025-10-04T01:34:53.5294964Z remote: Counting objects:  79% (330/417)        
+2025-10-04T01:34:53.5295326Z remote: Counting objects:  80% (334/417)        
+2025-10-04T01:34:53.5295602Z remote: Counting objects:  81% (338/417)        
+2025-10-04T01:34:53.5295870Z remote: Counting objects:  82% (342/417)        
+2025-10-04T01:34:53.5296126Z remote: Counting objects:  83% (347/417)        
+2025-10-04T01:34:53.5296374Z remote: Counting objects:  84% (351/417)        
+2025-10-04T01:34:53.5296642Z remote: Counting objects:  85% (355/417)        
+2025-10-04T01:34:53.5296891Z remote: Counting objects:  86% (359/417)        
+2025-10-04T01:34:53.5297144Z remote: Counting objects:  87% (363/417)        
+2025-10-04T01:34:53.5297402Z remote: Counting objects:  88% (367/417)        
+2025-10-04T01:34:53.5297655Z remote: Counting objects:  89% (372/417)        
+2025-10-04T01:34:53.5297909Z remote: Counting objects:  90% (376/417)        
+2025-10-04T01:34:53.5298158Z remote: Counting objects:  91% (380/417)        
+2025-10-04T01:34:53.5298411Z remote: Counting objects:  92% (384/417)        
+2025-10-04T01:34:53.5298666Z remote: Counting objects:  93% (388/417)        
+2025-10-04T01:34:53.5298924Z remote: Counting objects:  94% (392/417)        
+2025-10-04T01:34:53.5299175Z remote: Counting objects:  95% (397/417)        
+2025-10-04T01:34:53.5299428Z remote: Counting objects:  96% (401/417)        
+2025-10-04T01:34:53.5299694Z remote: Counting objects:  97% (405/417)        
+2025-10-04T01:34:53.5300180Z remote: Counting objects:  98% (409/417)        
+2025-10-04T01:34:53.5300472Z remote: Counting objects:  99% (413/417)        
+2025-10-04T01:34:53.5300729Z remote: Counting objects: 100% (417/417)        
+2025-10-04T01:34:53.5301225Z remote: Counting objects: 100% (417/417), done.        
+2025-10-04T01:34:53.5301528Z remote: Compressing objects:   0% (1/344)        
+2025-10-04T01:34:53.5301803Z remote: Compressing objects:   1% (4/344)        
+2025-10-04T01:34:53.5302065Z remote: Compressing objects:   2% (7/344)        
+2025-10-04T01:34:53.5302336Z remote: Compressing objects:   3% (11/344)        
+2025-10-04T01:34:53.5302610Z remote: Compressing objects:   4% (14/344)        
+2025-10-04T01:34:53.5302879Z remote: Compressing objects:   5% (18/344)        
+2025-10-04T01:34:53.5303140Z remote: Compressing objects:   6% (21/344)        
+2025-10-04T01:34:53.5831574Z remote: Compressing objects:   7% (25/344)        
+2025-10-04T01:34:53.5832277Z remote: Compressing objects:   8% (28/344)        
+2025-10-04T01:34:53.5832669Z remote: Compressing objects:   9% (31/344)        
+2025-10-04T01:34:53.5833092Z remote: Compressing objects:  10% (35/344)        
+2025-10-04T01:34:53.5833418Z remote: Compressing objects:  11% (38/344)        
+2025-10-04T01:34:53.5833758Z remote: Compressing objects:  12% (42/344)        
+2025-10-04T01:34:53.5834080Z remote: Compressing objects:  13% (45/344)        
+2025-10-04T01:34:53.5834407Z remote: Compressing objects:  14% (49/344)        
+2025-10-04T01:34:53.5834731Z remote: Compressing objects:  15% (52/344)        
+2025-10-04T01:34:53.5835063Z remote: Compressing objects:  16% (56/344)        
+2025-10-04T01:34:53.5835391Z remote: Compressing objects:  17% (59/344)        
+2025-10-04T01:34:53.5835715Z remote: Compressing objects:  18% (62/344)        
+2025-10-04T01:34:53.5836040Z remote: Compressing objects:  19% (66/344)        
+2025-10-04T01:34:53.5836361Z remote: Compressing objects:  20% (69/344)        
+2025-10-04T01:34:53.5836687Z remote: Compressing objects:  21% (73/344)        
+2025-10-04T01:34:53.5837351Z remote: Compressing objects:  22% (76/344)        
+2025-10-04T01:34:53.5837695Z remote: Compressing objects:  23% (80/344)        
+2025-10-04T01:34:53.5838039Z remote: Compressing objects:  24% (83/344)        
+2025-10-04T01:34:53.5838365Z remote: Compressing objects:  25% (86/344)        
+2025-10-04T01:34:53.5838692Z remote: Compressing objects:  26% (90/344)        
+2025-10-04T01:34:53.5839013Z remote: Compressing objects:  27% (93/344)        
+2025-10-04T01:34:53.5910496Z remote: Compressing objects:  28% (97/344)        
+2025-10-04T01:34:53.5911252Z remote: Compressing objects:  29% (100/344)        
+2025-10-04T01:34:53.5911955Z remote: Compressing objects:  30% (104/344)        
+2025-10-04T01:34:53.5912538Z remote: Compressing objects:  31% (107/344)        
+2025-10-04T01:34:53.5912947Z remote: Compressing objects:  32% (111/344)        
+2025-10-04T01:34:53.5913325Z remote: Compressing objects:  33% (114/344)        
+2025-10-04T01:34:53.5913697Z remote: Compressing objects:  34% (117/344)        
+2025-10-04T01:34:53.5914056Z remote: Compressing objects:  35% (121/344)        
+2025-10-04T01:34:53.5914441Z remote: Compressing objects:  36% (124/344)        
+2025-10-04T01:34:53.5914817Z remote: Compressing objects:  37% (128/344)        
+2025-10-04T01:34:53.5915179Z remote: Compressing objects:  38% (131/344)        
+2025-10-04T01:34:53.5915530Z remote: Compressing objects:  39% (135/344)        
+2025-10-04T01:34:53.5915888Z remote: Compressing objects:  40% (138/344)        
+2025-10-04T01:34:53.5916240Z remote: Compressing objects:  41% (142/344)        
+2025-10-04T01:34:53.5916654Z remote: Compressing objects:  42% (145/344)        
+2025-10-04T01:34:53.5917013Z remote: Compressing objects:  43% (148/344)        
+2025-10-04T01:34:53.5917365Z remote: Compressing objects:  44% (152/344)        
+2025-10-04T01:34:53.5917724Z remote: Compressing objects:  45% (155/344)        
+2025-10-04T01:34:53.5918076Z remote: Compressing objects:  46% (159/344)        
+2025-10-04T01:34:53.6013459Z remote: Compressing objects:  47% (162/344)        
+2025-10-04T01:34:53.6014293Z remote: Compressing objects:  48% (166/344)        
+2025-10-04T01:34:53.6014911Z remote: Compressing objects:  49% (169/344)        
+2025-10-04T01:34:53.6015837Z remote: Compressing objects:  50% (172/344)        
+2025-10-04T01:34:53.6016297Z remote: Compressing objects:  51% (176/344)        
+2025-10-04T01:34:53.6016746Z remote: Compressing objects:  52% (179/344)        
+2025-10-04T01:34:53.6017200Z remote: Compressing objects:  53% (183/344)        
+2025-10-04T01:34:53.6017645Z remote: Compressing objects:  54% (186/344)        
+2025-10-04T01:34:53.6018173Z remote: Compressing objects:  55% (190/344)        
+2025-10-04T01:34:53.6018716Z remote: Compressing objects:  56% (193/344)        
+2025-10-04T01:34:53.6019278Z remote: Compressing objects:  57% (197/344)        
+2025-10-04T01:34:53.6019736Z remote: Compressing objects:  58% (200/344)        
+2025-10-04T01:34:53.6020371Z remote: Compressing objects:  59% (203/344)        
+2025-10-04T01:34:53.6020744Z remote: Compressing objects:  60% (207/344)        
+2025-10-04T01:34:53.6021083Z remote: Compressing objects:  61% (210/344)        
+2025-10-04T01:34:53.6506801Z remote: Compressing objects:  62% (214/344)        
+2025-10-04T01:34:53.6507518Z remote: Compressing objects:  63% (217/344)        
+2025-10-04T01:34:53.6507908Z remote: Compressing objects:  64% (221/344)        
+2025-10-04T01:34:53.6508273Z remote: Compressing objects:  65% (224/344)        
+2025-10-04T01:34:53.6508627Z remote: Compressing objects:  66% (228/344)        
+2025-10-04T01:34:53.6508983Z remote: Compressing objects:  67% (231/344)        
+2025-10-04T01:34:53.6509338Z remote: Compressing objects:  68% (234/344)        
+2025-10-04T01:34:53.6509696Z remote: Compressing objects:  69% (238/344)        
+2025-10-04T01:34:53.6510205Z remote: Compressing objects:  70% (241/344)        
+2025-10-04T01:34:53.6510558Z remote: Compressing objects:  71% (245/344)        
+2025-10-04T01:34:53.6511252Z remote: Compressing objects:  72% (248/344)        
+2025-10-04T01:34:53.6511616Z remote: Compressing objects:  73% (252/344)        
+2025-10-04T01:34:53.6511929Z remote: Compressing objects:  74% (255/344)        
+2025-10-04T01:34:53.6512236Z remote: Compressing objects:  75% (258/344)        
+2025-10-04T01:34:53.6512542Z remote: Compressing objects:  76% (262/344)        
+2025-10-04T01:34:53.6512839Z remote: Compressing objects:  77% (265/344)        
+2025-10-04T01:34:53.6513144Z remote: Compressing objects:  78% (269/344)        
+2025-10-04T01:34:53.6513450Z remote: Compressing objects:  79% (272/344)        
+2025-10-04T01:34:53.6513751Z remote: Compressing objects:  80% (276/344)        
+2025-10-04T01:34:53.6514056Z remote: Compressing objects:  81% (279/344)        
+2025-10-04T01:34:53.6521714Z remote: Compressing objects:  82% (283/344)        
+2025-10-04T01:34:53.6522394Z remote: Compressing objects:  83% (286/344)        
+2025-10-04T01:34:53.6523204Z remote: Compressing objects:  84% (289/344)        
+2025-10-04T01:34:53.6523695Z remote: Compressing objects:  85% (293/344)        
+2025-10-04T01:34:53.6524161Z remote: Compressing objects:  86% (296/344)        
+2025-10-04T01:34:53.6524618Z remote: Compressing objects:  87% (300/344)        
+2025-10-04T01:34:53.6525084Z remote: Compressing objects:  88% (303/344)        
+2025-10-04T01:34:53.6525562Z remote: Compressing objects:  89% (307/344)        
+2025-10-04T01:34:53.6526019Z remote: Compressing objects:  90% (310/344)        
+2025-10-04T01:34:53.6526499Z remote: Compressing objects:  91% (314/344)        
+2025-10-04T01:34:53.6526969Z remote: Compressing objects:  92% (317/344)        
+2025-10-04T01:34:53.6527446Z remote: Compressing objects:  93% (320/344)        
+2025-10-04T01:34:53.6527917Z remote: Compressing objects:  94% (324/344)        
+2025-10-04T01:34:53.6528334Z remote: Compressing objects:  95% (327/344)        
+2025-10-04T01:34:53.6528634Z remote: Compressing objects:  96% (331/344)        
+2025-10-04T01:34:53.6528908Z remote: Compressing objects:  97% (334/344)        
+2025-10-04T01:34:53.6529185Z remote: Compressing objects:  98% (338/344)        
+2025-10-04T01:34:53.6529450Z remote: Compressing objects:  99% (341/344)        
+2025-10-04T01:34:53.6529904Z remote: Compressing objects: 100% (344/344)        
+2025-10-04T01:34:53.6530573Z remote: Compressing objects: 100% (344/344), done.        
+2025-10-04T01:34:53.6548696Z Receiving objects:   0% (1/417)
+2025-10-04T01:34:53.6550651Z Receiving objects:   1% (5/417)
+2025-10-04T01:34:53.6551654Z Receiving objects:   2% (9/417)
+2025-10-04T01:34:53.6552069Z Receiving objects:   3% (13/417)
+2025-10-04T01:34:53.6714742Z Receiving objects:   4% (17/417)
+2025-10-04T01:34:53.6716408Z Receiving objects:   5% (21/417)
+2025-10-04T01:34:53.6718552Z Receiving objects:   6% (26/417)
+2025-10-04T01:34:53.6719905Z Receiving objects:   7% (30/417)
+2025-10-04T01:34:53.6879328Z Receiving objects:   8% (34/417)
+2025-10-04T01:34:53.6880171Z Receiving objects:   9% (38/417)
+2025-10-04T01:34:53.6880783Z Receiving objects:  10% (42/417)
+2025-10-04T01:34:53.6899563Z Receiving objects:  11% (46/417)
+2025-10-04T01:34:53.6902276Z Receiving objects:  12% (51/417)
+2025-10-04T01:34:53.6904035Z Receiving objects:  13% (55/417)
+2025-10-04T01:34:53.6905676Z Receiving objects:  14% (59/417)
+2025-10-04T01:34:53.6908127Z Receiving objects:  15% (63/417)
+2025-10-04T01:34:53.6911658Z Receiving objects:  16% (67/417)
+2025-10-04T01:34:53.6913126Z Receiving objects:  17% (71/417)
+2025-10-04T01:34:53.6914595Z Receiving objects:  18% (76/417)
+2025-10-04T01:34:53.6915301Z Receiving objects:  19% (80/417)
+2025-10-04T01:34:53.6916307Z Receiving objects:  20% (84/417)
+2025-10-04T01:34:53.6916695Z Receiving objects:  21% (88/417)
+2025-10-04T01:34:53.6917463Z Receiving objects:  22% (92/417)
+2025-10-04T01:34:53.6918506Z Receiving objects:  23% (96/417)
+2025-10-04T01:34:53.6921895Z Receiving objects:  24% (101/417)
+2025-10-04T01:34:53.7071557Z Receiving objects:  25% (105/417)
+2025-10-04T01:34:53.7072915Z Receiving objects:  26% (109/417)
+2025-10-04T01:34:53.7073641Z Receiving objects:  27% (113/417)
+2025-10-04T01:34:53.7074549Z Receiving objects:  28% (117/417)
+2025-10-04T01:34:53.7085289Z Receiving objects:  29% (121/417)
+2025-10-04T01:34:53.7086898Z Receiving objects:  30% (126/417)
+2025-10-04T01:34:53.7087535Z Receiving objects:  31% (130/417)
+2025-10-04T01:34:53.7091574Z Receiving objects:  32% (134/417)
+2025-10-04T01:34:53.7092476Z Receiving objects:  33% (138/417)
+2025-10-04T01:34:53.7094401Z Receiving objects:  34% (142/417)
+2025-10-04T01:34:53.7096494Z Receiving objects:  35% (146/417)
+2025-10-04T01:34:53.7098260Z Receiving objects:  36% (151/417)
+2025-10-04T01:34:53.7101325Z Receiving objects:  37% (155/417)
+2025-10-04T01:34:53.7102674Z Receiving objects:  38% (159/417)
+2025-10-04T01:34:53.7103080Z Receiving objects:  39% (163/417)
+2025-10-04T01:34:53.7106623Z Receiving objects:  40% (167/417)
+2025-10-04T01:34:53.7110496Z Receiving objects:  41% (171/417)
+2025-10-04T01:34:53.8009248Z Receiving objects:  42% (176/417)
+2025-10-04T01:34:53.8066814Z Receiving objects:  43% (180/417)
+2025-10-04T01:34:53.8068075Z Receiving objects:  44% (184/417)
+2025-10-04T01:34:53.8070808Z Receiving objects:  45% (188/417)
+2025-10-04T01:34:53.8073384Z Receiving objects:  46% (192/417)
+2025-10-04T01:34:53.8419042Z Receiving objects:  47% (196/417)
+2025-10-04T01:34:53.8507984Z Receiving objects:  48% (201/417)
+2025-10-04T01:34:53.8526791Z Receiving objects:  49% (205/417)
+2025-10-04T01:34:53.8533540Z Receiving objects:  50% (209/417)
+2025-10-04T01:34:53.8538493Z Receiving objects:  51% (213/417)
+2025-10-04T01:34:53.8545786Z Receiving objects:  52% (217/417)
+2025-10-04T01:34:53.8550297Z Receiving objects:  53% (222/417)
+2025-10-04T01:34:53.8552612Z Receiving objects:  54% (226/417)
+2025-10-04T01:34:53.8560632Z Receiving objects:  55% (230/417)
+2025-10-04T01:34:53.8565476Z Receiving objects:  56% (234/417)
+2025-10-04T01:34:53.8567963Z Receiving objects:  57% (238/417)
+2025-10-04T01:34:53.8568784Z Receiving objects:  58% (242/417)
+2025-10-04T01:34:53.8573711Z Receiving objects:  59% (247/417)
+2025-10-04T01:34:53.8577087Z Receiving objects:  60% (251/417)
+2025-10-04T01:34:53.8579072Z Receiving objects:  61% (255/417)
+2025-10-04T01:34:53.8587097Z Receiving objects:  62% (259/417)
+2025-10-04T01:34:53.8589541Z Receiving objects:  63% (263/417)
+2025-10-04T01:34:53.8591981Z Receiving objects:  64% (267/417)
+2025-10-04T01:34:53.8595140Z Receiving objects:  65% (272/417)
+2025-10-04T01:34:53.8596539Z Receiving objects:  66% (276/417)
+2025-10-04T01:34:53.8597020Z Receiving objects:  67% (280/417)
+2025-10-04T01:34:53.8598196Z Receiving objects:  68% (284/417)
+2025-10-04T01:34:53.8598651Z Receiving objects:  69% (288/417)
+2025-10-04T01:34:53.8602714Z Receiving objects:  70% (292/417)
+2025-10-04T01:34:53.8604428Z Receiving objects:  71% (297/417)
+2025-10-04T01:34:53.8611057Z Receiving objects:  72% (301/417)
+2025-10-04T01:34:53.8618157Z Receiving objects:  73% (305/417)
+2025-10-04T01:34:53.8621490Z Receiving objects:  74% (309/417)
+2025-10-04T01:34:53.8623300Z Receiving objects:  75% (313/417)
+2025-10-04T01:34:53.8650406Z Receiving objects:  76% (317/417)
+2025-10-04T01:34:53.8659395Z Receiving objects:  77% (322/417)
+2025-10-04T01:34:53.8661575Z Receiving objects:  78% (326/417)
+2025-10-04T01:34:53.8666617Z Receiving objects:  79% (330/417)
+2025-10-04T01:34:53.8694677Z Receiving objects:  80% (334/417)
+2025-10-04T01:34:53.8723835Z Receiving objects:  81% (338/417)
+2025-10-04T01:34:53.8724471Z Receiving objects:  82% (342/417)
+2025-10-04T01:34:53.8724864Z Receiving objects:  83% (347/417)
+2025-10-04T01:34:53.8727030Z Receiving objects:  84% (351/417)
+2025-10-04T01:34:53.8727863Z remote: Total 417 (delta 112), reused 185 (delta 51), pack-reused 0 (from 0)        
+2025-10-04T01:34:53.8729950Z Receiving objects:  85% (355/417)
+2025-10-04T01:34:53.8730964Z Receiving objects:  86% (359/417)
+2025-10-04T01:34:53.8731774Z Receiving objects:  87% (363/417)
+2025-10-04T01:34:53.8733161Z Receiving objects:  88% (367/417)
+2025-10-04T01:34:53.8735165Z Receiving objects:  89% (372/417)
+2025-10-04T01:34:53.8736157Z Receiving objects:  90% (376/417)
+2025-10-04T01:34:53.8736630Z Receiving objects:  91% (380/417)
+2025-10-04T01:34:53.8737189Z Receiving objects:  92% (384/417)
+2025-10-04T01:34:53.8738369Z Receiving objects:  93% (388/417)
+2025-10-04T01:34:53.8741761Z Receiving objects:  94% (392/417)
+2025-10-04T01:34:53.8742230Z Receiving objects:  95% (397/417)
+2025-10-04T01:34:53.8743672Z Receiving objects:  96% (401/417)
+2025-10-04T01:34:53.8744687Z Receiving objects:  97% (405/417)
+2025-10-04T01:34:53.8746895Z Receiving objects:  98% (409/417)
+2025-10-04T01:34:53.8749702Z Receiving objects:  99% (413/417)
+2025-10-04T01:34:53.8750242Z Receiving objects: 100% (417/417)
+2025-10-04T01:34:53.8750746Z Receiving objects: 100% (417/417), 5.33 MiB | 24.27 MiB/s, done.
+2025-10-04T01:34:53.8753004Z Resolving deltas:   0% (0/112)
+2025-10-04T01:34:53.8754877Z Resolving deltas:   1% (2/112)
+2025-10-04T01:34:53.8755591Z Resolving deltas:   2% (3/112)
+2025-10-04T01:34:53.8756122Z Resolving deltas:   3% (4/112)
+2025-10-04T01:34:53.8756664Z Resolving deltas:   5% (6/112)
+2025-10-04T01:34:53.8757068Z Resolving deltas:   6% (7/112)
+2025-10-04T01:34:53.8757488Z Resolving deltas:   7% (8/112)
+2025-10-04T01:34:53.8760280Z Resolving deltas:   8% (9/112)
+2025-10-04T01:34:53.8760804Z Resolving deltas:   9% (11/112)
+2025-10-04T01:34:53.8761205Z Resolving deltas:  10% (12/112)
+2025-10-04T01:34:53.8762406Z Resolving deltas:  11% (13/112)
+2025-10-04T01:34:53.8763124Z Resolving deltas:  12% (14/112)
+2025-10-04T01:34:53.8763519Z Resolving deltas:  13% (15/112)
+2025-10-04T01:34:53.8763889Z Resolving deltas:  14% (16/112)
+2025-10-04T01:34:53.8764245Z Resolving deltas:  16% (18/112)
+2025-10-04T01:34:53.8764619Z Resolving deltas:  17% (20/112)
+2025-10-04T01:34:53.8765739Z Resolving deltas:  19% (22/112)
+2025-10-04T01:34:53.8766130Z Resolving deltas:  20% (23/112)
+2025-10-04T01:34:53.8766495Z Resolving deltas:  21% (24/112)
+2025-10-04T01:34:53.8766862Z Resolving deltas:  22% (25/112)
+2025-10-04T01:34:53.8767235Z Resolving deltas:  23% (26/112)
+2025-10-04T01:34:53.8767604Z Resolving deltas:  24% (27/112)
+2025-10-04T01:34:53.8767974Z Resolving deltas:  25% (29/112)
+2025-10-04T01:34:53.8770284Z Resolving deltas:  26% (30/112)
+2025-10-04T01:34:53.8770841Z Resolving deltas:  28% (32/112)
+2025-10-04T01:34:53.8771769Z Resolving deltas:  29% (33/112)
+2025-10-04T01:34:53.8777469Z Resolving deltas:  30% (34/112)
+2025-10-04T01:34:53.8777893Z Resolving deltas:  32% (36/112)
+2025-10-04T01:34:53.8778259Z Resolving deltas:  33% (37/112)
+2025-10-04T01:34:53.8778630Z Resolving deltas:  34% (39/112)
+2025-10-04T01:34:53.8778991Z Resolving deltas:  35% (40/112)
+2025-10-04T01:34:53.8779348Z Resolving deltas:  36% (41/112)
+2025-10-04T01:34:53.8779697Z Resolving deltas:  37% (42/112)
+2025-10-04T01:34:53.8780249Z Resolving deltas:  38% (43/112)
+2025-10-04T01:34:53.8780618Z Resolving deltas:  39% (44/112)
+2025-10-04T01:34:53.8780979Z Resolving deltas:  40% (45/112)
+2025-10-04T01:34:53.8787675Z Resolving deltas:  41% (46/112)
+2025-10-04T01:34:53.8788292Z Resolving deltas:  43% (49/112)
+2025-10-04T01:34:53.8789571Z Resolving deltas:  44% (50/112)
+2025-10-04T01:34:53.8790331Z Resolving deltas:  45% (51/112)
+2025-10-04T01:34:53.8794400Z Resolving deltas:  46% (52/112)
+2025-10-04T01:34:53.8796050Z Resolving deltas:  47% (53/112)
+2025-10-04T01:34:53.8797295Z Resolving deltas:  48% (54/112)
+2025-10-04T01:34:53.8797666Z Resolving deltas:  49% (55/112)
+2025-10-04T01:34:53.8798026Z Resolving deltas:  50% (56/112)
+2025-10-04T01:34:53.8798376Z Resolving deltas:  51% (58/112)
+2025-10-04T01:34:53.8798735Z Resolving deltas:  52% (59/112)
+2025-10-04T01:34:53.8802160Z Resolving deltas:  53% (60/112)
+2025-10-04T01:34:53.8803136Z Resolving deltas:  54% (61/112)
+2025-10-04T01:34:53.8803527Z Resolving deltas:  55% (62/112)
+2025-10-04T01:34:53.8803892Z Resolving deltas:  56% (63/112)
+2025-10-04T01:34:53.8804265Z Resolving deltas:  57% (64/112)
+2025-10-04T01:34:53.8804620Z Resolving deltas:  58% (65/112)
+2025-10-04T01:34:53.8804977Z Resolving deltas:  59% (67/112)
+2025-10-04T01:34:53.8805441Z Resolving deltas:  60% (68/112)
+2025-10-04T01:34:53.8808812Z Resolving deltas:  62% (70/112)
+2025-10-04T01:34:53.8813472Z Resolving deltas:  63% (71/112)
+2025-10-04T01:34:53.8814047Z Resolving deltas:  64% (72/112)
+2025-10-04T01:34:53.8815264Z Resolving deltas:  65% (73/112)
+2025-10-04T01:34:53.8816299Z Resolving deltas:  66% (74/112)
+2025-10-04T01:34:53.8816687Z Resolving deltas:  67% (76/112)
+2025-10-04T01:34:53.8817050Z Resolving deltas:  68% (77/112)
+2025-10-04T01:34:53.8817414Z Resolving deltas:  69% (78/112)
+2025-10-04T01:34:53.8817769Z Resolving deltas:  71% (80/112)
+2025-10-04T01:34:53.8818121Z Resolving deltas:  72% (81/112)
+2025-10-04T01:34:53.8818466Z Resolving deltas:  73% (82/112)
+2025-10-04T01:34:53.8819211Z Resolving deltas:  74% (83/112)
+2025-10-04T01:34:53.8819735Z Resolving deltas:  75% (84/112)
+2025-10-04T01:34:53.8820293Z Resolving deltas:  77% (87/112)
+2025-10-04T01:34:53.8821585Z Resolving deltas:  78% (88/112)
+2025-10-04T01:34:53.8824060Z Resolving deltas:  79% (89/112)
+2025-10-04T01:34:53.8824451Z Resolving deltas:  81% (91/112)
+2025-10-04T01:34:53.8824810Z Resolving deltas:  82% (92/112)
+2025-10-04T01:34:53.8826429Z Resolving deltas:  83% (93/112)
+2025-10-04T01:34:53.8826968Z Resolving deltas:  84% (95/112)
+2025-10-04T01:34:53.8827392Z Resolving deltas:  85% (96/112)
+2025-10-04T01:34:53.8827770Z Resolving deltas:  86% (97/112)
+2025-10-04T01:34:53.8828131Z Resolving deltas:  87% (98/112)
+2025-10-04T01:34:53.8829598Z Resolving deltas:  88% (99/112)
+2025-10-04T01:34:53.8830182Z Resolving deltas:  89% (100/112)
+2025-10-04T01:34:53.8830576Z Resolving deltas:  91% (102/112)
+2025-10-04T01:34:53.8830988Z Resolving deltas:  92% (104/112)
+2025-10-04T01:34:53.8831400Z Resolving deltas:  93% (105/112)
+2025-10-04T01:34:53.8831781Z Resolving deltas:  94% (106/112)
+2025-10-04T01:34:53.8832134Z Resolving deltas:  95% (107/112)
+2025-10-04T01:34:53.8832493Z Resolving deltas:  96% (108/112)
+2025-10-04T01:34:53.8832851Z Resolving deltas:  97% (109/112)
+2025-10-04T01:34:53.8833215Z Resolving deltas:  99% (111/112)
+2025-10-04T01:34:53.8833600Z Resolving deltas: 100% (112/112)
+2025-10-04T01:34:53.8833850Z Resolving deltas: 100% (112/112), done.
+2025-10-04T01:34:53.9041618Z From https://github.com/apache/age
+2025-10-04T01:34:53.9042546Z  * [new ref]         ec457345e25601c947aff73bfcc7354d97e238a6 -> origin/master
+2025-10-04T01:34:53.9080688Z ##[endgroup]
+2025-10-04T01:34:53.9081334Z ##[group]Determining the checkout info
+2025-10-04T01:34:53.9082349Z ##[endgroup]
+2025-10-04T01:34:53.9082923Z ##[group]Checking out the ref
+2025-10-04T01:34:53.9087405Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2025-10-04T01:34:53.9746267Z Reset branch 'master'
+2025-10-04T01:34:53.9747873Z branch 'master' set up to track 'origin/master'.
+2025-10-04T01:34:53.9759072Z ##[endgroup]
+2025-10-04T01:34:53.9796996Z [command]/usr/bin/git log -1 --format='%H'
+2025-10-04T01:34:53.9819103Z 'ec457345e25601c947aff73bfcc7354d97e238a6'
+2025-10-04T01:34:53.9923571Z ##[group]Run make PG_CONFIG=$HOME/pg17/bin/pg_config install -j$(nproc)
+2025-10-04T01:34:53.9924054Z [36;1mmake PG_CONFIG=$HOME/pg17/bin/pg_config install -j$(nproc)[0m
+2025-10-04T01:34:53.9956293Z shell: /usr/bin/bash -e {0}
+2025-10-04T01:34:53.9956523Z env:
+2025-10-04T01:34:53.9956746Z   PG_COMMIT_HASH: 3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:34:53.9957032Z ##[endgroup]
+2025-10-04T01:34:54.0178663Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/age.o src/backend/age.c
+2025-10-04T01:34:54.0185751Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/catalog/ag_catalog.o src/backend/catalog/ag_catalog.c
+2025-10-04T01:34:54.0193593Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/catalog/ag_graph.o src/backend/catalog/ag_graph.c
+2025-10-04T01:34:54.0201638Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/catalog/ag_label.o src/backend/catalog/ag_label.c
+2025-10-04T01:34:54.1346990Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/catalog/ag_namespace.o src/backend/catalog/ag_namespace.c
+2025-10-04T01:34:54.1405181Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/commands/graph_commands.o src/backend/commands/graph_commands.c
+2025-10-04T01:34:54.1628063Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/commands/label_commands.o src/backend/commands/label_commands.c
+2025-10-04T01:34:54.1938122Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/executor/cypher_create.o src/backend/executor/cypher_create.c
+2025-10-04T01:34:54.1947922Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/executor/cypher_merge.o src/backend/executor/cypher_merge.c
+2025-10-04T01:34:54.2929459Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/executor/cypher_set.o src/backend/executor/cypher_set.c
+2025-10-04T01:34:54.3457091Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/executor/cypher_utils.o src/backend/executor/cypher_utils.c
+2025-10-04T01:34:54.3692246Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/nodes/ag_nodes.o src/backend/nodes/ag_nodes.c
+2025-10-04T01:34:54.3922799Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/nodes/cypher_copyfuncs.o src/backend/nodes/cypher_copyfuncs.c
+2025-10-04T01:34:54.4738505Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/nodes/cypher_outfuncs.o src/backend/nodes/cypher_outfuncs.c
+2025-10-04T01:34:54.4794298Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/nodes/cypher_readfuncs.o src/backend/nodes/cypher_readfuncs.c
+2025-10-04T01:34:54.4968323Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/optimizer/cypher_createplan.o src/backend/optimizer/cypher_createplan.c
+2025-10-04T01:34:54.5213624Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/optimizer/cypher_pathnode.o src/backend/optimizer/cypher_pathnode.c
+2025-10-04T01:34:54.6081217Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/optimizer/cypher_paths.o src/backend/optimizer/cypher_paths.c
+2025-10-04T01:34:54.6182132Z /usr/bin/flex -b  -o'src/backend/parser/ag_scanner.c' src/backend/parser/ag_scanner.l
+2025-10-04T01:34:54.6247111Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_analyze.o src/backend/parser/cypher_analyze.c
+2025-10-04T01:34:54.6454468Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_clause.o src/backend/parser/cypher_clause.c
+2025-10-04T01:34:54.6675983Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/executor/cypher_delete.o src/backend/executor/cypher_delete.c
+2025-10-04T01:34:54.6758003Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_expr.o src/backend/parser/cypher_expr.c
+2025-10-04T01:34:54.8086585Z /usr/bin/bison -Wno-deprecated  --defines=src/include/parser/cypher_gram_def.h -o src/backend/parser/cypher_gram.c src/backend/parser/cypher_gram.y
+2025-10-04T01:34:54.8353387Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_item.o src/backend/parser/cypher_item.c
+2025-10-04T01:34:54.9582562Z '/usr/bin/perl' -I ./tools/ ./tools/gen_keywordlist.pl --extern --varname CypherKeyword --output src/include/parser src/include/parser/cypher_kwlist.h
+2025-10-04T01:34:54.9713716Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_parse_agg.o src/backend/parser/cypher_parse_agg.c
+2025-10-04T01:34:54.9908828Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_parse_node.o src/backend/parser/cypher_parse_node.c
+2025-10-04T01:34:55.0944983Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_transform_entity.o src/backend/parser/cypher_transform_entity.c
+2025-10-04T01:34:55.1071222Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/age_graphid_ds.o src/backend/utils/adt/age_graphid_ds.c
+2025-10-04T01:34:55.1576364Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/agtype.o src/backend/utils/adt/agtype.c
+2025-10-04T01:34:55.1704518Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/agtype_ext.o src/backend/utils/adt/agtype_ext.c
+2025-10-04T01:34:55.1815575Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/agtype_gin.o src/backend/utils/adt/agtype_gin.c
+2025-10-04T01:34:55.2421095Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/agtype_ops.o src/backend/utils/adt/agtype_ops.c
+2025-10-04T01:34:55.2532402Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/agtype_parser.o src/backend/utils/adt/agtype_parser.c
+2025-10-04T01:34:55.3757987Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/agtype_util.o src/backend/utils/adt/agtype_util.c
+2025-10-04T01:34:55.4366954Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/agtype_raw.o src/backend/utils/adt/agtype_raw.c
+2025-10-04T01:34:55.4911684Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/age_global_graph.o src/backend/utils/adt/age_global_graph.c
+2025-10-04T01:34:55.5083621Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/age_session_info.o src/backend/utils/adt/age_session_info.c
+2025-10-04T01:34:55.6168057Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/age_vle.o src/backend/utils/adt/age_vle.c
+2025-10-04T01:34:55.6303708Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/cypher_funcs.o src/backend/utils/adt/cypher_funcs.c
+2025-10-04T01:34:55.6778151Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/ag_float8_supp.o src/backend/utils/adt/ag_float8_supp.c
+2025-10-04T01:34:55.6908069Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/adt/graphid.o src/backend/utils/adt/graphid.c
+2025-10-04T01:34:55.7505829Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/ag_func.o src/backend/utils/ag_func.c
+2025-10-04T01:34:55.7883735Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/graph_generation.o src/backend/utils/graph_generation.c
+2025-10-04T01:34:55.8336940Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/cache/ag_cache.o src/backend/utils/cache/ag_cache.c
+2025-10-04T01:34:55.8544961Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/load/ag_load_labels.o src/backend/utils/load/ag_load_labels.c
+2025-10-04T01:34:55.9183258Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/load/ag_load_edges.o src/backend/utils/load/ag_load_edges.c
+2025-10-04T01:34:56.0290970Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/load/age_load.o src/backend/utils/load/age_load.c
+2025-10-04T01:34:56.0376181Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/load/libcsv.o src/backend/utils/load/libcsv.c
+2025-10-04T01:34:56.0778332Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/name_validation.o src/backend/utils/name_validation.c
+2025-10-04T01:34:56.1076932Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/utils/ag_guc.o src/backend/utils/ag_guc.c
+2025-10-04T01:34:56.1398602Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/ag_scanner.o src/backend/parser/ag_scanner.c
+2025-10-04T01:34:56.1717034Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_gram.o src/backend/parser/cypher_gram.c
+2025-10-04T01:34:56.1924189Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_keywords.o src/backend/parser/cypher_keywords.c
+2025-10-04T01:34:56.2853390Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -I.//src/include -I.//src/include/parser -I. -I./ -I/home/runner/pg17/include/postgresql/server -I/home/runner/pg17/include/postgresql/internal -D_GNU_SOURCE    -c -o src/backend/parser/cypher_parser.o src/backend/parser/cypher_parser.c
+2025-10-04T01:34:56.3026210Z /usr/bin/mkdir -p '/home/runner/pg17/lib/postgresql'
+2025-10-04T01:34:56.3046042Z /usr/bin/mkdir -p '/home/runner/pg17/share/postgresql/extension'
+2025-10-04T01:34:56.3064433Z /usr/bin/mkdir -p '/home/runner/pg17/share/postgresql/extension'
+2025-10-04T01:34:56.4056942Z gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wendif-labels -Wmissing-format-attribute -Wimplicit-fallthrough=3 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -std=gnu99 -ggdb -O0 -fPIC -fvisibility=hidden -shared -o age.so src/backend/age.o src/backend/catalog/ag_catalog.o src/backend/catalog/ag_graph.o src/backend/catalog/ag_label.o src/backend/catalog/ag_namespace.o src/backend/commands/graph_commands.o src/backend/commands/label_commands.o src/backend/executor/cypher_create.o src/backend/executor/cypher_merge.o src/backend/executor/cypher_set.o src/backend/executor/cypher_utils.o src/backend/nodes/ag_nodes.o src/backend/nodes/cypher_copyfuncs.o src/backend/nodes/cypher_outfuncs.o src/backend/nodes/cypher_readfuncs.o src/backend/optimizer/cypher_createplan.o src/backend/optimizer/cypher_pathnode.o src/backend/optimizer/cypher_paths.o src/backend/parser/ag_scanner.o src/backend/parser/cypher_analyze.o src/backend/parser/cypher_clause.o src/backend/executor/cypher_delete.o src/backend/parser/cypher_expr.o src/backend/parser/cypher_gram.o src/backend/parser/cypher_item.o src/backend/parser/cypher_keywords.o src/backend/parser/cypher_parse_agg.o src/backend/parser/cypher_parse_node.o src/backend/parser/cypher_parser.o src/backend/parser/cypher_transform_entity.o src/backend/utils/adt/age_graphid_ds.o src/backend/utils/adt/agtype.o src/backend/utils/adt/agtype_ext.o src/backend/utils/adt/agtype_gin.o src/backend/utils/adt/agtype_ops.o src/backend/utils/adt/agtype_parser.o src/backend/utils/adt/agtype_util.o src/backend/utils/adt/agtype_raw.o src/backend/utils/adt/age_global_graph.o src/backend/utils/adt/age_session_info.o src/backend/utils/adt/age_vle.o src/backend/utils/adt/cypher_funcs.o src/backend/utils/adt/ag_float8_supp.o src/backend/utils/adt/graphid.o src/backend/utils/ag_func.o src/backend/utils/graph_generation.o src/backend/utils/cache/ag_cache.o src/backend/utils/load/ag_load_labels.o src/backend/utils/load/ag_load_edges.o src/backend/utils/load/age_load.o src/backend/utils/load/libcsv.o src/backend/utils/name_validation.o src/backend/utils/ag_guc.o -L/home/runner/pg17/lib    -Wl,--as-needed -Wl,-rpath,'/home/runner/pg17/lib',--enable-new-dtags -fvisibility=hidden 
+2025-10-04T01:34:56.4509005Z /usr/bin/install -c -m 755  age.so '/home/runner/pg17/lib/postgresql/age.so'
+2025-10-04T01:34:56.4538297Z /usr/bin/install -c -m 644 .//age.control '/home/runner/pg17/share/postgresql/extension/'
+2025-10-04T01:34:56.4550722Z /usr/bin/install -c -m 644  age--1.6.0.sql '/home/runner/pg17/share/postgresql/extension/'
+2025-10-04T01:34:56.4591415Z ##[group]Run git clone https://github.com/pgvector/pgvector.git
+2025-10-04T01:34:56.4591902Z [36;1mgit clone https://github.com/pgvector/pgvector.git[0m
+2025-10-04T01:34:56.4592396Z [36;1mcd pgvector[0m
+2025-10-04T01:34:56.4592701Z [36;1mmake PG_CONFIG=$HOME/pg17/bin/pg_config install -j$(nproc) > /dev/null[0m
+2025-10-04T01:34:56.4625354Z shell: /usr/bin/bash -e {0}
+2025-10-04T01:34:56.4625580Z env:
+2025-10-04T01:34:56.4625805Z   PG_COMMIT_HASH: 3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:34:56.4626095Z ##[endgroup]
+2025-10-04T01:34:56.4685861Z Cloning into 'pgvector'...
+2025-10-04T01:34:58.7760938Z ##[group]Run make PG_CONFIG=$HOME/pg17/bin/pg_config installcheck EXTRA_TESTS="pgvector fuzzystrmatch pg_trgm"
+2025-10-04T01:34:58.7762241Z [36;1mmake PG_CONFIG=$HOME/pg17/bin/pg_config installcheck EXTRA_TESTS="pgvector fuzzystrmatch pg_trgm"[0m
+2025-10-04T01:34:58.7808870Z shell: /usr/bin/bash -e {0}
+2025-10-04T01:34:58.7809263Z env:
+2025-10-04T01:34:58.7809666Z   PG_COMMIT_HASH: 3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:34:58.7810405Z ##[endgroup]
+2025-10-04T01:34:58.7994902Z echo "# +++ regress install-check in  +++" && /home/runner/pg17/lib/postgresql/pgxs/src/makefiles/../../src/test/regress/pg_regress --inputdir=./ --bindir='/home/runner/pg17/bin'    --load-extension=age --inputdir=.//regress --outputdir=.//regress --temp-instance=.//regress/instance --port=61958 --encoding=UTF-8 --temp-config .//regress/age_regression.conf --dbname=contrib_regression scan graphid agtype agtype_hash_cmp catalog cypher expr cypher_create cypher_match cypher_unwind cypher_set cypher_remove cypher_delete cypher_with cypher_vle cypher_union cypher_call cypher_merge cypher_subquery age_global_graph age_load index analyze graph_generation name_validation jsonb_operators list_comprehension map_projection pgvector fuzzystrmatch pg_trgm drop
+2025-10-04T01:34:58.7997841Z # +++ regress install-check in  +++
+2025-10-04T01:34:58.8009055Z # initializing database system by running initdb
+2025-10-04T01:35:00.5043483Z # using temp instance on port 61958 with PID 11803
+2025-10-04T01:35:00.9892610Z ok 1         - scan                                      307 ms
+2025-10-04T01:35:01.0042003Z ok 2         - graphid                                    13 ms
+2025-10-04T01:35:01.1892895Z ok 3         - agtype                                    183 ms
+2025-10-04T01:35:01.2014735Z ok 4         - agtype_hash_cmp                            10 ms
+2025-10-04T01:35:01.3459495Z ok 5         - catalog                                   142 ms
+2025-10-04T01:35:01.4129891Z ok 6         - cypher                                     65 ms
+2025-10-04T01:35:02.4579770Z ok 7         - expr                                     1042 ms
+2025-10-04T01:35:02.6494151Z ok 8         - cypher_create                             189 ms
+2025-10-04T01:35:03.5612289Z ok 9         - cypher_match                              909 ms
+2025-10-04T01:35:03.6304515Z ok 10        - cypher_unwind                              67 ms
+2025-10-04T01:35:03.8333561Z ok 11        - cypher_set                                201 ms
+2025-10-04T01:35:03.9501312Z ok 12        - cypher_remove                             115 ms
+2025-10-04T01:35:04.2456122Z ok 13        - cypher_delete                             293 ms
+2025-10-04T01:35:04.3565489Z ok 14        - cypher_with                               109 ms
+2025-10-04T01:35:06.2423256Z ok 15        - cypher_vle                               1884 ms
+2025-10-04T01:35:06.2803864Z ok 16        - cypher_union                               36 ms
+2025-10-04T01:35:06.3343052Z ok 17        - cypher_call                                52 ms
+2025-10-04T01:35:06.8173452Z ok 18        - cypher_merge                              481 ms
+2025-10-04T01:35:06.9313878Z ok 19        - cypher_subquery                           112 ms
+2025-10-04T01:35:07.1295689Z ok 20        - age_global_graph                          196 ms
+2025-10-04T01:35:09.9730738Z ok 21        - age_load                                 2841 ms
+2025-10-04T01:35:10.1092602Z ok 22        - index                                     134 ms
+2025-10-04T01:35:10.1432744Z ok 23        - analyze                                    32 ms
+2025-10-04T01:35:10.2474012Z ok 24        - graph_generation                          102 ms
+2025-10-04T01:35:10.4688183Z ok 25        - name_validation                           219 ms
+2025-10-04T01:35:10.6338799Z ok 26        - jsonb_operators                           163 ms
+2025-10-04T01:35:10.7352508Z ok 27        - list_comprehension                         99 ms
+2025-10-04T01:35:10.7867990Z ok 28        - map_projection                             50 ms
+2025-10-04T01:35:10.9431069Z ok 29        - pgvector                                  154 ms
+2025-10-04T01:35:10.9896507Z ok 30        - fuzzystrmatch                              44 ms
+2025-10-04T01:35:11.0498157Z ok 31        - pg_trgm                                    58 ms
+2025-10-04T01:35:11.5591238Z ok 32        - drop                                      507 ms
+2025-10-04T01:35:11.7134582Z 1..32
+2025-10-04T01:35:11.7134934Z # All 32 tests passed.
+2025-10-04T01:35:11.7228414Z Post job cleanup.
+2025-10-04T01:35:11.7934082Z [command]/usr/bin/git version
+2025-10-04T01:35:11.7967745Z git version 2.51.0
+2025-10-04T01:35:11.8011128Z Temporarily overriding HOME='/home/runner/work/_temp/5deff67d-5838-4d6b-b0a1-4b5e8c7e880a' before making global git config changes
+2025-10-04T01:35:11.8012395Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-04T01:35:11.8015798Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/age/age
+2025-10-04T01:35:11.8046094Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-04T01:35:11.8075288Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-04T01:35:11.8299366Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-04T01:35:11.8321884Z http.https://github.com/.extraheader
+2025-10-04T01:35:11.8332531Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-04T01:35:11.8360984Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-04T01:35:11.8675273Z Post job cleanup.
+2025-10-04T01:35:12.0082930Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/age/age --files-from manifest.txt --use-compress-program zstdmt
+2025-10-04T01:35:13.5827141Z Sent 22303955 of 22303955 (100.0%), 21.3 MBs/sec
+2025-10-04T01:35:13.8201201Z Cache saved with key: Linux-v1-pg17-3549ffb6afaf045d715be6ca42814f0a08ad2af9
+2025-10-04T01:35:13.8303490Z Cleaning up orphan processes

@@ -1,0 +1,65 @@
+Collecting tox~=4.4
+  Using cached tox-4.28.4-py3-none-any.whl (174 kB)
+Collecting cachetools>=6.1
+  Using cached cachetools-6.1.0-py3-none-any.whl (11 kB)
+Collecting pyproject-api>=1.9.1
+  Using cached pyproject_api-1.9.1-py3-none-any.whl (13 kB)
+Collecting colorama>=0.4.6
+  Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting tomli>=2.2.1
+  Using cached tomli-2.2.1-py3-none-any.whl (14 kB)
+Collecting filelock>=3.18
+  Using cached filelock-3.19.1-py3-none-any.whl (15 kB)
+Collecting packaging>=25
+  Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Collecting platformdirs>=4.3.8
+  Using cached platformdirs-4.3.8-py3-none-any.whl (18 kB)
+Collecting typing-extensions>=4.14.1
+  Using cached typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+Collecting pluggy>=1.6
+  Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+Collecting virtualenv>=20.31.2
+  Using cached virtualenv-20.34.0-py3-none-any.whl (6.0 MB)
+Collecting chardet>=5.2
+  Using cached chardet-5.2.0-py3-none-any.whl (199 kB)
+Collecting distlib<1,>=0.3.7
+  Using cached distlib-0.4.0-py2.py3-none-any.whl (469 kB)
+Installing collected packages: distlib, typing-extensions, tomli, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+Successfully installed cachetools-6.1.0 chardet-5.2.0 colorama-0.4.6 distlib-0.4.0 filelock-3.19.1 packaging-25.0 platformdirs-4.3.8 pluggy-1.6.0 pyproject-api-1.9.1 tomli-2.2.1 tox-4.28.4 typing-extensions-4.14.1 virtualenv-20.34.0
+Requirement already satisfied: tox in ./venv/lib/python3.10/site-packages (4.28.4)
+Requirement already satisfied: filelock>=3.18 in ./venv/lib/python3.10/site-packages (from tox) (3.19.1)
+Requirement already satisfied: colorama>=0.4.6 in ./venv/lib/python3.10/site-packages (from tox) (0.4.6)
+Requirement already satisfied: packaging>=25 in ./venv/lib/python3.10/site-packages (from tox) (25.0)
+Requirement already satisfied: platformdirs>=4.3.8 in ./venv/lib/python3.10/site-packages (from tox) (4.3.8)
+Requirement already satisfied: virtualenv>=20.31.2 in ./venv/lib/python3.10/site-packages (from tox) (20.34.0)
+Requirement already satisfied: pluggy>=1.6 in ./venv/lib/python3.10/site-packages (from tox) (1.6.0)
+Requirement already satisfied: chardet>=5.2 in ./venv/lib/python3.10/site-packages (from tox) (5.2.0)
+Requirement already satisfied: cachetools>=6.1 in ./venv/lib/python3.10/site-packages (from tox) (6.1.0)
+Requirement already satisfied: pyproject-api>=1.9.1 in ./venv/lib/python3.10/site-packages (from tox) (1.9.1)
+Requirement already satisfied: tomli>=2.2.1 in ./venv/lib/python3.10/site-packages (from tox) (2.2.1)
+Requirement already satisfied: typing-extensions>=4.14.1 in ./venv/lib/python3.10/site-packages (from tox) (4.14.1)
+Requirement already satisfied: distlib<1,>=0.3.7 in ./venv/lib/python3.10/site-packages (from virtualenv>=20.31.2->tox) (0.4.0)
+No tests directory found. Creating a placeholder test.
+py: install_deps> python -I -m pip install pytest-cov pytest-randomly 'pytest~=8.2' wcag-contrast-ratio
+.pkg: install_requires> python -I -m pip install 'hatchling>=1.27'
+.pkg: _optional_hooks> python /app/venv/lib/python3.10/site-packages/pyproject_api/_backend.py True hatchling.build
+.pkg: get_requires_for_build_editable> python /app/venv/lib/python3.10/site-packages/pyproject_api/_backend.py True hatchling.build
+.pkg: install_requires_for_build_editable> python -I -m pip install 'editables~=0.3'
+.pkg: build_editable> python /app/venv/lib/python3.10/site-packages/pyproject_api/_backend.py True hatchling.build
+py: install_package> python -I -m pip install --force-reinstall --no-deps /app/.tox/.tmp/package/1/pygments-2.19.2-py3-none-any.whl
+py: commands[0]> pytest -W error tests/
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.4.1, pluggy-1.6.0
+cachedir: .tox/py/.pytest_cache
+Using --randomly-seed=1197519677
+rootdir: /app
+configfile: pyproject.toml
+plugins: cov-6.2.1, randomly-3.16.0
+collected 1 item
+
+tests/test_placeholder.py .                                              [100%]
+
+============================== 1 passed in 0.01s ===============================
+.pkg: _exit> python /app/venv/lib/python3.10/site-packages/pyproject_api/_backend.py True hatchling.build
+  py: OK (9.57=setup[9.19]+cmd[0.38] seconds)
+  congratulations :) (9.77 seconds)

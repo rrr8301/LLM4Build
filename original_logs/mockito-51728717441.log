@@ -1,0 +1,2220 @@
+﻿2025-10-01T18:34:46.2069585Z Current runner version: '2.328.0'
+2025-10-01T18:34:46.2106483Z ##[group]Runner Image Provisioner
+2025-10-01T18:34:46.2107770Z Hosted Compute Agent
+2025-10-01T18:34:46.2109039Z Version: 20250912.392
+2025-10-01T18:34:46.2110058Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-01T18:34:46.2111626Z Build Date: 2025-09-12T15:23:14Z
+2025-10-01T18:34:46.2112695Z ##[endgroup]
+2025-10-01T18:34:46.2113765Z ##[group]Operating System
+2025-10-01T18:34:46.2114949Z Ubuntu
+2025-10-01T18:34:46.2115789Z 24.04.3
+2025-10-01T18:34:46.2116600Z LTS
+2025-10-01T18:34:46.2117504Z ##[endgroup]
+2025-10-01T18:34:46.2118453Z ##[group]Runner Image
+2025-10-01T18:34:46.2119470Z Image: ubuntu-24.04
+2025-10-01T18:34:46.2120419Z Version: 20250922.53.1
+2025-10-01T18:34:46.2122453Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250922.53/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-01T18:34:46.2126081Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250922.53
+2025-10-01T18:34:46.2127799Z ##[endgroup]
+2025-10-01T18:34:46.2129589Z ##[group]GITHUB_TOKEN Permissions
+2025-10-01T18:34:46.2132566Z Contents: read
+2025-10-01T18:34:46.2133660Z Metadata: read
+2025-10-01T18:34:46.2134422Z ##[endgroup]
+2025-10-01T18:34:46.2137676Z Secret source: Actions
+2025-10-01T18:34:46.2139361Z Prepare workflow directory
+2025-10-01T18:34:46.2617477Z Prepare all required actions
+2025-10-01T18:34:46.2676601Z Getting action download info
+2025-10-01T18:34:46.6001486Z Download action repository 'actions/checkout@v5' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-10-01T18:34:46.6942489Z Download action repository 'actions/setup-java@v5' (SHA:dded0888837ed1f317902acf8a20df0ad188d165)
+2025-10-01T18:34:47.0338589Z Download action repository 'gradle/actions@v5' (SHA:4d9f0ba0025fe599b4ebab900eb7f3a1d93ef4c2)
+2025-10-01T18:34:47.7577744Z Download action repository 'codecov/codecov-action@v5' (SHA:5a1091511ad55cbe89839c7260b706298ca349f7)
+2025-10-01T18:34:48.0738301Z Getting action download info
+2025-10-01T18:34:48.2108277Z Download action repository 'actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea' (SHA:60a0d83039c74a4aee543508d2ffcb1c3799cdea)
+2025-10-01T18:34:48.5389671Z Complete job name: java (17, mock-maker-default, member-accessor-default)
+2025-10-01T18:34:48.6136962Z ##[group]Run actions/checkout@v5
+2025-10-01T18:34:48.6138237Z with:
+2025-10-01T18:34:48.6138940Z   fetch-depth: 0
+2025-10-01T18:34:48.6139733Z   repository: mockito/mockito
+2025-10-01T18:34:48.6140910Z   token: ***
+2025-10-01T18:34:48.6141884Z   ssh-strict: true
+2025-10-01T18:34:48.6142638Z   ssh-user: git
+2025-10-01T18:34:48.6143404Z   persist-credentials: true
+2025-10-01T18:34:48.6144272Z   clean: true
+2025-10-01T18:34:48.6145043Z   sparse-checkout-cone-mode: true
+2025-10-01T18:34:48.6145981Z   fetch-tags: false
+2025-10-01T18:34:48.6146754Z   show-progress: true
+2025-10-01T18:34:48.6147522Z   lfs: false
+2025-10-01T18:34:48.6148228Z   submodules: false
+2025-10-01T18:34:48.6149023Z   set-safe-directory: true
+2025-10-01T18:34:48.6150287Z ##[endgroup]
+2025-10-01T18:34:48.7069660Z Syncing repository: mockito/mockito
+2025-10-01T18:34:48.7072740Z ##[group]Getting Git version info
+2025-10-01T18:34:48.7074112Z Working directory is '/home/runner/work/mockito/mockito'
+2025-10-01T18:34:48.7076163Z [command]/usr/bin/git version
+2025-10-01T18:34:48.7085152Z git version 2.51.0
+2025-10-01T18:34:48.7107277Z ##[endgroup]
+2025-10-01T18:34:48.7123674Z Temporarily overriding HOME='/home/runner/work/_temp/ede48ebf-9f71-4d74-8b6f-1c682fc234be' before making global git config changes
+2025-10-01T18:34:48.7126465Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-01T18:34:48.7129094Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mockito/mockito
+2025-10-01T18:34:48.7167033Z Deleting the contents of '/home/runner/work/mockito/mockito'
+2025-10-01T18:34:48.7171269Z ##[group]Initializing the repository
+2025-10-01T18:34:48.7175896Z [command]/usr/bin/git init /home/runner/work/mockito/mockito
+2025-10-01T18:34:48.7237917Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-01T18:34:48.7240355Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-01T18:34:48.7242726Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-01T18:34:48.7244766Z hint:
+2025-10-01T18:34:48.7245847Z hint: 	git config --global init.defaultBranch <name>
+2025-10-01T18:34:48.7246928Z hint:
+2025-10-01T18:34:48.7247952Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-01T18:34:48.7250228Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-01T18:34:48.7252810Z hint:
+2025-10-01T18:34:48.7253977Z hint: 	git branch -m <name>
+2025-10-01T18:34:48.7255317Z hint:
+2025-10-01T18:34:48.7257101Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-01T18:34:48.7259196Z Initialized empty Git repository in /home/runner/work/mockito/mockito/.git/
+2025-10-01T18:34:48.7262492Z [command]/usr/bin/git remote add origin https://github.com/mockito/mockito
+2025-10-01T18:34:48.7288371Z ##[endgroup]
+2025-10-01T18:34:48.7290662Z ##[group]Disabling automatic garbage collection
+2025-10-01T18:34:48.7293012Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-01T18:34:48.7323462Z ##[endgroup]
+2025-10-01T18:34:48.7325592Z ##[group]Setting up auth
+2025-10-01T18:34:48.7330984Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-01T18:34:48.7363518Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-01T18:34:48.7633485Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-01T18:34:48.7664728Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-01T18:34:48.7960676Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-01T18:34:48.7965938Z ##[endgroup]
+2025-10-01T18:34:48.7967536Z ##[group]Fetching the repository
+2025-10-01T18:34:48.7969694Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2025-10-01T18:34:51.0501838Z From https://github.com/mockito/mockito
+2025-10-01T18:34:51.0503329Z  * [new branch]          ChristianSchwarz-within-sf -> origin/ChristianSchwarz-within-sf
+2025-10-01T18:34:51.0504482Z  * [new branch]          TimvdLippe-patch-1     -> origin/TimvdLippe-patch-1
+2025-10-01T18:34:51.0505388Z  * [new branch]          adds-mock-maker-name-2 -> origin/adds-mock-maker-name-2
+2025-10-01T18:34:51.0506445Z  * [new branch]          avoid-subclass-constructor-call -> origin/avoid-subclass-constructor-call
+2025-10-01T18:34:51.0507626Z  * [new branch]          benchmark-mockito-integration -> origin/benchmark-mockito-integration
+2025-10-01T18:34:51.0508581Z  * [new branch]          codecov-conf           -> origin/codecov-conf
+2025-10-01T18:34:51.0509718Z  * [new branch]          dependabot/gradle/androidx.test.ext-junit-1.3.0 -> origin/dependabot/gradle/androidx.test.ext-junit-1.3.0
+2025-10-01T18:34:51.0511516Z  * [new branch]          dependabot/gradle/com.android.application-8.10.0 -> origin/dependabot/gradle/com.android.application-8.10.0
+2025-10-01T18:34:51.0513288Z  * [new branch]          dependabot/gradle/com.github.ben-manes.versions-0.53.0 -> origin/dependabot/gradle/com.github.ben-manes.versions-0.53.0
+2025-10-01T18:34:51.0514891Z  * [new branch]          dependabot/gradle/junit-jupiter-6.0.0 -> origin/dependabot/gradle/junit-jupiter-6.0.0
+2025-10-01T18:34:51.0516033Z  * [new branch]          dependabot/gradle/kotlinVersion-1.7.22 -> origin/dependabot/gradle/kotlinVersion-1.7.22
+2025-10-01T18:34:51.0517613Z  * [new branch]          dependabot/gradle/org.junit.platform-junit-platform-launcher-6.0.0 -> origin/dependabot/gradle/org.junit.platform-junit-platform-launcher-6.0.0
+2025-10-01T18:34:51.0519555Z  * [new branch]          factor-out-class-file-transformer -> origin/factor-out-class-file-transformer
+2025-10-01T18:34:51.0520513Z  * [new branch]          gh-pages               -> origin/gh-pages
+2025-10-01T18:34:51.0521428Z  * [new branch]          graal-support          -> origin/graal-support
+2025-10-01T18:34:51.0522140Z  * [new branch]          initialize-interfaces  -> origin/initialize-interfaces
+2025-10-01T18:34:51.0522795Z  * [new branch]          main                   -> origin/main
+2025-10-01T18:34:51.0523349Z  * [new branch]          mockito-agent          -> origin/mockito-agent
+2025-10-01T18:34:51.0523961Z  * [new branch]          mockito-lambda         -> origin/mockito-lambda
+2025-10-01T18:34:51.0524627Z  * [new branch]          old-3.x                -> origin/old-3.x
+2025-10-01T18:34:51.0525245Z  * [new branch]          release/1.x            -> origin/release/1.x
+2025-10-01T18:34:51.0525885Z  * [new branch]          release/2.x            -> origin/release/2.x
+2025-10-01T18:34:51.0526527Z  * [new branch]          release/3.x            -> origin/release/3.x
+2025-10-01T18:34:51.0527158Z  * [new branch]          release/4.11.0         -> origin/release/4.11.0
+2025-10-01T18:34:51.0528043Z  * [new branch]          sealed-types-error-prettify -> origin/sealed-types-error-prettify
+2025-10-01T18:34:51.0529898Z  * [new branch]          sf                     -> origin/sf
+2025-10-01T18:34:51.0530525Z  * [new branch]          sf--axiom-test         -> origin/sf--axiom-test
+2025-10-01T18:34:51.0531604Z  * [new branch]          spotless-format-jdk17-mitigation -> origin/spotless-format-jdk17-mitigation
+2025-10-01T18:34:51.0532642Z  * [new branch]          static-varargs-call    -> origin/static-varargs-call
+2025-10-01T18:34:51.0533372Z  * [new tag]             1.8.0-rc1              -> 1.8.0-rc1
+2025-10-01T18:34:51.0533911Z  * [new tag]             v1.0                   -> v1.0
+2025-10-01T18:34:51.0534413Z  * [new tag]             v1.1                   -> v1.1
+2025-10-01T18:34:51.0534916Z  * [new tag]             v1.10.0                -> v1.10.0
+2025-10-01T18:34:51.0535668Z  * [new tag]             v1.10.1-dev            -> v1.10.1-dev
+2025-10-01T18:34:51.0536226Z  * [new tag]             v1.10.10               -> v1.10.10
+2025-10-01T18:34:51.0536734Z  * [new tag]             v1.10.11               -> v1.10.11
+2025-10-01T18:34:51.0537235Z  * [new tag]             v1.10.12               -> v1.10.12
+2025-10-01T18:34:51.0537729Z  * [new tag]             v1.10.13               -> v1.10.13
+2025-10-01T18:34:51.0538222Z  * [new tag]             v1.10.14               -> v1.10.14
+2025-10-01T18:34:51.0538714Z  * [new tag]             v1.10.15               -> v1.10.15
+2025-10-01T18:34:51.0539216Z  * [new tag]             v1.10.16               -> v1.10.16
+2025-10-01T18:34:51.0539716Z  * [new tag]             v1.10.17               -> v1.10.17
+2025-10-01T18:34:51.0540213Z  * [new tag]             v1.10.18               -> v1.10.18
+2025-10-01T18:34:51.0540740Z  * [new tag]             v1.10.19               -> v1.10.19
+2025-10-01T18:34:51.0541506Z  * [new tag]             v1.10.2                -> v1.10.2
+2025-10-01T18:34:51.0542044Z  * [new tag]             v1.10.28-dev           -> v1.10.28-dev
+2025-10-01T18:34:51.0542587Z  * [new tag]             v1.10.29-dev           -> v1.10.29-dev
+2025-10-01T18:34:51.0543102Z  * [new tag]             v1.10.3                -> v1.10.3
+2025-10-01T18:34:51.0543626Z  * [new tag]             v1.10.30-dev           -> v1.10.30-dev
+2025-10-01T18:34:51.0544152Z  * [new tag]             v1.10.31-dev           -> v1.10.31-dev
+2025-10-01T18:34:51.0544675Z  * [new tag]             v1.10.32-dev           -> v1.10.32-dev
+2025-10-01T18:34:51.0545214Z  * [new tag]             v1.10.33-dev           -> v1.10.33-dev
+2025-10-01T18:34:51.0545761Z  * [new tag]             v1.10.35-dev           -> v1.10.35-dev
+2025-10-01T18:34:51.0546499Z  * [new tag]             v1.10.38-dev           -> v1.10.38-dev
+2025-10-01T18:34:51.0547058Z  * [new tag]             v1.10.4                -> v1.10.4
+2025-10-01T18:34:51.0547654Z  * [new tag]             v1.10.40-dev           -> v1.10.40-dev
+2025-10-01T18:34:51.0548208Z  * [new tag]             v1.10.41-dev           -> v1.10.41-dev
+2025-10-01T18:34:51.0548763Z  * [new tag]             v1.10.42-dev           -> v1.10.42-dev
+2025-10-01T18:34:51.0549302Z  * [new tag]             v1.10.43-dev           -> v1.10.43-dev
+2025-10-01T18:34:51.0549857Z  * [new tag]             v1.10.44-dev           -> v1.10.44-dev
+2025-10-01T18:34:51.0550404Z  * [new tag]             v1.10.45-dev           -> v1.10.45-dev
+2025-10-01T18:34:51.0550933Z  * [new tag]             v1.10.5                -> v1.10.5
+2025-10-01T18:34:51.0551646Z  * [new tag]             v1.10.6                -> v1.10.6
+2025-10-01T18:34:51.0552181Z  * [new tag]             v1.10.7                -> v1.10.7
+2025-10-01T18:34:51.0552739Z  * [new tag]             v1.10.8                -> v1.10.8
+2025-10-01T18:34:51.0553320Z  * [new tag]             v1.10.9                -> v1.10.9
+2025-10-01T18:34:51.0553848Z  * [new tag]             v1.2                   -> v1.2
+2025-10-01T18:34:51.0554415Z  * [new tag]             v1.3                   -> v1.3
+2025-10-01T18:34:51.0554971Z  * [new tag]             v1.4                   -> v1.4
+2025-10-01T18:34:51.0555484Z  * [new tag]             v1.5                   -> v1.5
+2025-10-01T18:34:51.0555986Z  * [new tag]             v1.6                   -> v1.6
+2025-10-01T18:34:51.0556501Z  * [new tag]             v1.7                   -> v1.7
+2025-10-01T18:34:51.0557058Z  * [new tag]             v1.7-rc1               -> v1.7-rc1
+2025-10-01T18:34:51.0557614Z  * [new tag]             v1.8.0                 -> v1.8.0
+2025-10-01T18:34:51.0558202Z  * [new tag]             v1.8.0-rc1             -> v1.8.0-rc1
+2025-10-01T18:34:51.0558821Z  * [new tag]             v1.8.0-rc2             -> v1.8.0-rc2
+2025-10-01T18:34:51.0559397Z  * [new tag]             v1.8.1                 -> v1.8.1
+2025-10-01T18:34:51.0560024Z  * [new tag]             v1.8.1-rc1             -> v1.8.1-rc1
+2025-10-01T18:34:51.0560749Z  * [new tag]             v1.8.2                 -> v1.8.2
+2025-10-01T18:34:51.0561489Z  * [new tag]             v1.8.3                 -> v1.8.3
+2025-10-01T18:34:51.0562024Z  * [new tag]             v1.8.4                 -> v1.8.4
+2025-10-01T18:34:51.0562544Z  * [new tag]             v1.8.5                 -> v1.8.5
+2025-10-01T18:34:51.0563074Z  * [new tag]             v1.9-rc1               -> v1.9-rc1
+2025-10-01T18:34:51.0563610Z  * [new tag]             v1.9.0                 -> v1.9.0
+2025-10-01T18:34:51.0564147Z  * [new tag]             v1.9.0-rc1             -> v1.9.0-rc1
+2025-10-01T18:34:51.0564684Z  * [new tag]             v1.9.5                 -> v1.9.5
+2025-10-01T18:34:51.0565218Z  * [new tag]             v1.9.5-rc1             -> v1.9.5-rc1
+2025-10-01T18:34:51.0565764Z  * [new tag]             v2.0.0-beta            -> v2.0.0-beta
+2025-10-01T18:34:51.0566347Z  * [new tag]             v2.0.0-beta.112        -> v2.0.0-beta.112
+2025-10-01T18:34:51.0566941Z  * [new tag]             v2.0.0-beta.113        -> v2.0.0-beta.113
+2025-10-01T18:34:51.0567524Z  * [new tag]             v2.0.0-beta.114        -> v2.0.0-beta.114
+2025-10-01T18:34:51.0568092Z  * [new tag]             v2.0.0-beta.115        -> v2.0.0-beta.115
+2025-10-01T18:34:51.0568655Z  * [new tag]             v2.0.0-beta.116        -> v2.0.0-beta.116
+2025-10-01T18:34:51.0569225Z  * [new tag]             v2.0.0-beta.117        -> v2.0.0-beta.117
+2025-10-01T18:34:51.0569790Z  * [new tag]             v2.0.0-beta.118        -> v2.0.0-beta.118
+2025-10-01T18:34:51.0570343Z  * [new tag]             v2.0.1-beta            -> v2.0.1-beta
+2025-10-01T18:34:51.0570904Z  * [new tag]             v2.0.10-beta           -> v2.0.10-beta
+2025-10-01T18:34:51.0571648Z  * [new tag]             v2.0.100-beta          -> v2.0.100-beta
+2025-10-01T18:34:51.0572214Z  * [new tag]             v2.0.101-beta          -> v2.0.101-beta
+2025-10-01T18:34:51.0572975Z  * [new tag]             v2.0.102-beta          -> v2.0.102-beta
+2025-10-01T18:34:51.0573544Z  * [new tag]             v2.0.103-beta          -> v2.0.103-beta
+2025-10-01T18:34:51.0574102Z  * [new tag]             v2.0.104-beta          -> v2.0.104-beta
+2025-10-01T18:34:51.0574666Z  * [new tag]             v2.0.105-beta          -> v2.0.105-beta
+2025-10-01T18:34:51.0575213Z  * [new tag]             v2.0.106-beta          -> v2.0.106-beta
+2025-10-01T18:34:51.0575779Z  * [new tag]             v2.0.107-beta          -> v2.0.107-beta
+2025-10-01T18:34:51.0576342Z  * [new tag]             v2.0.108-beta          -> v2.0.108-beta
+2025-10-01T18:34:51.0576895Z  * [new tag]             v2.0.109-beta          -> v2.0.109-beta
+2025-10-01T18:34:51.0577457Z  * [new tag]             v2.0.11-beta           -> v2.0.11-beta
+2025-10-01T18:34:51.0578013Z  * [new tag]             v2.0.110-beta          -> v2.0.110-beta
+2025-10-01T18:34:51.0578574Z  * [new tag]             v2.0.111-beta          -> v2.0.111-beta
+2025-10-01T18:34:51.0579142Z  * [new tag]             v2.0.12-beta           -> v2.0.12-beta
+2025-10-01T18:34:51.0579715Z  * [new tag]             v2.0.14-beta           -> v2.0.14-beta
+2025-10-01T18:34:51.0580268Z  * [new tag]             v2.0.15-beta           -> v2.0.15-beta
+2025-10-01T18:34:51.0580820Z  * [new tag]             v2.0.16-beta           -> v2.0.16-beta
+2025-10-01T18:34:51.0581548Z  * [new tag]             v2.0.17-beta           -> v2.0.17-beta
+2025-10-01T18:34:51.0582103Z  * [new tag]             v2.0.18-beta           -> v2.0.18-beta
+2025-10-01T18:34:51.0582654Z  * [new tag]             v2.0.19-beta           -> v2.0.19-beta
+2025-10-01T18:34:51.0583199Z  * [new tag]             v2.0.2-beta            -> v2.0.2-beta
+2025-10-01T18:34:51.0583759Z  * [new tag]             v2.0.20-beta           -> v2.0.20-beta
+2025-10-01T18:34:51.0584315Z  * [new tag]             v2.0.21-beta           -> v2.0.21-beta
+2025-10-01T18:34:51.0584862Z  * [new tag]             v2.0.22-beta           -> v2.0.22-beta
+2025-10-01T18:34:51.0585412Z  * [new tag]             v2.0.23-beta           -> v2.0.23-beta
+2025-10-01T18:34:51.0586127Z  * [new tag]             v2.0.24-beta           -> v2.0.24-beta
+2025-10-01T18:34:51.0586701Z  * [new tag]             v2.0.25-beta           -> v2.0.25-beta
+2025-10-01T18:34:51.0587249Z  * [new tag]             v2.0.26-beta           -> v2.0.26-beta
+2025-10-01T18:34:51.0587787Z  * [new tag]             v2.0.3-beta            -> v2.0.3-beta
+2025-10-01T18:34:51.0588332Z  * [new tag]             v2.0.32-beta           -> v2.0.32-beta
+2025-10-01T18:34:51.0588873Z  * [new tag]             v2.0.33-beta           -> v2.0.33-beta
+2025-10-01T18:34:51.0589402Z  * [new tag]             v2.0.34-beta           -> v2.0.34-beta
+2025-10-01T18:34:51.0589952Z  * [new tag]             v2.0.35-beta           -> v2.0.35-beta
+2025-10-01T18:34:51.0590492Z  * [new tag]             v2.0.36-beta           -> v2.0.36-beta
+2025-10-01T18:34:51.0591201Z  * [new tag]             v2.0.37-beta           -> v2.0.37-beta
+2025-10-01T18:34:51.0591750Z  * [new tag]             v2.0.38-beta           -> v2.0.38-beta
+2025-10-01T18:34:51.0592278Z  * [new tag]             v2.0.39-beta           -> v2.0.39-beta
+2025-10-01T18:34:51.0592827Z  * [new tag]             v2.0.4-beta            -> v2.0.4-beta
+2025-10-01T18:34:51.0593376Z  * [new tag]             v2.0.40-beta           -> v2.0.40-beta
+2025-10-01T18:34:51.0593913Z  * [new tag]             v2.0.41-beta           -> v2.0.41-beta
+2025-10-01T18:34:51.0594452Z  * [new tag]             v2.0.42-beta           -> v2.0.42-beta
+2025-10-01T18:34:51.0595001Z  * [new tag]             v2.0.43-beta           -> v2.0.43-beta
+2025-10-01T18:34:51.0595533Z  * [new tag]             v2.0.44-beta           -> v2.0.44-beta
+2025-10-01T18:34:51.0596077Z  * [new tag]             v2.0.45-beta           -> v2.0.45-beta
+2025-10-01T18:34:51.0596618Z  * [new tag]             v2.0.46-beta           -> v2.0.46-beta
+2025-10-01T18:34:51.0597375Z  * [new tag]             v2.0.47-beta           -> v2.0.47-beta
+2025-10-01T18:34:51.0597917Z  * [new tag]             v2.0.48-beta           -> v2.0.48-beta
+2025-10-01T18:34:51.0598453Z  * [new tag]             v2.0.49-beta           -> v2.0.49-beta
+2025-10-01T18:34:51.0599052Z  * [new tag]             v2.0.5-beta            -> v2.0.5-beta
+2025-10-01T18:34:51.0599603Z  * [new tag]             v2.0.50-beta           -> v2.0.50-beta
+2025-10-01T18:34:51.0600136Z  * [new tag]             v2.0.51-beta           -> v2.0.51-beta
+2025-10-01T18:34:51.0600679Z  * [new tag]             v2.0.52-beta           -> v2.0.52-beta
+2025-10-01T18:34:51.0601390Z  * [new tag]             v2.0.53-beta           -> v2.0.53-beta
+2025-10-01T18:34:51.0601939Z  * [new tag]             v2.0.54-beta           -> v2.0.54-beta
+2025-10-01T18:34:51.0602488Z  * [new tag]             v2.0.55-beta           -> v2.0.55-beta
+2025-10-01T18:34:51.0603029Z  * [new tag]             v2.0.56-beta           -> v2.0.56-beta
+2025-10-01T18:34:51.0603564Z  * [new tag]             v2.0.57-beta           -> v2.0.57-beta
+2025-10-01T18:34:51.0604119Z  * [new tag]             v2.0.58-beta           -> v2.0.58-beta
+2025-10-01T18:34:51.0604661Z  * [new tag]             v2.0.59-beta           -> v2.0.59-beta
+2025-10-01T18:34:51.0605210Z  * [new tag]             v2.0.6-beta            -> v2.0.6-beta
+2025-10-01T18:34:51.0605765Z  * [new tag]             v2.0.60-beta           -> v2.0.60-beta
+2025-10-01T18:34:51.0606302Z  * [new tag]             v2.0.61-beta           -> v2.0.61-beta
+2025-10-01T18:34:51.0606841Z  * [new tag]             v2.0.62-beta           -> v2.0.62-beta
+2025-10-01T18:34:51.0607386Z  * [new tag]             v2.0.63-beta           -> v2.0.63-beta
+2025-10-01T18:34:51.0607922Z  * [new tag]             v2.0.64-beta           -> v2.0.64-beta
+2025-10-01T18:34:51.0608468Z  * [new tag]             v2.0.65-beta           -> v2.0.65-beta
+2025-10-01T18:34:51.0609008Z  * [new tag]             v2.0.66-beta           -> v2.0.66-beta
+2025-10-01T18:34:51.0609543Z  * [new tag]             v2.0.67-beta           -> v2.0.67-beta
+2025-10-01T18:34:51.0610093Z  * [new tag]             v2.0.68-beta           -> v2.0.68-beta
+2025-10-01T18:34:51.0610629Z  * [new tag]             v2.0.69-beta           -> v2.0.69-beta
+2025-10-01T18:34:51.0611529Z  * [new tag]             v2.0.7-beta            -> v2.0.7-beta
+2025-10-01T18:34:51.0612123Z  * [new tag]             v2.0.70-beta           -> v2.0.70-beta
+2025-10-01T18:34:51.0612664Z  * [new tag]             v2.0.71-beta           -> v2.0.71-beta
+2025-10-01T18:34:51.0613210Z  * [new tag]             v2.0.72-beta           -> v2.0.72-beta
+2025-10-01T18:34:51.0613755Z  * [new tag]             v2.0.73-beta           -> v2.0.73-beta
+2025-10-01T18:34:51.0614288Z  * [new tag]             v2.0.74-beta           -> v2.0.74-beta
+2025-10-01T18:34:51.0614830Z  * [new tag]             v2.0.76-beta           -> v2.0.76-beta
+2025-10-01T18:34:51.0615371Z  * [new tag]             v2.0.77-beta           -> v2.0.77-beta
+2025-10-01T18:34:51.0615911Z  * [new tag]             v2.0.78-beta           -> v2.0.78-beta
+2025-10-01T18:34:51.0616459Z  * [new tag]             v2.0.79-beta           -> v2.0.79-beta
+2025-10-01T18:34:51.0616995Z  * [new tag]             v2.0.8-beta            -> v2.0.8-beta
+2025-10-01T18:34:51.0617550Z  * [new tag]             v2.0.80-beta           -> v2.0.80-beta
+2025-10-01T18:34:51.0618094Z  * [new tag]             v2.0.81-beta           -> v2.0.81-beta
+2025-10-01T18:34:51.0618633Z  * [new tag]             v2.0.82-beta           -> v2.0.82-beta
+2025-10-01T18:34:51.0619173Z  * [new tag]             v2.0.83-beta           -> v2.0.83-beta
+2025-10-01T18:34:51.0619717Z  * [new tag]             v2.0.84-beta           -> v2.0.84-beta
+2025-10-01T18:34:51.0620252Z  * [new tag]             v2.0.85-beta           -> v2.0.85-beta
+2025-10-01T18:34:51.0620792Z  * [new tag]             v2.0.86-beta           -> v2.0.86-beta
+2025-10-01T18:34:51.0621509Z  * [new tag]             v2.0.87-beta           -> v2.0.87-beta
+2025-10-01T18:34:51.0622059Z  * [new tag]             v2.0.88-beta           -> v2.0.88-beta
+2025-10-01T18:34:51.0622805Z  * [new tag]             v2.0.89-beta           -> v2.0.89-beta
+2025-10-01T18:34:51.0623343Z  * [new tag]             v2.0.9-beta            -> v2.0.9-beta
+2025-10-01T18:34:51.0623891Z  * [new tag]             v2.0.90-beta           -> v2.0.90-beta
+2025-10-01T18:34:51.0624436Z  * [new tag]             v2.0.91-beta           -> v2.0.91-beta
+2025-10-01T18:34:51.0624967Z  * [new tag]             v2.0.92-beta           -> v2.0.92-beta
+2025-10-01T18:34:51.0625524Z  * [new tag]             v2.0.93-beta           -> v2.0.93-beta
+2025-10-01T18:34:51.0626066Z  * [new tag]             v2.0.94-beta           -> v2.0.94-beta
+2025-10-01T18:34:51.0626610Z  * [new tag]             v2.0.95-beta           -> v2.0.95-beta
+2025-10-01T18:34:51.0627147Z  * [new tag]             v2.0.96-beta           -> v2.0.96-beta
+2025-10-01T18:34:51.0627691Z  * [new tag]             v2.0.97-beta           -> v2.0.97-beta
+2025-10-01T18:34:51.0628228Z  * [new tag]             v2.0.98-beta           -> v2.0.98-beta
+2025-10-01T18:34:51.0628772Z  * [new tag]             v2.0.99-beta           -> v2.0.99-beta
+2025-10-01T18:34:51.0629305Z  * [new tag]             v2.1.0                 -> v2.1.0
+2025-10-01T18:34:51.0629848Z  * [new tag]             v2.1.0-RC.1            -> v2.1.0-RC.1
+2025-10-01T18:34:51.0630384Z  * [new tag]             v2.1.0-RC.2            -> v2.1.0-RC.2
+2025-10-01T18:34:51.0630949Z  * [new tag]             v2.1.0-beta.119        -> v2.1.0-beta.119
+2025-10-01T18:34:51.0631699Z  * [new tag]             v2.1.0-beta.120        -> v2.1.0-beta.120
+2025-10-01T18:34:51.0632282Z  * [new tag]             v2.1.0-beta.121        -> v2.1.0-beta.121
+2025-10-01T18:34:51.0632850Z  * [new tag]             v2.1.0-beta.123        -> v2.1.0-beta.123
+2025-10-01T18:34:51.0633414Z  * [new tag]             v2.1.0-beta.124        -> v2.1.0-beta.124
+2025-10-01T18:34:51.0633988Z  * [new tag]             v2.1.0-beta.125        -> v2.1.0-beta.125
+2025-10-01T18:34:51.0634564Z  * [new tag]             v2.1.0-beta.126        -> v2.1.0-beta.126
+2025-10-01T18:34:51.0635117Z  * [new tag]             v2.10.0                -> v2.10.0
+2025-10-01T18:34:51.0635752Z  * [new tag]             v2.10.1                -> v2.10.1
+2025-10-01T18:34:51.0636441Z  * [new tag]             v2.10.2                -> v2.10.2
+2025-10-01T18:34:51.0636983Z  * [new tag]             v2.10.3                -> v2.10.3
+2025-10-01T18:34:51.0637495Z  * [new tag]             v2.10.4                -> v2.10.4
+2025-10-01T18:34:51.0638014Z  * [new tag]             v2.10.5                -> v2.10.5
+2025-10-01T18:34:51.0638520Z  * [new tag]             v2.11.0                -> v2.11.0
+2025-10-01T18:34:51.0639005Z  * [new tag]             v2.11.1                -> v2.11.1
+2025-10-01T18:34:51.0639527Z  * [new tag]             v2.11.2                -> v2.11.2
+2025-10-01T18:34:51.0640063Z  * [new tag]             v2.11.3                -> v2.11.3
+2025-10-01T18:34:51.0640573Z  * [new tag]             v2.11.4                -> v2.11.4
+2025-10-01T18:34:51.0641255Z  * [new tag]             v2.11.5                -> v2.11.5
+2025-10-01T18:34:51.0641773Z  * [new tag]             v2.11.6                -> v2.11.6
+2025-10-01T18:34:51.0642287Z  * [new tag]             v2.11.7                -> v2.11.7
+2025-10-01T18:34:51.0642800Z  * [new tag]             v2.12.0                -> v2.12.0
+2025-10-01T18:34:51.0643303Z  * [new tag]             v2.12.1                -> v2.12.1
+2025-10-01T18:34:51.0643818Z  * [new tag]             v2.12.2                -> v2.12.2
+2025-10-01T18:34:51.0644327Z  * [new tag]             v2.13.0                -> v2.13.0
+2025-10-01T18:34:51.0644829Z  * [new tag]             v2.13.1                -> v2.13.1
+2025-10-01T18:34:51.0645336Z  * [new tag]             v2.13.2                -> v2.13.2
+2025-10-01T18:34:51.0645851Z  * [new tag]             v2.13.3                -> v2.13.3
+2025-10-01T18:34:51.0646370Z  * [new tag]             v2.14.0                -> v2.14.0
+2025-10-01T18:34:51.0646917Z  * [new tag]             v2.15.0                -> v2.15.0
+2025-10-01T18:34:51.0647608Z  * [new tag]             v2.15.1                -> v2.15.1
+2025-10-01T18:34:51.0648127Z  * [new tag]             v2.15.2                -> v2.15.2
+2025-10-01T18:34:51.0648642Z  * [new tag]             v2.15.3                -> v2.15.3
+2025-10-01T18:34:51.0649147Z  * [new tag]             v2.15.4                -> v2.15.4
+2025-10-01T18:34:51.0649651Z  * [new tag]             v2.15.5                -> v2.15.5
+2025-10-01T18:34:51.0650158Z  * [new tag]             v2.15.6                -> v2.15.6
+2025-10-01T18:34:51.0650664Z  * [new tag]             v2.16.0                -> v2.16.0
+2025-10-01T18:34:51.0651345Z  * [new tag]             v2.16.1                -> v2.16.1
+2025-10-01T18:34:51.0651856Z  * [new tag]             v2.16.2                -> v2.16.2
+2025-10-01T18:34:51.0652377Z  * [new tag]             v2.16.3                -> v2.16.3
+2025-10-01T18:34:51.0652885Z  * [new tag]             v2.17.0                -> v2.17.0
+2025-10-01T18:34:51.0653417Z  * [new tag]             v2.17.1                -> v2.17.1
+2025-10-01T18:34:51.0653993Z  * [new tag]             v2.17.2                -> v2.17.2
+2025-10-01T18:34:51.0654498Z  * [new tag]             v2.17.3                -> v2.17.3
+2025-10-01T18:34:51.0655006Z  * [new tag]             v2.17.4                -> v2.17.4
+2025-10-01T18:34:51.0655525Z  * [new tag]             v2.17.5                -> v2.17.5
+2025-10-01T18:34:51.0656060Z  * [new tag]             v2.17.6                -> v2.17.6
+2025-10-01T18:34:51.0656561Z  * [new tag]             v2.17.7                -> v2.17.7
+2025-10-01T18:34:51.0657077Z  * [new tag]             v2.17.8                -> v2.17.8
+2025-10-01T18:34:51.0657593Z  * [new tag]             v2.18.0                -> v2.18.0
+2025-10-01T18:34:51.0658105Z  * [new tag]             v2.18.1                -> v2.18.1
+2025-10-01T18:34:51.0658666Z  * [new tag]             v2.18.2                -> v2.18.2
+2025-10-01T18:34:51.0659176Z  * [new tag]             v2.18.3                -> v2.18.3
+2025-10-01T18:34:51.0659705Z  * [new tag]             v2.18.4                -> v2.18.4
+2025-10-01T18:34:51.0660218Z  * [new tag]             v2.18.5                -> v2.18.5
+2025-10-01T18:34:51.0660888Z  * [new tag]             v2.18.6                -> v2.18.6
+2025-10-01T18:34:51.0661600Z  * [new tag]             v2.18.7                -> v2.18.7
+2025-10-01T18:34:51.0662111Z  * [new tag]             v2.18.8                -> v2.18.8
+2025-10-01T18:34:51.0662623Z  * [new tag]             v2.18.9                -> v2.18.9
+2025-10-01T18:34:51.0663132Z  * [new tag]             v2.19.0                -> v2.19.0
+2025-10-01T18:34:51.0663634Z  * [new tag]             v2.19.1                -> v2.19.1
+2025-10-01T18:34:51.0664143Z  * [new tag]             v2.19.2                -> v2.19.2
+2025-10-01T18:34:51.0664649Z  * [new tag]             v2.19.3                -> v2.19.3
+2025-10-01T18:34:51.0665161Z  * [new tag]             v2.19.4                -> v2.19.4
+2025-10-01T18:34:51.0665668Z  * [new tag]             v2.19.5                -> v2.19.5
+2025-10-01T18:34:51.0666181Z  * [new tag]             v2.19.6                -> v2.19.6
+2025-10-01T18:34:51.0666694Z  * [new tag]             v2.2.0                 -> v2.2.0
+2025-10-01T18:34:51.0667219Z  * [new tag]             v2.2.1                 -> v2.2.1
+2025-10-01T18:34:51.0667724Z  * [new tag]             v2.2.10                -> v2.2.10
+2025-10-01T18:34:51.0668234Z  * [new tag]             v2.2.11                -> v2.2.11
+2025-10-01T18:34:51.0668742Z  * [new tag]             v2.2.12                -> v2.2.12
+2025-10-01T18:34:51.0669248Z  * [new tag]             v2.2.13                -> v2.2.13
+2025-10-01T18:34:51.0669750Z  * [new tag]             v2.2.14                -> v2.2.14
+2025-10-01T18:34:51.0670249Z  * [new tag]             v2.2.15                -> v2.2.15
+2025-10-01T18:34:51.0670748Z  * [new tag]             v2.2.16                -> v2.2.16
+2025-10-01T18:34:51.0671426Z  * [new tag]             v2.2.17                -> v2.2.17
+2025-10-01T18:34:51.0672141Z  * [new tag]             v2.2.18                -> v2.2.18
+2025-10-01T18:34:51.0672643Z  * [new tag]             v2.2.19                -> v2.2.19
+2025-10-01T18:34:51.0673160Z  * [new tag]             v2.2.2                 -> v2.2.2
+2025-10-01T18:34:51.0673667Z  * [new tag]             v2.2.20                -> v2.2.20
+2025-10-01T18:34:51.0674185Z  * [new tag]             v2.2.21                -> v2.2.21
+2025-10-01T18:34:51.0674685Z  * [new tag]             v2.2.22                -> v2.2.22
+2025-10-01T18:34:51.0675186Z  * [new tag]             v2.2.23                -> v2.2.23
+2025-10-01T18:34:51.0675690Z  * [new tag]             v2.2.24                -> v2.2.24
+2025-10-01T18:34:51.0676199Z  * [new tag]             v2.2.25                -> v2.2.25
+2025-10-01T18:34:51.0676697Z  * [new tag]             v2.2.26                -> v2.2.26
+2025-10-01T18:34:51.0677159Z  * [new tag]             v2.2.27                -> v2.2.27
+2025-10-01T18:34:51.0677636Z  * [new tag]             v2.2.28                -> v2.2.28
+2025-10-01T18:34:51.0678133Z  * [new tag]             v2.2.29                -> v2.2.29
+2025-10-01T18:34:51.0678603Z  * [new tag]             v2.2.3                 -> v2.2.3
+2025-10-01T18:34:51.0679081Z  * [new tag]             v2.2.4                 -> v2.2.4
+2025-10-01T18:34:51.0679571Z  * [new tag]             v2.2.5                 -> v2.2.5
+2025-10-01T18:34:51.0680060Z  * [new tag]             v2.2.6                 -> v2.2.6
+2025-10-01T18:34:51.0680533Z  * [new tag]             v2.2.7                 -> v2.2.7
+2025-10-01T18:34:51.0681167Z  * [new tag]             v2.2.8                 -> v2.2.8
+2025-10-01T18:34:51.0681666Z  * [new tag]             v2.2.9                 -> v2.2.9
+2025-10-01T18:34:51.0682142Z  * [new tag]             v2.20.0                -> v2.20.0
+2025-10-01T18:34:51.0682652Z  * [new tag]             v2.20.1                -> v2.20.1
+2025-10-01T18:34:51.0683158Z  * [new tag]             v2.20.2                -> v2.20.2
+2025-10-01T18:34:51.0683679Z  * [new tag]             v2.20.3                -> v2.20.3
+2025-10-01T18:34:51.0684205Z  * [new tag]             v2.20.4                -> v2.20.4
+2025-10-01T18:34:51.0684720Z  * [new tag]             v2.20.5                -> v2.20.5
+2025-10-01T18:34:51.0685400Z  * [new tag]             v2.20.6                -> v2.20.6
+2025-10-01T18:34:51.0685941Z  * [new tag]             v2.20.7                -> v2.20.7
+2025-10-01T18:34:51.0686456Z  * [new tag]             v2.21.0                -> v2.21.0
+2025-10-01T18:34:51.0686970Z  * [new tag]             v2.21.1                -> v2.21.1
+2025-10-01T18:34:51.0687484Z  * [new tag]             v2.21.2                -> v2.21.2
+2025-10-01T18:34:51.0687991Z  * [new tag]             v2.21.3                -> v2.21.3
+2025-10-01T18:34:51.0688505Z  * [new tag]             v2.21.4                -> v2.21.4
+2025-10-01T18:34:51.0689009Z  * [new tag]             v2.21.5                -> v2.21.5
+2025-10-01T18:34:51.0689524Z  * [new tag]             v2.22.0                -> v2.22.0
+2025-10-01T18:34:51.0690051Z  * [new tag]             v2.22.1                -> v2.22.1
+2025-10-01T18:34:51.0690558Z  * [new tag]             v2.22.2                -> v2.22.2
+2025-10-01T18:34:51.0691266Z  * [new tag]             v2.23.0                -> v2.23.0
+2025-10-01T18:34:51.0691795Z  * [new tag]             v2.23.1                -> v2.23.1
+2025-10-01T18:34:51.0692307Z  * [new tag]             v2.23.10               -> v2.23.10
+2025-10-01T18:34:51.0692831Z  * [new tag]             v2.23.11               -> v2.23.11
+2025-10-01T18:34:51.0693341Z  * [new tag]             v2.23.12               -> v2.23.12
+2025-10-01T18:34:51.0693857Z  * [new tag]             v2.23.13               -> v2.23.13
+2025-10-01T18:34:51.0694376Z  * [new tag]             v2.23.14               -> v2.23.14
+2025-10-01T18:34:51.0694881Z  * [new tag]             v2.23.15               -> v2.23.15
+2025-10-01T18:34:51.0695394Z  * [new tag]             v2.23.16               -> v2.23.16
+2025-10-01T18:34:51.0695907Z  * [new tag]             v2.23.17               -> v2.23.17
+2025-10-01T18:34:51.0696576Z  * [new tag]             v2.23.18               -> v2.23.18
+2025-10-01T18:34:51.0697070Z  * [new tag]             v2.23.19               -> v2.23.19
+2025-10-01T18:34:51.0697569Z  * [new tag]             v2.23.2                -> v2.23.2
+2025-10-01T18:34:51.0698065Z  * [new tag]             v2.23.20               -> v2.23.20
+2025-10-01T18:34:51.0698559Z  * [new tag]             v2.23.3                -> v2.23.3
+2025-10-01T18:34:51.0699049Z  * [new tag]             v2.23.4                -> v2.23.4
+2025-10-01T18:34:51.0699562Z  * [new tag]             v2.23.5                -> v2.23.5
+2025-10-01T18:34:51.0700065Z  * [new tag]             v2.23.6                -> v2.23.6
+2025-10-01T18:34:51.0700556Z  * [new tag]             v2.23.7                -> v2.23.7
+2025-10-01T18:34:51.0701255Z  * [new tag]             v2.23.8                -> v2.23.8
+2025-10-01T18:34:51.0701773Z  * [new tag]             v2.23.9                -> v2.23.9
+2025-10-01T18:34:51.0702281Z  * [new tag]             v2.24.0                -> v2.24.0
+2025-10-01T18:34:51.0702783Z  * [new tag]             v2.24.1                -> v2.24.1
+2025-10-01T18:34:51.0703277Z  * [new tag]             v2.24.10               -> v2.24.10
+2025-10-01T18:34:51.0703783Z  * [new tag]             v2.24.2                -> v2.24.2
+2025-10-01T18:34:51.0704280Z  * [new tag]             v2.24.3                -> v2.24.3
+2025-10-01T18:34:51.0704767Z  * [new tag]             v2.24.4                -> v2.24.4
+2025-10-01T18:34:51.0705270Z  * [new tag]             v2.24.5                -> v2.24.5
+2025-10-01T18:34:51.0705767Z  * [new tag]             v2.24.6                -> v2.24.6
+2025-10-01T18:34:51.0706322Z  * [new tag]             v2.24.7                -> v2.24.7
+2025-10-01T18:34:51.0706837Z  * [new tag]             v2.24.8                -> v2.24.8
+2025-10-01T18:34:51.0707318Z  * [new tag]             v2.24.9                -> v2.24.9
+2025-10-01T18:34:51.0707812Z  * [new tag]             v2.25.0                -> v2.25.0
+2025-10-01T18:34:51.0708309Z  * [new tag]             v2.25.1                -> v2.25.1
+2025-10-01T18:34:51.0708802Z  * [new tag]             v2.25.2                -> v2.25.2
+2025-10-01T18:34:51.0709500Z  * [new tag]             v2.25.3                -> v2.25.3
+2025-10-01T18:34:51.0710027Z  * [new tag]             v2.25.4                -> v2.25.4
+2025-10-01T18:34:51.0710526Z  * [new tag]             v2.25.5                -> v2.25.5
+2025-10-01T18:34:51.0711231Z  * [new tag]             v2.25.6                -> v2.25.6
+2025-10-01T18:34:51.0711751Z  * [new tag]             v2.25.7                -> v2.25.7
+2025-10-01T18:34:51.0712242Z  * [new tag]             v2.26.0                -> v2.26.0
+2025-10-01T18:34:51.0712738Z  * [new tag]             v2.26.1                -> v2.26.1
+2025-10-01T18:34:51.0713219Z  * [new tag]             v2.26.2                -> v2.26.2
+2025-10-01T18:34:51.0713713Z  * [new tag]             v2.27.0                -> v2.27.0
+2025-10-01T18:34:51.0714192Z  * [new tag]             v2.27.1                -> v2.27.1
+2025-10-01T18:34:51.0714690Z  * [new tag]             v2.27.2                -> v2.27.2
+2025-10-01T18:34:51.0715181Z  * [new tag]             v2.27.3                -> v2.27.3
+2025-10-01T18:34:51.0715660Z  * [new tag]             v2.27.4                -> v2.27.4
+2025-10-01T18:34:51.0716148Z  * [new tag]             v2.27.5                -> v2.27.5
+2025-10-01T18:34:51.0716638Z  * [new tag]             v2.28.0                -> v2.28.0
+2025-10-01T18:34:51.0717188Z  * [new tag]             v2.28.1                -> v2.28.1
+2025-10-01T18:34:51.0717685Z  * [new tag]             v2.28.2                -> v2.28.2
+2025-10-01T18:34:51.0718168Z  * [new tag]             v2.3.0                 -> v2.3.0
+2025-10-01T18:34:51.0718661Z  * [new tag]             v2.3.1                 -> v2.3.1
+2025-10-01T18:34:51.0719150Z  * [new tag]             v2.3.10                -> v2.3.10
+2025-10-01T18:34:51.0719633Z  * [new tag]             v2.3.11                -> v2.3.11
+2025-10-01T18:34:51.0720291Z  * [new tag]             v2.3.2                 -> v2.3.2
+2025-10-01T18:34:51.0720778Z  * [new tag]             v2.3.3                 -> v2.3.3
+2025-10-01T18:34:51.0721421Z  * [new tag]             v2.3.4                 -> v2.3.4
+2025-10-01T18:34:51.0721917Z  * [new tag]             v2.3.5                 -> v2.3.5
+2025-10-01T18:34:51.0722402Z  * [new tag]             v2.3.6                 -> v2.3.6
+2025-10-01T18:34:51.0722877Z  * [new tag]             v2.3.9                 -> v2.3.9
+2025-10-01T18:34:51.0723362Z  * [new tag]             v2.4.0                 -> v2.4.0
+2025-10-01T18:34:51.0723835Z  * [new tag]             v2.4.1                 -> v2.4.1
+2025-10-01T18:34:51.0724315Z  * [new tag]             v2.4.2                 -> v2.4.2
+2025-10-01T18:34:51.0724809Z  * [new tag]             v2.4.3                 -> v2.4.3
+2025-10-01T18:34:51.0725286Z  * [new tag]             v2.4.4                 -> v2.4.4
+2025-10-01T18:34:51.0725771Z  * [new tag]             v2.4.5                 -> v2.4.5
+2025-10-01T18:34:51.0726260Z  * [new tag]             v2.5.0                 -> v2.5.0
+2025-10-01T18:34:51.0726733Z  * [new tag]             v2.5.1                 -> v2.5.1
+2025-10-01T18:34:51.0727221Z  * [new tag]             v2.5.2                 -> v2.5.2
+2025-10-01T18:34:51.0727694Z  * [new tag]             v2.5.3                 -> v2.5.3
+2025-10-01T18:34:51.0728183Z  * [new tag]             v2.5.4                 -> v2.5.4
+2025-10-01T18:34:51.0728664Z  * [new tag]             v2.5.5                 -> v2.5.5
+2025-10-01T18:34:51.0729143Z  * [new tag]             v2.5.6                 -> v2.5.6
+2025-10-01T18:34:51.0729623Z  * [new tag]             v2.5.7                 -> v2.5.7
+2025-10-01T18:34:51.0730103Z  * [new tag]             v2.6.0                 -> v2.6.0
+2025-10-01T18:34:51.0730577Z  * [new tag]             v2.6.1                 -> v2.6.1
+2025-10-01T18:34:51.0731246Z  * [new tag]             v2.6.2                 -> v2.6.2
+2025-10-01T18:34:51.0731748Z  * [new tag]             v2.6.3                 -> v2.6.3
+2025-10-01T18:34:51.0732240Z  * [new tag]             v2.6.4                 -> v2.6.4
+2025-10-01T18:34:51.0732724Z  * [new tag]             v2.6.5                 -> v2.6.5
+2025-10-01T18:34:51.0733345Z  * [new tag]             v2.6.6                 -> v2.6.6
+2025-10-01T18:34:51.0733848Z  * [new tag]             v2.6.7                 -> v2.6.7
+2025-10-01T18:34:51.0734332Z  * [new tag]             v2.6.8                 -> v2.6.8
+2025-10-01T18:34:51.0734804Z  * [new tag]             v2.6.9                 -> v2.6.9
+2025-10-01T18:34:51.0735285Z  * [new tag]             v2.7.1                 -> v2.7.1
+2025-10-01T18:34:51.0735768Z  * [new tag]             v2.7.10                -> v2.7.10
+2025-10-01T18:34:51.0736248Z  * [new tag]             v2.7.11                -> v2.7.11
+2025-10-01T18:34:51.0736732Z  * [new tag]             v2.7.12                -> v2.7.12
+2025-10-01T18:34:51.0737205Z  * [new tag]             v2.7.13                -> v2.7.13
+2025-10-01T18:34:51.0737689Z  * [new tag]             v2.7.14                -> v2.7.14
+2025-10-01T18:34:51.0738181Z  * [new tag]             v2.7.15                -> v2.7.15
+2025-10-01T18:34:51.0738654Z  * [new tag]             v2.7.16                -> v2.7.16
+2025-10-01T18:34:51.0739143Z  * [new tag]             v2.7.17                -> v2.7.17
+2025-10-01T18:34:51.0739627Z  * [new tag]             v2.7.18                -> v2.7.18
+2025-10-01T18:34:51.0740105Z  * [new tag]             v2.7.19                -> v2.7.19
+2025-10-01T18:34:51.0740588Z  * [new tag]             v2.7.2                 -> v2.7.2
+2025-10-01T18:34:51.0741262Z  * [new tag]             v2.7.20                -> v2.7.20
+2025-10-01T18:34:51.0741753Z  * [new tag]             v2.7.21                -> v2.7.21
+2025-10-01T18:34:51.0742238Z  * [new tag]             v2.7.22                -> v2.7.22
+2025-10-01T18:34:51.0742713Z  * [new tag]             v2.7.3                 -> v2.7.3
+2025-10-01T18:34:51.0743191Z  * [new tag]             v2.7.4                 -> v2.7.4
+2025-10-01T18:34:51.0743838Z  * [new tag]             v2.7.5                 -> v2.7.5
+2025-10-01T18:34:51.0744313Z  * [new tag]             v2.7.6                 -> v2.7.6
+2025-10-01T18:34:51.0744799Z  * [new tag]             v2.7.7                 -> v2.7.7
+2025-10-01T18:34:51.0745281Z  * [new tag]             v2.7.8                 -> v2.7.8
+2025-10-01T18:34:51.0745886Z  * [new tag]             v2.7.9                 -> v2.7.9
+2025-10-01T18:34:51.0746358Z  * [new tag]             v2.8.0                 -> v2.8.0
+2025-10-01T18:34:51.0746831Z  * [new tag]             v2.8.1                 -> v2.8.1
+2025-10-01T18:34:51.0747309Z  * [new tag]             v2.8.2                 -> v2.8.2
+2025-10-01T18:34:51.0747789Z  * [new tag]             v2.8.23                -> v2.8.23
+2025-10-01T18:34:51.0748271Z  * [new tag]             v2.8.24                -> v2.8.24
+2025-10-01T18:34:51.0748764Z  * [new tag]             v2.8.25                -> v2.8.25
+2025-10-01T18:34:51.0749235Z  * [new tag]             v2.8.26                -> v2.8.26
+2025-10-01T18:34:51.0749736Z  * [new tag]             v2.8.27                -> v2.8.27
+2025-10-01T18:34:51.0750290Z  * [new tag]             v2.8.28                -> v2.8.28
+2025-10-01T18:34:51.0750779Z  * [new tag]             v2.8.29                -> v2.8.29
+2025-10-01T18:34:51.0751484Z  * [new tag]             v2.8.3                 -> v2.8.3
+2025-10-01T18:34:51.0751990Z  * [new tag]             v2.8.30                -> v2.8.30
+2025-10-01T18:34:51.0752484Z  * [new tag]             v2.8.31                -> v2.8.31
+2025-10-01T18:34:51.0752969Z  * [new tag]             v2.8.32                -> v2.8.32
+2025-10-01T18:34:51.0753446Z  * [new tag]             v2.8.33                -> v2.8.33
+2025-10-01T18:34:51.0753925Z  * [new tag]             v2.8.34                -> v2.8.34
+2025-10-01T18:34:51.0754404Z  * [new tag]             v2.8.35                -> v2.8.35
+2025-10-01T18:34:51.0754868Z  * [new tag]             v2.8.36                -> v2.8.36
+2025-10-01T18:34:51.0755352Z  * [new tag]             v2.8.37                -> v2.8.37
+2025-10-01T18:34:51.0755834Z  * [new tag]             v2.8.38                -> v2.8.38
+2025-10-01T18:34:51.0756321Z  * [new tag]             v2.8.39                -> v2.8.39
+2025-10-01T18:34:51.0756978Z  * [new tag]             v2.8.4                 -> v2.8.4
+2025-10-01T18:34:51.0757496Z  * [new tag]             v2.8.40                -> v2.8.40
+2025-10-01T18:34:51.0757985Z  * [new tag]             v2.8.41                -> v2.8.41
+2025-10-01T18:34:51.0758463Z  * [new tag]             v2.8.42                -> v2.8.42
+2025-10-01T18:34:51.0759031Z  * [new tag]             v2.8.43                -> v2.8.43
+2025-10-01T18:34:51.0759509Z  * [new tag]             v2.8.44                -> v2.8.44
+2025-10-01T18:34:51.0760007Z  * [new tag]             v2.8.45                -> v2.8.45
+2025-10-01T18:34:51.0760489Z  * [new tag]             v2.8.46                -> v2.8.46
+2025-10-01T18:34:51.0760972Z  * [new tag]             v2.8.47                -> v2.8.47
+2025-10-01T18:34:51.0761626Z  * [new tag]             v2.8.48                -> v2.8.48
+2025-10-01T18:34:51.0762114Z  * [new tag]             v2.8.49                -> v2.8.49
+2025-10-01T18:34:51.0762615Z  * [new tag]             v2.8.5                 -> v2.8.5
+2025-10-01T18:34:51.0763093Z  * [new tag]             v2.8.50                -> v2.8.50
+2025-10-01T18:34:51.0763570Z  * [new tag]             v2.8.51                -> v2.8.51
+2025-10-01T18:34:51.0764049Z  * [new tag]             v2.8.52                -> v2.8.52
+2025-10-01T18:34:51.0764522Z  * [new tag]             v2.8.53                -> v2.8.53
+2025-10-01T18:34:51.0765061Z  * [new tag]             v2.8.54                -> v2.8.54
+2025-10-01T18:34:51.0765538Z  * [new tag]             v2.8.55                -> v2.8.55
+2025-10-01T18:34:51.0766029Z  * [new tag]             v2.8.6                 -> v2.8.6
+2025-10-01T18:34:51.0766505Z  * [new tag]             v2.8.7                 -> v2.8.7
+2025-10-01T18:34:51.0766972Z  * [new tag]             v2.8.8                 -> v2.8.8
+2025-10-01T18:34:51.0767615Z  * [new tag]             v2.8.9                 -> v2.8.9
+2025-10-01T18:34:51.0768100Z  * [new tag]             v2.9.0                 -> v2.9.0
+2025-10-01T18:34:51.0768579Z  * [new tag]             v2.9.1                 -> v2.9.1
+2025-10-01T18:34:51.0769061Z  * [new tag]             v2.9.2                 -> v2.9.2
+2025-10-01T18:34:51.0769532Z  * [new tag]             v3.0.0                 -> v3.0.0
+2025-10-01T18:34:51.0770039Z  * [new tag]             v3.0.0-beta.1          -> v3.0.0-beta.1
+2025-10-01T18:34:51.0770579Z  * [new tag]             v3.0.0-beta.2          -> v3.0.0-beta.2
+2025-10-01T18:34:51.0771278Z  * [new tag]             v3.0.1                 -> v3.0.1
+2025-10-01T18:34:51.0771787Z  * [new tag]             v3.0.10                -> v3.0.10
+2025-10-01T18:34:51.0772284Z  * [new tag]             v3.0.11                -> v3.0.11
+2025-10-01T18:34:51.0772761Z  * [new tag]             v3.0.12                -> v3.0.12
+2025-10-01T18:34:51.0773235Z  * [new tag]             v3.0.2                 -> v3.0.2
+2025-10-01T18:34:51.0773722Z  * [new tag]             v3.0.3                 -> v3.0.3
+2025-10-01T18:34:51.0774190Z  * [new tag]             v3.0.4                 -> v3.0.4
+2025-10-01T18:34:51.0774673Z  * [new tag]             v3.0.5                 -> v3.0.5
+2025-10-01T18:34:51.0775156Z  * [new tag]             v3.0.6                 -> v3.0.6
+2025-10-01T18:34:51.0775631Z  * [new tag]             v3.0.7                 -> v3.0.7
+2025-10-01T18:34:51.0776103Z  * [new tag]             v3.0.8                 -> v3.0.8
+2025-10-01T18:34:51.0776571Z  * [new tag]             v3.0.9                 -> v3.0.9
+2025-10-01T18:34:51.0777043Z  * [new tag]             v3.1.0                 -> v3.1.0
+2025-10-01T18:34:51.0777517Z  * [new tag]             v3.1.1                 -> v3.1.1
+2025-10-01T18:34:51.0777980Z  * [new tag]             v3.1.10                -> v3.1.10
+2025-10-01T18:34:51.0778471Z  * [new tag]             v3.1.11                -> v3.1.11
+2025-10-01T18:34:51.0778952Z  * [new tag]             v3.1.12                -> v3.1.12
+2025-10-01T18:34:51.0779425Z  * [new tag]             v3.1.13                -> v3.1.13
+2025-10-01T18:34:51.0780047Z  * [new tag]             v3.1.2                 -> v3.1.2
+2025-10-01T18:34:51.0780522Z  * [new tag]             v3.1.3                 -> v3.1.3
+2025-10-01T18:34:51.0781166Z  * [new tag]             v3.1.4                 -> v3.1.4
+2025-10-01T18:34:51.0781691Z  * [new tag]             v3.1.5                 -> v3.1.5
+2025-10-01T18:34:51.0782179Z  * [new tag]             v3.1.6                 -> v3.1.6
+2025-10-01T18:34:51.0782665Z  * [new tag]             v3.1.7                 -> v3.1.7
+2025-10-01T18:34:51.0783151Z  * [new tag]             v3.1.8                 -> v3.1.8
+2025-10-01T18:34:51.0783628Z  * [new tag]             v3.1.9                 -> v3.1.9
+2025-10-01T18:34:51.0784112Z  * [new tag]             v3.10.0                -> v3.10.0
+2025-10-01T18:34:51.0784589Z  * [new tag]             v3.11.0                -> v3.11.0
+2025-10-01T18:34:51.0785080Z  * [new tag]             v3.11.1                -> v3.11.1
+2025-10-01T18:34:51.0785563Z  * [new tag]             v3.11.2                -> v3.11.2
+2025-10-01T18:34:51.0786051Z  * [new tag]             v3.12.0                -> v3.12.0
+2025-10-01T18:34:51.0786535Z  * [new tag]             v3.12.1                -> v3.12.1
+2025-10-01T18:34:51.0787020Z  * [new tag]             v3.12.2                -> v3.12.2
+2025-10-01T18:34:51.0787497Z  * [new tag]             v3.12.3                -> v3.12.3
+2025-10-01T18:34:51.0787978Z  * [new tag]             v3.12.4                -> v3.12.4
+2025-10-01T18:34:51.0788464Z  * [new tag]             v3.2.0                 -> v3.2.0
+2025-10-01T18:34:51.0788936Z  * [new tag]             v3.2.1                 -> v3.2.1
+2025-10-01T18:34:51.0789415Z  * [new tag]             v3.2.10                -> v3.2.10
+2025-10-01T18:34:51.0789949Z  * [new tag]             v3.2.11                -> v3.2.11
+2025-10-01T18:34:51.0790436Z  * [new tag]             v3.2.2                 -> v3.2.2
+2025-10-01T18:34:51.0791289Z  * [new tag]             v3.2.3                 -> v3.2.3
+2025-10-01T18:34:51.0791766Z  * [new tag]             v3.2.4                 -> v3.2.4
+2025-10-01T18:34:51.0792253Z  * [new tag]             v3.2.5                 -> v3.2.5
+2025-10-01T18:34:51.0792733Z  * [new tag]             v3.2.6                 -> v3.2.6
+2025-10-01T18:34:51.0793205Z  * [new tag]             v3.2.7                 -> v3.2.7
+2025-10-01T18:34:51.0793683Z  * [new tag]             v3.2.8                 -> v3.2.8
+2025-10-01T18:34:51.0794154Z  * [new tag]             v3.2.9                 -> v3.2.9
+2025-10-01T18:34:51.0794629Z  * [new tag]             v3.3.0                 -> v3.3.0
+2025-10-01T18:34:51.0795109Z  * [new tag]             v3.3.1                 -> v3.3.1
+2025-10-01T18:34:51.0795584Z  * [new tag]             v3.3.10                -> v3.3.10
+2025-10-01T18:34:51.0796065Z  * [new tag]             v3.3.11                -> v3.3.11
+2025-10-01T18:34:51.0796554Z  * [new tag]             v3.3.12                -> v3.3.12
+2025-10-01T18:34:51.0797018Z  * [new tag]             v3.3.13                -> v3.3.13
+2025-10-01T18:34:51.0797494Z  * [new tag]             v3.3.2                 -> v3.3.2
+2025-10-01T18:34:51.0797982Z  * [new tag]             v3.3.3                 -> v3.3.3
+2025-10-01T18:34:51.0798450Z  * [new tag]             v3.3.4                 -> v3.3.4
+2025-10-01T18:34:51.0798927Z  * [new tag]             v3.3.5                 -> v3.3.5
+2025-10-01T18:34:51.0799405Z  * [new tag]             v3.3.6                 -> v3.3.6
+2025-10-01T18:34:51.0799882Z  * [new tag]             v3.3.7                 -> v3.3.7
+2025-10-01T18:34:51.0800369Z  * [new tag]             v3.3.8                 -> v3.3.8
+2025-10-01T18:34:51.0800830Z  * [new tag]             v3.3.9                 -> v3.3.9
+2025-10-01T18:34:51.0801474Z  * [new tag]             v3.4.0                 -> v3.4.0
+2025-10-01T18:34:51.0801942Z  * [new tag]             v3.4.1                 -> v3.4.1
+2025-10-01T18:34:51.0802415Z  * [new tag]             v3.4.2                 -> v3.4.2
+2025-10-01T18:34:51.0802886Z  * [new tag]             v3.4.3                 -> v3.4.3
+2025-10-01T18:34:51.0803506Z  * [new tag]             v3.4.4                 -> v3.4.4
+2025-10-01T18:34:51.0804009Z  * [new tag]             v3.4.5                 -> v3.4.5
+2025-10-01T18:34:51.0804481Z  * [new tag]             v3.4.6                 -> v3.4.6
+2025-10-01T18:34:51.0804952Z  * [new tag]             v3.4.7                 -> v3.4.7
+2025-10-01T18:34:51.0805423Z  * [new tag]             v3.4.8                 -> v3.4.8
+2025-10-01T18:34:51.0805895Z  * [new tag]             v3.5.0                 -> v3.5.0
+2025-10-01T18:34:51.0806355Z  * [new tag]             v3.5.1                 -> v3.5.1
+2025-10-01T18:34:51.0806877Z  * [new tag]             v3.5.10                -> v3.5.10
+2025-10-01T18:34:51.0807386Z  * [new tag]             v3.5.11                -> v3.5.11
+2025-10-01T18:34:51.0807863Z  * [new tag]             v3.5.12                -> v3.5.12
+2025-10-01T18:34:51.0808349Z  * [new tag]             v3.5.13                -> v3.5.13
+2025-10-01T18:34:51.0808813Z  * [new tag]             v3.5.14                -> v3.5.14
+2025-10-01T18:34:51.0809302Z  * [new tag]             v3.5.15                -> v3.5.15
+2025-10-01T18:34:51.0809790Z  * [new tag]             v3.5.2                 -> v3.5.2
+2025-10-01T18:34:51.0810262Z  * [new tag]             v3.5.3                 -> v3.5.3
+2025-10-01T18:34:51.0810729Z  * [new tag]             v3.5.4                 -> v3.5.4
+2025-10-01T18:34:51.0811378Z  * [new tag]             v3.5.5                 -> v3.5.5
+2025-10-01T18:34:51.0811850Z  * [new tag]             v3.5.6                 -> v3.5.6
+2025-10-01T18:34:51.0812322Z  * [new tag]             v3.5.7                 -> v3.5.7
+2025-10-01T18:34:51.0812800Z  * [new tag]             v3.5.8                 -> v3.5.8
+2025-10-01T18:34:51.0813277Z  * [new tag]             v3.5.9                 -> v3.5.9
+2025-10-01T18:34:51.0813743Z  * [new tag]             v3.6.0                 -> v3.6.0
+2025-10-01T18:34:51.0814381Z  * [new tag]             v3.6.1                 -> v3.6.1
+2025-10-01T18:34:51.0814861Z  * [new tag]             v3.6.13                -> v3.6.13
+2025-10-01T18:34:51.0815343Z  * [new tag]             v3.6.14                -> v3.6.14
+2025-10-01T18:34:51.0815808Z  * [new tag]             v3.6.16                -> v3.6.16
+2025-10-01T18:34:51.0816282Z  * [new tag]             v3.6.17                -> v3.6.17
+2025-10-01T18:34:51.0816754Z  * [new tag]             v3.6.18                -> v3.6.18
+2025-10-01T18:34:51.0817218Z  * [new tag]             v3.6.19                -> v3.6.19
+2025-10-01T18:34:51.0817695Z  * [new tag]             v3.6.22                -> v3.6.22
+2025-10-01T18:34:51.0818159Z  * [new tag]             v3.6.23                -> v3.6.23
+2025-10-01T18:34:51.0818634Z  * [new tag]             v3.6.25                -> v3.6.25
+2025-10-01T18:34:51.0819105Z  * [new tag]             v3.6.26                -> v3.6.26
+2025-10-01T18:34:51.0819575Z  * [new tag]             v3.6.27                -> v3.6.27
+2025-10-01T18:34:51.0820046Z  * [new tag]             v3.6.28                -> v3.6.28
+2025-10-01T18:34:51.0820527Z  * [new tag]             v3.6.29                -> v3.6.29
+2025-10-01T18:34:51.0821174Z  * [new tag]             v3.6.30                -> v3.6.30
+2025-10-01T18:34:51.0821663Z  * [new tag]             v3.6.31                -> v3.6.31
+2025-10-01T18:34:51.0822129Z  * [new tag]             v3.6.34                -> v3.6.34
+2025-10-01T18:34:51.0822608Z  * [new tag]             v3.6.36                -> v3.6.36
+2025-10-01T18:34:51.0823086Z  * [new tag]             v3.6.37                -> v3.6.37
+2025-10-01T18:34:51.0823558Z  * [new tag]             v3.6.38                -> v3.6.38
+2025-10-01T18:34:51.0824036Z  * [new tag]             v3.6.39                -> v3.6.39
+2025-10-01T18:34:51.0824515Z  * [new tag]             v3.6.40                -> v3.6.40
+2025-10-01T18:34:51.0824982Z  * [new tag]             v3.6.41                -> v3.6.41
+2025-10-01T18:34:51.0825471Z  * [new tag]             v3.6.42                -> v3.6.42
+2025-10-01T18:34:51.0825939Z  * [new tag]             v3.6.43                -> v3.6.43
+2025-10-01T18:34:51.0826547Z  * [new tag]             v3.6.44                -> v3.6.44
+2025-10-01T18:34:51.0827033Z  * [new tag]             v3.6.46                -> v3.6.46
+2025-10-01T18:34:51.0827497Z  * [new tag]             v3.6.47                -> v3.6.47
+2025-10-01T18:34:51.0827968Z  * [new tag]             v3.6.48                -> v3.6.48
+2025-10-01T18:34:51.0828447Z  * [new tag]             v3.6.49                -> v3.6.49
+2025-10-01T18:34:51.0828911Z  * [new tag]             v3.6.50                -> v3.6.50
+2025-10-01T18:34:51.0829383Z  * [new tag]             v3.6.51                -> v3.6.51
+2025-10-01T18:34:51.0829852Z  * [new tag]             v3.6.52                -> v3.6.52
+2025-10-01T18:34:51.0830314Z  * [new tag]             v3.6.53                -> v3.6.53
+2025-10-01T18:34:51.0830790Z  * [new tag]             v3.6.54                -> v3.6.54
+2025-10-01T18:34:51.0831429Z  * [new tag]             v3.7.0                 -> v3.7.0
+2025-10-01T18:34:51.0831909Z  * [new tag]             v3.7.1                 -> v3.7.1
+2025-10-01T18:34:51.0832391Z  * [new tag]             v3.7.10                -> v3.7.10
+2025-10-01T18:34:51.0832861Z  * [new tag]             v3.7.11                -> v3.7.11
+2025-10-01T18:34:51.0833326Z  * [new tag]             v3.7.12                -> v3.7.12
+2025-10-01T18:34:51.0833799Z  * [new tag]             v3.7.13                -> v3.7.13
+2025-10-01T18:34:51.0834262Z  * [new tag]             v3.7.14                -> v3.7.14
+2025-10-01T18:34:51.0834732Z  * [new tag]             v3.7.15                -> v3.7.15
+2025-10-01T18:34:51.0835208Z  * [new tag]             v3.7.16                -> v3.7.16
+2025-10-01T18:34:51.0835670Z  * [new tag]             v3.7.17                -> v3.7.17
+2025-10-01T18:34:51.0836144Z  * [new tag]             v3.7.18                -> v3.7.18
+2025-10-01T18:34:51.0836880Z  * [new tag]             v3.7.2                 -> v3.7.2
+2025-10-01T18:34:51.0837355Z  * [new tag]             v3.7.3                 -> v3.7.3
+2025-10-01T18:34:51.0837832Z  * [new tag]             v3.7.4                 -> v3.7.4
+2025-10-01T18:34:51.0838292Z  * [new tag]             v3.7.5                 -> v3.7.5
+2025-10-01T18:34:51.0838754Z  * [new tag]             v3.7.6                 -> v3.7.6
+2025-10-01T18:34:51.0839221Z  * [new tag]             v3.7.7                 -> v3.7.7
+2025-10-01T18:34:51.0839687Z  * [new tag]             v3.7.8                 -> v3.7.8
+2025-10-01T18:34:51.0840157Z  * [new tag]             v3.7.9                 -> v3.7.9
+2025-10-01T18:34:51.0840618Z  * [new tag]             v3.8.0                 -> v3.8.0
+2025-10-01T18:34:51.0841262Z  * [new tag]             v3.8.1                 -> v3.8.1
+2025-10-01T18:34:51.0841738Z  * [new tag]             v3.8.11                -> v3.8.11
+2025-10-01T18:34:51.0842207Z  * [new tag]             v3.8.14                -> v3.8.14
+2025-10-01T18:34:51.0842692Z  * [new tag]             v3.8.16                -> v3.8.16
+2025-10-01T18:34:51.0843169Z  * [new tag]             v3.8.17                -> v3.8.17
+2025-10-01T18:34:51.0843640Z  * [new tag]             v3.8.2                 -> v3.8.2
+2025-10-01T18:34:51.0844109Z  * [new tag]             v3.8.20                -> v3.8.20
+2025-10-01T18:34:51.0844579Z  * [new tag]             v3.8.21                -> v3.8.21
+2025-10-01T18:34:51.0845057Z  * [new tag]             v3.8.22                -> v3.8.22
+2025-10-01T18:34:51.0845604Z  * [new tag]             v3.8.25                -> v3.8.25
+2025-10-01T18:34:51.0846068Z  * [new tag]             v3.8.4                 -> v3.8.4
+2025-10-01T18:34:51.0846541Z  * [new tag]             v3.8.5                 -> v3.8.5
+2025-10-01T18:34:51.0847012Z  * [new tag]             v3.8.6                 -> v3.8.6
+2025-10-01T18:34:51.0847474Z  * [new tag]             v3.9.0                 -> v3.9.0
+2025-10-01T18:34:51.0847950Z  * [new tag]             v3.9.10                -> v3.9.10
+2025-10-01T18:34:51.0848428Z  * [new tag]             v3.9.2                 -> v3.9.2
+2025-10-01T18:34:51.0848894Z  * [new tag]             v3.9.3                 -> v3.9.3
+2025-10-01T18:34:51.0849512Z  * [new tag]             v3.9.7                 -> v3.9.7
+2025-10-01T18:34:51.0849985Z  * [new tag]             v3.9.9                 -> v3.9.9
+2025-10-01T18:34:51.0850458Z  * [new tag]             v4.0.0                 -> v4.0.0
+2025-10-01T18:34:51.0850939Z  * [new tag]             v4.1.0                 -> v4.1.0
+2025-10-01T18:34:51.0851582Z  * [new tag]             v4.10.0                -> v4.10.0
+2025-10-01T18:34:51.0852060Z  * [new tag]             v4.11.0                -> v4.11.0
+2025-10-01T18:34:51.0852528Z  * [new tag]             v4.2.0                 -> v4.2.0
+2025-10-01T18:34:51.0852988Z  * [new tag]             v4.3.0                 -> v4.3.0
+2025-10-01T18:34:51.0853460Z  * [new tag]             v4.3.1                 -> v4.3.1
+2025-10-01T18:34:51.0853939Z  * [new tag]             v4.4.0                 -> v4.4.0
+2025-10-01T18:34:51.0854404Z  * [new tag]             v4.5.0                 -> v4.5.0
+2025-10-01T18:34:51.0854871Z  * [new tag]             v4.5.1                 -> v4.5.1
+2025-10-01T18:34:51.0855349Z  * [new tag]             v4.6.0                 -> v4.6.0
+2025-10-01T18:34:51.0855818Z  * [new tag]             v4.6.1                 -> v4.6.1
+2025-10-01T18:34:51.0856286Z  * [new tag]             v4.7.0                 -> v4.7.0
+2025-10-01T18:34:51.0856746Z  * [new tag]             v4.8.0                 -> v4.8.0
+2025-10-01T18:34:51.0857219Z  * [new tag]             v4.8.1                 -> v4.8.1
+2025-10-01T18:34:51.0857689Z  * [new tag]             v4.9.0                 -> v4.9.0
+2025-10-01T18:34:51.0858163Z  * [new tag]             v5.0.0                 -> v5.0.0
+2025-10-01T18:34:51.0858679Z  * [new tag]             v5.1.0                 -> v5.1.0
+2025-10-01T18:34:51.0859145Z  * [new tag]             v5.1.1                 -> v5.1.1
+2025-10-01T18:34:51.0859780Z  * [new tag]             v5.10.0                -> v5.10.0
+2025-10-01T18:34:51.0860255Z  * [new tag]             v5.11.0                -> v5.11.0
+2025-10-01T18:34:51.0860728Z  * [new tag]             v5.12.0                -> v5.12.0
+2025-10-01T18:34:51.0861381Z  * [new tag]             v5.13.0                -> v5.13.0
+2025-10-01T18:34:51.0861859Z  * [new tag]             v5.14.0                -> v5.14.0
+2025-10-01T18:34:51.0862320Z  * [new tag]             v5.14.1                -> v5.14.1
+2025-10-01T18:34:51.0862795Z  * [new tag]             v5.14.2                -> v5.14.2
+2025-10-01T18:34:51.0863271Z  * [new tag]             v5.15.0                -> v5.15.0
+2025-10-01T18:34:51.0863737Z  * [new tag]             v5.15.1                -> v5.15.1
+2025-10-01T18:34:51.0864205Z  * [new tag]             v5.15.2                -> v5.15.2
+2025-10-01T18:34:51.0864670Z  * [new tag]             v5.16.0                -> v5.16.0
+2025-10-01T18:34:51.0865141Z  * [new tag]             v5.16.1                -> v5.16.1
+2025-10-01T18:34:51.0865619Z  * [new tag]             v5.17.0                -> v5.17.0
+2025-10-01T18:34:51.0866083Z  * [new tag]             v5.18.0                -> v5.18.0
+2025-10-01T18:34:51.0866559Z  * [new tag]             v5.19.0                -> v5.19.0
+2025-10-01T18:34:51.0867029Z  * [new tag]             v5.2.0                 -> v5.2.0
+2025-10-01T18:34:51.0867494Z  * [new tag]             v5.20.0                -> v5.20.0
+2025-10-01T18:34:51.0867964Z  * [new tag]             v5.3.0                 -> v5.3.0
+2025-10-01T18:34:51.0868425Z  * [new tag]             v5.3.1                 -> v5.3.1
+2025-10-01T18:34:51.0868893Z  * [new tag]             v5.4.0                 -> v5.4.0
+2025-10-01T18:34:51.0869368Z  * [new tag]             v5.5.0                 -> v5.5.0
+2025-10-01T18:34:51.0869828Z  * [new tag]             v5.6.0                 -> v5.6.0
+2025-10-01T18:34:51.0870296Z  * [new tag]             v5.7.0                 -> v5.7.0
+2025-10-01T18:34:51.0870765Z  * [new tag]             v5.8.0                 -> v5.8.0
+2025-10-01T18:34:51.0871405Z  * [new tag]             v5.9.0                 -> v5.9.0
+2025-10-01T18:34:51.0871899Z  * [new tag]             vrbranch               -> vrbranch
+2025-10-01T18:34:51.1259897Z [command]/usr/bin/git branch --list --remote origin/main
+2025-10-01T18:34:51.1342548Z   origin/main
+2025-10-01T18:34:51.1350846Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2025-10-01T18:34:51.1372864Z cffddd4c759feda23185b6d25495fc8f9006190b
+2025-10-01T18:34:51.1377297Z ##[endgroup]
+2025-10-01T18:34:51.1377899Z ##[group]Determining the checkout info
+2025-10-01T18:34:51.1380276Z ##[endgroup]
+2025-10-01T18:34:51.1385932Z [command]/usr/bin/git sparse-checkout disable
+2025-10-01T18:34:51.1421396Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-01T18:34:51.1447637Z ##[group]Checking out the ref
+2025-10-01T18:34:51.1451481Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-10-01T18:34:51.2196587Z Switched to a new branch 'main'
+2025-10-01T18:34:51.2197688Z branch 'main' set up to track 'origin/main'.
+2025-10-01T18:34:51.2210060Z ##[endgroup]
+2025-10-01T18:34:51.2252320Z [command]/usr/bin/git log -1 --format=%H
+2025-10-01T18:34:51.2278548Z cffddd4c759feda23185b6d25495fc8f9006190b
+2025-10-01T18:34:51.2537383Z ##[group]Run actions/setup-java@v5
+2025-10-01T18:34:51.2537645Z with:
+2025-10-01T18:34:51.2537845Z   distribution: zulu
+2025-10-01T18:34:51.2538040Z   java-version: 17
+2025-10-01T18:34:51.2538214Z   cache: gradle
+2025-10-01T18:34:51.2538394Z   java-package: jdk
+2025-10-01T18:34:51.2538580Z   check-latest: false
+2025-10-01T18:34:51.2538770Z   server-id: github
+2025-10-01T18:34:51.2538957Z   server-username: GITHUB_ACTOR
+2025-10-01T18:34:51.2539181Z   server-password: GITHUB_TOKEN
+2025-10-01T18:34:51.2539401Z   overwrite-settings: true
+2025-10-01T18:34:51.2539613Z   job-status: success
+2025-10-01T18:34:51.2539922Z   token: ***
+2025-10-01T18:34:51.2540114Z ##[endgroup]
+2025-10-01T18:34:51.4058474Z ##[group]Installed distributions
+2025-10-01T18:34:51.4084998Z Trying to resolve the latest version from remote
+2025-10-01T18:34:51.4298104Z (node:2062) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-10-01T18:34:51.4299318Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-01T18:34:51.6761944Z Resolved latest version as 17.0.16+8
+2025-10-01T18:34:51.6762993Z Trying to download...
+2025-10-01T18:34:51.6764248Z Downloading Java 17.0.16+8 (Zulu) from https://cdn.azul.com/zulu/bin/zulu17.60.17-ca-crac-jdk17.0.16-linux_x64.tar.gz ...
+2025-10-01T18:34:54.1539026Z Extracting Java archive...
+2025-10-01T18:34:54.1663688Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/62cef284-46a3-46cd-82f1-3e372e800a4a -f /home/runner/work/_temp/ecc135bf-518b-4207-ab47-cef1c6fbdcf9
+2025-10-01T18:34:56.8202481Z Java 17.0.16+8 was downloaded
+2025-10-01T18:34:56.8202895Z Setting Java 17.0.16+8 as the default
+2025-10-01T18:34:56.8215076Z Creating toolchains.xml for JDK version 17 from zulu
+2025-10-01T18:34:56.8292115Z Writing to /home/runner/.m2/toolchains.xml
+2025-10-01T18:34:56.8293333Z 
+2025-10-01T18:34:56.8293507Z Java configuration:
+2025-10-01T18:34:56.8293860Z   Distribution: zulu
+2025-10-01T18:34:56.8294208Z   Version: 17.0.16+8
+2025-10-01T18:34:56.8294608Z   Path: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:34:56.8294884Z 
+2025-10-01T18:34:56.8295321Z ##[endgroup]
+2025-10-01T18:34:56.8310036Z Creating settings.xml with server-id: github
+2025-10-01T18:34:56.8310352Z Writing to /home/runner/.m2/settings.xml
+2025-10-01T18:34:57.1677991Z Cache hit for: setup-java-Linux-x64-gradle-68b2ca84ddffae456f6673d023b1e71950396dbc066b18b2237f4b3437c3be1b
+2025-10-01T18:34:57.1793465Z (node:2062) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-10-01T18:34:58.2205603Z Received 247463936 of 688595404 (35.9%), 235.8 MBs/sec
+2025-10-01T18:34:59.2211332Z Received 469762048 of 688595404 (68.2%), 223.9 MBs/sec
+2025-10-01T18:35:00.1214538Z Received 688595404 of 688595404 (100.0%), 226.3 MBs/sec
+2025-10-01T18:35:00.1215289Z Cache Size: ~657 MB (688595404 B)
+2025-10-01T18:35:00.1251649Z [command]/usr/bin/tar -xf /home/runner/work/_temp/ec0b5c12-f036-45ae-8ece-ffae26ba2276/cache.tzst -P -C /home/runner/work/mockito/mockito --use-compress-program unzstd
+2025-10-01T18:35:03.1154865Z Cache restored successfully
+2025-10-01T18:35:03.2448294Z Cache restored from key: setup-java-Linux-x64-gradle-68b2ca84ddffae456f6673d023b1e71950396dbc066b18b2237f4b3437c3be1b
+2025-10-01T18:35:03.2704490Z ##[group]Run ./gradlew -Pmockito.test.java=17 build --stacktrace --scan
+2025-10-01T18:35:03.2705044Z [36;1m./gradlew -Pmockito.test.java=17 build --stacktrace --scan[0m
+2025-10-01T18:35:03.2742127Z shell: /usr/bin/bash -e {0}
+2025-10-01T18:35:03.2742385Z env:
+2025-10-01T18:35:03.2742639Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:35:03.2743035Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:35:03.2743358Z   MOCK_MAKER: mock-maker-default
+2025-10-01T18:35:03.2743611Z   MEMBER_ACCESSOR: member-accessor-default
+2025-10-01T18:35:03.2743852Z ##[endgroup]
+2025-10-01T18:35:03.8788690Z 
+2025-10-01T18:35:03.8812034Z Welcome to Gradle 8.14.2!
+2025-10-01T18:35:03.8812350Z 
+2025-10-01T18:35:03.8812534Z Here are the highlights of this release:
+2025-10-01T18:35:03.8813030Z  - Java 24 support
+2025-10-01T18:35:03.8813455Z  - GraalVM Native Image toolchain selection
+2025-10-01T18:35:03.8814019Z  - Enhancements to test reporting
+2025-10-01T18:35:03.8814465Z  - Build Authoring improvements
+2025-10-01T18:35:03.8814749Z 
+2025-10-01T18:35:03.8815057Z For more details see https://docs.gradle.org/8.14.2/release-notes.html
+2025-10-01T18:35:03.8823302Z 
+2025-10-01T18:35:03.9779374Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-10-01T18:35:09.0779692Z Using the build cache is enabled, but no build caches are configured or enabled.
+2025-10-01T18:35:12.5811231Z > Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2025-10-01T18:35:12.9779471Z > Task :buildSrc:generateExternalPluginSpecBuilders
+2025-10-01T18:35:12.9803247Z > Task :buildSrc:extractPrecompiledScriptPluginPlugins
+2025-10-01T18:35:13.4792585Z > Task :buildSrc:generateScriptPluginAdapters
+2025-10-01T18:35:13.5784931Z > Task :buildSrc:pluginDescriptors
+2025-10-01T18:35:13.5785469Z > Task :buildSrc:processResources
+2025-10-01T18:35:20.4779111Z > Task :buildSrc:compilePluginsBlocks
+2025-10-01T18:35:22.4780533Z 
+2025-10-01T18:35:22.4781691Z > Task :buildSrc:generatePrecompiledScriptPluginAccessors
+2025-10-01T18:35:22.4782629Z Building version '5.20.1-SNAPSHOT'
+2025-10-01T18:35:22.4783385Z   - reason: shipkit-auto-version deduced snapshot based on tag: 'v5.20.0'
+2025-10-01T18:35:43.4775458Z 
+2025-10-01T18:35:43.4777322Z > Task :buildSrc:compileKotlin
+2025-10-01T18:35:43.4778561Z > Task :buildSrc:compileJava NO-SOURCE
+2025-10-01T18:35:43.4782987Z > Task :buildSrc:compileGroovy NO-SOURCE
+2025-10-01T18:35:43.4790003Z > Task :buildSrc:classes
+2025-10-01T18:35:43.7794793Z > Task :buildSrc:jar
+2025-10-01T18:35:45.4775600Z 
+2025-10-01T18:35:45.4779690Z > Configure project :
+2025-10-01T18:35:45.4783373Z Building version '5.20.1-SNAPSHOT'
+2025-10-01T18:35:45.4785442Z   - reason: shipkit-auto-version deduced snapshot based on tag: 'v5.20.0'
+2025-10-01T18:36:01.4777099Z Checking the license for package Android SDK Build-Tools 30.0.3 in /usr/local/lib/android/sdk/licenses
+2025-10-01T18:36:01.4781557Z License for package Android SDK Build-Tools 30.0.3 accepted.
+2025-10-01T18:36:01.4782298Z Preparing "Install Android SDK Build-Tools 30.0.3 (revision: 30.0.3)".
+2025-10-01T18:36:02.7782824Z "Install Android SDK Build-Tools 30.0.3 (revision: 30.0.3)" ready.
+2025-10-01T18:36:02.7816164Z Installing Android SDK Build-Tools 30.0.3 in /usr/local/lib/android/sdk/build-tools/30.0.3
+2025-10-01T18:36:02.7817071Z "Install Android SDK Build-Tools 30.0.3 (revision: 30.0.3)" complete.
+2025-10-01T18:36:02.8781902Z "Install Android SDK Build-Tools 30.0.3 (revision: 30.0.3)" finished.
+2025-10-01T18:36:02.8782833Z Checking the license for package Android SDK Platform 33 in /usr/local/lib/android/sdk/licenses
+2025-10-01T18:36:02.8783641Z License for package Android SDK Platform 33 accepted.
+2025-10-01T18:36:02.8787545Z Preparing "Install Android SDK Platform 33 (revision: 3)".
+2025-10-01T18:36:05.7801357Z "Install Android SDK Platform 33 (revision: 3)" ready.
+2025-10-01T18:36:05.7802145Z Installing Android SDK Platform 33 in /usr/local/lib/android/sdk/platforms/android-33
+2025-10-01T18:36:05.7803726Z "Install Android SDK Platform 33 (revision: 3)" complete.
+2025-10-01T18:36:05.7805888Z "Install Android SDK Platform 33 (revision: 3)" finished.
+2025-10-01T18:36:07.0793806Z 
+2025-10-01T18:36:07.0796174Z > Task :mockito-bom:assemble UP-TO-DATE
+2025-10-01T18:36:07.0798145Z > Task :mockito-bom:check UP-TO-DATE
+2025-10-01T18:36:07.0801482Z > Task :mockito-bom:build UP-TO-DATE
+2025-10-01T18:36:07.0802131Z > Task :mockito-extensions:mockito-errorprone:processResources NO-SOURCE
+2025-10-01T18:36:07.0802883Z > Task :mockito-extensions:mockito-android:processResources
+2025-10-01T18:36:07.0803520Z > Task :mockito-extensions:mockito-android:sourcesJar
+2025-10-01T18:36:07.0804241Z > Task :mockito-extensions:mockito-junit-jupiter:processResources NO-SOURCE
+2025-10-01T18:36:07.1802772Z > Task :mockito-extensions:mockito-junit-jupiter:sourcesJar
+2025-10-01T18:36:07.1808191Z > Task :mockito-extensions:mockito-junit-jupiter:processTestResources NO-SOURCE
+2025-10-01T18:36:07.1810137Z > Task :mockito-extensions:mockito-android:licenseMain UP-TO-DATE
+2025-10-01T18:36:07.1810931Z > Task :mockito-extensions:mockito-junit-jupiter:licenseMain UP-TO-DATE
+2025-10-01T18:36:07.1813125Z > Task :mockito-extensions:mockito-android:licenseTest NO-SOURCE
+2025-10-01T18:36:07.1813849Z > Task :mockito-extensions:mockito-android:license UP-TO-DATE
+2025-10-01T18:36:07.1814922Z > Task :mockito-extensions:mockito-android:processTestResources NO-SOURCE
+2025-10-01T18:36:07.2785271Z > Task :mockito-extensions:mockito-junit-jupiter:licenseTest UP-TO-DATE
+2025-10-01T18:36:07.2799190Z > Task :mockito-extensions:mockito-junit-jupiter:license UP-TO-DATE
+2025-10-01T18:36:07.2799963Z > Task :mockito-extensions:mockito-junit-jupiter:osgiProperties
+2025-10-01T18:36:07.2800630Z > Task :mockito-extensions:mockito-errorprone:sourcesJar
+2025-10-01T18:36:07.2801577Z > Task :mockito-extensions:mockito-errorprone:processTestResources NO-SOURCE
+2025-10-01T18:36:07.2802425Z > Task :mockito-extensions:mockito-errorprone:licenseMain UP-TO-DATE
+2025-10-01T18:36:07.2803195Z > Task :mockito-extensions:mockito-errorprone:licenseTest UP-TO-DATE
+2025-10-01T18:36:07.2803897Z > Task :mockito-extensions:mockito-errorprone:license UP-TO-DATE
+2025-10-01T18:36:18.7796815Z 
+2025-10-01T18:36:18.7801527Z Note: Some input files use or override a deprecated API.
+2025-10-01T18:36:18.7802552Z > Task :mockito-core:compileJava
+2025-10-01T18:36:18.7806323Z Note: Recompile with -Xlint:deprecation for details.
+2025-10-01T18:36:18.7808161Z Note: /home/runner/work/mockito/mockito/mockito-core/src/main/java/org/mockito/internal/configuration/plugins/DefaultMockitoPlugins.java uses or overrides a deprecated API that is marked for removal.
+2025-10-01T18:36:18.7810000Z Note: Recompile with -Xlint:removal for details.
+2025-10-01T18:36:18.7812008Z Note: Some input files use unchecked or unsafe operations.
+2025-10-01T18:36:18.7813461Z Note: Recompile with -Xlint:unchecked for details.
+2025-10-01T18:36:19.0798221Z 
+2025-10-01T18:36:19.0825917Z > Task :mockito-extensions:mockito-android:generatePomFileForMockitoLibraryPublication
+2025-10-01T18:36:19.0827379Z > Task :mockito-extensions:mockito-errorprone:generatePomFileForMockitoLibraryPublication
+2025-10-01T18:36:19.0828597Z > Task :mockito-extensions:mockito-junit-jupiter:generatePomFileForMockitoLibraryPublication
+2025-10-01T18:36:19.0829654Z > Task :mockito-integration-tests:android-tests:preBuild UP-TO-DATE
+2025-10-01T18:36:19.0830558Z > Task :mockito-integration-tests:android-tests:preDebugBuild UP-TO-DATE
+2025-10-01T18:36:19.0831802Z > Task :mockito-integration-tests:android-tests:mergeDebugNativeDebugMetadata NO-SOURCE
+2025-10-01T18:36:19.0832847Z > Task :mockito-integration-tests:android-tests:compileDebugAidl NO-SOURCE
+2025-10-01T18:36:19.0833711Z > Task :mockito-extensions:mockito-proxy:processResources
+2025-10-01T18:36:19.0834718Z > Task :mockito-integration-tests:android-tests:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2025-10-01T18:36:19.0835887Z > Task :mockito-integration-tests:android-tests:compileDebugRenderscript NO-SOURCE
+2025-10-01T18:36:19.0837139Z > Task :mockito-extensions:mockito-subclass:processResources
+2025-10-01T18:36:19.0837897Z > Task :mockito-core:copyMockMethodDispatcher
+2025-10-01T18:36:19.0838553Z > Task :mockito-extensions:mockito-proxy:sourcesJar
+2025-10-01T18:36:19.0839288Z > Task :mockito-core:processResources NO-SOURCE
+2025-10-01T18:36:19.0860082Z > Task :mockito-extensions:mockito-subclass:sourcesJar
+2025-10-01T18:36:19.0860961Z > Task :mockito-core:removeInjectionPackageFromModuleInfo
+2025-10-01T18:36:19.0861876Z > Task :mockito-core:classes
+2025-10-01T18:36:19.1812907Z > Task :mockito-integration-tests:android-tests:generateDebugBuildConfig
+2025-10-01T18:36:19.1814064Z > Task :mockito-extensions:mockito-proxy:compileJava NO-SOURCE
+2025-10-01T18:36:19.1814965Z > Task :mockito-extensions:mockito-proxy:classes
+2025-10-01T18:36:19.1815955Z > Task :mockito-extensions:mockito-proxy:javadoc SKIPPED
+2025-10-01T18:36:19.1816784Z > Task :mockito-extensions:mockito-proxy:javadocJar
+2025-10-01T18:36:19.1817643Z > Task :mockito-extensions:mockito-proxy:checkstyleMain NO-SOURCE
+2025-10-01T18:36:21.8824818Z > Task :mockito-core:jar
+2025-10-01T18:36:22.6842741Z > Task :mockito-extensions:mockito-android:compileJava
+2025-10-01T18:36:22.6872047Z > Task :mockito-extensions:mockito-android:classes
+2025-10-01T18:36:22.7794278Z > Task :mockito-extensions:mockito-android:jar
+2025-10-01T18:36:22.7795596Z > Task :mockito-extensions:mockito-android:javadoc SKIPPED
+2025-10-01T18:36:22.7796568Z > Task :mockito-extensions:mockito-android:javadocJar
+2025-10-01T18:36:22.7797535Z > Task :mockito-extensions:mockito-android:assemble
+2025-10-01T18:36:22.7798451Z > Task :mockito-extensions:mockito-android:compileTestJava NO-SOURCE
+2025-10-01T18:36:22.7799451Z > Task :mockito-extensions:mockito-android:testClasses UP-TO-DATE
+2025-10-01T18:36:22.7800341Z > Task :mockito-extensions:mockito-android:test NO-SOURCE
+2025-10-01T18:36:22.7801511Z > Task :mockito-extensions:mockito-android:retryTest SKIPPED
+2025-10-01T18:36:22.7802540Z > Task :mockito-extensions:mockito-android:check UP-TO-DATE
+2025-10-01T18:36:22.7803925Z > Task :mockito-extensions:mockito-android:generateMetadataFileForMockitoLibraryPublication SKIPPED
+2025-10-01T18:36:22.8778795Z > Task :mockito-extensions:mockito-android:publishMockitoLibraryPublicationToLocalRepository
+2025-10-01T18:36:22.8780694Z > Task :mockito-extensions:mockito-android:publishAllPublicationsToLocalRepository
+2025-10-01T18:36:22.8782060Z > Task :mockito-extensions:mockito-android:build
+2025-10-01T18:36:27.6777304Z > Task :mockito-extensions:mockito-junit-jupiter:compileJava
+2025-10-01T18:36:27.6778579Z > Task :mockito-extensions:mockito-junit-jupiter:classes
+2025-10-01T18:36:28.1791950Z > Task :mockito-extensions:mockito-junit-jupiter:jar
+2025-10-01T18:36:29.8789156Z > Task :mockito-extensions:mockito-errorprone:compileJava
+2025-10-01T18:36:29.8790210Z > Task :mockito-extensions:mockito-errorprone:classes
+2025-10-01T18:36:29.9782138Z > Task :mockito-extensions:mockito-proxy:compileTestJava
+2025-10-01T18:36:30.1782760Z > Task :mockito-extensions:mockito-proxy:jar
+2025-10-01T18:36:30.1783379Z > Task :mockito-extensions:mockito-proxy:assemble
+2025-10-01T18:36:30.1784058Z > Task :mockito-extensions:mockito-proxy:processTestResources NO-SOURCE
+2025-10-01T18:36:30.1784754Z > Task :mockito-extensions:mockito-proxy:testClasses
+2025-10-01T18:36:30.2776058Z > Task :mockito-extensions:mockito-errorprone:jar
+2025-10-01T18:36:34.4776480Z > Task :mockito-extensions:mockito-junit-jupiter:javadoc
+2025-10-01T18:36:34.5777233Z > Task :mockito-extensions:mockito-junit-jupiter:javadocJar
+2025-10-01T18:36:34.5782398Z > Task :mockito-extensions:mockito-junit-jupiter:assemble
+2025-10-01T18:36:34.9793852Z > Task :mockito-extensions:mockito-errorprone:javadoc
+2025-10-01T18:36:35.0779438Z > Task :mockito-extensions:mockito-errorprone:javadocJar
+2025-10-01T18:36:35.0815447Z > Task :mockito-extensions:mockito-errorprone:assemble
+2025-10-01T18:36:37.1776549Z > Task :mockito-core:javadoc
+2025-10-01T18:36:37.5776489Z > Task :mockito-core:javadocJar
+2025-10-01T18:36:37.8776992Z > Task :mockito-core:sourcesJar
+2025-10-01T18:36:37.8781824Z > Task :mockito-core:assemble
+2025-10-01T18:36:41.4822634Z > Task :mockito-core:animalsnifferMain
+2025-10-01T18:36:42.9780389Z > Task :mockito-extensions:mockito-proxy:checkstyleTest
+2025-10-01T18:36:43.8789498Z > Task :mockito-extensions:mockito-junit-jupiter:checkstyleMain
+2025-10-01T18:36:44.1822664Z > Task :mockito-extensions:mockito-errorprone:checkstyleMain
+2025-10-01T18:36:51.0788513Z Note: Some input files use or override a deprecated API.
+2025-10-01T18:36:51.0792825Z Note: Recompile with -Xlint:deprecation for details.
+2025-10-01T18:36:51.0807433Z 
+2025-10-01T18:36:51.0896685Z > Task :mockito-extensions:mockito-errorprone:compileTestJava
+2025-10-01T18:36:52.1777974Z 
+2025-10-01T18:36:52.1778469Z > Task :mockito-core:compileTestFixturesJava
+2025-10-01T18:36:52.8777405Z > Task :mockito-extensions:mockito-junit-jupiter:compileTestJava
+2025-10-01T18:36:52.8788495Z > Task :mockito-extensions:mockito-junit-jupiter:testClasses
+2025-10-01T18:36:54.3776668Z > Task :mockito-extensions:mockito-errorprone:testClasses
+2025-10-01T18:36:54.6786697Z > Task :mockito-extensions:mockito-junit-jupiter:checkstyleTest
+2025-10-01T18:36:55.6776373Z > Task :mockito-extensions:mockito-errorprone:checkstyleTest
+2025-10-01T18:36:56.6780792Z 
+2025-10-01T18:36:56.6805642Z > Task :mockito-extensions:mockito-junit-jupiter:test
+2025-10-01T18:36:56.6806054Z 
+2025-10-01T18:36:56.6806062Z 
+2025-10-01T18:37:02.1777356Z 
+2025-10-01T18:37:02.1777376Z 
+2025-10-01T18:37:02.1777877Z > Task :mockito-extensions:mockito-errorprone:test
+2025-10-01T18:37:02.1778279Z 
+2025-10-01T18:37:02.1778286Z 
+2025-10-01T18:37:02.1802628Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:37:02.1803700Z WARNING: package com.sun.tools.javac.type not in jdk.compiler
+2025-10-01T18:37:11.4793909Z 
+2025-10-01T18:37:11.4796775Z > Task :mockito-core:checkstyleMain
+2025-10-01T18:37:12.9799462Z 
+2025-10-01T18:37:12.9800361Z > Task :mockito-extensions:mockito-errorprone:test
+2025-10-01T18:37:12.9801158Z 
+2025-10-01T18:37:12.9801784Z   [0K[32m14 passing [90m(16.4s)[m
+2025-10-01T18:37:12.9802268Z 
+2025-10-01T18:37:13.0778059Z 
+2025-10-01T18:37:13.0802195Z > Task :mockito-extensions:mockito-proxy:licenseMain UP-TO-DATE
+2025-10-01T18:37:13.0803287Z > Task :mockito-extensions:mockito-proxy:licenseTest UP-TO-DATE
+2025-10-01T18:37:13.0885041Z > Task :mockito-extensions:mockito-proxy:license UP-TO-DATE
+2025-10-01T18:37:13.0886859Z > Task :mockito-extensions:mockito-errorprone:retryTest SKIPPED
+2025-10-01T18:37:13.0887504Z > Task :mockito-extensions:mockito-errorprone:check
+2025-10-01T18:37:13.0888411Z > Task :mockito-extensions:mockito-errorprone:generateMetadataFileForMockitoLibraryPublication SKIPPED
+2025-10-01T18:37:13.1834595Z > Task :mockito-extensions:mockito-errorprone:publishMockitoLibraryPublicationToLocalRepository
+2025-10-01T18:37:13.1838008Z > Task :mockito-extensions:mockito-errorprone:publishAllPublicationsToLocalRepository
+2025-10-01T18:37:13.1838858Z > Task :mockito-extensions:mockito-errorprone:build
+2025-10-01T18:37:13.1839529Z > Task :mockito-extensions:mockito-subclass:compileJava NO-SOURCE
+2025-10-01T18:37:13.1840169Z > Task :mockito-extensions:mockito-subclass:classes
+2025-10-01T18:37:13.1840734Z > Task :mockito-extensions:mockito-subclass:jar
+2025-10-01T18:37:13.1841565Z > Task :mockito-extensions:mockito-subclass:javadoc SKIPPED
+2025-10-01T18:37:13.2829801Z > Task :mockito-extensions:mockito-subclass:javadocJar
+2025-10-01T18:37:13.2830497Z > Task :mockito-extensions:mockito-subclass:assemble
+2025-10-01T18:37:13.2832883Z > Task :mockito-extensions:mockito-subclass:checkstyleMain NO-SOURCE
+2025-10-01T18:37:14.2775978Z 
+2025-10-01T18:37:14.2776855Z > Task :mockito-extensions:mockito-junit-jupiter:test
+2025-10-01T18:37:14.2778670Z   [0K[39morg.mockitousage.JunitJupiterSkippedTest > NestedSkipBeforeAllMockitoThenSkip [36m- should_handle_skip_in_before_all()[m
+2025-10-01T18:37:14.3806322Z   [0K[39morg.mockitousage.JunitJupiterSkippedTest > NestedSkipBeforeAllSkipThenMockito [36m- should_handle_skip_in_before_all()[m
+2025-10-01T18:37:14.3808648Z   [0K[39morg.mockitousage.JunitJupiterSkippedTest > NestedSkipBeforeEachMockito [36m- should_handle_skip_after_before_each()[m
+2025-10-01T18:37:14.3810694Z   [0K[39morg.mockitousage.JunitJupiterSkippedTest > NestedSkipBeforeEachMockito [36m- should_handle_skip_in_before_each()[m
+2025-10-01T18:37:14.3812566Z   [0K[39morg.mockitousage.JunitJupiterSkippedTest > NestedSkipBeforeEachMockito [36m- should_handle_skip_in_test()[m
+2025-10-01T18:37:15.8780138Z 
+2025-10-01T18:37:15.8781290Z > Task :mockito-extensions:mockito-subclass:compileTestJava
+2025-10-01T18:37:15.8782382Z > Task :mockito-extensions:mockito-subclass:processTestResources NO-SOURCE
+2025-10-01T18:37:15.8783241Z > Task :mockito-extensions:mockito-subclass:testClasses
+2025-10-01T18:37:15.8783890Z 
+2025-10-01T18:37:15.8784371Z > Task :mockito-extensions:mockito-proxy:test
+2025-10-01T18:37:15.8784741Z 
+2025-10-01T18:37:15.8784749Z 
+2025-10-01T18:37:16.4800520Z 
+2025-10-01T18:37:16.4801691Z > Task :mockito-extensions:mockito-subclass:checkstyleTest
+2025-10-01T18:37:16.4802379Z 
+2025-10-01T18:37:16.4802853Z > Task :mockito-extensions:mockito-junit-jupiter:test
+2025-10-01T18:37:16.4803822Z 
+2025-10-01T18:37:16.4804488Z   [0K[32m42 passing [90m(20.9s)
+2025-10-01T18:37:16.4805118Z   [0K[36m5 pending[m
+2025-10-01T18:37:16.4805334Z 
+2025-10-01T18:37:16.4805342Z 
+2025-10-01T18:37:16.4805638Z > Task :mockito-extensions:mockito-junit-jupiter:retryTest SKIPPED
+2025-10-01T18:37:16.4806343Z > Task :mockito-extensions:mockito-subclass:licenseMain UP-TO-DATE
+2025-10-01T18:37:16.5794918Z > Task :mockito-extensions:mockito-subclass:licenseTest UP-TO-DATE
+2025-10-01T18:37:16.5799499Z > Task :mockito-extensions:mockito-subclass:license UP-TO-DATE
+2025-10-01T18:37:17.5777395Z 
+2025-10-01T18:37:17.5781670Z > Task :mockito-extensions:mockito-proxy:test
+2025-10-01T18:37:17.5782390Z 
+2025-10-01T18:37:17.5783023Z   [0K[32m6 passing [90m(4.3s)[m
+2025-10-01T18:37:17.5783328Z 
+2025-10-01T18:37:17.5783335Z 
+2025-10-01T18:37:17.5783589Z > Task :mockito-extensions:mockito-proxy:retryTest SKIPPED
+2025-10-01T18:37:17.5784165Z > Task :mockito-extensions:mockito-proxy:check
+2025-10-01T18:37:17.5785012Z > Task :mockito-extensions:mockito-proxy:generateMetadataFileForMockitoLibraryPublication SKIPPED
+2025-10-01T18:37:18.1780657Z > Task :mockito-extensions:mockito-junit-jupiter:verifyOSGi
+2025-10-01T18:37:18.1784410Z > Task :mockito-extensions:mockito-junit-jupiter:check
+2025-10-01T18:37:18.1785393Z > Task :mockito-extensions:mockito-junit-jupiter:generateMetadataFileForMockitoLibraryPublication SKIPPED
+2025-10-01T18:37:18.1786677Z > Task :mockito-extensions:mockito-junit-jupiter:publishMockitoLibraryPublicationToLocalRepository
+2025-10-01T18:37:18.1787944Z > Task :mockito-extensions:mockito-junit-jupiter:publishAllPublicationsToLocalRepository
+2025-10-01T18:37:18.1788831Z > Task :mockito-extensions:mockito-junit-jupiter:build
+2025-10-01T18:37:18.2777163Z > Task :mockito-integration-tests:android-tests:checkDebugAarMetadata
+2025-10-01T18:37:18.2778010Z > Task :mockito-integration-tests:android-tests:generateDebugResValues
+2025-10-01T18:37:18.2778776Z > Task :mockito-integration-tests:android-tests:mapDebugSourceSetPaths
+2025-10-01T18:37:18.2779526Z > Task :mockito-integration-tests:android-tests:generateDebugResources
+2025-10-01T18:37:18.5776115Z 
+2025-10-01T18:37:18.5776602Z > Task :mockito-extensions:mockito-subclass:test
+2025-10-01T18:37:18.5776981Z 
+2025-10-01T18:37:18.5776988Z 
+2025-10-01T18:37:19.0778544Z 
+2025-10-01T18:37:19.0779171Z > Task :mockito-integration-tests:android-tests:mergeDebugResources
+2025-10-01T18:37:19.0780085Z > Task :mockito-integration-tests:android-tests:createDebugCompatibleScreenManifests
+2025-10-01T18:37:19.0780969Z > Task :mockito-integration-tests:android-tests:extractDeepLinksDebug
+2025-10-01T18:37:19.2776499Z > Task :mockito-integration-tests:android-tests:processDebugMainManifest
+2025-10-01T18:37:19.4776974Z > Task :mockito-integration-tests:android-tests:processDebugManifest
+2025-10-01T18:37:19.5776571Z > Task :mockito-integration-tests:android-tests:processDebugManifestForPackage
+2025-10-01T18:37:20.3777476Z > Task :mockito-integration-tests:android-tests:processDebugResources
+2025-10-01T18:37:20.7801690Z 
+2025-10-01T18:37:20.7824488Z > Task :mockito-extensions:mockito-subclass:test
+2025-10-01T18:37:20.7825230Z 
+2025-10-01T18:37:20.7825896Z   [0K[32m2 passing [90m(4.1s)[m
+2025-10-01T18:37:20.7826400Z 
+2025-10-01T18:37:20.7826555Z 
+2025-10-01T18:37:20.7826943Z > Task :mockito-extensions:mockito-subclass:retryTest SKIPPED
+2025-10-01T18:37:20.7827622Z > Task :mockito-extensions:mockito-subclass:check
+2025-10-01T18:37:20.7828689Z > Task :mockito-extensions:mockito-subclass:generateMetadataFileForMockitoLibraryPublication SKIPPED
+2025-10-01T18:37:22.1776941Z > Task :mockito-core:compileTestJava
+2025-10-01T18:37:27.3776425Z > Task :mockito-integration-tests:android-tests:compileDebugKotlin
+2025-10-01T18:37:27.4776266Z > Task :mockito-integration-tests:android-tests:javaPreCompileDebug
+2025-10-01T18:37:28.7796573Z > Task :mockito-integration-tests:android-tests:compileDebugJavaWithJavac
+2025-10-01T18:37:28.7801669Z > Task :mockito-integration-tests:android-tests:mergeDebugShaders
+2025-10-01T18:37:28.7807518Z > Task :mockito-integration-tests:android-tests:compileDebugShaders NO-SOURCE
+2025-10-01T18:37:28.7808687Z > Task :mockito-integration-tests:android-tests:generateDebugAssets UP-TO-DATE
+2025-10-01T18:37:28.7810742Z > Task :mockito-integration-tests:android-tests:mergeDebugAssets
+2025-10-01T18:37:28.7812596Z > Task :mockito-integration-tests:android-tests:compressDebugAssets
+2025-10-01T18:37:28.8777106Z > Task :mockito-integration-tests:android-tests:generateDebugJacocoPropertiesFile
+2025-10-01T18:37:28.8781932Z > Task :mockito-integration-tests:android-tests:processDebugJavaRes NO-SOURCE
+2025-10-01T18:37:29.4819006Z > Task :mockito-integration-tests:android-tests:mergeDebugJavaResource
+2025-10-01T18:37:29.4863373Z > Task :mockito-integration-tests:android-tests:checkDebugDuplicateClasses
+2025-10-01T18:37:29.4874683Z > Task :mockito-integration-tests:android-tests:desugarDebugFileDependencies
+2025-10-01T18:37:35.2775936Z > Task :mockito-integration-tests:android-tests:mergeExtDexDebug
+2025-10-01T18:37:41.5776124Z 
+2025-10-01T18:37:41.5776758Z Note: Some input files use or override a deprecated API.
+2025-10-01T18:37:41.5781611Z Note: Recompile with -Xlint:deprecation for details.
+2025-10-01T18:37:41.5782353Z Note: Some input files use or override a deprecated API that is marked for removal.
+2025-10-01T18:37:41.5783054Z Note: Recompile with -Xlint:removal for details.
+2025-10-01T18:37:41.5783661Z Note: Some input files use unchecked or unsafe operations.
+2025-10-01T18:37:41.5784259Z Note: Recompile with -Xlint:unchecked for details.
+2025-10-01T18:37:41.5784754Z > Task :mockito-core:compileTestJava
+2025-10-01T18:37:42.1777754Z 
+2025-10-01T18:37:42.1796654Z > Task :mockito-extensions:mockito-subclass:generatePomFileForMockitoLibraryPublication
+2025-10-01T18:37:42.1799089Z > Task :mockito-extensions:mockito-proxy:generatePomFileForMockitoLibraryPublication
+2025-10-01T18:37:42.1801761Z > Task :mockito-extensions:mockito-subclass:publishMockitoLibraryPublicationToLocalRepository
+2025-10-01T18:37:42.1817447Z > Task :mockito-extensions:mockito-subclass:publishAllPublicationsToLocalRepository
+2025-10-01T18:37:42.1818226Z > Task :mockito-extensions:mockito-subclass:build
+2025-10-01T18:37:42.1819019Z > Task :mockito-extensions:mockito-proxy:publishMockitoLibraryPublicationToLocalRepository
+2025-10-01T18:37:42.1820013Z > Task :mockito-extensions:mockito-proxy:publishAllPublicationsToLocalRepository
+2025-10-01T18:37:42.1820731Z > Task :mockito-extensions:mockito-proxy:build
+2025-10-01T18:37:42.2776394Z > Task :mockito-integration-tests:extensions-tests:compileJava NO-SOURCE
+2025-10-01T18:37:42.2780862Z > Task :mockito-integration-tests:extensions-tests:processResources NO-SOURCE
+2025-10-01T18:37:42.2785599Z > Task :mockito-integration-tests:extensions-tests:classes UP-TO-DATE
+2025-10-01T18:37:42.2787539Z > Task :mockito-integration-tests:extensions-tests:jar
+2025-10-01T18:37:42.2789227Z > Task :mockito-integration-tests:android-tests:mergeDebugJniLibFolders
+2025-10-01T18:37:42.4775868Z > Task :mockito-core:createTestResources
+2025-10-01T18:37:42.4785656Z > Task :mockito-core:processTestResources NO-SOURCE
+2025-10-01T18:37:42.4786126Z > Task :mockito-core:testClasses
+2025-10-01T18:37:42.4786691Z > Task :mockito-integration-tests:android-tests:mergeDebugNativeLibs NO-SOURCE
+2025-10-01T18:37:42.4787503Z > Task :mockito-integration-tests:android-tests:stripDebugDebugSymbols NO-SOURCE
+2025-10-01T18:37:42.4788204Z > Task :mockito-integration-tests:android-tests:jacocoDebug
+2025-10-01T18:37:42.4788769Z > Task :mockito-integration-tests:extensions-tests:assemble
+2025-10-01T18:37:42.4789404Z > Task :mockito-integration-tests:extensions-tests:licenseMain NO-SOURCE
+2025-10-01T18:37:42.5776557Z > Task :mockito-integration-tests:extensions-tests:licenseTest UP-TO-DATE
+2025-10-01T18:37:42.5777753Z > Task :mockito-integration-tests:extensions-tests:license UP-TO-DATE
+2025-10-01T18:37:44.4776646Z > Task :mockito-integration-tests:extensions-tests:compileTestJava
+2025-10-01T18:37:44.4778144Z > Task :mockito-core:processTestFixturesResources NO-SOURCE
+2025-10-01T18:37:44.4779449Z > Task :mockito-core:testFixturesClasses
+2025-10-01T18:37:44.8777015Z > Task :mockito-integration-tests:android-tests:validateSigningDebug
+2025-10-01T18:37:44.9789189Z > Task :mockito-core:licenseMain UP-TO-DATE
+2025-10-01T18:37:45.1777121Z > Task :mockito-core:licenseTest UP-TO-DATE
+2025-10-01T18:37:45.1779776Z > Task :mockito-core:licenseTestFixtures UP-TO-DATE
+2025-10-01T18:37:45.1780533Z > Task :mockito-core:license UP-TO-DATE
+2025-10-01T18:37:45.2780357Z > Task :mockito-core:testFixturesJar
+2025-10-01T18:37:46.5775956Z > Task :mockito-core:checkstyleTestFixtures
+2025-10-01T18:37:46.9822674Z > Task :mockito-integration-tests:android-tests:dexBuilderDebug
+2025-10-01T18:37:47.0790208Z > Task :mockito-integration-tests:android-tests:mergeProjectDexDebug
+2025-10-01T18:37:47.0791657Z > Task :mockito-integration-tests:android-tests:writeDebugAppMetadata
+2025-10-01T18:37:47.1776752Z > Task :mockito-integration-tests:android-tests:writeDebugSigningConfigVersions
+2025-10-01T18:37:47.1778282Z > Task :mockito-integration-tests:android-tests:license UP-TO-DATE
+2025-10-01T18:37:47.2777314Z > Task :mockito-integration-tests:android-tests:bundleDebugClassesToCompileJar
+2025-10-01T18:37:47.2787635Z > Task :mockito-integration-tests:android-tests:preDebugAndroidTestBuild SKIPPED
+2025-10-01T18:37:47.2788862Z 
+2025-10-01T18:37:47.2793022Z > Task :mockito-core:test
+2025-10-01T18:37:47.2793650Z 
+2025-10-01T18:37:47.2817549Z 
+2025-10-01T18:37:47.6778260Z 
+2025-10-01T18:37:47.6812714Z > Task :mockito-integration-tests:android-tests:processDebugAndroidTestManifest
+2025-10-01T18:37:47.6814213Z > Task :mockito-integration-tests:android-tests:compileDebugAndroidTestRenderscript NO-SOURCE
+2025-10-01T18:37:47.7776857Z > Task :mockito-integration-tests:android-tests:extractProguardFiles
+2025-10-01T18:37:47.7778140Z > Task :mockito-integration-tests:android-tests:generateDebugAndroidTestResValues
+2025-10-01T18:37:48.9777726Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:37:49.1775734Z > Task :mockito-integration-tests:extensions-tests:processTestResources
+2025-10-01T18:37:49.1776807Z > Task :mockito-integration-tests:extensions-tests:testClasses
+2025-10-01T18:37:51.1798897Z 
+2025-10-01T18:37:51.1799505Z > Task :mockito-integration-tests:extensions-tests:test
+2025-10-01T18:37:51.1799927Z 
+2025-10-01T18:37:51.1800070Z 
+2025-10-01T18:37:52.2806869Z 
+2025-10-01T18:37:52.2807570Z > Task :mockito-core:checkstyleTest
+2025-10-01T18:37:52.3781839Z > Task :mockito-integration-tests:graalvm-tests:compileJava NO-SOURCE
+2025-10-01T18:37:52.3787914Z > Task :mockito-integration-tests:graalvm-tests:processResources NO-SOURCE
+2025-10-01T18:37:52.3792833Z > Task :mockito-integration-tests:graalvm-tests:classes UP-TO-DATE
+2025-10-01T18:37:52.3798777Z > Task :mockito-integration-tests:graalvm-tests:jar
+2025-10-01T18:37:52.3812432Z > Task :mockito-integration-tests:graalvm-tests:assemble
+2025-10-01T18:37:52.3813439Z > Task :mockito-integration-tests:graalvm-tests:licenseMain NO-SOURCE
+2025-10-01T18:37:52.3825924Z > Task :mockito-integration-tests:graalvm-tests:licenseTest UP-TO-DATE
+2025-10-01T18:37:52.3828302Z > Task :mockito-integration-tests:graalvm-tests:license UP-TO-DATE
+2025-10-01T18:37:52.6776508Z > Task :mockito-integration-tests:graalvm-tests:compileTestJava
+2025-10-01T18:37:52.6777356Z > Task :mockito-integration-tests:graalvm-tests:processTestResources NO-SOURCE
+2025-10-01T18:37:52.6778382Z > Task :mockito-integration-tests:graalvm-tests:testClasses
+2025-10-01T18:37:54.6775736Z 
+2025-10-01T18:37:54.6802469Z > Task :mockito-integration-tests:graalvm-tests:test
+2025-10-01T18:37:54.6803218Z 
+2025-10-01T18:37:54.6803430Z 
+2025-10-01T18:37:59.3775703Z 
+2025-10-01T18:37:59.3779828Z   [0K[32m1 passing [90m(6.5s)[m
+2025-10-01T18:37:59.3783690Z 
+2025-10-01T18:37:59.9821773Z 
+2025-10-01T18:37:59.9829827Z > Task :mockito-integration-tests:graalvm-tests:check
+2025-10-01T18:37:59.9830925Z > Task :mockito-integration-tests:graalvm-tests:build
+2025-10-01T18:37:59.9833056Z > Task :mockito-integration-tests:groovy-inline-tests:compileJava NO-SOURCE
+2025-10-01T18:37:59.9834075Z > Task :mockito-integration-tests:groovy-inline-tests:compileGroovy NO-SOURCE
+2025-10-01T18:37:59.9834882Z 
+2025-10-01T18:37:59.9835345Z > Task :mockito-integration-tests:extensions-tests:test
+2025-10-01T18:37:59.9835772Z 
+2025-10-01T18:37:59.9839581Z   [0K[32m14 passing [90m(10.6s)[m
+2025-10-01T18:37:59.9839892Z 
+2025-10-01T18:38:00.0804191Z 
+2025-10-01T18:38:00.0805312Z > Task :mockito-integration-tests:groovy-inline-tests:processResources NO-SOURCE
+2025-10-01T18:38:00.0806266Z > Task :mockito-integration-tests:groovy-inline-tests:classes UP-TO-DATE
+2025-10-01T18:38:00.0807056Z > Task :mockito-integration-tests:extensions-tests:check
+2025-10-01T18:38:00.0807702Z > Task :mockito-integration-tests:extensions-tests:build
+2025-10-01T18:38:00.0808608Z > Task :mockito-integration-tests:groovy-tests:compileJava NO-SOURCE
+2025-10-01T18:38:00.0809867Z > Task :mockito-integration-tests:groovy-tests:compileGroovy NO-SOURCE
+2025-10-01T18:38:00.0810832Z > Task :mockito-integration-tests:groovy-inline-tests:jar
+2025-10-01T18:38:00.0811951Z > Task :mockito-integration-tests:groovy-inline-tests:assemble
+2025-10-01T18:38:00.0812944Z > Task :mockito-integration-tests:groovy-tests:processResources NO-SOURCE
+2025-10-01T18:38:00.0814094Z > Task :mockito-integration-tests:groovy-tests:classes UP-TO-DATE
+2025-10-01T18:38:00.0815218Z > Task :mockito-integration-tests:groovy-inline-tests:licenseMain NO-SOURCE
+2025-10-01T18:38:00.0816252Z > Task :mockito-integration-tests:groovy-tests:jar
+2025-10-01T18:38:00.0817207Z > Task :mockito-integration-tests:groovy-tests:assemble
+2025-10-01T18:38:00.0817953Z > Task :mockito-integration-tests:groovy-tests:licenseMain NO-SOURCE
+2025-10-01T18:38:00.0818782Z > Task :mockito-integration-tests:groovy-inline-tests:licenseTest UP-TO-DATE
+2025-10-01T18:38:00.0819629Z > Task :mockito-integration-tests:groovy-inline-tests:license UP-TO-DATE
+2025-10-01T18:38:00.0820489Z > Task :mockito-integration-tests:groovy-inline-tests:compileTestJava NO-SOURCE
+2025-10-01T18:38:00.1824024Z > Task :mockito-integration-tests:groovy-tests:licenseTest UP-TO-DATE
+2025-10-01T18:38:00.1824810Z > Task :mockito-integration-tests:groovy-tests:license UP-TO-DATE
+2025-10-01T18:38:00.1825534Z > Task :mockito-integration-tests:groovy-tests:compileTestJava NO-SOURCE
+2025-10-01T18:38:10.2776051Z > Task :mockito-integration-tests:groovy-inline-tests:compileTestGroovy
+2025-10-01T18:38:10.2777060Z > Task :mockito-integration-tests:groovy-tests:compileTestGroovy
+2025-10-01T18:38:10.7775575Z > Task :mockito-integration-tests:android-tests:bundleDebugClassesToRuntimeJar
+2025-10-01T18:38:11.7779013Z > Task :mockito-integration-tests:android-tests:mergeLibDexDebug
+2025-10-01T18:38:11.7779961Z > Task :mockito-integration-tests:groovy-inline-tests:processTestResources NO-SOURCE
+2025-10-01T18:38:11.7780865Z > Task :mockito-integration-tests:groovy-inline-tests:testClasses
+2025-10-01T18:38:13.7774911Z 
+2025-10-01T18:38:13.7775451Z > Task :mockito-integration-tests:groovy-inline-tests:test
+2025-10-01T18:38:13.7775879Z 
+2025-10-01T18:38:13.7775884Z 
+2025-10-01T18:38:16.0774872Z 
+2025-10-01T18:38:16.0776088Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:38:16.7782117Z 
+2025-10-01T18:38:16.7786406Z > Task :mockito-integration-tests:android-tests:compileDebugUnitTestKotlin
+2025-10-01T18:38:17.7775413Z > Task :mockito-integration-tests:android-tests:packageDebug
+2025-10-01T18:38:17.7780003Z > Task :mockito-integration-tests:android-tests:createDebugApkListingFileRedirect
+2025-10-01T18:38:17.7784872Z > Task :mockito-integration-tests:android-tests:assembleDebug
+2025-10-01T18:38:17.7796090Z > Task :mockito-integration-tests:android-tests:assemble
+2025-10-01T18:38:17.7809022Z > Task :mockito-integration-tests:android-tests:preDebugUnitTestBuild UP-TO-DATE
+2025-10-01T18:38:17.7813421Z > Task :mockito-integration-tests:android-tests:lintAnalyzeDebug
+2025-10-01T18:38:17.8803723Z > Task :mockito-integration-tests:android-tests:javaPreCompileDebugUnitTest
+2025-10-01T18:38:17.8808462Z > Task :mockito-integration-tests:android-tests:compileDebugUnitTestJavaWithJavac NO-SOURCE
+2025-10-01T18:38:17.8812877Z > Task :mockito-integration-tests:android-tests:processDebugUnitTestJavaRes NO-SOURCE
+2025-10-01T18:38:19.8777900Z e: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.2.0/fdfc65fbc42fda253a26f61dac3c0aca335fae96/kotlin-stdlib-2.2.0.jar!/META-INF/kotlin-stdlib-jdk7.kotlin_module: Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.2.0, expected version is 1.7.1.
+2025-10-01T18:38:19.8779874Z 
+2025-10-01T18:38:19.8782243Z e: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.2.0/fdfc65fbc42fda253a26f61dac3c0aca335fae96/kotlin-stdlib-2.2.0.jar!/META-INF/kotlin-stdlib.kotlin_module: Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.2.0, expected version is 1.7.1.
+2025-10-01T18:38:19.8789203Z e: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.2.0/fdfc65fbc42fda253a26f61dac3c0aca335fae96/kotlin-stdlib-2.2.0.jar!/META-INF/kotlin-stdlib-jdk8.kotlin_module: Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.2.0, expected version is 1.7.1.
+2025-10-01T18:38:19.8794075Z e: /home/runner/work/mockito/mockito/mockito-integration-tests/android-tests/build/intermediates/compile_app_classes_jar/debug/classes.jar!/META-INF/android-tests_debug.kotlin_module: Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.2.0, expected version is 1.7.1.
+2025-10-01T18:38:19.8797483Z e: /home/runner/.gradle/caches/8.14.2/transforms/e1f65e05e15184a08acbf2335d86e981/transformed/monitor-1.8.0/jars/classes.jar!/META-INF/runner_monitor_java_androidx_test-monitor_kt.kotlin_module: Module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 1.9.0, expected version is 1.7.1.
+2025-10-01T18:38:19.8820325Z > Task :mockito-integration-tests:android-tests:lintAnalyzeDebug
+2025-10-01T18:38:24.3776316Z 
+2025-10-01T18:38:24.3780581Z > Task :mockito-integration-tests:groovy-inline-tests:test
+2025-10-01T18:38:24.3782458Z 
+2025-10-01T18:38:24.3788632Z   [0K[32m1 passing [90m(12.4s)[m
+2025-10-01T18:38:24.3799092Z 
+2025-10-01T18:38:24.3801305Z 
+2025-10-01T18:38:24.3806424Z > Task :mockito-integration-tests:groovy-inline-tests:check
+2025-10-01T18:38:24.3812031Z > Task :mockito-integration-tests:groovy-inline-tests:build
+2025-10-01T18:38:24.3813815Z > Task :mockito-integration-tests:groovy-tests:processTestResources NO-SOURCE
+2025-10-01T18:38:24.3831979Z > Task :mockito-integration-tests:groovy-tests:testClasses
+2025-10-01T18:38:24.3832378Z 
+2025-10-01T18:38:24.3832666Z > Task :mockito-integration-tests:android-tests:testDebugUnitTest
+2025-10-01T18:38:24.3833128Z 
+2025-10-01T18:38:24.3833135Z 
+2025-10-01T18:38:25.7775591Z 
+2025-10-01T18:38:25.7779705Z > Task :mockito-core:test
+2025-10-01T18:38:25.7784554Z   [0K[39morg.mockito.AnnotationsAreCopiedFromMockedTypeTest [36m- mock_should_have_annotations_copied_from_mocked_type_at_class_level[m
+2025-10-01T18:38:25.8776404Z   [0K[39morg.mockito.MockTest [36m- should_have_matching_enum_in_strictness_enum[TEST_LEVEL_DEFAULT][m
+2025-10-01T18:38:26.0813227Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:38:26.0814490Z 
+2025-10-01T18:38:26.3775471Z 
+2025-10-01T18:38:26.3780022Z > Task :mockito-integration-tests:groovy-tests:test
+2025-10-01T18:38:26.3780734Z 
+2025-10-01T18:38:26.3783827Z 
+2025-10-01T18:38:28.3822852Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:38:28.3824092Z 
+2025-10-01T18:38:28.3824889Z 
+2025-10-01T18:38:28.3825295Z > Task :mockito-core:test
+2025-10-01T18:38:28.3826301Z   [0K[39morg.mockito.MockitoEnvTest [36m- uses_mock_maker_from_env[m
+2025-10-01T18:38:28.3827308Z   [0K[39morg.mockito.MockitoEnvTest [36m- uses_member_accessor_from_env[m
+2025-10-01T18:38:28.3828491Z   [0K[39morg.mockito.MockitoTest [36m- shouldGiveExplanationOnConstructionMockingMockMaker[m
+2025-10-01T18:38:28.3829761Z   [0K[39morg.mockito.MockitoTest [36m- shouldGiveExplanationOnStaticMockingMockMaker[m
+2025-10-01T18:38:28.3831236Z   [0K[39morg.mockito.PrematureGarbageCollectionTest [36m- provoke_premature_garbage_collection[m
+2025-10-01T18:38:31.4786838Z 
+2025-10-01T18:38:31.4791294Z > Task :mockito-integration-tests:android-tests:testDebugUnitTest
+2025-10-01T18:38:31.4803293Z 
+2025-10-01T18:38:31.4804886Z   [0K[32m9 passing [90m(8.6s)[m
+2025-10-01T18:38:31.4806391Z 
+2025-10-01T18:38:31.4809878Z 
+2025-10-01T18:38:31.4813635Z > Task :mockito-integration-tests:android-tests:test
+2025-10-01T18:38:31.4817554Z > Task :mockito-integration-tests:inline-mocks-tests:compileJava NO-SOURCE
+2025-10-01T18:38:31.4818760Z > Task :mockito-integration-tests:inline-mocks-tests:processResources NO-SOURCE
+2025-10-01T18:38:31.4820065Z > Task :mockito-integration-tests:inline-mocks-tests:classes UP-TO-DATE
+2025-10-01T18:38:31.5831228Z > Task :mockito-integration-tests:inline-mocks-tests:jar
+2025-10-01T18:38:31.5833791Z > Task :mockito-integration-tests:inline-mocks-tests:assemble
+2025-10-01T18:38:31.5834752Z > Task :mockito-integration-tests:inline-mocks-tests:licenseMain NO-SOURCE
+2025-10-01T18:38:31.5835868Z > Task :mockito-integration-tests:inline-mocks-tests:licenseTest UP-TO-DATE
+2025-10-01T18:38:31.5836777Z > Task :mockito-integration-tests:inline-mocks-tests:license UP-TO-DATE
+2025-10-01T18:38:34.4775742Z > Task :mockito-integration-tests:inline-mocks-tests:compileTestJava
+2025-10-01T18:38:34.4780468Z > Task :mockito-integration-tests:inline-mocks-tests:processTestResources NO-SOURCE
+2025-10-01T18:38:34.4785287Z > Task :mockito-integration-tests:inline-mocks-tests:testClasses
+2025-10-01T18:38:35.6776215Z 
+2025-10-01T18:38:35.6777242Z > Task :mockito-integration-tests:android-tests:lintReportDebug
+2025-10-01T18:38:35.6778522Z Wrote HTML report to file:///home/runner/work/mockito/mockito/mockito-integration-tests/android-tests/build/reports/lint-results-debug.html
+2025-10-01T18:38:35.6779466Z 
+2025-10-01T18:38:35.6779829Z > Task :mockito-integration-tests:android-tests:lintDebug
+2025-10-01T18:38:35.6780504Z > Task :mockito-integration-tests:android-tests:lint
+2025-10-01T18:38:35.6781404Z > Task :mockito-integration-tests:android-tests:check
+2025-10-01T18:38:35.6782133Z > Task :mockito-integration-tests:android-tests:build
+2025-10-01T18:38:35.6783328Z > Task :mockito-integration-tests:java-21-tests:compileJava NO-SOURCE
+2025-10-01T18:38:35.6784216Z > Task :mockito-integration-tests:java-21-tests:processResources NO-SOURCE
+2025-10-01T18:38:35.6785057Z > Task :mockito-integration-tests:java-21-tests:classes UP-TO-DATE
+2025-10-01T18:38:35.6785797Z > Task :mockito-integration-tests:java-21-tests:jar
+2025-10-01T18:38:35.6786441Z > Task :mockito-integration-tests:java-21-tests:assemble
+2025-10-01T18:38:35.6787186Z > Task :mockito-integration-tests:java-21-tests:licenseMain NO-SOURCE
+2025-10-01T18:38:35.7775877Z > Task :mockito-integration-tests:java-21-tests:licenseTest UP-TO-DATE
+2025-10-01T18:38:35.7780769Z > Task :mockito-integration-tests:java-21-tests:license UP-TO-DATE
+2025-10-01T18:38:36.0776848Z 
+2025-10-01T18:38:36.0804476Z > Task :mockito-integration-tests:groovy-tests:test
+2025-10-01T18:38:36.0805333Z 
+2025-10-01T18:38:36.0805862Z   [0K[32m1 passing [90m(11.6s)[m
+2025-10-01T18:38:36.0809007Z 
+2025-10-01T18:38:36.0809260Z 
+2025-10-01T18:38:36.0819586Z > Task :mockito-integration-tests:groovy-tests:check
+2025-10-01T18:38:36.0820556Z > Task :mockito-integration-tests:groovy-tests:build
+2025-10-01T18:38:36.0821512Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:compileJava NO-SOURCE
+2025-10-01T18:38:36.0822903Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:processResources NO-SOURCE
+2025-10-01T18:38:36.0824239Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:classes UP-TO-DATE
+2025-10-01T18:38:36.0825044Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:jar
+2025-10-01T18:38:36.0825801Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:assemble
+2025-10-01T18:38:36.0826621Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:licenseMain NO-SOURCE
+2025-10-01T18:38:36.1847790Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:licenseTest UP-TO-DATE
+2025-10-01T18:38:36.1849095Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:license UP-TO-DATE
+2025-10-01T18:38:36.3792825Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:compileTestJava
+2025-10-01T18:38:36.3794279Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:processTestResources
+2025-10-01T18:38:36.3795667Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:testClasses
+2025-10-01T18:38:36.4792026Z 
+2025-10-01T18:38:36.4792614Z > Task :mockito-integration-tests:inline-mocks-tests:test
+2025-10-01T18:38:36.4793069Z 
+2025-10-01T18:38:36.4793078Z 
+2025-10-01T18:38:38.0793072Z 
+2025-10-01T18:38:38.0822577Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:38:38.3803316Z 
+2025-10-01T18:38:38.3804314Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:test
+2025-10-01T18:38:38.3805068Z 
+2025-10-01T18:38:38.3810071Z 
+2025-10-01T18:38:41.8797698Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:38:41.8821754Z 
+2025-10-01T18:38:46.0777940Z 
+2025-10-01T18:38:46.0778747Z > Task :mockito-integration-tests:java-21-tests:compileTestJava
+2025-10-01T18:38:46.0779860Z > Task :mockito-integration-tests:java-21-tests:processTestResources NO-SOURCE
+2025-10-01T18:38:46.0780876Z > Task :mockito-integration-tests:java-21-tests:testClasses
+2025-10-01T18:38:46.0782096Z > Task :mockito-integration-tests:java-21-tests:testWithBytebuddyAgent SKIPPED
+2025-10-01T18:38:46.0783267Z > Task :mockito-integration-tests:java-21-tests:testWithEnableDynamicAgentLoading SKIPPED
+2025-10-01T18:38:46.0784449Z > Task :mockito-integration-tests:java-21-tests:testWithMockitoAgent SKIPPED
+2025-10-01T18:38:46.0785423Z > Task :mockito-integration-tests:java-21-tests:test SKIPPED
+2025-10-01T18:38:46.0786331Z > Task :mockito-integration-tests:java-21-tests:check UP-TO-DATE
+2025-10-01T18:38:46.0787207Z > Task :mockito-integration-tests:java-21-tests:build
+2025-10-01T18:38:46.0788737Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:compileJava NO-SOURCE
+2025-10-01T18:38:46.0790282Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:processResources NO-SOURCE
+2025-10-01T18:38:46.0792074Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:classes UP-TO-DATE
+2025-10-01T18:38:46.0853072Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:jar
+2025-10-01T18:38:46.0854275Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:assemble
+2025-10-01T18:38:46.0855523Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:licenseMain NO-SOURCE
+2025-10-01T18:38:46.1783426Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:licenseTest UP-TO-DATE
+2025-10-01T18:38:46.1787577Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:license UP-TO-DATE
+2025-10-01T18:38:46.7775838Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:compileTestJava
+2025-10-01T18:38:46.7777446Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:processTestResources
+2025-10-01T18:38:46.7778893Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:testClasses
+2025-10-01T18:38:47.8780665Z 
+2025-10-01T18:38:47.8800757Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:test
+2025-10-01T18:38:47.8806517Z 
+2025-10-01T18:38:47.8807144Z   [0K[32m1 passing [90m(11.4s)[m
+2025-10-01T18:38:47.8807456Z 
+2025-10-01T18:38:47.8807464Z 
+2025-10-01T18:38:47.8807799Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:check
+2025-10-01T18:38:47.8808589Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:build
+2025-10-01T18:38:47.8809442Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:compileJava NO-SOURCE
+2025-10-01T18:38:47.8810425Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:processResources NO-SOURCE
+2025-10-01T18:38:47.8811532Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:classes UP-TO-DATE
+2025-10-01T18:38:47.9776216Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:jar
+2025-10-01T18:38:47.9781410Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:assemble
+2025-10-01T18:38:47.9782753Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:licenseMain NO-SOURCE
+2025-10-01T18:38:47.9787354Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:licenseTest UP-TO-DATE
+2025-10-01T18:38:47.9788583Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:license UP-TO-DATE
+2025-10-01T18:38:48.2823781Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:compileTestJava
+2025-10-01T18:38:48.2838563Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:processTestResources
+2025-10-01T18:38:48.2839496Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:testClasses
+2025-10-01T18:38:48.7775553Z 
+2025-10-01T18:38:48.7779847Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:test
+2025-10-01T18:38:48.7780728Z 
+2025-10-01T18:38:48.7780991Z 
+2025-10-01T18:38:52.7775534Z 
+2025-10-01T18:38:52.7776831Z 
+2025-10-01T18:38:52.7778543Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:test
+2025-10-01T18:38:52.7779728Z 
+2025-10-01T18:38:52.7782156Z 
+2025-10-01T18:38:52.7812555Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:38:54.1776213Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:38:54.1801759Z 
+2025-10-01T18:38:58.3776156Z 
+2025-10-01T18:38:58.3778048Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:test
+2025-10-01T18:38:58.3779676Z 
+2025-10-01T18:38:58.3781390Z   [0K[32m14 passing [90m(10s)[m
+2025-10-01T18:38:58.3782810Z 
+2025-10-01T18:38:58.3784238Z 
+2025-10-01T18:38:58.3785711Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:check
+2025-10-01T18:38:58.3787895Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:build
+2025-10-01T18:38:58.3790104Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2025-10-01T18:38:58.3791949Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:compileKotlin NO-SOURCE
+2025-10-01T18:38:58.3796631Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:compileJava NO-SOURCE
+2025-10-01T18:38:58.3798955Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:processResources NO-SOURCE
+2025-10-01T18:38:58.3801408Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:classes UP-TO-DATE
+2025-10-01T18:38:58.4776049Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:jar
+2025-10-01T18:38:58.4777461Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:assemble
+2025-10-01T18:38:58.4778521Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:licenseMain NO-SOURCE
+2025-10-01T18:38:58.4782616Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:licenseTest UP-TO-DATE
+2025-10-01T18:38:58.4785206Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:license UP-TO-DATE
+2025-10-01T18:39:00.1775695Z 
+2025-10-01T18:39:00.1780030Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:test
+2025-10-01T18:39:00.1780907Z 
+2025-10-01T18:39:00.1784958Z   [0K[32m6 passing [90m(13.3s)[m
+2025-10-01T18:39:00.1785443Z 
+2025-10-01T18:39:00.2792094Z 
+2025-10-01T18:39:00.2796133Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:check
+2025-10-01T18:39:00.2807474Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:build
+2025-10-01T18:39:00.2808979Z > Task :mockito-integration-tests:kotlin-tests:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2025-10-01T18:39:00.2810065Z > Task :mockito-integration-tests:kotlin-tests:compileKotlin NO-SOURCE
+2025-10-01T18:39:00.2810919Z > Task :mockito-integration-tests:kotlin-tests:compileJava NO-SOURCE
+2025-10-01T18:39:00.2812034Z > Task :mockito-integration-tests:kotlin-tests:processResources NO-SOURCE
+2025-10-01T18:39:00.2812938Z > Task :mockito-integration-tests:kotlin-tests:classes UP-TO-DATE
+2025-10-01T18:39:00.3776787Z > Task :mockito-integration-tests:kotlin-tests:jar
+2025-10-01T18:39:00.3781556Z > Task :mockito-integration-tests:kotlin-tests:assemble
+2025-10-01T18:39:00.3785920Z > Task :mockito-integration-tests:kotlin-tests:licenseMain NO-SOURCE
+2025-10-01T18:39:00.3786989Z > Task :mockito-integration-tests:kotlin-tests:licenseTest UP-TO-DATE
+2025-10-01T18:39:00.3787787Z > Task :mockito-integration-tests:kotlin-tests:license UP-TO-DATE
+2025-10-01T18:39:05.7792644Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:compileTestKotlin
+2025-10-01T18:39:05.7807973Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:compileTestJava NO-SOURCE
+2025-10-01T18:39:05.7809174Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:processTestResources
+2025-10-01T18:39:05.7810141Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:testClasses
+2025-10-01T18:39:07.7775628Z 
+2025-10-01T18:39:07.7841772Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:test
+2025-10-01T18:39:07.7842713Z 
+2025-10-01T18:39:07.7842992Z 
+2025-10-01T18:39:09.4775271Z 
+2025-10-01T18:39:09.4776185Z > Task :mockito-integration-tests:kotlin-tests:compileTestKotlin
+2025-10-01T18:39:09.4777282Z > Task :mockito-integration-tests:kotlin-tests:compileTestJava NO-SOURCE
+2025-10-01T18:39:09.4778160Z > Task :mockito-integration-tests:kotlin-tests:processTestResources
+2025-10-01T18:39:09.4779005Z > Task :mockito-integration-tests:kotlin-tests:testClasses
+2025-10-01T18:39:10.7803428Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:11.4801896Z 
+2025-10-01T18:39:11.4802415Z > Task :mockito-integration-tests:kotlin-tests:test
+2025-10-01T18:39:11.4802821Z 
+2025-10-01T18:39:11.4802974Z 
+2025-10-01T18:39:13.5775344Z 
+2025-10-01T18:39:13.5781709Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:15.7781720Z 
+2025-10-01T18:39:15.7782765Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:test
+2025-10-01T18:39:15.7783560Z 
+2025-10-01T18:39:15.7784463Z   [0K[32m5 passing [90m(9.8s)[m
+2025-10-01T18:39:15.7785002Z 
+2025-10-01T18:39:15.7785272Z 
+2025-10-01T18:39:15.7785833Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:check
+2025-10-01T18:39:15.7786756Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:build
+2025-10-01T18:39:15.7787714Z > Task :mockito-integration-tests:memory-tests:compileJava NO-SOURCE
+2025-10-01T18:39:15.7788647Z > Task :mockito-integration-tests:memory-tests:processResources NO-SOURCE
+2025-10-01T18:39:15.7789559Z > Task :mockito-integration-tests:memory-tests:classes UP-TO-DATE
+2025-10-01T18:39:15.8776087Z > Task :mockito-integration-tests:memory-tests:jar
+2025-10-01T18:39:15.8780177Z > Task :mockito-integration-tests:memory-tests:assemble
+2025-10-01T18:39:15.8785318Z > Task :mockito-integration-tests:memory-tests:licenseMain NO-SOURCE
+2025-10-01T18:39:15.8789943Z > Task :mockito-integration-tests:memory-tests:licenseTest UP-TO-DATE
+2025-10-01T18:39:15.8794702Z > Task :mockito-integration-tests:memory-tests:license UP-TO-DATE
+2025-10-01T18:39:16.1793515Z > Task :mockito-integration-tests:memory-tests:compileTestJava
+2025-10-01T18:39:16.2775940Z > Task :mockito-integration-tests:memory-tests:processTestResources NO-SOURCE
+2025-10-01T18:39:16.2777729Z > Task :mockito-integration-tests:memory-tests:testClasses
+2025-10-01T18:39:18.1775276Z 
+2025-10-01T18:39:18.1779305Z > Task :mockito-integration-tests:memory-tests:test
+2025-10-01T18:39:18.1783296Z 
+2025-10-01T18:39:18.1786706Z 
+2025-10-01T18:39:19.9775445Z 
+2025-10-01T18:39:19.9776770Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:20.8776346Z 
+2025-10-01T18:39:20.8780749Z > Task :mockito-integration-tests:kotlin-tests:test
+2025-10-01T18:39:20.8782641Z 
+2025-10-01T18:39:20.8783444Z   [0K[32m24 passing [90m(11.2s)[m
+2025-10-01T18:39:20.8783919Z 
+2025-10-01T18:39:20.8784014Z 
+2025-10-01T18:39:20.8790925Z > Task :mockito-integration-tests:kotlin-tests:check
+2025-10-01T18:39:20.8792265Z > Task :mockito-integration-tests:kotlin-tests:build
+2025-10-01T18:39:20.8793324Z > Task :mockito-integration-tests:module-named-tests:compileJava NO-SOURCE
+2025-10-01T18:39:20.8794553Z > Task :mockito-integration-tests:module-named-tests:processResources NO-SOURCE
+2025-10-01T18:39:20.8795553Z > Task :mockito-integration-tests:module-named-tests:classes UP-TO-DATE
+2025-10-01T18:39:20.8796446Z > Task :mockito-integration-tests:module-named-tests:jar
+2025-10-01T18:39:20.8797225Z > Task :mockito-integration-tests:module-named-tests:assemble
+2025-10-01T18:39:20.8798058Z > Task :mockito-integration-tests:module-named-tests:licenseMain NO-SOURCE
+2025-10-01T18:39:20.9775972Z Missing header in: mockito-integration-tests/module-named-tests/src/test/java/module-info.java
+2025-10-01T18:39:20.9776819Z > Task :mockito-integration-tests:module-named-tests:licenseTest
+2025-10-01T18:39:20.9777438Z > Task :mockito-integration-tests:module-named-tests:license
+2025-10-01T18:39:21.3776340Z > Task :mockito-integration-tests:module-named-tests:compileTestJava
+2025-10-01T18:39:21.3781409Z > Task :mockito-integration-tests:module-named-tests:processTestResources NO-SOURCE
+2025-10-01T18:39:21.3782909Z > Task :mockito-integration-tests:module-named-tests:testClasses
+2025-10-01T18:39:23.3775236Z 
+2025-10-01T18:39:23.3779245Z > Task :mockito-integration-tests:module-named-tests:test
+2025-10-01T18:39:23.3780783Z 
+2025-10-01T18:39:23.3821553Z 
+2025-10-01T18:39:24.9804876Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:24.9805666Z 
+2025-10-01T18:39:25.0795546Z 
+2025-10-01T18:39:25.0796755Z > Task :mockito-integration-tests:inline-mocks-tests:test
+2025-10-01T18:39:25.0797469Z 
+2025-10-01T18:39:25.0798204Z   [0K[32m63 passing [90m(50.4s)[m
+2025-10-01T18:39:25.0798682Z 
+2025-10-01T18:39:25.1775770Z 
+2025-10-01T18:39:25.1776692Z > Task :mockito-integration-tests:inline-mocks-tests:check
+2025-10-01T18:39:25.1777745Z > Task :mockito-integration-tests:inline-mocks-tests:build
+2025-10-01T18:39:25.1778609Z > Task :mockito-integration-tests:module-tests:compileJava NO-SOURCE
+2025-10-01T18:39:25.1779413Z > Task :mockito-integration-tests:module-tests:processResources NO-SOURCE
+2025-10-01T18:39:25.1780187Z > Task :mockito-integration-tests:module-tests:classes UP-TO-DATE
+2025-10-01T18:39:25.1780806Z > Task :mockito-integration-tests:module-tests:jar
+2025-10-01T18:39:25.1781612Z > Task :mockito-integration-tests:module-tests:assemble
+2025-10-01T18:39:25.1782257Z > Task :mockito-integration-tests:module-tests:licenseMain NO-SOURCE
+2025-10-01T18:39:25.2776002Z > Task :mockito-integration-tests:module-tests:licenseTest UP-TO-DATE
+2025-10-01T18:39:25.2777773Z > Task :mockito-integration-tests:module-tests:license UP-TO-DATE
+2025-10-01T18:39:26.5775752Z > Task :mockito-integration-tests:module-tests:compileTestJava
+2025-10-01T18:39:26.6802672Z > Task :mockito-integration-tests:module-tests:processTestResources NO-SOURCE
+2025-10-01T18:39:26.6803944Z > Task :mockito-integration-tests:module-tests:testClasses
+2025-10-01T18:39:28.5779066Z 
+2025-10-01T18:39:28.5798483Z > Task :mockito-integration-tests:module-tests:test
+2025-10-01T18:39:28.5799260Z 
+2025-10-01T18:39:28.5802588Z 
+2025-10-01T18:39:30.3775540Z 
+2025-10-01T18:39:30.3779820Z > Task :mockito-integration-tests:module-named-tests:test
+2025-10-01T18:39:30.3780543Z 
+2025-10-01T18:39:30.3784706Z   [0K[32m4 passing [90m(8.9s)[m
+2025-10-01T18:39:30.3785297Z 
+2025-10-01T18:39:30.3788722Z 
+2025-10-01T18:39:30.3789268Z > Task :mockito-integration-tests:module-named-tests:check
+2025-10-01T18:39:30.3802580Z > Task :mockito-integration-tests:module-named-tests:build
+2025-10-01T18:39:30.4775456Z > Task :mockito-integration-tests:osgi-tests:compileJava NO-SOURCE
+2025-10-01T18:39:30.4778876Z > Task :mockito-integration-tests:osgi-tests:processResources NO-SOURCE
+2025-10-01T18:39:30.4779981Z > Task :mockito-integration-tests:osgi-tests:classes UP-TO-DATE
+2025-10-01T18:39:30.4780827Z > Task :mockito-integration-tests:osgi-tests:jar
+2025-10-01T18:39:30.4781595Z > Task :mockito-integration-tests:osgi-tests:assemble
+2025-10-01T18:39:30.4782236Z > Task :mockito-integration-tests:osgi-tests:licenseMain NO-SOURCE
+2025-10-01T18:39:30.5852557Z > Task :mockito-integration-tests:osgi-tests:licenseOtherBundle UP-TO-DATE
+2025-10-01T18:39:30.5853725Z > Task :mockito-integration-tests:osgi-tests:licenseTest UP-TO-DATE
+2025-10-01T18:39:30.5854769Z > Task :mockito-integration-tests:osgi-tests:licenseTestBundle UP-TO-DATE
+2025-10-01T18:39:30.5855816Z > Task :mockito-integration-tests:osgi-tests:license UP-TO-DATE
+2025-10-01T18:39:30.5856468Z 
+2025-10-01T18:39:30.5856771Z > Task :mockito-core:test
+2025-10-01T18:39:30.5858121Z   [0K[39morg.mockito.internal.runners.DefaultInternalRunnerTest [36m- does_not_fail_second_test_when_first_test_fail[m
+2025-10-01T18:39:30.6775706Z 
+2025-10-01T18:39:30.6810734Z > Task :mockito-integration-tests:osgi-tests:compileOtherBundleJava
+2025-10-01T18:39:30.6814556Z > Task :mockito-integration-tests:osgi-tests:processOtherBundleResources NO-SOURCE
+2025-10-01T18:39:30.6815650Z > Task :mockito-integration-tests:osgi-tests:otherBundleClasses
+2025-10-01T18:39:30.7775495Z > Task :mockito-integration-tests:osgi-tests:otherBundle
+2025-10-01T18:39:30.9775624Z > Task :mockito-integration-tests:osgi-tests:compileTestBundleJava
+2025-10-01T18:39:31.0803978Z > Task :mockito-integration-tests:osgi-tests:processTestBundleResources NO-SOURCE
+2025-10-01T18:39:31.0806450Z > Task :mockito-integration-tests:osgi-tests:testBundleClasses
+2025-10-01T18:39:31.0808969Z > Task :mockito-integration-tests:osgi-tests:testBundle
+2025-10-01T18:39:31.5776457Z > Task :mockito-integration-tests:osgi-tests:compileTestJava
+2025-10-01T18:39:31.6792852Z > Task :mockito-integration-tests:osgi-tests:processTestResources NO-SOURCE
+2025-10-01T18:39:31.6794053Z > Task :mockito-integration-tests:osgi-tests:testClasses
+2025-10-01T18:39:33.5793588Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:33.5802628Z 
+2025-10-01T18:39:33.5803000Z > Task :mockito-integration-tests:osgi-tests:test
+2025-10-01T18:39:33.5803375Z 
+2025-10-01T18:39:33.5803383Z 
+2025-10-01T18:39:34.5776955Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:34.5851908Z 
+2025-10-01T18:39:34.5852262Z 
+2025-10-01T18:39:34.5853167Z > Task :mockito-integration-tests:module-tests:test
+2025-10-01T18:39:34.5859818Z   [0K[39morg.mockito.moduletest.ModuleAccessTest [36m- cannot_read_unopened_private_field_but_exception_includes_cause[m
+2025-10-01T18:39:34.5862253Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_java_util_module[0][m
+2025-10-01T18:39:34.5864589Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_reading_module[0][m
+2025-10-01T18:39:34.5866327Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_non_reading_module[0][m
+2025-10-01T18:39:34.5868035Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_closed_module[0][m
+2025-10-01T18:39:34.5869861Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_non_opened_non_exported_module_if_unsafe_injection[0][m
+2025-10-01T18:39:34.5872023Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_reading_private_module[0][m
+2025-10-01T18:39:34.5873772Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_non_reading_non_exporting_module[0][m
+2025-10-01T18:39:34.5875701Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- cannot_define_class_in_non_opened_non_exported_module_if_lookup_injection[0][m
+2025-10-01T18:39:36.5813372Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_java_util_module[1][m
+2025-10-01T18:39:36.6783120Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_reading_module[1][m
+2025-10-01T18:39:36.6784844Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_non_reading_module[1][m
+2025-10-01T18:39:36.6788039Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_closed_module[1][m
+2025-10-01T18:39:36.6789872Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_non_opened_non_exported_module_if_unsafe_injection[1][m
+2025-10-01T18:39:36.6792068Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_reading_private_module[1][m
+2025-10-01T18:39:36.6794228Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- can_define_class_in_open_non_reading_non_exporting_module[1][m
+2025-10-01T18:39:36.6796306Z   [0K[39morg.mockito.moduletest.ModuleHandlingTest [36m- cannot_define_class_in_non_opened_non_exported_module_if_lookup_injection[1][m
+2025-10-01T18:39:36.7776206Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:36.7821857Z 
+2025-10-01T18:39:38.1775992Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:38.6776094Z 
+2025-10-01T18:39:38.6776634Z > Task :mockito-integration-tests:module-tests:test
+2025-10-01T18:39:38.6777079Z 
+2025-10-01T18:39:38.6778029Z   [0K[32m5 passing [90m(11.9s)
+2025-10-01T18:39:38.6778539Z   [0K[36m17 pending[m
+2025-10-01T18:39:38.6778798Z 
+2025-10-01T18:39:38.6778805Z 
+2025-10-01T18:39:38.6779038Z > Task :mockito-integration-tests:module-tests:check
+2025-10-01T18:39:38.6779639Z > Task :mockito-integration-tests:module-tests:build
+2025-10-01T18:39:38.6780393Z > Task :mockito-integration-tests:programmatic-tests:compileJava NO-SOURCE
+2025-10-01T18:39:38.7832488Z > Task :mockito-integration-tests:programmatic-tests:processResources NO-SOURCE
+2025-10-01T18:39:38.7833540Z > Task :mockito-integration-tests:programmatic-tests:classes UP-TO-DATE
+2025-10-01T18:39:38.7842139Z > Task :mockito-integration-tests:programmatic-tests:jar
+2025-10-01T18:39:38.7842765Z > Task :mockito-integration-tests:programmatic-tests:assemble
+2025-10-01T18:39:38.7843459Z > Task :mockito-integration-tests:programmatic-tests:licenseMain NO-SOURCE
+2025-10-01T18:39:38.7844222Z > Task :mockito-integration-tests:programmatic-tests:licenseTest UP-TO-DATE
+2025-10-01T18:39:38.7844989Z > Task :mockito-integration-tests:programmatic-tests:license UP-TO-DATE
+2025-10-01T18:39:39.0776186Z > Task :mockito-integration-tests:programmatic-tests:compileTestJava
+2025-10-01T18:39:39.0779766Z > Task :mockito-integration-tests:programmatic-tests:processTestResources NO-SOURCE
+2025-10-01T18:39:39.0781488Z > Task :mockito-integration-tests:programmatic-tests:testClasses
+2025-10-01T18:39:39.5795422Z 
+2025-10-01T18:39:39.5796229Z > Task :mockito-core:test
+2025-10-01T18:39:39.5797794Z   [0K[39morg.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest [36m- should_return_empty_sequenced_map[m
+2025-10-01T18:39:39.5799608Z   [0K[39morg.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest [36m- should_return_empty_sequenced_set[m
+2025-10-01T18:39:40.1776014Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:40.1776852Z 
+2025-10-01T18:39:41.0775836Z 
+2025-10-01T18:39:41.0812136Z > Task :mockito-integration-tests:programmatic-tests:test
+2025-10-01T18:39:41.0812876Z 
+2025-10-01T18:39:41.0813164Z 
+2025-10-01T18:39:42.5776462Z 
+2025-10-01T18:39:42.5776639Z 
+2025-10-01T18:39:42.5777069Z > Task :mockito-core:test
+2025-10-01T18:39:42.5778446Z   [0K[39morg.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest [36m- should_return_empty_sequenced_collection[m
+2025-10-01T18:39:42.5781287Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:42.6776563Z   [0K[39morg.mockito.internal.stubbing.defaultanswers.ReturnsMocksTest [36m- should_return_null_for_final_class_if_unsupported[m
+2025-10-01T18:39:44.3803862Z 
+2025-10-01T18:39:44.3808283Z > Task :mockito-integration-tests:osgi-tests:test
+2025-10-01T18:39:44.3809041Z 
+2025-10-01T18:39:44.3809855Z   [0K[32m3 passing [90m(12.4s)[m
+2025-10-01T18:39:44.3810302Z 
+2025-10-01T18:39:44.3810313Z 
+2025-10-01T18:39:44.3810580Z > Task :mockito-integration-tests:osgi-tests:check
+2025-10-01T18:39:44.3814000Z > Task :mockito-integration-tests:osgi-tests:build
+2025-10-01T18:39:49.2775560Z 
+2025-10-01T18:39:49.2776399Z > Task :mockito-core:test
+2025-10-01T18:39:49.2778116Z   [0K[39morg.mockitointegration.NoJUnitDependenciesTest [36m- pure_mockito_should_not_depend_JUnit___ByteBuddy[m
+2025-10-01T18:39:49.5780073Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:39:49.5780891Z 
+2025-10-01T18:39:52.1775377Z 
+2025-10-01T18:39:52.1775936Z > Task :mockito-integration-tests:programmatic-tests:test
+2025-10-01T18:39:52.1776362Z 
+2025-10-01T18:39:52.1776776Z   [0K[32m8 passing [90m(13s)[m
+2025-10-01T18:39:52.1777052Z 
+2025-10-01T18:39:52.2775525Z 
+2025-10-01T18:39:52.2776534Z > Task :mockito-integration-tests:programmatic-tests:check
+2025-10-01T18:39:52.2777676Z > Task :mockito-integration-tests:programmatic-tests:build
+2025-10-01T18:39:52.3775431Z 
+2025-10-01T18:39:52.3776663Z > Task :mockito-core:test
+2025-10-01T18:39:52.3778088Z   [0K[39morg.mockitousage.annotation.SpyAnnotationTest [36m- should_report_private_inner_not_supported[m
+2025-10-01T18:39:55.8775804Z   [0K[39morg.mockitousage.bugs.GenericsMockitoAnnotationsTest [36m- should_not_throw_class_cast_exception[m
+2025-10-01T18:39:56.1776253Z   [0K[39morg.mockitousage.bugs.MultithreadedStubbingHalfManualTest [36m- tryToRevealTheProblem[m
+2025-10-01T18:39:57.3777026Z   [0K[39morg.mockitousage.bugs.injection.ParentTestMockInjectionTest$ImplicitTest [36m- noNullPointerException[m
+2025-10-01T18:39:57.5774797Z 
+2025-10-01T18:39:57.5779804Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-10-01T18:40:02.3775491Z 
+2025-10-01T18:40:02.3776291Z > Task :mockito-core:test
+2025-10-01T18:40:02.3777633Z   [0K[39morg.mockitousage.jls.JLS_15_12_2_5Test [36m- with_variable_arg_and_matcher_String_cast[m
+2025-10-01T18:40:02.3779206Z   [0K[39morg.mockitousage.jls.JLS_15_12_2_5Test [36m- with_single_arg_and_null_Object_reference[m
+2025-10-01T18:40:02.3785888Z   [0K[39morg.mockitousage.jls.JLS_15_12_2_5Test [36m- with_variable_arg_and_null_Object_array[m
+2025-10-01T18:40:02.4776481Z   [0K[39morg.mockitousage.jls.JLS_15_12_2_5Test [36m- with_variable_arg_and_matcher_String_array_cast[m
+2025-10-01T18:40:02.4781183Z   [0K[39morg.mockitousage.jls.JLS_15_12_2_5Test [36m- with_single_arg_and_matcher_cast[m
+2025-10-01T18:40:02.4785516Z   [0K[39morg.mockitousage.jls.JLS_15_12_2_5Test [36m- with_variable_arg_and_null_Object_arg[m
+2025-10-01T18:40:02.4789986Z   [0K[39morg.mockitousage.jls.JLS_15_12_2_5Test [36m- with_variable_arg[m
+2025-10-01T18:40:02.4794127Z   [0K[39morg.mockitousage.jls.JLS_15_12_2_5Test [36m- with_single_arg[m
+2025-10-01T18:40:02.7775514Z 
+2025-10-01T18:40:02.7779762Z > Task :mockito-integration-tests:memory-tests:test
+2025-10-01T18:40:02.7784151Z 
+2025-10-01T18:40:02.7784895Z   [0K[32m2 passing [90m(46.4s)[m
+2025-10-01T18:40:02.7786657Z 
+2025-10-01T18:40:02.7786926Z 
+2025-10-01T18:40:02.7787454Z > Task :mockito-integration-tests:memory-tests:check
+2025-10-01T18:40:02.7789397Z > Task :mockito-integration-tests:memory-tests:build
+2025-10-01T18:40:04.4785156Z 
+2025-10-01T18:40:04.4789919Z > Task :mockito-core:test
+2025-10-01T18:40:04.4795354Z   [0K[39morg.mockitousage.junitrunner.ModellingVerboseMockitoTest [36m- shouldLogUnusedStubbingWarningWhenTestFails[m
+2025-10-01T18:40:04.4819006Z   [0K[39morg.mockitousage.junitrunner.ModellingVerboseMockitoTest [36m- shouldNotLogAnythingWhenNoWarnings[m
+2025-10-01T18:40:04.4821333Z   [0K[39morg.mockitousage.matchers.MatchersMixedWithRawArgumentsTest [36m- shouldAllowMixingRawArgumentsWithMatchers[m
+2025-10-01T18:40:04.4824111Z   [0K[39morg.mockitousage.matchers.VarargsTest [36m- shouldNotVerifyExactlyOneVarArg_any[m
+2025-10-01T18:40:04.4826199Z   [0K[39morg.mockitousage.misuse.DetectingFinalMethodsTest [36m- shouldFailWithUnfinishedVerification[m
+2025-10-01T18:40:04.4829103Z   [0K[39morg.mockitousage.misuse.DetectingFinalMethodsTest [36m- shouldFailWithUnfinishedStubbing[m
+2025-10-01T18:40:04.4831272Z   [0K[39morg.mockitousage.misuse.DetectingMisusedMatchersTest [36m- shouldSayUnfinishedVerificationButNotInvalidUseOfMatchers[m
+2025-10-01T18:40:04.4834387Z   [0K[39morg.mockitousage.misuse.InvalidUsageTest [36m- shouldNotAllowMockingFinalClassesIfDisabled[m
+2025-10-01T18:40:04.4837009Z   [0K[39morg.mockitousage.performance.LoadsOfMocksTest [36m- testSomething[m
+2025-10-01T18:40:04.4840064Z   [0K[39morg.mockitousage.performance.StubOnlyAvoidMemoryConsumptionTest [36m- without_stub_only_mocks_will_store_invocations_leading_to_an_OutOfMemoryError[m
+2025-10-01T18:40:25.1777112Z   [0K[39morg.mockitousage.spies.PartialMockingWithSpiesTest [36m- shouldStackTraceGetFilteredOnUserExceptionsReflectionForJava21AndHigher[m
+2025-10-01T18:40:25.1780056Z   [0K[39morg.mockitousage.spies.PartialMockingWithSpiesTest [36m- shouldStackTraceGetFilteredOnUserExceptionsReflectionForJavaOfVersionLessThan21[m
+2025-10-01T18:40:25.4776526Z   [0K[39morg.mockitousage.spies.SpyingOnRealObjectsTest [36m- shouldSayNiceMessageWhenSpyingOnPrivateClass[m
+2025-10-01T18:40:25.5782272Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldMentionFinalAndObjectMethodsWhenVerifying[m
+2025-10-01T18:40:25.5795145Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldMentionFinalAndObjectMethodsWhenMissingMockCall[m
+2025-10-01T18:40:25.5796887Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayNoMoreInteractions[m
+2025-10-01T18:40:25.5809266Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldScreamWhenNullPassedInsteadOfAnInterface[m
+2025-10-01T18:40:25.5817298Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- makeSureStateIsValidatedInTheVeryFirstTestThanksToTheRunner[m
+2025-10-01T18:40:25.5819153Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldScreamWhenExtraInterfacesEmpty[m
+2025-10-01T18:40:25.5820799Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayTooFewInvocationsInAtLeastMode[m
+2025-10-01T18:40:25.5823185Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayTooManyInvocations[m
+2025-10-01T18:40:25.5824655Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayWantedButNotInvoked[m
+2025-10-01T18:40:25.5826263Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayTooFewInvocations[m
+2025-10-01T18:40:25.5827823Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldScreamWhenExtraIsTheSame[m
+2025-10-01T18:40:25.5829399Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayNeverWantedButInvokedHere[m
+2025-10-01T18:40:25.5831331Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldShowExampleOfCorrectArgumentCapturing[m
+2025-10-01T18:40:25.5833082Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldScreamWhenExtraInterfacesIsANullArray[m
+2025-10-01T18:40:25.5836958Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldPointOutUnfinishedStubbing[m
+2025-10-01T18:40:25.5838563Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldShowActualAndExpected[m
+2025-10-01T18:40:25.5840137Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayTooManyInvocationsInOrder[m
+2025-10-01T18:40:25.5842036Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayWantedButNotInvokedInOrder[m
+2025-10-01T18:40:25.5843522Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayTooFewInvocationsInOrder[m
+2025-10-01T18:40:25.5845309Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldMentionSpiesWhenVoidMethodIsToldToReturnValue[m
+2025-10-01T18:40:25.5847023Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayUnstubbedMethodWasInvokedHere[m
+2025-10-01T18:40:25.5851980Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldMentionFinalAndObjectMethodsWhenMisplacedArgumentMatcher[m
+2025-10-01T18:40:25.5854251Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldPointOutInteractionsOnMockWhenOrdinaryVerificationFails[m
+2025-10-01T18:40:25.5856288Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldSayTooFewInvocationsInAtLeastModeInOrder[m
+2025-10-01T18:40:25.5857897Z   [0K[39morg.mockitousage.stacktrace.ModellingDescriptiveMessagesTest [36m- shouldScreamWhenNonInterfacePassed[m
+2025-10-01T18:40:27.5777308Z   [0K[39morg.mockitousage.verification.DescriptiveMessagesWhenVerificationFailsTest [36m- should_print_method_name_and_arguments_of_other_interactions_of_same_method[m
+2025-10-01T18:40:27.5779258Z   [0K[39morg.mockitousage.verification.DescriptiveMessagesWhenVerificationFailsTest [36m- test1[m
+2025-10-01T18:40:27.5780716Z   [0K[39morg.mockitousage.verification.DescriptiveMessagesWhenVerificationFailsTest [36m- test2[m
+2025-10-01T18:40:30.6785057Z   [0K[39morg.mockitousage.verification.VerificationWithAfterAndCaptorTest [36m- shouldReturnListOfArgumentsWithSameSizeAsGivenInTimesVerification[m
+2025-10-01T18:40:30.8803397Z   [0K[39morg.mockitousage.verification.VerificationWithAfterAndCaptorTest [36m- shouldReturnListOfArgumentsWithSameSizeAsGivenInAtLeastVerification[m
+2025-10-01T18:40:33.0775773Z   [0K[39morg.mockitousage.verification.VerificationWithAfterTest [36m- should_fail_early_when_only_is_used[m
+2025-10-01T18:40:33.8775852Z   [0K[39morg.mockitousage.verification.VerificationWithAfterTest [36m- should_fail_early_when_time_x_is_used[m
+2025-10-01T18:40:34.2776356Z   [0K[39morg.mockitousage.verification.VerificationWithTimeoutTest [36m- should_verify_with_only_and_fail[m
+2025-10-01T18:40:34.4775855Z   [0K[39morg.mockitousage.verification.VerificationWithTimeoutTest [36m- should_verify_with_only_and_fail_early[m
+2025-10-01T18:40:34.5776540Z   [0K[39morg.mockitousage.verification.VerificationWithTimeoutTest [36m- should_verify_with_timeout_and_fail_early[m
+2025-10-01T18:40:34.7826294Z 
+2025-10-01T18:40:34.7828440Z   [0K[32m2218 passing [90m(2m 49s)
+2025-10-01T18:40:34.7828999Z   [0K[36m73 pending[m
+2025-10-01T18:40:34.7829231Z 
+2025-10-01T18:40:34.9775352Z 
+2025-10-01T18:40:34.9788903Z > Task :mockito-core:retryTest SKIPPED
+2025-10-01T18:40:35.0777180Z > Task :mockito-core:check
+2025-10-01T18:40:35.0778372Z > Task :mockito-core:generateMetadataFileForMockitoLibraryPublication SKIPPED
+2025-10-01T18:40:35.0779625Z > Task :mockito-core:generatePomFileForMockitoLibraryPublication
+2025-10-01T18:40:35.0780748Z > Task :mockito-core:publishMockitoLibraryPublicationToLocalRepository
+2025-10-01T18:40:35.0781994Z > Task :mockito-core:publishAllPublicationsToLocalRepository
+2025-10-01T18:40:35.0782811Z > Task :mockito-core:build
+2025-10-01T18:40:35.0783270Z 
+2025-10-01T18:40:35.0792829Z [Incubating] Problems report is available at: file:///home/runner/work/mockito/mockito/build/reports/problems/problems-report.html
+2025-10-01T18:40:35.0793689Z 
+2025-10-01T18:40:35.0794110Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-10-01T18:40:35.0794607Z 
+2025-10-01T18:40:35.0795187Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-10-01T18:40:35.0795888Z 
+2025-10-01T18:40:35.0796617Z For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-10-01T18:40:35.0797460Z 
+2025-10-01T18:40:35.0797629Z BUILD SUCCESSFUL in 5m 31s
+2025-10-01T18:40:35.0798076Z 206 actionable tasks: 177 executed, 29 up-to-date
+2025-10-01T18:40:35.2775087Z 
+2025-10-01T18:40:35.2775529Z Publishing Build Scan to Develocity...
+2025-10-01T18:40:35.3775592Z https://gradle.com/s/tril6onfsqn5e
+2025-10-01T18:40:35.3776559Z 
+2025-10-01T18:40:35.9022712Z ##[group]Run ./gradlew -Pmockito.test.java=17 coverageReport --stacktrace --scan
+2025-10-01T18:40:35.9023326Z [36;1m./gradlew -Pmockito.test.java=17 coverageReport --stacktrace --scan[0m
+2025-10-01T18:40:35.9055861Z shell: /usr/bin/bash -e {0}
+2025-10-01T18:40:35.9056090Z env:
+2025-10-01T18:40:35.9056351Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:35.9056751Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:35.9057061Z ##[endgroup]
+2025-10-01T18:40:36.8848543Z Using the build cache is enabled, but no build caches are configured or enabled.
+2025-10-01T18:40:36.9864505Z > Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2025-10-01T18:40:36.9865582Z > Task :buildSrc:generateExternalPluginSpecBuilders UP-TO-DATE
+2025-10-01T18:40:36.9868292Z > Task :buildSrc:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+2025-10-01T18:40:37.0862346Z > Task :buildSrc:compilePluginsBlocks UP-TO-DATE
+2025-10-01T18:40:37.0870375Z > Task :buildSrc:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+2025-10-01T18:40:37.0871792Z > Task :buildSrc:generateScriptPluginAdapters UP-TO-DATE
+2025-10-01T18:40:37.0874071Z > Task :buildSrc:compileKotlin UP-TO-DATE
+2025-10-01T18:40:37.0882083Z > Task :buildSrc:compileJava NO-SOURCE
+2025-10-01T18:40:37.0886187Z > Task :buildSrc:compileGroovy NO-SOURCE
+2025-10-01T18:40:37.0890731Z > Task :buildSrc:pluginDescriptors UP-TO-DATE
+2025-10-01T18:40:37.0906732Z > Task :buildSrc:processResources UP-TO-DATE
+2025-10-01T18:40:37.0907864Z > Task :buildSrc:classes UP-TO-DATE
+2025-10-01T18:40:37.0909862Z > Task :buildSrc:jar UP-TO-DATE
+2025-10-01T18:40:37.2839373Z 
+2025-10-01T18:40:37.2840730Z > Configure project :
+2025-10-01T18:40:37.2841376Z Building version '5.20.1-SNAPSHOT'
+2025-10-01T18:40:37.2842014Z   - reason: shipkit-auto-version deduced snapshot based on tag: 'v5.20.0'
+2025-10-01T18:40:38.3884700Z 
+2025-10-01T18:40:38.3902200Z > Task :mockito-extensions:mockito-junit-jupiter:processResources NO-SOURCE
+2025-10-01T18:40:38.3908786Z > Task :mockito-extensions:mockito-proxy:processResources UP-TO-DATE
+2025-10-01T18:40:38.3910286Z > Task :mockito-extensions:mockito-errorprone:processResources NO-SOURCE
+2025-10-01T18:40:38.3913458Z > Task :mockito-integration-tests:android-tests:preBuild UP-TO-DATE
+2025-10-01T18:40:38.3923700Z > Task :mockito-integration-tests:android-tests:preDebugBuild UP-TO-DATE
+2025-10-01T18:40:38.3924525Z > Task :mockito-integration-tests:android-tests:compileDebugAidl NO-SOURCE
+2025-10-01T18:40:38.3925325Z > Task :mockito-extensions:mockito-subclass:processResources UP-TO-DATE
+2025-10-01T18:40:38.3926287Z > Task :mockito-integration-tests:android-tests:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2025-10-01T18:40:38.3927268Z > Task :mockito-integration-tests:extensions-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.3928108Z > Task :mockito-integration-tests:android-tests:compileDebugRenderscript NO-SOURCE
+2025-10-01T18:40:38.3928976Z > Task :mockito-extensions:mockito-android:processResources UP-TO-DATE
+2025-10-01T18:40:38.3929809Z > Task :mockito-integration-tests:android-tests:generateDebugBuildConfig UP-TO-DATE
+2025-10-01T18:40:38.3930691Z > Task :mockito-integration-tests:extensions-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.3931654Z > Task :mockito-integration-tests:graalvm-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.3932394Z > Task :mockito-integration-tests:extensions-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.3933133Z > Task :mockito-integration-tests:groovy-inline-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.3933876Z > Task :mockito-integration-tests:groovy-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.3934633Z > Task :mockito-integration-tests:groovy-inline-tests:compileGroovy NO-SOURCE
+2025-10-01T18:40:38.3935407Z > Task :mockito-integration-tests:groovy-tests:compileGroovy NO-SOURCE
+2025-10-01T18:40:38.3936187Z > Task :mockito-integration-tests:groovy-inline-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.3937420Z > Task :mockito-integration-tests:groovy-inline-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.3938271Z > Task :mockito-integration-tests:groovy-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.3938977Z > Task :mockito-integration-tests:groovy-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.3939679Z > Task :mockito-integration-tests:java-21-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.3940485Z > Task :mockito-integration-tests:inline-mocks-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.3948104Z > Task :mockito-integration-tests:android-tests:checkDebugAarMetadata UP-TO-DATE
+2025-10-01T18:40:38.3951268Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.3953644Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.3955977Z > Task :mockito-integration-tests:junit-jupiter-extension-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.3958844Z > Task :mockito-integration-tests:android-tests:generateDebugResValues UP-TO-DATE
+2025-10-01T18:40:38.3961491Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.3973650Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.3975202Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.3979286Z > Task :mockito-integration-tests:junit-jupiter-inline-mock-maker-extension-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.3982232Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.3986703Z > Task :mockito-integration-tests:junit-jupiter-parallel-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4003195Z > Task :mockito-integration-tests:android-tests:mapDebugSourceSetPaths UP-TO-DATE
+2025-10-01T18:40:38.4007494Z > Task :mockito-integration-tests:android-tests:generateDebugResources UP-TO-DATE
+2025-10-01T18:40:38.4008898Z > Task :mockito-integration-tests:kotlin-tests:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2025-10-01T18:40:38.4010256Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2025-10-01T18:40:38.4011662Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:compileKotlin NO-SOURCE
+2025-10-01T18:40:38.4012502Z > Task :mockito-integration-tests:kotlin-tests:compileKotlin NO-SOURCE
+2025-10-01T18:40:38.4013272Z > Task :mockito-integration-tests:android-tests:mergeDebugResources UP-TO-DATE
+2025-10-01T18:40:38.4014230Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4015334Z > Task :mockito-integration-tests:android-tests:createDebugCompatibleScreenManifests UP-TO-DATE
+2025-10-01T18:40:38.4016379Z > Task :mockito-integration-tests:android-tests:extractDeepLinksDebug UP-TO-DATE
+2025-10-01T18:40:38.4017327Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.4018418Z > Task :mockito-integration-tests:kotlin-release-coroutines-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4019344Z > Task :mockito-integration-tests:memory-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.4020159Z > Task :mockito-integration-tests:kotlin-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4020966Z > Task :mockito-integration-tests:kotlin-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.4021933Z > Task :mockito-integration-tests:kotlin-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4022717Z > Task :mockito-integration-tests:module-named-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.4023577Z > Task :mockito-integration-tests:module-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.4024362Z > Task :mockito-integration-tests:osgi-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4025150Z > Task :mockito-integration-tests:osgi-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.4026276Z > Task :mockito-integration-tests:programmatic-tests:processResources NO-SOURCE
+2025-10-01T18:40:38.4027128Z > Task :mockito-integration-tests:osgi-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4027727Z > Task :mockito-core:compileJava UP-TO-DATE
+2025-10-01T18:40:38.4028452Z > Task :mockito-integration-tests:android-tests:processDebugMainManifest UP-TO-DATE
+2025-10-01T18:40:38.4029255Z > Task :mockito-core:copyMockMethodDispatcher UP-TO-DATE
+2025-10-01T18:40:38.4029841Z > Task :mockito-core:processResources NO-SOURCE
+2025-10-01T18:40:38.4030441Z > Task :mockito-core:removeInjectionPackageFromModuleInfo
+2025-10-01T18:40:38.4031336Z > Task :mockito-extensions:mockito-proxy:compileJava NO-SOURCE
+2025-10-01T18:40:38.4031991Z > Task :mockito-extensions:mockito-proxy:classes UP-TO-DATE
+2025-10-01T18:40:38.4032619Z > Task :mockito-extensions:mockito-subclass:compileJava NO-SOURCE
+2025-10-01T18:40:38.4033294Z > Task :mockito-extensions:mockito-subclass:classes UP-TO-DATE
+2025-10-01T18:40:38.4033819Z > Task :mockito-core:classes
+2025-10-01T18:40:38.4034673Z > Task :mockito-integration-tests:android-tests:processDebugManifest UP-TO-DATE
+2025-10-01T18:40:38.4075970Z > Task :mockito-integration-tests:android-tests:processDebugManifestForPackage UP-TO-DATE
+2025-10-01T18:40:38.4076901Z > Task :mockito-extensions:mockito-errorprone:compileJava UP-TO-DATE
+2025-10-01T18:40:38.4077633Z > Task :mockito-extensions:mockito-errorprone:classes UP-TO-DATE
+2025-10-01T18:40:38.4078369Z > Task :mockito-extensions:mockito-android:compileJava UP-TO-DATE
+2025-10-01T18:40:38.4079094Z > Task :mockito-extensions:mockito-android:classes UP-TO-DATE
+2025-10-01T18:40:38.4079874Z > Task :mockito-integration-tests:graalvm-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4080708Z > Task :mockito-integration-tests:graalvm-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4081710Z > Task :mockito-integration-tests:java-21-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4082559Z > Task :mockito-integration-tests:inline-mocks-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4083471Z > Task :mockito-integration-tests:inline-mocks-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4084785Z > Task :mockito-integration-tests:java-21-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4085425Z > Task :mockito-core:jar UP-TO-DATE
+2025-10-01T18:40:38.4086041Z > Task :mockito-integration-tests:memory-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4086830Z > Task :mockito-integration-tests:memory-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4087683Z > Task :mockito-integration-tests:module-named-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4088536Z > Task :mockito-integration-tests:module-named-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4089363Z > Task :mockito-integration-tests:module-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4090148Z > Task :mockito-integration-tests:module-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4090966Z > Task :mockito-integration-tests:programmatic-tests:compileJava NO-SOURCE
+2025-10-01T18:40:38.4092041Z > Task :mockito-integration-tests:programmatic-tests:classes UP-TO-DATE
+2025-10-01T18:40:38.4838782Z > Task :mockito-integration-tests:android-tests:processDebugResources UP-TO-DATE
+2025-10-01T18:40:38.4859082Z > Task :mockito-extensions:mockito-junit-jupiter:compileJava UP-TO-DATE
+2025-10-01T18:40:38.4864823Z > Task :mockito-extensions:mockito-junit-jupiter:classes UP-TO-DATE
+2025-10-01T18:40:38.4875352Z > Task :mockito-integration-tests:android-tests:compileDebugKotlin UP-TO-DATE
+2025-10-01T18:40:38.4881156Z > Task :mockito-integration-tests:android-tests:javaPreCompileDebug UP-TO-DATE
+2025-10-01T18:40:38.4883846Z > Task :mockito-integration-tests:android-tests:compileDebugJavaWithJavac UP-TO-DATE
+2025-10-01T18:40:38.4886468Z > Task :mockito-integration-tests:android-tests:bundleDebugClassesToRuntimeJar UP-TO-DATE
+2025-10-01T18:40:38.4891358Z > Task :mockito-integration-tests:android-tests:bundleDebugClassesToCompileJar UP-TO-DATE
+2025-10-01T18:40:38.4892271Z > Task :mockito-integration-tests:android-tests:compileDebugUnitTestKotlin UP-TO-DATE
+2025-10-01T18:40:38.4893596Z > Task :mockito-integration-tests:android-tests:preDebugUnitTestBuild UP-TO-DATE
+2025-10-01T18:40:38.4894520Z > Task :mockito-integration-tests:android-tests:javaPreCompileDebugUnitTest UP-TO-DATE
+2025-10-01T18:40:38.4895454Z > Task :mockito-integration-tests:android-tests:compileDebugUnitTestJavaWithJavac NO-SOURCE
+2025-10-01T18:40:38.4896357Z > Task :mockito-integration-tests:android-tests:processDebugJavaRes NO-SOURCE
+2025-10-01T18:40:38.4897225Z > Task :mockito-integration-tests:android-tests:processDebugUnitTestJavaRes NO-SOURCE
+2025-10-01T18:40:38.4898150Z > Task :mockito-integration-tests:android-tests:testDebugUnitTest UP-TO-DATE
+2025-10-01T18:40:40.0832259Z 
+2025-10-01T18:40:40.0836217Z > Task :mockito-core:mockitoCoverage
+2025-10-01T18:40:40.0840345Z Jacoco HTML created: file:///home/runner/work/mockito/mockito/build/jacocoHtml/index.html
+2025-10-01T18:40:40.0844705Z 
+2025-10-01T18:40:40.0848255Z > Task :mockito-core:coverageReport
+2025-10-01T18:40:40.0849837Z 
+2025-10-01T18:40:40.0850752Z [Incubating] Problems report is available at: file:///home/runner/work/mockito/mockito/build/reports/problems/problems-report.html
+2025-10-01T18:40:40.0852587Z 
+2025-10-01T18:40:40.0854575Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-10-01T18:40:40.0856259Z 
+2025-10-01T18:40:40.0857015Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-10-01T18:40:40.0858384Z 
+2025-10-01T18:40:40.0859306Z For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-10-01T18:40:40.0860315Z 
+2025-10-01T18:40:40.0860537Z BUILD SUCCESSFUL in 4s
+2025-10-01T18:40:40.0861178Z 39 actionable tasks: 2 executed, 37 up-to-date
+2025-10-01T18:40:40.0861580Z 
+2025-10-01T18:40:40.0861873Z Publishing Build Scan to Develocity...
+2025-10-01T18:40:40.2863407Z https://gradle.com/s/fq32ic3ccwvpo
+2025-10-01T18:40:40.2863829Z 
+2025-10-01T18:40:40.3290683Z ##[group]Run codecov/codecov-action@v5
+2025-10-01T18:40:40.3291334Z with:
+2025-10-01T18:40:40.3291850Z   files: mockito-core/build/reports/jacoco/mockitoCoverage/mockitoCoverage.xml
+2025-10-01T18:40:40.3292491Z   fail_ci_if_error: true
+2025-10-01T18:40:40.3292890Z   disable_file_fixes: false
+2025-10-01T18:40:40.3293242Z   disable_search: false
+2025-10-01T18:40:40.3293588Z   disable_safe_directory: false
+2025-10-01T18:40:40.3293954Z   disable_telem: false
+2025-10-01T18:40:40.3294273Z   dry_run: false
+2025-10-01T18:40:40.3294578Z   git_service: github
+2025-10-01T18:40:40.3294896Z   gcov_executable: gcov
+2025-10-01T18:40:40.3295235Z   handle_no_reports_found: false
+2025-10-01T18:40:40.3295626Z   recurse_submodules: false
+2025-10-01T18:40:40.3295995Z   run_command: upload-coverage
+2025-10-01T18:40:40.3296368Z   skip_validation: false
+2025-10-01T18:40:40.3296727Z   use_legacy_upload_endpoint: false
+2025-10-01T18:40:40.3297117Z   use_oidc: false
+2025-10-01T18:40:40.3297475Z   use_pypi: false
+2025-10-01T18:40:40.3297804Z   verbose: false
+2025-10-01T18:40:40.3298108Z   version: latest
+2025-10-01T18:40:40.3298405Z env:
+2025-10-01T18:40:40.3298803Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.3299443Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.3300549Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.3300857Z ##[endgroup]
+2025-10-01T18:40:40.3413474Z ##[group]Run missing_deps=""
+2025-10-01T18:40:40.3413939Z [36;1mmissing_deps=""[0m
+2025-10-01T18:40:40.3414283Z [36;1m[0m
+2025-10-01T18:40:40.3414586Z [36;1m# Check for required commands[0m
+2025-10-01T18:40:40.3415038Z [36;1mfor cmd in bash git curl gpg; do[0m
+2025-10-01T18:40:40.3415528Z [36;1m  if ! command -v "$cmd" >/dev/null 2>&1; then[0m
+2025-10-01T18:40:40.3416037Z [36;1m    missing_deps="$missing_deps $cmd"[0m
+2025-10-01T18:40:40.3416454Z [36;1m  fi[0m
+2025-10-01T18:40:40.3416739Z [36;1mdone[0m
+2025-10-01T18:40:40.3417021Z [36;1m[0m
+2025-10-01T18:40:40.3417375Z [36;1m# Report missing required dependencies[0m
+2025-10-01T18:40:40.3417854Z [36;1mif [ -n "$missing_deps" ]; then[0m
+2025-10-01T18:40:40.3418491Z [36;1m  echo "Error: The following required dependencies are missing:$missing_deps"[0m
+2025-10-01T18:40:40.3419311Z [36;1m  echo "Please install these dependencies before using this action."[0m
+2025-10-01T18:40:40.3419888Z [36;1m  exit 1[0m
+2025-10-01T18:40:40.3420182Z [36;1mfi[0m
+2025-10-01T18:40:40.3420451Z [36;1m[0m
+2025-10-01T18:40:40.3420865Z [36;1mecho "All required system dependencies are available."[0m
+2025-10-01T18:40:40.4445818Z shell: /usr/bin/sh -e {0}
+2025-10-01T18:40:40.4446089Z env:
+2025-10-01T18:40:40.4446361Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.4446777Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.4447308Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.4447509Z ##[endgroup]
+2025-10-01T18:40:40.4527662Z All required system dependencies are available.
+2025-10-01T18:40:40.4577931Z ##[group]Run CC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)
+2025-10-01T18:40:40.4578698Z [36;1mCC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)[0m
+2025-10-01T18:40:40.4579431Z [36;1mecho -e "\033[0;32m==>\033[0m Running Action version $CC_ACTION_VERSION"[0m
+2025-10-01T18:40:40.4625690Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-01T18:40:40.4626246Z env:
+2025-10-01T18:40:40.4626643Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.4627293Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.4628019Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.4628343Z ##[endgroup]
+2025-10-01T18:40:40.4718742Z [0;32m==>[0m Running Action version 5.5.1
+2025-10-01T18:40:40.4763556Z ##[group]Run git config --global --add safe.directory "/home/runner/work/mockito/mockito"
+2025-10-01T18:40:40.4764787Z [36;1mgit config --global --add safe.directory "/home/runner/work/mockito/mockito"[0m
+2025-10-01T18:40:40.4765771Z [36;1mgit config --global --add safe.directory "$GITHUB_WORKSPACE"[0m
+2025-10-01T18:40:40.4811604Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-01T18:40:40.4812147Z env:
+2025-10-01T18:40:40.4812561Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.4813216Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.4813983Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.4814290Z ##[endgroup]
+2025-10-01T18:40:40.4977453Z ##[group]Run CC_FORK="false"
+2025-10-01T18:40:40.4977869Z [36;1mCC_FORK="false"[0m
+2025-10-01T18:40:40.4978709Z [36;1mif [ -n "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" ] && [ "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" != "$GITHUB_REPOSITORY" ];[0m
+2025-10-01T18:40:40.4979628Z [36;1mthen[0m
+2025-10-01T18:40:40.4979994Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected"[0m
+2025-10-01T18:40:40.4980444Z [36;1m  CC_FORK="true"[0m
+2025-10-01T18:40:40.4980808Z [36;1mfi[0m
+2025-10-01T18:40:40.4981355Z [36;1mecho "CC_FORK=$CC_FORK" >> "$GITHUB_ENV"[0m
+2025-10-01T18:40:40.5023012Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-01T18:40:40.5023344Z env:
+2025-10-01T18:40:40.5023596Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.5023994Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.5024532Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.5024927Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: 
+2025-10-01T18:40:40.5025435Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: 
+2025-10-01T18:40:40.5025945Z   GITHUB_REPOSITORY: mockito/mockito
+2025-10-01T18:40:40.5026349Z ##[endgroup]
+2025-10-01T18:40:40.5169403Z ##[group]Run actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
+2025-10-01T18:40:40.5170013Z with:
+2025-10-01T18:40:40.5170901Z   script: if (process.env.CC_USE_OIDC === 'true' && process.env.CC_FORK != 'true') {
+  const id_token = await core.getIDToken(process.env.CC_OIDC_AUDIENCE)
+  return id_token
+}
+
+2025-10-01T18:40:40.5172529Z   github-token: ***
+2025-10-01T18:40:40.5172872Z   debug: false
+2025-10-01T18:40:40.5173231Z   user-agent: actions/github-script
+2025-10-01T18:40:40.5173646Z   result-encoding: json
+2025-10-01T18:40:40.5173988Z   retries: 0
+2025-10-01T18:40:40.5174331Z   retry-exempt-status-codes: 400,401,403,404,422
+2025-10-01T18:40:40.5174758Z env:
+2025-10-01T18:40:40.5175131Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.5175753Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.5176263Z   CC_FORK: false
+2025-10-01T18:40:40.5176653Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.5177015Z   CC_OIDC_AUDIENCE: https://codecov.io
+2025-10-01T18:40:40.5177423Z   CC_USE_OIDC: false
+2025-10-01T18:40:40.5177722Z ##[endgroup]
+2025-10-01T18:40:40.6636524Z ##[group]Run if [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];
+2025-10-01T18:40:40.6637189Z [36;1mif [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];[0m
+2025-10-01T18:40:40.6637688Z [36;1mthen[0m
+2025-10-01T18:40:40.6638074Z [36;1m  echo "CC_TOKEN=$CC_OIDC_TOKEN" >> "$GITHUB_ENV"[0m
+2025-10-01T18:40:40.6638775Z [36;1melif [ -n "***" ];[0m
+2025-10-01T18:40:40.6639142Z [36;1mthen[0m
+2025-10-01T18:40:40.6639521Z [36;1m  echo -e "\033[0;32m==>\033[0m Token set from env"[0m
+2025-10-01T18:40:40.6640204Z [36;1m    echo "CC_TOKEN=***" >> "$GITHUB_ENV"[0m
+2025-10-01T18:40:40.6640630Z [36;1melse[0m
+2025-10-01T18:40:40.6640930Z [36;1m  if [ -n "" ];[0m
+2025-10-01T18:40:40.6641424Z [36;1m  then[0m
+2025-10-01T18:40:40.6641823Z [36;1m    echo -e "\033[0;32m==>\033[0m Token set from input"[0m
+2025-10-01T18:40:40.6642333Z [36;1m    CC_TOKEN=$(echo "" | tr -d '\n')[0m
+2025-10-01T18:40:40.6642806Z [36;1m    echo "CC_TOKEN=$CC_TOKEN" >> "$GITHUB_ENV"[0m
+2025-10-01T18:40:40.6643235Z [36;1m  fi[0m
+2025-10-01T18:40:40.6643501Z [36;1mfi[0m
+2025-10-01T18:40:40.6689839Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-01T18:40:40.6690936Z env:
+2025-10-01T18:40:40.6691573Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.6692257Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.6692809Z   CC_FORK: false
+2025-10-01T18:40:40.6693347Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.6693691Z   CC_OIDC_TOKEN: 
+2025-10-01T18:40:40.6694047Z   CC_OIDC_AUDIENCE: https://codecov.io
+2025-10-01T18:40:40.6694452Z ##[endgroup]
+2025-10-01T18:40:40.6896354Z [0;32m==>[0m Token set from env
+2025-10-01T18:40:40.6927842Z ##[group]Run if [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ]
+2025-10-01T18:40:40.6928605Z [36;1mif [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ][0m
+2025-10-01T18:40:40.6929135Z [36;1mthen[0m
+2025-10-01T18:40:40.6929744Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected, setting branch to $GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-10-01T18:40:40.6930578Z [36;1m  TOKENLESS="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-10-01T18:40:40.6931417Z [36;1m  CC_BRANCH="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-10-01T18:40:40.6932047Z [36;1m  echo "TOKENLESS=$TOKENLESS" >> "$GITHUB_ENV"[0m
+2025-10-01T18:40:40.6932502Z [36;1mfi[0m
+2025-10-01T18:40:40.6932777Z [36;1m[0m
+2025-10-01T18:40:40.6933126Z [36;1mecho "CC_BRANCH=$CC_BRANCH" >> "$GITHUB_ENV"[0m
+2025-10-01T18:40:40.6973934Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-01T18:40:40.6974496Z env:
+2025-10-01T18:40:40.6974921Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.6975596Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.6976119Z   CC_FORK: false
+2025-10-01T18:40:40.6976607Z   CC_TOKEN: ***
+2025-10-01T18:40:40.6976988Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.6977328Z   CC_BRANCH: 
+2025-10-01T18:40:40.6977673Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: 
+2025-10-01T18:40:40.6978178Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: 
+2025-10-01T18:40:40.6978717Z   GITHUB_REPOSITORY: mockito/mockito
+2025-10-01T18:40:40.6979147Z ##[endgroup]
+2025-10-01T18:40:40.7081929Z ##[group]Run if [ -z "$CC_SHA" ];
+2025-10-01T18:40:40.7082382Z [36;1mif [ -z "$CC_SHA" ];[0m
+2025-10-01T18:40:40.7082746Z [36;1mthen[0m
+2025-10-01T18:40:40.7083126Z [36;1m  CC_SHA="$GITHUB_EVENT_PULL_REQUEST_HEAD_SHA"[0m
+2025-10-01T18:40:40.7083582Z [36;1mfi[0m
+2025-10-01T18:40:40.7083950Z [36;1mif [ -z "$CC_PR" ] && [ "$CC_FORK" == 'true' ];[0m
+2025-10-01T18:40:40.7084399Z [36;1mthen[0m
+2025-10-01T18:40:40.7084719Z [36;1m  CC_PR="$GITHUB_EVENT_NUMBER"[0m
+2025-10-01T18:40:40.7085124Z [36;1mfi[0m
+2025-10-01T18:40:40.7085402Z [36;1m[0m
+2025-10-01T18:40:40.7085732Z [36;1mecho "CC_SHA=$CC_SHA" >> "$GITHUB_ENV"[0m
+2025-10-01T18:40:40.7086209Z [36;1mecho "CC_PR=$CC_PR" >> "$GITHUB_ENV"[0m
+2025-10-01T18:40:40.7131395Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-01T18:40:40.7131973Z env:
+2025-10-01T18:40:40.7132405Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.7133079Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.7133621Z   CC_FORK: false
+2025-10-01T18:40:40.7134137Z   CC_TOKEN: ***
+2025-10-01T18:40:40.7134440Z   CC_BRANCH: 
+2025-10-01T18:40:40.7134840Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.7135170Z   CC_PR: 
+2025-10-01T18:40:40.7135447Z   CC_SHA: 
+2025-10-01T18:40:40.7135742Z   GITHUB_EVENT_NAME: push
+2025-10-01T18:40:40.7136111Z   GITHUB_EVENT_NUMBER: 
+2025-10-01T18:40:40.7136486Z   GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: 
+2025-10-01T18:40:40.7136907Z ##[endgroup]
+2025-10-01T18:40:40.7264681Z ##[group]Run ${GITHUB_ACTION_PATH}/dist/codecov.sh
+2025-10-01T18:40:40.7265253Z [36;1m${GITHUB_ACTION_PATH}/dist/codecov.sh[0m
+2025-10-01T18:40:40.7329693Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-01T18:40:40.7330244Z env:
+2025-10-01T18:40:40.7330663Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.7332055Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-10-01T18:40:40.7332808Z   CC_FORK: false
+2025-10-01T18:40:40.7333343Z   CC_TOKEN: ***
+2025-10-01T18:40:40.7333670Z   CC_BRANCH: 
+2025-10-01T18:40:40.7333954Z   CC_SHA: 
+2025-10-01T18:40:40.7334227Z   CC_PR: 
+2025-10-01T18:40:40.7334834Z   CODECOV_TOKEN: ***
+2025-10-01T18:40:40.7335196Z   CC_BASE_SHA: 
+2025-10-01T18:40:40.7335507Z   CC_BINARY: 
+2025-10-01T18:40:40.7335808Z   CC_BUILD: 
+2025-10-01T18:40:40.7336279Z   CC_BUILD_URL: 
+2025-10-01T18:40:40.7336610Z   CC_CODE: 
+2025-10-01T18:40:40.7336905Z   CC_DIR: 
+2025-10-01T18:40:40.7337217Z   CC_DISABLE_FILE_FIXES: false
+2025-10-01T18:40:40.7337622Z   CC_DISABLE_SEARCH: false
+2025-10-01T18:40:40.7338001Z   CC_DISABLE_TELEM: false
+2025-10-01T18:40:40.7338577Z   CC_DRY_RUN: false
+2025-10-01T18:40:40.7338936Z   CC_ENTERPRISE_URL: 
+2025-10-01T18:40:40.7339271Z   CC_ENV: 
+2025-10-01T18:40:40.7339575Z   CC_EXCLUDES: 
+2025-10-01T18:40:40.7339907Z   CC_FAIL_ON_ERROR: true
+2025-10-01T18:40:40.7340559Z   CC_FILES: mockito-core/build/reports/jacoco/mockitoCoverage/mockitoCoverage.xml
+2025-10-01T18:40:40.7341458Z   CC_FLAGS: 
+2025-10-01T18:40:40.7341762Z   CC_FORCE: 
+2025-10-01T18:40:40.7342054Z   CC_GCOV_ARGS: 
+2025-10-01T18:40:40.7342386Z   CC_GCOV_EXECUTABLE: gcov
+2025-10-01T18:40:40.7342729Z   CC_GCOV_IGNORE: 
+2025-10-01T18:40:40.7343235Z   CC_GCOV_INCLUDE: 
+2025-10-01T18:40:40.7343568Z   CC_GIT_SERVICE: github
+2025-10-01T18:40:40.7343944Z   CC_HANDLE_NO_REPORTS_FOUND: false
+2025-10-01T18:40:40.7344344Z   CC_JOB_CODE: 
+2025-10-01T18:40:40.7344656Z   CC_LEGACY: false
+2025-10-01T18:40:40.7344970Z   CC_NAME: 
+2025-10-01T18:40:40.7345261Z   CC_NETWORK_FILTER: 
+2025-10-01T18:40:40.7345586Z   CC_NETWORK_PREFIX: 
+2025-10-01T18:40:40.7345927Z   CC_NETWORK_ROOT_FOLDER: 
+2025-10-01T18:40:40.7346267Z   CC_OS: 
+2025-10-01T18:40:40.7346537Z   CC_PARENT_SHA: 
+2025-10-01T18:40:40.7346834Z   CC_PLUGINS: 
+2025-10-01T18:40:40.7347151Z   CC_RECURSE_SUBMODULES: false
+2025-10-01T18:40:40.7347528Z   CC_REPORT_TYPE: 
+2025-10-01T18:40:40.7347882Z   CC_RUN_CMD: upload-coverage
+2025-10-01T18:40:40.7348264Z   CC_SERVICE: github
+2025-10-01T18:40:40.7348776Z   CC_SKIP_VALIDATION: false
+2025-10-01T18:40:40.7349125Z   CC_SLUG: 
+2025-10-01T18:40:40.7349412Z   CC_SWIFT_PROJECT: 
+2025-10-01T18:40:40.7349730Z   CC_USE_PYPI: false
+2025-10-01T18:40:40.7350059Z   CC_VERBOSE: false
+2025-10-01T18:40:40.7350378Z   CC_VERSION: latest
+2025-10-01T18:40:40.7350699Z   CC_YML_PATH: 
+2025-10-01T18:40:40.7351165Z ##[endgroup]
+2025-10-01T18:40:40.7444867Z      _____          _
+2025-10-01T18:40:40.7447089Z     / ____|        | |
+2025-10-01T18:40:40.7448529Z    | |     ___   __| | ___  ___ _____   __
+2025-10-01T18:40:40.7450106Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2025-10-01T18:40:40.7450353Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2025-10-01T18:40:40.7451190Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2025-10-01T18:40:40.7452140Z                            [0;31m Wrapper-0.2.7[0m
+2025-10-01T18:40:40.7452586Z                            
+2025-10-01T18:40:40.7504399Z [0;32m==>[0m Detected [0;36mlinux[0m
+2025-10-01T18:40:40.7504954Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov[0m
+2025-10-01T18:40:40.7570956Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-10-01T18:40:40.7571947Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-10-01T18:40:40.7572358Z 
+2025-10-01T18:40:40.7734595Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-10-01T18:40:40.9525365Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-10-01T18:40:40.9526651Z 100 10.6M  100 10.6M    0     0  54.5M      0 --:--:-- --:--:-- --:--:-- 54.4M
+2025-10-01T18:40:40.9559941Z [0;32m==>[0m Finishing downloading [0;36mlinux:latest[0m
+2025-10-01T18:40:41.0390598Z       Version: [0;36mv11.2.3[0m
+2025-10-01T18:40:41.0391265Z  
+2025-10-01T18:40:41.0442532Z gpg: directory '/home/runner/.gnupg' created
+2025-10-01T18:40:41.0449086Z gpg: keybox '/home/runner/.gnupg/pubring.kbx' created
+2025-10-01T18:40:41.1690246Z gpg: /home/runner/.gnupg/trustdb.gpg: trustdb created
+2025-10-01T18:40:41.1691398Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2025-10-01T18:40:41.2286232Z gpg: Total number processed: 1
+2025-10-01T18:40:41.2286704Z gpg:               imported: 1
+2025-10-01T18:40:41.2292714Z [0;32m==>[0m Verifying GPG signature integrity
+2025-10-01T18:40:41.2293448Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM[0m
+2025-10-01T18:40:41.2294284Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM.sig[0m
+2025-10-01T18:40:41.2294988Z  
+2025-10-01T18:40:41.3456011Z gpg: Signature made Thu Sep 18 23:03:08 2025 UTC
+2025-10-01T18:40:41.3456706Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2025-10-01T18:40:41.3458577Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2025-10-01T18:40:41.3459529Z gpg: WARNING: This key is not certified with a trusted signature!
+2025-10-01T18:40:41.3460195Z gpg:          There is no indication that the signature belongs to the owner.
+2025-10-01T18:40:41.3460926Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2025-10-01T18:40:41.4660608Z codecov: OK
+2025-10-01T18:40:41.4671274Z [0;32m==>[0m CLI integrity verified
+2025-10-01T18:40:41.4671572Z 
+2025-10-01T18:40:41.5266982Z [0;32m ->[0m Token length: 36
+2025-10-01T18:40:41.5267559Z [0;32m==>[0m Running upload-coverage
+2025-10-01T18:40:41.5276591Z       [0;36m./codecov  upload-coverage -t <redacted> --fail-on-error --git-service github --file mockito-core/build/reports/jacoco/mockitoCoverage/mockitoCoverage.xml --gcov-executable gcov[0m
+2025-10-01T18:40:41.8935565Z info - 2025-10-01 18:40:41,893 -- ci service found: github-actions
+2025-10-01T18:40:41.9032294Z warning - 2025-10-01 18:40:41,902 -- No config file could be found. Ignoring config.
+2025-10-01T18:40:41.9363567Z warning - 2025-10-01 18:40:41,936 -- xcrun is not installed or can't be found.
+2025-10-01T18:40:42.1110323Z warning - 2025-10-01 18:40:42,110 -- No gcov data found.
+2025-10-01T18:40:42.1114945Z warning - 2025-10-01 18:40:42,111 -- coverage.py is not installed or can't be found.
+2025-10-01T18:40:42.5101415Z info - 2025-10-01 18:40:42,509 -- Found 1 coverage files to report
+2025-10-01T18:40:42.5103074Z info - 2025-10-01 18:40:42,510 -- > /home/runner/work/mockito/mockito/mockito-core/build/reports/jacoco/mockitoCoverage/mockitoCoverage.xml
+2025-10-01T18:40:42.9754426Z info - 2025-10-01 18:40:42,975 -- Your upload is now processing. When finished, results will be available at: https://app.codecov.io/github/mockito/mockito/commit/cffddd4c759feda23185b6d25495fc8f9006190b
+2025-10-01T18:40:43.0969628Z info - 2025-10-01 18:40:43,096 -- Process Upload complete
+2025-10-01T18:40:43.2043448Z Post job cleanup.
+2025-10-01T18:40:43.3351485Z (node:11260) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-10-01T18:40:43.3352368Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-01T18:40:43.3358072Z Cache hit occurred on the primary key setup-java-Linux-x64-gradle-68b2ca84ddffae456f6673d023b1e71950396dbc066b18b2237f4b3437c3be1b, not saving cache.
+2025-10-01T18:40:43.3493070Z Post job cleanup.
+2025-10-01T18:40:43.4382495Z [command]/usr/bin/git version
+2025-10-01T18:40:43.4418933Z git version 2.51.0
+2025-10-01T18:40:43.4451806Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/02ee2d20-5db0-40e1-8b92-afbf3a35089c/.gitconfig'
+2025-10-01T18:40:43.4460511Z Temporarily overriding HOME='/home/runner/work/_temp/02ee2d20-5db0-40e1-8b92-afbf3a35089c' before making global git config changes
+2025-10-01T18:40:43.4461906Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-01T18:40:43.4466694Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mockito/mockito
+2025-10-01T18:40:43.4503569Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-01T18:40:43.4538209Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-01T18:40:43.4768179Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-01T18:40:43.4792030Z http.https://github.com/.extraheader
+2025-10-01T18:40:43.4803714Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-01T18:40:43.4836227Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-01T18:40:43.5179124Z Cleaning up orphan processes
+2025-10-01T18:40:43.5458436Z Terminate orphan process: pid (2120) (java)
+2025-10-01T18:40:43.5484963Z Terminate orphan process: pid (2223) (java)
+2025-10-01T18:40:43.5502540Z Terminate orphan process: pid (2518) (java)
+2025-10-01T18:40:43.5528633Z Terminate orphan process: pid (2565) (java)
+2025-10-01T18:40:43.5555016Z Terminate orphan process: pid (2591) (java)
+2025-10-01T18:40:43.5582642Z Terminate orphan process: pid (3148) (java)
+2025-10-01T18:40:43.5610527Z Terminate orphan process: pid (9254) (java)

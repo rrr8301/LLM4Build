@@ -1,0 +1,2145 @@
+﻿2025-12-12T15:07:23.0227165Z Current runner version: '2.329.0'
+2025-12-12T15:07:23.0254002Z ##[group]Runner Image Provisioner
+2025-12-12T15:07:23.0255096Z Hosted Compute Agent
+2025-12-12T15:07:23.0256063Z Version: 20251202.455
+2025-12-12T15:07:23.0256682Z Commit: 6c10caca4910e198df60de23adf20ad317c474e3
+2025-12-12T15:07:23.0257343Z Build Date: 2025-12-02T15:56:59Z
+2025-12-12T15:07:23.0258058Z Worker ID: {835477f3-f185-4d4c-b80c-fcc71fc774bb}
+2025-12-12T15:07:23.0258767Z ##[endgroup]
+2025-12-12T15:07:23.0259254Z ##[group]Operating System
+2025-12-12T15:07:23.0259869Z Ubuntu
+2025-12-12T15:07:23.0260330Z 24.04.3
+2025-12-12T15:07:23.0260788Z LTS
+2025-12-12T15:07:23.0261235Z ##[endgroup]
+2025-12-12T15:07:23.0261766Z ##[group]Runner Image
+2025-12-12T15:07:23.0262262Z Image: ubuntu-24.04
+2025-12-12T15:07:23.0262806Z Version: 20251208.163.1
+2025-12-12T15:07:23.0263865Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251208.163/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-12T15:07:23.0265619Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251208.163
+2025-12-12T15:07:23.0266716Z ##[endgroup]
+2025-12-12T15:07:23.0267760Z ##[group]GITHUB_TOKEN Permissions
+2025-12-12T15:07:23.0269982Z Contents: read
+2025-12-12T15:07:23.0270520Z Metadata: read
+2025-12-12T15:07:23.0271047Z Packages: read
+2025-12-12T15:07:23.0271554Z ##[endgroup]
+2025-12-12T15:07:23.0273655Z Secret source: None
+2025-12-12T15:07:23.0274411Z Prepare workflow directory
+2025-12-12T15:07:23.0670763Z Prepare all required actions
+2025-12-12T15:07:23.0711537Z Getting action download info
+2025-12-12T15:07:23.5187952Z Download action repository 'actions/checkout@v6' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+2025-12-12T15:07:23.6395808Z Download action repository 'actions/setup-python@v6' (SHA:83679a892e2d95755f2dac6acb0bfd1e9ac5d548)
+2025-12-12T15:07:23.8001111Z Download action repository 'astral-sh/setup-uv@v7' (SHA:ed21f2f24f8dd64503750218de024bcf64c7250a)
+2025-12-12T15:07:24.3609389Z Download action repository 'actions/upload-artifact@v5' (SHA:330a01c490aca151604b8cf639adc76d48f6c5d4)
+2025-12-12T15:07:24.6228968Z Complete job name: test (ubuntu-latest, 3.12, pydantic-v2)
+2025-12-12T15:07:24.7111749Z ##[group]Run echo "$GITHUB_CONTEXT"
+2025-12-12T15:07:24.7112938Z [36;1mecho "$GITHUB_CONTEXT"[0m
+2025-12-12T15:07:24.7153207Z shell: /usr/bin/bash -e {0}
+2025-12-12T15:07:24.7154585Z env:
+2025-12-12T15:07:24.7155334Z   UV_SYSTEM_PYTHON: 1
+2025-12-12T15:07:24.7467703Z   GITHUB_CONTEXT: {
+  "token": "***",
+  "job": "test",
+  "ref": "refs/pull/12135/merge",
+  "sha": "b4d6833c6cfdd5cf3e2aff84c5264356d3fa5264",
+  "repository": "fastapi/fastapi",
+  "repository_owner": "fastapi",
+  "repository_owner_id": "156354296",
+  "repositoryUrl": "git://github.com/fastapi/fastapi.git",
+  "run_id": "20170930277",
+  "run_number": "21493",
+  "retention_days": "90",
+  "run_attempt": "1",
+  "artifact_cache_size_limit": "10",
+  "repository_visibility": "public",
+  "actor_id": "158784988",
+  "actor": "merlinz01",
+  "workflow": "Test",
+  "head_ref": "pass-none-when-null-received",
+  "base_ref": "master",
+  "event_name": "pull_request",
+  "server_url": "https://github.com",
+  "api_url": "https://api.github.com",
+  "graphql_url": "https://api.github.com/graphql",
+  "ref_name": "12135/merge",
+  "ref_protected": false,
+  "ref_type": "branch",
+  "secret_source": "None",
+  "event": {
+    "action": "synchronize",
+    "after": "3dd2d6f162216ea97aa54bd81c5360869719d68c",
+    "before": "c7b0804f29860f2e343552ca9f7f93d3e90eb583",
+    "number": 12135,
+    "organization": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/156354296?v=4",
+      "description": "FastAPI and friends open source projects. Created and managed by @tiangolo.",
+      "events_url": "https://api.github.com/orgs/fastapi/events",
+      "hooks_url": "https://api.github.com/orgs/fastapi/hooks",
+      "id": 156354296,
+      "issues_url": "https://api.github.com/orgs/fastapi/issues",
+      "login": "fastapi",
+      "members_url": "https://api.github.com/orgs/fastapi/members{/member}",
+      "node_id": "O_kgDOCVHG-A",
+      "public_members_url": "https://api.github.com/orgs/fastapi/public_members{/member}",
+      "repos_url": "https://api.github.com/orgs/fastapi/repos",
+      "url": "https://api.github.com/orgs/fastapi"
+    },
+    "pull_request": {
+      "_links": {
+        "comments": {
+          "href": "https://api.github.com/repos/fastapi/fastapi/issues/12135/comments"
+        },
+        "commits": {
+          "href": "https://api.github.com/repos/fastapi/fastapi/pulls/12135/commits"
+        },
+        "html": {
+          "href": "https://github.com/fastapi/fastapi/pull/12135"
+        },
+        "issue": {
+          "href": "https://api.github.com/repos/fastapi/fastapi/issues/12135"
+        },
+        "review_comment": {
+          "href": "https://api.github.com/repos/fastapi/fastapi/pulls/comments{/number}"
+        },
+        "review_comments": {
+          "href": "https://api.github.com/repos/fastapi/fastapi/pulls/12135/comments"
+        },
+        "self": {
+          "href": "https://api.github.com/repos/fastapi/fastapi/pulls/12135"
+        },
+        "statuses": {
+          "href": "https://api.github.com/repos/fastapi/fastapi/statuses/3dd2d6f162216ea97aa54bd81c5360869719d68c"
+        }
+      },
+      "active_lock_reason": null,
+      "additions": 141,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "NONE",
+      "auto_merge": null,
+      "base": {
+        "label": "fastapi:master",
+        "ref": "master",
+        "repo": {
+          "allow_auto_merge": true,
+          "allow_forking": true,
+          "allow_merge_commit": false,
+          "allow_rebase_merge": false,
+          "allow_squash_merge": true,
+          "allow_update_branch": true,
+          "archive_url": "https://api.github.com/repos/fastapi/fastapi/{archive_format}{/ref}",
+          "archived": false,
+          "assignees_url": "https://api.github.com/repos/fastapi/fastapi/assignees{/user}",
+          "blobs_url": "https://api.github.com/repos/fastapi/fastapi/git/blobs{/sha}",
+          "branches_url": "https://api.github.com/repos/fastapi/fastapi/branches{/branch}",
+          "clone_url": "https://github.com/fastapi/fastapi.git",
+          "collaborators_url": "https://api.github.com/repos/fastapi/fastapi/collaborators{/collaborator}",
+          "comments_url": "https://api.github.com/repos/fastapi/fastapi/comments{/number}",
+          "commits_url": "https://api.github.com/repos/fastapi/fastapi/commits{/sha}",
+          "compare_url": "https://api.github.com/repos/fastapi/fastapi/compare/{base}...{head}",
+          "contents_url": "https://api.github.com/repos/fastapi/fastapi/contents/{+path}",
+          "contributors_url": "https://api.github.com/repos/fastapi/fastapi/contributors",
+          "created_at": "2018-12-08T08:21:47Z",
+          "default_branch": "master",
+          "delete_branch_on_merge": true,
+          "deployments_url": "https://api.github.com/repos/fastapi/fastapi/deployments",
+          "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+          "disabled": false,
+          "downloads_url": "https://api.github.com/repos/fastapi/fastapi/downloads",
+          "events_url": "https://api.github.com/repos/fastapi/fastapi/events",
+          "fork": false,
+          "forks": 8353,
+          "forks_count": 8353,
+          "forks_url": "https://api.github.com/repos/fastapi/fastapi/forks",
+          "full_name": "fastapi/fastapi",
+          "git_commits_url": "https://api.github.com/repos/fastapi/fastapi/git/commits{/sha}",
+          "git_refs_url": "https://api.github.com/repos/fastapi/fastapi/git/refs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/fastapi/fastapi/git/tags{/sha}",
+          "git_url": "git://github.com/fastapi/fastapi.git",
+          "has_discussions": true,
+          "has_downloads": true,
+          "has_issues": true,
+          "has_pages": false,
+          "has_projects": true,
+          "has_wiki": true,
+          "homepage": "https://fastapi.tiangolo.com/",
+          "hooks_url": "https://api.github.com/repos/fastapi/fastapi/hooks",
+          "html_url": "https://github.com/fastapi/fastapi",
+          "id": 160919119,
+          "is_template": false,
+          "issue_comment_url": "https://api.github.com/repos/fastapi/fastapi/issues/comments{/number}",
+          "issue_events_url": "https://api.github.com/repos/fastapi/fastapi/issues/events{/number}",
+          "issues_url": "https://api.github.com/repos/fastapi/fastapi/issues{/number}",
+          "keys_url": "https://api.github.com/repos/fastapi/fastapi/keys{/key_id}",
+          "labels_url": "https://api.github.com/repos/fastapi/fastapi/labels{/name}",
+          "language": "Python",
+          "languages_url": "https://api.github.com/repos/fastapi/fastapi/languages",
+          "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "node_id": "MDc6TGljZW5zZTEz",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit"
+          },
+          "merge_commit_message": "PR_TITLE",
+          "merge_commit_title": "MERGE_MESSAGE",
+          "merges_url": "https://api.github.com/repos/fastapi/fastapi/merges",
+          "milestones_url": "https://api.github.com/repos/fastapi/fastapi/milestones{/number}",
+          "mirror_url": null,
+          "name": "fastapi",
+          "node_id": "MDEwOlJlcG9zaXRvcnkxNjA5MTkxMTk=",
+          "notifications_url": "https://api.github.com/repos/fastapi/fastapi/notifications{?since,all,participating}",
+          "open_issues": 183,
+          "open_issues_count": 183,
+          "owner": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/156354296?v=4",
+            "events_url": "https://api.github.com/users/fastapi/events{/privacy}",
+            "followers_url": "https://api.github.com/users/fastapi/followers",
+            "following_url": "https://api.github.com/users/fastapi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fastapi/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/fastapi",
+            "id": 156354296,
+            "login": "fastapi",
+            "node_id": "O_kgDOCVHG-A",
+            "organizations_url": "https://api.github.com/users/fastapi/orgs",
+            "received_events_url": "https://api.github.com/users/fastapi/received_events",
+            "repos_url": "https://api.github.com/users/fastapi/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/fastapi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fastapi/subscriptions",
+            "type": "Organization",
+            "url": "https://api.github.com/users/fastapi",
+            "user_view_type": "public"
+          },
+          "private": false,
+          "pulls_url": "https://api.github.com/repos/fastapi/fastapi/pulls{/number}",
+          "pushed_at": "2025-12-12T15:00:02Z",
+          "releases_url": "https://api.github.com/repos/fastapi/fastapi/releases{/id}",
+          "size": 29538,
+          "squash_merge_commit_message": "COMMIT_MESSAGES",
+          "squash_merge_commit_title": "PR_TITLE",
+          "ssh_url": "git@github.com:fastapi/fastapi.git",
+          "stargazers_count": 93012,
+          "stargazers_url": "https://api.github.com/repos/fastapi/fastapi/stargazers",
+          "statuses_url": "https://api.github.com/repos/fastapi/fastapi/statuses/{sha}",
+          "subscribers_url": "https://api.github.com/repos/fastapi/fastapi/subscribers",
+          "subscription_url": "https://api.github.com/repos/fastapi/fastapi/subscription",
+          "svn_url": "https://github.com/fastapi/fastapi",
+          "tags_url": "https://api.github.com/repos/fastapi/fastapi/tags",
+          "teams_url": "https://api.github.com/repos/fastapi/fastapi/teams",
+          "topics": [
+            "api",
+            "async",
+            "asyncio",
+            "fastapi",
+            "framework",
+            "json",
+            "json-schema",
+            "openapi",
+            "openapi3",
+            "pydantic",
+            "python",
+            "python-types",
+            "python3",
+            "redoc",
+            "rest",
+            "starlette",
+            "swagger",
+            "swagger-ui",
+            "uvicorn",
+            "web"
+          ],
+          "trees_url": "https://api.github.com/repos/fastapi/fastapi/git/trees{/sha}",
+          "updated_at": "2025-12-12T14:59:35Z",
+          "url": "https://api.github.com/repos/fastapi/fastapi",
+          "use_squash_pr_title_as_default": true,
+          "visibility": "public",
+          "watchers": 93012,
+          "watchers_count": 93012,
+          "web_commit_signoff_required": false
+        },
+        "sha": "b1d9769f97295a238df8c2d318ad65dd6a40c6ff",
+        "user": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/156354296?v=4",
+          "events_url": "https://api.github.com/users/fastapi/events{/privacy}",
+          "followers_url": "https://api.github.com/users/fastapi/followers",
+          "following_url": "https://api.github.com/users/fastapi/following{/other_user}",
+          "gists_url": "https://api.github.com/users/fastapi/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/fastapi",
+          "id": 156354296,
+          "login": "fastapi",
+          "node_id": "O_kgDOCVHG-A",
+          "organizations_url": "https://api.github.com/users/fastapi/orgs",
+          "received_events_url": "https://api.github.com/users/fastapi/received_events",
+          "repos_url": "https://api.github.com/users/fastapi/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/fastapi/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/fastapi/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/fastapi",
+          "user_view_type": "public"
+        }
+      },
+      "body": "This PR addresses the case where a parameter is optional but has a default that is not `None`, and the user wishes to detect that a `null` value was passed, versus the value not being defined at all.\r\n\r\n### Use case\r\n\r\nThis is an example of a use case for which this behavior is crucial:\r\n```python\r\n@app.patch('/users/{user_id}')\r\ndef edit_user(user_id: int, name: str | None = None, organization_id: int | None = -1):\r\n    # user_id is the ID of a user in the database\r\n    user = lookup_user(user_id)\r\n    # If a name was given, save the user's name\r\n    if name is not None:\r\n        user.name = name\r\n    # If an organization id was given, edit the organization to which the user belongs\r\n    # If organization_id is -1, we know that no value has been received\r\n    if organization_id != -1:\r\n        # The user might not belong to any organization and we want to handle that case\r\n        if organization_id is not None:\r\n            lookup_organization(organization_id)\r\n        user.organization_id = organization_id # int | None\r\n    save_user(user)\r\n    return {\"success\": True}\r\n```\r\n\r\n### Previous behavior\r\n\r\n```\r\nPATCH /users/123\r\n{}\r\n```\r\nwould result in `organization_id == -1` (as expected), but:\r\n```\r\nPATCH /users/123\r\n{\r\n  \"organization_id\": null\r\n}\r\n```\r\nwould also result in `organization_id == -1`, which provides no way to distinguish the two.\r\n\r\n### New behavior\r\n\r\n```\r\nPATCH /users/123\r\n{}\r\n```\r\nresults in `organization_id == -1` (as before), but:\r\n```\r\nPATCH /users/123\r\n{\r\n  \"organization_id\": null\r\n}\r\n```\r\nnow results in `organization_id is None`.\r\n\r\n### Additional comments\r\n\r\nResolves #6058 and #1661 .\r\n\r\nTests included, all tests passing.\r\n",
+      "changed_files": 2,
+      "closed_at": null,
+      "comments": 18,
+      "comments_url": "https://api.github.com/repos/fastapi/fastapi/issues/12135/comments",
+      "commits": 36,
+      "commits_url": "https://api.github.com/repos/fastapi/fastapi/pulls/12135/commits",
+      "created_at": "2024-09-05T22:48:15Z",
+      "deletions": 9,
+      "diff_url": "https://github.com/fastapi/fastapi/pull/12135.diff",
+      "draft": false,
+      "head": {
+        "label": "merlinz01:pass-none-when-null-received",
+        "ref": "pass-none-when-null-received",
+        "repo": {
+          "allow_auto_merge": false,
+          "allow_forking": true,
+          "allow_merge_commit": true,
+          "allow_rebase_merge": true,
+          "allow_squash_merge": true,
+          "allow_update_branch": false,
+          "archive_url": "https://api.github.com/repos/merlinz01/fastapi/{archive_format}{/ref}",
+          "archived": false,
+          "assignees_url": "https://api.github.com/repos/merlinz01/fastapi/assignees{/user}",
+          "blobs_url": "https://api.github.com/repos/merlinz01/fastapi/git/blobs{/sha}",
+          "branches_url": "https://api.github.com/repos/merlinz01/fastapi/branches{/branch}",
+          "clone_url": "https://github.com/merlinz01/fastapi.git",
+          "collaborators_url": "https://api.github.com/repos/merlinz01/fastapi/collaborators{/collaborator}",
+          "comments_url": "https://api.github.com/repos/merlinz01/fastapi/comments{/number}",
+          "commits_url": "https://api.github.com/repos/merlinz01/fastapi/commits{/sha}",
+          "compare_url": "https://api.github.com/repos/merlinz01/fastapi/compare/{base}...{head}",
+          "contents_url": "https://api.github.com/repos/merlinz01/fastapi/contents/{+path}",
+          "contributors_url": "https://api.github.com/repos/merlinz01/fastapi/contributors",
+          "created_at": "2024-09-04T21:11:46Z",
+          "default_branch": "master",
+          "delete_branch_on_merge": false,
+          "deployments_url": "https://api.github.com/repos/merlinz01/fastapi/deployments",
+          "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+          "disabled": false,
+          "downloads_url": "https://api.github.com/repos/merlinz01/fastapi/downloads",
+          "events_url": "https://api.github.com/repos/merlinz01/fastapi/events",
+          "fork": true,
+          "forks": 0,
+          "forks_count": 0,
+          "forks_url": "https://api.github.com/repos/merlinz01/fastapi/forks",
+          "full_name": "merlinz01/fastapi",
+          "git_commits_url": "https://api.github.com/repos/merlinz01/fastapi/git/commits{/sha}",
+          "git_refs_url": "https://api.github.com/repos/merlinz01/fastapi/git/refs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/merlinz01/fastapi/git/tags{/sha}",
+          "git_url": "git://github.com/merlinz01/fastapi.git",
+          "has_discussions": false,
+          "has_downloads": true,
+          "has_issues": false,
+          "has_pages": false,
+          "has_projects": true,
+          "has_wiki": true,
+          "homepage": "https://fastapi.tiangolo.com/",
+          "hooks_url": "https://api.github.com/repos/merlinz01/fastapi/hooks",
+          "html_url": "https://github.com/merlinz01/fastapi",
+          "id": 852463166,
+          "is_template": false,
+          "issue_comment_url": "https://api.github.com/repos/merlinz01/fastapi/issues/comments{/number}",
+          "issue_events_url": "https://api.github.com/repos/merlinz01/fastapi/issues/events{/number}",
+          "issues_url": "https://api.github.com/repos/merlinz01/fastapi/issues{/number}",
+          "keys_url": "https://api.github.com/repos/merlinz01/fastapi/keys{/key_id}",
+          "labels_url": "https://api.github.com/repos/merlinz01/fastapi/labels{/name}",
+          "language": "Python",
+          "languages_url": "https://api.github.com/repos/merlinz01/fastapi/languages",
+          "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "node_id": "MDc6TGljZW5zZTEz",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit"
+          },
+          "merge_commit_message": "PR_TITLE",
+          "merge_commit_title": "MERGE_MESSAGE",
+          "merges_url": "https://api.github.com/repos/merlinz01/fastapi/merges",
+          "milestones_url": "https://api.github.com/repos/merlinz01/fastapi/milestones{/number}",
+          "mirror_url": null,
+          "name": "fastapi",
+          "node_id": "R_kgDOMs-OPg",
+          "notifications_url": "https://api.github.com/repos/merlinz01/fastapi/notifications{?since,all,participating}",
+          "open_issues": 0,
+          "open_issues_count": 0,
+          "owner": {
+            "avatar_url": "https://avatars.githubusercontent.com/u/158784988?v=4",
+            "events_url": "https://api.github.com/users/merlinz01/events{/privacy}",
+            "followers_url": "https://api.github.com/users/merlinz01/followers",
+            "following_url": "https://api.github.com/users/merlinz01/following{/other_user}",
+            "gists_url": "https://api.github.com/users/merlinz01/gists{/gist_id}",
+            "gravatar_id": "",
+            "html_url": "https://github.com/merlinz01",
+            "id": 158784988,
+            "login": "merlinz01",
+            "node_id": "U_kgDOCXbd3A",
+            "organizations_url": "https://api.github.com/users/merlinz01/orgs",
+            "received_events_url": "https://api.github.com/users/merlinz01/received_events",
+            "repos_url": "https://api.github.com/users/merlinz01/repos",
+            "site_admin": false,
+            "starred_url": "https://api.github.com/users/merlinz01/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/merlinz01/subscriptions",
+            "type": "User",
+            "url": "https://api.github.com/users/merlinz01",
+            "user_view_type": "public"
+          },
+          "private": false,
+          "pulls_url": "https://api.github.com/repos/merlinz01/fastapi/pulls{/number}",
+          "pushed_at": "2025-12-12T15:07:14Z",
+          "releases_url": "https://api.github.com/repos/merlinz01/fastapi/releases{/id}",
+          "size": 28619,
+          "squash_merge_commit_message": "COMMIT_MESSAGES",
+          "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+          "ssh_url": "git@github.com:merlinz01/fastapi.git",
+          "stargazers_count": 0,
+          "stargazers_url": "https://api.github.com/repos/merlinz01/fastapi/stargazers",
+          "statuses_url": "https://api.github.com/repos/merlinz01/fastapi/statuses/{sha}",
+          "subscribers_url": "https://api.github.com/repos/merlinz01/fastapi/subscribers",
+          "subscription_url": "https://api.github.com/repos/merlinz01/fastapi/subscription",
+          "svn_url": "https://github.com/merlinz01/fastapi",
+          "tags_url": "https://api.github.com/repos/merlinz01/fastapi/tags",
+          "teams_url": "https://api.github.com/repos/merlinz01/fastapi/teams",
+          "topics": [],
+          "trees_url": "https://api.github.com/repos/merlinz01/fastapi/git/trees{/sha}",
+          "updated_at": "2025-11-20T21:14:06Z",
+          "url": "https://api.github.com/repos/merlinz01/fastapi",
+          "use_squash_pr_title_as_default": false,
+          "visibility": "public",
+          "watchers": 0,
+          "watchers_count": 0,
+          "web_commit_signoff_required": false
+        },
+        "sha": "3dd2d6f162216ea97aa54bd81c5360869719d68c",
+        "user": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/158784988?v=4",
+          "events_url": "https://api.github.com/users/merlinz01/events{/privacy}",
+          "followers_url": "https://api.github.com/users/merlinz01/followers",
+          "following_url": "https://api.github.com/users/merlinz01/following{/other_user}",
+          "gists_url": "https://api.github.com/users/merlinz01/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/merlinz01",
+          "id": 158784988,
+          "login": "merlinz01",
+          "node_id": "U_kgDOCXbd3A",
+          "organizations_url": "https://api.github.com/users/merlinz01/orgs",
+          "received_events_url": "https://api.github.com/users/merlinz01/received_events",
+          "repos_url": "https://api.github.com/users/merlinz01/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/merlinz01/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/merlinz01/subscriptions",
+          "type": "User",
+          "url": "https://api.github.com/users/merlinz01",
+          "user_view_type": "public"
+        }
+      },
+      "html_url": "https://github.com/fastapi/fastapi/pull/12135",
+      "id": 2056688807,
+      "issue_url": "https://api.github.com/repos/fastapi/fastapi/issues/12135",
+      "labels": [
+        {
+          "color": "a2eeef",
+          "default": false,
+          "description": "New feature or request",
+          "id": 1154536359,
+          "name": "feature",
+          "node_id": "MDU6TGFiZWwxMTU0NTM2MzU5",
+          "url": "https://api.github.com/repos/fastapi/fastapi/labels/feature"
+        },
+        {
+          "color": "d93f0b",
+          "default": false,
+          "description": "Automatically generated when a PR has a merge conflict",
+          "id": 9229492097,
+          "name": "conflicts",
+          "node_id": "LA_kwDOCZduT88AAAACJh7fgQ",
+          "url": "https://api.github.com/repos/fastapi/fastapi/labels/conflicts"
+        }
+      ],
+      "locked": false,
+      "maintainer_can_modify": true,
+      "merge_commit_sha": null,
+      "mergeable": null,
+      "mergeable_state": "unknown",
+      "merged": false,
+      "merged_at": null,
+      "merged_by": null,
+      "milestone": null,
+      "node_id": "PR_kwDOCZduT856lpSn",
+      "number": 12135,
+      "patch_url": "https://github.com/fastapi/fastapi/pull/12135.patch",
+      "rebaseable": null,
+      "requested_reviewers": [],
+      "requested_teams": [],
+      "review_comment_url": "https://api.github.com/repos/fastapi/fastapi/pulls/comments{/number}",
+      "review_comments": 0,
+      "review_comments_url": "https://api.github.com/repos/fastapi/fastapi/pulls/12135/comments",
+      "state": "open",
+      "statuses_url": "https://api.github.com/repos/fastapi/fastapi/statuses/3dd2d6f162216ea97aa54bd81c5360869719d68c",
+      "title": "✨ Pass none instead of the default value for optional parameters when null is received",
+      "updated_at": "2025-12-12T15:07:15Z",
+      "url": "https://api.github.com/repos/fastapi/fastapi/pulls/12135",
+      "user": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/158784988?v=4",
+        "events_url": "https://api.github.com/users/merlinz01/events{/privacy}",
+        "followers_url": "https://api.github.com/users/merlinz01/followers",
+        "following_url": "https://api.github.com/users/merlinz01/following{/other_user}",
+        "gists_url": "https://api.github.com/users/merlinz01/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/merlinz01",
+        "id": 158784988,
+        "login": "merlinz01",
+        "node_id": "U_kgDOCXbd3A",
+        "organizations_url": "https://api.github.com/users/merlinz01/orgs",
+        "received_events_url": "https://api.github.com/users/merlinz01/received_events",
+        "repos_url": "https://api.github.com/users/merlinz01/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/merlinz01/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/merlinz01/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/merlinz01",
+        "user_view_type": "public"
+      }
+    },
+    "repository": {
+      "allow_forking": true,
+      "archive_url": "https://api.github.com/repos/fastapi/fastapi/{archive_format}{/ref}",
+      "archived": false,
+      "assignees_url": "https://api.github.com/repos/fastapi/fastapi/assignees{/user}",
+      "blobs_url": "https://api.github.com/repos/fastapi/fastapi/git/blobs{/sha}",
+      "branches_url": "https://api.github.com/repos/fastapi/fastapi/branches{/branch}",
+      "clone_url": "https://github.com/fastapi/fastapi.git",
+      "collaborators_url": "https://api.github.com/repos/fastapi/fastapi/collaborators{/collaborator}",
+      "comments_url": "https://api.github.com/repos/fastapi/fastapi/comments{/number}",
+      "commits_url": "https://api.github.com/repos/fastapi/fastapi/commits{/sha}",
+      "compare_url": "https://api.github.com/repos/fastapi/fastapi/compare/{base}...{head}",
+      "contents_url": "https://api.github.com/repos/fastapi/fastapi/contents/{+path}",
+      "contributors_url": "https://api.github.com/repos/fastapi/fastapi/contributors",
+      "created_at": "2018-12-08T08:21:47Z",
+      "custom_properties": {},
+      "default_branch": "master",
+      "deployments_url": "https://api.github.com/repos/fastapi/fastapi/deployments",
+      "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+      "disabled": false,
+      "downloads_url": "https://api.github.com/repos/fastapi/fastapi/downloads",
+      "events_url": "https://api.github.com/repos/fastapi/fastapi/events",
+      "fork": false,
+      "forks": 8353,
+      "forks_count": 8353,
+      "forks_url": "https://api.github.com/repos/fastapi/fastapi/forks",
+      "full_name": "fastapi/fastapi",
+      "git_commits_url": "https://api.github.com/repos/fastapi/fastapi/git/commits{/sha}",
+      "git_refs_url": "https://api.github.com/repos/fastapi/fastapi/git/refs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/fastapi/fastapi/git/tags{/sha}",
+      "git_url": "git://github.com/fastapi/fastapi.git",
+      "has_discussions": true,
+      "has_downloads": true,
+      "has_issues": true,
+      "has_pages": false,
+      "has_projects": true,
+      "has_wiki": true,
+      "homepage": "https://fastapi.tiangolo.com/",
+      "hooks_url": "https://api.github.com/repos/fastapi/fastapi/hooks",
+      "html_url": "https://github.com/fastapi/fastapi",
+      "id": 160919119,
+      "is_template": false,
+      "issue_comment_url": "https://api.github.com/repos/fastapi/fastapi/issues/comments{/number}",
+      "issue_events_url": "https://api.github.com/repos/fastapi/fastapi/issues/events{/number}",
+      "issues_url": "https://api.github.com/repos/fastapi/fastapi/issues{/number}",
+      "keys_url": "https://api.github.com/repos/fastapi/fastapi/keys{/key_id}",
+      "labels_url": "https://api.github.com/repos/fastapi/fastapi/labels{/name}",
+      "language": "Python",
+      "languages_url": "https://api.github.com/repos/fastapi/fastapi/languages",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "node_id": "MDc6TGljZW5zZTEz",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "merges_url": "https://api.github.com/repos/fastapi/fastapi/merges",
+      "milestones_url": "https://api.github.com/repos/fastapi/fastapi/milestones{/number}",
+      "mirror_url": null,
+      "name": "fastapi",
+      "node_id": "MDEwOlJlcG9zaXRvcnkxNjA5MTkxMTk=",
+      "notifications_url": "https://api.github.com/repos/fastapi/fastapi/notifications{?since,all,participating}",
+      "open_issues": 183,
+      "open_issues_count": 183,
+      "owner": {
+        "avatar_url": "https://avatars.githubusercontent.com/u/156354296?v=4",
+        "events_url": "https://api.github.com/users/fastapi/events{/privacy}",
+        "followers_url": "https://api.github.com/users/fastapi/followers",
+        "following_url": "https://api.github.com/users/fastapi/following{/other_user}",
+        "gists_url": "https://api.github.com/users/fastapi/gists{/gist_id}",
+        "gravatar_id": "",
+        "html_url": "https://github.com/fastapi",
+        "id": 156354296,
+        "login": "fastapi",
+        "node_id": "O_kgDOCVHG-A",
+        "organizations_url": "https://api.github.com/users/fastapi/orgs",
+        "received_events_url": "https://api.github.com/users/fastapi/received_events",
+        "repos_url": "https://api.github.com/users/fastapi/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/fastapi/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/fastapi/subscriptions",
+        "type": "Organization",
+        "url": "https://api.github.com/users/fastapi",
+        "user_view_type": "public"
+      },
+      "private": false,
+      "pulls_url": "https://api.github.com/repos/fastapi/fastapi/pulls{/number}",
+      "pushed_at": "2025-12-12T15:00:02Z",
+      "releases_url": "https://api.github.com/repos/fastapi/fastapi/releases{/id}",
+      "size": 29538,
+      "ssh_url": "git@github.com:fastapi/fastapi.git",
+      "stargazers_count": 93012,
+      "stargazers_url": "https://api.github.com/repos/fastapi/fastapi/stargazers",
+      "statuses_url": "https://api.github.com/repos/fastapi/fastapi/statuses/{sha}",
+      "subscribers_url": "https://api.github.com/repos/fastapi/fastapi/subscribers",
+      "subscription_url": "https://api.github.com/repos/fastapi/fastapi/subscription",
+      "svn_url": "https://github.com/fastapi/fastapi",
+      "tags_url": "https://api.github.com/repos/fastapi/fastapi/tags",
+      "teams_url": "https://api.github.com/repos/fastapi/fastapi/teams",
+      "topics": [
+        "api",
+        "async",
+        "asyncio",
+        "fastapi",
+        "framework",
+        "json",
+        "json-schema",
+        "openapi",
+        "openapi3",
+        "pydantic",
+        "python",
+        "python-types",
+        "python3",
+        "redoc",
+        "rest",
+        "starlette",
+        "swagger",
+        "swagger-ui",
+        "uvicorn",
+        "web"
+      ],
+      "trees_url": "https://api.github.com/repos/fastapi/fastapi/git/trees{/sha}",
+      "updated_at": "2025-12-12T14:59:35Z",
+      "url": "https://api.github.com/repos/fastapi/fastapi",
+      "visibility": "public",
+      "watchers": 93012,
+      "watchers_count": 93012,
+      "web_commit_signoff_required": false
+    },
+    "sender": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/158784988?v=4",
+      "events_url": "https://api.github.com/users/merlinz01/events{/privacy}",
+      "followers_url": "https://api.github.com/users/merlinz01/followers",
+      "following_url": "https://api.github.com/users/merlinz01/following{/other_user}",
+      "gists_url": "https://api.github.com/users/merlinz01/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/merlinz01",
+      "id": 158784988,
+      "login": "merlinz01",
+      "node_id": "U_kgDOCXbd3A",
+      "organizations_url": "https://api.github.com/users/merlinz01/orgs",
+      "received_events_url": "https://api.github.com/users/merlinz01/received_events",
+      "repos_url": "https://api.github.com/users/merlinz01/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/merlinz01/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/merlinz01/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/merlinz01",
+      "user_view_type": "public"
+    }
+  },
+  "workflow_ref": "fastapi/fastapi/.github/workflows/test.yml@refs/pull/12135/merge",
+  "workflow_sha": "b4d6833c6cfdd5cf3e2aff84c5264356d3fa5264",
+  "repository_id": "160919119",
+  "triggering_actor": "merlinz01",
+  "workspace": "/home/runner/work/fastapi/fastapi",
+  "action": "__run"
+}
+2025-12-12T15:07:24.7755629Z ##[endgroup]
+2025-12-12T15:07:24.7911285Z {
+2025-12-12T15:07:24.7913594Z   "token": "***",
+2025-12-12T15:07:24.7914530Z   "job": "test",
+2025-12-12T15:07:24.7915347Z   "ref": "refs/pull/12135/merge",
+2025-12-12T15:07:24.7916674Z   "sha": "b4d6833c6cfdd5cf3e2aff84c5264356d3fa5264",
+2025-12-12T15:07:24.7917834Z   "repository": "fastapi/fastapi",
+2025-12-12T15:07:24.7918815Z   "repository_owner": "fastapi",
+2025-12-12T15:07:24.7919773Z   "repository_owner_id": "156354296",
+2025-12-12T15:07:24.7920957Z   "repositoryUrl": "git://github.com/fastapi/fastapi.git",
+2025-12-12T15:07:24.7922117Z   "run_id": "20170930277",
+2025-12-12T15:07:24.7922964Z   "run_number": "21493",
+2025-12-12T15:07:24.7923802Z   "retention_days": "90",
+2025-12-12T15:07:24.7924637Z   "run_attempt": "1",
+2025-12-12T15:07:24.7925696Z   "artifact_cache_size_limit": "10",
+2025-12-12T15:07:24.7926723Z   "repository_visibility": "public",
+2025-12-12T15:07:24.7927688Z   "actor_id": "158784988",
+2025-12-12T15:07:24.7928532Z   "actor": "merlinz01",
+2025-12-12T15:07:24.7929398Z   "workflow": "Test",
+2025-12-12T15:07:24.7930311Z   "head_ref": "pass-none-when-null-received",
+2025-12-12T15:07:24.7931342Z   "base_ref": "master",
+2025-12-12T15:07:24.7932165Z   "event_name": "pull_request",
+2025-12-12T15:07:24.7933119Z   "server_url": "https://github.com",
+2025-12-12T15:07:24.7934474Z   "api_url": "https://api.github.com",
+2025-12-12T15:07:24.7935781Z   "graphql_url": "https://api.github.com/graphql",
+2025-12-12T15:07:24.7936881Z   "ref_name": "12135/merge",
+2025-12-12T15:07:24.7937764Z   "ref_protected": false,
+2025-12-12T15:07:24.7938615Z   "ref_type": "branch",
+2025-12-12T15:07:24.7939448Z   "secret_source": "None",
+2025-12-12T15:07:24.7940289Z   "event": {
+2025-12-12T15:07:24.7941042Z     "action": "synchronize",
+2025-12-12T15:07:24.7942049Z     "after": "3dd2d6f162216ea97aa54bd81c5360869719d68c",
+2025-12-12T15:07:24.7943246Z     "before": "c7b0804f29860f2e343552ca9f7f93d3e90eb583",
+2025-12-12T15:07:24.7944324Z     "number": 12135,
+2025-12-12T15:07:24.7945129Z     "organization": {
+2025-12-12T15:07:24.7946535Z       "avatar_url": "https://avatars.githubusercontent.com/u/156354296?v=4",
+2025-12-12T15:07:24.7948570Z       "description": "FastAPI and friends open source projects. Created and managed by @tiangolo.",
+2025-12-12T15:07:24.7950311Z       "events_url": "https://api.github.com/orgs/fastapi/events",
+2025-12-12T15:07:24.7951687Z       "hooks_url": "https://api.github.com/orgs/fastapi/hooks",
+2025-12-12T15:07:24.7952821Z       "id": 156354296,
+2025-12-12T15:07:24.7953832Z       "issues_url": "https://api.github.com/orgs/fastapi/issues",
+2025-12-12T15:07:24.7955007Z       "login": "fastapi",
+2025-12-12T15:07:24.7956384Z       "members_url": "https://api.github.com/orgs/fastapi/members{/member}",
+2025-12-12T15:07:24.7957686Z       "node_id": "O_kgDOCVHG-A",
+2025-12-12T15:07:24.7959026Z       "public_members_url": "https://api.github.com/orgs/fastapi/public_members{/member}",
+2025-12-12T15:07:24.7960636Z       "repos_url": "https://api.github.com/orgs/fastapi/repos",
+2025-12-12T15:07:24.7961866Z       "url": "https://api.github.com/orgs/fastapi"
+2025-12-12T15:07:24.7962893Z     },
+2025-12-12T15:07:24.7963584Z     "pull_request": {
+2025-12-12T15:07:24.7964371Z       "_links": {
+2025-12-12T15:07:24.7965114Z         "comments": {
+2025-12-12T15:07:24.7966475Z           "href": "https://api.github.com/repos/fastapi/fastapi/issues/12135/comments"
+2025-12-12T15:07:24.7967814Z         },
+2025-12-12T15:07:24.7968707Z         "commits": {
+2025-12-12T15:07:24.7969856Z           "href": "https://api.github.com/repos/fastapi/fastapi/pulls/12135/commits"
+2025-12-12T15:07:24.7971183Z         },
+2025-12-12T15:07:24.7971874Z         "html": {
+2025-12-12T15:07:24.7972828Z           "href": "https://github.com/fastapi/fastapi/pull/12135"
+2025-12-12T15:07:24.7973944Z         },
+2025-12-12T15:07:24.7974642Z         "issue": {
+2025-12-12T15:07:24.7976007Z           "href": "https://api.github.com/repos/fastapi/fastapi/issues/12135"
+2025-12-12T15:07:24.7977329Z         },
+2025-12-12T15:07:24.7978058Z         "review_comment": {
+2025-12-12T15:07:24.7979322Z           "href": "https://api.github.com/repos/fastapi/fastapi/pulls/comments{/number}"
+2025-12-12T15:07:24.7980686Z         },
+2025-12-12T15:07:24.7981411Z         "review_comments": {
+2025-12-12T15:07:24.7982636Z           "href": "https://api.github.com/repos/fastapi/fastapi/pulls/12135/comments"
+2025-12-12T15:07:24.7983956Z         },
+2025-12-12T15:07:24.7984655Z         "self": {
+2025-12-12T15:07:24.7985996Z           "href": "https://api.github.com/repos/fastapi/fastapi/pulls/12135"
+2025-12-12T15:07:24.7987265Z         },
+2025-12-12T15:07:24.7987970Z         "statuses": {
+2025-12-12T15:07:24.7989481Z           "href": "https://api.github.com/repos/fastapi/fastapi/statuses/3dd2d6f162216ea97aa54bd81c5360869719d68c"
+2025-12-12T15:07:24.7991153Z         }
+2025-12-12T15:07:24.7991825Z       },
+2025-12-12T15:07:24.7992544Z       "active_lock_reason": null,
+2025-12-12T15:07:24.7993450Z       "additions": 141,
+2025-12-12T15:07:24.7994257Z       "assignee": null,
+2025-12-12T15:07:24.7995063Z       "assignees": [],
+2025-12-12T15:07:24.7996088Z       "author_association": "NONE",
+2025-12-12T15:07:24.7997032Z       "auto_merge": null,
+2025-12-12T15:07:24.7997837Z       "base": {
+2025-12-12T15:07:24.7998597Z         "label": "fastapi:master",
+2025-12-12T15:07:24.7999704Z         "ref": "master",
+2025-12-12T15:07:24.8000502Z         "repo": {
+2025-12-12T15:07:24.8001274Z           "allow_auto_merge": true,
+2025-12-12T15:07:24.8002214Z           "allow_forking": true,
+2025-12-12T15:07:24.8003127Z           "allow_merge_commit": false,
+2025-12-12T15:07:24.8004098Z           "allow_rebase_merge": false,
+2025-12-12T15:07:24.8005074Z           "allow_squash_merge": true,
+2025-12-12T15:07:24.8006216Z           "allow_update_branch": true,
+2025-12-12T15:07:24.8007630Z           "archive_url": "https://api.github.com/repos/fastapi/fastapi/{archive_format}{/ref}",
+2025-12-12T15:07:24.8009064Z           "archived": false,
+2025-12-12T15:07:24.8010339Z           "assignees_url": "https://api.github.com/repos/fastapi/fastapi/assignees{/user}",
+2025-12-12T15:07:24.8012077Z           "blobs_url": "https://api.github.com/repos/fastapi/fastapi/git/blobs{/sha}",
+2025-12-12T15:07:24.8013827Z           "branches_url": "https://api.github.com/repos/fastapi/fastapi/branches{/branch}",
+2025-12-12T15:07:24.8015573Z           "clone_url": "https://github.com/fastapi/fastapi.git",
+2025-12-12T15:07:24.8017413Z           "collaborators_url": "https://api.github.com/repos/fastapi/fastapi/collaborators{/collaborator}",
+2025-12-12T15:07:24.8019461Z           "comments_url": "https://api.github.com/repos/fastapi/fastapi/comments{/number}",
+2025-12-12T15:07:24.8021223Z           "commits_url": "https://api.github.com/repos/fastapi/fastapi/commits{/sha}",
+2025-12-12T15:07:24.8023028Z           "compare_url": "https://api.github.com/repos/fastapi/fastapi/compare/{base}...{head}",
+2025-12-12T15:07:24.8024879Z           "contents_url": "https://api.github.com/repos/fastapi/fastapi/contents/{+path}",
+2025-12-12T15:07:24.8026901Z           "contributors_url": "https://api.github.com/repos/fastapi/fastapi/contributors",
+2025-12-12T15:07:24.8028335Z           "created_at": "2018-12-08T08:21:47Z",
+2025-12-12T15:07:24.8029373Z           "default_branch": "master",
+2025-12-12T15:07:24.8030364Z           "delete_branch_on_merge": true,
+2025-12-12T15:07:24.8031939Z           "deployments_url": "https://api.github.com/repos/fastapi/fastapi/deployments",
+2025-12-12T15:07:24.8034006Z           "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+2025-12-12T15:07:24.8035879Z           "disabled": false,
+2025-12-12T15:07:24.8037109Z           "downloads_url": "https://api.github.com/repos/fastapi/fastapi/downloads",
+2025-12-12T15:07:24.8038738Z           "events_url": "https://api.github.com/repos/fastapi/fastapi/events",
+2025-12-12T15:07:24.8039992Z           "fork": false,
+2025-12-12T15:07:24.8040803Z           "forks": 8353,
+2025-12-12T15:07:24.8041625Z           "forks_count": 8353,
+2025-12-12T15:07:24.8042762Z           "forks_url": "https://api.github.com/repos/fastapi/fastapi/forks",
+2025-12-12T15:07:24.8044045Z           "full_name": "fastapi/fastapi",
+2025-12-12T15:07:24.8045611Z           "git_commits_url": "https://api.github.com/repos/fastapi/fastapi/git/commits{/sha}",
+2025-12-12T15:07:24.8047424Z           "git_refs_url": "https://api.github.com/repos/fastapi/fastapi/git/refs{/sha}",
+2025-12-12T15:07:24.8049104Z           "git_tags_url": "https://api.github.com/repos/fastapi/fastapi/git/tags{/sha}",
+2025-12-12T15:07:24.8050575Z           "git_url": "git://github.com/fastapi/fastapi.git",
+2025-12-12T15:07:24.8051676Z           "has_discussions": true,
+2025-12-12T15:07:24.8052614Z           "has_downloads": true,
+2025-12-12T15:07:24.8053508Z           "has_issues": true,
+2025-12-12T15:07:24.8054376Z           "has_pages": false,
+2025-12-12T15:07:24.8055255Z           "has_projects": true,
+2025-12-12T15:07:24.8056362Z           "has_wiki": true,
+2025-12-12T15:07:24.8057327Z           "homepage": "https://fastapi.tiangolo.com/",
+2025-12-12T15:07:24.8058658Z           "hooks_url": "https://api.github.com/repos/fastapi/fastapi/hooks",
+2025-12-12T15:07:24.8060013Z           "html_url": "https://github.com/fastapi/fastapi",
+2025-12-12T15:07:24.8061270Z           "id": 160919119,
+2025-12-12T15:07:24.8062098Z           "is_template": false,
+2025-12-12T15:07:24.8063536Z           "issue_comment_url": "https://api.github.com/repos/fastapi/fastapi/issues/comments{/number}",
+2025-12-12T15:07:24.8065730Z           "issue_events_url": "https://api.github.com/repos/fastapi/fastapi/issues/events{/number}",
+2025-12-12T15:07:24.8067582Z           "issues_url": "https://api.github.com/repos/fastapi/fastapi/issues{/number}",
+2025-12-12T15:07:24.8069230Z           "keys_url": "https://api.github.com/repos/fastapi/fastapi/keys{/key_id}",
+2025-12-12T15:07:24.8070881Z           "labels_url": "https://api.github.com/repos/fastapi/fastapi/labels{/name}",
+2025-12-12T15:07:24.8072226Z           "language": "Python",
+2025-12-12T15:07:24.8073442Z           "languages_url": "https://api.github.com/repos/fastapi/fastapi/languages",
+2025-12-12T15:07:24.8074766Z           "license": {
+2025-12-12T15:07:24.8075721Z             "key": "mit",
+2025-12-12T15:07:24.8076564Z             "name": "MIT License",
+2025-12-12T15:07:24.8077499Z             "node_id": "MDc6TGljZW5zZTEz",
+2025-12-12T15:07:24.8078478Z             "spdx_id": "MIT",
+2025-12-12T15:07:24.8079428Z             "url": "https://api.github.com/licenses/mit"
+2025-12-12T15:07:24.8080456Z           },
+2025-12-12T15:07:24.8081222Z           "merge_commit_message": "PR_TITLE",
+2025-12-12T15:07:24.8082243Z           "merge_commit_title": "MERGE_MESSAGE",
+2025-12-12T15:07:24.8083526Z           "merges_url": "https://api.github.com/repos/fastapi/fastapi/merges",
+2025-12-12T15:07:24.8085238Z           "milestones_url": "https://api.github.com/repos/fastapi/fastapi/milestones{/number}",
+2025-12-12T15:07:24.8086861Z           "mirror_url": null,
+2025-12-12T15:07:24.8087721Z           "name": "fastapi",
+2025-12-12T15:07:24.8088686Z           "node_id": "MDEwOlJlcG9zaXRvcnkxNjA5MTkxMTk=",
+2025-12-12T15:07:24.8090524Z           "notifications_url": "https://api.github.com/repos/fastapi/fastapi/notifications{?since,all,participating}",
+2025-12-12T15:07:24.8092271Z           "open_issues": 183,
+2025-12-12T15:07:24.8093155Z           "open_issues_count": 183,
+2025-12-12T15:07:24.8094212Z           "owner": {
+2025-12-12T15:07:24.8095319Z             "avatar_url": "https://avatars.githubusercontent.com/u/156354296?v=4",
+2025-12-12T15:07:24.8097125Z             "events_url": "https://api.github.com/users/fastapi/events{/privacy}",
+2025-12-12T15:07:24.8098686Z             "followers_url": "https://api.github.com/users/fastapi/followers",
+2025-12-12T15:07:24.8100302Z             "following_url": "https://api.github.com/users/fastapi/following{/other_user}",
+2025-12-12T15:07:24.8101929Z             "gists_url": "https://api.github.com/users/fastapi/gists{/gist_id}",
+2025-12-12T15:07:24.8103182Z             "gravatar_id": "",
+2025-12-12T15:07:24.8104120Z             "html_url": "https://github.com/fastapi",
+2025-12-12T15:07:24.8105130Z             "id": 156354296,
+2025-12-12T15:07:24.8106195Z             "login": "fastapi",
+2025-12-12T15:07:24.8107085Z             "node_id": "O_kgDOCVHG-A",
+2025-12-12T15:07:24.8108324Z             "organizations_url": "https://api.github.com/users/fastapi/orgs",
+2025-12-12T15:07:24.8109953Z             "received_events_url": "https://api.github.com/users/fastapi/received_events",
+2025-12-12T15:07:24.8111489Z             "repos_url": "https://api.github.com/users/fastapi/repos",
+2025-12-12T15:07:24.8112635Z             "site_admin": false,
+2025-12-12T15:07:24.8113866Z             "starred_url": "https://api.github.com/users/fastapi/starred{/owner}{/repo}",
+2025-12-12T15:07:24.8115775Z             "subscriptions_url": "https://api.github.com/users/fastapi/subscriptions",
+2025-12-12T15:07:24.8117154Z             "type": "Organization",
+2025-12-12T15:07:24.8118168Z             "url": "https://api.github.com/users/fastapi",
+2025-12-12T15:07:24.8119238Z             "user_view_type": "public"
+2025-12-12T15:07:24.8120136Z           },
+2025-12-12T15:07:24.8120849Z           "private": false,
+2025-12-12T15:07:24.8122043Z           "pulls_url": "https://api.github.com/repos/fastapi/fastapi/pulls{/number}",
+2025-12-12T15:07:24.8123568Z           "pushed_at": "2025-12-12T15:00:02Z",
+2025-12-12T15:07:24.8124915Z           "releases_url": "https://api.github.com/repos/fastapi/fastapi/releases{/id}",
+2025-12-12T15:07:24.8126360Z           "size": 29538,
+2025-12-12T15:07:24.8127295Z           "squash_merge_commit_message": "COMMIT_MESSAGES",
+2025-12-12T15:07:24.8128412Z           "squash_merge_commit_title": "PR_TITLE",
+2025-12-12T15:07:24.8129554Z           "ssh_url": "git@github.com:fastapi/fastapi.git",
+2025-12-12T15:07:24.8130622Z           "stargazers_count": 93012,
+2025-12-12T15:07:24.8131907Z           "stargazers_url": "https://api.github.com/repos/fastapi/fastapi/stargazers",
+2025-12-12T15:07:24.8133622Z           "statuses_url": "https://api.github.com/repos/fastapi/fastapi/statuses/{sha}",
+2025-12-12T15:07:24.8135351Z           "subscribers_url": "https://api.github.com/repos/fastapi/fastapi/subscribers",
+2025-12-12T15:07:24.8137222Z           "subscription_url": "https://api.github.com/repos/fastapi/fastapi/subscription",
+2025-12-12T15:07:24.8138739Z           "svn_url": "https://github.com/fastapi/fastapi",
+2025-12-12T15:07:24.8140040Z           "tags_url": "https://api.github.com/repos/fastapi/fastapi/tags",
+2025-12-12T15:07:24.8141474Z           "teams_url": "https://api.github.com/repos/fastapi/fastapi/teams",
+2025-12-12T15:07:24.8142680Z           "topics": [
+2025-12-12T15:07:24.8143429Z             "api",
+2025-12-12T15:07:24.8144140Z             "async",
+2025-12-12T15:07:24.8144878Z             "asyncio",
+2025-12-12T15:07:24.8145713Z             "fastapi",
+2025-12-12T15:07:24.8146493Z             "framework",
+2025-12-12T15:07:24.8147268Z             "json",
+2025-12-12T15:07:24.8148005Z             "json-schema",
+2025-12-12T15:07:24.8148809Z             "openapi",
+2025-12-12T15:07:24.8149581Z             "openapi3",
+2025-12-12T15:07:24.8150344Z             "pydantic",
+2025-12-12T15:07:24.8151102Z             "python",
+2025-12-12T15:07:24.8151883Z             "python-types",
+2025-12-12T15:07:24.8152702Z             "python3",
+2025-12-12T15:07:24.8153602Z             "redoc",
+2025-12-12T15:07:24.8154334Z             "rest",
+2025-12-12T15:07:24.8155069Z             "starlette",
+2025-12-12T15:07:24.8156005Z             "swagger",
+2025-12-12T15:07:24.8156762Z             "swagger-ui",
+2025-12-12T15:07:24.8157547Z             "uvicorn",
+2025-12-12T15:07:24.8158293Z             "web"
+2025-12-12T15:07:24.8158989Z           ],
+2025-12-12T15:07:24.8160054Z           "trees_url": "https://api.github.com/repos/fastapi/fastapi/git/trees{/sha}",
+2025-12-12T15:07:24.8161392Z           "updated_at": "2025-12-12T14:59:35Z",
+2025-12-12T15:07:24.8162522Z           "url": "https://api.github.com/repos/fastapi/fastapi",
+2025-12-12T15:07:24.8163678Z           "use_squash_pr_title_as_default": true,
+2025-12-12T15:07:24.8164676Z           "visibility": "public",
+2025-12-12T15:07:24.8165689Z           "watchers": 93012,
+2025-12-12T15:07:24.8166553Z           "watchers_count": 93012,
+2025-12-12T15:07:24.8167497Z           "web_commit_signoff_required": false
+2025-12-12T15:07:24.8168517Z         },
+2025-12-12T15:07:24.8169318Z         "sha": "b1d9769f97295a238df8c2d318ad65dd6a40c6ff",
+2025-12-12T15:07:24.8170330Z         "user": {
+2025-12-12T15:07:24.8171379Z           "avatar_url": "https://avatars.githubusercontent.com/u/156354296?v=4",
+2025-12-12T15:07:24.8172981Z           "events_url": "https://api.github.com/users/fastapi/events{/privacy}",
+2025-12-12T15:07:24.8174510Z           "followers_url": "https://api.github.com/users/fastapi/followers",
+2025-12-12T15:07:24.8176219Z           "following_url": "https://api.github.com/users/fastapi/following{/other_user}",
+2025-12-12T15:07:24.8177837Z           "gists_url": "https://api.github.com/users/fastapi/gists{/gist_id}",
+2025-12-12T15:07:24.8179053Z           "gravatar_id": "",
+2025-12-12T15:07:24.8179964Z           "html_url": "https://github.com/fastapi",
+2025-12-12T15:07:24.8180959Z           "id": 156354296,
+2025-12-12T15:07:24.8181941Z           "login": "fastapi",
+2025-12-12T15:07:24.8182806Z           "node_id": "O_kgDOCVHG-A",
+2025-12-12T15:07:24.8184016Z           "organizations_url": "https://api.github.com/users/fastapi/orgs",
+2025-12-12T15:07:24.8185768Z           "received_events_url": "https://api.github.com/users/fastapi/received_events",
+2025-12-12T15:07:24.8187300Z           "repos_url": "https://api.github.com/users/fastapi/repos",
+2025-12-12T15:07:24.8188445Z           "site_admin": false,
+2025-12-12T15:07:24.8189673Z           "starred_url": "https://api.github.com/users/fastapi/starred{/owner}{/repo}",
+2025-12-12T15:07:24.8191355Z           "subscriptions_url": "https://api.github.com/users/fastapi/subscriptions",
+2025-12-12T15:07:24.8192696Z           "type": "Organization",
+2025-12-12T15:07:24.8193688Z           "url": "https://api.github.com/users/fastapi",
+2025-12-12T15:07:24.8194743Z           "user_view_type": "public"
+2025-12-12T15:07:24.8195722Z         }
+2025-12-12T15:07:24.8196385Z       },
+2025-12-12T15:07:24.8211915Z       "body": "This PR addresses the case where a parameter is optional but has a default that is not `None`, and the user wishes to detect that a `null` value was passed, versus the value not being defined at all.\r\n\r\n### Use case\r\n\r\nThis is an example of a use case for which this behavior is crucial:\r\n```python\r\n@app.patch('/users/{user_id}')\r\ndef edit_user(user_id: int, name: str | None = None, organization_id: int | None = -1):\r\n    # user_id is the ID of a user in the database\r\n    user = lookup_user(user_id)\r\n    # If a name was given, save the user's name\r\n    if name is not None:\r\n        user.name = name\r\n    # If an organization id was given, edit the organization to which the user belongs\r\n    # If organization_id is -1, we know that no value has been received\r\n    if organization_id != -1:\r\n        # The user might not belong to any organization and we want to handle that case\r\n        if organization_id is not None:\r\n            lookup_organization(organization_id)\r\n        user.organization_id = organization_id # int | None\r\n    save_user(user)\r\n    return {\"success\": True}\r\n```\r\n\r\n### Previous behavior\r\n\r\n```\r\nPATCH /users/123\r\n{}\r\n```\r\nwould result in `organization_id == -1` (as expected), but:\r\n```\r\nPATCH /users/123\r\n{\r\n  \"organization_id\": null\r\n}\r\n```\r\nwould also result in `organization_id == -1`, which provides no way to distinguish the two.\r\n\r\n### New behavior\r\n\r\n```\r\nPATCH /users/123\r\n{}\r\n```\r\nresults in `organization_id == -1` (as before), but:\r\n```\r\nPATCH /users/123\r\n{\r\n  \"organization_id\": null\r\n}\r\n```\r\nnow results in `organization_id is None`.\r\n\r\n### Additional comments\r\n\r\nResolves #6058 and #1661 .\r\n\r\nTests included, all tests passing.\r\n",
+2025-12-12T15:07:24.8227786Z       "changed_files": 2,
+2025-12-12T15:07:24.8228603Z       "closed_at": null,
+2025-12-12T15:07:24.8229433Z       "comments": 18,
+2025-12-12T15:07:24.8230666Z       "comments_url": "https://api.github.com/repos/fastapi/fastapi/issues/12135/comments",
+2025-12-12T15:07:24.8232068Z       "commits": 36,
+2025-12-12T15:07:24.8233278Z       "commits_url": "https://api.github.com/repos/fastapi/fastapi/pulls/12135/commits",
+2025-12-12T15:07:24.8234669Z       "created_at": "2024-09-05T22:48:15Z",
+2025-12-12T15:07:24.8235689Z       "deletions": 9,
+2025-12-12T15:07:24.8236716Z       "diff_url": "https://github.com/fastapi/fastapi/pull/12135.diff",
+2025-12-12T15:07:24.8237889Z       "draft": false,
+2025-12-12T15:07:24.8238636Z       "head": {
+2025-12-12T15:07:24.8239500Z         "label": "merlinz01:pass-none-when-null-received",
+2025-12-12T15:07:24.8240640Z         "ref": "pass-none-when-null-received",
+2025-12-12T15:07:24.8241624Z         "repo": {
+2025-12-12T15:07:24.8242380Z           "allow_auto_merge": false,
+2025-12-12T15:07:24.8243306Z           "allow_forking": true,
+2025-12-12T15:07:24.8244194Z           "allow_merge_commit": true,
+2025-12-12T15:07:24.8245143Z           "allow_rebase_merge": true,
+2025-12-12T15:07:24.8246363Z           "allow_squash_merge": true,
+2025-12-12T15:07:24.8247316Z           "allow_update_branch": false,
+2025-12-12T15:07:24.8248730Z           "archive_url": "https://api.github.com/repos/merlinz01/fastapi/{archive_format}{/ref}",
+2025-12-12T15:07:24.8250150Z           "archived": false,
+2025-12-12T15:07:24.8251428Z           "assignees_url": "https://api.github.com/repos/merlinz01/fastapi/assignees{/user}",
+2025-12-12T15:07:24.8253174Z           "blobs_url": "https://api.github.com/repos/merlinz01/fastapi/git/blobs{/sha}",
+2025-12-12T15:07:24.8254909Z           "branches_url": "https://api.github.com/repos/merlinz01/fastapi/branches{/branch}",
+2025-12-12T15:07:24.8256563Z           "clone_url": "https://github.com/merlinz01/fastapi.git",
+2025-12-12T15:07:24.8258311Z           "collaborators_url": "https://api.github.com/repos/merlinz01/fastapi/collaborators{/collaborator}",
+2025-12-12T15:07:24.8260331Z           "comments_url": "https://api.github.com/repos/merlinz01/fastapi/comments{/number}",
+2025-12-12T15:07:24.8262094Z           "commits_url": "https://api.github.com/repos/merlinz01/fastapi/commits{/sha}",
+2025-12-12T15:07:24.8263899Z           "compare_url": "https://api.github.com/repos/merlinz01/fastapi/compare/{base}...{head}",
+2025-12-12T15:07:24.8265833Z           "contents_url": "https://api.github.com/repos/merlinz01/fastapi/contents/{+path}",
+2025-12-12T15:07:24.8267631Z           "contributors_url": "https://api.github.com/repos/merlinz01/fastapi/contributors",
+2025-12-12T15:07:24.8269048Z           "created_at": "2024-09-04T21:11:46Z",
+2025-12-12T15:07:24.8270026Z           "default_branch": "master",
+2025-12-12T15:07:24.8270975Z           "delete_branch_on_merge": false,
+2025-12-12T15:07:24.8272334Z           "deployments_url": "https://api.github.com/repos/merlinz01/fastapi/deployments",
+2025-12-12T15:07:24.8274373Z           "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+2025-12-12T15:07:24.8276085Z           "disabled": false,
+2025-12-12T15:07:24.8277433Z           "downloads_url": "https://api.github.com/repos/merlinz01/fastapi/downloads",
+2025-12-12T15:07:24.8279065Z           "events_url": "https://api.github.com/repos/merlinz01/fastapi/events",
+2025-12-12T15:07:24.8280291Z           "fork": true,
+2025-12-12T15:07:24.8281060Z           "forks": 0,
+2025-12-12T15:07:24.8281818Z           "forks_count": 0,
+2025-12-12T15:07:24.8282916Z           "forks_url": "https://api.github.com/repos/merlinz01/fastapi/forks",
+2025-12-12T15:07:24.8284172Z           "full_name": "merlinz01/fastapi",
+2025-12-12T15:07:24.8285735Z           "git_commits_url": "https://api.github.com/repos/merlinz01/fastapi/git/commits{/sha}",
+2025-12-12T15:07:24.8287507Z           "git_refs_url": "https://api.github.com/repos/merlinz01/fastapi/git/refs{/sha}",
+2025-12-12T15:07:24.8289187Z           "git_tags_url": "https://api.github.com/repos/merlinz01/fastapi/git/tags{/sha}",
+2025-12-12T15:07:24.8290637Z           "git_url": "git://github.com/merlinz01/fastapi.git",
+2025-12-12T15:07:24.8291735Z           "has_discussions": false,
+2025-12-12T15:07:24.8292665Z           "has_downloads": true,
+2025-12-12T15:07:24.8293534Z           "has_issues": false,
+2025-12-12T15:07:24.8294385Z           "has_pages": false,
+2025-12-12T15:07:24.8295240Z           "has_projects": true,
+2025-12-12T15:07:24.8296192Z           "has_wiki": true,
+2025-12-12T15:07:24.8297135Z           "homepage": "https://fastapi.tiangolo.com/",
+2025-12-12T15:07:24.8298438Z           "hooks_url": "https://api.github.com/repos/merlinz01/fastapi/hooks",
+2025-12-12T15:07:24.8299786Z           "html_url": "https://github.com/merlinz01/fastapi",
+2025-12-12T15:07:24.8300839Z           "id": 852463166,
+2025-12-12T15:07:24.8301669Z           "is_template": false,
+2025-12-12T15:07:24.8303089Z           "issue_comment_url": "https://api.github.com/repos/merlinz01/fastapi/issues/comments{/number}",
+2025-12-12T15:07:24.8305121Z           "issue_events_url": "https://api.github.com/repos/merlinz01/fastapi/issues/events{/number}",
+2025-12-12T15:07:24.8307258Z           "issues_url": "https://api.github.com/repos/merlinz01/fastapi/issues{/number}",
+2025-12-12T15:07:24.8308913Z           "keys_url": "https://api.github.com/repos/merlinz01/fastapi/keys{/key_id}",
+2025-12-12T15:07:24.8310549Z           "labels_url": "https://api.github.com/repos/merlinz01/fastapi/labels{/name}",
+2025-12-12T15:07:24.8311855Z           "language": "Python",
+2025-12-12T15:07:24.8313088Z           "languages_url": "https://api.github.com/repos/merlinz01/fastapi/languages",
+2025-12-12T15:07:24.8314379Z           "license": {
+2025-12-12T15:07:24.8315148Z             "key": "mit",
+2025-12-12T15:07:24.8316043Z             "name": "MIT License",
+2025-12-12T15:07:24.8316967Z             "node_id": "MDc6TGljZW5zZTEz",
+2025-12-12T15:07:24.8317918Z             "spdx_id": "MIT",
+2025-12-12T15:07:24.8318853Z             "url": "https://api.github.com/licenses/mit"
+2025-12-12T15:07:24.8319855Z           },
+2025-12-12T15:07:24.8320619Z           "merge_commit_message": "PR_TITLE",
+2025-12-12T15:07:24.8321632Z           "merge_commit_title": "MERGE_MESSAGE",
+2025-12-12T15:07:24.8322910Z           "merges_url": "https://api.github.com/repos/merlinz01/fastapi/merges",
+2025-12-12T15:07:24.8324637Z           "milestones_url": "https://api.github.com/repos/merlinz01/fastapi/milestones{/number}",
+2025-12-12T15:07:24.8326172Z           "mirror_url": null,
+2025-12-12T15:07:24.8327017Z           "name": "fastapi",
+2025-12-12T15:07:24.8327883Z           "node_id": "R_kgDOMs-OPg",
+2025-12-12T15:07:24.8329608Z           "notifications_url": "https://api.github.com/repos/merlinz01/fastapi/notifications{?since,all,participating}",
+2025-12-12T15:07:24.8331353Z           "open_issues": 0,
+2025-12-12T15:07:24.8332194Z           "open_issues_count": 0,
+2025-12-12T15:07:24.8333066Z           "owner": {
+2025-12-12T15:07:24.8334131Z             "avatar_url": "https://avatars.githubusercontent.com/u/158784988?v=4",
+2025-12-12T15:07:24.8335805Z             "events_url": "https://api.github.com/users/merlinz01/events{/privacy}",
+2025-12-12T15:07:24.8337525Z             "followers_url": "https://api.github.com/users/merlinz01/followers",
+2025-12-12T15:07:24.8339159Z             "following_url": "https://api.github.com/users/merlinz01/following{/other_user}",
+2025-12-12T15:07:24.8340800Z             "gists_url": "https://api.github.com/users/merlinz01/gists{/gist_id}",
+2025-12-12T15:07:24.8342042Z             "gravatar_id": "",
+2025-12-12T15:07:24.8342986Z             "html_url": "https://github.com/merlinz01",
+2025-12-12T15:07:24.8343985Z             "id": 158784988,
+2025-12-12T15:07:24.8344832Z             "login": "merlinz01",
+2025-12-12T15:07:24.8345845Z             "node_id": "U_kgDOCXbd3A",
+2025-12-12T15:07:24.8347060Z             "organizations_url": "https://api.github.com/users/merlinz01/orgs",
+2025-12-12T15:07:24.8348708Z             "received_events_url": "https://api.github.com/users/merlinz01/received_events",
+2025-12-12T15:07:24.8350266Z             "repos_url": "https://api.github.com/users/merlinz01/repos",
+2025-12-12T15:07:24.8351434Z             "site_admin": false,
+2025-12-12T15:07:24.8352674Z             "starred_url": "https://api.github.com/users/merlinz01/starred{/owner}{/repo}",
+2025-12-12T15:07:24.8354384Z             "subscriptions_url": "https://api.github.com/users/merlinz01/subscriptions",
+2025-12-12T15:07:24.8355802Z             "type": "User",
+2025-12-12T15:07:24.8356745Z             "url": "https://api.github.com/users/merlinz01",
+2025-12-12T15:07:24.8357817Z             "user_view_type": "public"
+2025-12-12T15:07:24.8358696Z           },
+2025-12-12T15:07:24.8359407Z           "private": false,
+2025-12-12T15:07:24.8360580Z           "pulls_url": "https://api.github.com/repos/merlinz01/fastapi/pulls{/number}",
+2025-12-12T15:07:24.8361929Z           "pushed_at": "2025-12-12T15:07:14Z",
+2025-12-12T15:07:24.8363247Z           "releases_url": "https://api.github.com/repos/merlinz01/fastapi/releases{/id}",
+2025-12-12T15:07:24.8364803Z           "size": 28619,
+2025-12-12T15:07:24.8365835Z           "squash_merge_commit_message": "COMMIT_MESSAGES",
+2025-12-12T15:07:24.8367036Z           "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+2025-12-12T15:07:24.8368219Z           "ssh_url": "git@github.com:merlinz01/fastapi.git",
+2025-12-12T15:07:24.8369284Z           "stargazers_count": 0,
+2025-12-12T15:07:24.8370557Z           "stargazers_url": "https://api.github.com/repos/merlinz01/fastapi/stargazers",
+2025-12-12T15:07:24.8372287Z           "statuses_url": "https://api.github.com/repos/merlinz01/fastapi/statuses/{sha}",
+2025-12-12T15:07:24.8374039Z           "subscribers_url": "https://api.github.com/repos/merlinz01/fastapi/subscribers",
+2025-12-12T15:07:24.8375927Z           "subscription_url": "https://api.github.com/repos/merlinz01/fastapi/subscription",
+2025-12-12T15:07:24.8377430Z           "svn_url": "https://github.com/merlinz01/fastapi",
+2025-12-12T15:07:24.8378736Z           "tags_url": "https://api.github.com/repos/merlinz01/fastapi/tags",
+2025-12-12T15:07:24.8380213Z           "teams_url": "https://api.github.com/repos/merlinz01/fastapi/teams",
+2025-12-12T15:07:24.8381425Z           "topics": [],
+2025-12-12T15:07:24.8382571Z           "trees_url": "https://api.github.com/repos/merlinz01/fastapi/git/trees{/sha}",
+2025-12-12T15:07:24.8383911Z           "updated_at": "2025-11-20T21:14:06Z",
+2025-12-12T15:07:24.8385030Z           "url": "https://api.github.com/repos/merlinz01/fastapi",
+2025-12-12T15:07:24.8386284Z           "use_squash_pr_title_as_default": false,
+2025-12-12T15:07:24.8387344Z           "visibility": "public",
+2025-12-12T15:07:24.8388206Z           "watchers": 0,
+2025-12-12T15:07:24.8389009Z           "watchers_count": 0,
+2025-12-12T15:07:24.8389908Z           "web_commit_signoff_required": false
+2025-12-12T15:07:24.8390850Z         },
+2025-12-12T15:07:24.8391636Z         "sha": "3dd2d6f162216ea97aa54bd81c5360869719d68c",
+2025-12-12T15:07:24.8392633Z         "user": {
+2025-12-12T15:07:24.8393666Z           "avatar_url": "https://avatars.githubusercontent.com/u/158784988?v=4",
+2025-12-12T15:07:24.8395552Z           "events_url": "https://api.github.com/users/merlinz01/events{/privacy}",
+2025-12-12T15:07:24.8397142Z           "followers_url": "https://api.github.com/users/merlinz01/followers",
+2025-12-12T15:07:24.8398756Z           "following_url": "https://api.github.com/users/merlinz01/following{/other_user}",
+2025-12-12T15:07:24.8400385Z           "gists_url": "https://api.github.com/users/merlinz01/gists{/gist_id}",
+2025-12-12T15:07:24.8401618Z           "gravatar_id": "",
+2025-12-12T15:07:24.8402545Z           "html_url": "https://github.com/merlinz01",
+2025-12-12T15:07:24.8403539Z           "id": 158784988,
+2025-12-12T15:07:24.8404349Z           "login": "merlinz01",
+2025-12-12T15:07:24.8405226Z           "node_id": "U_kgDOCXbd3A",
+2025-12-12T15:07:24.8406534Z           "organizations_url": "https://api.github.com/users/merlinz01/orgs",
+2025-12-12T15:07:24.8408173Z           "received_events_url": "https://api.github.com/users/merlinz01/received_events",
+2025-12-12T15:07:24.8409737Z           "repos_url": "https://api.github.com/users/merlinz01/repos",
+2025-12-12T15:07:24.8410903Z           "site_admin": false,
+2025-12-12T15:07:24.8412105Z           "starred_url": "https://api.github.com/users/merlinz01/starred{/owner}{/repo}",
+2025-12-12T15:07:24.8413814Z           "subscriptions_url": "https://api.github.com/users/merlinz01/subscriptions",
+2025-12-12T15:07:24.8415126Z           "type": "User",
+2025-12-12T15:07:24.8416138Z           "url": "https://api.github.com/users/merlinz01",
+2025-12-12T15:07:24.8417200Z           "user_view_type": "public"
+2025-12-12T15:07:24.8418067Z         }
+2025-12-12T15:07:24.8418725Z       },
+2025-12-12T15:07:24.8419617Z       "html_url": "https://github.com/fastapi/fastapi/pull/12135",
+2025-12-12T15:07:24.8420743Z       "id": 2056688807,
+2025-12-12T15:07:24.8421833Z       "issue_url": "https://api.github.com/repos/fastapi/fastapi/issues/12135",
+2025-12-12T15:07:24.8423092Z       "labels": [
+2025-12-12T15:07:24.8423973Z         {
+2025-12-12T15:07:24.8424662Z           "color": "a2eeef",
+2025-12-12T15:07:24.8425616Z           "default": false,
+2025-12-12T15:07:24.8426505Z           "description": "New feature or request",
+2025-12-12T15:07:24.8427484Z           "id": 1154536359,
+2025-12-12T15:07:24.8428288Z           "name": "feature",
+2025-12-12T15:07:24.8429224Z           "node_id": "MDU6TGFiZWwxMTU0NTM2MzU5",
+2025-12-12T15:07:24.8430485Z           "url": "https://api.github.com/repos/fastapi/fastapi/labels/feature"
+2025-12-12T15:07:24.8431669Z         },
+2025-12-12T15:07:24.8432321Z         {
+2025-12-12T15:07:24.8433013Z           "color": "d93f0b",
+2025-12-12T15:07:24.8433851Z           "default": false,
+2025-12-12T15:07:24.8435016Z           "description": "Automatically generated when a PR has a merge conflict",
+2025-12-12T15:07:24.8436631Z           "id": 9229492097,
+2025-12-12T15:07:24.8437454Z           "name": "conflicts",
+2025-12-12T15:07:24.8438358Z           "node_id": "LA_kwDOCZduT88AAAACJh7fgQ",
+2025-12-12T15:07:24.8439638Z           "url": "https://api.github.com/repos/fastapi/fastapi/labels/conflicts"
+2025-12-12T15:07:24.8440856Z         }
+2025-12-12T15:07:24.8441509Z       ],
+2025-12-12T15:07:24.8442171Z       "locked": false,
+2025-12-12T15:07:24.8442978Z       "maintainer_can_modify": true,
+2025-12-12T15:07:24.8443917Z       "merge_commit_sha": null,
+2025-12-12T15:07:24.8444768Z       "mergeable": null,
+2025-12-12T15:07:24.8445705Z       "mergeable_state": "unknown",
+2025-12-12T15:07:24.8446608Z       "merged": false,
+2025-12-12T15:07:24.8447370Z       "merged_at": null,
+2025-12-12T15:07:24.8448169Z       "merged_by": null,
+2025-12-12T15:07:24.8448961Z       "milestone": null,
+2025-12-12T15:07:24.8449806Z       "node_id": "PR_kwDOCZduT856lpSn",
+2025-12-12T15:07:24.8450723Z       "number": 12135,
+2025-12-12T15:07:24.8451759Z       "patch_url": "https://github.com/fastapi/fastapi/pull/12135.patch",
+2025-12-12T15:07:24.8452972Z       "rebaseable": null,
+2025-12-12T15:07:24.8453803Z       "requested_reviewers": [],
+2025-12-12T15:07:24.8454705Z       "requested_teams": [],
+2025-12-12T15:07:24.8456364Z       "review_comment_url": "https://api.github.com/repos/fastapi/fastapi/pulls/comments{/number}",
+2025-12-12T15:07:24.8457874Z       "review_comments": 0,
+2025-12-12T15:07:24.8459204Z       "review_comments_url": "https://api.github.com/repos/fastapi/fastapi/pulls/12135/comments",
+2025-12-12T15:07:24.8460654Z       "state": "open",
+2025-12-12T15:07:24.8462226Z       "statuses_url": "https://api.github.com/repos/fastapi/fastapi/statuses/3dd2d6f162216ea97aa54bd81c5360869719d68c",
+2025-12-12T15:07:24.8464787Z       "title": "✨ Pass none instead of the default value for optional parameters when null is received",
+2025-12-12T15:07:24.8466403Z       "updated_at": "2025-12-12T15:07:15Z",
+2025-12-12T15:07:24.8467584Z       "url": "https://api.github.com/repos/fastapi/fastapi/pulls/12135",
+2025-12-12T15:07:24.8468760Z       "user": {
+2025-12-12T15:07:24.8469795Z         "avatar_url": "https://avatars.githubusercontent.com/u/158784988?v=4",
+2025-12-12T15:07:24.8471404Z         "events_url": "https://api.github.com/users/merlinz01/events{/privacy}",
+2025-12-12T15:07:24.8472946Z         "followers_url": "https://api.github.com/users/merlinz01/followers",
+2025-12-12T15:07:24.8474598Z         "following_url": "https://api.github.com/users/merlinz01/following{/other_user}",
+2025-12-12T15:07:24.8476331Z         "gists_url": "https://api.github.com/users/merlinz01/gists{/gist_id}",
+2025-12-12T15:07:24.8477558Z         "gravatar_id": "",
+2025-12-12T15:07:24.8478467Z         "html_url": "https://github.com/merlinz01",
+2025-12-12T15:07:24.8479467Z         "id": 158784988,
+2025-12-12T15:07:24.8480266Z         "login": "merlinz01",
+2025-12-12T15:07:24.8481132Z         "node_id": "U_kgDOCXbd3A",
+2025-12-12T15:07:24.8482317Z         "organizations_url": "https://api.github.com/users/merlinz01/orgs",
+2025-12-12T15:07:24.8483952Z         "received_events_url": "https://api.github.com/users/merlinz01/received_events",
+2025-12-12T15:07:24.8485881Z         "repos_url": "https://api.github.com/users/merlinz01/repos",
+2025-12-12T15:07:24.8487041Z         "site_admin": false,
+2025-12-12T15:07:24.8488245Z         "starred_url": "https://api.github.com/users/merlinz01/starred{/owner}{/repo}",
+2025-12-12T15:07:24.8489942Z         "subscriptions_url": "https://api.github.com/users/merlinz01/subscriptions",
+2025-12-12T15:07:24.8491256Z         "type": "User",
+2025-12-12T15:07:24.8492147Z         "url": "https://api.github.com/users/merlinz01",
+2025-12-12T15:07:24.8493201Z         "user_view_type": "public"
+2025-12-12T15:07:24.8494055Z       }
+2025-12-12T15:07:24.8494699Z     },
+2025-12-12T15:07:24.8495362Z     "repository": {
+2025-12-12T15:07:24.8496218Z       "allow_forking": true,
+2025-12-12T15:07:24.8497498Z       "archive_url": "https://api.github.com/repos/fastapi/fastapi/{archive_format}{/ref}",
+2025-12-12T15:07:24.8498882Z       "archived": false,
+2025-12-12T15:07:24.8500082Z       "assignees_url": "https://api.github.com/repos/fastapi/fastapi/assignees{/user}",
+2025-12-12T15:07:24.8501773Z       "blobs_url": "https://api.github.com/repos/fastapi/fastapi/git/blobs{/sha}",
+2025-12-12T15:07:24.8503450Z       "branches_url": "https://api.github.com/repos/fastapi/fastapi/branches{/branch}",
+2025-12-12T15:07:24.8504964Z       "clone_url": "https://github.com/fastapi/fastapi.git",
+2025-12-12T15:07:24.8506806Z       "collaborators_url": "https://api.github.com/repos/fastapi/fastapi/collaborators{/collaborator}",
+2025-12-12T15:07:24.8508768Z       "comments_url": "https://api.github.com/repos/fastapi/fastapi/comments{/number}",
+2025-12-12T15:07:24.8510464Z       "commits_url": "https://api.github.com/repos/fastapi/fastapi/commits{/sha}",
+2025-12-12T15:07:24.8512195Z       "compare_url": "https://api.github.com/repos/fastapi/fastapi/compare/{base}...{head}",
+2025-12-12T15:07:24.8513980Z       "contents_url": "https://api.github.com/repos/fastapi/fastapi/contents/{+path}",
+2025-12-12T15:07:24.8515884Z       "contributors_url": "https://api.github.com/repos/fastapi/fastapi/contributors",
+2025-12-12T15:07:24.8517282Z       "created_at": "2018-12-08T08:21:47Z",
+2025-12-12T15:07:24.8518384Z       "custom_properties": {},
+2025-12-12T15:07:24.8519267Z       "default_branch": "master",
+2025-12-12T15:07:24.8520542Z       "deployments_url": "https://api.github.com/repos/fastapi/fastapi/deployments",
+2025-12-12T15:07:24.8522525Z       "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+2025-12-12T15:07:24.8524117Z       "disabled": false,
+2025-12-12T15:07:24.8525264Z       "downloads_url": "https://api.github.com/repos/fastapi/fastapi/downloads",
+2025-12-12T15:07:24.8526931Z       "events_url": "https://api.github.com/repos/fastapi/fastapi/events",
+2025-12-12T15:07:24.8528144Z       "fork": false,
+2025-12-12T15:07:24.8528877Z       "forks": 8353,
+2025-12-12T15:07:24.8529672Z       "forks_count": 8353,
+2025-12-12T15:07:24.8530743Z       "forks_url": "https://api.github.com/repos/fastapi/fastapi/forks",
+2025-12-12T15:07:24.8531992Z       "full_name": "fastapi/fastapi",
+2025-12-12T15:07:24.8533338Z       "git_commits_url": "https://api.github.com/repos/fastapi/fastapi/git/commits{/sha}",
+2025-12-12T15:07:24.8535054Z       "git_refs_url": "https://api.github.com/repos/fastapi/fastapi/git/refs{/sha}",
+2025-12-12T15:07:24.8536800Z       "git_tags_url": "https://api.github.com/repos/fastapi/fastapi/git/tags{/sha}",
+2025-12-12T15:07:24.8538221Z       "git_url": "git://github.com/fastapi/fastapi.git",
+2025-12-12T15:07:24.8539276Z       "has_discussions": true,
+2025-12-12T15:07:24.8540146Z       "has_downloads": true,
+2025-12-12T15:07:24.8540987Z       "has_issues": true,
+2025-12-12T15:07:24.8541797Z       "has_pages": false,
+2025-12-12T15:07:24.8542618Z       "has_projects": true,
+2025-12-12T15:07:24.8543430Z       "has_wiki": true,
+2025-12-12T15:07:24.8544322Z       "homepage": "https://fastapi.tiangolo.com/",
+2025-12-12T15:07:24.8545712Z       "hooks_url": "https://api.github.com/repos/fastapi/fastapi/hooks",
+2025-12-12T15:07:24.8547198Z       "html_url": "https://github.com/fastapi/fastapi",
+2025-12-12T15:07:24.8548223Z       "id": 160919119,
+2025-12-12T15:07:24.8548998Z       "is_template": false,
+2025-12-12T15:07:24.8550368Z       "issue_comment_url": "https://api.github.com/repos/fastapi/fastapi/issues/comments{/number}",
+2025-12-12T15:07:24.8552332Z       "issue_events_url": "https://api.github.com/repos/fastapi/fastapi/issues/events{/number}",
+2025-12-12T15:07:24.8554124Z       "issues_url": "https://api.github.com/repos/fastapi/fastapi/issues{/number}",
+2025-12-12T15:07:24.8555841Z       "keys_url": "https://api.github.com/repos/fastapi/fastapi/keys{/key_id}",
+2025-12-12T15:07:24.8557431Z       "labels_url": "https://api.github.com/repos/fastapi/fastapi/labels{/name}",
+2025-12-12T15:07:24.8558703Z       "language": "Python",
+2025-12-12T15:07:24.8559866Z       "languages_url": "https://api.github.com/repos/fastapi/fastapi/languages",
+2025-12-12T15:07:24.8561136Z       "license": {
+2025-12-12T15:07:24.8561855Z         "key": "mit",
+2025-12-12T15:07:24.8562639Z         "name": "MIT License",
+2025-12-12T15:07:24.8563516Z         "node_id": "MDc6TGljZW5zZTEz",
+2025-12-12T15:07:24.8564449Z         "spdx_id": "MIT",
+2025-12-12T15:07:24.8565353Z         "url": "https://api.github.com/licenses/mit"
+2025-12-12T15:07:24.8566435Z       },
+2025-12-12T15:07:24.8567403Z       "merges_url": "https://api.github.com/repos/fastapi/fastapi/merges",
+2025-12-12T15:07:24.8569070Z       "milestones_url": "https://api.github.com/repos/fastapi/fastapi/milestones{/number}",
+2025-12-12T15:07:24.8570480Z       "mirror_url": null,
+2025-12-12T15:07:24.8571274Z       "name": "fastapi",
+2025-12-12T15:07:24.8572189Z       "node_id": "MDEwOlJlcG9zaXRvcnkxNjA5MTkxMTk=",
+2025-12-12T15:07:24.8573991Z       "notifications_url": "https://api.github.com/repos/fastapi/fastapi/notifications{?since,all,participating}",
+2025-12-12T15:07:24.8575786Z       "open_issues": 183,
+2025-12-12T15:07:24.8576623Z       "open_issues_count": 183,
+2025-12-12T15:07:24.8577447Z       "owner": {
+2025-12-12T15:07:24.8578491Z         "avatar_url": "https://avatars.githubusercontent.com/u/156354296?v=4",
+2025-12-12T15:07:24.8580179Z         "events_url": "https://api.github.com/users/fastapi/events{/privacy}",
+2025-12-12T15:07:24.8581684Z         "followers_url": "https://api.github.com/users/fastapi/followers",
+2025-12-12T15:07:24.8583272Z         "following_url": "https://api.github.com/users/fastapi/following{/other_user}",
+2025-12-12T15:07:24.8584865Z         "gists_url": "https://api.github.com/users/fastapi/gists{/gist_id}",
+2025-12-12T15:07:24.8586188Z         "gravatar_id": "",
+2025-12-12T15:07:24.8587065Z         "html_url": "https://github.com/fastapi",
+2025-12-12T15:07:24.8588051Z         "id": 156354296,
+2025-12-12T15:07:24.8588839Z         "login": "fastapi",
+2025-12-12T15:07:24.8589673Z         "node_id": "O_kgDOCVHG-A",
+2025-12-12T15:07:24.8590832Z         "organizations_url": "https://api.github.com/users/fastapi/orgs",
+2025-12-12T15:07:24.8592432Z         "received_events_url": "https://api.github.com/users/fastapi/received_events",
+2025-12-12T15:07:24.8593954Z         "repos_url": "https://api.github.com/users/fastapi/repos",
+2025-12-12T15:07:24.8595094Z         "site_admin": false,
+2025-12-12T15:07:24.8596366Z         "starred_url": "https://api.github.com/users/fastapi/starred{/owner}{/repo}",
+2025-12-12T15:07:24.8598028Z         "subscriptions_url": "https://api.github.com/users/fastapi/subscriptions",
+2025-12-12T15:07:24.8599351Z         "type": "Organization",
+2025-12-12T15:07:24.8600307Z         "url": "https://api.github.com/users/fastapi",
+2025-12-12T15:07:24.8601345Z         "user_view_type": "public"
+2025-12-12T15:07:24.8602199Z       },
+2025-12-12T15:07:24.8602868Z       "private": false,
+2025-12-12T15:07:24.8603994Z       "pulls_url": "https://api.github.com/repos/fastapi/fastapi/pulls{/number}",
+2025-12-12T15:07:24.8605313Z       "pushed_at": "2025-12-12T15:00:02Z",
+2025-12-12T15:07:24.8606706Z       "releases_url": "https://api.github.com/repos/fastapi/fastapi/releases{/id}",
+2025-12-12T15:07:24.8608159Z       "size": 29538,
+2025-12-12T15:07:24.8609039Z       "ssh_url": "git@github.com:fastapi/fastapi.git",
+2025-12-12T15:07:24.8610084Z       "stargazers_count": 93012,
+2025-12-12T15:07:24.8611314Z       "stargazers_url": "https://api.github.com/repos/fastapi/fastapi/stargazers",
+2025-12-12T15:07:24.8612998Z       "statuses_url": "https://api.github.com/repos/fastapi/fastapi/statuses/{sha}",
+2025-12-12T15:07:24.8614705Z       "subscribers_url": "https://api.github.com/repos/fastapi/fastapi/subscribers",
+2025-12-12T15:07:24.8616575Z       "subscription_url": "https://api.github.com/repos/fastapi/fastapi/subscription",
+2025-12-12T15:07:24.8618032Z       "svn_url": "https://github.com/fastapi/fastapi",
+2025-12-12T15:07:24.8619292Z       "tags_url": "https://api.github.com/repos/fastapi/fastapi/tags",
+2025-12-12T15:07:24.8620692Z       "teams_url": "https://api.github.com/repos/fastapi/fastapi/teams",
+2025-12-12T15:07:24.8621862Z       "topics": [
+2025-12-12T15:07:24.8622576Z         "api",
+2025-12-12T15:07:24.8623266Z         "async",
+2025-12-12T15:07:24.8623959Z         "asyncio",
+2025-12-12T15:07:24.8624677Z         "fastapi",
+2025-12-12T15:07:24.8625485Z         "framework",
+2025-12-12T15:07:24.8626309Z         "json",
+2025-12-12T15:07:24.8627182Z         "json-schema",
+2025-12-12T15:07:24.8627920Z         "openapi",
+2025-12-12T15:07:24.8628637Z         "openapi3",
+2025-12-12T15:07:24.8629385Z         "pydantic",
+2025-12-12T15:07:24.8630102Z         "python",
+2025-12-12T15:07:24.8630806Z         "python-types",
+2025-12-12T15:07:24.8631564Z         "python3",
+2025-12-12T15:07:24.8632251Z         "redoc",
+2025-12-12T15:07:24.8632938Z         "rest",
+2025-12-12T15:07:24.8633637Z         "starlette",
+2025-12-12T15:07:24.8634355Z         "swagger",
+2025-12-12T15:07:24.8635063Z         "swagger-ui",
+2025-12-12T15:07:24.8635905Z         "uvicorn",
+2025-12-12T15:07:24.8636601Z         "web"
+2025-12-12T15:07:24.8637262Z       ],
+2025-12-12T15:07:24.8638283Z       "trees_url": "https://api.github.com/repos/fastapi/fastapi/git/trees{/sha}",
+2025-12-12T15:07:24.8639595Z       "updated_at": "2025-12-12T14:59:35Z",
+2025-12-12T15:07:24.8640870Z       "url": "https://api.github.com/repos/fastapi/fastapi",
+2025-12-12T15:07:24.8641964Z       "visibility": "public",
+2025-12-12T15:07:24.8642796Z       "watchers": 93012,
+2025-12-12T15:07:24.8643590Z       "watchers_count": 93012,
+2025-12-12T15:07:24.8644480Z       "web_commit_signoff_required": false
+2025-12-12T15:07:24.8645506Z     },
+2025-12-12T15:07:24.8646159Z     "sender": {
+2025-12-12T15:07:24.8647196Z       "avatar_url": "https://avatars.githubusercontent.com/u/158784988?v=4",
+2025-12-12T15:07:24.8648747Z       "events_url": "https://api.github.com/users/merlinz01/events{/privacy}",
+2025-12-12T15:07:24.8650280Z       "followers_url": "https://api.github.com/users/merlinz01/followers",
+2025-12-12T15:07:24.8651875Z       "following_url": "https://api.github.com/users/merlinz01/following{/other_user}",
+2025-12-12T15:07:24.8653483Z       "gists_url": "https://api.github.com/users/merlinz01/gists{/gist_id}",
+2025-12-12T15:07:24.8654705Z       "gravatar_id": "",
+2025-12-12T15:07:24.8655684Z       "html_url": "https://github.com/merlinz01",
+2025-12-12T15:07:24.8656664Z       "id": 158784988,
+2025-12-12T15:07:24.8657418Z       "login": "merlinz01",
+2025-12-12T15:07:24.8658259Z       "node_id": "U_kgDOCXbd3A",
+2025-12-12T15:07:24.8659415Z       "organizations_url": "https://api.github.com/users/merlinz01/orgs",
+2025-12-12T15:07:24.8661020Z       "received_events_url": "https://api.github.com/users/merlinz01/received_events",
+2025-12-12T15:07:24.8662554Z       "repos_url": "https://api.github.com/users/merlinz01/repos",
+2025-12-12T15:07:24.8663677Z       "site_admin": false,
+2025-12-12T15:07:24.8664849Z       "starred_url": "https://api.github.com/users/merlinz01/starred{/owner}{/repo}",
+2025-12-12T15:07:24.8666624Z       "subscriptions_url": "https://api.github.com/users/merlinz01/subscriptions",
+2025-12-12T15:07:24.8667915Z       "type": "User",
+2025-12-12T15:07:24.8668954Z       "url": "https://api.github.com/users/merlinz01",
+2025-12-12T15:07:24.8669995Z       "user_view_type": "public"
+2025-12-12T15:07:24.8670827Z     }
+2025-12-12T15:07:24.8671457Z   },
+2025-12-12T15:07:24.8672530Z   "workflow_ref": "fastapi/fastapi/.github/workflows/test.yml@refs/pull/12135/merge",
+2025-12-12T15:07:24.8674087Z   "workflow_sha": "b4d6833c6cfdd5cf3e2aff84c5264356d3fa5264",
+2025-12-12T15:07:24.8675205Z   "repository_id": "160919119",
+2025-12-12T15:07:24.8676192Z   "triggering_actor": "merlinz01",
+2025-12-12T15:07:24.8677185Z   "workspace": "/home/runner/work/fastapi/fastapi",
+2025-12-12T15:07:24.8678184Z   "action": "__run"
+2025-12-12T15:07:24.8678886Z }
+2025-12-12T15:07:24.8937714Z ##[group]Run actions/checkout@v6
+2025-12-12T15:07:24.8938649Z with:
+2025-12-12T15:07:24.8939348Z   repository: fastapi/fastapi
+2025-12-12T15:07:24.8940476Z   token: ***
+2025-12-12T15:07:24.8941158Z   ssh-strict: true
+2025-12-12T15:07:24.8941874Z   ssh-user: git
+2025-12-12T15:07:24.8942595Z   persist-credentials: true
+2025-12-12T15:07:24.8943439Z   clean: true
+2025-12-12T15:07:24.8944172Z   sparse-checkout-cone-mode: true
+2025-12-12T15:07:24.8945043Z   fetch-depth: 1
+2025-12-12T15:07:24.8945975Z   fetch-tags: false
+2025-12-12T15:07:24.8946713Z   show-progress: true
+2025-12-12T15:07:24.8947436Z   lfs: false
+2025-12-12T15:07:24.8948114Z   submodules: false
+2025-12-12T15:07:24.8948854Z   set-safe-directory: true
+2025-12-12T15:07:24.8949626Z env:
+2025-12-12T15:07:24.8950273Z   UV_SYSTEM_PYTHON: 1
+2025-12-12T15:07:24.8951004Z ##[endgroup]
+2025-12-12T15:07:24.9877437Z Syncing repository: fastapi/fastapi
+2025-12-12T15:07:24.9880009Z ##[group]Getting Git version info
+2025-12-12T15:07:24.9881312Z Working directory is '/home/runner/work/fastapi/fastapi'
+2025-12-12T15:07:24.9883123Z [command]/usr/bin/git version
+2025-12-12T15:07:24.9969834Z git version 2.52.0
+2025-12-12T15:07:25.0027982Z ##[endgroup]
+2025-12-12T15:07:25.0045955Z Temporarily overriding HOME='/home/runner/work/_temp/d08e7ed1-5460-4d9e-8591-923e8a893cab' before making global git config changes
+2025-12-12T15:07:25.0050467Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-12T15:07:25.0054006Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fastapi/fastapi
+2025-12-12T15:07:25.0100230Z Deleting the contents of '/home/runner/work/fastapi/fastapi'
+2025-12-12T15:07:25.0102825Z ##[group]Initializing the repository
+2025-12-12T15:07:25.0107732Z [command]/usr/bin/git init /home/runner/work/fastapi/fastapi
+2025-12-12T15:07:25.0256145Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-12T15:07:25.0259116Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-12T15:07:25.0262162Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-12T15:07:25.0263828Z hint: call:
+2025-12-12T15:07:25.0264604Z hint:
+2025-12-12T15:07:25.0265880Z hint: 	git config --global init.defaultBranch <name>
+2025-12-12T15:07:25.0267498Z hint:
+2025-12-12T15:07:25.0268473Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-12T15:07:25.0270072Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-12T15:07:25.0272254Z hint:
+2025-12-12T15:07:25.0273418Z hint: 	git branch -m <name>
+2025-12-12T15:07:25.0274734Z hint:
+2025-12-12T15:07:25.0276155Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-12T15:07:25.0277925Z Initialized empty Git repository in /home/runner/work/fastapi/fastapi/.git/
+2025-12-12T15:07:25.0280799Z [command]/usr/bin/git remote add origin https://github.com/fastapi/fastapi
+2025-12-12T15:07:25.0313589Z ##[endgroup]
+2025-12-12T15:07:25.0315308Z ##[group]Disabling automatic garbage collection
+2025-12-12T15:07:25.0317477Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-12T15:07:25.0349991Z ##[endgroup]
+2025-12-12T15:07:25.0351950Z ##[group]Setting up auth
+2025-12-12T15:07:25.0353005Z Removing SSH command configuration
+2025-12-12T15:07:25.0356561Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-12T15:07:25.0397895Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-12T15:07:25.0805002Z Removing HTTP extra header
+2025-12-12T15:07:25.0812032Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-12T15:07:25.0849145Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-12T15:07:25.1092599Z Removing includeIf entries pointing to credentials config files
+2025-12-12T15:07:25.1094430Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-12T15:07:25.1131441Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-12T15:07:25.1367650Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-12T15:07:25.1409393Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/fastapi/fastapi/.git.path /home/runner/work/_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:07:25.1440914Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/fastapi/fastapi/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:07:25.1472501Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:07:25.1504311Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:07:25.1539387Z ##[endgroup]
+2025-12-12T15:07:25.1540638Z ##[group]Fetching the repository
+2025-12-12T15:07:25.1548951Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b4d6833c6cfdd5cf3e2aff84c5264356d3fa5264:refs/remotes/pull/12135/merge
+2025-12-12T15:07:26.4069754Z From https://github.com/fastapi/fastapi
+2025-12-12T15:07:26.4071583Z  * [new ref]         b4d6833c6cfdd5cf3e2aff84c5264356d3fa5264 -> pull/12135/merge
+2025-12-12T15:07:26.4104138Z ##[endgroup]
+2025-12-12T15:07:26.4104919Z ##[group]Determining the checkout info
+2025-12-12T15:07:26.4107819Z ##[endgroup]
+2025-12-12T15:07:26.4112784Z [command]/usr/bin/git sparse-checkout disable
+2025-12-12T15:07:26.4155295Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-12T15:07:26.4182980Z ##[group]Checking out the ref
+2025-12-12T15:07:26.4187873Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/12135/merge
+2025-12-12T15:07:26.6272629Z Note: switching to 'refs/remotes/pull/12135/merge'.
+2025-12-12T15:07:26.6273376Z 
+2025-12-12T15:07:26.6273917Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-12-12T15:07:26.6275177Z changes and commit them, and you can discard any commits you make in this
+2025-12-12T15:07:26.6276574Z state without impacting any branches by switching back to a branch.
+2025-12-12T15:07:26.6277216Z 
+2025-12-12T15:07:26.6277659Z If you want to create a new branch to retain commits you create, you may
+2025-12-12T15:07:26.6278689Z do so (now or later) by using -c with the switch command. Example:
+2025-12-12T15:07:26.6279219Z 
+2025-12-12T15:07:26.6279451Z   git switch -c <new-branch-name>
+2025-12-12T15:07:26.6279814Z 
+2025-12-12T15:07:26.6280041Z Or undo this operation with:
+2025-12-12T15:07:26.6280382Z 
+2025-12-12T15:07:26.6280507Z   git switch -
+2025-12-12T15:07:26.6280703Z 
+2025-12-12T15:07:26.6281353Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-12-12T15:07:26.6281777Z 
+2025-12-12T15:07:26.6282236Z HEAD is now at b4d6833 Merge 3dd2d6f162216ea97aa54bd81c5360869719d68c into b1d9769f97295a238df8c2d318ad65dd6a40c6ff
+2025-12-12T15:07:26.6289034Z ##[endgroup]
+2025-12-12T15:07:26.6330778Z [command]/usr/bin/git log -1 --format=%H
+2025-12-12T15:07:26.6356410Z b4d6833c6cfdd5cf3e2aff84c5264356d3fa5264
+2025-12-12T15:07:26.6561537Z ##[group]Run actions/setup-python@v6
+2025-12-12T15:07:26.6561905Z with:
+2025-12-12T15:07:26.6562141Z   python-version: 3.12
+2025-12-12T15:07:26.6562402Z   check-latest: false
+2025-12-12T15:07:26.6562846Z   token: ***
+2025-12-12T15:07:26.6563085Z   update-environment: true
+2025-12-12T15:07:26.6563363Z   allow-prereleases: false
+2025-12-12T15:07:26.6563656Z   freethreaded: false
+2025-12-12T15:07:26.6563897Z env:
+2025-12-12T15:07:26.6564113Z   UV_SYSTEM_PYTHON: 1
+2025-12-12T15:07:26.6564349Z ##[endgroup]
+2025-12-12T15:07:26.7890954Z ##[group]Installed versions
+2025-12-12T15:07:26.8304692Z (node:2119) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-12T15:07:26.8306293Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-12T15:07:26.8307110Z Successfully set up CPython (3.12.12)
+2025-12-12T15:07:26.8307927Z ##[endgroup]
+2025-12-12T15:07:26.8496332Z ##[group]Run astral-sh/setup-uv@v7
+2025-12-12T15:07:26.8496675Z with:
+2025-12-12T15:07:26.8496902Z   version: 0.4.15
+2025-12-12T15:07:26.8497138Z   enable-cache: true
+2025-12-12T15:07:26.8497480Z   cache-dependency-glob: requirements**.txt
+pyproject.toml
+
+2025-12-12T15:07:26.8497879Z   activate-environment: false
+2025-12-12T15:07:26.8498213Z   working-directory: /home/runner/work/fastapi/fastapi
+2025-12-12T15:07:26.8498734Z   github-token: ***
+2025-12-12T15:07:26.8498987Z   restore-cache: true
+2025-12-12T15:07:26.8499254Z   save-cache: true
+2025-12-12T15:07:26.8499486Z   prune-cache: true
+2025-12-12T15:07:26.8499744Z   cache-python: false
+2025-12-12T15:07:26.8499998Z   ignore-nothing-to-cache: false
+2025-12-12T15:07:26.8500302Z   ignore-empty-workdir: false
+2025-12-12T15:07:26.8500580Z   add-problem-matchers: true
+2025-12-12T15:07:26.8500862Z   resolution-strategy: highest
+2025-12-12T15:07:26.8501117Z env:
+2025-12-12T15:07:26.8501324Z   UV_SYSTEM_PYTHON: 1
+2025-12-12T15:07:26.8501670Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:26.8502138Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2025-12-12T15:07:26.8502587Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:26.8502987Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:26.8503378Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:26.8503784Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2025-12-12T15:07:26.8504116Z ##[endgroup]
+2025-12-12T15:07:26.9999728Z (node:2126) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-12T15:07:27.0000623Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-12T15:07:27.0128029Z manifest-file not provided, reading from local file.
+2025-12-12T15:07:27.0172422Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.4.15/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-12-12T15:07:27.4309191Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/9a953a73-9d44-4199-8134-c2cfd15bb4f7 -f /home/runner/work/_temp/c79a1e21-76bd-48e2-8018-4993f489bc0a
+2025-12-12T15:07:27.6744340Z Added /home/runner/.local/bin to the path
+2025-12-12T15:07:27.6749352Z Added /opt/hostedtoolcache/uv/0.4.15/x86_64 to the path
+2025-12-12T15:07:27.6751183Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2025-12-12T15:07:27.6752031Z Added /home/runner/work/_temp/uv-python-dir to the path
+2025-12-12T15:07:27.6763495Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-12-12T15:07:27.6764419Z Successfully installed uv version 0.4.15
+2025-12-12T15:07:27.6765815Z Searching files using cache dependency glob: /home/runner/work/fastapi/fastapi/requirements**.txt,/home/runner/work/fastapi/fastapi/pyproject.toml
+2025-12-12T15:07:27.6810316Z /home/runner/work/fastapi/fastapi/pyproject.toml
+2025-12-12T15:07:27.6825051Z /home/runner/work/fastapi/fastapi/requirements-docs-tests.txt
+2025-12-12T15:07:27.6835288Z /home/runner/work/fastapi/fastapi/requirements-docs.txt
+2025-12-12T15:07:27.6843467Z /home/runner/work/fastapi/fastapi/requirements-github-actions.txt
+2025-12-12T15:07:27.6850448Z /home/runner/work/fastapi/fastapi/requirements-tests.txt
+2025-12-12T15:07:27.6856924Z /home/runner/work/fastapi/fastapi/requirements-translations.txt
+2025-12-12T15:07:27.6863046Z /home/runner/work/fastapi/fastapi/requirements.txt
+2025-12-12T15:07:27.6869682Z Found 7 files to hash.
+2025-12-12T15:07:28.2719138Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.12-pruned-70aca2381f3a4beab9b7dd0d71927dd386e3c5e9bbd211b26e2e1fcad2dbf809
+2025-12-12T15:07:28.3927080Z Cache hit for: setup-uv-1-x86_64-unknown-linux-gnu-3.12.12-pruned-70aca2381f3a4beab9b7dd0d71927dd386e3c5e9bbd211b26e2e1fcad2dbf809
+2025-12-12T15:07:28.4049946Z (node:2126) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-12-12T15:07:29.1534444Z Received 7340654 of 7340654 (100.0%), 12.5 MBs/sec
+2025-12-12T15:07:29.1567516Z Cache Size: ~7 MB (7340654 B)
+2025-12-12T15:07:29.1568841Z [command]/usr/bin/tar -xf /home/runner/work/_temp/574f68e0-53e1-4cf5-b22b-57523324ebc2/cache.tzst -P -C /home/runner/work/fastapi/fastapi --use-compress-program unzstd
+2025-12-12T15:07:29.2407581Z Cache restored successfully
+2025-12-12T15:07:29.2426788Z uv cache restored from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.12-pruned-70aca2381f3a4beab9b7dd0d71927dd386e3c5e9bbd211b26e2e1fcad2dbf809
+2025-12-12T15:07:29.3052659Z ##[group]Run uv pip install -r requirements-tests.txt
+2025-12-12T15:07:29.3053140Z [36;1muv pip install -r requirements-tests.txt[0m
+2025-12-12T15:07:29.3089616Z shell: /usr/bin/bash -e {0}
+2025-12-12T15:07:29.3089867Z env:
+2025-12-12T15:07:29.3090056Z   UV_SYSTEM_PYTHON: 1
+2025-12-12T15:07:29.3090357Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:29.3090836Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2025-12-12T15:07:29.3091298Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:29.3091769Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:29.3092202Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:29.3092844Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2025-12-12T15:07:29.3093322Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2025-12-12T15:07:29.3093916Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-12-12T15:07:29.3094301Z ##[endgroup]
+2025-12-12T15:07:30.8384412Z Resolved 76 packages in 1.50s
+2025-12-12T15:07:31.8053963Z Prepared 76 packages in 963ms
+2025-12-12T15:07:31.8680995Z Installed 76 packages in 62ms
+2025-12-12T15:07:31.8681720Z  + annotated-doc==0.0.4
+2025-12-12T15:07:31.8682106Z  + annotated-types==0.7.0
+2025-12-12T15:07:31.8682475Z  + anyio==4.12.0
+2025-12-12T15:07:31.8682795Z  + argon2-cffi==25.1.0
+2025-12-12T15:07:31.8683148Z  + argon2-cffi-bindings==25.1.0
+2025-12-12T15:07:31.8683525Z  + asttokens==3.0.1
+2025-12-12T15:07:31.8683834Z  + attrs==25.4.0
+2025-12-12T15:07:31.8684126Z  + blinker==1.9.0
+2025-12-12T15:07:31.8684437Z  + certifi==2025.11.12
+2025-12-12T15:07:31.8684752Z  + cffi==2.0.0
+2025-12-12T15:07:31.8685042Z  + click==8.3.1
+2025-12-12T15:07:31.8685338Z  + coverage==7.13.0
+2025-12-12T15:07:31.8696311Z  + dirty-equals==0.9.0
+2025-12-12T15:07:31.8696682Z  + dnspython==2.8.0
+2025-12-12T15:07:31.8697380Z  + email-validator==2.3.0
+2025-12-12T15:07:31.8697751Z  + executing==2.2.1
+2025-12-12T15:07:31.8698218Z  + fastapi==0.124.4 (from file:///home/runner/work/fastapi/fastapi)
+2025-12-12T15:07:31.8698761Z  + fastapi-cli==0.0.16
+2025-12-12T15:07:31.8699148Z  + fastapi-cloud-cli==0.6.0
+2025-12-12T15:07:31.8699508Z  + fastar==0.8.0
+2025-12-12T15:07:31.8699806Z  + flask==3.1.2
+2025-12-12T15:07:31.8700106Z  + greenlet==3.3.0
+2025-12-12T15:07:31.8700409Z  + h11==0.16.0
+2025-12-12T15:07:31.8700704Z  + httpcore==1.0.9
+2025-12-12T15:07:31.8701011Z  + httptools==0.7.1
+2025-12-12T15:07:31.8701323Z  + httpx==0.28.1
+2025-12-12T15:07:31.8701624Z  + idna==3.11
+2025-12-12T15:07:31.8701908Z  + iniconfig==2.3.0
+2025-12-12T15:07:31.8702992Z  + inline-snapshot==0.31.1
+2025-12-12T15:07:31.8703378Z  + itsdangerous==2.2.0
+2025-12-12T15:07:31.8703705Z  + jinja2==3.1.6
+2025-12-12T15:07:31.8704038Z  + markdown-it-py==4.0.0
+2025-12-12T15:07:31.8704402Z  + markupsafe==3.0.3
+2025-12-12T15:07:31.8704748Z  + mdurl==0.1.2
+2025-12-12T15:07:31.8705039Z  + mypy==1.14.1
+2025-12-12T15:07:31.8705366Z  + mypy-extensions==1.1.0
+2025-12-12T15:07:31.8705876Z  + orjson==3.11.5
+2025-12-12T15:07:31.8706187Z  + outcome==1.3.0.post0
+2025-12-12T15:07:31.8706524Z  + packaging==25.0
+2025-12-12T15:07:31.8706836Z  + pluggy==1.6.0
+2025-12-12T15:07:31.8707138Z  + pwdlib==0.3.0
+2025-12-12T15:07:31.8707445Z  + pycparser==2.23
+2025-12-12T15:07:31.8707769Z  + pydantic==2.12.5
+2025-12-12T15:07:31.8707979Z  + pydantic-core==2.41.5
+2025-12-12T15:07:31.8708215Z  + pydantic-extra-types==2.10.6
+2025-12-12T15:07:31.8708465Z  + pydantic-settings==2.12.0
+2025-12-12T15:07:31.8708681Z  + pygments==2.19.2
+2025-12-12T15:07:31.8708872Z  + pyjwt==2.9.0
+2025-12-12T15:07:31.8709061Z  + pytest==8.4.2
+2025-12-12T15:07:31.8709247Z  + python-dotenv==1.2.1
+2025-12-12T15:07:31.8709464Z  + python-multipart==0.0.20
+2025-12-12T15:07:31.8709680Z  + pyyaml==6.0.3
+2025-12-12T15:07:31.8709852Z  + rich==14.2.0
+2025-12-12T15:07:31.8710040Z  + rich-toolkit==0.17.0
+2025-12-12T15:07:31.8710249Z  + rignore==0.7.6
+2025-12-12T15:07:31.8710429Z  + ruff==0.14.3
+2025-12-12T15:07:31.8710854Z  + sentry-sdk==2.47.0
+2025-12-12T15:07:31.8711062Z  + shellingham==1.5.4
+2025-12-12T15:07:31.8711253Z  + sniffio==1.3.1
+2025-12-12T15:07:31.8711446Z  + sortedcontainers==2.4.0
+2025-12-12T15:07:31.8711661Z  + sqlalchemy==2.0.45
+2025-12-12T15:07:31.8711851Z  + sqlmodel==0.0.27
+2025-12-12T15:07:31.8712030Z  + starlette==0.50.0
+2025-12-12T15:07:31.8712216Z  + trio==0.32.0
+2025-12-12T15:07:31.8712400Z  + typer==0.20.0
+2025-12-12T15:07:31.8712584Z  + types-orjson==3.6.2
+2025-12-12T15:07:31.8712802Z  + types-ujson==5.10.0.20240515
+2025-12-12T15:07:31.8713038Z  + typing-extensions==4.15.0
+2025-12-12T15:07:31.8713268Z  + typing-inspection==0.4.2
+2025-12-12T15:07:31.8713482Z  + ujson==5.11.0
+2025-12-12T15:07:31.8713668Z  + urllib3==2.6.2
+2025-12-12T15:07:31.8713854Z  + uvicorn==0.38.0
+2025-12-12T15:07:31.8714035Z  + uvloop==0.22.1
+2025-12-12T15:07:31.8714221Z  + watchfiles==1.1.1
+2025-12-12T15:07:31.8714432Z  + websockets==15.0.1
+2025-12-12T15:07:31.8714624Z  + werkzeug==3.1.4
+2025-12-12T15:07:31.8818088Z ##[group]Run uv pip install --upgrade "pydantic>=2.0.2,<3.0.0"
+2025-12-12T15:07:31.8818523Z [36;1muv pip install --upgrade "pydantic>=2.0.2,<3.0.0"[0m
+2025-12-12T15:07:31.8852080Z shell: /usr/bin/bash -e {0}
+2025-12-12T15:07:31.8852335Z env:
+2025-12-12T15:07:31.8852516Z   UV_SYSTEM_PYTHON: 1
+2025-12-12T15:07:31.8852809Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:31.8853238Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2025-12-12T15:07:31.8853716Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:31.8854228Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:31.8854723Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:31.8855080Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2025-12-12T15:07:31.8855553Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2025-12-12T15:07:31.8856202Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-12-12T15:07:31.8856480Z ##[endgroup]
+2025-12-12T15:07:32.0507209Z Resolved 5 packages in 103ms
+2025-12-12T15:07:32.0507681Z Audited 5 packages in 0.03ms
+2025-12-12T15:07:32.0563468Z ##[group]Run mkdir coverage
+2025-12-12T15:07:32.0563747Z [36;1mmkdir coverage[0m
+2025-12-12T15:07:32.0597362Z shell: /usr/bin/bash -e {0}
+2025-12-12T15:07:32.0597601Z env:
+2025-12-12T15:07:32.0597783Z   UV_SYSTEM_PYTHON: 1
+2025-12-12T15:07:32.0598080Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:32.0598509Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2025-12-12T15:07:32.0598911Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:32.0599268Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:32.0599620Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:32.0599989Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2025-12-12T15:07:32.0600382Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2025-12-12T15:07:32.0600741Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-12-12T15:07:32.0601013Z ##[endgroup]
+2025-12-12T15:07:32.0715784Z ##[group]Run bash scripts/test.sh
+2025-12-12T15:07:32.0716129Z [36;1mbash scripts/test.sh[0m
+2025-12-12T15:07:32.0749248Z shell: /usr/bin/bash -e {0}
+2025-12-12T15:07:32.0749495Z env:
+2025-12-12T15:07:32.0749679Z   UV_SYSTEM_PYTHON: 1
+2025-12-12T15:07:32.0749971Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:32.0750386Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib/pkgconfig
+2025-12-12T15:07:32.0750790Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:32.0751168Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:32.0751542Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.12/x64
+2025-12-12T15:07:32.0751905Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.12/x64/lib
+2025-12-12T15:07:32.0752299Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2025-12-12T15:07:32.0752642Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-12-12T15:07:32.0752995Z   COVERAGE_FILE: coverage/.coverage.Linux-py3.12
+2025-12-12T15:07:32.0753272Z   CONTEXT: Linux-py3.12
+2025-12-12T15:07:32.0753477Z ##[endgroup]
+2025-12-12T15:07:32.0823853Z + export PYTHONPATH=./docs_src
+2025-12-12T15:07:32.0824148Z + PYTHONPATH=./docs_src
+2025-12-12T15:07:32.0824400Z + coverage run -m pytest tests
+2025-12-12T15:07:53.1368561Z ============================= test session starts ==============================
+2025-12-12T15:07:53.1369298Z platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+2025-12-12T15:07:53.1369922Z rootdir: /home/runner/work/fastapi/fastapi
+2025-12-12T15:07:53.1370408Z configfile: pyproject.toml
+2025-12-12T15:07:53.1370868Z plugins: anyio-4.12.0, inline-snapshot-0.31.1
+2025-12-12T15:07:53.1371350Z collected 3617 items
+2025-12-12T15:07:53.1371607Z 
+2025-12-12T15:07:53.1876051Z tests/test_additional_properties.py ..                                   [  0%]
+2025-12-12T15:07:53.2111427Z tests/test_additional_properties_bool.py ...                             [  0%]
+2025-12-12T15:07:53.2240165Z tests/test_additional_response_extra.py ..                               [  0%]
+2025-12-12T15:07:53.2300280Z tests/test_additional_responses_bad.py .                                 [  0%]
+2025-12-12T15:07:53.2457502Z tests/test_additional_responses_custom_model_in_callback.py .            [  0%]
+2025-12-12T15:07:53.2627543Z tests/test_additional_responses_custom_validationerror.py .              [  0%]
+2025-12-12T15:07:53.2732212Z tests/test_additional_responses_default_validationerror.py .             [  0%]
+2025-12-12T15:07:53.2918502Z tests/test_additional_responses_response_class.py .                      [  0%]
+2025-12-12T15:07:53.3269197Z tests/test_additional_responses_router.py .....                          [  0%]
+2025-12-12T15:07:53.4610939Z tests/test_allow_inf_nan_in_enforcing.py ........................        [  1%]
+2025-12-12T15:07:53.4939101Z tests/test_ambiguous_params.py ..                                        [  1%]
+2025-12-12T15:07:53.5956433Z tests/test_annotated.py .............                                    [  1%]
+2025-12-12T15:07:53.7177580Z tests/test_application.py ........                                       [  1%]
+2025-12-12T15:07:53.7664925Z tests/test_arbitrary_types.py ...                                        [  1%]
+2025-12-12T15:07:53.7734454Z tests/test_callable_endpoint.py .                                        [  1%]
+2025-12-12T15:07:53.8298749Z tests/test_compat.py .............                                       [  2%]
+2025-12-12T15:07:54.1570811Z tests/test_compat_params_v1.py .....................................     [  3%]
+2025-12-12T15:07:54.2411666Z tests/test_computed_fields.py ......                                     [  3%]
+2025-12-12T15:07:54.2920822Z tests/test_custom_middleware_exception.py ..                             [  3%]
+2025-12-12T15:07:54.4701383Z tests/test_custom_route_class.py .....                                   [  3%]
+2025-12-12T15:07:54.4899581Z tests/test_custom_schema_fields.py ..                                    [  3%]
+2025-12-12T15:07:54.5053459Z tests/test_custom_swagger_ui_redirect.py ...                             [  3%]
+2025-12-12T15:07:54.5541476Z tests/test_datastructures.py .......                                     [  3%]
+2025-12-12T15:07:54.5666118Z tests/test_datetime_custom_encoder.py .s                                 [  4%]
+2025-12-12T15:07:54.6746944Z tests/test_default_response_class.py ..............                      [  4%]
+2025-12-12T15:07:54.7849817Z tests/test_default_response_class_router.py ..............               [  4%]
+2025-12-12T15:07:54.8160933Z tests/test_dependency_after_yield_raise.py ....                          [  4%]
+2025-12-12T15:07:54.8704236Z tests/test_dependency_after_yield_streaming.py .......                   [  5%]
+2025-12-12T15:07:54.8879901Z tests/test_dependency_after_yield_websockets.py ..                       [  5%]
+2025-12-12T15:07:54.9250495Z tests/test_dependency_cache.py ....                                      [  5%]
+2025-12-12T15:07:55.0028296Z tests/test_dependency_class.py ............                              [  5%]
+2025-12-12T15:07:55.1472814Z tests/test_dependency_contextmanager.py ......................           [  6%]
+2025-12-12T15:07:55.1547822Z tests/test_dependency_contextvars.py .                                   [  6%]
+2025-12-12T15:07:55.2047247Z tests/test_dependency_duplicates.py .....                                [  6%]
+2025-12-12T15:07:55.4293989Z tests/test_dependency_overrides.py ................................      [  7%]
+2025-12-12T15:07:55.4524352Z tests/test_dependency_paramless.py ....                                  [  7%]
+2025-12-12T15:07:55.5289303Z tests/test_dependency_partial.py ............                            [  7%]
+2025-12-12T15:07:55.5528136Z tests/test_dependency_security_overrides.py ...                          [  7%]
+2025-12-12T15:07:55.7258061Z tests/test_dependency_wrapped.py ............................            [  8%]
+2025-12-12T15:07:55.7414052Z tests/test_dependency_yield_except_httpexception.py ..                   [  8%]
+2025-12-12T15:07:55.8412940Z tests/test_dependency_yield_scope.py ...........                         [  8%]
+2025-12-12T15:07:55.8917884Z tests/test_dependency_yield_scope_websockets.py .......                  [  9%]
+2025-12-12T15:07:55.8948676Z tests/test_depends_hashable.py .                                         [  9%]
+2025-12-12T15:07:55.9093276Z tests/test_deprecated_openapi_prefix.py ..                               [  9%]
+2025-12-12T15:07:55.9333609Z tests/test_duplicate_models_openapi.py ..                                [  9%]
+2025-12-12T15:07:55.9471489Z tests/test_empty_router.py ..                                            [  9%]
+2025-12-12T15:07:55.9740391Z tests/test_enforce_once_required_parameter.py ...                        [  9%]
+2025-12-12T15:07:56.0112795Z tests/test_exception_handlers.py .....                                   [  9%]
+2025-12-12T15:07:56.0861852Z tests/test_extra_routes.py ........                                      [  9%]
+2025-12-12T15:07:58.8015957Z tests/test_fastapi_cli.py ..                                             [  9%]
+2025-12-12T15:07:58.8533342Z tests/test_file_and_form_order_issue_9116.py ....                        [  9%]
+2025-12-12T15:07:58.8540394Z tests/test_filter_pydantic_sub_model/test_filter_pydantic_sub_model_pv1.py s [  9%]
+2025-12-12T15:07:58.8577622Z ss                                                                       [  9%]
+2025-12-12T15:07:58.9118706Z tests/test_filter_pydantic_sub_model_pv2.py ...                          [ 10%]
+2025-12-12T15:07:58.9244444Z tests/test_form_default.py ..                                            [ 10%]
+2025-12-12T15:07:58.9455044Z tests/test_forms_from_non_typing_sequences.py ...                        [ 10%]
+2025-12-12T15:07:58.9913244Z tests/test_forms_single_model.py ......                                  [ 10%]
+2025-12-12T15:07:59.0119653Z tests/test_forms_single_param.py ..                                      [ 10%]
+2025-12-12T15:07:59.4131075Z tests/test_generate_unique_id_function.py ........                       [ 10%]
+2025-12-12T15:07:59.4320949Z tests/test_generic_parameterless_depends.py ..                           [ 10%]
+2025-12-12T15:07:59.4567279Z tests/test_get_model_definitions_formfeed_escape.py .ss                  [ 10%]
+2025-12-12T15:07:59.4818027Z tests/test_get_request_body.py ..                                        [ 10%]
+2025-12-12T15:07:59.4953027Z tests/test_http_connection_injection.py ..                               [ 10%]
+2025-12-12T15:07:59.5019319Z tests/test_include_route.py .                                            [ 10%]
+2025-12-12T15:07:59.6531701Z tests/test_include_router_defaults_overrides.py ........................ [ 11%]
+2025-12-12T15:08:00.3109744Z ...................                                                      [ 12%]
+2025-12-12T15:08:00.3981148Z tests/test_infer_param_optionality.py .........                          [ 12%]
+2025-12-12T15:08:00.4141041Z tests/test_inherited_custom_class.py .s                                  [ 12%]
+2025-12-12T15:08:00.4437515Z tests/test_invalid_path_param.py .......                                 [ 12%]
+2025-12-12T15:08:00.4623919Z tests/test_invalid_sequence_param.py ....                                [ 12%]
+2025-12-12T15:08:00.5253157Z tests/test_jsonable_encoder.py ......s....s....s......                   [ 13%]
+2025-12-12T15:08:00.5387584Z tests/test_local_docs.py .....                                           [ 13%]
+2025-12-12T15:08:00.6227721Z tests/test_modules_same_name_body/test_main.py .........                 [ 13%]
+2025-12-12T15:08:00.6611316Z tests/test_multi_body_errors.py ....                                     [ 13%]
+2025-12-12T15:08:00.6862529Z tests/test_multi_query_errors.py ...                                     [ 13%]
+2025-12-12T15:08:00.7427945Z tests/test_multipart_installation.py ...........                         [ 14%]
+2025-12-12T15:08:00.7877368Z tests/test_no_schema_split.py ..                                         [ 14%]
+2025-12-12T15:08:00.8042202Z tests/test_no_swagger_ui_redirect.py ...                                 [ 14%]
+2025-12-12T15:08:00.8593255Z tests/test_none_passed_when_null_received.py .....                       [ 14%]
+2025-12-12T15:08:00.9127339Z tests/test_openapi_examples.py ..                                        [ 14%]
+2025-12-12T15:08:00.9250798Z tests/test_openapi_model_description_trim_on_formfeed.py .               [ 14%]
+2025-12-12T15:08:00.9445983Z tests/test_openapi_query_parameter_extension.py ..                       [ 14%]
+2025-12-12T15:08:00.9585965Z tests/test_openapi_route_extensions.py ..                                [ 14%]
+2025-12-12T15:08:00.9702865Z tests/test_openapi_schema_type.py ....                                   [ 14%]
+2025-12-12T15:08:01.2321998Z tests/test_openapi_separate_input_output_schemas.py .......              [ 15%]
+2025-12-12T15:08:01.2471309Z tests/test_openapi_servers.py ..                                         [ 15%]
+2025-12-12T15:08:01.2534495Z tests/test_operations_signatures.py .                                    [ 15%]
+2025-12-12T15:08:01.2705212Z tests/test_optional_file_list.py ..                                      [ 15%]
+2025-12-12T15:08:01.2798306Z tests/test_orjson_response_class.py .                                    [ 15%]
+2025-12-12T15:08:01.2939066Z tests/test_param_class.py ..                                             [ 15%]
+2025-12-12T15:08:01.3111855Z tests/test_param_in_path_and_dependency.py ..                            [ 15%]
+2025-12-12T15:08:01.3703595Z tests/test_param_include_in_schema.py ........                           [ 15%]
+2025-12-12T15:08:01.4342171Z tests/test_params_repr.py ..........................                     [ 16%]
+2025-12-12T15:08:01.7724037Z tests/test_path.py ..................................................... [ 17%]
+2025-12-12T15:08:01.9137328Z ......................                                                   [ 18%]
+2025-12-12T15:08:01.9385854Z tests/test_put_no_body.py ...                                            [ 18%]
+2025-12-12T15:08:02.0549458Z tests/test_pydantic_v1_v2_01.py ..........                               [ 18%]
+2025-12-12T15:08:02.2249724Z tests/test_pydantic_v1_v2_list.py ..............                         [ 19%]
+2025-12-12T15:08:02.7547563Z tests/test_pydantic_v1_v2_mixed.py ..........................            [ 19%]
+2025-12-12T15:08:03.0018550Z tests/test_pydantic_v1_v2_multifile/test_multifile.py .............      [ 20%]
+2025-12-12T15:08:03.2394599Z tests/test_pydantic_v1_v2_noneable.py ...................                [ 20%]
+2025-12-12T15:08:03.2519942Z tests/test_pydanticv2_dataclasses_uuid_stringified_annotations.py .      [ 20%]
+2025-12-12T15:08:03.4791238Z tests/test_query.py .............................                        [ 21%]
+2025-12-12T15:08:03.5133390Z tests/test_query_cookie_header_model_extra_params.py .....               [ 21%]
+2025-12-12T15:08:03.5302975Z tests/test_read_with_orm_mode.py .s                                      [ 21%]
+2025-12-12T15:08:03.5834445Z tests/test_regex_deprecated_body.py ....                                 [ 21%]
+2025-12-12T15:08:03.6266367Z tests/test_regex_deprecated_params.py ....                               [ 21%]
+2025-12-12T15:08:03.6429888Z tests/test_repeated_cookie_headers.py .                                  [ 21%]
+2025-12-12T15:08:03.6638141Z tests/test_repeated_dependency_schema.py ..                              [ 21%]
+2025-12-12T15:08:03.6833551Z tests/test_repeated_parameter_alias.py ..                                [ 22%]
+2025-12-12T15:08:03.7004024Z tests/test_reponse_set_reponse_code_empty.py ..                          [ 22%]
+2025-12-12T15:08:03.7306625Z tests/test_request_body_parameters_media_type.py .                       [ 22%]
+2025-12-12T15:08:03.7729662Z tests/test_request_param_model_by_alias.py ......                        [ 22%]
+2025-12-12T15:08:03.9413442Z tests/test_request_params/test_body/test_list.py ....................... [ 22%]
+2025-12-12T15:08:04.0589913Z .................                                                        [ 23%]
+2025-12-12T15:08:04.1790473Z tests/test_request_params/test_body/test_optional_list.py .............. [ 23%]
+2025-12-12T15:08:04.3626778Z ..........................                                               [ 24%]
+2025-12-12T15:08:04.4928096Z tests/test_request_params/test_body/test_optional_str.py ............... [ 24%]
+2025-12-12T15:08:04.6730949Z .........................                                                [ 25%]
+2025-12-12T15:08:04.8008641Z tests/test_request_params/test_body/test_required_str.py ............... [ 26%]
+2025-12-12T15:08:04.9637631Z .........................                                                [ 26%]
+2025-12-12T15:08:05.0754007Z tests/test_request_params/test_cookie/test_optional_str.py ............. [ 27%]
+2025-12-12T15:08:05.2232775Z ...................                                                      [ 27%]
+2025-12-12T15:08:05.3179305Z tests/test_request_params/test_cookie/test_required_str.py ............. [ 27%]
+2025-12-12T15:08:05.4415141Z ...................                                                      [ 28%]
+2025-12-12T15:08:05.6623940Z tests/test_request_params/test_file/test_list.py ....................... [ 29%]
+2025-12-12T15:08:05.7585770Z .........                                                                [ 29%]
+2025-12-12T15:08:05.9368266Z tests/test_request_params/test_file/test_optional.py ................... [ 29%]
+2025-12-12T15:08:06.0664063Z .............                                                            [ 30%]
+2025-12-12T15:08:06.2244079Z tests/test_request_params/test_file/test_optional_list.py .............. [ 30%]
+2025-12-12T15:08:06.3997618Z ..................                                                       [ 31%]
+2025-12-12T15:08:06.5672614Z tests/test_request_params/test_file/test_required.py ................... [ 31%]
+2025-12-12T15:08:06.6846313Z .............                                                            [ 32%]
+2025-12-12T15:08:06.8822453Z tests/test_request_params/test_form/test_list.py ....................... [ 32%]
+2025-12-12T15:08:06.9562218Z .........                                                                [ 32%]
+2025-12-12T15:08:07.0887050Z tests/test_request_params/test_form/test_optional_list.py .............. [ 33%]
+2025-12-12T15:08:07.2253569Z ..................                                                       [ 33%]
+2025-12-12T15:08:07.3474139Z tests/test_request_params/test_form/test_optional_str.py ............... [ 34%]
+2025-12-12T15:08:07.4713543Z .................                                                        [ 34%]
+2025-12-12T15:08:07.5921394Z tests/test_request_params/test_form/test_required_str.py ............... [ 35%]
+2025-12-12T15:08:07.7077635Z .................                                                        [ 35%]
+2025-12-12T15:08:07.8617934Z tests/test_request_params/test_header/test_list.py ..................... [ 36%]
+2025-12-12T15:08:07.9390906Z ...........                                                              [ 36%]
+2025-12-12T15:08:08.0307740Z tests/test_request_params/test_header/test_optional_list.py ............ [ 36%]
+2025-12-12T15:08:08.1650667Z ....................                                                     [ 37%]
+2025-12-12T15:08:08.2592191Z tests/test_request_params/test_header/test_optional_str.py ............. [ 37%]
+2025-12-12T15:08:08.3915228Z ...................                                                      [ 38%]
+2025-12-12T15:08:08.4849056Z tests/test_request_params/test_header/test_required_str.py ............. [ 38%]
+2025-12-12T15:08:08.6091086Z ...................                                                      [ 39%]
+2025-12-12T15:08:08.6663762Z tests/test_request_params/test_path/test_required_str.py ........        [ 39%]
+2025-12-12T15:08:08.8228924Z tests/test_request_params/test_query/test_list.py ...................... [ 39%]
+2025-12-12T15:08:08.8950825Z ..........                                                               [ 40%]
+2025-12-12T15:08:08.9925078Z tests/test_request_params/test_query/test_optional_list.py ............. [ 40%]
+2025-12-12T15:08:09.1256429Z ...................                                                      [ 41%]
+2025-12-12T15:08:09.2286654Z tests/test_request_params/test_query/test_optional_str.py .............. [ 41%]
+2025-12-12T15:08:09.3601573Z ..................                                                       [ 41%]
+2025-12-12T15:08:09.4584102Z tests/test_request_params/test_query/test_required_str.py .............. [ 42%]
+2025-12-12T15:08:09.5742641Z ..................                                                       [ 42%]
+2025-12-12T15:08:09.7688643Z tests/test_required_noneable.py .....F.                                  [ 43%]
+2025-12-12T15:08:09.8699597Z tests/test_response_by_alias.py ..........                               [ 43%]
+2025-12-12T15:08:09.8770806Z tests/test_response_change_status_code.py .                              [ 43%]
+2025-12-12T15:08:09.8952606Z tests/test_response_class_no_mediatype.py .                              [ 43%]
+2025-12-12T15:08:09.9193941Z tests/test_response_code_no_body.py ..                                   [ 43%]
+2025-12-12T15:08:10.1035994Z tests/test_response_model_as_return_annotation.py ...................... [ 44%]
+2025-12-12T15:08:10.2813502Z ...............s.                                                        [ 44%]
+2025-12-12T15:08:10.3070263Z tests/test_response_model_data_filter.py ...                             [ 44%]
+2025-12-12T15:08:10.3312480Z tests/test_response_model_data_filter_no_inheritance.py ...              [ 44%]
+2025-12-12T15:08:10.3444445Z tests/test_response_model_default_factory.py ..                          [ 44%]
+2025-12-12T15:08:10.3970159Z tests/test_response_model_include_exclude.py ......                      [ 44%]
+2025-12-12T15:08:10.4123790Z tests/test_response_model_invalid.py ....                                [ 45%]
+2025-12-12T15:08:10.4538396Z tests/test_response_model_sub_types.py ..                                [ 45%]
+2025-12-12T15:08:10.4640613Z tests/test_return_none_stringified_annotations.py .                      [ 45%]
+2025-12-12T15:08:10.5025066Z tests/test_route_scope.py .....                                          [ 45%]
+2025-12-12T15:08:10.5600216Z tests/test_router_events.py ......                                       [ 45%]
+2025-12-12T15:08:10.5692018Z tests/test_router_prefix_with_template.py .                              [ 45%]
+2025-12-12T15:08:10.5979288Z tests/test_router_redirect_slashes.py ..                                 [ 45%]
+2025-12-12T15:08:10.6375309Z tests/test_schema_compat_pydantic_v2.py ..                               [ 45%]
+2025-12-12T15:08:10.8332109Z tests/test_schema_extra_examples.py ..                                   [ 45%]
+2025-12-12T15:08:10.8691405Z tests/test_schema_ref_pydantic_v2.py ..                                  [ 45%]
+2025-12-12T15:08:10.8954469Z tests/test_security_api_key_cookie.py ...                                [ 45%]
+2025-12-12T15:08:10.9213127Z tests/test_security_api_key_cookie_description.py ...                    [ 45%]
+2025-12-12T15:08:10.9514085Z tests/test_security_api_key_cookie_optional.py ...                       [ 45%]
+2025-12-12T15:08:10.9786463Z tests/test_security_api_key_header.py ...                                [ 45%]
+2025-12-12T15:08:11.0054876Z tests/test_security_api_key_header_description.py ...                    [ 46%]
+2025-12-12T15:08:11.0364744Z tests/test_security_api_key_header_optional.py ...                       [ 46%]
+2025-12-12T15:08:11.0633261Z tests/test_security_api_key_query.py ...                                 [ 46%]
+2025-12-12T15:08:11.0897293Z tests/test_security_api_key_query_description.py ...                     [ 46%]
+2025-12-12T15:08:11.1198577Z tests/test_security_api_key_query_optional.py ...                        [ 46%]
+2025-12-12T15:08:11.1471770Z tests/test_security_http_base.py ...                                     [ 46%]
+2025-12-12T15:08:11.1726052Z tests/test_security_http_base_description.py ...                         [ 46%]
+2025-12-12T15:08:11.1990311Z tests/test_security_http_base_optional.py ...                            [ 46%]
+2025-12-12T15:08:11.2381072Z tests/test_security_http_basic_optional.py .....                         [ 46%]
+2025-12-12T15:08:11.2746121Z tests/test_security_http_basic_realm.py .....                            [ 46%]
+2025-12-12T15:08:11.3123678Z tests/test_security_http_basic_realm_description.py .....                [ 47%]
+2025-12-12T15:08:11.3437525Z tests/test_security_http_bearer.py ....                                  [ 47%]
+2025-12-12T15:08:11.3742948Z tests/test_security_http_bearer_description.py ....                      [ 47%]
+2025-12-12T15:08:11.4091836Z tests/test_security_http_bearer_optional.py ....                         [ 47%]
+2025-12-12T15:08:11.4412480Z tests/test_security_http_digest.py ....                                  [ 47%]
+2025-12-12T15:08:11.4737542Z tests/test_security_http_digest_description.py ....                      [ 47%]
+2025-12-12T15:08:11.5103437Z tests/test_security_http_digest_optional.py ....                         [ 47%]
+2025-12-12T15:08:11.6251857Z tests/test_security_oauth2.py ..........                                 [ 47%]
+2025-12-12T15:08:11.6649395Z tests/test_security_oauth2_authorization_code_bearer.py ....             [ 48%]
+2025-12-12T15:08:11.7047594Z tests/test_security_oauth2_authorization_code_bearer_description.py .... [ 48%]
+2025-12-12T15:08:11.7063186Z                                                                          [ 48%]
+2025-12-12T15:08:11.7136579Z tests/test_security_oauth2_authorization_code_bearer_scopes_openapi.py . [ 48%]
+2025-12-12T15:08:11.7780184Z .....                                                                    [ 48%]
+2025-12-12T15:08:11.7857460Z tests/test_security_oauth2_authorization_code_bearer_scopes_openapi_simple.py . [ 48%]
+2025-12-12T15:08:11.8052295Z .                                                                        [ 48%]
+2025-12-12T15:08:11.9184443Z tests/test_security_oauth2_optional.py ..........                        [ 48%]
+2025-12-12T15:08:12.0362875Z tests/test_security_oauth2_optional_description.py ..........            [ 48%]
+2025-12-12T15:08:12.0819352Z tests/test_security_oauth2_password_bearer_optional.py ....              [ 49%]
+2025-12-12T15:08:12.1277563Z tests/test_security_oauth2_password_bearer_optional_description.py ....  [ 49%]
+2025-12-12T15:08:12.1642375Z tests/test_security_openid_connect.py ....                               [ 49%]
+2025-12-12T15:08:12.2002212Z tests/test_security_openid_connect_description.py ....                   [ 49%]
+2025-12-12T15:08:12.2379517Z tests/test_security_openid_connect_optional.py ....                      [ 49%]
+2025-12-12T15:08:12.2526824Z tests/test_security_scopes.py .                                          [ 49%]
+2025-12-12T15:08:12.2628253Z tests/test_security_scopes_dont_propagate.py .                           [ 49%]
+2025-12-12T15:08:12.2817317Z tests/test_security_scopes_sub_dependency.py .                           [ 49%]
+2025-12-12T15:08:12.3100528Z tests/test_serialize_response.py ...                                     [ 49%]
+2025-12-12T15:08:12.3791373Z tests/test_serialize_response_dataclass.py .......                       [ 49%]
+2025-12-12T15:08:12.4588546Z tests/test_serialize_response_model.py ........                          [ 50%]
+2025-12-12T15:08:12.5035280Z tests/test_skip_defaults.py .....                                        [ 50%]
+2025-12-12T15:08:12.5577540Z tests/test_starlette_exception.py .......                                [ 50%]
+2025-12-12T15:08:12.5983012Z tests/test_starlette_urlconvertors.py .....                              [ 50%]
+2025-12-12T15:08:12.6262152Z tests/test_stringified_annotation_dependency.py ..                       [ 50%]
+2025-12-12T15:08:12.6408106Z tests/test_stringified_annotations_simple.py .                           [ 50%]
+2025-12-12T15:08:12.6900411Z tests/test_sub_callbacks.py ..                                           [ 50%]
+2025-12-12T15:08:12.7041730Z tests/test_swagger_ui_init_oauth.py ..                                   [ 50%]
+2025-12-12T15:08:12.7323449Z tests/test_top_level_security_scheme_in_openapi.py ...                   [ 50%]
+2025-12-12T15:08:12.8266753Z tests/test_tuples.py .......                                             [ 51%]
+2025-12-12T15:08:12.8620654Z tests/test_tutorial/test_additional_responses/test_tutorial001.py ...    [ 51%]
+2025-12-12T15:08:12.9509633Z tests/test_tutorial/test_additional_responses/test_tutorial002.py ...... [ 51%]
+2025-12-12T15:08:12.9526398Z                                                                          [ 51%]
+2025-12-12T15:08:12.9886458Z tests/test_tutorial/test_additional_responses/test_tutorial003.py ...    [ 51%]
+2025-12-12T15:08:13.0787717Z tests/test_tutorial/test_additional_responses/test_tutorial004.py ...... [ 51%]
+2025-12-12T15:08:13.0803820Z                                                                          [ 51%]
+2025-12-12T15:08:13.1289404Z tests/test_tutorial/test_additional_status_codes/test_tutorial001.py ... [ 51%]
+2025-12-12T15:08:13.2020816Z .......                                                                  [ 51%]
+2025-12-12T15:08:13.2146011Z tests/test_tutorial/test_advanced_middleware/test_tutorial001.py .       [ 51%]
+2025-12-12T15:08:13.2308170Z tests/test_tutorial/test_advanced_middleware/test_tutorial002.py .       [ 51%]
+2025-12-12T15:08:13.2439439Z tests/test_tutorial/test_advanced_middleware/test_tutorial003.py .       [ 51%]
+2025-12-12T15:08:13.2704377Z tests/test_tutorial/test_async_tests/test_main.py ....                   [ 52%]
+2025-12-12T15:08:13.2849358Z tests/test_tutorial/test_authentication_error_status_code/test_tutorial001.py . [ 52%]
+2025-12-12T15:08:13.3423259Z .....                                                                    [ 52%]
+2025-12-12T15:08:13.3536165Z tests/test_tutorial/test_background_tasks/test_tutorial001.py .          [ 52%]
+2025-12-12T15:08:13.4350378Z tests/test_tutorial/test_background_tasks/test_tutorial002.py .....      [ 52%]
+2025-12-12T15:08:13.4533975Z tests/test_tutorial/test_behind_a_proxy/test_tutorial001.py ..           [ 52%]
+2025-12-12T15:08:13.4689809Z tests/test_tutorial/test_behind_a_proxy/test_tutorial001_01.py ..        [ 52%]
+2025-12-12T15:08:13.4867928Z tests/test_tutorial/test_behind_a_proxy/test_tutorial002.py ..           [ 52%]
+2025-12-12T15:08:13.5047105Z tests/test_tutorial/test_behind_a_proxy/test_tutorial003.py ..           [ 52%]
+2025-12-12T15:08:13.5224373Z tests/test_tutorial/test_behind_a_proxy/test_tutorial004.py ..           [ 52%]
+2025-12-12T15:08:13.9408062Z tests/test_tutorial/test_bigger_applications/test_main.py .............. [ 53%]
+2025-12-12T15:08:14.5437676Z .............................................................            [ 54%]
+2025-12-12T15:08:14.7243135Z tests/test_tutorial/test_body/test_tutorial001.py ...................... [ 55%]
+2025-12-12T15:08:14.8507957Z ..........                                                               [ 55%]
+2025-12-12T15:08:15.0096387Z tests/test_tutorial/test_body_fields/test_tutorial001.py ............... [ 56%]
+2025-12-12T15:08:15.1411561Z .....                                                                    [ 56%]
+2025-12-12T15:08:15.2258068Z tests/test_tutorial/test_body_multiple_params/test_tutorial001.py ...... [ 56%]
+2025-12-12T15:08:15.4571096Z ...................                                                      [ 56%]
+2025-12-12T15:08:15.5585671Z tests/test_tutorial/test_body_multiple_params/test_tutorial003.py ...... [ 57%]
+2025-12-12T15:08:15.8073807Z ..............                                                           [ 57%]
+2025-12-12T15:08:15.8735333Z tests/test_tutorial/test_body_nested_models/test_tutorial009.py ......   [ 57%]
+2025-12-12T15:08:16.0567401Z tests/test_tutorial/test_body_updates/test_tutorial001.py .........sss   [ 57%]
+2025-12-12T15:08:16.1760283Z tests/test_tutorial/test_conditional_openapi/test_tutorial001.py ...     [ 57%]
+2025-12-12T15:08:16.1904758Z tests/test_tutorial/test_configure_swagger_ui/test_tutorial001.py ..     [ 58%]
+2025-12-12T15:08:16.2044111Z tests/test_tutorial/test_configure_swagger_ui/test_tutorial002.py ..     [ 58%]
+2025-12-12T15:08:16.2184213Z tests/test_tutorial/test_configure_swagger_ui/test_tutorial003.py ..     [ 58%]
+2025-12-12T15:08:16.3273547Z tests/test_tutorial/test_cookie_param_models/test_tutorial001.py ....... [ 58%]
+2025-12-12T15:08:16.5421263Z ..................                                                       [ 58%]
+2025-12-12T15:08:16.6227726Z tests/test_tutorial/test_cookie_param_models/test_tutorial002.py .....ss [ 59%]
+2025-12-12T15:08:16.8762177Z sss.....sssss.....sssss.....sssss.....sssss                              [ 60%]
+2025-12-12T15:08:17.0357605Z tests/test_tutorial/test_cookie_params/test_tutorial001.py ............. [ 60%]
+2025-12-12T15:08:17.1814484Z ............                                                             [ 60%]
+2025-12-12T15:08:17.1963603Z tests/test_tutorial/test_cors/test_tutorial001.py .                      [ 60%]
+2025-12-12T15:08:17.2236703Z tests/test_tutorial/test_custom_docs_ui/test_tutorial001.py ....         [ 61%]
+2025-12-12T15:08:17.2542822Z tests/test_tutorial/test_custom_docs_ui/test_tutorial002.py ....         [ 61%]
+2025-12-12T15:08:17.2760693Z tests/test_tutorial/test_custom_request_and_route/test_tutorial001.py .. [ 61%]
+2025-12-12T15:08:17.4320102Z ................                                                         [ 61%]
+2025-12-12T15:08:17.4568800Z tests/test_tutorial/test_custom_request_and_route/test_tutorial002.py .. [ 61%]
+2025-12-12T15:08:17.5454676Z ..........                                                               [ 61%]
+2025-12-12T15:08:17.5674004Z tests/test_tutorial/test_custom_request_and_route/test_tutorial003.py .. [ 62%]
+2025-12-12T15:08:17.5865720Z ..                                                                       [ 62%]
+2025-12-12T15:08:17.6036972Z tests/test_tutorial/test_custom_response/test_tutorial001.py ..          [ 62%]
+2025-12-12T15:08:17.6214604Z tests/test_tutorial/test_custom_response/test_tutorial001b.py ..         [ 62%]
+2025-12-12T15:08:17.6377891Z tests/test_tutorial/test_custom_response/test_tutorial004.py ..          [ 62%]
+2025-12-12T15:08:17.6535322Z tests/test_tutorial/test_custom_response/test_tutorial005.py ..          [ 62%]
+2025-12-12T15:08:17.6689471Z tests/test_tutorial/test_custom_response/test_tutorial006.py ..          [ 62%]
+2025-12-12T15:08:17.6843068Z tests/test_tutorial/test_custom_response/test_tutorial006b.py ..         [ 62%]
+2025-12-12T15:08:17.6995987Z tests/test_tutorial/test_custom_response/test_tutorial006c.py ..         [ 62%]
+2025-12-12T15:08:17.7077266Z tests/test_tutorial/test_custom_response/test_tutorial007.py .           [ 62%]
+2025-12-12T15:08:17.7189110Z tests/test_tutorial/test_custom_response/test_tutorial008.py .           [ 62%]
+2025-12-12T15:08:17.7296957Z tests/test_tutorial/test_custom_response/test_tutorial009.py .           [ 62%]
+2025-12-12T15:08:17.7406858Z tests/test_tutorial/test_custom_response/test_tutorial009b.py .          [ 62%]
+2025-12-12T15:08:17.7482016Z tests/test_tutorial/test_custom_response/test_tutorial009c.py .          [ 62%]
+2025-12-12T15:08:17.8250668Z tests/test_tutorial/test_dataclasses/test_tutorial001.py ......          [ 62%]
+2025-12-12T15:08:17.9125594Z tests/test_tutorial/test_dataclasses/test_tutorial002.py ......          [ 62%]
+2025-12-12T15:08:18.0670838Z tests/test_tutorial/test_dataclasses/test_tutorial003.py .........sss    [ 63%]
+2025-12-12T15:08:18.2535200Z tests/test_tutorial/test_dependencies/test_tutorial001.py .............. [ 63%]
+2025-12-12T15:08:18.5065000Z ................                                                         [ 64%]
+2025-12-12T15:08:18.7197708Z tests/test_tutorial/test_dependencies/test_tutorial004.py .............. [ 64%]
+2025-12-12T15:08:19.0364880Z .....................                                                    [ 65%]
+2025-12-12T15:08:19.1795757Z tests/test_tutorial/test_dependencies/test_tutorial006.py .............. [ 65%]
+2025-12-12T15:08:19.1952349Z .                                                                        [ 65%]
+2025-12-12T15:08:19.3116086Z tests/test_tutorial/test_dependencies/test_tutorial008b.py .........     [ 65%]
+2025-12-12T15:08:19.4634564Z tests/test_tutorial/test_dependencies/test_tutorial008c.py ............  [ 66%]
+2025-12-12T15:08:19.6047397Z tests/test_tutorial/test_dependencies/test_tutorial008d.py ............  [ 66%]
+2025-12-12T15:08:19.6516251Z tests/test_tutorial/test_dependencies/test_tutorial008e.py ...           [ 66%]
+2025-12-12T15:08:19.7954979Z tests/test_tutorial/test_dependencies/test_tutorial012.py .............. [ 66%]
+2025-12-12T15:08:19.9327343Z .............                                                            [ 67%]
+2025-12-12T15:08:19.9639929Z tests/test_tutorial/test_events/test_tutorial001.py ..                   [ 67%]
+2025-12-12T15:08:19.9889954Z tests/test_tutorial/test_events/test_tutorial002.py ..                   [ 67%]
+2025-12-12T15:08:20.0166518Z tests/test_tutorial/test_events/test_tutorial003.py ..                   [ 67%]
+2025-12-12T15:08:20.0396733Z tests/test_tutorial/test_extending_openapi/test_tutorial001.py ..        [ 67%]
+2025-12-12T15:08:20.2783606Z tests/test_tutorial/test_extra_data_types/test_tutorial001.py .......... [ 67%]
+2025-12-12T15:08:20.2801213Z                                                                          [ 67%]
+2025-12-12T15:08:20.3892847Z tests/test_tutorial/test_extra_models/test_tutorial003.py ......         [ 67%]
+2025-12-12T15:08:20.4499144Z tests/test_tutorial/test_extra_models/test_tutorial004.py ....           [ 68%]
+2025-12-12T15:08:20.4933796Z tests/test_tutorial/test_extra_models/test_tutorial005.py ....           [ 68%]
+2025-12-12T15:08:20.5172347Z tests/test_tutorial/test_first_steps/test_tutorial001.py ...             [ 68%]
+2025-12-12T15:08:20.5689683Z tests/test_tutorial/test_generate_clients/test_tutorial003.py ....       [ 68%]
+2025-12-12T15:08:20.5952146Z tests/test_tutorial/test_handling_errors/test_tutorial001.py ...         [ 68%]
+2025-12-12T15:08:20.6213049Z tests/test_tutorial/test_handling_errors/test_tutorial002.py ...         [ 68%]
+2025-12-12T15:08:20.6468958Z tests/test_tutorial/test_handling_errors/test_tutorial003.py ...         [ 68%]
+2025-12-12T15:08:20.6798673Z tests/test_tutorial/test_handling_errors/test_tutorial004.py ....        [ 68%]
+2025-12-12T15:08:20.7122773Z tests/test_tutorial/test_handling_errors/test_tutorial005.py ...         [ 68%]
+2025-12-12T15:08:20.7468007Z tests/test_tutorial/test_handling_errors/test_tutorial006.py ....        [ 68%]
+2025-12-12T15:08:20.8578795Z tests/test_tutorial/test_header_param_models/test_tutorial001.py ....... [ 69%]
+2025-12-12T15:08:21.1281190Z .......................                                                  [ 69%]
+2025-12-12T15:08:21.2219572Z tests/test_tutorial/test_header_param_models/test_tutorial002.py .....ss [ 69%]
+2025-12-12T15:08:21.4968726Z sss.....sssss.....sssss.....sssss.....sssss                              [ 71%]
+2025-12-12T15:08:21.6184107Z tests/test_tutorial/test_header_param_models/test_tutorial003.py ....... [ 71%]
+2025-12-12T15:08:21.9295180Z .............................                                            [ 72%]
+2025-12-12T15:08:22.0946969Z tests/test_tutorial/test_header_params/test_tutorial001.py ............. [ 72%]
+2025-12-12T15:08:22.1360365Z ...                                                                      [ 72%]
+2025-12-12T15:08:22.2970463Z tests/test_tutorial/test_header_params/test_tutorial002.py ............. [ 72%]
+2025-12-12T15:08:22.4584983Z ............                                                             [ 73%]
+2025-12-12T15:08:22.6257366Z tests/test_tutorial/test_header_params/test_tutorial003.py ............. [ 73%]
+2025-12-12T15:08:22.7217865Z .......                                                                  [ 73%]
+2025-12-12T15:08:22.8366402Z tests/test_tutorial/test_metadata/test_tutorial001.py ..                 [ 73%]
+2025-12-12T15:08:22.8557581Z tests/test_tutorial/test_metadata/test_tutorial001_1.py ..               [ 73%]
+2025-12-12T15:08:22.8828748Z tests/test_tutorial/test_metadata/test_tutorial004.py ..                 [ 73%]
+2025-12-12T15:08:23.0167259Z tests/test_tutorial/test_openapi_callbacks/test_tutorial001.py ......    [ 74%]
+2025-12-12T15:08:23.0560148Z tests/test_tutorial/test_openapi_webhooks/test_tutorial001.py ...        [ 74%]
+2025-12-12T15:08:23.0647537Z tests/test_tutorial/test_path_operation_advanced_configurations/test_tutorial001.py . [ 74%]
+2025-12-12T15:08:23.0753728Z .                                                                        [ 74%]
+2025-12-12T15:08:23.0824022Z tests/test_tutorial/test_path_operation_advanced_configurations/test_tutorial002.py . [ 74%]
+2025-12-12T15:08:23.0935178Z .                                                                        [ 74%]
+2025-12-12T15:08:23.1007860Z tests/test_tutorial/test_path_operation_advanced_configurations/test_tutorial003.py . [ 74%]
+2025-12-12T15:08:23.1113464Z .                                                                        [ 74%]
+2025-12-12T15:08:23.1266399Z tests/test_tutorial/test_path_operation_advanced_configurations/test_tutorial004.py . [ 74%]
+2025-12-12T15:08:23.2533451Z .....sss                                                                 [ 74%]
+2025-12-12T15:08:23.2603356Z tests/test_tutorial/test_path_operation_advanced_configurations/test_tutorial005.py . [ 74%]
+2025-12-12T15:08:23.2705664Z .                                                                        [ 74%]
+2025-12-12T15:08:23.2777657Z tests/test_tutorial/test_path_operation_advanced_configurations/test_tutorial006.py . [ 74%]
+2025-12-12T15:08:23.2889548Z .                                                                        [ 74%]
+2025-12-12T15:08:23.3912605Z tests/test_tutorial/test_path_operation_advanced_configurations/test_tutorial007.py . [ 74%]
+2025-12-12T15:08:23.4596752Z .......                                                                  [ 74%]
+2025-12-12T15:08:23.4603088Z tests/test_tutorial/test_path_operation_advanced_configurations/test_tutorial007_pv1.py s [ 74%]
+2025-12-12T15:08:23.4700827Z sssssss                                                                  [ 75%]
+2025-12-12T15:08:23.4772712Z tests/test_tutorial/test_path_operation_configurations/test_tutorial002b.py . [ 75%]
+2025-12-12T15:08:23.4947550Z ..                                                                       [ 75%]
+2025-12-12T15:08:23.5081937Z tests/test_tutorial/test_path_operation_configurations/test_tutorial005.py . [ 75%]
+2025-12-12T15:08:23.6329927Z .....sss                                                                 [ 75%]
+2025-12-12T15:08:23.6401492Z tests/test_tutorial/test_path_operation_configurations/test_tutorial006.py . [ 75%]
+2025-12-12T15:08:23.6670022Z ...                                                                      [ 75%]
+2025-12-12T15:08:23.6936018Z tests/test_tutorial/test_path_params/test_tutorial004.py ...             [ 75%]
+2025-12-12T15:08:23.7357159Z tests/test_tutorial/test_path_params/test_tutorial005.py .....           [ 75%]
+2025-12-12T15:08:23.7475035Z tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial001.py ..        [ 75%]
+2025-12-12T15:08:23.8123046Z tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial002.py ....      [ 75%]
+2025-12-12T15:08:23.8929739Z tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial003.py ....      [ 76%]
+2025-12-12T15:08:23.9940555Z tests/test_tutorial/test_pydantic_v1_in_v2/test_tutorial004.py ......    [ 76%]
+2025-12-12T15:08:24.1104387Z tests/test_tutorial/test_query_param_models/test_tutorial001.py ........ [ 76%]
+2025-12-12T15:08:24.3698065Z ......................                                                   [ 77%]
+2025-12-12T15:08:24.6964381Z tests/test_tutorial/test_query_param_models/test_tutorial002.py ......ss [ 77%]
+2025-12-12T15:08:25.0060627Z ssss......ssssss......ssssss......ssssss......ssssss                     [ 78%]
+2025-12-12T15:08:25.0347765Z tests/test_tutorial/test_query_params/test_tutorial005.py ...            [ 78%]
+2025-12-12T15:08:25.1141021Z tests/test_tutorial/test_query_params/test_tutorial006.py ......         [ 78%]
+2025-12-12T15:08:25.1270001Z tests/test_tutorial/test_query_params_str_validations/test_tutorial010.py . [ 79%]
+2025-12-12T15:08:25.3703354Z ........................                                                 [ 79%]
+2025-12-12T15:08:25.3821398Z tests/test_tutorial/test_query_params_str_validations/test_tutorial011.py . [ 79%]
+2025-12-12T15:08:25.5806990Z .................                                                        [ 80%]
+2025-12-12T15:08:25.5928272Z tests/test_tutorial/test_query_params_str_validations/test_tutorial012.py . [ 80%]
+2025-12-12T15:08:25.7262074Z ...........                                                              [ 80%]
+2025-12-12T15:08:25.7376571Z tests/test_tutorial/test_query_params_str_validations/test_tutorial013.py . [ 80%]
+2025-12-12T15:08:25.8305289Z ........                                                                 [ 80%]
+2025-12-12T15:08:25.8461593Z tests/test_tutorial/test_query_params_str_validations/test_tutorial014.py . [ 80%]
+2025-12-12T15:08:26.0455025Z ..............                                                           [ 81%]
+2025-12-12T15:08:26.0615294Z tests/test_tutorial/test_query_params_str_validations/test_tutorial015.py . [ 81%]
+2025-12-12T15:08:26.2742188Z ..............                                                           [ 81%]
+2025-12-12T15:08:26.4442707Z tests/test_tutorial/test_request_files/test_tutorial001.py ............. [ 81%]
+2025-12-12T15:08:26.5368459Z .....                                                                    [ 82%]
+2025-12-12T15:08:26.6703825Z tests/test_tutorial/test_request_files/test_tutorial001_02.py .......... [ 82%]
+2025-12-12T15:08:26.9183378Z ...............                                                          [ 82%]
+2025-12-12T15:08:27.0866940Z tests/test_tutorial/test_request_files/test_tutorial001_03.py .........  [ 83%]
+2025-12-12T15:08:27.2758781Z tests/test_tutorial/test_request_files/test_tutorial002.py ............. [ 83%]
+2025-12-12T15:08:27.4576572Z ...........                                                              [ 83%]
+2025-12-12T15:08:27.6647303Z tests/test_tutorial/test_request_files/test_tutorial003.py ............. [ 84%]
+2025-12-12T15:08:27.7370942Z ...                                                                      [ 84%]
+2025-12-12T15:08:27.8137878Z tests/test_tutorial/test_request_form_models/test_tutorial001.py ....... [ 84%]
+2025-12-12T15:08:27.9398325Z ...........                                                              [ 84%]
+2025-12-12T15:08:28.0136685Z tests/test_tutorial/test_request_form_models/test_tutorial002.py ....... [ 84%]
+2025-12-12T15:08:28.1589362Z ..............                                                           [ 85%]
+2025-12-12T15:08:28.1620301Z tests/test_tutorial/test_request_form_models/test_tutorial002_pv1.py sss [ 85%]
+2025-12-12T15:08:28.1847274Z ssssssssssssssssss                                                       [ 85%]
+2025-12-12T15:08:28.3152633Z tests/test_tutorial/test_request_forms/test_tutorial001.py ............. [ 86%]
+2025-12-12T15:08:28.3867942Z .....                                                                    [ 86%]
+2025-12-12T15:08:28.4363154Z tests/test_tutorial/test_request_forms_and_files/test_tutorial001.py ... [ 86%]
+2025-12-12T15:08:28.6293297Z ...............                                                          [ 86%]
+2025-12-12T15:08:28.6448174Z tests/test_tutorial/test_response_change_status_code/test_tutorial001.py . [ 86%]
+2025-12-12T15:08:28.6464173Z                                                                          [ 86%]
+2025-12-12T15:08:28.6571952Z tests/test_tutorial/test_response_cookies/test_tutorial001.py .          [ 86%]
+2025-12-12T15:08:28.6673596Z tests/test_tutorial/test_response_cookies/test_tutorial002.py .          [ 86%]
+2025-12-12T15:08:28.7456149Z tests/test_tutorial/test_response_directly/test_tutorial001.py ....ss    [ 87%]
+2025-12-12T15:08:28.7564310Z tests/test_tutorial/test_response_headers/test_tutorial001.py .          [ 87%]
+2025-12-12T15:08:28.7666254Z tests/test_tutorial/test_response_headers/test_tutorial002.py .          [ 87%]
+2025-12-12T15:08:28.8776878Z tests/test_tutorial/test_response_model/test_tutorial003.py ....         [ 87%]
+2025-12-12T15:08:28.9863745Z tests/test_tutorial/test_response_model/test_tutorial003_01.py ....      [ 87%]
+2025-12-12T15:08:29.0134043Z tests/test_tutorial/test_response_model/test_tutorial003_02.py ...       [ 87%]
+2025-12-12T15:08:29.0294752Z tests/test_tutorial/test_response_model/test_tutorial003_03.py ..        [ 87%]
+2025-12-12T15:08:29.0401660Z tests/test_tutorial/test_response_model/test_tutorial003_04.py ..        [ 87%]
+2025-12-12T15:08:29.1033704Z tests/test_tutorial/test_response_model/test_tutorial003_05.py ......    [ 87%]
+2025-12-12T15:08:29.2619064Z tests/test_tutorial/test_response_model/test_tutorial004.py ............ [ 88%]
+2025-12-12T15:08:29.2634943Z                                                                          [ 88%]
+2025-12-12T15:08:29.3592100Z tests/test_tutorial/test_response_model/test_tutorial005.py ......       [ 88%]
+2025-12-12T15:08:29.4528641Z tests/test_tutorial/test_response_model/test_tutorial006.py ......       [ 88%]
+2025-12-12T15:08:29.5306952Z tests/test_tutorial/test_schema_extra_example/test_tutorial001.py ....   [ 88%]
+2025-12-12T15:08:29.5325675Z tests/test_tutorial/test_schema_extra_example/test_tutorial001_pv1.py ss [ 88%]
+2025-12-12T15:08:29.5363941Z ss                                                                       [ 88%]
+2025-12-12T15:08:29.6310988Z tests/test_tutorial/test_schema_extra_example/test_tutorial004.py ...... [ 88%]
+2025-12-12T15:08:29.7269411Z ....                                                                     [ 88%]
+2025-12-12T15:08:29.8249967Z tests/test_tutorial/test_schema_extra_example/test_tutorial005.py ...... [ 88%]
+2025-12-12T15:08:29.9274323Z ....                                                                     [ 89%]
+2025-12-12T15:08:30.0659881Z tests/test_tutorial/test_security/test_tutorial001.py ............       [ 89%]
+2025-12-12T15:08:30.3289725Z tests/test_tutorial/test_security/test_tutorial003.py .................. [ 89%]
+2025-12-12T15:08:30.6522468Z ...........................                                              [ 90%]
+2025-12-12T15:08:31.5927480Z tests/test_tutorial/test_security/test_tutorial005.py .................. [ 91%]
+2025-12-12T15:08:33.7609827Z ........................................................................ [ 93%]
+2025-12-12T15:08:34.8377911Z ........................                                                 [ 93%]
+2025-12-12T15:08:34.9763119Z tests/test_tutorial/test_security/test_tutorial006.py ...............    [ 94%]
+2025-12-12T15:08:35.0083078Z tests/test_tutorial/test_separate_openapi_schemas/test_tutorial001.py .. [ 94%]
+2025-12-12T15:08:35.1229323Z .......                                                                  [ 94%]
+2025-12-12T15:08:35.1533585Z tests/test_tutorial/test_separate_openapi_schemas/test_tutorial002.py .. [ 94%]
+2025-12-12T15:08:35.2678556Z .......                                                                  [ 94%]
+2025-12-12T15:08:35.3461231Z tests/test_tutorial/test_settings/test_app02.py ......                   [ 94%]
+2025-12-12T15:08:35.4124827Z tests/test_tutorial/test_settings/test_app03.py ...sss...                [ 95%]
+2025-12-12T15:08:35.4282911Z tests/test_tutorial/test_settings/test_tutorial001.py .s                 [ 95%]
+2025-12-12T15:08:36.5073663Z tests/test_tutorial/test_sql_databases/test_tutorial001.py ............  [ 95%]
+2025-12-12T15:08:38.2154320Z tests/test_tutorial/test_sql_databases/test_tutorial002.py ............  [ 95%]
+2025-12-12T15:08:38.2541209Z tests/test_tutorial/test_sub_applications/test_tutorial001.py ....       [ 95%]
+2025-12-12T15:08:38.3746458Z tests/test_tutorial/test_templates/test_tutorial001.py .                 [ 96%]
+2025-12-12T15:08:38.3997907Z tests/test_tutorial/test_testing/test_main.py ...                        [ 96%]
+2025-12-12T15:08:38.6938721Z tests/test_tutorial/test_testing/test_main_b.py .....                    [ 96%]
+2025-12-12T15:08:38.7174972Z tests/test_tutorial/test_testing/test_tutorial001.py ...                 [ 96%]
+2025-12-12T15:08:38.7499382Z tests/test_tutorial/test_testing/test_tutorial002.py ....                [ 96%]
+2025-12-12T15:08:38.7619602Z tests/test_tutorial/test_testing/test_tutorial003.py .                   [ 96%]
+2025-12-12T15:08:38.7808193Z tests/test_tutorial/test_testing/test_tutorial004.py ..                  [ 96%]
+2025-12-12T15:08:38.8864203Z tests/test_tutorial/test_testing_dependencies/test_tutorial001.py ...... [ 96%]
+2025-12-12T15:08:39.1610387Z .............................                                            [ 97%]
+2025-12-12T15:08:39.1846570Z tests/test_tutorial/test_using_request_directly/test_tutorial001.py ..   [ 97%]
+2025-12-12T15:08:39.2030655Z tests/test_tutorial/test_websockets/test_tutorial001.py ..               [ 97%]
+2025-12-12T15:08:39.4081648Z tests/test_tutorial/test_websockets/test_tutorial002.py ................ [ 98%]
+2025-12-12T15:08:39.5591926Z ..............                                                           [ 98%]
+2025-12-12T15:08:39.6176090Z tests/test_tutorial/test_websockets/test_tutorial003.py ....             [ 98%]
+2025-12-12T15:08:39.6450879Z tests/test_tutorial/test_wsgi/test_tutorial001.py ..                     [ 98%]
+2025-12-12T15:08:39.6853218Z tests/test_typing_python39.py .                                          [ 98%]
+2025-12-12T15:08:39.7245741Z tests/test_union_body.py ...                                             [ 98%]
+2025-12-12T15:08:39.7840785Z tests/test_union_body_discriminator.py .                                 [ 98%]
+2025-12-12T15:08:39.8578536Z tests/test_union_body_discriminator_annotated.py ...                     [ 98%]
+2025-12-12T15:08:39.9166661Z tests/test_union_forms.py .....                                          [ 98%]
+2025-12-12T15:08:39.9579196Z tests/test_union_inherited_body.py ...                                   [ 99%]
+2025-12-12T15:08:40.0175927Z tests/test_validate_response.py ......                                   [ 99%]
+2025-12-12T15:08:40.0484728Z tests/test_validate_response_dataclass.py ...                            [ 99%]
+2025-12-12T15:08:40.0656808Z tests/test_validate_response_recursive/test_validate_response_recursive.py . [ 99%]
+2025-12-12T15:08:40.0671525Z                                                                          [ 99%]
+2025-12-12T15:08:40.1175264Z tests/test_validation_error_context.py .......                           [ 99%]
+2025-12-12T15:08:40.1411910Z tests/test_webhooks_security.py ..                                       [ 99%]
+2025-12-12T15:08:40.1623708Z tests/test_wrapped_method_forward_reference.py .                         [ 99%]
+2025-12-12T15:08:40.2032997Z tests/test_ws_dependencies.py ...                                        [ 99%]
+2025-12-12T15:08:40.3359666Z tests/test_ws_router.py ............                                     [100%]
+2025-12-12T15:08:40.3360090Z 
+2025-12-12T15:08:40.3388288Z ═══════════════════════════════ inline-snapshot ════════════════════════════════
+2025-12-12T15:08:40.3396745Z INFO: CI run was detected because environment variable "CI" was defined. 
+2025-12-12T15:08:40.3397484Z inline-snapshot runs with --inline-snapshot=disable by default in CI. This means
+2025-12-12T15:08:40.3398208Z that tests with snapshots will continue to run, but snapshot(x) will only return
+2025-12-12T15:08:40.3398921Z x and inline-snapshot will not be able to fix snapshots or generate reports. You
+2025-12-12T15:08:40.3399557Z can change this by using --inline-snapshot=report for example.
+2025-12-12T15:08:40.3399897Z 
+2025-12-12T15:08:41.8023381Z 
+2025-12-12T15:08:41.8023401Z 
+2025-12-12T15:08:41.8024041Z =================================== FAILURES ===================================
+2025-12-12T15:08:41.8025034Z ___________________ test_required_nonable_body_embed_invalid ___________________
+2025-12-12T15:08:41.8025967Z 
+2025-12-12T15:08:41.8026249Z     def test_required_nonable_body_embed_invalid():
+2025-12-12T15:08:41.8026939Z         response = client.post("/body-embed", json={"invalid": "invalid"})
+2025-12-12T15:08:41.8027585Z >       assert response.status_code == 422
+2025-12-12T15:08:41.8028035Z E       assert 200 == 422
+2025-12-12T15:08:41.8028456Z E        +  where 200 = <Response [200 OK]>.status_code
+2025-12-12T15:08:41.8028799Z 
+2025-12-12T15:08:41.8029028Z tests/test_required_noneable.py:56: AssertionError
+2025-12-12T15:08:41.8029610Z =========================== short test summary info ============================
+2025-12-12T15:08:41.8030521Z FAILED tests/test_required_noneable.py::test_required_nonable_body_embed_invalid - assert 200 == 422
+2025-12-12T15:08:41.8031365Z  +  where 200 = <Response [200 OK]>.status_code
+2025-12-12T15:08:41.8031968Z ============ 1 failed, 3473 passed, 143 skipped in 63.76s (0:01:03) ============
+2025-12-12T15:08:43.3340353Z ##[error]Process completed with exit code 1.
+2025-12-12T15:08:43.3437332Z Post job cleanup.
+2025-12-12T15:08:43.4229287Z [command]/usr/bin/git version
+2025-12-12T15:08:43.4265879Z git version 2.52.0
+2025-12-12T15:08:43.4302609Z Temporarily overriding HOME='/home/runner/work/_temp/bb511b3b-e621-4e71-88f7-05f409f6be7d' before making global git config changes
+2025-12-12T15:08:43.4303923Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-12T15:08:43.4308790Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fastapi/fastapi
+2025-12-12T15:08:43.4339984Z Removing SSH command configuration
+2025-12-12T15:08:43.4346165Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-12T15:08:43.4402562Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-12T15:08:43.4645923Z Removing HTTP extra header
+2025-12-12T15:08:43.4651193Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-12T15:08:43.4684409Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-12T15:08:43.4916063Z Removing includeIf entries pointing to credentials config files
+2025-12-12T15:08:43.4922944Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-12T15:08:43.4950062Z includeif.gitdir:/home/runner/work/fastapi/fastapi/.git.path
+2025-12-12T15:08:43.4950871Z includeif.gitdir:/home/runner/work/fastapi/fastapi/.git/worktrees/*.path
+2025-12-12T15:08:43.4951482Z includeif.gitdir:/github/workspace/.git.path
+2025-12-12T15:08:43.4951849Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2025-12-12T15:08:43.4961009Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/fastapi/fastapi/.git.path
+2025-12-12T15:08:43.4983157Z /home/runner/work/_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:08:43.4994979Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/fastapi/fastapi/.git.path /home/runner/work/_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:08:43.5032431Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/fastapi/fastapi/.git/worktrees/*.path
+2025-12-12T15:08:43.5055360Z /home/runner/work/_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:08:43.5066028Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/fastapi/fastapi/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:08:43.5099498Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2025-12-12T15:08:43.5120507Z /github/runner_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:08:43.5128712Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:08:43.5158955Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2025-12-12T15:08:43.5179580Z /github/runner_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:08:43.5188923Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config
+2025-12-12T15:08:43.5221692Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-12T15:08:43.5452112Z Removing credentials config '/home/runner/work/_temp/git-credentials-3b92721c-c648-44e5-8248-2238836a529c.config'
+2025-12-12T15:08:43.5585138Z Cleaning up orphan processes

@@ -1,0 +1,1905 @@
+﻿2025-10-13T01:08:39.4047482Z Current runner version: '2.328.0'
+2025-10-13T01:08:39.4070805Z ##[group]Runner Image Provisioner
+2025-10-13T01:08:39.4071594Z Hosted Compute Agent
+2025-10-13T01:08:39.4072227Z Version: 20250912.392
+2025-10-13T01:08:39.4072849Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-13T01:08:39.4073735Z Build Date: 2025-09-12T15:23:14Z
+2025-10-13T01:08:39.4074392Z ##[endgroup]
+2025-10-13T01:08:39.4074943Z ##[group]Operating System
+2025-10-13T01:08:39.4075515Z Ubuntu
+2025-10-13T01:08:39.4075937Z 24.04.3
+2025-10-13T01:08:39.4076475Z LTS
+2025-10-13T01:08:39.4076891Z ##[endgroup]
+2025-10-13T01:08:39.4077362Z ##[group]Runner Image
+2025-10-13T01:08:39.4077988Z Image: ubuntu-24.04
+2025-10-13T01:08:39.4078452Z Version: 20250929.60.1
+2025-10-13T01:08:39.4079427Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-13T01:08:39.4080961Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-13T01:08:39.4081874Z ##[endgroup]
+2025-10-13T01:08:39.4082954Z ##[group]GITHUB_TOKEN Permissions
+2025-10-13T01:08:39.4084959Z Contents: read
+2025-10-13T01:08:39.4085635Z Metadata: read
+2025-10-13T01:08:39.4086098Z ##[endgroup]
+2025-10-13T01:08:39.4088217Z Secret source: Dependabot
+2025-10-13T01:08:39.4089045Z Prepare workflow directory
+2025-10-13T01:08:39.4477681Z Prepare all required actions
+2025-10-13T01:08:39.4515330Z Getting action download info
+2025-10-13T01:08:39.8371892Z Download action repository 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-10-13T01:08:40.0028586Z Download action repository 'actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444' (SHA:a0853c24544627f65ddf259abe73b1d18a591444)
+2025-10-13T01:08:40.1512968Z Download action repository 'codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7' (SHA:5a1091511ad55cbe89839c7260b706298ca349f7)
+2025-10-13T01:08:40.7114115Z Getting action download info
+2025-10-13T01:08:40.9887790Z Download action repository 'actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea' (SHA:60a0d83039c74a4aee543508d2ffcb1c3799cdea)
+2025-10-13T01:08:41.5424576Z Complete job name: Test on Node.js 20 and ubuntu-latest with coverage
+2025-10-13T01:08:41.6149656Z ##[group]Run actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+2025-10-13T01:08:41.6150453Z with:
+2025-10-13T01:08:41.6150738Z   repository: stylelint/stylelint
+2025-10-13T01:08:41.6151233Z   token: ***
+2025-10-13T01:08:41.6151501Z   ssh-strict: true
+2025-10-13T01:08:41.6151752Z   ssh-user: git
+2025-10-13T01:08:41.6152017Z   persist-credentials: true
+2025-10-13T01:08:41.6152308Z   clean: true
+2025-10-13T01:08:41.6152571Z   sparse-checkout-cone-mode: true
+2025-10-13T01:08:41.6152903Z   fetch-depth: 1
+2025-10-13T01:08:41.6153156Z   fetch-tags: false
+2025-10-13T01:08:41.6153607Z   show-progress: true
+2025-10-13T01:08:41.6153875Z   lfs: false
+2025-10-13T01:08:41.6154140Z   submodules: false
+2025-10-13T01:08:41.6154421Z   set-safe-directory: true
+2025-10-13T01:08:41.6154990Z env:
+2025-10-13T01:08:41.6155254Z   FORCE_COLOR: 2
+2025-10-13T01:08:41.6155527Z ##[endgroup]
+2025-10-13T01:08:41.7055461Z Syncing repository: stylelint/stylelint
+2025-10-13T01:08:41.7057114Z ##[group]Getting Git version info
+2025-10-13T01:08:41.7057638Z Working directory is '/home/runner/work/stylelint/stylelint'
+2025-10-13T01:08:41.7058348Z [command]/usr/bin/git version
+2025-10-13T01:08:41.7131516Z git version 2.51.0
+2025-10-13T01:08:41.7152702Z ##[endgroup]
+2025-10-13T01:08:41.7166843Z Temporarily overriding HOME='/home/runner/work/_temp/5b0e2870-151f-4bd8-84c5-d15c78bfbafb' before making global git config changes
+2025-10-13T01:08:41.7168370Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-13T01:08:41.7171985Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/stylelint/stylelint
+2025-10-13T01:08:41.7208433Z Deleting the contents of '/home/runner/work/stylelint/stylelint'
+2025-10-13T01:08:41.7211871Z ##[group]Initializing the repository
+2025-10-13T01:08:41.7216555Z [command]/usr/bin/git init /home/runner/work/stylelint/stylelint
+2025-10-13T01:08:41.7327148Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-13T01:08:41.7328316Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-13T01:08:41.7328964Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-13T01:08:41.7329423Z hint:
+2025-10-13T01:08:41.7329844Z hint: 	git config --global init.defaultBranch <name>
+2025-10-13T01:08:41.7330550Z hint:
+2025-10-13T01:08:41.7331237Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-13T01:08:41.7332332Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-13T01:08:41.7333161Z hint:
+2025-10-13T01:08:41.7333835Z hint: 	git branch -m <name>
+2025-10-13T01:08:41.7334352Z hint:
+2025-10-13T01:08:41.7335051Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-13T01:08:41.7335910Z Initialized empty Git repository in /home/runner/work/stylelint/stylelint/.git/
+2025-10-13T01:08:41.7345072Z [command]/usr/bin/git remote add origin https://github.com/stylelint/stylelint
+2025-10-13T01:08:41.7383135Z ##[endgroup]
+2025-10-13T01:08:41.7383936Z ##[group]Disabling automatic garbage collection
+2025-10-13T01:08:41.7386830Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-13T01:08:41.7412901Z ##[endgroup]
+2025-10-13T01:08:41.7413646Z ##[group]Setting up auth
+2025-10-13T01:08:41.7419460Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-13T01:08:41.7449323Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-13T01:08:41.7785905Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-13T01:08:41.7816716Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-13T01:08:41.8032696Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-13T01:08:41.8066219Z ##[endgroup]
+2025-10-13T01:08:41.8067231Z ##[group]Fetching the repository
+2025-10-13T01:08:41.8075589Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ceab6357d7dbcca5096d8162ff62a6e5db3498e3:refs/remotes/pull/8811/merge
+2025-10-13T01:08:42.5520978Z From https://github.com/stylelint/stylelint
+2025-10-13T01:08:42.5521693Z  * [new ref]         ceab6357d7dbcca5096d8162ff62a6e5db3498e3 -> pull/8811/merge
+2025-10-13T01:08:42.5552329Z ##[endgroup]
+2025-10-13T01:08:42.5552802Z ##[group]Determining the checkout info
+2025-10-13T01:08:42.5555397Z ##[endgroup]
+2025-10-13T01:08:42.5560368Z [command]/usr/bin/git sparse-checkout disable
+2025-10-13T01:08:42.5663800Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-13T01:08:42.5665681Z ##[group]Checking out the ref
+2025-10-13T01:08:42.5666241Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/8811/merge
+2025-10-13T01:08:42.6409270Z Note: switching to 'refs/remotes/pull/8811/merge'.
+2025-10-13T01:08:42.6409860Z 
+2025-10-13T01:08:42.6410329Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-10-13T01:08:42.6411277Z changes and commit them, and you can discard any commits you make in this
+2025-10-13T01:08:42.6412342Z state without impacting any branches by switching back to a branch.
+2025-10-13T01:08:42.6412954Z 
+2025-10-13T01:08:42.6413591Z If you want to create a new branch to retain commits you create, you may
+2025-10-13T01:08:42.6414531Z do so (now or later) by using -c with the switch command. Example:
+2025-10-13T01:08:42.6415099Z 
+2025-10-13T01:08:42.6415316Z   git switch -c <new-branch-name>
+2025-10-13T01:08:42.6415965Z 
+2025-10-13T01:08:42.6416119Z Or undo this operation with:
+2025-10-13T01:08:42.6416338Z 
+2025-10-13T01:08:42.6416457Z   git switch -
+2025-10-13T01:08:42.6416645Z 
+2025-10-13T01:08:42.6416967Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-10-13T01:08:42.6417346Z 
+2025-10-13T01:08:42.6417778Z HEAD is now at ceab635 Merge b6d2e2bcc52533482de36ee1f403b327388e77ac into 45897c9c4c3ea454014e44e585b22d63f840e4a7
+2025-10-13T01:08:42.6421059Z ##[endgroup]
+2025-10-13T01:08:42.6458950Z [command]/usr/bin/git log -1 --format=%H
+2025-10-13T01:08:42.6482260Z ceab6357d7dbcca5096d8162ff62a6e5db3498e3
+2025-10-13T01:08:42.6707282Z ##[group]Run actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+2025-10-13T01:08:42.6707709Z with:
+2025-10-13T01:08:42.6707919Z   node-version: 20
+2025-10-13T01:08:42.6708142Z   cache: npm
+2025-10-13T01:08:42.6708353Z   always-auth: false
+2025-10-13T01:08:42.6708585Z   check-latest: false
+2025-10-13T01:08:42.6708988Z   token: ***
+2025-10-13T01:08:42.6709213Z   package-manager-cache: true
+2025-10-13T01:08:42.6709466Z env:
+2025-10-13T01:08:42.6709653Z   FORCE_COLOR: 2
+2025-10-13T01:08:42.6709863Z ##[endgroup]
+2025-10-13T01:08:42.8534493Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+2025-10-13T01:08:42.8539089Z (node:2053) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-10-13T01:08:42.8540413Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-13T01:08:42.8542452Z ##[group]Environment details
+2025-10-13T01:08:45.7676046Z node: v20.19.5
+2025-10-13T01:08:45.7676607Z npm: 10.8.2
+2025-10-13T01:08:45.7676913Z yarn: 1.22.22
+2025-10-13T01:08:45.7678502Z ##[endgroup]
+2025-10-13T01:08:45.7698475Z [command]/opt/hostedtoolcache/node/20.19.5/x64/bin/npm config get cache
+2025-10-13T01:08:46.1504080Z /home/runner/.npm
+2025-10-13T01:08:46.3963686Z npm cache is not found
+2025-10-13T01:08:46.4093430Z ##[group]Run npm install --global npm
+2025-10-13T01:08:46.4093853Z [36;1mnpm install --global npm[0m
+2025-10-13T01:08:46.4242279Z shell: /usr/bin/bash -e {0}
+2025-10-13T01:08:46.4242528Z env:
+2025-10-13T01:08:46.4242693Z   FORCE_COLOR: 2
+2025-10-13T01:08:46.4242876Z ##[endgroup]
+2025-10-13T01:08:55.9684831Z 
+2025-10-13T01:08:55.9690172Z removed 18 packages, and changed 117 packages in 9s
+2025-10-13T01:08:55.9690546Z 
+2025-10-13T01:08:55.9690739Z 28 packages are looking for funding
+2025-10-13T01:08:55.9691048Z   run `npm fund` for details
+2025-10-13T01:08:55.9869558Z ##[group]Run npm ci
+2025-10-13T01:08:55.9869808Z [36;1mnpm ci[0m
+2025-10-13T01:08:55.9902195Z shell: /usr/bin/bash -e {0}
+2025-10-13T01:08:55.9902418Z env:
+2025-10-13T01:08:55.9902587Z   FORCE_COLOR: 2
+2025-10-13T01:08:55.9902766Z ##[endgroup]
+2025-10-13T01:09:05.6135042Z 
+2025-10-13T01:09:05.6135569Z > stylelint@16.25.0 prepare
+2025-10-13T01:09:05.6136252Z > husky && npm run build
+2025-10-13T01:09:05.6136497Z 
+2025-10-13T01:09:05.7661703Z 
+2025-10-13T01:09:05.7677756Z > stylelint@16.25.0 build
+2025-10-13T01:09:05.7680203Z > rollup -c
+2025-10-13T01:09:05.7680598Z 
+2025-10-13T01:09:06.0096787Z [36m
+2025-10-13T01:09:06.0110540Z [1mlib/assignDisabledRanges.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:06.0827856Z [32mcreated [1m[22m in [1m74ms[22m[39m
+2025-10-13T01:09:06.0833509Z [36m
+2025-10-13T01:09:06.0834196Z [1mlib/augmentConfig.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:06.9398690Z [32mcreated [1m[22m in [1m857ms[22m[39m
+2025-10-13T01:09:06.9402120Z [36m
+2025-10-13T01:09:06.9404756Z [1mlib/constants.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:06.9427052Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:06.9427781Z [36m
+2025-10-13T01:09:06.9428627Z [1mlib/createPartialStylelintResult.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:06.9486149Z [32mcreated [1m[22m in [1m6ms[22m[39m
+2025-10-13T01:09:06.9486845Z [36m
+2025-10-13T01:09:06.9487617Z [1mlib/createPlugin.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:06.9507643Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:06.9509071Z [36m
+2025-10-13T01:09:06.9509826Z [1mlib/createStylelint.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:07.6367698Z [32mcreated [1m[22m in [1m686ms[22m[39m
+2025-10-13T01:09:07.6370691Z [36m
+2025-10-13T01:09:07.6371827Z [1mlib/descriptionlessDisables.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:07.6515908Z [32mcreated [1m[22m in [1m15ms[22m[39m
+2025-10-13T01:09:07.6516810Z [36m
+2025-10-13T01:09:07.6518370Z [1mlib/getConfigForFile.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:08.2695104Z [32mcreated [1m[22m in [1m618ms[22m[39m
+2025-10-13T01:09:08.2697473Z [36m
+2025-10-13T01:09:08.2698698Z [1mlib/getPostcssResult.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:08.2848623Z [32mcreated [1m[22m in [1m15ms[22m[39m
+2025-10-13T01:09:08.2850256Z [36m
+2025-10-13T01:09:08.2850812Z [1mlib/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:09.0204252Z [32mcreated [1m[22m in [1m736ms[22m[39m
+2025-10-13T01:09:09.0209257Z [36m
+2025-10-13T01:09:09.0209946Z [1mlib/invalidScopeDisables.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:09.0359863Z [32mcreated [1m[22m in [1m15ms[22m[39m
+2025-10-13T01:09:09.0364577Z [36m
+2025-10-13T01:09:09.0365251Z [1mlib/isPathIgnored.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:09.6397505Z [32mcreated [1m[22m in [1m604ms[22m[39m
+2025-10-13T01:09:09.6399032Z [36m
+2025-10-13T01:09:09.6399730Z [1mlib/lintPostcssResult.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:10.1311280Z [32mcreated [1m[22m in [1m491ms[22m[39m
+2025-10-13T01:09:10.1312127Z [36m
+2025-10-13T01:09:10.1312714Z [1mlib/lintSource.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:10.6644911Z [32mcreated [1m[22m in [1m532ms[22m[39m
+2025-10-13T01:09:10.6645604Z [36m
+2025-10-13T01:09:10.6646333Z [1mlib/needlessDisables.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:10.6898906Z [32mcreated [1m[22m in [1m26ms[22m[39m
+2025-10-13T01:09:10.6899689Z [36m
+2025-10-13T01:09:10.6900882Z [1mlib/normalizeAllRuleSettings.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:11.1901117Z [32mcreated [1m[22m in [1m500ms[22m[39m
+2025-10-13T01:09:11.1902168Z [36m
+2025-10-13T01:09:11.1907414Z [1mlib/normalizeRuleSettings.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:11.1943510Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:11.1944127Z [36m
+2025-10-13T01:09:11.1944788Z [1mlib/postcssPlugin.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:11.7123518Z [32mcreated [1m[22m in [1m518ms[22m[39m
+2025-10-13T01:09:11.7125058Z [36m
+2025-10-13T01:09:11.7125796Z [1mlib/prepareReturnValue.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:11.7175487Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:11.7175991Z [36m
+2025-10-13T01:09:11.7176521Z [1mlib/printConfig.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:12.2161805Z [32mcreated [1m[22m in [1m498ms[22m[39m
+2025-10-13T01:09:12.2162323Z [36m
+2025-10-13T01:09:12.2162881Z [1mlib/reportDisables.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:12.2207570Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:12.2208102Z [36m
+2025-10-13T01:09:12.2208730Z [1mlib/reportUnknownRuleNames.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:12.6831739Z [32mcreated [1m[22m in [1m462ms[22m[39m
+2025-10-13T01:09:12.6832403Z [36m
+2025-10-13T01:09:12.6833069Z [1mlib/resolveConfig.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.1792490Z [32mcreated [1m[22m in [1m495ms[22m[39m
+2025-10-13T01:09:13.1793082Z [36m
+2025-10-13T01:09:13.1794180Z [1mlib/standalone.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.6994427Z [32mcreated [1m[22m in [1m521ms[22m[39m
+2025-10-13T01:09:13.7030183Z [36m
+2025-10-13T01:09:13.7030805Z [1mlib/timing.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7031514Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:13.7031960Z [36m
+2025-10-13T01:09:13.7032551Z [1mlib/unscopedDisables.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7129696Z [32mcreated [1m[22m in [1m10ms[22m[39m
+2025-10-13T01:09:13.7130224Z [36m
+2025-10-13T01:09:13.7131246Z [1mlib/validateDisableSettings.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7190390Z [32mcreated [1m[22m in [1m6ms[22m[39m
+2025-10-13T01:09:13.7191140Z [36m
+2025-10-13T01:09:13.7191748Z [1mlib/writeOutputFile.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7206093Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:13.7206555Z [36m
+2025-10-13T01:09:13.7207155Z [1mlib/formatters/calcSeverityCounts.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7247445Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:13.7248008Z [36m
+2025-10-13T01:09:13.7248746Z [1mlib/formatters/compactFormatter.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7283736Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:13.7284220Z [36m
+2025-10-13T01:09:13.7284630Z [1mlib/formatters/githubFormatter.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7321203Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:13.7321720Z [36m
+2025-10-13T01:09:13.7322185Z [1mlib/formatters/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7489106Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:13.7489989Z [36m
+2025-10-13T01:09:13.7492430Z [1mlib/formatters/jsonFormatter.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7505724Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:13.7506221Z [36m
+2025-10-13T01:09:13.7506953Z [1mlib/formatters/preprocessWarnings.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7537241Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:13.7537657Z [36m
+2025-10-13T01:09:13.7538062Z [1mlib/formatters/stringFormatter.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7659556Z [32mcreated [1m[22m in [1m12ms[22m[39m
+2025-10-13T01:09:13.7660105Z [36m
+2025-10-13T01:09:13.7660790Z [1mlib/formatters/tapFormatter.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7711059Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:13.7711618Z [36m
+2025-10-13T01:09:13.7712343Z [1mlib/formatters/terminalLink.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7725275Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:13.7725826Z [36m
+2025-10-13T01:09:13.7726463Z [1mlib/formatters/unixFormatter.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7768197Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:13.7768750Z [36m
+2025-10-13T01:09:13.7769512Z [1mlib/formatters/verboseFormatter.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7902768Z [32mcreated [1m[22m in [1m14ms[22m[39m
+2025-10-13T01:09:13.7904008Z [36m
+2025-10-13T01:09:13.7904684Z [1mlib/reference/atKeywords.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7929584Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:13.7930198Z [36m
+2025-10-13T01:09:13.7930856Z [1mlib/reference/functions.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.7944811Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:13.7945357Z [36m
+2025-10-13T01:09:13.7945899Z [1mlib/reference/keywords.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.8020794Z [32mcreated [1m[22m in [1m7ms[22m[39m
+2025-10-13T01:09:13.8021267Z [36m
+2025-10-13T01:09:13.8021893Z [1mlib/reference/mediaFeatures.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.8050517Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:13.8050987Z [36m
+2025-10-13T01:09:13.8051577Z [1mlib/reference/mediaTypes.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.8063462Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:13.8063946Z [36m
+2025-10-13T01:09:13.8064549Z [1mlib/reference/prefixes.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.8076385Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:13.8076905Z [36m
+2025-10-13T01:09:13.8077555Z [1mlib/reference/properties.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.8105499Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:13.8105964Z [36m
+2025-10-13T01:09:13.8106531Z [1mlib/reference/selectors.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.8140683Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:13.8141413Z [36m
+2025-10-13T01:09:13.8141955Z [1mlib/reference/units.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:13.8164776Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:13.8165222Z [36m
+2025-10-13T01:09:13.8165721Z [1mlib/rules/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.2897919Z [32mcreated [1m[22m in [1m473ms[22m[39m
+2025-10-13T01:09:14.2898403Z [36m
+2025-10-13T01:09:14.2898769Z [1mlib/utils/FileCache.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.2956366Z [32mcreated [1m[22m in [1m6ms[22m[39m
+2025-10-13T01:09:14.2956862Z [36m
+2025-10-13T01:09:14.2957521Z [1mlib/utils/addEmptyLineBefore.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.2975954Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:14.2976450Z [36m
+2025-10-13T01:09:14.2977254Z [1mlib/utils/addSemicolonForEditInfo.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.3009797Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.3010340Z [36m
+2025-10-13T01:09:14.3011053Z [1mlib/utils/appendRuleName.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.3028456Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:14.3029566Z [36m
+2025-10-13T01:09:14.3033523Z [1mlib/utils/arrayEqual.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.3051588Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.3057550Z [36m
+2025-10-13T01:09:14.3058494Z [1mlib/utils/beforeBlockString.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.3088958Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.3089498Z [36m
+2025-10-13T01:09:14.3090079Z [1mlib/utils/blockString.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.3134858Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:14.3135681Z [36m
+2025-10-13T01:09:14.3136487Z [1mlib/utils/blurInterpolation.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.3151544Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:14.3152248Z [36m
+2025-10-13T01:09:14.3152946Z [1mlib/utils/checkAgainstRule.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7631557Z [32mcreated [1m[22m in [1m447ms[22m[39m
+2025-10-13T01:09:14.7634502Z [36m
+2025-10-13T01:09:14.7635810Z [1mlib/utils/checkInvalidCLIOptions.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7662276Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:14.7662761Z [36m
+2025-10-13T01:09:14.7663636Z [1mlib/utils/configurationComment.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7704503Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:14.7705364Z [36m
+2025-10-13T01:09:14.7706103Z [1mlib/utils/containsString.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7740973Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.7741570Z [36m
+2025-10-13T01:09:14.7742255Z [1mlib/utils/createMapWithSet.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7775720Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.7776582Z [36m
+2025-10-13T01:09:14.7777232Z [1mlib/utils/dynamicImport.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7794873Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:14.7795442Z [36m
+2025-10-13T01:09:14.7796244Z [1mlib/utils/eachDeclarationBlock.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7824007Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.7824737Z [36m
+2025-10-13T01:09:14.7825453Z [1mlib/utils/eachNodeUpToRoot.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7851142Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:14.7851763Z [36m
+2025-10-13T01:09:14.7852493Z [1mlib/utils/emitWarning.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7872265Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:14.7872877Z [36m
+2025-10-13T01:09:14.7873674Z [1mlib/utils/errors.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7901430Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.7902025Z [36m
+2025-10-13T01:09:14.7902704Z [1mlib/utils/filterFilePaths.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.7919564Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:14.7920344Z [36m
+2025-10-13T01:09:14.7920926Z [1mlib/utils/findAnimationName.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8012259Z [32mcreated [1m[22m in [1m10ms[22m[39m
+2025-10-13T01:09:14.8012923Z [36m
+2025-10-13T01:09:14.8013775Z [1mlib/utils/findAtRuleContext.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8039397Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:14.8039985Z [36m
+2025-10-13T01:09:14.8040626Z [1mlib/utils/findFontFamily.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8147830Z [32mcreated [1m[22m in [1m11ms[22m[39m
+2025-10-13T01:09:14.8148426Z [36m
+2025-10-13T01:09:14.8149205Z [1mlib/utils/findMediaFeatureNames.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8194019Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:14.8194581Z [36m
+2025-10-13T01:09:14.8195279Z [1mlib/utils/findNodeUpToRoot.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8230122Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.8230707Z [36m
+2025-10-13T01:09:14.8231445Z [1mlib/utils/fixEmptyLinesBefore.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8268704Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:14.8269235Z [36m
+2025-10-13T01:09:14.8269996Z [1mlib/utils/flattenNestedSelectorsForRule.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8334312Z [32mcreated [1m[22m in [1m7ms[22m[39m
+2025-10-13T01:09:14.8334803Z [36m
+2025-10-13T01:09:14.8335620Z [1mlib/utils/functionArgumentsSearch.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8368293Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.8368871Z [36m
+2025-10-13T01:09:14.8369614Z [1mlib/utils/getAtRuleParams.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8383687Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:14.8384160Z [36m
+2025-10-13T01:09:14.8384802Z [1mlib/utils/getDeclarationValue.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8398301Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:14.8398782Z [36m
+2025-10-13T01:09:14.8399352Z [1mlib/utils/getDimension.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8455903Z [32mcreated [1m[22m in [1m6ms[22m[39m
+2025-10-13T01:09:14.8456390Z [36m
+2025-10-13T01:09:14.8457011Z [1mlib/utils/getFileIgnorer.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:14.8482905Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:14.8483544Z [36m
+2025-10-13T01:09:14.8484050Z [1mlib/utils/getFormatter.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3406544Z [32mcreated [1m[22m in [1m491ms[22m[39m
+2025-10-13T01:09:15.3407134Z [36m
+2025-10-13T01:09:15.3407848Z [1mlib/utils/getFormatterOptionsText.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3590436Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:15.3591386Z [36m
+2025-10-13T01:09:15.3592525Z [1mlib/utils/getImportantPosition.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3605984Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.3606646Z [36m
+2025-10-13T01:09:15.3607309Z [1mlib/utils/getLexer.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3622188Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.3622711Z [36m
+2025-10-13T01:09:15.3623408Z [1mlib/utils/getModulePath.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3670515Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:15.3671545Z [36m
+2025-10-13T01:09:15.3672349Z [1mlib/utils/getNextNonSharedLineCommentNode.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3689638Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.3690073Z [36m
+2025-10-13T01:09:15.3690964Z [1mlib/utils/getPreviousNonSharedLineCommentNode.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3725034Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:15.3725603Z [36m
+2025-10-13T01:09:15.3726290Z [1mlib/utils/getRelativePath.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3743494Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.3743881Z [36m
+2025-10-13T01:09:15.3744345Z [1mlib/utils/getRuleSelector.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3758898Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.3759230Z [36m
+2025-10-13T01:09:15.3759666Z [1mlib/utils/getSchemeFromUrl.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3775674Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.3776120Z [36m
+2025-10-13T01:09:15.3776696Z [1mlib/utils/getSelectorSourceIndex.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3790671Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.3791132Z [36m
+2025-10-13T01:09:15.3792179Z [1mlib/utils/getStrippedSelectorSource.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.3811680Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.3812191Z [36m
+2025-10-13T01:09:15.3813928Z [1mlib/utils/getStylelintRule.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8320733Z [32mcreated [1m[22m in [1m450ms[22m[39m
+2025-10-13T01:09:15.8321264Z [36m
+2025-10-13T01:09:15.8321893Z [1mlib/utils/hasANPlusBNotationPseudoClasses.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8372566Z [32mcreated [1m[22m in [1m6ms[22m[39m
+2025-10-13T01:09:15.8373072Z [36m
+2025-10-13T01:09:15.8373743Z [1mlib/utils/hasBlock.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8386970Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.8387435Z [36m
+2025-10-13T01:09:15.8387809Z [1mlib/utils/hasColorFunction.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8409638Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.8410143Z [36m
+2025-10-13T01:09:15.8410735Z [1mlib/utils/hasDimension.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8424177Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.8424491Z [36m
+2025-10-13T01:09:15.8424931Z [1mlib/utils/hasEmptyLine.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8438812Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.8439155Z [36m
+2025-10-13T01:09:15.8439695Z [1mlib/utils/hasInterpolation.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8471928Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:15.8472448Z [36m
+2025-10-13T01:09:15.8473106Z [1mlib/utils/hasLessInterpolation.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8486949Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.8487319Z [36m
+2025-10-13T01:09:15.8487842Z [1mlib/utils/hasNamedColor.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8536247Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:15.8536795Z [36m
+2025-10-13T01:09:15.8537600Z [1mlib/utils/hasPrefix.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8558877Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.8559384Z [36m
+2025-10-13T01:09:15.8560037Z [1mlib/utils/hasPsvInterpolation.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8574003Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.8574507Z [36m
+2025-10-13T01:09:15.8575093Z [1mlib/utils/hasScssInterpolation.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8588651Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.8589201Z [36m
+2025-10-13T01:09:15.8589843Z [1mlib/utils/hasTplInterpolation.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8603589Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.8604103Z [36m
+2025-10-13T01:09:15.8604763Z [1mlib/utils/hasValidHex.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8618300Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.8618774Z [36m
+2025-10-13T01:09:15.8619307Z [1mlib/utils/hash.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8633848Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.8634346Z [36m
+2025-10-13T01:09:15.8634947Z [1mlib/utils/isAfterComment.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8690926Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:15.8691427Z [36m
+2025-10-13T01:09:15.8692153Z [1mlib/utils/isAfterSingleLineComment.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8740397Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:15.8741349Z [36m
+2025-10-13T01:09:15.8742244Z [1mlib/utils/isAfterStandardPropertyDeclaration.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8791711Z [32mcreated [1m[22m in [1m6ms[22m[39m
+2025-10-13T01:09:15.8792195Z [36m
+2025-10-13T01:09:15.8792802Z [1mlib/utils/isAutoprefixable.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8827257Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:15.8827885Z [36m
+2025-10-13T01:09:15.8828889Z [1mlib/utils/isBlocklessAtRuleAfterBlocklessAtRule.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8884909Z [32mcreated [1m[22m in [1m6ms[22m[39m
+2025-10-13T01:09:15.8885401Z [36m
+2025-10-13T01:09:15.8886293Z [1mlib/utils/isBlocklessAtRuleAfterSameNameBlocklessAtRule.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8930621Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:15.8931125Z [36m
+2025-10-13T01:09:15.8931898Z [1mlib/utils/isContextFunctionalPseudoClass.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.8974721Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:15.8975226Z [36m
+2025-10-13T01:09:15.8975938Z [1mlib/utils/isCounterIncrementCustomIdentValue.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9023814Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:15.9024330Z [36m
+2025-10-13T01:09:15.9049832Z [1mlib/utils/isCounterResetCustomIdentValue.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9081912Z [32mcreated [1m[22m in [1m6ms[22m[39m
+2025-10-13T01:09:15.9082641Z [36m
+2025-10-13T01:09:15.9083440Z [1mlib/utils/isCustomElement.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9113470Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:15.9114362Z [36m
+2025-10-13T01:09:15.9115287Z [1mlib/utils/isCustomFunction.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9132631Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9133135Z [36m
+2025-10-13T01:09:15.9134075Z [1mlib/utils/isCustomMediaQuery.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9149230Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.9149695Z [36m
+2025-10-13T01:09:15.9150328Z [1mlib/utils/isCustomProperty.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9163014Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9163646Z [36m
+2025-10-13T01:09:15.9164148Z [1mlib/utils/isCustomSelector.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9177068Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.9177559Z [36m
+2025-10-13T01:09:15.9178499Z [1mlib/utils/isDescriptorDeclaration.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9229062Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:15.9229556Z [36m
+2025-10-13T01:09:15.9230150Z [1mlib/utils/isFirstNested.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9373105Z [32mcreated [1m[22m in [1m13ms[22m[39m
+2025-10-13T01:09:15.9373846Z [36m
+2025-10-13T01:09:15.9374489Z [1mlib/utils/isFirstNodeOfRoot.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9432297Z [32mcreated [1m[22m in [1m8ms[22m[39m
+2025-10-13T01:09:15.9432823Z [36m
+2025-10-13T01:09:15.9433569Z [1mlib/utils/isHexColor.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9462962Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:15.9463808Z [36m
+2025-10-13T01:09:15.9464358Z [1mlib/utils/isInDocument.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9494129Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:15.9494687Z [36m
+2025-10-13T01:09:15.9495366Z [1mlib/utils/isKeyframeRule.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9523984Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:15.9524462Z [36m
+2025-10-13T01:09:15.9524879Z [1mlib/utils/isKeyframeSelector.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9582567Z [32mcreated [1m[22m in [1m6ms[22m[39m
+2025-10-13T01:09:15.9583083Z [36m
+2025-10-13T01:09:15.9583960Z [1mlib/utils/isMathFunction.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9606248Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9606770Z [36m
+2025-10-13T01:09:15.9607504Z [1mlib/utils/isNonNegativeInteger.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9621077Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9621594Z [36m
+2025-10-13T01:09:15.9622236Z [1mlib/utils/isNumbery.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9636396Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.9636910Z [36m
+2025-10-13T01:09:15.9637592Z [1mlib/utils/isOnlyWhitespace.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9660137Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9660731Z [36m
+2025-10-13T01:09:15.9661453Z [1mlib/utils/isPathNotFoundError.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9675863Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9676430Z [36m
+2025-10-13T01:09:15.9677112Z [1mlib/utils/isScssVariable.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9691515Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9692026Z [36m
+2025-10-13T01:09:15.9692665Z [1mlib/utils/isSharedLineComment.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9733794Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:15.9734265Z [36m
+2025-10-13T01:09:15.9734924Z [1mlib/utils/isSingleLineString.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9750083Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.9750573Z [36m
+2025-10-13T01:09:15.9751215Z [1mlib/utils/isStandardSyntaxAtRule.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9766026Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9766520Z [36m
+2025-10-13T01:09:15.9767310Z [1mlib/utils/isStandardSyntaxColorFunction.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9791583Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:15.9792014Z [36m
+2025-10-13T01:09:15.9792793Z [1mlib/utils/isStandardSyntaxCombinator.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9807563Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.9808048Z [36m
+2025-10-13T01:09:15.9808802Z [1mlib/utils/isStandardSyntaxComment.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9822020Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9822552Z [36m
+2025-10-13T01:09:15.9823401Z [1mlib/utils/isStandardSyntaxDeclaration.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9857218Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:15.9857702Z [36m
+2025-10-13T01:09:15.9858426Z [1mlib/utils/isStandardSyntaxFunction.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9872723Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:15.9873579Z [36m
+2025-10-13T01:09:15.9874309Z [1mlib/utils/isStandardSyntaxHexColor.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9888095Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:15.9888642Z [36m
+2025-10-13T01:09:15.9889436Z [1mlib/utils/isStandardSyntaxKeyframesName.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9932705Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:15.9933468Z [36m
+2025-10-13T01:09:15.9934210Z [1mlib/utils/isStandardSyntaxProperty.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:15.9982558Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:15.9983355Z [36m
+2025-10-13T01:09:15.9983977Z [1mlib/utils/isStandardSyntaxRule.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0059374Z [32mcreated [1m[22m in [1m7ms[22m[39m
+2025-10-13T01:09:16.0060006Z [36m
+2025-10-13T01:09:16.0060786Z [1mlib/utils/isStandardSyntaxSelector.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0106623Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:16.0107280Z [36m
+2025-10-13T01:09:16.0108169Z [1mlib/utils/isStandardSyntaxTypeSelector.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0159652Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:16.0160285Z [36m
+2025-10-13T01:09:16.0161225Z [1mlib/utils/isStandardSyntaxUrl.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0199239Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:16.0199786Z [36m
+2025-10-13T01:09:16.0200514Z [1mlib/utils/isStandardSyntaxValue.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0250818Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:16.0251412Z [36m
+2025-10-13T01:09:16.0252285Z [1mlib/utils/isUnicodeRangeDescriptor.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0281897Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:16.0282392Z [36m
+2025-10-13T01:09:16.0282956Z [1mlib/utils/isUnicodeSupported.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0299578Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:16.0300093Z [36m
+2025-10-13T01:09:16.0300668Z [1mlib/utils/isUrlFunction.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0327081Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:16.0327594Z [36m
+2025-10-13T01:09:16.0328181Z [1mlib/utils/isValidFontSize.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0415912Z [32mcreated [1m[22m in [1m9ms[22m[39m
+2025-10-13T01:09:16.0416480Z [36m
+2025-10-13T01:09:16.0417103Z [1mlib/utils/isValidHex.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0433701Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0434263Z [36m
+2025-10-13T01:09:16.0434939Z [1mlib/utils/isValidIdentifier.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0452569Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0453126Z [36m
+2025-10-13T01:09:16.0453866Z [1mlib/utils/isVarFunction.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0481924Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:16.0482617Z [36m
+2025-10-13T01:09:16.0483493Z [1mlib/utils/isVariable.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0497036Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:16.0497632Z [36m
+2025-10-13T01:09:16.0498288Z [1mlib/utils/isWhitespace.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0511642Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0512207Z [36m
+2025-10-13T01:09:16.0512948Z [1mlib/utils/matchesStringOrRegExp.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0534444Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0534940Z [36m
+2025-10-13T01:09:16.0535467Z [1mlib/utils/mathMLTags.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0551101Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:16.0551565Z [36m
+2025-10-13T01:09:16.0552160Z [1mlib/utils/narrowFixRange.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0573079Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0573700Z [36m
+2025-10-13T01:09:16.0574299Z [1mlib/utils/nodeContextLookup.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0593027Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0593695Z [36m
+2025-10-13T01:09:16.0594306Z [1mlib/utils/nodeFieldIndices.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0642124Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:16.0642590Z [36m
+2025-10-13T01:09:16.0643321Z [1mlib/utils/normalizeFixMode.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0669364Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0670002Z [36m
+2025-10-13T01:09:16.0670845Z [1mlib/utils/normalizeSelector.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0698164Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:16.0698696Z [36m
+2025-10-13T01:09:16.0699321Z [1mlib/utils/optionsMatches.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0729908Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:16.0730495Z [36m
+2025-10-13T01:09:16.0731331Z [1mlib/utils/parseCustomMediaQuery.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0758012Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:16.0758482Z [36m
+2025-10-13T01:09:16.0759081Z [1mlib/utils/parseMediaQuery.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0783493Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:16.0783956Z [36m
+2025-10-13T01:09:16.0784539Z [1mlib/utils/parseSelector.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0802039Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0802490Z [36m
+2025-10-13T01:09:16.0803035Z [1mlib/utils/pluralize.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0817161Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:16.0817625Z [36m
+2025-10-13T01:09:16.0818158Z [1mlib/utils/putIfAbsent.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0833038Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0833666Z [36m
+2025-10-13T01:09:16.0834233Z [1mlib/utils/rangesOverlap.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0848719Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:16.0849260Z [36m
+2025-10-13T01:09:16.0849874Z [1mlib/utils/rawNodeString.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0864380Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0864894Z [36m
+2025-10-13T01:09:16.0865463Z [1mlib/utils/regexes.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0900814Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:16.0901457Z [36m
+2025-10-13T01:09:16.0902380Z [1mlib/utils/removeEmptyLinesBefore.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.0918607Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.0919205Z [36m
+2025-10-13T01:09:16.0919852Z [1mlib/utils/report.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.1074755Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:16.1075724Z [36m
+2025-10-13T01:09:16.1076450Z [1mlib/utils/reportCommentProblem.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.1105240Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:16.1105796Z [36m
+2025-10-13T01:09:16.1106500Z [1mlib/utils/resolveFilePath.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.1126100Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.1127104Z [36m
+2025-10-13T01:09:16.1128060Z [1mlib/utils/resolveOptionValue.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6349369Z [32mcreated [1m[22m in [1m522ms[22m[39m
+2025-10-13T01:09:16.6349935Z [36m
+2025-10-13T01:09:16.6350545Z [1mlib/utils/resolveSilent.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6375745Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:16.6376287Z [36m
+2025-10-13T01:09:16.6376865Z [1mlib/utils/ruleMessages.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6393488Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.6393991Z [36m
+2025-10-13T01:09:16.6394598Z [1mlib/utils/setAtRuleParams.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6408900Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:16.6409378Z [36m
+2025-10-13T01:09:16.6410507Z [1mlib/utils/setDeclarationValue.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6424056Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.6424519Z [36m
+2025-10-13T01:09:16.6425166Z [1mlib/utils/suppressionsService.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6476567Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:16.6477143Z [36m
+2025-10-13T01:09:16.6477772Z [1mlib/utils/typeGuards.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6495152Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.6495693Z [36m
+2025-10-13T01:09:16.6496249Z [1mlib/utils/uniteSets.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6510268Z [32mcreated [1m[22m in [1m1ms[22m[39m
+2025-10-13T01:09:16.6510802Z [36m
+2025-10-13T01:09:16.6511537Z [1mlib/utils/validateObjectWithArrayProps.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6560439Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:16.6560997Z [36m
+2025-10-13T01:09:16.6561681Z [1mlib/utils/validateObjectWithProps.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6593487Z [32mcreated [1m[22m in [1m4ms[22m[39m
+2025-10-13T01:09:16.6594056Z [36m
+2025-10-13T01:09:16.6594633Z [1mlib/utils/validateOptions.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6641740Z [32mcreated [1m[22m in [1m5ms[22m[39m
+2025-10-13T01:09:16.6642340Z [36m
+2025-10-13T01:09:16.6643071Z [1mlib/utils/validateTypes.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6664378Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.6664859Z [36m
+2025-10-13T01:09:16.6665366Z [1mlib/utils/vendor.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6682092Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:16.6682574Z [36m
+2025-10-13T01:09:16.6683420Z [1mlib/rules/alpha-value-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.6910996Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:16.6912000Z [36m
+2025-10-13T01:09:16.6912878Z [1mlib/rules/annotation-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.7153958Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:16.7155325Z [36m
+2025-10-13T01:09:16.7156267Z [1mlib/rules/at-rule-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.7393587Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:16.7394148Z [36m
+2025-10-13T01:09:16.7394984Z [1mlib/rules/at-rule-descriptor-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.7597075Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:16.7597599Z [36m
+2025-10-13T01:09:16.7598201Z [1mlib/rules/at-rule-descriptor-value-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.7852495Z [32mcreated [1m[22m in [1m26ms[22m[39m
+2025-10-13T01:09:16.7853071Z [36m
+2025-10-13T01:09:16.7854088Z [1mlib/rules/at-rule-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.8037380Z [32mcreated [1m[22m in [1m18ms[22m[39m
+2025-10-13T01:09:16.8037965Z [36m
+2025-10-13T01:09:16.8039023Z [1mlib/rules/at-rule-empty-line-before/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.8284304Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:16.8284988Z [36m
+2025-10-13T01:09:16.8285908Z [1mlib/rules/at-rule-no-deprecated/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.8513999Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:16.8514644Z [36m
+2025-10-13T01:09:16.8515418Z [1mlib/rules/at-rule-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.8731364Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:16.8731941Z [36m
+2025-10-13T01:09:16.8732817Z [1mlib/rules/at-rule-no-vendor-prefix/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.8902503Z [32mcreated [1m[22m in [1m17ms[22m[39m
+2025-10-13T01:09:16.8903111Z [36m
+2025-10-13T01:09:16.8904217Z [1mlib/rules/at-rule-prelude-no-invalid/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.9139388Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:16.9140009Z [36m
+2025-10-13T01:09:16.9141204Z [1mlib/rules/at-rule-property-required-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.9295668Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:16.9296280Z [36m
+2025-10-13T01:09:16.9297065Z [1mlib/rules/block-no-empty/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.9525301Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:16.9525933Z [36m
+2025-10-13T01:09:16.9527963Z [1mlib/rules/block-no-redundant-nested-style-rules/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.9774261Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:16.9774893Z [36m
+2025-10-13T01:09:16.9775744Z [1mlib/rules/color-function-alias-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:16.9961287Z [32mcreated [1m[22m in [1m18ms[22m[39m
+2025-10-13T01:09:16.9961800Z [36m
+2025-10-13T01:09:16.9962553Z [1mlib/rules/color-function-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.0207759Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:17.0208384Z [36m
+2025-10-13T01:09:17.0209200Z [1mlib/rules/color-hex-alpha/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.0434725Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:17.0435558Z [36m
+2025-10-13T01:09:17.0436343Z [1mlib/rules/color-hex-length/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.0682797Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:17.0683687Z [36m
+2025-10-13T01:09:17.0684739Z [1mlib/rules/color-named/colordUtils.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.0707375Z [32mcreated [1m[22m in [1m2ms[22m[39m
+2025-10-13T01:09:17.0708158Z [36m
+2025-10-13T01:09:17.0708760Z [1mlib/rules/color-named/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.1044226Z [32mcreated [1m[22m in [1m34ms[22m[39m
+2025-10-13T01:09:17.1044595Z [36m
+2025-10-13T01:09:17.1045137Z [1mlib/rules/color-no-hex/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.1210756Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:17.1211347Z [36m
+2025-10-13T01:09:17.1212191Z [1mlib/rules/color-no-invalid-hex/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.1412925Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:17.1413922Z [36m
+2025-10-13T01:09:17.1414947Z [1mlib/rules/comment-empty-line-before/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.1641098Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:17.1641592Z [36m
+2025-10-13T01:09:17.1642163Z [1mlib/rules/comment-no-empty/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.1809882Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:17.1810471Z [36m
+2025-10-13T01:09:17.1811133Z [1mlib/rules/comment-pattern/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.1939376Z [32mcreated [1m[22m in [1m13ms[22m[39m
+2025-10-13T01:09:17.1939741Z [36m
+2025-10-13T01:09:17.1940439Z [1mlib/rules/comment-whitespace-inside/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.2116627Z [32mcreated [1m[22m in [1m18ms[22m[39m
+2025-10-13T01:09:17.2117242Z [36m
+2025-10-13T01:09:17.2118050Z [1mlib/rules/comment-word-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.2307734Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:17.2308283Z [36m
+2025-10-13T01:09:17.2309016Z [1mlib/rules/container-name-pattern/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.2586140Z [32mcreated [1m[22m in [1m28ms[22m[39m
+2025-10-13T01:09:17.2586709Z [36m
+2025-10-13T01:09:17.2587524Z [1mlib/rules/custom-media-pattern/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.2745891Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:17.2746426Z [36m
+2025-10-13T01:09:17.2747302Z [1mlib/rules/custom-property-empty-line-before/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.3017892Z [32mcreated [1m[22m in [1m27ms[22m[39m
+2025-10-13T01:09:17.3018420Z [36m
+2025-10-13T01:09:17.3232821Z [1mlib/rules/custom-property-no-missing-var-function/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.3234391Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:17.3235131Z [36m
+2025-10-13T01:09:17.3235883Z [1mlib/rules/custom-property-pattern/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.3449461Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:17.3450090Z [36m
+2025-10-13T01:09:17.3451253Z [1mlib/rules/declaration-block-no-duplicate-custom-properties/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.3661767Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:17.3663158Z [36m
+2025-10-13T01:09:17.3664646Z [1mlib/rules/declaration-block-no-duplicate-properties/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.4011434Z [32mcreated [1m[22m in [1m34ms[22m[39m
+2025-10-13T01:09:17.4012498Z [36m
+2025-10-13T01:09:17.4013952Z [1mlib/rules/declaration-block-no-redundant-longhand-properties/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.4365876Z [32mcreated [1m[22m in [1m36ms[22m[39m
+2025-10-13T01:09:17.4366417Z [36m
+2025-10-13T01:09:17.4367491Z [1mlib/rules/declaration-block-no-shorthand-property-overrides/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.4565445Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:17.4565780Z [36m
+2025-10-13T01:09:17.4566393Z [1mlib/rules/declaration-block-single-line-max-declarations/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.4721906Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:17.4722396Z [36m
+2025-10-13T01:09:17.4723017Z [1mlib/rules/declaration-empty-line-before/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.5024301Z [32mcreated [1m[22m in [1m30ms[22m[39m
+2025-10-13T01:09:17.5024806Z [36m
+2025-10-13T01:09:17.5025549Z [1mlib/rules/declaration-no-important/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.5160721Z [32mcreated [1m[22m in [1m13ms[22m[39m
+2025-10-13T01:09:17.5161295Z [36m
+2025-10-13T01:09:17.5162131Z [1mlib/rules/declaration-property-max-values/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.5343720Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:17.5344281Z [36m
+2025-10-13T01:09:17.5345221Z [1mlib/rules/declaration-property-unit-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.5580271Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:17.5580739Z [36m
+2025-10-13T01:09:17.5581525Z [1mlib/rules/declaration-property-unit-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.5825689Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:17.5826223Z [36m
+2025-10-13T01:09:17.5827135Z [1mlib/rules/declaration-property-value-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.6029717Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:17.6030234Z [36m
+2025-10-13T01:09:17.6031139Z [1mlib/rules/declaration-property-value-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.6231317Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:17.6231760Z [36m
+2025-10-13T01:09:17.6232817Z [1mlib/rules/declaration-property-value-keyword-no-deprecated/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.6500783Z [32mcreated [1m[22m in [1m26ms[22m[39m
+2025-10-13T01:09:17.6501292Z [36m
+2025-10-13T01:09:17.6502183Z [1mlib/rules/declaration-property-value-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.6806760Z [32mcreated [1m[22m in [1m31ms[22m[39m
+2025-10-13T01:09:17.6807304Z [36m
+2025-10-13T01:09:17.6808043Z [1mlib/rules/font-family-name-quotes/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.7056013Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:17.7056620Z [36m
+2025-10-13T01:09:17.7057525Z [1mlib/rules/font-family-no-duplicate-names/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.7360020Z [32mcreated [1m[22m in [1m30ms[22m[39m
+2025-10-13T01:09:17.7360645Z [36m
+2025-10-13T01:09:17.7361674Z [1mlib/rules/font-family-no-missing-generic-family-keyword/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.7691452Z [32mcreated [1m[22m in [1m33ms[22m[39m
+2025-10-13T01:09:17.7692263Z [36m
+2025-10-13T01:09:17.7693010Z [1mlib/rules/font-weight-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.7936208Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:17.7937019Z [36m
+2025-10-13T01:09:17.7937992Z [1mlib/rules/function-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.8135070Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:17.8135642Z [36m
+2025-10-13T01:09:17.8136580Z [1mlib/rules/function-calc-no-unspaced-operator/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.8402473Z [32mcreated [1m[22m in [1m26ms[22m[39m
+2025-10-13T01:09:17.8403455Z [36m
+2025-10-13T01:09:17.8405423Z [1mlib/rules/function-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.8606598Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:17.8607117Z [36m
+2025-10-13T01:09:17.8608183Z [1mlib/rules/function-linear-gradient-no-nonstandard-direction/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.8799641Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:17.8800137Z [36m
+2025-10-13T01:09:17.8800818Z [1mlib/rules/function-name-case/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.9030396Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:17.9030920Z [36m
+2025-10-13T01:09:17.9031611Z [1mlib/rules/function-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.9360310Z [32mcreated [1m[22m in [1m33ms[22m[39m
+2025-10-13T01:09:17.9360903Z [36m
+2025-10-13T01:09:17.9361888Z [1mlib/rules/function-url-no-scheme-relative/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.9545893Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:17.9546417Z [36m
+2025-10-13T01:09:17.9547178Z [1mlib/rules/function-url-quotes/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.9789591Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:17.9790168Z [36m
+2025-10-13T01:09:17.9791046Z [1mlib/rules/function-url-scheme-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:17.9961109Z [32mcreated [1m[22m in [1m17ms[22m[39m
+2025-10-13T01:09:17.9961985Z [36m
+2025-10-13T01:09:17.9963119Z [1mlib/rules/function-url-scheme-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.0186454Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:18.0186998Z [36m
+2025-10-13T01:09:18.0187726Z [1mlib/rules/hue-degree-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.0434461Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:18.0435158Z [36m
+2025-10-13T01:09:18.0436189Z [1mlib/rules/import-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.0606247Z [32mcreated [1m[22m in [1m17ms[22m[39m
+2025-10-13T01:09:18.0606784Z [36m
+2025-10-13T01:09:18.0607747Z [1mlib/rules/keyframe-block-no-duplicate-selectors/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.0826231Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:18.0826749Z [36m
+2025-10-13T01:09:18.0827622Z [1mlib/rules/keyframe-declaration-no-important/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.1001420Z [32mcreated [1m[22m in [1m17ms[22m[39m
+2025-10-13T01:09:18.1001968Z [36m
+2025-10-13T01:09:18.1003575Z [1mlib/rules/keyframe-selector-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.1224548Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:18.1225274Z [36m
+2025-10-13T01:09:18.1226032Z [1mlib/rules/keyframes-name-pattern/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.1436282Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:18.1436829Z [36m
+2025-10-13T01:09:18.1437561Z [1mlib/rules/layer-name-pattern/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.1643866Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:18.1644941Z [36m
+2025-10-13T01:09:18.1645652Z [1mlib/rules/length-zero-no-unit/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.1864075Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:18.1864546Z [36m
+2025-10-13T01:09:18.1865644Z [1mlib/rules/lightness-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.2084684Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:18.2085255Z [36m
+2025-10-13T01:09:18.2086054Z [1mlib/rules/max-nesting-depth/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.2304001Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:18.2516721Z [36m
+2025-10-13T01:09:18.2517618Z [1mlib/rules/media-feature-name-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.2518511Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:18.2518935Z [36m
+2025-10-13T01:09:18.2519776Z [1mlib/rules/media-feature-name-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.2703096Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:18.2703801Z [36m
+2025-10-13T01:09:18.2704646Z [1mlib/rules/media-feature-name-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.2935803Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:18.2936670Z [36m
+2025-10-13T01:09:18.2937523Z [1mlib/rules/media-feature-name-no-vendor-prefix/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.3117999Z [32mcreated [1m[22m in [1m18ms[22m[39m
+2025-10-13T01:09:18.3118546Z [36m
+2025-10-13T01:09:18.3119470Z [1mlib/rules/media-feature-name-unit-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.3318921Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:18.3319407Z [36m
+2025-10-13T01:09:18.3320280Z [1mlib/rules/media-feature-name-value-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.3602132Z [32mcreated [1m[22m in [1m28ms[22m[39m
+2025-10-13T01:09:18.3602643Z [36m
+2025-10-13T01:09:18.3603524Z [1mlib/rules/media-feature-name-value-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.3832658Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:18.3833480Z [36m
+2025-10-13T01:09:18.3834181Z [1mlib/rules/media-feature-range-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.4168519Z [32mcreated [1m[22m in [1m34ms[22m[39m
+2025-10-13T01:09:18.4168976Z [36m
+2025-10-13T01:09:18.4169712Z [1mlib/rules/media-query-no-invalid/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.4394288Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:18.4396095Z [36m
+2025-10-13T01:09:18.4397388Z [1mlib/rules/media-type-no-deprecated/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.4605186Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:18.4605832Z [36m
+2025-10-13T01:09:18.4816023Z [1mlib/rules/named-grid-areas-no-invalid/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.4817040Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:18.4817579Z [36m
+2025-10-13T01:09:18.4818434Z [1mlib/rules/nesting-selector-no-missing-scoping-root/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.5036923Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:18.5037514Z [36m
+2025-10-13T01:09:18.5038386Z [1mlib/rules/no-descending-specificity/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.5319105Z [32mcreated [1m[22m in [1m28ms[22m[39m
+2025-10-13T01:09:18.5319686Z [36m
+2025-10-13T01:09:18.5320386Z [1mlib/rules/no-duplicate-at-import-rules/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.5504842Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:18.5505443Z [36m
+2025-10-13T01:09:18.5506244Z [1mlib/rules/no-duplicate-selectors/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.5751387Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:18.5752034Z [36m
+2025-10-13T01:09:18.5752776Z [1mlib/rules/no-empty-source/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.5886699Z [32mcreated [1m[22m in [1m13ms[22m[39m
+2025-10-13T01:09:18.5887242Z [36m
+2025-10-13T01:09:18.5888137Z [1mlib/rules/no-invalid-double-slash-comments/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.6062186Z [32mcreated [1m[22m in [1m17ms[22m[39m
+2025-10-13T01:09:18.6062831Z [36m
+2025-10-13T01:09:18.6064329Z [1mlib/rules/no-invalid-position-at-import-rule/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.6238144Z [32mcreated [1m[22m in [1m17ms[22m[39m
+2025-10-13T01:09:18.6238699Z [36m
+2025-10-13T01:09:18.6239395Z [1mlib/rules/no-invalid-position-declaration/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.6446193Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:18.6446771Z [36m
+2025-10-13T01:09:18.6447591Z [1mlib/rules/no-irregular-whitespace/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.6635194Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:18.6635838Z [36m
+2025-10-13T01:09:18.6636703Z [1mlib/rules/no-unknown-animations/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.6894250Z [32mcreated [1m[22m in [1m26ms[22m[39m
+2025-10-13T01:09:18.6894945Z [36m
+2025-10-13T01:09:18.6895774Z [1mlib/rules/no-unknown-custom-media/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.7073871Z [32mcreated [1m[22m in [1m18ms[22m[39m
+2025-10-13T01:09:18.7074488Z [36m
+2025-10-13T01:09:18.7075394Z [1mlib/rules/no-unknown-custom-properties/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.7269948Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:18.7270620Z [36m
+2025-10-13T01:09:18.7271495Z [1mlib/rules/number-max-precision/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.7479487Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:18.7480130Z [36m
+2025-10-13T01:09:18.7481026Z [1mlib/rules/property-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.7652305Z [32mcreated [1m[22m in [1m18ms[22m[39m
+2025-10-13T01:09:18.7652910Z [36m
+2025-10-13T01:09:18.7654074Z [1mlib/rules/property-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.7846292Z [32mcreated [1m[22m in [1m19ms[22m[39m
+2025-10-13T01:09:18.7846789Z [36m
+2025-10-13T01:09:18.7847414Z [1mlib/rules/property-no-deprecated/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.8001912Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:18.8002422Z [36m
+2025-10-13T01:09:18.8003132Z [1mlib/rules/property-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.8243661Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:18.8244194Z [36m
+2025-10-13T01:09:18.8244958Z [1mlib/rules/property-no-vendor-prefix/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.8458080Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:18.8458594Z [36m
+2025-10-13T01:09:18.8459361Z [1mlib/rules/rule-empty-line-before/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.8801278Z [32mcreated [1m[22m in [1m34ms[22m[39m
+2025-10-13T01:09:18.8801803Z [36m
+2025-10-13T01:09:18.8802407Z [1mlib/rules/rule-nesting-at-rule-required-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.9014395Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:18.9015040Z [36m
+2025-10-13T01:09:18.9016062Z [1mlib/rules/rule-selector-property-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.9220861Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:18.9221445Z [36m
+2025-10-13T01:09:18.9222138Z [1mlib/rules/selector-anb-no-unmatchable/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.9413525Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:18.9414196Z [36m
+2025-10-13T01:09:18.9414935Z [1mlib/rules/selector-attribute-name-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.9662236Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:18.9662937Z [36m
+2025-10-13T01:09:18.9664174Z [1mlib/rules/selector-attribute-operator-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:18.9862047Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:18.9862711Z [36m
+2025-10-13T01:09:18.9863999Z [1mlib/rules/selector-attribute-operator-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.0031304Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:19.0031995Z [36m
+2025-10-13T01:09:19.0033587Z [1mlib/rules/selector-attribute-quotes/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.0238052Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:19.0238607Z [36m
+2025-10-13T01:09:19.0239285Z [1mlib/rules/selector-class-pattern/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.0504652Z [32mcreated [1m[22m in [1m27ms[22m[39m
+2025-10-13T01:09:19.0505247Z [36m
+2025-10-13T01:09:19.0506183Z [1mlib/rules/selector-combinator-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.0682704Z [32mcreated [1m[22m in [1m18ms[22m[39m
+2025-10-13T01:09:19.0683517Z [36m
+2025-10-13T01:09:19.0684410Z [1mlib/rules/selector-combinator-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.0887539Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:19.0888098Z [36m
+2025-10-13T01:09:19.0888794Z [1mlib/rules/selector-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.1117741Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:19.1118332Z [36m
+2025-10-13T01:09:19.1119106Z [1mlib/rules/selector-id-pattern/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.1279662Z [32mcreated [1m[22m in [1m16ms[22m[39m
+2025-10-13T01:09:19.1280221Z [36m
+2025-10-13T01:09:19.1281045Z [1mlib/rules/selector-max-attribute/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.1525632Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:19.1526301Z [36m
+2025-10-13T01:09:19.1527522Z [1mlib/rules/selector-max-class/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.1758837Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:19.1759411Z [36m
+2025-10-13T01:09:19.1759973Z [1mlib/rules/selector-max-combinators/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.1974549Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:19.1975087Z [36m
+2025-10-13T01:09:19.1975980Z [1mlib/rules/selector-max-compound-selectors/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.2227867Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:19.2228450Z [36m
+2025-10-13T01:09:19.2229083Z [1mlib/rules/selector-max-id/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.2453005Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:19.2453714Z [36m
+2025-10-13T01:09:19.2454314Z [1mlib/rules/selector-max-pseudo-class/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.2690083Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:19.2690701Z [36m
+2025-10-13T01:09:19.2691599Z [1mlib/rules/selector-max-specificity/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.2915081Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:19.2915676Z [36m
+2025-10-13T01:09:19.2916467Z [1mlib/rules/selector-max-type/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.3252382Z [32mcreated [1m[22m in [1m34ms[22m[39m
+2025-10-13T01:09:19.3252988Z [36m
+2025-10-13T01:09:19.3254002Z [1mlib/rules/selector-max-universal/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.3484672Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:19.3485273Z [36m
+2025-10-13T01:09:19.3485924Z [1mlib/rules/selector-nested-pattern/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.3771688Z [32mcreated [1m[22m in [1m28ms[22m[39m
+2025-10-13T01:09:19.3772479Z [36m
+2025-10-13T01:09:19.3773544Z [1mlib/rules/selector-no-qualifying-type/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.4023521Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:19.4024085Z [36m
+2025-10-13T01:09:19.4024765Z [1mlib/rules/selector-no-vendor-prefix/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.4252508Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:19.4253017Z [36m
+2025-10-13T01:09:19.4253925Z [1mlib/rules/selector-not-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.4464149Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:19.4464770Z [36m
+2025-10-13T01:09:19.4466136Z [1mlib/rules/selector-pseudo-class-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.4704075Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:19.4704575Z [36m
+2025-10-13T01:09:19.4705442Z [1mlib/rules/selector-pseudo-class-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.4924306Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:19.4924827Z [36m
+2025-10-13T01:09:19.4925530Z [1mlib/rules/selector-pseudo-class-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.5187558Z [32mcreated [1m[22m in [1m26ms[22m[39m
+2025-10-13T01:09:19.5188157Z [36m
+2025-10-13T01:09:19.5189109Z [1mlib/rules/selector-pseudo-element-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.5395102Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:19.5395690Z [36m
+2025-10-13T01:09:19.5396676Z [1mlib/rules/selector-pseudo-element-colon-notation/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.5598239Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:19.5598775Z [36m
+2025-10-13T01:09:19.5599696Z [1mlib/rules/selector-pseudo-element-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.5799791Z [32mcreated [1m[22m in [1m20ms[22m[39m
+2025-10-13T01:09:19.5800310Z [36m
+2025-10-13T01:09:19.5801159Z [1mlib/rules/selector-pseudo-element-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.6037633Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:19.6038152Z [36m
+2025-10-13T01:09:19.6038863Z [1mlib/rules/selector-type-case/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.6300992Z [32mcreated [1m[22m in [1m26ms[22m[39m
+2025-10-13T01:09:19.6301500Z [36m
+2025-10-13T01:09:19.6302259Z [1mlib/rules/selector-type-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.6578489Z [32mcreated [1m[22m in [1m28ms[22m[39m
+2025-10-13T01:09:19.6579006Z [36m
+2025-10-13T01:09:19.6579555Z [1mlib/rules/shorthand-property-no-redundant-values/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.6817781Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:19.6818282Z [36m
+2025-10-13T01:09:19.6818954Z [1mlib/rules/string-no-newline/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.7022774Z [32mcreated [1m[22m in [1m21ms[22m[39m
+2025-10-13T01:09:19.7023587Z [36m
+2025-10-13T01:09:19.7024453Z [1mlib/rules/syntax-string-no-invalid/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.7253909Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:19.7254430Z [36m
+2025-10-13T01:09:19.7255112Z [1mlib/rules/time-min-milliseconds/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.7504268Z [32mcreated [1m[22m in [1m25ms[22m[39m
+2025-10-13T01:09:19.7504776Z [36m
+2025-10-13T01:09:19.7505482Z [1mlib/rules/unit-allowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.7728507Z [32mcreated [1m[22m in [1m22ms[22m[39m
+2025-10-13T01:09:19.7729299Z [36m
+2025-10-13T01:09:19.7730018Z [1mlib/rules/unit-disallowed-list/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.7966430Z [32mcreated [1m[22m in [1m24ms[22m[39m
+2025-10-13T01:09:19.7968007Z [36m
+2025-10-13T01:09:19.7968673Z [1mlib/rules/unit-no-unknown/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.8290265Z [32mcreated [1m[22m in [1m32ms[22m[39m
+2025-10-13T01:09:19.8290918Z [36m
+2025-10-13T01:09:19.8291698Z [1mlib/rules/value-keyword-case/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.8648517Z [32mcreated [1m[22m in [1m36ms[22m[39m
+2025-10-13T01:09:19.8649296Z [36m
+2025-10-13T01:09:19.8650596Z [1mlib/rules/value-no-vendor-prefix/index.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.8878938Z [32mcreated [1m[22m in [1m23ms[22m[39m
+2025-10-13T01:09:19.8879398Z [36m
+2025-10-13T01:09:19.8880269Z [1mlib/rules/named-grid-areas-no-invalid/utils/findNotContiguousOrRectangular.mjs[22m → [1m[22m...[39m
+2025-10-13T01:09:19.8905749Z [32mcreated [1m[22m in [1m3ms[22m[39m
+2025-10-13T01:09:19.9152404Z 
+2025-10-13T01:09:19.9152711Z > stylelint@16.25.0 postprepare
+2025-10-13T01:09:19.9153598Z > patch-package
+2025-10-13T01:09:19.9153790Z 
+2025-10-13T01:09:20.0305000Z [1mpatch-package[22m 8.0.1
+2025-10-13T01:09:20.0309246Z Applying patches...
+2025-10-13T01:09:20.0352104Z [1m@types/css-tree[22m@2.3.10 [32m✔[39m
+2025-10-13T01:09:20.0360025Z [1mis-plain-object[22m@5.0.0 [32m✔[39m
+2025-10-13T01:09:20.0662455Z 
+2025-10-13T01:09:20.0663001Z added 1129 packages, and audited 1130 packages in 24s
+2025-10-13T01:09:20.0663676Z 
+2025-10-13T01:09:20.0664880Z 349 packages are looking for funding
+2025-10-13T01:09:20.0665911Z   run `npm fund` for details
+2025-10-13T01:09:20.0679954Z 
+2025-10-13T01:09:20.0680253Z found 0 vulnerabilities
+2025-10-13T01:09:20.0975412Z ##[group]Run npm run test-coverage
+2025-10-13T01:09:20.0975712Z [36;1mnpm run test-coverage[0m
+2025-10-13T01:09:20.1007759Z shell: /usr/bin/bash -e {0}
+2025-10-13T01:09:20.1008074Z env:
+2025-10-13T01:09:20.1008442Z   FORCE_COLOR: 2
+2025-10-13T01:09:20.1008760Z   NODE_OPTIONS: --max-old-space-size=4096
+2025-10-13T01:09:20.1009102Z ##[endgroup]
+2025-10-13T01:09:20.2256593Z 
+2025-10-13T01:09:20.2257102Z > stylelint@16.25.0 test-coverage
+2025-10-13T01:09:20.2257676Z > npm test --ignore-scripts -- --coverage
+2025-10-13T01:09:20.2257912Z 
+2025-10-13T01:09:20.3532403Z 
+2025-10-13T01:09:20.3532874Z > stylelint@16.25.0 test
+2025-10-13T01:09:20.3533787Z > node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage
+2025-10-13T01:09:20.3534132Z 
+2025-10-13T01:09:22.6900789Z (node:2302) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+2025-10-13T01:09:22.6904729Z (Use `node --trace-warnings ...` to show where the warning was created)
+2025-10-13T01:09:22.7006766Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-block-no-redundant-longhand-properties/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:23.7554653Z (node:2296) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+2025-10-13T01:09:23.7556256Z (Use `node --trace-warnings ...` to show where the warning was created)
+2025-10-13T01:09:23.7729063Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-no-qualifying-type/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:23.9755406Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-calc-no-unspaced-operator/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:24.4897592Z (node:2295) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+2025-10-13T01:09:24.4898715Z (Use `node --trace-warnings ...` to show where the warning was created)
+2025-10-13T01:09:24.5285436Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/value-keyword-case/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:25.5738346Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mcli.test.mjs[22m
+2025-10-13T01:09:25.9018792Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-empty-line-before/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:26.3522832Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mdisableRanges.test.mjs[22m
+2025-10-13T01:09:26.6035250Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-empty-line-before/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:26.6437893Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/font-family-name-quotes/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:26.6960371Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mreport.test.mjs[22m
+2025-10-13T01:09:27.4053929Z (node:2295) [stylelint:007] DeprecationWarning: Omitting the `node` argument in the `utils.report()` function is deprecated ("plugin/selector-no-qux").
+2025-10-13T01:09:27.4060549Z Please pass a `node` argument in the `utils.report()` function of "plugin/selector-no-qux".
+2025-10-13T01:09:27.4061747Z (node:2295) [stylelint:005] DeprecationWarning: `context.fix` is being deprecated.
+2025-10-13T01:09:27.4062906Z Please pass a `fix` callback to the `report` utility of "plugin/selector-no-foo" instead.
+2025-10-13T01:09:27.7016116Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-fix.test.mjs[22m
+2025-10-13T01:09:27.8462995Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-block-no-duplicate-properties/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:27.8881004Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/length-zero-no-unit/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:29.0859339Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-name-case/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:29.1334881Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-url-quotes/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:29.3622394Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/rule-empty-line-before/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:30.3171338Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/custom-property-empty-line-before/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:30.3324598Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/shorthand-property-no-redundant-values/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:30.4748346Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mcli-suppressions.test.mjs[22m
+2025-10-13T01:09:31.2559341Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-cache.test.mjs[22m
+2025-10-13T01:09:31.5204311Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-max-type/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:31.6764500Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/formatters/__tests__/[22m[1mstringFormatter.test.mjs[22m
+2025-10-13T01:09:31.8011192Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/alpha-value-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:32.6115117Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-max-id/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:32.8400964Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/unit-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:32.9505173Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/unit-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:33.8262978Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-max-compound-selectors/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:33.9602170Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-duplicate-selectors/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:34.2326865Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:34.2328364Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:34.3195824Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:34.3197649Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:34.3640229Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mnarrowFixRange.test.mjs[22m
+2025-10-13T01:09:34.3813853Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:34.3815223Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:34.4363771Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:34.4369366Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:34.4992712Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:34.4996800Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:34.5625015Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:34.5626606Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:34.6876029Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:34.6893094Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:34.7352004Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:34.7357302Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:34.7788395Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:34.7789807Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:34.8575537Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-max-specificity/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:34.9328283Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone.test.mjs[22m
+2025-10-13T01:09:35.2873620Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mplugins.test.mjs[22m
+2025-10-13T01:09:35.6380381Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:35.6383679Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:35.6433841Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-bar.cjs").
+2025-10-13T01:09:35.6435363Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:35.6772938Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-bar.cjs").
+2025-10-13T01:09:35.6774834Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:35.6776357Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:09:35.6777782Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:09:35.9978395Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1moverrides.test.mjs[22m
+2025-10-13T01:09:36.0147187Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/keyframe-selector-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:36.4090166Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/font-weight-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:36.4288373Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mgetDimension.test.mjs[22m
+2025-10-13T01:09:37.0900393Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/time-min-milliseconds/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:37.3244093Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mignore.test.mjs[22m
+2025-10-13T01:09:37.7533549Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mvalidateOptions.test.mjs[22m
+2025-10-13T01:09:38.0540196Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/color-named/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:38.4550374Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-property-value-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:38.5627705Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/formatters/__tests__/[22m[1mverboseFormatter.test.mjs[22m
+2025-10-13T01:09:38.8319480Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/color-function-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:39.4726396Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mneedlessDisables.test.mjs[22m
+2025-10-13T01:09:39.8719240Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-feature-name-value-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:40.0208647Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-attribute-quotes/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:40.7007209Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-descending-specificity/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:41.0157457Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/lightness-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:41.1288709Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-linear-gradient-no-nonstandard-direction/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:41.9766330Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-max-combinators/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:42.1285453Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-max-attribute/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:42.4773864Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/max-nesting-depth/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:43.3430718Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mlanguageOptions.test.mjs[22m
+2025-10-13T01:09:43.4218834Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-type-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:43.7365817Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-pseudo-class-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:43.8835997Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxUrl.test.mjs[22m
+2025-10-13T01:09:44.5665365Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-max-universal/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:44.9690390Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/unit-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:44.9787910Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-irregular-whitespace/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:45.0590050Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mapplyOverrides.test.mjs[22m
+2025-10-13T01:09:46.0993443Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-syntax.test.mjs[22m
+2025-10-13T01:09:46.2352233Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-feature-name-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:46.4151318Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/comment-empty-line-before/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:47.2532593Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1minvalidScopeDisables.test.mjs[22m
+2025-10-13T01:09:47.3579658Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mdescriptionlessDisables.test.mjs[22m
+2025-10-13T01:09:47.5754095Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-type-case/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:47.8806716Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mfindFontFamily.test.mjs[22m
+2025-10-13T01:09:48.1541680Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mnodeFieldIndices.test.mjs[22m
+2025-10-13T01:09:48.3955619Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-feature-range-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:48.4767024Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misInDocument.test.mjs[22m
+2025-10-13T01:09:49.3594708Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/property-no-vendor-prefix/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:49.7115554Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-class-pattern/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:49.8070466Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/property-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:50.7837093Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-query-no-invalid/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:51.0717810Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-unknown-animations/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:51.1115334Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-url-scheme-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:52.0617489Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-pseudo-element-colon-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:52.2665366Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-invalid-position-declaration/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:52.3048011Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mdisableRanges-integration.test.mjs[22m
+2025-10-13T01:09:53.3042462Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/hue-degree-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:53.4642607Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/number-max-precision/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:53.5549126Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/value-no-vendor-prefix/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:53.8155247Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/formatters/__tests__/[22m[1mtapFormatter.test.mjs[22m
+2025-10-13T01:09:54.6180031Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-block-no-shorthand-property-overrides/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:54.6356928Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:09:54.6359209Z Use `report` or `code` instead.
+2025-10-13T01:09:54.6423019Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:09:54.6423926Z Use `report` or `code` instead.
+2025-10-13T01:09:54.6456824Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:09:54.6457456Z Use `report` or `code` instead.
+2025-10-13T01:09:54.6745633Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:09:54.6746631Z Use `report` or `code` instead.
+2025-10-13T01:09:54.7169311Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:09:54.7170143Z Use `report` or `code` instead.
+2025-10-13T01:09:54.7241148Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:09:54.7241948Z Use `report` or `code` instead.
+2025-10-13T01:09:54.7271005Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:09:54.7273531Z Use `report` or `code` instead.
+2025-10-13T01:09:54.8818092Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:09:54.8820697Z Use `report` or `code` instead.
+2025-10-13T01:09:54.8985490Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/stylelintignore-test/[22m[1mstylelintignore.test.mjs[22m
+2025-10-13T01:09:54.9182746Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/color-hex-length/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:55.6220380Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-globs.test.mjs[22m
+2025-10-13T01:09:56.1896853Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/comment-word-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:56.2042844Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/comment-whitespace-inside/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:56.2954985Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxDeclaration.test.mjs[22m
+2025-10-13T01:09:57.3611706Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-url-scheme-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:57.3942873Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:57.5092551Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/custom-property-no-missing-var-function/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:58.6426107Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-max-pseudo-class/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:58.7426183Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/font-family-no-missing-generic-family-keyword/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:58.7496907Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-max-class/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:09:59.7324809Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mpostcssPlugin.test.mjs[22m
+2025-10-13T01:09:59.7720827Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mprocessors.test.mjs[22m
+2025-10-13T01:09:59.8820129Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-block-no-duplicate-custom-properties/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:00.4524121Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1maddSemicolonForEditInfo.test.mjs[22m
+2025-10-13T01:10:01.0690922Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-property-unit-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:01.1155398Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:01.7823097Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-pseudo-class-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:02.1982441Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-duplicate-at-import-rules/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:02.4194884Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-not-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:03.0534497Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-no-vendor-prefix/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:03.5475570Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/block-no-empty/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:03.7312443Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/property-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:04.2180740Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-nested-pattern/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:04.6709018Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mcheckAgainstRule.test.mjs[22m
+2025-10-13T01:10:05.1216753Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-pseudo-element-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:05.5778033Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/import-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:05.9826772Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mintegration.test.mjs[22m
+2025-10-13T01:10:06.2752762Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misSharedLineComment.test.mjs[22m
+2025-10-13T01:10:06.4585293Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-pseudo-class-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:07.0531064Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mnormalizeRuleSettings.test.mjs[22m
+2025-10-13T01:10:07.6219367Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:07.7441173Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mnormalizeSelector.test.mjs[22m
+2025-10-13T01:10:07.9340971Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-feature-name-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:08.8901818Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-descriptor-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:08.9092197Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-feature-name-value-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:09.2157802Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-property-value-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:09.5859540Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misFirstNested.test.mjs[22m
+2025-10-13T01:10:10.2585663Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-feature-name-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:10.5267690Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:10.8628773Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/named-grid-areas-no-invalid/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:11.6193488Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-url-no-scheme-relative/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:11.8446271Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1munscopedDisables.test.mjs[22m
+2025-10-13T01:10:12.2717543Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/string-no-newline/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:12.6069910Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mgetStrippedSelectorSource.test.mjs[22m
+2025-10-13T01:10:12.8999820Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/custom-property-pattern/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:13.5840966Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mtiming.test.mjs[22m
+2025-10-13T01:10:13.6585753Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/property-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:14.0634041Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-anb-no-unmatchable/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:14.8013666Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mmatchesStringOrRegExp.test.mjs[22m
+2025-10-13T01:10:14.9074413Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-formatter.test.mjs[22m
+2025-10-13T01:10:14.9528237Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-property-value-keyword-no-deprecated/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:16.0554977Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxRule.test.mjs[22m
+2025-10-13T01:10:16.3584495Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/container-name-pattern/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:17.7551165Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/nesting-selector-no-missing-scoping-root/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:17.8031695Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-invalid-position-at-import-rule/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:18.5538507Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mregexes.test.mjs[22m
+2025-10-13T01:10:18.6289061Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/__tests__/[22m[1mindex.test.mjs[22m
+2025-10-13T01:10:19.2095573Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-property-unit-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:19.8323521Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:19.8629749Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-compute-edit-info.test.mjs[22m
+2025-10-13T01:10:20.0066818Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/formatters/__tests__/[22m[1munixFormatter.test.mjs[22m
+2025-10-13T01:10:20.6719503Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxAtRule.test.mjs[22m
+2025-10-13T01:10:20.7950381Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:10:20.7956015Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:10:20.8271778Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxSelector.test.mjs[22m
+2025-10-13T01:10:20.8374760Z (node:2296) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:10:20.8380672Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:10:21.1561788Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mresolveConfig.test.mjs[22m
+2025-10-13T01:10:22.0445948Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/rule-selector-property-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:22.0607376Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-quiet-deprecation-warnings.test.mjs[22m
+2025-10-13T01:10:22.4211680Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mextends.test.mjs[22m
+2025-10-13T01:10:22.9919971Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/color-named/__tests__/[22m[1mcolordUtils.test.mjs[22m
+2025-10-13T01:10:23.3779019Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-feature-name-unit-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:23.7552915Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-feature-name-no-vendor-prefix/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:24.2695785Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:24.6677978Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxTypeSelector.test.mjs[22m
+2025-10-13T01:10:24.6770936Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/media-type-no-deprecated/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:25.0361819Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/formatters/__tests__/[22m[1mcompactFormatter.test.mjs[22m
+2025-10-13T01:10:26.1221837Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/color-no-hex/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:26.3215282Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/syntax-string-no-invalid/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:26.4259082Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-pseudo-element-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:27.2441287Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mfunctionArgumentsSearch.test.mjs[22m
+2025-10-13T01:10:27.4384823Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-invalid-double-slash-comments/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:27.7888948Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-descriptor-value-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:28.6503673Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/font-family-no-duplicate-names/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:28.9402347Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/function-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:29.0842701Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/color-function-alias-notation/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:29.9429949Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mreportDisables.test.mjs[22m
+2025-10-13T01:10:29.9687882Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mvalidateTypes.test.mjs[22m
+2025-10-13T01:10:30.4469181Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-id-pattern/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:30.8516198Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misKeyframeRule.test.mjs[22m
+2025-10-13T01:10:31.3790967Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-pseudo-element-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:31.7891583Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-deprecations.test.mjs[22m
+2025-10-13T01:10:32.2301780Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-empty-source/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:32.8634728Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-attribute-operator-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:33.1327985Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1memitWarning.test.mjs[22m
+2025-10-13T01:10:33.2080047Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/color-no-invalid-hex/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:33.8095527Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mrangesOverlap.test.mjs[22m
+2025-10-13T01:10:34.5370067Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-attribute-name-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:34.6052015Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/layer-name-pattern/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:35.3370596Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-attribute-operator-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:35.9607270Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxColorFunction.test.mjs[22m
+2025-10-13T01:10:36.3110405Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/custom-media-pattern/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:36.8449632Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mconfigurationComment.test.mjs[22m
+2025-10-13T01:10:36.8944057Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/keyframe-block-no-duplicate-selectors/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:37.7548495Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-unknown-custom-media/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:37.8237651Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxCombinator.test.mjs[22m
+2025-10-13T01:10:37.8401223Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misBlocklessAtRuleAfterSameNameBlocklessAtRule.test.mjs[22m
+2025-10-13T01:10:38.7360263Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mfindAnimationName.test.mjs[22m
+2025-10-13T01:10:38.8500955Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mbeforeBlockString.test.mjs[22m
+2025-10-13T01:10:39.1392328Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mnormalizeRuleSettings-integration.test.mjs[22m
+2025-10-13T01:10:40.1507644Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-no-deprecated/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:40.3963941Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-combinator-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:40.6552893Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/selector-combinator-disallowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:41.5409323Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/property-no-deprecated/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:41.6795490Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mnodeContextLookup.test.mjs[22m
+2025-10-13T01:10:41.8198425Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/keyframe-declaration-no-important/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:42.5813617Z (node:2302) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:10:42.5818663Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:10:42.7441140Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/formatters/__tests__/[22m[1mgithubFormatter.test.mjs[22m
+2025-10-13T01:10:42.9684437Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mprintConfig.test.mjs[22m
+2025-10-13T01:10:43.1979227Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mignoreDisables.test.mjs[22m
+2025-10-13T01:10:43.5865122Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxKeyframesName.test.mjs[22m
+2025-10-13T01:10:44.4823668Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/block-no-redundant-nested-style-rules/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:44.5516489Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misBlocklessAtRuleAfterBlocklessAtRule.test.mjs[22m
+2025-10-13T01:10:44.6965723Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-property-required-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:45.4497440Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mparseSelector.test.mjs[22m
+2025-10-13T01:10:46.0586785Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-block-single-line-max-declarations/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:46.2726806Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-prelude-no-invalid/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:46.3808282Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misDescriptorDeclaration.test.mjs[22m
+2025-10-13T01:10:47.0252505Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misAutoprefixable.test.mjs[22m
+2025-10-13T01:10:47.4949739Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mremoveEmptyLinesBefore.test.mjs[22m
+2025-10-13T01:10:47.6767127Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/color-hex-alpha/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:48.4116120Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-property-max-values/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:48.5437349Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1moptionsMatches.test.mjs[22m
+2025-10-13T01:10:49.6129852Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mhasBlock.test.mjs[22m
+2025-10-13T01:10:49.7223948Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/keyframes-name-pattern/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:50.1635367Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-property-value-allowed-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:51.0831835Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mcontainsString.test.mjs[22m
+2025-10-13T01:10:51.0855456Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-quiet.test.mjs[22m
+2025-10-13T01:10:51.1144239Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/no-unknown-custom-properties/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:52.1008616Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misCustomElement.test.mjs[22m
+2025-10-13T01:10:52.1614017Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mgetPreviousNonSharedLineCommentNode.test.mjs[22m
+2025-10-13T01:10:52.4509558Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/at-rule-no-vendor-prefix/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:53.0815726Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxValue.test.mjs[22m
+2025-10-13T01:10:53.2080331Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mgetNextNonSharedLineCommentNode.test.mjs[22m
+2025-10-13T01:10:53.8640834Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mreportUnknownRuleNames.test.mjs[22m
+2025-10-13T01:10:54.3162004Z ConfigurationError: No configuration provided for /home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/empty-block.css
+2025-10-13T01:10:54.3167542Z     at getConfigForFile (/home/runner/work/stylelint/stylelint/lib/getConfigForFile.mjs:76:9)
+2025-10-13T01:10:54.3172568Z     at isPathIgnored (/home/runner/work/stylelint/stylelint/lib/isPathIgnored.mjs:23:17)
+2025-10-13T01:10:54.3177669Z     at lintSource (/home/runner/work/stylelint/stylelint/lib/lintSource.mjs:43:20)
+2025-10-13T01:10:54.3181841Z     at /home/runner/work/stylelint/stylelint/lib/standalone.mjs:250:27
+2025-10-13T01:10:54.3184809Z     at async Promise.all (index 0)
+2025-10-13T01:10:54.3201962Z     at standalone (/home/runner/work/stylelint/stylelint/lib/standalone.mjs:295:22)
+2025-10-13T01:10:54.3205144Z     at Object.<anonymous> (/home/runner/work/stylelint/stylelint/lib/__tests__/cli-deprecation.test.mjs:24:2)
+2025-10-13T01:10:54.3615769Z ConfigurationError: No configuration provided for /home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/empty-block.css
+2025-10-13T01:10:54.3622975Z     at getConfigForFile (/home/runner/work/stylelint/stylelint/lib/getConfigForFile.mjs:76:9)
+2025-10-13T01:10:54.3624839Z     at isPathIgnored (/home/runner/work/stylelint/stylelint/lib/isPathIgnored.mjs:23:17)
+2025-10-13T01:10:54.3625798Z     at lintSource (/home/runner/work/stylelint/stylelint/lib/lintSource.mjs:43:20)
+2025-10-13T01:10:54.3626616Z     at /home/runner/work/stylelint/stylelint/lib/standalone.mjs:250:27
+2025-10-13T01:10:54.3627672Z     at async Promise.all (index 0)
+2025-10-13T01:10:54.3628371Z     at standalone (/home/runner/work/stylelint/stylelint/lib/standalone.mjs:295:22)
+2025-10-13T01:10:54.3629443Z     at Object.<anonymous> (/home/runner/work/stylelint/stylelint/lib/__tests__/cli-deprecation.test.mjs:43:2)
+2025-10-13T01:10:54.4957635Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mdefaultSeverity.test.mjs[22m
+2025-10-13T01:10:54.7349230Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mcli-deprecation.test.mjs[22m
+2025-10-13T01:10:55.4298282Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/comment-pattern/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:55.5790407Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mcheckInvalidCLIOptions.test.mjs[22m
+2025-10-13T01:10:55.9907716Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/rule-nesting-at-rule-required-list/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:10:56.5229043Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misAfterSingleLineComment.test.mjs[22m
+2025-10-13T01:10:56.9975356Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-parseErrors.test.mjs[22m
+2025-10-13T01:10:57.0016517Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1maddEmptyLineBefore.test.mjs[22m
+2025-10-13T01:10:57.5150990Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mblurInterpolation.test.mjs[22m
+2025-10-13T01:10:57.9925355Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misContextFunctionalPseudoClass.test.mjs[22m
+2025-10-13T01:10:58.0699318Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxFunction.test.mjs[22m
+2025-10-13T01:10:58.4655519Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mvalidateObjectWithArrayProps.test.mjs[22m
+2025-10-13T01:10:59.0310285Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mhasEmptyLine.test.mjs[22m
+2025-10-13T01:10:59.1286885Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/testUtils/__tests__/[22m[1mmergeTestDescriptions.test.mjs[22m
+2025-10-13T01:10:59.4254996Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misValidIdentifier.test.mjs[22m
+2025-10-13T01:11:00.0036896Z (node:2302) [stylelint:002] DeprecationWarning: The CommonJS Node.js API is deprecated.
+2025-10-13T01:11:00.0040351Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:11:00.0173430Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misKeyframeSelector.test.mjs[22m
+2025-10-13T01:11:00.5517486Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxProperty.test.mjs[22m
+2025-10-13T01:11:01.0464857Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mgetImportantPosition.test.mjs[22m
+2025-10-13T01:11:01.1230105Z (node:2302) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:01.1231148Z Use `report` or `code` instead.
+2025-10-13T01:11:01.1240982Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2msystem-tests/005/[22m[1mcommonjs.test.cjs[22m
+2025-10-13T01:11:01.4754197Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misScssVariable.test.mjs[22m
+2025-10-13T01:11:02.1609740Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misAfterComment.test.mjs[22m
+2025-10-13T01:11:02.9776486Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/comment-no-empty/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:11:03.0464214Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxComment.test.mjs[22m
+2025-10-13T01:11:03.8595774Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/annotation-no-unknown/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:11:04.0984285Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mhasInterpolation.test.mjs[22m
+2025-10-13T01:11:04.4014849Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-maxWarnings.test.mjs[22m
+2025-10-13T01:11:04.8940827Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misCounterIncrementCustomIdentValue.test.mjs[22m
+2025-10-13T01:11:05.3523096Z (node:2295) [stylelint:001] DeprecationWarning: CommonJS plugins are deprecated ("/home/runner/work/stylelint/stylelint/lib/__tests__/fixtures/plugin-warn-about-foo.cjs").
+2025-10-13T01:11:05.3527943Z See https://stylelint.io/migration-guide/to-16
+2025-10-13T01:11:05.3532185Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mgetConfigForFile.test.mjs[22m
+2025-10-13T01:11:05.5045137Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1meachNodeUpToRoot.test.mjs[22m
+2025-10-13T01:11:05.8726749Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misCounterResetCustomIdentValue.test.mjs[22m
+2025-10-13T01:11:06.3778831Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/formatters/__tests__/[22m[1mterminalLink.test.mjs[22m
+2025-10-13T01:11:06.6044441Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misUrlFunction.test.mjs[22m
+2025-10-13T01:11:06.8737886Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mvalidateObjectWithProps.test.mjs[22m
+2025-10-13T01:11:07.3976266Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mwriteOutputFile.test.mjs[22m
+2025-10-13T01:11:07.6079943Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mblockString.test.mjs[22m
+2025-10-13T01:11:07.9361154Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/named-grid-areas-no-invalid/utils/__tests__/[22m[1mfindNotContiguousOrRectangular.test.mjs[22m
+2025-10-13T01:11:08.3596887Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misNonNegativeInteger.test.mjs[22m
+2025-10-13T01:11:08.6726492Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mruleMessages.test.mjs[22m
+2025-10-13T01:11:09.2609336Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mfindNodeUpToRoot.test.mjs[22m
+2025-10-13T01:11:09.5786771Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/rules/declaration-no-important/__tests__/[22m[1mindex.mjs[22m
+2025-10-13T01:11:10.3141814Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mformatters.test.mjs[22m
+2025-10-13T01:11:10.3647410Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:10.3648266Z Use `report` or `code` instead.
+2025-10-13T01:11:10.5558771Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mgetSchemeFromUrl.test.mjs[22m
+2025-10-13T01:11:10.7043702Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:10.7047568Z Use `report` or `code` instead.
+2025-10-13T01:11:10.7224595Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2msystem-tests/004/[22m[1mfs.test.mjs[22m
+2025-10-13T01:11:11.4693999Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1marrayEqual.test.mjs[22m
+2025-10-13T01:11:11.5705019Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misValidHex.test.mjs[22m
+2025-10-13T01:11:11.9022518Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:11.9026926Z Use `report` or `code` instead.
+2025-10-13T01:11:12.2427905Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:12.2432258Z Use `report` or `code` instead.
+2025-10-13T01:11:12.2593648Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2msystem-tests/004/[22m[1mno-fs.test.mjs[22m
+2025-10-13T01:11:12.5087401Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mgetSelectorSourceIndex.test.mjs[22m
+2025-10-13T01:11:12.6717466Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misMathFunction.test.mjs[22m
+2025-10-13T01:11:13.2779678Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misVariable.test.mjs[22m
+2025-10-13T01:11:13.6310784Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misNumbery.test.mjs[22m
+2025-10-13T01:11:13.6462904Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/formatters/__tests__/[22m[1mjsonFormatter.test.mjs[22m
+2025-10-13T01:11:14.5072711Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1misPathIgnored.test.mjs[22m
+2025-10-13T01:11:14.6536945Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mfindAtRuleContext.test.mjs[22m
+2025-10-13T01:11:15.2814907Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/standalone-glob-parent-test/folder/another-folder/[22m[1mstandalone-glob-parent-wildcard.test.mjs[22m
+2025-10-13T01:11:15.4659494Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mfilterFilePaths.test.mjs[22m
+2025-10-13T01:11:15.6870521Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misCustomMediaQuery.test.mjs[22m
+2025-10-13T01:11:16.8273665Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misCustomProperty.test.mjs[22m
+2025-10-13T01:11:16.9299716Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mmessage.test.mjs[22m
+2025-10-13T01:11:17.0268068Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/standalone-glob-parent-test/folder/[22m[1mstandalone-glob-parent.test.mjs[22m
+2025-10-13T01:11:17.8928747Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mresolveSilent.test.mjs[22m
+2025-10-13T01:11:18.0554707Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mappendRuleName.test.mjs[22m
+2025-10-13T01:11:18.7784612Z (node:2295) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:18.7787112Z Use `report` or `code` instead.
+2025-10-13T01:11:18.7930361Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2msystem-tests/002/[22m[1mno-fs.test.mjs[22m
+2025-10-13T01:11:19.0587055Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misHexColor.test.mjs[22m
+2025-10-13T01:11:19.9059854Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misValidFontSize.test.mjs[22m
+2025-10-13T01:11:19.9978308Z (node:2302) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:19.9982269Z Use `report` or `code` instead.
+2025-10-13T01:11:20.0069249Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2msystem-tests/002/[22m[1mfs.test.mjs[22m
+2025-10-13T01:11:20.1215155Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mvendor.test.mjs[22m
+2025-10-13T01:11:20.9951004Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misCustomFunction.test.mjs[22m
+2025-10-13T01:11:22.0487676Z (node:2302) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:22.0488144Z Use `report` or `code` instead.
+2025-10-13T01:11:22.0593832Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2msystem-tests/003/[22m[1mfs.test.mjs[22m
+2025-10-13T01:11:22.1297557Z (node:2296) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:22.1298694Z Use `report` or `code` instead.
+2025-10-13T01:11:22.1456377Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2msystem-tests/003/[22m[1mno-fs.test.mjs[22m
+2025-10-13T01:11:22.1516879Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misSingleLineString.test.mjs[22m
+2025-10-13T01:11:23.4281053Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misCustomSelector.test.mjs[22m
+2025-10-13T01:11:24.3565679Z (node:2296) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:24.3570950Z Use `report` or `code` instead.
+2025-10-13T01:11:24.3855539Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2msystem-tests/001/[22m[1mno-fs.test.mjs[22m
+2025-10-13T01:11:24.9105081Z (node:2302) [stylelint:003] DeprecationWarning: `output` is deprecated.
+2025-10-13T01:11:24.9133112Z Use `report` or `code` instead.
+2025-10-13T01:11:24.9225747Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2msystem-tests/001/[22m[1mfs.test.mjs[22m
+2025-10-13T01:11:25.1971601Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/__tests__/[22m[1mstandalone-custom-url.test.mjs[22m
+2025-10-13T01:11:25.4280838Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misFirstNodeOfRoot.test.mjs[22m
+2025-10-13T01:11:26.0075878Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mgetFormatterOptionsText.test.mjs[22m
+2025-10-13T01:11:26.3184719Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misStandardSyntaxHexColor.test.mjs[22m
+2025-10-13T01:11:26.4944529Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1misOnlyWhitespace.test.mjs[22m
+2025-10-13T01:11:26.9470803Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/reference/__tests__/[22m[1matKeywords.test.mjs[22m
+2025-10-13T01:11:27.2452902Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mlib/utils/__tests__/[22m[1mpluralize.test.mjs[22m
+2025-10-13T01:11:27.9943483Z 
+2025-10-13T01:11:27.9944415Z =============================== Coverage summary ===============================
+2025-10-13T01:11:27.9945496Z [32;1mStatements   : 99.14% ( 30598/30862 )[0m
+2025-10-13T01:11:27.9946143Z [32;1mBranches     : 95.45% ( 6970/7302 )[0m
+2025-10-13T01:11:27.9946753Z [32;1mFunctions    : 99.33% ( 1047/1054 )[0m
+2025-10-13T01:11:27.9947417Z [32;1mLines        : 99.14% ( 30598/30862 )[0m
+2025-10-13T01:11:27.9948053Z ================================================================================
+2025-10-13T01:11:28.0197413Z 
+2025-10-13T01:11:28.0202112Z [1mTest Suites: [22m[1m[32m307 passed[39m[22m, 307 total
+2025-10-13T01:11:28.0203838Z [1mTests:       [22m[1m[33m14 skipped[39m[22m, [1m[32m10161 passed[39m[22m, 10175 total
+2025-10-13T01:11:28.0205805Z [1mSnapshots:   [22m[1m[32m14 passed[39m[22m, 14 total
+2025-10-13T01:11:28.0206488Z [1mTime:[22m        127.102 s
+2025-10-13T01:11:28.0207048Z [2mRan all test suites[22m[2m.[22m
+2025-10-13T01:11:28.0952619Z ##[group]Run codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7
+2025-10-13T01:11:28.0952995Z with:
+2025-10-13T01:11:28.0953316Z   files: ./.coverage/lcov.info
+2025-10-13T01:11:28.0953564Z   fail_ci_if_error: true
+2025-10-13T01:11:28.0953760Z   disable_file_fixes: false
+2025-10-13T01:11:28.0953958Z   disable_search: false
+2025-10-13T01:11:28.0954145Z   disable_safe_directory: false
+2025-10-13T01:11:28.0954354Z   disable_telem: false
+2025-10-13T01:11:28.0954528Z   dry_run: false
+2025-10-13T01:11:28.0954697Z   git_service: github
+2025-10-13T01:11:28.0954873Z   gcov_executable: gcov
+2025-10-13T01:11:28.0955070Z   handle_no_reports_found: false
+2025-10-13T01:11:28.0955286Z   recurse_submodules: false
+2025-10-13T01:11:28.0955499Z   run_command: upload-coverage
+2025-10-13T01:11:28.0955724Z   skip_validation: false
+2025-10-13T01:11:28.0955928Z   use_legacy_upload_endpoint: false
+2025-10-13T01:11:28.0956147Z   use_oidc: false
+2025-10-13T01:11:28.0956312Z   use_pypi: false
+2025-10-13T01:11:28.0956502Z   verbose: false
+2025-10-13T01:11:28.0956664Z   version: latest
+2025-10-13T01:11:28.0956823Z env:
+2025-10-13T01:11:28.0956969Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.0957134Z ##[endgroup]
+2025-10-13T01:11:28.1027191Z ##[group]Run missing_deps=""
+2025-10-13T01:11:28.1027441Z [36;1mmissing_deps=""[0m
+2025-10-13T01:11:28.1027627Z [36;1m[0m
+2025-10-13T01:11:28.1027802Z [36;1m# Check for required commands[0m
+2025-10-13T01:11:28.1028055Z [36;1mfor cmd in bash git curl gpg; do[0m
+2025-10-13T01:11:28.1028333Z [36;1m  if ! command -v "$cmd" >/dev/null 2>&1; then[0m
+2025-10-13T01:11:28.1028616Z [36;1m    missing_deps="$missing_deps $cmd"[0m
+2025-10-13T01:11:28.1028846Z [36;1m  fi[0m
+2025-10-13T01:11:28.1029004Z [36;1mdone[0m
+2025-10-13T01:11:28.1029153Z [36;1m[0m
+2025-10-13T01:11:28.1029523Z [36;1m# Report missing required dependencies[0m
+2025-10-13T01:11:28.1029782Z [36;1mif [ -n "$missing_deps" ]; then[0m
+2025-10-13T01:11:28.1030144Z [36;1m  echo "Error: The following required dependencies are missing:$missing_deps"[0m
+2025-10-13T01:11:28.1030605Z [36;1m  echo "Please install these dependencies before using this action."[0m
+2025-10-13T01:11:28.1030925Z [36;1m  exit 1[0m
+2025-10-13T01:11:28.1031088Z [36;1mfi[0m
+2025-10-13T01:11:28.1031234Z [36;1m[0m
+2025-10-13T01:11:28.1031461Z [36;1mecho "All required system dependencies are available."[0m
+2025-10-13T01:11:28.2667834Z shell: /usr/bin/sh -e {0}
+2025-10-13T01:11:28.2668122Z env:
+2025-10-13T01:11:28.2668337Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.2668567Z ##[endgroup]
+2025-10-13T01:11:28.2740432Z All required system dependencies are available.
+2025-10-13T01:11:28.2768093Z ##[group]Run CC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)
+2025-10-13T01:11:28.2768507Z [36;1mCC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)[0m
+2025-10-13T01:11:28.2768923Z [36;1mecho -e "\033[0;32m==>\033[0m Running Action version $CC_ACTION_VERSION"[0m
+2025-10-13T01:11:28.2799262Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-13T01:11:28.2799566Z env:
+2025-10-13T01:11:28.2799719Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.2799891Z ##[endgroup]
+2025-10-13T01:11:28.2862000Z [0;32m==>[0m Running Action version 5.5.1
+2025-10-13T01:11:28.2903447Z ##[group]Run git config --global --add safe.directory "/home/runner/work/stylelint/stylelint"
+2025-10-13T01:11:28.2904020Z [36;1mgit config --global --add safe.directory "/home/runner/work/stylelint/stylelint"[0m
+2025-10-13T01:11:28.2904469Z [36;1mgit config --global --add safe.directory "$GITHUB_WORKSPACE"[0m
+2025-10-13T01:11:28.2933066Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-13T01:11:28.2933544Z env:
+2025-10-13T01:11:28.2933698Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.2933870Z ##[endgroup]
+2025-10-13T01:11:28.3033361Z ##[group]Run CC_FORK="false"
+2025-10-13T01:11:28.3033651Z [36;1mCC_FORK="false"[0m
+2025-10-13T01:11:28.3034310Z [36;1mif [ -n "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" ] && [ "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" != "$GITHUB_REPOSITORY" ];[0m
+2025-10-13T01:11:28.3034826Z [36;1mthen[0m
+2025-10-13T01:11:28.3035036Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected"[0m
+2025-10-13T01:11:28.3035294Z [36;1m  CC_FORK="true"[0m
+2025-10-13T01:11:28.3035482Z [36;1mfi[0m
+2025-10-13T01:11:28.3035670Z [36;1mecho "CC_FORK=$CC_FORK" >> "$GITHUB_ENV"[0m
+2025-10-13T01:11:28.3064477Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-13T01:11:28.3064780Z env:
+2025-10-13T01:11:28.3064931Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.3065262Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: stylelint:dependabot/npm_and_yarn/rollup-4.52.4
+2025-10-13T01:11:28.3065744Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: stylelint/stylelint
+2025-10-13T01:11:28.3066077Z   GITHUB_REPOSITORY: stylelint/stylelint
+2025-10-13T01:11:28.3066310Z ##[endgroup]
+2025-10-13T01:11:28.3162211Z ##[group]Run actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
+2025-10-13T01:11:28.3162578Z with:
+2025-10-13T01:11:28.3163116Z   script: if (process.env.CC_USE_OIDC === 'true' && process.env.CC_FORK != 'true') {
+  const id_token = await core.getIDToken(process.env.CC_OIDC_AUDIENCE)
+  return id_token
+}
+
+2025-10-13T01:11:28.3164201Z   github-token: ***
+2025-10-13T01:11:28.3164394Z   debug: false
+2025-10-13T01:11:28.3164576Z   user-agent: actions/github-script
+2025-10-13T01:11:28.3164812Z   result-encoding: json
+2025-10-13T01:11:28.3164987Z   retries: 0
+2025-10-13T01:11:28.3165184Z   retry-exempt-status-codes: 400,401,403,404,422
+2025-10-13T01:11:28.3165431Z env:
+2025-10-13T01:11:28.3165580Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.3165741Z   CC_FORK: false
+2025-10-13T01:11:28.3165930Z   CC_OIDC_AUDIENCE: https://codecov.io
+2025-10-13T01:11:28.3166175Z   CC_USE_OIDC: false
+2025-10-13T01:11:28.3166348Z ##[endgroup]
+2025-10-13T01:11:28.4091716Z ##[group]Run if [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];
+2025-10-13T01:11:28.4092279Z [36;1mif [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];[0m
+2025-10-13T01:11:28.4092556Z [36;1mthen[0m
+2025-10-13T01:11:28.4092789Z [36;1m  echo "CC_TOKEN=$CC_OIDC_TOKEN" >> "$GITHUB_ENV"[0m
+2025-10-13T01:11:28.4093070Z [36;1melif [ -n "" ];[0m
+2025-10-13T01:11:28.4093563Z [36;1mthen[0m
+2025-10-13T01:11:28.4093924Z [36;1m  echo -e "\033[0;32m==>\033[0m Token set from env"[0m
+2025-10-13T01:11:28.4094302Z [36;1m    echo "CC_TOKEN=" >> "$GITHUB_ENV"[0m
+2025-10-13T01:11:28.4094529Z [36;1melse[0m
+2025-10-13T01:11:28.4094695Z [36;1m  if [ -n "" ];[0m
+2025-10-13T01:11:28.4094874Z [36;1m  then[0m
+2025-10-13T01:11:28.4095093Z [36;1m    echo -e "\033[0;32m==>\033[0m Token set from input"[0m
+2025-10-13T01:11:28.4095377Z [36;1m    CC_TOKEN=$(echo "" | tr -d '\n')[0m
+2025-10-13T01:11:28.4095649Z [36;1m    echo "CC_TOKEN=$CC_TOKEN" >> "$GITHUB_ENV"[0m
+2025-10-13T01:11:28.4095887Z [36;1m  fi[0m
+2025-10-13T01:11:28.4096049Z [36;1mfi[0m
+2025-10-13T01:11:28.4127577Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-13T01:11:28.4127874Z env:
+2025-10-13T01:11:28.4128025Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.4128207Z   CC_FORK: false
+2025-10-13T01:11:28.4128369Z   CC_OIDC_TOKEN: 
+2025-10-13T01:11:28.4128568Z   CC_OIDC_AUDIENCE: https://codecov.io
+2025-10-13T01:11:28.4128798Z ##[endgroup]
+2025-10-13T01:11:28.4199864Z ##[group]Run if [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ]
+2025-10-13T01:11:28.4200285Z [36;1mif [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ][0m
+2025-10-13T01:11:28.4200580Z [36;1mthen[0m
+2025-10-13T01:11:28.4200920Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected, setting branch to $GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-10-13T01:11:28.4201363Z [36;1m  TOKENLESS="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-10-13T01:11:28.4201676Z [36;1m  CC_BRANCH="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2025-10-13T01:11:28.4201978Z [36;1m  echo "TOKENLESS=$TOKENLESS" >> "$GITHUB_ENV"[0m
+2025-10-13T01:11:28.4202230Z [36;1mfi[0m
+2025-10-13T01:11:28.4202385Z [36;1m[0m
+2025-10-13T01:11:28.4202738Z [36;1mecho "CC_BRANCH=$CC_BRANCH" >> "$GITHUB_ENV"[0m
+2025-10-13T01:11:28.4231919Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-13T01:11:28.4232222Z env:
+2025-10-13T01:11:28.4232376Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.4232547Z   CC_FORK: false
+2025-10-13T01:11:28.4232702Z   CC_BRANCH: 
+2025-10-13T01:11:28.4233021Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: stylelint:dependabot/npm_and_yarn/rollup-4.52.4
+2025-10-13T01:11:28.4233685Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: stylelint/stylelint
+2025-10-13T01:11:28.4234016Z   GITHUB_REPOSITORY: stylelint/stylelint
+2025-10-13T01:11:28.4234249Z ##[endgroup]
+2025-10-13T01:11:28.4303918Z ##[group]Run if [ -z "$CC_SHA" ];
+2025-10-13T01:11:28.4304174Z [36;1mif [ -z "$CC_SHA" ];[0m
+2025-10-13T01:11:28.4304388Z [36;1mthen[0m
+2025-10-13T01:11:28.4304610Z [36;1m  CC_SHA="$GITHUB_EVENT_PULL_REQUEST_HEAD_SHA"[0m
+2025-10-13T01:11:28.4304877Z [36;1mfi[0m
+2025-10-13T01:11:28.4305087Z [36;1mif [ -z "$CC_PR" ] && [ "$CC_FORK" == 'true' ];[0m
+2025-10-13T01:11:28.4305343Z [36;1mthen[0m
+2025-10-13T01:11:28.4305526Z [36;1m  CC_PR="$GITHUB_EVENT_NUMBER"[0m
+2025-10-13T01:11:28.4305745Z [36;1mfi[0m
+2025-10-13T01:11:28.4305899Z [36;1m[0m
+2025-10-13T01:11:28.4306083Z [36;1mecho "CC_SHA=$CC_SHA" >> "$GITHUB_ENV"[0m
+2025-10-13T01:11:28.4306346Z [36;1mecho "CC_PR=$CC_PR" >> "$GITHUB_ENV"[0m
+2025-10-13T01:11:28.4334886Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-13T01:11:28.4335190Z env:
+2025-10-13T01:11:28.4335343Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.4335512Z   CC_FORK: false
+2025-10-13T01:11:28.4335673Z   CC_BRANCH: 
+2025-10-13T01:11:28.4335899Z   CC_PR: 
+2025-10-13T01:11:28.4336105Z   CC_SHA: 
+2025-10-13T01:11:28.4336362Z   GITHUB_EVENT_NAME: pull_request
+2025-10-13T01:11:28.4336755Z   GITHUB_EVENT_NUMBER: 8811
+2025-10-13T01:11:28.4337202Z   GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: b6d2e2bcc52533482de36ee1f403b327388e77ac
+2025-10-13T01:11:28.4337766Z ##[endgroup]
+2025-10-13T01:11:28.4428783Z ##[group]Run ${GITHUB_ACTION_PATH}/dist/codecov.sh
+2025-10-13T01:11:28.4429114Z [36;1m${GITHUB_ACTION_PATH}/dist/codecov.sh[0m
+2025-10-13T01:11:28.4457648Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-13T01:11:28.4457952Z env:
+2025-10-13T01:11:28.4458103Z   FORCE_COLOR: 2
+2025-10-13T01:11:28.4458276Z   CC_FORK: false
+2025-10-13T01:11:28.4458433Z   CC_BRANCH: 
+2025-10-13T01:11:28.4458630Z   CC_SHA: b6d2e2bcc52533482de36ee1f403b327388e77ac
+2025-10-13T01:11:28.4458876Z   CC_PR: 
+2025-10-13T01:11:28.4459030Z   CC_BASE_SHA: 
+2025-10-13T01:11:28.4459188Z   CC_BINARY: 
+2025-10-13T01:11:28.4459339Z   CC_BUILD: 
+2025-10-13T01:11:28.4459491Z   CC_BUILD_URL: 
+2025-10-13T01:11:28.4459643Z   CC_CODE: 
+2025-10-13T01:11:28.4459789Z   CC_DIR: 
+2025-10-13T01:11:28.4459944Z   CC_DISABLE_FILE_FIXES: false
+2025-10-13T01:11:28.4460161Z   CC_DISABLE_SEARCH: false
+2025-10-13T01:11:28.4460360Z   CC_DISABLE_TELEM: false
+2025-10-13T01:11:28.4460543Z   CC_DRY_RUN: false
+2025-10-13T01:11:28.4460712Z   CC_ENTERPRISE_URL: 
+2025-10-13T01:11:28.4460891Z   CC_ENV: 
+2025-10-13T01:11:28.4461040Z   CC_EXCLUDES: 
+2025-10-13T01:11:28.4461206Z   CC_FAIL_ON_ERROR: true
+2025-10-13T01:11:28.4461402Z   CC_FILES: ./.coverage/lcov.info
+2025-10-13T01:11:28.4461600Z   CC_FLAGS: 
+2025-10-13T01:11:28.4461747Z   CC_FORCE: 
+2025-10-13T01:11:28.4461892Z   CC_GCOV_ARGS: 
+2025-10-13T01:11:28.4462062Z   CC_GCOV_EXECUTABLE: gcov
+2025-10-13T01:11:28.4462240Z   CC_GCOV_IGNORE: 
+2025-10-13T01:11:28.4462411Z   CC_GCOV_INCLUDE: 
+2025-10-13T01:11:28.4462575Z   CC_GIT_SERVICE: github
+2025-10-13T01:11:28.4462774Z   CC_HANDLE_NO_REPORTS_FOUND: false
+2025-10-13T01:11:28.4462983Z   CC_JOB_CODE: 
+2025-10-13T01:11:28.4463151Z   CC_LEGACY: false
+2025-10-13T01:11:28.4463482Z   CC_NAME: 
+2025-10-13T01:11:28.4463637Z   CC_NETWORK_FILTER: 
+2025-10-13T01:11:28.4463816Z   CC_NETWORK_PREFIX: 
+2025-10-13T01:11:28.4463987Z   CC_NETWORK_ROOT_FOLDER: 
+2025-10-13T01:11:28.4464172Z   CC_OS: 
+2025-10-13T01:11:28.4464327Z   CC_PARENT_SHA: 
+2025-10-13T01:11:28.4464494Z   CC_PLUGINS: 
+2025-10-13T01:11:28.4464816Z   CC_RECURSE_SUBMODULES: false
+2025-10-13T01:11:28.4465027Z   CC_REPORT_TYPE: 
+2025-10-13T01:11:28.4465201Z   CC_RUN_CMD: upload-coverage
+2025-10-13T01:11:28.4465407Z   CC_SERVICE: github
+2025-10-13T01:11:28.4465583Z   CC_SKIP_VALIDATION: false
+2025-10-13T01:11:28.4465771Z   CC_SLUG: 
+2025-10-13T01:11:28.4465927Z   CC_SWIFT_PROJECT: 
+2025-10-13T01:11:28.4466091Z   CC_USE_PYPI: false
+2025-10-13T01:11:28.4466258Z   CC_VERBOSE: false
+2025-10-13T01:11:28.4466417Z   CC_VERSION: latest
+2025-10-13T01:11:28.4466583Z   CC_YML_PATH: 
+2025-10-13T01:11:28.4466739Z ##[endgroup]
+2025-10-13T01:11:28.4536748Z      _____          _
+2025-10-13T01:11:28.4537178Z     / ____|        | |
+2025-10-13T01:11:28.4537628Z    | |     ___   __| | ___  ___ _____   __
+2025-10-13T01:11:28.4538147Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2025-10-13T01:11:28.4538671Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2025-10-13T01:11:28.4539161Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2025-10-13T01:11:28.4539984Z                            [0;31m Wrapper-0.2.7[0m
+2025-10-13T01:11:28.4540491Z                            
+2025-10-13T01:11:28.4595452Z [0;32m==>[0m Detected [0;36mlinux[0m
+2025-10-13T01:11:28.4596449Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov[0m
+2025-10-13T01:11:28.4665452Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-10-13T01:11:28.4666247Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-10-13T01:11:28.4666580Z 
+2025-10-13T01:11:28.5310762Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-10-13T01:11:28.8915351Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-10-13T01:11:28.8916153Z 100 10.6M  100 10.6M    0     0  25.0M      0 --:--:-- --:--:-- --:--:-- 25.0M
+2025-10-13T01:11:28.8937690Z [0;32m==>[0m Finishing downloading [0;36mlinux:latest[0m
+2025-10-13T01:11:28.9837118Z       Version: [0;36mv11.2.3[0m
+2025-10-13T01:11:28.9837558Z  
+2025-10-13T01:11:29.0331798Z gpg: directory '/home/runner/.gnupg' created
+2025-10-13T01:11:29.0382165Z gpg: keybox '/home/runner/.gnupg/pubring.kbx' created
+2025-10-13T01:11:29.2302010Z gpg: /home/runner/.gnupg/trustdb.gpg: trustdb created
+2025-10-13T01:11:29.2303406Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2025-10-13T01:11:29.2646678Z gpg: Total number processed: 1
+2025-10-13T01:11:29.2647049Z gpg:               imported: 1
+2025-10-13T01:11:29.2652101Z [0;32m==>[0m Verifying GPG signature integrity
+2025-10-13T01:11:29.2653159Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM[0m
+2025-10-13T01:11:29.2654574Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM.sig[0m
+2025-10-13T01:11:29.2655243Z  
+2025-10-13T01:11:29.4329915Z gpg: Signature made Thu Sep 18 23:03:08 2025 UTC
+2025-10-13T01:11:29.4330641Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2025-10-13T01:11:29.4332925Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2025-10-13T01:11:29.4334244Z gpg: WARNING: This key is not certified with a trusted signature!
+2025-10-13T01:11:29.4335087Z gpg:          There is no indication that the signature belongs to the owner.
+2025-10-13T01:11:29.4335856Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2025-10-13T01:11:29.5076388Z codecov: OK
+2025-10-13T01:11:29.5084628Z [0;32m==>[0m CLI integrity verified
+2025-10-13T01:11:29.5084960Z 
+2025-10-13T01:11:29.5708363Z [0;32m ->[0m Token length: 0
+2025-10-13T01:11:29.5708969Z [0;32m==>[0m Running upload-coverage
+2025-10-13T01:11:29.5718705Z       [0;36m./codecov  upload-coverage --fail-on-error --git-service github --sha b6d2e2bcc52533482de36ee1f403b327388e77ac --file ./.coverage/lcov.info --gcov-executable gcov[0m
+2025-10-13T01:11:29.9212650Z info - 2025-10-13 01:11:29,921 -- ci service found: github-actions
+2025-10-13T01:11:29.9614072Z warning - 2025-10-13 01:11:29,961 -- xcrun is not installed or can't be found.
+2025-10-13T01:11:30.3113064Z warning - 2025-10-13 01:11:30,311 -- No gcov data found.
+2025-10-13T01:11:30.3117029Z warning - 2025-10-13 01:11:30,311 -- coverage.py is not installed or can't be found.
+2025-10-13T01:11:30.6917671Z info - 2025-10-13 01:11:30,691 -- Found 1 coverage files to report
+2025-10-13T01:11:30.6918909Z info - 2025-10-13 01:11:30,691 -- > /home/runner/work/stylelint/stylelint/.coverage/lcov.info
+2025-10-13T01:11:31.1626127Z info - 2025-10-13 01:11:31,162 -- Your upload is now processing. When finished, results will be available at: https://app.codecov.io/github/stylelint/stylelint/commit/b6d2e2bcc52533482de36ee1f403b327388e77ac
+2025-10-13T01:11:31.5591640Z info - 2025-10-13 01:11:31,558 -- Process Upload complete
+2025-10-13T01:11:31.7230454Z Post job cleanup.
+2025-10-13T01:11:31.8387630Z (node:2592) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-10-13T01:11:31.8388535Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-13T01:11:31.8581446Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/stylelint/stylelint --files-from manifest.txt --use-compress-program zstdmt
+2025-10-13T01:11:32.2747803Z Failed to save: Unable to reserve cache with key node-cache-Linux-x64-npm-aaa28fd589d402744636ea7dffcda17720981399c7a57461d078442df311aa52, another job may be creating this cache.
+2025-10-13T01:11:32.2928032Z Post job cleanup.
+2025-10-13T01:11:32.3706537Z [command]/usr/bin/git version
+2025-10-13T01:11:32.3741843Z git version 2.51.0
+2025-10-13T01:11:32.3771821Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/4291d6e2-d051-41e3-9ab8-eb2a2ad18400/.gitconfig'
+2025-10-13T01:11:32.3780377Z Temporarily overriding HOME='/home/runner/work/_temp/4291d6e2-d051-41e3-9ab8-eb2a2ad18400' before making global git config changes
+2025-10-13T01:11:32.3781439Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-13T01:11:32.3786516Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/stylelint/stylelint
+2025-10-13T01:11:32.3821930Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-13T01:11:32.3854289Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-13T01:11:32.4080401Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-13T01:11:32.4101117Z http.https://github.com/.extraheader
+2025-10-13T01:11:32.4111410Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-13T01:11:32.4141382Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-13T01:11:32.4469094Z Cleaning up orphan processes

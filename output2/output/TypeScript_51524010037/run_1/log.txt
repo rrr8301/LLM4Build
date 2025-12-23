@@ -1,0 +1,250 @@
+
+> typescript@6.0.0 test
+> hereby runtests-parallel --light=false --no-lint --bundle=true
+
+Using /app/Herebyfile.mjs to run runtests-parallel
+Starting lib
+Starting generate-diagnostics
+> /usr/bin/node scripts/processDiagnosticMessages.mjs src/compiler/diagnosticMessages.json
+Reading diagnostics from src/compiler/diagnosticMessages.json
+Finished lib in 110ms
+Finished generate-diagnostics in 113ms
+Starting bundle-tests
+Starting build-tests
+Starting build-services
+Finished bundle-tests in 581ms
+Finished build-tests in 28.5s
+Finished build-services in 28.5s
+Starting dts-services
+> /usr/bin/node ./scripts/dtsBundler.mjs --entrypoint ./built/local/typescript/typescript.d.ts --output ./built/local/typescript.d.ts
+Bundling ./built/local/typescript/typescript.d.ts to ./built/local/typescript.d.ts and ./built/local/typescript.internal.d.ts
+Finished dts-services in 3.2s
+Starting dts-lssl
+Finished dts-lssl in 2ms
+Starting do-runtests-parallel
+Running tests with config: {"light":false,"workerCount":63,"taskConfigsFolder":"/tmp/ts-tests1","noColor":false,"timeout":40000,"keepFailed":false}
+> /usr/bin/node ./built/local/run.js
+Discovered 326 unittest suites.
+Discovering runner-based tests...
+Discovered 19585 test files in 192ms.
+Starting to run tests using 63 threads...
+Batching initial test lists...
+Suboptimal packing detected: no tests remain to be stolen. Reduce packing fraction from 0.9 to fix.
+Batched into 63 groups with approximate total file sizes of 319296 bytes in each group. (100.0% of total tests batched)
+
+
+
+  98881 passing (2m)
+  2 failing
+
+  1)
+
+         compiler tests
+           compiler tests for tests/cases/compiler/uniqueSymbolReassignment.ts
+             Correct JS output for tests/cases/compiler/uniqueSymbolReassignment.ts:
+     Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.js
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at Object.doJsEmitBaseline (src/harness/harnessIO.ts:1034:18)
+      at _CompilerTest.verifyJavaScriptOutput (src/testRunner/compilerRunner.ts:298:22)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:102:82)
+      at processImmediate (node:internal/timers:485:21)
+
+  2)
+
+         compiler tests
+           compiler tests for tests/cases/compiler/uniqueSymbolReassignment.ts
+             Correct type/symbol baselines for tests/cases/compiler/uniqueSymbolReassignment.ts:
+     Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.types
+    at writeComparison (/app/src/harness/harnessIO.ts:1546:27)
+    at Object.runBaseline2 [as runBaseline] (/app/src/harness/harnessIO.ts:1565:9)
+    at checkBaseLines (/app/src/harness/harnessIO.ts:788:26)
+    at Object.doTypeAndSymbolBaseline (/app/src/harness/harnessIO.ts:751:13)
+    at _CompilerTest.verifyTypesAndSymbols (/app/src/testRunner/compilerRunner.ts:327:18)
+    at Context.<anonymous> (/app/src/testRunner/compilerRunner.ts:104:80)
+    at callFn (/app/node_modules/mocha/lib/runnable.js:364:21)
+    at Test2.Runnable.run (/app/node_modules/mocha/lib/runnable.js:352:5)
+    at Runner.runTest (/app/node_modules/mocha/lib/runner.js:677:10)
+    at /app/node_modules/mocha/lib/runner.js:800:12
+    at next (/app/node_modules/mocha/lib/runner.js:592:14)
+    at /app/node_modules/mocha/lib/runner.js:602:7
+    at next (/app/node_modules/mocha/lib/runner.js:485:14)
+    at Immediate._onImmediate (/app/node_modules/mocha/lib/runner.js:570:5)
+    at processImmediate (node:internal/timers:485:21)
+Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.symbols
+    at writeComparison (/app/src/harness/harnessIO.ts:1546:27)
+    at Object.runBaseline2 [as runBaseline] (/app/src/harness/harnessIO.ts:1565:9)
+    at checkBaseLines (/app/src/harness/harnessIO.ts:788:26)
+    at Object.doTypeAndSymbolBaseline (/app/src/harness/harnessIO.ts:758:13)
+    at _CompilerTest.verifyTypesAndSymbols (/app/src/testRunner/compilerRunner.ts:327:18)
+    at Context.<anonymous> (/app/src/testRunner/compilerRunner.ts:104:80)
+    at callFn (/app/node_modules/mocha/lib/runnable.js:364:21)
+    at Test2.Runnable.run (/app/node_modules/mocha/lib/runnable.js:352:5)
+    at Runner.runTest (/app/node_modules/mocha/lib/runner.js:677:10)
+    at /app/node_modules/mocha/lib/runner.js:800:12
+    at next (/app/node_modules/mocha/lib/runner.js:592:14)
+    at /app/node_modules/mocha/lib/runner.js:602:7
+    at next (/app/node_modules/mocha/lib/runner.js:485:14)
+    at Immediate._onImmediate (/app/node_modules/mocha/lib/runner.js:570:5)
+    at processImmediate (node:internal/timers:485:21)
+  Error: Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.types
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at checkBaseLines (src/harness/harnessIO.ts:788:26)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:751:13)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:485:21)
+  Error: New baseline created at tests/baselines/local/uniqueSymbolReassignment.symbols
+      at writeComparison (src/harness/harnessIO.ts:1546:27)
+      at Object.runBaseline2 [as runBaseline] (src/harness/harnessIO.ts:1565:9)
+      at checkBaseLines (src/harness/harnessIO.ts:788:26)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:758:13)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:485:21)
+      at Object.doTypeAndSymbolBaseline (src/harness/harnessIO.ts:765:19)
+      at _CompilerTest.verifyTypesAndSymbols (src/testRunner/compilerRunner.ts:327:18)
+      at Context.<anonymous> (src/testRunner/compilerRunner.ts:104:80)
+      at processImmediate (node:internal/timers:485:21)
+
+
+
+Error in do-runtests-parallel in 1m 46.5s
+Error: Process exited with code: 2
+Completed runtests-parallel with errors in 2m 18.4s
+Failed tasks: do-runtests-parallel
+Using /app/Herebyfile.mjs to run baseline-accept
+Starting baseline-accept
+Finished baseline-accept in 255ms
+Completed baseline-accept in 256ms
+fatal: not a git repository (or any of the parent directories): .git
+error: unknown option `staged'
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1,param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1,param2>...]
+                          synonym for --dirstat=files,param1,param2...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --compact-summary     generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --full-index          show full pre- and post-image object names on the "index" lines
+    --color[=<when>]      show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --abbrev[=<n>]        use <n> digits to display object names
+    --src-prefix <prefix>
+                          show the given source prefix instead of "a/"
+    --dst-prefix <prefix>
+                          show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --find-copies-harder  use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --rename-empty        use empty blobs as rename source
+    --follow              continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+Diff algorithm options
+    --minimal             produce the smallest possible diff
+    -w, --ignore-all-space
+                          ignore whitespace when comparing lines
+    -b, --ignore-space-change
+                          ignore changes in amount of whitespace
+    --ignore-space-at-eol
+                          ignore changes in whitespace at EOL
+    --ignore-cr-at-eol    ignore carrier-return at the end of line
+    --ignore-blank-lines  ignore changes whose lines are all blank
+    -I, --ignore-matching-lines <regex>
+                          ignore changes whose all lines match <regex>
+    --indent-heuristic    heuristic to shift diff hunk boundaries for easy reading
+    --patience            generate diff using the "patience diff" algorithm
+    --histogram           generate diff using the "histogram diff" algorithm
+    --diff-algorithm <algorithm>
+                          choose a diff algorithm
+    --anchored <text>     generate diff using the "anchored diff" algorithm
+    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+    --word-diff-regex <regex>
+                          use <regex> to decide what a word is
+    --color-words[=<regex>]
+                          equivalent to --word-diff=color --word-diff-regex=<regex>
+    --color-moved[=<mode>]
+                          moved lines of code are colored differently
+    --color-moved-ws <mode>
+                          how white spaces are ignored in --color-moved
+
+Other diff options
+    --relative[=<prefix>]
+                          when run from subdir, exclude changes outside and show relative paths
+    -a, --text            treat all files as text
+    -R                    swap two inputs, reverse the diff
+    --exit-code           exit with 1 if there were differences, 0 otherwise
+    --quiet               disable all output of the program
+    --ext-diff            allow an external diff helper to be executed
+    --textconv            run external text conversion filters when comparing binary files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules in the diff generation
+    --submodule[=<format>]
+                          specify how differences in submodules are shown
+    --ita-invisible-in-index
+                          hide 'git add -N' entries from the index
+    --ita-visible-in-index
+                          treat 'git add -N' entries as real in the index
+    -S <string>           look for differences that change the number of occurrences of the specified string
+    -G <regex>            look for differences that change the number of occurrences of the specified regex
+    --pickaxe-all         show all changes in the changeset with -S or -G
+    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+    -O <file>             control the order in which files appear in the output
+    --rotate-to <path>    show the change in the specified path first
+    --skip-to <path>      skip the output to the specified path
+    --find-object <object-id>
+                          look for differences that change the number of occurrences of the specified object
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          select files by diff type
+    --output <file>       Output to a specific file
+

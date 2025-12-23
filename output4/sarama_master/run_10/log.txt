@@ -1,0 +1,91 @@
+No 'deps' target found in Makefile. Skipping dependency installation.
+GOBIN=/app/bin go install gotest.tools/gotestsum@v1.13.0
+go: downloading gotest.tools/gotestsum v1.13.0
+go: gotest.tools/gotestsum@v1.13.0 requires go >= 1.24.0; switching to go1.24.10
+go: downloading github.com/fatih/color v1.18.0
+go: downloading github.com/fsnotify/fsnotify v1.9.0
+go: downloading golang.org/x/sys v0.36.0
+go: downloading golang.org/x/tools v0.36.0
+go: downloading golang.org/x/term v0.35.0
+go: downloading github.com/dnephin/pflag v1.0.7
+go: downloading github.com/bitfield/gotestdox v0.2.2
+go: downloading github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
+go: downloading github.com/mattn/go-colorable v0.1.13
+go: downloading golang.org/x/text v0.17.0
+go: downloading golang.org/x/mod v0.27.0
+GOBIN=/app/bin go install github.com/vearutop/teststat@v0.1.27
+go: downloading github.com/vearutop/teststat v0.1.27
+go: github.com/vearutop/teststat@v0.1.27 requires go >= 1.24; switching to go1.24.10
+go: downloading github.com/vearutop/dynhist-go v1.2.2
+go: downloading github.com/godogx/allure v0.2.4
+go: downloading github.com/bool64/dev v0.2.43
+go: downloading github.com/google/uuid v1.6.0
+github.com/IBM/sarama/tools/kafka-console-consumer:
+
+github.com/IBM/sarama/tools/kafka-console-partitionconsumer:
+
+github.com/IBM/sarama/internal/toxiproxy:
+
+github.com/IBM/sarama/tools/kafka-console-producer:
+
+github.com/IBM/sarama/tools/tls:
+
+github.com/IBM/sarama/tools/kafka-producer-performance:
+
+github.com/IBM/sarama/mocks:
+
+github.com/IBM/sarama:
+
+
+=== Failed
+=== FAIL: .  (0.00s)
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+panic: failed to tear down existing env: failed to run docker compose to stop test environment: exit status 1
+
+goroutine 1 [running]:
+github.com/IBM/sarama.testMain(0xc00016ce60)
+	/app/functional_test.go:85 +0x353
+github.com/IBM/sarama.TestMain(0xc00016ce60)
+	/app/functional_test.go:66 +0x27
+main.main()
+	_testmain.go:181 +0x172
+FAIL	github.com/IBM/sarama	0.714s
+
+DONE 0 tests, 1 failure in 0.715s
+ERROR rerun aborted because previous run had a suspected panic and some test may not have run
+make: *** [Makefile:46: test_functional] Error 3
+Functional tests failed.
+go: downloading golang.org/x/sys v0.26.0
+
+
+
+
+
+
+
+## 🔴 PANIC • github.com/IBM/sarama
+panic: failed to tear down existing env: failed to run docker compose to stop test environment: exit status 1
+
+goroutine 1 [running]:
+github.com/IBM/sarama.testMain(0xc00016ce60)
+	/app/functional_test.go:85 +0x353
+github.com/IBM/sarama.TestMain(0xc00016ce60)
+	/app/functional_test.go:66 +0x27
+main.main()
+	_testmain.go:181 +0x172
+FAIL	github.com/IBM/sarama	0.714s
+
+|  Status  | Elapsed |                           Package                           | Cover | Pass | Fail | Skip |
+|----------|---------|-------------------------------------------------------------|-------|------|------|------|
+| 🔴 PANIC |  0.00s  | github.com/IBM/sarama                                       |  --   |  --  |  --  |  --  |
+| 🟢 PASS  |  0.01s  | github.com/IBM/sarama/internal/toxiproxy                    | 0.0%  |  0   |  0   |  0   |
+| 🟢 PASS  |  0.01s  | github.com/IBM/sarama/mocks                                 | 0.0%  |  0   |  0   |  0   |
+| 🟢 PASS  |  0.01s  | github.com/IBM/sarama/tools/kafka-console-consumer          | 0.0%  |  0   |  0   |  0   |
+| 🟢 PASS  |  0.01s  | github.com/IBM/sarama/tools/kafka-console-partitionconsumer | 0.0%  |  0   |  0   |  0   |
+| 🟢 PASS  |  0.01s  | github.com/IBM/sarama/tools/kafka-console-producer          | 0.0%  |  0   |  0   |  0   |
+| 🟢 PASS  |  0.01s  | github.com/IBM/sarama/tools/kafka-producer-performance      | 0.0%  |  0   |  0   |  0   |
+| 🟢 PASS  |  0.01s  | github.com/IBM/sarama/tools/tls                             | 0.0%  |  0   |  0   |  0   |
+exit status 1

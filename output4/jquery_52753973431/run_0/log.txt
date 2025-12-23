@@ -1,0 +1,86 @@
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+npm warn deprecated rimraf@2.5.4: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+npm warn deprecated sinon@7.5.0: 16.1.1
+
+> jquery@3.7.1 prepare
+> husky
+
+.git can't be found
+added 649 packages, and audited 650 packages in 4s
+
+136 packages are looking for funding
+  run `npm fund` for details
+
+4 vulnerabilities (3 low, 1 moderate)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> jquery@3.7.1 test:browserless
+> npm run pretest && npm run build:all && node build/tasks/node_smoke_tests.js && node build/tasks/promises_aplus_tests.js && npm run test:unit -- -b jsdom -f module=basic
+
+
+> jquery@3.7.1 pretest
+> npm run qunit-fixture && npm run babel:tests && npm run npmcopy
+
+
+> jquery@3.7.1 qunit-fixture
+> node build/tasks/qunit-fixture.js
+
+Updated ./test/data/qunit-fixture.js
+
+> jquery@3.7.1 babel:tests
+> babel test/data/core/jquery-iterability-transpiled-es6.js --out-file test/data/core/jquery-iterability-transpiled.js
+
+
+> jquery@3.7.1 npmcopy
+> node build/tasks/npmcopy.js
+
+bootstrap/dist/css/bootstrap.css → bootstrap/bootstrap.css
+bootstrap/dist/css/bootstrap.min.css → bootstrap/bootstrap.min.css
+bootstrap/dist/css/bootstrap.min.css.map → bootstrap/bootstrap.min.css.map
+core-js-bundle/minified.js → core-js-bundle/core-js-bundle.js
+core-js-bundle/LICENSE → core-js-bundle/LICENSE
+native-promise-only/lib/npo.src.js → npo/npo.js
+qunit/qunit/qunit.js → qunit/qunit.js
+qunit/qunit/qunit.css → qunit/qunit.css
+qunit/LICENSE.txt → qunit/LICENSE.txt
+requirejs/require.js → requirejs/require.js
+sinon/pkg/sinon.js → sinon/sinon.js
+sinon/LICENSE → sinon/LICENSE.txt
+
+> jquery@3.7.1 build:all
+> node --input-type=module -e "import { buildDefaultFiles } from './build/tasks/build.js'; buildDefaultFiles()"
+
+node:internal/errors:983
+  const err = new Error(message);
+              ^
+
+Error: Command failed: git rev-parse --short HEAD
+fatal: not a git repository (or any of the parent directories): .git
+
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at ChildProcess.exithandler (node:child_process:417:12)
+    at ChildProcess.emit (node:events:519:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Socket.<anonymous> (node:internal/child_process:456:11)
+    at Socket.emit (node:events:519:28)
+    at Pipe.<anonymous> (node:net:346:12) {
+  code: 128,
+  killed: false,
+  signal: null,
+  cmd: 'git rev-parse --short HEAD',
+  stdout: '',
+  stderr: 'fatal: not a git repository (or any of the parent directories): .git\n'
+}
+
+Node.js v22.21.0

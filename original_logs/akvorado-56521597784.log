@@ -1,0 +1,1102 @@
+﻿2025-11-27T06:39:31.4686838Z Current runner version: '2.329.0'
+2025-11-27T06:39:31.4713393Z ##[group]Runner Image Provisioner
+2025-11-27T06:39:31.4714171Z Hosted Compute Agent
+2025-11-27T06:39:31.4714696Z Version: 20251016.436
+2025-11-27T06:39:31.4715386Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+2025-11-27T06:39:31.4716061Z Build Date: 2025-10-15T20:44:12Z
+2025-11-27T06:39:31.4716653Z ##[endgroup]
+2025-11-27T06:39:31.4717229Z ##[group]Operating System
+2025-11-27T06:39:31.4717804Z Ubuntu
+2025-11-27T06:39:31.4718261Z 24.04.3
+2025-11-27T06:39:31.4718780Z LTS
+2025-11-27T06:39:31.4719470Z ##[endgroup]
+2025-11-27T06:39:31.4719986Z ##[group]Runner Image
+2025-11-27T06:39:31.4720618Z Image: ubuntu-24.04
+2025-11-27T06:39:31.4721116Z Version: 20251112.124.1
+2025-11-27T06:39:31.4722129Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+2025-11-27T06:39:31.4724044Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+2025-11-27T06:39:31.4725665Z ##[endgroup]
+2025-11-27T06:39:31.4727478Z ##[group]GITHUB_TOKEN Permissions
+2025-11-27T06:39:31.4730030Z Actions: write
+2025-11-27T06:39:31.4730833Z Contents: read
+2025-11-27T06:39:31.4731704Z Metadata: read
+2025-11-27T06:39:31.4732456Z ##[endgroup]
+2025-11-27T06:39:31.4735108Z Secret source: Actions
+2025-11-27T06:39:31.4736259Z Prepare workflow directory
+2025-11-27T06:39:31.5275566Z Prepare all required actions
+2025-11-27T06:39:31.5331097Z Getting action download info
+2025-11-27T06:39:31.8355085Z Download action repository 'actions/checkout@v5' (SHA:93cb6efe18208431cddfb8368fd83d5badbf9bfd)
+2025-11-27T06:39:32.1413529Z Download action repository 'docker/setup-buildx-action@v3' (SHA:e468171a9de216ec08956ac3ada2f0791b6bd435)
+2025-11-27T06:39:32.4678815Z Download action repository 'actions/upload-artifact@v5' (SHA:330a01c490aca151604b8cf639adc76d48f6c5d4)
+2025-11-27T06:39:32.6984707Z Complete job name: 🐧 Test on Linux (regular)
+2025-11-27T06:39:32.7726627Z ##[group]Run actions/checkout@v5
+2025-11-27T06:39:32.7727535Z with:
+2025-11-27T06:39:32.7727963Z   fetch-depth: 1
+2025-11-27T06:39:32.7728416Z   persist-credentials: false
+2025-11-27T06:39:32.7729151Z   repository: akvorado/akvorado
+2025-11-27T06:39:32.7729839Z   token: ***
+2025-11-27T06:39:32.7730259Z   ssh-strict: true
+2025-11-27T06:39:32.7730689Z   ssh-user: git
+2025-11-27T06:39:32.7731092Z   clean: true
+2025-11-27T06:39:32.7731526Z   sparse-checkout-cone-mode: true
+2025-11-27T06:39:32.7732040Z   fetch-tags: false
+2025-11-27T06:39:32.7732479Z   show-progress: true
+2025-11-27T06:39:32.7732914Z   lfs: false
+2025-11-27T06:39:32.7733323Z   submodules: false
+2025-11-27T06:39:32.7733750Z   set-safe-directory: true
+2025-11-27T06:39:32.7734469Z env:
+2025-11-27T06:39:32.7734890Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:39:32.7735478Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:39:32.7735924Z ##[endgroup]
+2025-11-27T06:39:32.8646281Z Syncing repository: akvorado/akvorado
+2025-11-27T06:39:32.8648212Z ##[group]Getting Git version info
+2025-11-27T06:39:32.8649357Z Working directory is '/home/runner/work/akvorado/akvorado'
+2025-11-27T06:39:32.8650442Z [command]/usr/bin/git version
+2025-11-27T06:39:32.8709623Z git version 2.51.2
+2025-11-27T06:39:32.8729208Z ##[endgroup]
+2025-11-27T06:39:32.8742940Z Temporarily overriding HOME='/home/runner/work/_temp/df5a5740-f9f1-448d-be24-7285ad7f987c' before making global git config changes
+2025-11-27T06:39:32.8744388Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-27T06:39:32.8747691Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/akvorado/akvorado
+2025-11-27T06:39:32.8783675Z Deleting the contents of '/home/runner/work/akvorado/akvorado'
+2025-11-27T06:39:32.8787078Z ##[group]Initializing the repository
+2025-11-27T06:39:32.8791519Z [command]/usr/bin/git init /home/runner/work/akvorado/akvorado
+2025-11-27T06:39:32.8913910Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-11-27T06:39:32.8915918Z hint: is subject to change. To configure the initial branch name to use in all
+2025-11-27T06:39:32.8917662Z hint: of your new repositories, which will suppress this warning, call:
+2025-11-27T06:39:32.8918438Z hint:
+2025-11-27T06:39:32.8919099Z hint: 	git config --global init.defaultBranch <name>
+2025-11-27T06:39:32.8920149Z hint:
+2025-11-27T06:39:32.8921085Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-11-27T06:39:32.8922779Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-11-27T06:39:32.8924331Z hint:
+2025-11-27T06:39:32.8925176Z hint: 	git branch -m <name>
+2025-11-27T06:39:32.8926129Z hint:
+2025-11-27T06:39:32.8927419Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-11-27T06:39:32.8929632Z Initialized empty Git repository in /home/runner/work/akvorado/akvorado/.git/
+2025-11-27T06:39:32.8933294Z [command]/usr/bin/git remote add origin https://github.com/akvorado/akvorado
+2025-11-27T06:39:32.8967763Z ##[endgroup]
+2025-11-27T06:39:32.8969430Z ##[group]Disabling automatic garbage collection
+2025-11-27T06:39:32.8972211Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-27T06:39:32.8999707Z ##[endgroup]
+2025-11-27T06:39:32.9001092Z ##[group]Setting up auth
+2025-11-27T06:39:32.9006807Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-27T06:39:32.9037963Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-27T06:39:32.9378315Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-27T06:39:32.9409830Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-27T06:39:32.9631588Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-11-27T06:39:32.9663212Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-11-27T06:39:32.9883041Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-27T06:39:32.9917289Z ##[endgroup]
+2025-11-27T06:39:32.9918691Z ##[group]Fetching the repository
+2025-11-27T06:39:32.9927939Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +468a3e1705710008ea0e4ecc468f02120a375d57:refs/remotes/origin/main
+2025-11-27T06:39:33.3339056Z From https://github.com/akvorado/akvorado
+2025-11-27T06:39:33.3340680Z  * [new ref]         468a3e1705710008ea0e4ecc468f02120a375d57 -> origin/main
+2025-11-27T06:39:33.3369310Z ##[endgroup]
+2025-11-27T06:39:33.3370330Z ##[group]Determining the checkout info
+2025-11-27T06:39:33.3371716Z ##[endgroup]
+2025-11-27T06:39:33.3376648Z [command]/usr/bin/git sparse-checkout disable
+2025-11-27T06:39:33.3418591Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-11-27T06:39:33.3445858Z ##[group]Checking out the ref
+2025-11-27T06:39:33.3450175Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-27T06:39:33.3894639Z Switched to a new branch 'main'
+2025-11-27T06:39:33.3896802Z branch 'main' set up to track 'origin/main'.
+2025-11-27T06:39:33.3905184Z ##[endgroup]
+2025-11-27T06:39:33.3942239Z [command]/usr/bin/git log -1 --format=%H
+2025-11-27T06:39:33.3964728Z 468a3e1705710008ea0e4ecc468f02120a375d57
+2025-11-27T06:39:33.3975114Z ##[group]Removing auth
+2025-11-27T06:39:33.3979656Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-27T06:39:33.4010501Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-27T06:39:33.4231293Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-27T06:39:33.4252661Z http.https://github.com/.extraheader
+2025-11-27T06:39:33.4262470Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-27T06:39:33.4295273Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-27T06:39:33.4515237Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-11-27T06:39:33.4546529Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-11-27T06:39:33.4766751Z ##[endgroup]
+2025-11-27T06:39:33.5078066Z ##[group]Run docker/setup-buildx-action@v3
+2025-11-27T06:39:33.5079467Z with:
+2025-11-27T06:39:33.5080185Z   driver: docker-container
+2025-11-27T06:39:33.5081055Z   install: false
+2025-11-27T06:39:33.5081807Z   use: true
+2025-11-27T06:39:33.5082487Z   keep-state: false
+2025-11-27T06:39:33.5083238Z   cache-binary: true
+2025-11-27T06:39:33.5084021Z   cleanup: true
+2025-11-27T06:39:33.5084703Z env:
+2025-11-27T06:39:33.5085383Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:39:33.5086372Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:39:33.5087190Z ##[endgroup]
+2025-11-27T06:39:33.8093230Z ##[group]Docker info
+2025-11-27T06:39:33.8115075Z [command]/usr/bin/docker version
+2025-11-27T06:39:33.9389352Z Client: Docker Engine - Community
+2025-11-27T06:39:33.9391476Z  Version:           28.0.4
+2025-11-27T06:39:33.9393828Z  API version:       1.48
+2025-11-27T06:39:33.9395258Z  Go version:        go1.23.7
+2025-11-27T06:39:33.9396703Z  Git commit:        b8034c0
+2025-11-27T06:39:33.9398207Z  Built:             Tue Mar 25 15:07:16 2025
+2025-11-27T06:39:33.9399910Z  OS/Arch:           linux/amd64
+2025-11-27T06:39:33.9401378Z  Context:           default
+2025-11-27T06:39:33.9402295Z 
+2025-11-27T06:39:33.9402882Z Server: Docker Engine - Community
+2025-11-27T06:39:33.9404376Z  Engine:
+2025-11-27T06:39:33.9405461Z   Version:          28.0.4
+2025-11-27T06:39:33.9406997Z   API version:      1.48 (minimum version 1.24)
+2025-11-27T06:39:33.9408836Z   Go version:       go1.23.7
+2025-11-27T06:39:33.9410575Z   Git commit:       6430e49
+2025-11-27T06:39:33.9412152Z   Built:            Tue Mar 25 15:07:16 2025
+2025-11-27T06:39:33.9413828Z   OS/Arch:          linux/amd64
+2025-11-27T06:39:33.9415338Z   Experimental:     false
+2025-11-27T06:39:33.9416691Z  containerd:
+2025-11-27T06:39:33.9417853Z   Version:          v2.1.5
+2025-11-27T06:39:33.9419810Z   GitCommit:        fcd43222d6b07379a4be9786bda52438f0dd16a1
+2025-11-27T06:39:33.9421891Z  runc:
+2025-11-27T06:39:33.9422967Z   Version:          1.3.3
+2025-11-27T06:39:33.9424449Z   GitCommit:        v1.3.3-0-gd842d771
+2025-11-27T06:39:33.9426048Z  docker-init:
+2025-11-27T06:39:33.9427205Z   Version:          0.19.0
+2025-11-27T06:39:33.9428599Z   GitCommit:        de40ad0
+2025-11-27T06:39:33.9454317Z [command]/usr/bin/docker info
+2025-11-27T06:39:35.7520047Z Client: Docker Engine - Community
+2025-11-27T06:39:35.7520515Z  Version:    28.0.4
+2025-11-27T06:39:35.7520790Z  Context:    default
+2025-11-27T06:39:35.7521091Z  Debug Mode: false
+2025-11-27T06:39:35.7521370Z  Plugins:
+2025-11-27T06:39:35.7521652Z   buildx: Docker Buildx (Docker Inc.)
+2025-11-27T06:39:35.7522039Z     Version:  v0.29.1
+2025-11-27T06:39:35.7522470Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2025-11-27T06:39:35.7522995Z   compose: Docker Compose (Docker Inc.)
+2025-11-27T06:39:35.7587132Z     Version:  v2.38.2
+2025-11-27T06:39:35.7587649Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2025-11-27T06:39:35.7588080Z 
+2025-11-27T06:39:35.7588198Z Server:
+2025-11-27T06:39:35.7588557Z  Containers: 0
+2025-11-27T06:39:35.7589064Z   Running: 0
+2025-11-27T06:39:35.7589377Z   Paused: 0
+2025-11-27T06:39:35.7589666Z   Stopped: 0
+2025-11-27T06:39:35.7589944Z  Images: 0
+2025-11-27T06:39:35.7590608Z  Server Version: 28.0.4
+2025-11-27T06:39:35.7590955Z  Storage Driver: overlay2
+2025-11-27T06:39:35.7591305Z   Backing Filesystem: extfs
+2025-11-27T06:39:35.7591710Z   Supports d_type: true
+2025-11-27T06:39:35.7592054Z   Using metacopy: false
+2025-11-27T06:39:35.7592441Z   Native Overlay Diff: false
+2025-11-27T06:39:35.7592855Z   userxattr: false
+2025-11-27T06:39:35.7593181Z  Logging Driver: json-file
+2025-11-27T06:39:35.7593551Z  Cgroup Driver: systemd
+2025-11-27T06:39:35.7593950Z  Cgroup Version: 2
+2025-11-27T06:39:35.7594249Z  Plugins:
+2025-11-27T06:39:35.7594603Z   Volume: local
+2025-11-27T06:39:35.7595168Z   Network: bridge host ipvlan macvlan null overlay
+2025-11-27T06:39:35.7595842Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2025-11-27T06:39:35.7596782Z  Swarm: inactive
+2025-11-27T06:39:35.7597172Z  Runtimes: io.containerd.runc.v2 runc
+2025-11-27T06:39:35.7597661Z  Default Runtime: runc
+2025-11-27T06:39:35.7598004Z  Init Binary: docker-init
+2025-11-27T06:39:35.7598524Z  containerd version: fcd43222d6b07379a4be9786bda52438f0dd16a1
+2025-11-27T06:39:35.7599646Z  runc version: v1.3.3-0-gd842d771
+2025-11-27T06:39:35.7600072Z  init version: de40ad0
+2025-11-27T06:39:35.7600403Z  Security Options:
+2025-11-27T06:39:35.7600712Z   apparmor
+2025-11-27T06:39:35.7600993Z   seccomp
+2025-11-27T06:39:35.7601272Z    Profile: builtin
+2025-11-27T06:39:35.7601594Z   cgroupns
+2025-11-27T06:39:35.7601899Z  Kernel Version: 6.11.0-1018-azure
+2025-11-27T06:39:35.7602322Z  Operating System: Ubuntu 24.04.3 LTS
+2025-11-27T06:39:35.7602622Z  OSType: linux
+2025-11-27T06:39:35.7602817Z  Architecture: x86_64
+2025-11-27T06:39:35.7603008Z  CPUs: 4
+2025-11-27T06:39:35.7603178Z  Total Memory: 15.62GiB
+2025-11-27T06:39:35.7603371Z  Name: runnervmg1sw1
+2025-11-27T06:39:35.7603596Z  ID: 25309008-d3b6-4795-9b53-5704e2dd5a06
+2025-11-27T06:39:35.7603852Z  Docker Root Dir: /var/lib/docker
+2025-11-27T06:39:35.7604081Z  Debug Mode: false
+2025-11-27T06:39:35.7604270Z  Username: githubactions
+2025-11-27T06:39:35.7604476Z  Experimental: false
+2025-11-27T06:39:35.7604669Z  Insecure Registries:
+2025-11-27T06:39:35.7608130Z   ::1/128
+2025-11-27T06:39:35.7608335Z   127.0.0.0/8
+2025-11-27T06:39:35.7608523Z  Live Restore Enabled: false
+2025-11-27T06:39:35.7608679Z 
+2025-11-27T06:39:35.7609495Z ##[endgroup]
+2025-11-27T06:39:35.8785129Z ##[group]Buildx version
+2025-11-27T06:39:35.8806807Z [command]/usr/bin/docker buildx version
+2025-11-27T06:39:35.9451153Z github.com/docker/buildx v0.29.1 a32761aeb3debd39be1eca514af3693af0db334b
+2025-11-27T06:39:35.9483453Z ##[endgroup]
+2025-11-27T06:39:35.9715897Z ##[group]Inspecting default docker context
+2025-11-27T06:39:35.9857936Z [
+2025-11-27T06:39:35.9858271Z   {
+2025-11-27T06:39:35.9858570Z     "Name": "default",
+2025-11-27T06:39:35.9859150Z     "Metadata": {},
+2025-11-27T06:39:35.9859550Z     "Endpoints": {
+2025-11-27T06:39:35.9859874Z       "docker": {
+2025-11-27T06:39:35.9860246Z         "Host": "unix:///var/run/docker.sock",
+2025-11-27T06:39:35.9860714Z         "SkipTLSVerify": false
+2025-11-27T06:39:35.9861115Z       }
+2025-11-27T06:39:35.9861390Z     },
+2025-11-27T06:39:35.9861696Z     "TLSMaterial": {},
+2025-11-27T06:39:35.9862046Z     "Storage": {
+2025-11-27T06:39:35.9862395Z       "MetadataPath": "<IN MEMORY>",
+2025-11-27T06:39:35.9862848Z       "TLSPath": "<IN MEMORY>"
+2025-11-27T06:39:35.9863226Z     }
+2025-11-27T06:39:35.9863519Z   }
+2025-11-27T06:39:35.9863796Z ]
+2025-11-27T06:39:35.9864440Z ##[endgroup]
+2025-11-27T06:39:35.9865199Z ##[group]Creating a new builder instance
+2025-11-27T06:39:36.1297225Z [command]/usr/bin/docker buildx create --name builder-1c3a3294-9425-4c7e-b346-0073521ed0e1 --driver docker-container --buildkitd-flags --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host --use
+2025-11-27T06:39:36.1891812Z builder-1c3a3294-9425-4c7e-b346-0073521ed0e1
+2025-11-27T06:39:36.1933707Z ##[endgroup]
+2025-11-27T06:39:36.1934576Z ##[group]Booting builder
+2025-11-27T06:39:36.1971993Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-1c3a3294-9425-4c7e-b346-0073521ed0e1
+2025-11-27T06:39:36.2458629Z #1 [internal] booting buildkit
+2025-11-27T06:39:36.3963350Z #1 pulling image moby/buildkit:buildx-stable-1
+2025-11-27T06:39:38.7597196Z #1 pulling image moby/buildkit:buildx-stable-1 2.5s done
+2025-11-27T06:39:38.9101208Z #1 creating container buildx_buildkit_builder-1c3a3294-9425-4c7e-b346-0073521ed0e10
+2025-11-27T06:39:39.2191725Z #1 creating container buildx_buildkit_builder-1c3a3294-9425-4c7e-b346-0073521ed0e10 0.5s done
+2025-11-27T06:39:39.2205192Z #1 DONE 3.0s
+2025-11-27T06:39:39.2521811Z Name:          builder-1c3a3294-9425-4c7e-b346-0073521ed0e1
+2025-11-27T06:39:39.2522588Z Driver:        docker-container
+2025-11-27T06:39:39.2523119Z Last Activity: 2025-11-27 06:39:36 +0000 UTC
+2025-11-27T06:39:39.2523402Z 
+2025-11-27T06:39:39.2523951Z Nodes:
+2025-11-27T06:39:39.2524572Z Name:                  builder-1c3a3294-9425-4c7e-b346-0073521ed0e10
+2025-11-27T06:39:39.2524911Z Endpoint:              unix:///var/run/docker.sock
+2025-11-27T06:39:39.2525332Z Status:                running
+2025-11-27T06:39:39.2525813Z BuildKit daemon flags: --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host
+2025-11-27T06:39:39.2526304Z BuildKit version:      v0.26.2
+2025-11-27T06:39:39.2526618Z Platforms:             linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386
+2025-11-27T06:39:39.2526917Z Labels:
+2025-11-27T06:39:39.2527142Z  org.mobyproject.buildkit.worker.executor:         oci
+2025-11-27T06:39:39.2527513Z  org.mobyproject.buildkit.worker.hostname:         854b9ca2ac1e
+2025-11-27T06:39:39.2527884Z  org.mobyproject.buildkit.worker.network:          host
+2025-11-27T06:39:39.2528238Z  org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+2025-11-27T06:39:39.2528640Z  org.mobyproject.buildkit.worker.selinux.enabled:  false
+2025-11-27T06:39:39.2529318Z  org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+2025-11-27T06:39:39.2529643Z GC Policy rule#0:
+2025-11-27T06:39:39.2529817Z  All:            false
+2025-11-27T06:39:39.2530130Z  Filters:        type==source.local,type==exec.cachemount,type==source.git.checkout
+2025-11-27T06:39:39.2530478Z  Keep Duration:  48h0m0s
+2025-11-27T06:39:39.2530672Z  Max Used Space: 488.3MiB
+2025-11-27T06:39:39.2530855Z GC Policy rule#1:
+2025-11-27T06:39:39.2531027Z  All:            false
+2025-11-27T06:39:39.2531204Z  Keep Duration:  1440h0m0s
+2025-11-27T06:39:39.2531398Z  Reserved Space: 7.451GiB
+2025-11-27T06:39:39.2531586Z  Max Used Space: 54.02GiB
+2025-11-27T06:39:39.2531764Z  Min Free Space: 13.97GiB
+2025-11-27T06:39:39.2531944Z GC Policy rule#2:
+2025-11-27T06:39:39.2532101Z  All:            false
+2025-11-27T06:39:39.2532282Z  Reserved Space: 7.451GiB
+2025-11-27T06:39:39.2532464Z  Max Used Space: 54.02GiB
+2025-11-27T06:39:39.2532648Z  Min Free Space: 13.97GiB
+2025-11-27T06:39:39.2532907Z GC Policy rule#3:
+2025-11-27T06:39:39.2533076Z  All:            true
+2025-11-27T06:39:39.2533246Z  Reserved Space: 7.451GiB
+2025-11-27T06:39:39.2533430Z  Max Used Space: 54.02GiB
+2025-11-27T06:39:39.2533613Z  Min Free Space: 13.97GiB
+2025-11-27T06:39:39.2569448Z ##[endgroup]
+2025-11-27T06:39:39.3424638Z ##[group]Inspect builder
+2025-11-27T06:39:39.3427240Z {
+2025-11-27T06:39:39.3427531Z   "nodes": [
+2025-11-27T06:39:39.3427815Z     {
+2025-11-27T06:39:39.3428184Z       "name": "builder-1c3a3294-9425-4c7e-b346-0073521ed0e10",
+2025-11-27T06:39:39.3428772Z       "endpoint": "unix:///var/run/docker.sock",
+2025-11-27T06:39:39.3429447Z       "status": "running",
+2025-11-27T06:39:39.3430273Z       "buildkitd-flags": "--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host",
+2025-11-27T06:39:39.3431158Z       "buildkit": "v0.26.2",
+2025-11-27T06:39:39.3431705Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386",
+2025-11-27T06:39:39.3432314Z       "features": {
+2025-11-27T06:39:39.3432821Z         "Automatically load images to the Docker Engine image store": true,
+2025-11-27T06:39:39.3433424Z         "Cache export": true,
+2025-11-27T06:39:39.3434230Z         "Direct push": true,
+2025-11-27T06:39:39.3434633Z         "Docker exporter": true,
+2025-11-27T06:39:39.3435058Z         "Multi-platform build": true,
+2025-11-27T06:39:39.3435473Z         "OCI exporter": true
+2025-11-27T06:39:39.3435875Z       },
+2025-11-27T06:39:39.3436143Z       "labels": {
+2025-11-27T06:39:39.3436565Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2025-11-27T06:39:39.3437204Z         "org.mobyproject.buildkit.worker.hostname": "854b9ca2ac1e",
+2025-11-27T06:39:39.3437780Z         "org.mobyproject.buildkit.worker.network": "host",
+2025-11-27T06:39:39.3438390Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2025-11-27T06:39:39.3439247Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2025-11-27T06:39:39.3440171Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2025-11-27T06:39:39.3440775Z       },
+2025-11-27T06:39:39.3441036Z       "gcPolicy": [
+2025-11-27T06:39:39.3441311Z         {
+2025-11-27T06:39:39.3441565Z           "all": false,
+2025-11-27T06:39:39.3441839Z           "filter": [
+2025-11-27T06:39:39.3442123Z             "type==source.local",
+2025-11-27T06:39:39.3442466Z             "type==exec.cachemount",
+2025-11-27T06:39:39.3442808Z             "type==source.git.checkout"
+2025-11-27T06:39:39.3443173Z           ],
+2025-11-27T06:39:39.3443443Z           "keepDuration": "48h0m0s",
+2025-11-27T06:39:39.3443809Z           "maxUsedSpace": "488.3MiB"
+2025-11-27T06:39:39.3444131Z         },
+2025-11-27T06:39:39.3444366Z         {
+2025-11-27T06:39:39.3444609Z           "all": false,
+2025-11-27T06:39:39.3444943Z           "keepDuration": "1440h0m0s",
+2025-11-27T06:39:39.3445323Z           "reservedSpace": "7.451GiB",
+2025-11-27T06:39:39.3445694Z           "maxUsedSpace": "54.02GiB",
+2025-11-27T06:39:39.3446099Z           "minFreeSpace": "13.97GiB"
+2025-11-27T06:39:39.3446449Z         },
+2025-11-27T06:39:39.3446688Z         {
+2025-11-27T06:39:39.3446931Z           "all": false,
+2025-11-27T06:39:39.3447253Z           "reservedSpace": "7.451GiB",
+2025-11-27T06:39:39.3447648Z           "maxUsedSpace": "54.02GiB",
+2025-11-27T06:39:39.3448032Z           "minFreeSpace": "13.97GiB"
+2025-11-27T06:39:39.3448373Z         },
+2025-11-27T06:39:39.3448615Z         {
+2025-11-27T06:39:39.3448866Z           "all": true,
+2025-11-27T06:39:39.3449353Z           "reservedSpace": "7.451GiB",
+2025-11-27T06:39:39.3449750Z           "maxUsedSpace": "54.02GiB",
+2025-11-27T06:39:39.3450125Z           "minFreeSpace": "13.97GiB"
+2025-11-27T06:39:39.3450470Z         }
+2025-11-27T06:39:39.3450706Z       ]
+2025-11-27T06:39:39.3450948Z     }
+2025-11-27T06:39:39.3451167Z   ],
+2025-11-27T06:39:39.3451501Z   "name": "builder-1c3a3294-9425-4c7e-b346-0073521ed0e1",
+2025-11-27T06:39:39.3451972Z   "driver": "docker-container",
+2025-11-27T06:39:39.3452356Z   "lastActivity": "2025-11-27T06:39:36.000Z"
+2025-11-27T06:39:39.3452727Z }
+2025-11-27T06:39:39.3453263Z ##[endgroup]
+2025-11-27T06:39:39.3453756Z ##[group]BuildKit version
+2025-11-27T06:39:39.3454172Z builder-1c3a3294-9425-4c7e-b346-0073521ed0e10: v0.26.2
+2025-11-27T06:39:39.3454834Z ##[endgroup]
+2025-11-27T06:39:39.3567918Z ##[group]Run docker compose -f docker/docker-compose-dev.yml up --wait --wait-timeout 60 --quiet-pull
+2025-11-27T06:39:39.3568707Z [36;1mdocker compose -f docker/docker-compose-dev.yml up --wait --wait-timeout 60 --quiet-pull[0m
+2025-11-27T06:39:39.3607139Z shell: /usr/bin/bash -e {0}
+2025-11-27T06:39:39.3607367Z env:
+2025-11-27T06:39:39.3607546Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:39:39.3607784Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:39:39.3607989Z ##[endgroup]
+2025-11-27T06:39:39.4710761Z  clickhouse Pulling 
+2025-11-27T06:39:39.4713654Z  clickhouse-4 Pulling 
+2025-11-27T06:39:39.4715800Z  clickhouse-2 Pulling 
+2025-11-27T06:39:39.4716144Z  clickhouse-1 Pulling 
+2025-11-27T06:39:39.4716479Z  redis Pulling 
+2025-11-27T06:39:39.4716810Z  mock-oauth2-server Pulling 
+2025-11-27T06:39:39.4717191Z  clickhouse-keeper-1 Pulling 
+2025-11-27T06:39:39.4717544Z  postgres Pulling 
+2025-11-27T06:39:39.4718157Z  clickhouse-3 Pulling 
+2025-11-27T06:39:39.4718403Z  mysql Pulling 
+2025-11-27T06:39:39.4718576Z  srlinux Pulling 
+2025-11-27T06:39:39.4718742Z  kafka Pulling 
+2025-11-27T06:39:49.6325775Z  redis Pulled 
+2025-11-27T06:39:55.0081781Z  mock-oauth2-server Pulled 
+2025-11-27T06:39:57.0094549Z  kafka Pulled 
+2025-11-27T06:39:57.0750859Z  clickhouse-keeper-1 Pulled 
+2025-11-27T06:39:59.0637804Z  mysql Pulled 
+2025-11-27T06:39:59.1363917Z  clickhouse-1 Pulled 
+2025-11-27T06:39:59.1395359Z  clickhouse Pulled 
+2025-11-27T06:39:59.1401007Z  clickhouse-3 Pulled 
+2025-11-27T06:39:59.1415210Z  clickhouse-2 Pulled 
+2025-11-27T06:39:59.1417984Z  clickhouse-4 Pulled 
+2025-11-27T06:40:00.1157225Z  postgres Pulled 
+2025-11-27T06:40:14.8937602Z  srlinux Pulled 
+2025-11-27T06:40:14.8968690Z  Network akvorado-dev_default  Creating
+2025-11-27T06:40:14.9343983Z  Network akvorado-dev_default  Created
+2025-11-27T06:40:14.9349657Z  Container akvorado-dev-srlinux-1  Creating
+2025-11-27T06:40:14.9350172Z  Container akvorado-dev-mysql-1  Creating
+2025-11-27T06:40:14.9350761Z  Container akvorado-dev-mock-oauth2-server-1  Creating
+2025-11-27T06:40:14.9351314Z  Container akvorado-dev-clickhouse-1  Creating
+2025-11-27T06:40:14.9356787Z  Container akvorado-dev-postgres-1  Creating
+2025-11-27T06:40:14.9357273Z  Container akvorado-dev-redis-1  Creating
+2025-11-27T06:40:14.9357795Z  Container akvorado-dev-clickhouse-keeper-1-1  Creating
+2025-11-27T06:40:18.2324655Z  Container akvorado-dev-mock-oauth2-server-1  Created
+2025-11-27T06:40:18.2327930Z  Container akvorado-dev-redis-1  Created
+2025-11-27T06:40:18.2328418Z  Container akvorado-dev-srlinux-1  Created
+2025-11-27T06:40:18.2329038Z  Container akvorado-dev-kafka-1  Creating
+2025-11-27T06:40:18.2333618Z  Container akvorado-dev-mysql-1  Created
+2025-11-27T06:40:18.2339619Z  Container akvorado-dev-postgres-1  Created
+2025-11-27T06:40:18.2380220Z  Container akvorado-dev-clickhouse-1  Created
+2025-11-27T06:40:18.2389398Z  Container akvorado-dev-clickhouse-keeper-1-1  Created
+2025-11-27T06:40:18.2390472Z  Container akvorado-dev-clickhouse-4-1  Creating
+2025-11-27T06:40:18.2391256Z  Container akvorado-dev-clickhouse-1-1  Creating
+2025-11-27T06:40:18.2393603Z  Container akvorado-dev-clickhouse-3-1  Creating
+2025-11-27T06:40:18.2394173Z  Container akvorado-dev-clickhouse-2-1  Creating
+2025-11-27T06:40:18.2569982Z  Container akvorado-dev-kafka-1  Created
+2025-11-27T06:40:18.2618235Z  Container akvorado-dev-clickhouse-2-1  Created
+2025-11-27T06:40:18.2623278Z  Container akvorado-dev-clickhouse-4-1  Created
+2025-11-27T06:40:18.2626967Z  Container akvorado-dev-clickhouse-1-1  Created
+2025-11-27T06:40:18.2724123Z  Container akvorado-dev-clickhouse-3-1  Created
+2025-11-27T06:40:18.2744522Z  Container akvorado-dev-redis-1  Starting
+2025-11-27T06:40:18.2746281Z  Container akvorado-dev-mysql-1  Starting
+2025-11-27T06:40:18.2760603Z  Container akvorado-dev-srlinux-1  Starting
+2025-11-27T06:40:18.2761135Z  Container akvorado-dev-postgres-1  Starting
+2025-11-27T06:40:18.2761676Z  Container akvorado-dev-clickhouse-1  Starting
+2025-11-27T06:40:18.2762682Z  Container akvorado-dev-mock-oauth2-server-1  Starting
+2025-11-27T06:40:18.2763375Z  Container akvorado-dev-clickhouse-keeper-1-1  Starting
+2025-11-27T06:40:18.6037026Z  Container akvorado-dev-clickhouse-keeper-1-1  Started
+2025-11-27T06:40:18.6037853Z  Container akvorado-dev-clickhouse-3-1  Starting
+2025-11-27T06:40:18.6038663Z  Container akvorado-dev-clickhouse-2-1  Starting
+2025-11-27T06:40:18.6048673Z  Container akvorado-dev-clickhouse-1-1  Starting
+2025-11-27T06:40:18.6051768Z  Container akvorado-dev-clickhouse-4-1  Starting
+2025-11-27T06:40:18.7405157Z  Container akvorado-dev-mock-oauth2-server-1  Started
+2025-11-27T06:40:18.7408120Z  Container akvorado-dev-kafka-1  Starting
+2025-11-27T06:40:18.7666646Z  Container akvorado-dev-mysql-1  Started
+2025-11-27T06:40:18.7669776Z  Container akvorado-dev-postgres-1  Started
+2025-11-27T06:40:18.8365758Z  Container akvorado-dev-redis-1  Started
+2025-11-27T06:40:18.9068178Z  Container akvorado-dev-clickhouse-1  Started
+2025-11-27T06:40:18.9254330Z  Container akvorado-dev-srlinux-1  Started
+2025-11-27T06:40:19.1826619Z  Container akvorado-dev-clickhouse-1-1  Started
+2025-11-27T06:40:19.2025627Z  Container akvorado-dev-clickhouse-4-1  Started
+2025-11-27T06:40:19.4353733Z  Container akvorado-dev-clickhouse-3-1  Started
+2025-11-27T06:40:19.4790475Z  Container akvorado-dev-clickhouse-2-1  Started
+2025-11-27T06:40:19.6238505Z  Container akvorado-dev-kafka-1  Started
+2025-11-27T06:40:19.6239304Z  Container akvorado-dev-redis-1  Waiting
+2025-11-27T06:40:19.6239773Z  Container akvorado-dev-srlinux-1  Waiting
+2025-11-27T06:40:19.6240213Z  Container akvorado-dev-kafka-1  Waiting
+2025-11-27T06:40:19.6240641Z  Container akvorado-dev-mysql-1  Waiting
+2025-11-27T06:40:19.6241105Z  Container akvorado-dev-clickhouse-2-1  Waiting
+2025-11-27T06:40:19.6241590Z  Container akvorado-dev-clickhouse-1  Waiting
+2025-11-27T06:40:19.6242106Z  Container akvorado-dev-clickhouse-keeper-1-1  Waiting
+2025-11-27T06:40:19.6242660Z  Container akvorado-dev-clickhouse-1-1  Waiting
+2025-11-27T06:40:19.6243228Z  Container akvorado-dev-postgres-1  Waiting
+2025-11-27T06:40:19.6243716Z  Container akvorado-dev-clickhouse-3-1  Waiting
+2025-11-27T06:40:19.6244209Z  Container akvorado-dev-clickhouse-4-1  Waiting
+2025-11-27T06:40:19.6244727Z  Container akvorado-dev-mock-oauth2-server-1  Waiting
+2025-11-27T06:40:20.1323770Z  Container akvorado-dev-clickhouse-4-1  Healthy
+2025-11-27T06:40:20.1344772Z  Container akvorado-dev-mock-oauth2-server-1  Healthy
+2025-11-27T06:40:20.1444010Z  Container akvorado-dev-srlinux-1  Healthy
+2025-11-27T06:40:20.1444575Z  Container akvorado-dev-clickhouse-2-1  Healthy
+2025-11-27T06:40:20.1445099Z  Container akvorado-dev-clickhouse-1  Healthy
+2025-11-27T06:40:20.1445614Z  Container akvorado-dev-clickhouse-3-1  Healthy
+2025-11-27T06:40:20.1446143Z  Container akvorado-dev-clickhouse-1-1  Healthy
+2025-11-27T06:40:20.1446620Z  Container akvorado-dev-kafka-1  Healthy
+2025-11-27T06:40:20.1447147Z  Container akvorado-dev-clickhouse-keeper-1-1  Healthy
+2025-11-27T06:40:20.1447726Z  Container akvorado-dev-redis-1  Healthy
+2025-11-27T06:40:24.1272278Z  Container akvorado-dev-postgres-1  Healthy
+2025-11-27T06:40:29.1256769Z  Container akvorado-dev-mysql-1  Healthy
+2025-11-27T06:40:29.1581668Z Prepare all required actions
+2025-11-27T06:40:29.1582331Z Getting action download info
+2025-11-27T06:40:29.3910582Z Download action repository 'actions/setup-go@v5' (SHA:d35c59abb061a4a6fb18e82ac0862c26744d6ab5)
+2025-11-27T06:40:29.6484614Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+2025-11-27T06:40:29.7497531Z Download action repository 'pnpm/action-setup@v4' (SHA:41ff72655975bd51cab0327fa583b6e92b6d3061)
+2025-11-27T06:40:30.1077880Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-11-27T06:40:30.2777967Z ##[group]Run ./.github/actions/setup
+2025-11-27T06:40:30.2778221Z with:
+2025-11-27T06:40:30.2778384Z   setup-go: true
+2025-11-27T06:40:30.2778568Z   setup-node: true
+2025-11-27T06:40:30.2778758Z   node-version: 20
+2025-11-27T06:40:30.2779123Z env:
+2025-11-27T06:40:30.2779383Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:40:30.2779626Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:40:30.2779852Z ##[endgroup]
+2025-11-27T06:40:30.2915402Z ##[group]Run actions/setup-go@v5
+2025-11-27T06:40:30.2915627Z with:
+2025-11-27T06:40:30.2915801Z   go-version-file: go.mod
+2025-11-27T06:40:30.2915995Z   check-latest: true
+2025-11-27T06:40:30.2916174Z   cache: false
+2025-11-27T06:40:30.2916452Z   token: ***
+2025-11-27T06:40:30.2916612Z env:
+2025-11-27T06:40:30.2916783Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:40:30.2917019Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:40:30.2917217Z ##[endgroup]
+2025-11-27T06:40:30.4699935Z Setup go version spec 1.25
+2025-11-27T06:40:30.4705326Z Attempting to resolve the latest version from the manifest...
+2025-11-27T06:40:30.8579274Z matching 1.25...
+2025-11-27T06:40:30.8607131Z Resolved as '1.25.4'
+2025-11-27T06:40:30.8704536Z Found in cache @ /opt/hostedtoolcache/go/1.25.4/x64
+2025-11-27T06:40:30.8708422Z Added go to the path
+2025-11-27T06:40:30.8713135Z Successfully set up Go version 1.25
+2025-11-27T06:40:31.4075586Z go version go1.25.4 linux/amd64
+2025-11-27T06:40:31.4076291Z 
+2025-11-27T06:40:31.4076689Z ##[group]go env
+2025-11-27T06:40:31.5718851Z AR='ar'
+2025-11-27T06:40:31.5719354Z CC='gcc'
+2025-11-27T06:40:31.5719648Z CGO_CFLAGS='-O2 -g'
+2025-11-27T06:40:31.5720003Z CGO_CPPFLAGS=''
+2025-11-27T06:40:31.5720309Z CGO_CXXFLAGS='-O2 -g'
+2025-11-27T06:40:31.5720654Z CGO_ENABLED='1'
+2025-11-27T06:40:31.5720945Z CGO_FFLAGS='-O2 -g'
+2025-11-27T06:40:31.5721270Z CGO_LDFLAGS='-O2 -g'
+2025-11-27T06:40:31.5721565Z CXX='g++'
+2025-11-27T06:40:31.5721833Z GCCGO='gccgo'
+2025-11-27T06:40:31.5722149Z GO111MODULE=''
+2025-11-27T06:40:31.5722421Z GOAMD64='v1'
+2025-11-27T06:40:31.5722693Z GOARCH='amd64'
+2025-11-27T06:40:31.5722945Z GOAUTH='netrc'
+2025-11-27T06:40:31.5723208Z GOBIN=''
+2025-11-27T06:40:31.5723499Z GOCACHE='/home/runner/.cache/go-build'
+2025-11-27T06:40:31.5723919Z GOCACHEPROG=''
+2025-11-27T06:40:31.5724181Z GODEBUG=''
+2025-11-27T06:40:31.5724611Z GOENV='/home/runner/.config/go/env'
+2025-11-27T06:40:31.5724971Z GOEXE=''
+2025-11-27T06:40:31.5725252Z GOEXPERIMENT=''
+2025-11-27T06:40:31.5725555Z GOFIPS140='off'
+2025-11-27T06:40:31.5725835Z GOFLAGS=''
+2025-11-27T06:40:31.5726939Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build1284360164=/tmp/go-build -gno-record-gcc-switches'
+2025-11-27T06:40:31.5727874Z GOHOSTARCH='amd64'
+2025-11-27T06:40:31.5728179Z GOHOSTOS='linux'
+2025-11-27T06:40:31.5728459Z GOINSECURE=''
+2025-11-27T06:40:31.5728827Z GOMOD='/home/runner/work/akvorado/akvorado/go.mod'
+2025-11-27T06:40:31.5729523Z GOMODCACHE='/home/runner/go/pkg/mod'
+2025-11-27T06:40:31.5729915Z GONOPROXY=''
+2025-11-27T06:40:31.5730191Z GONOSUMDB=''
+2025-11-27T06:40:31.5730465Z GOOS='linux'
+2025-11-27T06:40:31.5730755Z GOPATH='/home/runner/go'
+2025-11-27T06:40:31.5731087Z GOPRIVATE=''
+2025-11-27T06:40:31.5731487Z GOPROXY='https://proxy.golang.org,direct'
+2025-11-27T06:40:31.5731987Z GOROOT='/opt/hostedtoolcache/go/1.25.4/x64'
+2025-11-27T06:40:31.5732428Z GOSUMDB='sum.golang.org'
+2025-11-27T06:40:31.5732769Z GOTELEMETRY='local'
+2025-11-27T06:40:31.5733474Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2025-11-27T06:40:31.5733965Z GOTMPDIR=''
+2025-11-27T06:40:31.5734408Z GOTOOLCHAIN='auto'
+2025-11-27T06:40:31.5734906Z GOTOOLDIR='/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64'
+2025-11-27T06:40:31.5735451Z GOVCS=''
+2025-11-27T06:40:31.5735723Z GOVERSION='go1.25.4'
+2025-11-27T06:40:31.5736038Z GOWORK=''
+2025-11-27T06:40:31.5736328Z PKG_CONFIG='pkg-config'
+2025-11-27T06:40:31.5736541Z 
+2025-11-27T06:40:31.5736977Z ##[endgroup]
+2025-11-27T06:40:31.5850658Z ##[group]Run echo "gocache=$(go env GOCACHE)" >> $GITHUB_ENV
+2025-11-27T06:40:31.5851035Z [36;1mecho "gocache=$(go env GOCACHE)" >> $GITHUB_ENV[0m
+2025-11-27T06:40:31.5851367Z [36;1mecho "gomodcache=$(go env GOMODCACHE)" >> $GITHUB_ENV[0m
+2025-11-27T06:40:31.5851725Z [36;1mecho "today=$(date +%Y%m%d)" >> $GITHUB_ENV[0m
+2025-11-27T06:40:31.5896033Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-11-27T06:40:31.5896352Z env:
+2025-11-27T06:40:31.5896548Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:40:31.5896875Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:40:31.5897208Z ##[endgroup]
+2025-11-27T06:40:31.7246443Z ##[group]Run actions/cache@v4
+2025-11-27T06:40:31.7246676Z with:
+2025-11-27T06:40:31.7246935Z   path: /home/runner/.cache/go-build
+/home/runner/go/pkg/mod
+
+2025-11-27T06:40:31.7247447Z   key: Linux-X64-go1.25.4-96db16edd2db22b4c7058e99a1e55a56b4dd9fec57b10e958926319e9065431e-20251127
+2025-11-27T06:40:31.7248161Z   restore-keys: Linux-X64-go1.25.4-96db16edd2db22b4c7058e99a1e55a56b4dd9fec57b10e958926319e9065431e-
+Linux-X64-go1.25.4-
+
+2025-11-27T06:40:31.7248686Z   enableCrossOsArchive: false
+2025-11-27T06:40:31.7249087Z   fail-on-cache-miss: false
+2025-11-27T06:40:31.7249303Z   lookup-only: false
+2025-11-27T06:40:31.7249479Z   save-always: false
+2025-11-27T06:40:31.7249983Z env:
+2025-11-27T06:40:31.7250146Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:40:31.7250379Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:40:31.7250600Z   gocache: /home/runner/.cache/go-build
+2025-11-27T06:40:31.7250841Z   gomodcache: /home/runner/go/pkg/mod
+2025-11-27T06:40:31.7251061Z   today: 20251127
+2025-11-27T06:40:31.7251226Z ##[endgroup]
+2025-11-27T06:40:31.9732079Z Cache hit for: Linux-X64-go1.25.4-96db16edd2db22b4c7058e99a1e55a56b4dd9fec57b10e958926319e9065431e-20251127
+2025-11-27T06:40:33.0343065Z Received 218103808 of 1552042296 (14.1%), 204.9 MBs/sec
+2025-11-27T06:40:34.0461196Z Received 423624704 of 1552042296 (27.3%), 199.3 MBs/sec
+2025-11-27T06:40:35.0712922Z Received 671088640 of 1552042296 (43.2%), 209.7 MBs/sec
+2025-11-27T06:40:36.0829812Z Received 922746880 of 1552042296 (59.5%), 216.5 MBs/sec
+2025-11-27T06:40:37.0827120Z Received 1115684864 of 1552042296 (71.9%), 210.1 MBs/sec
+2025-11-27T06:40:38.0824839Z Received 1342177280 of 1552042296 (86.5%), 211.1 MBs/sec
+2025-11-27T06:40:38.9317527Z Received 1552042296 of 1552042296 (100.0%), 214.1 MBs/sec
+2025-11-27T06:40:38.9320068Z Cache Size: ~1480 MB (1552042296 B)
+2025-11-27T06:40:38.9456024Z [command]/usr/bin/tar -xf /home/runner/work/_temp/5ea578ea-666c-48f1-b82c-6d2b2a05a537/cache.tzst -P -C /home/runner/work/akvorado/akvorado --use-compress-program unzstd
+2025-11-27T06:40:55.8614133Z Cache restored successfully
+2025-11-27T06:40:56.1552125Z Cache restored from key: Linux-X64-go1.25.4-96db16edd2db22b4c7058e99a1e55a56b4dd9fec57b10e958926319e9065431e-20251127
+2025-11-27T06:40:56.1683578Z ##[group]Run pnpm/action-setup@v4
+2025-11-27T06:40:56.1683825Z with:
+2025-11-27T06:40:56.1684040Z   package_json_file: console/frontend/package.json
+2025-11-27T06:40:56.1684312Z   dest: ~/setup-pnpm
+2025-11-27T06:40:56.1684502Z   run_install: null
+2025-11-27T06:40:56.1684685Z   standalone: false
+2025-11-27T06:40:56.1684847Z env:
+2025-11-27T06:40:56.1685017Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:40:56.1685271Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:40:56.1685487Z   gocache: /home/runner/.cache/go-build
+2025-11-27T06:40:56.1685736Z   gomodcache: /home/runner/go/pkg/mod
+2025-11-27T06:40:56.1685964Z   today: 20251127
+2025-11-27T06:40:56.1686418Z ##[endgroup]
+2025-11-27T06:40:56.2283373Z ##[group]Running self-installer...
+2025-11-27T06:40:56.9184291Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2025-11-27T06:40:56.9279809Z Packages: +1
+2025-11-27T06:40:56.9280382Z +
+2025-11-27T06:40:57.4064760Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2025-11-27T06:40:57.4368514Z 
+2025-11-27T06:40:57.4369268Z dependencies:
+2025-11-27T06:40:57.4370054Z + pnpm 10.16.1 (10.23.0 is available)
+2025-11-27T06:40:57.4370723Z 
+2025-11-27T06:40:57.4446456Z Done in 1s
+2025-11-27T06:40:57.4656847Z ##[endgroup]
+2025-11-27T06:40:57.4661618Z Installation Completed!
+2025-11-27T06:40:57.4754245Z ##[group]Run actions/setup-node@v4
+2025-11-27T06:40:57.4754476Z with:
+2025-11-27T06:40:57.4754641Z   node-version: 20
+2025-11-27T06:40:57.4754834Z   cache: pnpm
+2025-11-27T06:40:57.4755139Z   cache-dependency-path: console/frontend/pnpm-lock.yaml
+bin/external-tool
+
+2025-11-27T06:40:57.4755493Z   always-auth: false
+2025-11-27T06:40:57.4755717Z   check-latest: false
+2025-11-27T06:40:57.4756040Z   token: ***
+2025-11-27T06:40:57.4756207Z env:
+2025-11-27T06:40:57.4756382Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:40:57.4756626Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:40:57.4756844Z   gocache: /home/runner/.cache/go-build
+2025-11-27T06:40:57.4757099Z   gomodcache: /home/runner/go/pkg/mod
+2025-11-27T06:40:57.4757327Z   today: 20251127
+2025-11-27T06:40:57.4757564Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-11-27T06:40:57.4757839Z ##[endgroup]
+2025-11-27T06:40:57.6730291Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+2025-11-27T06:40:57.6737292Z ##[group]Environment details
+2025-11-27T06:40:59.9165362Z node: v20.19.5
+2025-11-27T06:40:59.9165977Z npm: 10.8.2
+2025-11-27T06:40:59.9166221Z yarn: 1.22.22
+2025-11-27T06:40:59.9167064Z ##[endgroup]
+2025-11-27T06:40:59.9198412Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+2025-11-27T06:41:00.6285560Z /home/runner/setup-pnpm/node_modules/.bin/store/v10
+2025-11-27T06:41:00.7365394Z Cache hit for: node-cache-Linux-x64-pnpm-13e64d33f0e245ee50ef0c2650e0fb344fa98fc0801ac9e182d54c970da2955e
+2025-11-27T06:41:01.2520451Z Received 71092584 of 71092584 (100.0%), 146.4 MBs/sec
+2025-11-27T06:41:01.2521453Z Cache Size: ~68 MB (71092584 B)
+2025-11-27T06:41:01.2551493Z [command]/usr/bin/tar -xf /home/runner/work/_temp/441de7dd-3f51-4a01-9113-70c2a4522e38/cache.tzst -P -C /home/runner/work/akvorado/akvorado --use-compress-program unzstd
+2025-11-27T06:41:01.9453441Z Cache restored successfully
+2025-11-27T06:41:01.9649491Z Cache restored from key: node-cache-Linux-x64-pnpm-13e64d33f0e245ee50ef0c2650e0fb344fa98fc0801ac9e182d54c970da2955e
+2025-11-27T06:41:02.1217260Z ##[group]Run actions/cache/restore@v4
+2025-11-27T06:41:02.1217536Z with:
+2025-11-27T06:41:02.1217888Z   path: orchestrator/clickhouse/data/udp.csv
+orchestrator/clickhouse/data/tcp.csv
+
+2025-11-27T06:41:02.1218582Z   key: iana-cache-e8d230126f1e8fe7d664aa6fab368693cc3e4430f357bce89d0d67b88527d350-19727457216
+2025-11-27T06:41:02.1219526Z   restore-keys: iana-cache-e8d230126f1e8fe7d664aa6fab368693cc3e4430f357bce89d0d67b88527d350-
+
+2025-11-27T06:41:02.1219979Z   enableCrossOsArchive: false
+2025-11-27T06:41:02.1220209Z   fail-on-cache-miss: false
+2025-11-27T06:41:02.1220425Z   lookup-only: false
+2025-11-27T06:41:02.1220609Z env:
+2025-11-27T06:41:02.1220784Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:41:02.1221024Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:41:02.1221244Z   gocache: /home/runner/.cache/go-build
+2025-11-27T06:41:02.1221545Z   gomodcache: /home/runner/go/pkg/mod
+2025-11-27T06:41:02.1221825Z   today: 20251127
+2025-11-27T06:41:02.1222066Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-11-27T06:41:02.1222340Z ##[endgroup]
+2025-11-27T06:41:02.3624932Z Cache hit for restore-key: iana-cache-e8d230126f1e8fe7d664aa6fab368693cc3e4430f357bce89d0d67b88527d350-19685139344
+2025-11-27T06:41:02.4445819Z Received 48824 of 48824 (100.0%), 2.2 MBs/sec
+2025-11-27T06:41:02.4446496Z Cache Size: ~0 MB (48824 B)
+2025-11-27T06:41:02.4490574Z [command]/usr/bin/tar -xf /home/runner/work/_temp/6c55e656-8f5a-42cb-b1ad-777153a16abe/cache.tzst -P -C /home/runner/work/akvorado/akvorado --use-compress-program unzstd
+2025-11-27T06:41:02.4545238Z Cache restored successfully
+2025-11-27T06:41:02.4634717Z Cache restored from key: iana-cache-e8d230126f1e8fe7d664aa6fab368693cc3e4430f357bce89d0d67b88527d350-19685139344
+2025-11-27T06:41:02.4738348Z ##[group]Run sudo apt-get install -qqy shared-mime-info curl zip
+2025-11-27T06:41:02.4738824Z [36;1msudo apt-get install -qqy shared-mime-info curl zip[0m
+2025-11-27T06:41:02.4782184Z shell: /usr/bin/bash -e {0}
+2025-11-27T06:41:02.4782517Z env:
+2025-11-27T06:41:02.4782711Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:41:02.4782974Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:41:02.4783225Z   gocache: /home/runner/.cache/go-build
+2025-11-27T06:41:02.4783498Z   gomodcache: /home/runner/go/pkg/mod
+2025-11-27T06:41:02.4783841Z   today: 20251127
+2025-11-27T06:41:02.4784090Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-11-27T06:41:02.4784381Z ##[endgroup]
+2025-11-27T06:41:04.0313003Z ##[group]Run sudo -E capsh --keep=1 --user=$USER --caps=cap_bpf+eip --addamb=cap_bpf -- -c "make test-race"
+2025-11-27T06:41:04.0313883Z [36;1msudo -E capsh --keep=1 --user=$USER --caps=cap_bpf+eip --addamb=cap_bpf -- -c "make test-race"[0m
+2025-11-27T06:41:04.0349570Z shell: /usr/bin/bash -e {0}
+2025-11-27T06:41:04.0349811Z env:
+2025-11-27T06:41:04.0350274Z   CI_AKVORADO_FUNCTIONAL_TESTS: true
+2025-11-27T06:41:04.0350542Z   CI_AKVORADO_EBPF: true
+2025-11-27T06:41:04.0350774Z   gocache: /home/runner/.cache/go-build
+2025-11-27T06:41:04.0351035Z   gomodcache: /home/runner/go/pkg/mod
+2025-11-27T06:41:04.0351269Z   today: 20251127
+2025-11-27T06:41:04.0351510Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-11-27T06:41:04.0352031Z ##[endgroup]
+2025-11-27T06:41:04.1820884Z ▶ formatting Go code…
+2025-11-27T06:41:04.6073508Z go: downloading go1.25.4 (linux/amd64)
+2025-11-27T06:41:10.3422077Z ▶ running golint…
+2025-11-27T06:41:18.4371384Z ▶ compiling protocol buffers common/pb/rawflow.pb.go…
+2025-11-27T06:41:48.6318848Z ▶ generate column definitions…
+2025-11-27T06:41:48.7259452Z ▶ generate ASN map…
+2025-11-27T06:41:49.0554099Z ▶ generate PEG parser for filters…
+2025-11-27T06:41:49.6109501Z ▶ generate enums for LoadBalanceAlgorithm…
+2025-11-27T06:42:08.4127709Z ▶ generate enums for ASNProvider…
+2025-11-27T06:42:08.6476037Z ▶ generate enums for NetProvider…
+2025-11-27T06:42:08.8664942Z ▶ generate enums for AuthProtocol…
+2025-11-27T06:42:14.1797553Z ▶ generate enums for PrivProtocol…
+2025-11-27T06:42:14.4455679Z ▶ generate enums for IfSpeedPathUnit…
+2025-11-27T06:42:14.7039491Z ▶ generate enums for HomepageTopWidget…
+2025-11-27T06:42:15.2751033Z ▶ generate enums for SASLMechanism…
+2025-11-27T06:42:15.5442657Z ▶ fetching node modules…
+2025-11-27T06:42:17.9536943Z ▶ building console frontend…
+2025-11-27T06:42:25.3931813Z [36mrolldown-vite v7.1.10 [32mbuilding for production...[36m[39m
+2025-11-27T06:42:25.5049991Z [2K
+2025-11-27T06:42:26.8311348Z transforming...[32m✓[39m 2036 modules transformed.
+2025-11-27T06:42:26.9792162Z rendering chunks...
+2025-11-27T06:42:27.5149499Z computing gzip size...
+2025-11-27T06:42:27.5422266Z [2m../data/frontend/[22m[32mindex.html                    [39m[1m[2m    0.56 kB[22m[22m[2m │ gzip:   0.34 kB[22m
+2025-11-27T06:42:27.5423266Z [2m../data/frontend/[22m[2massets/[22m[32makvorado-DXhK_DdK.svg  [39m[1m[2m   95.68 kB[22m[22m[2m │ gzip:  29.02 kB[22m
+2025-11-27T06:42:27.5424414Z [2m../data/frontend/[22m[2massets/[22m[35mindex-Bt0ncb_s.css     [39m[1m[2m   98.50 kB[22m[22m[2m │ gzip:  14.22 kB[22m
+2025-11-27T06:42:27.5425574Z [2m../data/frontend/[22m[2massets/[22m[36mindex-DetDb6Un.js      [39m[1m[2m1,525.53 kB[22m[22m[2m │ gzip: 508.53 kB[22m
+2025-11-27T06:42:27.5426569Z [32m✓ built in 2.14s[39m
+2025-11-27T06:42:27.6044980Z ▶ generate embed.zip…
+2025-11-27T06:42:28.0327420Z ▶ generate mocks for ClickHouse driver…
+2025-11-27T06:42:29.3929395Z ▶ generate mocks for conntrack-fixer…
+2025-11-27T06:42:32.8641767Z ▶ running Go tests, with race detector…
+2025-11-27T06:44:25.0967254Z [33m∅[0m  .
+2025-11-27T06:46:06.7237668Z [33m∅[0m  common/clickhousedb/mocks
+2025-11-27T06:46:07.5360624Z [32m✓[0m  cmd (2.37s)
+2025-11-27T06:46:07.8137707Z [32m✓[0m  common/daemon (1.087s)
+2025-11-27T06:46:07.8280593Z [32m✓[0m  common/clickhousedb (1.104s)
+2025-11-27T06:46:08.5801086Z [32m✓[0m  common/embed (1.047s)
+2025-11-27T06:46:13.9205157Z [32m✓[0m  common/helpers/bimap (1.053s)
+2025-11-27T06:46:13.9271531Z [32m✓[0m  common/helpers/intern (1.059s)
+2025-11-27T06:46:13.9312914Z [32m✓[0m  common/helpers/cache (1.063s)
+2025-11-27T06:46:13.9498826Z [33m∅[0m  common/helpers/race
+2025-11-27T06:46:13.9744342Z [32m✓[0m  common/helpers (1.107s)
+2025-11-27T06:46:15.8237504Z [33m∅[0m  common/pb
+2025-11-27T06:46:16.1265130Z [32m✓[0m  common/helpers/yaml (1.064s)
+2025-11-27T06:46:16.8900282Z [32m✓[0m  common/httpserver (1.18s)
+2025-11-27T06:46:18.4256916Z [32m✓[0m  common/kafka (2.602s)
+2025-11-27T06:46:18.8145996Z [32m✓[0m  common/reporter/logger (1.014s)
+2025-11-27T06:46:18.9441188Z [32m✓[0m  common/reporter (1.144s)
+2025-11-27T06:46:19.1584831Z [32m✓[0m  common/remotedatasource (1.515s)
+2025-11-27T06:46:20.9281136Z [32m✓[0m  common/reporter/metrics (1.142s)
+2025-11-27T06:46:21.0811332Z [32m✓[0m  common/reporter/stack (1.057s)
+2025-11-27T06:46:23.0821584Z [33m∅[0m  conntrackfixer/mocks
+2025-11-27T06:46:24.2020095Z [32m✓[0m  conntrackfixer (1.121s)
+2025-11-27T06:46:24.3143533Z [32m✓[0m  common/schema (1.233s)
+2025-11-27T06:46:26.2177625Z [32m✓[0m  console/authentication (1.275s)
+2025-11-27T06:46:27.7552647Z [32m✓[0m  console (2.811s)
+2025-11-27T06:46:27.7859713Z [33m∅[0m  demoexporter
+2025-11-27T06:46:28.8909657Z [32m✓[0m  console/query (1.133s)
+2025-11-27T06:46:28.9433414Z [32m✓[0m  console/database (1.355s)
+2025-11-27T06:46:28.9440674Z [32m✓[0m  console/filter (1.358s)
+2025-11-27T06:46:30.2148079Z [32m✓[0m  demoexporter/bmp (1.147s)
+2025-11-27T06:46:31.1606821Z [33m∅[0m  inlet/flow/input
+2025-11-27T06:46:31.8357296Z [32m✓[0m  demoexporter/snmp (1.072s)
+2025-11-27T06:46:32.0675724Z [32m✓[0m  demoexporter/flows (1.303s)
+2025-11-27T06:46:32.3240620Z [32m✓[0m  inlet/flow (1.16s)
+2025-11-27T06:46:33.3969306Z [32m✓[0m  inlet/flow/input/file (1.1s)
+2025-11-27T06:46:34.9074086Z [32m✓[0m  inlet/flow/input/udp (1.474s)
+2025-11-27T06:46:35.3725535Z [32m✓[0m  orchestrator (1.089s)
+2025-11-27T06:46:37.4093814Z [32m✓[0m  inlet/kafka (3.126s)
+2025-11-27T06:46:38.9356270Z [32m✓[0m  orchestrator/geoip (1.407s)
+2025-11-27T06:46:39.3576642Z [32m✓[0m  orchestrator/kafka (1.591s)
+2025-11-27T06:46:45.1374327Z [32m✓[0m  outlet/flow (1.179s)
+2025-11-27T06:46:47.7394720Z [32m✓[0m  outlet/flow/decoder (1.075s)
+2025-11-27T06:46:48.2929955Z [32m✓[0m  outlet/core (4.334s)
+2025-11-27T06:46:49.9281937Z [32m✓[0m  outlet/clickhouse (7.755s)
+2025-11-27T06:46:50.3187470Z [32m✓[0m  outlet/flow/decoder/gob (1.085s)
+2025-11-27T06:46:51.7064048Z [32m✓[0m  outlet/flow/decoder/netflow (1.395s)
+2025-11-27T06:46:53.0457548Z [32m✓[0m  outlet/flow/decoder/sflow (1.206s)
+2025-11-27T06:46:54.7755898Z [33m∅[0m  outlet/metadata/provider
+2025-11-27T06:46:56.3135227Z [32m✓[0m  outlet/metadata (1.538s)
+2025-11-27T06:46:57.1894920Z [31m✖[0m  outlet/kafka (4.521s)
+2025-11-27T06:46:57.6311809Z [32m✓[0m  orchestrator/clickhouse (20.103s)
+2025-11-27T06:47:03.7759383Z [32m✓[0m  outlet/routing (1.083s)
+2025-11-27T06:47:03.7854793Z [33m∅[0m  outlet/routing/provider
+2025-11-27T06:47:03.9256264Z [32m✓[0m  outlet/metadata/provider/static (1.233s)
+2025-11-27T06:47:04.4516434Z [32m✓[0m  outlet/metadata/provider/snmp (1.758s)
+2025-11-27T06:47:09.4056240Z [32m✓[0m  outlet/routing/provider/bioris (2.197s)
+2025-11-27T06:47:14.3824158Z [32m✓[0m  outlet/metadata/provider/gnmi (11.69s)
+2025-11-27T06:47:17.1207976Z [32m✓[0m  outlet/routing/provider/bmp (9.389s)
+2025-11-27T06:47:17.7934197Z 
+2025-11-27T06:47:17.7934999Z === [33mSkipped[0m
+2025-11-27T06:47:17.7936055Z === [33mSKIP[0m: common/helpers TestSubnetMapAllMaybeSorted/sorted_vs_unsorted (0.00s)
+2025-11-27T06:47:17.7937963Z     /home/runner/work/akvorado/akvorado/common/helpers/subnetmap_test.go:677: All() and AllMaybeSorted() returned identical order
+2025-11-27T06:47:17.7938795Z 
+2025-11-27T06:47:17.7939828Z === [33mSKIP[0m: outlet/metadata/provider/gnmi TestSRLinux/subscribe_polling_json (0.00s)
+2025-11-27T06:47:17.7941821Z     /home/runner/work/akvorado/akvorado/outlet/metadata/provider/gnmi/srlinux_test.go:631: subscribe with polling does not work on SR Linux
+2025-11-27T06:47:17.7942729Z 
+2025-11-27T06:47:17.7943724Z === [33mSKIP[0m: outlet/metadata/provider/gnmi TestSRLinux/subscribe_polling_json_ietf (0.00s)
+2025-11-27T06:47:17.7945997Z     /home/runner/work/akvorado/akvorado/outlet/metadata/provider/gnmi/srlinux_test.go:631: subscribe with polling does not work on SR Linux
+2025-11-27T06:47:17.7946769Z 
+2025-11-27T06:47:17.7946962Z === [31mFailed[0m
+2025-11-27T06:47:17.7947402Z === [31mFAIL[0m: outlet/kafka TestStartSeveralWorkers (0.10s)
+2025-11-27T06:47:17.7948605Z {"level":"info","time":"2025-11-27T06:46:52Z","caller":"akvorado/outlet/kafka/root.go:96","module":"akvorado/outlet/kafka","message":"starting Kafka component"}
+2025-11-27T06:47:17.7950734Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.7952514Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.7954015Z {"level":"debug","broker":"seed_0","version":4,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.7956111Z {"level":"debug","broker":"seed_0","bytes_written":40,"write_wait":0.0268,"time_to_write":0.324187,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.7958042Z {"level":"debug","broker":"seed_0","bytes_read":233,"read_wait":0.221896,"time_to_read":0.013606,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.7960044Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.7962284Z {"level":"debug","broker":"seed_0","bytes_written":31,"write_wait":1.341893,"time_to_write":0.019627,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote Metadata v13"}
+2025-11-27T06:47:17.7965287Z {"level":"debug","broker":"seed_0","bytes_read":524,"read_wait":0.091181,"time_to_read":0.333062,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read Metadata v13"}
+2025-11-27T06:47:17.7967960Z {"level":"info","time":"2025-11-27T06:46:52Z","caller":"akvorado/outlet/kafka/root.go:123","module":"akvorado/outlet/kafka","message":"topic \"test-topic2-4161520809734794026-v5\" has 16 partitions"}
+2025-11-27T06:47:17.7970539Z {"level":"info","worker":0,"time":"2025-11-27T06:46:52Z","caller":"akvorado/outlet/kafka/worker.go:27","module":"akvorado/outlet/kafka","message":"starting new client"}
+2025-11-27T06:47:17.7973148Z {"level":"info","why":"querying metadata for consumer initialization","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"immediate metadata update triggered"}
+2025-11-27T06:47:17.7975655Z {"level":"info","worker":1,"time":"2025-11-27T06:46:52Z","caller":"akvorado/outlet/kafka/worker.go:27","module":"akvorado/outlet/kafka","message":"starting new client"}
+2025-11-27T06:47:17.7978236Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.7981076Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.7983491Z {"level":"debug","broker":"seed_0","version":4,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.7985841Z {"level":"debug","broker":"seed_0","bytes_written":40,"write_wait":0.22975,"time_to_write":0.035858,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.7988035Z {"level":"debug","broker":"seed_0","bytes_read":233,"read_wait":0.334425,"time_to_read":0.045324,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.7990134Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.7992057Z {"level":"info","why":"querying metadata for consumer initialization","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"immediate metadata update triggered"}
+2025-11-27T06:47:17.7994295Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.7996405Z {"level":"debug","broker":"seed_0","bytes_written":83,"write_wait":2.217355,"time_to_write":0.026219,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote Metadata v13"}
+2025-11-27T06:47:17.7998576Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8000123Z {"level":"debug","broker":"seed_0","version":4,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.8001579Z {"level":"info","worker":2,"time":"2025-11-27T06:46:52Z","caller":"akvorado/outlet/kafka/worker.go:27","module":"akvorado/outlet/kafka","message":"starting new client"}
+2025-11-27T06:47:17.8003002Z {"level":"debug","broker":"seed_0","bytes_read":524,"read_wait":0.583051,"time_to_read":0.016491,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read Metadata v13"}
+2025-11-27T06:47:17.8005084Z {"level":"debug","broker":"seed_0","bytes_written":40,"write_wait":0.10183,"time_to_write":0.028494,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.8007326Z {"level":"debug","broker":"seed_0","bytes_read":233,"read_wait":0.339508,"time_to_read":0.011982,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.8009605Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8011872Z {"level":"debug","broker":"seed_0","bytes_written":83,"write_wait":1.494561,"time_to_write":0.024025,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote Metadata v13"}
+2025-11-27T06:47:17.8014773Z {"level":"debug","broker":"seed_0","bytes_read":524,"read_wait":0.29896,"time_to_read":0.051607,"err":null,"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read Metadata v13"}
+2025-11-27T06:47:17.8017558Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning to manage the group lifecycle"}
+2025-11-27T06:47:17.8020126Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning autocommit loop"}
+2025-11-27T06:47:17.8022312Z {"level":"debug","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"blocking commits from join&sync"}
+2025-11-27T06:47:17.8024143Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"joining group"}
+2025-11-27T06:47:17.8025861Z {"level":"debug","coordinator_type":0,"coordinator_keys":["outlet-7094647786116436174"],"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"prepared to issue find coordinator request"}
+2025-11-27T06:47:17.8027713Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning to manage the group lifecycle"}
+2025-11-27T06:47:17.8031383Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning autocommit loop"}
+2025-11-27T06:47:17.8033677Z {"level":"debug","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"blocking commits from join&sync"}
+2025-11-27T06:47:17.8035970Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"joining group"}
+2025-11-27T06:47:17.8038148Z {"level":"debug","req":"FindCoordinator","destinations":["any"],"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"sharded request"}
+2025-11-27T06:47:17.8040830Z {"level":"debug","coordinator_type":0,"coordinator_keys":["outlet-7094647786116436174"],"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"prepared to issue find coordinator request"}
+2025-11-27T06:47:17.8043383Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8046018Z {"level":"debug","req":"FindCoordinator","destinations":["any"],"time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"sharded request"}
+2025-11-27T06:47:17.8048210Z {"level":"info","why":"querying metadata for consumer initialization","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"immediate metadata update triggered"}
+2025-11-27T06:47:17.8050299Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8051985Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:52Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8053211Z {"level":"info","worker":3,"time":"2025-11-27T06:46:53Z","caller":"akvorado/outlet/kafka/worker.go:27","module":"akvorado/outlet/kafka","message":"starting new client"}
+2025-11-27T06:47:17.8054781Z {"level":"info","why":"querying metadata for consumer initialization","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"immediate metadata update triggered"}
+2025-11-27T06:47:17.8056564Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8058235Z {"level":"info","worker":4,"time":"2025-11-27T06:46:53Z","caller":"akvorado/outlet/kafka/worker.go:27","module":"akvorado/outlet/kafka","message":"starting new client"}
+2025-11-27T06:47:17.8060314Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8061789Z {"level":"debug","broker":"seed_0","version":4,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.8063470Z {"level":"debug","broker":"seed_0","bytes_written":40,"write_wait":0.028914,"time_to_write":0.030377,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.8065440Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8066905Z {"level":"debug","broker":"0","version":4,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.8068394Z {"level":"debug","broker":"0","bytes_written":40,"write_wait":0.012754,"time_to_write":0.027291,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.8070302Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8072105Z {"level":"debug","broker":"0","version":4,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.8074010Z {"level":"debug","broker":"0","bytes_written":40,"write_wait":0.020028,"time_to_write":0.02684,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.8076370Z {"level":"debug","broker":"seed_0","bytes_read":233,"read_wait":0.091311,"time_to_read":4.994686,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.8078408Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8080819Z {"level":"debug","broker":"seed_0","bytes_written":83,"write_wait":9.7094,"time_to_write":0.021279,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote Metadata v13"}
+2025-11-27T06:47:17.8083067Z {"level":"debug","broker":"0","bytes_read":233,"read_wait":0.072746,"time_to_read":4.755708,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.8084814Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8086554Z {"level":"debug","broker":"0","bytes_read":233,"read_wait":0.084117,"time_to_read":0.88565,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.8088504Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8091749Z {"level":"debug","broker":"0","bytes_written":57,"write_wait":10.980479,"time_to_write":0.020067,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote FindCoordinator v6"}
+2025-11-27T06:47:17.8093921Z {"level":"debug","broker":"seed_0","bytes_read":524,"read_wait":0.105758,"time_to_read":1.158149,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read Metadata v13"}
+2025-11-27T06:47:17.8096397Z {"level":"info","why":"querying metadata for consumer initialization","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"immediate metadata update triggered"}
+2025-11-27T06:47:17.8099172Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8100791Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8102337Z {"level":"debug","broker":"0","bytes_written":57,"write_wait":10.1796,"time_to_write":0.020608,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote FindCoordinator v6"}
+2025-11-27T06:47:17.8104092Z {"level":"debug","broker":"0","bytes_read":64,"read_wait":6.138629,"time_to_read":0.01045,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read FindCoordinator v6"}
+2025-11-27T06:47:17.8105564Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8107380Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8110513Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8112498Z {"level":"debug","broker":"0","bytes_written":196,"write_wait":0.374672,"time_to_write":0.026399,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote JoinGroup v9"}
+2025-11-27T06:47:17.8114116Z {"level":"debug","broker":"0","bytes_read":71,"read_wait":0.121548,"time_to_read":0.111879,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read JoinGroup v9"}
+2025-11-27T06:47:17.8115599Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning to manage the group lifecycle"}
+2025-11-27T06:47:17.8117000Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning autocommit loop"}
+2025-11-27T06:47:17.8118236Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"blocking commits from join&sync"}
+2025-11-27T06:47:17.8119454Z make: *** [Makefile:203: test-go-units] Error 1
+2025-11-27T06:47:17.8120576Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"joining group"}
+2025-11-27T06:47:17.8123058Z {"level":"debug","coordinator_type":0,"coordinator_keys":["outlet-7094647786116436174"],"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"prepared to issue find coordinator request"}
+2025-11-27T06:47:17.8124890Z {"level":"debug","req":"FindCoordinator","destinations":["any"],"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"sharded request"}
+2025-11-27T06:47:17.8126234Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8128199Z {"level":"debug","broker":"0","bytes_read":64,"read_wait":0.167354,"time_to_read":10.758756,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read FindCoordinator v6"}
+2025-11-27T06:47:17.8130510Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8132513Z {"level":"debug","broker":"0","version":4,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.8134136Z {"level":"debug","broker":"0","bytes_written":40,"write_wait":0.014056,"time_to_write":0.026109,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.8135673Z {"level":"debug","broker":"seed_0","version":4,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.8137264Z {"level":"debug","broker":"seed_0","bytes_written":40,"write_wait":0.029736,"time_to_write":0.027391,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.8138710Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8140631Z {"level":"debug","broker":"0","bytes_read":233,"read_wait":0.125926,"time_to_read":1.403679,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.8142492Z {"level":"debug","broker":"seed_0","bytes_read":233,"read_wait":0.227496,"time_to_read":0.029335,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.8144208Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8146808Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8149121Z {"level":"debug","broker":"0","bytes_written":57,"write_wait":3.944986,"time_to_write":0.015299,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote FindCoordinator v6"}
+2025-11-27T06:47:17.8150826Z {"level":"debug","broker":"seed_0","bytes_written":83,"write_wait":10.985799,"time_to_write":0.024856,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote Metadata v13"}
+2025-11-27T06:47:17.8152756Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8154543Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8156429Z {"level":"debug","broker":"0","bytes_written":196,"write_wait":3.483202,"time_to_write":0.030717,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote JoinGroup v9"}
+2025-11-27T06:47:17.8158553Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-1e7ef363d0f3e097ca74d3430ad72d76","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"join returned MemberIDRequired, rejoining with response's MemberID"}
+2025-11-27T06:47:17.8160935Z {"level":"debug","broker":"0","bytes_written":241,"write_wait":0.072816,"time_to_write":0.019466,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote JoinGroup v9"}
+2025-11-27T06:47:17.8162713Z {"level":"debug","broker":"0","bytes_read":71,"read_wait":0.130615,"time_to_read":1.798639,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read JoinGroup v9"}
+2025-11-27T06:47:17.8164941Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-d122456b3864d790a5cbc6a92d33e2d8","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"join returned MemberIDRequired, rejoining with response's MemberID"}
+2025-11-27T06:47:17.8167493Z {"level":"debug","broker":"0","bytes_written":241,"write_wait":0.034825,"time_to_write":0.020709,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote JoinGroup v9"}
+2025-11-27T06:47:17.8169768Z {"level":"debug","broker":"0","bytes_read":251,"read_wait":0.097423,"time_to_read":1.733627,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read JoinGroup v9"}
+2025-11-27T06:47:17.8171947Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-1e7ef363d0f3e097ca74d3430ad72d76","instance_id":{},"generation":1,"balance_protocol":"cooperative-sticky","leader":true,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"joined, balancing group"}
+2025-11-27T06:47:17.8173873Z {"level":"info","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balancing group as leader"}
+2025-11-27T06:47:17.8187922Z {"level":"info","id":"akvorado-dev-1e7ef363d0f3e097ca74d3430ad72d76","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8190257Z {"level":"info","plan":"akvorado-dev-1e7ef363d0f3e097ca74d3430ad72d76{test-topic2-4161520809734794026-v5[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15]}","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balanced"}
+2025-11-27T06:47:17.8192183Z {"level":"info","group":"outlet-7094647786116436174","protocol_type":"consumer","protocol":"cooperative-sticky","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"syncing"}
+2025-11-27T06:47:17.8194017Z {"level":"debug","broker":"0","bytes_written":297,"write_wait":0.038522,"time_to_write":0.021691,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote SyncGroup v5"}
+2025-11-27T06:47:17.8195986Z {"level":"debug","broker":"0","bytes_read":159,"read_wait":0.082545,"time_to_read":0.177833,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read SyncGroup v5"}
+2025-11-27T06:47:17.8197792Z {"level":"info","group":"outlet-7094647786116436174","assigned":{"test-topic2-4161520809734794026-v5":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"synced"}
+2025-11-27T06:47:17.8199835Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"unblocking commits from join&sync"}
+2025-11-27T06:47:17.8201667Z {"level":"info","group":"outlet-7094647786116436174","added":{"test-topic2-4161520809734794026-v5":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]},"lost":{},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"new group session begun"}
+2025-11-27T06:47:17.8203225Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning heartbeat loop"}
+2025-11-27T06:47:17.8204831Z {"level":"debug","with":{"test-topic2-4161520809734794026-v5":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"entering OnPartitionsAssigned"}
+2025-11-27T06:47:17.8206250Z {"level":"debug","req":"OffsetFetch","destinations":["0"],"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"sharded request"}
+2025-11-27T06:47:17.8208056Z {"level":"debug","broker":"0","bytes_written":210,"write_wait":0.041879,"time_to_write":0.022732,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote OffsetFetch v9"}
+2025-11-27T06:47:17.8210008Z {"level":"debug","broker":"0","bytes_read":403,"read_wait":0.079539,"time_to_read":0.126588,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read OffsetFetch v9"}
+2025-11-27T06:47:17.8211581Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8213026Z {"level":"debug","broker":"seed_0","version":4,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.8214540Z {"level":"debug","broker":"seed_0","bytes_written":40,"write_wait":0.022221,"time_to_write":0.028053,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.8216169Z {"level":"debug","broker":"0","bytes_read":64,"read_wait":0.270336,"time_to_read":5.132915,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read FindCoordinator v6"}
+2025-11-27T06:47:17.8217719Z {"level":"debug","broker":"seed_0","bytes_read":524,"read_wait":0.355756,"time_to_read":5.326378,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read Metadata v13"}
+2025-11-27T06:47:17.8219589Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning to manage the group lifecycle"}
+2025-11-27T06:47:17.8221305Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning autocommit loop"}
+2025-11-27T06:47:17.8223124Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"blocking commits from join&sync"}
+2025-11-27T06:47:17.8224576Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"joining group"}
+2025-11-27T06:47:17.8226611Z {"level":"debug","coordinator_type":0,"coordinator_keys":["outlet-7094647786116436174"],"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"prepared to issue find coordinator request"}
+2025-11-27T06:47:17.8228472Z {"level":"debug","req":"FindCoordinator","destinations":["any"],"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"sharded request"}
+2025-11-27T06:47:17.8230398Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8231888Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8233769Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8235159Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8237102Z {"level":"debug","broker":"0","bytes_written":196,"write_wait":1.474793,"time_to_write":0.02671,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote JoinGroup v9"}
+2025-11-27T06:47:17.8238776Z {"level":"debug","broker":"0","bytes_read":71,"read_wait":0.089678,"time_to_read":0.236904,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read JoinGroup v9"}
+2025-11-27T06:47:17.8241433Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-5a0ebd900dcab8fc66eb21234bcf6770","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"join returned MemberIDRequired, rejoining with response's MemberID"}
+2025-11-27T06:47:17.8243879Z {"level":"debug","broker":"0","bytes_written":241,"write_wait":0.044774,"time_to_write":0.017773,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote JoinGroup v9"}
+2025-11-27T06:47:17.8249422Z {"level":"info","why":"newly fetched offsets for group outlet-7094647786116436174","how":0,"input":{"test-topic2-4161520809734794026-v5":{"0":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"1":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"10":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"11":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"12":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"13":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"14":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"15":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"2":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"3":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"4":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"5":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"6":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"7":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"8":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"9":{"At":-1,"Epoch":-1,"CurrentEpoch":0}}},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8253247Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"assign requires loading offsets"}
+2025-11-27T06:47:17.8257521Z {"level":"debug","broker":0,"load":{"List":{"test-topic2-4161520809734794026-v5":{"0":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"1":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"10":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"11":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"12":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"13":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"14":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"15":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"2":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"3":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"4":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"5":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"6":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"7":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"8":{"At":-1,"Epoch":-1,"CurrentEpoch":0},"9":{"At":-1,"Epoch":-1,"CurrentEpoch":0}}},"Epoch":null},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"offsets to load broker"}
+2025-11-27T06:47:17.8260974Z {"level":"debug","broker":"0","bytes_written":347,"write_wait":0.049523,"time_to_write":0.023704,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ListOffsets v10"}
+2025-11-27T06:47:17.8262484Z {"level":"info","time":"2025-11-27T06:46:53Z","caller":"akvorado/outlet/kafka/root.go:196","module":"akvorado/outlet/kafka","message":"stopping Kafka component"}
+2025-11-27T06:47:17.8263922Z {"level":"info","worker":4,"time":"2025-11-27T06:46:53Z","caller":"akvorado/outlet/kafka/worker.go:69","module":"akvorado/outlet/kafka","message":"stopping worker"}
+2025-11-27T06:47:17.8265050Z {"level":"info","worker":1,"time":"2025-11-27T06:46:53Z","caller":"akvorado/outlet/kafka/worker.go:69","module":"akvorado/outlet/kafka","message":"stopping worker"}
+2025-11-27T06:47:17.8266353Z {"level":"info","worker":2,"time":"2025-11-27T06:46:53Z","caller":"akvorado/outlet/kafka/worker.go:69","module":"akvorado/outlet/kafka","message":"stopping worker"}
+2025-11-27T06:47:17.8267763Z {"level":"info","worker":3,"time":"2025-11-27T06:46:53Z","caller":"akvorado/outlet/kafka/worker.go:69","module":"akvorado/outlet/kafka","message":"stopping worker"}
+2025-11-27T06:47:17.8269493Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8271044Z {"level":"debug","broker":"0","version":4,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"issuing api versions request"}
+2025-11-27T06:47:17.8272679Z {"level":"debug","broker":"0","bytes_written":40,"write_wait":0.023284,"time_to_write":0.028032,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote ApiVersions v4"}
+2025-11-27T06:47:17.8274529Z {"level":"debug","broker":"0","bytes_read":233,"read_wait":0.080702,"time_to_read":0.100227,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.8276067Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8277582Z {"level":"debug","broker":"0","bytes_written":57,"write_wait":6.265647,"time_to_write":0.017182,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote FindCoordinator v6"}
+2025-11-27T06:47:17.8279491Z {"level":"debug","broker":"seed_0","bytes_read":233,"read_wait":0.093204,"time_to_read":1.261483,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ApiVersions v4"}
+2025-11-27T06:47:17.8281450Z {"level":"info","why":"invalidating all assignments in LeaveGroup","how":1,"input":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8282757Z {"level":"info","worker":0,"time":"2025-11-27T06:46:53Z","caller":"akvorado/outlet/kafka/worker.go:69","module":"akvorado/outlet/kafka","message":"stopping worker"}
+2025-11-27T06:47:17.8284282Z {"level":"debug","addr":"127.0.0.1:37301","broker":"seed_0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8286170Z {"level":"info","why":"invalidating all assignments in LeaveGroup","how":1,"input":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8287776Z {"level":"debug","broker":"seed_0","bytes_written":83,"write_wait":35.337634,"time_to_write":0.020729,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote Metadata v13"}
+2025-11-27T06:47:17.8289551Z {"level":"info","why":"invalidating all assignments in LeaveGroup","how":1,"input":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8291077Z {"level":"info","why":"invalidating all assignments in LeaveGroup","how":1,"input":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8292988Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"tried to leave group but we have no member ID yet, returning early"}
+2025-11-27T06:47:17.8294594Z {"level":"info","why":"invalidating all assignments in LeaveGroup","how":1,"input":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8296317Z {"level":"debug","broker":"seed_0","bytes_read":524,"read_wait":0.093034,"time_to_read":0.221385,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read Metadata v13"}
+2025-11-27T06:47:17.8298102Z {"level":"info","group":"outlet-7094647786116436174","err":"context canceled","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"heartbeat errored"}
+2025-11-27T06:47:17.8300056Z {"level":"debug","with":{"test-topic2-4161520809734794026-v5":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"entering OnPartitionsRevoked"}
+2025-11-27T06:47:17.8301676Z {"level":"info","why":"clearing assignment at end of group management session","how":1,"input":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8303107Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53138 disconnected from read: EOF"}
+2025-11-27T06:47:17.8304564Z {"level":"debug","broker":"0","bytes_read":484,"read_wait":0.095298,"time_to_read":0.153528,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read ListOffsets v10"}
+2025-11-27T06:47:17.8306273Z {"level":"debug","broker":"0","bytes_read":64,"read_wait":0.083537,"time_to_read":2.523136,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read FindCoordinator v6"}
+2025-11-27T06:47:17.8307993Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"opening connection to broker"}
+2025-11-27T06:47:17.8309696Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection opened to broker"}
+2025-11-27T06:47:17.8311164Z {"level":"debug","addr":"127.0.0.1:37301","broker":"0","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"connection initialized successfully"}
+2025-11-27T06:47:17.8313236Z {"level":"debug","broker":"0","bytes_written":196,"write_wait":0.719949,"time_to_write":0.174306,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote JoinGroup v9"}
+2025-11-27T06:47:17.8314814Z {"level":"debug","broker":"0","bytes_read":71,"read_wait":0.085811,"time_to_read":0.01038,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read JoinGroup v9"}
+2025-11-27T06:47:17.8316986Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-403bd5906d84bb856aebd25d6361c30a","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"join returned MemberIDRequired, rejoining with response's MemberID"}
+2025-11-27T06:47:17.8319225Z {"level":"debug","broker":"0","bytes_written":241,"write_wait":0.03203,"time_to_write":0.023324,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote JoinGroup v9"}
+2025-11-27T06:47:17.8321291Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-1e7ef363d0f3e097ca74d3430ad72d76","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"leaving group"}
+2025-11-27T06:47:17.8323412Z {"level":"debug","broker":"0","bytes_written":146,"write_wait":0.04237,"time_to_write":0.029475,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote LeaveGroup v5"}
+2025-11-27T06:47:17.8325340Z {"level":"debug","broker":"0","bytes_read":469,"read_wait":0.07988,"time_to_read":18.320057,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read JoinGroup v9"}
+2025-11-27T06:47:17.8327027Z {"level":"debug","broker":"0","bytes_read":67,"read_wait":0.108493,"time_to_read":0.473989,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read LeaveGroup v5"}
+2025-11-27T06:47:17.8329249Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-d122456b3864d790a5cbc6a92d33e2d8","instance_id":{},"generation":2,"balance_protocol":"cooperative-sticky","leader":true,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"joined, balancing group"}
+2025-11-27T06:47:17.8331174Z {"level":"debug","broker":"0","bytes_read":469,"read_wait":0.122049,"time_to_read":13.455765,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read JoinGroup v9"}
+2025-11-27T06:47:17.8333825Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-5a0ebd900dcab8fc66eb21234bcf6770","instance_id":{},"generation":2,"balance_protocol":"cooperative-sticky","leader":true,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"joined, balancing group"}
+2025-11-27T06:47:17.8335859Z {"level":"info","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balancing group as leader"}
+2025-11-27T06:47:17.8337323Z {"level":"info","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balancing group as leader"}
+2025-11-27T06:47:17.8339506Z {"level":"info","id":"akvorado-dev-403bd5906d84bb856aebd25d6361c30a","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8341815Z {"level":"info","id":"akvorado-dev-403bd5906d84bb856aebd25d6361c30a","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8344819Z {"level":"info","id":"akvorado-dev-5a0ebd900dcab8fc66eb21234bcf6770","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8347180Z {"level":"debug","broker":"0","bytes_read":469,"read_wait":0.082484,"time_to_read":5.748648,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read JoinGroup v9"}
+2025-11-27T06:47:17.8350316Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-403bd5906d84bb856aebd25d6361c30a","instance_id":{},"generation":2,"balance_protocol":"cooperative-sticky","leader":true,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"joined, balancing group"}
+2025-11-27T06:47:17.8352295Z {"level":"info","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balancing group as leader"}
+2025-11-27T06:47:17.8354813Z {"level":"info","id":"akvorado-dev-403bd5906d84bb856aebd25d6361c30a","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8357788Z {"level":"info","id":"akvorado-dev-5a0ebd900dcab8fc66eb21234bcf6770","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8360274Z {"level":"info","id":"akvorado-dev-d122456b3864d790a5cbc6a92d33e2d8","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8362580Z {"level":"info","id":"akvorado-dev-d122456b3864d790a5cbc6a92d33e2d8","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8365498Z {"level":"info","plan":"akvorado-dev-403bd5906d84bb856aebd25d6361c30a{test-topic2-4161520809734794026-v5[0 4 8 9 13]}, akvorado-dev-5a0ebd900dcab8fc66eb21234bcf6770{test-topic2-4161520809734794026-v5[1 5 6 10 14 15]}, akvorado-dev-d122456b3864d790a5cbc6a92d33e2d8{test-topic2-4161520809734794026-v5[2 3 7 11 12]}","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balanced"}
+2025-11-27T06:47:17.8369745Z {"level":"info","plan":"akvorado-dev-403bd5906d84bb856aebd25d6361c30a{test-topic2-4161520809734794026-v5[0 4 8 9 13]}, akvorado-dev-5a0ebd900dcab8fc66eb21234bcf6770{test-topic2-4161520809734794026-v5[1 5 6 10 14 15]}, akvorado-dev-d122456b3864d790a5cbc6a92d33e2d8{test-topic2-4161520809734794026-v5[2 3 7 11 12]}","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balanced"}
+2025-11-27T06:47:17.8372550Z {"level":"info","group":"outlet-7094647786116436174","protocol_type":"consumer","protocol":"cooperative-sticky","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"syncing"}
+2025-11-27T06:47:17.8374375Z {"level":"debug","broker":"0","bytes_written":493,"write_wait":0.044623,"time_to_write":0.027983,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote SyncGroup v5"}
+2025-11-27T06:47:17.8375979Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53104 disconnected from read: EOF"}
+2025-11-27T06:47:17.8377244Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53158 disconnected from read: EOF"}
+2025-11-27T06:47:17.8378712Z {"level":"info","group":"outlet-7094647786116436174","protocol_type":"consumer","protocol":"cooperative-sticky","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"syncing"}
+2025-11-27T06:47:17.8380885Z {"level":"info","id":"akvorado-dev-5a0ebd900dcab8fc66eb21234bcf6770","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8383365Z {"level":"info","id":"akvorado-dev-d122456b3864d790a5cbc6a92d33e2d8","interests":"interested topics: [test-topic2-4161520809734794026-v5], previously owned: ","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balance group member"}
+2025-11-27T06:47:17.8386440Z {"level":"info","plan":"akvorado-dev-5a0ebd900dcab8fc66eb21234bcf6770{test-topic2-4161520809734794026-v5[1 5 6 10 14 15]}, akvorado-dev-d122456b3864d790a5cbc6a92d33e2d8{test-topic2-4161520809734794026-v5[2 3 7 11 12]}, akvorado-dev-403bd5906d84bb856aebd25d6361c30a{test-topic2-4161520809734794026-v5[0 4 8 9 13]}","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"balanced"}
+2025-11-27T06:47:17.8388730Z {"level":"info","group":"outlet-7094647786116436174","protocol_type":"consumer","protocol":"cooperative-sticky","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"syncing"}
+2025-11-27T06:47:17.8390610Z {"level":"debug","broker":"0","bytes_written":493,"write_wait":0.079148,"time_to_write":0.023133,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote SyncGroup v5"}
+2025-11-27T06:47:17.8392204Z {"level":"debug","broker":"0","bytes_read":119,"read_wait":0.086031,"time_to_read":2.408622,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read SyncGroup v5"}
+2025-11-27T06:47:17.8393883Z {"level":"info","group":"outlet-7094647786116436174","assigned":{"test-topic2-4161520809734794026-v5":[1,5,6,10,14,15]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"synced"}
+2025-11-27T06:47:17.8395230Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"unblocking commits from join&sync"}
+2025-11-27T06:47:17.8397063Z {"level":"info","group":"outlet-7094647786116436174","added":{"test-topic2-4161520809734794026-v5":[1,5,6,10,14,15]},"lost":{},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"new group session begun"}
+2025-11-27T06:47:17.8398748Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning heartbeat loop"}
+2025-11-27T06:47:17.8400384Z {"level":"info","group":"outlet-7094647786116436174","err":"context canceled","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"heartbeat errored"}
+2025-11-27T06:47:17.8402067Z {"level":"debug","with":{"test-topic2-4161520809734794026-v5":[1,5,6,10,14,15]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"entering OnPartitionsAssigned"}
+2025-11-27T06:47:17.8403739Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"fetch offsets failed due to context cancelation"}
+2025-11-27T06:47:17.8405111Z {"level":"debug","req":"OffsetFetch","destinations":["err"],"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"sharded request"}
+2025-11-27T06:47:17.8406509Z {"level":"debug","with":{"test-topic2-4161520809734794026-v5":[1,5,6,10,14,15]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"entering OnPartitionsRevoked"}
+2025-11-27T06:47:17.8408061Z {"level":"info","why":"clearing assignment at end of group management session","how":1,"input":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8410012Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-5a0ebd900dcab8fc66eb21234bcf6770","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"leaving group"}
+2025-11-27T06:47:17.8411685Z {"level":"debug","broker":"0","bytes_written":146,"write_wait":0.034815,"time_to_write":0.025628,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote LeaveGroup v5"}
+2025-11-27T06:47:17.8413384Z {"level":"debug","broker":"0","bytes_read":115,"read_wait":2.037056,"time_to_read":0.011412,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read SyncGroup v5"}
+2025-11-27T06:47:17.8415157Z {"level":"info","group":"outlet-7094647786116436174","assigned":{"test-topic2-4161520809734794026-v5":[2,3,7,11,12]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"synced"}
+2025-11-27T06:47:17.8416501Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"unblocking commits from join&sync"}
+2025-11-27T06:47:17.8418017Z {"level":"info","group":"outlet-7094647786116436174","added":{"test-topic2-4161520809734794026-v5":[2,3,7,11,12]},"lost":{},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"new group session begun"}
+2025-11-27T06:47:17.8419621Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning heartbeat loop"}
+2025-11-27T06:47:17.8421347Z {"level":"info","group":"outlet-7094647786116436174","err":"context canceled","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"heartbeat errored"}
+2025-11-27T06:47:17.8423422Z {"level":"debug","with":{"test-topic2-4161520809734794026-v5":[2,3,7,11,12]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"entering OnPartitionsAssigned"}
+2025-11-27T06:47:17.8425665Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"fetch offsets failed due to context cancelation"}
+2025-11-27T06:47:17.8427528Z {"level":"debug","req":"OffsetFetch","destinations":["err"],"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"sharded request"}
+2025-11-27T06:47:17.8429307Z {"level":"debug","with":{"test-topic2-4161520809734794026-v5":[2,3,7,11,12]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"entering OnPartitionsRevoked"}
+2025-11-27T06:47:17.8431387Z {"level":"info","why":"clearing assignment at end of group management session","how":1,"input":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8433754Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-d122456b3864d790a5cbc6a92d33e2d8","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"leaving group"}
+2025-11-27T06:47:17.8436110Z {"level":"debug","broker":"0","bytes_written":146,"write_wait":0.035547,"time_to_write":0.027061,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote LeaveGroup v5"}
+2025-11-27T06:47:17.8437658Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53114 disconnected from read: EOF"}
+2025-11-27T06:47:17.8439591Z {"level":"debug","broker":"0","bytes_written":493,"write_wait":0.108703,"time_to_write":0.018064,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote SyncGroup v5"}
+2025-11-27T06:47:17.8441179Z {"level":"debug","broker":"0","bytes_read":115,"read_wait":3.549148,"time_to_read":0.011512,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read SyncGroup v5"}
+2025-11-27T06:47:17.8443054Z {"level":"info","group":"outlet-7094647786116436174","assigned":{"test-topic2-4161520809734794026-v5":[0,4,8,9,13]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"synced"}
+2025-11-27T06:47:17.8444696Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"unblocking commits from join&sync"}
+2025-11-27T06:47:17.8446639Z {"level":"info","group":"outlet-7094647786116436174","added":{"test-topic2-4161520809734794026-v5":[0,4,8,9,13]},"lost":{},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"new group session begun"}
+2025-11-27T06:47:17.8448591Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"beginning heartbeat loop"}
+2025-11-27T06:47:17.8450784Z {"level":"debug","with":{"test-topic2-4161520809734794026-v5":[0,4,8,9,13]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"entering OnPartitionsAssigned"}
+2025-11-27T06:47:17.8452321Z {"level":"info","group":"outlet-7094647786116436174","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"fetch offsets failed due to context cancelation"}
+2025-11-27T06:47:17.8454073Z {"level":"debug","req":"OffsetFetch","destinations":["err"],"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"sharded request"}
+2025-11-27T06:47:17.8455527Z {"level":"info","group":"outlet-7094647786116436174","err":"context canceled","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"heartbeat errored"}
+2025-11-27T06:47:17.8457440Z {"level":"debug","with":{"test-topic2-4161520809734794026-v5":[0,4,8,9,13]},"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"entering OnPartitionsRevoked"}
+2025-11-27T06:47:17.8459372Z {"level":"info","why":"clearing assignment at end of group management session","how":1,"input":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"assigning partitions"}
+2025-11-27T06:47:17.8461661Z {"level":"info","group":"outlet-7094647786116436174","member_id":"akvorado-dev-403bd5906d84bb856aebd25d6361c30a","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:42","module":"akvorado/common/kafka","message":"leaving group"}
+2025-11-27T06:47:17.8463544Z {"level":"debug","broker":"0","bytes_written":146,"write_wait":0.035977,"time_to_write":0.025228,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"wrote LeaveGroup v5"}
+2025-11-27T06:47:17.8465459Z {"level":"debug","broker":"0","bytes_read":67,"read_wait":0.09646,"time_to_read":0.982821,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read LeaveGroup v5"}
+2025-11-27T06:47:17.8467243Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53152 disconnected from read: EOF"}
+2025-11-27T06:47:17.8468840Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53204 disconnected from read: EOF"}
+2025-11-27T06:47:17.8470512Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53226 disconnected from read: EOF"}
+2025-11-27T06:47:17.8472119Z {"level":"debug","broker":"0","bytes_read":67,"read_wait":0.098434,"time_to_read":6.651538,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read LeaveGroup v5"}
+2025-11-27T06:47:17.8474100Z {"level":"debug","broker":"0","bytes_read":67,"read_wait":0.09625,"time_to_read":7.276601,"err":null,"time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:44","module":"akvorado/common/kafka","message":"read LeaveGroup v5"}
+2025-11-27T06:47:17.8475731Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53190 disconnected from read: EOF"}
+2025-11-27T06:47:17.8477237Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53098 disconnected from read: EOF"}
+2025-11-27T06:47:17.8479497Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53130 disconnected from read: EOF"}
+2025-11-27T06:47:17.8480836Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53132 disconnected from read: EOF"}
+2025-11-27T06:47:17.8482616Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53212 disconnected from read: EOF"}
+2025-11-27T06:47:17.8484207Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53174 disconnected from read: EOF"}
+2025-11-27T06:47:17.8485692Z {"level":"debug","time":"2025-11-27T06:46:53Z","caller":"akvorado/common/kafka/logs.go:58","module":"akvorado/common/kafka","message":"client 127.0.0.1:53086 disconnected from read: EOF"}
+2025-11-27T06:47:17.8487020Z {"level":"info","time":"2025-11-27T06:46:53Z","caller":"akvorado/outlet/kafka/root.go:194","module":"akvorado/outlet/kafka","message":"Kafka component stopped"}
+2025-11-27T06:47:17.8488002Z     /home/runner/work/akvorado/akvorado/outlet/kafka/functional_test.go:196: Metrics (-got, +want):
+2025-11-27T06:47:17.8488532Z           map[string]int{
+2025-11-27T06:47:17.8488854Z         - 	"connects_total":    9,
+2025-11-27T06:47:17.8489467Z         + 	"connects_total":    10,
+2025-11-27T06:47:17.8489973Z         - 	"read_bytes_total":  9,
+2025-11-27T06:47:17.8490381Z         + 	"read_bytes_total":  10,
+2025-11-27T06:47:17.8490697Z         - 	"write_bytes_total": 9,
+2025-11-27T06:47:17.8491020Z         + 	"write_bytes_total": 10,
+2025-11-27T06:47:17.8491270Z           }
+2025-11-27T06:47:17.8491377Z 
+2025-11-27T06:47:17.8491565Z DONE 1119 tests, 3 skipped, 1 failure in 172.026s
+2025-11-27T06:47:17.8502906Z ##[error]Process completed with exit code 2.
+2025-11-27T06:47:17.8620933Z Post job cleanup.
+2025-11-27T06:47:17.8657513Z Post job cleanup.
+2025-11-27T06:47:17.9320480Z Pruning is unnecessary.
+2025-11-27T06:47:17.9443530Z Post job cleanup.
+2025-11-27T06:47:18.2825310Z ##[group]Removing builder
+2025-11-27T06:47:18.4403264Z [command]/usr/bin/docker buildx rm builder-1c3a3294-9425-4c7e-b346-0073521ed0e1
+2025-11-27T06:47:18.6722043Z builder-1c3a3294-9425-4c7e-b346-0073521ed0e1 removed
+2025-11-27T06:47:18.6759510Z ##[endgroup]
+2025-11-27T06:47:18.6760552Z ##[group]Cleaning up certificates
+2025-11-27T06:47:18.6771699Z ##[endgroup]
+2025-11-27T06:47:18.6772181Z ##[group]Post cache
+2025-11-27T06:47:18.6774747Z State not set
+2025-11-27T06:47:18.6775399Z ##[endgroup]
+2025-11-27T06:47:18.6940666Z Post job cleanup.
+2025-11-27T06:47:18.9560409Z [command]/usr/bin/git version
+2025-11-27T06:47:18.9608321Z git version 2.51.2
+2025-11-27T06:47:18.9684153Z Temporarily overriding HOME='/home/runner/work/_temp/609f3667-0bb3-452b-9835-551c3391df77' before making global git config changes
+2025-11-27T06:47:18.9685665Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-27T06:47:18.9691256Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/akvorado/akvorado
+2025-11-27T06:47:18.9745146Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-27T06:47:18.9801701Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-27T06:47:19.0437003Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-27T06:47:19.0480050Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-27T06:47:19.0738230Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-11-27T06:47:19.0779400Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-11-27T06:47:19.1164639Z Cleaning up orphan processes

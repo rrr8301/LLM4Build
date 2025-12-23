@@ -1,0 +1,52 @@
+# Dockerfile
+FROM ubuntu:22.04
+
+# Set timezone to Pacific Time
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Install necessary packages
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    python3 \
+    python3-pip \
+    curl \
+    build-essential \
+    autoconf \
+    automake \
+    binutils-dev \
+    cmake \
+    libboost-all-dev \
+    libdouble-conversion-dev \
+    libdwarf-dev \
+    libevent-dev \
+    libgflags-dev \
+    liblz4-dev \
+    libpcre2-dev \
+    libsnappy-dev \
+    libsodium-dev \
+    libssl-dev \
+    libtool \
+    libxxhash-dev \
+    libzstd-dev \
+    ninja-build \
+    python3-setuptools \
+    xxhash \
+    zlib1g-dev \
+    zstd \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Rust
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Create work directory
+WORKDIR /app
+
+# Copy repository files
+COPY . .
+
+# Copy and set run.sh as entrypoint
+COPY run.sh /app/run.sh
+RUN chmod +x /app/run.sh
+ENTRYPOINT ["/app/run.sh"]

@@ -1,0 +1,507 @@
+﻿2025-12-15T10:02:34.1928556Z Current runner version: '2.329.0'
+2025-12-15T10:02:34.1951862Z ##[group]Runner Image Provisioner
+2025-12-15T10:02:34.1952566Z Hosted Compute Agent
+2025-12-15T10:02:34.1953056Z Version: 20251202.455
+2025-12-15T10:02:34.1953636Z Commit: 6c10caca4910e198df60de23adf20ad317c474e3
+2025-12-15T10:02:34.1954236Z Build Date: 2025-12-02T15:56:59Z
+2025-12-15T10:02:34.1954810Z Worker ID: {4410996c-d6c2-441b-9291-bfd046727894}
+2025-12-15T10:02:34.1955354Z ##[endgroup]
+2025-12-15T10:02:34.1955855Z ##[group]Operating System
+2025-12-15T10:02:34.1956326Z Ubuntu
+2025-12-15T10:02:34.1956720Z 24.04.3
+2025-12-15T10:02:34.1957136Z LTS
+2025-12-15T10:02:34.1957531Z ##[endgroup]
+2025-12-15T10:02:34.1957927Z ##[group]Runner Image
+2025-12-15T10:02:34.1958567Z Image: ubuntu-24.04
+2025-12-15T10:02:34.1959012Z Version: 20251208.163.1
+2025-12-15T10:02:34.1959881Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251208.163/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-15T10:02:34.1961311Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251208.163
+2025-12-15T10:02:34.1962118Z ##[endgroup]
+2025-12-15T10:02:34.1962937Z ##[group]GITHUB_TOKEN Permissions
+2025-12-15T10:02:34.1964770Z Metadata: read
+2025-12-15T10:02:34.1965251Z ##[endgroup]
+2025-12-15T10:02:34.1967175Z Secret source: Dependabot
+2025-12-15T10:02:34.1967750Z Prepare workflow directory
+2025-12-15T10:02:34.2376783Z Prepare all required actions
+2025-12-15T10:02:34.2414361Z Getting action download info
+2025-12-15T10:02:34.6671872Z Download action repository 'actions/checkout@v6' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+2025-12-15T10:02:34.7593880Z Download action repository 'actions/setup-python@v6' (SHA:83679a892e2d95755f2dac6acb0bfd1e9ac5d548)
+2025-12-15T10:02:34.8263714Z Download action repository 'astral-sh/setup-uv@v7' (SHA:681c641aba71e4a1c380be3ab5e12ad51f415867)
+2025-12-15T10:02:35.5339602Z Download action repository 'conda-incubator/setup-miniconda@v3' (SHA:835234971496cad1653abb28a638a281cf32541f)
+2025-12-15T10:02:36.1461454Z Download action repository 'actions/upload-artifact@v6' (SHA:b7c566a772e6b6bfb58ed0dc250532a479d7789f)
+2025-12-15T10:02:36.9232639Z Complete job name: build (ubuntu-latest, 3.11)
+2025-12-15T10:02:36.9737116Z ##[group]Run actions/checkout@v6
+2025-12-15T10:02:36.9737653Z with:
+2025-12-15T10:02:36.9737859Z   persist-credentials: false
+2025-12-15T10:02:36.9738125Z   repository: wntrblm/nox
+2025-12-15T10:02:36.9738753Z   token: ***
+2025-12-15T10:02:36.9738970Z   ssh-strict: true
+2025-12-15T10:02:36.9739183Z   ssh-user: git
+2025-12-15T10:02:36.9739376Z   clean: true
+2025-12-15T10:02:36.9739610Z   sparse-checkout-cone-mode: true
+2025-12-15T10:02:36.9739887Z   fetch-depth: 1
+2025-12-15T10:02:36.9740084Z   fetch-tags: false
+2025-12-15T10:02:36.9740265Z   show-progress: true
+2025-12-15T10:02:36.9740457Z   lfs: false
+2025-12-15T10:02:36.9740737Z   submodules: false
+2025-12-15T10:02:36.9740952Z   set-safe-directory: true
+2025-12-15T10:02:36.9741520Z env:
+2025-12-15T10:02:36.9741761Z   FORCE_COLOR: 1
+2025-12-15T10:02:36.9741979Z ##[endgroup]
+2025-12-15T10:02:37.0651885Z Syncing repository: wntrblm/nox
+2025-12-15T10:02:37.0653367Z ##[group]Getting Git version info
+2025-12-15T10:02:37.0653771Z Working directory is '/home/runner/work/nox/nox'
+2025-12-15T10:02:37.0654247Z [command]/usr/bin/git version
+2025-12-15T10:02:37.0685398Z git version 2.52.0
+2025-12-15T10:02:37.0704487Z ##[endgroup]
+2025-12-15T10:02:37.0719878Z Temporarily overriding HOME='/home/runner/work/_temp/a1daa930-8d44-4e58-bad2-feb484dfc576' before making global git config changes
+2025-12-15T10:02:37.0721180Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-15T10:02:37.0725560Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nox/nox
+2025-12-15T10:02:37.0760677Z Deleting the contents of '/home/runner/work/nox/nox'
+2025-12-15T10:02:37.0764149Z ##[group]Initializing the repository
+2025-12-15T10:02:37.0768645Z [command]/usr/bin/git init /home/runner/work/nox/nox
+2025-12-15T10:02:37.0856126Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-15T10:02:37.0857049Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-15T10:02:37.0857878Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-15T10:02:37.0858866Z hint: call:
+2025-12-15T10:02:37.0859161Z hint:
+2025-12-15T10:02:37.0859572Z hint: 	git config --global init.defaultBranch <name>
+2025-12-15T10:02:37.0860036Z hint:
+2025-12-15T10:02:37.0860478Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-15T10:02:37.0861158Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-15T10:02:37.0861505Z hint:
+2025-12-15T10:02:37.0861696Z hint: 	git branch -m <name>
+2025-12-15T10:02:37.0861898Z hint:
+2025-12-15T10:02:37.0862188Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-15T10:02:37.0862674Z Initialized empty Git repository in /home/runner/work/nox/nox/.git/
+2025-12-15T10:02:37.0869555Z [command]/usr/bin/git remote add origin https://github.com/wntrblm/nox
+2025-12-15T10:02:37.0897015Z ##[endgroup]
+2025-12-15T10:02:37.0897419Z ##[group]Disabling automatic garbage collection
+2025-12-15T10:02:37.0900849Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-15T10:02:37.0921831Z ##[endgroup]
+2025-12-15T10:02:37.0922197Z ##[group]Setting up auth
+2025-12-15T10:02:37.0922893Z Removing SSH command configuration
+2025-12-15T10:02:37.0928216Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-15T10:02:37.0953948Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-15T10:02:37.1216693Z Removing HTTP extra header
+2025-12-15T10:02:37.1222138Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-15T10:02:37.1247648Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-15T10:02:37.1406707Z Removing includeIf entries pointing to credentials config files
+2025-12-15T10:02:37.1412379Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-15T10:02:37.1438826Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-15T10:02:37.1612340Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-15T10:02:37.1642950Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/nox/nox/.git.path /home/runner/work/_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:37.1668554Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/nox/nox/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:37.1698846Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:37.1725000Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:37.1748021Z ##[endgroup]
+2025-12-15T10:02:37.1748790Z ##[group]Fetching the repository
+2025-12-15T10:02:37.1757307Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +357d694d002fe150a6a67e8de0b52d922e9f750c:refs/remotes/pull/1043/merge
+2025-12-15T10:02:38.1738590Z From https://github.com/wntrblm/nox
+2025-12-15T10:02:38.1740195Z  * [new ref]         357d694d002fe150a6a67e8de0b52d922e9f750c -> pull/1043/merge
+2025-12-15T10:02:38.1767802Z ##[endgroup]
+2025-12-15T10:02:38.1768534Z ##[group]Determining the checkout info
+2025-12-15T10:02:38.1777349Z ##[endgroup]
+2025-12-15T10:02:38.1777886Z [command]/usr/bin/git sparse-checkout disable
+2025-12-15T10:02:38.2205944Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-15T10:02:38.2233259Z ##[group]Checking out the ref
+2025-12-15T10:02:38.2243898Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1043/merge
+2025-12-15T10:02:38.4712090Z Note: switching to 'refs/remotes/pull/1043/merge'.
+2025-12-15T10:02:38.4712541Z 
+2025-12-15T10:02:38.4712839Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-12-15T10:02:38.4713492Z changes and commit them, and you can discard any commits you make in this
+2025-12-15T10:02:38.4714083Z state without impacting any branches by switching back to a branch.
+2025-12-15T10:02:38.4714627Z 
+2025-12-15T10:02:38.4714903Z If you want to create a new branch to retain commits you create, you may
+2025-12-15T10:02:38.4715539Z do so (now or later) by using -c with the switch command. Example:
+2025-12-15T10:02:38.4715884Z 
+2025-12-15T10:02:38.4716047Z   git switch -c <new-branch-name>
+2025-12-15T10:02:38.4716298Z 
+2025-12-15T10:02:38.4716451Z Or undo this operation with:
+2025-12-15T10:02:38.4716678Z 
+2025-12-15T10:02:38.4716792Z   git switch -
+2025-12-15T10:02:38.4716977Z 
+2025-12-15T10:02:38.4717284Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-12-15T10:02:38.4717720Z 
+2025-12-15T10:02:38.4718208Z HEAD is now at 357d694 Merge d959b4ae0d89e68c89e4b3603de02e3209e41673 into af8ea878666bb73ec82247f5e386ea3bc4122f00
+2025-12-15T10:02:38.4727705Z ##[endgroup]
+2025-12-15T10:02:38.4766441Z [command]/usr/bin/git log -1 --format=%H
+2025-12-15T10:02:38.4790783Z 357d694d002fe150a6a67e8de0b52d922e9f750c
+2025-12-15T10:02:38.4803828Z ##[group]Removing auth
+2025-12-15T10:02:38.4804528Z Removing SSH command configuration
+2025-12-15T10:02:38.4812821Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-15T10:02:38.4844604Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-15T10:02:38.5197200Z Removing HTTP extra header
+2025-12-15T10:02:38.5201836Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-15T10:02:38.5241232Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-15T10:02:38.5435170Z Removing includeIf entries pointing to credentials config files
+2025-12-15T10:02:38.5439217Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-15T10:02:38.5457575Z includeif.gitdir:/home/runner/work/nox/nox/.git.path
+2025-12-15T10:02:38.5458405Z includeif.gitdir:/home/runner/work/nox/nox/.git/worktrees/*.path
+2025-12-15T10:02:38.5458965Z includeif.gitdir:/github/workspace/.git.path
+2025-12-15T10:02:38.5459458Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2025-12-15T10:02:38.5467228Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/nox/nox/.git.path
+2025-12-15T10:02:38.5484993Z /home/runner/work/_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:38.5493698Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/nox/nox/.git.path /home/runner/work/_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:38.5823322Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/nox/nox/.git/worktrees/*.path
+2025-12-15T10:02:38.5850624Z /home/runner/work/_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:38.5860059Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/nox/nox/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:38.5894883Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2025-12-15T10:02:38.5911849Z /github/runner_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:38.5919928Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:38.6303382Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2025-12-15T10:02:38.6338468Z /github/runner_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:38.6349236Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config
+2025-12-15T10:02:38.6779605Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-15T10:02:38.6951024Z Removing credentials config '/home/runner/work/_temp/git-credentials-6d728f7a-9590-4284-997c-2006a4d70c56.config'
+2025-12-15T10:02:38.6959165Z ##[endgroup]
+2025-12-15T10:02:38.7195149Z ##[group]Run actions/setup-python@v6
+2025-12-15T10:02:38.7195404Z with:
+2025-12-15T10:02:38.7195587Z   python-version: 3.9
+3.10
+
+2025-12-15T10:02:38.7195804Z   check-latest: false
+2025-12-15T10:02:38.7196120Z   token: ***
+2025-12-15T10:02:38.7196293Z   update-environment: true
+2025-12-15T10:02:38.7196512Z   allow-prereleases: false
+2025-12-15T10:02:38.7196710Z   freethreaded: false
+2025-12-15T10:02:38.7196896Z env:
+2025-12-15T10:02:38.7197048Z   FORCE_COLOR: 1
+2025-12-15T10:02:38.7197223Z ##[endgroup]
+2025-12-15T10:02:38.8430373Z ##[group]Installed versions
+2025-12-15T10:02:39.0784839Z (node:2228) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-15T10:02:39.0785471Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-15T10:02:39.0786020Z Successfully set up CPython (3.9.25)
+2025-12-15T10:02:39.0814073Z Successfully set up CPython (3.10.19)
+2025-12-15T10:02:39.0814731Z ##[endgroup]
+2025-12-15T10:02:39.0931268Z ##[group]Run actions/setup-python@v6
+2025-12-15T10:02:39.0931520Z with:
+2025-12-15T10:02:39.0931690Z   python-version: 3.11
+2025-12-15T10:02:39.0931894Z   allow-prereleases: true
+2025-12-15T10:02:39.0932101Z   check-latest: false
+2025-12-15T10:02:39.0932464Z   token: ***
+2025-12-15T10:02:39.0932648Z   update-environment: true
+2025-12-15T10:02:39.0932845Z   freethreaded: false
+2025-12-15T10:02:39.0933028Z env:
+2025-12-15T10:02:39.0933179Z   FORCE_COLOR: 1
+2025-12-15T10:02:39.0933422Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-15T10:02:39.0933808Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib/pkgconfig
+2025-12-15T10:02:39.0934181Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-15T10:02:39.0934758Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-15T10:02:39.0935088Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.19/x64
+2025-12-15T10:02:39.0935588Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.19/x64/lib:/opt/hostedtoolcache/Python/3.9.25/x64/lib
+2025-12-15T10:02:39.0936108Z ##[endgroup]
+2025-12-15T10:02:39.2196227Z ##[group]Installed versions
+2025-12-15T10:02:39.2253014Z (node:2235) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-15T10:02:39.2254279Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-15T10:02:39.2255130Z Successfully set up CPython (3.11.14)
+2025-12-15T10:02:39.2256480Z ##[endgroup]
+2025-12-15T10:02:39.2405627Z ##[group]Run astral-sh/setup-uv@v7
+2025-12-15T10:02:39.2406022Z with:
+2025-12-15T10:02:39.2406309Z   activate-environment: false
+2025-12-15T10:02:39.2406708Z   working-directory: /home/runner/work/nox/nox
+2025-12-15T10:02:39.2407231Z   github-token: ***
+2025-12-15T10:02:39.2407468Z   enable-cache: auto
+2025-12-15T10:02:39.2408007Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2025-12-15T10:02:39.2408922Z   restore-cache: true
+2025-12-15T10:02:39.2409150Z   save-cache: true
+2025-12-15T10:02:39.2409397Z   prune-cache: true
+2025-12-15T10:02:39.2409658Z   cache-python: false
+2025-12-15T10:02:39.2409935Z   ignore-nothing-to-cache: false
+2025-12-15T10:02:39.2410212Z   ignore-empty-workdir: false
+2025-12-15T10:02:39.2410546Z   add-problem-matchers: true
+2025-12-15T10:02:39.2410843Z   resolution-strategy: highest
+2025-12-15T10:02:39.2411093Z env:
+2025-12-15T10:02:39.2411410Z   FORCE_COLOR: 1
+2025-12-15T10:02:39.2411697Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:39.2412176Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+2025-12-15T10:02:39.2412638Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:39.2413040Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:39.2413399Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:39.2414092Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib:/opt/hostedtoolcache/Python/3.10.19/x64/lib:/opt/hostedtoolcache/Python/3.9.25/x64/lib
+2025-12-15T10:02:39.2414687Z ##[endgroup]
+2025-12-15T10:02:39.3853303Z (node:2242) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-15T10:02:39.3854422Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-15T10:02:39.3963393Z Trying to find version for uv in: /home/runner/work/nox/nox/uv.toml
+2025-12-15T10:02:39.3963891Z Could not find file: /home/runner/work/nox/nox/uv.toml
+2025-12-15T10:02:39.3964570Z Trying to find version for uv in: /home/runner/work/nox/nox/pyproject.toml
+2025-12-15T10:02:39.3976369Z Found version for uv in /home/runner/work/nox/nox/pyproject.toml: >=0.1.6
+2025-12-15T10:02:39.3977474Z Found minimum version specifier, using latest version
+2025-12-15T10:02:39.3977976Z Getting latest version from GitHub API...
+2025-12-15T10:02:39.7627029Z manifest-file not provided, reading from local file.
+2025-12-15T10:02:39.7665427Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.9.17/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-12-15T10:02:40.3007843Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/fa41f114-a3e9-4cad-b917-852a62bf96b4 -f /home/runner/work/_temp/825c89b7-103b-4d48-b0db-cf365edeafa4
+2025-12-15T10:02:40.7225551Z Added /home/runner/.local/bin to the path
+2025-12-15T10:02:40.7229242Z Added /opt/hostedtoolcache/uv/0.9.17/x86_64 to the path
+2025-12-15T10:02:40.7235356Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2025-12-15T10:02:40.7237340Z Added /home/runner/work/_temp/uv-python-dir to the path
+2025-12-15T10:02:40.7244230Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-12-15T10:02:40.7244826Z Successfully installed uv version 0.9.17
+2025-12-15T10:02:40.7247113Z Searching files using cache dependency glob: /home/runner/work/nox/nox/**/*requirements*.txt,/home/runner/work/nox/nox/**/*requirements*.in,/home/runner/work/nox/nox/**/*constraints*.txt,/home/runner/work/nox/nox/**/*constraints*.in,/home/runner/work/nox/nox/**/pyproject.toml,/home/runner/work/nox/nox/**/uv.lock,/home/runner/work/nox/nox/**/*.py.lock
+2025-12-15T10:02:40.7411200Z /home/runner/work/nox/nox/pyproject.toml
+2025-12-15T10:02:40.7423324Z /home/runner/work/nox/nox/requirements-conda-test.txt
+2025-12-15T10:02:40.7475224Z Found 2 files to hash.
+2025-12-15T10:02:40.8634188Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.11.14-pruned-8bd6448989a59e069f4899a4bedaa37c865a06d5dcf5f306cefa81181b11e8f3
+2025-12-15T10:02:41.0395282Z No GitHub Actions cache found for key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.11.14-pruned-8bd6448989a59e069f4899a4bedaa37c865a06d5dcf5f306cefa81181b11e8f3
+2025-12-15T10:02:41.1089741Z ##[group]Run uv pip install --system .
+2025-12-15T10:02:41.1090129Z [36;1muv pip install --system .[0m
+2025-12-15T10:02:41.1114766Z shell: /usr/bin/bash -e {0}
+2025-12-15T10:02:41.1114995Z env:
+2025-12-15T10:02:41.1115180Z   FORCE_COLOR: 1
+2025-12-15T10:02:41.1115434Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:41.1115821Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+2025-12-15T10:02:41.1116188Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:41.1116511Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:41.1116835Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:41.1117409Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib:/opt/hostedtoolcache/Python/3.10.19/x64/lib:/opt/hostedtoolcache/Python/3.9.25/x64/lib
+2025-12-15T10:02:41.1118017Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2025-12-15T10:02:41.1118541Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-12-15T10:02:41.1118801Z ##[endgroup]
+2025-12-15T10:02:41.1630769Z [2mUsing Python 3.11.14 environment at: /opt/hostedtoolcache/Python/3.11.14/x64[0m
+2025-12-15T10:02:41.3369695Z [2mResolved [1m11 packages[0m [2min 172ms[0m[0m
+2025-12-15T10:02:41.3378882Z    [36m[1mBuilding[0m[39m nox[2m @ file:///home/runner/work/nox/nox[0m
+2025-12-15T10:02:41.3587565Z [36m[1mDownloading[0m[39m virtualenv [2m(5.7MiB)[0m
+2025-12-15T10:02:41.5040654Z  Downloaded virtualenv
+2025-12-15T10:02:41.7612589Z       [32m[1mBuilt[0m[39m nox[2m @ file:///home/runner/work/nox/nox[0m
+2025-12-15T10:02:41.7624974Z [2mPrepared [1m11 packages[0m [2min 425ms[0m[0m
+2025-12-15T10:02:41.7668907Z [2mInstalled [1m11 packages[0m [2min 4ms[0m[0m
+2025-12-15T10:02:41.7669530Z  [32m+[39m [1margcomplete[0m[2m==3.6.3[0m
+2025-12-15T10:02:41.7670029Z  [32m+[39m [1mattrs[0m[2m==25.4.0[0m
+2025-12-15T10:02:41.7670413Z  [32m+[39m [1mcolorlog[0m[2m==6.10.1[0m
+2025-12-15T10:02:41.7670726Z  [32m+[39m [1mdependency-groups[0m[2m==1.3.1[0m
+2025-12-15T10:02:41.7671032Z  [32m+[39m [1mdistlib[0m[2m==0.4.0[0m
+2025-12-15T10:02:41.7671303Z  [32m+[39m [1mfilelock[0m[2m==3.20.0[0m
+2025-12-15T10:02:41.7671580Z  [32m+[39m [1mhumanize[0m[2m==4.14.0[0m
+2025-12-15T10:02:41.7671953Z  [32m+[39m [1mnox[0m[2m==2025.11.12 (from file:///home/runner/work/nox/nox)[0m
+2025-12-15T10:02:41.7672313Z  [32m+[39m [1mpackaging[0m[2m==25.0[0m
+2025-12-15T10:02:41.7672605Z  [32m+[39m [1mplatformdirs[0m[2m==4.5.1[0m
+2025-12-15T10:02:41.7672893Z  [32m+[39m [1mvirtualenv[0m[2m==20.35.4[0m
+2025-12-15T10:02:41.7744098Z ##[group]Run nox --session "tests-3.11" -- --full-trace
+2025-12-15T10:02:41.7744462Z [36;1mnox --session "tests-3.11" -- --full-trace[0m
+2025-12-15T10:02:41.7764359Z shell: /usr/bin/bash -e {0}
+2025-12-15T10:02:41.7764580Z env:
+2025-12-15T10:02:41.7764751Z   FORCE_COLOR: 1
+2025-12-15T10:02:41.7764997Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:41.7765370Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+2025-12-15T10:02:41.7765729Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:41.7766058Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:41.7766390Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:02:41.7766959Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib:/opt/hostedtoolcache/Python/3.10.19/x64/lib:/opt/hostedtoolcache/Python/3.9.25/x64/lib
+2025-12-15T10:02:41.7767591Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2025-12-15T10:02:41.7767905Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-12-15T10:02:41.7768162Z ##[endgroup]
+2025-12-15T10:02:41.9757461Z [36mnox > [35mRunning session tests-3.11[0m
+2025-12-15T10:02:41.9762201Z [36mnox > [34mCreating virtual environment (uv) using python3.11 in .nox/tests-3-11[0m
+2025-12-15T10:02:42.0463599Z [36mnox > [34muv pip install 'coverage[toml]>=7.10.3' 'pytest>=7.4; python_version>='"'"'3.12'"'"'' 'pytest>=7; python_version<'"'"'3.12'"'"'' 'pytest-cov>=3' uv[0m
+2025-12-15T10:02:42.6958164Z [36mnox > [34muv pip install '-e.[tox_to_nox,pbs]'[0m
+2025-12-15T10:02:43.3400495Z [36mnox > [34mpytest --cov --cov-config pyproject.toml --cov-report= --full-trace[0m
+2025-12-15T10:02:45.3263371Z [1m============================= test session starts ==============================[0m
+2025-12-15T10:02:45.3263854Z platform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0
+2025-12-15T10:02:45.3264156Z rootdir: /home/runner/work/nox/nox
+2025-12-15T10:02:45.3264432Z configfile: pyproject.toml
+2025-12-15T10:02:45.3264631Z testpaths: tests
+2025-12-15T10:02:45.3264825Z plugins: anyio-4.12.0, cov-7.0.0
+2025-12-15T10:02:45.3265043Z collected 688 items
+2025-12-15T10:02:45.3265162Z 
+2025-12-15T10:02:45.3926394Z tests/test__cli.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                            [  1%][0m
+2025-12-15T10:02:45.4121824Z tests/test__option_set.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                     [  2%][0m
+2025-12-15T10:02:45.4513564Z tests/test__parametrize.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                        [  6%][0m
+2025-12-15T10:02:45.4634175Z tests/test__resolver.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                          [  7%][0m
+2025-12-15T10:02:45.4941087Z tests/test__version.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                     [  9%][0m
+2025-12-15T10:02:45.5310666Z tests/test_action_helper.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                      [ 12%][0m
+2025-12-15T10:02:48.4345398Z tests/test_command.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                  [ 17%][0m
+2025-12-15T10:02:48.4456792Z tests/test_logger.py [32m.[0m[32m.[0m[32m.[0m[33mX[0m[32m.[0m[33m                                               [ 17%][0m
+2025-12-15T10:02:51.6475266Z tests/test_main.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 25%]
+2025-12-15T10:03:05.2872145Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m       [ 35%][0m
+2025-12-15T10:03:05.3784022Z tests/test_manifest.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 42%]
+2025-12-15T10:03:05.3927051Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m                                                                [ 43%][0m
+2025-12-15T10:03:05.4045941Z tests/test_project.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m                                            [ 44%][0m
+2025-12-15T10:03:05.4214183Z tests/test_registry.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m                                       [ 46%][0m
+2025-12-15T10:03:06.6396623Z tests/test_sessions.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 53%]
+2025-12-15T10:03:08.0057003Z [0m[33ms[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 63%]
+2025-12-15T10:03:08.6540808Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m                                  [ 69%][0m
+2025-12-15T10:03:08.9065070Z tests/test_tasks.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 77%]
+2025-12-15T10:03:08.9072581Z [0m[33m                                                                         [ 77%][0m
+2025-12-15T10:03:08.9209362Z tests/test_toml.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m                                                [ 77%][0m
+2025-12-15T10:03:12.6882713Z tests/test_tox_to_nox.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m                                      [ 79%][0m
+2025-12-15T10:04:23.9823308Z tests/test_virtualenv.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 86%]
+2025-12-15T10:04:38.5493883Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 96%]
+2025-12-15T10:04:38.6104593Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m                                                     [ 99%][0m
+2025-12-15T10:04:38.7376523Z tests/test_workflow.py [32m.[0m[32m.[0m[32m.[0m[33m                                               [100%][0m
+2025-12-15T10:04:38.7377105Z 
+2025-12-15T10:04:38.7377310Z =================================== XPASSES ====================================
+2025-12-15T10:04:38.7378129Z [32m[1m________________________ test_no_color_timestamp[color] ________________________[0m
+2025-12-15T10:04:38.7379002Z ----------------------------- Captured stderr call -----------------------------
+2025-12-15T10:04:38.7379657Z [36mnox > [2025-12-15 10:02:48,442] [34mbar[0m
+2025-12-15T10:04:38.7380263Z [36mnox > [2025-12-15 10:02:48,442] [34mbar[0m
+2025-12-15T10:04:38.7380823Z foo
+2025-12-15T10:04:38.7381370Z ------------------------------ Captured log call -------------------------------
+2025-12-15T10:04:38.7382295Z [32mINFO    [0m nox:test_logger.py:75 bar
+2025-12-15T10:04:38.7383022Z [32mINFO    [0m nox:test_logger.py:84 bar
+2025-12-15T10:04:38.7384287Z [36m[1m=========================== short test summary info ============================[0m
+2025-12-15T10:04:38.7385451Z [33mSKIPPED[0m [1] tests/test_command.py:393: Only run this test on Windows.
+2025-12-15T10:04:38.7386702Z [33mSKIPPED[0m [1] tests/test_command.py:415: Only run this test on Windows.
+2025-12-15T10:04:38.7387803Z [33mSKIPPED[0m [1] tests/test_sessions.py:589: Only on Windows
+2025-12-15T10:04:38.7389026Z [33mSKIPPED[0m [1] tests/test_sessions.py:599: Only on Windows
+2025-12-15T10:04:38.7390344Z [33mSKIPPED[0m [1] tests/test_virtualenv.py:1039: Python 2.7 unsupported for virtualenv>=20.22.0
+2025-12-15T10:04:38.7392396Z [33mXPASS[0m tests/test_logger.py::[1mtest_no_color_timestamp[color][0m
+2025-12-15T10:04:38.7393609Z [33m============ [32m682 passed[0m, [33m[1m5 skipped[0m, [33m[1m1 xpassed[0m[33m in 114.56s (0:01:54)[0m[33m =============[0m
+2025-12-15T10:04:38.7991086Z [36mnox > [32mSession tests-3.11 was successful in a minute.[0m
+2025-12-15T10:04:38.8183892Z ##[group]Run nox --session minimums --force-python="3.11" -- --full-trace
+2025-12-15T10:04:38.8184355Z [36;1mnox --session minimums --force-python="3.11" -- --full-trace[0m
+2025-12-15T10:04:38.8205047Z shell: /usr/bin/bash -e {0}
+2025-12-15T10:04:38.8205270Z env:
+2025-12-15T10:04:38.8205442Z   FORCE_COLOR: 1
+2025-12-15T10:04:38.8205690Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:04:38.8206069Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+2025-12-15T10:04:38.8206438Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:04:38.8206765Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:04:38.8207098Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:04:38.8207666Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib:/opt/hostedtoolcache/Python/3.10.19/x64/lib:/opt/hostedtoolcache/Python/3.9.25/x64/lib
+2025-12-15T10:04:38.8208622Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2025-12-15T10:04:38.8208950Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-12-15T10:04:38.8209217Z ##[endgroup]
+2025-12-15T10:04:38.9283661Z [36mnox > [35mRunning session minimums-3.11[0m
+2025-12-15T10:04:38.9287383Z [36mnox > [34mCreating virtual environment (uv) using python3.11 in .nox/minimums-3-11[0m
+2025-12-15T10:04:39.0788961Z [36mnox > [34muv pip install -e. --group=test --resolution=lowest-direct[0m
+2025-12-15T10:04:39.8779340Z [36mnox > [34muv pip list[0m
+2025-12-15T10:04:39.8856893Z [2mUsing Python 3.11.14 environment at: .nox/minimums-3-11[0m
+2025-12-15T10:04:39.8860082Z Package           Version    Editable project location
+2025-12-15T10:04:39.8860625Z ----------------- ---------- -------------------------
+2025-12-15T10:04:39.8861052Z argcomplete       1.9.4
+2025-12-15T10:04:39.8861359Z attrs             24.1.0
+2025-12-15T10:04:39.8861651Z colorlog          2.6.1
+2025-12-15T10:04:39.8861945Z coverage          7.10.3
+2025-12-15T10:04:39.8862284Z dependency-groups 1.1.0
+2025-12-15T10:04:39.8862599Z distlib           0.4.0
+2025-12-15T10:04:39.8862938Z filelock          3.20.0
+2025-12-15T10:04:39.8863287Z humanize          4.0.0
+2025-12-15T10:04:39.8863640Z iniconfig         2.3.0
+2025-12-15T10:04:39.8864009Z nox               2025.11.12 /home/runner/work/nox/nox
+2025-12-15T10:04:39.8864473Z packaging         21.0
+2025-12-15T10:04:39.8864809Z platformdirs      2.6.2
+2025-12-15T10:04:39.8865146Z pluggy            1.6.0
+2025-12-15T10:04:39.8865470Z py                1.11.0
+2025-12-15T10:04:39.8865817Z pyparsing         3.2.5
+2025-12-15T10:04:39.8866144Z pytest            7.0.0
+2025-12-15T10:04:39.8866485Z pytest-cov        3.0.0
+2025-12-15T10:04:39.8866812Z six               1.17.0
+2025-12-15T10:04:39.8867118Z tomli             2.3.0
+2025-12-15T10:04:39.8867429Z virtualenv        20.15.0
+2025-12-15T10:04:39.8875033Z [36mnox > [34mpytest --full-trace[0m
+2025-12-15T10:04:41.0976615Z [1m============================= test session starts ==============================[0m
+2025-12-15T10:04:41.0977336Z platform linux -- Python 3.11.14, pytest-7.0.0, pluggy-1.6.0
+2025-12-15T10:04:41.0977959Z rootdir: /home/runner/work/nox/nox, configfile: pyproject.toml, testpaths: tests
+2025-12-15T10:04:41.0978557Z plugins: cov-3.0.0
+2025-12-15T10:04:41.0978773Z collected 678 items / 1 skipped / 677 selected
+2025-12-15T10:04:41.0978962Z 
+2025-12-15T10:04:41.2015381Z tests/test__cli.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                            [  1%][0m
+2025-12-15T10:04:41.2103650Z tests/test__option_set.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                     [  2%][0m
+2025-12-15T10:04:41.2272341Z tests/test__parametrize.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                        [  6%][0m
+2025-12-15T10:04:41.2318997Z tests/test__resolver.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                          [  7%][0m
+2025-12-15T10:04:41.2459490Z tests/test__version.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                     [  9%][0m
+2025-12-15T10:04:41.2608677Z tests/test_action_helper.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                      [ 12%][0m
+2025-12-15T10:04:42.5007401Z tests/test_command.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                  [ 17%][0m
+2025-12-15T10:04:42.5883090Z tests/test_logger.py [32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m                                               [ 18%][0m
+2025-12-15T10:04:44.6021966Z tests/test_main.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 25%]
+2025-12-15T10:04:52.1799170Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m       [ 35%][0m
+2025-12-15T10:04:52.2167427Z tests/test_manifest.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 42%]
+2025-12-15T10:04:52.2224529Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                                [ 44%][0m
+2025-12-15T10:04:52.2290079Z tests/test_project.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                            [ 45%][0m
+2025-12-15T10:04:52.2356845Z tests/test_registry.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                       [ 46%][0m
+2025-12-15T10:04:52.6618198Z tests/test_sessions.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 54%]
+2025-12-15T10:04:53.2790082Z [0m[33ms[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 64%]
+2025-12-15T10:04:53.5205038Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                  [ 70%][0m
+2025-12-15T10:04:53.6530353Z tests/test_tasks.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 78%]
+2025-12-15T10:04:53.6532176Z [0m[32m                                                                         [ 78%][0m
+2025-12-15T10:04:53.6596212Z tests/test_toml.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                [ 79%][0m
+2025-12-15T10:05:45.0124255Z tests/test_virtualenv.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 85%]
+2025-12-15T10:05:51.4078973Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 96%]
+2025-12-15T10:05:51.4389088Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m                                                     [ 99%][0m
+2025-12-15T10:05:51.4451763Z tests/test_workflow.py [32m.[0m[32m.[0m[32m.[0m[32m                                               [100%][0m
+2025-12-15T10:05:51.4452892Z 
+2025-12-15T10:05:51.4453294Z =========================== short test summary info ============================
+2025-12-15T10:05:51.4453971Z SKIPPED [1] tests/test_tox_to_nox.py:27: could not import 'nox.tox_to_nox': No module named 'jinja2'
+2025-12-15T10:05:51.4454447Z SKIPPED [1] tests/test_command.py:393: Only run this test on Windows.
+2025-12-15T10:05:51.4454818Z SKIPPED [1] tests/test_command.py:415: Only run this test on Windows.
+2025-12-15T10:05:51.4455164Z SKIPPED [1] tests/test_sessions.py:589: Only on Windows
+2025-12-15T10:05:51.4455471Z SKIPPED [1] tests/test_sessions.py:599: Only on Windows
+2025-12-15T10:05:51.4455830Z SKIPPED [1] tests/test_virtualenv.py:1051: Requires Python 2.7 installation.
+2025-12-15T10:05:51.4456327Z SKIPPED [1] tests/test_virtualenv.py:1610: could not import 'pbs_installer': No module named 'pbs_installer'
+2025-12-15T10:05:51.4456830Z XFAIL tests/test_logger.py::test_no_color_timestamp[color]
+2025-12-15T10:05:51.4457428Z [32m============= [32m[1m671 passed[0m, [33m7 skipped[0m, [33m1 xfailed[0m[32m in 71.09s (0:01:11)[0m[32m =============[0m
+2025-12-15T10:05:51.5044010Z [36mnox > [32mSession minimums-3.11 was successful in a minute.[0m
+2025-12-15T10:05:51.5241022Z ##[group]Run actions/upload-artifact@v6
+2025-12-15T10:05:51.5241270Z with:
+2025-12-15T10:05:51.5241433Z   name: coverage-build-1
+2025-12-15T10:05:51.5241628Z   path: .coverage.*
+2025-12-15T10:05:51.5241811Z   include-hidden-files: true
+2025-12-15T10:05:51.5242026Z   if-no-files-found: error
+2025-12-15T10:05:51.5242220Z   compression-level: 6
+2025-12-15T10:05:51.5242406Z   overwrite: false
+2025-12-15T10:05:51.5242564Z env:
+2025-12-15T10:05:51.5242742Z   FORCE_COLOR: 1
+2025-12-15T10:05:51.5242976Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:05:51.5243351Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+2025-12-15T10:05:51.5243705Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:05:51.5244038Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:05:51.5244361Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+2025-12-15T10:05:51.5244986Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib:/opt/hostedtoolcache/Python/3.10.19/x64/lib:/opt/hostedtoolcache/Python/3.9.25/x64/lib
+2025-12-15T10:05:51.5245567Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2025-12-15T10:05:51.5245887Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-12-15T10:05:51.5246143Z ##[endgroup]
+2025-12-15T10:05:51.6691902Z With the provided path, there will be 1 file uploaded
+2025-12-15T10:05:51.6697250Z Artifact name is valid!
+2025-12-15T10:05:51.6697688Z Root directory input is valid!
+2025-12-15T10:05:51.8631527Z Beginning upload of artifact content to blob storage
+2025-12-15T10:05:52.2135555Z Uploaded bytes 63511
+2025-12-15T10:05:52.2700847Z Finished uploading artifact content to blob storage!
+2025-12-15T10:05:52.2701401Z SHA256 digest of uploaded artifact zip is 5f88ab784bf0027d596d4a695420adb205feb5e5676b370e2e81deadf66cbcad
+2025-12-15T10:05:52.2703226Z Finalizing artifact upload
+2025-12-15T10:05:52.5320052Z Artifact coverage-build-1.zip successfully finalized. Artifact ID 4869802058
+2025-12-15T10:05:52.5321101Z Artifact coverage-build-1 has been successfully uploaded! Final size is 63511 bytes. Artifact ID is 4869802058
+2025-12-15T10:05:52.5325029Z Artifact download URL: https://github.com/wntrblm/nox/actions/runs/20228114899/artifacts/4869802058
+2025-12-15T10:05:52.5436537Z Post job cleanup.
+2025-12-15T10:05:52.6653218Z UV_CACHE_DIR is already set to /home/runner/work/_temp/setup-uv-cache
+2025-12-15T10:05:52.6658539Z UV_PYTHON_INSTALL_DIR is already set to  /home/runner/work/_temp/uv-python-dir
+2025-12-15T10:05:52.6669161Z Pruning cache...
+2025-12-15T10:05:52.6680290Z (node:4307) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-15T10:05:52.6680873Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-15T10:05:52.6686914Z [command]/opt/hostedtoolcache/uv/0.9.17/x86_64/uv cache prune --ci --force
+2025-12-15T10:05:52.6792384Z Pruning cache at: [36m/home/runner/work/_temp/setup-uv-cache[39m
+2025-12-15T10:05:52.7045744Z Removed 2238 files ([32m110.2MiB[39m)
+2025-12-15T10:05:52.7068466Z Saving cache path: /home/runner/work/_temp/setup-uv-cache
+2025-12-15T10:05:52.7069123Z Final cache paths: /home/runner/work/_temp/setup-uv-cache
+2025-12-15T10:05:52.7196876Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/nox/nox --files-from manifest.txt --use-compress-program zstdmt
+2025-12-15T10:05:53.0021771Z (node:4307) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2025-12-15T10:05:53.8299258Z Sent 11834336 of 11834336 (100.0%), 13.5 MBs/sec
+2025-12-15T10:05:53.9529086Z cache saved with the key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.11.14-pruned-8bd6448989a59e069f4899a4bedaa37c865a06d5dcf5f306cefa81181b11e8f3
+2025-12-15T10:05:54.0125175Z Post job cleanup.
+2025-12-15T10:05:54.1243746Z (node:4329) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-15T10:05:54.1244861Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-15T10:05:54.1326660Z Post job cleanup.
+2025-12-15T10:05:54.2437769Z (node:4337) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-12-15T10:05:54.2439127Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-15T10:05:54.2552228Z Post job cleanup.
+2025-12-15T10:05:54.3287538Z [command]/usr/bin/git version
+2025-12-15T10:05:54.3319579Z git version 2.52.0
+2025-12-15T10:05:54.3351631Z Temporarily overriding HOME='/home/runner/work/_temp/3b6a04a5-c864-4c79-890d-f1e861690bbe' before making global git config changes
+2025-12-15T10:05:54.3352466Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-15T10:05:54.3356938Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nox/nox
+2025-12-15T10:05:54.3382531Z Removing SSH command configuration
+2025-12-15T10:05:54.3388802Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-15T10:05:54.3417099Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-15T10:05:54.3587693Z Removing HTTP extra header
+2025-12-15T10:05:54.3592657Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-15T10:05:54.3618789Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-15T10:05:54.3784237Z Removing includeIf entries pointing to credentials config files
+2025-12-15T10:05:54.3790338Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-15T10:05:54.3816260Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-15T10:05:54.4076812Z Cleaning up orphan processes

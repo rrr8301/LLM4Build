@@ -1,0 +1,468 @@
+﻿2025-09-26T12:09:41.4028734Z Current runner version: '2.328.0'
+2025-09-26T12:09:41.4051418Z ##[group]Runner Image Provisioner
+2025-09-26T12:09:41.4052232Z Hosted Compute Agent
+2025-09-26T12:09:41.4052792Z Version: 20250912.392
+2025-09-26T12:09:41.4053359Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-09-26T12:09:41.4054139Z Build Date: 2025-09-12T15:23:14Z
+2025-09-26T12:09:41.4054747Z ##[endgroup]
+2025-09-26T12:09:41.4055259Z ##[group]Operating System
+2025-09-26T12:09:41.4055966Z Ubuntu
+2025-09-26T12:09:41.4056417Z 24.04.3
+2025-09-26T12:09:41.4056876Z LTS
+2025-09-26T12:09:41.4057370Z ##[endgroup]
+2025-09-26T12:09:41.4057880Z ##[group]Runner Image
+2025-09-26T12:09:41.4058413Z Image: ubuntu-24.04
+2025-09-26T12:09:41.4058966Z Version: 20250922.53.1
+2025-09-26T12:09:41.4059985Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250922.53/images/ubuntu/Ubuntu2404-Readme.md
+2025-09-26T12:09:41.4061687Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250922.53
+2025-09-26T12:09:41.4062667Z ##[endgroup]
+2025-09-26T12:09:41.4063719Z ##[group]GITHUB_TOKEN Permissions
+2025-09-26T12:09:41.4065478Z Contents: read
+2025-09-26T12:09:41.4066019Z Metadata: read
+2025-09-26T12:09:41.4066567Z ##[endgroup]
+2025-09-26T12:09:41.4068524Z Secret source: Actions
+2025-09-26T12:09:41.4069213Z Prepare workflow directory
+2025-09-26T12:09:41.4416025Z Prepare all required actions
+2025-09-26T12:09:41.4473655Z Getting action download info
+2025-09-26T12:09:41.9372948Z Download action repository 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-09-26T12:09:42.1192370Z Download action repository 'actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809' (SHA:0400d5f644dc74513175e3cd8d07132dd4860809)
+2025-09-26T12:09:42.2158347Z Download action repository 'actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165' (SHA:dded0888837ed1f317902acf8a20df0ad188d165)
+2025-09-26T12:09:42.9563875Z Complete job name: build (ubuntu-latest, 17, false)
+2025-09-26T12:09:43.0159888Z ##[group]Run actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+2025-09-26T12:09:43.0161282Z with:
+2025-09-26T12:09:43.0161713Z   persist-credentials: false
+2025-09-26T12:09:43.0162219Z   repository: apache/commons-csv
+2025-09-26T12:09:43.0162844Z   token: ***
+2025-09-26T12:09:43.0163230Z   ssh-strict: true
+2025-09-26T12:09:43.0163628Z   ssh-user: git
+2025-09-26T12:09:43.0164011Z   clean: true
+2025-09-26T12:09:43.0164426Z   sparse-checkout-cone-mode: true
+2025-09-26T12:09:43.0164906Z   fetch-depth: 1
+2025-09-26T12:09:43.0165304Z   fetch-tags: false
+2025-09-26T12:09:43.0165702Z   show-progress: true
+2025-09-26T12:09:43.0166112Z   lfs: false
+2025-09-26T12:09:43.0166479Z   submodules: false
+2025-09-26T12:09:43.0166893Z   set-safe-directory: true
+2025-09-26T12:09:43.0167562Z ##[endgroup]
+2025-09-26T12:09:43.1060077Z Syncing repository: apache/commons-csv
+2025-09-26T12:09:43.1062001Z ##[group]Getting Git version info
+2025-09-26T12:09:43.1062818Z Working directory is '/home/runner/work/commons-csv/commons-csv'
+2025-09-26T12:09:43.1064077Z [command]/usr/bin/git version
+2025-09-26T12:09:43.1119693Z git version 2.51.0
+2025-09-26T12:09:43.1139990Z ##[endgroup]
+2025-09-26T12:09:43.1154258Z Temporarily overriding HOME='/home/runner/work/_temp/57d131f6-fb84-48ac-a84d-a585541e691a' before making global git config changes
+2025-09-26T12:09:43.1156413Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-26T12:09:43.1158975Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/commons-csv/commons-csv
+2025-09-26T12:09:43.1195102Z Deleting the contents of '/home/runner/work/commons-csv/commons-csv'
+2025-09-26T12:09:43.1198829Z ##[group]Initializing the repository
+2025-09-26T12:09:43.1203735Z [command]/usr/bin/git init /home/runner/work/commons-csv/commons-csv
+2025-09-26T12:09:43.1302112Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-26T12:09:43.1303391Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-26T12:09:43.1304553Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-26T12:09:43.1305232Z hint:
+2025-09-26T12:09:43.1305709Z hint: 	git config --global init.defaultBranch <name>
+2025-09-26T12:09:43.1306417Z hint:
+2025-09-26T12:09:43.1306982Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-26T12:09:43.1307877Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-26T12:09:43.1308629Z hint:
+2025-09-26T12:09:43.1309022Z hint: 	git branch -m <name>
+2025-09-26T12:09:43.1309486Z hint:
+2025-09-26T12:09:43.1310077Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-26T12:09:43.1335954Z Initialized empty Git repository in /home/runner/work/commons-csv/commons-csv/.git/
+2025-09-26T12:09:43.1345642Z [command]/usr/bin/git remote add origin https://github.com/apache/commons-csv
+2025-09-26T12:09:43.1381159Z ##[endgroup]
+2025-09-26T12:09:43.1382271Z ##[group]Disabling automatic garbage collection
+2025-09-26T12:09:43.1385149Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-26T12:09:43.1412029Z ##[endgroup]
+2025-09-26T12:09:43.1412707Z ##[group]Setting up auth
+2025-09-26T12:09:43.1418300Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-26T12:09:43.1449597Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-26T12:09:43.1764995Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-26T12:09:43.1794177Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-26T12:09:43.2009409Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-26T12:09:43.2042219Z ##[endgroup]
+2025-09-26T12:09:43.2042968Z ##[group]Fetching the repository
+2025-09-26T12:09:43.2051480Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +84c86228afe086d1114e9ac8f88b01c968c61331:refs/remotes/origin/master
+2025-09-26T12:09:44.3413449Z From https://github.com/apache/commons-csv
+2025-09-26T12:09:44.3415502Z  * [new ref]         84c86228afe086d1114e9ac8f88b01c968c61331 -> origin/master
+2025-09-26T12:09:44.3443564Z ##[endgroup]
+2025-09-26T12:09:44.3445334Z ##[group]Determining the checkout info
+2025-09-26T12:09:44.3447328Z ##[endgroup]
+2025-09-26T12:09:44.3452138Z [command]/usr/bin/git sparse-checkout disable
+2025-09-26T12:09:44.3492706Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-26T12:09:44.3518245Z ##[group]Checking out the ref
+2025-09-26T12:09:44.3521635Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2025-09-26T12:09:44.4381937Z Reset branch 'master'
+2025-09-26T12:09:44.4383433Z branch 'master' set up to track 'origin/master'.
+2025-09-26T12:09:44.4403149Z ##[endgroup]
+2025-09-26T12:09:44.4441660Z [command]/usr/bin/git log -1 --format=%H
+2025-09-26T12:09:44.4465276Z 84c86228afe086d1114e9ac8f88b01c968c61331
+2025-09-26T12:09:44.4474976Z ##[group]Removing auth
+2025-09-26T12:09:44.4478581Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-26T12:09:44.4507838Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-26T12:09:44.4723626Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-26T12:09:44.4779786Z http.https://github.com/.extraheader
+2025-09-26T12:09:44.4788563Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-09-26T12:09:44.4819275Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-26T12:09:44.5027381Z ##[endgroup]
+2025-09-26T12:09:44.5991995Z ##[group]Run actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809
+2025-09-26T12:09:44.5993461Z with:
+2025-09-26T12:09:44.5994180Z   path: ~/.m2/repository
+2025-09-26T12:09:44.5995777Z   key: Linux-maven-e80e94995c429c8300312b426534c22a36aa856bcc05a3f1c1f0e2c30102a3f3
+2025-09-26T12:09:44.5997581Z   restore-keys: Linux-maven-
+
+2025-09-26T12:09:44.5998569Z   enableCrossOsArchive: false
+2025-09-26T12:09:44.5999556Z   fail-on-cache-miss: false
+2025-09-26T12:09:44.6000887Z   lookup-only: false
+2025-09-26T12:09:44.6001783Z   save-always: false
+2025-09-26T12:09:44.6002591Z ##[endgroup]
+2025-09-26T12:09:45.0300419Z Cache hit for: Linux-maven-e80e94995c429c8300312b426534c22a36aa856bcc05a3f1c1f0e2c30102a3f3
+2025-09-26T12:09:46.3562204Z Received 0 of 253331714 (0.0%), 0.0 MBs/sec
+2025-09-26T12:09:47.3575500Z Received 104857600 of 253331714 (41.4%), 50.0 MBs/sec
+2025-09-26T12:09:48.3660666Z Received 234881024 of 253331714 (92.7%), 74.4 MBs/sec
+2025-09-26T12:09:48.5293999Z Received 253331714 of 253331714 (100.0%), 76.1 MBs/sec
+2025-09-26T12:09:48.5296433Z Cache Size: ~242 MB (253331714 B)
+2025-09-26T12:09:48.5401650Z [command]/usr/bin/tar -xf /home/runner/work/_temp/4b6dbcd5-7e88-4de2-8e8a-10b7136fe833/cache.tzst -P -C /home/runner/work/commons-csv/commons-csv --use-compress-program unzstd
+2025-09-26T12:09:49.1932001Z Cache restored successfully
+2025-09-26T12:09:49.2519468Z Cache restored from key: Linux-maven-e80e94995c429c8300312b426534c22a36aa856bcc05a3f1c1f0e2c30102a3f3
+2025-09-26T12:09:49.2719586Z ##[group]Run actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165
+2025-09-26T12:09:49.2720034Z with:
+2025-09-26T12:09:49.2720281Z   distribution: temurin
+2025-09-26T12:09:49.2720765Z   java-version: 17
+2025-09-26T12:09:49.2721076Z   java-package: jdk
+2025-09-26T12:09:49.2721355Z   check-latest: false
+2025-09-26T12:09:49.2721599Z   server-id: github
+2025-09-26T12:09:49.2721858Z   server-username: GITHUB_ACTOR
+2025-09-26T12:09:49.2722135Z   server-password: GITHUB_TOKEN
+2025-09-26T12:09:49.2722409Z   overwrite-settings: true
+2025-09-26T12:09:49.2722667Z   job-status: success
+2025-09-26T12:09:49.2723050Z   token: ***
+2025-09-26T12:09:49.2723293Z ##[endgroup]
+2025-09-26T12:09:49.4248939Z ##[group]Installed distributions
+2025-09-26T12:09:49.4733626Z Resolved Java 17.0.16+8 from tool-cache
+2025-09-26T12:09:49.4734200Z Setting Java 17.0.16+8 as the default
+2025-09-26T12:09:49.4744832Z (node:2223) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-09-26T12:09:49.4746051Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-26T12:09:49.4748944Z Creating toolchains.xml for JDK version 17 from temurin
+2025-09-26T12:09:49.4828424Z Writing to /home/runner/.m2/toolchains.xml
+2025-09-26T12:09:49.4829113Z 
+2025-09-26T12:09:49.4829375Z Java configuration:
+2025-09-26T12:09:49.4829794Z   Distribution: temurin
+2025-09-26T12:09:49.4830247Z   Version: 17.0.16+8
+2025-09-26T12:09:49.4831065Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+2025-09-26T12:09:49.4831563Z 
+2025-09-26T12:09:49.4832039Z ##[endgroup]
+2025-09-26T12:09:49.4846023Z Creating settings.xml with server-id: github
+2025-09-26T12:09:49.4850030Z Writing to /home/runner/.m2/settings.xml
+2025-09-26T12:09:49.4960162Z ##[group]Run mvn -Ddoclint=all --show-version --batch-mode --no-transfer-progress
+2025-09-26T12:09:49.4961319Z [36;1mmvn -Ddoclint=all --show-version --batch-mode --no-transfer-progress[0m
+2025-09-26T12:09:49.4999727Z shell: /usr/bin/bash -e {0}
+2025-09-26T12:09:49.4999984Z env:
+2025-09-26T12:09:49.5000285Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+2025-09-26T12:09:49.5001081Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.16-8/x64
+2025-09-26T12:09:49.5001665Z ##[endgroup]
+2025-09-26T12:09:52.9499084Z Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
+2025-09-26T12:09:52.9499843Z Maven home: /usr/share/apache-maven-3.9.11
+2025-09-26T12:09:52.9500790Z Java version: 17.0.16, vendor: Eclipse Adoptium, runtime: /usr/lib/jvm/temurin-17-jdk-amd64
+2025-09-26T12:09:52.9501402Z Default locale: en, platform encoding: UTF-8
+2025-09-26T12:09:52.9501860Z OS name: "linux", version: "6.11.0-1018-azure", arch: "amd64", family: "unix"
+2025-09-26T12:09:55.6879208Z [INFO] Scanning for projects...
+2025-09-26T12:09:56.3356358Z [INFO] 
+2025-09-26T12:09:56.3361275Z [INFO] -------------------< org.apache.commons:commons-csv >-------------------
+2025-09-26T12:09:56.3365830Z [INFO] Building Apache Commons CSV 1.14.2-SNAPSHOT
+2025-09-26T12:09:56.3370065Z [INFO]   from pom.xml
+2025-09-26T12:09:56.3372084Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-09-26T12:09:56.4287274Z [INFO] 
+2025-09-26T12:09:56.4292215Z [INFO] --- clean:3.5.0:clean (default-clean) @ commons-csv ---
+2025-09-26T12:09:56.5451092Z [INFO] 
+2025-09-26T12:09:56.5452595Z [INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ commons-csv ---
+2025-09-26T12:09:56.6853873Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2025-09-26T12:09:56.6855930Z [INFO] 
+2025-09-26T12:09:56.6871499Z [INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ commons-csv ---
+2025-09-26T12:09:56.7027267Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-09-26T12:09:56.7028336Z [INFO] 
+2025-09-26T12:09:56.7029110Z [INFO] --- apache-rat:0.16.1:check (rat-check) @ commons-csv ---
+2025-09-26T12:09:59.2383085Z [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 86 licenses.
+2025-09-26T12:09:59.2385182Z [INFO] 
+2025-09-26T12:09:59.2385707Z [INFO] --- artifact:3.6.0:check-buildplan (check-buildplan) @ commons-csv ---
+2025-09-26T12:09:59.5755359Z [INFO] No known issue in 21 plugins
+2025-09-26T12:09:59.5762360Z [INFO] 
+2025-09-26T12:09:59.5763080Z [INFO] --- build-helper:3.6.1:parse-version (parse-version) @ commons-csv ---
+2025-09-26T12:09:59.6201474Z [INFO] 
+2025-09-26T12:09:59.6220349Z [INFO] --- antrun:3.1.0:run (javadoc.resources) @ commons-csv ---
+2025-09-26T12:09:59.8032521Z [INFO] Executing tasks
+2025-09-26T12:09:59.8674365Z [INFO]      [copy] Copying 2 files to /home/runner/work/commons-csv/commons-csv/target/apidocs/META-INF
+2025-09-26T12:09:59.8765733Z [INFO] Executed tasks
+2025-09-26T12:09:59.8766594Z [INFO] 
+2025-09-26T12:09:59.8768496Z [INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ commons-csv ---
+2025-09-26T12:10:00.0514597Z [INFO] Skipping remote resources execution.
+2025-09-26T12:10:00.0519608Z [INFO] 
+2025-09-26T12:10:00.0520041Z [INFO] --- buildnumber:3.2.1:create (default) @ commons-csv ---
+2025-09-26T12:10:00.1898305Z [INFO] Executing: /bin/sh -c cd '/home/runner/work/commons-csv/commons-csv' && 'git' 'log' '-1' '--no-merges' '--format=format:%H %aI %aE %aN'
+2025-09-26T12:10:00.1901984Z [INFO] Working directory: /home/runner/work/commons-csv/commons-csv
+2025-09-26T12:10:00.2642823Z [INFO] Storing buildNumber: null at timestamp: 1758888600176
+2025-09-26T12:10:00.2649193Z [INFO] Executing: /bin/sh -c cd '/home/runner/work/commons-csv/commons-csv' && 'git' 'symbolic-ref' 'HEAD'
+2025-09-26T12:10:00.2650117Z [INFO] Working directory: /home/runner/work/commons-csv/commons-csv
+2025-09-26T12:10:00.2694926Z [INFO] Storing scmBranch: master
+2025-09-26T12:10:00.2696577Z [INFO] 
+2025-09-26T12:10:00.2698797Z [INFO] --- resources:3.3.1:resources (default-resources) @ commons-csv ---
+2025-09-26T12:10:00.3063384Z [INFO] skip non existing resourceDirectory /home/runner/work/commons-csv/commons-csv/src/main/resources
+2025-09-26T12:10:00.3075055Z [INFO] Copying 2 resources from  to target/classes/META-INF
+2025-09-26T12:10:00.3185036Z [INFO] 
+2025-09-26T12:10:00.3189033Z [INFO] --- compiler:3.14.0:compile (default-compile) @ commons-csv ---
+2025-09-26T12:10:00.4538714Z [INFO] Recompiling the module because of changed source code.
+2025-09-26T12:10:00.4595953Z [INFO] Compiling 12 source files with javac [debug release 8] to target/classes
+2025-09-26T12:10:02.1531038Z [INFO] 
+2025-09-26T12:10:02.1533755Z [INFO] --- bundle:6.0.0:manifest (bundle-manifest) @ commons-csv ---
+2025-09-26T12:10:02.4077884Z [INFO] No MANIFEST.MF file found, generating manifest.
+2025-09-26T12:10:02.9788049Z [INFO] Writing manifest: /home/runner/work/commons-csv/commons-csv/target/osgi/MANIFEST.MF
+2025-09-26T12:10:02.9805328Z [INFO] 
+2025-09-26T12:10:02.9806285Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ commons-csv ---
+2025-09-26T12:10:02.9862558Z [INFO] Copying 25 resources from src/test/resources to target/test-classes
+2025-09-26T12:10:03.0168474Z [INFO] Copying 2 resources from  to target/test-classes/META-INF
+2025-09-26T12:10:03.0172252Z [INFO] 
+2025-09-26T12:10:03.0172794Z [INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ commons-csv ---
+2025-09-26T12:10:03.0263556Z [INFO] Recompiling the module because of changed dependency.
+2025-09-26T12:10:03.0270044Z [INFO] Compiling 41 source files with javac [debug release 8] to target/test-classes
+2025-09-26T12:10:04.3914771Z [INFO] /home/runner/work/commons-csv/commons-csv/src/test/java/org/apache/commons/csv/CSVFileParserTest.java: Some input files use or override a deprecated API.
+2025-09-26T12:10:04.3916892Z [INFO] /home/runner/work/commons-csv/commons-csv/src/test/java/org/apache/commons/csv/CSVFileParserTest.java: Recompile with -Xlint:deprecation for details.
+2025-09-26T12:10:04.3920303Z [INFO] 
+2025-09-26T12:10:04.3922903Z [INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ commons-csv ---
+2025-09-26T12:10:04.4210245Z [INFO] argLine set to -javaagent:/home/runner/.m2/repository/org/jacoco/org.jacoco.agent/0.8.13/org.jacoco.agent-0.8.13-runtime.jar=destfile=/home/runner/work/commons-csv/commons-csv/target/jacoco.exec
+2025-09-26T12:10:04.4215806Z [INFO] 
+2025-09-26T12:10:04.4216300Z [INFO] --- surefire:3.5.4:test (default-test) @ commons-csv ---
+2025-09-26T12:10:04.5019769Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-09-26T12:10:04.5246691Z [INFO] 
+2025-09-26T12:10:04.5252134Z [INFO] -------------------------------------------------------
+2025-09-26T12:10:04.5252677Z [INFO]  T E S T S
+2025-09-26T12:10:04.5253103Z [INFO] -------------------------------------------------------
+2025-09-26T12:10:06.5695784Z [INFO] Running org.apache.commons.csv.ExtendedBufferedReaderTest
+2025-09-26T12:10:06.6807357Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s -- in org.apache.commons.csv.ExtendedBufferedReaderTest
+2025-09-26T12:10:06.6840830Z [INFO] Running org.apache.commons.csv.issues.JiraCsv198Test
+2025-09-26T12:10:07.0674421Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.420 s -- in org.apache.commons.csv.issues.JiraCsv198Test
+2025-09-26T12:10:07.0678457Z [INFO] Running org.apache.commons.csv.issues.JiraCsv253Test
+2025-09-26T12:10:07.0773994Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.csv.issues.JiraCsv253Test
+2025-09-26T12:10:07.0775050Z [INFO] Running org.apache.commons.csv.issues.JiraCsv265Test
+2025-09-26T12:10:07.0870328Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.csv.issues.JiraCsv265Test
+2025-09-26T12:10:07.0872073Z [INFO] Running org.apache.commons.csv.issues.JiraCsv150Test
+2025-09-26T12:10:07.0981525Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.apache.commons.csv.issues.JiraCsv150Test
+2025-09-26T12:10:07.0982700Z [INFO] Running org.apache.commons.csv.issues.JiraCsv249Test
+2025-09-26T12:10:07.1151551Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.apache.commons.csv.issues.JiraCsv249Test
+2025-09-26T12:10:07.1153238Z [INFO] Running org.apache.commons.csv.issues.JiraCsv154Test
+2025-09-26T12:10:07.1235199Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.csv.issues.JiraCsv154Test
+2025-09-26T12:10:07.1236605Z [INFO] Running org.apache.commons.csv.issues.JiraCsv248Test
+2025-09-26T12:10:07.1724790Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s -- in org.apache.commons.csv.issues.JiraCsv248Test
+2025-09-26T12:10:07.1726338Z [INFO] Running org.apache.commons.csv.issues.JiraCsv257Test
+2025-09-26T12:10:07.1919171Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.csv.issues.JiraCsv257Test
+2025-09-26T12:10:07.1920759Z [INFO] Running org.apache.commons.csv.issues.JiraCsv290Test
+2025-09-26T12:10:07.2011876Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.apache.commons.csv.issues.JiraCsv290Test
+2025-09-26T12:10:07.2037940Z [INFO] Running org.apache.commons.csv.issues.JiraCsv294Test
+2025-09-26T12:10:07.2157544Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.csv.issues.JiraCsv294Test
+2025-09-26T12:10:07.2159985Z [INFO] Running org.apache.commons.csv.issues.JiraCsv149Test
+2025-09-26T12:10:07.2306774Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.csv.issues.JiraCsv149Test
+2025-09-26T12:10:07.2308124Z [INFO] Running org.apache.commons.csv.issues.JiraCsv264Test
+2025-09-26T12:10:07.2421988Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.csv.issues.JiraCsv264Test
+2025-09-26T12:10:07.2423901Z [INFO] Running org.apache.commons.csv.issues.JiraCsv211Test
+2025-09-26T12:10:07.2442114Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.csv.issues.JiraCsv211Test
+2025-09-26T12:10:07.2443858Z [INFO] Running org.apache.commons.csv.issues.JiraCsv254Test
+2025-09-26T12:10:07.2502593Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.csv.issues.JiraCsv254Test
+2025-09-26T12:10:07.2504019Z [INFO] Running org.apache.commons.csv.issues.JiraCsv271Test
+2025-09-26T12:10:07.2557144Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.csv.issues.JiraCsv271Test
+2025-09-26T12:10:07.2562208Z [INFO] Running org.apache.commons.csv.issues.JiraCsv288Test
+2025-09-26T12:10:07.2872871Z [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in org.apache.commons.csv.issues.JiraCsv288Test
+2025-09-26T12:10:07.2873984Z [INFO] Running org.apache.commons.csv.issues.JiraCsv167Test
+2025-09-26T12:10:07.2963061Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.csv.issues.JiraCsv167Test
+2025-09-26T12:10:07.2965880Z [INFO] Running org.apache.commons.csv.issues.JiraCsv247Test
+2025-09-26T12:10:07.3040114Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.csv.issues.JiraCsv247Test
+2025-09-26T12:10:07.3041748Z [INFO] Running org.apache.commons.csv.issues.JiraCsv203Test
+2025-09-26T12:10:07.3173787Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.apache.commons.csv.issues.JiraCsv203Test
+2025-09-26T12:10:07.3178282Z [INFO] Running org.apache.commons.csv.issues.JiraCsv206Test
+2025-09-26T12:10:07.3208261Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.csv.issues.JiraCsv206Test
+2025-09-26T12:10:07.3219824Z [INFO] Running org.apache.commons.csv.issues.JiraCsv93Test
+2025-09-26T12:10:07.3371711Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.csv.issues.JiraCsv93Test
+2025-09-26T12:10:07.3380071Z [INFO] Running org.apache.commons.csv.issues.JiraCsv148Test
+2025-09-26T12:10:07.3438597Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.csv.issues.JiraCsv148Test
+2025-09-26T12:10:07.3440212Z [INFO] Running org.apache.commons.csv.issues.JiraCsv213Test
+2025-09-26T12:10:07.3491725Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.JiraCsv213Test
+2025-09-26T12:10:07.3493036Z [INFO] Running org.apache.commons.csv.issues.JiraCsv263Test
+2025-09-26T12:10:07.3507210Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.csv.issues.JiraCsv263Test
+2025-09-26T12:10:07.3511656Z [INFO] Running org.apache.commons.csv.UserGuideTest
+2025-09-26T12:10:07.4076778Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s -- in org.apache.commons.csv.UserGuideTest
+2025-09-26T12:10:07.4082382Z [INFO] Running org.apache.commons.csv.CSVFormatTest
+2025-09-26T12:10:07.5709343Z [INFO] Tests run: 109, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.154 s -- in org.apache.commons.csv.CSVFormatTest
+2025-09-26T12:10:07.5725278Z [INFO] Running org.apache.commons.csv.CSVFormatPredefinedTest
+2025-09-26T12:10:07.6087780Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in org.apache.commons.csv.CSVFormatPredefinedTest
+2025-09-26T12:10:07.6103043Z [INFO] Running org.apache.commons.csv.CSVParserTest
+2025-09-26T12:10:08.0043027Z [WARNING] Tests run: 154, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.394 s -- in org.apache.commons.csv.CSVParserTest
+2025-09-26T12:10:08.0071338Z [INFO] Running org.apache.commons.csv.CSVDuplicateHeaderTest
+2025-09-26T12:10:08.4371980Z [INFO] Tests run: 348, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.424 s -- in org.apache.commons.csv.CSVDuplicateHeaderTest
+2025-09-26T12:10:08.4375833Z [INFO] Running org.apache.commons.csv.JiraCsv318Test
+2025-09-26T12:10:08.4620185Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in org.apache.commons.csv.JiraCsv318Test
+2025-09-26T12:10:08.4647631Z [INFO] Running org.apache.commons.csv.LexerTest
+2025-09-26T12:10:08.4942842Z [INFO] Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in org.apache.commons.csv.LexerTest
+2025-09-26T12:10:08.4947675Z [INFO] Running org.apache.commons.csv.CSVRecordTest
+2025-09-26T12:10:08.5552150Z [INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s -- in org.apache.commons.csv.CSVRecordTest
+2025-09-26T12:10:08.5581411Z [INFO] Running org.apache.commons.csv.CSVFileParserTest
+2025-09-26T12:10:08.5763285Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in org.apache.commons.csv.CSVFileParserTest
+2025-09-26T12:10:08.5764692Z [INFO] Running org.apache.commons.csv.JiraCsv196Test
+2025-09-26T12:10:08.5961899Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in org.apache.commons.csv.JiraCsv196Test
+2025-09-26T12:10:08.5963233Z [INFO] Running org.apache.commons.csv.CSVPrinterTest
+2025-09-26T12:10:13.7977102Z [WARNING] Tests run: 144, Failures: 0, Errors: 0, Skipped: 7, Time elapsed: 5.197 s -- in org.apache.commons.csv.CSVPrinterTest
+2025-09-26T12:10:13.7981266Z [INFO] Running org.apache.commons.csv.TokenTest
+2025-09-26T12:10:13.8002141Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.csv.TokenTest
+2025-09-26T12:10:13.8744590Z [INFO] 
+2025-09-26T12:10:13.8745156Z [INFO] Results:
+2025-09-26T12:10:13.8745536Z [INFO] 
+2025-09-26T12:10:13.8747702Z [WARNING] Tests run: 923, Failures: 0, Errors: 0, Skipped: 11
+2025-09-26T12:10:13.8748703Z [INFO] 
+2025-09-26T12:10:13.8771976Z [INFO] 
+2025-09-26T12:10:13.8772386Z [INFO] --- jar:3.4.2:jar (default-jar) @ commons-csv ---
+2025-09-26T12:10:14.0113747Z [INFO] Building jar: /home/runner/work/commons-csv/commons-csv/target/commons-csv-1.14.2-SNAPSHOT.jar
+2025-09-26T12:10:14.0570829Z [INFO] 
+2025-09-26T12:10:14.0571457Z [INFO] --- jar:3.4.2:test-jar (default) @ commons-csv ---
+2025-09-26T12:10:14.0831785Z [INFO] Building jar: /home/runner/work/commons-csv/commons-csv/target/commons-csv-1.14.2-SNAPSHOT-tests.jar
+2025-09-26T12:10:15.0607484Z [INFO] 
+2025-09-26T12:10:15.0608059Z [INFO] --- source:3.2.1:jar-no-fork (create-source-jar) @ commons-csv ---
+2025-09-26T12:10:15.1856840Z [INFO] Building jar: /home/runner/work/commons-csv/commons-csv/target/commons-csv-1.14.2-SNAPSHOT-sources.jar
+2025-09-26T12:10:15.2218528Z [INFO] 
+2025-09-26T12:10:15.2220796Z [INFO] --- source:3.2.1:test-jar-no-fork (create-source-jar) @ commons-csv ---
+2025-09-26T12:10:15.2352867Z [INFO] Building jar: /home/runner/work/commons-csv/commons-csv/target/commons-csv-1.14.2-SNAPSHOT-test-sources.jar
+2025-09-26T12:10:16.2474658Z [INFO] 
+2025-09-26T12:10:16.2475449Z [INFO] --- cyclonedx:2.9.1:makeAggregateBom (build-sbom-cyclonedx) @ commons-csv ---
+2025-09-26T12:10:16.3182506Z [INFO] CycloneDX: Resolving Dependencies
+2025-09-26T12:10:17.2399873Z [INFO] CycloneDX: Creating BOM version 1.6 with 2 component(s)
+2025-09-26T12:10:17.3426562Z [INFO] CycloneDX: Writing and validating BOM (XML): /home/runner/work/commons-csv/commons-csv/target/commons-csv-1.14.2-SNAPSHOT-bom.xml
+2025-09-26T12:10:17.9381565Z [INFO]            attaching as commons-csv-1.14.2-SNAPSHOT-cyclonedx.xml
+2025-09-26T12:10:17.9594332Z [INFO] CycloneDX: Writing and validating BOM (JSON): /home/runner/work/commons-csv/commons-csv/target/commons-csv-1.14.2-SNAPSHOT-bom.json
+2025-09-26T12:10:18.0319578Z [WARNING] Unknown keyword meta:enum - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+2025-09-26T12:10:18.0332209Z [WARNING] Unknown keyword deprecated - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+2025-09-26T12:10:18.0885533Z [INFO]            attaching as commons-csv-1.14.2-SNAPSHOT-cyclonedx.json
+2025-09-26T12:10:18.0895487Z [INFO] 
+2025-09-26T12:10:18.0896185Z [INFO] --- spdx:1.0.3:createSPDX (build-sbom-spdx) @ commons-csv ---
+2025-09-26T12:10:18.2662430Z [INFO] spdx file type = .json
+2025-09-26T12:10:18.2665987Z [INFO] Creating SPDX File /home/runner/work/commons-csv/commons-csv/target/site/org.apache.commons_commons-csv-1.14.2-SNAPSHOT.spdx.json
+2025-09-26T12:10:21.2515456Z [INFO] 
+2025-09-26T12:10:21.2516084Z [INFO] --- moditect:1.3.0.Final:add-module-info (add-module-infos) @ commons-csv ---
+2025-09-26T12:10:21.6444835Z [INFO] Running jdeps --generate-module-info /home/runner/work/commons-csv/commons-csv/target/moditect --add-modules org.apache.commons.io,org.apache.commons.codec --module-path /home/runner/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar --multi-release=9 /home/runner/work/commons-csv/commons-csv/target/commons-csv-1.14.2-SNAPSHOT.jar
+2025-09-26T12:10:21.8982996Z writing to /home/runner/work/commons-csv/commons-csv/target/moditect/org.apache.commons.csv/versions/9/module-info.java
+2025-09-26T12:10:22.0326494Z [INFO] Created module descriptor at /home/runner/work/commons-csv/commons-csv/target/moditect/generated-sources/org.apache.commons.csv/module-info.java
+2025-09-26T12:10:22.0612360Z [INFO] 
+2025-09-26T12:10:22.0615186Z [INFO] --- site:3.21.0:attach-descriptor (attach-descriptor) @ commons-csv ---
+2025-09-26T12:10:22.3915585Z [INFO] Skipping because packaging 'jar' is not pom.
+2025-09-26T12:10:22.3921750Z [INFO] 
+2025-09-26T12:10:22.3922747Z [INFO] --- changes:3.0.0-M3:changes-validate (validate-changes) @ commons-csv ---
+2025-09-26T12:10:22.6590036Z [INFO] 
+2025-09-26T12:10:22.6611413Z [INFO] --- jacoco:0.8.13:check (check) @ commons-csv ---
+2025-09-26T12:10:22.6772825Z [INFO] Loading execution data file /home/runner/work/commons-csv/commons-csv/target/jacoco.exec
+2025-09-26T12:10:22.7921488Z [INFO] Analyzed bundle 'commons-csv' with 17 classes
+2025-09-26T12:10:22.7927052Z [INFO] All coverage checks have been met.
+2025-09-26T12:10:22.7931121Z [INFO] 
+2025-09-26T12:10:22.7935023Z [INFO] --- apache-rat:0.16.1:check (default-cli) @ commons-csv ---
+2025-09-26T12:10:23.1086126Z [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 86 licenses.
+2025-09-26T12:10:23.1092095Z [INFO] 
+2025-09-26T12:10:23.1093153Z [INFO] --- japicmp:0.23.1:cmp (default-cli) @ commons-csv ---
+2025-09-26T12:10:23.4549424Z [INFO] Written file '/home/runner/work/commons-csv/commons-csv/target/japicmp/default-cli.diff'.
+2025-09-26T12:10:23.4623930Z [INFO] Written file '/home/runner/work/commons-csv/commons-csv/target/japicmp/default-cli.md'.
+2025-09-26T12:10:23.7205172Z [INFO] Written file '/home/runner/work/commons-csv/commons-csv/target/japicmp/default-cli.xml'.
+2025-09-26T12:10:23.7237669Z [INFO] Written file '/home/runner/work/commons-csv/commons-csv/target/japicmp/default-cli.html'.
+2025-09-26T12:10:23.7249924Z [INFO] 
+2025-09-26T12:10:23.7252257Z [INFO] >>> spotbugs:4.9.5.0:check (default-cli) > :spotbugs @ commons-csv >>>
+2025-09-26T12:10:23.7289374Z [INFO] 
+2025-09-26T12:10:23.7291930Z [INFO] --- spotbugs:4.9.5.0:spotbugs (spotbugs) @ commons-csv ---
+2025-09-26T12:10:24.5961938Z [INFO] Fork Value is true
+2025-09-26T12:10:32.1295184Z [INFO] Done SpotBugs Analysis....
+2025-09-26T12:10:32.4499810Z [INFO] Skipping com.github.spotbugs:spotbugs-maven-plugin:4.9.5.0:spotbugs report goal
+2025-09-26T12:10:32.4541335Z [INFO] 
+2025-09-26T12:10:32.4542137Z [INFO] <<< spotbugs:4.9.5.0:check (default-cli) < :spotbugs @ commons-csv <<<
+2025-09-26T12:10:32.4542726Z [INFO] 
+2025-09-26T12:10:32.4543024Z [INFO] 
+2025-09-26T12:10:32.4543479Z [INFO] --- spotbugs:4.9.5.0:check (default-cli) @ commons-csv ---
+2025-09-26T12:10:32.5059995Z [INFO] BugInstance size is 0
+2025-09-26T12:10:32.5072079Z [INFO] Error size is 0
+2025-09-26T12:10:32.5072893Z [INFO] No errors/warnings found
+2025-09-26T12:10:32.5073314Z [INFO] 
+2025-09-26T12:10:32.5073765Z [INFO] >>> pmd:3.27.0:check (default-cli) > :pmd @ commons-csv >>>
+2025-09-26T12:10:32.5076767Z [INFO] 
+2025-09-26T12:10:32.5077856Z [INFO] --- pmd:3.27.0:pmd (pmd) @ commons-csv ---
+2025-09-26T12:10:32.8517692Z [INFO] PMD version: 7.17.0
+2025-09-26T12:10:33.4979406Z [WARNING] Warning at /home/runner/work/commons-csv/commons-csv/target/pmd/rulesets/001-maven-pmd-plugin-default.xml:75:5
+2025-09-26T12:10:33.4983940Z  73|     <rule ref="category/java/errorprone.xml/UnnecessaryConversionTemporary" />
+2025-09-26T12:10:33.5021485Z  74|     <rule ref="category/java/errorprone.xml/UnusedNullCheckInEquals" />
+2025-09-26T12:10:33.5022434Z  75|     <rule ref="category/java/errorprone.xml/UselessOperationOnImmutable" />
+2025-09-26T12:10:33.5023878Z          ^^^^^ Discontinue using Rule name category/java/errorprone.xml/UselessOperationOnImmutable as it is scheduled for removal from PMD. PMD 8.0.0 will remove support for this Rule.
+2025-09-26T12:10:33.5024975Z 
+2025-09-26T12:10:33.5025085Z  76| 
+2025-09-26T12:10:33.5025527Z  77|     <rule ref="category/java/multithreading.xml/AvoidThreadGroup" />
+2025-09-26T12:10:33.8421268Z [WARNING] Warning at /home/runner/work/commons-csv/commons-csv/target/pmd/rulesets/001-maven-pmd-plugin-default.xml:75:5
+2025-09-26T12:10:33.8426238Z  73|     <rule ref="category/java/errorprone.xml/UnnecessaryConversionTemporary" />
+2025-09-26T12:10:33.8427379Z  74|     <rule ref="category/java/errorprone.xml/UnusedNullCheckInEquals" />
+2025-09-26T12:10:33.8428530Z  75|     <rule ref="category/java/errorprone.xml/UselessOperationOnImmutable" />
+2025-09-26T12:10:33.8430683Z          ^^^^^ Discontinue using Rule name category/java/errorprone.xml/UselessOperationOnImmutable as it is scheduled for removal from PMD. PMD 8.0.0 will remove support for this Rule.
+2025-09-26T12:10:33.8432100Z 
+2025-09-26T12:10:33.8432450Z  76| 
+2025-09-26T12:10:33.8433159Z  77|     <rule ref="category/java/multithreading.xml/AvoidThreadGroup" />
+2025-09-26T12:10:35.5571521Z [INFO] Rendering content with org.apache.commons:commons-skin:jar:5.1.0 skin
+2025-09-26T12:10:35.8070262Z [INFO] 
+2025-09-26T12:10:35.8071180Z [INFO] <<< pmd:3.27.0:check (default-cli) < :pmd @ commons-csv <<<
+2025-09-26T12:10:35.8072100Z [INFO] 
+2025-09-26T12:10:35.8072379Z [INFO] 
+2025-09-26T12:10:35.8072786Z [INFO] --- pmd:3.27.0:check (default-cli) @ commons-csv ---
+2025-09-26T12:10:35.8090269Z [INFO] 
+2025-09-26T12:10:35.8091160Z [INFO] >>> pmd:3.27.0:cpd-check (default-cli) > :cpd @ commons-csv >>>
+2025-09-26T12:10:35.8096159Z [INFO] 
+2025-09-26T12:10:35.8099032Z [INFO] --- pmd:3.27.0:cpd (cpd) @ commons-csv ---
+2025-09-26T12:10:35.9483814Z [INFO] Rendering content with org.apache.commons:commons-skin:jar:5.1.0 skin
+2025-09-26T12:10:36.0046590Z [INFO] 
+2025-09-26T12:10:36.0049161Z [INFO] <<< pmd:3.27.0:cpd-check (default-cli) < :cpd @ commons-csv <<<
+2025-09-26T12:10:36.0061126Z [INFO] 
+2025-09-26T12:10:36.0061795Z [INFO] 
+2025-09-26T12:10:36.0062522Z [INFO] --- pmd:3.27.0:cpd-check (default-cli) @ commons-csv ---
+2025-09-26T12:10:36.0063394Z [INFO] 
+2025-09-26T12:10:36.0064128Z [INFO] >>> javadoc:3.11.3:javadoc (default-cli) > generate-sources @ commons-csv >>>
+2025-09-26T12:10:36.0067625Z [INFO] 
+2025-09-26T12:10:36.0068325Z [INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ commons-csv ---
+2025-09-26T12:10:36.0085885Z [INFO] 
+2025-09-26T12:10:36.0107899Z [INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ commons-csv ---
+2025-09-26T12:10:36.0110724Z [INFO] 
+2025-09-26T12:10:36.0112787Z [INFO] --- apache-rat:0.16.1:check (rat-check) @ commons-csv ---
+2025-09-26T12:10:36.2716064Z [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 86 licenses.
+2025-09-26T12:10:36.2717316Z [INFO] 
+2025-09-26T12:10:36.2718083Z [INFO] --- artifact:3.6.0:check-buildplan (check-buildplan) @ commons-csv ---
+2025-09-26T12:10:36.2775618Z [INFO] No known issue in 21 plugins
+2025-09-26T12:10:36.2776355Z [INFO] 
+2025-09-26T12:10:36.2777084Z [INFO] --- build-helper:3.6.1:parse-version (parse-version) @ commons-csv ---
+2025-09-26T12:10:36.2784398Z [INFO] 
+2025-09-26T12:10:36.2785087Z [INFO] --- antrun:3.1.0:run (javadoc.resources) @ commons-csv ---
+2025-09-26T12:10:36.3164411Z [INFO] Executing tasks
+2025-09-26T12:10:36.3180911Z [INFO] Executed tasks
+2025-09-26T12:10:36.3181849Z [INFO] 
+2025-09-26T12:10:36.3182833Z [INFO] <<< javadoc:3.11.3:javadoc (default-cli) < generate-sources @ commons-csv <<<
+2025-09-26T12:10:36.3183749Z [INFO] 
+2025-09-26T12:10:36.3184248Z [INFO] 
+2025-09-26T12:10:36.3184790Z [INFO] --- javadoc:3.11.3:javadoc (default-cli) @ commons-csv ---
+2025-09-26T12:10:36.6428579Z [WARNING] Javadoc 1.4+ doesn't support the -1.1 switch anymore. Ignore this option.
+2025-09-26T12:10:39.2058969Z [INFO] 
+2025-09-26T12:10:39.2059529Z [INFO] --- checkstyle:3.6.0:check (default-cli) @ commons-csv ---
+2025-09-26T12:10:41.8935354Z [INFO] You have 0 Checkstyle violations.
+2025-09-26T12:10:41.8945304Z [INFO] ------------------------------------------------------------------------
+2025-09-26T12:10:41.8946773Z [INFO] BUILD SUCCESS
+2025-09-26T12:10:41.8947659Z [INFO] ------------------------------------------------------------------------
+2025-09-26T12:10:41.8948414Z [INFO] Total time:  46.311 s
+2025-09-26T12:10:41.8948998Z [INFO] Finished at: 2025-09-26T12:10:41Z
+2025-09-26T12:10:41.8949715Z [INFO] ------------------------------------------------------------------------
+2025-09-26T12:10:41.9564498Z Post job cleanup.
+2025-09-26T12:10:42.0817323Z (node:2494) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-09-26T12:10:42.0818469Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-26T12:10:42.2241691Z Post job cleanup.
+2025-09-26T12:10:42.3528138Z Cache hit occurred on the primary key Linux-maven-e80e94995c429c8300312b426534c22a36aa856bcc05a3f1c1f0e2c30102a3f3, not saving cache.
+2025-09-26T12:10:42.3627097Z Post job cleanup.
+2025-09-26T12:10:42.4488705Z [command]/usr/bin/git version
+2025-09-26T12:10:42.4530183Z git version 2.51.0
+2025-09-26T12:10:42.4569628Z Temporarily overriding HOME='/home/runner/work/_temp/be90bf45-e1f6-4ff0-9de2-562ae9bceb41' before making global git config changes
+2025-09-26T12:10:42.4571022Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-26T12:10:42.4576047Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/commons-csv/commons-csv
+2025-09-26T12:10:42.4615098Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-26T12:10:42.4648630Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-26T12:10:42.4872397Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-26T12:10:42.4906212Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-26T12:10:42.5242470Z Cleaning up orphan processes

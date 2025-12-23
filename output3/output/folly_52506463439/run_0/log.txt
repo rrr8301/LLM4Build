@@ -1,0 +1,143 @@
+Traceback (most recent call last):
+  File "/app/build/fbcode_builder/getdeps/runcmd.py", line 109, in _run_cmd
+    p = subprocess.Popen(
+  File "/usr/lib/python3.10/subprocess.py", line 971, in __init__
+---
++ sudo \
++      --preserve-env=http_proxy \
++      apt-get \
++      install \
++      -y \
++      autoconf \
++      automake \
++      binutils-dev \
++      cmake \
++      libboost-all-dev \
++      libdouble-conversion-dev \
++      libdwarf-dev \
++      libevent-dev \
++      libgflags-dev \
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.10/subprocess.py", line 1863, in _execute_child
++      liblz4-dev \
++      libsnappy-dev \
++      libsodium-dev \
++      libtool \
++      libzstd-dev \
++      ninja-build \
++      zlib1g-dev \
++      zstd
+error running `sudo \
++      --preserve-env=http_proxy \
++      apt-get \
++      install \
++      -y \
++      autoconf \
++      automake \
++      binutils-dev \
++      cmake \
++      libboost-all-dev \
++      libdouble-conversion-dev \
++      libdwarf-dev \
++      libevent-dev \
++      libgflags-dev \
++      liblz4-dev \
++      libsnappy-dev \
++      libsodium-dev \
++      libtool \
++      libzstd-dev \
++      ninja-build \
++      zlib1g-dev \
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sudo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/build/fbcode_builder/getdeps.py", line 1603, in <module>
+    sys.exit(main())
+  File "/app/build/fbcode_builder/getdeps.py", line 1586, in main
+    return args.func(args)
+  File "/app/build/fbcode_builder/getdeps.py", line 108, in run
+    self.run_project_cmd(args, loader, manifest)
+  File "/app/build/fbcode_builder/getdeps.py", line 475, in run_project_cmd
+    check_cmd(cmd_args)
+  File "/app/build/fbcode_builder/getdeps/runcmd.py", line 47, in check_cmd
+    rc = run_cmd(cmd, **kwargs)
+  File "/app/build/fbcode_builder/getdeps/runcmd.py", line 67, in run_cmd
+    return _run_cmd(
+  File "/app/build/fbcode_builder/getdeps/runcmd.py", line 114, in _run_cmd
+    raise RunCommandError(
+getdeps.runcmd.RunCommandError: [Errno 2] No such file or directory: 'sudo' while running `sudo \
++      --preserve-env=http_proxy \
++      apt-get \
++      install \
++      -y \
++      autoconf \
++      automake \
++      binutils-dev \
++      cmake \
++      libboost-all-dev \
++      libdouble-conversion-dev \
++      libdwarf-dev \
++      libevent-dev \
++      libgflags-dev \
++      liblz4-dev \
++      libsnappy-dev \
++      libsodium-dev \
++      libtool \
++      libzstd-dev \
++      ninja-build \
++      zlib1g-dev \
++      zstd` with env=None
+os.environ=environ({'HOSTNAME': 'dec4a25ec8e5', 'PWD': '/app', 'TZ': 'America/Los_Angeles', 'HOME': '/root', 'SHLVL': '1', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', '_': '/usr/bin/python3', 'LC_CTYPE': 'C.UTF-8', 'GETDEPS_CMAKE_DEFINES': ''})
+Testing ENV[BOOST_ROOT_1_69_0]: None
+Testing ENV[BOOST_ROOT_1_69_0]: None
++      zstd`: [Errno 2] No such file or directory: 'sudo'Building on {distro=ubuntu, distro_vers=22.04, fb=off, fbsource=off, os=linux, shared_libs=off, test=on}
+Assessing boost...
+Download with https://archives.boost.io/release/1.83.0/source/boost_1_83_0.tar.gz -> /tmp/fbcode_builder_getdeps-ZappZbuildZfbcode_builder-root/downloads/boost-boost_1_83_0.tar.gz ...
+.. 8192 of 144645738  [Complete in 2.907047 seconds]
+Connection: close
+Content-Length: 144645738
+Content-Type: application/octet-stream
+Server: nginx/1.24.0 (Ubuntu)
+Last-Modified: Sat, 12 Aug 2023 03:27:39 GMT
+ETag: "64d6fc2b-89f1e6a"
+Accept-Ranges: bytes
+Age: 581159
+Date: Sun, 12 Oct 2025 01:29:40 GMT
+Via: 1.1 varnish
+X-Served-By: cache-sjc10022-SJC
+X-Cache: HIT
+Traceback (most recent call last):
+  File "/app/build/fbcode_builder/getdeps.py", line 1603, in <module>
+    sys.exit(main())
+  File "/app/build/fbcode_builder/getdeps.py", line 1586, in main
+X-Cache-Hits: 0
+X-Timer: S1760232580.432042,VS0,VE2
+Strict-Transport-Security: max-age=31557600
+
+    return args.func(args)
+  File "/app/build/fbcode_builder/getdeps.py", line 108, in run
+
+Extract /tmp/fbcode_builder_getdeps-ZappZbuildZfbcode_builder-root/downloads/boost-boost_1_83_0.tar.gz -> /tmp/fbcode_builder_getdeps-ZappZbuildZfbcode_builder-root/extracted/boost-boost_1_83_0.tar.gz
+Building boost...
+Patching boost with boost_comparator_operator_fix.patch in /tmp/fbcode_builder_getdeps-ZappZbuildZfbcode_builder-root/extracted/boost-boost_1_83_0.tar.gz/boost_1_83_0
+    self.run_project_cmd(args, loader, manifest)
+  File "/app/build/fbcode_builder/getdeps.py", line 720, in run_project_cmd
+    builder.build(reconfigure=reconfigure)
+  File "/app/build/fbcode_builder/getdeps/builder.py", line 194, in build
+    self._apply_patchfile()
+  File "/app/build/fbcode_builder/getdeps/builder.py", line 146, in _apply_patchfile
+    subprocess.check_call(patchcmd + [patchfile])
+  File "/usr/lib/python3.10/subprocess.py", line 364, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "/usr/lib/python3.10/subprocess.py", line 345, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "/usr/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'git'
+project folly has not been built
+project folly has not been built

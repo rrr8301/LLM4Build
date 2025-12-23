@@ -1,0 +1,49 @@
+Don't run Bundler as root. Installing your bundle as root will break this
+application for all non-root users on this machine.
+Bundle complete! 6 Gemfile dependencies, 6 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+/usr/bin/ruby3.2 -I. ../../../../ext/date/extconf.rb
+mkdir -p lib/3.2.3/x86_64-linux-gnu
+mkdir -p tmp/x86_64-linux-gnu/date_core/3.2.3
+cd tmp/x86_64-linux-gnu/date_core/3.2.3
+*** ../../../../ext/date/extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=../../../../ext/date
+	--curdir
+	--ruby=/usr/bin/$(RUBY_BASE_NAME)3.2
+/usr/lib/ruby/3.2.0/mkmf.rb:490:in `try_do': The compiler failed to generate an executable file. (RuntimeError)
+You have to install development tools first.
+
+	from /usr/lib/ruby/3.2.0/mkmf.rb:583:in `try_link0'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:601:in `try_link'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:812:in `try_func'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:1116:in `block in have_func'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:989:in `block in checking_for'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:354:in `block (2 levels) in postpone'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:324:in `open'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:354:in `block in postpone'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:324:in `open'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:350:in `postpone'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:988:in `checking_for'
+	from /usr/lib/ruby/3.2.0/mkmf.rb:1115:in `have_func'
+	from ../../../../ext/date/extconf.rb:7:in `<main>'
+rake aborted!
+Command failed with status (1): [/usr/bin/ruby3.2 -I. ../../../../ext/date/extconf.rb]
+/var/lib/gems/3.2.0/gems/rake-compiler-1.3.1/lib/rake/extensiontask.rb:214:in `block (2 levels) in define_compile_tasks'
+/var/lib/gems/3.2.0/gems/rake-compiler-1.3.1/lib/rake/extensiontask.rb:213:in `block in define_compile_tasks'
+/var/lib/gems/3.2.0/gems/rake-13.3.1/exe/rake:27:in `<top (required)>'
+Tasks: TOP => compile => compile:x86_64-linux-gnu => compile:date_core:x86_64-linux-gnu => copy:date_core:x86_64-linux-gnu:3.2.3 => tmp/x86_64-linux-gnu/date_core/3.2.3/date_core.so => tmp/x86_64-linux-gnu/date_core/3.2.3/Makefile
+(See full trace by running task with --trace)
+checking for rb_category_warn()...

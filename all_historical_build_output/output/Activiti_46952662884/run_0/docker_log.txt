@@ -1,0 +1,64 @@
+Step 1/13 : FROM eclipse-temurin:21-jdk
+---> 6cae872dd710
+Step 2/13 : ARG MAVEN_VERSION=3.9.3
+---> Running in 8e8a1cf1a98d
+---> 4fa99746f619
+Step 3/13 : ARG USER_HOME_DIR="/root"
+---> Running in 5c247337d204
+---> 13910f3e41a3
+Step 4/13 : ARG BASE_URL=https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries
+---> Running in a524228f8eab
+---> 0edda8d67600
+Step 5/13 : ARG SHA=sha512sum_placeholder
+---> Running in b81a3cb0a346
+---> 128ce38b3a7c
+Step 6/13 : RUN apt-get update && apt-get install -y curl tar &&     curl -fsSL ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz -o /tmp/apache-maven.tar.gz &&     tar -xzf /tmp/apache-maven.tar.gz -C /opt &&     ln -s /opt/apache-maven-${MAVEN_VERSION} /opt/maven &&     rm /tmp/apache-maven.tar.gz &&     apt-get clean && rm -rf /var/lib/apt/lists/*
+---> Running in 6520891fe39e
+Get:1 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,324 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1,808 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,135 kB]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [23.0 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1,968 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [45.2 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,660 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,447 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2,078 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [48.8 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [33.0 kB]
+Fetched 32.0 MB in 5s (6,348 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.6).
+tar is already the newest version (1.35+dfsg-3build1).
+0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+---> 30570236250a
+Step 7/13 : ENV MAVEN_HOME=/opt/maven
+---> Running in 34d358519e8e
+---> cca76137e14e
+Step 8/13 : ENV PATH=${MAVEN_HOME}/bin:${PATH}
+---> Running in 64cb6bae63ef
+---> 15b1bcd2f209
+Step 9/13 : WORKDIR /workspace
+---> Running in 5652dbbb8229
+---> 25b38ad2bdf0
+Step 10/13 : COPY . /workspace
+---> 22bb99774389
+Step 11/13 : COPY run.sh /usr/local/bin/run.sh
+---> 7319b847e104
+Step 12/13 : RUN chmod +x /usr/local/bin/run.sh
+---> Running in 6731fc4531ed
+---> 814c24f4d671
+Step 13/13 : ENTRYPOINT ["/usr/local/bin/run.sh"]
+---> Running in b989d11faad7
+---> c81b56367aa6
+Successfully built c81b56367aa6
+Successfully tagged activity:latest

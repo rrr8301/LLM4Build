@@ -1,0 +1,488 @@
+
+> angular-srcs@21.0.0-next.2 test:ci /app
+> bazelisk test -- //... -//integration/... -//adev/... -//devtools/... -//modules/ssr-benchmarks/...
+
+2025/09/06 21:11:08 Downloading https://releases.bazel.build/7.6.1/release/bazel-7.6.1-linux-x86_64...
+Extracting Bazel installation...
+Starting local Bazel server and connecting to it...
+Computing main repo mapping:
+INFO: Repository devinfra~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_angular~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_sass~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_browsers~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl:210:9: An error occurred during the fetch of repository 'devinfra~':
+   Traceback (most recent call last):
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 180, column 35, in _git_repository_implementation
+		update = _clone_or_update_repo(ctx)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 43, column 20, in _clone_or_update_repo
+		git_ = git_repo(ctx, directory)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 98, column 12, in git_repo
+		_update(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 114, column 9, in _update
+		init(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 131, column 15, in init
+		_error(ctx.name, cl, st.stderr)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 210, column 9, in _error
+		fail("error running '%s' while working with @%s:\n%s" % (command_text, name, stderr))
+Error in fail: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/devinfra~' while working with @devinfra~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+ERROR: Error computing the main repository mapping: error during computation of main repo mapping: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/devinfra~' while working with @devinfra~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+ ELIFECYCLE  Command failed with exit code 37.
+
+> angular-srcs@21.0.0-next.2 integration-tests:ci /app
+> bazelisk test -- //integration/...
+
+Computing main repo mapping:
+INFO: Repository rules_sass~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl:210:9: An error occurred during the fetch of repository 'rules_sass~':
+   Traceback (most recent call last):
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 180, column 35, in _git_repository_implementation
+		update = _clone_or_update_repo(ctx)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 43, column 20, in _clone_or_update_repo
+		git_ = git_repo(ctx, directory)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 98, column 12, in git_repo
+		_update(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 114, column 9, in _update
+		init(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 131, column 15, in init
+		_error(ctx.name, cl, st.stderr)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 210, column 9, in _error
+		fail("error running '%s' while working with @%s:\n%s" % (command_text, name, stderr))
+Error in fail: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_sass~' while working with @rules_sass~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+INFO: Repository rules_browsers~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: Error computing the main repository mapping: error during computation of main repo mapping: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_sass~' while working with @rules_sass~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+ ELIFECYCLE  Command failed with exit code 37.
+
+> angular-srcs@21.0.0-next.2 devtools:test /app
+> bazelisk test --//devtools/projects/shell-browser/src:flag_browser=chrome -- //devtools/...
+
+Computing main repo mapping:
+INFO: Repository rules_angular~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl:210:9: An error occurred during the fetch of repository 'rules_angular~':
+   Traceback (most recent call last):
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 180, column 35, in _git_repository_implementation
+		update = _clone_or_update_repo(ctx)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 43, column 20, in _clone_or_update_repo
+		git_ = git_repo(ctx, directory)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 98, column 12, in git_repo
+		_update(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 114, column 9, in _update
+		init(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 131, column 15, in init
+		_error(ctx.name, cl, st.stderr)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 210, column 9, in _error
+		fail("error running '%s' while working with @%s:\n%s" % (command_text, name, stderr))
+Error in fail: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_angular~' while working with @rules_angular~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+ERROR: Error computing the main repository mapping: error during computation of main repo mapping: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_angular~' while working with @rules_angular~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+ ELIFECYCLE  Command failed with exit code 37.
+
+> angular-srcs@21.0.0-next.2 devtools:build:chrome /app
+> bazelisk build --//devtools/projects/shell-browser/src:flag_browser=chrome //devtools/projects/shell-browser/src:prodapp
+
+Computing main repo mapping:
+INFO: Repository rules_angular~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository devinfra~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl:210:9: An error occurred during the fetch of repository 'rules_angular~':
+   Traceback (most recent call last):
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 180, column 35, in _git_repository_implementation
+		update = _clone_or_update_repo(ctx)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 43, column 20, in _clone_or_update_repo
+		git_ = git_repo(ctx, directory)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 98, column 12, in git_repo
+		_update(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 114, column 9, in _update
+		init(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 131, column 15, in init
+		_error(ctx.name, cl, st.stderr)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 210, column 9, in _error
+		fail("error running '%s' while working with @%s:\n%s" % (command_text, name, stderr))
+Error in fail: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_angular~' while working with @rules_angular~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+INFO: Repository rules_sass~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: Error computing the main repository mapping: error during computation of main repo mapping: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_angular~' while working with @rules_angular~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+ ELIFECYCLE  Command failed with exit code 37.
+Computing main repo mapping:
+INFO: Repository rules_angular~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_sass~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl:210:9: An error occurred during the fetch of repository 'rules_angular~':
+   Traceback (most recent call last):
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 180, column 35, in _git_repository_implementation
+		update = _clone_or_update_repo(ctx)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 43, column 20, in _clone_or_update_repo
+		git_ = git_repo(ctx, directory)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 98, column 12, in git_repo
+		_update(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 114, column 9, in _update
+		init(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 131, column 15, in init
+		_error(ctx.name, cl, st.stderr)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 210, column 9, in _error
+		fail("error running '%s' while working with @%s:\n%s" % (command_text, name, stderr))
+Error in fail: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_angular~' while working with @rules_angular~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+INFO: Repository rules_browsers~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository devinfra~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: Error computing the main repository mapping: error during computation of main repo mapping: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/rules_angular~' while working with @rules_angular~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+Computing main repo mapping:
+INFO: Repository devinfra~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl:210:9: An error occurred during the fetch of repository 'devinfra~':
+   Traceback (most recent call last):
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 180, column 35, in _git_repository_implementation
+		update = _clone_or_update_repo(ctx)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 43, column 20, in _clone_or_update_repo
+		git_ = git_repo(ctx, directory)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 98, column 12, in git_repo
+		_update(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 114, column 9, in _update
+		init(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 131, column 15, in init
+		_error(ctx.name, cl, st.stderr)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 210, column 9, in _error
+		fail("error running '%s' while working with @%s:\n%s" % (command_text, name, stderr))
+Error in fail: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/devinfra~' while working with @devinfra~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+INFO: Repository rules_sass~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_angular~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: Error computing the main repository mapping: error during computation of main repo mapping: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/devinfra~' while working with @devinfra~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+Computing main repo mapping:
+INFO: Repository devinfra~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl:210:9: An error occurred during the fetch of repository 'devinfra~':
+   Traceback (most recent call last):
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 180, column 35, in _git_repository_implementation
+		update = _clone_or_update_repo(ctx)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl", line 43, column 20, in _clone_or_update_repo
+		git_ = git_repo(ctx, directory)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 98, column 12, in git_repo
+		_update(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 114, column 9, in _update
+		init(ctx, git_repo)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 131, column 15, in init
+		_error(ctx.name, cl, st.stderr)
+	File "/root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git_worker.bzl", line 210, column 9, in _error
+		fail("error running '%s' while working with @%s:\n%s" % (command_text, name, stderr))
+Error in fail: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/devinfra~' while working with @devinfra~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+INFO: Repository rules_sass~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_angular~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+INFO: Repository rules_browsers~ instantiated at:
+  <builtin>: in <toplevel>
+Repository rule git_repository defined at:
+  /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/bazel_tools/tools/build_defs/repo/git.bzl:189:33: in <toplevel>
+ERROR: Error computing the main repository mapping: error during computation of main repo mapping: error running 'git init /root/.cache/bazel/_bazel_root/8c069df52082beee3c95ca17836fb8e2/external/devinfra~' while working with @devinfra~:
+src/main/tools/process-wrapper-legacy.cc:80: "execvp(git, ...)": No such file or directory
+../animations                            |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../common                                |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../compiler                              |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../compiler-cli                          |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../core                                  |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../elements                              |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../forms                                 |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../language-service                      |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../localize                              |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../platform-browser                      |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../platform-browser-dynamic              |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../platform-server                       |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../router                                |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../service-worker                        |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+../upgrade                               |  WARN  Unsupported engine: wanted: {"node":"^20.19.0 || ^22.12.0 || >=24.0.0"} (current: {"node":"v18.20.8","pnpm":"10.15.1"})
+Scope: all 27 workspace projects
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/build/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/build/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/build/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/build/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/build/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/build/node_modules/.bin/ngsw-config. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8d3ccbfd815f922e71a3a1bc00b7c89c/node_modules/@angular/service-worker/ngsw-config.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular-devkit/build-angular/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular-devkit/build-angular/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular-devkit/build-angular/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular-devkit/build-angular/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular-devkit/build-angular/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular-devkit/build-angular/node_modules/.bin/ngsw-config. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3_25a0f1ffdf2d59607ffaddfb7130be69/node_modules/@angular/service-worker/ngsw-config.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/build/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/build/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/build/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/build/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/build/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/build/node_modules/.bin/ngsw-config. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@24.3.0_chokidar@4.0_8bc45a4f91eafd2df650b9e6893265c8/node_modules/@angular/service-worker/ngsw-config.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular-devkit/build-angular/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular-devkit/build-angular/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular-devkit/build-angular/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular-devkit/build-angular/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular-devkit/build-angular/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular-devkit/build-angular/node_modules/.bin/ngsw-config. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular-devkit+build-angular@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.1_c2ea929d23fee4cfac6f71809e10e1dc/node_modules/@angular/service-worker/ngsw-config.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/build/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/build/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/build/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/build/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/build/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/build/node_modules/.bin/ngsw-config. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_48d85f8bf20cfbb5b70f16afa173bf5a/node_modules/@angular/service-worker/ngsw-config.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/build/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/build/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/build/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/build/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/build/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/build/node_modules/.bin/ngsw-config. ENOENT: no such file or directory, open '/app/node_modules/.pnpm/@angular+build@21.0.0-next.1_@angular+ssr@21.0.0-next.1_@types+node@20.19.13_chokidar@4_6720d0efe536a036e6b08d00c2d13d30/node_modules/@angular/service-worker/ngsw-config.js'
+ WARN  Failed to create bin at /app/adev/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/adev/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/integration/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/integration/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/adev/shared-docs/pipeline/api-gen/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/adev/shared-docs/pipeline/api-gen/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/packages/localize/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/packages/localize/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/packages/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/packages/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/packages/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/packages/compiler-cli/linker/babel/test/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/packages/compiler-cli/linker/babel/test/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/packages/core/test/bundling/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/packages/core/test/bundling/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/packages/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/packages/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/packages/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/ngsw-config. ENOENT: no such file or directory, open '/app/packages/service-worker/ngsw-config.js'
+ WARN  Failed to create bin at /app/tools/bazel/rules_angular_store/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/tools/bazel/rules_angular_store/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/bundles/src/bin/ng_xi18n.js'
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: @firebase/util, @parcel/watcher, bufferutil,        │
+│   core-js, esbuild, lmdb, msgpackr-extract, protobufjs, puppeteer, re2,      │
+│   unrs-resolver, utf-8-validate.                                             │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+ WARN  Failed to create bin at /app/packages/localize/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/localize/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/packages/localize/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/localize/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/adev/shared-docs/pipeline/api-gen/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/adev/shared-docs/pipeline/api-gen/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/adev/shared-docs/pipeline/api-gen/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/adev/shared-docs/pipeline/api-gen/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/integration/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/integration/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/integration/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/integration/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/adev/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/adev/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/adev/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/adev/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/packages/compiler-cli/linker/babel/test/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/compiler-cli/linker/babel/test/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/packages/compiler-cli/linker/babel/test/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/compiler-cli/linker/babel/test/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/modules/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/modules/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/modules/node_modules/@angular/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/modules/node_modules/@angular/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/modules/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/modules/node_modules/@angular/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/packages/core/test/bundling/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/packages/core/test/bundling/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/packages/core/test/bundling/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/packages/core/test/bundling/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/tools/bazel/rules_angular_store/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/tools/bazel/rules_angular_store/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/tools/bazel/rules_angular_store/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/tools/bazel/rules_angular_store/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/ngc. ENOENT: no such file or directory, open '/app/node_modules/@angular/compiler-cli/bundles/src/bin/ngc.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/ng-xi18n. ENOENT: no such file or directory, open '/app/node_modules/@angular/compiler-cli/bundles/src/bin/ng_xi18n.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/localize-translate. ENOENT: no such file or directory, open '/app/node_modules/@angular/localize/tools/bundles/src/translate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/localize-extract. ENOENT: no such file or directory, open '/app/node_modules/@angular/localize/tools/bundles/src/extract/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/localize-migrate. ENOENT: no such file or directory, open '/app/node_modules/@angular/localize/tools/bundles/src/migrate/cli.js'
+ WARN  Failed to create bin at /app/node_modules/.bin/ngsw-config. ENOENT: no such file or directory, open '/app/node_modules/@angular/service-worker/ngsw-config.js'
+../.. prepare$ husky
+../.. prepare: git command not found
+../.. prepare: Done
+Done in 4.4s using pnpm v10.15.1
+
+> zone.js@0.15.1 promisefinallytest /app/packages/zone.js
+> mocha ./test/promise/promise.finally.spec.mjs
+
+
+ Exception during run: Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/app/packages/zone.js/build/zone.umd.js' imported from /app/packages/zone.js/test/promise/promise-adapter.mjs
+    at new NodeError (node:internal/errors:405:5)
+    at finalizeResolution (node:internal/modules/esm/resolve:327:11)
+    at moduleResolve (node:internal/modules/esm/resolve:980:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:404:12)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:373:25)
+    at ModuleLoader.getModuleJob (node:internal/modules/esm/loader:250:38)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:39)
+    at link (node:internal/modules/esm/module_job:75:36) {
+  url: 'file:///app/packages/zone.js/build/zone.umd.js',
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+ ELIFECYCLE  Command failed with exit code 1.
+
+> zone.js@0.15.1 jest:test /app/packages/zone.js
+> jest --config ./test/jest/jest.config.js
+
+FAIL test/jest/jest.spec.js
+  ● Test suite failed to run
+
+    Cannot find module '../../../../dist/bin/packages/zone.js/npm_package/bundles/zone.umd.js' from 'jest-zone.js'
+
+      1 | const {legacyFakeTimers, modernFakeTimers} = global;
+      2 |
+    > 3 | require('../../../../dist/bin/packages/zone.js/npm_package/bundles/zone.umd.js');
+        | ^
+      4 | require('../../../../dist/bin/packages/zone.js/npm_package/bundles/zone-testing.umd.js');
+      5 |
+      6 | if (Zone && Zone.patchJestObject) {
+
+      at Resolver._throwModNotFoundError (../../../../node_modules/.pnpm/jest-resolve@30.1.0/node_modules/jest-resolve/build/index.js:863:11)
+      at Object.require (jest-zone.js:3:1)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.156 s
+Ran all test suites.
+ ELIFECYCLE  Command failed with exit code 1.
+
+> zone.js@0.15.1 jest:nodetest /app/packages/zone.js
+> jest --config ./test/jest/jest.node.config.js
+
+FAIL test/jest/jest.spec.js
+  ● Test suite failed to run
+
+    Cannot find module '../../../../dist/bin/packages/zone.js/npm_package/bundles/zone.umd.js' from 'jest-zone.js'
+
+      1 | const {legacyFakeTimers, modernFakeTimers} = global;
+      2 |
+    > 3 | require('../../../../dist/bin/packages/zone.js/npm_package/bundles/zone.umd.js');
+        | ^
+      4 | require('../../../../dist/bin/packages/zone.js/npm_package/bundles/zone-testing.umd.js');
+      5 |
+      6 | if (Zone && Zone.patchJestObject) {
+
+      at Resolver._throwModNotFoundError (../../../../node_modules/.pnpm/jest-resolve@30.1.0/node_modules/jest-resolve/build/index.js:863:11)
+      at Object.require (jest-zone.js:3:1)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.53 s
+Ran all test suites.
+ ELIFECYCLE  Command failed with exit code 1.
+
+> zone.js@0.15.1 vitest:test /app/packages/zone.js
+> vitest ./test/vitest/vitest.spec.js
+
+
+ RUN  v3.2.4 /app/packages/zone.js
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/vitest/vitest.spec.js [ test/vitest/vitest.spec.js ]
+Error: Cannot find module '../../../../dist/bin/packages/zone.js/npm_package/bundles/zone.umd.js'
+Require stack:
+- /app/packages/zone.js/test/vitest/vitest.spec.js
+ ❯ test/vitest/vitest.spec.js:1:1
+      1| require('../../../../dist/bin/packages/zone.js/npm_package/bundles/zon…
+       | ^
+      2| require('../../../../dist/bin/packages/zone.js/npm_package/bundles/zon…
+      3|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  14:11:41
+   Duration  943ms (transform 41ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 148ms)
+
+ ELIFECYCLE  Command failed with exit code 1.
+
+> zone.js@0.15.1 electrontest /app/packages/zone.js
+> cd test/extra && node electron.js
+
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module './zone-mix.umd'
+Require stack:
+- /app/packages/zone.js/test/extra/electron.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module._load (/app/node_modules/.pnpm/mock-require@3.0.3/node_modules/mock-require/index.js:30:22)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/packages/zone.js/test/extra/electron.js:11:1)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/app/packages/zone.js/test/extra/electron.js' ]
+}
+
+Node.js v18.20.8
+ ELIFECYCLE  Command failed with exit code 1.
+
+> typings@1.0.0 test /app/packages/zone.js/test/typings
+> tsc -p .
+

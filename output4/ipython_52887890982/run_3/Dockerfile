@@ -1,0 +1,39 @@
+FROM ubuntu:22.04
+
+# Set timezone to Pacific Time
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Install system dependencies and add deadsnakes PPA for Python 3.12
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    curl \
+    && add-apt-repository ppa:deadsnakes/ppa \
+    && apt-get update && apt-get install -y \
+    python3.12 \
+    python3.12-dev \
+    python3.12-venv \
+    python3-distutils \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install pip for Python 3.12
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.12
+
+# Set up work directory
+WORKDIR /app
+
+# Copy the repository
+COPY . .
+
+# Install Python dependencies
+RUN python3.12 -m pip install --upgrade pip setuptools wheel build
+RUN python3.12 -m pip install --no-binary curio --no-binary psutil --no-binary tornado --upgrade -e .[test_extra]
+RUN python3.12 -m pip install --only-binary ':all:' --upgrade check-manifest pytest-cov pytest
+
+# Copy run.sh and make it executable
+COPY run.sh /app/run.sh
+RUN chmod +x /app/run.sh
+
+# Set entrypoint
+ENTRYPOINT ["/app/run.sh"]

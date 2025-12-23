@@ -1,0 +1,419 @@
+go: downloading go1.23.0 (linux/amd64)
+fatal: not a git repository (or any of the parent directories): .git
+building .gotmp/bin/linux_amd64/ddev from ./cmd/... ./pkg/... GORACE=halt_on_error=1 CGO_ENABLED=0 BUILDARGS=
+go: downloading go1.23.0 (linux/amd64)
+building .gotmp/bin/linux_amd64/ddev-hostname from ./cmd/... ./pkg/... GORACE=halt_on_error=1 CGO_ENABLED=0 BUILDARGS=
+export PATH="/app/.gotmp/bin/linux_amd64:$PATH" DDEV_NO_INSTRUMENTATION=true CGO_ENABLED=0 DDEV_BINARY_FULLPATH=/app/.gotmp/bin/linux_amd64/ddev; go test  -p 1 -timeout 4h -v -installsuffix static -ldflags " -extldflags -static -X 'github.com/ddev/ddev/pkg/versionconstants.DdevVersion=' -X 'github.com/ddev/ddev/pkg/versionconstants.AmplitudeAPIKey=' -s -w " ./pkg/util ./pkg/config ./pkg/nodeps ./pkg/environment ./pkg/netutil ./pkg/fileutil ./pkg/amplitude ./pkg/output ./pkg/composer ./pkg/archive ./pkg/dockerutil ./pkg/hostname ./pkg/docker ./pkg/updatecheck ./pkg/exec ./pkg/heredoc ./pkg/testcommon ./pkg/appimport ./pkg/build ./pkg/globalconfig ./pkg/github ./pkg/version ./pkg/versionconstants ./pkg/ddevhosts ./pkg/styles
+=== RUN   TestDownloadFile
+=== RUN   TestDownloadFile/no_shasum
+=== RUN   TestDownloadFile/correct_shasum
+=== RUN   TestDownloadFile/incorrect_shasum
+--- PASS: TestDownloadFile (0.01s)
+    --- PASS: TestDownloadFile/no_shasum (0.00s)
+    --- PASS: TestDownloadFile/correct_shasum (0.00s)
+    --- PASS: TestDownloadFile/incorrect_shasum (0.00s)
+=== RUN   TestDownloadFileRetryLogic
+=== RUN   TestDownloadFileRetryLogic/server_errors_then_success_with_retries
+=== NAME  TestDownloadFileRetryLogic
+    network_test.go:78: simulating server error (attempt 1)
+    network_test.go:78: simulating server error (attempt 2)
+    network_test.go:82: responding 200 OK (attempt 3)
+=== RUN   TestDownloadFileRetryLogic/server_errors_exhaust_all_retries
+    network_test.go:108: simulating server error (attempt 1)
+    network_test.go:108: simulating server error (attempt 2)
+    network_test.go:108: simulating server error (attempt 3)
+    network_test.go:122:
+        	Error Trace:	/app/pkg/util/network_test.go:122
+        	Error:      	"" does not contain "Retrying download of http://127.0.0.1:46323/testfile.txt try #1"
+        	Test:       	TestDownloadFileRetryLogic/server_errors_exhaust_all_retries
+        	Messages:   	expected log output for first retry, but got:
+=== RUN   TestDownloadFileRetryLogic/shasum_server_errors_then_success_with_retries
+    network_test.go:140: simulating shasum server error (attempt 1)
+    network_test.go:140: simulating shasum server error (attempt 2)
+    network_test.go:144: serving shasum file
+    network_test.go:135: serving main file
+=== RUN   TestDownloadFileRetryLogic/context_deadline_exceeded_during_client.Get
+    network_test.go:166: handling request (attempt 1)
+    network_test.go:171: connection dropped from client
+    network_test.go:166: handling request (attempt 2)
+    network_test.go:171: connection dropped from client
+=== RUN   TestDownloadFileRetryLogic/context_deadline_exceeded_during_file_copy
+    network_test.go:194: serving slow file copy (attempt 1)
+    network_test.go:194: serving slow file copy (attempt 2)
+    network_test.go:209: client disconnected during slow transfer
+    network_test.go:194: serving slow file copy (attempt 3)
+    network_test.go:209: client disconnected during slow transfer
+    network_test.go:228:
+        	Error Trace:	/app/pkg/util/network_test.go:228
+        	Error:      	"" does not contain "with timeout 1s"
+        	Test:       	TestDownloadFileRetryLogic/context_deadline_exceeded_during_file_copy
+        	Messages:   	expected log output for initial attempt with 1s timeout (2^0), but got:
+    network_test.go:209: client disconnected during slow transfer
+--- FAIL: TestDownloadFileRetryLogic (14.04s)
+    --- PASS: TestDownloadFileRetryLogic/server_errors_then_success_with_retries (1.50s)
+    --- FAIL: TestDownloadFileRetryLogic/server_errors_exhaust_all_retries (1.50s)
+    --- PASS: TestDownloadFileRetryLogic/shasum_server_errors_then_success_with_retries (1.51s)
+    --- PASS: TestDownloadFileRetryLogic/context_deadline_exceeded_during_client.Get (2.50s)
+    --- FAIL: TestDownloadFileRetryLogic/context_deadline_exceeded_during_file_copy (7.03s)
+=== RUN   TestRandString
+--- PASS: TestRandString (0.00s)
+=== RUN   TestGetInput
+nodefault (expected default): nodefault (expected default):
+--- PASS: TestGetInput (0.00s)
+=== RUN   TestGetQuotedInput
+=== RUN   TestGetQuotedInput/Remove_single_quotes
+=== RUN   TestGetQuotedInput/Remove_double_quotes
+=== RUN   TestGetQuotedInput/Remove_spaces
+=== RUN   TestGetQuotedInput/Remove_all_quotes_and_spaces
+=== RUN   TestGetQuotedInput/Quotes_and_spaces_are_not_removed_from_the_middle
+--- PASS: TestGetQuotedInput (0.00s)
+    --- PASS: TestGetQuotedInput/Remove_single_quotes (0.00s)
+    --- PASS: TestGetQuotedInput/Remove_double_quotes (0.00s)
+    --- PASS: TestGetQuotedInput/Remove_spaces (0.00s)
+    --- PASS: TestGetQuotedInput/Remove_all_quotes_and_spaces (0.00s)
+    --- PASS: TestGetQuotedInput/Quotes_and_spaces_are_not_removed_from_the_middle (0.00s)
+=== RUN   TestCaptureUserOut
+--- PASS: TestCaptureUserOut (0.00s)
+=== RUN   TestCaptureStdOut
+--- PASS: TestCaptureStdOut (0.00s)
+=== RUN   TestCaptureOutputToFile
+--- PASS: TestCaptureOutputToFile (0.00s)
+=== RUN   TestConfirmTo
+--- PASS: TestConfirmTo (0.01s)
+=== RUN   TestSliceToUniqueSlice
+--- PASS: TestSliceToUniqueSlice (0.00s)
+=== RUN   TestArrayToReadableOutput
+--- PASS: TestArrayToReadableOutput (0.00s)
+=== RUN   TestGetTimezone
+=== RUN   TestGetTimezone/$TZ_env_var
+=== RUN   TestGetTimezone/Linux_/etc/localtime_symlink
+=== RUN   TestGetTimezone/Linux_/etc/localtime_posix_symlink
+=== RUN   TestGetTimezone/Linux_/etc/localtime_right_symlink
+=== RUN   TestGetTimezone//etc/localtime_is_not_a_symlink
+=== RUN   TestGetTimezone/macOS_/etc/localtime_symlink
+=== RUN   TestGetTimezone/macOS_Sonoma_/etc/localtime_symlink
+=== RUN   TestGetTimezone/macOS_Sequoia_/etc/localtime_symlink
+=== RUN   TestGetTimezone/Case-insensitive_search_for_/zoneinfo/_in_the_path
+=== RUN   TestGetTimezone/Timezone_has_wrong_format
+=== RUN   TestGetTimezone/Not_real_timezone
+--- PASS: TestGetTimezone (0.00s)
+    --- PASS: TestGetTimezone/$TZ_env_var (0.00s)
+    --- PASS: TestGetTimezone/Linux_/etc/localtime_symlink (0.00s)
+    --- PASS: TestGetTimezone/Linux_/etc/localtime_posix_symlink (0.00s)
+    --- PASS: TestGetTimezone/Linux_/etc/localtime_right_symlink (0.00s)
+    --- PASS: TestGetTimezone//etc/localtime_is_not_a_symlink (0.00s)
+    --- PASS: TestGetTimezone/macOS_/etc/localtime_symlink (0.00s)
+    --- PASS: TestGetTimezone/macOS_Sonoma_/etc/localtime_symlink (0.00s)
+    --- PASS: TestGetTimezone/macOS_Sequoia_/etc/localtime_symlink (0.00s)
+    --- PASS: TestGetTimezone/Case-insensitive_search_for_/zoneinfo/_in_the_path (0.00s)
+    --- PASS: TestGetTimezone/Timezone_has_wrong_format (0.00s)
+    --- PASS: TestGetTimezone/Not_real_timezone (0.00s)
+=== RUN   TestWarningOnce
+--- PASS: TestWarningOnce (0.00s)
+=== RUN   TestSubtractSlices
+=== RUN   TestSubtractSlices/No_overlap
+=== RUN   TestSubtractSlices/Partial_overlap
+=== RUN   TestSubtractSlices/Complete_overlap
+--- PASS: TestSubtractSlices (0.00s)
+    --- PASS: TestSubtractSlices/No_overlap (0.00s)
+    --- PASS: TestSubtractSlices/Partial_overlap (0.00s)
+    --- PASS: TestSubtractSlices/Complete_overlap (0.00s)
+=== RUN   TestYamlFileToMap
+--- PASS: TestYamlFileToMap (0.00s)
+=== RUN   TestYamlToDict
+--- PASS: TestYamlToDict (0.00s)
+=== RUN   TestMergeYamlFiles
+=== RUN   TestMergeYamlFiles/#00
+=== RUN   TestMergeYamlFiles/#01
+=== RUN   TestMergeYamlFiles/#02
+=== RUN   TestMergeYamlFiles/#03
+=== RUN   TestMergeYamlFiles/#04
+--- PASS: TestMergeYamlFiles (0.01s)
+    --- PASS: TestMergeYamlFiles/#00 (0.00s)
+    --- PASS: TestMergeYamlFiles/#01 (0.00s)
+    --- PASS: TestMergeYamlFiles/#02 (0.00s)
+    --- PASS: TestMergeYamlFiles/#03 (0.00s)
+    --- PASS: TestMergeYamlFiles/#04 (0.00s)
+FAIL
+FAIL	github.com/ddev/ddev/pkg/util	14.083s
+?   	github.com/ddev/ddev/pkg/config	[no test files]
+=== RUN   TestRandomString
+--- PASS: TestRandomString (0.00s)
+=== RUN   TestPathWithSlashesToArray
+--- PASS: TestPathWithSlashesToArray (0.00s)
+=== RUN   TestParseURL
+=== RUN   TestParseURL/invalid_URL
+=== RUN   TestParseURL/URL_with_path
+=== RUN   TestParseURL/URL_with_query
+=== RUN   TestParseURL/http_URL_without_port
+=== RUN   TestParseURL/https_URL_without_port
+=== RUN   TestParseURL/http_URL_with_port
+=== RUN   TestParseURL/https_URL_with_port
+=== RUN   TestParseURL/empty_URL
+--- PASS: TestParseURL (0.00s)
+    --- PASS: TestParseURL/invalid_URL (0.00s)
+    --- PASS: TestParseURL/URL_with_path (0.00s)
+    --- PASS: TestParseURL/URL_with_query (0.00s)
+    --- PASS: TestParseURL/http_URL_without_port (0.00s)
+    --- PASS: TestParseURL/https_URL_without_port (0.00s)
+    --- PASS: TestParseURL/http_URL_with_port (0.00s)
+    --- PASS: TestParseURL/https_URL_with_port (0.00s)
+    --- PASS: TestParseURL/empty_URL (0.00s)
+=== RUN   TestArrayContainsString
+--- PASS: TestArrayContainsString (0.00s)
+=== RUN   TestPosString
+--- PASS: TestPosString (0.00s)
+=== RUN   TestRemoveItemFromSlice
+--- PASS: TestRemoveItemFromSlice (0.00s)
+=== RUN   TestIsAppleSilicon
+--- PASS: TestIsAppleSilicon (0.00s)
+=== RUN   TestIsGitpod
+--- PASS: TestIsGitpod (0.00s)
+=== RUN   TestIsCodespaces
+--- PASS: TestIsCodespaces (0.00s)
+=== RUN   TestGetWSLDistro
+--- PASS: TestGetWSLDistro (0.00s)
+=== RUN   TestIsLetter
+--- PASS: TestIsLetter (0.00s)
+=== RUN   TestIsInteger
+--- PASS: TestIsInteger (0.00s)
+=== RUN   TestIsIPAddress
+--- PASS: TestIsIPAddress (0.00s)
+=== RUN   TestGrepStringInBuffer
+--- PASS: TestGrepStringInBuffer (0.00s)
+PASS
+ok  	github.com/ddev/ddev/pkg/nodeps	0.008s
+?   	github.com/ddev/ddev/pkg/environment	[no test files]
+?   	github.com/ddev/ddev/pkg/netutil	[no test files]
+=== RUN   TestFileHash
+=== RUN   TestFileHash/#00
+    file_hash_test.go:63:
+        	Error Trace:	/app/pkg/fileutil/file_hash_test.go:63
+        	Error:      	Received unexpected error:
+        	            	failed to pull image ddev/ddev-utilities:latest: failed to exec docker-compose: fork/exec /root/.ddev/bin/docker-compose: no such file or directory
+        	Test:       	TestFileHash/#00
+=== RUN   TestFileHash/#01
+    file_hash_test.go:63:
+        	Error Trace:	/app/pkg/fileutil/file_hash_test.go:63
+        	Error:      	Received unexpected error:
+        	            	failed to pull image ddev/ddev-utilities:latest: failed to exec docker-compose: fork/exec /root/.ddev/bin/docker-compose: no such file or directory
+        	Test:       	TestFileHash/#01
+=== RUN   TestFileHash/#02
+    file_hash_test.go:63:
+        	Error Trace:	/app/pkg/fileutil/file_hash_test.go:63
+        	Error:      	Received unexpected error:
+        	            	failed to pull image ddev/ddev-utilities:latest: failed to exec docker-compose: fork/exec /root/.ddev/bin/docker-compose: no such file or directory
+        	Test:       	TestFileHash/#02
+=== RUN   TestFileHash/#03
+    file_hash_test.go:63:
+        	Error Trace:	/app/pkg/fileutil/file_hash_test.go:63
+        	Error:      	Received unexpected error:
+        	            	failed to pull image ddev/ddev-utilities:latest: failed to exec docker-compose: fork/exec /root/.ddev/bin/docker-compose: no such file or directory
+        	Test:       	TestFileHash/#03
+--- FAIL: TestFileHash (0.12s)
+    --- FAIL: TestFileHash/#00 (0.04s)
+    --- FAIL: TestFileHash/#01 (0.03s)
+    --- FAIL: TestFileHash/#02 (0.02s)
+    --- FAIL: TestFileHash/#03 (0.03s)
+=== RUN   TestCopyDir
+--- PASS: TestCopyDir (0.02s)
+=== RUN   TestCopyFile
+--- PASS: TestCopyFile (0.01s)
+=== RUN   TestPurgeDirectory
+--- PASS: TestPurgeDirectory (0.01s)
+=== RUN   TestFgrepStringInFile
+--- PASS: TestFgrepStringInFile (0.00s)
+=== RUN   TestListFilesInDir
+--- PASS: TestListFilesInDir (0.00s)
+=== RUN   TestListFilesInDirNoSubdirsFullPath
+--- PASS: TestListFilesInDirNoSubdirsFullPath (0.00s)
+=== RUN   TestReplaceStringInFile
+--- PASS: TestReplaceStringInFile (0.00s)
+=== RUN   TestFindSimulatedXsymSymlinks
+--- PASS: TestFindSimulatedXsymSymlinks (0.00s)
+=== RUN   TestReplaceSimulatedXsymSymlinks
+--- PASS: TestReplaceSimulatedXsymSymlinks (0.10s)
+=== RUN   TestIsSameFile
+--- PASS: TestIsSameFile (0.00s)
+=== RUN   TestRemoveFilesMatchingGlob
+--- PASS: TestRemoveFilesMatchingGlob (0.00s)
+FAIL
+FAIL	github.com/ddev/ddev/pkg/fileutil	0.292s
+=== RUN   TestAmplitude
+=== RUN   TestAmplitude/TestCheckSetUp
+=== RUN   TestAmplitude/TestClean
+=== RUN   TestAmplitude/TestFlush
+=== RUN   TestAmplitude/TestFlushForce
+=== RUN   TestAmplitude/TestGetDeviceID
+=== RUN   TestAmplitude/TestGetEventOptions
+=== RUN   TestAmplitude/TestTrackCommand
+--- PASS: TestAmplitude (0.00s)
+    --- PASS: TestAmplitude/TestCheckSetUp (0.00s)
+    --- PASS: TestAmplitude/TestClean (0.00s)
+    --- PASS: TestAmplitude/TestFlush (0.00s)
+    --- PASS: TestAmplitude/TestFlushForce (0.00s)
+    --- PASS: TestAmplitude/TestGetDeviceID (0.00s)
+    --- PASS: TestAmplitude/TestGetEventOptions (0.00s)
+    --- PASS: TestAmplitude/TestTrackCommand (0.00s)
+PASS
+ok  	github.com/ddev/ddev/pkg/amplitude	0.024s
+?   	github.com/ddev/ddev/pkg/output	[no test files]
+?   	github.com/ddev/ddev/pkg/composer	[no test files]
+=== RUN   TestUnarchive
+--- PASS: TestUnarchive (0.00s)
+=== RUN   TestArchiveTar
+--- PASS: TestArchiveTar (0.01s)
+=== RUN   TestArchiveTarGz
+--- PASS: TestArchiveTarGz (0.00s)
+=== RUN   TestExtractTarballWithCleanup
+--- PASS: TestExtractTarballWithCleanup (0.01s)
+=== RUN   TestDownloadAndExtractTarball
+--- PASS: TestDownloadAndExtractTarball (0.74s)
+PASS
+ok  	github.com/ddev/ddev/pkg/archive	0.794s
+Not reading global config file because running with root privileges
+Not reading global projects file because running with root privileges
+Failed to ensure Docker network ddev_default: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+FAIL	github.com/ddev/ddev/pkg/dockerutil	0.037s
+?   	github.com/ddev/ddev/pkg/hostname	[no test files]
+?   	github.com/ddev/ddev/pkg/docker	[no test files]
+=== RUN   TestUpdateNeeded
+--- PASS: TestUpdateNeeded (2.00s)
+=== RUN   TestIsReleaseVersion
+--- PASS: TestIsReleaseVersion (0.00s)
+=== RUN   TestAvailableUpdates
+    updatecheck_test.go:88: AvailableUpdates() failed, err=Invalid Semantic Version
+--- SKIP: TestAvailableUpdates (0.76s)
+PASS
+ok  	github.com/ddev/ddev/pkg/updatecheck	2.785s
+=== RUN   TestRunHostCommandWithOptions
+=== RUN   TestRunHostCommandWithOptions/no_options
+=== RUN   TestRunHostCommandWithOptions/with_stdin
+=== RUN   TestRunHostCommandWithOptions/with_env
+=== RUN   TestRunHostCommandWithOptions/with_stdin_and_env
+=== RUN   TestRunHostCommandWithOptions/empty_options
+=== RUN   TestRunHostCommandWithOptions/nil_options
+=== RUN   TestRunHostCommandWithOptions/command_error
+=== RUN   TestRunHostCommandWithOptions/with_multiple_env_vars
+=== RUN   TestRunHostCommandWithOptions/with_env_override
+=== RUN   TestRunHostCommandWithOptions/with_empty_stdin
+--- PASS: TestRunHostCommandWithOptions (0.03s)
+    --- PASS: TestRunHostCommandWithOptions/no_options (0.00s)
+    --- PASS: TestRunHostCommandWithOptions/with_stdin (0.01s)
+    --- PASS: TestRunHostCommandWithOptions/with_env (0.00s)
+    --- PASS: TestRunHostCommandWithOptions/with_stdin_and_env (0.01s)
+    --- PASS: TestRunHostCommandWithOptions/empty_options (0.00s)
+    --- PASS: TestRunHostCommandWithOptions/nil_options (0.00s)
+    --- PASS: TestRunHostCommandWithOptions/command_error (0.00s)
+    --- PASS: TestRunHostCommandWithOptions/with_multiple_env_vars (0.00s)
+    --- PASS: TestRunHostCommandWithOptions/with_env_override (0.00s)
+    --- PASS: TestRunHostCommandWithOptions/with_empty_stdin (0.00s)
+PASS
+ok  	github.com/ddev/ddev/pkg/exec	0.039s
+=== RUN   TestIndent
+=== RUN   TestIndent/spaces_only
+=== RUN   TestIndent/nothing_to_add_or_remove
+=== RUN   TestIndent/two_spaces_indent
+=== RUN   TestIndent/tab_indent
+--- PASS: TestIndent (0.00s)
+    --- PASS: TestIndent/spaces_only (0.00s)
+    --- PASS: TestIndent/nothing_to_add_or_remove (0.00s)
+    --- PASS: TestIndent/two_spaces_indent (0.00s)
+    --- PASS: TestIndent/tab_indent (0.00s)
+=== RUN   TestDoc
+=== RUN   TestDoc/nothing_to_add_or_remove
+=== RUN   TestDoc/tabs_to_two_spaces_indent
+=== RUN   TestDoc/spaces_to_two_spaces_indent
+--- PASS: TestDoc (0.00s)
+    --- PASS: TestDoc/nothing_to_add_or_remove (0.00s)
+    --- PASS: TestDoc/tabs_to_two_spaces_indent (0.00s)
+    --- PASS: TestDoc/spaces_to_two_spaces_indent (0.00s)
+=== RUN   TestDocIndent
+=== RUN   TestDocIndent/nothing_to_add_or_remove
+=== RUN   TestDocIndent/two_spaces_indent
+=== RUN   TestDocIndent/tab_indent
+--- PASS: TestDocIndent (0.00s)
+    --- PASS: TestDocIndent/nothing_to_add_or_remove (0.00s)
+    --- PASS: TestDocIndent/two_spaces_indent (0.00s)
+    --- PASS: TestDocIndent/tab_indent (0.00s)
+=== RUN   TestDocI2S
+=== RUN   TestDocI2S/two_spaces_indent
+=== RUN   TestDocI2S/tabs_to_two_spaces_indent
+=== RUN   TestDocI2S/spaces_to_two_spaces_indent
+--- PASS: TestDocI2S (0.00s)
+    --- PASS: TestDocI2S/two_spaces_indent (0.00s)
+    --- PASS: TestDocI2S/tabs_to_two_spaces_indent (0.00s)
+    --- PASS: TestDocI2S/spaces_to_two_spaces_indent (0.00s)
+PASS
+ok  	github.com/ddev/ddev/pkg/heredoc	0.007s
+Not reading global config file because running with root privileges
+Not reading global projects file because running with root privileges
+=== RUN   TestCreateTmpDir
+--- PASS: TestCreateTmpDir (0.00s)
+=== RUN   TestValidTestSite
+Downloading https://wordpress.org/wordpress-5.8.2.tar.gz
+Downloaded https://wordpress.org/wordpress-5.8.2.tar.gz into /root/.ddev/testcache/tarballs/cbceb39f_wordpress-5.8.2.tar.gz
+Extracted /root/.ddev/testcache/tarballs/cbceb39f_wordpress-5.8.2.tar.gz into /root/.ddev/testcache/cbceb39f_wordpress-5.8.2.tar.gz
+Copying directory /root/.ddev/testcache/cbceb39f_wordpress-5.8.2.tar.gz to /root/tmp/ddevtest/TestValidTestSite2891217986
+
+Copying complete
+Not reading global config file because running with root privileges
+    testcommon_test.go:82:
+        	Error Trace:	/app/pkg/testcommon/testcommon_test.go:82
+        	            				/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.0.linux-amd64/src/testing/testing.go:1176
+        	            				/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.0.linux-amd64/src/testing/testing.go:1354
+        	            				/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.0.linux-amd64/src/testing/testing.go:1684
+        	Error:      	Received unexpected error:
+        	            	exit status 1
+        	Test:       	TestValidTestSite
+--- FAIL: TestValidTestSite (5.44s)
+=== RUN   TestGetLocalHTTPResponse
+[33mIsColima(): Unable to get Docker info, err=Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?[0m
+[33mIsLima(): Unable to get Docker info, err=Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?[0m
+[33mIsRancherDesktop(): Unable to get Docker info, err=Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?[0m
+Not reading global config file because running with root privileges
+Failed to ensure Docker network ddev_default: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+FAIL	github.com/ddev/ddev/pkg/testcommon	5.478s
+=== RUN   TestValidateAsset
+--- PASS: TestValidateAsset (0.00s)
+PASS
+ok  	github.com/ddev/ddev/pkg/appimport	0.008s
+?   	github.com/ddev/ddev/pkg/build	[no test files]
+Not reading global config file because running with root privileges
+=== RUN   TestGetFreePort
+Not reading global config file because running with root privileges
+    global_config_test.go:63:
+        	Error Trace:	/app/pkg/globalconfig/global_config_test.go:63
+        	Error:      	Received unexpected error:
+        	            	exec: "docker": executable file not found in $PATH
+        	Test:       	TestGetFreePort
+        	Messages:   	failed to 'docker [run --rm -p127.0.0.1:35327:35327 ddev/ddev-utilities:latest]': exec: "docker": executable file not found in $PATH, output=''
+--- FAIL: TestGetFreePort (0.01s)
+=== RUN   TestSetProjectAppRoot
+Not reading global config file because running with root privileges
+--- PASS: TestSetProjectAppRoot (0.00s)
+=== RUN   TestIsInternetActiveErrorOccurred
+--- PASS: TestIsInternetActiveErrorOccurred (0.00s)
+=== RUN   TestIsInternetActiveTimeout
+--- PASS: TestIsInternetActiveTimeout (3.00s)
+=== RUN   TestIsInternetActiveAlreadyChecked
+--- PASS: TestIsInternetActiveAlreadyChecked (0.00s)
+=== RUN   TestIsInternetActive
+--- PASS: TestIsInternetActive (0.00s)
+FAIL
+FAIL	github.com/ddev/ddev/pkg/globalconfig	3.043s
+?   	github.com/ddev/ddev/pkg/github	[no test files]
+=== RUN   TestGetVersionInfo
+    version_test.go:27:
+        	Error Trace:	/app/pkg/version/version_test.go:27
+        	Error:      	Received unexpected error:
+        	            	exit status 1
+        	Test:       	TestGetVersionInfo
+--- FAIL: TestGetVersionInfo (0.04s)
+FAIL
+FAIL	github.com/ddev/ddev/pkg/version	0.061s
+?   	github.com/ddev/ddev/pkg/versionconstants	[no test files]
+?   	github.com/ddev/ddev/pkg/ddevhosts	[no test files]
+?   	github.com/ddev/ddev/pkg/styles	[no test files]
+FAIL
+make: *** [Makefile:153: testnotddevapp] Error 1

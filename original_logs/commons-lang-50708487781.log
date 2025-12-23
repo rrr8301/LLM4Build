@@ -1,0 +1,1061 @@
+﻿2025-09-18T16:06:49.7992436Z Current runner version: '2.328.0'
+2025-09-18T16:06:49.8024586Z ##[group]Runner Image Provisioner
+2025-09-18T16:06:49.8025756Z Hosted Compute Agent
+2025-09-18T16:06:49.8026781Z Version: 20250829.383
+2025-09-18T16:06:49.8027814Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+2025-09-18T16:06:49.8028981Z Build Date: 2025-08-29T13:48:48Z
+2025-09-18T16:06:49.8030323Z ##[endgroup]
+2025-09-18T16:06:49.8031261Z ##[group]Operating System
+2025-09-18T16:06:49.8032282Z Ubuntu
+2025-09-18T16:06:49.8033232Z 24.04.3
+2025-09-18T16:06:49.8034138Z LTS
+2025-09-18T16:06:49.8034915Z ##[endgroup]
+2025-09-18T16:06:49.8035943Z ##[group]Runner Image
+2025-09-18T16:06:49.8037025Z Image: ubuntu-24.04
+2025-09-18T16:06:49.8037853Z Version: 20250907.24.1
+2025-09-18T16:06:49.8039949Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
+2025-09-18T16:06:49.8042915Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
+2025-09-18T16:06:49.8044810Z ##[endgroup]
+2025-09-18T16:06:49.8046611Z ##[group]GITHUB_TOKEN Permissions
+2025-09-18T16:06:49.8049655Z Contents: read
+2025-09-18T16:06:49.8050812Z Metadata: read
+2025-09-18T16:06:49.8051609Z ##[endgroup]
+2025-09-18T16:06:49.8054985Z Secret source: Actions
+2025-09-18T16:06:49.8056570Z Prepare workflow directory
+2025-09-18T16:06:49.8523970Z Prepare all required actions
+2025-09-18T16:06:49.8581135Z Getting action download info
+2025-09-18T16:06:50.1860952Z Download action repository 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-09-18T16:06:50.6365599Z Download action repository 'actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809' (SHA:0400d5f644dc74513175e3cd8d07132dd4860809)
+2025-09-18T16:06:50.7348380Z Download action repository 'actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165' (SHA:dded0888837ed1f317902acf8a20df0ad188d165)
+2025-09-18T16:06:51.3321799Z Complete job name: build (ubuntu-latest, 21, false)
+2025-09-18T16:06:51.3939404Z ##[group]Run actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+2025-09-18T16:06:51.3940709Z with:
+2025-09-18T16:06:51.3941144Z   persist-credentials: false
+2025-09-18T16:06:51.3941673Z   repository: apache/commons-lang
+2025-09-18T16:06:51.3942342Z   token: ***
+2025-09-18T16:06:51.3942762Z   ssh-strict: true
+2025-09-18T16:06:51.3943198Z   ssh-user: git
+2025-09-18T16:06:51.3943611Z   clean: true
+2025-09-18T16:06:51.3944041Z   sparse-checkout-cone-mode: true
+2025-09-18T16:06:51.3944558Z   fetch-depth: 1
+2025-09-18T16:06:51.3944984Z   fetch-tags: false
+2025-09-18T16:06:51.3945410Z   show-progress: true
+2025-09-18T16:06:51.3945848Z   lfs: false
+2025-09-18T16:06:51.3946237Z   submodules: false
+2025-09-18T16:06:51.3946671Z   set-safe-directory: true
+2025-09-18T16:06:51.3947370Z ##[endgroup]
+2025-09-18T16:06:51.4873099Z Syncing repository: apache/commons-lang
+2025-09-18T16:06:51.4874930Z ##[group]Getting Git version info
+2025-09-18T16:06:51.4875823Z Working directory is '/home/runner/work/commons-lang/commons-lang'
+2025-09-18T16:06:51.4876939Z [command]/usr/bin/git version
+2025-09-18T16:06:51.4948696Z git version 2.51.0
+2025-09-18T16:06:51.4968756Z ##[endgroup]
+2025-09-18T16:06:51.4982254Z Temporarily overriding HOME='/home/runner/work/_temp/d76739b5-53a3-429a-aae1-eb2d9f15ff81' before making global git config changes
+2025-09-18T16:06:51.4986872Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-18T16:06:51.4988772Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/commons-lang/commons-lang
+2025-09-18T16:06:51.5024031Z Deleting the contents of '/home/runner/work/commons-lang/commons-lang'
+2025-09-18T16:06:51.5027471Z ##[group]Initializing the repository
+2025-09-18T16:06:51.5032503Z [command]/usr/bin/git init /home/runner/work/commons-lang/commons-lang
+2025-09-18T16:06:51.5142078Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-18T16:06:51.5143380Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-18T16:06:51.5144725Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-18T16:06:51.5145421Z hint:
+2025-09-18T16:06:51.5145910Z hint: 	git config --global init.defaultBranch <name>
+2025-09-18T16:06:51.5146898Z hint:
+2025-09-18T16:06:51.5147794Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-18T16:06:51.5149033Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-18T16:06:51.5150309Z hint:
+2025-09-18T16:06:51.5150768Z hint: 	git branch -m <name>
+2025-09-18T16:06:51.5151242Z hint:
+2025-09-18T16:06:51.5151851Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-18T16:06:51.5153208Z Initialized empty Git repository in /home/runner/work/commons-lang/commons-lang/.git/
+2025-09-18T16:06:51.5157711Z [command]/usr/bin/git remote add origin https://github.com/apache/commons-lang
+2025-09-18T16:06:51.5196171Z ##[endgroup]
+2025-09-18T16:06:51.5196991Z ##[group]Disabling automatic garbage collection
+2025-09-18T16:06:51.5199729Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-18T16:06:51.5228625Z ##[endgroup]
+2025-09-18T16:06:51.5230362Z ##[group]Setting up auth
+2025-09-18T16:06:51.5235863Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-18T16:06:51.5267738Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-18T16:06:51.5597586Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-18T16:06:51.5625511Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-18T16:06:51.5844361Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-18T16:06:51.5875900Z ##[endgroup]
+2025-09-18T16:06:51.5884297Z ##[group]Fetching the repository
+2025-09-18T16:06:51.5885689Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0c58cce21dfc606f220403a691e7f36feb47ed43:refs/remotes/origin/master
+2025-09-18T16:06:52.2616741Z From https://github.com/apache/commons-lang
+2025-09-18T16:06:52.2618626Z  * [new ref]         0c58cce21dfc606f220403a691e7f36feb47ed43 -> origin/master
+2025-09-18T16:06:52.2647398Z ##[endgroup]
+2025-09-18T16:06:52.2648519Z ##[group]Determining the checkout info
+2025-09-18T16:06:52.2650423Z ##[endgroup]
+2025-09-18T16:06:52.2656327Z [command]/usr/bin/git sparse-checkout disable
+2025-09-18T16:06:52.2696995Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-18T16:06:52.2723282Z ##[group]Checking out the ref
+2025-09-18T16:06:52.2726688Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2025-09-18T16:06:52.3242288Z Reset branch 'master'
+2025-09-18T16:06:52.3244819Z branch 'master' set up to track 'origin/master'.
+2025-09-18T16:06:52.3254622Z ##[endgroup]
+2025-09-18T16:06:52.3289695Z [command]/usr/bin/git log -1 --format=%H
+2025-09-18T16:06:52.3312195Z 0c58cce21dfc606f220403a691e7f36feb47ed43
+2025-09-18T16:06:52.3323248Z ##[group]Removing auth
+2025-09-18T16:06:52.3327926Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-18T16:06:52.3359107Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-18T16:06:52.3580093Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-18T16:06:52.3607308Z http.https://github.com/.extraheader
+2025-09-18T16:06:52.3616458Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-09-18T16:06:52.3649347Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-18T16:06:52.3859011Z ##[endgroup]
+2025-09-18T16:06:52.5330246Z ##[group]Run actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809
+2025-09-18T16:06:52.5331744Z with:
+2025-09-18T16:06:52.5332537Z   path: ~/.m2/repository
+2025-09-18T16:06:52.5334179Z   key: Linux-maven-3cbfa339dfe3b6411f90b4b14a8b02b11e2eb4aebd6b3284c88026accdfc3394
+2025-09-18T16:06:52.5336005Z   restore-keys: Linux-maven-
+
+2025-09-18T16:06:52.5337054Z   enableCrossOsArchive: false
+2025-09-18T16:06:52.5338093Z   fail-on-cache-miss: false
+2025-09-18T16:06:52.5339048Z   lookup-only: false
+2025-09-18T16:06:52.5340103Z   save-always: false
+2025-09-18T16:06:52.5340934Z ##[endgroup]
+2025-09-18T16:06:52.7975093Z Cache hit for: Linux-maven-3cbfa339dfe3b6411f90b4b14a8b02b11e2eb4aebd6b3284c88026accdfc3394
+2025-09-18T16:06:53.9499710Z Received 122001984 of 122001984 (100.0%), 114.1 MBs/sec
+2025-09-18T16:06:53.9501087Z Cache Size: ~116 MB (122001984 B)
+2025-09-18T16:06:53.9529354Z [command]/usr/bin/tar -xf /home/runner/work/_temp/e35c3c97-bdc6-4668-ac6b-f63fd1dc0ad4/cache.tzst -P -C /home/runner/work/commons-lang/commons-lang --use-compress-program unzstd
+2025-09-18T16:06:54.3120066Z Cache restored successfully
+2025-09-18T16:06:54.3430151Z Cache restored from key: Linux-maven-3cbfa339dfe3b6411f90b4b14a8b02b11e2eb4aebd6b3284c88026accdfc3394
+2025-09-18T16:06:54.3624001Z ##[group]Run actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165
+2025-09-18T16:06:54.3624387Z with:
+2025-09-18T16:06:54.3624576Z   distribution: temurin
+2025-09-18T16:06:54.3624789Z   java-version: 21
+2025-09-18T16:06:54.3624982Z   java-package: jdk
+2025-09-18T16:06:54.3625176Z   check-latest: false
+2025-09-18T16:06:54.3625376Z   server-id: github
+2025-09-18T16:06:54.3625578Z   server-username: GITHUB_ACTOR
+2025-09-18T16:06:54.3625821Z   server-password: GITHUB_TOKEN
+2025-09-18T16:06:54.3626081Z   overwrite-settings: true
+2025-09-18T16:06:54.3626306Z   job-status: success
+2025-09-18T16:06:54.3626617Z   token: ***
+2025-09-18T16:06:54.3626808Z ##[endgroup]
+2025-09-18T16:06:54.5110205Z ##[group]Installed distributions
+2025-09-18T16:06:54.5236934Z (node:2150) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-09-18T16:06:54.5241847Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-18T16:06:54.5246604Z Resolved Java 21.0.8+9 from tool-cache
+2025-09-18T16:06:54.5247108Z Setting Java 21.0.8+9 as the default
+2025-09-18T16:06:54.5247679Z Creating toolchains.xml for JDK version 21 from temurin
+2025-09-18T16:06:54.5315350Z Writing to /home/runner/.m2/toolchains.xml
+2025-09-18T16:06:54.5315790Z 
+2025-09-18T16:06:54.5315961Z Java configuration:
+2025-09-18T16:06:54.5316374Z   Distribution: temurin
+2025-09-18T16:06:54.5316770Z   Version: 21.0.8+9
+2025-09-18T16:06:54.5317403Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.8-9/x64
+2025-09-18T16:06:54.5317908Z 
+2025-09-18T16:06:54.5319113Z ##[endgroup]
+2025-09-18T16:06:54.5338424Z Creating settings.xml with server-id: github
+2025-09-18T16:06:54.5338941Z Writing to /home/runner/.m2/settings.xml
+2025-09-18T16:06:54.5451781Z ##[group]Run mvn --errors --show-version --batch-mode --no-transfer-progress -Ddoclint=all
+2025-09-18T16:06:54.5452478Z [36;1mmvn --errors --show-version --batch-mode --no-transfer-progress -Ddoclint=all[0m
+2025-09-18T16:06:54.5510063Z shell: /usr/bin/bash -e {0}
+2025-09-18T16:06:54.5510332Z env:
+2025-09-18T16:06:54.5510636Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.8-9/x64
+2025-09-18T16:06:54.5511120Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.8-9/x64
+2025-09-18T16:06:54.5511476Z ##[endgroup]
+2025-09-18T16:06:56.5812029Z Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
+2025-09-18T16:06:56.5812894Z Maven home: /usr/share/apache-maven-3.9.11
+2025-09-18T16:06:56.5814002Z Java version: 21.0.8, vendor: Eclipse Adoptium, runtime: /usr/lib/jvm/temurin-21-jdk-amd64
+2025-09-18T16:06:56.5814801Z Default locale: en, platform encoding: UTF-8
+2025-09-18T16:06:56.5815562Z OS name: "linux", version: "6.11.0-1018-azure", arch: "amd64", family: "unix"
+2025-09-18T16:06:59.6707770Z [INFO] Error stacktraces are turned on.
+2025-09-18T16:06:59.8472436Z [INFO] Scanning for projects...
+2025-09-18T16:07:05.8350634Z [INFO] 
+2025-09-18T16:07:05.8352655Z [INFO] ------------------< org.apache.commons:commons-lang3 >------------------
+2025-09-18T16:07:05.8353269Z [INFO] Building Apache Commons Lang 3.19.0-SNAPSHOT
+2025-09-18T16:07:05.8353578Z [INFO]   from pom.xml
+2025-09-18T16:07:05.8353878Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-09-18T16:07:06.1058507Z [INFO] 
+2025-09-18T16:07:06.1059057Z [INFO] --- clean:3.5.0:clean (default-clean) @ commons-lang3 ---
+2025-09-18T16:07:06.1838251Z [INFO] 
+2025-09-18T16:07:06.1838916Z [INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ commons-lang3 ---
+2025-09-18T16:07:06.3140892Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2025-09-18T16:07:06.3141702Z [INFO] 
+2025-09-18T16:07:06.3142272Z [INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ commons-lang3 ---
+2025-09-18T16:07:06.3505510Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-09-18T16:07:06.3506529Z [INFO] 
+2025-09-18T16:07:06.3510422Z [INFO] --- apache-rat:0.16.1:check (rat-check) @ commons-lang3 ---
+2025-09-18T16:07:10.8037713Z [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 572 licenses.
+2025-09-18T16:07:10.8041168Z [INFO] 
+2025-09-18T16:07:10.8044737Z [INFO] --- artifact:3.6.0:check-buildplan (check-buildplan) @ commons-lang3 ---
+2025-09-18T16:07:11.1185583Z [INFO] No known issue in 22 plugins
+2025-09-18T16:07:11.1186092Z [INFO] 
+2025-09-18T16:07:11.1186706Z [INFO] --- build-helper:3.6.1:parse-version (parse-version) @ commons-lang3 ---
+2025-09-18T16:07:11.1903424Z [INFO] 
+2025-09-18T16:07:11.1905272Z [INFO] --- antrun:3.1.0:run (javadoc.resources) @ commons-lang3 ---
+2025-09-18T16:07:11.3937005Z [INFO] Executing tasks
+2025-09-18T16:07:11.4732413Z [INFO]      [copy] Copying 2 files to /home/runner/work/commons-lang/commons-lang/target/apidocs/META-INF
+2025-09-18T16:07:11.4741426Z [INFO] Executed tasks
+2025-09-18T16:07:11.4743629Z [INFO] 
+2025-09-18T16:07:11.4760014Z [INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ commons-lang3 ---
+2025-09-18T16:07:11.6938990Z [INFO] Skipping remote resources execution.
+2025-09-18T16:07:11.6940867Z [INFO] 
+2025-09-18T16:07:11.6948672Z [INFO] --- buildnumber:3.2.1:create (default) @ commons-lang3 ---
+2025-09-18T16:07:11.8259145Z [INFO] Executing: /bin/sh -c cd '/home/runner/work/commons-lang/commons-lang' && 'git' 'log' '-1' '--no-merges' '--format=format:%H %aI %aE %aN'
+2025-09-18T16:07:11.8261815Z [INFO] Working directory: /home/runner/work/commons-lang/commons-lang
+2025-09-18T16:07:11.9240353Z [INFO] Storing buildNumber: null at timestamp: 1758211631812
+2025-09-18T16:07:11.9248837Z [INFO] Executing: /bin/sh -c cd '/home/runner/work/commons-lang/commons-lang' && 'git' 'symbolic-ref' 'HEAD'
+2025-09-18T16:07:11.9256985Z [INFO] Working directory: /home/runner/work/commons-lang/commons-lang
+2025-09-18T16:07:11.9300398Z [INFO] Storing scmBranch: master
+2025-09-18T16:07:11.9302085Z [INFO] 
+2025-09-18T16:07:11.9303719Z [INFO] --- resources:3.3.1:resources (default-resources) @ commons-lang3 ---
+2025-09-18T16:07:11.9667904Z [INFO] skip non existing resourceDirectory /home/runner/work/commons-lang/commons-lang/src/main/resources
+2025-09-18T16:07:11.9693634Z [INFO] Copying 2 resources from  to target/classes/META-INF
+2025-09-18T16:07:11.9793064Z [INFO] 
+2025-09-18T16:07:11.9795977Z [INFO] --- compiler:3.14.0:compile (default-compile) @ commons-lang3 ---
+2025-09-18T16:07:12.1728530Z [INFO] Recompiling the module because of changed source code.
+2025-09-18T16:07:12.1844988Z [INFO] Compiling 259 source files with javac [debug release 8] to target/classes
+2025-09-18T16:07:17.0190973Z [WARNING] source value 8 is obsolete and will be removed in a future release
+2025-09-18T16:07:17.0194293Z [WARNING] target value 8 is obsolete and will be removed in a future release
+2025-09-18T16:07:17.0211234Z [WARNING] To suppress warnings about obsolete options, use -Xlint:-options.
+2025-09-18T16:07:17.0212811Z [INFO] /home/runner/work/commons-lang/commons-lang/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java: Some input files use or override a deprecated API.
+2025-09-18T16:07:17.0215051Z [INFO] /home/runner/work/commons-lang/commons-lang/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java: Recompile with -Xlint:deprecation for details.
+2025-09-18T16:07:17.0217280Z [INFO] /home/runner/work/commons-lang/commons-lang/src/main/java/org/apache/commons/lang3/AppendableJoiner.java: Some input files use unchecked or unsafe operations.
+2025-09-18T16:07:17.0218836Z [INFO] /home/runner/work/commons-lang/commons-lang/src/main/java/org/apache/commons/lang3/AppendableJoiner.java: Recompile with -Xlint:unchecked for details.
+2025-09-18T16:07:17.0219531Z [INFO] 
+2025-09-18T16:07:17.0220067Z [INFO] --- bundle:6.0.0:manifest (bundle-manifest) @ commons-lang3 ---
+2025-09-18T16:07:17.3050571Z [INFO] No MANIFEST.MF file found, generating manifest.
+2025-09-18T16:07:18.0830743Z [INFO] Writing manifest: /home/runner/work/commons-lang/commons-lang/target/osgi/MANIFEST.MF
+2025-09-18T16:07:18.0850764Z [INFO] 
+2025-09-18T16:07:18.0865340Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ commons-lang3 ---
+2025-09-18T16:07:18.0920661Z [INFO] Copying 2 resources from src/test/resources to target/test-classes
+2025-09-18T16:07:18.0951232Z [INFO] Copying 2 resources from  to target/test-classes/META-INF
+2025-09-18T16:07:18.0952078Z [INFO] 
+2025-09-18T16:07:18.0952717Z [INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ commons-lang3 ---
+2025-09-18T16:07:18.1155267Z [INFO] Recompiling the module because of changed dependency.
+2025-09-18T16:07:18.1160173Z [INFO] Compiling 267 source files with javac [debug release 8] to target/test-classes
+2025-09-18T16:07:25.5810242Z [WARNING] source value 8 is obsolete and will be removed in a future release
+2025-09-18T16:07:25.5811210Z [WARNING] target value 8 is obsolete and will be removed in a future release
+2025-09-18T16:07:25.5812042Z [WARNING] To suppress warnings about obsolete options, use -Xlint:-options.
+2025-09-18T16:07:25.5813910Z [WARNING] /home/runner/work/commons-lang/commons-lang/src/test/java/org/apache/commons/lang3/builder/ReflectionDiffBuilderTest.java:[172,52] non-varargs call of varargs method with inexact argument type for last parameter;
+2025-09-18T16:07:25.5815660Z   cast to java.lang.String for a varargs call
+2025-09-18T16:07:25.5816349Z   cast to java.lang.String[] for a non-varargs call and to suppress this warning
+2025-09-18T16:07:25.5817894Z [INFO] /home/runner/work/commons-lang/commons-lang/src/test/java/org/apache/commons/lang3/AppendableJoinerTest.java: Some input files use or override a deprecated API.
+2025-09-18T16:07:25.5820608Z [INFO] /home/runner/work/commons-lang/commons-lang/src/test/java/org/apache/commons/lang3/AppendableJoinerTest.java: Recompile with -Xlint:deprecation for details.
+2025-09-18T16:07:25.5822764Z [INFO] /home/runner/work/commons-lang/commons-lang/src/test/java/org/apache/commons/lang3/FunctionsTest.java: Some input files use unchecked or unsafe operations.
+2025-09-18T16:07:25.5824761Z [INFO] /home/runner/work/commons-lang/commons-lang/src/test/java/org/apache/commons/lang3/FunctionsTest.java: Recompile with -Xlint:unchecked for details.
+2025-09-18T16:07:25.5825933Z [INFO] 
+2025-09-18T16:07:25.5826365Z [INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ commons-lang3 ---
+2025-09-18T16:07:25.6673216Z [INFO] argLine set to -javaagent:/home/runner/.m2/repository/org/jacoco/org.jacoco.agent/0.8.13/org.jacoco.agent-0.8.13-runtime.jar=destfile=/home/runner/work/commons-lang/commons-lang/target/jacoco.exec -Xmx512m --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.time=ALL-UNNAMED --add-opens java.base/java.time.chrono=ALL-UNNAMED
+2025-09-18T16:07:25.6676808Z [INFO] 
+2025-09-18T16:07:25.6677482Z [INFO] --- surefire:3.5.3:test (default-test) @ commons-lang3 ---
+2025-09-18T16:07:25.8333619Z [INFO] Surefire report directory: /home/runner/work/commons-lang/commons-lang/target/surefire-reports
+2025-09-18T16:07:25.8362886Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-09-18T16:07:25.9003277Z [INFO] 
+2025-09-18T16:07:25.9004573Z [INFO] -------------------------------------------------------
+2025-09-18T16:07:25.9005278Z [INFO]  T E S T S
+2025-09-18T16:07:25.9005783Z [INFO] -------------------------------------------------------
+2025-09-18T16:07:29.7789041Z [INFO] Running org.apache.commons.lang3.ClassPathUtilsTest
+2025-09-18T16:07:29.8839126Z [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 s -- in org.apache.commons.lang3.ClassPathUtilsTest
+2025-09-18T16:07:29.8857313Z [INFO] Running org.apache.commons.lang3.StringUtilsSubstringTest
+2025-09-18T16:07:29.9301657Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s -- in org.apache.commons.lang3.StringUtilsSubstringTest
+2025-09-18T16:07:29.9303062Z [INFO] Running org.apache.commons.lang3.StringsTest
+2025-09-18T16:07:30.0387917Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 s -- in org.apache.commons.lang3.StringsTest
+2025-09-18T16:07:30.0389097Z [INFO] Running org.apache.commons.lang3.LongRangeTest
+2025-09-18T16:07:30.1438461Z [INFO] Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 s -- in org.apache.commons.lang3.LongRangeTest
+2025-09-18T16:07:30.1477875Z [INFO] Running org.apache.commons.lang3.AnnotationUtilsTest
+2025-09-18T16:07:30.2157291Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in org.apache.commons.lang3.AnnotationUtilsTest
+2025-09-18T16:07:30.2158602Z [INFO] Running org.apache.commons.lang3.CharSetUtilsTest
+2025-09-18T16:07:30.2330789Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in org.apache.commons.lang3.CharSetUtilsTest
+2025-09-18T16:07:30.2351261Z [INFO] Running org.apache.commons.lang3.ArraySorterTest
+2025-09-18T16:07:30.2567519Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in org.apache.commons.lang3.ArraySorterTest
+2025-09-18T16:07:30.2572061Z [INFO] Running org.apache.commons.lang3.SystemUtilsTest
+2025-09-18T16:07:30.3055882Z [INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in org.apache.commons.lang3.SystemUtilsTest
+2025-09-18T16:07:30.3080625Z [INFO] Running org.apache.commons.lang3.ArrayUtilsAddTest
+2025-09-18T16:07:30.3388681Z [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in org.apache.commons.lang3.ArrayUtilsAddTest
+2025-09-18T16:07:30.3393530Z [INFO] Running org.apache.commons.lang3.CharUtilsTest
+2025-09-18T16:07:30.3753570Z [INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in org.apache.commons.lang3.CharUtilsTest
+2025-09-18T16:07:30.3757490Z [INFO] Running org.apache.commons.lang3.ClassUtilsOssFuzzTest
+2025-09-18T16:07:32.9291359Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.553 s -- in org.apache.commons.lang3.ClassUtilsOssFuzzTest
+2025-09-18T16:07:32.9294416Z [INFO] Running org.apache.commons.lang3.CachedRandomBitsTest
+2025-09-18T16:07:32.9691383Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in org.apache.commons.lang3.CachedRandomBitsTest
+2025-09-18T16:07:32.9693712Z [INFO] Running org.apache.commons.lang3.SerializationUtilsTest
+2025-09-18T16:07:33.0520266Z [INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 s -- in org.apache.commons.lang3.SerializationUtilsTest
+2025-09-18T16:07:33.0526748Z [INFO] Running org.apache.commons.lang3.RuntimeEnvironmentTest
+2025-09-18T16:07:33.1429407Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s -- in org.apache.commons.lang3.RuntimeEnvironmentTest
+2025-09-18T16:07:33.1430616Z [INFO] Running org.apache.commons.lang3.ObjectUtilsTest
+2025-09-18T16:07:33.3407380Z [INFO] Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s -- in org.apache.commons.lang3.ObjectUtilsTest
+2025-09-18T16:07:33.3414788Z [INFO] Running org.apache.commons.lang3.EnumUtilsTest
+2025-09-18T16:07:33.4162457Z [INFO] Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 s -- in org.apache.commons.lang3.EnumUtilsTest
+2025-09-18T16:07:33.4169511Z [INFO] Running org.apache.commons.lang3.RandomUtilsTest
+2025-09-18T16:07:33.6751551Z [INFO] Tests run: 117, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.262 s -- in org.apache.commons.lang3.RandomUtilsTest
+2025-09-18T16:07:33.6759981Z [INFO] Running org.apache.commons.lang3.ArrayUtilsInsertTest
+2025-09-18T16:07:33.6843150Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.apache.commons.lang3.ArrayUtilsInsertTest
+2025-09-18T16:07:33.6848485Z [INFO] Running org.apache.commons.lang3.mutable.MutableDoubleTest
+2025-09-18T16:07:33.7083150Z [INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in org.apache.commons.lang3.mutable.MutableDoubleTest
+2025-09-18T16:07:33.7105602Z [INFO] Running org.apache.commons.lang3.mutable.MutableByteTest
+2025-09-18T16:07:33.7264560Z [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in org.apache.commons.lang3.mutable.MutableByteTest
+2025-09-18T16:07:33.7266344Z [INFO] Running org.apache.commons.lang3.mutable.MutableIntTest
+2025-09-18T16:07:33.7438834Z [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.apache.commons.lang3.mutable.MutableIntTest
+2025-09-18T16:07:33.7467292Z [INFO] Running org.apache.commons.lang3.mutable.MutableLongTest
+2025-09-18T16:07:33.7756874Z [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in org.apache.commons.lang3.mutable.MutableLongTest
+2025-09-18T16:07:33.7761699Z [INFO] Running org.apache.commons.lang3.mutable.MutableBooleanTest
+2025-09-18T16:07:33.7799378Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.commons.lang3.mutable.MutableBooleanTest
+2025-09-18T16:07:33.7820656Z [INFO] Running org.apache.commons.lang3.mutable.MutableFloatTest
+2025-09-18T16:07:33.8033558Z [INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in org.apache.commons.lang3.mutable.MutableFloatTest
+2025-09-18T16:07:33.8035188Z [INFO] Running org.apache.commons.lang3.mutable.MutableShortTest
+2025-09-18T16:07:33.8170358Z [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in org.apache.commons.lang3.mutable.MutableShortTest
+2025-09-18T16:07:33.8175459Z [INFO] Running org.apache.commons.lang3.mutable.MutableObjectTest
+2025-09-18T16:07:33.8249573Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.mutable.MutableObjectTest
+2025-09-18T16:07:33.8254855Z [INFO] Running org.apache.commons.lang3.ValidateTest
+2025-09-18T16:07:33.8260707Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidState
+2025-09-18T16:07:33.8263046Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidState$WitMessage
+2025-09-18T16:07:33.8297353Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.ValidateTest$ValidState$WitMessage
+2025-09-18T16:07:33.8300314Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidState$WithoutMessage
+2025-09-18T16:07:33.8316873Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.ValidateTest$ValidState$WithoutMessage
+2025-09-18T16:07:33.8381662Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.commons.lang3.ValidateTest$ValidState
+2025-09-18T16:07:33.8383457Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex
+2025-09-18T16:07:33.8384733Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex$WithCollection
+2025-09-18T16:07:33.8385921Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex$WithCollection$WithoutMessage
+2025-09-18T16:07:33.8504475Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex$WithCollection$WithoutMessage
+2025-09-18T16:07:33.8506343Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex$WithCollection$WithMessage
+2025-09-18T16:07:33.8571107Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex$WithCollection$WithMessage
+2025-09-18T16:07:33.8681443Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex$WithCollection
+2025-09-18T16:07:33.8683144Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex$WithCharSequence
+2025-09-18T16:07:33.8684510Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex$WithCharSequence$WithoutMessage
+2025-09-18T16:07:33.8693394Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex$WithCharSequence$WithoutMessage
+2025-09-18T16:07:33.8698379Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex$WithCharSequence$WithMessage
+2025-09-18T16:07:33.8710528Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex$WithCharSequence$WithMessage
+2025-09-18T16:07:33.8728726Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex$WithCharSequence
+2025-09-18T16:07:33.8732486Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex$WithArray
+2025-09-18T16:07:33.8761036Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex$WithArray$WithoutMessage
+2025-09-18T16:07:33.8762766Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex$WithArray$WithoutMessage
+2025-09-18T16:07:33.8764227Z [INFO] Running org.apache.commons.lang3.ValidateTest$ValidIndex$WithArray$WithMessage
+2025-09-18T16:07:33.8835530Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex$WithArray$WithMessage
+2025-09-18T16:07:33.8888224Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex$WithArray
+2025-09-18T16:07:33.8945982Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.050 s -- in org.apache.commons.lang3.ValidateTest$ValidIndex
+2025-09-18T16:07:33.8951138Z [INFO] Running org.apache.commons.lang3.ValidateTest$UtilClassConventions
+2025-09-18T16:07:33.8981271Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.ValidateTest$UtilClassConventions
+2025-09-18T16:07:33.8982763Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotNull
+2025-09-18T16:07:33.8983722Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotNull$WithoutMessage
+2025-09-18T16:07:33.9004191Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.ValidateTest$NotNull$WithoutMessage
+2025-09-18T16:07:33.9033327Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotNull$WithMessage
+2025-09-18T16:07:33.9048877Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$NotNull$WithMessage
+2025-09-18T16:07:33.9081039Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.lang3.ValidateTest$NotNull
+2025-09-18T16:07:33.9082781Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotNaN
+2025-09-18T16:07:33.9083854Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotNaN$WithoutMessage
+2025-09-18T16:07:33.9160493Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$NotNaN$WithoutMessage
+2025-09-18T16:07:33.9162101Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotNaN$WithMessage
+2025-09-18T16:07:33.9218719Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.ValidateTest$NotNaN$WithMessage
+2025-09-18T16:07:33.9266413Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.apache.commons.lang3.ValidateTest$NotNaN
+2025-09-18T16:07:33.9290568Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty
+2025-09-18T16:07:33.9291711Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithMap
+2025-09-18T16:07:33.9293989Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithMap$WithoutMessage
+2025-09-18T16:07:33.9295839Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithMap$WithoutMessage
+2025-09-18T16:07:33.9297336Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithMap$WithMessage
+2025-09-18T16:07:33.9360881Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithMap$WithMessage
+2025-09-18T16:07:33.9432229Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithMap
+2025-09-18T16:07:33.9437313Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithCollection
+2025-09-18T16:07:33.9440595Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithCollection$WithoutMessage
+2025-09-18T16:07:33.9448859Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithCollection$WithoutMessage
+2025-09-18T16:07:33.9451796Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithCollection$WithMessage
+2025-09-18T16:07:33.9580010Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithCollection$WithMessage
+2025-09-18T16:07:33.9582336Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithCollection
+2025-09-18T16:07:33.9583863Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithCharSequence
+2025-09-18T16:07:33.9585087Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithCharSequence$WithoutMessage
+2025-09-18T16:07:33.9605449Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithCharSequence$WithoutMessage
+2025-09-18T16:07:33.9608558Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithCharSequence$WithMessage
+2025-09-18T16:07:33.9649324Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithCharSequence$WithMessage
+2025-09-18T16:07:33.9756281Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithCharSequence
+2025-09-18T16:07:33.9757432Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithArray
+2025-09-18T16:07:33.9758247Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithArray$WithoutMessage
+2025-09-18T16:07:33.9759382Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithArray$WithoutMessage
+2025-09-18T16:07:33.9760671Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotEmpty$WithArray$WithMessage
+2025-09-18T16:07:33.9830297Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithArray$WithMessage
+2025-09-18T16:07:33.9858805Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty$WithArray
+2025-09-18T16:07:33.9871817Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in org.apache.commons.lang3.ValidateTest$NotEmpty
+2025-09-18T16:07:33.9874021Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotBlank
+2025-09-18T16:07:33.9875947Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotBlank$WithoutMessage
+2025-09-18T16:07:33.9929103Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.ValidateTest$NotBlank$WithoutMessage
+2025-09-18T16:07:33.9931621Z [INFO] Running org.apache.commons.lang3.ValidateTest$NotBlank$WithMessage
+2025-09-18T16:07:34.0021507Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.ValidateTest$NotBlank$WithMessage
+2025-09-18T16:07:34.0032961Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in org.apache.commons.lang3.ValidateTest$NotBlank
+2025-09-18T16:07:34.0034360Z [INFO] Running org.apache.commons.lang3.ValidateTest$NoNullElements
+2025-09-18T16:07:34.0035380Z [INFO] Running org.apache.commons.lang3.ValidateTest$NoNullElements$WithCollection
+2025-09-18T16:07:34.0036563Z [INFO] Running org.apache.commons.lang3.ValidateTest$NoNullElements$WithCollection$WithoutMessage
+2025-09-18T16:07:34.0065285Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.ValidateTest$NoNullElements$WithCollection$WithoutMessage
+2025-09-18T16:07:34.0076585Z [INFO] Running org.apache.commons.lang3.ValidateTest$NoNullElements$WithCollection$WithMessage
+2025-09-18T16:07:34.0117605Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.ValidateTest$NoNullElements$WithCollection$WithMessage
+2025-09-18T16:07:34.0135319Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.apache.commons.lang3.ValidateTest$NoNullElements$WithCollection
+2025-09-18T16:07:34.0137300Z [INFO] Running org.apache.commons.lang3.ValidateTest$NoNullElements$WithArray
+2025-09-18T16:07:34.0149585Z [INFO] Running org.apache.commons.lang3.ValidateTest$NoNullElements$WithArray$WithoutMessage
+2025-09-18T16:07:34.0206533Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.ValidateTest$NoNullElements$WithArray$WithoutMessage
+2025-09-18T16:07:34.0211579Z [INFO] Running org.apache.commons.lang3.ValidateTest$NoNullElements$WithArray$WithMessage
+2025-09-18T16:07:34.0272637Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.ValidateTest$NoNullElements$WithArray$WithMessage
+2025-09-18T16:07:34.0286340Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.lang3.ValidateTest$NoNullElements$WithArray
+2025-09-18T16:07:34.0330555Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in org.apache.commons.lang3.ValidateTest$NoNullElements
+2025-09-18T16:07:34.0331727Z [INFO] Running org.apache.commons.lang3.ValidateTest$MatchesPattern
+2025-09-18T16:07:34.0332564Z [INFO] Running org.apache.commons.lang3.ValidateTest$MatchesPattern$WithoutMessage
+2025-09-18T16:07:34.0333749Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.ValidateTest$MatchesPattern$WithoutMessage
+2025-09-18T16:07:34.0334944Z [INFO] Running org.apache.commons.lang3.ValidateTest$MatchesPattern$WithMessage
+2025-09-18T16:07:34.0392323Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.ValidateTest$MatchesPattern$WithMessage
+2025-09-18T16:07:34.0394243Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$MatchesPattern
+2025-09-18T16:07:34.0395301Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsTrue
+2025-09-18T16:07:34.0396076Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsTrue$WithoutMessage
+2025-09-18T16:07:34.0461164Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.ValidateTest$IsTrue$WithoutMessage
+2025-09-18T16:07:34.0462734Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsTrue$WithObjectTemplate
+2025-09-18T16:07:34.0464479Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.ValidateTest$IsTrue$WithObjectTemplate
+2025-09-18T16:07:34.0465875Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsTrue$WithMessageSupplier
+2025-09-18T16:07:34.0523896Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.ValidateTest$IsTrue$WithMessageSupplier
+2025-09-18T16:07:34.0525119Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsTrue$WithMessage
+2025-09-18T16:07:34.0536425Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$IsTrue$WithMessage
+2025-09-18T16:07:34.0541870Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsTrue$WithLongTemplate
+2025-09-18T16:07:34.0561336Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.ValidateTest$IsTrue$WithLongTemplate
+2025-09-18T16:07:34.0566440Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsTrue$WithDoubleTemplate
+2025-09-18T16:07:34.0586203Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.ValidateTest$IsTrue$WithDoubleTemplate
+2025-09-18T16:07:34.0605134Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in org.apache.commons.lang3.ValidateTest$IsTrue
+2025-09-18T16:07:34.0610268Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsInstanceOf
+2025-09-18T16:07:34.0613825Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsInstanceOf$WithoutMessage
+2025-09-18T16:07:34.0633776Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.ValidateTest$IsInstanceOf$WithoutMessage
+2025-09-18T16:07:34.0639344Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsInstanceOf$WithMessageTemplate
+2025-09-18T16:07:34.0690598Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.ValidateTest$IsInstanceOf$WithMessageTemplate
+2025-09-18T16:07:34.0695611Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsInstanceOf$WithMessage
+2025-09-18T16:07:34.0700439Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.ValidateTest$IsInstanceOf$WithMessage
+2025-09-18T16:07:34.0705448Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in org.apache.commons.lang3.ValidateTest$IsInstanceOf
+2025-09-18T16:07:34.0709036Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsAssignable
+2025-09-18T16:07:34.0712308Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsAssignable$WithoutMessage
+2025-09-18T16:07:34.0776967Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.lang3.ValidateTest$IsAssignable$WithoutMessage
+2025-09-18T16:07:34.0841159Z [INFO] Running org.apache.commons.lang3.ValidateTest$IsAssignable$WithMessage
+2025-09-18T16:07:34.0842894Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.ValidateTest$IsAssignable$WithMessage
+2025-09-18T16:07:34.0855490Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.ValidateTest$IsAssignable
+2025-09-18T16:07:34.0857317Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween
+2025-09-18T16:07:34.0858404Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithLong
+2025-09-18T16:07:34.0859648Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithLong$WithoutMessage
+2025-09-18T16:07:34.0951256Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithLong$WithoutMessage
+2025-09-18T16:07:34.0958568Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithLong$WithMessage
+2025-09-18T16:07:34.1061488Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithLong$WithMessage
+2025-09-18T16:07:34.1071303Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithLong
+2025-09-18T16:07:34.1073243Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithDouble
+2025-09-18T16:07:34.1074841Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithDouble$WithoutMessage
+2025-09-18T16:07:34.1133014Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithDouble$WithoutMessage
+2025-09-18T16:07:34.1134836Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithDouble$WithMessage
+2025-09-18T16:07:34.1211105Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithDouble$WithMessage
+2025-09-18T16:07:34.1250331Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithDouble
+2025-09-18T16:07:34.1257613Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithComparable
+2025-09-18T16:07:34.1280117Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithComparable$WithoutMessage
+2025-09-18T16:07:34.1281764Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithComparable$WithoutMessage
+2025-09-18T16:07:34.1287258Z [INFO] Running org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithComparable$WithMessage
+2025-09-18T16:07:34.1411575Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithComparable$WithMessage
+2025-09-18T16:07:34.1413868Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween$WithComparable
+2025-09-18T16:07:34.1426405Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s -- in org.apache.commons.lang3.ValidateTest$InclusiveBetween
+2025-09-18T16:07:34.1432568Z [INFO] Running org.apache.commons.lang3.ValidateTest$Finite
+2025-09-18T16:07:34.1454940Z [INFO] Running org.apache.commons.lang3.ValidateTest$Finite$WithoutMessage
+2025-09-18T16:07:34.1460624Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.ValidateTest$Finite$WithoutMessage
+2025-09-18T16:07:34.1465652Z [INFO] Running org.apache.commons.lang3.ValidateTest$Finite$WithMessage
+2025-09-18T16:07:34.1521580Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.ValidateTest$Finite$WithMessage
+2025-09-18T16:07:34.1532819Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.apache.commons.lang3.ValidateTest$Finite
+2025-09-18T16:07:34.1537563Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween
+2025-09-18T16:07:34.1542690Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithLong
+2025-09-18T16:07:34.1548989Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithLong$WithoutMessage
+2025-09-18T16:07:34.1575334Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithLong$WithoutMessage
+2025-09-18T16:07:34.1579410Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithLong$WithMessage
+2025-09-18T16:07:34.1614758Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithLong$WithMessage
+2025-09-18T16:07:34.1632469Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithLong
+2025-09-18T16:07:34.1637879Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithDouble
+2025-09-18T16:07:34.1643905Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithDouble$WithoutMessage
+2025-09-18T16:07:34.1664074Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithDouble$WithoutMessage
+2025-09-18T16:07:34.1669072Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithDouble$WithMessage
+2025-09-18T16:07:34.1751501Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithDouble$WithMessage
+2025-09-18T16:07:34.1759561Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithDouble
+2025-09-18T16:07:34.1761009Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithComparable
+2025-09-18T16:07:34.1762102Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithComparable$WithoutMessage
+2025-09-18T16:07:34.1867889Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithComparable$WithoutMessage
+2025-09-18T16:07:34.1879359Z [INFO] Running org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithComparable$WithMessage
+2025-09-18T16:07:34.1930197Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithComparable$WithMessage
+2025-09-18T16:07:34.1951791Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween$WithComparable
+2025-09-18T16:07:34.1970528Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s -- in org.apache.commons.lang3.ValidateTest$ExclusiveBetween
+2025-09-18T16:07:34.1988701Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.371 s -- in org.apache.commons.lang3.ValidateTest
+2025-09-18T16:07:34.2021030Z [INFO] Running org.apache.commons.lang3.reflect.TypeUtilsTest
+2025-09-18T16:07:34.4830332Z [WARNING] Tests run: 405, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.268 s -- in org.apache.commons.lang3.reflect.TypeUtilsTest
+2025-09-18T16:07:34.4855930Z [INFO] Running org.apache.commons.lang3.reflect.TypeLiteralTest
+2025-09-18T16:07:34.4902126Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in org.apache.commons.lang3.reflect.TypeLiteralTest
+2025-09-18T16:07:34.4904210Z [INFO] Running org.apache.commons.lang3.reflect.FieldUtilsTest
+2025-09-18T16:07:34.5688032Z [INFO] Tests run: 68, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s -- in org.apache.commons.lang3.reflect.FieldUtilsTest
+2025-09-18T16:07:34.5692027Z [INFO] Running org.apache.commons.lang3.reflect.MethodUtilsTest
+2025-09-18T16:07:34.6861237Z [INFO] Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 s -- in org.apache.commons.lang3.reflect.MethodUtilsTest
+2025-09-18T16:07:34.6932493Z [INFO] Running org.apache.commons.lang3.reflect.InheritanceUtilsTest
+2025-09-18T16:07:34.6934921Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.reflect.InheritanceUtilsTest
+2025-09-18T16:07:34.6936215Z [INFO] Running org.apache.commons.lang3.reflect.ConstructorUtilsTest
+2025-09-18T16:07:34.6986428Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.lang3.reflect.ConstructorUtilsTest
+2025-09-18T16:07:34.6991993Z [INFO] Running org.apache.commons.lang3.reflect.Lang1703Test
+2025-09-18T16:07:34.7019037Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.reflect.Lang1703Test
+2025-09-18T16:07:34.7024409Z [INFO] Running org.apache.commons.lang3.CharRangeTest
+2025-09-18T16:07:34.7262601Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in org.apache.commons.lang3.CharRangeTest
+2025-09-18T16:07:34.7281314Z [INFO] Running org.apache.commons.lang3.CharSequenceUtilsTest
+2025-09-18T16:07:34.8001410Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s -- in org.apache.commons.lang3.CharSequenceUtilsTest
+2025-09-18T16:07:34.8006908Z [INFO] Running org.apache.commons.lang3.text.CompositeFormatTest
+2025-09-18T16:07:34.8175085Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in org.apache.commons.lang3.text.CompositeFormatTest
+2025-09-18T16:07:34.8182182Z [INFO] Running org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest
+2025-09-18T16:07:34.8212875Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.text.translate.NumericEntityUnescaperTest
+2025-09-18T16:07:34.8214556Z [INFO] Running org.apache.commons.lang3.text.translate.EntityArraysTest
+2025-09-18T16:07:34.8246946Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.text.translate.EntityArraysTest
+2025-09-18T16:07:34.8252828Z [INFO] Running org.apache.commons.lang3.text.translate.NumericEntityEscaperTest
+2025-09-18T16:07:34.8282286Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.text.translate.NumericEntityEscaperTest
+2025-09-18T16:07:34.8289922Z [INFO] Running org.apache.commons.lang3.text.translate.LookupTranslatorTest
+2025-09-18T16:07:34.8407563Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.text.translate.LookupTranslatorTest
+2025-09-18T16:07:34.8420926Z [INFO] Running org.apache.commons.lang3.text.translate.UnicodeUnpairedSurrogateRemoverTest
+2025-09-18T16:07:34.8463455Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.text.translate.UnicodeUnpairedSurrogateRemoverTest
+2025-09-18T16:07:34.8465114Z [INFO] Running org.apache.commons.lang3.text.translate.UnicodeEscaperTest
+2025-09-18T16:07:34.8490501Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.text.translate.UnicodeEscaperTest
+2025-09-18T16:07:34.8503618Z [INFO] Running org.apache.commons.lang3.text.translate.UnicodeUnescaperTest
+2025-09-18T16:07:34.8548350Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.text.translate.UnicodeUnescaperTest
+2025-09-18T16:07:34.8550610Z [INFO] Running org.apache.commons.lang3.text.translate.OctalUnescaperTest
+2025-09-18T16:07:34.8592356Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.text.translate.OctalUnescaperTest
+2025-09-18T16:07:34.8593914Z [INFO] Running org.apache.commons.lang3.text.StrBuilderAppendInsertTest
+2025-09-18T16:07:34.8748602Z [INFO] Tests run: 51, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in org.apache.commons.lang3.text.StrBuilderAppendInsertTest
+2025-09-18T16:07:34.8755284Z [INFO] Running org.apache.commons.lang3.text.FormattableUtilsTest
+2025-09-18T16:07:34.8774629Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.text.FormattableUtilsTest
+2025-09-18T16:07:34.8787693Z [INFO] Running org.apache.commons.lang3.text.WordUtilsTest
+2025-09-18T16:07:34.8868827Z [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.commons.lang3.text.WordUtilsTest
+2025-09-18T16:07:34.8885759Z [INFO] Running org.apache.commons.lang3.text.StrSubstitutorTest
+2025-09-18T16:07:34.9203520Z [INFO] Tests run: 41, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in org.apache.commons.lang3.text.StrSubstitutorTest
+2025-09-18T16:07:34.9211313Z [INFO] Running org.apache.commons.lang3.text.StrTokenizerTest
+2025-09-18T16:07:34.9459206Z [INFO] Tests run: 55, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in org.apache.commons.lang3.text.StrTokenizerTest
+2025-09-18T16:07:34.9465274Z [INFO] Running org.apache.commons.lang3.text.ExtendedMessageFormatTest
+2025-09-18T16:07:43.8850294Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.937 s -- in org.apache.commons.lang3.text.ExtendedMessageFormatTest
+2025-09-18T16:07:43.8862064Z [INFO] Running org.apache.commons.lang3.text.StrBuilderTest
+2025-09-18T16:07:43.9351577Z [INFO] Tests run: 91, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in org.apache.commons.lang3.text.StrBuilderTest
+2025-09-18T16:07:43.9352985Z [INFO] Running org.apache.commons.lang3.text.StrMatcherTest
+2025-09-18T16:07:43.9360016Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.text.StrMatcherTest
+2025-09-18T16:07:43.9365176Z [INFO] Running org.apache.commons.lang3.text.StrLookupTest
+2025-09-18T16:07:43.9385425Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.text.StrLookupTest
+2025-09-18T16:07:43.9387943Z [INFO] Running org.apache.commons.lang3.StreamsTest
+2025-09-18T16:07:43.9692857Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in org.apache.commons.lang3.StreamsTest
+2025-09-18T16:07:43.9720772Z [INFO] Running org.apache.commons.lang3.FunctionsTest
+2025-09-18T16:07:44.0149219Z [INFO] Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in org.apache.commons.lang3.FunctionsTest
+2025-09-18T16:07:44.0181106Z [INFO] Running org.apache.commons.lang3.LocaleUtilsTest
+2025-09-18T16:07:45.0574536Z [INFO] Tests run: 2155, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.007 s -- in org.apache.commons.lang3.LocaleUtilsTest
+2025-09-18T16:07:45.0591342Z [INFO] Running org.apache.commons.lang3.ArrayUtilsSetTest
+2025-09-18T16:07:45.0603181Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ArrayUtilsSetTest
+2025-09-18T16:07:45.0604141Z [INFO] Running org.apache.commons.lang3.StringUtilsTest
+2025-09-18T16:07:45.2412255Z [WARNING] Tests run: 164, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.213 s -- in org.apache.commons.lang3.StringUtilsTest
+2025-09-18T16:07:45.2416488Z [INFO] Running org.apache.commons.lang3.BooleanUtilsTest
+2025-09-18T16:07:45.2741057Z [INFO] Tests run: 90, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in org.apache.commons.lang3.BooleanUtilsTest
+2025-09-18T16:07:45.2742621Z [INFO] Running org.apache.commons.lang3.ArrayUtilsRemoveMultipleTest
+2025-09-18T16:07:45.2960009Z [INFO] Tests run: 55, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in org.apache.commons.lang3.ArrayUtilsRemoveMultipleTest
+2025-09-18T16:07:45.2965577Z [INFO] Running org.apache.commons.lang3.StringUtilsStartsEndsWithTest
+2025-09-18T16:07:45.2985546Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.StringUtilsStartsEndsWithTest
+2025-09-18T16:07:45.2991342Z [INFO] Running org.apache.commons.lang3.ArrayUtilsRemoveTest
+2025-09-18T16:07:45.3127372Z [INFO] Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.apache.commons.lang3.ArrayUtilsRemoveTest
+2025-09-18T16:07:45.3134182Z [INFO] Running org.apache.commons.lang3.StringUtilsIsTest
+2025-09-18T16:07:45.3156003Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.StringUtilsIsTest
+2025-09-18T16:07:45.3160246Z [INFO] Running org.apache.commons.lang3.BitFieldTest
+2025-09-18T16:07:45.3214001Z [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.BitFieldTest
+2025-09-18T16:07:45.3217956Z [INFO] Running org.apache.commons.lang3.ConversionTest
+2025-09-18T16:07:45.3702724Z [INFO] Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s -- in org.apache.commons.lang3.ConversionTest
+2025-09-18T16:07:45.3703951Z [INFO] Running org.apache.commons.lang3.concurrent.ConcurrentRuntimeExceptionTest
+2025-09-18T16:07:45.3716546Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.concurrent.ConcurrentRuntimeExceptionTest
+2025-09-18T16:07:45.3717862Z [INFO] Running org.apache.commons.lang3.concurrent.CircuitBreakingExceptionTest
+2025-09-18T16:07:45.3771380Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.concurrent.CircuitBreakingExceptionTest
+2025-09-18T16:07:45.3786043Z [INFO] Running org.apache.commons.lang3.concurrent.LazyInitializerAnonClassTest
+2025-09-18T16:07:45.3868096Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.concurrent.LazyInitializerAnonClassTest
+2025-09-18T16:07:45.3872011Z [INFO] Running org.apache.commons.lang3.concurrent.LazyInitializerSupplierTest
+2025-09-18T16:07:45.3971064Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.concurrent.LazyInitializerSupplierTest
+2025-09-18T16:07:45.3990921Z [INFO] Running org.apache.commons.lang3.concurrent.locks.LockingVisitorsTest
+2025-09-18T16:09:03.5174021Z [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 78.12 s -- in org.apache.commons.lang3.concurrent.locks.LockingVisitorsTest
+2025-09-18T16:09:03.5179105Z [INFO] Running org.apache.commons.lang3.concurrent.AtomicInitializerSupplierTest
+2025-09-18T16:09:03.5235709Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.concurrent.AtomicInitializerSupplierTest
+2025-09-18T16:09:03.5237971Z [INFO] Running org.apache.commons.lang3.concurrent.EventCountCircuitBreakerTest
+2025-09-18T16:09:03.5819194Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in org.apache.commons.lang3.concurrent.EventCountCircuitBreakerTest
+2025-09-18T16:09:03.5836813Z [INFO] Running org.apache.commons.lang3.concurrent.TimedSemaphoreTest
+2025-09-18T16:09:04.7771503Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.196 s -- in org.apache.commons.lang3.concurrent.TimedSemaphoreTest
+2025-09-18T16:09:04.7773629Z [INFO] Running org.apache.commons.lang3.concurrent.AtomicInitializerObjectTest
+2025-09-18T16:09:04.7827847Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.concurrent.AtomicInitializerObjectTest
+2025-09-18T16:09:04.7829244Z [INFO] Running org.apache.commons.lang3.concurrent.BasicThreadFactoryTest
+2025-09-18T16:09:04.8395082Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.concurrent.BasicThreadFactoryTest
+2025-09-18T16:09:04.8396704Z [INFO] Running org.apache.commons.lang3.concurrent.BackgroundInitializerSupplierTest
+2025-09-18T16:09:04.8412241Z [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in org.apache.commons.lang3.concurrent.BackgroundInitializerSupplierTest
+2025-09-18T16:09:04.8413920Z [INFO] Running org.apache.commons.lang3.concurrent.MemoizerFunctionTest
+2025-09-18T16:09:04.8425706Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.apache.commons.lang3.concurrent.MemoizerFunctionTest
+2025-09-18T16:09:04.8427689Z [INFO] Running org.apache.commons.lang3.concurrent.LazyInitializerSingleInstanceTest
+2025-09-18T16:09:04.8438701Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.apache.commons.lang3.concurrent.LazyInitializerSingleInstanceTest
+2025-09-18T16:09:04.8440588Z [INFO] Running org.apache.commons.lang3.concurrent.UncheckedTimeoutExceptionTest
+2025-09-18T16:09:04.8458528Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.concurrent.UncheckedTimeoutExceptionTest
+2025-09-18T16:09:04.8460063Z [INFO] Running org.apache.commons.lang3.concurrent.LazyInitializerSimpleTest
+2025-09-18T16:09:04.8497952Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.concurrent.LazyInitializerSimpleTest
+2025-09-18T16:09:04.8500554Z [INFO] Running org.apache.commons.lang3.concurrent.LazyInitializerCloserTest
+2025-09-18T16:09:04.8652785Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.commons.lang3.concurrent.LazyInitializerCloserTest
+2025-09-18T16:09:04.8655624Z [INFO] Running org.apache.commons.lang3.concurrent.MemoizerComputableTest
+2025-09-18T16:09:04.8674439Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.lang3.concurrent.MemoizerComputableTest
+2025-09-18T16:09:04.8676112Z [INFO] Running org.apache.commons.lang3.concurrent.ConcurrentExceptionTest
+2025-09-18T16:09:04.8727368Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.concurrent.ConcurrentExceptionTest
+2025-09-18T16:09:04.8728993Z [INFO] Running org.apache.commons.lang3.concurrent.BackgroundInitializerTest
+2025-09-18T16:09:04.8898279Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.apache.commons.lang3.concurrent.BackgroundInitializerTest
+2025-09-18T16:09:04.8900209Z [INFO] Running org.apache.commons.lang3.concurrent.CallableBackgroundInitializerTest
+2025-09-18T16:09:04.8924750Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.concurrent.CallableBackgroundInitializerTest
+2025-09-18T16:09:04.8927401Z [INFO] Running org.apache.commons.lang3.concurrent.LazyInitializerFailableCloserTest
+2025-09-18T16:09:04.9003903Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.concurrent.LazyInitializerFailableCloserTest
+2025-09-18T16:09:04.9005700Z [INFO] Running org.apache.commons.lang3.concurrent.MultiBackgroundInitializerSupplierTest
+2025-09-18T16:09:04.9383606Z [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in org.apache.commons.lang3.concurrent.MultiBackgroundInitializerSupplierTest
+2025-09-18T16:09:04.9388951Z [INFO] Running org.apache.commons.lang3.concurrent.ConcurrentUtilsTest
+2025-09-18T16:09:04.9542541Z [INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.apache.commons.lang3.concurrent.ConcurrentUtilsTest
+2025-09-18T16:09:04.9544315Z [INFO] Running org.apache.commons.lang3.concurrent.UncheckedExecutionExceptionTest
+2025-09-18T16:09:04.9564365Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.concurrent.UncheckedExecutionExceptionTest
+2025-09-18T16:09:04.9567139Z [INFO] Running org.apache.commons.lang3.concurrent.ThresholdCircuitBreakerTest
+2025-09-18T16:09:04.9578430Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.concurrent.ThresholdCircuitBreakerTest
+2025-09-18T16:09:04.9579988Z [INFO] Running org.apache.commons.lang3.concurrent.AtomicInitializerNonObjectTest
+2025-09-18T16:09:04.9621372Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.lang3.concurrent.AtomicInitializerNonObjectTest
+2025-09-18T16:09:04.9633129Z [INFO] Running org.apache.commons.lang3.concurrent.MultiBackgroundInitializerTest
+2025-09-18T16:09:04.9843802Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in org.apache.commons.lang3.concurrent.MultiBackgroundInitializerTest
+2025-09-18T16:09:04.9845576Z [INFO] Running org.apache.commons.lang3.concurrent.AtomicSafeInitializerTest
+2025-09-18T16:09:05.0133967Z [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in org.apache.commons.lang3.concurrent.AtomicSafeInitializerTest
+2025-09-18T16:09:05.0141791Z [INFO] Running org.apache.commons.lang3.concurrent.ConstantInitializerTest
+2025-09-18T16:09:05.0147493Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.concurrent.ConstantInitializerTest
+2025-09-18T16:09:05.0149049Z [INFO] Running org.apache.commons.lang3.concurrent.AtomicSafeInitializerSupplierTest
+2025-09-18T16:09:05.0240781Z [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.concurrent.AtomicSafeInitializerSupplierTest
+2025-09-18T16:09:05.0246404Z [INFO] Running org.apache.commons.lang3.concurrent.UncheckedFutureTest
+2025-09-18T16:09:05.0305136Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.concurrent.UncheckedFutureTest
+2025-09-18T16:09:05.0306683Z [INFO] Running org.apache.commons.lang3.concurrent.FutureTasksTest
+2025-09-18T16:09:05.0331022Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.concurrent.FutureTasksTest
+2025-09-18T16:09:05.0332356Z [INFO] Running org.apache.commons.lang3.StringEscapeUtilsTest
+2025-09-18T16:09:05.2318325Z [INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.202 s -- in org.apache.commons.lang3.StringEscapeUtilsTest
+2025-09-18T16:09:05.2320271Z [INFO] Running org.apache.commons.lang3.StringUtilsContainsTest
+2025-09-18T16:09:05.2391867Z [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.StringUtilsContainsTest
+2025-09-18T16:09:05.2398266Z [INFO] Running org.apache.commons.lang3.StringUtilsEmptyBlankTest
+2025-09-18T16:09:05.2425729Z [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.StringUtilsEmptyBlankTest
+2025-09-18T16:09:05.2432645Z [INFO] Running org.apache.commons.lang3.compare.ObjectToStringComparatorTest
+2025-09-18T16:09:05.2454414Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.compare.ObjectToStringComparatorTest
+2025-09-18T16:09:05.2461445Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest
+2025-09-18T16:09:05.2465196Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1
+2025-09-18T16:09:05.2467296Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_10
+2025-09-18T16:09:05.2502743Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_10$C_is_10
+2025-09-18T16:09:05.2545476Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_10$C_is_10
+2025-09-18T16:09:05.2563084Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_10$C_is_1
+2025-09-18T16:09:05.2644351Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_10$C_is_1
+2025-09-18T16:09:05.2647349Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_10$C_is_0
+2025-09-18T16:09:05.2648749Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_10$C_is_0
+2025-09-18T16:09:05.2697136Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_10
+2025-09-18T16:09:05.2715426Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_1
+2025-09-18T16:09:05.2723100Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_1$C_is_10
+2025-09-18T16:09:05.2774481Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_1$C_is_10
+2025-09-18T16:09:05.2776141Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_1$C_is_1
+2025-09-18T16:09:05.2789399Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_1$C_is_1
+2025-09-18T16:09:05.2795032Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_1$C_is_0
+2025-09-18T16:09:05.2861075Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_1$C_is_0
+2025-09-18T16:09:05.2871873Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_1
+2025-09-18T16:09:05.2877337Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_0
+2025-09-18T16:09:05.2883286Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_0$C_is_10
+2025-09-18T16:09:05.2904450Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_0$C_is_10
+2025-09-18T16:09:05.2914581Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_0$C_is_1
+2025-09-18T16:09:05.2951038Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_0$C_is_1
+2025-09-18T16:09:05.2952722Z [INFO] Running org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_0$C_is_0
+2025-09-18T16:09:05.2954285Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_0$C_is_0
+2025-09-18T16:09:05.2991140Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1$B_is_0
+2025-09-18T16:09:05.2992638Z [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest$A_is_1
+2025-09-18T16:09:05.3010845Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in org.apache.commons.lang3.compare.ComparableUtilsTest
+2025-09-18T16:09:05.3012209Z [INFO] Running org.apache.commons.lang3.time.Java15BugFastDateParserTest
+2025-09-18T16:09:07.3579143Z [INFO] Tests run: 1086, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.058 s -- in org.apache.commons.lang3.time.Java15BugFastDateParserTest
+2025-09-18T16:09:07.3590195Z [INFO] Running org.apache.commons.lang3.time.FastDateFormat_PrinterTest
+2025-09-18T16:09:07.4299069Z [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 s -- in org.apache.commons.lang3.time.FastDateFormat_PrinterTest
+2025-09-18T16:09:07.4307775Z [INFO] Running org.apache.commons.lang3.time.DateUtilsRoundingTest
+2025-09-18T16:09:07.4647877Z [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in org.apache.commons.lang3.time.DateUtilsRoundingTest
+2025-09-18T16:09:07.4663028Z [INFO] Running org.apache.commons.lang3.time.FastDateParserTest
+2025-09-18T16:09:40.7346073Z [INFO] Tests run: 46009, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.50 s -- in org.apache.commons.lang3.time.FastDateParserTest
+2025-09-18T16:09:40.7831083Z [INFO] Running org.apache.commons.lang3.time.StopWatchTest
+2025-09-18T16:09:40.7847771Z [INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.638 s -- in org.apache.commons.lang3.time.StopWatchTest
+2025-09-18T16:09:40.7884215Z [INFO] Running org.apache.commons.lang3.time.DateUtilsTest
+2025-09-18T16:09:40.8184833Z [INFO] Tests run: 128, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.209 s -- in org.apache.commons.lang3.time.DateUtilsTest
+2025-09-18T16:09:40.8190926Z [INFO] Running org.apache.commons.lang3.time.FastDateParser_MoreOrLessTest
+2025-09-18T16:09:40.8205326Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.time.FastDateParser_MoreOrLessTest
+2025-09-18T16:09:40.8207517Z [INFO] Running org.apache.commons.lang3.time.TimeZonesTest
+2025-09-18T16:09:40.8257427Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.lang3.time.TimeZonesTest
+2025-09-18T16:09:40.8290634Z [INFO] Running org.apache.commons.lang3.time.CalendarUtilsTest
+2025-09-18T16:09:41.2988209Z [INFO] Tests run: 1903, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.438 s -- in org.apache.commons.lang3.time.CalendarUtilsTest
+2025-09-18T16:09:41.2997486Z [INFO] Running org.apache.commons.lang3.time.DateFormatUtilsTest
+2025-09-18T16:09:41.3013321Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.time.DateFormatUtilsTest
+2025-09-18T16:09:41.3014840Z [INFO] Running org.apache.commons.lang3.time.FastDatePrinterTimeZonesTest
+2025-09-18T16:09:41.4801459Z [INFO] Tests run: 632, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.206 s -- in org.apache.commons.lang3.time.FastDatePrinterTimeZonesTest
+2025-09-18T16:09:41.4803946Z [INFO] Running org.apache.commons.lang3.time.GmtTimeZoneTest
+2025-09-18T16:09:41.4818076Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.time.GmtTimeZoneTest
+2025-09-18T16:09:41.4820253Z [INFO] Running org.apache.commons.lang3.time.DurationUtilsTest
+2025-09-18T16:09:41.4859508Z [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.apache.commons.lang3.time.DurationUtilsTest
+2025-09-18T16:09:41.4862359Z [INFO] Running org.apache.commons.lang3.time.FastDateParserSDFTest
+2025-09-18T16:09:41.5847375Z [INFO] Tests run: 276, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s -- in org.apache.commons.lang3.time.FastDateParserSDFTest
+2025-09-18T16:09:41.5848573Z [INFO] Running org.apache.commons.lang3.time.FastDateFormatTest
+2025-09-18T16:09:42.2921519Z [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.709 s -- in org.apache.commons.lang3.time.FastDateFormatTest
+2025-09-18T16:09:42.2926257Z [INFO] Running org.apache.commons.lang3.time.FastTimeZoneTest
+2025-09-18T16:09:42.2930854Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.time.FastTimeZoneTest
+2025-09-18T16:09:42.2963238Z [INFO] Running org.apache.commons.lang3.time.WeekYearTest
+2025-09-18T16:09:42.3083120Z [INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.apache.commons.lang3.time.WeekYearTest
+2025-09-18T16:09:42.3087865Z [INFO] Running org.apache.commons.lang3.time.DurationFormatUtilsTest
+2025-09-18T16:09:49.1299714Z [INFO] Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.821 s -- in org.apache.commons.lang3.time.DurationFormatUtilsTest
+2025-09-18T16:09:49.1301183Z [INFO] Running org.apache.commons.lang3.time.DateUtilsFragmentTest
+2025-09-18T16:09:49.1434570Z [INFO] Tests run: 57, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.apache.commons.lang3.time.DateUtilsFragmentTest
+2025-09-18T16:09:49.1439501Z [INFO] Running org.apache.commons.lang3.time.FastDateParser_TimeZoneStrategyTest
+2025-09-18T16:09:54.3452765Z [1][main] Java Eclipse Adoptium 21.0.8+9-LTS - Mark as an assumption failure instead of a hard fail: locale = 'de', parse = 'Coordinated Universal Time'
+2025-09-18T16:09:54.4459112Z [2][main] Java Eclipse Adoptium 21.0.8+9-LTS - Mark as an assumption failure instead of a hard fail: locale = 'de_DE', parse = 'Coordinated Universal Time'
+2025-09-18T16:09:58.5938330Z [3][main] Java Eclipse Adoptium 21.0.8+9-LTS - Mark as an assumption failure instead of a hard fail: locale = 'es', parse = 'Coordinated Universal Time'
+2025-09-18T16:10:31.5256949Z Actual failures on Java 17+: 3
+2025-09-18T16:10:31.5267073Z [de, de_DE, es]
+2025-09-18T16:10:31.5933980Z [WARNING] Tests run: 2142, Failures: 0, Errors: 0, Skipped: 8, Time elapsed: 42.38 s -- in org.apache.commons.lang3.time.FastDateParser_TimeZoneStrategyTest
+2025-09-18T16:10:31.5945293Z [INFO] Running org.apache.commons.lang3.time.FastDatePrinterTest
+2025-09-18T16:10:31.5962387Z [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.lang3.time.FastDatePrinterTest
+2025-09-18T16:10:31.5963456Z [INFO] Running org.apache.commons.lang3.IntegerRangeTest
+2025-09-18T16:10:31.5982170Z [INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.apache.commons.lang3.IntegerRangeTest
+2025-09-18T16:10:31.5984402Z [INFO] Running org.apache.commons.lang3.ThreadUtilsTest
+2025-09-18T16:10:31.6003351Z [INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s -- in org.apache.commons.lang3.ThreadUtilsTest
+2025-09-18T16:10:31.6005403Z [INFO] Running org.apache.commons.lang3.util.IterableStringTokenizerTest
+2025-09-18T16:10:31.6105441Z [INFO] Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.lang3.util.IterableStringTokenizerTest
+2025-09-18T16:10:31.6106600Z [INFO] Running org.apache.commons.lang3.util.FluentBitSetTest
+2025-09-18T16:10:31.6333915Z [INFO] Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in org.apache.commons.lang3.util.FluentBitSetTest
+2025-09-18T16:10:31.6335452Z [INFO] Running org.apache.commons.lang3.builder.HashCodeBuilderAndEqualsBuilderTest
+2025-09-18T16:10:32.7137360Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.080 s -- in org.apache.commons.lang3.builder.HashCodeBuilderAndEqualsBuilderTest
+2025-09-18T16:10:32.7142626Z [INFO] Running org.apache.commons.lang3.builder.IDKeyTest
+2025-09-18T16:10:32.7148043Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.lang3.builder.IDKeyTest
+2025-09-18T16:10:32.7152918Z [INFO] Running org.apache.commons.lang3.builder.ReflectionToStringBuilderTest
+2025-09-18T16:10:32.7179441Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.lang3.builder.ReflectionToStringBuilderTest
+2025-09-18T16:10:32.7200706Z [INFO] Running org.apache.commons.lang3.builder.JsonToStringStyleTest
+2025-09-18T16:10:32.7439971Z [INFO] Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in org.apache.commons.lang3.builder.JsonToStringStyleTest
+2025-09-18T16:10:32.7441196Z [INFO] Running org.apache.commons.lang3.builder.EqualsBuilderTest
+2025-09-18T16:10:32.8012572Z [INFO] Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s -- in org.apache.commons.lang3.builder.EqualsBuilderTest
+2025-09-18T16:10:32.8015006Z [INFO] Running org.apache.commons.lang3.builder.DiffTest
+2025-09-18T16:10:32.8130678Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.builder.DiffTest
+2025-09-18T16:10:32.8163886Z [INFO] Running org.apache.commons.lang3.builder.DefaultToStringStyleTest
+2025-09-18T16:10:32.8171064Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.builder.DefaultToStringStyleTest
+2025-09-18T16:10:32.8172320Z [INFO] Running org.apache.commons.lang3.builder.StandardToStringStyleTest
+2025-09-18T16:10:32.8258800Z [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in org.apache.commons.lang3.builder.StandardToStringStyleTest
+2025-09-18T16:10:32.8260261Z [INFO] Running org.apache.commons.lang3.builder.NoFieldNamesToStringStyleTest
+2025-09-18T16:10:32.8375717Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.commons.lang3.builder.NoFieldNamesToStringStyleTest
+2025-09-18T16:10:32.8377095Z [INFO] Running org.apache.commons.lang3.builder.MultiLineToStringStyleTest
+2025-09-18T16:10:32.8416310Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.builder.MultiLineToStringStyleTest
+2025-09-18T16:10:32.8417658Z [INFO] Running org.apache.commons.lang3.builder.EqualsBuilderReflectJreImplementationTest
+2025-09-18T16:10:33.4862875Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.644 s -- in org.apache.commons.lang3.builder.EqualsBuilderReflectJreImplementationTest
+2025-09-18T16:10:33.4868471Z [INFO] Running org.apache.commons.lang3.builder.ToStringBuilderTest
+2025-09-18T16:10:33.5112566Z [INFO] Tests run: 95, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in org.apache.commons.lang3.builder.ToStringBuilderTest
+2025-09-18T16:10:33.5116071Z [INFO] Running org.apache.commons.lang3.builder.RecursiveToStringStyleTest
+2025-09-18T16:10:33.5132612Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.builder.RecursiveToStringStyleTest
+2025-09-18T16:10:33.5135397Z [INFO] Running org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeTest
+2025-09-18T16:10:33.5152946Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeTest
+2025-09-18T16:10:33.5155657Z [INFO] Running org.apache.commons.lang3.builder.HashCodeBuilderTest
+2025-09-18T16:10:33.5249519Z [INFO] Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.commons.lang3.builder.HashCodeBuilderTest
+2025-09-18T16:10:33.5254596Z [INFO] Running org.apache.commons.lang3.builder.ConversionTest
+2025-09-18T16:10:33.5263954Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.lang3.builder.ConversionTest
+2025-09-18T16:10:33.5267510Z [INFO] Running org.apache.commons.lang3.builder.ToStringStyleTest
+2025-09-18T16:10:33.5277193Z [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.builder.ToStringStyleTest
+2025-09-18T16:10:33.5278380Z [INFO] Running org.apache.commons.lang3.builder.NoClassNameToStringStyleTest
+2025-09-18T16:10:33.5297566Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.builder.NoClassNameToStringStyleTest
+2025-09-18T16:10:33.5302408Z [INFO] Running org.apache.commons.lang3.builder.ReflectionToStringBuilderMutateInspectConcurrencyTest
+2025-09-18T16:10:33.5310758Z [WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s -- in org.apache.commons.lang3.builder.ReflectionToStringBuilderMutateInspectConcurrencyTest
+2025-09-18T16:10:33.5313798Z [INFO] Running org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeWithAnnotationTest
+2025-09-18T16:10:33.5323510Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeWithAnnotationTest
+2025-09-18T16:10:33.5325184Z [INFO] Running org.apache.commons.lang3.builder.CompareToBuilderTest
+2025-09-18T16:10:33.5426903Z [INFO] Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.lang3.builder.CompareToBuilderTest
+2025-09-18T16:10:33.5427998Z [INFO] Running org.apache.commons.lang3.builder.DiffBuilderTest
+2025-09-18T16:10:33.5626667Z [INFO] Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in org.apache.commons.lang3.builder.DiffBuilderTest
+2025-09-18T16:10:33.5627937Z [INFO] Running org.apache.commons.lang3.builder.ReflectionToStringBuilderSummaryTest
+2025-09-18T16:10:33.5641791Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.builder.ReflectionToStringBuilderSummaryTest
+2025-09-18T16:10:33.5643332Z [INFO] Running org.apache.commons.lang3.builder.DiffResultTest
+2025-09-18T16:10:33.5672431Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.builder.DiffResultTest
+2025-09-18T16:10:33.5674667Z [INFO] Running org.apache.commons.lang3.builder.SimpleToStringStyleTest
+2025-09-18T16:10:33.5694818Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.builder.SimpleToStringStyleTest
+2025-09-18T16:10:33.5696903Z [INFO] Running org.apache.commons.lang3.builder.ToStringStyleConcurrencyTest
+2025-09-18T16:10:36.3374204Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.767 s -- in org.apache.commons.lang3.builder.ToStringStyleConcurrencyTest
+2025-09-18T16:10:36.3375461Z [INFO] Running org.apache.commons.lang3.builder.ReflectionDiffBuilderTest
+2025-09-18T16:10:36.8523618Z [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.514 s -- in org.apache.commons.lang3.builder.ReflectionDiffBuilderTest
+2025-09-18T16:10:36.8524516Z [INFO] Running org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeNullValuesTest
+2025-09-18T16:10:36.8536558Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.builder.ReflectionToStringBuilderExcludeNullValuesTest
+2025-09-18T16:10:36.8537504Z [INFO] Running org.apache.commons.lang3.builder.ReflectionToStringBuilderIncludeTest
+2025-09-18T16:10:36.8598687Z [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.builder.ReflectionToStringBuilderIncludeTest
+2025-09-18T16:10:36.8599956Z [INFO] Running org.apache.commons.lang3.builder.MultilineRecursiveToStringStyleTest
+2025-09-18T16:10:36.8676399Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.builder.MultilineRecursiveToStringStyleTest
+2025-09-18T16:10:36.8704002Z [INFO] Running org.apache.commons.lang3.builder.ReflectionToStringBuilderCustomImplementationTest
+2025-09-18T16:10:36.8705645Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.builder.ReflectionToStringBuilderCustomImplementationTest
+2025-09-18T16:10:36.8732129Z [INFO] Running org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest
+2025-09-18T16:10:36.8782025Z [WARNING] Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.001 s -- in org.apache.commons.lang3.builder.ReflectionToStringBuilderConcurrencyTest
+2025-09-18T16:10:36.8800924Z [INFO] Running org.apache.commons.lang3.builder.ShortPrefixToStringStyleTest
+2025-09-18T16:10:36.8861021Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.builder.ShortPrefixToStringStyleTest
+2025-09-18T16:10:36.8877806Z [INFO] Running org.apache.commons.lang3.NotImplementedExceptionTest
+2025-09-18T16:10:36.8879170Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.NotImplementedExceptionTest
+2025-09-18T16:10:36.8880781Z [INFO] Running org.apache.commons.lang3.CharsetsTest
+2025-09-18T16:10:36.8882100Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.lang3.CharsetsTest
+2025-09-18T16:10:36.8883047Z [INFO] Running org.apache.commons.lang3.RangeTest
+2025-09-18T16:10:36.8948534Z [INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.apache.commons.lang3.RangeTest
+2025-09-18T16:10:36.8949561Z [INFO] Running org.apache.commons.lang3.SystemPropertiesTest
+2025-09-18T16:10:36.9679184Z [INFO] Tests run: 58, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.080 s -- in org.apache.commons.lang3.SystemPropertiesTest
+2025-09-18T16:10:36.9690900Z [INFO] Running org.apache.commons.lang3.AppendableJoinerTest
+2025-09-18T16:10:36.9772807Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.lang3.AppendableJoinerTest
+2025-09-18T16:10:36.9774467Z [INFO] Running org.apache.commons.lang3.StringUtilsTrimStripTest
+2025-09-18T16:10:36.9896480Z [WARNING] Tests run: 16, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.010 s -- in org.apache.commons.lang3.StringUtilsTrimStripTest
+2025-09-18T16:10:36.9901513Z [INFO] Running org.apache.commons.lang3.CharEncodingTest
+2025-09-18T16:10:36.9983475Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.lang3.CharEncodingTest
+2025-09-18T16:10:36.9990300Z [INFO] Running org.apache.commons.lang3.ArrayUtilsTest
+2025-09-18T16:10:37.1123044Z [INFO] Tests run: 355, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 s -- in org.apache.commons.lang3.ArrayUtilsTest
+2025-09-18T16:10:37.1125490Z [INFO] Running org.apache.commons.lang3.math.NumberUtilsTest
+2025-09-18T16:10:37.1846845Z [INFO] Tests run: 120, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.080 s -- in org.apache.commons.lang3.math.NumberUtilsTest
+2025-09-18T16:10:37.1847910Z [INFO] Running org.apache.commons.lang3.math.FractionTest
+2025-09-18T16:10:37.2916491Z [INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s -- in org.apache.commons.lang3.math.FractionTest
+2025-09-18T16:10:37.2919003Z [INFO] Running org.apache.commons.lang3.math.IEEE754rUtilsTest
+2025-09-18T16:10:37.2929610Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.math.IEEE754rUtilsTest
+2025-09-18T16:10:37.2931680Z [INFO] Running org.apache.commons.lang3.StringUtilsEqualsIndexOfTest
+2025-09-18T16:10:37.3246651Z [INFO] Tests run: 70, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in org.apache.commons.lang3.StringUtilsEqualsIndexOfTest
+2025-09-18T16:10:37.3247784Z [INFO] Running org.apache.commons.lang3.StringUtilsAbbreviateTest
+2025-09-18T16:10:37.3267107Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.StringUtilsAbbreviateTest
+2025-09-18T16:10:37.3268472Z [INFO] Running org.apache.commons.lang3.RegExUtilsTest
+2025-09-18T16:10:37.3315086Z [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.RegExUtilsTest
+2025-09-18T16:10:37.3316468Z [INFO] Running org.apache.commons.lang3.StringUtilsValueOfTest
+2025-09-18T16:10:37.3326881Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.lang3.StringUtilsValueOfTest
+2025-09-18T16:10:37.3328321Z [INFO] Running org.apache.commons.lang3.ClassUtilsTest
+2025-09-18T16:10:37.3944830Z [INFO] Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s -- in org.apache.commons.lang3.ClassUtilsTest
+2025-09-18T16:10:37.3945927Z [INFO] Running org.apache.commons.lang3.function.MethodInvokersSupplierTest
+2025-09-18T16:10:37.4029552Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.apache.commons.lang3.function.MethodInvokersSupplierTest
+2025-09-18T16:10:37.4031188Z [INFO] Running org.apache.commons.lang3.function.MethodInvokersBiFunctionTest
+2025-09-18T16:10:37.4077255Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.function.MethodInvokersBiFunctionTest
+2025-09-18T16:10:37.4078422Z [INFO] Running org.apache.commons.lang3.function.ConsumersTest
+2025-09-18T16:10:37.4106892Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.ConsumersTest
+2025-09-18T16:10:37.4110649Z [INFO] Running org.apache.commons.lang3.function.IntToCharFunctionTest
+2025-09-18T16:10:37.4111775Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.IntToCharFunctionTest
+2025-09-18T16:10:37.4112989Z [INFO] Running org.apache.commons.lang3.function.MethodInvokersFailableSupplierTest
+2025-09-18T16:10:37.4141155Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.MethodInvokersFailableSupplierTest
+2025-09-18T16:10:37.4142863Z [INFO] Running org.apache.commons.lang3.function.FailableSupplierTest
+2025-09-18T16:10:37.4144295Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.FailableSupplierTest
+2025-09-18T16:10:37.4146170Z [INFO] Running org.apache.commons.lang3.function.ToBooleanBiFunctionTest
+2025-09-18T16:10:37.4160708Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.ToBooleanBiFunctionTest
+2025-09-18T16:10:37.4193877Z [INFO] Running org.apache.commons.lang3.function.SuppliersTest
+2025-09-18T16:10:37.4212138Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.SuppliersTest
+2025-09-18T16:10:37.4216784Z [INFO] Running org.apache.commons.lang3.function.FunctionsTest
+2025-09-18T16:10:37.4232967Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.function.FunctionsTest
+2025-09-18T16:10:37.4237580Z [INFO] Running org.apache.commons.lang3.function.BooleanConsumerTest
+2025-09-18T16:10:37.4253379Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.function.BooleanConsumerTest
+2025-09-18T16:10:37.4257721Z [INFO] Running org.apache.commons.lang3.function.MethodInvokersBiConsumerTest
+2025-09-18T16:10:37.4340520Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.apache.commons.lang3.function.MethodInvokersBiConsumerTest
+2025-09-18T16:10:37.4341951Z [INFO] Running org.apache.commons.lang3.function.TriFunctionTest
+2025-09-18T16:10:37.4343193Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.TriFunctionTest
+2025-09-18T16:10:37.4344436Z [INFO] Running org.apache.commons.lang3.function.PredicatesTest
+2025-09-18T16:10:37.4345983Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.lang3.function.PredicatesTest
+2025-09-18T16:10:37.4347357Z [INFO] Running org.apache.commons.lang3.function.ByteSupplierTest
+2025-09-18T16:10:37.4383585Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.ByteSupplierTest
+2025-09-18T16:10:37.4385026Z [INFO] Running org.apache.commons.lang3.function.MethodInvokersFunctionTest
+2025-09-18T16:10:37.4397600Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.lang3.function.MethodInvokersFunctionTest
+2025-09-18T16:10:37.4401765Z [INFO] Running org.apache.commons.lang3.function.MethodInvokersFailableBiConsumerTest
+2025-09-18T16:10:37.4447182Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.function.MethodInvokersFailableBiConsumerTest
+2025-09-18T16:10:37.4451877Z [INFO] Running org.apache.commons.lang3.function.FailableTest
+2025-09-18T16:10:37.5675956Z [INFO] Tests run: 177, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 s -- in org.apache.commons.lang3.function.FailableTest
+2025-09-18T16:10:37.5681523Z [INFO] Running org.apache.commons.lang3.function.MethodInvokersFailableFunctionTest
+2025-09-18T16:10:37.5721092Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.function.MethodInvokersFailableFunctionTest
+2025-09-18T16:10:37.5722746Z [INFO] Running org.apache.commons.lang3.function.TriConsumerTest
+2025-09-18T16:10:37.5723973Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.TriConsumerTest
+2025-09-18T16:10:37.5725313Z [INFO] Running org.apache.commons.lang3.function.ByteConsumerTest
+2025-09-18T16:10:37.5737297Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.function.ByteConsumerTest
+2025-09-18T16:10:37.5740687Z [INFO] Running org.apache.commons.lang3.function.ObjectsTest
+2025-09-18T16:10:37.5749998Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.function.ObjectsTest
+2025-09-18T16:10:37.5753904Z [INFO] Running org.apache.commons.lang3.function.MethodInvokersFailableBiFunctionTest
+2025-09-18T16:10:37.5781181Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.function.MethodInvokersFailableBiFunctionTest
+2025-09-18T16:10:37.5784492Z [INFO] Running org.apache.commons.lang3.tuple.ImmutableTripleTest
+2025-09-18T16:10:37.5856839Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.tuple.ImmutableTripleTest
+2025-09-18T16:10:37.5858274Z [INFO] Running org.apache.commons.lang3.tuple.ImmutablePairTest
+2025-09-18T16:10:37.5925716Z [INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.tuple.ImmutablePairTest
+2025-09-18T16:10:37.5927977Z [INFO] Running org.apache.commons.lang3.tuple.PairTest
+2025-09-18T16:10:37.6031377Z [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.lang3.tuple.PairTest
+2025-09-18T16:10:37.6037717Z [INFO] Running org.apache.commons.lang3.tuple.TripleTest
+2025-09-18T16:10:37.6074250Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.tuple.TripleTest
+2025-09-18T16:10:37.6078165Z [INFO] Running org.apache.commons.lang3.tuple.MutableTripleTest
+2025-09-18T16:10:37.6111654Z [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.tuple.MutableTripleTest
+2025-09-18T16:10:37.6116188Z [INFO] Running org.apache.commons.lang3.tuple.MutablePairTest
+2025-09-18T16:10:37.6144205Z [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.tuple.MutablePairTest
+2025-09-18T16:10:37.6147082Z [INFO] Running org.apache.commons.lang3.ClassLoaderUtilsTest
+2025-09-18T16:10:37.6188783Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.ClassLoaderUtilsTest
+2025-09-18T16:10:37.6190559Z [INFO] Running org.apache.commons.lang3.ArrayFillTest
+2025-09-18T16:10:37.6236328Z [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.ArrayFillTest
+2025-09-18T16:10:37.6241755Z [INFO] Running org.apache.commons.lang3.exception.DefaultExceptionContextTest
+2025-09-18T16:10:37.6302110Z [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.apache.commons.lang3.exception.DefaultExceptionContextTest
+2025-09-18T16:10:37.6304455Z [INFO] Running org.apache.commons.lang3.exception.UncheckedExceptionTest
+2025-09-18T16:10:37.6316267Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.lang3.exception.UncheckedExceptionTest
+2025-09-18T16:10:37.6317507Z [INFO] Running org.apache.commons.lang3.exception.CloneFailedExceptionTest
+2025-09-18T16:10:37.6343039Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.exception.CloneFailedExceptionTest
+2025-09-18T16:10:37.6345041Z [INFO] Running org.apache.commons.lang3.exception.ContextedExceptionTest
+2025-09-18T16:10:37.6479610Z [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.apache.commons.lang3.exception.ContextedExceptionTest
+2025-09-18T16:10:37.6482081Z [INFO] Running org.apache.commons.lang3.exception.UncheckedIllegalAccessExceptionTest
+2025-09-18T16:10:37.6483448Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.exception.UncheckedIllegalAccessExceptionTest
+2025-09-18T16:10:37.6484736Z [INFO] Running org.apache.commons.lang3.exception.ExceptionUtilsTest
+2025-09-18T16:10:37.6835422Z [INFO] Tests run: 64, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in org.apache.commons.lang3.exception.ExceptionUtilsTest
+2025-09-18T16:10:37.6837638Z [INFO] Running org.apache.commons.lang3.exception.ContextedRuntimeExceptionTest
+2025-09-18T16:10:37.6945519Z [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.apache.commons.lang3.exception.ContextedRuntimeExceptionTest
+2025-09-18T16:10:37.6960787Z [INFO] Running org.apache.commons.lang3.exception.UncheckedInterruptedExceptionTest
+2025-09-18T16:10:37.6962379Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in org.apache.commons.lang3.exception.UncheckedInterruptedExceptionTest
+2025-09-18T16:10:37.6963967Z [INFO] Running org.apache.commons.lang3.exception.UncheckedReflectiveOperationExceptionTest
+2025-09-18T16:10:37.6982182Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.exception.UncheckedReflectiveOperationExceptionTest
+2025-09-18T16:10:37.6987404Z [INFO] Running org.apache.commons.lang3.event.EventListenerSupportTest
+2025-09-18T16:10:37.7147706Z [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in org.apache.commons.lang3.event.EventListenerSupportTest
+2025-09-18T16:10:37.7152426Z [INFO] Running org.apache.commons.lang3.event.EventUtilsTest
+2025-09-18T16:10:37.7290654Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in org.apache.commons.lang3.event.EventUtilsTest
+2025-09-18T16:10:37.7294847Z [INFO] Running org.apache.commons.lang3.RandomStringUtilsTest
+2025-09-18T16:10:38.0255800Z [WARNING] Tests run: 82, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.293 s -- in org.apache.commons.lang3.RandomStringUtilsTest
+2025-09-18T16:10:38.0256886Z [INFO] Running org.apache.commons.lang3.ArchUtilsTest
+2025-09-18T16:10:38.0260163Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.apache.commons.lang3.ArchUtilsTest
+2025-09-18T16:10:38.0263377Z [INFO] Running org.apache.commons.lang3.DoubleRangeTest
+2025-09-18T16:10:38.0333784Z [INFO] Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.apache.commons.lang3.DoubleRangeTest
+2025-09-18T16:10:38.0337860Z [INFO] Running org.apache.commons.lang3.CharSetTest
+2025-09-18T16:10:38.0396349Z [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.apache.commons.lang3.CharSetTest
+2025-09-18T16:10:38.0397393Z [INFO] Running org.apache.commons.lang3.stream.IntStreamsTest
+2025-09-18T16:10:38.0420349Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.stream.IntStreamsTest
+2025-09-18T16:10:38.0423310Z [INFO] Running org.apache.commons.lang3.stream.StreamsTest
+2025-09-18T16:10:38.0630443Z [INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in org.apache.commons.lang3.stream.StreamsTest
+2025-09-18T16:10:38.0631608Z [INFO] Running org.apache.commons.lang3.stream.LangCollectorsTest
+2025-09-18T16:10:38.0652395Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.apache.commons.lang3.stream.LangCollectorsTest
+2025-09-18T16:10:38.0655007Z [INFO] Running org.apache.commons.lang3.stream.FailableStreamTest
+2025-09-18T16:10:38.0670984Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.apache.commons.lang3.stream.FailableStreamTest
+2025-09-18T16:10:38.0672477Z [INFO] Running org.apache.commons.lang3.JavaVersionTest
+2025-09-18T16:10:38.0683294Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.apache.commons.lang3.JavaVersionTest
+2025-09-18T16:10:38.2673409Z [INFO] 
+2025-09-18T16:10:38.2673844Z [INFO] Results:
+2025-09-18T16:10:38.2674529Z [INFO] 
+2025-09-18T16:10:38.2675202Z [WARNING] Tests run: 59449, Failures: 0, Errors: 0, Skipped: 16
+2025-09-18T16:10:38.2676272Z [INFO] 
+2025-09-18T16:10:38.2697627Z [INFO] 
+2025-09-18T16:10:38.2698055Z [INFO] --- jar:3.4.2:jar (default-jar) @ commons-lang3 ---
+2025-09-18T16:10:38.4479062Z [INFO] Building jar: /home/runner/work/commons-lang/commons-lang/target/commons-lang3-3.19.0-SNAPSHOT.jar
+2025-09-18T16:10:38.5230779Z [INFO] 
+2025-09-18T16:10:38.5231298Z [INFO] --- jar:3.4.2:test-jar (default) @ commons-lang3 ---
+2025-09-18T16:10:38.6216168Z [INFO] Building jar: /home/runner/work/commons-lang/commons-lang/target/commons-lang3-3.19.0-SNAPSHOT-tests.jar
+2025-09-18T16:10:38.7022016Z [INFO] 
+2025-09-18T16:10:38.7023787Z [INFO] --- source:3.2.1:jar-no-fork (create-source-jar) @ commons-lang3 ---
+2025-09-18T16:10:38.8656149Z [INFO] Building jar: /home/runner/work/commons-lang/commons-lang/target/commons-lang3-3.19.0-SNAPSHOT-sources.jar
+2025-09-18T16:10:38.9726466Z [INFO] 
+2025-09-18T16:10:38.9728397Z [INFO] --- source:3.2.1:test-jar-no-fork (create-source-jar) @ commons-lang3 ---
+2025-09-18T16:10:39.0252322Z [INFO] Building jar: /home/runner/work/commons-lang/commons-lang/target/commons-lang3-3.19.0-SNAPSHOT-test-sources.jar
+2025-09-18T16:10:39.0975434Z [INFO] 
+2025-09-18T16:10:39.0980456Z [INFO] >>> javadoc:3.11.2:javadoc (create-javadoc-jar) > generate-sources @ commons-lang3 >>>
+2025-09-18T16:10:39.1040451Z [INFO] 
+2025-09-18T16:10:39.1048859Z [INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ commons-lang3 ---
+2025-09-18T16:10:39.1070364Z [INFO] 
+2025-09-18T16:10:39.1071289Z [INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ commons-lang3 ---
+2025-09-18T16:10:39.1072256Z [INFO] 
+2025-09-18T16:10:39.1072897Z [INFO] --- apache-rat:0.16.1:check (rat-check) @ commons-lang3 ---
+2025-09-18T16:10:41.2501270Z [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 572 licenses.
+2025-09-18T16:10:41.2504120Z [INFO] 
+2025-09-18T16:10:41.2504652Z [INFO] --- artifact:3.6.0:check-buildplan (check-buildplan) @ commons-lang3 ---
+2025-09-18T16:10:41.2581019Z [INFO] No known issue in 22 plugins
+2025-09-18T16:10:41.2581790Z [INFO] 
+2025-09-18T16:10:41.2584335Z [INFO] --- build-helper:3.6.1:parse-version (parse-version) @ commons-lang3 ---
+2025-09-18T16:10:41.2587716Z [INFO] 
+2025-09-18T16:10:41.2588285Z [INFO] --- antrun:3.1.0:run (javadoc.resources) @ commons-lang3 ---
+2025-09-18T16:10:41.2998932Z [INFO] Executing tasks
+2025-09-18T16:10:41.3007680Z [INFO] Executed tasks
+2025-09-18T16:10:41.3008047Z [INFO] 
+2025-09-18T16:10:41.3008666Z [INFO] <<< javadoc:3.11.2:javadoc (create-javadoc-jar) < generate-sources @ commons-lang3 <<<
+2025-09-18T16:10:41.3009376Z [INFO] 
+2025-09-18T16:10:41.3009645Z [INFO] 
+2025-09-18T16:10:41.3010298Z [INFO] --- javadoc:3.11.2:javadoc (create-javadoc-jar) @ commons-lang3 ---
+2025-09-18T16:10:41.7503056Z [INFO] No previous run data found, generating javadoc.
+2025-09-18T16:10:48.9017562Z [INFO] 
+2025-09-18T16:10:48.9019234Z [INFO] --- javadoc:3.11.2:jar (create-javadoc-jar) @ commons-lang3 ---
+2025-09-18T16:10:48.9916785Z [INFO] Skipping javadoc generation, everything is up to date.
+2025-09-18T16:10:49.0491146Z [INFO] Building jar: /home/runner/work/commons-lang/commons-lang/target/commons-lang3-3.19.0-SNAPSHOT-javadoc.jar
+2025-09-18T16:10:49.2951821Z [INFO] 
+2025-09-18T16:10:49.2952489Z [INFO] --- cyclonedx:2.9.1:makeAggregateBom (build-sbom-cyclonedx) @ commons-lang3 ---
+2025-09-18T16:10:49.3579088Z [INFO] CycloneDX: Resolving Dependencies
+2025-09-18T16:10:50.1788150Z [INFO] CycloneDX: Creating BOM version 1.6 with 0 component(s)
+2025-09-18T16:10:50.3075976Z [INFO] CycloneDX: Writing and validating BOM (XML): /home/runner/work/commons-lang/commons-lang/target/commons-lang3-3.19.0-SNAPSHOT-bom.xml
+2025-09-18T16:10:51.0033107Z [INFO]            attaching as commons-lang3-3.19.0-SNAPSHOT-cyclonedx.xml
+2025-09-18T16:10:51.0208025Z [INFO] CycloneDX: Writing and validating BOM (JSON): /home/runner/work/commons-lang/commons-lang/target/commons-lang3-3.19.0-SNAPSHOT-bom.json
+2025-09-18T16:10:51.1053125Z [WARNING] Unknown keyword meta:enum - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+2025-09-18T16:10:51.1056681Z [WARNING] Unknown keyword deprecated - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+2025-09-18T16:10:51.1502431Z [INFO]            attaching as commons-lang3-3.19.0-SNAPSHOT-cyclonedx.json
+2025-09-18T16:10:51.1503303Z [INFO] 
+2025-09-18T16:10:51.1503808Z [INFO] --- spdx:1.0.3:createSPDX (build-sbom-spdx) @ commons-lang3 ---
+2025-09-18T16:10:51.9786488Z [INFO] spdx file type = .json
+2025-09-18T16:10:51.9792201Z [INFO] Creating SPDX File /home/runner/work/commons-lang/commons-lang/target/site/org.apache.commons_commons-lang3-3.19.0-SNAPSHOT.spdx.json
+2025-09-18T16:10:53.8522801Z [INFO] 
+2025-09-18T16:10:53.8523845Z [INFO] --- moditect:1.3.0.Final:add-module-info (add-module-infos) @ commons-lang3 ---
+2025-09-18T16:10:54.0747292Z [INFO] Running jdeps --generate-module-info /home/runner/work/commons-lang/commons-lang/target/moditect --multi-release=9 /home/runner/work/commons-lang/commons-lang/target/commons-lang3-3.19.0-SNAPSHOT.jar
+2025-09-18T16:10:54.5442199Z writing to /home/runner/work/commons-lang/commons-lang/target/moditect/org.apache.commons.lang3/versions/9/module-info.java
+2025-09-18T16:10:54.7445453Z [INFO] Created module descriptor at /home/runner/work/commons-lang/commons-lang/target/moditect/generated-sources/org.apache.commons.lang3/module-info.java
+2025-09-18T16:10:54.8844439Z [INFO] 
+2025-09-18T16:10:54.8845432Z [INFO] --- site:3.21.0:attach-descriptor (attach-descriptor) @ commons-lang3 ---
+2025-09-18T16:10:55.0811544Z [INFO] Skipping because packaging 'jar' is not pom.
+2025-09-18T16:10:55.0813848Z [INFO] 
+2025-09-18T16:10:55.0814382Z [INFO] --- changes:3.0.0-M3:changes-validate (validate-changes) @ commons-lang3 ---
+2025-09-18T16:10:55.5022377Z [INFO] 
+2025-09-18T16:10:55.5040609Z [INFO] --- jacoco:0.8.13:check (check) @ commons-lang3 ---
+2025-09-18T16:10:55.5089544Z [INFO] Loading execution data file /home/runner/work/commons-lang/commons-lang/target/jacoco.exec
+2025-09-18T16:10:55.8188901Z [INFO] Analyzed bundle 'commons-lang3' with 335 classes
+2025-09-18T16:10:55.8194898Z [INFO] All coverage checks have been met.
+2025-09-18T16:10:55.8195369Z [INFO] 
+2025-09-18T16:10:55.8195799Z [INFO] --- apache-rat:0.16.1:check (default-cli) @ commons-lang3 ---
+2025-09-18T16:10:57.9053768Z [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 572 licenses.
+2025-09-18T16:10:57.9055966Z [INFO] 
+2025-09-18T16:10:57.9058174Z [INFO] --- checkstyle:3.6.0:check (default-cli) @ commons-lang3 ---
+2025-09-18T16:11:05.3988838Z [INFO] You have 0 Checkstyle violations.
+2025-09-18T16:11:05.4020278Z [INFO] 
+2025-09-18T16:11:05.4020785Z [INFO] --- japicmp:0.23.1:cmp (default-cli) @ commons-lang3 ---
+2025-09-18T16:11:06.3491474Z [INFO] Written file '/home/runner/work/commons-lang/commons-lang/target/japicmp/default-cli.diff'.
+2025-09-18T16:11:06.3894028Z [INFO] Written file '/home/runner/work/commons-lang/commons-lang/target/japicmp/default-cli.md'.
+2025-09-18T16:11:06.6792905Z [INFO] Written file '/home/runner/work/commons-lang/commons-lang/target/japicmp/default-cli.xml'.
+2025-09-18T16:11:06.6965428Z [INFO] Written file '/home/runner/work/commons-lang/commons-lang/target/japicmp/default-cli.html'.
+2025-09-18T16:11:06.6978624Z [INFO] 
+2025-09-18T16:11:06.6978981Z [INFO] >>> spotbugs:4.9.3.2:check (default-cli) > :spotbugs @ commons-lang3 >>>
+2025-09-18T16:11:06.7018714Z [INFO] 
+2025-09-18T16:11:06.7021600Z [INFO] --- spotbugs:4.9.3.2:spotbugs (spotbugs) @ commons-lang3 ---
+2025-09-18T16:11:07.8556862Z [INFO] Fork Value is true
+2025-09-18T16:11:25.4533377Z [INFO] Done SpotBugs Analysis....
+2025-09-18T16:11:25.9950060Z [INFO] Rendering content with org.apache.commons:commons-skin:jar:5.0.0 skin
+2025-09-18T16:11:26.3457189Z [INFO] 
+2025-09-18T16:11:26.3460172Z [INFO] <<< spotbugs:4.9.3.2:check (default-cli) < :spotbugs @ commons-lang3 <<<
+2025-09-18T16:11:26.3463245Z [INFO] 
+2025-09-18T16:11:26.3465474Z [INFO] 
+2025-09-18T16:11:26.3467910Z [INFO] --- spotbugs:4.9.3.2:check (default-cli) @ commons-lang3 ---
+2025-09-18T16:11:26.3894003Z [INFO] BugInstance size is 0
+2025-09-18T16:11:26.3900546Z [INFO] Error size is 0
+2025-09-18T16:11:26.3900963Z [INFO] No errors/warnings found
+2025-09-18T16:11:26.3901303Z [INFO] 
+2025-09-18T16:11:26.3901727Z [INFO] >>> pmd:3.27.0:check (default-cli) > :pmd @ commons-lang3 >>>
+2025-09-18T16:11:26.3908892Z [INFO] 
+2025-09-18T16:11:26.3911265Z [INFO] --- pmd:3.27.0:pmd (pmd) @ commons-lang3 ---
+2025-09-18T16:11:26.7950178Z [INFO] PMD version: 7.16.0
+2025-09-18T16:11:29.6299293Z [INFO] Rendering content with org.apache.commons:commons-skin:jar:5.0.0 skin
+2025-09-18T16:11:29.8426594Z [INFO] 
+2025-09-18T16:11:29.8433949Z [INFO] <<< pmd:3.27.0:check (default-cli) < :pmd @ commons-lang3 <<<
+2025-09-18T16:11:29.8438171Z [INFO] 
+2025-09-18T16:11:29.8440962Z [INFO] 
+2025-09-18T16:11:29.8443296Z [INFO] --- pmd:3.27.0:check (default-cli) @ commons-lang3 ---
+2025-09-18T16:11:29.8481974Z [INFO] 
+2025-09-18T16:11:29.8484412Z [INFO] >>> javadoc:3.11.2:javadoc (default-cli) > generate-sources @ commons-lang3 >>>
+2025-09-18T16:11:29.8487350Z [INFO] 
+2025-09-18T16:11:29.8489989Z [INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ commons-lang3 ---
+2025-09-18T16:11:29.8510497Z [INFO] 
+2025-09-18T16:11:29.8512952Z [INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ commons-lang3 ---
+2025-09-18T16:11:29.8515477Z [INFO] 
+2025-09-18T16:11:29.8517867Z [INFO] --- apache-rat:0.16.1:check (rat-check) @ commons-lang3 ---
+2025-09-18T16:11:32.0175240Z [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 572 licenses.
+2025-09-18T16:11:32.0186209Z [INFO] 
+2025-09-18T16:11:32.0187838Z [INFO] --- artifact:3.6.0:check-buildplan (check-buildplan) @ commons-lang3 ---
+2025-09-18T16:11:32.0333681Z [INFO] No known issue in 22 plugins
+2025-09-18T16:11:32.0334486Z [INFO] 
+2025-09-18T16:11:32.0340567Z [INFO] --- build-helper:3.6.1:parse-version (parse-version) @ commons-lang3 ---
+2025-09-18T16:11:32.0341598Z [INFO] 
+2025-09-18T16:11:32.0342508Z [INFO] --- antrun:3.1.0:run (javadoc.resources) @ commons-lang3 ---
+2025-09-18T16:11:32.0711162Z [INFO] Executing tasks
+2025-09-18T16:11:32.0715572Z [INFO] Executed tasks
+2025-09-18T16:11:32.0716241Z [INFO] 
+2025-09-18T16:11:32.0717771Z [INFO] <<< javadoc:3.11.2:javadoc (default-cli) < generate-sources @ commons-lang3 <<<
+2025-09-18T16:11:32.0718422Z [INFO] 
+2025-09-18T16:11:32.0718702Z [INFO] 
+2025-09-18T16:11:32.0719146Z [INFO] --- javadoc:3.11.2:javadoc (default-cli) @ commons-lang3 ---
+2025-09-18T16:11:32.1674196Z [INFO] Skipping javadoc generation, everything is up to date.
+2025-09-18T16:11:32.1823139Z [INFO] ------------------------------------------------------------------------
+2025-09-18T16:11:32.1824641Z [INFO] BUILD SUCCESS
+2025-09-18T16:11:32.1825274Z [INFO] ------------------------------------------------------------------------
+2025-09-18T16:11:32.1826023Z [INFO] Total time:  04:32 min
+2025-09-18T16:11:32.1826892Z [INFO] Finished at: 2025-09-18T16:11:32Z
+2025-09-18T16:11:32.1833595Z [INFO] ------------------------------------------------------------------------
+2025-09-18T16:11:32.2568643Z Post job cleanup.
+2025-09-18T16:11:32.3804225Z (node:3367) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2025-09-18T16:11:32.3805016Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-09-18T16:11:32.7203320Z Post job cleanup.
+2025-09-18T16:11:32.8466705Z Cache hit occurred on the primary key Linux-maven-3cbfa339dfe3b6411f90b4b14a8b02b11e2eb4aebd6b3284c88026accdfc3394, not saving cache.
+2025-09-18T16:11:32.8557604Z Post job cleanup.
+2025-09-18T16:11:32.9325349Z [command]/usr/bin/git version
+2025-09-18T16:11:32.9361397Z git version 2.51.0
+2025-09-18T16:11:32.9400200Z Temporarily overriding HOME='/home/runner/work/_temp/e8b8b590-98f9-4324-85fd-8e5ce32ff3a6' before making global git config changes
+2025-09-18T16:11:32.9401657Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-18T16:11:32.9405874Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/commons-lang/commons-lang
+2025-09-18T16:11:32.9439536Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-18T16:11:32.9470456Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-18T16:11:32.9690625Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-18T16:11:32.9720361Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-18T16:11:33.0041560Z Cleaning up orphan processes

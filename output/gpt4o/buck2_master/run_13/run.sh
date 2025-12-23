@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Activate the virtual environment
+source /venv/bin/activate
+
+# Install project dependencies (in case requirements changed)
+if [ -f "requirements.txt" ]; then
+    pip install -r requirements.txt
+fi
+
+# Ensure Rust toolchain is up to date
+rustup update nightly-2025-09-14
+rustup default nightly-2025-09-14
+
+# Clean any existing build artifacts
+cargo clean
+
+# Update cargo dependencies with retry logic
+for i in {1..3}; do
+    cargo update -p digest --precise 0.10.7 && break || sleep 5
+done
+
+# Build with retry logic
+for i in {1..3}; do
+    cargo build --release && break || sleep 5
+done
+
+# Run tests
+# Ensure all tests are executed, even if some fail
+set +e
+python test.py --ci --git --buck2=/path/to/simulated/artifacts/buck2
+EXIT_CODE=$?
+set -e
+
+exit $EXIT_CODE

@@ -1,0 +1,957 @@
+﻿2025-10-18T13:04:50.5466025Z Current runner version: '2.329.0'
+2025-10-18T13:04:50.5488889Z ##[group]Runner Image Provisioner
+2025-10-18T13:04:50.5489836Z Hosted Compute Agent
+2025-10-18T13:04:50.5490387Z Version: 20251013.424
+2025-10-18T13:04:50.5491077Z Commit: cfdd8bfed34d71a55b72df4d2e82343c3fc2bab3
+2025-10-18T13:04:50.5491788Z Build Date: 2025-10-13T20:22:23Z
+2025-10-18T13:04:50.5492378Z ##[endgroup]
+2025-10-18T13:04:50.5492971Z ##[group]Operating System
+2025-10-18T13:04:50.5493493Z Ubuntu
+2025-10-18T13:04:50.5493993Z 22.04.5
+2025-10-18T13:04:50.5494532Z LTS
+2025-10-18T13:04:50.5494956Z ##[endgroup]
+2025-10-18T13:04:50.5495449Z ##[group]Runner Image
+2025-10-18T13:04:50.5495980Z Image: ubuntu-22.04
+2025-10-18T13:04:50.5496498Z Version: 20251014.106.1
+2025-10-18T13:04:50.5497511Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20251014.106/images/ubuntu/Ubuntu2204-Readme.md
+2025-10-18T13:04:50.5499307Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20251014.106
+2025-10-18T13:04:50.5500283Z ##[endgroup]
+2025-10-18T13:04:50.5501335Z ##[group]GITHUB_TOKEN Permissions
+2025-10-18T13:04:50.5503093Z Contents: read
+2025-10-18T13:04:50.5503683Z Metadata: read
+2025-10-18T13:04:50.5504201Z ##[endgroup]
+2025-10-18T13:04:50.5506591Z Secret source: None
+2025-10-18T13:04:50.5507364Z Prepare workflow directory
+2025-10-18T13:04:50.5890372Z Prepare all required actions
+2025-10-18T13:04:50.5926786Z Getting action download info
+2025-10-18T13:04:50.7990686Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-10-18T13:04:51.1979636Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-10-18T13:04:51.4245099Z Complete job name: ubuntu-22.04-gcc-11
+2025-10-18T13:04:51.4895381Z ##[group]Run sudo apt-get update
+2025-10-18T13:04:51.4896056Z [36;1msudo apt-get update[0m
+2025-10-18T13:04:51.4896543Z [36;1m[0m
+2025-10-18T13:04:51.4896981Z [36;1mcmake_params=(-D CMAKE_BUILD_TYPE=CI)[0m
+2025-10-18T13:04:51.4897571Z [36;1mpackages=([0m
+2025-10-18T13:04:51.4897996Z [36;1m  elfutils[0m
+2025-10-18T13:04:51.4898718Z [36;1m  libhiredis-dev[0m
+2025-10-18T13:04:51.4899261Z [36;1m  libzstd-dev[0m
+2025-10-18T13:04:51.4899706Z [36;1m  python3[0m
+2025-10-18T13:04:51.4900139Z [36;1m  redis-server[0m
+2025-10-18T13:04:51.4900593Z [36;1m  redis-tools[0m
+2025-10-18T13:04:51.4901042Z [36;1m)[0m
+2025-10-18T13:04:51.4901635Z [36;1m# Install ld.gold (binutils) and ld.lld (lld) on different runs.[0m
+2025-10-18T13:04:51.4902394Z [36;1mif [ "ubuntu-22.04" = "ubuntu-22.04" ]; then[0m
+2025-10-18T13:04:51.4903011Z [36;1m  packages+=(binutils)[0m
+2025-10-18T13:04:51.4903504Z [36;1melse[0m
+2025-10-18T13:04:51.4903915Z [36;1m  packages+=(lld)[0m
+2025-10-18T13:04:51.4904400Z [36;1mfi[0m
+2025-10-18T13:04:51.4904843Z [36;1mif [ "ubuntu-22.04" = "ubuntu-22.04" ]; then[0m
+2025-10-18T13:04:51.4905425Z [36;1m  packages+=(doctest-dev)[0m
+2025-10-18T13:04:51.4905939Z [36;1m  packages+=(libfmt-dev)[0m
+2025-10-18T13:04:51.4906465Z [36;1m  packages+=(libxxhash-dev)[0m
+2025-10-18T13:04:51.4906971Z [36;1melse[0m
+2025-10-18T13:04:51.4907431Z [36;1m  cmake_params+=(-D DEP_DOCTEST=DOWNLOAD)[0m
+2025-10-18T13:04:51.4908057Z [36;1m  cmake_params+=(-D DEP_XXHASH=DOWNLOAD)[0m
+2025-10-18T13:04:51.4908767Z [36;1mfi[0m
+2025-10-18T13:04:51.4909224Z [36;1msudo apt-get install -y "${packages[@]}"[0m
+2025-10-18T13:04:51.4909797Z [36;1m[0m
+2025-10-18T13:04:51.4910211Z [36;1mif [ "gcc" = "gcc" ]; then[0m
+2025-10-18T13:04:51.4910734Z [36;1m  echo "CC=gcc-11" >> $GITHUB_ENV[0m
+2025-10-18T13:04:51.4911291Z [36;1m  echo "CXX=g++-11" >> $GITHUB_ENV[0m
+2025-10-18T13:04:51.4911808Z [36;1m[0m
+2025-10-18T13:04:51.4912339Z [36;1m  sudo apt-get install -y g++-11[0m
+2025-10-18T13:04:51.4912926Z [36;1m  if [ "true" = "true" ]; then[0m
+2025-10-18T13:04:51.4913569Z [36;1m    # The -multilib packages are only available on x86.[0m
+2025-10-18T13:04:51.4914249Z [36;1m    sudo apt-get install -y g++-11-multilib[0m
+2025-10-18T13:04:51.4915078Z [36;1m  fi[0m
+2025-10-18T13:04:51.4915480Z [36;1m  if [ "11" = 8 ]; then[0m
+2025-10-18T13:04:51.4916145Z [36;1m    # The compilation test in StdFilesystem.cmake doesn't work when[0m
+2025-10-18T13:04:51.4916956Z [36;1m    # GCC 9 is installed as well, so need to force linking with[0m
+2025-10-18T13:04:51.4917772Z [36;1m    # libstdc++fs for GCC 8. Note: This requires using -fuse-ld=lld to[0m
+2025-10-18T13:04:51.4918760Z [36;1m    # work.[0m
+2025-10-18T13:04:51.4919284Z [36;1m    echo "LDFLAGS=-lstdc++fs" >> $GITHUB_ENV[0m
+2025-10-18T13:04:51.4919845Z [36;1m  fi[0m
+2025-10-18T13:04:51.4920234Z [36;1melse[0m
+2025-10-18T13:04:51.4920671Z [36;1m  echo "CC=clang-11" >> $GITHUB_ENV[0m
+2025-10-18T13:04:51.4921257Z [36;1m  echo "CXX=clang++-11" >> $GITHUB_ENV[0m
+2025-10-18T13:04:51.4921800Z [36;1m[0m
+2025-10-18T13:04:51.4922290Z [36;1m  sudo apt-get install -y clang-11 g++-multilib lld-11[0m
+2025-10-18T13:04:51.4922908Z [36;1mfi[0m
+2025-10-18T13:04:51.4923287Z [36;1m[0m
+2025-10-18T13:04:51.4923692Z [36;1mcase "ubuntu-22.04" in[0m
+2025-10-18T13:04:51.4924188Z [36;1m  ubuntu-*)[0m
+2025-10-18T13:04:51.4924743Z [36;1m    cmake_params+=(-D DEPS=LOCAL)[0m
+2025-10-18T13:04:51.4925277Z [36;1m    ;;[0m
+2025-10-18T13:04:51.4925668Z [36;1m  *)[0m
+2025-10-18T13:04:51.4926063Z [36;1m    ;;[0m
+2025-10-18T13:04:51.4926459Z [36;1mesac[0m
+2025-10-18T13:04:51.4926978Z [36;1mecho "CMAKE_PARAMS=${cmake_params[*]}" >> $GITHUB_ENV[0m
+2025-10-18T13:04:51.5227563Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-18T13:04:51.5228923Z env:
+2025-10-18T13:04:51.5229383Z   CTEST_OUTPUT_ON_FAILURE: ON
+2025-10-18T13:04:51.5229881Z   VERBOSE: 1
+2025-10-18T13:04:51.5230300Z   CMAKE_GENERATOR: Ninja
+2025-10-18T13:04:51.5231024Z ##[endgroup]
+2025-10-18T13:04:51.7145657Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-10-18T13:04:51.7531068Z Hit:2 http://azure.archive.ubuntu.com/ubuntu jammy InRelease
+2025-10-18T13:04:51.7552405Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+2025-10-18T13:04:51.7590298Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+2025-10-18T13:04:51.7612611Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+2025-10-18T13:04:51.7843411Z Hit:6 https://packages.microsoft.com/repos/azure-cli jammy InRelease
+2025-10-18T13:04:51.7887429Z Get:7 https://packages.microsoft.com/ubuntu/22.04/prod jammy InRelease [3632 B]
+2025-10-18T13:04:51.9872925Z Get:8 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [3011 kB]
+2025-10-18T13:04:52.0104692Z Get:9 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [467 kB]
+2025-10-18T13:04:52.0138908Z Get:10 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [19.0 kB]
+2025-10-18T13:04:52.0147158Z Get:11 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [4707 kB]
+2025-10-18T13:04:52.0376530Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [870 kB]
+2025-10-18T13:04:52.0432486Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 c-n-f Metadata [640 B]
+2025-10-18T13:04:52.0439207Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1242 kB]
+2025-10-18T13:04:52.0503773Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [307 kB]
+2025-10-18T13:04:52.0534620Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [29.8 kB]
+2025-10-18T13:04:52.0542412Z Get:17 http://azure.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [57.6 kB]
+2025-10-18T13:04:52.0999931Z Get:18 http://azure.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [600 B]
+2025-10-18T13:04:52.1724665Z Get:19 http://azure.archive.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2736 kB]
+2025-10-18T13:04:52.1897450Z Get:20 http://azure.archive.ubuntu.com/ubuntu jammy-security/main Translation-en [399 kB]
+2025-10-18T13:04:52.1956858Z Get:21 http://azure.archive.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [13.9 kB]
+2025-10-18T13:04:52.1984538Z Get:22 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [4519 kB]
+2025-10-18T13:04:52.2229166Z Get:23 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted Translation-en [840 kB]
+2025-10-18T13:04:52.2312082Z Get:24 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1007 kB]
+2025-10-18T13:04:52.2406420Z Get:25 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe Translation-en [219 kB]
+2025-10-18T13:04:52.2421298Z Get:26 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [22.4 kB]
+2025-10-18T13:04:52.3428874Z Get:27 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main arm64 Packages [90.4 kB]
+2025-10-18T13:04:52.3470865Z Get:28 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main amd64 Packages [263 kB]
+2025-10-18T13:04:59.5847722Z Fetched 21.2 MB in 2s (8592 kB/s)
+2025-10-18T13:05:00.4444037Z Reading package lists...
+2025-10-18T13:05:00.5031332Z Reading package lists...
+2025-10-18T13:05:00.6731764Z Building dependency tree...
+2025-10-18T13:05:00.6742575Z Reading state information...
+2025-10-18T13:05:00.8206907Z libzstd-dev is already the newest version (1.4.8+dfsg-3build1).
+2025-10-18T13:05:00.8207496Z libzstd-dev set to manually installed.
+2025-10-18T13:05:00.8207969Z binutils is already the newest version (2.38-4ubuntu2.8).
+2025-10-18T13:05:00.8208930Z python3 is already the newest version (3.10.6-1~22.04.1).
+2025-10-18T13:05:00.8209788Z The following additional packages will be installed:
+2025-10-18T13:05:00.8211448Z   libasm1 libfmt8 libhiredis0.14 libjemalloc2 liblua5.1-0 liblzf1 lua-bitop
+2025-10-18T13:05:00.8216153Z   lua-cjson
+2025-10-18T13:05:00.8216845Z Suggested packages:
+2025-10-18T13:05:00.8217470Z   libfmt-doc ruby-redis
+2025-10-18T13:05:00.8492889Z The following NEW packages will be installed:
+2025-10-18T13:05:00.8493738Z   doctest-dev elfutils libasm1 libfmt-dev libfmt8 libhiredis-dev
+2025-10-18T13:05:00.8496373Z   libhiredis0.14 libjemalloc2 liblua5.1-0 liblzf1 libxxhash-dev lua-bitop
+2025-10-18T13:05:00.8497362Z   lua-cjson redis-server redis-tools
+2025-10-18T13:05:00.8645888Z 0 upgraded, 15 newly installed, 0 to remove and 17 not upgraded.
+2025-10-18T13:05:00.8646572Z Need to get 2295 kB of archives.
+2025-10-18T13:05:00.8646960Z After this operation, 11.1 MB of additional disk space will be used.
+2025-10-18T13:05:00.8647388Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-10-18T13:05:00.9020518Z Get:2 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libjemalloc2 amd64 5.2.1-4ubuntu1 [240 kB]
+2025-10-18T13:05:00.9306325Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 liblua5.1-0 amd64 5.1.5-8.1build4 [99.9 kB]
+2025-10-18T13:05:00.9533630Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 liblzf1 amd64 3.6-3 [7444 B]
+2025-10-18T13:05:00.9714856Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 lua-bitop amd64 1.0.2-5 [6680 B]
+2025-10-18T13:05:00.9897967Z Get:6 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 lua-cjson amd64 2.1.0+dfsg-2.1 [17.4 kB]
+2025-10-18T13:05:01.0083700Z Get:7 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 redis-tools amd64 5:6.0.16-1ubuntu1.1 [856 kB]
+2025-10-18T13:05:01.0449471Z Get:8 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 redis-server amd64 5:6.0.16-1ubuntu1.1 [45.9 kB]
+2025-10-18T13:05:01.0647299Z Get:9 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 doctest-dev all 2.4.8~ds-1 [177 kB]
+2025-10-18T13:05:01.0839402Z Get:10 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libasm1 amd64 0.186-1ubuntu0.1 [15.6 kB]
+2025-10-18T13:05:01.1022957Z Get:11 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 elfutils amd64 0.186-1ubuntu0.1 [500 kB]
+2025-10-18T13:05:01.1381407Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libfmt8 amd64 8.1.1+ds1-2 [60.2 kB]
+2025-10-18T13:05:01.1579519Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libhiredis0.14 amd64 0.14.1-2 [32.8 kB]
+2025-10-18T13:05:01.1775142Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libhiredis-dev amd64 0.14.1-2 [52.7 kB]
+2025-10-18T13:05:01.1961508Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxxhash-dev amd64 0.8.1-1 [65.3 kB]
+2025-10-18T13:05:01.2156650Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libfmt-dev amd64 8.1.1+ds1-2 [118 kB]
+2025-10-18T13:05:01.5299802Z Fetched 2295 kB in 0s (6339 kB/s)
+2025-10-18T13:05:01.5759131Z Selecting previously unselected package libjemalloc2:amd64.
+2025-10-18T13:05:01.6296835Z (Reading database ... 
+2025-10-18T13:05:01.6297243Z (Reading database ... 5%
+2025-10-18T13:05:01.6297612Z (Reading database ... 10%
+2025-10-18T13:05:01.6297867Z (Reading database ... 15%
+2025-10-18T13:05:01.6298216Z (Reading database ... 20%
+2025-10-18T13:05:01.6298791Z (Reading database ... 25%
+2025-10-18T13:05:01.6298996Z (Reading database ... 30%
+2025-10-18T13:05:01.6299314Z (Reading database ... 35%
+2025-10-18T13:05:01.6299631Z (Reading database ... 40%
+2025-10-18T13:05:01.6299968Z (Reading database ... 45%
+2025-10-18T13:05:01.6300274Z (Reading database ... 50%
+2025-10-18T13:05:02.0156197Z (Reading database ... 55%
+2025-10-18T13:05:02.4293080Z (Reading database ... 60%
+2025-10-18T13:05:02.8134663Z (Reading database ... 65%
+2025-10-18T13:05:03.3336007Z (Reading database ... 70%
+2025-10-18T13:05:03.9403177Z (Reading database ... 75%
+2025-10-18T13:05:04.5328620Z (Reading database ... 80%
+2025-10-18T13:05:05.1460174Z (Reading database ... 85%
+2025-10-18T13:05:05.6248704Z (Reading database ... 90%
+2025-10-18T13:05:06.2287252Z (Reading database ... 95%
+2025-10-18T13:05:06.2287818Z (Reading database ... 100%
+2025-10-18T13:05:06.2288916Z (Reading database ... 257392 files and directories currently installed.)
+2025-10-18T13:05:06.2341204Z Preparing to unpack .../00-libjemalloc2_5.2.1-4ubuntu1_amd64.deb ...
+2025-10-18T13:05:06.2416868Z Unpacking libjemalloc2:amd64 (5.2.1-4ubuntu1) ...
+2025-10-18T13:05:06.2707491Z Selecting previously unselected package liblua5.1-0:amd64.
+2025-10-18T13:05:06.2860032Z Preparing to unpack .../01-liblua5.1-0_5.1.5-8.1build4_amd64.deb ...
+2025-10-18T13:05:06.2875862Z Unpacking liblua5.1-0:amd64 (5.1.5-8.1build4) ...
+2025-10-18T13:05:06.3192890Z Selecting previously unselected package liblzf1:amd64.
+2025-10-18T13:05:06.3344773Z Preparing to unpack .../02-liblzf1_3.6-3_amd64.deb ...
+2025-10-18T13:05:06.3357717Z Unpacking liblzf1:amd64 (3.6-3) ...
+2025-10-18T13:05:06.3592971Z Selecting previously unselected package lua-bitop:amd64.
+2025-10-18T13:05:06.3745928Z Preparing to unpack .../03-lua-bitop_1.0.2-5_amd64.deb ...
+2025-10-18T13:05:06.3759538Z Unpacking lua-bitop:amd64 (1.0.2-5) ...
+2025-10-18T13:05:06.4032988Z Selecting previously unselected package lua-cjson:amd64.
+2025-10-18T13:05:06.4185193Z Preparing to unpack .../04-lua-cjson_2.1.0+dfsg-2.1_amd64.deb ...
+2025-10-18T13:05:06.4195915Z Unpacking lua-cjson:amd64 (2.1.0+dfsg-2.1) ...
+2025-10-18T13:05:06.4458006Z Selecting previously unselected package redis-tools.
+2025-10-18T13:05:06.4610824Z Preparing to unpack .../05-redis-tools_5%3a6.0.16-1ubuntu1.1_amd64.deb ...
+2025-10-18T13:05:06.4628946Z Unpacking redis-tools (5:6.0.16-1ubuntu1.1) ...
+2025-10-18T13:05:06.5427348Z Selecting previously unselected package redis-server.
+2025-10-18T13:05:06.5579980Z Preparing to unpack .../06-redis-server_5%3a6.0.16-1ubuntu1.1_amd64.deb ...
+2025-10-18T13:05:06.5783235Z Unpacking redis-server (5:6.0.16-1ubuntu1.1) ...
+2025-10-18T13:05:06.6134567Z Selecting previously unselected package doctest-dev.
+2025-10-18T13:05:06.6287417Z Preparing to unpack .../07-doctest-dev_2.4.8~ds-1_all.deb ...
+2025-10-18T13:05:06.6300281Z Unpacking doctest-dev (2.4.8~ds-1) ...
+2025-10-18T13:05:06.6877984Z Selecting previously unselected package libasm1:amd64.
+2025-10-18T13:05:06.7028644Z Preparing to unpack .../08-libasm1_0.186-1ubuntu0.1_amd64.deb ...
+2025-10-18T13:05:06.7039662Z Unpacking libasm1:amd64 (0.186-1ubuntu0.1) ...
+2025-10-18T13:05:06.7292201Z Selecting previously unselected package elfutils.
+2025-10-18T13:05:06.7440147Z Preparing to unpack .../09-elfutils_0.186-1ubuntu0.1_amd64.deb ...
+2025-10-18T13:05:06.7450120Z Unpacking elfutils (0.186-1ubuntu0.1) ...
+2025-10-18T13:05:06.7912460Z Selecting previously unselected package libfmt8:amd64.
+2025-10-18T13:05:06.8064996Z Preparing to unpack .../10-libfmt8_8.1.1+ds1-2_amd64.deb ...
+2025-10-18T13:05:06.8082360Z Unpacking libfmt8:amd64 (8.1.1+ds1-2) ...
+2025-10-18T13:05:06.8405076Z Selecting previously unselected package libhiredis0.14:amd64.
+2025-10-18T13:05:06.8556078Z Preparing to unpack .../11-libhiredis0.14_0.14.1-2_amd64.deb ...
+2025-10-18T13:05:06.8566948Z Unpacking libhiredis0.14:amd64 (0.14.1-2) ...
+2025-10-18T13:05:06.8781936Z Selecting previously unselected package libhiredis-dev:amd64.
+2025-10-18T13:05:06.8934272Z Preparing to unpack .../12-libhiredis-dev_0.14.1-2_amd64.deb ...
+2025-10-18T13:05:06.8945552Z Unpacking libhiredis-dev:amd64 (0.14.1-2) ...
+2025-10-18T13:05:06.9415709Z Selecting previously unselected package libxxhash-dev:amd64.
+2025-10-18T13:05:06.9567458Z Preparing to unpack .../13-libxxhash-dev_0.8.1-1_amd64.deb ...
+2025-10-18T13:05:06.9577845Z Unpacking libxxhash-dev:amd64 (0.8.1-1) ...
+2025-10-18T13:05:06.9805380Z Selecting previously unselected package libfmt-dev:amd64.
+2025-10-18T13:05:06.9955920Z Preparing to unpack .../14-libfmt-dev_8.1.1+ds1-2_amd64.deb ...
+2025-10-18T13:05:06.9969161Z Unpacking libfmt-dev:amd64 (8.1.1+ds1-2) ...
+2025-10-18T13:05:07.0472324Z Setting up libjemalloc2:amd64 (5.2.1-4ubuntu1) ...
+2025-10-18T13:05:07.0507721Z Setting up lua-cjson:amd64 (2.1.0+dfsg-2.1) ...
+2025-10-18T13:05:07.0538586Z Setting up liblzf1:amd64 (3.6-3) ...
+2025-10-18T13:05:07.0567471Z Setting up lua-bitop:amd64 (1.0.2-5) ...
+2025-10-18T13:05:07.0600424Z Setting up libxxhash-dev:amd64 (0.8.1-1) ...
+2025-10-18T13:05:07.0636873Z Setting up libfmt8:amd64 (8.1.1+ds1-2) ...
+2025-10-18T13:05:07.0670250Z Setting up liblua5.1-0:amd64 (5.1.5-8.1build4) ...
+2025-10-18T13:05:07.0700967Z Setting up libasm1:amd64 (0.186-1ubuntu0.1) ...
+2025-10-18T13:05:07.0740070Z Setting up doctest-dev (2.4.8~ds-1) ...
+2025-10-18T13:05:07.0776162Z Setting up libhiredis0.14:amd64 (0.14.1-2) ...
+2025-10-18T13:05:07.0819369Z Setting up elfutils (0.186-1ubuntu0.1) ...
+2025-10-18T13:05:07.0849591Z Setting up libhiredis-dev:amd64 (0.14.1-2) ...
+2025-10-18T13:05:07.0881143Z Setting up redis-tools (5:6.0.16-1ubuntu1.1) ...
+2025-10-18T13:05:07.2445281Z Setting up libfmt-dev:amd64 (8.1.1+ds1-2) ...
+2025-10-18T13:05:07.2479529Z Setting up redis-server (5:6.0.16-1ubuntu1.1) ...
+2025-10-18T13:05:07.6710189Z Created symlink /etc/systemd/system/redis.service → /lib/systemd/system/redis-server.service.
+2025-10-18T13:05:07.6711879Z Created symlink /etc/systemd/system/multi-user.target.wants/redis-server.service → /lib/systemd/system/redis-server.service.
+2025-10-18T13:05:08.2125392Z Processing triggers for man-db (2.10.2-1) ...
+2025-10-18T13:05:09.2941559Z Processing triggers for libc-bin (2.35-0ubuntu3.11) ...
+2025-10-18T13:05:10.2924207Z 
+2025-10-18T13:05:10.2924682Z Running kernel seems to be up-to-date.
+2025-10-18T13:05:10.2925105Z 
+2025-10-18T13:05:10.2925281Z No services need to be restarted.
+2025-10-18T13:05:10.2925598Z 
+2025-10-18T13:05:10.2925771Z No containers need to be restarted.
+2025-10-18T13:05:10.2926127Z 
+2025-10-18T13:05:10.2926339Z No user sessions are running outdated binaries.
+2025-10-18T13:05:10.2926728Z 
+2025-10-18T13:05:10.2927103Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2025-10-18T13:05:11.5875103Z Reading package lists...
+2025-10-18T13:05:11.7610389Z Building dependency tree...
+2025-10-18T13:05:11.7621889Z Reading state information...
+2025-10-18T13:05:11.9313882Z g++-11 is already the newest version (11.4.0-1ubuntu1~22.04.2).
+2025-10-18T13:05:11.9314418Z g++-11 set to manually installed.
+2025-10-18T13:05:11.9314903Z 0 upgraded, 0 newly installed, 0 to remove and 17 not upgraded.
+2025-10-18T13:05:11.9827621Z Reading package lists...
+2025-10-18T13:05:12.1591026Z Building dependency tree...
+2025-10-18T13:05:12.1602500Z Reading state information...
+2025-10-18T13:05:12.3039150Z The following additional packages will be installed:
+2025-10-18T13:05:12.3039851Z   gcc-11-multilib gcc-multilib lib32asan6 lib32atomic1 lib32gcc-11-dev
+2025-10-18T13:05:12.3040596Z   lib32gomp1 lib32itm1 lib32quadmath0 lib32stdc++-11-dev lib32ubsan1
+2025-10-18T13:05:12.3041522Z   libc6-dev-i386 libc6-dev-x32 libc6-x32 libx32asan6 libx32atomic1
+2025-10-18T13:05:12.3042306Z   libx32gcc-11-dev libx32gcc-s1 libx32gomp1 libx32itm1 libx32quadmath0
+2025-10-18T13:05:12.3045203Z   libx32stdc++-11-dev libx32stdc++6 libx32ubsan1
+2025-10-18T13:05:12.3050275Z Suggested packages:
+2025-10-18T13:05:12.3050598Z   lib32stdc++6-11-dbg libx32stdc++6-11-dbg
+2025-10-18T13:05:12.3310467Z The following NEW packages will be installed:
+2025-10-18T13:05:12.3311113Z   g++-11-multilib gcc-11-multilib gcc-multilib lib32asan6 lib32atomic1
+2025-10-18T13:05:12.3311929Z   lib32gcc-11-dev lib32gomp1 lib32itm1 lib32quadmath0 lib32stdc++-11-dev
+2025-10-18T13:05:12.3312826Z   lib32ubsan1 libc6-dev-i386 libc6-dev-x32 libc6-x32 libx32asan6 libx32atomic1
+2025-10-18T13:05:12.3313765Z   libx32gcc-11-dev libx32gcc-s1 libx32gomp1 libx32itm1 libx32quadmath0
+2025-10-18T13:05:12.3316046Z   libx32stdc++-11-dev libx32stdc++6 libx32ubsan1
+2025-10-18T13:05:12.3468177Z 0 upgraded, 24 newly installed, 0 to remove and 17 not upgraded.
+2025-10-18T13:05:12.3468814Z Need to get 20.1 MB of archives.
+2025-10-18T13:05:12.3469134Z After this operation, 89.2 MB of additional disk space will be used.
+2025-10-18T13:05:12.3469504Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-10-18T13:05:12.3897608Z Get:2 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libc6-dev-i386 amd64 2.35-0ubuntu3.11 [1445 kB]
+2025-10-18T13:05:12.4333875Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libc6-x32 amd64 2.35-0ubuntu3.11 [2978 kB]
+2025-10-18T13:05:12.5025543Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libc6-dev-x32 amd64 2.35-0ubuntu3.11 [1632 kB]
+2025-10-18T13:05:12.5535575Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32gcc-s1 amd64 12.3.0-1ubuntu1~22.04.2 [54.0 kB]
+2025-10-18T13:05:12.5716223Z Get:6 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 lib32gomp1 amd64 12.3.0-1ubuntu1~22.04.2 [133 kB]
+2025-10-18T13:05:12.5918710Z Get:7 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32gomp1 amd64 12.3.0-1ubuntu1~22.04.2 [127 kB]
+2025-10-18T13:05:12.6107970Z Get:8 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 lib32itm1 amd64 12.3.0-1ubuntu1~22.04.2 [32.0 kB]
+2025-10-18T13:05:12.6288165Z Get:9 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32itm1 amd64 12.3.0-1ubuntu1~22.04.2 [30.2 kB]
+2025-10-18T13:05:12.6488938Z Get:10 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 lib32atomic1 amd64 12.3.0-1ubuntu1~22.04.2 [8512 B]
+2025-10-18T13:05:12.6673247Z Get:11 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32atomic1 amd64 12.3.0-1ubuntu1~22.04.2 [10.2 kB]
+2025-10-18T13:05:12.6866477Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 lib32asan6 amd64 11.4.0-1ubuntu1~22.04.2 [2154 kB]
+2025-10-18T13:05:12.7436147Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32asan6 amd64 11.4.0-1ubuntu1~22.04.2 [2128 kB]
+2025-10-18T13:05:12.8005990Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 lib32ubsan1 amd64 12.3.0-1ubuntu1~22.04.2 [959 kB]
+2025-10-18T13:05:12.8387696Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32stdc++6 amd64 12.3.0-1ubuntu1~22.04.2 [682 kB]
+2025-10-18T13:05:12.8754138Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32ubsan1 amd64 12.3.0-1ubuntu1~22.04.2 [963 kB]
+2025-10-18T13:05:12.9157961Z Get:17 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 lib32quadmath0 amd64 12.3.0-1ubuntu1~22.04.2 [244 kB]
+2025-10-18T13:05:12.9356492Z Get:18 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32quadmath0 amd64 12.3.0-1ubuntu1~22.04.2 [156 kB]
+2025-10-18T13:05:12.9549148Z Get:19 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 lib32gcc-11-dev amd64 11.4.0-1ubuntu1~22.04.2 [2339 kB]
+2025-10-18T13:05:13.0529032Z Get:20 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32gcc-11-dev amd64 11.4.0-1ubuntu1~22.04.2 [2106 kB]
+2025-10-18T13:05:13.1095020Z Get:21 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 gcc-11-multilib amd64 11.4.0-1ubuntu1~22.04.2 [880 B]
+2025-10-18T13:05:13.1279842Z Get:22 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 lib32stdc++-11-dev amd64 11.4.0-1ubuntu1~22.04.2 [989 kB]
+2025-10-18T13:05:13.1666866Z Get:23 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx32stdc++-11-dev amd64 11.4.0-1ubuntu1~22.04.2 [906 kB]
+2025-10-18T13:05:13.2050499Z Get:24 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 g++-11-multilib amd64 11.4.0-1ubuntu1~22.04.2 [894 B]
+2025-10-18T13:05:13.2229457Z Get:25 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 gcc-multilib amd64 4:11.2.0-1ubuntu1 [1382 B]
+2025-10-18T13:05:13.5090372Z Fetched 20.1 MB in 1s (22.7 MB/s)
+2025-10-18T13:05:13.5292725Z Selecting previously unselected package libc6-dev-i386.
+2025-10-18T13:05:13.5357811Z (Reading database ... 
+2025-10-18T13:05:13.5358152Z (Reading database ... 5%
+2025-10-18T13:05:13.5358646Z (Reading database ... 10%
+2025-10-18T13:05:13.5358924Z (Reading database ... 15%
+2025-10-18T13:05:13.5359214Z (Reading database ... 20%
+2025-10-18T13:05:13.5359511Z (Reading database ... 25%
+2025-10-18T13:05:13.5360152Z (Reading database ... 30%
+2025-10-18T13:05:13.5360468Z (Reading database ... 35%
+2025-10-18T13:05:13.5360760Z (Reading database ... 40%
+2025-10-18T13:05:13.5361053Z (Reading database ... 45%
+2025-10-18T13:05:13.5361327Z (Reading database ... 50%
+2025-10-18T13:05:13.5449344Z (Reading database ... 55%
+2025-10-18T13:05:13.5474274Z (Reading database ... 60%
+2025-10-18T13:05:13.5495786Z (Reading database ... 65%
+2025-10-18T13:05:13.5631324Z (Reading database ... 70%
+2025-10-18T13:05:13.5680770Z (Reading database ... 75%
+2025-10-18T13:05:13.5709257Z (Reading database ... 80%
+2025-10-18T13:05:13.5945982Z (Reading database ... 85%
+2025-10-18T13:05:13.5964672Z (Reading database ... 90%
+2025-10-18T13:05:13.6159635Z (Reading database ... 95%
+2025-10-18T13:05:13.6159918Z (Reading database ... 100%
+2025-10-18T13:05:13.6160312Z (Reading database ... 257803 files and directories currently installed.)
+2025-10-18T13:05:13.6205983Z Preparing to unpack .../00-libc6-dev-i386_2.35-0ubuntu3.11_amd64.deb ...
+2025-10-18T13:05:13.6218592Z Unpacking libc6-dev-i386 (2.35-0ubuntu3.11) ...
+2025-10-18T13:05:13.6930349Z Selecting previously unselected package libc6-x32.
+2025-10-18T13:05:13.7082722Z Preparing to unpack .../01-libc6-x32_2.35-0ubuntu3.11_amd64.deb ...
+2025-10-18T13:05:13.7106644Z Unpacking libc6-x32 (2.35-0ubuntu3.11) ...
+2025-10-18T13:05:13.8153543Z Selecting previously unselected package libc6-dev-x32.
+2025-10-18T13:05:13.8305750Z Preparing to unpack .../02-libc6-dev-x32_2.35-0ubuntu3.11_amd64.deb ...
+2025-10-18T13:05:13.8315328Z Unpacking libc6-dev-x32 (2.35-0ubuntu3.11) ...
+2025-10-18T13:05:13.8829577Z Selecting previously unselected package libx32gcc-s1.
+2025-10-18T13:05:13.8980381Z Preparing to unpack .../03-libx32gcc-s1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:13.8992434Z Unpacking libx32gcc-s1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:13.9223139Z Selecting previously unselected package lib32gomp1.
+2025-10-18T13:05:13.9374950Z Preparing to unpack .../04-lib32gomp1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:13.9383668Z Unpacking lib32gomp1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:13.9626342Z Selecting previously unselected package libx32gomp1.
+2025-10-18T13:05:13.9778990Z Preparing to unpack .../05-libx32gomp1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:13.9788968Z Unpacking libx32gomp1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.0019030Z Selecting previously unselected package lib32itm1.
+2025-10-18T13:05:14.0170315Z Preparing to unpack .../06-lib32itm1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.0185135Z Unpacking lib32itm1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.0411084Z Selecting previously unselected package libx32itm1.
+2025-10-18T13:05:14.0564089Z Preparing to unpack .../07-libx32itm1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.0577938Z Unpacking libx32itm1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.0797801Z Selecting previously unselected package lib32atomic1.
+2025-10-18T13:05:14.0950023Z Preparing to unpack .../08-lib32atomic1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.0960289Z Unpacking lib32atomic1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.1174813Z Selecting previously unselected package libx32atomic1.
+2025-10-18T13:05:14.1326583Z Preparing to unpack .../09-libx32atomic1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.1338206Z Unpacking libx32atomic1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.1553476Z Selecting previously unselected package lib32asan6.
+2025-10-18T13:05:14.1700357Z Preparing to unpack .../10-lib32asan6_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.1711044Z Unpacking lib32asan6 (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.2207103Z Selecting previously unselected package libx32asan6.
+2025-10-18T13:05:14.2359718Z Preparing to unpack .../11-libx32asan6_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.2370755Z Unpacking libx32asan6 (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.2842512Z Selecting previously unselected package lib32ubsan1.
+2025-10-18T13:05:14.2993876Z Preparing to unpack .../12-lib32ubsan1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.3004840Z Unpacking lib32ubsan1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.3345804Z Selecting previously unselected package libx32stdc++6.
+2025-10-18T13:05:14.3498159Z Preparing to unpack .../13-libx32stdc++6_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.3510534Z Unpacking libx32stdc++6 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.3806390Z Selecting previously unselected package libx32ubsan1.
+2025-10-18T13:05:14.3959626Z Preparing to unpack .../14-libx32ubsan1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.3969806Z Unpacking libx32ubsan1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.4347869Z Selecting previously unselected package lib32quadmath0.
+2025-10-18T13:05:14.4499430Z Preparing to unpack .../15-lib32quadmath0_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.4511027Z Unpacking lib32quadmath0 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.4766222Z Selecting previously unselected package libx32quadmath0.
+2025-10-18T13:05:14.4917156Z Preparing to unpack .../16-libx32quadmath0_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.4932542Z Unpacking libx32quadmath0 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.5162457Z Selecting previously unselected package lib32gcc-11-dev.
+2025-10-18T13:05:14.5314954Z Preparing to unpack .../17-lib32gcc-11-dev_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.5325678Z Unpacking lib32gcc-11-dev (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.5887280Z Selecting previously unselected package libx32gcc-11-dev.
+2025-10-18T13:05:14.6040325Z Preparing to unpack .../18-libx32gcc-11-dev_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.6051630Z Unpacking libx32gcc-11-dev (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.6502601Z Selecting previously unselected package gcc-11-multilib.
+2025-10-18T13:05:14.6656021Z Preparing to unpack .../19-gcc-11-multilib_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.6669016Z Unpacking gcc-11-multilib (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.6861539Z Selecting previously unselected package lib32stdc++-11-dev.
+2025-10-18T13:05:14.7013539Z Preparing to unpack .../20-lib32stdc++-11-dev_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.7023114Z Unpacking lib32stdc++-11-dev (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.7642197Z Selecting previously unselected package libx32stdc++-11-dev.
+2025-10-18T13:05:14.7793750Z Preparing to unpack .../21-libx32stdc++-11-dev_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.7805479Z Unpacking libx32stdc++-11-dev (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.8371432Z Selecting previously unselected package g++-11-multilib.
+2025-10-18T13:05:14.8528168Z Preparing to unpack .../22-g++-11-multilib_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+2025-10-18T13:05:14.8549112Z Unpacking g++-11-multilib (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.8754098Z Selecting previously unselected package gcc-multilib.
+2025-10-18T13:05:14.8908538Z Preparing to unpack .../23-gcc-multilib_4%3a11.2.0-1ubuntu1_amd64.deb ...
+2025-10-18T13:05:14.8918688Z Unpacking gcc-multilib (4:11.2.0-1ubuntu1) ...
+2025-10-18T13:05:14.9361506Z Setting up libc6-dev-i386 (2.35-0ubuntu3.11) ...
+2025-10-18T13:05:14.9385647Z Setting up lib32itm1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9413264Z Setting up lib32ubsan1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9440018Z Setting up libc6-x32 (2.35-0ubuntu3.11) ...
+2025-10-18T13:05:14.9479462Z Setting up libc6-dev-x32 (2.35-0ubuntu3.11) ...
+2025-10-18T13:05:14.9503924Z Setting up lib32gomp1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9525982Z Setting up libx32gomp1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9550076Z Setting up lib32asan6 (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9572762Z Setting up lib32quadmath0 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9601441Z Setting up libx32quadmath0 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9624994Z Setting up lib32atomic1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9655878Z Setting up libx32atomic1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9680673Z Setting up libx32gcc-s1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9702029Z Setting up libx32itm1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9730598Z Setting up libx32asan6 (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9753339Z Setting up libx32stdc++6 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9777019Z Setting up libx32ubsan1 (12.3.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9800619Z Setting up libx32gcc-11-dev (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9839517Z Setting up libx32stdc++-11-dev (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9873768Z Setting up lib32gcc-11-dev (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9900140Z Setting up lib32stdc++-11-dev (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9930320Z Setting up gcc-11-multilib (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:14.9955121Z Setting up gcc-multilib (4:11.2.0-1ubuntu1) ...
+2025-10-18T13:05:14.9988674Z Setting up g++-11-multilib (11.4.0-1ubuntu1~22.04.2) ...
+2025-10-18T13:05:15.0013386Z Processing triggers for libc-bin (2.35-0ubuntu3.11) ...
+2025-10-18T13:05:15.4649723Z 
+2025-10-18T13:05:15.4650260Z Running kernel seems to be up-to-date.
+2025-10-18T13:05:15.4650647Z 
+2025-10-18T13:05:15.4650789Z No services need to be restarted.
+2025-10-18T13:05:15.4651051Z 
+2025-10-18T13:05:15.4651198Z No containers need to be restarted.
+2025-10-18T13:05:15.4651461Z 
+2025-10-18T13:05:15.4652094Z No user sessions are running outdated binaries.
+2025-10-18T13:05:15.4652837Z 
+2025-10-18T13:05:15.4653326Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2025-10-18T13:05:16.7470139Z ##[group]Run actions/checkout@v4
+2025-10-18T13:05:16.7470393Z with:
+2025-10-18T13:05:16.7470572Z   repository: ccache/ccache
+2025-10-18T13:05:16.7470917Z   token: ***
+2025-10-18T13:05:16.7471081Z   ssh-strict: true
+2025-10-18T13:05:16.7471250Z   ssh-user: git
+2025-10-18T13:05:16.7471425Z   persist-credentials: true
+2025-10-18T13:05:16.7471624Z   clean: true
+2025-10-18T13:05:16.7471797Z   sparse-checkout-cone-mode: true
+2025-10-18T13:05:16.7472017Z   fetch-depth: 1
+2025-10-18T13:05:16.7472375Z   fetch-tags: false
+2025-10-18T13:05:16.7472549Z   show-progress: true
+2025-10-18T13:05:16.7472717Z   lfs: false
+2025-10-18T13:05:16.7472869Z   submodules: false
+2025-10-18T13:05:16.7473041Z   set-safe-directory: true
+2025-10-18T13:05:16.7473229Z env:
+2025-10-18T13:05:16.7473391Z   CTEST_OUTPUT_ON_FAILURE: ON
+2025-10-18T13:05:16.7473578Z   VERBOSE: 1
+2025-10-18T13:05:16.7473735Z   CMAKE_GENERATOR: Ninja
+2025-10-18T13:05:16.7473908Z   CC: gcc-11
+2025-10-18T13:05:16.7474052Z   CXX: g++-11
+2025-10-18T13:05:16.7474290Z   CMAKE_PARAMS: -D CMAKE_BUILD_TYPE=CI -D DEPS=LOCAL
+2025-10-18T13:05:16.7474546Z ##[endgroup]
+2025-10-18T13:05:16.8545572Z Syncing repository: ccache/ccache
+2025-10-18T13:05:16.8546746Z ##[group]Getting Git version info
+2025-10-18T13:05:16.8547077Z Working directory is '/home/runner/work/ccache/ccache'
+2025-10-18T13:05:16.8547578Z [command]/usr/bin/git version
+2025-10-18T13:05:16.9508987Z git version 2.51.0
+2025-10-18T13:05:16.9536665Z ##[endgroup]
+2025-10-18T13:05:16.9552586Z Temporarily overriding HOME='/home/runner/work/_temp/0343f1f1-7a2c-4804-bf72-8229422df588' before making global git config changes
+2025-10-18T13:05:16.9553861Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-18T13:05:16.9558988Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ccache/ccache
+2025-10-18T13:05:16.9592133Z Deleting the contents of '/home/runner/work/ccache/ccache'
+2025-10-18T13:05:16.9595767Z ##[group]Initializing the repository
+2025-10-18T13:05:16.9600257Z [command]/usr/bin/git init /home/runner/work/ccache/ccache
+2025-10-18T13:05:16.9854718Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-18T13:05:16.9855790Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-18T13:05:16.9856624Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-18T13:05:16.9857027Z hint:
+2025-10-18T13:05:16.9857329Z hint: 	git config --global init.defaultBranch <name>
+2025-10-18T13:05:16.9857687Z hint:
+2025-10-18T13:05:16.9858008Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-18T13:05:16.9858977Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-18T13:05:16.9859458Z hint:
+2025-10-18T13:05:16.9859637Z hint: 	git branch -m <name>
+2025-10-18T13:05:16.9859847Z hint:
+2025-10-18T13:05:16.9860141Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-18T13:05:16.9904058Z Initialized empty Git repository in /home/runner/work/ccache/ccache/.git/
+2025-10-18T13:05:16.9916598Z [command]/usr/bin/git remote add origin https://github.com/ccache/ccache
+2025-10-18T13:05:16.9986360Z ##[endgroup]
+2025-10-18T13:05:16.9986969Z ##[group]Disabling automatic garbage collection
+2025-10-18T13:05:16.9991487Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-18T13:05:17.0019017Z ##[endgroup]
+2025-10-18T13:05:17.0019585Z ##[group]Setting up auth
+2025-10-18T13:05:17.0026598Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-18T13:05:17.0056109Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-18T13:05:17.1461623Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-18T13:05:17.1492350Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-18T13:05:17.1720242Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-18T13:05:17.1753509Z ##[endgroup]
+2025-10-18T13:05:17.1753952Z ##[group]Fetching the repository
+2025-10-18T13:05:17.1762514Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +aaffee9bf195f450e2ae9df7aeb1cab873b6d8ab:refs/remotes/pull/1644/merge
+2025-10-18T13:05:17.5400477Z From https://github.com/ccache/ccache
+2025-10-18T13:05:17.5401157Z  * [new ref]         aaffee9bf195f450e2ae9df7aeb1cab873b6d8ab -> pull/1644/merge
+2025-10-18T13:05:17.5494659Z ##[endgroup]
+2025-10-18T13:05:17.5495187Z ##[group]Determining the checkout info
+2025-10-18T13:05:17.5497121Z ##[endgroup]
+2025-10-18T13:05:17.5502054Z [command]/usr/bin/git sparse-checkout disable
+2025-10-18T13:05:17.5601260Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-18T13:05:17.5627561Z ##[group]Checking out the ref
+2025-10-18T13:05:17.5631849Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1644/merge
+2025-10-18T13:05:17.5934114Z Note: switching to 'refs/remotes/pull/1644/merge'.
+2025-10-18T13:05:17.5934576Z 
+2025-10-18T13:05:17.5934954Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-10-18T13:05:17.5935673Z changes and commit them, and you can discard any commits you make in this
+2025-10-18T13:05:17.5936245Z state without impacting any branches by switching back to a branch.
+2025-10-18T13:05:17.5936554Z 
+2025-10-18T13:05:17.5936752Z If you want to create a new branch to retain commits you create, you may
+2025-10-18T13:05:17.5937220Z do so (now or later) by using -c with the switch command. Example:
+2025-10-18T13:05:17.5937485Z 
+2025-10-18T13:05:17.5937595Z   git switch -c <new-branch-name>
+2025-10-18T13:05:17.5937786Z 
+2025-10-18T13:05:17.5937975Z Or undo this operation with:
+2025-10-18T13:05:17.5938288Z 
+2025-10-18T13:05:17.5938664Z   git switch -
+2025-10-18T13:05:17.5938909Z 
+2025-10-18T13:05:17.5939338Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-10-18T13:05:17.5939995Z 
+2025-10-18T13:05:17.5940755Z HEAD is now at aaffee9 Merge 18c8b5e353dec224f3cb6fb4a0416f877584b4be into 32146dd25c89ea0ea0bdb933bbedf487befc9747
+2025-10-18T13:05:17.5942707Z ##[endgroup]
+2025-10-18T13:05:17.5975756Z [command]/usr/bin/git log -1 --format=%H
+2025-10-18T13:05:17.5997204Z aaffee9bf195f450e2ae9df7aeb1cab873b6d8ab
+2025-10-18T13:05:17.6105952Z ##[group]Run ci/build
+2025-10-18T13:05:17.6106186Z [36;1mci/build[0m
+2025-10-18T13:05:17.6142218Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-10-18T13:05:17.6142501Z env:
+2025-10-18T13:05:17.6142667Z   CTEST_OUTPUT_ON_FAILURE: ON
+2025-10-18T13:05:17.6142859Z   VERBOSE: 1
+2025-10-18T13:05:17.6143018Z   CMAKE_GENERATOR: Ninja
+2025-10-18T13:05:17.6143193Z   CC: gcc-11
+2025-10-18T13:05:17.6143342Z   CXX: g++-11
+2025-10-18T13:05:17.6143537Z   CMAKE_PARAMS: -D CMAKE_BUILD_TYPE=CI -D DEPS=LOCAL
+2025-10-18T13:05:17.6143802Z ##[endgroup]
+2025-10-18T13:05:17.6212542Z + [ -n  ]
+2025-10-18T13:05:17.6212893Z + mkdir -p build
+2025-10-18T13:05:17.6223391Z + cd build
+2025-10-18T13:05:17.6223753Z + cmake -D CMAKE_BUILD_TYPE=CI -D DEPS=LOCAL ..
+2025-10-18T13:05:17.9051408Z Re-run cmake no build system arguments
+2025-10-18T13:05:18.8137097Z -- The C compiler identification is GNU 11.4.0
+2025-10-18T13:05:19.4063795Z -- The CXX compiler identification is GNU 11.4.0
+2025-10-18T13:05:19.4489731Z -- The ASM compiler identification is GNU
+2025-10-18T13:05:19.4506437Z -- Found assembler: /usr/bin/gcc-11
+2025-10-18T13:05:19.5025648Z -- The ASM_MASM compiler identification is unknown
+2025-10-18T13:05:19.5037350Z -- Found assembler: ml
+2025-10-18T13:05:19.5679072Z -- Detecting C compiler ABI info
+2025-10-18T13:05:19.7130861Z -- Detecting C compiler ABI info - done
+2025-10-18T13:05:19.7292841Z -- Check for working C compiler: /usr/bin/gcc-11 - skipped
+2025-10-18T13:05:19.7335482Z -- Detecting C compile features
+2025-10-18T13:05:19.7377485Z -- Detecting C compile features - done
+2025-10-18T13:05:19.7588888Z -- Detecting CXX compiler ABI info
+2025-10-18T13:05:19.8502469Z -- Detecting CXX compiler ABI info - done
+2025-10-18T13:05:19.8667673Z -- Check for working CXX compiler: /usr/bin/g++-11 - skipped
+2025-10-18T13:05:19.8671700Z -- Detecting CXX compile features
+2025-10-18T13:05:19.8678276Z -- Detecting CXX compile features - done
+2025-10-18T13:05:19.9353127Z -- Ccache version: pr.1644.aaffee9b
+2025-10-18T13:05:19.9353545Z -- Ccache dev mode: ON
+2025-10-18T13:05:20.1965454Z -- Using gold linker
+2025-10-18T13:05:20.1972063Z -- Performing Test std_atomic_without_libatomic
+2025-10-18T13:05:20.4577114Z -- Performing Test std_atomic_without_libatomic - Success
+2025-10-18T13:05:20.4580483Z -- Performing Test std_filesystem_without_libfs
+2025-10-18T13:05:21.4604289Z -- Performing Test std_filesystem_without_libfs - Success
+2025-10-18T13:05:21.4873574Z -- Looking for cpuid.h
+2025-10-18T13:05:21.5474402Z -- Looking for cpuid.h - found
+2025-10-18T13:05:21.5475359Z -- Looking for dirent.h
+2025-10-18T13:05:21.6018174Z -- Looking for dirent.h - found
+2025-10-18T13:05:21.6019805Z -- Looking for linux/fs.h
+2025-10-18T13:05:21.7234276Z -- Looking for linux/fs.h - found
+2025-10-18T13:05:21.7235542Z -- Looking for pwd.h
+2025-10-18T13:05:21.7746678Z -- Looking for pwd.h - found
+2025-10-18T13:05:21.7747594Z -- Looking for spawn.h
+2025-10-18T13:05:21.8242555Z -- Looking for spawn.h - found
+2025-10-18T13:05:21.8244027Z -- Looking for sys/clonefile.h
+2025-10-18T13:05:21.8492128Z -- Looking for sys/clonefile.h - not found
+2025-10-18T13:05:21.8493435Z -- Looking for sys/file.h
+2025-10-18T13:05:21.9004380Z -- Looking for sys/file.h - found
+2025-10-18T13:05:21.9005406Z -- Looking for sys/ioctl.h
+2025-10-18T13:05:21.9554454Z -- Looking for sys/ioctl.h - found
+2025-10-18T13:05:21.9555370Z -- Looking for sys/mman.h
+2025-10-18T13:05:22.0214085Z -- Looking for sys/mman.h - found
+2025-10-18T13:05:22.0215122Z -- Looking for sys/sendfile.h
+2025-10-18T13:05:22.0731177Z -- Looking for sys/sendfile.h - found
+2025-10-18T13:05:22.0732368Z -- Looking for sys/utime.h
+2025-10-18T13:05:22.0983169Z -- Looking for sys/utime.h - not found
+2025-10-18T13:05:22.0984056Z -- Looking for sys/wait.h
+2025-10-18T13:05:22.1453614Z -- Looking for sys/wait.h - found
+2025-10-18T13:05:22.1455002Z -- Looking for syslog.h
+2025-10-18T13:05:22.2037525Z -- Looking for syslog.h - found
+2025-10-18T13:05:22.2038706Z -- Looking for unistd.h
+2025-10-18T13:05:22.2640698Z -- Looking for unistd.h - found
+2025-10-18T13:05:22.2641246Z -- Looking for utime.h
+2025-10-18T13:05:22.3152820Z -- Looking for utime.h - found
+2025-10-18T13:05:22.3156760Z -- Looking for getopt_long
+2025-10-18T13:05:22.3675989Z -- Looking for getopt_long - found
+2025-10-18T13:05:22.3676449Z -- Looking for getpwuid
+2025-10-18T13:05:22.4146375Z -- Looking for getpwuid - found
+2025-10-18T13:05:22.4146836Z -- Looking for localtime_r
+2025-10-18T13:05:22.4615931Z -- Looking for localtime_r - found
+2025-10-18T13:05:22.4616427Z -- Looking for posix_fallocate
+2025-10-18T13:05:22.5085367Z -- Looking for posix_fallocate - found
+2025-10-18T13:05:22.5085856Z -- Looking for setenv
+2025-10-18T13:05:22.5562672Z -- Looking for setenv - found
+2025-10-18T13:05:22.5563121Z -- Looking for syslog
+2025-10-18T13:05:22.6034316Z -- Looking for syslog - found
+2025-10-18T13:05:22.6034790Z -- Looking for unsetenv
+2025-10-18T13:05:22.6505315Z -- Looking for unsetenv - found
+2025-10-18T13:05:22.6505730Z -- Looking for utimensat
+2025-10-18T13:05:22.6976059Z -- Looking for utimensat - found
+2025-10-18T13:05:22.6976468Z -- Looking for utimes
+2025-10-18T13:05:22.7444348Z -- Looking for utimes - found
+2025-10-18T13:05:22.7818992Z -- Performing Test HAVE_STRUCT_STAT_ST_ATIM
+2025-10-18T13:05:22.8602572Z -- Performing Test HAVE_STRUCT_STAT_ST_ATIM - Success
+2025-10-18T13:05:22.8604595Z -- Performing Test HAVE_STRUCT_STAT_ST_ATIMENSEC
+2025-10-18T13:05:22.8897457Z -- Performing Test HAVE_STRUCT_STAT_ST_ATIMENSEC - Failed
+2025-10-18T13:05:22.8899613Z -- Performing Test HAVE_STRUCT_STAT_ST_ATIMESPEC
+2025-10-18T13:05:22.9190646Z -- Performing Test HAVE_STRUCT_STAT_ST_ATIMESPEC - Failed
+2025-10-18T13:05:22.9192555Z -- Performing Test HAVE_STRUCT_STAT_ST_CTIM
+2025-10-18T13:05:22.9794542Z -- Performing Test HAVE_STRUCT_STAT_ST_CTIM - Success
+2025-10-18T13:05:22.9795890Z -- Performing Test HAVE_STRUCT_STAT_ST_CTIMENSEC
+2025-10-18T13:05:23.0093093Z -- Performing Test HAVE_STRUCT_STAT_ST_CTIMENSEC - Failed
+2025-10-18T13:05:23.0094898Z -- Performing Test HAVE_STRUCT_STAT_ST_CTIMESPEC
+2025-10-18T13:05:23.0386432Z -- Performing Test HAVE_STRUCT_STAT_ST_CTIMESPEC - Failed
+2025-10-18T13:05:23.0388636Z -- Performing Test HAVE_STRUCT_STAT_ST_MTIM
+2025-10-18T13:05:23.0990941Z -- Performing Test HAVE_STRUCT_STAT_ST_MTIM - Success
+2025-10-18T13:05:23.0993031Z -- Performing Test HAVE_STRUCT_STAT_ST_MTIMENSEC
+2025-10-18T13:05:23.1287470Z -- Performing Test HAVE_STRUCT_STAT_ST_MTIMENSEC - Failed
+2025-10-18T13:05:23.1289316Z -- Performing Test HAVE_STRUCT_STAT_ST_MTIMESPEC
+2025-10-18T13:05:23.1581021Z -- Performing Test HAVE_STRUCT_STAT_ST_MTIMESPEC - Failed
+2025-10-18T13:05:23.1582691Z -- Performing Test HAVE_STRUCT_STATFS_F_FSTYPENAME
+2025-10-18T13:05:23.1932536Z -- Performing Test HAVE_STRUCT_STATFS_F_FSTYPENAME - Failed
+2025-10-18T13:05:23.1934820Z -- Performing Test HAVE_AVX2
+2025-10-18T13:05:23.8407151Z -- Performing Test HAVE_AVX2 - Success
+2025-10-18T13:05:23.8687056Z -- Using bundled Blake3 since Blake3>=1.4.0 was not found locally
+2025-10-18T13:05:23.8691344Z -- Using bundled CppHttplib since CppHttplib>=0.10.6 was not found locally
+2025-10-18T13:05:23.8705460Z -- Using system Fmt (/usr/lib/x86_64-linux-gnu/libfmt.so)
+2025-10-18T13:05:23.8709980Z -- Using bundled NonstdSpan since NonstdSpan>=0.10.3 was not found locally
+2025-10-18T13:05:23.8713348Z -- Using bundled TlExpected since TlExpected>=1.1.0 was not found locally
+2025-10-18T13:05:23.8732322Z -- Using system Xxhash (/usr/lib/x86_64-linux-gnu/libxxhash.so)
+2025-10-18T13:05:23.9025867Z -- Using system Zstd (/usr/lib/x86_64-linux-gnu/libzstd.so)
+2025-10-18T13:05:23.9044695Z -- Using system doctest (/usr/include/doctest/doctest.h)
+2025-10-18T13:05:23.9055680Z -- Using system Hiredis (/usr/lib/x86_64-linux-gnu/libhiredis.so)
+2025-10-18T13:05:23.9126294Z -- Performing Test HAVE_ASM_SSE2
+2025-10-18T13:05:28.8850982Z -- Performing Test HAVE_ASM_SSE2 - Success
+2025-10-18T13:05:28.8851675Z -- Performing Test HAVE_ASM_SSE41
+2025-10-18T13:05:28.9889314Z -- Performing Test HAVE_ASM_SSE41 - Success
+2025-10-18T13:05:28.9890481Z -- Performing Test HAVE_ASM_AVX2
+2025-10-18T13:05:29.0932887Z -- Performing Test HAVE_ASM_AVX2 - Success
+2025-10-18T13:05:29.0933559Z -- Performing Test HAVE_ASM_AVX512
+2025-10-18T13:05:29.2035753Z -- Performing Test HAVE_ASM_AVX512 - Success
+2025-10-18T13:05:29.2037304Z -- Performing Test HAVE_NEON
+2025-10-18T13:05:29.2291171Z -- Performing Test HAVE_NEON - Failed
+2025-10-18T13:05:29.2402103Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+2025-10-18T13:05:29.3047297Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+2025-10-18T13:05:29.3058492Z -- Found Threads: TRUE
+2025-10-18T13:05:29.3099306Z CMake Warning at doc/CMakeLists.txt:8 (message):
+2025-10-18T13:05:29.3099830Z   Could not find asciidoctor; documentation will not be generated
+2025-10-18T13:05:29.3100078Z 
+2025-10-18T13:05:29.3100082Z 
+2025-10-18T13:05:29.3458649Z -- 
+2025-10-18T13:05:29.3458958Z -- Configuration summary:
+2025-10-18T13:05:29.3459305Z --   Storage backends:
+2025-10-18T13:05:29.3459576Z --     file  ON
+2025-10-18T13:05:29.3459774Z --     http  ON
+2025-10-18T13:05:29.3459948Z --     redis ON
+2025-10-18T13:05:29.3460120Z --   Dependencies:
+2025-10-18T13:05:29.3461054Z --     Blake3     1.8.2  BUNDLED
+2025-10-18T13:05:29.3461481Z --     CppHttplib 0.20.0 BUNDLED
+2025-10-18T13:05:29.3462021Z --     Doctest    2.4.8  SYSTEM (/usr/include/doctest/doctest.h)
+2025-10-18T13:05:29.3462712Z --     Fmt        8.1.1  SYSTEM (/usr/lib/x86_64-linux-gnu/libfmt.so)
+2025-10-18T13:05:29.3463421Z --     Hiredis    0.14.1 SYSTEM (/usr/lib/x86_64-linux-gnu/libhiredis.so)
+2025-10-18T13:05:29.3464041Z --     NonstdSpan 0.11.0 BUNDLED
+2025-10-18T13:05:29.3464470Z --     TlExpected 1.1.0  BUNDLED
+2025-10-18T13:05:29.3465028Z --     Xxhash     0.8.1  SYSTEM (/usr/lib/x86_64-linux-gnu/libxxhash.so)
+2025-10-18T13:05:29.3465553Z --     Zstd       1.4.8  SYSTEM (/usr/lib/x86_64-linux-gnu/libzstd.so)
+2025-10-18T13:05:29.3465896Z -- 
+2025-10-18T13:05:29.3482658Z -- Configuring done (11.4s)
+2025-10-18T13:05:29.3862614Z -- Generating done (0.0s)
+2025-10-18T13:05:29.3867468Z -- Build files have been written to: /home/runner/work/ccache/ccache/build
+2025-10-18T13:05:29.3944253Z + cmake --build . -- -j 4
+2025-10-18T13:05:29.3963500Z Change Dir: '/home/runner/work/ccache/ccache/build'
+2025-10-18T13:05:29.3963847Z 
+2025-10-18T13:05:29.3964035Z Run Build Command(s): /usr/local/bin/ninja -v -j 4
+2025-10-18T13:05:29.8423950Z [1/116] /usr/bin/gcc-11   -O2 -g -std=c99 -include /home/runner/work/ccache/ccache/build/config.h -MD -MT src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_dispatch.c.o -MF src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_dispatch.c.o.d -o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_dispatch.c.o -c /home/runner/work/ccache/ccache/src/third_party/blake3/blake3/blake3_dispatch.c
+2025-10-18T13:05:29.8482945Z [2/116] /usr/bin/gcc-11   -O2 -g -std=c99 -include /home/runner/work/ccache/ccache/build/config.h -MD -MT src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_portable.c.o -MF src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_portable.c.o.d -o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_portable.c.o -c /home/runner/work/ccache/ccache/src/third_party/blake3/blake3/blake3_portable.c
+2025-10-18T13:05:29.8630604Z [3/116] /usr/bin/gcc-11   -include /home/runner/work/ccache/ccache/build/config.h -msse2 -MD -MT src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_sse2_x86-64_unix.S.o -MF src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_sse2_x86-64_unix.S.o.d -o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_sse2_x86-64_unix.S.o -c /home/runner/work/ccache/ccache/src/third_party/blake3/blake3/blake3_sse2_x86-64_unix.S
+2025-10-18T13:05:29.8670880Z [4/116] /usr/bin/gcc-11   -include /home/runner/work/ccache/ccache/build/config.h -msse4.1 -MD -MT src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_sse41_x86-64_unix.S.o -MF src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_sse41_x86-64_unix.S.o.d -o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_sse41_x86-64_unix.S.o -c /home/runner/work/ccache/ccache/src/third_party/blake3/blake3/blake3_sse41_x86-64_unix.S
+2025-10-18T13:05:29.8830374Z [5/116] /usr/bin/gcc-11   -include /home/runner/work/ccache/ccache/build/config.h -mavx2 -MD -MT src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_avx2_x86-64_unix.S.o -MF src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_avx2_x86-64_unix.S.o.d -o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_avx2_x86-64_unix.S.o -c /home/runner/work/ccache/ccache/src/third_party/blake3/blake3/blake3_avx2_x86-64_unix.S
+2025-10-18T13:05:29.8966763Z [6/116] /usr/bin/gcc-11   -include /home/runner/work/ccache/ccache/build/config.h -mavx512f -mavx512vl -MD -MT src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_avx512_x86-64_unix.S.o -MF src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_avx512_x86-64_unix.S.o.d -o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_avx512_x86-64_unix.S.o -c /home/runner/work/ccache/ccache/src/third_party/blake3/blake3/blake3_avx512_x86-64_unix.S
+2025-10-18T13:05:29.9561466Z [7/116] /usr/bin/gcc-11   -O2 -g -std=c99 -include /home/runner/work/ccache/ccache/build/config.h -MD -MT src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3.c.o -MF src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3.c.o.d -o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3.c.o -c /home/runner/work/ccache/ccache/src/third_party/blake3/blake3/blake3.c
+2025-10-18T13:05:30.0600073Z [8/116] : && /usr/local/bin/cmake -E rm -f src/third_party/blake3/libdep_blake3.a && /usr/bin/ar qc src/third_party/blake3/libdep_blake3.a  src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3.c.o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_dispatch.c.o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_portable.c.o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_sse2_x86-64_unix.S.o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_sse41_x86-64_unix.S.o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_avx2_x86-64_unix.S.o src/third_party/blake3/CMakeFiles/dep_blake3.dir/blake3/blake3_avx512_x86-64_unix.S.o && /usr/bin/ranlib src/third_party/blake3/libdep_blake3.a && :
+2025-10-18T13:05:31.4394485Z [9/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/compopt.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/compopt.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/compopt.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/compopt.cpp
+2025-10-18T13:05:31.8634132Z [10/116] /usr/bin/g++-11   -O2 -g -std=c++17 -MD -MT src/third_party/cxxurl/CMakeFiles/dep_cxxurl.dir/cxxurl/url.cpp.o -MF src/third_party/cxxurl/CMakeFiles/dep_cxxurl.dir/cxxurl/url.cpp.o.d -o src/third_party/cxxurl/CMakeFiles/dep_cxxurl.dir/cxxurl/url.cpp.o -c /home/runner/work/ccache/ccache/src/third_party/cxxurl/cxxurl/url.cpp
+2025-10-18T13:05:31.9960661Z [11/116] : && /usr/local/bin/cmake -E rm -f src/third_party/cxxurl/libdep_cxxurl.a && /usr/bin/ar qc src/third_party/cxxurl/libdep_cxxurl.a  src/third_party/cxxurl/CMakeFiles/dep_cxxurl.dir/cxxurl/url.cpp.o && /usr/bin/ranlib src/third_party/cxxurl/libdep_cxxurl.a && :
+2025-10-18T13:05:34.4926232Z [12/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/context.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/context.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/context.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/context.cpp
+2025-10-18T13:05:37.0550428Z [13/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/argprocessing.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/argprocessing.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/argprocessing.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/argprocessing.cpp
+2025-10-18T13:05:37.1800513Z [14/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/depfile.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/depfile.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/depfile.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/depfile.cpp
+2025-10-18T13:05:37.7155618Z [15/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/config.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/config.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/config.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/config.cpp
+2025-10-18T13:05:39.0123572Z [16/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/hash.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/hash.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/hash.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/hash.cpp
+2025-10-18T13:05:39.2326835Z [17/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/execute.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/execute.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/execute.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/execute.cpp
+2025-10-18T13:05:40.0818899Z [18/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/language.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/language.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/language.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/language.cpp
+2025-10-18T13:05:40.0969074Z [19/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/version.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/version.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/version.cpp.o -c /home/runner/work/ccache/ccache/build/src/ccache/version.cpp
+2025-10-18T13:05:40.3831737Z [20/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/progressbar.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/progressbar.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/progressbar.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/progressbar.cpp
+2025-10-18T13:05:40.6068136Z [21/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/hashutil.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/hashutil.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/hashutil.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/hashutil.cpp
+2025-10-18T13:05:41.2350760Z [22/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/ccache.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/ccache.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/ccache.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/ccache.cpp
+2025-10-18T13:05:41.6816130Z [23/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/signalhandler.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/signalhandler.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/signalhandler.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/signalhandler.cpp
+2025-10-18T13:05:42.4201837Z [24/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/atomicfile.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/atomicfile.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/atomicfile.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/atomicfile.cpp
+2025-10-18T13:05:42.6846251Z [25/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/inodecache.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/inodecache.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/inodecache.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/inodecache.cpp
+2025-10-18T13:05:43.3862613Z [26/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/cacheentry.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/cacheentry.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/cacheentry.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/cacheentry.cpp
+2025-10-18T13:05:44.0155237Z [27/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/common.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/common.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/common.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/common.cpp
+2025-10-18T13:05:44.2671908Z [28/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/filerecompressor.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/filerecompressor.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/filerecompressor.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/filerecompressor.cpp
+2025-10-18T13:05:45.4613279Z [29/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/msvcshowincludesoutput.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/msvcshowincludesoutput.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/msvcshowincludesoutput.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/msvcshowincludesoutput.cpp
+2025-10-18T13:05:46.7815907Z [30/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/result.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/result.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/result.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/result.cpp
+2025-10-18T13:05:47.0995368Z [31/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/manifest.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/manifest.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/manifest.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/manifest.cpp
+2025-10-18T13:05:47.4472036Z [32/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/resultextractor.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/resultextractor.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/resultextractor.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/resultextractor.cpp
+2025-10-18T13:05:48.2498316Z [33/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/resultinspector.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/resultinspector.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/resultinspector.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/resultinspector.cpp
+2025-10-18T13:05:49.0193972Z [34/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/mainoptions.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/mainoptions.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/mainoptions.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/mainoptions.cpp
+2025-10-18T13:05:49.2361003Z [35/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/statisticscounters.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/statisticscounters.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/statisticscounters.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/statisticscounters.cpp
+2025-10-18T13:05:49.5339397Z [36/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/resultretriever.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/resultretriever.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/resultretriever.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/resultretriever.cpp
+2025-10-18T13:05:50.5012166Z [37/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/types.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/types.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/types.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/types.cpp
+2025-10-18T13:05:50.7946704Z [38/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/statslog.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/statslog.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/statslog.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/statslog.cpp
+2025-10-18T13:05:51.8785955Z [39/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/core/statistics.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/core/statistics.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/core/statistics.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/core/statistics.cpp
+2025-10-18T13:05:52.2742289Z [40/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/storage/local/statsfile.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/storage/local/statsfile.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/storage/local/statsfile.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/storage/local/statsfile.cpp
+2025-10-18T13:05:52.7226821Z [41/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/storage/local/util.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/storage/local/util.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/storage/local/util.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/storage/local/util.cpp
+2025-10-18T13:05:53.4188080Z [42/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/remotestorage.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/remotestorage.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/remotestorage.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/storage/remote/remotestorage.cpp
+2025-10-18T13:05:54.1039204Z [43/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/filestorage.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/filestorage.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/filestorage.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/storage/remote/filestorage.cpp
+2025-10-18T13:05:55.1032002Z [44/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/redisstorage.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/redisstorage.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/redisstorage.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/storage/remote/redisstorage.cpp
+2025-10-18T13:05:57.2525744Z [45/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/storage/local/localstorage.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/storage/local/localstorage.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/storage/local/localstorage.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/storage/local/localstorage.cpp
+2025-10-18T13:05:58.0943982Z [46/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/args.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/args.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/args.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/args.cpp
+2025-10-18T13:05:58.7315377Z [47/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/assertions.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/assertions.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/assertions.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/assertions.cpp
+2025-10-18T13:05:58.9304807Z [48/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/bytes.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/bytes.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/bytes.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/bytes.cpp
+2025-10-18T13:05:58.9528963Z [49/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/cpu.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/cpu.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/cpu.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/cpu.cpp
+2025-10-18T13:05:59.0373903Z [50/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/storage/storage.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/storage/storage.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/storage/storage.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/storage/storage.cpp
+2025-10-18T13:06:00.4771155Z [51/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/direntry.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/direntry.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/direntry.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/direntry.cpp
+2025-10-18T13:06:00.4934241Z [52/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/error.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/error.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/error.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/error.cpp
+2025-10-18T13:06:00.5515029Z [53/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/environment.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/environment.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/environment.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/environment.cpp
+2025-10-18T13:06:00.5840548Z [54/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/clang.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/clang.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/clang.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/clang.cpp
+2025-10-18T13:06:00.6560851Z [55/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/filelock.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/filelock.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/filelock.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/filelock.cpp
+2025-10-18T13:06:01.5109271Z [56/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/filesystem.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/filesystem.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/filesystem.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/filesystem.cpp
+2025-10-18T13:06:02.0298772Z [57/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/exec.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/exec.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/exec.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/exec.cpp
+2025-10-18T13:06:03.8059367Z [58/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/logging.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/logging.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/logging.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/logging.cpp
+2025-10-18T13:06:04.0316925Z [59/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/lockfile.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/lockfile.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/lockfile.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/lockfile.cpp
+2025-10-18T13:06:04.0655207Z [60/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/file.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/file.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/file.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/file.cpp
+2025-10-18T13:06:05.0735434Z [61/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/memorymap.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/memorymap.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/memorymap.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/memorymap.cpp
+2025-10-18T13:06:05.1362952Z [62/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/process.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/process.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/process.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/process.cpp
+2025-10-18T13:06:05.1914406Z [63/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/longlivedlockfilemanager.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/longlivedlockfilemanager.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/longlivedlockfilemanager.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/longlivedlockfilemanager.cpp
+2025-10-18T13:06:06.0583378Z [64/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/path.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/path.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/path.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/path.cpp
+2025-10-18T13:06:06.9919980Z [65/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/temporaryfile.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/temporaryfile.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/temporaryfile.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/temporaryfile.cpp
+2025-10-18T13:06:07.5672370Z [66/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/texttable.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/texttable.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/texttable.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/texttable.cpp
+2025-10-18T13:06:07.7265543Z [67/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/time.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/time.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/time.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/time.cpp
+2025-10-18T13:06:07.7965696Z [68/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/string.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/string.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/string.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/string.cpp
+2025-10-18T13:06:07.9082785Z [69/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/threadpool.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/threadpool.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/threadpool.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/threadpool.cpp
+2025-10-18T13:06:07.9120333Z [70/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/umaskscope.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/umaskscope.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/umaskscope.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/umaskscope.cpp
+2025-10-18T13:06:07.9316035Z [71/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT CMakeFiles/ccache.dir/src/ccache/main.cpp.o -MF CMakeFiles/ccache.dir/src/ccache/main.cpp.o.d -o CMakeFiles/ccache.dir/src/ccache/main.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/main.cpp
+2025-10-18T13:06:08.4115910Z [72/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/tokenizer.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/tokenizer.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/tokenizer.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/tokenizer.cpp
+2025-10-18T13:06:08.5783471Z [73/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/util/zstd.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/util/zstd.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/util/zstd.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/util/zstd.cpp
+2025-10-18T13:06:09.5507120Z [74/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/test-lockfile.dir/test_lockfile.cpp.o -MF src/ccache/CMakeFiles/test-lockfile.dir/test_lockfile.cpp.o.d -o src/ccache/CMakeFiles/test-lockfile.dir/test_lockfile.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/test_lockfile.cpp
+2025-10-18T13:06:13.4079257Z [75/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -isystem /home/runner/work/ccache/ccache/src/third_party/cpp-httplib -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/httpstorage.cpp.o -MF src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/httpstorage.cpp.o.d -o src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/httpstorage.cpp.o -c /home/runner/work/ccache/ccache/src/ccache/storage/remote/httpstorage.cpp
+2025-10-18T13:06:14.2321010Z [76/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_ccache.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_ccache.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_ccache.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_ccache.cpp
+2025-10-18T13:06:14.3744503Z [77/116] : && /usr/local/bin/cmake -E rm -f src/ccache/libccache_framework.a && /usr/bin/ar qc src/ccache/libccache_framework.a  src/ccache/CMakeFiles/ccache_framework.dir/argprocessing.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/ccache.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/compopt.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/config.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/context.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/depfile.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/execute.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/hash.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/hashutil.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/language.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/progressbar.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/version.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/inodecache.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/signalhandler.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/atomicfile.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/cacheentry.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/common.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/filerecompressor.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/mainoptions.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/manifest.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/msvcshowincludesoutput.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/result.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/resultextractor.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/resultinspector.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/resultretriever.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/statistics.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/statisticscounters.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/statslog.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/core/types.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/storage/local/localstorage.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/storage/local/statsfile.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/storage/local/util.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/filestorage.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/remotestorage.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/redisstorage.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/storage/remote/httpstorage.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/storage/storage.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/args.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/assertions.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/bytes.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/clang.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/cpu.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/direntry.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/environment.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/error.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/exec.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/file.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/filelock.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/filesystem.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/lockfile.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/logging.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/longlivedlockfilemanager.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/memorymap.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/path.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/process.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/string.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/temporaryfile.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/texttable.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/threadpool.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/time.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/tokenizer.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/umaskscope.cpp.o src/ccache/CMakeFiles/ccache_framework.dir/util/zstd.cpp.o && /usr/bin/ranlib src/ccache/libccache_framework.a && :
+2025-10-18T13:06:15.0711028Z [78/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_compopt.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_compopt.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_compopt.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_compopt.cpp
+2025-10-18T13:06:15.7459111Z [79/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_compression_types.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_compression_types.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_compression_types.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_compression_types.cpp
+2025-10-18T13:06:15.9620436Z [80/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/main.cpp.o -MF unittest/CMakeFiles/unittest.dir/main.cpp.o.d -o unittest/CMakeFiles/unittest.dir/main.cpp.o -c /home/runner/work/ccache/ccache/unittest/main.cpp
+2025-10-18T13:06:16.9010616Z [81/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_core_atomicfile.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_core_atomicfile.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_core_atomicfile.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_core_atomicfile.cpp
+2025-10-18T13:06:17.9357552Z [82/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_core_common.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_core_common.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_core_common.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_core_common.cpp
+2025-10-18T13:06:18.8031136Z [83/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_core_msvcshowincludesoutput.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_core_msvcshowincludesoutput.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_core_msvcshowincludesoutput.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_core_msvcshowincludesoutput.cpp
+2025-10-18T13:06:18.8592663Z [84/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_core_statistics.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_core_statistics.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_core_statistics.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_core_statistics.cpp
+2025-10-18T13:06:19.1031012Z [85/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_argprocessing.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_argprocessing.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_argprocessing.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_argprocessing.cpp
+2025-10-18T13:06:19.6779806Z [86/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_core_statisticscounters.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_core_statisticscounters.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_core_statisticscounters.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_core_statisticscounters.cpp
+2025-10-18T13:06:20.1231438Z [87/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_core_statslog.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_core_statslog.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_core_statslog.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_core_statslog.cpp
+2025-10-18T13:06:20.7872874Z [88/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_hash.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_hash.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_hash.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_hash.cpp
+2025-10-18T13:06:20.9534608Z [89/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_config.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_config.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_config.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_config.cpp
+2025-10-18T13:06:22.5133366Z [90/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_hashutil.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_hashutil.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_hashutil.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_hashutil.cpp
+2025-10-18T13:06:22.5696076Z [91/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_storage_local_statsfile.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_storage_local_statsfile.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_storage_local_statsfile.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_storage_local_statsfile.cpp
+2025-10-18T13:06:23.4939972Z [92/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_bitset.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_bitset.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_bitset.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_bitset.cpp
+2025-10-18T13:06:23.5161424Z [93/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_storage_local_util.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_storage_local_util.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_storage_local_util.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_storage_local_util.cpp
+2025-10-18T13:06:24.6325819Z [94/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_depfile.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_depfile.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_depfile.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_depfile.cpp
+2025-10-18T13:06:24.8202396Z [95/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_clang.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_clang.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_clang.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_clang.cpp
+2025-10-18T13:06:26.4071781Z [96/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_conversion.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_conversion.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_conversion.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_conversion.cpp
+2025-10-18T13:06:26.9267577Z [97/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_bytes.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_bytes.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_bytes.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_bytes.cpp
+2025-10-18T13:06:27.8935341Z [98/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_args.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_args.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_args.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_args.cpp
+2025-10-18T13:06:28.0694102Z [99/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_exec.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_exec.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_exec.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_exec.cpp
+2025-10-18T13:06:28.2436795Z [100/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_environment.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_environment.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_environment.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_environment.cpp
+2025-10-18T13:06:28.8154938Z [101/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_direntry.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_direntry.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_direntry.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_direntry.cpp
+2025-10-18T13:06:29.3168817Z [102/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_expected.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_expected.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_expected.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_expected.cpp
+2025-10-18T13:06:30.2851279Z [103/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_lockfile.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_lockfile.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_lockfile.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_lockfile.cpp
+2025-10-18T13:06:31.6854647Z [104/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_texttable.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_texttable.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_texttable.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_texttable.cpp
+2025-10-18T13:06:32.0781042Z [105/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_path.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_path.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_path.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_path.cpp
+2025-10-18T13:06:33.1866797Z [106/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_xxh3_128.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_xxh3_128.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_xxh3_128.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_xxh3_128.cpp
+2025-10-18T13:06:33.2279500Z [107/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_tokenizer.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_tokenizer.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_tokenizer.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_tokenizer.cpp
+2025-10-18T13:06:33.2295028Z [108/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_file.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_file.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_file.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_file.cpp
+2025-10-18T13:06:33.3260258Z [109/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_xxh3_64.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_xxh3_64.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_xxh3_64.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_xxh3_64.cpp
+2025-10-18T13:06:34.4291938Z [110/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_zstd.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_zstd.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_zstd.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_zstd.cpp
+2025-10-18T13:06:34.9703963Z [111/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/testutil.cpp.o -MF unittest/CMakeFiles/unittest.dir/testutil.cpp.o.d -o unittest/CMakeFiles/unittest.dir/testutil.cpp.o -c /home/runner/work/ccache/ccache/unittest/testutil.cpp
+2025-10-18T13:06:34.9891523Z [112/116] : && /usr/bin/g++-11 -O2 -g  CMakeFiles/ccache.dir/src/ccache/main.cpp.o -o ccache  -fuse-ld=gold  src/ccache/libccache_framework.a  src/third_party/blake3/libdep_blake3.a  src/third_party/cxxurl/libdep_cxxurl.a  -fuse-ld=gold  /usr/lib/x86_64-linux-gnu/libfmt.so  /usr/lib/x86_64-linux-gnu/libxxhash.so  /usr/lib/x86_64-linux-gnu/libzstd.so  /usr/lib/x86_64-linux-gnu/libhiredis.so && :
+2025-10-18T13:06:35.0587580Z [113/116] : && /usr/bin/g++-11 -O2 -g  src/ccache/CMakeFiles/test-lockfile.dir/test_lockfile.cpp.o -o src/ccache/test-lockfile  -fuse-ld=gold  src/ccache/libccache_framework.a  src/third_party/blake3/libdep_blake3.a  src/third_party/cxxurl/libdep_cxxurl.a  -fuse-ld=gold  /usr/lib/x86_64-linux-gnu/libfmt.so  /usr/lib/x86_64-linux-gnu/libxxhash.so  /usr/lib/x86_64-linux-gnu/libzstd.so  /usr/lib/x86_64-linux-gnu/libhiredis.so && :
+2025-10-18T13:06:35.5997589Z [114/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_inodecache.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_inodecache.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_inodecache.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_inodecache.cpp
+2025-10-18T13:06:37.8222713Z [115/116] /usr/bin/g++-11 -DHAVE_HTTP_STORAGE_BACKEND -DHAVE_REDIS_STORAGE_BACKEND -I/home/runner/work/ccache/ccache/build -I/home/runner/work/ccache/ccache/unittest -I/home/runner/work/ccache/ccache/src -I/home/runner/work/ccache/ccache/src/third_party/blake3/blake3 -isystem /home/runner/work/ccache/ccache/src/third_party/cxxurl -isystem /home/runner/work/ccache/ccache/src/third_party/nonstd-span -isystem /home/runner/work/ccache/ccache/src/third_party/tl-expected -O2 -g -std=c++17 -include /home/runner/work/ccache/ccache/build/config.h -Wall -Wcast-align -Wdouble-promotion -Wextra -Wextra-semi -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wshadow -Wunused -Werror -Wlogical-op -MD -MT unittest/CMakeFiles/unittest.dir/test_util_string.cpp.o -MF unittest/CMakeFiles/unittest.dir/test_util_string.cpp.o.d -o unittest/CMakeFiles/unittest.dir/test_util_string.cpp.o -c /home/runner/work/ccache/ccache/unittest/test_util_string.cpp
+2025-10-18T13:06:38.2923573Z [116/116] : && /usr/bin/g++-11 -O2 -g  unittest/CMakeFiles/unittest.dir/main.cpp.o unittest/CMakeFiles/unittest.dir/test_argprocessing.cpp.o unittest/CMakeFiles/unittest.dir/test_ccache.cpp.o unittest/CMakeFiles/unittest.dir/test_compopt.cpp.o unittest/CMakeFiles/unittest.dir/test_compression_types.cpp.o unittest/CMakeFiles/unittest.dir/test_config.cpp.o unittest/CMakeFiles/unittest.dir/test_core_atomicfile.cpp.o unittest/CMakeFiles/unittest.dir/test_core_common.cpp.o unittest/CMakeFiles/unittest.dir/test_core_msvcshowincludesoutput.cpp.o unittest/CMakeFiles/unittest.dir/test_core_statistics.cpp.o unittest/CMakeFiles/unittest.dir/test_core_statisticscounters.cpp.o unittest/CMakeFiles/unittest.dir/test_core_statslog.cpp.o unittest/CMakeFiles/unittest.dir/test_depfile.cpp.o unittest/CMakeFiles/unittest.dir/test_hash.cpp.o unittest/CMakeFiles/unittest.dir/test_hashutil.cpp.o unittest/CMakeFiles/unittest.dir/test_storage_local_statsfile.cpp.o unittest/CMakeFiles/unittest.dir/test_storage_local_util.cpp.o unittest/CMakeFiles/unittest.dir/test_util_args.cpp.o unittest/CMakeFiles/unittest.dir/test_util_bitset.cpp.o unittest/CMakeFiles/unittest.dir/test_util_bytes.cpp.o unittest/CMakeFiles/unittest.dir/test_util_clang.cpp.o unittest/CMakeFiles/unittest.dir/test_util_conversion.cpp.o unittest/CMakeFiles/unittest.dir/test_util_direntry.cpp.o unittest/CMakeFiles/unittest.dir/test_util_environment.cpp.o unittest/CMakeFiles/unittest.dir/test_util_exec.cpp.o unittest/CMakeFiles/unittest.dir/test_util_expected.cpp.o unittest/CMakeFiles/unittest.dir/test_util_file.cpp.o unittest/CMakeFiles/unittest.dir/test_util_lockfile.cpp.o unittest/CMakeFiles/unittest.dir/test_util_path.cpp.o unittest/CMakeFiles/unittest.dir/test_util_string.cpp.o unittest/CMakeFiles/unittest.dir/test_util_texttable.cpp.o unittest/CMakeFiles/unittest.dir/test_util_tokenizer.cpp.o unittest/CMakeFiles/unittest.dir/test_util_xxh3_128.cpp.o unittest/CMakeFiles/unittest.dir/test_util_xxh3_64.cpp.o unittest/CMakeFiles/unittest.dir/test_util_zstd.cpp.o unittest/CMakeFiles/unittest.dir/testutil.cpp.o unittest/CMakeFiles/unittest.dir/test_inodecache.cpp.o -o unittest/unittest  -fuse-ld=gold  src/ccache/libccache_framework.a  src/third_party/blake3/libdep_blake3.a  src/third_party/cxxurl/libdep_cxxurl.a  -fuse-ld=gold  /usr/lib/x86_64-linux-gnu/libfmt.so  /usr/lib/x86_64-linux-gnu/libxxhash.so  /usr/lib/x86_64-linux-gnu/libzstd.so  /usr/lib/x86_64-linux-gnu/libhiredis.so && :
+2025-10-18T13:06:38.2933332Z + [ -x ccache ]
+2025-10-18T13:06:38.2933517Z + ./ccache --version
+2025-10-18T13:06:38.2933633Z 
+2025-10-18T13:06:38.2953628Z ccache version pr.1644.aaffee9b
+2025-10-18T13:06:38.2954045Z Features: avx2 file-storage http-storage redis+unix-storage redis-storage
+2025-10-18T13:06:38.2954522Z 
+2025-10-18T13:06:38.2954658Z Copyright (C) 2002-2007 Andrew Tridgell
+2025-10-18T13:06:38.2955139Z Copyright (C) 2009-2025 Joel Rosdahl and other contributors
+2025-10-18T13:06:38.2955528Z 
+2025-10-18T13:06:38.2955859Z See <https://ccache.dev/credits.html> for a complete list of contributors.
+2025-10-18T13:06:38.2956277Z 
+2025-10-18T13:06:38.2956468Z This program is free software; you can redistribute it and/or modify it under
+2025-10-18T13:06:38.2956912Z the terms of the GNU General Public License as published by the Free Software
+2025-10-18T13:06:38.2957357Z Foundation; either version 3 of the License, or (at your option) any later
+2025-10-18T13:06:38.2957662Z version.
+2025-10-18T13:06:38.2957850Z + CC=gcc-11 ctest --output-on-failure -j4
+2025-10-18T13:06:38.7538238Z Test project /home/runner/work/ccache/ccache/build
+2025-10-18T13:06:38.8123470Z       Start  1: unittest
+2025-10-18T13:06:38.8173786Z       Start  2: test.base
+2025-10-18T13:06:38.8182190Z       Start  3: test.basedir
+2025-10-18T13:06:38.8190726Z       Start  4: test.cache_levels
+2025-10-18T13:06:38.9824535Z  1/50 Test  #1: unittest .........................   Passed    0.17 sec
+2025-10-18T13:06:38.9832263Z       Start  5: test.clang_cu
+2025-10-18T13:06:39.1040328Z  2/50 Test  #5: test.clang_cu ....................***Skipped   0.12 sec
+2025-10-18T13:06:39.1044627Z       Start  6: test.clang_cu_alias
+2025-10-18T13:06:39.2252773Z  3/50 Test  #6: test.clang_cu_alias ..............***Skipped   0.12 sec
+2025-10-18T13:06:39.2258073Z       Start  7: test.clang_cu_direct
+2025-10-18T13:06:39.3474413Z  4/50 Test  #7: test.clang_cu_direct .............***Skipped   0.12 sec
+2025-10-18T13:06:39.3501959Z       Start  8: test.cleanup
+2025-10-18T13:06:39.6846334Z  5/50 Test  #4: test.cache_levels ................   Passed    0.87 sec
+2025-10-18T13:06:39.6853067Z       Start  9: test.color_diagnostics
+2025-10-18T13:06:41.9812577Z  6/50 Test  #3: test.basedir .....................   Passed    3.16 sec
+2025-10-18T13:06:41.9817051Z       Start 10: test.config
+2025-10-18T13:06:42.1498776Z  7/50 Test #10: test.config ......................   Passed    0.17 sec
+2025-10-18T13:06:42.1499645Z       Start 11: test.coverage_compilation_dir
+2025-10-18T13:06:42.2892312Z  8/50 Test #11: test.coverage_compilation_dir ....***Skipped   0.14 sec
+2025-10-18T13:06:42.2897340Z       Start 12: test.coverage_prefix_map
+2025-10-18T13:06:42.4290707Z  9/50 Test #12: test.coverage_prefix_map .........***Skipped   0.14 sec
+2025-10-18T13:06:42.4304595Z       Start 13: test.debug_compilation_dir
+2025-10-18T13:06:42.5635135Z 10/50 Test #13: test.debug_compilation_dir .......***Skipped   0.14 sec
+2025-10-18T13:06:42.5637480Z       Start 14: test.debug_prefix_map
+2025-10-18T13:06:43.0152875Z 11/50 Test #14: test.debug_prefix_map ............   Passed    0.45 sec
+2025-10-18T13:06:43.0159598Z       Start 15: test.depend
+2025-10-18T13:06:43.6317441Z 12/50 Test  #9: test.color_diagnostics ...........   Passed    3.95 sec
+2025-10-18T13:06:43.6324640Z       Start 16: test.direct
+2025-10-18T13:06:44.7960659Z 13/50 Test #15: test.depend ......................   Passed    1.78 sec
+2025-10-18T13:06:44.7965866Z       Start 17: test.fileclone
+2025-10-18T13:06:44.9247879Z 14/50 Test #17: test.fileclone ...................***Skipped   0.13 sec
+2025-10-18T13:06:44.9251386Z       Start 18: test.hardlink
+2025-10-18T13:06:45.0901099Z 15/50 Test  #8: test.cleanup .....................   Passed    5.74 sec
+2025-10-18T13:06:45.0902039Z       Start 19: test.inode_cache
+2025-10-18T13:06:45.6400698Z 16/50 Test #18: test.hardlink ....................   Passed    0.71 sec
+2025-10-18T13:06:45.6409506Z       Start 20: test.input_charset
+2025-10-18T13:06:45.6918040Z 17/50 Test #19: test.inode_cache .................   Passed    0.60 sec
+2025-10-18T13:06:45.6920395Z       Start 21: test.ivfsoverlay
+2025-10-18T13:06:45.8037693Z 18/50 Test #21: test.ivfsoverlay .................***Skipped   0.11 sec
+2025-10-18T13:06:45.8044667Z       Start 22: test.masquerading
+2025-10-18T13:06:45.8697347Z 19/50 Test #20: test.input_charset ...............   Passed    0.23 sec
+2025-10-18T13:06:45.8702635Z       Start 23: test.modules
+2025-10-18T13:06:45.9884756Z 20/50 Test #23: test.modules .....................***Skipped   0.12 sec
+2025-10-18T13:06:45.9890217Z       Start 24: test.multi_arch
+2025-10-18T13:06:46.1063675Z 21/50 Test #24: test.multi_arch ..................***Skipped   0.12 sec
+2025-10-18T13:06:46.1064267Z       Start 25: test.namespace
+2025-10-18T13:06:46.3336839Z 22/50 Test #22: test.masquerading ................   Passed    0.53 sec
+2025-10-18T13:06:46.3343921Z       Start 26: test.no_compression
+2025-10-18T13:06:46.9166343Z 23/50 Test #26: test.no_compression ..............   Passed    0.58 sec
+2025-10-18T13:06:46.9167219Z       Start 27: test.nvcc
+2025-10-18T13:06:46.9417986Z 24/50 Test #25: test.namespace ...................   Passed    0.84 sec
+2025-10-18T13:06:46.9430227Z       Start 28: test.nvcc_direct
+2025-10-18T13:06:47.0319216Z 25/50 Test #27: test.nvcc ........................***Skipped   0.12 sec
+2025-10-18T13:06:47.0333964Z       Start 29: test.nvcc_ldir
+2025-10-18T13:06:47.0588272Z 26/50 Test #28: test.nvcc_direct .................***Skipped   0.12 sec
+2025-10-18T13:06:47.0593119Z       Start 30: test.pch
+2025-10-18T13:06:47.1449892Z 27/50 Test #29: test.nvcc_ldir ...................***Skipped   0.11 sec
+2025-10-18T13:06:47.1454033Z       Start 31: test.profiling
+2025-10-18T13:06:49.5341802Z 28/50 Test #31: test.profiling ...................   Passed    2.39 sec
+2025-10-18T13:06:49.5344864Z       Start 32: test.profiling_clang
+2025-10-18T13:06:49.6311149Z 29/50 Test #32: test.profiling_clang .............***Skipped   0.10 sec
+2025-10-18T13:06:49.6312321Z       Start 33: test.profiling_gcc
+2025-10-18T13:06:50.1163074Z 30/50 Test  #2: test.base ........................   Passed   11.30 sec
+2025-10-18T13:06:50.1169620Z       Start 34: test.profiling_gcc_10+
+2025-10-18T13:06:50.6867641Z 31/50 Test #34: test.profiling_gcc_10+ ...........   Passed    0.57 sec
+2025-10-18T13:06:50.6868261Z       Start 35: test.profiling_hip_clang
+2025-10-18T13:06:50.8000429Z 32/50 Test #35: test.profiling_hip_clang .........***Skipped   0.11 sec
+2025-10-18T13:06:50.8039307Z       Start 36: test.readonly
+2025-10-18T13:06:50.9382183Z 33/50 Test #33: test.profiling_gcc ...............   Passed    1.31 sec
+2025-10-18T13:06:50.9387706Z       Start 37: test.readonly_direct
+2025-10-18T13:06:51.1777126Z 34/50 Test #36: test.readonly ....................   Passed    0.38 sec
+2025-10-18T13:06:51.1779264Z       Start 38: test.remote_file
+2025-10-18T13:06:51.3214048Z 35/50 Test #37: test.readonly_direct .............   Passed    0.38 sec
+2025-10-18T13:06:51.3221726Z       Start 39: test.remote_http
+2025-10-18T13:06:54.3705729Z 36/50 Test #30: test.pch .........................   Passed    7.31 sec
+2025-10-18T13:06:54.3712728Z       Start 40: test.remote_only
+2025-10-18T13:06:54.6757580Z 37/50 Test #40: test.remote_only .................   Passed    0.30 sec
+2025-10-18T13:06:54.6765662Z       Start 41: test.remote_redis
+2025-10-18T13:06:55.2415432Z 38/50 Test #38: test.remote_file .................   Passed    4.06 sec
+2025-10-18T13:06:55.2422900Z       Start 42: test.remote_redis_unix
+2025-10-18T13:06:55.4903227Z 39/50 Test #39: test.remote_http .................   Passed    4.17 sec
+2025-10-18T13:06:55.4906696Z       Start 43: test.remote_url
+2025-10-18T13:06:55.5198007Z 40/50 Test #41: test.remote_redis ................   Passed    0.84 sec
+2025-10-18T13:06:55.5209394Z       Start 44: test.sanitize_blacklist
+2025-10-18T13:06:55.6614072Z 41/50 Test #44: test.sanitize_blacklist ..........***Skipped   0.14 sec
+2025-10-18T13:06:55.6621313Z       Start 45: test.serialize_diagnostics
+2025-10-18T13:06:55.7077432Z 42/50 Test #43: test.remote_url ..................   Passed    0.22 sec
+2025-10-18T13:06:55.7082488Z       Start 46: test.source_date_epoch
+2025-10-18T13:06:55.7146397Z 43/50 Test #16: test.direct ......................   Passed   12.08 sec
+2025-10-18T13:06:55.7153516Z       Start 47: test.split_dwarf
+2025-10-18T13:06:55.7879609Z 44/50 Test #45: test.serialize_diagnostics .......***Skipped   0.13 sec
+2025-10-18T13:06:55.7882498Z       Start 48: test.stats_log
+2025-10-18T13:06:56.0017377Z 45/50 Test #48: test.stats_log ...................   Passed    0.21 sec
+2025-10-18T13:06:56.0018600Z       Start 49: test.trim_dir
+2025-10-18T13:06:56.1676299Z 46/50 Test #49: test.trim_dir ....................   Passed    0.17 sec
+2025-10-18T13:06:56.1681568Z       Start 50: test.upgrade
+2025-10-18T13:06:56.2464590Z 47/50 Test #42: test.remote_redis_unix ...........   Passed    1.00 sec
+2025-10-18T13:06:56.2999545Z 48/50 Test #46: test.source_date_epoch ...........   Passed    0.59 sec
+2025-10-18T13:06:56.3643049Z 49/50 Test #50: test.upgrade .....................   Passed    0.20 sec
+2025-10-18T13:06:56.5706348Z 50/50 Test #47: test.split_dwarf .................   Passed    0.86 sec
+2025-10-18T13:06:56.5709332Z 
+2025-10-18T13:06:56.5709529Z 100% tests passed, 0 tests failed out of 50
+2025-10-18T13:06:56.5711128Z 
+2025-10-18T13:06:56.5711586Z Total Test time (real) =  17.82 sec
+2025-10-18T13:06:56.5711872Z 
+2025-10-18T13:06:56.5712008Z The following tests did not run:
+2025-10-18T13:06:56.5712416Z 	  5 - test.clang_cu (Skipped)
+2025-10-18T13:06:56.5712750Z 	  6 - test.clang_cu_alias (Skipped)
+2025-10-18T13:06:56.5713008Z 	  7 - test.clang_cu_direct (Skipped)
+2025-10-18T13:06:56.5713272Z 	 11 - test.coverage_compilation_dir (Skipped)
+2025-10-18T13:06:56.5713554Z 	 12 - test.coverage_prefix_map (Skipped)
+2025-10-18T13:06:56.5713812Z 	 13 - test.debug_compilation_dir (Skipped)
+2025-10-18T13:06:56.5714053Z 	 17 - test.fileclone (Skipped)
+2025-10-18T13:06:56.5714516Z 	 21 - test.ivfsoverlay (Skipped)
+2025-10-18T13:06:56.5714743Z 	 23 - test.modules (Skipped)
+2025-10-18T13:06:56.5714945Z 	 24 - test.multi_arch (Skipped)
+2025-10-18T13:06:56.5715148Z 	 27 - test.nvcc (Skipped)
+2025-10-18T13:06:56.5715337Z 	 28 - test.nvcc_direct (Skipped)
+2025-10-18T13:06:56.5715546Z 	 29 - test.nvcc_ldir (Skipped)
+2025-10-18T13:06:56.5715752Z 	 32 - test.profiling_clang (Skipped)
+2025-10-18T13:06:56.5715992Z 	 35 - test.profiling_hip_clang (Skipped)
+2025-10-18T13:06:56.5716229Z 	 44 - test.sanitize_blacklist (Skipped)
+2025-10-18T13:06:56.5716476Z 	 45 - test.serialize_diagnostics (Skipped)
+2025-10-18T13:06:56.6104987Z Post job cleanup.
+2025-10-18T13:06:56.7041618Z [command]/usr/bin/git version
+2025-10-18T13:06:56.7087380Z git version 2.51.0
+2025-10-18T13:06:56.7130880Z Temporarily overriding HOME='/home/runner/work/_temp/031aef14-30e6-405a-a497-13ccf7d17ebb' before making global git config changes
+2025-10-18T13:06:56.7132150Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-18T13:06:56.7137850Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ccache/ccache
+2025-10-18T13:06:56.7170697Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-18T13:06:56.7201835Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-18T13:06:56.7430866Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-18T13:06:56.7451990Z http.https://github.com/.extraheader
+2025-10-18T13:06:56.7463757Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-18T13:06:56.7493247Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-18T13:06:56.7819221Z Cleaning up orphan processes

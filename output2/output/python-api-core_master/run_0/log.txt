@@ -1,0 +1,506 @@
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/dist-packages (80.9.0)
+Requirement already satisfied: pip in /usr/local/lib/python3.11/dist-packages (25.2)
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/dist-packages (0.45.1)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Requirement already satisfied: nox in /usr/local/lib/python3.11/dist-packages (2025.5.1)
+Requirement already satisfied: argcomplete<4,>=1.9.4 in /usr/local/lib/python3.11/dist-packages (from nox) (3.6.2)
+Requirement already satisfied: attrs>=23.1 in /usr/local/lib/python3.11/dist-packages (from nox) (25.4.0)
+Requirement already satisfied: colorlog<7,>=2.6.1 in /usr/local/lib/python3.11/dist-packages (from nox) (6.9.0)
+Requirement already satisfied: dependency-groups>=1.1 in /usr/local/lib/python3.11/dist-packages (from nox) (1.3.1)
+Requirement already satisfied: packaging>=20.9 in /usr/local/lib/python3.11/dist-packages (from nox) (25.0)
+Requirement already satisfied: virtualenv>=20.14.1 in /usr/local/lib/python3.11/dist-packages (from nox) (20.34.0)
+Requirement already satisfied: distlib<1,>=0.3.7 in /usr/local/lib/python3.11/dist-packages (from virtualenv>=20.14.1->nox) (0.4.0)
+Requirement already satisfied: filelock<4,>=3.12.2 in /usr/local/lib/python3.11/dist-packages (from virtualenv>=20.14.1->nox) (3.19.1)
+Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.11/dist-packages (from virtualenv>=20.14.1->nox) (4.4.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+nox > Running session unit-3.7
+nox > Session unit-3.7 failed: Python interpreter 3.7 not found.
+nox > Running session unit-3.8
+nox > Session unit-3.8 failed: Python interpreter 3.8 not found.
+nox > Running session unit-3.9
+nox > Session unit-3.9 failed: Python interpreter 3.9 not found.
+nox > Running session unit-3.10
+nox > Creating virtual environment (virtualenv) using python3.10 in .nox/unit-3-10
+nox > python -m pip install dataclasses 'mock; python_version=='"'"'3.7'"'"'' pytest pytest-cov pytest-xdist
+nox > python -m pip install -e '.[grpc]' -c /app/testing/constraints-3.10.txt
+nox > python -c 'import google.protobuf; print(google.protobuf.__version__)'
+6.32.1
+nox > python -c 'import proto; hasattr(proto, "version") and print(proto.version.__version__)'
+1.26.1
+nox > python -c 'import grpc; print(grpc.__version__)'
+1.75.1
+nox > python -c 'import google.auth; print(google.auth.__version__)'
+2.41.1
+nox > python -m pip install asyncmock pytest-asyncio
+nox > python -m pytest --quiet --cov=google.api_core --cov=tests.unit --cov-append --cov-config=.coveragerc --cov-report= --cov-fail-under=0 -n=auto tests/unit --cov=tests.asyncio tests/asyncio
+bringing up nodes...
+bringing up nodes...
+
+.........................s.s.s...s.......s...s.......................... [  7%]
+.............s.ss....................................................... [ 14%]
+........................................................................ [ 21%]
+........................................................................ [ 28%]
+........................................................................ [ 35%]
+........................................................................ [ 42%]
+........................................................................ [ 49%]
+.............................s.......................................... [ 56%]
+........................................................................ [ 63%]
+........................................................................ [ 70%]
+........................................................................ [ 77%]
+........................................................................ [ 84%]
+........................................................................ [ 91%]
+........................................................................ [ 98%]
+.................                                                        [100%]
+=============================== warnings summary ===============================
+tests/unit/operations_v1/test_operations_rest_client.py::test_list_operations_rest[credentials.json]
+  /app/google/api_core/operations_v1/transports/rest.py:138: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport_error
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport_with_credentials_file
+  /app/google/api_core/operations_v1/transports/base.py:105: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/unit/test_client_options.py::test_constructor
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_client_options_credentials_file[AbstractOperationsClient-OperationsRestTransport-rest]
+tests/unit/test_client_options.py::test_constructor_with_both_api_key_and_credentials_file
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_client_options[AbstractOperationsClient-OperationsRestTransport-rest]
+  /app/google/api_core/client_options.py:122: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/unit/test_grpc_helpers.py::test_create_channel_explicit_with_duplicate_credentials
+tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file_and_scopes
+tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file_and_default_scopes
+tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_with_duplicate_credentials
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_default_scopes
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_scopes
+  /app/google/api_core/grpc_helpers.py:249: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_with_duplicate_credentials
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_default_scopes
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_scopes
+  /app/google/api_core/grpc_helpers_async.py:286: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1015 passed, 10 skipped, 19 warnings in 10.97s
+nox > Session unit-3.10 was successful.
+nox > Running session unit-3.11
+nox > Creating virtual environment (virtualenv) using python3.11 in .nox/unit-3-11
+nox > python -m pip install dataclasses 'mock; python_version=='"'"'3.7'"'"'' pytest pytest-cov pytest-xdist
+nox > python -m pip install -e '.[grpc]' -c /app/testing/constraints-3.11.txt
+nox > python -c 'import google.protobuf; print(google.protobuf.__version__)'
+6.32.1
+nox > python -c 'import proto; hasattr(proto, "version") and print(proto.version.__version__)'
+1.26.1
+nox > python -c 'import grpc; print(grpc.__version__)'
+1.75.1
+nox > python -c 'import google.auth; print(google.auth.__version__)'
+2.41.1
+nox > python -m pip install asyncmock pytest-asyncio
+nox > python -m pytest --quiet --cov=google.api_core --cov=tests.unit --cov-append --cov-config=.coveragerc --cov-report= --cov-fail-under=0 -n=auto tests/unit --cov=tests.asyncio tests/asyncio
+bringing up nodes...
+bringing up nodes...
+
+s.....s...........ss.s..............................................s... [  7%]
+.........s.s................s........................................... [ 14%]
+........................................................................ [ 21%]
+........................................................................ [ 28%]
+........................................................................ [ 35%]
+........................................................................ [ 42%]
+........................................................................ [ 49%]
+......................................................................s. [ 56%]
+........................................................................ [ 63%]
+........................................................................ [ 70%]
+........................................................................ [ 77%]
+........................................................................ [ 84%]
+........................................................................ [ 91%]
+........................................................................ [ 98%]
+.................                                                        [100%]
+=============================== warnings summary ===============================
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport_with_credentials_file
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_base_transport_error
+  /app/google/api_core/operations_v1/transports/base.py:105: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/unit/operations_v1/test_operations_rest_client.py::test_list_operations_rest[credentials.json]
+  /app/google/api_core/operations_v1/transports/rest.py:138: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/unit/test_client_options.py::test_constructor_with_both_api_key_and_credentials_file
+tests/unit/test_client_options.py::test_constructor
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_client_options_credentials_file[AbstractOperationsClient-OperationsRestTransport-rest]
+tests/unit/operations_v1/test_operations_rest_client.py::test_operations_client_client_options[AbstractOperationsClient-OperationsRestTransport-rest]
+  /app/google/api_core/client_options.py:122: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/unit/test_grpc_helpers.py::test_create_channel_explicit_with_duplicate_credentials
+tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file_and_scopes
+tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file_and_default_scopes
+tests/unit/test_grpc_helpers.py::test_create_channel_with_credentials_file
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_with_duplicate_credentials
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_scopes
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_default_scopes
+  /app/google/api_core/grpc_helpers.py:249: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_explicit_with_duplicate_credentials
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_scopes
+tests/asyncio/test_grpc_helpers_async.py::test_create_channel_with_credentials_file_and_default_scopes
+  /app/google/api_core/grpc_helpers_async.py:286: DeprecationWarning: The `credentials_file` argument is deprecated because of a potential security risk.
+
+  The `google.auth.load_credentials_from_file` method does not validate the credential
+  configuration. The security risk occurs when a credential configuration is accepted
+  from a source that is not under your control and used without validation on your side.
+
+  If you know that you will be loading credential configurations of a
+  specific type, it is recommended to use a credential-type-specific
+  load method.
+
+  This will ensure that an unexpected credential type with potential for
+  malicious intent is not loaded unintentionally. You might still have to do
+  validation for certain credential types. Please follow the recommendations
+  for that method. For example, if you want to load only service accounts,
+  you can create the service account credentials explicitly:
+
+  ```
+  from google.cloud.vision_v1 import ImageAnnotatorClient
+  from google.oauth2 import service_account
+
+  credentials = service_account.Credentials.from_service_account_file(filename)
+  client = ImageAnnotatorClient(credentials=credentials)
+  ```
+
+  If you are loading your credential configuration from an untrusted source and have
+  not mitigated the risks (e.g. by validating the configuration yourself), make
+  these changes as soon as possible to prevent security risks to your environment.
+
+  Regardless of the method used, it is always your responsibility to validate
+  configurations received from external sources.
+
+  Refer to https://cloud.google.com/docs/authentication/external/externally-sourced-credentials
+  for more details.
+
+    warnings.warn(general_helpers._CREDENTIALS_FILE_WARNING, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1015 passed, 10 skipped, 19 warnings in 10.43s
+nox > Session unit-3.11 was successful.
+nox > Running session unit-3.12
+nox > Session unit-3.12 failed: Python interpreter 3.12 not found.
+nox > Running session unit-3.13
+nox > Session unit-3.13 failed: Python interpreter 3.13 not found.
+nox > Running session unit-3.14
+nox > Session unit-3.14 failed: Python interpreter 3.14 not found.
+nox > Ran multiple sessions:
+nox > * unit-3.7: failed
+nox > * unit-3.8: failed
+nox > * unit-3.9: failed
+nox > * unit-3.10: success
+nox > * unit-3.11: success
+nox > * unit-3.12: failed
+nox > * unit-3.13: failed
+nox > * unit-3.14: failed

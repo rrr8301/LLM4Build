@@ -1,0 +1,47 @@
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'
+py39-marshmallow3: install_deps> python -I -m pip install 'marshmallow<4.0.0,>=3.0.0'
+.pkg: install_requires> python -I -m pip install 'flit_core<4'
+.pkg: _optional_hooks> python /usr/local/lib/python3.9/dist-packages/pyproject_api/_backend.py True flit_core.buildapi
+.pkg: get_requires_for_build_sdist> python /usr/local/lib/python3.9/dist-packages/pyproject_api/_backend.py True flit_core.buildapi
+.pkg: build_sdist> python /usr/local/lib/python3.9/dist-packages/pyproject_api/_backend.py True flit_core.buildapi
+py39-marshmallow3: install_package_deps> python -I -m pip install 'Django>=2.2.0' 'Flask>=0.12.5' 'aiohttp>=3.0.8' 'bottle>=0.12.13' 'falcon>=2.0.0' 'marshmallow<5.0.0,>=3.13.0' 'packaging>=17.0' 'pyramid>=1.9.1' pytest 'pytest-aiohttp>=0.3.0' pytest-asyncio 'tornado>=4.5.2' 'typing_extensions>=4.0; python_version < "3.10"' webtest-aiohttp==2.0.0 webtest==3.0.6
+py39-marshmallow3: install_package> python -I -m pip install --force-reinstall --no-deps /app/.tox/.tmp/package/1/webargs-8.7.0.tar.gz
+py39-marshmallow3: commands[0]> pytest
+============================= test session starts ==============================
+platform linux -- Python 3.9.23, pytest-8.4.1, pluggy-1.6.0
+cachedir: .tox/py39-marshmallow3/.pytest_cache
+rootdir: /app
+configfile: pyproject.toml
+plugins: asyncio-1.1.0, aiohttp-1.1.0
+asyncio: mode=strict, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 507 items
+
+tests/test_aiohttpparser.py .......................................s.... [  8%]
+......                                                                   [  9%]
+tests/test_bottleparser.py ........................................s     [ 17%]
+tests/test_core.py ..................................................... [ 28%]
+........................................................................ [ 42%]
+..............                                                           [ 45%]
+tests/test_djangoparser.py ........................................s.... [ 54%]
+.                                                                        [ 54%]
+tests/test_falconparser.py .....................................s....... [ 63%]
+......                                                                   [ 64%]
+tests/test_flaskparser.py .............................................. [ 73%]
+..........................................................               [ 85%]
+tests/test_pyramidparser.py ...........................................  [ 93%]
+tests/test_tornadoparser.py .................................            [100%]
+
+=============================== warnings summary ===============================
+.tox/py39-marshmallow3/lib/python3.9/site-packages/django/conf/__init__.py:267
+  /app/.tox/py39-marshmallow3/lib/python3.9/site-packages/django/conf/__init__.py:267: RemovedInDjango50Warning: The USE_L10N setting is deprecated. Starting with Django 5.0, localized formatting of data will always be enabled. For example Django will display numbers and dates using the format of the current locale.
+    warnings.warn(USE_L10N_DEPRECATED_MSG, RemovedInDjango50Warning)
+
+tests/test_pyramidparser.py::TestPyramidParser::test_parse_querystring_args
+  /app/.tox/py39-marshmallow3/lib/python3.9/site-packages/pyramid/asset.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+    import pkg_resources
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 503 passed, 4 skipped, 2 warnings in 2.18s ==================
+.pkg: _exit> python /usr/local/lib/python3.9/dist-packages/pyproject_api/_backend.py True flit_core.buildapi
+  py39-marshmallow3: OK (20.19=setup[17.32]+cmd[2.86] seconds)
+  congratulations :) (20.27 seconds)

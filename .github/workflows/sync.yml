@@ -1,0 +1,56 @@
+name: Anonymize and Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to sync'
+        required: true
+        default: 'main'
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source repository
+      uses: actions/checkout@v4
+      with:
+        # For manual runs, use the chosen branch; for push events, use the pushed branch name
+        ref: ${{ github.event.inputs.branch }}
+        fetch-depth: 0
+
+    - name: Configure git user for anonymous commit
+      run: |
+        git config --global user.email "llm4build@llm4build.email"
+        git config --global user.name "llm4build"
+
+    - name: Setup SSH for pushing 
+      uses: webfactory/ssh-agent@v0.9.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_KEY_TO_PUSH }}
+
+    - name: Rewrite commit history to single anonymous snapshot
+      run: |
+        # Remove any existing Git history from the working directory
+        rm -rf .git
+
+        # Initialize a fresh repository
+        git init
+
+        # Create a single new commit with the current snapshot of the code
+        git add .
+        git commit -m "Sync repo"
+
+        # Ensure the branch is named 'main'
+        git branch -M main
+
+    - name: Force push snapshot to target mirror repo
+      run: |
+        TARGET_REPO_SSH_URL="git@github.com:rrr8301/LLM4Build.git"
+        git remote add target ${TARGET_REPO_SSH_URL}
+        git push target main --force
+
